@@ -1,0 +1,55 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.plate {
+    position: relative;
+    display: inline-block;
+    padding: 16px;
+    border-radius: var(--border-radius-control);
+    box-shadow: var(--shadow);
+
+    margin-right: 7px;
+    margin-bottom: 7px;
+
+    background-color: #fff;
+
+    &_hidden {
+        display: none;
+    }
+
+    &_has-clear {
+        padding-right: 34px;
+    }
+
+    /* FIXME: maybe remove cascade? */
+    &__clear > .icon {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+
+        opacity: var(--opacity-minor);
+
+        transition: opacity .1s ease-out;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        cursor: pointer;
+    }
+
+    &_flat {
+        box-shadow: none;
+    }
+
+    &_theme_alfa-on-color.plate_flat {
+        background-color: rgba(255, 255, 255, .06);
+    }
+
+    &_theme_alfa-on-white.plate_flat {
+        background-color: rgba(0, 0, 0, .06);
+    }
+}

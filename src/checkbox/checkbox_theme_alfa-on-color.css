@@ -1,0 +1,53 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.checkbox_theme_alfa-on-color {
+    color: var(--color-content-alfa-on-color);
+
+    .checkbox__box {
+        transition: all 200ms ease;
+
+        background: var(--color-background-control-alfa-on-color);
+
+        border: 1px solid rgba(255, 255, 255, .5);
+    }
+
+    &.checkbox_checked {
+        .checkbox__box {
+            border-color: transparent;
+            background: var(--color-accent-translucent);
+        }
+
+        &.checkbox_hovered .checkbox__box {
+            border-color: transparent;
+            background: var(--color-accent);
+        }
+    }
+
+    &.checkbox_focused,
+    &.checkbox_hovered {
+        .checkbox__box {
+            border-color: var(--color-content-alfa-on-color);
+        }
+    }
+
+    &.checkbox_focused .checkbox__box {
+        box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
+    }
+
+    &.checkbox_disabled {
+        color: var(--color-content-minor-alfa-on-color);
+
+        .checkbox__box {
+            border-color: transparent;
+            background: var(--color-background-control-disabled-alfa-on-color);
+        }
+
+        &.checkbox_checked .checkbox__box:after {
+            opacity: var(--opacity-disabled);
+        }
+    }
+}

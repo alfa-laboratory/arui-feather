@@ -1,0 +1,5 @@
+.demo {
+    &__layout + &__layout {
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,71 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* eslint jsx-a11y/no-static-element-interactions: 0 */
+
+import { autobind } from 'core-decorators';
+import React from 'react';
+import Type from 'prop-types';
+
+import cn from '../cn';
+import performance from '../performance';
+
+import './icon.css';
+
+import './icon_alfa-on-color.css';
+import './icon_alfa-on-white.css';
+import './icon_alfa-on-colored.css';
+
+/**
+ * Компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
+ * Все иконки доступны в двух цветовых темах `alfa-on-color` и `alfa-on-white`.
+ *
+ * Для иконок `error` и `ок` также есть цветной вариант,
+ * реализуемый темой `alfa-on-colored`.
+ */
+@cn('icon')
+@performance()
+class Icon extends React.Component {
+    static propTypes = {
+        /** Тип иконки */
+        icon: Type.oneOf([
+            'error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'
+        ]),
+        /** Размер компонента */
+        size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
+        /** Дочерние элементы `Icon` */
+        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        /** Тема компонента */
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']),
+        /** Дополнительный класс */
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Обработчик клика по иконке */
+        onClick: Type.func
+    };
+
+    static defaultProps = {
+        size: 'm'
+    };
+
+    render(cn) {
+        return (
+            <span
+                className={ cn({
+                    size: this.props.size,
+                    [this.props.icon]: true
+                }) }
+                onClick={ this.handleClick }
+            />
+        );
+    }
+
+    @autobind
+    handleClick(event) {
+        if (this.props.onClick) {
+            this.props.onClick(event);
+        }
+    }
+}
+
+export default Icon;

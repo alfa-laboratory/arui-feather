@@ -1,0 +1,35 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    background-repeat: no-repeat;
+}
+
+.icon_size_s {
+    width: 18px;
+    height: 18px;
+}
+
+.icon_size_m {
+    width: 24px;
+    height: 24px;
+}
+
+.icon_size_l {
+    width: 30px;
+    height: 30px;
+}
+
+.icon_size_xl {
+    width: 36px;
+    height: 36px;
+}
+
+.icon_size_xxl {
+    width: 48px;
+    height: 48px;
+}

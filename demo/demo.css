@@ -1,0 +1,106 @@
+@import '../src/main.css';
+@import '../src/vars.css';
+
+html, body {
+    overflow: hidden;
+}
+
+.demo {
+    font-family: var(--font);
+    height: 100%;
+
+    &__menu,
+    &__layout {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+
+    &__menu {
+        width: 100%;
+        height: 50px;
+        background: #eee;
+        padding: 10px 20px 0;
+        overflow: auto;
+    }
+
+    &__menu-items,
+    &__menu-item {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__menu-item + &__menu-item {
+        margin-top: 10px;
+    }
+
+    &__layout {
+        width: 100%;
+        top: 50px;
+        bottom: 0;
+    }
+
+    &__iframe {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    a:link,
+    a:visited,
+    a:active,
+    a:hover {
+        color: #000;
+        opacity: .7;
+        text-decoration: none;
+        border-bottom: solid rgba(0, 0, 0, .5) 1px;
+    }
+
+    a:hover {
+        opacity: 1;
+    }
+
+    &__menu-desktop {
+        display: none;
+    }
+
+    &__menu-mobile-item {
+        display: inline-block;
+        vertical-align: middle;
+
+        & + & {
+            margin-left: 10px;
+        }
+    }
+}
+
+.popup {
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+@media (--large) {
+    .demo {
+        &__menu-mobile {
+            display: none;
+        }
+
+        &__menu-desktop {
+            display: block;
+        }
+    }
+
+    .demo__layout {
+        top: 0;
+        height: 100%;
+        padding-left: 320px;
+    }
+
+    .demo__menu {
+        width: 320px;
+        height: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,71 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import easings from './easings';
+import { SCROLL_TO_NORMAL_DURATION, SCROLL_TO_EASING } from '../vars';
+
+/**
+ * Скроллит по элементу или странице.
+ * В настоящее время доступно перемещение только по оси Y.
+ *
+ * @param {Options} options Список переданных опций
+ * @param {Number} options.targetY Цель по оси Y
+ * @param {HTMLElement} [options.container] Элемент в котором скроллим
+ * @param {Number} [options.duration=0] Продолжительность анимации в миллесекундах
+ * @param {String} [options.easing='easeInOutSine'] Название функции плавности для анимации
+ * @returns {Promise}
+ */
+export default function scrollTo(options) {
+    let {
+        targetY,
+        container,
+        duration = SCROLL_TO_NORMAL_DURATION,
+        easing = SCROLL_TO_EASING
+    } = options;
+
+    let scrollY = container ? container.scrollTop : window.pageYOffset;
+    let startTime = window.performance.now();
+
+    if (duration < 0) {
+        throw new Error('Incorrect duration in options');
+    }
+
+    if (!easings[easing]) {
+        throw new Error('Incorrect easing in options');
+    }
+
+    easing = easings[easing];
+
+    return new Promise((resolve) => {
+        function scrollToTarget(y) {
+            if (container) {
+                container.scrollTop = y;
+            } else {
+                window.scrollTo(0, y);
+            }
+        }
+
+        function loop(timestamp) {
+            let currentTime = Math.abs(timestamp - startTime);
+            let t = currentTime / duration;
+            let val = easing(t);
+            let currentTargetY = scrollY + ((targetY - scrollY) * val);
+
+            if (t < 1) {
+                window.requestAnimationFrame(loop);
+                scrollToTarget(currentTargetY);
+            } else {
+                scrollToTarget(targetY);
+                resolve();
+            }
+        }
+
+        if (duration === 0) {
+            scrollToTarget(targetY);
+            resolve();
+        } else {
+            loop(window.performance.now());
+        }
+    });
+}

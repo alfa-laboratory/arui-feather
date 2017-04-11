@@ -1,0 +1,24 @@
+.top-block {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, .9);
+
+    background-color: rgba(0, 0, 0, .9);
+
+    &__inner {
+         padding: 20px;
+         position: relative;
+         margin: 0px auto;
+         max-width: 994px;
+    }
+
+    &__head {
+         position: relative;
+    }
+
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+}

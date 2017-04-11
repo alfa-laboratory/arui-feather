@@ -1,0 +1,9 @@
+.layout {
+    padding-right: 10px;
+}
+
+.icon {
+    &_link-demo {
+        margin-right: 5px;
+    }
+}

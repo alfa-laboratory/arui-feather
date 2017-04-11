@@ -1,0 +1,216 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.button_theme_alfa-on-white {
+    color: var(--color-content-alfa-on-white);
+
+    background: transparent;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .3);
+
+    &.button_hovered {
+        border-color: var(--color-content-alfa-on-white);
+    }
+
+    &.button_focused-hard {
+        border-color: var(--color-content-alfa-on-white);
+        box-shadow: 0 0 0 1px var(--color-content-alfa-on-white);
+
+        &.button_hovered {
+            box-shadow: none;
+            border-color: var(--color-content-alfa-on-white);
+        }
+    }
+
+    &.button_pressed {
+        border-color: var(--color-content-alfa-on-white);
+        background: rgba(0, 0, 0, .05);
+    }
+
+    &.button_view_action {
+        color: var(--color-content-alfa-on-white);
+        background: rgba(0, 0, 0, .15);
+        border-color: rgba(0, 0, 0, .05);
+
+        &.button_hovered {
+            background: rgba(0, 0, 0, .25);
+        }
+
+        &.button_pressed {
+            background: rgba(0, 0, 0, .3);
+        }
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-white);
+
+            &.button_hovered {
+                border-color: transparent;
+            }
+        }
+    }
+
+    &.button_view_extra {
+        color: var(--color-content-accent-alfa-on-color);
+        background: var(--color-accent-translucent);
+        border-color: var(--color-accent-translucent);
+
+        &.button_hovered {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-white);
+
+            &.button_hovered {
+                border-color: var(--color-accent);
+            }
+        }
+
+        &.button_pressed {
+            background: var(--color-accent-alt);
+            border-color: var(--color-accent-alt);
+        }
+    }
+
+    &.button_view_other {
+        background: rgba(80, 64, 218, .85);
+        border-color: rgba(80, 64, 218, .85);
+
+        color: var(--color-content-accent-alfa-on-color);
+
+        &.button_hovered {
+            background: rgba(71, 57, 195, .85);
+            border-color: rgba(71, 57, 195, .85);
+        }
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-white);
+
+            &.button_hovered {
+                border-color: rgba(71, 57, 195, .85);
+            }
+        }
+
+        &.button_pressed {
+            background: rgba(64, 51, 174, .85);
+            border-color: rgba(64, 51, 174, .85);
+        }
+    }
+
+    &.button_pseudo {
+        border-style: dashed;
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-white);
+            border-style: solid;
+
+            &.button_hovered {
+                border-color: rgba(239, 49, 36, .5);
+                border-style: dashed;
+            }
+        }
+    }
+
+    &.button_disabled {
+        border-color: transparent;
+        background: rgba(0, 0, 0, .08);
+
+        .button__text {
+            color: var(--color-content-minor-alfa-on-white);
+        }
+    }
+}
+
+.control-group {
+    .button_theme_alfa-on-white {
+        .button__text {
+            font-weight: var(--font-weight);
+        }
+
+        &.button_hovered {
+            border-color: var(--color-content-alfa-on-white);
+        }
+    }
+
+    .checkbox_theme_alfa-on-white,
+    .radio_theme_alfa-on-white {
+        & + .checkbox_disabled,
+        & + .radio_disabled {
+            .button_theme_alfa-on-white {
+                border-left-color: rgba(0, 0, 0, .3);
+            }
+        }
+
+        &.checkbox + .checkbox_theme_alfa-on-white,
+        &.radio + .radio_theme_alfa-on-white {
+            .button_theme_alfa-on-white {
+                margin-left: 1px;
+                border-left: none;
+                box-shadow: -1px 0 0 0 rgba(0, 0, 0, .3);
+            }
+        }
+
+        &.checkbox_checked + .checkbox_theme_alfa-on-white,
+        &.radio_checked + .checkbox_theme_alfa-on-white {
+            .button_theme_alfa-on-white {
+                box-shadow: -1px 0 0 0 rgba(0, 0, 0, .2);
+            }
+        }
+
+        &.checkbox_hovered + .checkbox.checkbox_theme_alfa-on-white,
+        &.radio_hovered + .radio.radio_theme_alfa-on-white {
+            .button.button_theme_alfa-on-white {
+                box-shadow: -1px 0 0 0 var(--color-content-alfa-on-white);
+            }
+        }
+    }
+
+    > :not(:first-child) {
+        &.checkbox_theme_alfa-on-white,
+        &.radio_theme_alfa-on-white {
+            .button_theme_alfa-on-white {
+                &.button_hovered {
+                    box-shadow: -1px 0 0 0 var(--color-content-alfa-on-white);
+                }
+            }
+
+            &.checkbox_checked:not(.checkbox_hovered),
+            &.radio_checked:not(.radio_hovered) {
+                .button_theme_alfa-on-white {
+                    box-shadow: -1px 0 0 0 rgba(0, 0, 0, .3);
+                }
+            }
+        }
+    }
+
+    > :last-child {
+        .button_theme_alfa-on-white {
+            border-right-color: rgba(0, 0, 0, .3);
+
+            &.button_hovered {
+                border-color: var(--color-content-alfa-on-white);
+            }
+
+            &.button_checked,
+            &.button_disabled {
+                border-right-color: rgba(0, 0, 0, .05);
+
+                &.button_hovered {
+                    border-color: var(--color-content-alfa-on-white);
+                }
+            }
+        }
+    }
+
+    > :not(:last-child) {
+        .button_theme_alfa-on-white {
+            border-right: none;
+        }
+    }
+}

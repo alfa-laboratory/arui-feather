@@ -1,0 +1,17 @@
+.build/
+.idea/
+.publish/
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+.gemini-react-tmp/
+.gemini.tmp.*/
+coverage/
+gemini-coverage/
+gemini-report/
+gemini-utils/polyfills.js
+test-results.xml
+
+tools/modernizr.js

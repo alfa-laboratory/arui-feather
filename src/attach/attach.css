@@ -1,0 +1,83 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.attach {
+    display: inline-block;
+
+    white-space: nowrap;
+
+    &__label,
+    &__control {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__label {
+        z-index: 2;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__control {
+        cursor: pointer;
+        opacity: 0;
+
+        /*
+         * Хак для обхода поведения IE10+, где левая половина контрола — "поле ввода",
+         * в которое можно поставить курсор. Нажатие в такое поле не вызывает click,
+         * а только ставит курсор, который виден независимо от видимости контрола.
+         * Cкейлинг размещает в видимом пространстве кнопки именно кнопку инпута.
+         */
+        width: 100px;
+        height: 50px;
+        transform: scale(20);
+    }
+
+    &__file,
+    &__no-file {
+        display: inline;
+
+        margin-left: 0.5em;
+    }
+
+    &__file .icon {
+        width: 1em;
+        margin-right: 0.3em;
+
+        background-image: url(./images/attach.png);
+    }
+
+    &__clear {
+        margin: 0 0 0 5px;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+        color: inherit;
+        font: inherit;
+        background: none;
+        border: none;
+
+        &:before {
+            content: '×';
+        }
+    }
+
+    &_disabled &__control {
+        cursor: default;
+    }
+
+    &_disabled &__no-file,
+    &_disabled &__file {
+        opacity: var(--opacity-disabled);
+    }
+
+    &_disabled &__clear {
+        display: none;
+    }
+}

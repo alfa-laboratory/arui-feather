@@ -1,0 +1,39 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.select_theme_alfa-on-color {
+    @each $size in s, m, l, xl {
+        &.select_size_$(size) .select__tick {
+            background-image: url(./images/select__tick_theme_alfa-on-color__$(size).svg);
+        }
+    }
+
+    &.select_focused,
+    &.select_focused-hard,
+    &.select_opened {
+        .select__button {
+            border-color: rgba(255, 255, 255, .9);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+            background-color: var(--color-background-control-focused-alfa-on-color);
+        }
+    }
+
+    &.select_invalid {
+        .select__button {
+            border-color: var(--color-error-translucent);
+        }
+
+        &.select_focused,
+        &.select_focused-hard,
+        &.select_opened {
+            .select__button {
+                border-color: var(--color-error-translucent);
+                box-shadow: 0 0 0 1px var(--color-error-translucent);
+                background: var(--color-error-transparent);
+            }
+        }
+    }
+}

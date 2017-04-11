@@ -1,0 +1,124 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.calendar {
+    display: inline-block;
+
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size-m);
+
+    padding: 0;
+    border-radius: var(--border-radius-control);
+
+    box-sizing: border-box;
+
+    outline: 0;
+
+    &__name {
+        text-align: center;
+    }
+
+    &__layout {
+        border-spacing: 0;
+        border-collapse: separate;
+    }
+
+    &__title {
+        padding: 20px 15px 5px;
+        line-height: 20px;
+        vertical-align: middle;
+    }
+
+    &__layout {
+        padding: 0 15px 15px;
+    }
+
+    &__dayname,
+    &__day {
+        font-size: var(--font-size-s);
+    }
+
+    &__dayname {
+        font-weight: var(--font-weight);
+        font-size: var(--font-size-xs);
+        line-height: 34px;
+
+        cursor: default;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__day {
+        line-height: 30px;
+
+        width: 30px;
+
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__arrow, &__double_arrow {
+        width: 18px;
+        height: 18px;
+        opacity: var(--opacity-minor);
+        cursor: pointer;
+        transition: all 0.1s ease-out;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__arrow:hover {
+        opacity: 1;
+    }
+
+    &__arrow_direction_left, &__double_arrow_direction_left {
+        float: left;
+    }
+
+    &__arrow_direction_right, &__double_arrow_direction_right {
+        float: right;
+    }
+
+    &__day_type_weekend {
+        font-weight: var(--font-weight-heavy-accent);
+    }
+
+    &__day_state_current {
+        color: var(--color-accent-content);
+        position: relative;
+        z-index: 2;
+
+        margin: 0 -1px 0 0;
+
+        text-align: center;
+
+        outline: 0;
+
+        user-select: none;
+    }
+
+    &__day_state_current {
+        background: var(--color-accent);
+        border-radius: var(--border-radius-control);
+    }
+
+    &__day_type_off,
+    &__day_type_weekend-off {
+        cursor: default;
+        opacity: var(--opacity-minor);
+    }
+
+    &__arrow_disabled {
+        visibility: hidden;
+    }
+
+    &__error {
+        box-sizing: border-box;
+        width: 240px;
+        margin: 7px;
+    }
+}

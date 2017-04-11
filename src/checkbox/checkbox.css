@@ -1,0 +1,149 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.checkbox {
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+
+    display: inline-block;
+    position: relative;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    &__control {
+        position: absolute;
+        z-index: -1;
+
+        margin: 0;
+
+        opacity: 0;
+    }
+
+    &__box {
+        display: inline-block;
+        position: absolute;
+
+        border-radius: var(--border-radius-control);
+
+        &:after {
+            position: absolute;
+            top: -1px;
+            left: 2px;
+
+            content: '';
+
+            background-size: 100%;
+
+            visibility: hidden;
+            opacity: 0;
+
+            background-image: url(./images/checkbox__box.svg);
+            background-repeat: no-repeat;
+
+            transition:
+                transform 50ms ease-out,
+                opacity 50ms ease-out;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+    }
+
+    &_size_m {
+        font-size: var(--font-size-m);
+
+        .checkbox__text {
+            padding-left: 24px;
+        }
+    }
+
+    &_size_m &__box {
+        top: 2px;
+
+        width: 14px;
+        height: 14px;
+
+        margin-right: 6px;
+
+        &:after {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    &_size_l {
+        font-size: var(--font-size-xl);
+    }
+
+    &_size_l &__box {
+        top: 2px;
+
+        width: 18px;
+        height: 18px;
+
+        margin-right: 10px;
+
+        &:after {
+            width: 17px;
+            height: 16px;
+        }
+    }
+
+    &_size_l &__text {
+        padding-left: 32px;
+    }
+
+    &_checked &__box:after {
+        visibility: visible;
+        opacity: 1;
+
+        transform: translateY(0);
+        transition-delay: 0s;
+    }
+
+    &_disabled {
+        cursor: default;
+    }
+}
+
+.checkbox_type_button {
+    display: inline-block;
+
+    &.checkbox_checked .button__text {
+        font-weight: var(--font-weight);
+    }
+}
+
+.checkbox_view_line {
+    &.checkbox_size_m {
+        margin-right: 13px;
+    }
+
+    &.checkbox_size_l {
+        margin-right: 15px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.checkbox_invalid {
+    .checkbox__box {
+        border-color: var(--color-error-translucent);
+    }
+
+    &.checkbox_focused,
+    &.checkbox_hovered {
+        .checkbox__box {
+            border-color: var(--color-error-translucent);
+            box-shadow: 0 0 0 1px var(--color-error-translucent);
+        }
+    }
+}

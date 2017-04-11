@@ -1,0 +1,127 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+:root {
+    --width: 325px;
+    --offset: 20px;
+}
+
+.notification {
+    position: fixed;
+    visibility: hidden;
+    box-sizing: border-box;
+    border-radius: var(--border-radius-control);
+    padding: 15px 45px 15px 25px;
+    width: 315px;
+    min-height: 80px;
+
+    z-index: 9999;
+
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+    line-height: 1.2;
+    font-size: var(--font-size-m);
+
+    transition: all .2s ease-out;
+
+    &_stick-to_left {
+        transform: translate(calc(var(--width) * -1), 0);
+        left: var(--offset);
+    }
+
+    &_stick-to_right {
+        transform: translate(var(--width), 0);
+        right: var(--offset);
+    }
+
+    &_theme_alfa-on-color {
+        color: var(--color-content-alfa-on-color);
+
+        background: var(--color-background-alfa-on-color);
+
+        box-shadow: var(--shadow-light);
+    }
+
+    &_theme_alfa-on-white {
+        color: var(--color-content-alfa-on-white);
+
+        background: var(--color-background-alfa-on-white);
+
+        box-shadow: var(--shadow-light);
+    }
+
+    &__title {
+        font-size: var(--font-size-m);
+        line-height: 1.2;
+        padding-bottom: 10px;
+        margin-top: -2px;
+    }
+
+    &__message {
+        font-size: var(--font-size-s);
+        line-height: 1.2;
+    }
+
+    &__icon,
+    &__close {
+        position: absolute;
+    }
+
+    &__icon {
+        display: none;
+        top: 10px;
+        left: 18px;
+    }
+
+    &__close {
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: opacity 200ms;
+        opacity: var(--opacity-minor);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &_status_ok,
+    &_status_error {
+        width: 350px;
+        padding-left: 60px;
+    }
+
+    &_status_ok &__icon,
+    &_status_error &__icon {
+        display: block;
+    }
+
+    &_visible {
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+}
+
+@media (--small-only) {
+    .notification {
+        width: 100%;
+        border-radius: 0;
+
+        transform: translate(0, -500px);
+
+        &_visible {
+            transform: translate(0, 0);
+        }
+
+        &_stick-to_left {
+            left: 0;
+        }
+
+        &_stick-to_right {
+            right: 0;
+        }
+    }
+}

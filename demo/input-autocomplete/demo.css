@@ -1,0 +1,10 @@
+.demo {
+    &__layout {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+
+        &_width_available {
+            display: block;
+        }
+    }
+}

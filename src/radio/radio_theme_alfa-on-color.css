@@ -1,0 +1,57 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.radio_theme_alfa-on-color {
+    color: var(--color-content-alfa-on-color);
+
+    .radio__box {
+        transition: all 200ms ease;
+
+        background: var(--color-background-control-alfa-on-color);
+
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    &.radio_checked {
+        .radio__box {
+            border-color: transparent;
+            background: var(--color-accent-translucent);
+
+            &:after {
+                background: var(--color-accent-content);
+            }
+        }
+
+        &.radio_hovered .radio__box {
+            border-color: transparent;
+            background: var(--color-accent);
+        }
+    }
+
+    &.radio_focused,
+    &.radio_hovered {
+        .radio__box {
+            border-color: rgba(255, 255, 255, .9);
+        }
+    }
+
+    &.radio_focused .radio__box {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+    }
+
+    &.radio_disabled {
+        color: var(--color-content-minor-alfa-on-color);
+
+        .radio__box {
+            border-color: transparent;
+            background: var(--color-background-control-disabled-alfa-on-color);
+
+            &:after {
+                background: var(--color-accent-content-minor);
+            }
+        }
+    }
+}

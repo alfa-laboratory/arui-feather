@@ -1,0 +1,86 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+:root {
+    --sidebar-width: 352px;
+    --sidebar-shift: 40px;
+    --sidebar-padding: 32px;
+    --sidebar-padding-top: 96px;
+    --sidebar-padding-small: 16px;
+}
+
+.sidebar {
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: calc(var(--sidebar-width) + var(--sidebar-shift));
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin-right: calc((var(--sidebar-width) + var(--sidebar-shift)) * -1);
+    padding: var(--sidebar-padding-top) 0 var(--sidebar-padding) var(--sidebar-padding);
+    padding-right: calc(var(--sidebar-padding) + var(--sidebar-shift));
+    box-sizing: border-box;
+    z-index: 1001;
+    transition: margin-right .45s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &_visible {
+        margin-right: calc(var(--sidebar-shift) * -1);
+    }
+
+    &__closer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: calc(var(--sidebar-padding) - 6);
+        margin-right: calc(var(--sidebar-shift) + var(--sidebar-padding) - 6);
+        margin-bottom: 0;
+        margin-left: 0;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+        color: inherit;
+        font: inherit;
+        background: none;
+        border: none;
+    }
+
+    &__content {
+        overflow: hidden;
+    }
+
+    &_theme_alfa-on-color {
+        background-color: var(--color-background-alfa-on-color);
+    }
+
+    &_theme_alfa-on-white {
+        background-color: var(--color-background-alfa-on-white);
+    }
+}
+
+@media (--small-only) {
+    .sidebar {
+        width: 100%;
+        padding: var(--sidebar-padding-top) var(--sidebar-padding-small) var(--sidebar-padding-small);
+        margin-right: -100%;
+
+        &_visible {
+            margin-right: 0;
+        }
+
+        &__closer {
+            top: 0;
+            right: 0;
+            margin-right: var(--sidebar-padding-small);
+            margin-top: var(--sidebar-padding-small);
+        }
+    }
+
+    body.sidebar-visible {
+        overflow: hidden;
+    }
+}

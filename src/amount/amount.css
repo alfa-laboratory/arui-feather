@@ -1,0 +1,28 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.amount {
+    display: inline-block;
+    white-space: nowrap;
+
+    &__minor-container {
+        display: inline-block;
+    }
+
+    &__currency {
+        display: inline-block;
+        text-align: right;
+        min-width: 1em;
+    }
+
+    &__separator, &__minor, &__currency {
+        opacity: var(--opacity-minor);
+    }
+
+    .heading {
+        margin: 0;
+    }
+}

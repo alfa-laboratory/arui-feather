@@ -1,0 +1,20 @@
+.gemini-box {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+.gemini-box_width_available {
+    display: block;
+}
+
+.gemini-box_theme_alfa-on-white {
+    color: #000;
+}
+
+.gemini-box_theme_alfa-on-color {
+    color: #fff;
+    background: #4d545b;
+    background: linear-gradient(to bottom, #4d545b 0%, #4d545b 50%, #282c36 100%);
+}

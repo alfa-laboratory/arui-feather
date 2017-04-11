@@ -1,0 +1,34 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.inline-error {
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+
+    border-radius: var(--border-radius-control);
+    color: var(--color-error-content);
+    background-color: var(--color-error);
+
+    &_size_s {
+        font-size: var(--font-size-s);
+        padding: 7px 12px 8px;
+    }
+
+    &_size_m {
+        font-size: var(--font-size-m);
+        padding: 10px 14px 11px;
+    }
+
+    &_size_l {
+        font-size: var(--font-size-l);
+        padding: 14px 18px 15px;
+    }
+
+    &_size_xl {
+        font-size: var(--font-size-xl);
+        padding: 18px 22px;
+    }
+}

@@ -1,0 +1,46 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.textarea_theme_alfa-on-white {
+    background: var(--color-background-control-alfa-on-white);
+
+    color: var(--color-content-alfa-on-white);
+
+    border: 1px solid rgba(0, 0, 0, .3);
+
+    transition: all 200ms ease;
+
+    &::placeholder {
+        color: var(--color-content-minor-alfa-on-white);
+    }
+
+    &.textarea_hovered,
+    &.textarea_focused {
+        border-color: rgba(0, 0, 0, .9);
+    }
+
+    &.textarea_focused {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+
+        background-color: var(--color-background-control-focused-alfa-on-white);
+    }
+
+    &.textarea_invalid {
+        border-color: var(--color-error-translucent);
+
+        &.textarea_focused {
+            border-color: var(--color-error-translucent);
+            box-shadow: 0 0 0 1px var(--color-error-translucent);
+            background: var(--color-error-transparent);
+        }
+    }
+
+    &.textarea_disabled {
+        border-color: transparent;
+        background: var(--color-background-control-disabled-alfa-on-white);
+        color: var(--color-content-minor-alfa-on-white);
+    }
+}

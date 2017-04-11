@@ -1,0 +1,155 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.button {
+    font-family: var(--font);
+
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+
+    user-select: none;
+
+    border-radius: var(--border-radius-control);
+
+    outline: 0;
+
+    text-align: center;
+    white-space: nowrap;
+
+    transition: all 200ms ease;
+
+    cursor: pointer;
+
+    & + & {
+        margin-left: 10px;
+    }
+
+    &::-moz-focus-inner {
+        padding: 0;
+
+        border: 0;
+    }
+
+    &__text {
+        position: relative;
+        display: inline-block;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: top;
+
+        font-weight: var(--font-weight);
+    }
+
+    &__icon {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        padding-right: 10px;
+    }
+
+    &_width_available {
+        width: 100%;
+    }
+
+    &_type_link {
+        text-decoration: none;
+    }
+
+    &_focused-hard {
+        z-index: 1;
+    }
+
+    &_disabled {
+        cursor: default;
+    }
+
+    &_disabled &__icon {
+        opacity: var(--opacity-disabled);
+    }
+
+    &_view_action &__text,
+    &_view_extra &__text,
+    &_view_other &__text {
+        font-weight: var(--font-weight-heavy-accent);
+    }
+
+    & > :last-child {
+        padding-right: 0;
+    }
+
+    &_size_s {
+        min-height: 28px;
+        padding: 0 15px;
+        font-size: var(--font-size-s);
+        line-height: 28px;
+    }
+
+    &_size_s &__icon {
+        margin-left: -4px;
+    }
+
+    &_size_m {
+        min-height: 38px;
+        padding: 0 20px;
+        font-size: var(--font-size-m);
+        line-height: 38px;
+    }
+
+    &_size_m &__icon {
+        margin-left: -8px;
+    }
+
+    &_size_l {
+        min-height: 48px;
+        padding: 0 25px;
+        font-size: var(--font-size-l);
+        line-height: 48px;
+    }
+
+    &_size_l &__icon {
+        margin-left: -12px;
+        min-width: 2px;
+    }
+
+    &_size_xl {
+        min-height: 58px;
+        padding: 0 30px;
+        font-size: var(--font-size-xl);
+        line-height: 58px;
+    }
+
+    &_size_xl &__icon {
+        margin-left: -16px;
+        min-width: 6px;
+    }
+}
+
+.control-group {
+    .button {
+        border-radius: 0;
+        border-right-color: transparent;
+    }
+
+    > .button:first-child,
+    > :first-child .button {
+        border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
+    }
+
+    > .button:last-child,
+    > :last-child .button {
+        border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
+    }
+
+    > :only-child .button {
+        border-radius: var(--border-radius-control);
+    }
+}

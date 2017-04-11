@@ -1,0 +1,275 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.menu {
+    font-family: var(--font);
+    box-sizing: border-box;
+    user-select: none;
+    outline: 0;
+}
+
+.menu_view_horizontal {
+    .menu-item {
+        display: inline-block;
+        vertical-align: top;
+
+        &.menu-item_type_link:first-child {
+            padding-left: 0;
+        }
+
+        &.menu-item_type_link:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .menu-item:first-child {
+        border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
+    }
+
+    .menu-item:last-child {
+        border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
+    }
+}
+
+.menu_mode_nav {
+    .menu-item_checked {
+        opacity: var(--opacity-minor);
+    }
+}
+
+.menu_mode_check,
+.menu_mode_radio,
+.menu_mode_radio-check {
+    .menu-item_checked:before {
+        position: absolute;
+        content: '';
+        display: inline-block;
+    }
+}
+
+.menu_mode_check {
+    .menu-item_checked:before {
+        background-repeat: no-repeat;
+    }
+}
+
+.menu_mode_radio, .menu_mode_radio-check {
+    .menu-item_checked:before {
+        border-radius: 50%;
+    }
+}
+
+.menu_size_s {
+    .menu__group-title {
+        font-size: var(--font-size-s);
+        padding: 10px 12px;
+    }
+
+    .menu-item {
+        font-size: var(--font-size-s);
+        padding: 6px 10px;
+    }
+
+    &.menu_mode_check {
+        .menu-item_checked:before {
+            width: 18px;
+            height: 18px;
+
+            top: 50%;
+            margin-top: -9px;
+            margin-left: -21px;
+        }
+    }
+
+    &.menu_mode_radio, &.menu_mode_radio-check {
+        .menu-item_checked:before {
+            width: 5px;
+            height: 5px;
+
+            top: 12px;
+            margin-left: -14px;
+        }
+    }
+
+    &.menu_mode_check,
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
+        .menu-item,
+        .menu__group-title {
+            padding-left: 24px;
+        }
+    }
+
+    .menu__group {
+        .menu-item {
+            padding-left: 36px;
+        }
+    }
+}
+
+.menu_size_m {
+    .menu__group-title {
+        font-size: var(--font-size-m);
+        padding: 8px 12px;
+    }
+
+    .menu-item {
+        font-size: var(--font-size-m);
+        padding: 9px 12px;
+    }
+
+    &.menu_mode_check {
+        .menu-item_checked:before {
+            width: 24px;
+            height: 24px;
+
+            top: 50%;
+            margin-top: -12px;
+            margin-left: -28px;
+        }
+    }
+
+    &.menu_mode_radio, &.menu_mode_radio-check {
+        .menu-item_checked:before {
+            width: 6px;
+            height: 6px;
+
+            top: 17px;
+            margin-left: -14px;
+        }
+    }
+
+    &.menu_mode_check,
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
+        .menu-item,
+        .menu__group-title {
+            padding-left: 30px;
+        }
+    }
+
+    .menu__group {
+        .menu-item {
+            padding-left: 48px;
+        }
+    }
+}
+
+.menu_size_l {
+    .menu__group-title {
+        font-size: var(--font-size-l);
+        padding: 10px 17px;
+    }
+
+    .menu-item {
+        font-size: var(--font-size-l);
+        padding: 12px 15px 13px;
+    }
+
+    &.menu_mode_check {
+        .menu-item_checked:before {
+            width: 30px;
+            height: 30px;
+
+            top: 50%;
+            margin-top: -15px;
+            margin-left: -33px;
+        }
+    }
+
+    &.menu_mode_radio, &.menu_mode_radio-check {
+        .menu-item_checked:before {
+            width: 8px;
+            height: 8px;
+
+            top: 21px;
+            margin-left: -21px;
+        }
+    }
+
+    &.menu_mode_check,
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
+        .menu-item,
+        .menu__group-title {
+            padding-left: 36px;
+        }
+    }
+
+    .menu__group {
+        .menu-item {
+            padding-left: 56px;
+        }
+    }
+}
+
+.menu_size_xl {
+    .menu__group-title {
+        font-size: var(--font-size-xl);
+        padding: 12px 19px;
+    }
+
+    .menu-item {
+        font-size: var(--font-size-xl);
+        padding: 11px 15px;
+    }
+
+    &.menu_mode_check {
+        .menu-item_checked:before {
+            width: 36px;
+            height: 36px;
+
+            top: 50%;
+            margin-top: -18px;
+            margin-left: -40px;
+        }
+    }
+
+    &.menu_mode_radio, &.menu_mode_radio-check {
+        .menu-item_checked:before {
+            width: 10px;
+            height: 10px;
+
+            top: 21px;
+            margin-left: -22px;
+        }
+    }
+
+    &.menu_mode_check,
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
+        .menu-item,
+        .menu__group-title {
+            padding-left: 44px;
+        }
+    }
+
+    .menu__group {
+        .menu-item {
+            padding-left: 56px;
+        }
+    }
+}
+
+.menu__group-title {
+    font-weight: var(--font-weight-accent);
+}
+
+.menu__group {
+    & + .menu__group {
+        border-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    &:first-child {
+        padding-top: 0;
+        border-top: 0;
+    }
+}

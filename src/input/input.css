@@ -1,0 +1,374 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.input {
+    font-family: var(--font);
+
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+
+    border-radius: var(--border-radius-control);
+
+    transition-duration: 200ms;
+    transition-property: background, border-color, box-shadow, width;
+    transition-timing-function: ease;
+
+    &__box {
+        box-sizing: border-box;
+        display: block;
+        position: relative;
+        min-width: 148px;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    &__control {
+        position: relative;
+        display: inline-block;
+
+        font: inherit;
+        line-height: inherit;
+        font-weight: var(--font-weight);
+
+        box-sizing: border-box;
+
+        padding: 0;
+        margin: 0;
+
+        width: 100%;
+
+        border: 0;
+        border-radius: var(--border-radius-inner-control);
+
+        outline: none;
+        background: none;
+
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+
+        &::-webkit-input-placeholder {
+            text-indent: 0;
+        }
+
+        &::-moz-placeholder {
+            opacity: 1;
+        }
+
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    &_has-clear &__control {
+        text-overflow: ellipsis;
+        padding-right: 0;
+    }
+
+    &__clear {
+        opacity: var(--opacity-minor);
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        cursor: text;
+        outline: none;
+        user-select: none;
+        color: inherit;
+        font: inherit;
+        background: none;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: none;
+        transition: opacity 0.1s ease-out;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+
+    &_has-icon &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 200ms ease;
+        text-align: center;
+    }
+
+    &_has-icon &__control {
+        text-overflow: ellipsis;
+        padding-right: 2px;
+    }
+
+    &_width_available {
+        width: 100%;
+        min-width: 0;
+    }
+
+    &_has-addons &__box,
+    &__addons {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    &__addons {
+        width: 1px;
+
+        &_left .control-group > .button:last-child,
+        &_left .control-group > :last-child .button,
+        &_right .control-group > .button:first-child,
+        &_right .control-group > :first-child .button {
+            border-radius: 0;
+        }
+    }
+
+    &__addons-layout {
+        display: table;
+        width: 100%;
+        height: 100%;
+        margin-top: -1px; /* -1px border */
+    }
+
+    &_type_hidden {
+        display: none !important;
+    }
+
+    /* reset for ios */
+    &__control:disabled {
+        opacity: 1;
+    }
+
+    &_view_line,
+    &_view_line.input_focused {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    &_view_line {
+        .input__control {
+            text-align: center;
+        }
+
+        /* line view has only one size */
+        &.input_size_s, &.input_size_m,
+        &.input_size_l, &.input_size_xl {
+            height: 50px;
+
+            font-size: var(--font-size-2xl);
+            border-bottom-width: 2px;
+
+            .input__control {
+                padding: 11px 0 4px;
+            }
+        }
+    }
+}
+
+.input_focused {
+    z-index: 1;
+
+    &.input_mode_link {
+        .input__control {
+            padding-left: 0;
+        }
+    }
+}
+
+.input_disabled {
+    &:before,
+    .input__clear {
+        display: none;
+    }
+
+    .input__box,
+    .input__control {
+        cursor: default;
+    }
+}
+
+.input_type_password .input__control {
+    text-overflow: clip;
+}
+
+.input_size_s {
+    height: 30px;
+    font-size: var(--font-size-s);
+
+    .input__control {
+        padding: 7px 10px 6px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 28px; /* -2px borders */
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon { /* TODO: Maybe icon should not have set this width/height */
+        width: 28px;
+        height: 28px;
+        line-height: 26px;
+    }
+}
+
+.input_size_m {
+    font-size: var(--font-size-m);
+    height: 40px;
+
+    .input__control {
+        padding: 10px 12px 9px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 38px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 38px;
+        height: 38px;
+        line-height: 36px;
+    }
+
+    &.input_mode_link {
+        .input__box {
+            height: 38px;
+            padding: 0 12px;
+        }
+
+        .input__trigger {
+            line-height: 40px;
+        }
+    }
+}
+
+.input_size_l {
+    font-size: var(--font-size-l);
+    height: 50px;
+
+    .input__control {
+        padding: 14px 15px 13px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 48px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 48px;
+        height: 48px;
+        line-height: 46px;
+    }
+}
+
+.input_size_xl {
+    font-size: var(--font-size-xl);
+    height: 60px;
+
+    .input__control {
+        padding: 17px 15px 16px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 60px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 58px;
+        height: 58px;
+        line-height: 56px;
+    }
+}
+
+.input_invalid {
+    border-color: var(--color-error-translucent);
+
+    &.input_focused {
+        border-color: var(--color-error-translucent);
+        box-shadow: 0 0 0 1px var(--color-error-translucent);
+        background: var(--color-error-transparent);
+    }
+
+    &.input_view_line.input_focused {
+        box-shadow: none;
+        background: none;
+    }
+}
+
+.control-group {
+    .input {
+        border-radius: 0;
+    }
+
+    .input-group__input-case_invalid + * {
+        .input {
+            padding-left: 1px;
+            border-left: none;
+        }
+
+        .input_theme_alfa-on-white:not(.input_focused),
+        .input_theme_alfa-on-color:not(.input_focused) {
+            padding-left: 1px;
+            border-left: none;
+            box-shadow: -1px 0 0 0 var(--color-error-translucent);
+        }
+    }
+
+    .input_theme_alfa-on-white.input_invalid,
+    .input_theme_alfa-on-color.input_invalid {
+        &.input_focused {
+            border-color: var(--color-error-translucent);
+        }
+    }
+
+    > :last-child .input {
+        border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
+
+        &.input_theme_alfa-on-white.input_invalid,
+        &.input_theme_alfa-on-color.input_invalid {
+            border-color: var(--color-error-translucent);
+        }
+    }
+
+    > :first-child .input {
+        border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
+
+        &.input_invalid.input_focused {
+            box-shadow: 0 0 0 1px var(--color-error-translucent);
+        }
+    }
+
+    > :not(:first-child):not(:last-child) .input {
+        &.input_invalid.input_focused {
+            padding-left: 1px;
+            border-left: none;
+            box-shadow: -1px 0 0 1px var(--color-error-translucent), 0 0 0 1px var(--color-error-translucent);
+        }
+    }
+
+    > :only-child .input {
+        border-radius: var(--border-radius-control);
+    }
+}

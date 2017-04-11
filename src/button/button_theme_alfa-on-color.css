@@ -1,0 +1,212 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.button_theme_alfa-on-color {
+    color: var(--color-content-alfa-on-color);
+
+    background: transparent;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, .4);
+
+    &.button_hovered {
+        border-color: var(--color-content-alfa-on-color);
+    }
+
+    &.button_focused-hard {
+        border-color: var(--color-content-alfa-on-color);
+        box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
+
+        &.button_hovered {
+            box-shadow: none;
+            border-color: var(--color-content-alfa-on-color);
+        }
+    }
+
+    &.button_pressed {
+        border-color: var(--color-content-alfa-on-color);
+        background: rgba(0, 0, 0, .1);
+    }
+
+    &.button_view_action {
+        color: var(--color-content-alfa-on-color);
+        background: rgba(255, 255, 255, .2);
+        border-color: rgba(255, 255, 255, .05);
+
+        &.button_hovered {
+            background: rgba(255, 255, 255, .3);
+        }
+
+        &.button_pressed {
+            background: rgba(255, 255, 255, .15);
+        }
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-color);
+
+            &.button_hovered {
+                border-color: transparent;
+            }
+        }
+    }
+
+    &.button_view_extra {
+        background: var(--color-accent-translucent);
+        border-color: var(--color-accent-translucent);
+
+        color: var(--color-content-accent-alfa-on-color);
+
+        &.button_hovered {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-color);
+
+            &.button_hovered {
+                border-color: var(--color-accent);
+            }
+        }
+
+        &.button_pressed {
+            background: var(--color-accent-alt);
+            border-color: var(--color-accent-alt);
+        }
+    }
+
+    &.button_view_other {
+        background: rgba(80, 64, 218, .85);
+        border-color: rgba(80, 64, 218, .85);
+
+        color: var(--color-content-accent-alfa-on-color);
+
+        &.button_hovered {
+            background: rgba(71, 57, 195, .85);
+            border-color: rgba(71, 57, 195, .85);
+        }
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-color);
+
+            &.button_hovered {
+                border-color: rgba(71, 57, 195, .85);
+            }
+        }
+
+        &.button_pressed {
+            background: rgba(64, 51, 174, .85);
+            border-color: rgba(64, 51, 174, .85);
+        }
+    }
+
+    &.button_pseudo {
+        border-style: dashed;
+
+        &.button_focused-hard {
+            border-color: var(--color-content-alfa-on-color);
+            border-style: solid;
+        }
+    }
+
+    &.button_disabled {
+        border-color: transparent;
+        background: rgba(255, 255, 255, .08);
+
+        .button__text {
+            color: var(--color-content-minor-alfa-on-color);
+        }
+    }
+}
+
+.control-group {
+    .button_theme_alfa-on-color {
+        .button__text {
+            font-weight: var(--font-weight);
+        }
+
+        &.button_hovered {
+            border-color: var(--color-content-alfa-on-color);
+        }
+    }
+
+    .checkbox_theme_alfa-on-color,
+    .radio_theme_alfa-on-color {
+        & + .checkbox_disabled,
+        & + .radio_disabled {
+            .button_theme_alfa-on-color {
+                border-left-color: rgba(255, 255, 255, .3);
+            }
+        }
+
+        &.checkbox + .checkbox_theme_alfa-on-color,
+        &.radio + .radio_theme_alfa-on-color {
+            .button_theme_alfa-on-color {
+                margin-left: 1px;
+                border-left: none;
+                box-shadow: -1px 0 0 0 rgba(255, 255, 255, .4);
+            }
+        }
+
+        &.checkbox_checked + .checkbox_theme_alfa-on-color,
+        &.radio_checked + .checkbox_theme_alfa-on-color {
+            .button_theme_alfa-on-color {
+                box-shadow: -1px 0 0 0 rgba(255, 255, 255, .25);
+            }
+        }
+
+        &.checkbox_hovered + .checkbox.checkbox_theme_alfa-on-color,
+        &.radio_hovered + .radio.radio_theme_alfa-on-color {
+            .button.button_theme_alfa-on-color {
+                box-shadow: -1px 0 0 0 var(--color-content-alfa-on-color);
+            }
+        }
+    }
+
+    > :not(:first-child) {
+        &.checkbox_theme_alfa-on-color,
+        &.radio_theme_alfa-on-color {
+            .button_theme_alfa-on-color {
+                &.button_hovered {
+                    box-shadow: -1px 0 0 0 var(--color-content-alfa-on-color);
+                }
+            }
+
+            &.checkbox_checked:not(.checkbox_hovered),
+            &.radio_checked:not(.radio_hovered) {
+                .button_theme_alfa-on-color {
+                    box-shadow: -1px 0 0 0 rgba(255, 255, 255, .5);
+                }
+            }
+        }
+    }
+
+    > :last-child {
+        .button_theme_alfa-on-color {
+            border-right-color: rgba(255, 255, 255, .3);
+
+            &.button_hovered {
+                border-color: var(--color-content-alfa-on-color);
+            }
+
+            &.button_checked,
+            &.button_disabled {
+                border-right-color: rgba(255, 255, 255, .05);
+
+                &.button_hovered {
+                    border-color: var(--color-content-alfa-on-color);
+                }
+            }
+        }
+    }
+
+    > :not(:last-child) {
+        .button_theme_alfa-on-color {
+            border-right: none;
+        }
+    }
+}

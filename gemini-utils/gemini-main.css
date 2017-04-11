@@ -1,0 +1,15 @@
+*,
+*:before,
+*:after {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+body > div {
+    table-layout: fixed;
+    display: table;
+    width: 100%;
+    height: inherit;
+}

@@ -1,0 +1,96 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.textarea {
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+
+    box-sizing: border-box;
+
+    position: relative;
+    display: inline-block;
+
+    padding: 0;
+    margin: 0;
+
+    vertical-align: top;
+
+    border-radius: var(--border-radius-control);
+
+    min-height: 5em;
+    min-width: 150px;
+
+    outline: none;
+    background: none;
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    overflow-y: auto;
+
+    &::-webkit-input-placeholder {
+        text-indent: 0;
+    }
+
+    &::-moz-placeholder {
+        opacity: 1;
+    }
+
+    &_focused {
+        z-index: 1;
+    }
+
+    &_disabled {
+        cursor: default;
+
+        resize: none;
+    }
+
+    &_size_s {
+        font-size: var(--font-size-s);
+        padding: 8px 10px;
+    }
+
+    &_size_m {
+        font-size: var(--font-size-m);
+        padding: 10px 12px;
+    }
+
+    &_size_l {
+        font-size: var(--font-size-l);
+        padding: 12px 15px;
+    }
+
+    &_size_xl {
+        font-size: var(--font-size-xl);
+        padding: 14px 15px;
+    }
+
+    &_width_available {
+        width: 100%;
+        min-width: 0;
+    }
+
+    &_resize_none {
+        resize: none;
+    }
+
+    &_resize_both {
+        resize: both;
+    }
+
+    &_resize_horizontal {
+        resize: horizontal;
+    }
+
+    &_resize_vertical {
+        resize: vertical;
+    }
+
+    &_autosize {
+        overflow-y: hidden;
+    }
+}

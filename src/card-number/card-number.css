@@ -1,0 +1,27 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.card-number {
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+
+    &__dot {
+        border-radius: 100%;
+        border: 4px solid;
+        display: inline-block;
+        margin-right: 3px;
+        vertical-align: middle;
+        margin-bottom: 3px;
+
+        &:first-of-type {
+            margin-left: 5px;
+        }
+
+        &:last-of-type {
+            margin-right: 5px;
+        }
+    }
+}

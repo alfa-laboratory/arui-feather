@@ -1,0 +1,35 @@
+html, body {
+    padding: 0;
+}
+
+.popup-demo {
+    margin: 20px;
+
+    &__main {
+        margin-right: 450px;
+
+        @media (--small-only) {
+            margin-right: 0;
+        }
+    }
+
+    &__aside {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+        width: 400px;
+        background-color: #efefef;
+        padding: 20px;
+        z-index: 2;
+        right: 0;
+
+        .paragraph {
+            margin-top: 15px;
+        }
+
+        @media (--small-only) {
+            display: none;
+        }
+    }
+}

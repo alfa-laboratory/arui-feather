@@ -1,0 +1,25 @@
+.layout {
+    margin-left: -10px;
+
+    & + & {
+        margin-top: 10px;
+    }
+}
+
+.layout-button {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+@media (--small-only) {
+    .layout {
+        margin-left: 0;
+    }
+
+    .layout-button {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

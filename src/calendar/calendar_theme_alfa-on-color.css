@@ -1,0 +1,26 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.calendar_theme_alfa-on-color {
+    color: var(--color-content-alfa-on-color);
+    background-color: var(--color-background-alfa-on-color);
+
+    .calendar__arrow_direction_left {
+        background-image: url(./images/arrow_cl.svg);
+
+        &.calendar__arrow_double {
+            background-image: url(./images/2_arrow_cl.svg);
+        }
+    }
+
+    .calendar__arrow_direction_right {
+        background-image: url(./images/arrow_cr.svg);
+
+        &.calendar__arrow_double {
+            background-image: url(./images/2_arrow_cr.svg);
+        }
+    }
+}

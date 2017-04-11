@@ -1,0 +1,10 @@
+.build/
+.idea/
+
+.gemini-react-tmp/
+.gemini.tmp.*/
+coverage/
+gemini*/
+
+.gemini.yml
+test-results.xml

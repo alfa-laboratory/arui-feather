@@ -1,5 +1,7 @@
-Alfa Bank UI lightweight library (Beta)
-=======================================
+Alfa Bank UI lightweight library
+================================
+
+[![Build Status](https://travis-ci.org/alfa-laboratory/arui-feather.svg?branch=master)](https://travis-ci.org/alfa-laboratory/arui-feather)
 
 Как запустить?
 --------------

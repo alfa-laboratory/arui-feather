@@ -8,20 +8,25 @@
 ## Contributors
 
 * Elena Gerasimova
+* Ivan Lyagushkin
 * Alexey Bukin
 * Ivan Kotov
 * Igor Romanov
 * Nikita Korotkikh
-* Ivan Lyagushkin
 * Mikhail Fomichev
 * Andrey Kuzmin
 * Andrey Tyurin
+* Svyatoslav Ovsyannikov
 * Elena Sharova
+* Artem Petrenkov
 * Boris Lazarev
 * Oleg Baykov
 * Ilya Sergeev
+* Ilya Moiseev
+* Alexander Konovalov
 * Anton Arsentyev
 * Vladimir Solovyev
 * Yaroslav Saverin
 * Anna Voshkarina
-* Ilya Moiseev
+* Anton Kamyshansky
+* Stepan Mikhaylyuk

@@ -80,21 +80,13 @@ class PopupContainerProvider extends React.Component {
     }
 
     render(cn) {
-        if (this.props.children && this.props.children.length > 1) {
-            throw new Error('You can provide only one child element to <PopupContainerProvider />');
-        }
-
         return (
             <div
                 className={ cn }
                 ref={ (positioningContainer) => { this.positioningContainer = positioningContainer; } }
                 style={ this.props.style }
             >
-                {
-                    this.props.children
-                        ? React.cloneElement(this.props.children)
-                        : null
-                }
+                { this.props.children }
                 <IsolatedContainer
                     ref={ (renderContainer) => { this.renderContainer = renderContainer; } }
                 />

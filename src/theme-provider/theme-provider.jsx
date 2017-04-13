@@ -52,11 +52,7 @@ class ThemeProvider extends React.Component {
     }
 
     render() {
-        if (this.props.children && this.props.children.length > 1) {
-            throw new Error('You can provide only one child element to <ThemeProvider />');
-        }
-
-        return this.props.children && React.cloneElement(this.props.children);
+        return React.Children.only(this.props.children);
     }
 }
 

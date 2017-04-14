@@ -6,5 +6,6 @@
 coverage/
 gemini*/
 
-.gemini.yml
+.gemini.js
+.travis.yml
 test-results.xml

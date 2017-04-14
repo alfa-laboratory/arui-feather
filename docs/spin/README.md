@@ -14,10 +14,10 @@ import Spin from 'arui-feather/spin';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| visible | Type.bool | `false`  |  | Управление видимостью компонента |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| visible | Boolean | `false`  |  | Управление видимостью компонента |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
 
 
 
@@ -25,7 +25,25 @@ import Spin from 'arui-feather/spin';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

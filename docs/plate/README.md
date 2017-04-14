@@ -14,13 +14,13 @@ import Plate from 'arui-feather/plate';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| hasCloser | Type.bool | `false`  |  | Управление наличием закрывающего крестика |
-| isFlat | Type.bool |  |  | Плоская тема |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Plate` |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onClick | Type.func |  |  | Обработчик клика по плашке |
-| onCloserClick | Type.func |  |  | Обработчик клика по крестику |
+| hasCloser | Boolean | `false`  |  | Управление наличием закрывающего крестика |
+| isFlat | Boolean |  |  | Плоская тема |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Plate` |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onClick | Function |  |  | Обработчик клика по плашке |
+| onCloserClick | Function |  |  | Обработчик клика по крестику |
 
 
 
@@ -28,7 +28,17 @@ import Plate from 'arui-feather/plate';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

@@ -14,11 +14,11 @@ import Label from 'arui-feather/label';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Label` |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| isNoWrap | Type.bool | `false`  |  | Управление возможностью рендерить компонент в одну сроку |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Label` |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| isNoWrap | Boolean | `false`  |  | Управление возможностью рендерить компонент в одну сроку |
 
 
 
@@ -26,7 +26,25 @@ import Label from 'arui-feather/label';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

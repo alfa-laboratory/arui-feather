@@ -14,10 +14,10 @@ import Heading from 'arui-feather/heading';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Heading` |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'xl'`  |  | Размер, определяющий какой тег заголовка будет использоваться |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Heading` |
+| size | [SizeEnum](#SizeEnum) | `'xl'`  |  | Размер, определяющий какой тег заголовка будет использоваться |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
 
 
 
@@ -25,7 +25,25 @@ import Heading from 'arui-feather/heading';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

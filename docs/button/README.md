@@ -14,35 +14,35 @@ import Button from 'arui-feather/button';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| text | Type.node |  |  | Текст кнопки |
-| icon | Type.node |  |  | Иконка кнопки |
-| rightAddons | Type.node |  |  | Список произвольных элементов в левом слоте |
-| leftAddons | Type.node |  |  | Список произвольных элементов в правом слоте |
-| view | Type.oneOf(['default', 'action', 'extra', 'other']) |  |  | Тип кнопки |
-| type | Type.oneOf(['button', 'reset', 'submit']) | `'button'`  |  | Поведение кнопки |
-| tag | Type.oneOf(['button', 'span']) | `'button'`  |  | HTML элемент, которым будет компонент в DOM |
-| width | Type.oneOf(['default', 'available']) |  |  | Управление шириной кнопки. При значении 'available' растягивает кнопку на ширину родителя |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| disabled | Type.bool |  |  | Управление возможности взаимодействия с компонентом |
-| pseudo | Type.bool |  |  | Псевдо представление кнопки |
-| id | Type.string |  |  | Идентификатор компонента в DOM |
-| name | Type.string |  |  | Имя компонента в DOM |
-| title | Type.string |  |  | Текст всплывающей подсказки |
-| tabIndex | Type.number |  |  | Последовательность перехода между контролами при нажатии на Tab |
-| togglable | Type.oneOf(['check', 'radio']) |  |  | Тип переключателя |
-| checked | Type.bool |  |  | Отображение кнопки в отмеченном (зажатом) состоянии |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Button` |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onClick | Type.func |  |  | Обработчик клика по кнопке |
-| onFocus | Type.func |  |  | Обработчик фокуса кнопки |
-| onBlur | Type.func |  |  | Обработчик снятия фокуса кнопки |
-| onMouseEnter | Type.func |  |  | Обработчик события наведения курсора на кнопку |
-| onMouseLeave | Type.func |  |  | Обработчик события снятия курсора с кнопки |
-| onMouseDown | Type.func |  |  | Обработчик события нажатия кнопки мыши в момент |
-| onMouseUp | Type.func |  |  | Обработчик события отжатия кнопки мыши в момент |
-| onKeyDown | Type.func |  |  | Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
-| onKeyUp | Type.func |  |  | Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
+| text | Node |  |  | Текст кнопки |
+| icon | Node |  |  | Иконка кнопки |
+| rightAddons | Node |  |  | Список произвольных элементов в левом слоте |
+| leftAddons | Node |  |  | Список произвольных элементов в правом слоте |
+| view | [ViewEnum](#ViewEnum) |  |  | Тип кнопки |
+| type | [TypeEnum](#TypeEnum) | `'button'`  |  | Поведение кнопки |
+| tag | [TagEnum](#TagEnum) | `'button'`  |  | HTML элемент, которым будет компонент в DOM |
+| width | [WidthEnum](#WidthEnum) |  |  | Управление шириной кнопки. При значении 'available' растягивает кнопку на ширину родителя |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| disabled | Boolean |  |  | Управление возможности взаимодействия с компонентом |
+| pseudo | Boolean |  |  | Псевдо представление кнопки |
+| id | String |  |  | Идентификатор компонента в DOM |
+| name | String |  |  | Имя компонента в DOM |
+| title | String |  |  | Текст всплывающей подсказки |
+| tabIndex | Number |  |  | Последовательность перехода между контролами при нажатии на Tab |
+| togglable | [TogglableEnum](#TogglableEnum) |  |  | Тип переключателя |
+| checked | Boolean |  |  | Отображение кнопки в отмеченном (зажатом) состоянии |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Button` |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onClick | Function |  |  | Обработчик клика по кнопке |
+| onFocus | Function |  |  | Обработчик фокуса кнопки |
+| onBlur | Function |  |  | Обработчик снятия фокуса кнопки |
+| onMouseEnter | Function |  |  | Обработчик события наведения курсора на кнопку |
+| onMouseLeave | Function |  |  | Обработчик события снятия курсора с кнопки |
+| onMouseDown | Function |  |  | Обработчик события нажатия кнопки мыши в момент |
+| onMouseUp | Function |  |  | Обработчик события отжатия кнопки мыши в момент |
+| onKeyDown | Function |  |  | Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
+| onKeyUp | Function |  |  | Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
 
 
 
@@ -59,7 +59,58 @@ import Button from 'arui-feather/button';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="ViewEnum"></a>ViewEnum
+
+ * `'default'`
+ * `'action'`
+ * `'extra'`
+ * `'other'`
+
+
+### <a id="TypeEnum"></a>TypeEnum
+
+ * `'button'`
+ * `'reset'`
+ * `'submit'`
+
+
+### <a id="TagEnum"></a>TagEnum
+
+ * `'button'`
+ * `'span'`
+
+
+### <a id="WidthEnum"></a>WidthEnum
+
+ * `'default'`
+ * `'available'`
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="TogglableEnum"></a>TogglableEnum
+
+ * `'check'`
+ * `'radio'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

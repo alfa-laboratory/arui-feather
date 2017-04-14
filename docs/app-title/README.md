@@ -43,9 +43,9 @@ import Paragraph from 'arui-feather/paragraph';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `AppTitle` |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `AppTitle` |
+| className | Function\|String |  |  | Дополнительный класс |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 
 
 
@@ -53,7 +53,17 @@ import Paragraph from 'arui-feather/paragraph';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

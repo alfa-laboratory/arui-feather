@@ -15,13 +15,13 @@ import Support from 'arui-feather/support';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| city | Type.string |  |  | Название города |
-| phone | Type.string |  |  | Номер телефона |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onCityClick | Type.func |  |  | Обработчик клика по городу |
-| onPhoneClick | Type.func |  |  | Обработчик клика по телефону |
+| city | String |  |  | Название города |
+| phone | String |  |  | Номер телефона |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onCityClick | Function |  |  | Обработчик клика по городу |
+| onPhoneClick | Function |  |  | Обработчик клика по телефону |
 
 
 
@@ -29,7 +29,25 @@ import Support from 'arui-feather/support';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

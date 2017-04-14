@@ -18,12 +18,12 @@ import Icon from 'arui-feather/icon';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| icon | Type.oneOf([ 'error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user' ]) |  |  | Тип иконки |
-| size | Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']) | `'m'`  |  | Размер компонента |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Icon` |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onClick | Type.func |  |  | Обработчик клика по иконке |
+| icon | [IconEnum](#IconEnum) |  |  | Тип иконки |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Icon` |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onClick | Function |  |  | Обработчик клика по иконке |
 
 
 
@@ -31,7 +31,39 @@ import Icon from 'arui-feather/icon';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="IconEnum"></a>IconEnum
+
+ * `'error'`
+ * `'fail'`
+ * `'ok'`
+ * `'ok_filled'`
+ * `'calendar'`
+ * `'search'`
+ * `'close'`
+ * `'user'`
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+ * `'xxl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
+ * `'alfa-on-colored'`
 
 
 

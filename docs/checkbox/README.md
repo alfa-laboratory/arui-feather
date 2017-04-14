@@ -14,22 +14,22 @@ import Checkbox from 'arui-feather/checkbox';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| text | Type.node |  |  | Текст подписи к чекбоксу |
-| id | Type.string |  |  | Идентификатор компонента в DOM |
-| name | Type.string |  |  | Имя компонента в DOM |
-| title | Type.string |  |  | Текст всплывающей подсказки |
-| value | Type.string |  |  | Значение чекбокса, которое будет отправлено на сервер, если он выбран |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| type | Type.oneOf(['normal', 'button']) | `'normal'`  |  | Тип чекбокса |
-| disabled | Type.bool |  |  | Управление возможностью изменять состояние 'checked' компонента |
-| checked | Type.bool |  |  | Управление состоянием вкл/выкл компонента |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onChange | Type.func |  |  | Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента |
-| onFocus | Type.func |  |  | Обработчик фокуса комнонента |
-| onBlur | Type.func |  |  | Обработчик снятия фокуса компонента |
-| onMouseEnter | Type.func |  |  | Обработчик события наведения курсора на чекбокс |
-| onMouseLeave | Type.func |  |  | Обработчик события снятия курсора с чекбокса |
+| text | Node |  |  | Текст подписи к чекбоксу |
+| id | String |  |  | Идентификатор компонента в DOM |
+| name | String |  |  | Имя компонента в DOM |
+| title | String |  |  | Текст всплывающей подсказки |
+| value | String |  |  | Значение чекбокса, которое будет отправлено на сервер, если он выбран |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| type | [TypeEnum](#TypeEnum) | `'normal'`  |  | Тип чекбокса |
+| disabled | Boolean |  |  | Управление возможностью изменять состояние 'checked' компонента |
+| checked | Boolean |  |  | Управление состоянием вкл/выкл компонента |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onChange | Function |  |  | Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента |
+| onFocus | Function |  |  | Обработчик фокуса комнонента |
+| onBlur | Function |  |  | Обработчик снятия фокуса компонента |
+| onMouseEnter | Function |  |  | Обработчик события наведения курсора на чекбокс |
+| onMouseLeave | Function |  |  | Обработчик события снятия курсора с чекбокса |
 
 
 
@@ -46,7 +46,31 @@ import Checkbox from 'arui-feather/checkbox';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="TypeEnum"></a>TypeEnum
+
+ * `'normal'`
+ * `'button'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

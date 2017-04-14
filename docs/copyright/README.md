@@ -14,10 +14,10 @@ import Copyright from 'arui-feather/copyright';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Copyright`, заменяют собой стандартный текст copyright'а |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| showYears | Type.bool | `false`  |  | Отображение годов |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Copyright`, заменяют собой стандартный текст copyright'а |
+| className | Function\|String |  |  | Дополнительный класс |
+| showYears | Boolean | `false`  |  | Отображение годов |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 
 
 
@@ -25,7 +25,17 @@ import Copyright from 'arui-feather/copyright';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

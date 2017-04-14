@@ -15,10 +15,10 @@ import CardNumber from 'arui-feather/card-number';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Type.oneOfType([Type.string, Type.number]) |  |  | Номер карты |
-| value | Type.oneOfType([Type.string, Type.number]) |  |  | Номер карты |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| children | String\|Number |  |  | Номер карты |
+| value | String\|Number |  |  | Номер карты |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
 
 
 
@@ -26,7 +26,17 @@ import CardNumber from 'arui-feather/card-number';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

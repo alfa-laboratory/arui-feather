@@ -1,7 +1,14 @@
 Alfa Bank UI lightweight library
 ================================
 
-[![Build Status](https://travis-ci.org/alfa-laboratory/arui-feather.svg?branch=master)](https://travis-ci.org/alfa-laboratory/arui-feather)
+[![NPM version][npm-img]][npm] [![Travis Build Status][travis-img]][travis] [![AppVeyor Build Status][appveyor-img]][appveyor]
+
+[appveyor-img]: https://img.shields.io/appveyor/ci/teryaew/arui-feather.svg?label=win
+[npm-img]:      https://img.shields.io/npm/v/arui-feather.svg
+[travis-img]:   https://img.shields.io/travis/alfa-laboratory/arui-feather.svg?label=unix
+[appveyor]:     https://ci.appveyor.com/project/teryaew/arui-feather
+[npm]:          https://www.npmjs.org/package/arui-feather
+[travis]:       https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
 
 Как запустить?
 --------------

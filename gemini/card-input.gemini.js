@@ -27,27 +27,9 @@ geminiReact.suite(NAME, function () {
                 );
 
                 geminiReact.suite(selector, function (suite) {
-                    if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
-                    } else {
-                        suite
-                            .render(template)
-                            .capture('plain')
-                            .capture('hovered', function (actions) {
-                                actions.mouseMove(this.renderedComponent);
-                            })
-                            .capture('pressed', function (actions) {
-                                actions.mouseDown(this.renderedComponent);
-                            })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused', function (actions) {
-                                actions.focus(this.renderedComponent);
-                            });
-                    }
+                    suite
+                        .render(template)
+                        .capture('plain');
                 });
             });
         });

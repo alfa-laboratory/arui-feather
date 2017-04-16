@@ -61,19 +61,7 @@ geminiReact.suite(NAME, function () {
 
                     suite
                         .render(template)
-                        .capture('plain')
-                        .capture('hovered', function (actions) {
-                            actions.mouseMove(this.renderedComponent);
-                        })
-                        .capture('pressed', function (actions) {
-                            actions.mouseDown(this.renderedComponent);
-                        })
-                        .capture('clicked', function (actions) {
-                            actions.mouseUp(this.renderedComponent);
-                        })
-                        .capture('focused-hard', function (actions) {
-                            actions.focus(this.renderedComponent);
-                        });
+                        .capture('plain');
                 });
             });
         });

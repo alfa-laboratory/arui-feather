@@ -1,4 +1,5 @@
-import React, { PropTypes as Type } from 'react';
+import React from 'react';
+import Type from 'prop-types';
 
 import ThemeProvider from '../../src/theme-provider/theme-provider';
 import cn from '../../src/cn';

@@ -6,8 +6,8 @@ const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
 const PROP_SETS = [
-    { value: 'alfalab@alfabank.ru' },
-    { value: 'alfalab@alfabank.ru', disabled: true }
+    { value: 'design@alfabank.ru' },
+    { value: 'design@alfabank.ru', disabled: true }
 ];
 
 geminiReact.suite(NAME, function () {
@@ -28,27 +28,9 @@ geminiReact.suite(NAME, function () {
                         </GeminiBox>
                     );
 
-                    if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
-                    } else {
-                        suite
-                            .render(template)
-                            .capture('plain')
-                            .capture('hovered', function (actions) {
-                                actions.mouseMove(this.renderedComponent);
-                            })
-                            .capture('pressed', function (actions) {
-                                actions.mouseDown(this.renderedComponent);
-                            })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused', function (actions) {
-                                actions.focus(this.renderedComponent);
-                            });
-                    }
+                    suite
+                        .render(template)
+                        .capture('plain');
                 });
             });
         });

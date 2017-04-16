@@ -1,0 +1,28 @@
+environment:
+  matrix:
+    - nodejs_version: "7"
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - yarn install
+
+test_script:
+  - node --version
+  - npm --version
+  - yarn lint
+  - yarn test
+
+build: off
+
+cache:
+  - node_modules
+
+matrix:
+  fast_finish: true
+
+platform:
+  - x64
+
+skip_commits:
+  files:
+    - '*.md'

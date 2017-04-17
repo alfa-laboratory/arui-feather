@@ -1,17 +1,28 @@
 language: node_js
-node_js:
-  - "6"
-install:
-  - npm i
-script:
-  - npm run lint
-  - npm run test
 
-env:
-  - CXX=g++-4.8
+node_js:
+  - stable
+
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+
+env:
+  - CXX=g++-4.8
+
+install:
+  - yarn install
+
+script:
+  - yarn lint
+  - yarn test
+
+cache:
+  directories:
+    - node_modules
+
+matrix:
+  fast_finish: true

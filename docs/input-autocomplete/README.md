@@ -17,7 +17,7 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 | options | Array.<[OptionsType](#OptionsType)> | `[]`  |  | Список вариантов выбора |
 | disabled | Boolean | `false`  |  | Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления |
 | opened | Boolean |  |  | Управление видимостью выпадающего списка |
-| size | [SizeEnum](#SizeEnum) | `'s'`  |  | Размер компонента |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
 | onItemSelect | Function |  |  | Обработчик выбора пункта в выпадающем меню |
 
@@ -74,6 +74,3 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 
  * `'default'`
  * `'available'`
-
-
-

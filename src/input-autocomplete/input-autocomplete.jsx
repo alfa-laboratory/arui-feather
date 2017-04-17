@@ -55,7 +55,7 @@ class InputAutocomplete extends React.Component {
 
     static defaultProps = {
         disabled: false,
-        size: 's',
+        size: 'm',
         width: 'default',
         options: []
     };

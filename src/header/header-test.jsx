@@ -74,7 +74,7 @@ describe('header', () => {
             setTimeout(() => {
                 expect(onResize).to.have.been.called.twice;
                 done();
-            }, 0);
+            }, 100);
         }, 0);
     });
 

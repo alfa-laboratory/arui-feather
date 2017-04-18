@@ -6,14 +6,12 @@
             size='m'
         />
     </div>
-
     <div className='layout'>
         <CheckBox
             text='Чекбокс'
             size='l'
         />
     </div>
-
     <div className='layout'>
         <CheckBox
             text='Чекбокс'

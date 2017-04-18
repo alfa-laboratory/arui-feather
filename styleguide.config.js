@@ -10,8 +10,9 @@ const config = {
     title: 'ARUI FEATHER',
     template: path.resolve(__dirname, './arui-demo/demo.html'),
     serverPort: 3013,
-    components: 'src/+(button)/**/[a-z]*.jsx',
+    components: 'src/+(amount|attach|button|calendar|card-input|card-number|checkbox|icon)/**/[a-z]*.jsx',
     ignore: ['**/*-test.jsx'],
+    styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),
     webpackConfig: Object.assign({}, ARUI_TEMPLATE, {
         resolve: {
             alias: {

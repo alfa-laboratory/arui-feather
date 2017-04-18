@@ -22,6 +22,11 @@ class PreviewWithThemeSwitcher extends FeatherComponent {
                 value: 'alfa-on-color',
                 demoSectionPrefix: 'alfa-on-white',
                 themeProviderPrefix: 'alfa-on-color'
+            }, {
+                text: 'Цветная',
+                value: 'alfa-on-colored',
+                demoSectionPrefix: 'alfa-on-white',
+                themeProviderPrefix: 'alfa-on-colored'
             }
         ];
         const activeTheme = themes.filter(theme => theme.value === this.state.theme)[0];

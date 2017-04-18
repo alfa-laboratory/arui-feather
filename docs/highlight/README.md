@@ -7,12 +7,6 @@
 import Highlight from 'arui-feather/highlight';
 ```
 
-## Примеры
-
-
-```javascript
-Слоган <Highlight>«Найдётся всё»</Highlight> придумали в 2000 году.
-```
 
 
 

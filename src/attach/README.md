@@ -1,78 +1,42 @@
 ```
 <div>
-    <div className='layout'>
-        <Attach
-            size='s'
-        />
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div className='layout' key={ size }>
+                <Attach
+                    size={size}
+                />
+            </div>
+        ))}
     </div>
-    <div className='layout'>
-        <Attach
-            size='m'
-        />
-    </div>
-    <div className='layout'>
-        <Attach
-            size='l'
-        />
-    </div>
-    <div className='layout'>
-        <Attach
-            size='xl'
-        />
-    </div>
-    <div className='layout'>
-        <Attach
-            size='xl'
-            disabled={ true }
-        />
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div className='layout' key={ size }>
+                <Attach
+                    size={size}
+                    disabled={ true }
+                />
+            </div>
+        ))}
     </div>
 </div>
 ```
 ```
 <div>
-    <div className='layout'>
-        <Attach
-            size='s'
-            buttonContent='Please, choose a file'
-            noFileText='file in pdf format'
-            buttonProps={ {
-                pseudo: true,
-                icon: <Icon size='s' icon='search' />
-            } }
-        />
-    </div>
-    <div className='layout'>
-        <Attach
-            size='m'
-            buttonContent='Please, choose a file'
-            noFileText='file in pdf format'
-            buttonProps={ {
-                pseudo: true,
-                icon: <Icon size='m' icon='search' />
-            } }
-        />
-    </div>
-    <div className='layout'>
-        <Attach
-            size='l'
-            buttonContent='Please, choose a file'
-            noFileText='file in pdf format'
-            buttonProps={ {
-                pseudo: true,
-                icon: <Icon size='l' icon='search' />
-            } }
-        />
-    </div>
-    <div className='layout'>
-        <Attach
-            size='xl'
-            buttonContent='Please, choose a file'
-            noFileText='file in pdf format'
-            buttonProps={ {
-                pseudo: true,
-                icon: <Icon size='xl' icon='search' />
-            } }
-        />
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div className='layout' key={ size }>
+                <Attach
+                    size={size}
+                    buttonContent='Please, choose a file'
+                    noFileText='file in pdf format'
+                    buttonProps={ {
+                        pseudo: true,
+                        icon: <Icon size={size} icon='search' />
+                    } }
+                />
+            </div>
+        ))}
     </div>
 </div>
 ```

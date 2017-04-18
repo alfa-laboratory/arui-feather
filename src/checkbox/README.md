@@ -1,30 +1,48 @@
 ```
 <div>
-    <div className='layout'>
-        <CheckBox
-            text='Чекбокс'
-            size='m'
-        />
-    </div>
-    <div className='layout'>
-        <CheckBox
-            text='Чекбокс'
-            size='l'
-        />
-    </div>
-    <div className='layout'>
-        <CheckBox
-            text='Чекбокс'
-            size='m'
-            disabled={ true }
-        />
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div key={ size }>
+                <CheckBox
+                    text='Чекбокс'
+                    size={size}
+                />
+            </div>
+        ))}
     </div>
     <div>
-        <CheckBox
-            size='s'
-            text='Чекбокс'
-            type='button'  
-        />
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div key={ size }>
+                <CheckBox
+                    text='Чекбокс disabled'
+                    size={size}
+                    disabled={ true }
+                />
+            </div>
+        ))}
+    </div>
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div key={ size }>
+                <CheckBox
+                    text='Чекбокс - кнопка'
+                    size={size}
+                    type='button'
+                />
+            </div>
+        ))}
+    </div>
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div key={ size }>
+                <CheckBox
+                    text='Чекбокс - кнопка'
+                    size={size}
+                    type='button'
+                    disabled={ true }
+                />
+            </div>
+        ))}
     </div>
 </div>
 ```

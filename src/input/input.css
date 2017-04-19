@@ -118,6 +118,10 @@
         min-width: 0;
     }
 
+    &_width_available &__box {
+        min-width: 0;
+    }
+
     &_has-addons &__box,
     &__addons {
         display: table-cell;

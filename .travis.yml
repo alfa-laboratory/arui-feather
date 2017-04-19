@@ -15,7 +15,8 @@ env:
     - CXX=g++-4.8
   matrix:
     - TEST_SCOPE: lint
-    - TEST_SCOPE: unit
+    - TEST_SCOPE: desktop_unit
+    - TEST_SCOPE: mobile_unit
     # - TEST_SCOPE: gemini
 
 matrix:
@@ -26,7 +27,8 @@ install:
 
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
-  - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi
+  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then npm run test; fi
+  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 npm run test; fi
   - if [ "${TEST_SCOPE}" == "gemini" ]; then npm run gemini; fi
 
 after_success:

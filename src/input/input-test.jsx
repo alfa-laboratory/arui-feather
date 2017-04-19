@@ -84,24 +84,31 @@ describe('input', () => {
         }, 0);
     });
 
-    it('should set selection to all value when `setSelectionRange` method was called without parameters', () => {
+    it('should set selection to all value when `setSelectionRange` method was called without parameters', (done) => {
         let input = render(<Input value='test' />);
 
-        input.instance.setSelectionRange();
+        input.instance.focus();
 
-        expect(window.getSelection().toString()).to.be.eq('test');
+        setTimeout(() => {
+            input.instance.setSelectionRange();
+            expect(window.getSelection().toString()).to.be.eq('test');
+            done();
+        }, 500);
     });
 
-    it('should set selection when setSelection range was called with parameters', () => {
+    it('should set selection when setSelection range was called with parameters', (done) => {
         let input = render(<Input value='test' />);
 
-        input.instance.setSelectionRange(0, 2);
+        input.instance.focus();
 
-        expect(window.getSelection().toString()).to.be.eq('te');
+        setTimeout(() => {
+            input.instance.setSelectionRange(0, 2);
+            expect(window.getSelection().toString()).to.be.eq('te');
 
-        input.instance.setSelectionRange(2, 4);
-
-        expect(window.getSelection().toString()).to.be.eq('st');
+            input.instance.setSelectionRange(2, 4);
+            expect(window.getSelection().toString()).to.be.eq('st');
+            done();
+        }, 200);
     });
 
     it('should render without problems', function () {

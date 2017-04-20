@@ -15,15 +15,14 @@ class PreviewComponent extends Component {
         this.setInitialState = this.setInitialState.bind(this);
     }
 
+    render() {
+        return this.props.component(this.state, this.setState, this.setInitialState);
+    }
     // Synchronously set initial state, so it will be ready before first render
     // Ignore all consequent calls
     setInitialState(initialState) {
         Object.assign(this.state, initialState);
         this.setInitialState = noop;
-    }
-
-    render() {
-        return this.props.component(this.state, this.setState, this.setInitialState);
     }
 }
 export default PreviewComponent;

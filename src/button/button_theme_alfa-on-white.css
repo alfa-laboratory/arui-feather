@@ -17,13 +17,15 @@
         border-color: var(--color-content-alfa-on-white);
     }
 
-    &.button_focused-hard {
+    &.button_focused {
         border-color: var(--color-content-alfa-on-white);
-        box-shadow: 0 0 0 1px var(--color-content-alfa-on-white);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
+
+        background: var(--color-background-control-focused-alfa-on-white);
 
         &.button_hovered {
-            box-shadow: none;
             border-color: var(--color-content-alfa-on-white);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
         }
     }
 
@@ -45,12 +47,8 @@
             background: rgba(0, 0, 0, .3);
         }
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-white);
-
-            &.button_hovered {
-                border-color: transparent;
-            }
         }
     }
 
@@ -64,12 +62,8 @@
             border-color: var(--color-accent);
         }
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-white);
-
-            &.button_hovered {
-                border-color: var(--color-accent);
-            }
         }
 
         &.button_pressed {
@@ -89,12 +83,8 @@
             border-color: rgba(71, 57, 195, .85);
         }
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-white);
-
-            &.button_hovered {
-                border-color: rgba(71, 57, 195, .85);
-            }
         }
 
         &.button_pressed {
@@ -106,12 +96,11 @@
     &.button_pseudo {
         border-style: dashed;
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-white);
             border-style: solid;
 
             &.button_hovered {
-                border-color: rgba(239, 49, 36, .5);
                 border-style: dashed;
             }
         }
@@ -128,89 +117,136 @@
 }
 
 .control-group {
-    .button_theme_alfa-on-white {
-        .button__text {
-            font-weight: var(--font-weight);
+    &.checkbox-group_theme_alfa-on-white,
+    &.radio-group_theme_alfa-on-white {
+        > .button:last-child,
+        > :last-child .button {
+            border-right-color: var(--color-content-minor-alfa-on-white);
+
+            &.button_hovered {
+                border-right-color: var(--color-content-alfa-on-white);
+            }
         }
 
-        &.button_hovered {
+        & .button_hovered {
             border-color: var(--color-content-alfa-on-white);
         }
-    }
 
-    .checkbox_theme_alfa-on-white,
-    .radio_theme_alfa-on-white {
-        & + .checkbox_disabled,
-        & + .radio_disabled {
-            .button_theme_alfa-on-white {
-                border-left-color: rgba(0, 0, 0, .3);
-            }
+        & .button_checked.button_hovered {
+            border-color: var(--color-content-alfa-on-white);
+            background-color: rgba(0, 0, 0, .25);
         }
 
-        &.checkbox + .checkbox_theme_alfa-on-white,
-        &.radio + .radio_theme_alfa-on-white {
-            .button_theme_alfa-on-white {
-                margin-left: 1px;
-                border-left: none;
-                box-shadow: -1px 0 0 0 rgba(0, 0, 0, .3);
-            }
+        & .button_focused {
+            border-color: var(--color-content-alfa-on-white);
+            background-color: rgba(0, 0, 0, .08);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
         }
 
-        &.checkbox_checked + .checkbox_theme_alfa-on-white,
-        &.radio_checked + .checkbox_theme_alfa-on-white {
-            .button_theme_alfa-on-white {
-                box-shadow: -1px 0 0 0 rgba(0, 0, 0, .2);
-            }
-        }
-
-        &.checkbox_hovered + .checkbox.checkbox_theme_alfa-on-white,
-        &.radio_hovered + .radio.radio_theme_alfa-on-white {
-            .button.button_theme_alfa-on-white {
-                box-shadow: -1px 0 0 0 var(--color-content-alfa-on-white);
-            }
+        & .button_checked.button_focused {
+            border-color: var(--color-content-alfa-on-white);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
         }
     }
 
-    > :not(:first-child) {
-        &.checkbox_theme_alfa-on-white,
-        &.radio_theme_alfa-on-white {
-            .button_theme_alfa-on-white {
-                &.button_hovered {
-                    box-shadow: -1px 0 0 0 var(--color-content-alfa-on-white);
-                }
+    &.checkbox-group_theme_alfa-on-white {
+        .button {
+            border-left-color: rgba(0, 0, 0, .15);
+            border-right-color: rgba(0, 0, 0, .15);
+
+            &.button_hovered {
+                border-right-color: var(--color-content-alfa-on-white);
+                border-left-color: var(--color-content-alfa-on-white);
             }
 
-            &.checkbox_checked:not(.checkbox_hovered),
-            &.radio_checked:not(.radio_hovered) {
-                .button_theme_alfa-on-white {
-                    box-shadow: -1px 0 0 0 rgba(0, 0, 0, .3);
-                }
+            &.button_focused {
+                border-left-color: var(--color-content-alfa-on-white);
+                border-right-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        > .button:first-child,
+        > :first-child .button {
+            border-left-color: var(--color-content-minor-alfa-on-white);
+
+            &.button_hovered {
+                border-left-color: var(--color-content-alfa-on-white);
+            }
+
+            &.button_disabled {
+                border-left: transparent;
+            }
+
+            &.button_focused {
+                border-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        .button_checked {
+            background-color: rgba(0, 0, 0, .15);
+            border-color: transparent;
+            border-left-color: rgba(0, 0, 0, .15);
+        }
+
+        > .button_checked:last-child,
+        > :last-child .button_checked {
+            border-color: transparent;
+            border-left-color: rgba(0, 0, 0, .15);
+
+            &.button_hovered {
+                border-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        > .button_checked:first-child,
+        > :first-child .button_checked {
+            border-color: transparent;
+
+            &.button_hovered {
+                border-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        .button_focused {
+            background-color: transparent;
+
+            &.button_checked {
+                background-color: rgba(0, 0, 0, .15);
             }
         }
     }
 
-    > :last-child {
-        .button_theme_alfa-on-white {
-            border-right-color: rgba(0, 0, 0, .3);
+    &.radio-group_theme_alfa-on-white {
+        .button_checked {
+            background-color: rgba(0, 0, 0, .15);
+            border-color: var(--color-background-control-focused-alfa-on-color);
+            border-right-color: transparent;
+        }
+
+        > .button_checked:last-child,
+        > :last-child .button_checked {
+            border-right-color: var(--color-background-control-focused-alfa-on-color);
+
+            &.button_hovered {
+                border-right-color: var(--color-content-alfa-on-white);
+            }
+
+            &.button_focused {
+                border-right-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        > .button_checked:first-child,
+        > :first-child .button_checked {
+            border-left-color: transparent;
 
             &.button_hovered {
                 border-color: var(--color-content-alfa-on-white);
             }
 
-            &.button_checked,
-            &.button_disabled {
-                border-right-color: rgba(0, 0, 0, .05);
-
-                &.button_hovered {
-                    border-color: var(--color-content-alfa-on-white);
-                }
+            &.button_focused {
+                border-left-color: var(--color-content-alfa-on-white);
             }
-        }
-    }
-
-    > :not(:last-child) {
-        .button_theme_alfa-on-white {
-            border-right: none;
         }
     }
 }

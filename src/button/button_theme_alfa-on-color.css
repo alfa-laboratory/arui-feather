@@ -17,13 +17,13 @@
         border-color: var(--color-content-alfa-on-color);
     }
 
-    &.button_focused-hard {
+    &.button_focused {
         border-color: var(--color-content-alfa-on-color);
         box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
 
         &.button_hovered {
-            box-shadow: none;
             border-color: var(--color-content-alfa-on-color);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
         }
     }
 
@@ -45,12 +45,8 @@
             background: rgba(255, 255, 255, .15);
         }
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-color);
-
-            &.button_hovered {
-                border-color: transparent;
-            }
         }
     }
 
@@ -65,12 +61,8 @@
             border-color: var(--color-accent);
         }
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-color);
-
-            &.button_hovered {
-                border-color: var(--color-accent);
-            }
         }
 
         &.button_pressed {
@@ -90,12 +82,8 @@
             border-color: rgba(71, 57, 195, .85);
         }
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-color);
-
-            &.button_hovered {
-                border-color: rgba(71, 57, 195, .85);
-            }
         }
 
         &.button_pressed {
@@ -107,9 +95,13 @@
     &.button_pseudo {
         border-style: dashed;
 
-        &.button_focused-hard {
+        &.button_focused {
             border-color: var(--color-content-alfa-on-color);
             border-style: solid;
+
+            &.button_hovered {
+                border-style: dashed;
+            }
         }
     }
 
@@ -124,89 +116,128 @@
 }
 
 .control-group {
-    .button_theme_alfa-on-color {
-        .button__text {
-            font-weight: var(--font-weight);
-        }
-
-        &.button_hovered {
-            border-color: var(--color-content-alfa-on-color);
-        }
-    }
-
-    .checkbox_theme_alfa-on-color,
-    .radio_theme_alfa-on-color {
-        & + .checkbox_disabled,
-        & + .radio_disabled {
-            .button_theme_alfa-on-color {
-                border-left-color: rgba(255, 255, 255, .3);
-            }
-        }
-
-        &.checkbox + .checkbox_theme_alfa-on-color,
-        &.radio + .radio_theme_alfa-on-color {
-            .button_theme_alfa-on-color {
-                margin-left: 1px;
-                border-left: none;
-                box-shadow: -1px 0 0 0 rgba(255, 255, 255, .4);
-            }
-        }
-
-        &.checkbox_checked + .checkbox_theme_alfa-on-color,
-        &.radio_checked + .checkbox_theme_alfa-on-color {
-            .button_theme_alfa-on-color {
-                box-shadow: -1px 0 0 0 rgba(255, 255, 255, .25);
-            }
-        }
-
-        &.checkbox_hovered + .checkbox.checkbox_theme_alfa-on-color,
-        &.radio_hovered + .radio.radio_theme_alfa-on-color {
-            .button.button_theme_alfa-on-color {
-                box-shadow: -1px 0 0 0 var(--color-content-alfa-on-color);
-            }
-        }
-    }
-
-    > :not(:first-child) {
-        &.checkbox_theme_alfa-on-color,
-        &.radio_theme_alfa-on-color {
-            .button_theme_alfa-on-color {
-                &.button_hovered {
-                    box-shadow: -1px 0 0 0 var(--color-content-alfa-on-color);
-                }
-            }
-
-            &.checkbox_checked:not(.checkbox_hovered),
-            &.radio_checked:not(.radio_hovered) {
-                .button_theme_alfa-on-color {
-                    box-shadow: -1px 0 0 0 rgba(255, 255, 255, .5);
-                }
-            }
-        }
-    }
-
-    > :last-child {
-        .button_theme_alfa-on-color {
-            border-right-color: rgba(255, 255, 255, .3);
+    &.checkbox-group_theme_alfa-on-color,
+    &.radio-group_theme_alfa-on-color {
+        > .button:last-child,
+        > :last-child .button {
+            border-right-color: rgba(255, 255, 255, .4);
 
             &.button_hovered {
-                border-color: var(--color-content-alfa-on-color);
+                border-right-color: var(--color-background-control-alfa-on-white);
+            }
+        }
+
+        .button_hovered {
+            border-color: var(--color-background-control-alfa-on-white);
+        }
+
+        .button_checked.button_hovered {
+            border-color: var(--color-background-control-alfa-on-white);
+            background-color: var(--color-content-minor-alfa-on-color);
+        }
+
+        .button_focused {
+            border-color: var(--color-background-control-alfa-on-white);
+            box-shadow: 0 0 0 1px var(--color-background-control-alfa-on-white);
+        }
+
+        .button_checked.button_focused {
+            border-color: var(--color-background-control-alfa-on-white);
+            box-shadow: 0 0 0 1px var(--color-background-control-alfa-on-white);
+        }
+    }
+
+    &.checkbox-group_theme_alfa-on-color {
+        &:root {
+            --color-overlay-border: rgba(255, 255, 255, .15);
+        }
+
+        .button {
+            border-left-color: var(--color-overlay-border);
+            border-right-color: var(--color-overlay-border);
+
+            &.button_hovered {
+                border-right-color: var(--color-content-alfa-on-color);
+                border-left-color: var(--color-content-alfa-on-color);
+            }
+        }
+
+        > .button:first-child,
+        > :first-child .button {
+            border-left-color: rgba(255, 255, 255, .3);
+
+            &.button_hovered {
+                border-color: var(--color-background-control-alfa-on-white);
             }
 
-            &.button_checked,
-            &.button_disabled {
-                border-right-color: rgba(255, 255, 255, .05);
+            &.button_focused {
+                border-color: var(--color-background-control-alfa-on-white);
+            }
+        }
 
-                &.button_hovered {
-                    border-color: var(--color-content-alfa-on-color);
-                }
+        > .button:last-child,
+        > :last-child .button {
+            &.button_focused {
+                border-color: var(--color-background-control-alfa-on-white);
+            }
+        }
+
+        .button_checked {
+            background-color: rgba(255, 255, 255, .15);
+            border-color: transparent;
+            border-left-color: rgba(255, 255, 255, .3);
+        }
+
+        > .button_checked:last-child,
+        > :last-child .button_checked {
+            border-color: transparent;
+            border-left-color: rgba(255, 255, 255, .3);
+
+            &.button_hovered {
+                border-color: var(--color-background-control-alfa-on-white);
+            }
+        }
+
+        > .button_checked:first-child,
+        > :first-child .button_checked {
+            border-color: transparent;
+
+            &.button_hovered {
+                border-color: var(--color-background-control-alfa-on-white);
             }
         }
     }
 
-    > :not(:last-child) {
-        .button_theme_alfa-on-color {
-            border-right: none;
+    &.radio-group_theme_alfa-on-color {
+        .button_checked {
+            background-color: var(--color-content-minor-alfa-on-color);
+            border-left-color: rgba(255, 255, 255, .05);
+        }
+
+        > .button_checked:last-child,
+        > :last-child .button_checked {
+            border-right-color: var(--color-background-control-hovered-alfa-on-color);
+
+            &.button_hovered {
+                border-right-color: var(--color-background-control-alfa-on-white);
+            }
+
+            &.button_focused {
+                border-right-color: var(--color-background-control-alfa-on-white);
+            }
+        }
+
+        > .button_checked:first-child,
+        > :first-child .button_checked {
+            border-left-color: transparent;
+
+            &.button_hovered {
+                border-color: var(--color-background-control-alfa-on-white);
+            }
+
+            &.button_focused {
+                border-left-color: var(--color-background-control-alfa-on-white);
+            }
         }
     }
 }

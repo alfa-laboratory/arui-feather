@@ -4,6 +4,7 @@
 'use strict';
 
 const path = require('path');
+const merge = require('webpack-merge');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
     components: 'src/**/**/[a-z]*.jsx',
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),
-    webpackConfig: Object.assign({}, ARUI_TEMPLATE, {
+    webpackConfig: merge.smart(ARUI_TEMPLATE, {
         resolve: {
             alias: {
                 // Override styleguidist preview template for adding theme switcher functionality

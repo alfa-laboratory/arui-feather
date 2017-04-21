@@ -1,3 +1,6 @@
+<img align="left" width="140" height="140" title="arui-feather"
+     src="https://rawgit.com/alfa-laboratory/arui-feather/master/logo.svg" />
+
 Alfa Bank UI lightweight library
 ================================
 
@@ -9,6 +12,8 @@ Alfa Bank UI lightweight library
 [appveyor]:     https://ci.appveyor.com/project/teryaew/arui-feather
 [npm]:          https://www.npmjs.org/package/arui-feather
 [travis]:       https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
+
+<br />
 
 Как запустить?
 --------------

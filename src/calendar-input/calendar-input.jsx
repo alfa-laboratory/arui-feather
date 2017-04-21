@@ -306,6 +306,7 @@ class CalendarInput extends React.Component {
         return (
             <Popup
                 ref={ (calendarPopup) => { this.calendarPopup = calendarPopup; } }
+                for={ this.props.name }
                 autoclosable={ true }
                 visible={ opened }
                 directions={ this.props.directions }

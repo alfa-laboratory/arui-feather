@@ -128,6 +128,7 @@ class InputAutocomplete extends React.Component {
                 className={ cn('popup') }
                 size={ this.props.size }
                 ref={ (popup) => { this.popup = popup; } }
+                for={ this.props.name }
                 visible={ opened }
                 autoclosable={ true }
                 onClickOutside={ this.handleClickOutside }

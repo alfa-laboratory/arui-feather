@@ -148,6 +148,7 @@ class Textarea extends React.Component {
                     && <Popup
                         directions={ this.props.errorDirections }
                         ref={ (errorPopup) => { this.errorPopup = errorPopup; } }
+                        for={ this.props.name }
                         size={ this.props.size }
                         type='tooltip'
                         mainOffset={ 13 }

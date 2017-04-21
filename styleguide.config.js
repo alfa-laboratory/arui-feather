@@ -19,7 +19,8 @@ module.exports = {
         resolve: {
             alias: {
                 // Override styleguidist preview template for adding theme switcher functionality
-                'rsg-components/Preview': path.resolve(__dirname, './arui-demo/components/preview.jsx')
+                'rsg-components/Preview': path.resolve(__dirname, './arui-demo/components/preview.jsx'),
+                'rsg-components/Logo': path.resolve(__dirname, './arui-demo/components/logo.jsx')
             }
         }
     })

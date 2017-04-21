@@ -39,12 +39,13 @@ class PreviewWithThemeSwitcher extends React.Component {
                     <ThemeProvider theme={ activeTheme.themeProviderPrefix }>
                         <div>
                             <div className={ cn('button-group') } >
-                                {themes.map(theme => (
+                                {themes.map(({ value: theme, text }) => (
                                     <button
+                                        key={ theme }
                                         className={ cn('button') }
-                                        onClick={ () => this.handleOnChange(theme.value) }
+                                        onClick={ () => this.handleOnChange(theme) }
                                     >
-                                        { theme.text }
+                                        { text }
                                     </button>
                                 ))}
                             </div>

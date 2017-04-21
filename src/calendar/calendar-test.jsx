@@ -236,4 +236,13 @@ describe('calendar', () => {
 
         expect(nextMonthArrow).to.not.have.class('calendar__arrow_disabled');
     });
+
+    it('should return root `HTMLElement` after `getNode` method call', () => {
+        let calendar = render(<Calendar />);
+
+        let node = calendar.instance.getNode();
+
+        expect(node).to.be.instanceOf(HTMLElement);
+        expect(node).to.be.equal(calendar.node);
+    });
 });

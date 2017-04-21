@@ -45,6 +45,7 @@ import Calendar from 'arui-feather/calendar';
 | ------ | -------- |
 | focus() | Устанавливает фокус на календарь. |
 | blur() | Убирает фокус с календаря. |
+| getNode(): HTMLElement | Возвращает корневой `HTMLElement` компонента. |
 
 
 

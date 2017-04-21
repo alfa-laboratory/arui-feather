@@ -19,6 +19,7 @@ import Popup from '../popup/popup';
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import Modernizr from '../modernizr';
+import { isNodeOutsideElement } from '../lib/window';
 import { parse } from '../lib/date-utils';
 import performance from '../performance';
 
@@ -329,6 +330,7 @@ class CalendarInput extends React.Component {
     handleCalendarChange(value, formatted, isTriggeredByKeyboard) {
         if (!isTriggeredByKeyboard) {
             this.changeCloseTimeoutId = setTimeout(() => {
+                this.calendar.blur(); // FF не испускает событие `blur` когда элементы становятся невидимыми, делаем это явно
                 this.setState({
                     opened: false
                 });
@@ -565,7 +567,17 @@ class CalendarInput extends React.Component {
             ...focusedState
         };
 
-        let newFocused = newState.isInputFocused || newState.isCalendarFocused;
+        // При переключении фокуса с поля ввода на календарь событие `blur` у поля ввода иногда происходит перед фокусом календаря
+        // Поэтому проверяем элемент который получит фокус после блюра и если он внутри календаря - оставляем сфокусированное состояние.
+        let relatedTarget = event.relatedTarget || // не поддерживается в FF и IE10 https://github.com/facebook/react/issues/2011
+            event.explicitOriginalTarget || // не поддерживается в IE
+            document.activeElement; // В IE вернет не <calendar> а конкретную ноду, на которую пришел фокус
+
+        let calendarWillReceiveFocus = !isNodeOutsideElement(relatedTarget, this.calendar.getNode());
+
+        let newFocused = newState.isInputFocused
+            || newState.isCalendarFocused
+            || calendarWillReceiveFocus;
 
         this.setState(focusedState);
 

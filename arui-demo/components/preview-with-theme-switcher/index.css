@@ -1,22 +1,29 @@
 .preview-with-theme-switcher {
-    margin-top: 20px;
-    margin-bottom: -5px;
-    border-radius: 5px;
+    &__layout {
+        margin-top: 20px;
+        margin-bottom: -5px;
+        border-radius: 5px;
 
-    &__alfa-on-white {
-        color: #fff;
-        background: #4d545b;
-        background: linear-gradient(to bottom, #4d545b 0%, #4d545b 50%, #282c36 100%);
+        &_theme_alfa-on-white {
+            color: #000;
+            border: solid 1px #eee;
+        }
+
+        &_theme_alfa-on-color {
+            color: #fff;
+            background: #4d545b;
+            background: linear-gradient(to bottom, #4d545b 0%, #4d545b 50%, #282c36 100%);
+            border: solid 1px #eee;
+        }
     }
 
-    &__alfa-on-color {
-        color: #000;
-        border: solid 1px #eee;
+    &__wrapper {
+       margin: 15px;
     }
-
     &__button-group {
         position: absolute;
         top: 5px;
+        left: 8px;
     }
 
     &__button {
@@ -26,8 +33,8 @@
         font-size: 14px;
 
         &:hover {
-           color: #f28a25;
-           cursor: pointer;
+            color: #f28a25;
+            cursor: pointer;
         }
     }
 }

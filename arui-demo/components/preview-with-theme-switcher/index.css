@@ -18,8 +18,9 @@
     }
 
     &__wrapper {
-       margin: 15px;
+        margin: 15px;
     }
+
     &__button-group {
         position: absolute;
         top: 5px;

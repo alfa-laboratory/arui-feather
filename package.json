@@ -10,7 +10,7 @@
     "demo": "node demo",
     "test": "karma start ./karma.config.js",
     "lint": "npm run lint-css && npm run lint-js",
-    "lint-js": "eslint ./*.js ./src/ ./demo/ ./gemini/ ./arui-demo/ --ext .js,.jsx",
+    "lint-js": "eslint ./*.js ./src/ ./demo/ ./gemini/ ./arui-demo/components --ext .js,.jsx",
     "lint-css": "stylelint ./src/**/*.css ./arui-demo/**/*.css",
     "quality-check": "npm run lint && npm run test",
     "quality-check-js": "npm run lint-js && npm run test",

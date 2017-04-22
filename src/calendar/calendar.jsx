@@ -412,6 +412,16 @@ class Calendar extends React.Component {
     }
 
     /**
+     * Возвращает корневой `HTMLElement` компонента.
+     *
+     * @public
+     * @returns {HTMLElement}
+     */
+    getNode() {
+        return this.root;
+    }
+
+    /**
      * Возвращает `true`, если переданная дата является валидной,
      * попадает в заданные лимиты календаря и не является выходным днем.
      *

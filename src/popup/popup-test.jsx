@@ -96,6 +96,12 @@ describe('popup', () => {
         expect(popup.node).to.have.text('Popup');
     });
 
+    it('should set data-for when `for` prop is set', () => {
+        let { popup } = renderPopup({ for: 'example' }, {});
+
+        expect(popup.node.dataset.for).to.equal('example');
+    });
+
     it('should have tooltip with target=`anchor` and type=`tooltip`', () => {
         let { popup } = renderPopup({ type: 'tooltip' }, {});
 

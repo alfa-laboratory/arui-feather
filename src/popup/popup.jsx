@@ -99,7 +99,9 @@ class Popup extends React.Component {
         /** Минимальная ширина попапа */
         minWidth: Type.number,
         /** Максимальная ширина попапа */
-        maxWidth: Type.number
+        maxWidth: Type.number,
+        /** Указатель на родительский элемент */
+        for: Type.string
     };
 
     static defaultProps = {
@@ -214,6 +216,7 @@ class Popup extends React.Component {
             <RenderInContainer container={ this.getRenderContainer() }>
                 <div
                     ref={ (popup) => { this.popup = popup; } }
+                    data-for={ this.props.for }
                     className={ cn({
                         direction: this.state.direction,
                         type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,

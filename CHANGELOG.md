@@ -1,3 +1,18 @@
+<a name="4.2.0"></a>
+# 4.2.0 (2017-04-24)
+
+
+### Bug Fixes
+
+* **calendar-input:** don't fire blur event when input loose focus and calendar will receive focus ([686eb32](https://github.com/alfa-laboratory/arui-feather/commit/686eb32))
+
+
+### Features
+
+* **popup:** add data-for attr ([#17](https://github.com/alfa-laboratory/arui-feather/issues/17)) ([ccd14a5](https://github.com/alfa-laboratory/arui-feather/commit/ccd14a5))
+
+
+
 <a name="4.1.0"></a>
 # 4.1.0 (2017-04-20)
 

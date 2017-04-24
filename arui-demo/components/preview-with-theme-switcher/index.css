@@ -1,19 +1,22 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 .preview-with-theme-switcher {
     &__layout {
         margin-top: 20px;
         margin-bottom: -5px;
         border-radius: 5px;
+        border: solid 1px #eee;
 
         &_theme_alfa-on-white {
             color: #000;
-            border: solid 1px #eee;
         }
 
         &_theme_alfa-on-color {
             color: #fff;
             background: #4d545b;
             background: linear-gradient(to bottom, #4d545b 0%, #4d545b 50%, #282c36 100%);
-            border: solid 1px #eee;
         }
     }
 

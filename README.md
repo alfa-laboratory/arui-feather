@@ -69,6 +69,8 @@ Alfa Bank UI lightweight library
 
 Запуск тестов производится командой `npm run gemini`.
 
+В схеме тестирования участвует сервис [`Sauce Labs`](https://saucelabs.com), для доступа к нему необходимо указать переменные окружения: `SAUCE_USERNAME=alfalab.js SAUCE_ACCESS_KEY={ ключ взять у мейнтейнеров }`.
+
 Обновление или создание новых эталонных скриншотов: `npm run gemini-update`.
 
 Запуск `gemini` на выборочное число сьютов (используется опция `--grep` c JS RegExp): `SUITES='button|select' npm run gemini`.

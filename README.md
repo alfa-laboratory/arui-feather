@@ -6,7 +6,7 @@ Alfa Bank UI lightweight library
 
 [![NPM version][npm-img]][npm] [![Travis Build Status][travis-img]][travis] [![AppVeyor Build Status][appveyor-img]][appveyor]
 
-[appveyor-img]: https://img.shields.io/appveyor/ci/teryaew/arui-feather.svg?label=win
+[appveyor-img]: https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
 [npm-img]:      https://img.shields.io/npm/v/arui-feather.svg
 [travis-img]:   https://img.shields.io/travis/alfa-laboratory/arui-feather.svg?label=unix
 [appveyor]:     https://ci.appveyor.com/project/teryaew/arui-feather

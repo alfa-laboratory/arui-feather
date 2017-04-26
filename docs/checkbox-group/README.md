@@ -6,34 +6,6 @@
 import CheckboxGroup from 'arui-feather/checkbox-group';
 ```
 
-## Примеры
-
-
-```
-import 'CheckBox' from 'arui-feather/src/checkbox/checkbox';
-import 'CheckBoxGroup' from 'arui-feather/src/checkbox-group/checkbox-group';
-
-// Вертикальная группа чекбоксов
-<CheckBoxGroup>
-   <CheckBox text="Раз" />
-   <CheckBox text="Два" />
-   <CheckBox text="Три" />
-</CheckBoxGroup>
-
-// Горизонтальная группа чекбоксов, состоящая из обычных кнопок
-<CheckBoxGroup type="button">
-   <CheckBox type="button" text="Раз" />
-   <CheckBox type="button" text="Два" />
-   <CheckBox type="button" text="Три" />
-</CheckBoxGroup>
-
-// Горизонтальная группа чекбоксов
-<CheckBoxGroup type="line">
-   <CheckBox text="Раз" />
-   <CheckBox text="Два" />
-   <CheckBox text="Три" />
-</CheckBoxGroup>
-```
 
 
 

@@ -1,0 +1,7 @@
+* eol=lf
+
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.ttf binary

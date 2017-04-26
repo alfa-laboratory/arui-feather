@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import easings from './easings';
-import { SCROLL_TO_NORMAL_DURATION, SCROLL_TO_EASING } from '../vars';
+import { SCROLL_TO_EASING } from '../vars';
 
 /**
  * Скроллит по элементу или странице.
@@ -20,7 +20,7 @@ export default function scrollTo(options) {
     let {
         targetY,
         container,
-        duration = SCROLL_TO_NORMAL_DURATION,
+        duration = 0,
         easing = SCROLL_TO_EASING
     } = options;
 

@@ -34,6 +34,7 @@ import Popup from 'arui-feather/popup';
 | onClickOutside | Function |  |  | Обработчик клика вне компонента |
 | minWidth | Number |  |  | Минимальная ширина попапа |
 | maxWidth | Number |  |  | Максимальная ширина попапа |
+| for | String |  |  | Указатель на родительский элемент |
 
 
 

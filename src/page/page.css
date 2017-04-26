@@ -7,9 +7,9 @@
 body {
     background-attachment: fixed;
     background-color: #2a2e37;
-    background-image: linear-gradient(to right, rgb(35, 39, 48), rgb(55, 59, 68));
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(images/bg.png);
+    background-repeat: repeat-y;
+    background-size: contain;
 }
 
 .page {

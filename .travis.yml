@@ -22,6 +22,6 @@ install:
   - yarn install
 
 script:
-  - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
-  - if [ "${TEST_SCOPE}" == "unit" ]; then yarn test; fi
-  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini; fi
+  - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
+  - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then npm run gemini; fi

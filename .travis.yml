@@ -24,4 +24,4 @@ install:
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
   - if [ "${TEST_SCOPE}" == "unit" ]; then yarn test; fi
-  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then SUITES=select yarn gemini; fi

@@ -38,7 +38,9 @@ const iconStyle = {
                 return  (
                     <span style={ layoutStyle }>
                         <Link { ...props } >
-                            <Icon { ...props } style={ iconStyle } icon='ok' />
+                            <Icon { ...props } 
+                                style={ iconStyle }
+                                icon='ok' />
                         </Link>
                     </span>
                 );

@@ -1,7 +1,7 @@
 ```
 initialState = {
     visible: false
-}
+};
 <div>
     <Button
         onClick={ () => { setState({ visible: !state.visible }); } }

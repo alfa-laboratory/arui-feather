@@ -42,7 +42,8 @@ module.exports = {
                 port: 8888,
                 staticRoot: './',
                 webpackConfig: './webpack.config.gemini.js'
-            }
+            },
+            sauce: {}
         },
         tempDir: './'
     }

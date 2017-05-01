@@ -24,11 +24,13 @@ matrix:
 install:
   - yarn install
 
-script:
-  - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
-  - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi
+before_script:
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       curl -L https://gist.githubusercontent.com/tadatuta/3303b14f47dbee9ca079/raw/sauce-connect.sh | bash
-      cat .gemini.js
     fi
+
+script:
+  - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
+  - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then SUITES='input|button|attach|page|group' npm run gemini; fi

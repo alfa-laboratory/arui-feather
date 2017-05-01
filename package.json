@@ -94,7 +94,6 @@
     "gemini-babel": "^1.0.0",
     "gemini-optipng": "^1.0.0",
     "gemini-react": "^0.11.0",
-    "gemini-sauce": "^1.0.1",
     "gulp": "^3.9.1",
     "husky": "^0.13.3",
     "inflight": "^1.0.4",

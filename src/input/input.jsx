@@ -73,8 +73,6 @@ class Input extends React.Component {
         leftAddons: Type.node,
         /** Добавление дополнительных элементов к инпуту справа */
         rightAddons: Type.node,
-        /** Заголовок для поля */
-        label: Type.node,
         /** Подсказка в текстовом поле */
         placeholder: Type.string,
         /** Подсказка под полем */

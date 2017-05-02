@@ -90,8 +90,6 @@ class Select extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Заголовок для поля */
-        label: Type.node,
         /** Подсказка, которая отображается в случае если ни один из пунктов выбран */
         placeholder: Type.string,
          /** Подсказка под полем */

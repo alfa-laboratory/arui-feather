@@ -171,7 +171,7 @@
         }
     }
 
-    > :not(:first-child) {
+    > :not(:first-of-type) {
         &.checkbox_theme_alfa-on-white,
         &.radio_theme_alfa-on-white {
             .button_theme_alfa-on-white {
@@ -189,7 +189,7 @@
         }
     }
 
-    > :last-child {
+    > :last-of-type {
         .button_theme_alfa-on-white {
             border-right-color: rgba(0, 0, 0, .3);
 
@@ -208,7 +208,7 @@
         }
     }
 
-    > :not(:last-child) {
+    > :not(:last-of-type) {
         .button_theme_alfa-on-white {
             border-right: none;
         }

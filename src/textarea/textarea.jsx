@@ -7,7 +7,7 @@ import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
 
-import Popup from '../popup/popup';
+import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -21,7 +21,7 @@ import './textarea_theme_alfa-on-white.css';
 /**
  * Компонент многострочного текстового ввода.
  */
-@cn('textarea', Popup)
+@cn('textarea')
 @performance()
 class Textarea extends React.Component {
     static propTypes = {
@@ -53,10 +53,10 @@ class Textarea extends React.Component {
         resize: Type.oneOf(['both', 'horizontal', 'vertical', 'none']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Рисует попап с ошибкой в момент когда фокус находится в поле ввода */
+        /** Подсказка под полем */
+        hint: Type.node,
+        /** Отображение ошибки */
         error: Type.node,
-        /** Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия */
-        errorDirections: Type.arrayOf(Type.string),
         /** Обработчик изменения значения 'value' */
         onChange: Type.func,
         /** Обработчик фокуса поля */
@@ -74,12 +74,12 @@ class Textarea extends React.Component {
         autocomplete: true,
         disabled: false,
         autosize: false,
-        size: 'm',
-        errorDirections: ['right-top', 'right-center', 'right-bottom', 'bottom-left']
+        size: 'm'
     };
 
     state = {
         focused: false,
+        subWidth: '100%',
         value: ''
     };
 
@@ -93,34 +93,22 @@ class Textarea extends React.Component {
      */
     control;
 
-    /**
-     * @type {Popup}
-     */
-    errorPopup;
-
     componentDidMount() {
-        this.ensureErrorPopupTarget();
+        this.updateSubWidth();
     }
 
     componentDidUpdate() {
-        this.ensureErrorPopupTarget();
+        this.updateSubWidth();
     }
 
-    render(cn, Popup) {
+    render(cn) {
         let value = this.props.value !== undefined
             ? this.props.value
             : this.state.value;
 
         let textareaProps = {
-            className: cn({
-                disabled: this.props.disabled,
-                focused: this.state.focused,
-                autosize: this.props.autosize,
-                size: this.props.size,
-                width: this.props.width,
-                resize: this.props.resize,
-                invalid: !!this.props.error
-            }),
+            className: cn('control'),
+            ref: (control) => { this.control = control; },
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled,
             id: this.props.id,
@@ -129,34 +117,41 @@ class Textarea extends React.Component {
             tabIndex: this.props.tabIndex,
             placeholder: this.props.placeholder,
             maxLength: this.props.maxLength,
-            ref: (control) => { this.control = control; },
             onChange: this.handleChange,
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onPaste: this.handlePaste
         };
         return (
-            <span ref={ (root) => { this.root = root; } }>
-                { !this.props.autosize
+            <span
+                className={ cn({
+                    disabled: this.props.disabled,
+                    focused: this.state.focused,
+                    autosize: this.props.autosize,
+                    size: this.props.size,
+                    width: this.props.width,
+                    resize: this.props.resize,
+                    invalid: !!this.props.error
+                }) }
+                ref={ (root) => { this.root = root; } }
+            >
+                {
+                    !this.props.autosize
                     ? <textarea { ...textareaProps } />
                     : <TextareaAutosize
                         { ...textareaProps }
                         onHeightChange={ this.handleHeightChange }
                     />
                 }
-                { this.props.error && this.state.focused
-                    && <Popup
-                        directions={ this.props.errorDirections }
-                        ref={ (errorPopup) => { this.errorPopup = errorPopup; } }
-                        for={ this.props.name }
-                        size={ this.props.size }
-                        type='tooltip'
-                        mainOffset={ 13 }
-                        visible={ true }
-                        invalid={ true }
+                {
+                    (this.props.error || this.props.hint) &&
+                    <span
+                        className={ cn('sub') }
+                        style={ { maxWidth: this.state.subWidth } }
                     >
-                        { this.props.error }
-                    </Popup>
+                        <ResizeSensor onResize={ this.updateSubWidth } />
+                        { this.props.error || this.props.hint }
+                    </span>
                 }
             </span>
         );
@@ -237,9 +232,15 @@ class Textarea extends React.Component {
         });
     }
 
-    ensureErrorPopupTarget() {
-        if (this.props.error && this.state.focused) {
-            this.errorPopup.setTarget(this.root);
+    /**
+     * Задает максимальную ширину для sub элемента.
+     */
+    @autobind
+    updateSubWidth() {
+        if (this.control && this.props.width !== 'available') {
+            this.setState({
+                subWidth: `${this.control.offsetWidth}px`
+            });
         }
     }
 }

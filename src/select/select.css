@@ -10,6 +10,33 @@
     position: relative;
     min-width: 150px;
     max-width: 100%;
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+
+    &__sub {
+        box-sizing: border-box;
+        display: block;
+        max-width: 100%;
+        padding-top: 5px;
+        padding-right: 12px;
+        white-space: normal;
+
+        .select_size_s & {
+            font-size: var(--font-size-xs);
+        }
+
+        .select_size_m & {
+            font-size: var(--font-size-s);
+        }
+
+        .select_size_l & {
+            font-size: var(--font-size-m);
+        }
+
+        .select_size_xl & {
+            font-size: var(--font-size-l);
+        }
+    }
 
     &__button {
         width: 100%;
@@ -95,5 +122,11 @@
         min-width: 0;
         height: 100%;
         border-radius: var(--border-radius-control);
+    }
+}
+
+.select_invalid {
+    .select__sub {
+        color: var(--color-error);
     }
 }

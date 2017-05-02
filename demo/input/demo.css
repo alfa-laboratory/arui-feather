@@ -9,21 +9,3 @@ body {
         margin-left: 10px;
     }
 }
-
-.input__addons {
-    vertical-align: top;
-
-    .button {
-        border-top: 0;
-        border-bottom: 0;
-    }
-
-    &_right .radio:last-child .button {
-        border-right: 0;
-    }
-
-    &_left .radio:first-child .button {
-        border-left: 0;
-    }
-}
-

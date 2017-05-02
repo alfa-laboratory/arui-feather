@@ -45,7 +45,6 @@ import 'RadioGroup' from 'arui-feather/radio-group';
 | type | [TypeEnum](#TypeEnum) | `'normal'`  |  | Тип группы кнопок |
 | value | String |  |  | Значение выбранной радио-кнопки |
 | error | Node |  |  | Отображение попапа с ошибкой в момент когда фокус находится на компоненте |
-| errorDirections | Array.<String> | `['right-center', 'right-top', 'right-bottom', 'bottom-left']`  |  | Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия |
 | width | [WidthEnum](#WidthEnum) |  |  | Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя |
 | name | String |  |  | Уникальное имя блока |
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` |

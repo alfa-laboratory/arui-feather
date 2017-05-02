@@ -6,6 +6,7 @@
 
 .checkbox-group {
     display: inline-block;
+    outline: none;
 }
 
 .checkbox-group_invalid {

@@ -87,7 +87,7 @@
     }
 
     &_size_s {
-        min-height: 28px;
+        min-height: 30px;
         padding: 0 15px;
         font-size: var(--font-size-s);
         line-height: 28px;
@@ -98,7 +98,7 @@
     }
 
     &_size_m {
-        min-height: 38px;
+        min-height: 40px;
         padding: 0 20px;
         font-size: var(--font-size-m);
         line-height: 38px;
@@ -109,7 +109,7 @@
     }
 
     &_size_l {
-        min-height: 48px;
+        min-height: 50px;
         padding: 0 25px;
         font-size: var(--font-size-l);
         line-height: 48px;
@@ -121,7 +121,7 @@
     }
 
     &_size_xl {
-        min-height: 58px;
+        min-height: 60px;
         padding: 0 30px;
         font-size: var(--font-size-xl);
         line-height: 58px;
@@ -139,17 +139,23 @@
         border-right-color: transparent;
     }
 
-    > .button:first-child,
-    > :first-child .button {
+    > .button:first-of-type,
+    > :first-of-type .button {
         border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
     }
 
-    > .button:last-child,
-    > :last-child .button {
+    > .button:last-of-type,
+    > :last-of-type .button {
         border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
     }
 
     > :only-child .button {
         border-radius: var(--border-radius-control);
+    }
+}
+
+.control-group_invalid {
+    .button {
+        border-color: var(--color-error-translucent);
     }
 }

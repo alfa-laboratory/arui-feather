@@ -43,26 +43,11 @@ class Demo extends React.Component {
                 <DemoSection theme='alfa-on-color'>
                     <ThemeProvider theme='alfa-on-white'>
                         <div>
-                            <div>
-                                <span className={ cn('layout') }>
-                                    <Input
-                                        view='line'
-                                        size='m'
-                                    />
-                                </span>
-                            </div>
-                        </div>
-                    </ThemeProvider>
-                </DemoSection>
-
-                <DemoSection theme='alfa-on-color'>
-                    <ThemeProvider theme='alfa-on-white'>
-                        <div>
                             <span className={ cn('layout') }>
                                 <Input
                                     size='m'
                                     placeholder='Input...'
-                                    error='something went wrong'
+                                    error='Something went wrong'
                                 />
                             </span>
                         </div>
@@ -110,23 +95,6 @@ class Demo extends React.Component {
                         </div>
                     </ThemeProvider>
                 </DemoSection>
-
-                <DemoSection theme='alfa-on-white'>
-                    <ThemeProvider theme='alfa-on-color'>
-                        <div>
-                            <div>
-                                <span className={ cn('layout') }>
-                                    <Input
-                                        view='line'
-                                        size='xl'
-                                    />
-                                </span>
-                            </div>
-                        </div>
-                    </ThemeProvider>
-                </DemoSection>
-
-
                 <DemoSection theme='alfa-on-white'>
                     <ThemeProvider theme='alfa-on-color'>
                         <div>
@@ -134,7 +102,7 @@ class Demo extends React.Component {
                                 <Input
                                     size='m'
                                     placeholder='Input...'
-                                    error='something went wrong'
+                                    error='Something went wrong'
                                 />
                             </span>
                         </div>
@@ -166,6 +134,7 @@ class Demo extends React.Component {
                 size='m'
                 type={ 'button' }
                 text={ item }
+                error={ true }
             />
         ));
 

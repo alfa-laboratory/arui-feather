@@ -18,8 +18,6 @@ import subtractYears from 'date-fns/sub_years';
 import formatDate from 'date-fns/format';
 import sortedIndexOf from 'lodash.sortedindexof';
 
-import InlineError from '../inline-error/inline-error';
-
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -70,8 +68,6 @@ class Calendar extends React.Component {
         showArrows: Type.bool,
         /** Возможность управления календарём с клавиатуры */
         isKeyboard: Type.bool,
-        /** Сообщение об ошибке */
-        error: Type.node,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -138,13 +134,6 @@ class Calendar extends React.Component {
                 onKeyDown={ this.props.isKeyboard && this.handleKeyDown }
                 onKeyUp={ this.props.isKeyboard && this.handleKeyUp }
             >
-                {
-                    this.props.error && (
-                        <InlineError className={ cn('error') }>
-                            { this.props.error }
-                        </InlineError>
-                    )
-                }
                 { this.renderTitle(cn) }
                 <table className={ cn('layout') }>
                     <tbody>

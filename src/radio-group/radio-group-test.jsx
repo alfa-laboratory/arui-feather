@@ -160,23 +160,6 @@ describe('radio-group', () => {
         }, 0);
     });
 
-    it('should render error-popup on focus when error set', (done) => {
-        let radioGroup = render(
-            <RadioGroup error={ 'Текст ошибки' } >
-                <Radio key='1' />
-            </RadioGroup>
-        );
-
-        radioGroup.instance.focus();
-
-        setTimeout(() => {
-            let popupNode = document.querySelector('.popup');
-            expect(popupNode).to.exist;
-            expect(popupNode).to.contain.text('Текст ошибки');
-            done();
-        }, 0);
-    });
-
     it('should change other radio checked status when check one', function () {
         const radioGroupNode = render(
             <RadioGroup value='1'>

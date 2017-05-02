@@ -25,7 +25,7 @@ class Demo extends React.Component {
                         <div>
                             <Textarea
                                 placeholder='Textarea...'
-                                error='something went wrong'
+                                error='Something went wrong'
                             />
                         </div>
                     </ThemeProvider>
@@ -52,7 +52,7 @@ class Demo extends React.Component {
                         <div>
                             <Textarea
                                 placeholder='Textarea...'
-                                error='something went wrong'
+                                error='Something went wrong'
                             />
                         </div>
                     </ThemeProvider>

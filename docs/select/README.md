@@ -18,7 +18,6 @@ import Select from 'arui-feather/select';
 | mode | [ModeEnum](#ModeEnum) | `'check'`  |  | Тип выпадающего списка |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
 | directions | Array.<[DirectionsEnum](#DirectionsEnum)> | `['bottom-left', 'bottom-right', 'top-left', 'top-right']`  |  | Направления, в которые может открываться попап компонента |
-| placeholder | String | `'Выберите:'`  |  | Подсказка, которая отображается в кнопке раскрывающегося списка, в случае, если ни один из пунктов выбран |
 | disabled | Boolean | `false`  |  | Управление возможностью редактирования значения |
 | opened | Boolean |  |  | Управление видимостью выпадающего списка |
 | equalPopupWidth | Boolean | `false`  |  | Ширинa выпадающего списка равна ширине кнопки |
@@ -27,8 +26,10 @@ import Select from 'arui-feather/select';
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | id | String |  |  | Уникальный идентификатор блока |
 | name | String |  |  | Уникальное имя блока |
-| error | Node |  |  | Содержание попапа с ошибкой |
-| errorDirections | Array.<[ErrorDirectionsEnum](#ErrorDirectionsEnum)> | `['right-center', 'right-top', 'right-bottom', 'bottom-left']`  |  | Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия |
+| label | Node |  |  | Заголовок для поля |
+| placeholder | String | `'Выберите:'`  |  | Подсказка, которая отображается в случае если ни один из пунктов выбран |
+| hint | Node |  |  | Подсказка под полем |
+| error | Node |  |  | Отображение ошибки |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | onFocus | Function |  |  | Обработчик фокуса на компоненте |
 | onBlur | Function |  |  | Обработчик потери фокуса компонентом |
@@ -122,23 +123,6 @@ import Select from 'arui-feather/select';
  * `'m'`
  * `'l'`
  * `'xl'`
-
-
-### <a id="ErrorDirectionsEnum"></a>ErrorDirectionsEnum
-
- * `'anchor'`
- * `'top-left'`
- * `'top-center'`
- * `'top-right'`
- * `'left-top'`
- * `'left-center'`
- * `'left-bottom'`
- * `'right-top'`
- * `'right-center'`
- * `'right-bottom'`
- * `'bottom-left'`
- * `'bottom-center'`
- * `'bottom-right'`
 
 
 ### <a id="ThemeEnum"></a>ThemeEnum

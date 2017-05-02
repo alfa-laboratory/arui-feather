@@ -74,7 +74,7 @@ class InputAutocomplete extends React.Component {
     menu;
 
     componentDidMount() {
-        this.popup.setTarget(this.input.getNode());
+        this.popup.setTarget(this.input.getBox());
         this.updatePopupStyles();
     }
 

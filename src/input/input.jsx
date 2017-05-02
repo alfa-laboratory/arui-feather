@@ -7,7 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import MaskedInput from '../masked-input/masked-input';
-import Popup from '../popup/popup';
+import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -22,7 +22,7 @@ import './input.css';
 /**
  * Компонент текстового поля ввода.
  */
-@cn('input', Popup, MaskedInput)
+@cn('input', MaskedInput)
 @performance()
 class Input extends React.Component {
     static propTypes = {
@@ -34,8 +34,6 @@ class Input extends React.Component {
         type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
-        /** Визуальный стиль поля */
-        view: Type.oneOf(['default', 'line']),
         /** Управление автозаполнением компонента */
         autocomplete: Type.bool,
         /** Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления */
@@ -58,8 +56,6 @@ class Input extends React.Component {
         value: Type.string,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
-        /** Подсказка в текстовом поле */
-        placeholder: Type.string,
         /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
         mask: Type.string,
         /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
@@ -77,12 +73,14 @@ class Input extends React.Component {
         leftAddons: Type.node,
         /** Добавление дополнительных элементов к инпуту справа */
         rightAddons: Type.node,
-        /** Отображение попапа с ошибкой в момент когда фокус находится в поле ввода */
+        /** Заголовок для поля */
+        label: Type.node,
+        /** Подсказка в текстовом поле */
+        placeholder: Type.string,
+        /** Подсказка под полем */
+        hint: Type.node,
+        /** Отображение ошибки */
         error: Type.node,
-        /** Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия */
-        errorDirections: Type.arrayOf(Type.string),
-        /** Управление возможностью отображения попапа с ошибкой */
-        showErrorPopup: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -121,31 +119,40 @@ class Input extends React.Component {
 
     static defaultProps = {
         noValidate: false,
-        showErrorPopup: true,
-        errorDirections: ['right-center', 'right-top', 'right-bottom', 'bottom-left'],
         size: 'm',
-        type: 'text',
-        view: 'default'
+        type: 'text'
     };
 
     state = {
         focused: false,
+        subWidth: '100%',
         value: ''
     };
 
+    /**
+     * @type {HTMLSpanElement}
+     */
     root;
+
+    /**
+     * @type {HTMLSpanElement}
+     */
+    box;
+
+    /**
+     * @type {HTMLInputElement}
+     */
     control;
-    errorPopup;
 
     componentDidMount() {
-        this.ensureErrorPopupTarget();
+        this.updateSubWidth();
     }
 
     componentDidUpdate() {
-        this.ensureErrorPopupTarget();
+        this.updateSubWidth();
     }
 
-    render(cn, Popup, MaskedInput) {
+    render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
 
         let content = this.renderContent(cn, MaskedInput);
@@ -166,13 +173,21 @@ class Input extends React.Component {
                     'has-icon': !!this.props.icon,
                     'has-clear': !!this.props.clear,
                     'has-addons': hasAddons,
-                    invalid: !!this.props.error,
-                    view: this.props.view
+                    invalid: !!this.props.error
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
                 { content }
-                { this.renderErrorPopup(Popup) }
+                {
+                    (this.props.error || this.props.hint) &&
+                    <span
+                        className={ cn('sub') }
+                        style={ { maxWidth: this.state.subWidth } }
+                    >
+                        <ResizeSensor onResize={ this.updateSubWidth } />
+                        { this.props.error || this.props.hint }
+                    </span>
+                }
             </span>
         );
     }
@@ -227,7 +242,11 @@ class Input extends React.Component {
         };
 
         return (
-            <span className={ cn('box') } key='input-wrapper'>
+            <span
+                className={ cn('box') }
+                key='input-wrapper'
+                ref={ (box) => { this.box = box; } }
+            >
                 {
                     !isMaskedInput
                         ? <input { ...inputProps } />
@@ -252,24 +271,6 @@ class Input extends React.Component {
                     </span>
                 }
             </span>
-        );
-    }
-
-    renderErrorPopup(Popup) {
-        return (
-            this.props.error && this.props.showErrorPopup && this.getFocused() &&
-            <Popup
-                directions={ this.props.errorDirections }
-                ref={ (errorPopup) => { this.errorPopup = errorPopup; } }
-                for={ this.props.name }
-                size={ this.props.size }
-                type='tooltip'
-                mainOffset={ 13 }
-                visible={ true }
-                invalid={ true }
-            >
-                { this.props.error }
-            </Popup>
         );
     }
 
@@ -374,6 +375,27 @@ class Input extends React.Component {
     }
 
     /**
+     * Возвращает ссылку на инстанс контейнера для контрола.
+     *
+     * @public
+     * @returns {React.Component}
+     */
+    getBox() {
+        return this.box;
+    }
+
+    /**
+     * Возвращает ссылку на инстанс контрола.
+     * Для полей ввода с маской ссылку на объект `MaskedInput`.
+     *
+     * @public
+     * @returns {React.Component}
+     */
+    getControl() {
+        return this.control;
+    }
+
+    /**
      * Устанавливает фокус на поле ввода.
      *
      * @public
@@ -416,17 +438,6 @@ class Input extends React.Component {
     }
 
     /**
-     * Возвращает ссылку на инстанс контрола.
-     * Для полей ввода с маской ссылку на объект `MaskedInput`.
-     *
-     * @public
-     * @returns {React.Component}
-     */
-    getControl() {
-        return this.control;
-    }
-
-    /**
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
      * @param {String} value Новое значение
@@ -436,12 +447,6 @@ class Input extends React.Component {
 
         if (this.props.onChange) {
             this.props.onChange(value);
-        }
-    }
-
-    ensureErrorPopupTarget() {
-        if (this.props.error && this.props.showErrorPopup && this.getFocused()) {
-            this.errorPopup.setTarget(this.root);
         }
     }
 
@@ -469,6 +474,18 @@ class Input extends React.Component {
         let length = mask !== undefined ? mask.length : maxLength || 1;
 
         return Math.floor(length * INPUT_SIZE_CORRECTION_RATIO);
+    }
+
+    /**
+     * Задает максимальную ширину для sub элемента.
+     */
+    @autobind
+    updateSubWidth() {
+        if (this.control && this.props.width !== 'available') {
+            this.setState({
+                subWidth: `${this.control.offsetWidth}px`
+            });
+        }
     }
 }
 

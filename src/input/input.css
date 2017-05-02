@@ -5,48 +5,65 @@
 @import '../vars.css';
 
 .input {
-    font-family: var(--font);
-
-    position: relative;
-    display: inline-block;
     box-sizing: border-box;
-
-    border-radius: var(--border-radius-control);
-
-    transition-duration: 200ms;
-    transition-property: background, border-color, box-shadow, width;
-    transition-timing-function: ease;
+    display: inline-block;
+    position: relative;
+    font-family: var(--font);
+    font-weight: var(--font-weight);
 
     &__box {
         box-sizing: border-box;
         display: block;
         position: relative;
-        min-width: 148px;
+        min-width: 150px;
         user-select: none;
+        border-radius: var(--border-radius-control);
+        transition-duration: 200ms;
+        transition-property: background, border-color, box-shadow, width;
+        transition-timing-function: ease;
         -webkit-touch-callout: none;
     }
 
-    &__control {
-        position: relative;
-        display: inline-block;
-
-        font: inherit;
-        line-height: inherit;
-        font-weight: var(--font-weight);
-
+    &__sub {
         box-sizing: border-box;
+        display: block;
+        max-width: 100%;
+        padding-top: 5px;
+        padding-right: 12px;
+        white-space: normal;
 
-        padding: 0;
-        margin: 0;
+        .input_size_s & {
+            font-size: var(--font-size-xs);
+        }
 
+        .input_size_m & {
+            font-size: var(--font-size-s);
+        }
+
+        .input_size_l & {
+            font-size: var(--font-size-m);
+        }
+
+        .input_size_xl & {
+            font-size: var(--font-size-l);
+        }
+    }
+
+    &__control {
+        box-sizing: border-box;
+        display: inline-block;
+        position: relative;
         width: 100%;
-
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        font: inherit;
+        font-weight: var(--font-weight);
+        line-height: inherit;
+        background: none;
         border: 0;
         border-radius: var(--border-radius-inner-control);
-
-        outline: none;
-        background: none;
-
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -72,8 +89,8 @@
     }
 
     &_has-clear &__control {
-        text-overflow: ellipsis;
         padding-right: 0;
+        text-overflow: ellipsis;
     }
 
     &__clear {
@@ -109,8 +126,8 @@
     }
 
     &_has-icon &__control {
-        text-overflow: ellipsis;
         padding-right: 2px;
+        text-overflow: ellipsis;
     }
 
     &_width_available {
@@ -118,14 +135,16 @@
         min-width: 0;
     }
 
-    &_width_available &__box {
-        min-width: 0;
-    }
-
     &_has-addons &__box,
     &__addons {
         display: table-cell;
         vertical-align: top;
+    }
+
+    &_has-addons &__box {
+        border-radius: 0;
+        border-right-color: transparent;
+        border-left-color: transparent;
     }
 
     &__addons {
@@ -153,35 +172,6 @@
     /* reset for ios */
     &__control:disabled {
         opacity: 1;
-    }
-
-    &_view_line,
-    &_view_line.input_focused {
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 0;
-        background: none;
-        box-shadow: none;
-    }
-
-    &_view_line {
-        .input__control {
-            text-align: center;
-        }
-
-        /* line view has only one size */
-        &.input_size_s, &.input_size_m,
-        &.input_size_l, &.input_size_xl {
-            height: 50px;
-
-            font-size: var(--font-size-2xl);
-            border-bottom-width: 2px;
-
-            .input__control {
-                padding: 11px 0 4px;
-            }
-        }
     }
 }
 
@@ -212,11 +202,14 @@
 }
 
 .input_size_s {
-    height: 30px;
-    font-size: var(--font-size-s);
+    .input__box {
+        height: 30px;
+        font-size: var(--font-size-s);
+    }
 
     .input__control {
-        padding: 7px 10px 6px;
+        padding: 0 10px;
+        line-height: 26px;
     }
 
     &.input_has-clear .input__box,
@@ -233,11 +226,14 @@
 }
 
 .input_size_m {
-    font-size: var(--font-size-m);
-    height: 40px;
+    .input__box {
+        height: 40px;
+        font-size: var(--font-size-m);
+    }
 
     .input__control {
-        padding: 10px 12px 9px;
+        padding: 0 12px;
+        line-height: 36px;
     }
 
     &.input_has-clear .input__box,
@@ -265,11 +261,14 @@
 }
 
 .input_size_l {
-    font-size: var(--font-size-l);
-    height: 50px;
+    .input__box {
+        height: 50px;
+        font-size: var(--font-size-l);
+    }
 
     .input__control {
-        padding: 14px 15px 13px;
+        padding: 0 15px;
+        line-height: 46px;
     }
 
     &.input_has-clear .input__box,
@@ -286,11 +285,14 @@
 }
 
 .input_size_xl {
-    font-size: var(--font-size-xl);
-    height: 60px;
+    .input__box {
+        height: 60px;
+        font-size: var(--font-size-xl);
+    }
 
     .input__control {
-        padding: 17px 15px 16px;
+        padding: 0 15px;
+        line-height: 56px;
     }
 
     &.input_has-clear .input__box,
@@ -307,56 +309,71 @@
 }
 
 .input_invalid {
-    border-color: var(--color-error-translucent);
-
-    &.input_focused {
+    .input__box {
         border-color: var(--color-error-translucent);
-        box-shadow: 0 0 0 1px var(--color-error-translucent);
-        background: var(--color-error-transparent);
     }
 
-    &.input_view_line.input_focused {
-        box-shadow: none;
-        background: none;
+    &.input_focused {
+        .input__box {
+            background: var(--color-error-transparent);
+            border-color: var(--color-error-translucent);
+            box-shadow: 0 0 0 1px var(--color-error-translucent);
+        }
+    }
+
+    .input__sub {
+        color: var(--color-error);
     }
 }
 
 .control-group {
-    .input {
+    .input__box {
         border-radius: 0;
     }
 
     .input-group__input-case_invalid + * {
         .input {
             padding-left: 1px;
-            border-left: none;
+
+            .input__box {
+                border-left: none;
+            }
         }
 
         .input_theme_alfa-on-white:not(.input_focused),
         .input_theme_alfa-on-color:not(.input_focused) {
             padding-left: 1px;
-            border-left: none;
-            box-shadow: -1px 0 0 0 var(--color-error-translucent);
+
+            .input__box {
+                border-left: none;
+                box-shadow: -1px 0 0 0 var(--color-error-translucent);
+            }
         }
     }
 
     .input_theme_alfa-on-white.input_invalid,
     .input_theme_alfa-on-color.input_invalid {
         &.input_focused {
-            border-color: var(--color-error-translucent);
+            .input__box {
+                border-color: var(--color-error-translucent);
+            }
         }
     }
 
     > :last-child .input {
-        border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
+        .input__box {
+            border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
+        }
 
         &.input_theme_alfa-on-white.input_invalid,
         &.input_theme_alfa-on-color.input_invalid {
-            border-color: var(--color-error-translucent);
+            .input__box {
+                border-color: var(--color-error-translucent);
+            }
         }
     }
 
-    > :first-child .input {
+    > :first-child .input__box {
         border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
 
         &.input_invalid.input_focused {
@@ -367,12 +384,15 @@
     > :not(:first-child):not(:last-child) .input {
         &.input_invalid.input_focused {
             padding-left: 1px;
-            border-left: none;
-            box-shadow: -1px 0 0 1px var(--color-error-translucent), 0 0 0 1px var(--color-error-translucent);
+
+            .input__box {
+                border-left: none;
+                box-shadow: -1px 0 0 1px var(--color-error-translucent), 0 0 0 1px var(--color-error-translucent);
+            }
         }
     }
 
-    > :only-child .input {
+    > :only-child .input__box {
         border-radius: var(--border-radius-control);
     }
 }

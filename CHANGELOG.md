@@ -1,3 +1,18 @@
+<a name="4.2.1"></a>
+## 4.2.1 (2017-05-02)
+
+
+### Bug Fixes
+
+* **page:** use image instead of gradient, get rid of banding ([011d5fb](https://github.com/alfa-laboratory/arui-feather/commit/011d5fb))
+
+
+### Features
+
+* **demo:** add styleguidist demo ([#13](https://github.com/alfa-laboratory/arui-feather/issues/13)) ([1379f55](https://github.com/alfa-laboratory/arui-feather/commit/1379f55))
+
+
+
 <a name="4.2.0"></a>
 # 4.2.0 (2017-04-24)
 

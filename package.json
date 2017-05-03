@@ -35,7 +35,10 @@
     "styleguide:build": "styleguidist build"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint", "npm run test"],
+    "*.{js,jsx}": [
+      "eslint",
+      "npm run test"
+    ],
     "*.css": "stylelint"
   },
   "maintainers": [
@@ -81,7 +84,8 @@
     "react-addons-create-fragment": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-style-proptype": "^3.0.0",
-    "react-textarea-autosize": "^4.0.5"
+    "react-textarea-autosize": "^4.0.5",
+    "react-transition-group": "^1.1.3"
   },
   "devDependencies": {
     "arui-presets": "^2.0.3",

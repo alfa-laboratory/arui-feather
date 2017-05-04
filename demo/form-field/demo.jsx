@@ -176,6 +176,18 @@ class Demo extends React.Component {
                                     <Radio size='l' text='radio 2' value='radio-2' />
                                 </RadioGroup>
                             </FormField>
+                            <FormField size='m' view='line' label={ <Label size='m'>Label...</Label> }>
+                                <RadioGroup size='m' type='line'>
+                                    <Radio size='m' text='radio 1' value='radio-1' />
+                                    <Radio size='m' text='radio 2' value='radio-2' />
+                                </RadioGroup>
+                            </FormField>
+                            <FormField size='l' view='line' label={ <Label size='l'>Label...</Label> }>
+                                <RadioGroup size='l' type='line'>
+                                    <Radio size='l' text='radio 1' value='radio-1' />
+                                    <Radio size='l' text='radio 2' value='radio-2' />
+                                </RadioGroup>
+                            </FormField>
                             <FormField size='s' view='line' label={ <Label size='s'>Label...</Label> }>
                                 <RadioGroup type='button'>
                                     <Radio type='button' size='s' text='radio 1' value='radio-1' />
@@ -214,6 +226,18 @@ class Demo extends React.Component {
                             </FormField>
                             <FormField size='l' view='line' label={ <Label size='l'>Label...</Label> }>
                                 <RadioGroup type='normal'>
+                                    <Radio size='l' text='radio 1' value='radio-1' />
+                                    <Radio size='l' text='radio 2' value='radio-2' />
+                                </RadioGroup>
+                            </FormField>
+                            <FormField size='m' view='line' label={ <Label size='m'>Label...</Label> }>
+                                <RadioGroup type='line'>
+                                    <Radio size='m' text='radio 1' value='radio-1' />
+                                    <Radio size='m' text='radio 2' value='radio-2' />
+                                </RadioGroup>
+                            </FormField>
+                            <FormField size='l' view='line' label={ <Label size='l'>Label...</Label> }>
+                                <RadioGroup type='line'>
                                     <Radio size='l' text='radio 1' value='radio-1' />
                                     <Radio size='l' text='radio 2' value='radio-2' />
                                 </RadioGroup>
@@ -260,6 +284,18 @@ class Demo extends React.Component {
                                     <Checkbox size='l' text='checkbox 2' value='checkbox-2' />
                                 </CheckboxGroup>
                             </FormField>
+                            <FormField size='m' view='line' label={ <Label size='m'>Label...</Label> }>
+                                <CheckboxGroup type='line'>
+                                    <Checkbox size='m' text='checkbox 1' value='checkbox-1' />
+                                    <Checkbox size='m' text='checkbox 2' value='checkbox-2' />
+                                </CheckboxGroup>
+                            </FormField>
+                            <FormField size='l' view='line' label={ <Label size='l'>Label...</Label> }>
+                                <CheckboxGroup type='line'>
+                                    <Checkbox size='l' text='checkbox 1' value='checkbox-1' />
+                                    <Checkbox size='l' text='checkbox 2' value='checkbox-2' />
+                                </CheckboxGroup>
+                            </FormField>
                             <FormField size='s' view='line' label={ <Label size='s'>Label...</Label> }>
                                 <CheckboxGroup type='button'>
                                     <Checkbox type='button' size='s' text='checkbox 1' value='checkbox-1' />
@@ -298,6 +334,18 @@ class Demo extends React.Component {
                             </FormField>
                             <FormField size='l' view='line' label={ <Label size='l'>Label...</Label> }>
                                 <CheckboxGroup type='normal'>
+                                    <Checkbox size='l' text='checkbox 1' value='checkbox-1' />
+                                    <Checkbox size='l' text='checkbox 2' value='checkbox-2' />
+                                </CheckboxGroup>
+                            </FormField>
+                            <FormField size='m' view='line' label={ <Label size='m'>Label...</Label> }>
+                                <CheckboxGroup type='line'>
+                                    <Checkbox size='m' text='checkbox 1' value='checkbox-1' />
+                                    <Checkbox size='m' text='checkbox 2' value='checkbox-2' />
+                                </CheckboxGroup>
+                            </FormField>
+                            <FormField size='l' view='line' label={ <Label size='l'>Label...</Label> }>
+                                <CheckboxGroup type='line'>
                                     <Checkbox size='l' text='checkbox 1' value='checkbox-1' />
                                     <Checkbox size='l' text='checkbox 2' value='checkbox-2' />
                                 </CheckboxGroup>

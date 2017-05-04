@@ -43,7 +43,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should render input and popup with options', () => {
-        let { popupNode, controlNode } = renderInputAutocomplete();
+        let { popupNode, controlNode } = renderInputAutocomplete({ options: OPTIONS });
 
         expect(popupNode).to.have.class('popup');
         expect(controlNode).to.have.class('input__control');

@@ -137,7 +137,7 @@ class Menu extends React.Component {
                     disabled: this.props.disabled,
                     mode: this.props.mode
                 }) }
-                tabIndex='0'
+                tabIndex={ 0 }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
                 onKeyDown={ this.handleKeyDown }
@@ -377,6 +377,16 @@ class Menu extends React.Component {
         if (this.props.onHighlightItem) {
             this.props.onHighlightItem(null);
         }
+    }
+
+    /**
+     * Возвращает корневой `HTMLElement` компонента.
+     *
+     * @public
+     * @returns {HTMLElement}
+     */
+    getNode() {
+        return this.root;
     }
 
     /**

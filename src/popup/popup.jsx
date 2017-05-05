@@ -327,6 +327,10 @@ class Popup extends React.Component {
      * @param {HTMLElement} target Элемент, к которому будет привязан popup
      */
     setTarget(target) {
+        if (this.anchor === target) {
+            return;
+        }
+
         this.anchor = target;
         this.redraw();
     }

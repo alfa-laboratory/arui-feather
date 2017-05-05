@@ -201,4 +201,13 @@ describe('menu', () => {
             }, 0);
         }, 0);
     });
+
+    it('should return root `HTMLElement` after `getNode` method call', () => {
+        let menu = render(<Menu />);
+
+        let node = menu.instance.getNode();
+
+        expect(node).to.be.instanceOf(HTMLElement);
+        expect(node).to.be.equal(menu.node);
+    });
 });

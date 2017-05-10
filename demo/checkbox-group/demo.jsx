@@ -52,6 +52,36 @@ class Demo extends React.Component {
                 </DemoSection>
                 <DemoSection theme='alfa-on-color'>
                     <ThemeProvider theme='alfa-on-white'>
+                        <CheckBoxGroup type='button'>
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                        </CheckBoxGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-color'>
+                    <ThemeProvider theme='alfa-on-white'>
                         <CheckBoxGroup type='line'>
                             <CheckBox
                                 text='Чекбокс'
@@ -89,6 +119,18 @@ class Demo extends React.Component {
                 <DemoSection theme='alfa-on-white'>
                     <ThemeProvider theme='alfa-on-color'>
                         <CheckBoxGroup type='button'>
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
+                            <CheckBox
+                                text='Чекбокс'
+                                type='button'
+                            />
                             <CheckBox
                                 text='Чекбокс'
                                 type='button'

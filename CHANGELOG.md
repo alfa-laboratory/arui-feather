@@ -1,3 +1,20 @@
+<a name="4.3.0"></a>
+# 4.3.0 (2017-05-11)
+
+
+### Bug Fixes
+
+* **form-field:** radio/checkbox group with view='line' in form-field ([#26](https://github.com/alfa-laboratory/arui-feather/issues/26)) ([c366e98](https://github.com/alfa-laboratory/arui-feather/commit/c366e98))
+* **input-autocomplete:** focus ([#28](https://github.com/alfa-laboratory/arui-feather/issues/28)) ([aeea353](https://github.com/alfa-laboratory/arui-feather/commit/aeea353))
+
+
+### Features
+
+* sidebar csstansition group animation ([#25](https://github.com/alfa-laboratory/arui-feather/issues/25)) ([4bbc349](https://github.com/alfa-laboratory/arui-feather/commit/4bbc349))
+* **demo:** add demo readme for several components ([#20](https://github.com/alfa-laboratory/arui-feather/issues/20)) ([bc1e221](https://github.com/alfa-laboratory/arui-feather/commit/bc1e221))
+
+
+
 <a name="4.2.1"></a>
 ## 4.2.1 (2017-05-02)
 

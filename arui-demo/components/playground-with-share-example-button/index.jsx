@@ -2,10 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 import { Component } from 'react';
 import Type from 'prop-types';
 import { autobind } from 'core-decorators';
-/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 import PlayGroundRendererStyleguidist from 'react-styleguidist/lib/rsg-components/Playground/PlaygroundRenderer';
 import cn from '../../../src/cn';
 import './index.css';
@@ -19,7 +19,7 @@ export class PlayGroundRenderer extends Component {
     render(cn) {
         return (
             <div className={ cn }>
-                <button className={ cn('share-code') } onClick={ this.handleShareExampleClick }>ShareExample</button>
+                <button className={ cn('share-code') } onClick={ this.handleShareExampleClick }>Share example</button>
                 <PlayGroundRendererStyleguidist { ...this.props } />
             </div>
         );
@@ -28,8 +28,7 @@ export class PlayGroundRenderer extends Component {
     @autobind
     handleShareExampleClick() {
         const code = encodeURI(this.props.code);
-        history.pushState({}, 'Playground', `#playground/code=${code}`);
+        window.open(`/#playground/code=${code}`, '_blank');
     }
 }
 export default PlayGroundRenderer;
-

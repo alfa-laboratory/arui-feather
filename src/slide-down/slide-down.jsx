@@ -76,41 +76,35 @@ class SlideDown extends React.Component {
 
     @autobind
     handleTransitionEnd(event) {
-        if (
-            event.propertyName === 'height'
-            && this.props.isExpanded
-        ) {
+        if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
         }
     }
 
     getHeight() {
-        if (this.state.isHeightAuto) {
-            return 'auto';
-        }
-
-        return this.state.height;
-    }
-
-    calculateHeight() {
-        return this.slideDownContent.offsetHeight;
+        return this.state.isHeightAuto
+            ? 'auto'
+            : this.state.height;
     }
 
     setHeightToContentHeight() {
         this.setState({
             isHeightAuto: false,
-            height: this.calculateHeight()
+            height: this.slideDownContent.offsetHeight
         });
     }
 
     setHeightToNull() {
         this.setHeightToContentHeight();
 
-        setTimeout(() => {
+         // Заставляем React перерисовать элемент
+        this.forceUpdate(() => {
+            // Заставляем браузер сделать reflow
+            this.slideDown.getBoundingClientRect();
             this.setState({
                 height: 0
             });
-        }, 20);
+        });
     }
 
     setAutoHeight() {

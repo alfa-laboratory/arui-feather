@@ -28,7 +28,8 @@ export class PlayGroundRenderer extends Component {
     @autobind
     handleShareExampleClick() {
         const code = encodeURI(this.props.code);
-        window.open(`/#playground/code=${code}`, '_blank');
+        const pathname = location.pathname;
+        window.open(`${pathname}#playground/code=${code}`, '_blank');
     }
 }
 export default PlayGroundRenderer;

@@ -2,7 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind, debounce } from 'core-decorators';
+import { autobind } from 'core-decorators';
+import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -146,6 +147,12 @@ class Popup extends React.Component {
     popup;
     inner;
     content;
+
+    handleResizeWindow = debounce(() => {
+        if (this.isPropsToPositionCorrect()) {
+            this.redraw();
+        }
+    }, 200);
 
     componentWillMount() {
         if (this.context.isInCustomContainer
@@ -310,14 +317,6 @@ class Popup extends React.Component {
         }
 
         this.redraw();
-    }
-
-    @autobind
-    @debounce(200)
-    handleResizeWindow() {
-        if (this.isPropsToPositionCorrect()) {
-            this.redraw();
-        }
     }
 
     /**

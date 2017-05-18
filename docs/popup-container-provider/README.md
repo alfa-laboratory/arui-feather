@@ -43,10 +43,10 @@ import Page from 'arui-feather/page';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Array.<Node>\|Node |  |  | Дочерние элементы контейнера |
-| className | Function\|String |  |  | Дополнительный класс |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы контейнера |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 | style | CSSStyleDeclaration |  |  | Объект со стилями |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
 
 
 
@@ -54,17 +54,7 @@ import Page from 'arui-feather/page';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

@@ -15,9 +15,9 @@ import Highlight from 'arui-feather/highlight';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `Highlight` |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Highlight` |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -25,17 +25,7 @@ import Highlight from 'arui-feather/highlight';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

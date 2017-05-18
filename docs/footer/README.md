@@ -27,14 +27,14 @@ import Footer from 'arui-feather/footer';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| menu | Node |  |  | Меню в подвале |
-| additional | Node | `'Сделано в Альфа-Лаборатории'`  |  | Дополнительный текст |
-| social | Node | `null`  |  | Содержимое блока соц. сетей |
-| showSocial | Boolean | `true`  |  | Отображение блока соц. сетей |
-| copyright | Node |  |  | Содержимое блока копирайта |
-| showYears | Boolean | `false`  |  | Отображение годов в копирайте |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| menu | Type.node |  |  | Меню в подвале |
+| additional | Type.node | `'Сделано в Альфа-Лаборатории'`  |  | Дополнительный текст |
+| social | Type.node | `null`  |  | Содержимое блока соц. сетей |
+| showSocial | Type.bool | `true`  |  | Отображение блока соц. сетей |
+| copyright | Type.node |  |  | Содержимое блока копирайта |
+| showYears | Type.bool | `false`  |  | Отображение годов в копирайте |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -42,17 +42,7 @@ import Footer from 'arui-feather/footer';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

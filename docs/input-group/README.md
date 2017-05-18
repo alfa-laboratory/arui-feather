@@ -35,10 +35,10 @@ import 'InputGroup' from 'arui-feather/input-group';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| width | [WidthEnum](#WidthEnum) |  |  | Управление возможностью компонента занимать всю ширину родителя |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `InputGroup`, как правило, компоненты `Input` |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| width | Type.oneOf(['default', 'available']) |  |  | Управление возможностью компонента занимать всю ширину родителя |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `InputGroup`, как правило, компоненты `Input` |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -46,23 +46,7 @@ import 'InputGroup' from 'arui-feather/input-group';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="WidthEnum"></a>WidthEnum
-
- * `'default'`
- * `'available'`
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

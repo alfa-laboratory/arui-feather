@@ -14,12 +14,12 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| options | Array.<[OptionsType](#OptionsType)> | `[]`  |  | Список вариантов выбора |
-| disabled | Boolean | `false`  |  | Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления |
-| opened | Boolean |  |  | Управление видимостью выпадающего списка |
-| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
-| width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
-| onItemSelect | Function |  |  | Обработчик выбора пункта в выпадающем меню |
+| options | Type.arrayOf(Type.shape({ /** Тип списка вариантов */ type: Type.oneOf(['item', 'group']), /** Уникальное значение, которое будет отправлено на сервер, если вариант выбран */ value: Type.string, /** Отображение варианта */ description: Type.node, /** Список вариантов, только для type='group' */ content: Type.array })) | `[]`  |  | Список вариантов выбора |
+| disabled | Type.bool | `false`  |  | Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления |
+| opened | Type.bool |  |  | Управление видимостью выпадающего списка |
+| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
+| width | Type.oneOf(['default', 'available']) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
+| onItemSelect | Type.func |  |  | Обработчик выбора пункта в выпадающем меню |
 
 
 
@@ -36,44 +36,7 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 
 
 
-## Типы
 
-
-
-
-### <a id="OptionsType"></a>OptionsType
-
-| Prop  | Тип  | Описание |
-| ----- | ---- |----------|
-| type | [TypeEnum](#TypeEnum) | Тип списка вариантов |
-| value | String | Уникальное значение, которое будет отправлено на сервер, если вариант выбран |
-| description | Node | Отображение варианта |
-| content | Array | Список вариантов, только для type='group' |
-
-
-
-
-
-
-
-### <a id="TypeEnum"></a>TypeEnum
-
- * `'item'`
- * `'group'`
-
-
-### <a id="SizeEnum"></a>SizeEnum
-
- * `'s'`
- * `'m'`
- * `'l'`
- * `'xl'`
-
-
-### <a id="WidthEnum"></a>WidthEnum
-
- * `'default'`
- * `'available'`
 
 
 

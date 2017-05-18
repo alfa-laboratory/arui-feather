@@ -34,9 +34,9 @@ import Heading from 'arui-feather/heading';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Node |  |  | Дочерний элемент `ThemeProvider` |
-| className | Function\|String |  |  | Дополнительный класс |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| children | Type.node |  |  | Дочерний элемент `ThemeProvider` |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-colored', 'alfa-on-white']) |  |  | Тема компонента |
 
 
 
@@ -44,18 +44,7 @@ import Heading from 'arui-feather/heading';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-colored'`
- * `'alfa-on-white'`
 
 
 

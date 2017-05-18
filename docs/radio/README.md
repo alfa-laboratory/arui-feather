@@ -14,24 +14,24 @@ import Radio from 'arui-feather/radio';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| type | [TypeEnum](#TypeEnum) |  |  | Тип |
-| checked | Boolean |  |  | Управление состоянием вкл/выкл компонента |
-| disabled | Boolean |  |  | Управление возможностью изменения состояние 'checked' компонента |
-| id | String |  |  | Уникальный идентификатор блока |
-| name | String |  |  | Уникальное имя блока |
-| value | String |  |  | Значение радио-кнопки, которое будет отправлено на сервер, если она выбрана |
-| text | Node |  |  | Текст подписи к радио-кнопке |
-| width | [WidthEnum](#WidthEnum) |  |  | Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя |
-| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
-| error | Boolean |  |  | Отображение в состоянии ошибки |
-| tabIndex | Number | `0`  |  | Последовательность перехода между контролами при нажатии на Tab |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
-| onChange | Function |  |  | Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента |
-| onFocus | Function |  |  | Обработчик фокуса комнонента |
-| onBlur | Function |  |  | Обработчик снятия фокуса с компонента |
-| onMouseEnter | Function |  |  | Обработчик события наведения курсора на радио-кнопку |
-| onMouseLeave | Function |  |  | Обработчик события снятия курсора с радио-кнопки |
+| type | Type.oneOf(['normal', 'button']) |  |  | Тип |
+| checked | Type.bool |  |  | Управление состоянием вкл/выкл компонента |
+| disabled | Type.bool |  |  | Управление возможностью изменения состояние 'checked' компонента |
+| id | Type.string |  |  | Уникальный идентификатор блока |
+| name | Type.string |  |  | Уникальное имя блока |
+| value | Type.string |  |  | Значение радио-кнопки, которое будет отправлено на сервер, если она выбрана |
+| text | Type.node |  |  | Текст подписи к радио-кнопке |
+| width | Type.oneOf(['default', 'available']) |  |  | Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя |
+| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
+| error | Type.bool |  |  | Отображение в состоянии ошибки |
+| tabIndex | Type.number | `0`  |  | Последовательность перехода между контролами при нажатии на Tab |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| onChange | Type.func |  |  | Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента |
+| onFocus | Type.func |  |  | Обработчик фокуса комнонента |
+| onBlur | Type.func |  |  | Обработчик снятия фокуса с компонента |
+| onMouseEnter | Type.func |  |  | Обработчик события наведения курсора на радио-кнопку |
+| onMouseLeave | Type.func |  |  | Обработчик события снятия курсора с радио-кнопки |
 
 
 
@@ -48,37 +48,7 @@ import Radio from 'arui-feather/radio';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="TypeEnum"></a>TypeEnum
-
- * `'normal'`
- * `'button'`
-
-
-### <a id="WidthEnum"></a>WidthEnum
-
- * `'default'`
- * `'available'`
-
-
-### <a id="SizeEnum"></a>SizeEnum
-
- * `'s'`
- * `'m'`
- * `'l'`
- * `'xl'`
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

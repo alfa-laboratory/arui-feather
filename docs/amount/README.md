@@ -14,12 +14,12 @@ import Amount from 'arui-feather/amount';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| amount | [AmountType](#AmountType) |  | Да |  |
-| showZeroMinorPart | Boolean | `true`  |  | Отображение минорной части, если она нулевая |
-| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
-| isHeading | Boolean | `false`  |  | Использовать компонент `Heading` для вывода числа |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| amount | Type.shape({ /** Абсолютное значение суммы */ value: Type.number, /** Валюта */ currency: Type.shape({ /** Международный код валюты */ code: Type.string, /** Количество минорных единиц валюты */ minority: Type.number }) }).isRequired |  |  |  |
+| showZeroMinorPart | Type.bool | `true`  |  | Отображение минорной части, если она нулевая |
+| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
+| isHeading | Type.bool | `false`  |  | Использовать компонент `Heading` для вывода числа |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -27,44 +27,7 @@ import Amount from 'arui-feather/amount';
 
 
 
-## Типы
 
-
-
-
-### <a id="AmountType"></a>AmountType
-
-| Prop  | Тип  | Описание |
-| ----- | ---- |----------|
-| value | Number | Абсолютное значение суммы |
-| currency | [CurrencyType](#CurrencyType) | Валюта |
-
-
-### <a id="CurrencyType"></a>CurrencyType
-
-| Prop  | Тип  | Описание |
-| ----- | ---- |----------|
-| code | String | Международный код валюты |
-| minority | Number | Количество минорных единиц валюты |
-
-
-
-
-
-
-
-### <a id="SizeEnum"></a>SizeEnum
-
- * `'s'`
- * `'m'`
- * `'l'`
- * `'xl'`
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

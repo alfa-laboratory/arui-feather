@@ -14,27 +14,27 @@ import Calendar from 'arui-feather/calendar';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| value | Number |  |  | Выбранная дата, в формате unix timestamp |
-| selectedFrom | Number | `null`  |  | Левая граница диапазона дат, в формате unix timestamp |
-| selectedTo | Number | `null`  |  | Правая граница диапазона дат, в формате unix timestamp |
-| earlierLimit | Number |  |  | Левая граница дат, возможных для выбора, в формате unix timestamp |
-| laterLimit | Number |  |  | Правая граница дат, возможных для выбора, в формате unix timestamp |
-| month | Number |  |  | Месяц, в формате unix timestamp |
-| onValueChange | Function |  |  | Обработчик смены даты |
-| onMonthChange | Function |  |  | Обработчик смены месяца |
-| outputFormat | String | `'DD.MM.YYYY'`  |  | Тип форматирования даты при выводе |
-| months | Array.<String> | `['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',<br>    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']`  |  | Список названий месяцев |
-| weekdays | Array.<String> | `['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']`  |  | Список названий дней недели |
-| offDays | Array.<Number> | `[]`  |  | Список выходных дней в виде unix timestamp, отсортированный по возрастанию |
-| showArrows | Boolean | `true`  |  | Отображение стрелок навигации по месяцам |
-| isKeyboard | Boolean | `true`  |  | Возможность управления календарём с клавиатуры |
-| error | Node |  |  | Сообщение об ошибке |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
-| onKeyDown | Function |  |  | Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
-| onKeyUp | Function |  |  | Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
-| onFocus | Function |  |  | Обработчик фокуса |
-| onBlur | Function |  |  | Обработчик снятия фокуса |
+| value | Type.number |  |  | Выбранная дата, в формате unix timestamp |
+| selectedFrom | Type.number | `null`  |  | Левая граница диапазона дат, в формате unix timestamp |
+| selectedTo | Type.number | `null`  |  | Правая граница диапазона дат, в формате unix timestamp |
+| earlierLimit | Type.number |  |  | Левая граница дат, возможных для выбора, в формате unix timestamp |
+| laterLimit | Type.number |  |  | Правая граница дат, возможных для выбора, в формате unix timestamp |
+| month | Type.number |  |  | Месяц, в формате unix timestamp |
+| onValueChange | Type.func |  |  | Обработчик смены даты |
+| onMonthChange | Type.func |  |  | Обработчик смены месяца |
+| outputFormat | Type.string | `'DD.MM.YYYY'`  |  | Тип форматирования даты при выводе |
+| months | Type.arrayOf(Type.string) | `['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',<br>    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']`  |  | Список названий месяцев |
+| weekdays | Type.arrayOf(Type.string) | `['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']`  |  | Список названий дней недели |
+| offDays | Type.arrayOf(Type.number) | `[]`  |  | Список выходных дней в виде unix timestamp, отсортированный по возрастанию |
+| showArrows | Type.bool | `true`  |  | Отображение стрелок навигации по месяцам |
+| isKeyboard | Type.bool | `true`  |  | Возможность управления календарём с клавиатуры |
+| error | Type.node |  |  | Сообщение об ошибке |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| onKeyDown | Type.func |  |  | Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
+| onKeyUp | Type.func |  |  | Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |
+| onFocus | Type.func |  |  | Обработчик фокуса |
+| onBlur | Type.func |  |  | Обработчик снятия фокуса |
 
 
 
@@ -51,17 +51,7 @@ import Calendar from 'arui-feather/calendar';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

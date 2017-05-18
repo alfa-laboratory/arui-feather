@@ -14,23 +14,23 @@ import Link from 'arui-feather/link';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| icon | Node |  |  | Иконка ссылки |
-| text | Node |  |  | Текст ссылки |
-| url | String | `'#'`  |  | href ссылки |
-| target | [TargetEnum](#TargetEnum) |  |  | target ссылки |
-| tabIndex | Number | `0`  |  | Последовательность перехода между контролами при нажатии на Tab |
-| disabled | Boolean | `false`  |  | Управление возможностью клика по ссылке |
-| checked | Boolean | `false`  |  | Управление состоянием ссылки выбран/не выбран |
-| pseudo | Boolean | `false`  |  | Псевдо-ссылка (border-bottom: dotted) |
-| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `Link` |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
-| onClick | Function |  |  | Обработчик клика но ссылке |
-| onFocus | Function |  |  | Обработчик фокуса компонента |
-| onBlur | Function |  |  | Обработчик снятия фокуса компонента |
-| onMouseEnter | Function |  |  | Обработчик события наведения курсора на ссылку |
-| onMouseLeave | Function |  |  | Обработчик события снятия курсора с ссылки |
+| icon | Type.node |  |  | Иконка ссылки |
+| text | Type.node |  |  | Текст ссылки |
+| url | Type.string | `'#'`  |  | href ссылки |
+| target | Type.oneOf(['_self', '_blank', '_parent', '_top']) |  |  | target ссылки |
+| tabIndex | Type.number | `0`  |  | Последовательность перехода между контролами при нажатии на Tab |
+| disabled | Type.bool | `false`  |  | Управление возможностью клика по ссылке |
+| checked | Type.bool | `false`  |  | Управление состоянием ссылки выбран/не выбран |
+| pseudo | Type.bool | `false`  |  | Псевдо-ссылка (border-bottom: dotted) |
+| size | Type.oneOf(['xs', 's', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Link` |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| onClick | Type.func |  |  | Обработчик клика но ссылке |
+| onFocus | Type.func |  |  | Обработчик фокуса компонента |
+| onBlur | Type.func |  |  | Обработчик снятия фокуса компонента |
+| onMouseEnter | Type.func |  |  | Обработчик события наведения курсора на ссылку |
+| onMouseLeave | Type.func |  |  | Обработчик события снятия курсора с ссылки |
 
 
 
@@ -47,34 +47,7 @@ import Link from 'arui-feather/link';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="TargetEnum"></a>TargetEnum
-
- * `'_self'`
- * `'_blank'`
- * `'_parent'`
- * `'_top'`
-
-
-### <a id="SizeEnum"></a>SizeEnum
-
- * `'xs'`
- * `'s'`
- * `'m'`
- * `'l'`
- * `'xl'`
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

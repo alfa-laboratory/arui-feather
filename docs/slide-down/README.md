@@ -15,10 +15,10 @@ import SlideDown from 'arui-feather/slide-down';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| isExpanded | Boolean |  |  | Управление состоянием expand/collapse компонента |
-| children | Node |  |  | Контент компонента |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | String\|Function |  |  | Дополнительный класс |
+| isExpanded | Type.bool |  |  | Управление состоянием expand/collapse компонента |
+| children | Type.node |  |  | Контент компонента |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.string, Type.func]) |  |  | Дополнительный класс |
 
 
 
@@ -26,17 +26,7 @@ import SlideDown from 'arui-feather/slide-down';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

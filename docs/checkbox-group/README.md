@@ -14,10 +14,10 @@ import CheckboxGroup from 'arui-feather/checkbox-group';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| type | [TypeEnum](#TypeEnum) |  |  | Тип компонента |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `CheckBoxGroup`, как правило, компоненты `CheckBox` |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| type | Type.oneOf(['normal', 'button', 'line']) |  |  | Тип компонента |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `CheckBoxGroup`, как правило, компоненты `CheckBox` |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -25,24 +25,7 @@ import CheckboxGroup from 'arui-feather/checkbox-group';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="TypeEnum"></a>TypeEnum
-
- * `'normal'`
- * `'button'`
- * `'line'`
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

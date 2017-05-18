@@ -18,10 +18,10 @@ import Mq from 'arui-feather/mq';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| query | String |  |  | Медиа запрос |
-| touch | Boolean |  |  | Запрос на поддержку тач-событий |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `Mq` |
-| onMatchChange | Function |  |  | Обработчик изменений в совпадении запросов |
+| query | Type.string |  |  | Медиа запрос |
+| touch | Type.bool |  |  | Запрос на поддержку тач-событий |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Mq` |
+| onMatchChange | Type.func |  |  | Обработчик изменений в совпадении запросов |
 
 
 

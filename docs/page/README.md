@@ -45,11 +45,11 @@ import Paragraph from 'arui-feather/paragraph';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| header | Node |  |  | Шапка страницы |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `Page` |
-| footer | Node |  |  | Футер страницы |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| header | Type.node |  |  | Шапка страницы |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Page` |
+| footer | Type.node |  |  | Футер страницы |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -57,17 +57,7 @@ import Paragraph from 'arui-feather/paragraph';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

@@ -14,11 +14,11 @@ import Message from 'arui-feather/message';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| type | [TypeEnum](#TypeEnum) | `'text'`  |  | Тип компонента |
-| visible | Boolean |  |  | Управление видимостью компонента |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `Message` |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
+| type | Type.oneOf(['text', 'popup']) | `'text'`  |  | Тип компонента |
+| visible | Type.bool |  |  | Управление видимостью компонента |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Message` |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 
 
 
@@ -26,23 +26,7 @@ import Message from 'arui-feather/message';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="TypeEnum"></a>TypeEnum
-
- * `'text'`
- * `'popup'`
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

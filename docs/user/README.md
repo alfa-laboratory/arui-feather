@@ -14,12 +14,12 @@ import User from 'arui-feather/user';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| className | Function\|String |  |  | Дополнительный класс |
-| icon | Node |  |  | Иконка пользователя |
-| text | String |  |  | Имя пользователя |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| url | String | `'#'`  |  | href ссылки с именем пользователя |
-| onClick | Function |  |  | Обработчик клика по пользователю |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| icon | Type.node |  |  | Иконка пользователя |
+| text | Type.string |  |  | Имя пользователя |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| url | Type.string | `'#'`  |  | href ссылки с именем пользователя |
+| onClick | Type.func |  |  | Обработчик клика по пользователю |
 
 
 
@@ -27,17 +27,7 @@ import User from 'arui-feather/user';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

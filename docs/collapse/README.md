@@ -14,13 +14,13 @@ import Collapse from 'arui-feather/collapse';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| isExpanded | Boolean |  |  | Управление состоянием `expand`/`collapse` компонента |
-| collapsedLabel | String | `'Expand'`  |  | Текст ссылки в `expand` состоянии |
-| expandedLabel | String | `'Collapse'`  |  | Текст ссылки в `collapse` состоянии |
-| children | Array.<Node>\|Node |  |  | Дочерние элементы `Collapse` |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
-| onExpandedChange | Function |  |  | Обработчик смены состояния `expand`/`collapse` |
+| isExpanded | Type.bool |  |  | Управление состоянием `expand`/`collapse` компонента |
+| collapsedLabel | Type.string | `'Expand'`  |  | Текст ссылки в `expand` состоянии |
+| expandedLabel | Type.string | `'Collapse'`  |  | Текст ссылки в `collapse` состоянии |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Collapse` |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| onExpandedChange | Type.func |  |  | Обработчик смены состояния `expand`/`collapse` |
 
 
 
@@ -28,17 +28,7 @@ import Collapse from 'arui-feather/collapse';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

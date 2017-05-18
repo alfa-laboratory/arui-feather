@@ -27,17 +27,17 @@ import Footer from 'arui-feather/footer';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| root | String | `'/'`  |  |  |
-| logo | Node | `null`  |  | Содержимое кастомного логотипа в шапке |
-| menu | Node |  |  | Содержимое меню в шапке |
-| user | Node |  |  | Содержимое блока пользователя |
-| support | Node |  |  | Содержимое блока контактов поддержки |
-| topContent | Node |  |  | Произвольный контент над логотипом и меню |
-| fixed | Boolean | `false`  |  | Управление возможностью фиксирования шапки к верхнему краю окна |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| className | Function\|String |  |  | Дополнительный класс |
-| onResize | Function |  |  | Обработчик события изменение размера шапки |
-| onLogoClick | Function |  |  | Обработчик события клика по логотипу Альфа-Банк |
+| root | Type.string | `'/'`  |  |  |
+| logo | Type.node | `null`  |  | Содержимое кастомного логотипа в шапке |
+| menu | Type.node |  |  | Содержимое меню в шапке |
+| user | Type.node |  |  | Содержимое блока пользователя |
+| support | Type.node |  |  | Содержимое блока контактов поддержки |
+| topContent | Type.node |  |  | Произвольный контент над логотипом и меню |
+| fixed | Type.bool | `false`  |  | Управление возможностью фиксирования шапки к верхнему краю окна |
+| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| onResize | Type.func |  |  | Обработчик события изменение размера шапки |
+| onLogoClick | Type.func |  |  | Обработчик события клика по логотипу Альфа-Банк |
 
 
 
@@ -45,17 +45,7 @@ import Footer from 'arui-feather/footer';
 
 
 
-## Типы
 
-
-
-
-
-
-### <a id="ThemeEnum"></a>ThemeEnum
-
- * `'alfa-on-color'`
- * `'alfa-on-white'`
 
 
 

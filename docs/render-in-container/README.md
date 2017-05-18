@@ -14,10 +14,10 @@ import RenderInContainer from 'arui-feather/render-in-container';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Array.<Node>\|Node |  |  | Дочерние элементы контейнера |
-| className | Function\|String |  |  | Дополнительный класс |
+| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы контейнера |
+| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
 | container | HtmlElement |  |  | Контейнер, в котором будет визуализирован компонент |
-| onRender | Function |  |  | Callback на рендер компонента |
+| onRender | Type.func |  |  | Callback на рендер компонента |
 
 
 

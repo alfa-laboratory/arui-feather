@@ -14,10 +14,10 @@ import List from 'arui-feather/list';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| items | Type.arrayOf(Type.shape({ /** Уникальный ключ элемента */ key: Type.string.isRequired, /** Содержание элемента */ value: Type.node.isRequired })) |  |  | Список элементов |
-| type | Type.oneOf(['default', 'ordered']) |  |  | Тип списка |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
+| items | Array.<[ItemsType](#ItemsType)> |  |  | Список элементов |
+| type | [TypeEnum](#TypeEnum) |  |  | Тип списка |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
 
 
 
@@ -25,7 +25,34 @@ import List from 'arui-feather/list';
 
 
 
+## Типы
 
+
+
+
+### <a id="ItemsType"></a>ItemsType
+
+| Prop  | Тип  | Описание |
+| ----- | ---- |----------|
+| key | String | Уникальный ключ элемента |
+| value | Node | Содержание элемента |
+
+
+
+
+
+
+
+### <a id="TypeEnum"></a>TypeEnum
+
+ * `'default'`
+ * `'ordered'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

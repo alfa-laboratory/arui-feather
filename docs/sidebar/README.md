@@ -14,12 +14,12 @@ import Sidebar from 'arui-feather/sidebar';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние компоненты |
-| hasCloser | Type.bool | `true`  |  | Признак для отрисовки элемента закрытия |
-| visible | Type.bool.isRequired |  |  | Признак появления холодильника |
-| onCloserClick | Type.func |  |  | Обработчик клика на элемент закрытия |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| children | Array.<Node>\|Node |  |  | Дочерние компоненты |
+| hasCloser | Boolean | `true`  |  | Признак для отрисовки элемента закрытия |
+| visible | Boolean |  | Да | Признак появления холодильника |
+| onCloserClick | Function |  |  | Обработчик клика на элемент закрытия |
 
 
 
@@ -27,7 +27,17 @@ import Sidebar from 'arui-feather/sidebar';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

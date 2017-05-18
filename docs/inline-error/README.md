@@ -14,10 +14,10 @@ import InlineError from 'arui-feather/inline-error';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `InlineError` |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `InlineError` |
+| className | Function\|String |  |  | Дополнительный класс |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 
 
 
@@ -25,7 +25,25 @@ import InlineError from 'arui-feather/inline-error';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

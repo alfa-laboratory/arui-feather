@@ -14,18 +14,18 @@ import RadioGroup from 'arui-feather/radio-group';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| type | Type.oneOf(['normal', 'button', 'line']) | `'normal'`  |  | Тип группы кнопок |
-| value | Type.string |  |  | Значение выбранной радио-кнопки |
-| error | Type.node |  |  | Отображение попапа с ошибкой в момент когда фокус находится на компоненте |
-| errorDirections | Type.arrayOf(Type.string) | `['right-center', 'right-top', 'right-bottom', 'bottom-left']`  |  | Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия |
-| width | Type.oneOf(['default', 'available']) |  |  | Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя |
-| name | Type.string |  |  | Уникальное имя блока |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onFocus | Type.func |  |  | Обработчик фокуса радиогруппы |
-| onBlur | Type.func |  |  | Обработчик снятия фокуса с радиогруппы |
-| onChange | Type.func |  |  | Обработчик изменения значения 'checked' одного из дочерних радио-кнопок |
+| type | [TypeEnum](#TypeEnum) | `'normal'`  |  | Тип группы кнопок |
+| value | String |  |  | Значение выбранной радио-кнопки |
+| error | Node |  |  | Отображение попапа с ошибкой в момент когда фокус находится на компоненте |
+| errorDirections | Array.<String> | `['right-center', 'right-top', 'right-bottom', 'bottom-left']`  |  | Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия |
+| width | [WidthEnum](#WidthEnum) |  |  | Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя |
+| name | String |  |  | Уникальное имя блока |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onFocus | Function |  |  | Обработчик фокуса радиогруппы |
+| onBlur | Function |  |  | Обработчик снятия фокуса с радиогруппы |
+| onChange | Function |  |  | Обработчик изменения значения 'checked' одного из дочерних радио-кнопок |
 
 
 
@@ -41,7 +41,30 @@ import RadioGroup from 'arui-feather/radio-group';
 
 
 
+## Типы
 
+
+
+
+
+
+### <a id="TypeEnum"></a>TypeEnum
+
+ * `'normal'`
+ * `'button'`
+ * `'line'`
+
+
+### <a id="WidthEnum"></a>WidthEnum
+
+ * `'default'`
+ * `'available'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

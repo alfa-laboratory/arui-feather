@@ -14,24 +14,24 @@ import Dropdown from 'arui-feather/dropdown';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| switcherType | Type.oneOf(['link', 'button']) | `'link'`  |  | Тип компонента |
-| switcherText | Type.node | `'Switcher'`  |  | Текст кнопки компонента |
-| popupContent | Type.node |  |  | Компонент [Popup](../popup/) |
-| popupProps | Type.shape({ className: Type.oneOfType([Type.func, Type.string]), type: Type.oneOf(['default', 'tooltip']), height: Type.oneOf(['default', 'available', 'adaptive']), directions: Type.arrayOf(Type.oneOf([ 'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top', 'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right' ])), target: Type.oneOf(['anchor', 'position']), mainOffset: Type.number, secondaryOffset: Type.number, fitContaiterOffset: Type.number, invalid: Type.bool, visible: Type.bool, autoclosable: Type.bool, padded: Type.bool, size: Type.oneOf(['s', 'm', 'l', 'xl']), theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']), onMouseEnter: Type.func, onMouseLeave: Type.func, onClickOutside: Type.func, minWidth: Type.number, maxWidth: Type.number }) |  |  | Свойства для компонента [Popup](../popup/) |
-| mode | Type.oneOf(['hover', 'normal']) |  |  | Управление возможностью отображать попап при наведении курсора |
-| disabled | Type.bool | `false`  |  | Управление возможностью открытия попапа |
-| opened | Type.bool |  |  | Управление состоянием открыт/закрыт попапа |
-| togglable | Type.oneOf(['button', 'check']) |  |  | Только для switcherType='button'. Тип переключателя для кнопки, 'check' |
-| size | Type.oneOf(['s', 'm', 'l', 'xl']) | `'m'`  |  | Размер компонента |
-| children | Type.oneOfType([Type.arrayOf(Type.node), Type.node]) |  |  | Дочерние элементы `Dropdown` |
-| theme | Type.oneOf(['alfa-on-color', 'alfa-on-white']) |  |  | Тема компонента |
-| className | Type.oneOfType([Type.func, Type.string]) |  |  | Дополнительный класс |
-| onSwitcherClick | Type.func |  |  | Обработчик клика по кнопке компонента |
-| onSwitcherMouseEnter | Type.func |  |  | Обработчик события наведения курсора на кнопку компонента |
-| onSwitcherMouseLeave | Type.func |  |  | Обработчик события снятия курсора с кнопки компонента |
-| onPopupMouseEnter | Type.func |  |  | Обработчик события наведения курсора на попап |
-| onPopupMouseLeave | Type.func |  |  | Обработчик события снятия курсора с попапа |
-| onPopupClickOutside | Type.func |  |  | Обработчик события клика попапа за пределами попапа |
+| switcherType | [SwitcherTypeEnum](#SwitcherTypeEnum) | `'link'`  |  | Тип компонента |
+| switcherText | Node | `'Switcher'`  |  | Текст кнопки компонента |
+| popupContent | Node |  |  | Компонент [Popup](../popup/) |
+| popupProps | [PopupPropsType](#PopupPropsType) |  |  | Свойства для компонента [Popup](../popup/) |
+| mode | [ModeEnum](#ModeEnum) |  |  | Управление возможностью отображать попап при наведении курсора |
+| disabled | Boolean | `false`  |  | Управление возможностью открытия попапа |
+| opened | Boolean |  |  | Управление состоянием открыт/закрыт попапа |
+| togglable | [TogglableEnum](#TogglableEnum) |  |  | Только для switcherType='button'. Тип переключателя для кнопки, 'check' |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| children | Array.<Node>\|Node |  |  | Дочерние элементы `Dropdown` |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| className | Function\|String |  |  | Дополнительный класс |
+| onSwitcherClick | Function |  |  | Обработчик клика по кнопке компонента |
+| onSwitcherMouseEnter | Function |  |  | Обработчик события наведения курсора на кнопку компонента |
+| onSwitcherMouseLeave | Function |  |  | Обработчик события снятия курсора с кнопки компонента |
+| onPopupMouseEnter | Function |  |  | Обработчик события наведения курсора на попап |
+| onPopupMouseLeave | Function |  |  | Обработчик события снятия курсора с попапа |
+| onPopupClickOutside | Function |  |  | Обработчик события клика попапа за пределами попапа |
 
 
 
@@ -39,7 +39,121 @@ import Dropdown from 'arui-feather/dropdown';
 
 
 
+## Типы
 
+
+
+
+### <a id="PopupPropsType"></a>PopupPropsType
+
+| Prop  | Тип  | Описание |
+| ----- | ---- |----------|
+| className | Function\|String |  |
+| type | [TypeEnum](#TypeEnum) |  |
+| height | [HeightEnum](#HeightEnum) |  |
+| directions | Array.<[DirectionsEnum](#DirectionsEnum)> |  |
+| target | [TargetEnum](#TargetEnum) |  |
+| mainOffset | Number |  |
+| secondaryOffset | Number |  |
+| fitContaiterOffset | Number |  |
+| invalid | Boolean |  |
+| visible | Boolean |  |
+| autoclosable | Boolean |  |
+| padded | Boolean |  |
+| size | [SizeEnum](#SizeEnum) |  |
+| theme | [ThemeEnum](#ThemeEnum) |  |
+| onMouseEnter | Function |  |
+| onMouseLeave | Function |  |
+| onClickOutside | Function |  |
+| minWidth | Number |  |
+| maxWidth | Number |  |
+
+
+
+
+
+
+
+### <a id="SwitcherTypeEnum"></a>SwitcherTypeEnum
+
+ * `'link'`
+ * `'button'`
+
+
+### <a id="TypeEnum"></a>TypeEnum
+
+ * `'default'`
+ * `'tooltip'`
+
+
+### <a id="HeightEnum"></a>HeightEnum
+
+ * `'default'`
+ * `'available'`
+ * `'adaptive'`
+
+
+### <a id="DirectionsEnum"></a>DirectionsEnum
+
+ * `'anchor'`
+ * `'top-left'`
+ * `'top-center'`
+ * `'top-right'`
+ * `'left-top'`
+ * `'left-center'`
+ * `'left-bottom'`
+ * `'right-top'`
+ * `'right-center'`
+ * `'right-bottom'`
+ * `'bottom-left'`
+ * `'bottom-center'`
+ * `'bottom-right'`
+
+
+### <a id="TargetEnum"></a>TargetEnum
+
+ * `'anchor'`
+ * `'position'`
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
+
+
+### <a id="ModeEnum"></a>ModeEnum
+
+ * `'hover'`
+ * `'normal'`
+
+
+### <a id="TogglableEnum"></a>TogglableEnum
+
+ * `'button'`
+ * `'check'`
+
+
+### <a id="SizeEnum"></a>SizeEnum
+
+ * `'s'`
+ * `'m'`
+ * `'l'`
+ * `'xl'`
+
+
+### <a id="ThemeEnum"></a>ThemeEnum
+
+ * `'alfa-on-color'`
+ * `'alfa-on-white'`
 
 
 

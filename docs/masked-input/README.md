@@ -15,10 +15,10 @@ import MaskedInput from 'arui-feather/masked-input';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| mask | Type.string.isRequired |  |  | Маска для поля ввода, использует формат https://github.com/insin/inputmask-core |
-| formatCharacters | Type.objectOf( Type.shape({ validate: Type.func.isRequired, transform: Type.func }) ) |  |  | Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` |
-| maxLength | Type.number |  |  | Максимальное число символов |
-| onProcessInputEvent | Type.func |  |  | Обработчик, вызываемый перед началом ввода в поле |
+| mask | String |  | Да | Маска для поля ввода, использует формат https://github.com/insin/inputmask-core |
+| formatCharacters | objectOf |  |  | Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` |
+| maxLength | Number |  |  | Максимальное число символов |
+| onProcessInputEvent | Function |  |  | Обработчик, вызываемый перед началом ввода в поле |
 
 
 

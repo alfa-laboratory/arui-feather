@@ -19,7 +19,7 @@ import ResizeSensor from 'arui-feather/resize-sensor';
 
 | Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| onResize | Type.func |  |  | Callback на изменение размера родителя |
+| onResize | Function |  |  | Callback на изменение размера родителя |
 
 
 

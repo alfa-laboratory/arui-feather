@@ -21,6 +21,7 @@ export default function (props) {
         slugger.reset();
         const sections = setSlugs(getPlayground(processSections(styleguide.sections))); // подменяем секции для отображения
         /* eslint react/prop-types: 0 */
+        // Показываем код сразу
         const config = { ...props.config, showCode: true };
         return (
             <StyleGuide { ...props } config={ config } sections={ sections } isolatedComponent={ true } />

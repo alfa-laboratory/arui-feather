@@ -14,33 +14,6 @@ import './radio-group.css';
 
 /**
  * Компонент группы радио-кнопок.
- *
- * @example
- * ```
- * import 'Radio' from 'arui-feather/radio';
- * import 'RadioGroup' from 'arui-feather/radio-group';
- *
- * // Вертикальная группа радио кнопок
- * <RadioGroup>
- *    <Radio text="Кнопка раз" />
- *    <Radio text="Кнопка два" />
- *    <Radio text="Кнопка три" />
- * </RadioGroup>
- *
- * // Горизонтальная группа радио кнопок, состоящая из обычных кнопок
- * <RadioGroup type="button">
- *    <Radio type="button" text="Кнопка раз" />
- *    <Radio type="button" text="Кнопка два" />
- *    <Radio type="button" text="Кнопка три" />
- * </RadioGroup>
- *
- * // Горизонтальная группа радио кнопок
- * <RadioGroup type="line">
- *    <Radio text="Кнопка раз" />
- *    <Radio text="Кнопка два" />
- *    <Radio text="Кнопка три" />
- * </RadioGroup>
- * ```
  */
 @cn('radio-group')
 @performance()

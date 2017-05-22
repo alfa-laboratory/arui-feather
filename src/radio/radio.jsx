@@ -151,7 +151,7 @@ class Radio extends React.Component {
                     width={ this.props.width }
                     focused={ this.state.focused }
                     hovered={ this.state.hovered }
-                    tabIndex={ this.props.tabIndex }
+                    tabIndex={ -1 }
                     view={ checked ? 'action' : undefined }
                     onClick={ this.handleChange }
                 >
@@ -168,7 +168,7 @@ class Radio extends React.Component {
                     id={ this.props.id }
                     value={ this.props.value }
                     autoComplete='off'
-                    tabIndex='-1'
+                    tabIndex={ -1 }
                     type='radio'
                     className={ cn('control') }
                     onChange={ this.handleChange }

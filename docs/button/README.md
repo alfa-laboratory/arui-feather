@@ -24,6 +24,7 @@ import Button from 'arui-feather/button';
 | width | [WidthEnum](#WidthEnum) |  |  | Управление шириной кнопки. При значении 'available' растягивает кнопку на ширину родителя |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | disabled | Boolean |  |  | Управление возможности взаимодействия с компонентом |
+| focused | Boolean |  |  | Отображение кнопки в состоянии фокуса |
 | pseudo | Boolean |  |  | Псевдо представление кнопки |
 | id | String |  |  | Идентификатор компонента в DOM |
 | name | String |  |  | Имя компонента в DOM |

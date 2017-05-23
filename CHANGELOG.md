@@ -1,3 +1,25 @@
+<a name="4.4.0"></a>
+# 4.4.0 (2017-05-23)
+
+
+### Bug Fixes
+
+* fix sidebar viewport for android ([#37](https://github.com/alfa-laboratory/arui-feather/issues/37)) ([c2d884e](https://github.com/alfa-laboratory/arui-feather/commit/c2d884e))
+* **package.json:** add babel-runtime dependency ([c4472bc](https://github.com/alfa-laboratory/arui-feather/commit/c4472bc))
+* **playground:** fix url of playground ([#31](https://github.com/alfa-laboratory/arui-feather/issues/31)) ([5608be5](https://github.com/alfa-laboratory/arui-feather/commit/5608be5))
+* **popup:** replace deprecated debounce decorator ([#30](https://github.com/alfa-laboratory/arui-feather/issues/30)) ([5e1d640](https://github.com/alfa-laboratory/arui-feather/commit/5e1d640))
+
+
+### Features
+
+* add styleguide for input and for calendarInput ([#34](https://github.com/alfa-laboratory/arui-feather/issues/34)) ([44756f4](https://github.com/alfa-laboratory/arui-feather/commit/44756f4))
+* change react-textarea-autosize version ([#29](https://github.com/alfa-laboratory/arui-feather/issues/29)) ([07c8360](https://github.com/alfa-laboratory/arui-feather/commit/07c8360))
+* fix fonts for styleguide ([#33](https://github.com/alfa-laboratory/arui-feather/issues/33)) ([7067f46](https://github.com/alfa-laboratory/arui-feather/commit/7067f46))
+* **playground:** add share example functionality ([#23](https://github.com/alfa-laboratory/arui-feather/issues/23)) ([49cc2ed](https://github.com/alfa-laboratory/arui-feather/commit/49cc2ed))
+* **slide-down:** add component ([#27](https://github.com/alfa-laboratory/arui-feather/issues/27)) ([2e5d959](https://github.com/alfa-laboratory/arui-feather/commit/2e5d959))
+
+
+
 <a name="4.3.0"></a>
 # 4.3.0 (2017-05-11)
 

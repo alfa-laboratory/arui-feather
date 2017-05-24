@@ -61,6 +61,7 @@ function splitInteger(str) {
 @performance()
 class MoneyInput extends React.Component {
     static propTypes = {
+        ...Input.propTypes,
         /** Максимально допустимая длина значения до запятой */
         integerLength: Type.number,
         /** Максимально допустимая длина значения после запятой */

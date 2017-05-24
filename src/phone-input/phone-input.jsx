@@ -19,6 +19,7 @@ import performance from '../performance';
 @performance()
 class PhoneInput extends React.Component {
     static propTypes = {
+        ...Input.propTypes,
         /** Подсказка в текстовом поле */
         placeholder: Type.string
     };

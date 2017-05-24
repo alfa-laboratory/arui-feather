@@ -15,29 +15,27 @@ class Demo extends React.Component {
             <div className={ cn }>
                 <DemoSection theme='alfa-on-color'>
                     <ThemeProvider theme='alfa-on-white'>
-                        <div>
-                            <div>
-                                <span className={ cn('layout') }>
-                                    <Input
-                                        size='m'
-                                        placeholder='Input...'
-                                        rightAddons={ this.renderAddons() }
-                                        leftAddons={ this.renderAddons() }
-                                    />
-                                </span>
-                            </div>
-                            <div>
-                                <span className={ cn('layout') }>
-                                    <Input
-                                        size='m'
-                                        placeholder='Input with width available...'
-                                        rightAddons={ this.renderAddons() }
-                                        leftAddons={ this.renderAddons() }
-                                        width='available'
-                                    />
-                                </span>
-                            </div>
-                        </div>
+                        <span className={ cn('layout') }>
+                            <Input
+                                size='m'
+                                placeholder='Input...'
+                                rightAddons={ this.renderAddons() }
+                                leftAddons={ this.renderAddons() }
+                            />
+                        </span>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-color'>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <span className={ cn('layout') }>
+                            <Input
+                                size='m'
+                                placeholder='Input with width available...'
+                                rightAddons={ this.renderAddons() }
+                                leftAddons={ this.renderAddons() }
+                                width='available'
+                            />
+                        </span>
                     </ThemeProvider>
                 </DemoSection>
                 <DemoSection theme='alfa-on-color'>
@@ -70,29 +68,27 @@ class Demo extends React.Component {
                 </DemoSection>
                 <DemoSection theme='alfa-on-white'>
                     <ThemeProvider theme='alfa-on-color'>
-                        <div>
-                            <div>
-                                <span className={ cn('layout') }>
-                                    <Input
-                                        size='m'
-                                        placeholder='Input...'
-                                        rightAddons={ this.renderAddons() }
-                                        leftAddons={ this.renderAddons() }
-                                    />
-                                </span>
-                            </div>
-                            <div>
-                                <span className={ cn('layout') }>
-                                    <Input
-                                        size='m'
-                                        placeholder='Input with width available...'
-                                        rightAddons={ this.renderAddons() }
-                                        leftAddons={ this.renderAddons() }
-                                        width='available'
-                                    />
-                                </span>
-                            </div>
-                        </div>
+                        <span className={ cn('layout') }>
+                            <Input
+                                size='m'
+                                placeholder='Input...'
+                                rightAddons={ this.renderAddons() }
+                                leftAddons={ this.renderAddons() }
+                            />
+                        </span>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-white'>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <span className={ cn('layout') }>
+                            <Input
+                                size='m'
+                                placeholder='Input with width available...'
+                                rightAddons={ this.renderAddons() }
+                                leftAddons={ this.renderAddons() }
+                                width='available'
+                            />
+                        </span>
                     </ThemeProvider>
                 </DemoSection>
                 <DemoSection theme='alfa-on-white'>
@@ -134,7 +130,6 @@ class Demo extends React.Component {
                 size='m'
                 type={ 'button' }
                 text={ item }
-                error={ true }
             />
         ));
 

@@ -136,9 +136,7 @@
 .control-group {
     .button {
         position: relative;
-
         border-radius: 0;
-        border-right-color: transparent;
     }
 
     > .button:first-of-type,
@@ -163,7 +161,6 @@
 
         .button {
             margin-right: -1px;
-            border-right-color: transparent;
         }
 
         .button__text {
@@ -183,10 +180,14 @@
         }
     }
 
-    &.radio-group_theme_alfa-on-white,
-    &.radio-group_theme_alfa-on-color {
-        & .button {
-            margin: 0;
+    &:not(&_invalid) {
+        .checkbox-group_theme_alfa-on-color,
+        .checkbox-group_theme_alfa-on-white,
+        .radio-group_theme_alfa-on-color,
+        .radio-group_theme_alfa-on-white {
+            .button {
+                border-right-color: transparent;
+            }
         }
     }
 }

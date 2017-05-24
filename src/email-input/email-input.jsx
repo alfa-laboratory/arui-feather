@@ -16,6 +16,9 @@ import performance from '../performance';
 @cn('email-input', Input)
 @performance()
 class EmailInput extends React.Component {
+    static propTypes = {
+        ...Input.propTypes
+    };
     /**
      * @type {Input}
      */

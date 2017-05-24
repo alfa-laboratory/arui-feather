@@ -55,6 +55,19 @@ class Demo extends React.Component {
                     <ThemeProvider theme='alfa-on-white'>
                         <div>
                             <span className={ cn('layout') }>
+                                <Input
+                                    size='m'
+                                    placeholder='Input...'
+                                    hint='Hint for the field'
+                                />
+                            </span>
+                        </div>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-color'>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <div>
+                            <span className={ cn('layout') }>
                                 <Input placeholder='Input...' />
                             </span>
                             <span className={ cn('layout') }>
@@ -99,6 +112,19 @@ class Demo extends React.Component {
                                     size='m'
                                     placeholder='Input...'
                                     error='Something went wrong'
+                                />
+                            </span>
+                        </div>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-white'>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <div>
+                            <span className={ cn('layout') }>
+                                <Input
+                                    size='m'
+                                    placeholder='Input...'
+                                    hint='Hint for the field'
                                 />
                             </span>
                         </div>

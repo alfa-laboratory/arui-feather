@@ -124,20 +124,22 @@ class Textarea extends React.Component {
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
-                {
-                    !this.props.autosize
-                    ? <textarea { ...textareaProps } />
-                    : <TextareaAutosize
-                        { ...textareaProps }
-                        onHeightChange={ this.handleHeightChange }
-                    />
-                }
-                {
-                    (this.props.error || this.props.hint) &&
-                    <span className={ cn('sub') }>
-                        { this.props.error || this.props.hint }
-                    </span>
-                }
+                <span className={ cn('inner') }>
+                    {
+                        !this.props.autosize
+                        ? <textarea { ...textareaProps } />
+                        : <TextareaAutosize
+                            { ...textareaProps }
+                            onHeightChange={ this.handleHeightChange }
+                        />
+                    }
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
+                </span>
             </span>
         );
     }

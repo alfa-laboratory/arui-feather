@@ -378,7 +378,7 @@ class Input extends React.Component {
      * @public
      * @returns {HTMLSpanElement}
      */
-    getBox() {
+    getBoxNode() {
         return this.box;
     }
 

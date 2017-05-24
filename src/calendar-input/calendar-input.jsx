@@ -208,7 +208,7 @@ class CalendarInput extends React.Component {
             if (this.nativeCalendarTarget) {
                 element = this.nativeCalendarTarget;
             } else if (this.customCalendarTarget) {
-                element = this.customCalendarTarget.getBox();
+                element = this.customCalendarTarget.getBoxNode();
             }
 
             if (element) {

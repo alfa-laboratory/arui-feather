@@ -7,8 +7,6 @@ import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
 
-import ResizeSensor from '../resize-sensor/resize-sensor';
-
 import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
@@ -79,7 +77,6 @@ class Textarea extends React.Component {
 
     state = {
         focused: false,
-        subWidth: '100%',
         value: ''
     };
 
@@ -92,14 +89,6 @@ class Textarea extends React.Component {
      * @type {HTMLTextareaElement}
      */
     control;
-
-    componentDidMount() {
-        this.updateSubWidth();
-    }
-
-    componentDidUpdate() {
-        this.updateSubWidth();
-    }
 
     render(cn) {
         let value = this.props.value !== undefined
@@ -145,11 +134,7 @@ class Textarea extends React.Component {
                 }
                 {
                     (this.props.error || this.props.hint) &&
-                    <span
-                        className={ cn('sub') }
-                        style={ { maxWidth: this.state.subWidth } }
-                    >
-                        <ResizeSensor onResize={ this.updateSubWidth } />
+                    <span className={ cn('sub') }>
                         { this.props.error || this.props.hint }
                     </span>
                 }
@@ -230,18 +215,6 @@ class Textarea extends React.Component {
         scrollTo({
             targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
         });
-    }
-
-    /**
-     * Задает максимальную ширину для sub элемента.
-     */
-    @autobind
-    updateSubWidth() {
-        if (this.control && this.props.width !== 'available') {
-            this.setState({
-                subWidth: `${this.control.offsetWidth}px`
-            });
-        }
     }
 }
 

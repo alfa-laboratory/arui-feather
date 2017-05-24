@@ -7,7 +7,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import MaskedInput from '../masked-input/masked-input';
-import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -123,7 +122,6 @@ class Input extends React.Component {
 
     state = {
         focused: false,
-        subWidth: '100%',
         value: ''
     };
 
@@ -141,14 +139,6 @@ class Input extends React.Component {
      * @type {HTMLInputElement}
      */
     control;
-
-    componentDidMount() {
-        this.updateSubWidth();
-    }
-
-    componentDidUpdate() {
-        this.updateSubWidth();
-    }
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
@@ -175,17 +165,15 @@ class Input extends React.Component {
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
-                { content }
-                {
-                    (this.props.error || this.props.hint) &&
-                    <span
-                        className={ cn('sub') }
-                        style={ { maxWidth: this.state.subWidth } }
-                    >
-                        <ResizeSensor onResize={ this.updateSubWidth } />
-                        { this.props.error || this.props.hint }
-                    </span>
-                }
+                <span className={ cn('inner') }>
+                    { content }
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
+                </span>
             </span>
         );
     }
@@ -472,18 +460,6 @@ class Input extends React.Component {
         let length = mask !== undefined ? mask.length : maxLength || 1;
 
         return Math.floor(length * INPUT_SIZE_CORRECTION_RATIO);
-    }
-
-    /**
-     * Задает максимальную ширину для sub элемента.
-     */
-    @autobind
-    updateSubWidth() {
-        if (this.control && this.props.width !== 'available') {
-            this.setState({
-                subWidth: `${this.control.offsetWidth}px`
-            });
-        }
     }
 }
 

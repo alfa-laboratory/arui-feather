@@ -143,7 +143,6 @@ class Select extends React.Component {
         nativeFocused: false,
         opened: !!this.props.opened,
         popupStyles: {},
-        subWidth: '100%',
         value: this.props.value || []
     };
 
@@ -176,7 +175,6 @@ class Select extends React.Component {
     componentDidMount() {
         this.popup.setTarget(this.button.getNode());
         this.updatePopupStyles();
-        this.updateSubWidth();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -187,10 +185,6 @@ class Select extends React.Component {
         this.setState({
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
         });
-    }
-
-    componentDidUpdate() {
-        this.updateSubWidth();
     }
 
     render(cn, Popup) {
@@ -209,25 +203,23 @@ class Select extends React.Component {
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
-                <input
-                    type='hidden'
-                    name={ this.props.name }
-                    id={ this.props.id }
-                    value={ value }
-                />
-                { this.renderButton(cn) }
-                { this.renderNativeSelect(cn) }
-                {
-                    (this.props.error || this.props.hint) &&
-                    <span
-                        className={ cn('sub') }
-                        style={ { maxWidth: this.state.subWidth } }
-                    >
-                        <ResizeSensor onResize={ this.updateSubWidth } />
-                        { this.props.error || this.props.hint }
-                    </span>
-                }
-                { this.renderPopup(cn, Popup) }
+                <span className={ cn('inner') }>
+                    <input
+                        type='hidden'
+                        name={ this.props.name }
+                        id={ this.props.id }
+                        value={ value }
+                    />
+                    { this.renderButton(cn) }
+                    { this.renderNativeSelect(cn) }
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
+                    { this.renderPopup(cn, Popup) }
+                </span>
             </div>
         );
     }
@@ -769,18 +761,6 @@ class Select extends React.Component {
      */
     getFocused() {
         return this.getOpened() || this.state.buttonFocused || this.state.nativeFocused;
-    }
-
-    /**
-     * Задает максимальную ширину для sub элемента.
-     */
-    @autobind
-    updateSubWidth() {
-        if (this.button && this.props.width !== 'available') {
-            this.setState({
-                subWidth: `${this.button.getNode().offsetWidth}px`
-            });
-        }
     }
 }
 

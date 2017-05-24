@@ -20,17 +20,16 @@
         color: var(--color-content-minor-alfa-on-color);
     }
 
-    &.textarea_hovered,
     &.textarea_focused {
         .textarea__control {
-            border-color: rgba(255, 255, 255, .9);
+            border-color: var(--color-border-control-focused-alfa-on-color);
         }
     }
 
     &.textarea_focused {
         .textarea__control {
             background-color: var(--color-background-control-focused-alfa-on-color);
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+            box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
         }
     }
 

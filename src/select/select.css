@@ -13,10 +13,14 @@
     font-family: var(--font);
     font-weight: var(--font-weight);
 
+    &__inner {
+        display: table;
+    }
+
     &__sub {
         box-sizing: border-box;
-        display: block;
-        max-width: 100%;
+        display: table-caption;
+        caption-side: bottom;
         padding-top: 5px;
         padding-right: 12px;
         white-space: normal;
@@ -36,6 +40,11 @@
         .select_size_xl & {
             font-size: var(--font-size-l);
         }
+    }
+
+    &__button,
+    &_native {
+        display: table-cell;
     }
 
     &__button {

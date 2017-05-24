@@ -41,17 +41,11 @@
         }
     }
 
-    &.input_hovered {
-        .input__box {
-            border-color: var(--color-content-alfa-on-color);
-        }
-    }
-
     &.input_focused {
         .input__box {
             background-color: var(--color-background-control-focused-alfa-on-color);
-            border-color: var(--color-content-alfa-on-color);
-            box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
+            border-color: var(--color-border-control-focused-alfa-on-color);
+            box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
         }
     }
 
@@ -84,12 +78,11 @@
 
 .control-group {
     .input_theme_alfa-on-color {
-        &.input_hovered,
         &.input_focused {
             .input__box {
-                border-top-color: var(--color-content-alfa-on-color);
-                border-right-color: var(--color-content-alfa-on-color);
-                border-bottom-color: var(--color-content-alfa-on-color);
+                border-top-color: var(--color-border-control-focused-alfa-on-color);
+                border-right-color: var(--color-border-control-focused-alfa-on-color);
+                border-bottom-color: var(--color-border-control-focused-alfa-on-color);
             }
         }
     }
@@ -111,7 +104,7 @@
             }
 
             &.input_focused:not(.input_invalid) .input__box {
-                box-shadow: 0 0 0 1px var(--color-content-alfa-on-color), 1px 0 0 1px var(--color-content-alfa-on-color);
+                box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color), 1px 0 0 1px var(--color-border-control-focused-alfa-on-color);
             }
         }
     }
@@ -119,7 +112,7 @@
     .input-group__input-case_invalid + * {
         .input_theme_alfa-on-color {
             &.input_focused:not(.input_invalid) .input__box {
-                box-shadow: -1px 0 0 1px var(--color-content-alfa-on-color), 1px 0 0 1px var(--color-content-alfa-on-color);
+                box-shadow: -1px 0 0 1px var(--color-border-control-focused-alfa-on-color), 1px 0 0 1px var(--color-border-control-focused-alfa-on-color);
             }
         }
     }
@@ -131,7 +124,7 @@
             }
 
             &.input_focused .input__box {
-                border-right-color: var(--color-content-alfa-on-color);
+                border-right-color: var(--color-border-control-focused-alfa-on-color);
             }
         }
     }

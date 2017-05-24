@@ -376,7 +376,7 @@ class Input extends React.Component {
      * Возвращает ссылку на инстанс контейнера для контрола.
      *
      * @public
-     * @returns {React.Component}
+     * @returns {HTMLSpanElement}
      */
     getBox() {
         return this.box;
@@ -387,7 +387,7 @@ class Input extends React.Component {
      * Для полей ввода с маской ссылку на объект `MaskedInput`.
      *
      * @public
-     * @returns {React.Component}
+     * @returns {HTMLInputElement|MaskedInput}
      */
     getControl() {
         return this.control;

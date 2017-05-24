@@ -181,7 +181,7 @@
                 border-color: var(--color-content-alfa-on-white);
             }
         }
-      
+
         .button_checked {
             background-color: rgba(0, 0, 0, .15);
             border-color: transparent;

@@ -100,6 +100,15 @@ class Button extends React.Component {
      */
     control;
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.disabled) {
+            this.setState({
+                hovered: false,
+                focused: false
+            });
+        }
+    }
+
     render(cn) {
         let buttonElement = this.props.tag === 'span' ? 'span' : 'button';
 

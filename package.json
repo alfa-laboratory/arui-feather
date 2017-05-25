@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "4.3.0",
+  "version": "4.5.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -37,12 +37,25 @@
   },
   "lint-staged": {
     "concurrent": false,
-    "./*.js": ["eslint"],
-    "demo/**/*.{js,jsx}": ["eslint"],
-    "gemini/**/*.{js,jsx}": ["eslint"],
-    "arui-demo/components/**/*.{js,jsx}": ["eslint"],
-    "*.css": ["lint-css"],
-    "src/**/*.{js,jsx}": ["eslint", "test"]
+    "./*.js": [
+      "eslint"
+    ],
+    "demo/**/*.{js,jsx}": [
+      "eslint"
+    ],
+    "gemini/**/*.{js,jsx}": [
+      "eslint"
+    ],
+    "arui-demo/components/**/*.{js,jsx}": [
+      "eslint"
+    ],
+    "*.css": [
+      "lint-css"
+    ],
+    "src/**/*.{js,jsx}": [
+      "eslint",
+      "test"
+    ]
   },
   "maintainers": [
     {
@@ -68,6 +81,7 @@
     "array-from": "^2.1.1",
     "array.prototype.fill": "^1.0.1",
     "array.prototype.find": "^2.0.4",
+    "babel-runtime": "^6.23.0",
     "bezier-easing": "^2.0.3",
     "cn-decorator": "^1.0.4",
     "core-decorators": "^0.18.0",
@@ -133,7 +147,7 @@
     "phantomjs-prebuilt": "^2.1.12",
     "react-docgen": "^2.15.0",
     "react-hot-loader": "3.0.0-beta.1",
-    "react-styleguidist": "5.0.6",
+    "react-styleguidist": "^5.2.1",
     "redbox-react": "^1.3.5",
     "rimraf": "^2.5.2",
     "stylelint": "^7.10.1",

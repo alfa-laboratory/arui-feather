@@ -1,3 +1,19 @@
+<a name="4.5.0"></a>
+# 4.5.0 (2017-05-25)
+
+
+### Bug Fixes
+
+* fix prop types for composite components ([#40](https://github.com/alfa-laboratory/arui-feather/issues/40)) ([8dace92](https://github.com/alfa-laboratory/arui-feather/commit/8dace92))
+
+
+### Features
+
+* add defaultValue prop for textarea ([#39](https://github.com/alfa-laboratory/arui-feather/issues/39)) ([8aab55d](https://github.com/alfa-laboratory/arui-feather/commit/8aab55d))
+* docs for composed components ([#41](https://github.com/alfa-laboratory/arui-feather/issues/41)) ([318fcd4](https://github.com/alfa-laboratory/arui-feather/commit/318fcd4))
+
+
+
 <a name="4.4.0"></a>
 # 4.4.0 (2017-05-23)
 

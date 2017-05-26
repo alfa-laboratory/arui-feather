@@ -671,7 +671,7 @@ class Select extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.button.getNode().getBoundingClientRect();
+        let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION

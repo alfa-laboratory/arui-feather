@@ -61,8 +61,8 @@ describe('input-autocomplete', () => {
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {
-        let { inputAutocomplete } = renderInputAutocomplete();
-        let elemTopPosition = inputAutocomplete.node.getBoundingClientRect().top;
+        let { inputAutocomplete, inputNode } = renderInputAutocomplete();
+        let elemTopPosition = inputNode.getBoundingClientRect().top;
         let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         inputAutocomplete.instance.scrollTo();

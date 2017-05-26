@@ -21,6 +21,7 @@ import Attach from 'arui-feather/attach';
 | noFileText | String | `'Нет файла'`  |  | Текст для случая, когда файл не загружен |
 | buttonContent | Node | `'Выберите файл'`  |  | Содержимое кнопки для выбора файла |
 | buttonProps | [ButtonPropsType](#ButtonPropsType) | `{}`  |  | Свойства для кнопки |
+| accept | String |  |  | Доступные для выбора MIME типы файлов |
 | disabled | Boolean | `false`  |  | Управление возможностью изменения значения компонента |
 | multiple | Boolean | `false`  |  | Управляет возможностью выбора нескольких файлов |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |

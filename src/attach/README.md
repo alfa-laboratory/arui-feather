@@ -43,7 +43,6 @@
 
 
 ```
-
 function handleChange(value) {
    setState({value});
 }
@@ -53,6 +52,26 @@ function handleChange(value) {
         <Attach
             size='s'
             buttonContent={ state.value ? 'Choose another file' : 'Choose a file' }
+            onChange={ handleChange }
+            value={ state.value }
+        />
+    </div>
+</div>
+```
+
+### accept mime-type
+
+```
+function handleChange(value) {
+   setState({value});
+}
+
+<div>
+    <div className='layout'>
+        <Attach
+            accept='text/plain'
+            size='s'
+            buttonContent={ state.value ? 'Choose another text file' : 'Choose a text file' }
             onChange={ handleChange }
             value={ state.value }
         />

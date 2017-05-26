@@ -1,4 +1,4 @@
-import CalendarInput from '../src/calendar-input/calendar-input';
+import CalendarInput from '../src/calendar-input';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const DATE = '28.09.2016';

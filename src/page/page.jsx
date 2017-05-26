@@ -8,8 +8,6 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 
-import './page.css';
-
 const SMALL_HEADER_HEIGHT = 80;
 const PADDING_FROM_HEADER = 15;
 

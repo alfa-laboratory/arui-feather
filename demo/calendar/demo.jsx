@@ -3,9 +3,9 @@ import addDays from 'date-fns/add_days';
 import startOfDay from 'date-fns/start_of_day';
 import subtractDays from 'date-fns/sub_days';
 
-import Calendar from '../../src/calendar/calendar';
+import Calendar from '../../src/calendar';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

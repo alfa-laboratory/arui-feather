@@ -1,7 +1,7 @@
 import React from 'react';
-import Checkbox from '../../src/checkbox/checkbox';
+import Checkbox from '../../src/checkbox';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

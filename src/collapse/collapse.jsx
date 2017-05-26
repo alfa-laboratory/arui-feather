@@ -12,8 +12,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 import cn from '../cn';
 import performance from '../performance';
 
-import './collapse.css';
-
 /**
  * Компонент "подката": позволяет спрятать кусок текста за ссылку "Еще...".
  */

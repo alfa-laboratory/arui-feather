@@ -8,8 +8,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './highlight.css';
-
 /**
  * Компонент подсветки текста. Используйте его, чтобы выделить текст на странице.
  * Текст необходимо передать в виде дочерних компонентов.

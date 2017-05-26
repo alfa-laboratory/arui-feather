@@ -14,10 +14,6 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-import './textarea.css';
-import './textarea_theme_alfa-on-color.css';
-import './textarea_theme_alfa-on-white.css';
-
 /**
  * Компонент многострочного текстового ввода.
  */

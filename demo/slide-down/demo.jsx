@@ -1,11 +1,11 @@
 import React from 'react';
 import { autobind } from 'core-decorators';
 
-import Button from '../../src/button/button';
-import Paragraph from '../../src/paragraph/paragraph';
+import Button from '../../src/button';
+import Paragraph from '../../src/paragraph';
 import DemoSection from '../demo-section';
-import SlideDown from '../../src/slide-down/slide-down';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import SlideDown from '../../src/slide-down';
+import ThemeProvider from '../../src/theme-provider';
 
 import { LOREM_IPSUM } from '../../src/vars';
 

@@ -12,8 +12,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 import cn from '../cn';
 import performance from '../performance';
 
-import './header.css';
-
 /**
  * Компонент шапки сайта: лого, меню и пользовательский профиль.
  * Обычно используется совместно с компонентом `Page`.

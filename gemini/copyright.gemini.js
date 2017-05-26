@@ -1,4 +1,4 @@
-import Copyright from '../src/copyright/copyright';
+import Copyright from '../src/copyright';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'copyright';

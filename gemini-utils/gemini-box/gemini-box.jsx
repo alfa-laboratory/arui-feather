@@ -1,7 +1,7 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 import cn from '../../src/cn';
 
 require('./gemini-box.css');

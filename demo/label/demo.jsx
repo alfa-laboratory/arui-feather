@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Label from '../../src/label/label';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Label from '../../src/label';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 import './demo.css';

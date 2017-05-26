@@ -13,8 +13,6 @@ import Page from '../page/page';
 
 import cn from '../cn';
 
-import './error-page.css';
-
 /**
  * Компонент страницы ошибки.
  * Как правило является корневым компонентом страницы.

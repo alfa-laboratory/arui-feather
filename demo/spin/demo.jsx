@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../../src/button/button';
+import Button from '../../src/button';
 import DemoSection from '../demo-section';
-import Spin from '../../src/spin/spin';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Spin from '../../src/spin';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

@@ -12,8 +12,6 @@ import cn from '../cn';
 import { getCurrencySymbol } from '../lib/currency-codes';
 import performance from '../performance';
 
-import './amount.css';
-
 const AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR = ',';
 const AMOUNT_MAJOR_PART_SIZE = 3;
 const ZERO_MINOR_PART_REGEXP = /^0+$/;

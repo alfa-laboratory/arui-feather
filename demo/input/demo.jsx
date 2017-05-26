@@ -1,9 +1,9 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Input from '../../src/input/input';
-import Radio from '../../src/radio/radio';
-import RadioGroup from '../../src/radio-group/radio-group';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Input from '../../src/input';
+import Radio from '../../src/radio';
+import RadioGroup from '../../src/radio-group';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 import './demo.css';

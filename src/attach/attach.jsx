@@ -11,8 +11,6 @@ import Button from '../button/button';
 import cn from '../cn';
 import performance from '../performance';
 
-import './attach.css';
-
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 
 /**

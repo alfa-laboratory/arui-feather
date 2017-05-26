@@ -1,8 +1,8 @@
-import Button from '../src/button/button';
-import Form from '../src/form/form';
-import FormField from '../src/form-field/form-field';
+import Button from '../src/button';
+import Form from '../src/form';
+import FormField from '../src/form-field';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Input from '../src/input/input';
+import Input from '../src/input';
 
 const NAME = 'form';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

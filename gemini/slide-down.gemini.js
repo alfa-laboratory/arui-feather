@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import SlideDown from '../src/slide-down/slide-down';
-import Paragraph from '../src/paragraph/paragraph';
+import SlideDown from '../src/slide-down';
+import Paragraph from '../src/paragraph';
 import { LOREM_IPSUM } from '../src/vars';
 
 const NAME = 'slide-down';

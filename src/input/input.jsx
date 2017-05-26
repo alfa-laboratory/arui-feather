@@ -14,11 +14,6 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { INPUT_SIZE_CORRECTION_RATIO, SCROLL_TO_CORRECTION } from '../vars';
 
-import './input_mode_link.css';
-import './input_theme_alfa-on-color.css';
-import './input_theme_alfa-on-white.css';
-import './input.css';
-
 /**
  * Компонент текстового поля ввода.
  */

@@ -8,8 +8,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import '../app/app.css';
-
 /**
  * Компонент заголовка страницы.
  * Обычно используется совместно с компонентом `Page`.

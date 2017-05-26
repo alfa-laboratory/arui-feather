@@ -1,8 +1,8 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Radio from '../../src/radio/radio';
-import RadioGroup from '../../src/radio-group/radio-group';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Radio from '../../src/radio';
+import RadioGroup from '../../src/radio-group';
+import ThemeProvider from '../../src/theme-provider';
 
 const RADIOS_1 = [
     { text: 'Один', value: 'radio-1-1' },

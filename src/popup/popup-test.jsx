@@ -4,7 +4,7 @@
 
 import { render, cleanUp, simulate } from '../test-utils';
 
-import Popup from './popup';
+import Popup from './index';
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
 
 function renderPopup(popupProps, anchorProps) {

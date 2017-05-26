@@ -26,10 +26,6 @@ import performance from '../performance';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
 
-import './calendar.css';
-import './calendar_theme_alfa-on-white.css';
-import './calendar_theme_alfa-on-color.css';
-
 const DAYS_IN_WEEK = 7;
 const ATTR_DAY = 'data-day';
 const ATTR_STEP_SIZE = 'data-step';

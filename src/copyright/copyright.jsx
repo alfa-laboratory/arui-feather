@@ -10,8 +10,6 @@ import Link from '../link/link';
 import cn from '../cn';
 import performance from '../performance';
 
-import './copyright.css';
-
 /**
  * Компонент копирайта: отображает данные о лицензии Альфа-Банка.
  */

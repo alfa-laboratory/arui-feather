@@ -1,7 +1,7 @@
 import React from 'react';
-import CardNumber from '../../src/card-number/card-number';
+import CardNumber from '../../src/card-number';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

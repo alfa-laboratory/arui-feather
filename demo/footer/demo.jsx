@@ -1,8 +1,8 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Footer from '../../src/footer/footer';
-import Menu from '../../src/menu/menu';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Footer from '../../src/footer';
+import Menu from '../../src/menu';
+import ThemeProvider from '../../src/theme-provider';
 
 const MENU_ITEMS = [
     {

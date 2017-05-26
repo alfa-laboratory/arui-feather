@@ -1,6 +1,6 @@
-import Header from '../src/header/header';
-import Menu from '../src/menu/menu';
-import Page from '../src/page/page';
+import Header from '../src/header';
+import Menu from '../src/menu';
+import Page from '../src/page';
 
 const NAME = 'header';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

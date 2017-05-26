@@ -11,12 +11,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './icon.css';
-
-import './icon_alfa-on-color.css';
-import './icon_alfa-on-white.css';
-import './icon_alfa-on-colored.css';
-
 /**
  * Компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
  * Все иконки доступны в двух цветовых темах `alfa-on-color` и `alfa-on-white`.

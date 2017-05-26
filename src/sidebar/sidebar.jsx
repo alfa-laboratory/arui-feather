@@ -13,8 +13,6 @@ import PopupContainerProvider from '../popup-container-provider/popup-container-
 import cn from '../cn';
 import performance from '../performance';
 
-import './sidebar.css';
-
 /**
  * Изменяет класс для body. Нужен для управления скроллом
  * основного экрана при показе холодильника.

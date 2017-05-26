@@ -2,8 +2,8 @@ import React from 'react';
 import { autobind } from 'core-decorators';
 
 import DemoSection from '../demo-section';
-import MoneyInput from '../../src/money-input/money-input';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import MoneyInput from '../../src/money-input';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     state = {

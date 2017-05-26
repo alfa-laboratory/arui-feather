@@ -1,8 +1,8 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Label from '../../src/label/label';
-import Menu from '../../src/menu/menu';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Label from '../../src/label';
+import Menu from '../../src/menu';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

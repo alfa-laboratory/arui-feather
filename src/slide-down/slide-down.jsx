@@ -10,8 +10,6 @@ import { autobind } from 'core-decorators';
 import cn from '../cn';
 import performance from '../performance';
 
-import './slide-down.css';
-
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.

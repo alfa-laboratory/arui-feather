@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import List from '../../src/list/list';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import List from '../../src/list';
+import ThemeProvider from '../../src/theme-provider';
 
 const ITEMS_OL = [
     {

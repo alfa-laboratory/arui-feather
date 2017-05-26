@@ -22,7 +22,8 @@ import Textarea from 'arui-feather/textarea';
 | maxLength | Number |  |  | Максимальное число символов |
 | id | String |  |  | Уникальный идентификатор блока |
 | name | String |  |  | Уникальное имя блока |
-| value | String |  |  | Содержимое поля ввода, указанное по умолчанию |
+| defaultValue | String |  |  | Содержимое поля ввода, указанное по умолчанию (используйте это поле если хотите использовать компонент как uncontrolled) |
+| value | String |  |  | Содержимое поля ввода |
 | tabIndex | Number |  |  | Последовательность перехода между контролами при нажатии на Tab |
 | placeholder | String |  |  | Подсказка |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |

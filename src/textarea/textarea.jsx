@@ -39,7 +39,9 @@ class Textarea extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию */
+        /** Содержимое поля ввода, указанное по умолчанию (используйте это поле если хотите использовать компонент как uncontrolled) */
+        defaultValue: Type.string,
+        /** Содержимое поля ввода */
         value: Type.string,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
@@ -77,7 +79,7 @@ class Textarea extends React.Component {
 
     state = {
         focused: false,
-        value: ''
+        value: this.props.defaultValue || ''
     };
 
     /**

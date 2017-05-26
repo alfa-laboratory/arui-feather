@@ -19,11 +19,11 @@
 
     &.button_focused {
         border-color: var(--color-content-alfa-on-color);
-        box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, .4);
 
         &.button_hovered {
             border-color: var(--color-content-alfa-on-color);
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+            box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
         }
     }
 

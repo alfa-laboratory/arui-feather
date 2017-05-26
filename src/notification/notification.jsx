@@ -15,8 +15,6 @@ import cn from '../cn';
 import { isEventOutsideClientBounds } from '../lib/window';
 import performance from '../performance';
 
-import './notification.css';
-
 /**
  * Компонент всплывающего окна.
  */

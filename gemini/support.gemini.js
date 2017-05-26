@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Support from '../src/support/support';
+import Support from '../src/support';
 
 const NAME = 'support';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

@@ -12,8 +12,6 @@ import Link from '../link/link';
 import cn from '../cn';
 import performance from '../performance';
 
-import './menu-item.css';
-
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */

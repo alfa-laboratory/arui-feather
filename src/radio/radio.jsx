@@ -13,10 +13,6 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-import './radio_theme_alfa-on-color.css';
-import './radio_theme_alfa-on-white.css';
-import './radio.css';
-
 /**
  * Компонент радио-кнопки.
  */

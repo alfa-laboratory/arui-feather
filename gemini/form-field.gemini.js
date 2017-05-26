@@ -1,6 +1,6 @@
-import FormField from '../src/form-field/form-field';
+import FormField from '../src/form-field';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Input from '../src/input/input';
+import Input from '../src/input';
 
 const NAME = 'form-field';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

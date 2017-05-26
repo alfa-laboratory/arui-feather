@@ -12,8 +12,6 @@ import Popup from '../popup/popup';
 import cn from '../cn';
 import performance from '../performance';
 
-import './radio-group.css';
-
 /**
  * Компонент группы радио-кнопок.
  */

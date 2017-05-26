@@ -1,6 +1,6 @@
-import Attach from '../src/attach/attach';
+import Attach from '../src/attach';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Icon from '../src/icon/icon';
+import Icon from '../src/icon';
 
 const NAME = 'attach';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];

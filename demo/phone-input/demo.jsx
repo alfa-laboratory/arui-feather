@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import PhoneInput from '../../src/phone-input/phone-input';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import PhoneInput from '../../src/phone-input';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

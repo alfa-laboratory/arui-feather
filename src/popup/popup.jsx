@@ -17,10 +17,6 @@ import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
 
-import './popup.css';
-import './popup_theme_alfa-on-white.css';
-import './popup_theme_alfa-on-color.css';
-
 /**
  * @typedef {Object} Point
  * @property {Number} left Координата по оси x

@@ -13,10 +13,6 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-import './checkbox.css';
-import './checkbox_theme_alfa-on-color.css';
-import './checkbox_theme_alfa-on-white.css';
-
 /**
  * Компонент чекбокса.
  */

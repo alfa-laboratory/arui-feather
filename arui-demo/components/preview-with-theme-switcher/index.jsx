@@ -5,7 +5,7 @@
 import { Component } from 'react';
 import Type from 'prop-types';
 import { autobind } from 'core-decorators';
-import ThemeProvider from '../../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../../src/theme-provider';
 import cn from '../../../src/cn';
 import './index.css';
 

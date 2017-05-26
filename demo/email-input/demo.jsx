@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import EmailInput from '../../src/email-input/email-input';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import EmailInput from '../../src/email-input';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

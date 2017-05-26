@@ -9,9 +9,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './input-group.css';
-import './input-group_theme_alfa-on-white.css';
-
 /**
  * Компонент группы полей для текстового ввода.
  *

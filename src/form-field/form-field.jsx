@@ -8,8 +8,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './form-field.css';
-
 /**
  * Компонент поля формы: cодержит заголовок контрола и сам контрол.
  * Контрол должен быть передан дочерним компонентов.

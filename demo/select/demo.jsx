@@ -1,9 +1,9 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Icon from '../../src/icon/icon';
-import Label from '../../src/label/label';
-import Select from '../../src/select/select';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Icon from '../../src/icon';
+import Label from '../../src/label';
+import Select from '../../src/select';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

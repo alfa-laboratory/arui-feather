@@ -8,8 +8,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './heading.css';
-
 const HEADING_LEVEL = {
     xl: 1,
     l: 2,

@@ -1,6 +1,6 @@
-import Heading from '../src/heading/heading';
-import Paragraph from '../src/paragraph/paragraph';
-import Sidebar from '../src/sidebar/sidebar';
+import Heading from '../src/heading';
+import Paragraph from '../src/paragraph';
+import Sidebar from '../src/sidebar';
 import { LOREM_IPSUM } from '../src/vars';
 
 const NAME = 'sidebar';

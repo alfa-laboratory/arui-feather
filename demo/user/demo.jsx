@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
-import User from '../../src/user/user';
+import ThemeProvider from '../../src/theme-provider';
+import User from '../../src/user';
 
 class Demo extends React.Component {
     render() {

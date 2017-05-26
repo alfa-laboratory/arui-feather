@@ -1,14 +1,14 @@
 import React from 'react';
-import AppContent from '../../src/app-content/app-content';
+import AppContent from '../../src/app-content';
 import DemoSection from '../demo-section';
-import FormField from '../../src/form-field/form-field';
-import Input from '../../src/input/input';
-import Label from '../../src/label/label';
-import Radio from '../../src/radio/radio';
-import RadioGroup from '../../src/radio-group/radio-group';
-import Checkbox from '../../src/checkbox/checkbox';
-import CheckboxGroup from '../../src/checkbox-group/checkbox-group';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import FormField from '../../src/form-field';
+import Input from '../../src/input';
+import Label from '../../src/label';
+import Radio from '../../src/radio';
+import RadioGroup from '../../src/radio-group';
+import Checkbox from '../../src/checkbox';
+import CheckboxGroup from '../../src/checkbox-group';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 

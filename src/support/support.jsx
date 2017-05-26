@@ -11,8 +11,6 @@ import Link from '../link/link';
 import cn from '../cn';
 import performance from '../performance';
 
-import './support.css';
-
 /**
  * Компонент с информацией о поддержке для клиентов.
  * Включает в себя город и телефон.

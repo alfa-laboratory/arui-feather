@@ -10,8 +10,6 @@ import Copyright from '../copyright/copyright';
 import cn from '../cn';
 import performance from '../performance';
 
-import './footer.css';
-
 /**
  * Компонент подвала сайта.
  * Обычно используется совместно с компонентом `Page`.

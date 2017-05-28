@@ -1,3 +1,18 @@
+<a name="4.6.0"></a>
+# 4.6.0 (2017-05-26)
+
+
+### Bug Fixes
+
+* **button:** fix disabled button ([#36](https://github.com/alfa-laboratory/arui-feather/issues/36)) ([654b293](https://github.com/alfa-laboratory/arui-feather/commit/654b293))
+
+
+### Features
+
+* add accept prop for attach component ([#44](https://github.com/alfa-laboratory/arui-feather/issues/44)) ([992547d](https://github.com/alfa-laboratory/arui-feather/commit/992547d))
+
+
+
 <a name="4.5.0"></a>
 # 4.5.0 (2017-05-25)
 

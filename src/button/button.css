@@ -135,6 +135,8 @@
 
 .control-group {
     .button {
+        position: relative;
+
         border-radius: 0;
         border-right-color: transparent;
     }
@@ -151,5 +153,40 @@
 
     > :only-child .button {
         border-radius: var(--border-radius-control);
+    }
+
+    &.checkbox-group_theme_alfa-on-color,
+    &.checkbox-group_theme_alfa-on-white,
+    &.radio-group_theme_alfa-on-color,
+    &.radio-group_theme_alfa-on-white {
+        outline: none;
+
+        .button {
+            margin-right: -1px;
+            border-right-color: transparent;
+        }
+
+        .button__text {
+            font-weight: var(--font-weight);
+        }
+
+        .button_checked {
+            z-index: 1;
+        }
+
+        .button_focused {
+            z-index: 2;
+        }
+
+        .button_hovered {
+            z-index: 3;
+        }
+    }
+
+    &.radio-group_theme_alfa-on-white,
+    &.radio-group_theme_alfa-on-color {
+        & .button {
+            margin: 0;
+        }
     }
 }

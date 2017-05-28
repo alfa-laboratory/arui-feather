@@ -8,9 +8,9 @@ const elipsisBoxStyles = {
 <div>
     {['s' , 'm', 'l', 'xl'].map(size => (
         <div key={ size }>
-            <Label size={size}>Лейбл</Label>
+            <Label size={ size }>Лейбл</Label>
             <div style={ elipsisBoxStyles }>
-                <Label size={size} isNoWrap={ true }>
+                <Label size={ size } isNoWrap={ true }>
                     Очень длинная срока, которую необходимо скыть за тремя точками
                 </Label>
             </div>

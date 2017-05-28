@@ -153,6 +153,7 @@ class CheckBox extends React.Component {
                 <input
                     className={ cn('control') }
                     type='checkbox'
+                    tabIndex={ -1 }
                     autoComplete='off'
                     name={ this.props.name }
                     id={ this.props.id }

@@ -47,6 +47,7 @@ const server = new WebpackDevServer(compiler, {
         poll: 1000
     },
     publicPath: '/',
+    disableHostCheck: true,
     stats: {
         colors: true,
         assets: false,

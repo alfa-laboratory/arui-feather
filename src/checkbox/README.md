@@ -1,21 +1,21 @@
 ```
 <div>
     <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
+        {['m', 'l'].map(size => (
             <div key={ size }>
                 <CheckBox
                     text='Чекбокс'
-                    size={size}
+                    size={ size }
                 />
             </div>
         ))}
     </div>
     <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
+        {['m', 'l'].map(size => (
             <div key={ size }>
                 <CheckBox
                     text='Чекбокс disabled'
-                    size={size}
+                    size={ size }
                     disabled={ true }
                 />
             </div>
@@ -26,7 +26,7 @@
             <div key={ size }>
                 <CheckBox
                     text='Чекбокс - кнопка'
-                    size={size}
+                    size={ size }
                     type='button'
                 />
             </div>
@@ -37,7 +37,7 @@
             <div key={ size }>
                 <CheckBox
                     text='Чекбокс - кнопка'
-                    size={size}
+                    size={ size }
                     type='button'
                     disabled={ true }
                 />

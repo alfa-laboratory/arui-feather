@@ -70,8 +70,12 @@ function getFilteredOptions(optionsList, value) {
                     )
                 );
             }
-        } else if (option.value.toLowerCase().indexOf((value).toLowerCase()) !== -1) {
-            filteredOptions.push(option);
+        } else {
+            let normalOptionValue = option.value.toLowerCase().trim();
+            let normalValue = value.toLowerCase().trim();
+            if (normalOptionValue !== normalValue && normalOptionValue.indexOf(normalValue) !== -1) {
+                filteredOptions.push(option);
+            }
         }
     });
 

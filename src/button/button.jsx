@@ -41,6 +41,8 @@ class Button extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Управление возможности взаимодействия с компонентом */
         disabled: Type.bool,
+        /** Отображение кнопки в состоянии фокуса */
+        focused: Type.bool,
         /** Псевдо представление кнопки */
         pseudo: Type.bool,
         /** Идентификатор компонента в DOM */
@@ -98,6 +100,15 @@ class Button extends React.Component {
      */
     control;
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.disabled) {
+            this.setState({
+                hovered: false,
+                focused: false
+            });
+        }
+    }
+
     render(cn) {
         let buttonElement = this.props.tag === 'span' ? 'span' : 'button';
 
@@ -116,7 +127,7 @@ class Button extends React.Component {
                 view: this.props.view,
                 size: this.props.size,
                 width: this.props.width,
-                focused: this.state.focused,
+                focused: this.props.focused !== undefined ? this.props.focused : this.state.focused,
                 hovered: this.state.hovered,
                 pressed: this.state.pressed,
                 togglable: this.props.togglable,

@@ -12,6 +12,10 @@ require('./gemini-box.css');
 @cn('gemini-box')
 class GeminiBox extends React.Component {
     static propTypes = {
+        /** Дочерние компоненты */
+        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        /** Стиль компоненты */
+        style: Type.object, // eslint-disable-line react/forbid-prop-types
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Управление шириной. При значении 'available' растягивает элемент на ширину родителя */

@@ -62,30 +62,60 @@ class InputAutocomplete extends React.Component {
 
     state = {
         value: '',
-        opened: false,
         inputFocused: false,
         menuFocused: false,
         popupStyles: {},
         highlightedItem: null
     };
 
+    /**
+     * @type {Input}
+     */
     input;
+
+    /**
+     * @type {Popup}
+     */
     popup;
+
+    /**
+     * @type {Menu}
+     */
     menu;
 
+    /**
+     * @type {Number}
+     */
+    blurTimeout = null;
+
+    /**
+     * @type {Number}
+     */
+    inputFocusTimeout = null;
+
     componentDidMount() {
-        this.popup.setTarget(this.input.getNode());
+        if (this.popup) {
+            this.popup.setTarget(this.input.getNode());
+        }
         this.updatePopupStyles();
     }
 
-    componentWillReceiveProps(nextProps) {
-        // Если у компонента появились опции и фокус стоит на нем,
-        // то проявляем попап со списком опций.
-        if (nextProps.options.length > 0 &&
-            (this.state.inputFocused || this.state.menuFocused) &&
-            !this.state.opened
-        ) {
-            this.setState({ opened: true });
+    componentDidUpdate() {
+        if (this.popup) {
+            this.popup.setTarget(this.input.getNode());
+        }
+        this.updatePopupStyles();
+    }
+
+    componentWillUnmount() {
+        if (this.blurTimeout) {
+            clearTimeout(this.blurTimeout);
+            this.blurTimeout = null;
+        }
+
+        if (this.inputFocusTimeout) {
+            clearTimeout(this.inputFocusTimeout);
+            this.inputFocusTimeout = null;
         }
     }
 
@@ -120,7 +150,15 @@ class InputAutocomplete extends React.Component {
         let formattedOptionsList = this.props.options
             ? this.formatOptionsList(this.props.options)
             : [];
-        let opened = this.props.opened !== undefined ? this.props.opened : this.state.opened;
+
+        let opened = this.props.opened !== undefined
+            ? this.props.opened
+            : this.state.inputFocused || this.state.menuFocused;
+
+        if (this.props.options.length === 0) {
+            this.popup = null;
+            return null;
+        }
 
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
@@ -147,7 +185,6 @@ class InputAutocomplete extends React.Component {
                     content={ formattedOptionsList }
                     checkedItems={ [] }
                     onItemCheck={ this.handleItemCheck }
-                    onMouseEnter={ this.handleMenuFocus }
                     autoFocusFirstItem={ true }
                     highlightedItem={ this.state.highlightedItem }
                     onHighlightItem={ this.handleHighlightedItem }
@@ -166,10 +203,7 @@ class InputAutocomplete extends React.Component {
 
         let newValue = checkedItem ? checkedItem.value : this.state.value;
 
-        this.setState({
-            value: newValue,
-            opened: false
-        });
+        this.setState({ value: newValue });
 
         if (this.props.onItemSelect) {
             this.props.onItemSelect(checkedItem);
@@ -178,17 +212,17 @@ class InputAutocomplete extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(newValue);
         }
+
+        if (this.inputFocusTimeout) {
+            clearTimeout(this.inputFocusTimeout);
+        }
+
+        this.inputFocusTimeout = setTimeout(() => this.input.focus(), 0);
     }
 
     @autobind
     handleChange(value) {
-        this.setState({
-            value
-        }, () => {
-            this.setState({
-                opened: this.props.options.length > 0
-            });
-        });
+        this.setState({ value });
 
         if (this.props.onChange) {
             this.props.onChange(value);
@@ -197,9 +231,12 @@ class InputAutocomplete extends React.Component {
 
     @autobind
     handleInputFocus(event) {
-        this.changeFocused({
-            inputFocused: true
-        }, event);
+        if (this.blurTimeout) {
+            clearTimeout(this.blurTimeout);
+            this.blurTimeout = null;
+        }
+
+        this.solveFocused(event);
 
         this.setState({
             highlightedItem: null
@@ -208,42 +245,46 @@ class InputAutocomplete extends React.Component {
 
     @autobind
     handleInputBlur(event) {
-        this.changeFocused({
-            inputFocused: false
-        }, event, () => {
-            this.setState({
-                opened: this.state.menuFocused
-            });
-        });
+        if (this.blurTimeout) {
+            clearTimeout(this.blurTimeout);
+        }
+
+        event.persist();
+
+        this.blurTimeout = setTimeout(() => {
+            this.solveFocused(event);
+            this.blurTimeout = null;
+        }, 0);
     }
 
     @autobind
     handleMenuFocus(event) {
-        this.changeFocused({ menuFocused: true }, event);
+        if (this.blurTimeout) {
+            clearTimeout(this.blurTimeout);
+            this.blurTimeout = null;
+        }
+
+        this.solveFocused(event);
     }
 
     @autobind
     handleMenuBlur(event) {
-        this.changeFocused({
-            menuFocused: false
-        }, event, () => {
-            this.setState({
-                opened: this.state.inputFocused
-            });
-        });
+        if (this.blurTimeout) {
+            clearTimeout(this.blurTimeout);
+        }
+
+        event.persist();
+
+        this.blurTimeout = setTimeout(() => {
+            this.solveFocused(event);
+            this.blurTimeout = null;
+        }, 0);
     }
 
     @autobind
-    handleClickOutside(event) {
-        if (!this.state.inputFocused) {
-            this.changeFocused({
-                menuFocused: false,
-                opened: false
-            }, event);
-
-            if (this.props.onClickOutside) {
-                this.props.onClickOutside();
-            }
+    handleClickOutside() {
+        if (this.props.onClickOutside) {
+            this.props.onClickOutside();
         }
     }
 
@@ -256,7 +297,9 @@ class InputAutocomplete extends React.Component {
                 let posX = window.pageXOffset;
                 let posY = window.pageYOffset;
 
-                this.menu.focus();
+                if (this.menu) {
+                    this.menu.focus();
+                }
 
                 window.scrollTo(posX, posY);
 
@@ -293,10 +336,6 @@ class InputAutocomplete extends React.Component {
             case keyboardCode.ESCAPE:
                 this.input.focus();
                 break;
-
-            case keyboardCode.TAB:
-                this.menu.blur();
-                break;
         }
 
         if (this.props.onKeyDown) {
@@ -331,13 +370,21 @@ class InputAutocomplete extends React.Component {
         this.input.scrollTo();
     }
 
-    changeFocused(focusedState, event, done) {
+    /**
+     * Определяет является ли весь компонент в фокусе на событиях onFocus/onBlur.
+     *
+     * @param {SyntheticEvent} event Событие focus/blur, которое будет проброшено в обработчик onFocus/onBlur
+     */
+    solveFocused(event) {
         let currentFocused = this.state.inputFocused || this.state.menuFocused;
 
+        let focusedElement = document.activeElement;
+
         let newState = {
-            inputFocused: this.state.inputFocused,
-            menuFocused: this.state.menuFocused,
-            ...focusedState
+            inputFocused: (focusedElement === this.input.getControl()),
+            menuFocused: this.menu
+                ? (this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement))
+                : false
         };
 
         let newFocused = newState.inputFocused || newState.menuFocused;
@@ -352,7 +399,7 @@ class InputAutocomplete extends React.Component {
             }
         }
 
-        this.setState(focusedState, done);
+        this.setState(newState);
     }
 
     formatOptionsList(options) {

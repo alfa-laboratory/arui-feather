@@ -12,7 +12,7 @@ import Calendar from 'arui-feather/calendar';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | value | Number |  |  | Выбранная дата, в формате unix timestamp |
 | selectedFrom | Number | `null`  |  | Левая граница диапазона дат, в формате unix timestamp |
@@ -28,7 +28,6 @@ import Calendar from 'arui-feather/calendar';
 | offDays | Array.<Number> | `[]`  |  | Список выходных дней в виде unix timestamp, отсортированный по возрастанию |
 | showArrows | Boolean | `true`  |  | Отображение стрелок навигации по месяцам |
 | isKeyboard | Boolean | `true`  |  | Возможность управления календарём с клавиатуры |
-| error | Node |  |  | Сообщение об ошибке |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |
 | onKeyDown | Function |  |  | Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте |

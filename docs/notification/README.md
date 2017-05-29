@@ -12,7 +12,7 @@ import Notification from 'arui-feather/notification';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | status | [StatusEnum](#StatusEnum) |  |  | Тип компонента |
 | visible | Boolean |  |  | Управление видимостью компонента |

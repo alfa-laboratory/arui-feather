@@ -259,6 +259,7 @@ class Demo extends React.Component {
                                     mode='radio'
                                     options={ OPTIONS_1 }
                                     renderButtonContent={ this.renderRadioButtonContent }
+                                    error='Something went wrong'
                                 />
                             </div>
                         </div>
@@ -273,6 +274,7 @@ class Demo extends React.Component {
                                     mode='check'
                                     options={ OPTIONS_1 }
                                     renderButtonContent={ this.renderCheckButtonContent }
+                                    error='Something went wrong'
                                 />
                             </div>
                         </div>

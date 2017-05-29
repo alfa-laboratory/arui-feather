@@ -47,4 +47,9 @@
      * Цвет фона для замороженных контролов для `alfa-on-color`.
      */
     --color-background-control-disabled-alfa-on-color: rgba(255, 255, 255, .1);
+
+    /**
+     * Цвет рамки для контролов в фокусе для `alfa-on-color`.
+     */
+    --color-border-control-focused-alfa-on-color: rgba(255, 255, 255, .9);
 }

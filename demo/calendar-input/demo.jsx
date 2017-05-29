@@ -59,16 +59,16 @@ class Demo extends React.Component {
                     <ThemeProvider theme='alfa-on-white'>
                         <div>
                             <div className='layout'>
-                                <CalendarInput size='s' error='something went wrong' />
+                                <CalendarInput size='s' error='Something went wrong' />
                             </div>
                             <div className='layout'>
-                                <CalendarInput size='m' error='something went wrong' />
+                                <CalendarInput size='m' error='Something went wrong' />
                             </div>
                             <div className='layout'>
-                                <CalendarInput size='l' error='something went wrong' />
+                                <CalendarInput size='l' error='Something went wrong' />
                             </div>
                             <div className='layout'>
-                                <CalendarInput size='xl' error='something went wrong' />
+                                <CalendarInput size='xl' error='Something went wrong' />
                             </div>
                         </div>
                     </ThemeProvider>
@@ -128,16 +128,16 @@ class Demo extends React.Component {
                     <ThemeProvider theme='alfa-on-color'>
                         <div>
                             <div className='layout'>
-                                <CalendarInput size='s' error='something went wrong' />
+                                <CalendarInput size='s' error='Something went wrong' />
                             </div>
                             <div className='layout'>
-                                <CalendarInput size='m' error='something went wrong' />
+                                <CalendarInput size='m' error='Something went wrong' />
                             </div>
                             <div className='layout'>
-                                <CalendarInput size='l' error='something went wrong' />
+                                <CalendarInput size='l' error='Something went wrong' />
                             </div>
                             <div className='layout'>
-                                <CalendarInput size='xl' error='something went wrong' />
+                                <CalendarInput size='xl' error='Something went wrong' />
                             </div>
                         </div>
                     </ThemeProvider>

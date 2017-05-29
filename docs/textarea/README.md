@@ -12,7 +12,7 @@ import Textarea from 'arui-feather/textarea';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | className | Function\|String |  |  | Дополнительный класс |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
@@ -29,8 +29,8 @@ import Textarea from 'arui-feather/textarea';
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | resize | [ResizeEnum](#ResizeEnum) |  |  | Управление возможностью изменения размеров компонента |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
-| error | Node |  |  | Рисует попап с ошибкой в момент когда фокус находится в поле ввода |
-| errorDirections | Array.<String> | `['right-top', 'right-center', 'right-bottom', 'bottom-left']`  |  | Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия |
+| hint | Node |  |  | Подсказка под полем |
+| error | Node |  |  | Отображение ошибки |
 | onChange | Function |  |  | Обработчик изменения значения 'value' |
 | onFocus | Function |  |  | Обработчик фокуса поля |
 | onBlur | Function |  |  | Обработчик снятия фокуса c поля |

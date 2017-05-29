@@ -42,7 +42,7 @@ class Demo extends React.Component {
                                         <Input
                                             size='m'
                                             placeholder='Input...'
-                                            error='something went wrong'
+                                            error='Something went wrong'
                                         />
                                     </div>
                                     <Paragraph>

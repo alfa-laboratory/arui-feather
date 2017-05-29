@@ -12,7 +12,7 @@ import Popup from 'arui-feather/popup';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | className | Function\|String |  |  | Дополнительный класс |
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `Popup` |

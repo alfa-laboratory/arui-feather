@@ -12,7 +12,7 @@ import List from 'arui-feather/list';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | items | Array.<[ItemsType](#ItemsType)> |  |  | Список элементов |
 | type | [TypeEnum](#TypeEnum) |  |  | Тип списка |

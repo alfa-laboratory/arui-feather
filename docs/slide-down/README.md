@@ -13,7 +13,7 @@ import SlideDown from 'arui-feather/slide-down';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | isExpanded | Boolean |  |  | Управление состоянием expand/collapse компонента |
 | children | Node |  |  | Контент компонента |

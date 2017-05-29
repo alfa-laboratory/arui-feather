@@ -13,7 +13,7 @@ import CardNumber from 'arui-feather/card-number';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | String\|Number |  |  | Номер карты |
 | value | String\|Number |  |  | Номер карты |

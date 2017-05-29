@@ -17,7 +17,7 @@ import ResizeSensor from 'arui-feather/resize-sensor';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | onResize | Function |  |  | Callback на изменение размера родителя |
 

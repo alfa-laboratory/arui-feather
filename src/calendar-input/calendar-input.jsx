@@ -206,7 +206,7 @@ class CalendarInput extends React.Component {
             if (this.nativeCalendarTarget) {
                 element = this.nativeCalendarTarget;
             } else if (this.customCalendarTarget) {
-                element = this.customCalendarTarget.getNode();
+                element = this.customCalendarTarget.getBoxNode();
             }
 
             if (element) {
@@ -313,7 +313,6 @@ class CalendarInput extends React.Component {
                     ref={ (calendar) => { this.calendar = calendar; } }
                     month={ this.state.month }
                     { ...this.props.calendar }
-                    error={ this.props.error }
                     value={ parseDate(value, CUSTOM_DATE_FORMAT) }
                     onBlur={ this.handleCalendarBlur }
                     onFocus={ this.handleCalendarFocus }

@@ -12,7 +12,7 @@ import Copyright from 'arui-feather/copyright';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `Copyright`, заменяют собой стандартный текст copyright'а |
 | className | Function\|String |  |  | Дополнительный класс |

@@ -15,7 +15,7 @@ function renderTextarea(props = {}) {
             css: 'min-width: 9999px; min-height: 9999px; padding: 50px 0 0;'
         }
     );
-    textarea.controlNode = textarea.node.querySelector('textarea');
+    textarea.controlNode = textarea.node.querySelector('.textarea__control');
     return textarea;
 }
 
@@ -35,16 +35,16 @@ describe('textarea', () => {
         let textarea = renderTextarea();
 
         simulate(textarea.controlNode, 'focus');
-        expect(textarea.controlNode).to.have.class('textarea_focused');
+        expect(textarea.node).to.have.class('textarea_focused');
 
         simulate(textarea.controlNode, 'blur');
-        expect(textarea.controlNode).to.not.have.class('textarea_focused');
+        expect(textarea.node).to.not.have.class('textarea_focused');
     });
 
     it('should render with disabled class', () => {
         let textarea = renderTextarea({ disabled: true });
 
-        expect(textarea.controlNode).to.have.class('textarea_disabled');
+        expect(textarea.node).to.have.class('textarea_disabled');
     });
 
     it('should set class on public focus method', (done) => {
@@ -53,7 +53,7 @@ describe('textarea', () => {
         textarea.instance.focus();
 
         setTimeout(() => {
-            expect(textarea.controlNode).to.have.class('textarea_focused');
+            expect(textarea.node).to.have.class('textarea_focused');
             done();
         }, 0);
     });
@@ -64,11 +64,11 @@ describe('textarea', () => {
         textarea.instance.focus();
 
         setTimeout(() => {
-            expect(textarea.controlNode).to.have.class('textarea_focused');
+            expect(textarea.node).to.have.class('textarea_focused');
             textarea.instance.blur();
 
             setTimeout(() => {
-                expect(textarea.controlNode).to.not.have.class('textarea_focused');
+                expect(textarea.node).to.not.have.class('textarea_focused');
                 done();
             }, 0);
         }, 0);
@@ -77,8 +77,8 @@ describe('textarea', () => {
     it('should render without problems', () => {
         let textarea = renderTextarea();
 
-        expect(textarea.controlNode).to.exist;
-        expect(textarea.controlNode).to.have.class('textarea');
+        expect(textarea.node).to.exist;
+        expect(textarea.node).to.have.class('textarea');
     });
 
     it('should set class on textarea focus', (done) => {
@@ -87,7 +87,7 @@ describe('textarea', () => {
         textarea.instance.focus();
 
         setTimeout(() => {
-            expect(textarea.controlNode).to.have.class('textarea_focused');
+            expect(textarea.node).to.have.class('textarea_focused');
             done();
         }, 0);
     });
@@ -175,25 +175,25 @@ describe('textarea', () => {
     it('should render with resize `none` class', () => {
         let textarea = renderTextarea({ resize: 'none' });
 
-        expect(textarea.controlNode).to.have.class('textarea_resize_none');
+        expect(textarea.node).to.have.class('textarea_resize_none');
     });
 
     it('should render with resize `both` class', () => {
         let textarea = renderTextarea({ resize: 'both' });
 
-        expect(textarea.controlNode).to.have.class('textarea_resize_both');
+        expect(textarea.node).to.have.class('textarea_resize_both');
     });
 
     it('should render with resize `vertical` class', () => {
         let textarea = renderTextarea({ resize: 'vertical' });
 
-        expect(textarea.controlNode).to.have.class('textarea_resize_vertical');
+        expect(textarea.node).to.have.class('textarea_resize_vertical');
     });
 
     it('should render with resize `horizontal` class', () => {
         let textarea = renderTextarea({ resize: 'horizontal' });
 
-        expect(textarea.controlNode).to.have.class('textarea_resize_horizontal');
+        expect(textarea.node).to.have.class('textarea_resize_horizontal');
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {
@@ -213,7 +213,7 @@ describe('textarea', () => {
     it('should render with autosize class', () => {
         let textarea = renderTextarea({ autosize: true });
 
-        expect(textarea.controlNode).to.have.class('textarea_autosize');
+        expect(textarea.node).to.have.class('textarea_autosize');
     });
 
     it('should call `onHeightChange` callback after add new line with autoresize=true', () => {

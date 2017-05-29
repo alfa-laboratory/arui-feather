@@ -12,7 +12,7 @@ import MenuItem from 'arui-feather/menu-item';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | type | [TypeEnum](#TypeEnum) | `'link'`  |  | Тип элемента меню |
 | view | [ViewEnum](#ViewEnum) |  |  | Тип ссылки, для компонента с type='link' |

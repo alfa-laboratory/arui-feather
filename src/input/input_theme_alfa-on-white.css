@@ -5,12 +5,22 @@
 @import '../vars.css';
 
 .input_theme_alfa-on-white {
-    background: var(--color-background-control-alfa-on-white);
-    color: var(--color-content-alfa-on-white);
+    .input__box {
+        background: var(--color-background-control-alfa-on-white);
+        border-color: rgba(0, 0, 0, .3);
+        border-style: solid;
+        border-width: 1px;
+    }
 
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, .3);
+    &.input_has-addons .input__box {
+        border-right-color: rgba(0, 0, 0, .15);
+        border-left-color: rgba(0, 0, 0, .15);
+    }
+
+    &,
+    .input__control {
+        color: var(--color-content-alfa-on-white);
+    }
 
     .input__control {
         color: var(--color-content-alfa-on-white);
@@ -31,35 +41,27 @@
     }
 
     &.input_mode_link {
-        background: rgba(255, 255, 255, 0);
-        border-color: transparent;
-
-        &.input_hovered {
-            background: rgba(255, 255, 255, .3);
+        .input__box {
+            background: transparent;
+            border-color: transparent;
         }
-
-        &.input_focused {
-            background: rgba(255, 255, 255, 1);
-        }
-    }
-
-    &.input_hovered {
-        border-color: var(--color-content-alfa-on-white);
     }
 
     &.input_focused {
-        border-color: var(--color-content-alfa-on-white);
-        box-shadow: 0 0 0 1px var(--color-content-alfa-on-white);
-
-        background: var(--color-background-control-focused-alfa-on-white);
+        .input__box {
+            background: var(--color-background-control-focused-alfa-on-white);
+            border-color: var(--color-border-control-focused-alfa-on-white);
+            box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-white);
+        }
     }
 
     &.input_disabled {
-        border-color: transparent;
+        .input__box {
+            background: var(--color-background-control-disabled-alfa-on-white);
+            border-color: transparent;
+        }
 
-        background: var(--color-background-control-disabled-alfa-on-white);
-
-        .input__box,
+        &,
         .input__control {
             color: var(--color-content-minor-alfa-on-white);
         }
@@ -82,11 +84,12 @@
 
 .control-group {
     .input_theme_alfa-on-white {
-        &.input_hovered,
         &.input_focused {
-            border-top-color: var(--color-content-alfa-on-white);
-            border-right-color: var(--color-content-alfa-on-white);
-            border-bottom-color: var(--color-content-alfa-on-white);
+            .input__box {
+                border-top-color: var(--color-border-control-focused-alfa-on-white);
+                border-right-color: var(--color-border-control-focused-alfa-on-white);
+                border-bottom-color: var(--color-border-control-focused-alfa-on-white);
+            }
         }
     }
 
@@ -94,34 +97,40 @@
         margin-left: 1px;
 
         .input_theme_alfa-on-white.input_disabled {
-            box-shadow: -1px 0 0 0 rgba(0, 0, 0, .3);
+            .input__box {
+                box-shadow: -1px 0 0 0 rgba(0, 0, 0, .3);
+            }
         }
     }
 
-    > :not(:last-child) {
+    > :not(:last-of-type) {
         .input_theme_alfa-on-white {
-            border-right: none;
+            .input__box {
+                border-right: none;
+            }
 
-            &.input_focused:not(.input_invalid) {
-                box-shadow: 0 0 0 1px var(--color-content-alfa-on-white), 1px 0 0 1px var(--color-content-alfa-on-white);
+            &.input_focused:not(.input_invalid) .input__box {
+                box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-white), 1px 0 0 1px var(--color-border-control-focused-alfa-on-white);
             }
         }
     }
 
     .input-group__input-case_invalid + * {
         .input_theme_alfa-on-white {
-            &.input_focused:not(.input_invalid) {
-                box-shadow: -1px 0 0 1px var(--color-content-alfa-on-white), 1px 0 0 1px var(--color-content-alfa-on-white);
+            &.input_focused:not(.input_invalid) .input__box {
+                box-shadow: -1px 0 0 1px var(--color-border-control-focused-alfa-on-white), 1px 0 0 1px var(--color-border-control-focused-alfa-on-white);
             }
         }
     }
 
-    > :last-child {
+    > :last-of-type {
         .input_theme_alfa-on-white:not(.input_disabled) {
-            border-right-color: rgba(0, 0, 0, .3);
+            .input__box {
+                border-right-color: rgba(0, 0, 0, .3);
+            }
 
-            &.input_focused {
-                border-right-color: var(--color-content-alfa-on-white);
+            &.input_focused .input__box {
+                border-right-color: var(--color-border-control-focused-alfa-on-white);
             }
         }
     }

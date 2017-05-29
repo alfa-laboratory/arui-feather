@@ -42,9 +42,6 @@ const PROP_SETS = [
     },
     {
         disabled: true
-    },
-    {
-        view: 'line'
     }
 ];
 

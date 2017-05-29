@@ -12,7 +12,8 @@
     font-weight: var(--font-weight);
 
     &__inner {
-        display: table;
+        display: inline-table;
+        width: 100%;
     }
 
     &__box {

@@ -12,38 +12,35 @@
     font-weight: var(--font-weight);
 
     &__inner {
-        display: table;
+        display: inline-table;
+        width: 100%;
     }
 
     &__control {
         box-sizing: border-box;
+        overflow-y: auto;
         display: table-cell;
         vertical-align: top;
         position: relative;
         width: 100%;
+        min-width: 150px;
+        min-height: 5em;
         margin: 0;
         padding: 0;
         outline: none;
         font: inherit;
-        border-radius: var(--border-radius-control);
-
-        min-height: 5em;
-        min-width: 150px;
-
         background: none;
-
+        border-radius: var(--border-radius-control);
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-        overflow-y: auto;
-    }
+        &::-webkit-input-placeholder {
+            text-indent: 0;
+        }
 
-    &::-webkit-input-placeholder {
-        text-indent: 0;
-    }
-
-    &::-moz-placeholder {
-        opacity: 1;
+        &::-moz-placeholder {
+            opacity: 1;
+        }
     }
 
     &_focused {

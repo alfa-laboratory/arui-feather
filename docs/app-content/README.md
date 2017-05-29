@@ -41,7 +41,7 @@ import Paragraph from 'arui-feather/paragraph';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `AppContent` |
 | className | Function\|String |  |  | Дополнительный класс |

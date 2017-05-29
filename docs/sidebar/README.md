@@ -12,7 +12,7 @@ import Sidebar from 'arui-feather/sidebar';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |

@@ -12,7 +12,7 @@ import Amount from 'arui-feather/amount';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | amount | [AmountType](#AmountType) |  | Да |  |
 | showZeroMinorPart | Boolean | `true`  |  | Отображение минорной части, если она нулевая |

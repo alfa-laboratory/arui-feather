@@ -1,3 +1,14 @@
+<a name="5.0.0"></a>
+# 5.0.0 (2017-05-29)
+
+
+### Features
+
+* introduce new errors on components ([#22](https://github.com/alfa-laboratory/arui-feather/issues/22)) ([009e2cf](https://github.com/alfa-laboratory/arui-feather/commit/009e2cf))
+* separate styles from js ([606ebdb](https://github.com/alfa-laboratory/arui-feather/commit/606ebdb))
+
+
+
 <a name="4.6.0"></a>
 # 4.6.0 (2017-05-26)
 

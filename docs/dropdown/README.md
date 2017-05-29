@@ -12,7 +12,7 @@ import Dropdown from 'arui-feather/dropdown';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | switcherType | [SwitcherTypeEnum](#SwitcherTypeEnum) | `'link'`  |  | Тип компонента |
 | switcherText | Node | `'Switcher'`  |  | Текст кнопки компонента |

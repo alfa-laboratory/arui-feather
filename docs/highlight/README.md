@@ -13,7 +13,7 @@ import Highlight from 'arui-feather/highlight';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `Highlight` |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |

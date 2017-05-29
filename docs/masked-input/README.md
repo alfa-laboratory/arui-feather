@@ -13,7 +13,7 @@ import MaskedInput from 'arui-feather/masked-input';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | mask | String |  | Да | Маска для поля ввода, использует формат https://github.com/insin/inputmask-core |
 | formatCharacters | objectOf |  |  | Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` |

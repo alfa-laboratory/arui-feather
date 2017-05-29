@@ -12,7 +12,7 @@ import Select from 'arui-feather/select';
 ## Props
 
 
-| Prop  | Тип  | По умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | className | Function\|String |  |  | Дополнительный класс |
 | mode | [ModeEnum](#ModeEnum) | `'check'`  |  | Тип выпадающего списка |

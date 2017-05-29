@@ -12,7 +12,7 @@ import Form from 'arui-feather/form';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | enctype | [EnctypeEnum](#EnctypeEnum) | `'application/x-www-form-urlencoded'`  |  | Способ кодирования данных формы при их отправке |
 | action | String | `'/'`  |  | Адрес отправки данных на сервер |

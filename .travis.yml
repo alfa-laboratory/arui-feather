@@ -11,14 +11,17 @@ addons:
       - g++-4.8
 
 env:
-  - CXX=g++-4.8
+  global:
+    - CXX=g++-4.8
+  matrix:
+    - TEST_SCOPE: lint
+    - TEST_SCOPE: unit
+    - TEST_SCOPE: gemini
 
 install:
   - yarn install
 
 script:
-  - yarn lint
-  - yarn test
-
-matrix:
-  fast_finish: true
+  - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
+  - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then npm run gemini; fi

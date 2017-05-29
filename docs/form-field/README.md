@@ -13,7 +13,7 @@ import FormField from 'arui-feather/form-field';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `FormField` |
 | label | Node |  |  | Заголовок для контрола |

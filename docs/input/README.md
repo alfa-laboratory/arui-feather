@@ -12,7 +12,7 @@ import Input from 'arui-feather/input';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | type | [TypeEnum](#TypeEnum) | `'text'`  |  | Тип поля.
 Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.

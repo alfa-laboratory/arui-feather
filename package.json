@@ -17,7 +17,7 @@
     "gemini": "gemini test --reporter html --reporter flat --grep=`env | grep '^SUITES' | awk -F= '{print $NF}'`; exit",
     "gemini-update": "ALL_SIZES=1 gemini update --grep=`env | grep '^SUITES' | awk -F= '{print $NF}'`; exit",
     "build": "webpack",
-    "_changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -c ./changelog.config.js",
+    "_changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "release-patch": "npm version patch -m 'chore(*): patch version'",
     "release-minor": "npm version minor -m 'chore(*): minor version'",
     "release-major": "npm version major -m 'chore(*): major version'",

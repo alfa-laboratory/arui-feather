@@ -1,5 +1,5 @@
 <a name="5.0.0"></a>
-# 5.0.0 (2017-05-29)
+# [5.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.6.0...v5.0.0) (2017-05-29)
 
 
 ### Features
@@ -10,7 +10,7 @@
 
 
 <a name="4.6.0"></a>
-# 4.6.0 (2017-05-26)
+# [4.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.5.0...v4.6.0) (2017-05-26)
 
 
 ### Bug Fixes
@@ -25,7 +25,7 @@
 
 
 <a name="4.5.0"></a>
-# 4.5.0 (2017-05-25)
+# [4.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.4.0...v4.5.0) (2017-05-25)
 
 
 ### Bug Fixes
@@ -41,7 +41,7 @@
 
 
 <a name="4.4.0"></a>
-# 4.4.0 (2017-05-23)
+# [4.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.3.0...v4.4.0) (2017-05-23)
 
 
 ### Bug Fixes
@@ -63,7 +63,7 @@
 
 
 <a name="4.3.0"></a>
-# 4.3.0 (2017-05-11)
+# [4.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.2.1...v4.3.0) (2017-05-11)
 
 
 ### Bug Fixes
@@ -80,7 +80,7 @@
 
 
 <a name="4.2.1"></a>
-## 4.2.1 (2017-05-02)
+## [4.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v4.2.0...v4.2.1) (2017-05-02)
 
 
 ### Bug Fixes
@@ -95,7 +95,7 @@
 
 
 <a name="4.2.0"></a>
-# 4.2.0 (2017-04-24)
+# [4.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.1.0...v4.2.0) (2017-04-24)
 
 
 ### Bug Fixes
@@ -110,7 +110,7 @@
 
 
 <a name="4.1.0"></a>
-# 4.1.0 (2017-04-20)
+# [4.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v4.0.1...v4.1.0) (2017-04-20)
 
 
 ### Bug Fixes
@@ -127,7 +127,7 @@
 
 
 <a name="4.0.1"></a>
-## 4.0.1 (2017-04-14)
+## [4.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v4.0.0...v4.0.1) (2017-04-14)
 
 
 ### Bug Fixes
@@ -139,7 +139,7 @@
 
 
 <a name="4.0.0"></a>
-# 4.0.0 (2017-04-11)
+# [4.0.0](https://github.com/alfa-laboratory/arui-feather/compare/2c7f060...v4.0.0) (2017-04-11)
 
 
 ### Features

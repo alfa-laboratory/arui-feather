@@ -24,12 +24,6 @@ matrix:
 install:
   - yarn install
 
-# before_script:
-#   - |
-#     if [ "${TEST_SCOPE}" == "gemini" ]; then
-#       curl -L https://gist.githubusercontent.com/tadatuta/3303b14f47dbee9ca079/raw/sauce-connect.sh | bash
-#     fi
-
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
   - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi

@@ -43,7 +43,7 @@ import Paragraph from 'arui-feather/paragraph';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | header | Node |  |  | Шапка страницы |
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `Page` |

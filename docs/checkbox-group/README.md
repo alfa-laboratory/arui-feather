@@ -12,7 +12,7 @@ import CheckboxGroup from 'arui-feather/checkbox-group';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | type | [TypeEnum](#TypeEnum) |  |  | Тип компонента |
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `CheckBoxGroup`, как правило, компоненты `CheckBox` |

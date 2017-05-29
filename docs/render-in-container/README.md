@@ -12,7 +12,7 @@ import RenderInContainer from 'arui-feather/render-in-container';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Array.<Node>\|Node |  |  | Дочерние элементы контейнера |
 | className | Function\|String |  |  | Дополнительный класс |

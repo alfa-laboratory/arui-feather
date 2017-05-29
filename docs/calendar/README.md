@@ -12,7 +12,7 @@ import Calendar from 'arui-feather/calendar';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | value | Number |  |  | Выбранная дата, в формате unix timestamp |
 | selectedFrom | Number | `null`  |  | Левая граница диапазона дат, в формате unix timestamp |

@@ -16,7 +16,10 @@ env:
   matrix:
     - TEST_SCOPE: lint
     - TEST_SCOPE: unit
-    # - TEST_SCOPE: gemini
+    - TEST_SCOPE: gemini
+
+matrix:
+  fast_finish: true
 
 install:
   - yarn install
@@ -24,4 +27,16 @@ install:
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
   - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test; fi
-  # - if [ "${TEST_SCOPE}" == "gemini" ]; then npm run gemini; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then npm run gemini; fi
+
+after_success:
+  - |
+    if [ "${TEST_SCOPE}" == "lint" ] && [ "${TRAVIS_BRANCH}" == "master" ]; then
+      sh ./tools/publish-styleguide.sh
+    fi
+
+after_failure:
+  - |
+    if [ "${TEST_SCOPE}" == "gemini" ]; then
+      sh ./tools/publish-gemini-report.sh
+    fi

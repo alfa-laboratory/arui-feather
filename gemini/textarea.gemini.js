@@ -56,7 +56,7 @@ geminiReact.suite(NAME, () => {
                                 actions.mouseUp(this.renderedComponent);
                             })
                             .capture('focused', function (actions) {
-                                actions.focus(this.renderedComponent);
+                                actions.mouseUp(this.renderedComponent);
                             });
                     }
                 });

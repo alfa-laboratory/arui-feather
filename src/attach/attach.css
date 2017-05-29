@@ -6,7 +6,7 @@
 
 .attach {
     display: inline-block;
-
+    font-family: var(--font);
     white-space: nowrap;
 
     &__label,

@@ -1,5 +1,6 @@
 import React from 'react';
 import Type from 'prop-types';
+
 import Button from '../src/button/button';
 import Paragraph from '../src/paragraph/paragraph';
 import Popup from '../src/popup/popup';
@@ -103,7 +104,7 @@ geminiReact.suite(NAME, function () {
                     );
 
                     suite
-                        .setExtraCaptureElements(['.popup'])
+                        .setExtraCaptureElements([`.${NAME}`])
                         .render(template)
                         .capture('plain');
                 });

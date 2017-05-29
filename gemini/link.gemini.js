@@ -47,9 +47,6 @@ geminiReact.suite(NAME, function () {
                             })
                             .capture('clicked', function (actions) {
                                 actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused', function (actions) {
-                                actions.mouseMove(this.renderedComponent, { x: 100, y: 0 });
                             });
                     }
                 });

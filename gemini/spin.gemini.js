@@ -7,8 +7,7 @@ const THEMES = ['alfa-on-color', 'alfa-on-white'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
 const PROP_SETS = [
-    {},
-    { disabled: true }
+    {}
 ];
 
 geminiReact.suite(NAME, function () {
@@ -35,27 +34,9 @@ geminiReact.suite(NAME, function () {
                         </GeminiBox>
                     );
 
-                    if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
-                    } else {
-                        suite
-                            .render(template)
-                            .capture('plain')
-                            .capture('hovered', function (actions) {
-                                actions.mouseMove(this.renderedComponent);
-                            })
-                            .capture('pressed', function (actions) {
-                                actions.mouseDown(this.renderedComponent);
-                            })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused-hard', function (actions) {
-                                actions.focus(this.renderedComponent);
-                            });
-                    }
+                    suite
+                        .render(template)
+                        .capture('plain');
                 });
             });
         });

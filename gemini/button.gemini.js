@@ -50,9 +50,6 @@ geminiReact.suite(NAME, function () {
                             })
                             .capture('clicked', function (actions) {
                                 actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused-hard', function (actions) {
-                                actions.focus(this.renderedComponent);
                             });
                     }
                 });

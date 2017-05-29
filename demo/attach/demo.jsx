@@ -1,10 +1,10 @@
 import React from 'react';
 import { autobind } from 'core-decorators';
 
-import Attach from '../../src/attach/attach';
+import Attach from '../../src/attach';
 import DemoSection from '../demo-section';
-import Icon from '../../src/icon/icon';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Icon from '../../src/icon';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

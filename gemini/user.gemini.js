@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import User from '../src/user/user';
+import User from '../src/user';
 
 const NAME = 'user';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

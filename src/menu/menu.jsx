@@ -16,10 +16,6 @@ import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 
-import './menu.css';
-import './menu_theme_alfa-on-white.css';
-import './menu_theme_alfa-on-color.css';
-
 /**
  * Компонент меню.
  */

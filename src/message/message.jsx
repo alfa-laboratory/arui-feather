@@ -10,8 +10,6 @@ import Popup from '../popup/popup';
 import cn from '../cn';
 import performance from '../performance';
 
-import './message.css';
-
 /**
  * Компонент сообщения.
  */

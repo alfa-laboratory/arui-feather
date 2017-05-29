@@ -1,7 +1,7 @@
 import React from 'react';
-import Amount from '../../src/amount/amount';
+import Amount from '../../src/amount';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 const AMOUNT = {
     value: 123535,

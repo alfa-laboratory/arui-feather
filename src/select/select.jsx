@@ -21,10 +21,6 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
-import './select.css';
-import './select_theme_alfa-on-color.css';
-import './select_theme_alfa-on-white.css';
-
 /**
  * @typedef {Object} CheckedOption
  * @property {String} value Уникальное значение, которое будет отправлено на сервер, если вариант выбран
@@ -647,7 +643,7 @@ class Select extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.button.getNode().getBoundingClientRect();
+        let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION

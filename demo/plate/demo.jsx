@@ -1,10 +1,10 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Link from '../../src/link/link';
+import Link from '../../src/link';
 import { LOREM_IPSUM } from '../../src/vars';
-import Paragraph from '../../src/paragraph/paragraph';
-import Plate from '../../src/plate/plate';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Paragraph from '../../src/paragraph';
+import Plate from '../../src/plate';
+import ThemeProvider from '../../src/theme-provider';
 
 /* eslint no-alert: 0 */
 class Demo extends React.Component {

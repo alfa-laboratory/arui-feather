@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../../src/button/button';
+import Button from '../../src/button';
 import DemoSection from '../demo-section';
-import Message from '../../src/message/message';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Message from '../../src/message';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     state = {

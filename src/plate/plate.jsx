@@ -13,8 +13,6 @@ import Icon from '../icon/icon';
 import cn from '../cn';
 import performance from '../performance';
 
-import './plate.css';
-
 /**
  * Компонент плашки.
  */

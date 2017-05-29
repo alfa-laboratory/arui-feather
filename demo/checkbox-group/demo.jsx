@@ -1,8 +1,8 @@
 import React from 'react';
-import CheckBox from '../../src/checkbox/checkbox';
-import CheckBoxGroup from '../../src/checkbox-group/checkbox-group';
+import CheckBox from '../../src/checkbox';
+import CheckBoxGroup from '../../src/checkbox-group';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

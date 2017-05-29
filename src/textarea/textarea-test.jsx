@@ -198,7 +198,7 @@ describe('textarea', () => {
 
     it('should scroll window to element on public scrollTo method', (done) => {
         let textarea = renderTextarea();
-        let elemTopPosition = textarea.controlNode.getBoundingClientRect().top;
+        let elemTopPosition = textarea.node.getBoundingClientRect().top;
         let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         textarea.instance.scrollTo();

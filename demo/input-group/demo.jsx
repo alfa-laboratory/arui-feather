@@ -1,8 +1,8 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Input from '../../src/input/input';
-import InputGroup from '../../src/input-group/input-group';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Input from '../../src/input';
+import InputGroup from '../../src/input-group';
+import ThemeProvider from '../../src/theme-provider';
 
 const INPUTS_1 = [
     { key: 'input-1-1' },

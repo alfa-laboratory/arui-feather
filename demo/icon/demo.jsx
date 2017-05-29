@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Icon from '../../src/icon/icon';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Icon from '../../src/icon';
+import ThemeProvider from '../../src/theme-provider';
 
 const ICONS = ['error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'];
 

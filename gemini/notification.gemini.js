@@ -1,6 +1,6 @@
-import Icon from '../src/icon/icon';
-import Notification from '../src/notification/notification';
-import ThemeProvider from '../src/theme-provider/theme-provider';
+import Icon from '../src/icon';
+import Notification from '../src/notification';
+import ThemeProvider from '../src/theme-provider';
 
 const NAME = 'notification';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

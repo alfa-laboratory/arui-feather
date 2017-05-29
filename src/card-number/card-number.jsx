@@ -9,8 +9,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './card-number.css';
-
 /**
  * Компонент для отображения номера банковской карты.
  * Маскирует карту, если передать все 16 цифр номера карты.

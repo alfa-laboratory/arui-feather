@@ -1,8 +1,8 @@
-import Button from '../../src/button/button';
+import Button from '../../src/button';
 import DemoSection from '../demo-section';
-import Icon from '../../src/icon/icon';
-import Notification from '../../src/notification/notification';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Icon from '../../src/icon';
+import Notification from '../../src/notification';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 

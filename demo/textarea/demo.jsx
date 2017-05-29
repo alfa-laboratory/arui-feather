@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Textarea from '../../src/textarea/textarea';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Textarea from '../../src/textarea';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 

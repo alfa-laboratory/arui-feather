@@ -10,10 +10,6 @@ import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 
-import './button.css';
-import './button_theme_alfa-on-color.css';
-import './button_theme_alfa-on-white.css';
-
 /**
  * Компонент кнопки (да, она нажимается!).
  */

@@ -1,8 +1,8 @@
 import React from 'react';
 import DemoSection from '../demo-section';
 import { LOREM_IPSUM } from '../../src/vars';
-import Paragraph from '../../src/paragraph/paragraph';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Paragraph from '../../src/paragraph';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

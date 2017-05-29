@@ -1,13 +1,13 @@
 import React from 'react';
-import AppContent from '../../src/app-content/app-content';
-import AppMenu from '../../src/app-menu/app-menu';
-import AppTitle from '../../src/app-title/app-title';
-import Footer from '../../src/footer/footer';
-import Header from '../../src/header/header';
-import Heading from '../../src/heading/heading';
-import Menu from '../../src/menu/menu';
-import Page from '../../src/page/page';
-import Paragraph from '../../src/paragraph/paragraph';
+import AppContent from '../../src/app-content';
+import AppMenu from '../../src/app-menu';
+import AppTitle from '../../src/app-title';
+import Footer from '../../src/footer';
+import Header from '../../src/header';
+import Heading from '../../src/heading';
+import Menu from '../../src/menu';
+import Page from '../../src/page';
+import Paragraph from '../../src/paragraph';
 
 import '../../src/main.css';
 

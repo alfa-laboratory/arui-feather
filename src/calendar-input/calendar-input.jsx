@@ -23,8 +23,6 @@ import { isNodeOutsideElement } from '../lib/window';
 import { parse } from '../lib/date-utils';
 import performance from '../performance';
 
-import './calendar-input.css';
-
 /**
  * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
  * https://www.w3.org/TR/html-markup/input.date.html#input.date.attrs.value

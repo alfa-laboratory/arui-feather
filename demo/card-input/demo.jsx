@@ -1,7 +1,7 @@
 import React from 'react';
-import CardInput from '../../src/card-input/card-input';
+import CardInput from '../../src/card-input';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

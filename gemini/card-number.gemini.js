@@ -1,4 +1,4 @@
-import CardNumber from '../src/card-number/card-number';
+import CardNumber from '../src/card-number';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'card-number';

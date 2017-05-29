@@ -12,7 +12,7 @@ import InlineError from 'arui-feather/inline-error';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `InlineError` |
 | className | Function\|String |  |  | Дополнительный класс |

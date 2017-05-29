@@ -1,8 +1,8 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Dropdown from '../../src/dropdown/dropdown';
-import Label from '../../src/label/label';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Dropdown from '../../src/dropdown';
+import Label from '../../src/label';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

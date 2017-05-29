@@ -2,9 +2,9 @@ import React from 'react';
 import { autobind } from 'core-decorators';
 
 import DemoSection from '../demo-section';
-import InputAutocomplete from '../../src/input-autocomplete/input-autocomplete';
-import Label from '../../src/label/label';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import InputAutocomplete from '../../src/input-autocomplete';
+import Label from '../../src/label';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 

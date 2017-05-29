@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Message from '../src/message/message';
-import ThemeProvider from '../src/theme-provider/theme-provider';
+import Message from '../src/message';
+import ThemeProvider from '../src/theme-provider';
 
 const NAME = 'message';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

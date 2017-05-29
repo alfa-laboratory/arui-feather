@@ -1,6 +1,6 @@
-import Collapse from '../src/collapse/collapse';
+import Collapse from '../src/collapse';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Paragraph from '../src/paragraph/paragraph';
+import Paragraph from '../src/paragraph';
 import { LOREM_IPSUM } from '../src/vars';
 
 const NAME = 'collapse';

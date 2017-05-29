@@ -1,4 +1,4 @@
-import Button from '../src/button/button';
+import Button from '../src/button';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'button';

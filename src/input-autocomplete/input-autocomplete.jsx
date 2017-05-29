@@ -19,8 +19,6 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 
-import './input-autocomplete.css';
-
 /**
  * Компонент поля для ввода с автокомплитом.
  *

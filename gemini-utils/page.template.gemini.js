@@ -1,15 +1,15 @@
-import Page from '../src/page/page';
+import Page from '../src/page';
 
-import Header from '../src/header/header';
-import Footer from '../src/footer/footer';
+import Header from '../src/header';
+import Footer from '../src/footer';
 
-import AppTitle from '../src/app-title/app-title';
-import AppMenu from '../src/app-menu/app-menu';
-import AppContent from '../src/app-content/app-content';
+import AppTitle from '../src/app-title';
+import AppMenu from '../src/app-menu';
+import AppContent from '../src/app-content';
 
-import Heading from '../src/heading/heading';
-import Menu from '../src/menu/menu';
-import Paragraph from '../src/paragraph/paragraph';
+import Heading from '../src/heading';
+import Menu from '../src/menu';
+import Paragraph from '../src/paragraph';
 
 function createPageSuite(name) {
     geminiReact.suite(name, function (suite) {

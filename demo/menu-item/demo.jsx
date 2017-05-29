@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import MenuItem from '../../src/menu-item/menu-item';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import MenuItem from '../../src/menu-item';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

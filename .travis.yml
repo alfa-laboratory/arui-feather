@@ -27,4 +27,4 @@ install:
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
   - if [ "${TEST_SCOPE}" == "unit" ]; then yarn test; fi
-  - if [ "${TEST_SCOPE}" == "gemini" ]; then ALL_SIZES=1 yarn gemini; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini; fi

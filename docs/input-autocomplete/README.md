@@ -19,6 +19,7 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 | opened | Boolean |  |  | Управление видимостью выпадающего списка |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
+| equalPopupWidth | Boolean | `false`  |  | Ширинa выпадающего списка равна ширине инпута |
 | onItemSelect | Function |  |  | Обработчик выбора пункта в выпадающем меню |
 
 

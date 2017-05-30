@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "5.0.0",
+  "version": "5.0.2",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -100,8 +100,7 @@
     "react-addons-create-fragment": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-style-proptype": "^3.0.0",
-    "react-textarea-autosize": "^4.3.2",
-    "react-transition-group": "^1.1.3"
+    "react-textarea-autosize": "^4.3.2"
   },
   "devDependencies": {
     "arui-presets": "2.2.1",
@@ -139,7 +138,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.1",
-    "library-utils": "^1.2.0",
+    "library-utils": "^1.2.1",
     "lint-staged": "^3.4.1",
     "mocha": "^3.0.0",
     "react-docgen": "^2.15.0",

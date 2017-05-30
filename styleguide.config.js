@@ -34,9 +34,13 @@ module.exports = {
     title: 'ARUI FEATHER',
     serverPort: 3013,
     skipComponentsWithoutExample: true,
-    components: 'src/**/**/[a-z]*.jsx',
+    components: 'src/**/**/index.js',
     propsParser(filePath, source, resolver, handlers) {
-        return reactDocGenWithMergedComposed(filePath, resolver, handlers);
+        // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
+        const componentDirName = path.dirname(filePath);
+        const componentName = componentDirName.split(path.sep).pop();
+        const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
+        return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),

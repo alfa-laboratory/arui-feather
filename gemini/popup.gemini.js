@@ -87,7 +87,7 @@ class TestButtonPopupContainer extends React.Component {
 geminiReact.suite(NAME, function () {
     THEMES.forEach((theme) => {
         let themeSelector = `${NAME}_theme_${theme}`;
-        let providerSelector = `${themeSelector + NAME}_container-provider`;
+        let providerSelector = `${themeSelector}.${NAME}_container-provider`;
 
         SIZES.forEach((size) => {
             let sizeSelector = `${NAME}_size_${size}`;

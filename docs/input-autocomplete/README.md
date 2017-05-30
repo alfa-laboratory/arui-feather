@@ -20,6 +20,7 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
 | equalPopupWidth | Boolean | `false`  |  | Ширинa выпадающего списка равна ширине инпута |
+| directions | Array.<[DirectionsEnum](#DirectionsEnum)> | `['bottom-left', 'bottom-right', 'top-left', 'top-right']`  |  | Направления, в которые может открываться попап компонента |
 | onItemSelect | Function |  |  | Обработчик выбора пункта в выпадающем меню |
 
 
@@ -77,4 +78,17 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
  * `'available'`
 
 
+### <a id="DirectionsEnum"></a>DirectionsEnum
 
+ * `'top-left'`
+ * `'top-center'`
+ * `'top-right'`
+ * `'left-top'`
+ * `'left-center'`
+ * `'left-bottom'`
+ * `'right-top'`
+ * `'right-center'`
+ * `'right-bottom'`
+ * `'bottom-left'`
+ * `'bottom-center'`
+ * `'bottom-right'`

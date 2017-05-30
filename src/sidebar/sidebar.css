@@ -21,11 +21,16 @@
     height: 100vh;
     top: 0;
     right: 0;
-    margin-right: calc(var(--sidebar-shift) * -1);
+    margin-right: calc((var(--sidebar-width) + var(--sidebar-shift)) * -1);
     padding: var(--sidebar-padding-top) 0 var(--sidebar-padding) var(--sidebar-padding);
     padding-right: calc(var(--sidebar-padding) + var(--sidebar-shift));
     box-sizing: border-box;
     z-index: 1001;
+    transition: margin-right .45s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &_visible {
+        margin-right: calc(var(--sidebar-shift) * -1);
+    }
 
     &__closer {
         position: absolute;
@@ -58,31 +63,15 @@
     }
 }
 
-.sidebar-transition-enter,
-.sidebar-transition-appear {
-    margin-right: calc((var(--sidebar-width) + var(--sidebar-shift)) * -1);
-}
-
-.sidebar-transition-enter.sidebar-transition-enter-active,
-.sidebar-transition-appear.sidebar-transition-appear-active {
-    margin-right: calc(var(--sidebar-shift) * -1);
-    transition: margin-right .45s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.sidebar-transition-leave {
-    margin-right: calc(var(--sidebar-shift) * -1);
-}
-
-.sidebar-transition-leave.sidebar-transition-leave-active {
-    margin-right: calc((var(--sidebar-width) + var(--sidebar-shift)) * -1);
-    transition: margin-right .45s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
 @media (--small-only) {
     .sidebar {
         width: 100%;
         padding: var(--sidebar-padding-top) var(--sidebar-padding-small) var(--sidebar-padding-small);
-        margin-right: 0;
+        margin-right: -100%;
+
+        &_visible {
+            margin-right: 0;
+        }
 
         &__closer {
             top: 0;
@@ -94,23 +83,5 @@
 
     body.sidebar-visible {
         overflow: hidden;
-    }
-
-    .sidebar-transition-enter,
-    .sidebar-transition-appear {
-        margin-right: -100%;
-    }
-
-    .sidebar-transition-enter.sidebar-transition-enter-active,
-    .sidebar-transition-appear.sidebar-transition-appear-active {
-        margin-right: 0;
-    }
-
-    .sidebar-transition-leave {
-        margin-right: 0;
-    }
-
-    .sidebar-transition-leave.sidebar-transition-leave-active {
-        margin-right: -100%;
     }
 }

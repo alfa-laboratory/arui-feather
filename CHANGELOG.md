@@ -1,3 +1,13 @@
+<a name="5.0.1"></a>
+## 5.0.1 (2017-05-30)
+
+
+### Features
+
+* revert csstransitiongroup in sidebar ([#48](https://github.com/alfa-laboratory/arui-feather/issues/48)) ([332d367](https://github.com/alfa-laboratory/arui-feather/commit/332d367))
+
+
+
 <a name="5.0.0"></a>
 # 5.0.0 (2017-05-29)
 

@@ -1,5 +1,16 @@
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v5.0.2...v5.1.0) (2017-05-31)
+
+
+### Features
+
+* **input-autocomplete:** add popup directions ([#50](https://github.com/alfa-laboratory/arui-feather/issues/50)) ([017743e](https://github.com/alfa-laboratory/arui-feather/commit/017743e))
+* **input-autocomplete:** equal popup width ([#49](https://github.com/alfa-laboratory/arui-feather/issues/49)) ([bd433b9](https://github.com/alfa-laboratory/arui-feather/commit/bd433b9))
+
+
+
 <a name="5.0.2"></a>
-## 5.0.2 (2017-05-30)
+## [5.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v5.0.1...v5.0.2) (2017-05-30)
 
 
 ### Bug Fixes
@@ -9,7 +20,7 @@
 
 
 <a name="5.0.1"></a>
-## 5.0.1 (2017-05-30)
+## [5.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v5.0.0...v5.0.1) (2017-05-30)
 
 
 ### Features

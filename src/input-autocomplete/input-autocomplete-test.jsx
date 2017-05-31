@@ -120,6 +120,11 @@ describe('input-autocomplete', () => {
         expect(popupWidth).to.be.equal(inputWidth);
     });
 
+    it('should set directions to popup', () => {
+        let { popupNode } = renderInputAutocomplete({ options: OPTIONS, directions: ['right-bottom'] });
+        expect(popupNode).to.have.class('popup_direction_right-bottom');
+    });
+
     it('should render all options when input value is empty', () => {
         let { popupNode } = renderInputAutocomplete({ options: OPTIONS });
         let optionsNode = popupNode.querySelectorAll('.menu-item');

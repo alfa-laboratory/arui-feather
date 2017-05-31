@@ -49,6 +49,11 @@ class InputAutocomplete extends React.Component {
         width: Type.oneOf(['default', 'available']),
         /** Ширинa выпадающего списка равна ширине инпута */
         equalPopupWidth: Type.bool,
+        /** Направления, в которые может открываться попап компонента */
+        directions: Type.arrayOf(Type.oneOf([
+            'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
+            'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
+        ])),
         /** Обработчик выбора пункта в выпадающем меню */
         onItemSelect: Type.func
     };
@@ -58,6 +63,7 @@ class InputAutocomplete extends React.Component {
         size: 'm',
         width: 'default',
         options: [],
+        directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         equalPopupWidth: false
     };
 
@@ -173,7 +179,7 @@ class InputAutocomplete extends React.Component {
                 autoclosable={ true }
                 onClickOutside={ this.handleClickOutside }
                 target='anchor'
-                directions={ ['bottom-left', 'bottom-right', 'top-left', 'top-right'] }
+                directions={ this.props.directions }
                 height='adaptive'
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }

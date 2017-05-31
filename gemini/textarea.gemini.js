@@ -52,9 +52,6 @@ geminiReact.suite(NAME, () => {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
                             .capture('focused', function (actions) {
                                 actions.mouseUp(this.renderedComponent);
                             });

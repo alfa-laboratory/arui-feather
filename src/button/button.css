@@ -64,7 +64,7 @@
         text-decoration: none;
     }
 
-    &_focused-hard {
+    &_focused {
         z-index: 1;
     }
 

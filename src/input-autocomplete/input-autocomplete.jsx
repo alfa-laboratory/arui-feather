@@ -47,6 +47,8 @@ class InputAutocomplete extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
+        /** Ширинa выпадающего списка равна ширине инпута */
+        equalPopupWidth: Type.bool,
         /** Обработчик выбора пункта в выпадающем меню */
         onItemSelect: Type.func
     };
@@ -55,7 +57,8 @@ class InputAutocomplete extends React.Component {
         disabled: false,
         size: 'm',
         width: 'default',
-        options: []
+        options: [],
+        equalPopupWidth: false
     };
 
     state = {
@@ -174,6 +177,7 @@ class InputAutocomplete extends React.Component {
                 height='adaptive'
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }
+                maxWidth={ this.state.popupStyles.maxWidth }
                 key='popup'
             >
                 <Menu
@@ -447,11 +451,14 @@ class InputAutocomplete extends React.Component {
     updatePopupStyles() {
         let input = this.input.getNode();
         let inputWidth = input.getBoundingClientRect().width;
+        let popupStyles = { minWidth: inputWidth };
+
+        if (this.props.equalPopupWidth) {
+            popupStyles.maxWidth = inputWidth;
+        }
 
         this.setState({
-            popupStyles: {
-                minWidth: inputWidth
-            }
+            popupStyles
         });
     }
 

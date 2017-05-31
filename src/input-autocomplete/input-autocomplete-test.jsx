@@ -99,6 +99,27 @@ describe('input-autocomplete', () => {
         expect(popupWidth).to.be.at.least(inputWidth);
     });
 
+    it('should set popup width equal to input width when equalPopupWidth = true', () => {
+        let props = {
+            options: [
+                {
+                    value: `Very, very long option text
+                            used just to make autocomplete popup
+                            strech really really wide and another
+                            couple of words just to be sure`
+                }
+            ],
+            equalPopupWidth: true,
+            opened: true
+        };
+
+        let { popupNode, inputNode } = renderInputAutocomplete(props);
+        let popupWidth = popupNode.getBoundingClientRect().width;
+        let inputWidth = inputNode.getBoundingClientRect().width;
+
+        expect(popupWidth).to.be.equal(inputWidth);
+    });
+
     it('should render all options when input value is empty', () => {
         let { popupNode } = renderInputAutocomplete({ options: OPTIONS });
         let optionsNode = popupNode.querySelectorAll('.menu-item');

@@ -12,7 +12,6 @@
     }
 
     &.select_focused,
-    &.select_focused-hard,
     &.select_opened {
         .select__button {
             border-color: rgba(255, 255, 255, .9);
@@ -27,7 +26,6 @@
         }
 
         &.select_focused,
-        &.select_focused-hard,
         &.select_opened {
             .select__button {
                 border-color: var(--color-error-translucent);

@@ -31,6 +31,9 @@
         font: inherit;
         background: none;
         border-radius: var(--border-radius-control);
+        transition-duration: 250ms;
+        transition-property: border-bottom-color, box-shadow, width;
+        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -41,6 +44,32 @@
         &::-moz-placeholder {
             opacity: 1;
         }
+
+        &::placeholder {
+            transition: opacity .2s ease-in-out;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:after {
+            -webkit-text-fill-color: #fff !important;
+
+            /* Hack from http://stackoverflow.com/a/29350537 */
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    }
+
+    &_has-label {
+        .textarea__control::placeholder {
+            opacity: 0;
+        }
+
+        &.textarea_focused {
+            .textarea__control::placeholder {
+                opacity: 1;
+            }
+        }
     }
 
     &_focused {
@@ -50,7 +79,9 @@
     &_disabled {
         cursor: default;
 
-        resize: none;
+        .textarea__control {
+            resize: none;
+        }
     }
 
     &_size_s {
@@ -90,26 +121,24 @@
         min-width: 0;
     }
 
-    &_resize_none {
+    &_resize_none .textarea__control {
         resize: none;
     }
 
-    &_resize_both {
+    &_resize_both &__control {
         resize: both;
     }
 
-    &_resize_horizontal {
+    &_resize_horizontal &__control {
         resize: horizontal;
     }
 
-    &_resize_vertical {
+    &_resize_vertical &__control {
         resize: vertical;
     }
 
-    &_autosize {
-        .textarea__control {
-            overflow-y: hidden;
-        }
+    &_autosize &__control {
+        overflow-y: hidden;
     }
 
     &.textarea_invalid {

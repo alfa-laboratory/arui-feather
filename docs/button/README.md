@@ -73,6 +73,7 @@ import Button from 'arui-feather/button';
  * `'action'`
  * `'extra'`
  * `'other'`
+ * `'tag'`
 
 
 ### <a id="TypeEnum"></a>TypeEnum

@@ -41,18 +41,20 @@ class Textarea extends React.Component {
         value: Type.string,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
-        /** Подсказка */
+        /** Лейбл для поля */
+        label: Type.node,
+        /** Подсказка в поле */
         placeholder: Type.string,
+        /** Подсказка под полем */
+        hint: Type.node,
+        /** Отображение ошибки */
+        error: Type.node,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Управление возможностью изменения размеров компонента */
         resize: Type.oneOf(['both', 'horizontal', 'vertical', 'none']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Подсказка под полем */
-        hint: Type.node,
-        /** Отображение ошибки */
-        error: Type.node,
         /** Обработчик изменения значения 'value' */
         onChange: Type.func,
         /** Обработчик фокуса поля */
@@ -69,7 +71,8 @@ class Textarea extends React.Component {
         width: 'default',
         autocomplete: true,
         disabled: false,
-        autosize: false,
+        autosize: true,
+        resize: 'none',
         size: 'm'
     };
 
@@ -118,11 +121,19 @@ class Textarea extends React.Component {
                     size: this.props.size,
                     width: this.props.width,
                     resize: this.props.resize,
-                    invalid: !!this.props.error
+                    invalid: !!this.props.error,
+                    'has-label': !!this.props.label,
+                    'has-value': !!this.props.value || !!this.state.value
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
                 <span className={ cn('inner') }>
+                    {
+                        !!this.props.label &&
+                        <span className={ cn('top') }>
+                            { this.props.label }
+                        </span>
+                    }
                     {
                         !this.props.autosize
                         ? <textarea { ...textareaProps } />

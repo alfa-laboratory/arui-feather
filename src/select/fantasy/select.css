@@ -1,0 +1,149 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../../vars-fantasy.css';
+
+.select {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    min-width: 150px;
+    max-width: 100%;
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+
+    &__inner {
+        display: inline-table;
+        width: 100%;
+    }
+
+    &__sub {
+        box-sizing: border-box;
+        display: table-caption;
+        caption-side: bottom;
+        padding-top: 5px;
+        padding-right: 12px;
+        white-space: normal;
+
+        .select_size_s & {
+            font-size: var(--font-size-xs);
+        }
+
+        .select_size_m & {
+            font-size: var(--font-size-s);
+        }
+
+        .select_size_l & {
+            font-size: var(--font-size-m);
+        }
+
+        .select_size_xl & {
+            font-size: var(--font-size-l);
+        }
+    }
+
+    &__button,
+    &_native {
+        display: table-cell;
+    }
+
+    &__button {
+        width: 100%;
+        text-align: left;
+        vertical-align: top;
+
+        /* Override default button styles */
+        &,
+        &.button_focused,
+        &.button_hovered {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-radius: 0;
+        }
+
+        & .button__text {
+            max-width: 100%;
+        }
+    }
+
+    &__menu {
+        .menu-item:first-child {
+            border-radius: var(--border-radius-control) var(--border-radius-control) 0 0;
+        }
+
+        .menu-item:last-child {
+            border-radius: 0 0 var(--border-radius-control) var(--border-radius-control);
+        }
+    }
+
+    &__tick {
+        opacity: var(--opacity-minor);
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-position: center;
+    }
+
+    &_disabled &__tick {
+        opacity: var(--opacity-disabled);
+    }
+
+    &_size_s &__button,
+    &_size_m &__button {
+        padding-right: 30px;
+        padding-left: 10px;
+    }
+
+    &_size_l &__button,
+    &_size_xl &__button {
+        padding-right: 34px;
+        padding-left: 15px;
+    }
+
+    &_focused &__tick,
+    &__button.button_hovered &__tick {
+        opacity: 1;
+    }
+
+    &_size_s &__tick {
+        right: 5px;
+    }
+
+    &_size_m &__tick {
+        right: 2px;
+    }
+
+    &_size_l &__tick {
+        right: 0;
+    }
+
+    &_size_xl &__tick {
+        right: 0;
+    }
+
+    &_width_available {
+        width: 100%;
+        min-width: 0;
+    }
+
+    &_native {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: 100%;
+        border-radius: var(--border-radius-control);
+    }
+}
+
+.select_invalid {
+    .select__sub {
+        color: var(--color-error);
+    }
+}

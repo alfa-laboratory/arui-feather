@@ -3,10 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 .collapse {
-    &__content {
-        position: relative;
-    }
-
     &__link {
         outline: none;
 
@@ -18,19 +14,6 @@
             margin-left: 5px;
             background-size: 100% 100%;
         }
-    }
-
-    &__content {
-        height: 0;
-        visibility: hidden;
-        transition: height 0.2s;
-        overflow: hidden;
-    }
-
-    &_expanded &__content {
-        height: auto;
-        visibility: visible;
-        padding-bottom: 15px;
     }
 
     &_expanded &__link:after {

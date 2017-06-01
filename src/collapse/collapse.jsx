@@ -6,8 +6,8 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
+import Collapsible from '../collapsible/collapsible';
 import Link from '../link/link';
-import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -44,17 +44,6 @@ class Collapse extends React.Component {
         isExpanded: false
     };
 
-    content;
-    contentCase;
-
-    componentDidMount() {
-        this.updateContentHeight();
-    }
-
-    componentDidUpdate() {
-        this.updateContentHeight();
-    }
-
     render(cn) {
         let expanded = this.props.isExpanded !== undefined
             ? this.props.isExpanded
@@ -66,15 +55,11 @@ class Collapse extends React.Component {
                     expanded
                 }) }
             >
-                <div
-                    ref={ (content) => { this.content = content; } }
+                <Collapsible
                     className={ cn('content') }
-                >
-                    <div ref={ (contentCase) => { this.contentCase = contentCase; } }>
-                        { this.props.children }
-                    </div>
-                    <ResizeSensor onResize={ this.updateContentHeight } />
-                </div>
+                    { ...this.props }
+                    isExpanded={ expanded }
+                />
                 <Link
                     className={ cn('link') }
                     pseudo={ true }
@@ -101,25 +86,6 @@ class Collapse extends React.Component {
 
         if (this.props.onExpandedChange) {
             this.props.onExpandedChange(newExpandedValue);
-        }
-    }
-
-    @autobind
-    updateContentHeight() {
-        let expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
-
-        let contentHeight;
-
-        if (expanded) {
-            contentHeight = this.contentCase.offsetHeight;
-        } else {
-            contentHeight = 0;
-        }
-
-        if (this.content) {
-            this.content.style.height = `${contentHeight}px`;
         }
     }
 }

@@ -47,6 +47,13 @@ class InputAutocomplete extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
+        /** Ширинa выпадающего списка равна ширине инпута */
+        equalPopupWidth: Type.bool,
+        /** Направления, в которые может открываться попап компонента */
+        directions: Type.arrayOf(Type.oneOf([
+            'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
+            'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
+        ])),
         /** Обработчик выбора пункта в выпадающем меню */
         onItemSelect: Type.func
     };
@@ -55,7 +62,9 @@ class InputAutocomplete extends React.Component {
         disabled: false,
         size: 'm',
         width: 'default',
-        options: []
+        options: [],
+        directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
+        equalPopupWidth: false
     };
 
     state = {
@@ -170,10 +179,11 @@ class InputAutocomplete extends React.Component {
                 autoclosable={ true }
                 onClickOutside={ this.handleClickOutside }
                 target='anchor'
-                directions={ ['bottom-left', 'bottom-right', 'top-left', 'top-right'] }
+                directions={ this.props.directions }
                 height='adaptive'
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }
+                maxWidth={ this.state.popupStyles.maxWidth }
                 key='popup'
             >
                 <Menu
@@ -447,11 +457,14 @@ class InputAutocomplete extends React.Component {
     updatePopupStyles() {
         let input = this.input.getNode();
         let inputWidth = input.getBoundingClientRect().width;
+        let popupStyles = { minWidth: inputWidth };
+
+        if (this.props.equalPopupWidth) {
+            popupStyles.maxWidth = inputWidth;
+        }
 
         this.setState({
-            popupStyles: {
-                minWidth: inputWidth
-            }
+            popupStyles
         });
     }
 

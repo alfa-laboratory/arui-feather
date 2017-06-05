@@ -1,0 +1,431 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../../vars-fantasy.css';
+
+:root {
+    --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
+    --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
+    --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
+    --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
+}
+
+.input {
+    display: inline-block;
+    font-family: var(--font);
+    font-weight: var(--font-weight-light);
+    text-rendering: optimizeLegibility;
+
+    &_has-label {
+        /* TODO @teryaew: spread for all sizes */
+        padding-top: 5px;
+    }
+
+    &__inner {
+        display: inline-table;
+        position: relative;
+        width: 100%;
+    }
+
+    &__box {
+        box-sizing: border-box;
+        display: table-cell;
+        position: relative;
+        min-width: 150px;
+        user-select: none;
+        transition-duration: 250ms;
+        transition-property: border-bottom-color, box-shadow, width;
+        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
+        -webkit-touch-callout: none;
+    }
+
+    &__top {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: var(--font-size-m);
+        text-overflow: ellipsis;
+        pointer-events: none;
+        transform: scale(1) translate3d(0, 0, 0);
+        transform-origin: 0 100%;
+        transition-duration: 200ms;
+        transition-property: color, transform;
+        transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+        will-change: transform;
+        white-space: nowrap;
+    }
+
+    &__sub {
+        box-sizing: border-box;
+        display: table-caption;
+        caption-side: bottom;
+        padding-top: 5px;
+        padding-right: 12px;
+        white-space: normal;
+    }
+
+    &__control {
+        box-sizing: border-box;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        font: inherit;
+        font-weight: var(--font-weight);
+        line-height: inherit;
+        background: none;
+        border: none;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+
+        &::-webkit-input-placeholder {
+            text-indent: 0;
+        }
+
+        &::-moz-placeholder {
+            opacity: 1;
+        }
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        &::placeholder {
+            transition: opacity .2s ease-in-out;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:after {
+            -webkit-text-fill-color: #fff !important;
+
+            /* Hack from http://stackoverflow.com/a/29350537 */
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    }
+
+    &_has-label:not(&_invalid) {
+        .input__control::placeholder {
+            opacity: 0;
+        }
+
+        &.input_focused {
+            .input__control::placeholder {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_has-clear &__control {
+        padding-right: 0;
+        text-overflow: ellipsis;
+    }
+
+    &__clear {
+        opacity: var(--opacity-minor);
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+        color: inherit;
+        font: inherit;
+        background: none;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: none;
+        transition: opacity 0.1s ease-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &_has-icon &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 200ms ease;
+        text-align: center;
+    }
+
+    &_has-icon &__control {
+        padding-right: 2px;
+        text-overflow: ellipsis;
+    }
+
+    &_width_available {
+        width: 100%;
+        min-width: 0;
+    }
+
+    &_has-addons &__box {
+        flex-grow: 1;
+        margin-right: -1px;
+        border-radius: 0;
+    }
+
+    &__addons-layout {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+
+    &_type_hidden {
+        display: none !important;
+    }
+
+    /* reset for ios */
+    &__control:disabled {
+        opacity: 1;
+    }
+}
+
+.input_focused {
+    z-index: 1;
+
+    &.input_mode_link {
+        .input__control {
+            padding-left: 0;
+        }
+    }
+}
+
+.input_disabled {
+    &:before,
+    .input__clear {
+        display: none;
+    }
+
+    .input__box,
+    .input__control {
+        cursor: default;
+    }
+}
+
+.input_type_password .input__control {
+    text-overflow: clip;
+}
+
+.input_size_s {
+    .input__top {
+        line-height: 30px;
+    }
+
+    &.input_invalid,
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-s)) translate3d(0, -22px, 0);
+        }
+    }
+
+    .input__top,
+    .input__box {
+        font-size: var(--font-size-s);
+    }
+
+    .input__box {
+        height: 30px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-xs);
+    }
+
+    .input__control {
+        padding: 7px 0 6px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 28px; /* -2px borders, TODO @teryaew: not needed anymore? */
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon { /* TODO: Maybe icon should not have set this width/height */
+        width: 28px;
+        height: 28px;
+        line-height: 26px;
+    }
+}
+
+.input_size_m {
+    .input__top {
+        line-height: 40px;
+    }
+
+    &.input_invalid,
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-m)) translate3d(0, -30px, 0);
+        }
+    }
+
+    .input__top,
+    .input__box {
+        font-size: var(--font-size-m);
+    }
+
+    .input__box {
+        height: 40px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-s);
+    }
+
+    .input__control {
+        padding: 10px 0;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 28px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 38px;
+        height: 38px;
+        margin-right: -7px;
+        line-height: 36px;
+        text-align: center;
+    }
+
+    &.input_mode_link {
+        .input__box {
+            height: 38px;
+            padding: 0 12px;
+        }
+
+        .input__trigger {
+            line-height: 40px;
+        }
+    }
+}
+
+.input_size_l {
+    .input__top {
+        line-height: 50px;
+    }
+
+    &.input_invalid,
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-l)) translate3d(0, -31px, 0);
+        }
+    }
+
+    .input__top,
+    .input__box {
+        font-size: var(--font-size-l);
+    }
+
+    .input__box {
+        height: 50px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-m);
+    }
+
+    .input__control {
+        padding: 14px 0 13px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 48px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 48px;
+        height: 48px;
+        line-height: 46px;
+    }
+}
+
+.input_size_xl {
+    .input__top {
+        line-height: 60px;
+    }
+
+    &.input_invalid,
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-xl)) translate3d(0, -45px, 0);
+        }
+    }
+
+    .input__top,
+    .input__box {
+        font-size: var(--font-size-xl);
+    }
+
+    .input__box {
+        height: 60px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-l);
+    }
+
+    .input__control {
+        padding: 17px 0 16px;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 60px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 58px;
+        height: 58px;
+        line-height: 56px;
+    }
+}
+
+.input.input_invalid {
+    .input__top,
+    .input__sub {
+        color: var(--color-error);
+    }
+
+    .input__box {
+        border-bottom-color: var(--color-error-translucent);
+    }
+
+    &.input_focused {
+        .input__box {
+            border-bottom-color: var(--color-error-translucent);
+            box-shadow: inset 0 -1px 0 var(--color-error-translucent);
+        }
+    }
+}

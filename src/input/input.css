@@ -55,20 +55,17 @@
     }
 
     &__control {
-        box-sizing: border-box;
         display: inline-block;
         position: relative;
         width: 100%;
-        height: 100%;
         margin: 0;
         padding: 0;
         outline: none;
         font: inherit;
         font-weight: var(--font-weight);
-        line-height: inherit;
+        line-height: var(--line-height-condensed);
         background: none;
         border: 0;
-        border-radius: var(--border-radius-inner-control);
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -90,6 +87,32 @@
 
         &::-ms-clear {
             display: none;
+        }
+
+        &::placeholder {
+            transition: opacity .2s ease-in-out;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:after {
+            -webkit-text-fill-color: #fff !important;
+
+            /* Hack from http://stackoverflow.com/a/29350537 */
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    }
+
+    &_has-label {
+        .input__control::placeholder {
+            opacity: 0;
+        }
+
+        &.input_focused {
+            .input__control::placeholder {
+                opacity: 1;
+            }
         }
     }
 

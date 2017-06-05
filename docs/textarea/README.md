@@ -18,19 +18,20 @@ import Textarea from 'arui-feather/textarea';
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
 | autocomplete | Boolean | `true`  |  | Управление автозаполнением компонента |
 | disabled | Boolean | `false`  |  | Управление возможностью изменения значения компонента |
-| autosize | Boolean | `false`  |  | Управление возможностью подстраивать высоту компонента под высоту текста |
+| autosize | Boolean | `true`  |  | Управление возможностью подстраивать высоту компонента под высоту текста |
 | maxLength | Number |  |  | Максимальное число символов |
 | id | String |  |  | Уникальный идентификатор блока |
 | name | String |  |  | Уникальное имя блока |
 | defaultValue | String |  |  | Содержимое поля ввода, указанное по умолчанию (используйте это поле если хотите использовать компонент как uncontrolled) |
 | value | String |  |  | Содержимое поля ввода |
 | tabIndex | Number |  |  | Последовательность перехода между контролами при нажатии на Tab |
-| placeholder | String |  |  | Подсказка |
-| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
-| resize | [ResizeEnum](#ResizeEnum) |  |  | Управление возможностью изменения размеров компонента |
-| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| label | Node |  |  | Лейбл для поля |
+| placeholder | String |  |  | Подсказка в поле |
 | hint | Node |  |  | Подсказка под полем |
 | error | Node |  |  | Отображение ошибки |
+| size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
+| resize | [ResizeEnum](#ResizeEnum) | `'none'`  |  | Управление возможностью изменения размеров компонента |
+| theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | onChange | Function |  |  | Обработчик изменения значения 'value' |
 | onFocus | Function |  |  | Обработчик фокуса поля |
 | onBlur | Function |  |  | Обработчик снятия фокуса c поля |

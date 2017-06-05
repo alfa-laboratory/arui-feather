@@ -34,7 +34,7 @@ module.exports = {
     title: 'ARUI FEATHER',
     serverPort: 3013,
     skipComponentsWithoutExample: true,
-    components: './src/**/**/index.js',
+    components: './src/*/index.js',
     propsParser(filePath, source, resolver, handlers) {
         // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
         const componentDirName = path.dirname(filePath);

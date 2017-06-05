@@ -18,6 +18,7 @@ import Button from 'arui-feather/button';
 | icon | Node |  |  | Иконка кнопки |
 | rightAddons | Node |  |  | Список произвольных элементов в левом слоте |
 | leftAddons | Node |  |  | Список произвольных элементов в правом слоте |
+| inlineSubmit | Boolean |  |  | Представление для встраивания в поле ввода |
 | view | [ViewEnum](#ViewEnum) |  |  | Тип кнопки |
 | type | [TypeEnum](#TypeEnum) | `'button'`  |  | Поведение кнопки |
 | tag | [TagEnum](#TagEnum) | `'button'`  |  | HTML элемент, которым будет компонент в DOM |
@@ -73,6 +74,7 @@ import Button from 'arui-feather/button';
  * `'action'`
  * `'extra'`
  * `'other'`
+ * `'tag'`
 
 
 ### <a id="TypeEnum"></a>TypeEnum

@@ -22,23 +22,18 @@ const HEADING_LEVEL = {
 @performance()
 class Heading extends React.Component {
     static propTypes = {
-        /** Выравнивание контента */
-        align: Type.oneOf(['left', 'center', 'right', 'justify']),
         /** Дочерние элементы `Heading` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Размер, определяющий какой тег заголовка будет использоваться */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Вес шрифта */
-        weight: Type.oneOf(['light', 'bold', 'black']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string])
     };
 
     static defaultProps = {
-        size: 'xl',
-        weight: 'bold'
+        size: 'xl'
     };
 
     render(cn) {

@@ -247,7 +247,6 @@ class CalendarInput extends React.Component {
                     className={ cn('custom-field') }
                     disabledAttr={ this.state.isNativeInputEnabled }
                     error={ this.props.error }
-                    showErrorPopup={ this.state.isNativeInputEnabled }
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                     mask='11.11.1111'
                     size={ this.props.size }

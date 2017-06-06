@@ -8,8 +8,7 @@ yarn-error.log
 
 .gemini-react-tmp/
 .gemini.tmp.*/
-arui-demo/styleguide/build/
-arui-demo/styleguide/index.html
+arui-demo/styleguide*
 coverage/
 gemini-coverage/
 gemini-report/

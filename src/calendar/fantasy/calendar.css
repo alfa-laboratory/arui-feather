@@ -90,7 +90,7 @@
             right: 0;
             bottom: 2px;
             left: 0;
-            background: var(--color-red);
+            background: var(--color-accent);
             border-radius: 14px;
             z-index: -1;
         }

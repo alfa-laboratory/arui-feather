@@ -25,13 +25,13 @@
     "postversion": "git push origin master && git push --tags && npm run pub",
     "modernizr": "node ./tools/modernizr-build.js",
     "commitmsg": "validate-commit-msg",
-    "precommit": "npm run docs && git add docs && npm run styleguide:build && git add arui-demo/styleguide && lint-staged",
+    "precommit": "npm run docs && git add docs && lint-staged",
     "docs": "gulp --cwd . --gulpfile ./node_modules/library-utils/gulpfile.js docs",
     "compile": "gulp --cwd . --gulpfile ./node_modules/library-utils/gulpfile.js compile",
     "pub": "npm run compile && cd .publish && npm publish",
     "styleguide": "styleguidist server",
     "styleguide-fantasy": "styleguidist server --config ./styleguide-fantasy.config.js",
-    "styleguide:build": "styleguidist build",
+    "styleguide-build": "styleguidist build",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {

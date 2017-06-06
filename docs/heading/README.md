@@ -14,9 +14,11 @@ import Heading from 'arui-feather/heading';
 
 | Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
+| align | [AlignEnum](#AlignEnum) |  |  | Выравнивание контента |
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `Heading` |
 | size | [SizeEnum](#SizeEnum) | `'xl'`  |  | Размер, определяющий какой тег заголовка будет использоваться |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
+| weight | [WeightEnum](#WeightEnum) | `'bold'`  |  | Вес шрифта |
 | className | Function\|String |  |  | Дополнительный класс |
 
 
@@ -32,6 +34,14 @@ import Heading from 'arui-feather/heading';
 
 
 
+### <a id="AlignEnum"></a>AlignEnum
+
+ * `'left'`
+ * `'center'`
+ * `'right'`
+ * `'justify'`
+
+
 ### <a id="SizeEnum"></a>SizeEnum
 
  * `'s'`
@@ -44,6 +54,13 @@ import Heading from 'arui-feather/heading';
 
  * `'alfa-on-color'`
  * `'alfa-on-white'`
+
+
+### <a id="WeightEnum"></a>WeightEnum
+
+ * `'light'`
+ * `'bold'`
+ * `'black'`
 
 
 

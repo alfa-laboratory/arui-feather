@@ -44,7 +44,14 @@ module.exports = {
         return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
     },
     getExampleFilename(componentPath) {
-        return path.resolve(path.dirname(componentPath), './README.md');
+        // если в дирректории src/componentname/fantasy/ есть файл README.md - то по умолчанию будет использован он
+        // иначе будет использован README.md из src/componentname/
+        const fantasyExamplesPath = path.resolve(path.dirname(componentPath), './README.md');
+        if (fs.existsSync(fantasyExamplesPath)) {
+            return fantasyExamplesPath;
+        }
+        const featherExamplesPath = path.resolve(path.dirname(componentPath), '../README.md');
+        return featherExamplesPath;
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),

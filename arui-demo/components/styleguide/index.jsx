@@ -11,7 +11,7 @@ import {
 } from 'react-styleguidist/lib/utils/utils';
 import { getPlayground, isPlayground } from '../playground-with-share-example-button/utils';
 import '../../../src/font/font_roboto.css';
-import './index.css';
+import './demo-styles.css';
 
 export default function (props) {
     if (isPlayground()) {

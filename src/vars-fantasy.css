@@ -11,10 +11,4 @@
     --small-header-height: 80px;
     --large-screen-content-width: 1000px;
     --xlarge-screen-content-width: 1100px;
-
-    /* TODO @teryaew: We need color palette in variables */
-    --color-red: rgba(240, 50, 38, 1);
-    --color-red-hovered: rgba(240, 50, 38, 1);
-    --color-red-pressed: rgba(189, 41, 30, .9);
-    --color-red-disabled: rgba(236, 52, 46, .3);
 }

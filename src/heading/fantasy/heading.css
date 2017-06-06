@@ -2,31 +2,19 @@
 
 .heading {
     font-family: var(--font);
-
-    &_weight_light {
-        font-weight: var(--font-weight-light);
-    }
-
-    &_weight_bold {
-        font-weight: var(--font-weight-bold);
-    }
-
-    &_weight_black {
-        font-weight: var(--font-weight-black);
-    }
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-condensed);
 
     &_size_s {
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: var(--font-size-l);
-        line-height: var(--line-height-condensed);
     }
 
     &_size_m {
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: var(--font-size-xl);
-        line-height: var(--line-height-condensed);
 
         @media (--medium) {
             font-size: var(--font-size-2xl);
@@ -37,7 +25,6 @@
         margin-top: 30px;
         margin-bottom: 25px;
         font-size: var(--font-size-2xl);
-        line-height: var(--line-height-condensed);
 
         @media (--medium) {
             font-size: var(--font-size-3xl);
@@ -48,13 +35,6 @@
         margin-top: 25px;
         margin-bottom: 20px;
         font-size: var(--font-size-3xl);
-        line-height: var(--line-height-condensed);
-
-        @media (--medium-only) {
-            margin-top: 30px;
-            margin-bottom: 25px;
-            font-size: 48px;
-        }
 
         @media (--large) {
             margin-top: 35px;
@@ -69,21 +49,5 @@
 
     &_theme_alfa-on-white {
         color: var(--color-content-alfa-on-white);
-    }
-
-    &_align_left {
-        text-align: left;
-    }
-
-    &_align_center {
-        text-align: center;
-    }
-
-    &_align_right {
-        text-align: right;
-    }
-
-    &_align_justify {
-        text-align: justify;
     }
 }

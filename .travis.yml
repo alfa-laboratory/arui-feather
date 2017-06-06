@@ -34,6 +34,10 @@ after_success:
     if [ "${TEST_SCOPE}" == "lint" ] && [ "${TRAVIS_BRANCH}" == "master" ]; then
       sh ./tools/publish-styleguide.sh
     fi
+  - |
+    if [ "${TEST_SCOPE}" == "lint" ]; then
+      sh ./tools/publish-fantasy-styleguide.sh
+    fi
 
 after_failure:
   - |

@@ -16,7 +16,7 @@ env:
   matrix:
     - TEST_SCOPE: lint
     - TEST_SCOPE: unit
-    - TEST_SCOPE: gemini
+    # - TEST_SCOPE: gemini
 
 matrix:
   fast_finish: true

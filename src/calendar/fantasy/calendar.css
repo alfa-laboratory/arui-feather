@@ -105,9 +105,4 @@
     &__arrow_disabled {
         visibility: hidden;
     }
-
-    &__error {
-        width: 240px;
-        margin: 7px;
-    }
 }

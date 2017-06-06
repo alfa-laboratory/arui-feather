@@ -33,7 +33,7 @@
         display: inline-block;
         vertical-align: top;
         position: relative;
-        font-weight: var(--font-weight);
+        font-weight: var(--font-weight-normal);
         text-overflow: ellipsis;
     }
 
@@ -65,27 +65,10 @@
         opacity: var(--opacity-disabled);
     }
 
-    &_view_tag {
-        border-radius: 30px;
-
-        &.button {
-            &.button_hovered,
-            &.button_hovered.button_focused,
-            &.button_focused {
-                border-color: transparent;
-                box-shadow: none;
-            }
-        }
-    }
-
-    &_view_tag &__text {
-        font-weight: var(--font-weight-medium);
-    }
-
     &_view_action &__text,
     &_view_extra &__text,
     &_view_other &__text {
-        font-weight: var(--font-weight-heavy-accent);
+        font-weight: var(--font-weight-bold);
     }
 
     & > :last-child {
@@ -170,7 +153,7 @@
         }
 
         .button__text {
-            font-weight: var(--font-weight);
+            font-weight: var(--font-weight-normal);
         }
 
         .button_checked {

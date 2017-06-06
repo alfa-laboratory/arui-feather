@@ -88,29 +88,6 @@
         }
     }
 
-    &.button_view_tag {
-        color: var(--color-content-alfa-on-white);
-        background: rgba(10, 30, 50, .05);
-        border-color: transparent;
-
-        &.button_hovered {
-            background: rgba(10, 30, 50, .07);
-        }
-
-        &.button_focused {
-            background: rgba(10, 30, 50, .15);
-        }
-
-        &.button_pressed {
-            background: rgba(10, 30, 50, .2);
-        }
-
-        &.button_checked {
-            color: var(--color-content-alfa-on-color);
-            background: rgba(10, 30, 50, .9);
-        }
-    }
-
     &.button_pseudo {
         border-style: dashed;
 

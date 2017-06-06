@@ -1,0 +1,62 @@
+@import '../../vars-fantasy.css';
+
+.tag-button {
+    border-radius: 30px;
+
+    &.button_hovered,
+    &.button_hovered.button_focused,
+    &.button_focused {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    &_view_tag &__text {
+        font-weight: var(--font-weight-medium);
+    }
+
+    &_theme_alfa-on-color {
+        color: var(--color-content-alfa-on-color);
+        background: rgba(255, 255, 255, .05);
+        border-color: transparent;
+
+        &.button_hovered {
+            background: rgba(255, 255, 255, .07);
+        }
+
+        &.button_focused {
+            background: rgba(255, 255, 255, .2);
+        }
+
+        &.button_pressed {
+            background: rgba(255, 255, 255, .25);
+        }
+
+        &.button_checked {
+            color: var(--color-content-alfa-on-color);
+            background: rgba(255, 255, 255, .75);
+        }
+    }
+
+    &_theme_alfa-on-white {
+        color: var(--color-content-alfa-on-white);
+        background: rgba(10, 30, 50, .05);
+        border-color: transparent;
+
+        &.button_hovered {
+            background: rgba(10, 30, 50, .07);
+        }
+
+        &.button_focused {
+            background: rgba(10, 30, 50, .15);
+        }
+
+        &.button_pressed {
+            background: rgba(10, 30, 50, .2);
+        }
+
+        &.button_checked {
+            color: var(--color-content-alfa-on-color);
+            background: rgba(10, 30, 50, .9);
+        }
+    }
+}

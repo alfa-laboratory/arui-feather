@@ -65,7 +65,11 @@ class MoneyInput extends React.Component {
         /** Максимально допустимая длина значения до запятой */
         integerLength: Type.number,
         /** Максимально допустимая длина значения после запятой */
-        fractionLength: Type.number
+        fractionLength: Type.number,
+        /** Содержимое поля ввода, указанное по умолчанию */
+        value: Type.string,
+        /** Обработчик изменения значения 'value' */
+        onChange: Type.func
     };
 
     static defaultProps = {

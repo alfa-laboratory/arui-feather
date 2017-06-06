@@ -27,12 +27,13 @@ class TagButton extends React.Component {
         return (
             <Button
                 { ...this.props }
+                className={ cn }
             />
         );
     }
 
     /**
-     * Устанавливает фокус на поле ввода.
+     * Устанавливает фокус на компонент.
      *
      * @public
      */
@@ -41,7 +42,7 @@ class TagButton extends React.Component {
     }
 
     /**
-     * Убирает фокус с поля ввода.
+     * Убирает фокус с компонента.
      *
      * @public
      */
@@ -50,7 +51,7 @@ class TagButton extends React.Component {
     }
 
     /**
-     * Скроллит страницу до поля ввода.
+     * Скроллит страницу до компонента.
      *
      * @public
      */

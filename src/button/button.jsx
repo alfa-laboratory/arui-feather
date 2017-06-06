@@ -25,8 +25,6 @@ class Button extends React.Component {
         rightAddons: Type.node,
         /** Список произвольных элементов в правом слоте */
         leftAddons: Type.node,
-        /** Представление для встраивания в поле ввода */
-        inlineSubmit: Type.bool,
         /** Тип кнопки */
         view: Type.oneOf(['default', 'action', 'extra', 'other', 'tag']),
         /** Поведение кнопки */
@@ -115,12 +113,11 @@ class Button extends React.Component {
             role: 'button',
             id: this.props.id,
             name: this.props.name,
-            type: this.props.inlineSubmit ? 'submit' : this.props.type,
+            type: this.props.type,
             title: this.props.title,
             tabIndex: this.props.tabIndex,
             disabled: this.props.disabled,
             className: cn({
-                'inline-submit': this.props.inlineSubmit,
                 disabled: this.props.disabled,
                 pseudo: this.props.pseudo,
                 view: this.props.view,

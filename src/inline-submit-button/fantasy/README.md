@@ -5,7 +5,7 @@
             key={ size }
             style={{ marginBottom: 10 }}
         >
-            <TagButton size={ size }>{`Tag ${size}`}</TagButton>
+            <InlineSubmitButton size={ size } />
         </div>
     ))}
 </div>

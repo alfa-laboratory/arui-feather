@@ -16,23 +16,23 @@
 
     &_theme_alfa-on-color {
         color: var(--color-content-alfa-on-color);
-        background: rgba(255, 255, 255, .05);
+        background: rgba(255, 255, 255, .3);
         border-color: transparent;
 
         &.button_hovered {
-            background: rgba(255, 255, 255, .07);
+            background: rgba(255, 255, 255, .4);
         }
 
         &.button_focused {
-            background: rgba(255, 255, 255, .2);
+            background: rgba(255, 255, 255, .55);
         }
 
         &.button_pressed {
-            background: rgba(255, 255, 255, .25);
+            background: rgba(255, 255, 255, .6);
         }
 
         &.button_checked {
-            color: var(--color-content-alfa-on-color);
+            color: var(--color-content-alfa-on-white);
             background: rgba(255, 255, 255, .75);
         }
     }
@@ -43,15 +43,15 @@
         border-color: transparent;
 
         &.button_hovered {
-            background: rgba(10, 30, 50, .07);
+            background: rgba(10, 30, 50, .08);
         }
 
         &.button_focused {
-            background: rgba(10, 30, 50, .15);
+            background: rgba(10, 30, 50, .14);
         }
 
         &.button_pressed {
-            background: rgba(10, 30, 50, .2);
+            background: rgba(10, 30, 50, .18);
         }
 
         &.button_checked {

@@ -1,3 +1,3 @@
-import './inline-submit.css';
+import './inline-submit-button.css';
 
-export default from './inline-submit';
+export default from './inline-submit-button';

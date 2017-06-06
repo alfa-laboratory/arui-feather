@@ -37,14 +37,13 @@ class Heading extends React.Component {
     };
 
     render(cn) {
-        let headingSize = this.props.size;
         let headingProps = {
             className: cn({
-                size: headingSize
+                size: this.props.size
             })
         };
 
-        return React.createElement(`h${HEADING_LEVEL[headingSize]}`,
+        return React.createElement(`h${HEADING_LEVEL[this.props.size]}`,
             headingProps,
             this.props.children
         );

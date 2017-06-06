@@ -32,12 +32,12 @@ function reactDocGenWithMergedComposed(filePath, resolver, handlers) {
 
 module.exports = {
     title: 'ARUI FEATHER',
-    serverPort: 3013,
+    serverPort: 3014,
     skipComponentsWithoutExample: true,
-    components: './src/*/index.js',
+    components: './src/**/fantasy/index.js',
     propsParser(filePath, source, resolver, handlers) {
         // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
-        const componentDirName = path.dirname(filePath);
+        const componentDirName = path.resolve(filePath, '../..');
         const componentName = componentDirName.split(path.sep).pop();
         const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
         return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
@@ -46,7 +46,7 @@ module.exports = {
         return path.resolve(path.dirname(componentPath), './README.md');
     },
     ignore: ['**/*-test.jsx'],
-    styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),
+    styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),
     webpackConfig: merge.smart(ARUI_TEMPLATE, {
         resolve: {
             alias: {

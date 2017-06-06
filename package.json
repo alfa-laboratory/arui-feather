@@ -30,6 +30,7 @@
     "compile": "gulp --cwd . --gulpfile ./node_modules/library-utils/gulpfile.js compile",
     "pub": "npm run compile && cd .publish && npm publish",
     "styleguide": "styleguidist server",
+    "styleguide-fantasy": "styleguidist server --config ./styleguide-fantasy.config.js",
     "styleguide-build": "styleguidist build",
     "lint-staged": "lint-staged"
   },
@@ -103,7 +104,7 @@
     "react-textarea-autosize": "^4.3.2"
   },
   "devDependencies": {
-    "arui-presets": "2.2.1",
+    "arui-presets": "2.3.0",
     "babel-core": "^6.24.1",
     "bowser": "^1.6.1",
     "chai": "^3.5.0",

@@ -35,7 +35,7 @@ after_success:
       sh ./tools/publish-styleguide.sh
     fi
   - |
-    if [ "${TEST_SCOPE}" == "lint" ]; then
+    if [ "${TEST_SCOPE}" == "unit" ]; then
       sh ./tools/publish-fantasy-styleguide.sh
     fi
 

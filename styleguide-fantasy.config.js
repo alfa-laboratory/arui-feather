@@ -4,6 +4,7 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDockGen = require('react-docgen');
 const fs = require('fs');
@@ -71,6 +72,9 @@ module.exports = {
                 ),
                 'rsg-components/StyleGuide': path.resolve(__dirname, './arui-demo/components/styleguide')
             }
-        }
+        },
+        plugins: [
+            new webpack.NormalModuleReplacementPlugin(/font_roboto\.css$/, 'node-noop')
+        ]
     })
 };

@@ -10,12 +10,11 @@ git config user.name "Travis CI"
 git config user.email "travis@travis-ci.org"
 
 git remote add upstream "https://$GH_TOKEN@github.com/alfa-laboratory/arui-feather.git"
-git fetch upstream && git reset upstream/gh-pages
+git fetch -q upstream && git reset -q upstream/gh-pages
 
 mkdir -p $PUBLISH_REPORT_DIR
 cp -R $SOURCE_REPORT_DIR/* $PUBLISH_REPORT_DIR
 
 git add -A -f "$PUBLISH_REPORT_DIR"
 git commit -q -m "test(gemini): add gemini report by travis build $TRAVIS_BUILD_NUMBER"
-git pull -q --rebase origin gh-pages
 git push -q upstream HEAD:gh-pages

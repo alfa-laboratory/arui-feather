@@ -26,7 +26,7 @@ class Button extends React.Component {
         /** Список произвольных элементов в правом слоте */
         leftAddons: Type.node,
         /** Тип кнопки */
-        view: Type.oneOf(['default', 'action', 'extra', 'other', 'tag']),
+        view: Type.oneOf(['default', 'action', 'extra', 'other']),
         /** Поведение кнопки */
         type: Type.oneOf(['button', 'reset', 'submit']),
         /** HTML элемент, которым будет компонент в DOM */

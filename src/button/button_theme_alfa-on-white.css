@@ -216,14 +216,14 @@
 
     &.radio-group_theme_alfa-on-white {
         .button_checked {
-            background-color: rgba(0, 0, 0, .15);
-            border-color: var(--color-background-control-focused-alfa-on-color);
+            background-color: var(--color-background-control-focused-alfa-on-color);
+            border-color: var(--color-border-control-focused-alfa-on-color);
             border-right-color: transparent;
         }
 
         > .button_checked:last-child,
         > :last-child .button_checked {
-            border-right-color: var(--color-background-control-focused-alfa-on-color);
+            border-right-color: var(--color-border-control-focused-alfa-on-color);
 
             &.button_hovered {
                 border-right-color: var(--color-content-alfa-on-white);

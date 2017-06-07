@@ -2,8 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import React from 'react';
-
 import Button from '../../button/button';
 
 import cn from '../../cn';
@@ -14,49 +12,22 @@ import performance from '../../performance';
  *
  * @extends Button
  */
-@cn('inline-submit-button', Button)
+@cn('inline-submit-button')
 @performance()
-class InlineSubmitButton extends React.Component {
+class InlineSubmitButton extends Button {
     static propTypes = {
         ...Button.propTypes
     };
 
     root;
 
-    render(cn, Button) {
+    render(cn) {
         return (
             <Button
                 { ...this.props }
                 className={ cn }
             />
         );
-    }
-
-    /**
-     * Устанавливает фокус на компонент.
-     *
-     * @public
-     */
-    focus() {
-        this.root.focus();
-    }
-
-    /**
-     * Убирает фокус с компонента.
-     *
-     * @public
-     */
-    blur() {
-        this.root.blur();
-    }
-
-    /**
-     * Скроллит страницу до компонента.
-     *
-     * @public
-     */
-    scrollTo() {
-        this.root.scrollTo();
     }
 }
 

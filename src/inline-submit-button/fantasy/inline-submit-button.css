@@ -3,16 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 .inline-submit-button {
-    &.button_theme_alfa-on-white,
-    &.button_theme_alfa-on-color {
-        /* We have problems with disabled theme styles and default hardcoded size styles
-           TODO @teryaew: refactor */
-        min-height: 0;
-        padding: 0;
-        line-height: 1;
-
+    &_theme_alfa-on-white,
+    &_theme_alfa-on-color {
         opacity: 1;
-        display: block;
+        display: inline-block;
         width: 40px;
         height: 40px;
         margin-right: -7px;
@@ -27,10 +21,10 @@
         box-shadow: none;
         transition: opacity .25s ease-in-out;
 
-        button&.button_disabled,
-        button&.button_focused-hard,
-        button&.button_pressed,
-        button&.button_hovered {
+        &.button_disabled,
+        &.button_focused-hard,
+        &.button_pressed,
+        &.button_hovered {
             background: none;
             background-position: center 7px;
             background-repeat: no-repeat;
@@ -40,7 +34,7 @@
             box-shadow: none;
         }
 
-        button&.button_disabled {
+        &.button_disabled {
             opacity: .3;
             cursor: default;
         }
@@ -49,10 +43,10 @@
     &.button_theme_alfa-on-color {
         background-image: url('./images/button_inline_submit.button_theme_alfa-on-color.svg');
 
-        button&.button_disabled,
-        button&.button_focused-hard,
-        button&.button_pressed,
-        button&.button_hovered {
+        &.button_disabled,
+        &.button_focused-hard,
+        &.button_pressed,
+        &.button_hovered {
             background-image: url('./images/button_inline_submit.button_theme_alfa-on-color.svg');
         }
     }
@@ -60,10 +54,10 @@
     &.button_theme_alfa-on-white {
         background-image: url('./images/button_inline_submit.button_theme_alfa-on-white.svg');
 
-        button&.button_disabled,
-        button&.button_focused-hard,
-        button&.button_pressed,
-        button&.button_hovered {
+        &.button_disabled,
+        &.button_focused-hard,
+        &.button_pressed,
+        &.button_hovered {
             background-image: url('./images/button_inline_submit.button_theme_alfa-on-white.svg');
         }
     }

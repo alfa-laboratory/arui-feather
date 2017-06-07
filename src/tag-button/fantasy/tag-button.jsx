@@ -14,49 +14,22 @@ import performance from '../../performance';
  *
  * @extends Button
  */
-@cn('tag-button', Button)
+@cn('tag-button')
 @performance()
-class TagButton extends React.Component {
+class TagButton extends Button {
     static propTypes = {
         ...Button.propTypes
     };
 
     root;
 
-    render(cn, Button) {
+    render(cn) {
         return (
             <Button
                 { ...this.props }
                 className={ cn }
             />
         );
-    }
-
-    /**
-     * Устанавливает фокус на компонент.
-     *
-     * @public
-     */
-    focus() {
-        this.root.focus();
-    }
-
-    /**
-     * Убирает фокус с компонента.
-     *
-     * @public
-     */
-    blur() {
-        this.root.blur();
-    }
-
-    /**
-     * Скроллит страницу до компонента.
-     *
-     * @public
-     */
-    scrollTo() {
-        this.root.scrollTo();
     }
 }
 

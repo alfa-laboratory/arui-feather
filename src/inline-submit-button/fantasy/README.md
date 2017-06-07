@@ -1,6 +1,6 @@
 ```
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
+    {['m'].map(size => (
         <div
             key={ size }
             style={{ marginBottom: 10 }}

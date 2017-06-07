@@ -36,7 +36,7 @@ after_success:
     fi
   - |
     if [ "${TEST_SCOPE}" == "unit" ]; then
-      sh ./tools/publish-fantasy-styleguide.sh
+      sh ./tools/publish-styleguide-fantasy.sh
     fi
 
 after_failure:

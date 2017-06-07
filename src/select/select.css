@@ -18,6 +18,10 @@
         width: 100%;
     }
 
+    &_width_available &__inner {
+        table-layout: fixed;
+    }
+
     &__sub {
         box-sizing: border-box;
         display: table-caption;

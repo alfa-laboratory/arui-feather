@@ -139,6 +139,9 @@ class Input extends React.Component {
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
+        let value = this.props.value !== undefined
+            ? this.props.value
+            : this.state.value;
 
         let content = this.renderContent(cn, MaskedInput);
         if (hasAddons) {
@@ -156,7 +159,7 @@ class Input extends React.Component {
                     size: this.props.size,
                     width: this.props.width,
                     'has-label': !!this.props.label,
-                    'has-value': !!this.props.value || !!this.state.value,
+                    'has-value': !!value,
                     'has-icon': !!this.props.icon,
                     'has-clear': !!this.props.clear,
                     'has-addons': hasAddons,

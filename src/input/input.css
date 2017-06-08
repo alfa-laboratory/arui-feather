@@ -55,6 +55,7 @@
     }
 
     &__control {
+        box-sizing: border-box;
         display: inline-block;
         position: relative;
         width: 100%;
@@ -63,7 +64,6 @@
         outline: none;
         font: inherit;
         font-weight: var(--font-weight);
-        line-height: var(--line-height-condensed);
         background: none;
         border: 0;
         -webkit-appearance: none;
@@ -116,7 +116,7 @@
         }
     }
 
-    &_has-clear &__control {
+    &&_has-clear &__control {
         padding-right: 0;
         text-overflow: ellipsis;
     }
@@ -230,7 +230,7 @@
 
     .input__control {
         padding: 0 10px;
-        line-height: 26px;
+        line-height: 28px;
     }
 
     &.input_has-clear .input__box,
@@ -254,7 +254,7 @@
 
     .input__control {
         padding: 0 12px;
-        line-height: 36px;
+        line-height: 38px;
     }
 
     &.input_has-clear .input__box,
@@ -289,7 +289,7 @@
 
     .input__control {
         padding: 0 15px;
-        line-height: 46px;
+        line-height: 48px;
     }
 
     &.input_has-clear .input__box,
@@ -313,7 +313,7 @@
 
     .input__control {
         padding: 0 15px;
-        line-height: 56px;
+        line-height: 58px;
     }
 
     &.input_has-clear .input__box,

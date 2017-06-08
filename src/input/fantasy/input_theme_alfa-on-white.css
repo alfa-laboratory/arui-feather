@@ -6,7 +6,8 @@
 
 .input_theme_alfa-on-white {
     .input__box {
-        border-bottom: 1px solid rgba(0, 0, 0, .4);
+        border-bottom-color: rgba(0, 0, 0, .4);
+        border-bottom-width: 1px;
     }
 
     &,
@@ -68,7 +69,7 @@
         }
 
         .input__icon {
-            opacity: .3; /* TODO @teryaew: why not var(--opacity-disabled)? */
+            opacity: var(--opacity-disabled);
         }
     }
 

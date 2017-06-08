@@ -25,10 +25,12 @@
 
     &__box {
         box-sizing: border-box;
+        overflow: hidden;
         display: table-cell;
         position: relative;
         min-width: 150px;
         user-select: none;
+        border-bottom-style: solid;
         transition-duration: 250ms;
         transition-property: border-bottom-color, box-shadow, width;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
@@ -212,6 +214,16 @@
         display: none;
     }
 
+    .input__box {
+        border-bottom-style: dashed;
+    }
+
+    .input__control {
+        &::placeholder {
+            opacity: .5;
+        }
+    }
+
     .input__box,
     .input__control {
         cursor: default;
@@ -253,19 +265,20 @@
     }
 
     .input__control {
-        padding: 7px 0 6px;
+        padding: 7px 0;
     }
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 28px; /* -2px borders, TODO @teryaew: not needed anymore? */
+        padding-right: 24px;
     }
 
     &.input_has-clear .input__clear,
-    &.input_has-icon .input__icon { /* TODO: Maybe icon should not have set this width/height */
-        width: 28px;
-        height: 28px;
-        line-height: 26px;
+    &.input_has-icon .input__icon {
+        width: 29px;
+        height: 30px;
+        margin-right: -5px;
+        line-height: 28px;
     }
 }
 
@@ -305,16 +318,15 @@
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 28px;
+        padding-right: 27px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 40px;
         margin-right: -7px;
-        line-height: 36px;
-        text-align: center;
+        line-height: 38px;
     }
 
     &.input_mode_link {
@@ -360,19 +372,20 @@
     }
 
     .input__control {
-        padding: 14px 0 13px;
+        padding: 14px 0;
     }
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 48px;
+        padding-right: 34px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 48px;
-        height: 48px;
-        line-height: 46px;
+        width: 44px;
+        height: 50px;
+        margin-right: -10px;
+        line-height: 48px;
     }
 }
 
@@ -407,19 +420,20 @@
     }
 
     .input__control {
-        padding: 17px 0 16px;
+        padding: 17px 0;
     }
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 60px;
+        padding-right: 37px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 58px;
-        height: 58px;
-        line-height: 56px;
+        width: 52px;
+        height: 60px;
+        margin-right: -15px;
+        line-height: 58px;
     }
 }
 

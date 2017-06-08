@@ -49,8 +49,14 @@ function renderAddons() {
 
 ```
 <div>
-    <Input placeholder='Input...' />
-    <Input placeholder='Input...' clear={ true } />
-    <Input placeholder='Input...' disabled={ true } />
+    <span style={{ marginRight: 12 }}>
+        <Input placeholder='Input...' />
+    </span>
+    <span style={{ marginRight: 12 }}>
+        <Input placeholder='Input...' clear={ true } />
+    </span>
+    <span>
+        <Input placeholder='Input...' disabled={ true } />
+    </span>
 </div>
 ```

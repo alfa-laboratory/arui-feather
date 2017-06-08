@@ -16,6 +16,10 @@
         width: 100%;
     }
 
+    &_width_available &__inner {
+        table-layout: fixed;
+    }
+
     &__control {
         box-sizing: border-box;
         overflow-y: auto;

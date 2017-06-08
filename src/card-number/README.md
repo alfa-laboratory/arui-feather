@@ -1,10 +1,16 @@
 ```
 <div>
-    <dt>Mask number 1234****9321</dt>
-    <dd>
-        <CardNumber>
-            1234*********9321
-        </CardNumber>
-    </dd>
+    <CardNumber>
+        1234123443211234
+    </CardNumber>
+</div>
+```
+
+Маскированный номер карты:
+```
+<div>
+    <CardNumber>
+        1234*********9321
+    </CardNumber>
 </div>
 ```

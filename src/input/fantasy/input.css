@@ -15,7 +15,6 @@
     display: inline-block;
     font-family: var(--font);
     font-weight: var(--font-weight-light);
-    text-rendering: optimizeLegibility;
 
     &__inner {
         display: inline-table;

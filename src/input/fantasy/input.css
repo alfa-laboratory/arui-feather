@@ -45,7 +45,6 @@
         right: 0;
         font-size: var(--font-size-m);
         text-overflow: ellipsis;
-        pointer-events: none;
         transform: scale(1) translate3d(0, 0, 0);
         transform-origin: 0 100%;
         transition-duration: 200ms;

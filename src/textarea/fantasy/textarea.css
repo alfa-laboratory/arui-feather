@@ -27,17 +27,16 @@
         overflow: hidden;
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
+        left: 0;
         font-size: var(--font-size-m);
+        white-space: nowrap;
         text-overflow: ellipsis;
         transform: scale(1) translate3d(0, 0, 0);
         transform-origin: 0 100%;
         transition-duration: 200ms;
         transition-property: color, transform;
         transition-timing-function: cubic-bezier(.25, .1, .25, 1);
-        will-change: transform;
-        white-space: nowrap;
     }
 
     &__sub {

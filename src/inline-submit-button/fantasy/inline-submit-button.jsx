@@ -14,21 +14,6 @@ import performance from '../../performance';
  */
 @cn('inline-submit-button')
 @performance()
-class InlineSubmitButton extends Button {
-    static propTypes = {
-        ...Button.propTypes
-    };
-
-    root;
-
-    render(cn) {
-        return (
-            <Button
-                { ...this.props }
-                className={ cn }
-            />
-        );
-    }
-}
+class InlineSubmitButton extends Button {}
 
 export default InlineSubmitButton;

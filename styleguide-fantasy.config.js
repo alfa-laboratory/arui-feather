@@ -38,10 +38,14 @@ module.exports = {
     components: './src/**/fantasy/index.js',
     propsParser(filePath, source, resolver, handlers) {
         // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
-        const componentDirName = path.resolve(filePath, '../..');
-        const componentName = componentDirName.split(path.sep).pop();
+        const componentDirName = path.dirname(filePath);
+        const componentName = path.resolve(filePath, '../..').split(path.sep).pop();
         const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
-        return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
+        if (fs.existsSync(componentSourcesPath)) {
+            return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
+        }
+        const mainComponentPath = path.resolve(componentDirName, `../${componentName}.jsx`);
+        return reactDocGenWithMergedComposed(mainComponentPath, resolver, handlers);
     },
     getExampleFilename(componentPath) {
         // если в дирректории src/componentname/fantasy/ есть файл README.md - то по умолчанию будет использован он

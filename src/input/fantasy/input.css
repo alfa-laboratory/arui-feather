@@ -40,8 +40,8 @@
         overflow: hidden;
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
+        left: 0;
         font-size: var(--font-size-m);
         text-overflow: ellipsis;
         white-space: nowrap;

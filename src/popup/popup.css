@@ -6,7 +6,6 @@
 
 .popup {
     position: absolute;
-    visibility: hidden;
 
     box-sizing: border-box;
 
@@ -17,12 +16,6 @@
     line-height: 1.2;
 
     border-radius: var(--border-radius-control);
-
-    /* Чтобы попап не прокликивался и браузер не рисовал лишний скролл */
-    transform: translate(-9999px, -9999px);
-
-    /* Чтобы IE9 не рисовал лишний скролл */
-    clip: rect(0, 0, 0, 0);
 
     &_size_s {
         font-size: var(--font-size-s);
@@ -55,9 +48,6 @@
         position: fixed;
         padding: 5px 23px;
 
-        opacity: 0;
-
-        transition: opacity 400ms ease;
         border-radius: 0;
     }
 

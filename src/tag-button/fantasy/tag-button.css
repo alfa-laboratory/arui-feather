@@ -1,0 +1,68 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../../vars-fantasy.css';
+
+.tag-button {
+    border-radius: 30px;
+
+    &.button {
+        border-color: transparent;
+    }
+
+    &.button_hovered,
+    &.button_hovered.button_focused,
+    &.button_focused {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    &_view_tag &__text {
+        font-weight: var(--font-weight-medium);
+    }
+
+    &_theme_alfa-on-color {
+        color: var(--color-content-alfa-on-color);
+        background: rgba(255, 255, 255, .3);
+
+        &.button_hovered {
+            background: rgba(255, 255, 255, .4);
+        }
+
+        &.button_focused {
+            background: rgba(255, 255, 255, .55);
+        }
+
+        &.button_pressed {
+            background: rgba(255, 255, 255, .6);
+        }
+
+        &.button_checked {
+            color: var(--color-content-alfa-on-white);
+            background: rgba(255, 255, 255, .75);
+        }
+    }
+
+    &_theme_alfa-on-white {
+        color: var(--color-content-alfa-on-white);
+        background: rgba(10, 30, 50, .05);
+
+        &.button_hovered {
+            background: rgba(10, 30, 50, .08);
+        }
+
+        &.button_focused {
+            background: rgba(10, 30, 50, .14);
+        }
+
+        &.button_pressed {
+            background: rgba(10, 30, 50, .18);
+        }
+
+        &.button_checked {
+            color: var(--color-content-alfa-on-color);
+            background: rgba(10, 30, 50, .9);
+        }
+    }
+}

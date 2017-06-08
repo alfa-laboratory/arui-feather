@@ -13,11 +13,14 @@
 ```
 Компонент может использоваться для отображения заголовков слева от блока
 ```
+const layoutStyles = {
+    marginLeft: '80px'
+};
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div key={ size }>
+        <div style={ layoutStyles } key={ size }>
             <FormField
-                size={size}
+                size={ size }
                 view='line'
                 label={
                     <Label>Label...</Label>

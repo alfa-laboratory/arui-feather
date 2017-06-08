@@ -6948,6 +6948,10 @@ node-libs-browser@^0.7.0:
     util "^0.10.3"
     vm-browserify "0.0.4"
 
+node-noop@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/node-noop/-/node-noop-1.0.0.tgz#47a3e7d80cffaa6458364bd22ed85cab3307be79"
+
 node-pre-gyp@^0.6.29, node-pre-gyp@^0.6.4:
   version "0.6.34"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.6.34.tgz#94ad1c798a11d7fc67381b50d47f8cc18d9799f7"

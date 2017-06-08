@@ -4,7 +4,7 @@
         {['m', 'l'].map(size => (
             <div key={ size }>
                 <CheckBox
-                    text='Чекбокс'
+                    text='Обычный чекбокс'
                     size={ size }
                 />
             </div>
@@ -14,7 +14,7 @@
         {['m', 'l'].map(size => (
             <div key={ size }>
                 <CheckBox
-                    text='Чекбокс disabled'
+                    text='Обычный чекбокс'
                     size={ size }
                     disabled={ true }
                 />

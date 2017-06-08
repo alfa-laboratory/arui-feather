@@ -11,7 +11,7 @@ import MaskedInput from '../masked-input/masked-input';
 import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
-import { INPUT_SIZE_CORRECTION_RATIO, SCROLL_TO_CORRECTION } from '../vars';
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
  * Компонент текстового поля ввода.
@@ -67,7 +67,9 @@ class Input extends React.Component {
         leftAddons: Type.node,
         /** Добавление дополнительных элементов к инпуту справа */
         rightAddons: Type.node,
-        /** Подсказка в текстовом поле */
+        /** Лейбл для поля */
+        label: Type.node,
+        /** Подсказка в поле */
         placeholder: Type.string,
         /** Подсказка под полем */
         hint: Type.node,
@@ -137,6 +139,9 @@ class Input extends React.Component {
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
+        let value = this.props.value !== undefined
+            ? this.props.value
+            : this.state.value;
 
         let content = this.renderContent(cn, MaskedInput);
         if (hasAddons) {
@@ -151,8 +156,10 @@ class Input extends React.Component {
                     type: this.props.type,
                     disabled: this.props.disabled,
                     focused,
-                    width: this.props.width,
                     size: this.props.size,
+                    width: this.props.width,
+                    'has-label': !!this.props.label,
+                    'has-value': !!value,
                     'has-icon': !!this.props.icon,
                     'has-clear': !!this.props.clear,
                     'has-addons': hasAddons,
@@ -161,6 +168,12 @@ class Input extends React.Component {
                 ref={ (root) => { this.root = root; } }
             >
                 <span className={ cn('inner') }>
+                    {
+                        !!this.props.label &&
+                        <span className={ cn('top') }>
+                            { this.props.label }
+                        </span>
+                    }
                     { content }
                     {
                         (this.props.error || this.props.hint) &&
@@ -207,7 +220,6 @@ class Input extends React.Component {
             placeholder: this.props.placeholder,
             pattern: this.props.pattern,
             ref: (control) => { this.control = control; },
-            size: this.getOptimalSize(),
             title: this.props.title,
             onChange: this.handleChange,
             onFocus: this.handleFocus,
@@ -438,23 +450,6 @@ class Input extends React.Component {
      */
     getFocused() {
         return this.props.focused !== undefined ? this.props.focused : this.state.focused;
-    }
-
-    /**
-     * Вычисляет оптимальную длину для атрибута `size` с корректировкой на использование пропорционального шрифта.
-     * Для нормализации минимальной ширины поля ввода между браузерами и переопределения установленного
-     * по-умолчанию в браузере значения атрибута `size` равному 20.
-     * Коэффициент с корректировкой на пропорциональный шрифт необходим для переопределения вычисления браузером
-     * итоговой ширины поля на основе значения `size` и ширины глифов моноширинного шрифта.
-     * https://www.w3.org/TR/html4/interact/forms.html#adef-size-INPUT
-     *
-     * @returns {Number}
-     */
-    getOptimalSize() {
-        let { mask, maxLength } = this.props;
-        let length = mask !== undefined ? mask.length : maxLength || 1;
-
-        return Math.floor(length * INPUT_SIZE_CORRECTION_RATIO);
     }
 }
 

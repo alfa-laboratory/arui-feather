@@ -35,7 +35,8 @@ import Input from 'arui-feather/input';
 | noValidate | Boolean | `false`  |  | Управление встроенной проверкой данных введённых пользователем в поле на корректность |
 | leftAddons | Node |  |  | Добавление дополнительных элементов к инпуту слева |
 | rightAddons | Node |  |  | Добавление дополнительных элементов к инпуту справа |
-| placeholder | String |  |  | Подсказка в текстовом поле |
+| label | Node |  |  | Лейбл для поля |
+| placeholder | String |  |  | Подсказка в поле |
 | hint | Node |  |  | Подсказка под полем |
 | error | Node |  |  | Отображение ошибки |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |

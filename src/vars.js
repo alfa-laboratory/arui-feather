@@ -4,10 +4,6 @@
 
 /* eslint max-len: 0 */
 
-// Коэффициент с корректировкой на пропорциональный шрифт для переопределения вычисления браузером
-// итоговой ширины поля на основе значения `size` и ширины глифов моноширинного шрифта.
-export const INPUT_SIZE_CORRECTION_RATIO = 1.1;
-
 export const SCROLL_TO_CORRECTION = 16;
 export const SCROLL_TO_DEFAULT_DURATION = 0;
 export const SCROLL_TO_NORMAL_DURATION = 250;

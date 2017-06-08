@@ -123,7 +123,7 @@ class Textarea extends React.Component {
                     resize: this.props.resize,
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
-                    'has-value': !!this.props.value || !!this.state.value
+                    'has-value': !!value
                 }) }
                 ref={ (root) => { this.root = root; } }
             >

@@ -75,8 +75,6 @@ class Popup extends React.Component {
         secondaryOffset: Type.number,
         /** Только для target='anchor'. Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера */
         fitContaiterOffset: Type.number,
-        /** Отображение попапа как сообщения об ошибке */
-        invalid: Type.bool,
         /** Управление видимостью компонента */
         visible: Type.bool,
         /** Управление возможностью автозакрытия компонента */
@@ -102,7 +100,6 @@ class Popup extends React.Component {
     };
 
     static defaultProps = {
-        invalid: false,
         visible: false,
         autoclosable: false,
         padded: true,
@@ -225,7 +222,6 @@ class Popup extends React.Component {
                         type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
                         size: this.props.size,
                         visible: this.props.visible,
-                        invalid: this.props.invalid,
                         height: this.props.height,
                         hovered: this.state.hovered,
                         autoclosable: this.props.autoclosable,

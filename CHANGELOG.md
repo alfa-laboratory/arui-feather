@@ -1,3 +1,25 @@
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v5.1.0...v6.0.0) (2017-06-09)
+
+
+### Bug Fixes
+
+* fix inner element width overflow in input, select, textarea ([#65](https://github.com/alfa-laboratory/arui-feather/issues/65)) ([fd06398](https://github.com/alfa-laboratory/arui-feather/commit/fd06398))
+* **fantasy:** fix inline-submit-button & tag-button styles ([#70](https://github.com/alfa-laboratory/arui-feather/issues/70)) ([01a5f87](https://github.com/alfa-laboratory/arui-feather/commit/01a5f87))
+
+
+### Features
+
+* **fantasy:** add attach & button with pt.2 ([#58](https://github.com/alfa-laboratory/arui-feather/issues/58)) ([fed7826](https://github.com/alfa-laboratory/arui-feather/commit/fed7826))
+* **fantasy:** add calendar ([#59](https://github.com/alfa-laboratory/arui-feather/issues/59)) ([1f77d18](https://github.com/alfa-laboratory/arui-feather/commit/1f77d18))
+* **fantasy:** add fantasy design, pt.1 ([#57](https://github.com/alfa-laboratory/arui-feather/issues/57)) ([a7e69c4](https://github.com/alfa-laboratory/arui-feather/commit/a7e69c4))
+* **fantasy:** add input ([#60](https://github.com/alfa-laboratory/arui-feather/issues/60)) ([e92d728](https://github.com/alfa-laboratory/arui-feather/commit/e92d728))
+* **fantasy:** add popup ([#68](https://github.com/alfa-laboratory/arui-feather/issues/68)) ([458d488](https://github.com/alfa-laboratory/arui-feather/commit/458d488))
+* **fantasy:** add textarea ([#61](https://github.com/alfa-laboratory/arui-feather/issues/61)) ([a1585ce](https://github.com/alfa-laboratory/arui-feather/commit/a1585ce))
+* **fantasy:** change heading default font weight from black to bold ([#71](https://github.com/alfa-laboratory/arui-feather/issues/71)) ([093ed3b](https://github.com/alfa-laboratory/arui-feather/commit/093ed3b))
+
+
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v5.0.2...v5.1.0) (2017-05-31)
 

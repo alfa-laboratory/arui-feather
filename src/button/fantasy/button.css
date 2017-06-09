@@ -16,7 +16,9 @@
     font-family: var(--font);
     text-align: center;
     white-space: nowrap;
-    transition: all 200ms ease; /* TODO @teryaew: describe all properties */
+    transition-duration: 200ms;
+    transition-property: background, border-color, color, width;
+    transition-timing-function: ease;
     border-radius: var(--border-radius-control);
 
     & + & {

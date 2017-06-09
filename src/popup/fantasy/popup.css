@@ -137,7 +137,7 @@
         margin: -7px;
         border-style: solid;
         border-width: 7px;
-        filter: drop-shadow(0px 0px 2px var(--shadow-light-color));
+        filter: drop-shadow(0 0 2px var(--shadow-light-color));
         z-index: 1;
     }
 

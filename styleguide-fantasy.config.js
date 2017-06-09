@@ -55,7 +55,7 @@ module.exports = {
         if (fs.existsSync(componentSourcesPath)) {
             return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers, componentName);
         }
-        const mainComponentPath = path.resolve(componentDirName, `../${componentName}.jsx`);
+        const mainComponentPath = path.resolve(componentDirName, `../${componentSourcesFileName}.jsx`);
         return reactDocGenWithMergedComposed(mainComponentPath, resolver, handlers);
     },
     getExampleFilename(componentPath) {

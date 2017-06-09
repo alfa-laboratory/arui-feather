@@ -6,6 +6,7 @@ import { render, cleanUp, simulate } from '../test-utils';
 
 import Popup from './index';
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
+import { POPUP_MAIN_OFFSET } from '../vars';
 
 function renderPopup(popupProps, anchorProps) {
     let popup;
@@ -249,7 +250,7 @@ describe('popup', () => {
             expect(bestDrawingParams.direction).to.deep.equal('left-top');
         });
 
-        it('should draw with margin=13 by main direction when type=`tooltip` & mainOffset=null', () => {
+        it('should draw with margin=POPUP_MAIN_OFFSET by main direction when type=`tooltip` & mainOffset=null', () => {
             let popupProps = { visible: true, type: 'tooltip' };
             let targetProps = { style: { width: 100, height: 100 } };
             let { popup, anchor, popupContentNode } = renderPopup(popupProps, targetProps);
@@ -265,7 +266,7 @@ describe('popup', () => {
 
             let expectedParams = {
                 direction: 'right-top',
-                left: 113,
+                left: 100 + POPUP_MAIN_OFFSET,
                 top: 0,
                 height: 'auto',
                 overflow: false

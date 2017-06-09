@@ -1,6 +1,6 @@
 ```
 <div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='s'
             popupContent='Popup with default props'
@@ -8,20 +8,19 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='m'
             popupContent='Dropdown popup width custom props'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='l'
             popupContent='Dropdown popup'
@@ -29,12 +28,11 @@
             disabled={ true }
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         />
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='xl'
             popupContent={
@@ -42,7 +40,6 @@
             }
             popupProps={ {
                 directions: ['bottom-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -54,7 +51,7 @@
 
 ```
 <div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='s'
             switcherType='button'
@@ -64,21 +61,20 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='m'
             switcherType='button'
             popupContent='Dropdown popup width custom props'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='l'
             switcherType='button'
@@ -87,12 +83,11 @@
             popupContent='Dropdown popup'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         />
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='xl'
             switcherType='button'
@@ -101,7 +96,6 @@
             }
             popupProps={ {
                 directions: ['bottom-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >

@@ -7,21 +7,31 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDockGen = require('react-docgen');
+const upperCamelCase = require('uppercamelcase');
 const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
 const documentation = { };
-function reactDocGenWithMergedComposed(filePath, resolver, handlers) {
+function reactDocGenWithMergedComposed(filePath, resolver, handlers, componentName) {
     if (documentation[filePath]) {
         return documentation[filePath];
     }
     const content = fs.readFileSync(filePath);
-    const doc = reactDockGen.parse(content, resolver, handlers)[0];
+    // react-docgen считает компонент реакт компонентом, только если он наследуется от React.Component
+    // для такого кейса оставляем заглушку
+    let doc;
+    try {
+        doc = reactDockGen.parse(content, resolver, handlers)[0];
+    } catch (e) {
+        doc = {
+            displayName: componentName
+        };
+    }
     doc.filePath = filePath;
     if (doc.composes) {
         doc.composes = doc.composes.map((relativePath) => {
             const composeComponentPath = path.resolve(path.dirname(filePath), `${relativePath}.jsx`);
-            return reactDocGenWithMergedComposed(composeComponentPath, resolver, handlers);
+            return reactDocGenWithMergedComposed(composeComponentPath, resolver, handlers, componentName);
         });
     } else {
         doc.composes = [];
@@ -39,12 +49,13 @@ module.exports = {
     propsParser(filePath, source, resolver, handlers) {
         // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
         const componentDirName = path.dirname(filePath);
-        const componentName = path.resolve(filePath, '../..').split(path.sep).pop();
-        const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
+        const componentSourcesFileName = path.resolve(filePath, '../..').split(path.sep).pop();
+        const componentSourcesPath = path.resolve(componentDirName, `${componentSourcesFileName}.jsx`);
+        const componentName = upperCamelCase(componentSourcesFileName);
         if (fs.existsSync(componentSourcesPath)) {
-            return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
+            return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers, componentName);
         }
-        const mainComponentPath = path.resolve(componentDirName, `../${componentName}.jsx`);
+        const mainComponentPath = path.resolve(componentDirName, `../${componentSourcesFileName}.jsx`);
         return reactDocGenWithMergedComposed(mainComponentPath, resolver, handlers);
     },
     getExampleFilename(componentPath) {

@@ -2,7 +2,7 @@
 
 .heading {
     font-family: var(--font);
-    font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-bold);
     line-height: var(--line-height-condensed);
 
     &_size_s {

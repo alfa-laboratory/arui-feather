@@ -31,7 +31,7 @@
     /**
      * Цвет фона компонентов для `alfa-on-white`.
      */
-    --color-background-alfa-on-white: rgba(255, 255, 255, 1);
+    --color-background-alfa-on-white: rgb(255, 255, 255);
 
     /**
      * Цвет фона для контролов для `alfa-on-white`.

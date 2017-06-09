@@ -26,7 +26,7 @@
     /**
      * Цвет фона компонентов для `alfa-on-color`.
      */
-    --color-background-alfa-on-color: rgba(10, 30, 50, 1);
+    --color-background-alfa-on-color: rgb(10, 30, 50);
 
     /**
      * Цвет фона для контролов для `alfa-on-color`.

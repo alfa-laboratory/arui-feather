@@ -17,8 +17,8 @@ function reactDocGenWithMergedComposed(filePath, resolver, handlers, componentNa
         return documentation[filePath];
     }
     const content = fs.readFileSync(filePath);
-    // react-docgen считает компонент реакт компоеннтом, только если он наследуется от React.Component
-    // для такого кейса оставляем загрушку
+    // react-docgen считает компонент реакт компонентом, только если он наследуется от React.Component
+    // для такого кейса оставляем заглушку
     let doc;
     try {
         doc = reactDockGen.parse(content, resolver, handlers)[0];

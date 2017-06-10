@@ -4,11 +4,6 @@
 
 .preview-with-theme-switcher {
     &__layout {
-        margin-top: 20px;
-        margin-bottom: -5px;
-        border-radius: 5px;
-        border: solid 1px #eee;
-
         &_theme_alfa-on-white {
             color: #000;
         }
@@ -22,23 +17,39 @@
 
     &__wrapper {
         margin: 15px;
+        display: inline-block;
     }
 
     &__button-group {
         position: absolute;
-        top: 5px;
-        left: 8px;
+        top: -40px;
+        left: 0;
     }
 
     &__button {
-        color: #1978c8;
-        background: white;
-        border: none;
-        font-size: 14px;
+        width: 32px;
+        height: 32px;
+        border: solid 1px #eee;
 
         &:hover {
-            color: #f28a25;
             cursor: pointer;
         }
+
+        &:focus {
+            outline: 1px dotted #f28a25;
+        }
+
+        &_theme_alfa-on-white {
+            background: #fff;
+        }
+
+        &_theme_alfa-on-color {
+            background: #4d545b;
+            background: linear-gradient(to bottom, #4d545b 0%, #4d545b 50%, #282c36 100%);
+        }
+    }
+
+    &__button + &__button {
+        margin-left: 10px;
     }
 }

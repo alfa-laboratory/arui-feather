@@ -6,6 +6,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const reactDockGen = require('react-docgen');
+const upperCamelCase = require('uppercamelcase');
 const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
@@ -33,6 +34,14 @@ function reactDocGenWithMergedComposed(filePath, resolver, handlers) {
 module.exports = {
     title: 'ARUI FEATHER',
     serverPort: 3013,
+    styles: {
+        Playground: {
+            preview: {
+                borderRadius: 0,
+                padding: 0
+            }
+        }
+    },
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
     propsParser(filePath, source, resolver, handlers) {
@@ -41,6 +50,12 @@ module.exports = {
         const componentName = componentDirName.split(path.sep).pop();
         const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
         return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
+    },
+    getComponentPathLine(filePath) {
+        const componentDirName = path.dirname(filePath);
+        const componentSourcesFileName = componentDirName.split(path.sep).pop();
+        const componentName = upperCamelCase(componentSourcesFileName);
+        return `import ${componentName} from 'arui-feather/${componentSourcesFileName}';`;
     },
     getExampleFilename(componentPath) {
         return path.resolve(path.dirname(componentPath), './README.md');

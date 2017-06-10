@@ -4,8 +4,8 @@
         <div key={ size }>
             <FormField
                 size={size}
-                label='Label...' >
-                <Input placeholder='Input...' />
+                label='Label' >
+                <Input placeholder='Input' />
             </FormField>
         </div>
     ))}
@@ -23,9 +23,9 @@ const layoutStyles = {
                 size={ size }
                 view='line'
                 label={
-                    <Label>Label...</Label>
+                    <Label>Label</Label>
                 }>
-                <Input placeholder='Input...' />
+                <Input placeholder='Input' />
             </FormField>
         </div>
     ))}

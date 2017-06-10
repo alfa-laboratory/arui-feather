@@ -3,7 +3,9 @@
     {['error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'].map(icon => (
         <div className='layout' >
             {['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <Icon {...{size, icon}} />
+                <div style={{ paddingRight: '30px' }} >
+                    <Icon {...{size, icon}} />
+                </div>
             ))}
         </div>
     ))}
@@ -15,12 +17,14 @@
     {['error', 'ok'].map(icon => (
         <div className='layout' >
             {['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <Icon {...{
-                        size,
-                        icon,
-                        theme: 'alfa-on-colored'
-                    }
-                } />
+                <div style={{ paddingRight: '30px' }} >
+                    <Icon {...{
+                            size,
+                            icon,
+                            theme: 'alfa-on-colored'
+                        }
+                    } />
+                </div>
             ))}
         </div>
     ))}

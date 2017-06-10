@@ -1,8 +1,9 @@
+Обычный чекбокс
 ```
 <div>
     <div>
         {['m', 'l'].map(size => (
-            <div key={ size }>
+            <div className={'layout'} key={ size }>
                 <CheckBox
                     text='Обычный чекбокс'
                     size={ size }
@@ -12,7 +13,7 @@
     </div>
     <div>
         {['m', 'l'].map(size => (
-            <div key={ size }>
+            <div className={'layout'} key={ size }>
                 <CheckBox
                     text='Обычный чекбокс'
                     size={ size }
@@ -21,9 +22,15 @@
             </div>
         ))}
     </div>
+</div>
+```
+
+Чекбокс - кнопка
+```
+<div>
     <div>
         {['s', 'm', 'l', 'xl'].map(size => (
-            <div key={ size }>
+            <div className={'layout'} key={ size }>
                 <CheckBox
                     text='Чекбокс - кнопка'
                     size={ size }
@@ -32,9 +39,10 @@
             </div>
         ))}
     </div>
+    <br />
     <div>
         {['s', 'm', 'l', 'xl'].map(size => (
-            <div key={ size }>
+            <div className={'layout'} key={ size }>
                 <CheckBox
                     text='Чекбокс - кнопка'
                     size={ size }

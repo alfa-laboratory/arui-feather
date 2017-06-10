@@ -13,13 +13,17 @@ import './index.css';
 @cn('playground-with-share-example-button')
 export class PlayGroundRenderer extends Component {
     static propTypes = {
-        code: Type.string.isRequired
+        preview: Type.shape({
+            props: Type.shape({
+                code: Type.string
+            })
+        })
     };
 
     render(cn) {
         return (
             <div className={ cn }>
-                <button className={ cn('share-code') } onClick={ this.handleShareExampleClick }>Share example</button>
+                <button className={ cn('share-code') } onClick={ this.handleShareExampleClick } />
                 <PlayGroundRendererStyleguidist { ...this.props } />
             </div>
         );
@@ -27,7 +31,7 @@ export class PlayGroundRenderer extends Component {
 
     @autobind
     handleShareExampleClick() {
-        const code = encodeURI(this.props.code);
+        const code = encodeURI(this.props.preview.props.code);
         const pathname = location.pathname;
         window.open(`${pathname}#playground/code=${code}`, '_blank');
     }

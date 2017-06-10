@@ -9,11 +9,6 @@ initialState = {
         Toggle message
     </Button>
     <Message
-        visible={ state.visible }
-    >
-        Some message here
-    </Message>
-    <Message
         type='popup'
         visible={ state.visible }
     >

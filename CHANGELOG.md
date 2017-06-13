@@ -1,3 +1,8 @@
+<a name="6.0.1"></a>
+## [6.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.0.0...v6.0.1) (2017-06-13)
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v5.1.0...v6.0.0) (2017-06-09)
 

@@ -12,7 +12,7 @@ initialState = {
     >
         Toggle slide down
     </Button>
-    <div className='layout' >
+    <div className='row' >
         <SlideDown isExpanded={ state.isExpanded }>
             <Paragraph>
                 { LOREM_IPSUM.slice(0, 3) }

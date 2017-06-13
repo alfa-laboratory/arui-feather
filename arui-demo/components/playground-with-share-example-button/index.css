@@ -9,11 +9,11 @@
     &__share-code {
         background-image: url(./icon.svg);
         background-color: white;
-        height: 32px;
-        width: 32px;
+        height: 24px;
+        width: 24px;
         position: absolute;
         right: 0;
-        top: -40px;
+        top: -28px;
         border: none;
 
         &:focus {

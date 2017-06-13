@@ -2,17 +2,20 @@
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span className={'layout'}>
-            <Link {...{
-                text: 'Ссылка',
-                size,
-            }} />
-            <p style={{ width: '5px' }} />
-            <Link {...{
-                text: 'Ссылка',
-                size,
-                disabled: true
-            }} />
+        <span className='row'>
+            <div className='column'>
+                <Link
+                    text='Ссылка'
+                    size={ size }
+                />
+            </div>
+            <div className='column'>
+                <Link
+                    text='Ссылка'
+                    size={ size }
+                    disabled={ true }
+                />
+            </div>
         </span>
     ))}
 </div>
@@ -21,19 +24,22 @@
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span className={'layout'}>
-            <Link {...{
-                text: 'Ссылка',
-                size,
-                pseudo: true
-            }} />
-            <p style={{ width: '5px' }} />
-            <Link {...{
-                text: 'Ссылка',
-                size,
-                pseudo: true,
-                disabled: true
-            }} />
+        <span className='row'>
+            <div className='column'>
+                <Link
+                    text='Ссылка'
+                    size={ size }
+                    pseudo={ true }
+                />
+            </div>
+            <div className='column'>
+                <Link 
+                    text='Ссылка'
+                    size={ size }
+                    pseudo={ true }
+                    disabled={ true }
+                />
+            </div>
         </span>
     ))}
 </div>
@@ -51,8 +57,8 @@ const iconStyle = {
             text: 'Ссылка',
             size
         };
-        return  (
-            <span className={'layout'} >
+        return (
+            <span className='row' >
                 <Link { ...props } >
                     <div style={ iconStyle }>
                         <Icon { ...props } 
@@ -71,15 +77,13 @@ const iconStyle = {
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span className={'layout'}>
-            <Link {...{
-                size,
-            }} >😊</Link>
-            <p style={{ width: '5px' }} />
-            <Link {...{
-                size,
-                disabled: true
-            }} >😊</Link>
+        <span className='row'>
+            <div className='column'>
+                <Link size={ size } >😊</Link>
+            </div>
+            <div className='column'>
+                <Link size={ size } disabled={ true } >😊</Link>
+            </div>
         </span>
     ))}
 </div>

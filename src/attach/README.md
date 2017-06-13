@@ -1,7 +1,7 @@
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='layout' key={ size }>
+        <div className='row' key={ size }>
             <Attach
                 size={size}
             />
@@ -15,7 +15,7 @@ C Иконкой
 <div>
     <div>
         {['s', 'm', 'l', 'xl'].map(size => (
-            <div className='layout' key={ size }>
+            <div className='row' key={ size }>
                 <Attach
                     size={size}
                     buttonContent='Пожалуйста, выберите файл'
@@ -38,7 +38,7 @@ function handleChange(value) {
 }
 
 <div>
-    <div className='layout'>
+    <div className='row'>
         <Attach
             size='s'
             buttonContent={ state.value ? 'Choose another file' : 'Choose a file' }
@@ -53,7 +53,7 @@ Disabled
 ```
  <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='layout' key={ size }>
+        <div className='row' key={ size }>
             <Attach
                 size={size}
                 disabled={ true }
@@ -64,14 +64,14 @@ Disabled
 ```
 
 
-С установлеными типами файлов, доступными для выборв
+С установлеными типами файлов, доступными для выбора
 ```
 function handleChange(value) {
    setState({value});
 }
 
 <div>
-    <div className='layout'>
+    <div className='row'>
         <Attach
             accept='text/plain'
             buttonContent={ 'Выберите текстовый файл' }

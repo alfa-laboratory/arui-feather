@@ -8,7 +8,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button size={ size }>{`${ name }`}</Button>
         </div>
     ))}
@@ -25,7 +25,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button pseudo={true} size={ size }>{`${ name }`}</Button>
         </div>
     ))}
@@ -43,7 +43,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button view="action" size={ size }>{`${ name }`}</Button>
         </div>
     ))}
@@ -60,7 +60,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button view="extra" size={ size }>{`${ name }`}</Button>
         </div>
     ))}
@@ -77,7 +77,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button view="other" size={ size }>{`${ name }`}</Button>
         </div>
     ))}
@@ -94,9 +94,9 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button size={ size }>
-                <div style={{ paddingRight: '12px', display: 'inline-block' }} >
+                <div style={{ marginRight: '12px', display: 'inline-block' }} >
                     <Icon size={ size } icon='ok' />
                 </div>
                 {`${ name }`}
@@ -116,7 +116,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button width="available" size={ size }>{`${ name }`}</Button>
         </div>
     ))}
@@ -133,7 +133,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <Button size={ size } disabled={ true }>{`${ name }`}</Button>
         </div>
     ))}

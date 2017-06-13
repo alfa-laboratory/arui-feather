@@ -1,6 +1,6 @@
 ```
 <div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='s'
             popupContent='Popup with default props'
@@ -8,7 +8,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='m'
             popupContent='Dropdown popup width custom props'
@@ -21,7 +21,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='l'
             popupContent='Dropdown popup'
@@ -34,7 +34,7 @@
             } }
         />
     </div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='xl'
             popupContent={
@@ -54,7 +54,7 @@
 
 ```
 <div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='s'
             switcherType='button'
@@ -64,7 +64,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='m'
             switcherType='button'
@@ -78,7 +78,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='l'
             switcherType='button'
@@ -92,7 +92,7 @@
             } }
         />
     </div>
-    <div className='layout' >
+    <div className='row' >
         <Dropdown
             size='xl'
             switcherType='button'

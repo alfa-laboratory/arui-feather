@@ -7,7 +7,7 @@ const options = [
 ];
 <div>
     {['s'].map(size => (
-        <div className='layout' >
+        <div className='row' >
             <Select
                 size={ size }
                 mode='radio'
@@ -34,7 +34,7 @@ const options = [
 ];
 <div>
     {['m'].map(size => (
-        <div className='layout' >
+        <div className='row' >
             <Select
                 size={ size }
                 mode='check'
@@ -61,7 +61,7 @@ const options = [
 ];
 <div>
     {['xl'].map(size => (
-        <div className='layout' >
+        <div className='row' >
             <Select
                 size={ size }
                 mode='radio-check'
@@ -91,7 +91,7 @@ const options = [
 ];
 <div>
     {['l'].map(size => (
-        <div className='layout' >
+        <div className='row' >
             <Select
                 width='available'
                 size={ size }

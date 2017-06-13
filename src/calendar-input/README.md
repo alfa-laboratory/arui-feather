@@ -24,7 +24,7 @@ class CalendarInputWithState extends React.Component {
 }
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <CalendarInputWithState size={ size } />
         </div>
     ))}
@@ -34,7 +34,7 @@ class CalendarInputWithState extends React.Component {
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <CalendarInput size={ size } error='Что-то пошло не так' />
         </div>
     ))}
@@ -44,7 +44,7 @@ class CalendarInputWithState extends React.Component {
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className={'layout'} key={ size }>
+        <div className={'row'} key={ size }>
             <CalendarInput size={ size } width='available' />
         </div>
     ))}

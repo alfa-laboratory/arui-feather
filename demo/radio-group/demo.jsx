@@ -46,6 +46,20 @@ const RADIOS_7 = [
     { text: 'Три', value: 'radio-7-3' },
     { text: 'Четыре', value: 'radio-7-4' }
 ];
+const RADIOS_71 = [
+    { text: 'Один', value: 'radio-7-1', disabled: true },
+    { text: 'Два', value: 'radio-7-2', disabled: true },
+    { text: 'Три', value: 'radio-7-3', disabled: true },
+    { text: 'Четыре', value: 'radio-7-4', disabled: true }
+];
+const RADIOS_72 = [
+    { text: 'Один', value: 'radio-7-1', disabled: true },
+    { text: 'Два', value: 'radio-7-2', disabled: false },
+    { text: 'Три', value: 'radio-7-3', disabled: true },
+    { text: 'Четыре', value: 'radio-7-4', disabled: false },
+    { text: 'Четыре', value: 'radio-7-5', disabled: true },
+    { text: 'Четыре', value: 'radio-7-6', disabled: false }
+];
 const RADIOS_8 = [
     { text: 'Один', value: 'radio-8-1' },
     { text: 'Два', value: 'radio-8-2' },
@@ -105,6 +119,50 @@ class Demo extends React.Component {
                 </DemoSection>
                 <DemoSection theme='alfa-on-color'>
                     <ThemeProvider theme='alfa-on-white'>
+                        <RadioGroup type='button'>
+                            { RADIOS_7.map(radio =>
+                                <Radio
+                                    text={ radio.text }
+                                    key={ radio.value }
+                                    value={ radio.value }
+                                    type='button'
+                                />
+                            ) }
+                        </RadioGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-color'>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <RadioGroup type='button'>
+                            { RADIOS_71.map(radio =>
+                                <Radio
+                                    text={ radio.text }
+                                    key={ radio.value }
+                                    value={ radio.value }
+                                    disabled={ radio.disabled }
+                                    type='button'
+                                />
+                            ) }
+                        </RadioGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-color'>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <RadioGroup type='button'>
+                            { RADIOS_72.map(radio =>
+                                <Radio
+                                    text={ radio.text }
+                                    key={ radio.value }
+                                    value={ radio.value }
+                                    disabled={ radio.disabled }
+                                    type='button'
+                                />
+                            ) }
+                        </RadioGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-color'>
+                    <ThemeProvider theme='alfa-on-white'>
                         <RadioGroup type='line'>
                             { RADIOS_4.map(radio =>
                                 <Radio
@@ -150,6 +208,50 @@ class Demo extends React.Component {
                                     text={ radio.text }
                                     key={ radio.value }
                                     value={ radio.value }
+                                    type='button'
+                                />
+                            ) }
+                        </RadioGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-white'>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <RadioGroup type='button'>
+                            { RADIOS_71.map(radio =>
+                                <Radio
+                                    text={ radio.text }
+                                    key={ radio.value }
+                                    value={ radio.value }
+                                    disabled={ radio.disabled }
+                                    type='button'
+                                />
+                            ) }
+                        </RadioGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-white'>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <RadioGroup type='button' error={ 'Обязательно' }>
+                            { RADIOS_71.map(radio =>
+                                <Radio
+                                    text={ radio.text }
+                                    key={ radio.value }
+                                    value={ radio.value }
+                                    type='button'
+                                />
+                            ) }
+                        </RadioGroup>
+                    </ThemeProvider>
+                </DemoSection>
+                <DemoSection theme='alfa-on-white'>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <RadioGroup type='button'>
+                            { RADIOS_72.map(radio =>
+                                <Radio
+                                    text={ radio.text }
+                                    key={ radio.value }
+                                    value={ radio.value }
+                                    disabled={ radio.disabled }
                                     type='button'
                                 />
                             ) }

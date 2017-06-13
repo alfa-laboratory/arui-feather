@@ -5,5 +5,7 @@
 import '../../popup/fantasy';
 
 import './radio-group.css';
+import '../../radio/radio';
+import '../radio-group.css';
 
 export default from '../radio-group';

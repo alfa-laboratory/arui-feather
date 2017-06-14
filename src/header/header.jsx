@@ -15,17 +15,6 @@ import performance from '../performance';
 /**
  * Компонент шапки сайта: лого, меню и пользовательский профиль.
  * Обычно используется совместно с компонентом `Page`.
- *
- * @example
- * ```javascript
- * import Page from 'arui-feather/page';
- * import Header from 'arui-feather/header';
- * import Footer from 'arui-feather/footer';
- *
- * <Page header={ <Header /> } footer={ <Footer /> }>
- *     Контент страницы...
- * </Page>
- * ```
  */
 @cn('header')
 @performance()

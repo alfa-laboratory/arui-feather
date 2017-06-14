@@ -2,9 +2,7 @@
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <Attach
-                size={size}
-            />
+            <Attach size={size} />
         </div>
     ))}
 </div>
@@ -13,21 +11,19 @@
 C Иконкой
 ```
 <div>
-    <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
-            <div className='row' key={ size }>
-                <Attach
-                    size={size}
-                    buttonContent='Пожалуйста, выберите файл'
-                    noFileText='в формате PDF'
-                    buttonProps={ {
-                        pseudo: true,
-                        icon: <Icon size={size} icon='search' />
-                    } }
-                />
-            </div>
-        ))}
-    </div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <div className='row' key={ size }>
+            <Attach
+                size={size}
+                buttonContent='Пожалуйста, выберите файл'
+                noFileText='в формате PDF'
+                buttonProps={ {
+                    pseudo: true,
+                    icon: <Icon size={size} icon='search' />
+                } }
+            />
+        </div>
+    ))}
 </div>
 ```
 
@@ -51,13 +47,10 @@ function handleChange(value) {
 
 Disabled
 ```
- <div>
+<div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <Attach
-                size={size}
-                disabled={ true }
-            />
+            <Attach size={size} disabled={ true } />
         </div>
     ))}
 </div>

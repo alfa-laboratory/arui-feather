@@ -4,7 +4,6 @@
 
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 import { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import Type from 'prop-types';
 import Frame from 'react-frame-component';
 import cn from '../../../src/cn';
@@ -17,11 +16,17 @@ export default class PreviewFrame extends Component {
     };
 
     iframe;
-
+    contentDocument;
+    timeout;
     componentDidMount() {
-        setTimeout(() => {
+        this.contentDocument = this.iframe.getDoc();
+        this.timeout = setTimeout(() => {
             this.forceUpdate();
         }, 500);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timeout);
     }
 
     render(cn) {
@@ -43,10 +48,9 @@ export default class PreviewFrame extends Component {
                 height: 100%;
             }
         `;
-        const frame = findDOMNode(this.iframe);
         let height = 0;
-        if (frame) {
-            height = `${frame.contentWindow.document.body.scrollHeight}px`;
+        if (this.contentDocument) {
+            height = `${this.contentDocument.body.scrollHeight}px`;
         }
         const iframeProps = {
             ...this.props,

@@ -4,6 +4,7 @@
 
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 import { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import Type from 'prop-types';
 import Frame from 'react-frame-component';
 import cn from '../../../src/cn';
@@ -14,6 +15,15 @@ export default class PreviewFrame extends Component {
     static propTypes = {
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node])
     };
+
+    iframe;
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.forceUpdate();
+        }, 500);
+    }
+
     render(cn) {
         const styleLinks = Array.prototype.slice.call(document.querySelectorAll('link[type="text/css"]'));
         const styles = `
@@ -33,16 +43,18 @@ export default class PreviewFrame extends Component {
                 height: 100%;
             }
         `;
-        const iframeProps = { ...this.props };
-        if (!iframeProps.style) {
-            iframeProps.style = {};
+        const frame = findDOMNode(this.iframe);
+        let height = 0;
+        if (frame) {
+            height = `${frame.contentWindow.document.body.scrollHeight}px`;
         }
-        if (!iframeProps.style.height) {
-            iframeProps.style.height = '500px';
-        }
+        const iframeProps = {
+            ...this.props,
+            style: { height }
+        };
         return (
             <div className={ cn } >
-                <Frame { ...iframeProps }>
+                <Frame { ...iframeProps } ref={ (node) => { this.iframe = node; } } >
                     {styleLinks.map(l => (
                         <link href={ l.href } type='text/css' rel='stylesheet' />
                     ))}

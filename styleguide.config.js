@@ -40,6 +40,11 @@ module.exports = {
                 borderRadius: 0,
                 padding: 0
             }
+        },
+        StyleGuide: {
+            content: {
+                maxWidth: 'none'
+            }
         }
     },
     skipComponentsWithoutExample: true,

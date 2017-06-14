@@ -6,6 +6,6 @@
     & iframe {
         width: 100%;
         border: 0;
-        height: 600px;
+        height: 100%;
     }
 }

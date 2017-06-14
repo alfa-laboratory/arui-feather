@@ -5,7 +5,7 @@
 .preview-with-theme-switcher {
     &__layout {
         display: flex;
-        
+
         &_theme_alfa-on-white {
             color: #000;
         }

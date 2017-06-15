@@ -35,9 +35,7 @@
     <div className='layout'>
         <Dropdown
             size='xl'
-            popupContent={
-                <Label size='l'>Label inside popup</Label>
-            }
+            popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
                 type: 'tooltip'
@@ -91,9 +89,7 @@
         <Dropdown
             size='xl'
             switcherType='button'
-            popupContent={
-                <Label size='l'>Label inside popup</Label>
-            }
+            popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
                 type: 'tooltip'

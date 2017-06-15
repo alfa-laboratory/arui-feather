@@ -146,11 +146,12 @@ class Dropdown extends React.Component {
                 className={ cn('switcher') }
                 size={ this.props.size }
                 ref={ (switcher) => { this.switcher = switcher; } }
+                disabled={ this.props.disabled }
                 pseudo={ true }
+                text={ content }
                 onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
-                text={ content }
             />
         );
     }

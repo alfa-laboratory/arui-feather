@@ -154,6 +154,19 @@ npm run modernizr
 -----------------
 [Использование в адаптивной/мобильной среде](./README_MOBILE.md)
 
+Дизайн 2017 (aka Fantasy)
+-------------------------
+
+Work in progress
+
+[Демо](https://alfa-laboratory.github.io/arui-feather/styleguide-fantasy/)
+
+Для использования обновлённой дизайн системы импортируйте компоненты следующим образом:
+
+```
+import Input from 'arui-feather/input/fantasy'
+```
+
 Лицензия
 --------
 

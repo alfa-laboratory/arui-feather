@@ -8,7 +8,7 @@ const layoutStyle = {
             {['s', 'm', 'l', 'xl'].map(size => (
                 <span style={ layoutStyle }>
                     <Link {...{
-                        text: `${mod} link`,
+                        text: `${mod ? `${mod} ` : ''}link`,
                         size,
                         [mod]: true
                     }} />
@@ -31,14 +31,14 @@ const iconStyle = {
         <div key={ mod }>
             {['s', 'm', 'l', 'xl'].map(size => {
                 const props = {
-                    text: `${mod} link`,
+                    text: `${mod ? `${mod} ` : ''}link`,
                     size,
                     [mod]: true
                 };
                 return  (
                     <span style={ layoutStyle }>
                         <Link { ...props } >
-                            <Icon { ...props } 
+                            <Icon { ...props }
                                 style={ iconStyle }
                                 icon='ok' />
                         </Link>

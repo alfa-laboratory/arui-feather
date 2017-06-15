@@ -16,21 +16,18 @@ export default class PreviewFrame extends Component {
     };
 
     iframe;
+
     contentDocument;
-    timeout;
+
     componentDidMount() {
         this.contentDocument = this.iframe.getDoc();
-        this.timeout = setTimeout(() => {
+        setTimeout(() => {
             this.forceUpdate();
-        }, 500);
-    }
-
-    componentWillUnmount() {
-        clearTimeout(this.timeout);
+        }, 0);
     }
 
     render(cn) {
-        const styleLinks = Array.prototype.slice.call(document.querySelectorAll('link[type="text/css"]'));
+        const styleLinks = Array.from(document.querySelectorAll('link[type="text/css"]'));
         const styles = `
             html { height: 100%; }
 
@@ -59,11 +56,11 @@ export default class PreviewFrame extends Component {
         return (
             <div className={ cn } >
                 <Frame { ...iframeProps } ref={ (node) => { this.iframe = node; } } >
-                    {styleLinks.map(l => (
-                        <link href={ l.href } type='text/css' rel='stylesheet' />
-                    ))}
+                    { styleLinks.map(({ href }) => (
+                        <link href={ href } type='text/css' rel='stylesheet' />
+                    )) }
                     <style dangerouslySetInnerHTML={ { __html: styles } } />
-                    {this.props.children}
+                    { this.props.children }
                 </Frame>
             </div>
         );

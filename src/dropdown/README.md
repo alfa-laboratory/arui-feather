@@ -1,6 +1,6 @@
 ```
 <div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='s'
             popupContent='Popup with default props'
@@ -8,7 +8,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='m'
             popupContent='Dropdown popup width custom props'
@@ -21,7 +21,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='l'
             popupContent='Dropdown popup'
@@ -34,12 +34,10 @@
             } }
         />
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='xl'
-            popupContent={
-                <Label size='l'>Label inside popup</Label>
-            }
+            popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
                 mainOffset: 13,
@@ -54,7 +52,7 @@
 
 ```
 <div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='s'
             switcherType='button'
@@ -64,7 +62,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='m'
             switcherType='button'
@@ -78,7 +76,7 @@
             Click me
         </Dropdown>
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='l'
             switcherType='button'
@@ -92,13 +90,11 @@
             } }
         />
     </div>
-    <div className='layout' >
+    <div className='layout'>
         <Dropdown
             size='xl'
             switcherType='button'
-            popupContent={
-                <Label size='l'>Label inside popup</Label>
-            }
+            popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
                 mainOffset: 13,

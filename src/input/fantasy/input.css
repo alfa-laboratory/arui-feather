@@ -267,14 +267,13 @@
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 24px;
+        padding-right: 30px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 29px;
+        width: 30px;
         height: 30px;
-        margin-right: -5px;
         line-height: 28px;
     }
 }
@@ -315,14 +314,13 @@
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 27px;
+        padding-right: 34px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 34px;
         height: 40px;
-        margin-right: -7px;
         line-height: 38px;
     }
 
@@ -374,14 +372,13 @@
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 34px;
+        padding-right: 44px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 44px;
         height: 50px;
-        margin-right: -10px;
         line-height: 48px;
     }
 }
@@ -422,14 +419,13 @@
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 37px;
+        padding-right: 52px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 52px;
         height: 60px;
-        margin-right: -15px;
         line-height: 58px;
     }
 }

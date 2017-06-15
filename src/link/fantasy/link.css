@@ -28,25 +28,27 @@
 
     &_size_xs {
         font-size: var(--font-size-xs);
-        line-height: 1.5;
+        line-height: var(--line-height-normal);
     }
 
     &_size_s {
         font-size: var(--font-size-s);
-        line-height: 1.5;
+        line-height: var(--line-height-normal);
     }
 
     &_size_m {
         font-size: var(--font-size-m);
-        line-height: 1.5;
+        line-height: var(--line-height-normal);
     }
 
     &_size_l {
         font-size: var(--font-size-xl);
+        line-height: var(--line-height-condensed);
     }
 
     &_size_xl {
         font-size: var(--font-size-2xl);
+        line-height: var(--line-height-condensed);
     }
 
     &_pseudo &__text {

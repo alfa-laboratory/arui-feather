@@ -14,7 +14,6 @@
             popupContent='Dropdown popup width custom props'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -29,7 +28,6 @@
             disabled={ true }
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         />
@@ -40,7 +38,6 @@
             popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -69,7 +66,6 @@
             popupContent='Dropdown popup width custom props'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -85,7 +81,6 @@
             popupContent='Dropdown popup'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         />
@@ -97,7 +92,6 @@
             popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >

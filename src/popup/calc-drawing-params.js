@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import { POPUP_MAIN_OFFSET } from '../vars';
+
 const VIEWPORT_ACCURACY_FACTOR = 0.99;
 const VIEWPORT_PADDING = 20;
 
@@ -198,7 +200,7 @@ function calcFitContainerFactor(position, fitContainerDimensions, popupDimension
  */
 function calcPos(direction, targetDimensions, popupDimensions, popup) {
     let result = {};
-    let mainOffset = popup.offset.main || (popup.isHaveTooltip && 13) || 0;
+    let mainOffset = popup.offset.main || (popup.isHaveTooltip && POPUP_MAIN_OFFSET) || 0;
     let secondaryOffset = popup.offset.second;
 
     let mainDirection = getMainDirection(direction);

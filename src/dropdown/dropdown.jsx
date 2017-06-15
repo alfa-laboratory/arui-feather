@@ -12,6 +12,7 @@ import Popup from '../popup/popup';
 
 import cn from '../cn';
 import performance from '../performance';
+import { POPUP_MAIN_OFFSET } from '../vars';
 
 /**
  * Компонент "выпадашка": ссылка или кнопка. По клику показывается Popup.
@@ -156,14 +157,26 @@ class Dropdown extends React.Component {
     }
 
     renderPopup(cn) {
+        let mainOffset;
         let opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.opened;
+
+        if (this.props.popupProps === undefined || (
+            this.props.popupProps && this.props.popupProps.type !== 'tooltip')) {
+            switch (this.props.size) {
+                case 's':
+                case 'm': mainOffset = POPUP_MAIN_OFFSET / 2; break;
+                case 'l':
+                case 'xl': mainOffset = POPUP_MAIN_OFFSET; break;
+            }
+        }
 
         let popupProps = {
             className: cn('popup'),
             size: this.props.size,
             autoclosable: true,
+            mainOffset,
             ...this.props.popupProps
         };
 

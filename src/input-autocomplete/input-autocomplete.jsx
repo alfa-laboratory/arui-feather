@@ -28,6 +28,7 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 @performance(true)
 class InputAutocomplete extends React.Component {
     static propTypes = {
+        ...Input.propTypes,
         /** Список вариантов выбора */
         options: Type.arrayOf(Type.shape({
             /** Тип списка вариантов */

@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 @import '../../vars-fantasy.css';
 
 .calendar {
@@ -20,12 +24,12 @@
 
     &__title {
         vertical-align: middle;
-        padding: 20px 15px 5px;
+        padding: 20px 20px 7px;
         line-height: 20px;
     }
 
     &__layout {
-        padding: 0 15px 15px;
+        padding: 0 10px 10px;
     }
 
     &__dayname,

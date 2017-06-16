@@ -2,11 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import '../input';
-import '../menu';
-import '../popup';
-import '../resize-sensor';
+.input__autocomplete-case {
+    display: inline-block;
+    position: relative;
 
-import './input-autocomplete.css';
-
-export default from './input-autocomplete';
+    &_width_available {
+        width: 100%;
+    }
+}

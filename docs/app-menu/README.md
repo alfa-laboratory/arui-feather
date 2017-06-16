@@ -7,34 +7,6 @@
 import AppMenu from 'arui-feather/app-menu';
 ```
 
-## Примеры
-
-
-```javascript
-import Page from 'arui-feather/page';
-import Header from 'arui-feather/header';
-import Footer from 'arui-feather/footer';
-
-import AppTitle from 'arui-feather/app-title';
-import AppMenu from 'arui-feather/app-menu';
-import AppContent from 'arui-feather/app-content';
-
-import Heading from 'arui-feather/heading';
-import Menu from 'arui-feather/menu';
-import Paragraph from 'arui-feather/paragraph';
-
-<Page header={ <Header /> } footer={ <Footer /> }>
-    <AppTitle>
-        <Heading>Заголовок страницы</Heading>
-    </AppTitle>
-    <AppMenu>
-        <Menu />
-    </AppMenu>
-    <AppContent>
-        <Paragraph>Контент страницы...</Paragraph>
-    </AppContent>
-</Page>
-```
 
 
 

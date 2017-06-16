@@ -46,7 +46,7 @@ const radioStyle = {
             </span>
         ))}
     </div>
-    <div>
+    <div className='row'>
         {['s', 'm', 'l', 'xl'].map(size => (
             <span style={ radioStyle } >
                 <Radio

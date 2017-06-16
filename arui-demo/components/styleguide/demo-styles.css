@@ -2,6 +2,31 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-.layout {
-    margin-top: 15px;
+.row {
+    display: flex;
+
+    .column + .column {
+        margin-left: 10px;
+    }
+
+    .column.s + .column.s {
+        margin-left: 5px;
+    }
+
+    .column.m + .column.m {
+        margin-left: 10px;
+    }
+
+    .column.l + .column.l {
+        margin-left: 30px;
+    }
+
+    .column.xl + .column.xl {
+        margin-left: 40px;
+    }
+
+    & + & {
+        margin-top: 15px;
+    }
 }
+

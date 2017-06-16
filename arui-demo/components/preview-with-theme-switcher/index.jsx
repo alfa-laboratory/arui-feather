@@ -25,31 +25,25 @@ class PreviewWithThemeSwitcher extends Component {
     render(cn) {
         const themes = [LIGHT_THEME, DARK_THEME];
         return (
-            <div>
-                <div className={ cn('button-group') } >
-                    {themes.map(theme => (
-                        <button
-                            key={ theme }
-                            className={ cn('button') }
-                            onClick={ () => this.handleOnChange(theme) }
-                        >
-                            { this.renderThemeText(theme) }
-                        </button>
-                    ))}
-                </div>
-                <div className={ cn('layout', { theme: this.state.theme }) } >
-                    <ThemeProvider theme={ this.state.theme } >
+            <ThemeProvider theme={ this.state.theme } >
+                <div>
+                    <div className={ cn('button-group') } >
+                        {themes.map(theme => (
+                            <button
+                                key={ theme }
+                                className={ cn('button', { theme, selected: theme === this.state.theme }) }
+                                onClick={ () => this.handleOnChange(theme) }
+                            />
+                        ))}
+                    </div>
+                    <div className={ cn('layout', { theme: this.state.theme }) } >
                         <div className={ cn('wrapper') }>
                             {this.props.children}
                         </div>
-                    </ThemeProvider>
+                    </div>
                 </div>
-            </div>
+            </ThemeProvider>
         );
-    }
-
-    renderThemeText(theme) {
-        return theme === LIGHT_THEME ? 'На светлом' : 'На темном';
     }
 
     @autobind

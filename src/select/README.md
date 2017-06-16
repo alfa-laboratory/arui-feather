@@ -7,19 +7,22 @@ const options = [
 ];
 <div>
     {['s'].map(size => (
-        <div className='layout' >
-            <Select
-                size={ size }
-                mode='radio'
-                options={ options }
-            />
-            <p/>
-            <Select
-                size={ size }
-                mode='radio'
-                options={ options }
-                disabled={ true }
-            />
+        <div className='row' >
+            <div className='column'>
+                <Select
+                    size={ size }
+                    mode='radio'
+                    options={ options }
+                />
+            </div>
+            <div className='column'>
+                <Select
+                    size={ size }
+                    mode='radio'
+                    options={ options }
+                    disabled={ true }
+                />
+            </div>
         </div>
     ))}
 </div>
@@ -34,19 +37,22 @@ const options = [
 ];
 <div>
     {['m'].map(size => (
-        <div className='layout' >
-            <Select
-                size={ size }
-                mode='check'
-                options={ options }
-            />
-            <p/>
-            <Select
-                size={ size }
-                mode='check'
-                options={ options }
-                disabled={ true }
-            />
+        <div className='row' >
+            <div className='column'>
+                <Select
+                    size={ size }
+                    mode='check'
+                    options={ options }
+                />
+            </div>
+            <div className='column'>
+                <Select
+                    size={ size }
+                    mode='check'
+                    options={ options }
+                    disabled={ true }
+                />
+            </div>
         </div>
     ))}
 </div>
@@ -61,19 +67,22 @@ const options = [
 ];
 <div>
     {['xl'].map(size => (
-        <div className='layout' >
-            <Select
-                size={ size }
-                mode='radio-check'
-                options={ options }
-            />
-            <p/>
-            <Select
-                size={ size }
-                mode='radio-check'
-                options={ options }
-                disabled={ true }
-            />
+        <div className='row' >
+            <div className='column'>
+                <Select
+                    size={ size }
+                    mode='radio-check'
+                    options={ options }
+                />
+            </div>
+            <div className='column'>
+                <Select
+                    size={ size }
+                    mode='radio-check'
+                    options={ options }
+                    disabled={ true }
+                />
+            </div>
         </div>
     ))}
 </div>
@@ -91,21 +100,24 @@ const options = [
 ];
 <div>
     {['l'].map(size => (
-        <div className='layout' >
-            <Select
-                width='available'
-                size={ size }
-                mode='check'
-                options={ options }
-            />
-            <p/>
-            <Select
-                width='available'
-                size={ size }
-                mode='check'
-                options={ options }
-                disabled={ true }
-            />
+        <div className='row' >
+            <div className='column'>
+                <Select
+                    width='available'
+                    size={ size }
+                    mode='check'
+                    options={ options }
+                />
+            </div>
+            <div className='column'>
+                <Select
+                    width='available'
+                    size={ size }
+                    mode='check'
+                    options={ options }
+                    disabled={ true }
+                />
+            </div>
         </div>
     ))}
 </div>

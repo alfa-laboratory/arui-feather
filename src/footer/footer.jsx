@@ -13,17 +13,6 @@ import performance from '../performance';
 /**
  * Компонент подвала сайта.
  * Обычно используется совместно с компонентом `Page`.
- *
- * @example
- * ```javascript
- * import Page from 'arui-feather/page';
- * import Header from 'arui-feather/header';
- * import Footer from 'arui-feather/footer';
- *
- * <Page header={ <Header /> } footer={ <Footer /> }>
- *     Контент страницы...
- * </Page>
- * ```
  */
 @cn('footer')
 @performance()

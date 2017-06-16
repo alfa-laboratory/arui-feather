@@ -36,7 +36,7 @@ function renderAddons() {
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='layout'>
+        <div className='row'>
              <Input
                 placeholder='Введите что-нибудь...'
                 view='line'
@@ -52,7 +52,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='layout'>
+        <div className='row'>
              <Input
                 placeholder='Введите что-нибудь...'
                 clear={ true }
@@ -69,7 +69,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='layout'>
+        <div className='row'>
              <Input
                 placeholder='Введите что-нибудь...'
                 width='available'
@@ -86,7 +86,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='layout'>
+        <div className='row'>
              <Input
                 placeholder='Введите что-нибудь...'
                 error='Что-то идет не так'
@@ -103,7 +103,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='layout'>
+        <div className='row'>
              <Input
                 placeholder='Введите что-нибудь...'
                 view='line'
@@ -120,7 +120,7 @@ Disabled
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='layout'>
+        <div className='row'>
              <Input
                 placeholder='Введите что-нибудь...'
                 disabled={ true }

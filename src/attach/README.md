@@ -1,54 +1,40 @@
 ```
 <div>
-    <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
-            <div className='layout' key={ size }>
-                <Attach
-                    size={size}
-                />
-            </div>
-        ))}
-    </div>
-    <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
-            <div className='layout' key={ size }>
-                <Attach
-                    size={size}
-                    disabled={ true }
-                />
-            </div>
-        ))}
-    </div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <div className='row' key={ size }>
+            <Attach size={size} />
+        </div>
+    ))}
 </div>
 ```
+
+C Иконкой
 ```
 <div>
-    <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
-            <div className='layout' key={ size }>
-                <Attach
-                    size={size}
-                    buttonContent='Please, choose a file'
-                    noFileText='file in pdf format'
-                    buttonProps={ {
-                        pseudo: true,
-                        icon: <Icon size={size} icon='search' />
-                    } }
-                />
-            </div>
-        ))}
-    </div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <div className='row' key={ size }>
+            <Attach
+                size={size}
+                buttonContent='Пожалуйста, выберите файл'
+                noFileText='в формате PDF'
+                buttonProps={ {
+                    pseudo: true,
+                    icon: <Icon size={size} icon='search' />
+                } }
+            />
+        </div>
+    ))}
 </div>
 ```
 
-
+С изменяемым текстом
 ```
 function handleChange(value) {
    setState({value});
 }
 
 <div>
-    <div className='layout'>
+    <div className='row'>
         <Attach
             size='s'
             buttonContent={ state.value ? 'Choose another file' : 'Choose a file' }
@@ -59,19 +45,30 @@ function handleChange(value) {
 </div>
 ```
 
-### accept mime-type
+Disabled
+```
+<div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <div className='row' key={ size }>
+            <Attach size={size} disabled={ true } />
+        </div>
+    ))}
+</div>
+```
 
+
+С установлеными типами файлов, доступными для выбора
 ```
 function handleChange(value) {
    setState({value});
 }
 
 <div>
-    <div className='layout'>
+    <div className='row'>
         <Attach
             accept='text/plain'
+            buttonContent={ 'Выберите текстовый файл' }
             size='s'
-            buttonContent={ state.value ? 'Choose another text file' : 'Choose a text file' }
             onChange={ handleChange }
             value={ state.value }
         />

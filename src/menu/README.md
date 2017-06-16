@@ -85,7 +85,7 @@ const MENU_2 = [
 ];
 
 <div>
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Базовое горизонтальное меню
         </Heading>
@@ -94,7 +94,7 @@ const MENU_2 = [
             content={ MENU_1 }
         />
     </div>
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Базовое вертикальное меню
         </Heading>
@@ -103,7 +103,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Горизонтальное меню с множественным выбором (mode="check")
         </Heading>
@@ -114,7 +114,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Вертикальное меню с множественным выбором (mode="check")
         </Heading>
@@ -124,7 +124,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Горизонтальное меню с одиночным обязательным выбором (mode="radio")
         </Heading>
@@ -135,7 +135,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Вертикальное меню с одиночным обязательным выбором (mode="radio")
         </Heading>
@@ -145,7 +145,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Горизонтальное меню с одиночным необязательным выбором (mode="radio-check")
         </Heading>
@@ -156,7 +156,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Вертикальное меню с одиночным необязательным выбором (mode="radio-check")
         </Heading>
@@ -166,7 +166,7 @@ const MENU_2 = [
         />
     </div>
 
-    <div className='layout'>
+    <div className='row'>
         <Heading size='s'>
             Неактивное меню
         </Heading>

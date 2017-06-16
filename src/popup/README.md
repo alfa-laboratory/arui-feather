@@ -36,7 +36,7 @@ class PopupDemo extends React.Component {
     render() {
         return (
             <div>
-                <div className='layout'>
+                <div className='row'>
                     <Button
                         ref={ (target) => { this.target1 = target; } }
                         size='s'
@@ -54,7 +54,7 @@ class PopupDemo extends React.Component {
                         Popup on top or bottom
                     </Popup>
                 </div>
-                <div className='layout'>
+                <div className='row'>
                     <Button
                         ref={ (target) => { this.target2 = target; } }
                         size='l'
@@ -76,7 +76,7 @@ class PopupDemo extends React.Component {
                         Popup
                     </Popup>
                 </div>
-                <div className='layout'>
+                <div className='row'>
                     <Button
                         ref={ (target) => { this.target3 = target; } }
                         size='m'
@@ -95,7 +95,7 @@ class PopupDemo extends React.Component {
                         Popup with available height
                     </Popup>
                 </div>
-                <div className='layout'>
+                <div className='row'>
                     <Button
                         ref={ (target) => { this.target4 = target; } }
                         size='m'
@@ -115,7 +115,7 @@ class PopupDemo extends React.Component {
                         Popup with available height
                     </Popup>
                 </div>
-                <div className='layout'>
+                <div className='row'>
                     <Button
                         ref={ (target) => { this.target5 = target; } }
                         size='m'

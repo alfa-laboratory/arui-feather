@@ -14,7 +14,6 @@
             popupContent='Dropdown popup width custom props'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -29,7 +28,6 @@
             disabled={ true }
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         />
@@ -37,12 +35,9 @@
     <div className='row' >
         <Dropdown
             size='xl'
-            popupContent={
-                <Label size='l'>Label inside popup</Label>
-            }
+            popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -71,7 +66,6 @@
             popupContent='Dropdown popup width custom props'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >
@@ -87,7 +81,6 @@
             popupContent='Dropdown popup'
             popupProps={ {
                 directions: ['right-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         />
@@ -96,12 +89,9 @@
         <Dropdown
             size='xl'
             switcherType='button'
-            popupContent={
-                <Label size='l'>Label inside popup</Label>
-            }
+            popupContent='Content inside popup'
             popupProps={ {
                 directions: ['bottom-center'],
-                mainOffset: 13,
                 type: 'tooltip'
             } }
         >

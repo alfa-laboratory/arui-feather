@@ -1,3 +1,20 @@
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.0.2...v6.1.0) (2017-06-16)
+
+
+### Bug Fixes
+
+* **input-autocomplete:** add missing proptypes ([36aaa7d](https://github.com/alfa-laboratory/arui-feather/commit/36aaa7d))
+
+
+### Features
+
+* **fantasy:** add calendar-input ([#76](https://github.com/alfa-laboratory/arui-feather/issues/76)) ([57c5284](https://github.com/alfa-laboratory/arui-feather/commit/57c5284))
+* **fantasy:** add dropdown & link ([#77](https://github.com/alfa-laboratory/arui-feather/issues/77)) ([cdf09fc](https://github.com/alfa-laboratory/arui-feather/commit/cdf09fc))
+* **fantasy:** add menu & menu-item ([#78](https://github.com/alfa-laboratory/arui-feather/issues/78)) ([2ab41d4](https://github.com/alfa-laboratory/arui-feather/commit/2ab41d4))
+
+
+
 <a name="6.0.2"></a>
 ## [6.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v6.0.1...v6.0.2) (2017-06-15)
 

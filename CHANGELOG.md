@@ -1,3 +1,16 @@
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.1.0...v6.2.0) (2017-06-17)
+
+
+### Features
+
+* add forgotten licenses to component index files ([#85](https://github.com/alfa-laboratory/arui-feather/issues/85)) ([0ab4c33](https://github.com/alfa-laboratory/arui-feather/commit/0ab4c33))
+* **fantasy:** add input-autocomplete ([#82](https://github.com/alfa-laboratory/arui-feather/issues/82)) ([515fffc](https://github.com/alfa-laboratory/arui-feather/commit/515fffc))
+* **fantasy:** add label ([#84](https://github.com/alfa-laboratory/arui-feather/issues/84)) ([39b9a24](https://github.com/alfa-laboratory/arui-feather/commit/39b9a24))
+* **fantasy:** add money-input ([#83](https://github.com/alfa-laboratory/arui-feather/issues/83)) ([82e41b4](https://github.com/alfa-laboratory/arui-feather/commit/82e41b4))
+
+
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.0.2...v6.1.0) (2017-06-16)
 

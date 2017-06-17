@@ -24,7 +24,7 @@ const AMOUNT = {
     value: 123343,
     currency: {
         code: 'RUR',
-        minority: 10
+        minority: 100
     }
 };
 <div>

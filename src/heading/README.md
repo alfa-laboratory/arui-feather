@@ -1,8 +1,8 @@
 ```
 <div>
-    <Heading size='xl'>Заголовок H1</Heading>
-    <Heading size='l'>Заголовок H2</Heading>
-    <Heading size='m'>Заголовок H3</Heading>
-    <Heading size='s'>Заголовок H4</Heading>
+    <Heading size='xl'>Заголовок первого уровня</Heading>
+    <Heading size='l'>Многострочный заголовок, длина которого иногда бывает так некстати</Heading>
+    <Heading size='m'>Очень длинный загловок в&nbsp;несколько строчек, чтобы проверить правильность интерлиньяжа</Heading>
+    <Heading size='s'>Низкоуровневый заголовок</Heading>
 </div>
 ```

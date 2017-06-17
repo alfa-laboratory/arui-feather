@@ -6,17 +6,27 @@ const elipsisBoxStyles = {
 };
 
 <div>
-    {['s' , 'm', 'l', 'xl'].map(size => (
-        <div>
-            <div className='row' key={ size }>
-                <Label size={ size }>Лейбл</Label>
+    {['l'].map(size => (
+        <div key={ size }>
+            <div style={ elipsisBoxStyles }>
+                <Label size={ size } isNoWrap={ true }>
+                    Гипермаркет
+                </Label>
             </div>
-            <div className='row'>
-                <div style={ elipsisBoxStyles }>
-                    <Label size={ size } isNoWrap={ true }>
-                        Очень длинная строка, которую необходимо скрыть за тремя точками
-                    </Label>
-                </div>
+            <div style={ elipsisBoxStyles }>
+                <Label size={ size } isNoWrap={ true }>
+                    Путешествие
+                </Label>
+            </div>
+            <div style={ elipsisBoxStyles }>
+                <Label size={ size } isNoWrap={ true }>
+                    Мобильная связь, интернет, ТВ, телефон
+                </Label>
+            </div>
+            <div style={ elipsisBoxStyles }>
+                <Label size={ size } isNoWrap={ true }>
+                    Кафе и рестораны
+                </Label>
             </div>
         </div>
     ))}

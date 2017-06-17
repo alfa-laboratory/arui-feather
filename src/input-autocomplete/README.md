@@ -33,22 +33,25 @@ function handleItemSelect(item) {
 function handleChange(value) {
     setState({ value });
 }
+<div style={{width: '300px'}}>
 <InputAutocomplete
     size='m'
+    width='available'
     value={ state.value }
     onChange={ handleChange }
     onItemSelect={ handleItemSelect }
     placeholder='Введите название социальной сети'
     options={ getFilteredOptions(socialNetworks, state.value) }
 />
+</div>
 ```
 
 Элементы с кастомной разметкой
 ```
 const socialNetworks = [
     {
-        value: 'VKontakte',
-        description: <Label size='l'>вариант - VKontakte</Label>
+        value: 'Автотранспорт',
+        description: <Label size='l'> зеленая точка  Автотранспорт</Label>
     },
     {
         value: 'Facebook',
@@ -56,7 +59,7 @@ const socialNetworks = [
     },
     {
         value: 'Twitter',
-        description: <Label size='l'>вариант - Twitter</Label>
+        description: <Label size='l'>http://statement.alfalab.design/ вариант - Twitter</Label>
     }
 ];
 function getFilteredOptions(list, typedValue) {
@@ -74,9 +77,10 @@ function handleChange(value) {
 <InputAutocomplete
     size='l'
     value={ state.value }
+    width='available'
     onChange={ handleChange }
     onItemSelect={ handleItemSelect }
-    placeholder='Введите название социальной сети'
+    placeholder='Выберите категорию'
     options={ getFilteredOptions(socialNetworks, state.value) }
 />
 ```

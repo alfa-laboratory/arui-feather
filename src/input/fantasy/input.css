@@ -98,7 +98,9 @@
             display: none;
         }
 
+        &[placeholder],
         &::placeholder {
+            text-overflow: ellipsis;
             transition: opacity .2s ease-in-out;
         }
 
@@ -217,7 +219,7 @@
 
     .input__control {
         &::placeholder {
-            opacity: .5;
+            opacity: var(--opacity-minor);
         }
     }
 

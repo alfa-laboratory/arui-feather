@@ -19,14 +19,8 @@ function renderAddons() {
         size='m'
         placeholder='Input...'
         rightAddons={ renderAddons() }
-        leftAddons={ renderAddons() }
-    />
-    <Input
-        size='m'
-        placeholder='Input with width available...'
-        rightAddons={ renderAddons() }
-        leftAddons={ renderAddons() }
-        width='available'
+        type='number'
+        maskFormatCharacters={{ validate: (symb)=> symb === 'a'}}
     />
 </div>    
 ```
@@ -50,15 +44,28 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С крестиком "Очистить"
 ```
 const sizes = ['s', 'm', 'l', 'xl'];
+
+class StateFullInput extends React.Component {
+    constructor() {
+        this.state = { value: 'Корм для кота' };
+    }
+    render() {
+        return (
+            <Input
+                placeholder='Введите что-нибудь'
+                value={ this.state.value }
+                clear={ true }
+                view='line'
+                onChange={(value) => this.setState({ value })}
+                size={ this.props.size }
+             />
+        );
+    }
+}
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <Input
-                placeholder='Введите что-нибудь...'
-                clear={ true }
-                view='line'
-                size={ size }
-             />
+             <StateFullInput size={ size } />
         </div>
     ))}
 </div>
@@ -84,14 +91,24 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С ошибкой
 ```
 const sizes = ['s', 'm', 'l', 'xl'];
+initialState = {
+    value: 'Конsтантин',
+    error: true
+};
 <div>
     {sizes.map(size => (
         <div className='row'>
              <Input
-                placeholder='Введите что-нибудь...'
-                error='Что-то идет не так'
+                placeholder='Введите что-нибудь'
+                error={ state.error ? 'Только кириллические символы': null }
                 view='line'
                 size={ size }
+                value={ state.value }
+                onChange={ (value) => setState({
+                    value,
+                    error: value.search(/[a-z]/i) !== -1
+                }) }
+
              />
         </div>
     ))}

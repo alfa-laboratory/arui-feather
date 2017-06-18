@@ -1,18 +1,5 @@
 
 ```
-const LOREM_IPSUM = require('../vars').LOREM_IPSUM;
-<Collapse
-    collapsedLabel='Подробнее'
-    expandedLabel='Скрыть' >
-    <span>
-        { LOREM_IPSUM.slice(0, 3) }
-    </span>
-</Collapse>
-```
-
-Открытый
-```
-const LOREM_IPSUM = require('../vars').LOREM_IPSUM;
 function handleExpandedChange(isExpanded){
    setState({ isExpanded });
 }
@@ -24,8 +11,6 @@ initialState = {
     expandedLabel='Скрыть'
     isExpanded={ state.isExpanded }
     onExpandedChange={ value => handleExpandedChange(value) }>
-    <span>
-        { LOREM_IPSUM.slice(0, 3) }
-    </span>
+        Альфа-Банк, основанный в&nbsp;1990 году, является универсальным банком, осуществляющим все основные виды банковских операций, представленных на&nbsp;рынке финансовых услуг, включая обслуживание частных и&nbsp;корпоративных клиентов, инвестиционный банковский бизнес, торговое финансирование и&nbsp;т.д.
 </Collapse>
 ```

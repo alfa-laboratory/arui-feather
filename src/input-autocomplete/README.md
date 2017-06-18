@@ -48,18 +48,46 @@ function handleChange(value) {
 
 Элементы с кастомной разметкой
 ```
+
+function Circle({ background }) {
+    const circleStyles = {
+        width: '14px',
+        height: '14px',
+        display: 'block',
+        userSelect: 'none',
+        background,
+        borderRadius: '50%',
+        transform: 'translateY(-50%)',
+        top: '10px',
+        position: 'relative',
+        marginRight: '10px',
+        marginLeft: '-20px'
+    };
+    return (
+        <span style={ circleStyles }></span>
+    )
+}
 const socialNetworks = [
     {
         value: 'Автотранспорт',
-        description: <Label size='l'> зеленая точка  Автотранспорт</Label>
+        description: 
+            <Label size='l'>
+                <div style={{ display: 'flex' }}><Circle background={'green'} /> Автотранспорт</div>
+            </Label>
     },
     {
         value: 'Facebook',
-        description: <Label size='l'>вариант - Facebook</Label>
+        description:
+            <Label size='l'>
+                <div style={{ display: 'flex' }}><Circle background={'blue'} /> Гипермаркет</div>
+            </Label>
     },
     {
         value: 'Twitter',
-        description: <Label size='l'>http://statement.alfalab.design/ вариант - Twitter</Label>
+        description:  
+            <Label size='l'>
+                <div style={{ display: 'flex' }}><Circle background={'rgb(217, 50, 128)'} /> Штрафы, налоги, комиссии</div>
+            </Label>
     }
 ];
 function getFilteredOptions(list, typedValue) {

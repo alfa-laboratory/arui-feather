@@ -11,28 +11,17 @@
         border-bottom-width: 1px;
     }
 
-    &,
     .input__control {
         color: var(--color-content-alfa-on-white);
-    }
 
-    .input__top {
-        color: rgba(0, 0, 0, .4);
-    }
-
-    &.input_focused,
-    &.input_has-value {
-        &:not(.input_invalid) {
-            .input__top {
-                color: var(--color-content-alfa-on-white);
-            }
-        }
-    }
-
-    .input__control {
         &::placeholder {
             color: var(--color-content-minor-alfa-on-white);
         }
+    }
+
+    .input__top,
+    .input__sub {
+        color: var(--color-content-minor-alfa-on-white);
     }
 
     .input__clear {

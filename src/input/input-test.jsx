@@ -129,10 +129,10 @@ describe('input', () => {
 
     it('should render with `label` from props', () => {
         let input = render(<Input label='Label' />);
-        let labelNode = input.node.querySelector('.input__top');
+        let topNode = input.node.querySelector('.input__top');
 
-        expect(labelNode).to.exist;
-        expect(labelNode).to.have.html('Label');
+        expect(topNode).to.exist;
+        expect(topNode).to.have.text('Label');
     });
 
     it('should render with `placeholder` from props', () => {
@@ -147,7 +147,7 @@ describe('input', () => {
         let subNode = input.node.querySelector('.input__sub');
 
         expect(subNode).to.exist;
-        expect(subNode).to.have.html('Hint');
+        expect(subNode).to.have.text('Hint');
     });
 
     it('should render with `error` from props', () => {
@@ -155,7 +155,7 @@ describe('input', () => {
         let subNode = input.node.querySelector('.input__sub');
 
         expect(subNode).to.exist;
-        expect(subNode).to.have.html('Error');
+        expect(subNode).to.have.text('Error');
     });
 
     it('should render with `off` autocomplete attribute', () => {

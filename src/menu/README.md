@@ -86,97 +86,115 @@ const MENU_2 = [
 
 <div>
     <div className='row'>
-        <Heading size='s'>
-            Базовое горизонтальное меню
-        </Heading>
-        <Menu
-            view='horizontal'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Базовое горизонтальное меню
+            </Heading>
+            <Menu
+                view='horizontal'
+                content={ MENU_1 }
+            />
+        </div>
     </div>
     <div className='row'>
-        <Heading size='s'>
-            Базовое вертикальное меню
-        </Heading>
-        <Menu
-            content={ MENU_2 }
-        />
-    </div>
-
-    <div className='row'>
-        <Heading size='s'>
-            Горизонтальное меню с множественным выбором (mode="check")
-        </Heading>
-        <Menu
-            mode='check'
-            view='horizontal'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Базовое вертикальное меню
+            </Heading>
+            <Menu
+                content={ MENU_2 }
+            />
+        </div>
     </div>
 
     <div className='row'>
-        <Heading size='s'>
-            Вертикальное меню с множественным выбором (mode="check")
-        </Heading>
-        <Menu
-            mode='check'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Горизонтальное меню с множественным выбором (mode="check")
+            </Heading>
+            <Menu
+                mode='check'
+                view='horizontal'
+                content={ MENU_1 }
+            />
+        </div>
     </div>
 
     <div className='row'>
-        <Heading size='s'>
-            Горизонтальное меню с одиночным обязательным выбором (mode="radio")
-        </Heading>
-        <Menu
-            mode='radio'
-            view='horizontal'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Вертикальное меню с множественным выбором (mode="check")
+            </Heading>
+            <Menu
+                mode='check'
+                content={ MENU_1 }
+            />
+        </div>
     </div>
 
     <div className='row'>
-        <Heading size='s'>
-            Вертикальное меню с одиночным обязательным выбором (mode="radio")
-        </Heading>
-        <Menu
-            mode='radio'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Горизонтальное меню с одиночным обязательным выбором (mode="radio")
+            </Heading>
+            <Menu
+                mode='radio'
+                view='horizontal'
+                content={ MENU_1 }
+            />
+        </div>
     </div>
 
     <div className='row'>
-        <Heading size='s'>
-            Горизонтальное меню с одиночным необязательным выбором (mode="radio-check")
-        </Heading>
-        <Menu
-            mode='radio-check'
-            view='horizontal'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Вертикальное меню с одиночным обязательным выбором (mode="radio")
+            </Heading>
+            <Menu
+                mode='radio'
+                content={ MENU_1 }
+            />
+        </div>
     </div>
 
     <div className='row'>
-        <Heading size='s'>
-            Вертикальное меню с одиночным необязательным выбором (mode="radio-check")
-        </Heading>
-        <Menu
-            mode='radio-check'
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Горизонтальное меню с одиночным необязательным выбором (mode="radio-check")
+            </Heading>
+            <Menu
+                mode='radio-check'
+                view='horizontal'
+                content={ MENU_1 }
+            />
+        </div>
     </div>
 
     <div className='row'>
-        <Heading size='s'>
-            Неактивное меню
-        </Heading>
-        <Menu
-            mode='check'
-            view='horizontal'
-            disabled={ true }
-            checkedItems={ ['value1', 'value3'] }
-            content={ MENU_1 }
-        />
+        <div className='column'>
+            <Heading size='s'>
+                Вертикальное меню с одиночным необязательным выбором (mode="radio-check")
+            </Heading>
+            <Menu
+                mode='radio-check'
+                content={ MENU_1 }
+            />
+        </div>
+    </div>
+
+    <div className='row'>
+        <div className='column'>
+            <Heading size='s'>
+                Неактивное меню
+            </Heading>
+            <Menu
+                mode='check'
+                view='horizontal'
+                disabled={ true }
+                checkedItems={ ['value1', 'value3'] }
+                content={ MENU_1 }
+            />
+        </div>
     </div>
 </div>
 ```

@@ -5,7 +5,6 @@
 import Button from '../../button/button';
 
 import cn from '../../cn';
-import performance from '../../performance';
 
 /**
  * Компонент тэг.
@@ -13,7 +12,6 @@ import performance from '../../performance';
  * @extends Button
  */
 @cn('tag-button')
-@performance()
 class TagButton extends Button {}
 
 export default TagButton;

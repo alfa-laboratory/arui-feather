@@ -4,7 +4,6 @@
 
 .row {
     display: flex;
-    flex-direction: column;
 
     .column + .column {
         margin-left: 10px;

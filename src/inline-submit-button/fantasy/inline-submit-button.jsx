@@ -5,7 +5,6 @@
 import Button from '../../button/button';
 
 import cn from '../../cn';
-import performance from '../../performance';
 
 /**
  * Компонент сабмит кнопки для встраивания в поля ввода.
@@ -13,7 +12,6 @@ import performance from '../../performance';
  * @extends Button
  */
 @cn('inline-submit-button')
-@performance()
 class InlineSubmitButton extends Button {}
 
 export default InlineSubmitButton;

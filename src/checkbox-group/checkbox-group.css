@@ -7,6 +7,8 @@
 .checkbox-group {
     display: inline-block;
     outline: none;
+    font-family: var(--font);
+    font-weight: var(--font-weight);
 }
 
 .checkbox-group_invalid {

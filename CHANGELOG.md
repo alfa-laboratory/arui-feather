@@ -1,3 +1,13 @@
+<a name="6.4.1"></a>
+## [6.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.4.0...v6.4.1) (2017-06-19)
+
+
+### Bug Fixes
+
+* **fantasy:** normalize top & sub styles in controls ([#93](https://github.com/alfa-laboratory/arui-feather/issues/93)) ([a9d479b](https://github.com/alfa-laboratory/arui-feather/commit/a9d479b))
+
+
+
 <a name="6.4.0"></a>
 # [6.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.3.0...v6.4.0) (2017-06-19)
 

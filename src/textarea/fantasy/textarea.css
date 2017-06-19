@@ -65,7 +65,7 @@
         transition-property: border-bottom-color, box-shadow, width;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         -webkit-appearance: none;
-        -webkit-tap-highlight-color: rgba(10, 30, 50, 0);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
         &::-webkit-input-placeholder {
             text-indent: 0;

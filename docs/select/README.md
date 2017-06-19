@@ -26,7 +26,8 @@ import Select from 'arui-feather/select';
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | id | String |  |  | Уникальный идентификатор блока |
 | name | String |  |  | Уникальное имя блока |
-| placeholder | String | `'Выберите:'`  |  | Подсказка, которая отображается в случае если ни один из пунктов выбран |
+| label | Node |  |  | Лейбл для поля |
+| placeholder | String | `'Выберите:'`  |  | Подсказка в поле |
 | hint | Node |  |  | Подсказка под полем |
 | error | Node |  |  | Отображение ошибки |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |

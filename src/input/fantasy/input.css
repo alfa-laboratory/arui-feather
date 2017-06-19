@@ -23,13 +23,10 @@
     }
 
     &__box {
-        box-sizing: border-box;
         overflow: hidden;
         display: table-cell;
         position: relative;
-        min-width: 150px;
         user-select: none;
-        border-bottom-style: solid;
         transition-duration: 250ms;
         transition-property: border-bottom-color, box-shadow, width;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
@@ -53,7 +50,6 @@
     }
 
     &__sub {
-        box-sizing: border-box;
         display: table-caption;
         caption-side: bottom;
         padding-top: 5px;
@@ -62,7 +58,6 @@
     }
 
     &__control {
-        box-sizing: border-box;
         display: inline-block;
         position: relative;
         width: 100%;
@@ -170,7 +165,6 @@
 
     &_width_available {
         width: 100%;
-        min-width: 0;
     }
 
     &_has-addons &__box {
@@ -211,10 +205,6 @@
     &:before,
     .input__clear {
         display: none;
-    }
-
-    .input__box {
-        border-bottom-style: dashed;
     }
 
     .input__control {

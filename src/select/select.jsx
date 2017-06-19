@@ -22,6 +22,12 @@ import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
 /**
+ * Элемент кнопки для выпадающего списка.
+ */
+@cn('select-button')
+class SelectButton extends Button {}
+
+/**
  * @typedef {Object} CheckedOption
  * @property {String} value Уникальное значение, которое будет отправлено на сервер, если вариант выбран
  * @property {String} text Текст варианта
@@ -32,7 +38,7 @@ import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 /**
  * Компонент выпадающего списка.
  */
-@cn('select', Popup)
+@cn('select', SelectButton, Popup)
 @performance(true)
 class Select extends React.Component {
     static propTypes = {
@@ -86,9 +92,11 @@ class Select extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Подсказка, которая отображается в случае если ни один из пунктов выбран */
+        /** Лейбл для поля */
+        label: Type.node,
+        /** Подсказка в поле */
         placeholder: Type.string,
-         /** Подсказка под полем */
+        /** Подсказка под полем */
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
@@ -183,7 +191,7 @@ class Select extends React.Component {
         });
     }
 
-    render(cn, Popup) {
+    render(cn, SelectButton, Popup) {
         let value = this.getValue();
 
         return (
@@ -195,18 +203,20 @@ class Select extends React.Component {
                     disabled: this.props.disabled,
                     checked: this.props.mode !== 'radio' && value.length > 0,
                     focused: this.getFocused(),
+                    'has-label': !!this.props.label,
+                    'has-value': !!value,
                     invalid: !!this.props.error
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
                 <span className={ cn('inner') }>
-                    <input
-                        type='hidden'
-                        name={ this.props.name }
-                        id={ this.props.id }
-                        value={ value }
-                    />
-                    { this.renderButton(cn) }
+                    {
+                        !!this.props.label &&
+                        <span className={ cn('top') }>
+                            { this.props.label }
+                        </span>
+                    }
+                    { this.renderButton(cn, SelectButton) }
                     { this.renderNativeSelect(cn) }
                     {
                         (this.props.error || this.props.hint) &&
@@ -220,12 +230,11 @@ class Select extends React.Component {
         );
     }
 
-    renderButton(cn) {
+    renderButton(cn, SelectButton) {
         return (
-            <Button
-                className={ cn('button') }
-                size={ this.props.size }
+            <SelectButton
                 ref={ (button) => { this.button = button; } }
+                size={ this.props.size }
                 disabled={ this.props.disabled }
                 text={ this.renderButtonContent() }
                 rightAddons={ [
@@ -259,7 +268,7 @@ class Select extends React.Component {
             >
                 <select
                     ref={ (nativeSelect) => { this.nativeSelect = nativeSelect; } }
-                    className={ cn({ native: true }) }
+                    className={ cn('native-control') }
                     disabled={ this.props.disabled }
                     multiple={ isCheckMode && 'multiple' }
                     value={ value }

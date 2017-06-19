@@ -11,25 +11,55 @@
         }
     }
 
+    .select-button {
+        color: var(--color-content-alfa-on-color);
+        border-color: rgba(255, 255, 255, .4);
+        border-style: solid;
+        border-radius: var(--border-radius-control);
+        border-width: 1px;
+
+        &_hovered {
+            border-color: rgba(255, 255, 255, .9);
+        }
+
+        &_focused {
+            border-color: var(--color-border-control-focused-alfa-on-color);
+            box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
+
+            &.select-button_hovered {
+                border-color: var(--color-border-control-focused-alfa-on-color);
+                box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
+            }
+        }
+
+        &_pressed {
+            border-color: var(--color-content-alfa-on-color);
+        }
+    }
+
     &.select_focused,
-    &.select_focused-hard,
     &.select_opened {
-        .select__button {
+        .select-button {
             border-color: rgba(255, 255, 255, .9);
             box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
             background-color: var(--color-background-control-focused-alfa-on-color);
         }
     }
 
+    &.select_disabled {
+        .select-button {
+            border-color: rgba(255, 255, 255, .2);
+        }
+    }
+
     &.select_invalid {
-        .select__button {
+        .select-button {
             border-color: var(--color-error-translucent);
         }
 
         &.select_focused,
-        &.select_focused-hard,
         &.select_opened {
-            .select__button {
+            .select-button {
                 border-color: var(--color-error-translucent);
                 box-shadow: 0 0 0 1px var(--color-error-translucent);
                 background: var(--color-error-transparent);

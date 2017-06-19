@@ -20,8 +20,8 @@ function renderCalendarInput(props = {}) {
     );
 
     let inputNode =
-        calendarInput.node.querySelector('.calendar-input__native-field') ||
-        calendarInput.node.querySelector('.calendar-input__custom-field input');
+        calendarInput.node.querySelector('.calendar-input__native-control') ||
+        calendarInput.node.querySelector('.calendar-input__custom-control input');
     let popupNode = document.querySelector('.popup');
     let calendarNode = popupNode.querySelector('.calendar');
 

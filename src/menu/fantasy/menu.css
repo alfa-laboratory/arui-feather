@@ -234,13 +234,13 @@
     &.menu_mode_radio-check {
         .menu-item,
         .menu__group-title {
-            padding-left: 44px;
+            padding-left: 38px;
         }
     }
 
     .menu__group {
         .menu-item {
-            padding-left: 56px;
+            padding-left: 50px;
         }
     }
 }

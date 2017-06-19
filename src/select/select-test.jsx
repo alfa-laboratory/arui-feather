@@ -37,8 +37,8 @@ function renderSelect(props) {
         }
     );
 
-    let nativeSelectNode = select.node.querySelector('.select_native');
-    let buttonNode = select.node.querySelector('.select__button');
+    let nativeSelectNode = select.node.querySelector('.select__native-control');
+    let buttonNode = select.node.querySelector('.select-button');
     let popupNode = document.querySelector('.popup');
     let menuNode = popupNode.querySelector('.select__menu');
 
@@ -63,19 +63,41 @@ describe('select', () => {
         expect(select.node).to.exist;
     });
 
-    it('should render button and popup with options', () => {
-        let { select, popupNode, buttonNode } = renderSelect({ options: OPTIONS });
+    it('should render popup with options', () => {
+        let { select, popupNode } = renderSelect({ options: OPTIONS });
 
         expect(select.node).to.exist;
         expect(popupNode).to.have.class('popup');
-        expect(buttonNode).to.have.class('button');
     });
 
-    it('should render placeholder text', () => {
-        let selectProps = { options: OPTIONS, placeholder: 'Select something' };
-        let { buttonNode } = renderSelect(selectProps);
+    it('should render with `label` from props', () => {
+        let { select } = renderSelect({ options: OPTIONS, label: 'Label' });
+        let labelNode = select.node.querySelector('.select__top');
 
-        expect(buttonNode).to.have.text('Select something');
+        expect(labelNode).to.exist;
+        expect(labelNode).to.have.text('Label');
+    });
+
+    it('should render with `placeholder` from props', () => {
+        let { buttonNode } = renderSelect({ options: OPTIONS, placeholder: 'Placeholder' });
+
+        expect(buttonNode).to.have.text('Placeholder');
+    });
+
+    it('should render with `hint` from props', () => {
+        let { select } = renderSelect({ options: OPTIONS, hint: 'Hint' });
+        let subNode = select.node.querySelector('.select__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('Hint');
+    });
+
+    it('should render with `error` from props', () => {
+        let { select } = renderSelect({ options: OPTIONS, error: 'Error' });
+        let subNode = select.node.querySelector('.select__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('Error');
     });
 
     it('should set width to popup equal or more than button width', () => {

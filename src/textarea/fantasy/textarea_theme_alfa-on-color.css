@@ -18,6 +18,10 @@
         }
     }
 
+    .textarea__top {
+        color: var(--color-content-minor-alfa-on-color);
+    }
+
     &.textarea_focused {
         .textarea__control {
             border-bottom-color: var(--color-border-control-focused-alfa-on-color);

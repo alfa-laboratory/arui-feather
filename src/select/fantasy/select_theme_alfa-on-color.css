@@ -11,6 +11,11 @@
         }
     }
 
+    .select__top,
+    .select__sub {
+        color: var(--color-content-minor-alfa-on-color);
+    }
+
     .select-button {
         color: var(--color-content-alfa-on-color);
         background: transparent;

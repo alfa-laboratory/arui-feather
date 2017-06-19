@@ -5,12 +5,8 @@
 @import '../../vars-fantasy.css';
 
 .textarea_theme_alfa-on-white {
-    &,
     .textarea__control {
         color: var(--color-content-alfa-on-white);
-    }
-
-    .textarea__control {
         border-bottom: 1px solid rgba(10, 30, 50, .4);
 
         &::placeholder {
@@ -18,7 +14,8 @@
         }
     }
 
-    .textarea__top {
+    .textarea__top,
+    .textarea__sub {
         color: var(--color-content-minor-alfa-on-white);
     }
 

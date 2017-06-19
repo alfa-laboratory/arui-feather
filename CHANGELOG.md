@@ -1,3 +1,18 @@
+<a name="6.4.0"></a>
+# [6.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.3.0...v6.4.0) (2017-06-19)
+
+
+### Bug Fixes
+
+* remove useless perfomance decorators ([#91](https://github.com/alfa-laboratory/arui-feather/issues/91)) ([ed80b4a](https://github.com/alfa-laboratory/arui-feather/commit/ed80b4a))
+
+
+### Features
+
+* add paragraph in fantasy styles ([#92](https://github.com/alfa-laboratory/arui-feather/issues/92)) ([0cf790b](https://github.com/alfa-laboratory/arui-feather/commit/0cf790b))
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.2.0...v6.3.0) (2017-06-19)
 

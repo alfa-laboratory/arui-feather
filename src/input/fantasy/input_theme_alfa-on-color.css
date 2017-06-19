@@ -62,7 +62,7 @@
     &.input_disabled {
         .input__box {
             border-bottom-color: rgba(255, 255, 255, .2);
-            border-bottom-style: dashed;
+            border-bottom-style: dotted;
         }
 
         &,

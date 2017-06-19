@@ -207,10 +207,6 @@
         display: none;
     }
 
-    .input__box {
-        border-bottom-style: dotted;
-    }
-
     .input__control {
         &::placeholder {
             opacity: var(--opacity-minor);

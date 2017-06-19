@@ -127,6 +127,37 @@ describe('input', () => {
         expect(input.node).to.have.class('input_focused');
     });
 
+    it('should render with `label` from props', () => {
+        let input = render(<Input label='Label' />);
+        let labelNode = input.node.querySelector('.input__top');
+
+        expect(labelNode).to.exist;
+        expect(labelNode).to.have.html('Label');
+    });
+
+    it('should render with `placeholder` from props', () => {
+        let input = render(<Input placeholder='Placeholder' />);
+        let controlNode = input.node.querySelector('input');
+
+        expect(controlNode).to.have.attr('placeholder', 'Placeholder');
+    });
+
+    it('should render with `hint` from props', () => {
+        let input = render(<Input hint='Hint' />);
+        let subNode = input.node.querySelector('.input__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.html('Hint');
+    });
+
+    it('should render with `error` from props', () => {
+        let input = render(<Input error='Error' />);
+        let subNode = input.node.querySelector('.input__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.html('Error');
+    });
+
     it('should render with `off` autocomplete attribute', () => {
         let input = render(<Input autocomplete={ false } />);
         let controlNode = input.node.querySelector('input');

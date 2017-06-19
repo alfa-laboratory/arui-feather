@@ -81,8 +81,6 @@ class CalendarInput extends React.Component {
     static propTypes = {
         /** Содержимое поля ввода, указанное по умолчанию */
         value: Type.string,
-        /** Отображение попапа с ошибкой в момент когда фокус находится в поле ввода */
-        error: Type.node,
         /** Свойства компонента [Calendar](../calendar/) */
         calendar: Type.shape({
             value: Type.number,
@@ -124,8 +122,14 @@ class CalendarInput extends React.Component {
         tabIndex: Type.number,
         /** Показывать иконку календаря в инпуте */
         withIcon: Type.bool,
-        /** Подсказка в текстовом поле */
+        /** Лейбл для поля */
+        label: Type.node,
+        /** Подсказка в поле */
         placeholder: Type.string,
+        /** Подсказка под полем */
+        hint: Type.node,
+        /** Отображение ошибки */
+        error: Type.node,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Имя компонента в DOM */
@@ -246,12 +250,14 @@ class CalendarInput extends React.Component {
                     { ...commonProps }
                     className={ cn('custom-field') }
                     disabledAttr={ this.state.isNativeInputEnabled }
-                    error={ this.props.error }
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                     mask='11.11.1111'
                     size={ this.props.size }
                     type='text'
+                    label={ this.props.label }
                     placeholder={ this.props.placeholder }
+                    hint={ this.props.hint }
+                    error={ this.props.error }
                     value={ value }
                     width={ this.props.width }
                     id={ this.props.id }

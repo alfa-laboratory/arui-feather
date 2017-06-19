@@ -1,3 +1,21 @@
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.2.0...v6.3.0) (2017-06-19)
+
+
+### Bug Fixes
+
+* add missed font for checkbox and radio group ([#81](https://github.com/alfa-laboratory/arui-feather/issues/81)) ([dfcd1a1](https://github.com/alfa-laboratory/arui-feather/commit/dfcd1a1))
+* **fantasy:** add label & hint props to calendar-input ([#89](https://github.com/alfa-laboratory/arui-feather/issues/89)) ([9e00154](https://github.com/alfa-laboratory/arui-feather/commit/9e00154))
+* **fantasy:** change disabled input border style ([#88](https://github.com/alfa-laboratory/arui-feather/issues/88)) ([0e2057c](https://github.com/alfa-laboratory/arui-feather/commit/0e2057c))
+* **fantasy:** fix textarea top color ([#87](https://github.com/alfa-laboratory/arui-feather/issues/87)) ([7dee8a3](https://github.com/alfa-laboratory/arui-feather/commit/7dee8a3))
+
+
+### Features
+
+* **fantasy:** add select ([#80](https://github.com/alfa-laboratory/arui-feather/issues/80)) ([0f3e381](https://github.com/alfa-laboratory/arui-feather/commit/0f3e381))
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.1.0...v6.2.0) (2017-06-17)
 

@@ -112,6 +112,7 @@ class Textarea extends React.Component {
             onBlur: this.handleBlur,
             onPaste: this.handlePaste
         };
+
         return (
             <span
                 className={ cn({

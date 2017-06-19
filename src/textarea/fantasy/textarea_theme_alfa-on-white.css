@@ -11,11 +11,15 @@
     }
 
     .textarea__control {
-        border-bottom: 1px solid rgba(0, 0, 0, .3);
+        border-bottom: 1px solid rgba(10, 30, 50, .4);
 
         &::placeholder {
             color: var(--color-content-minor-alfa-on-white);
         }
+    }
+
+    .textarea__top {
+        color: var(--color-content-minor-alfa-on-white);
     }
 
     &.textarea_focused {

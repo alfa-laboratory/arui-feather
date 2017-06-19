@@ -248,7 +248,7 @@ class CalendarInput extends React.Component {
                         this.customCalendarTarget = customCalendarTarget;
                     } }
                     { ...commonProps }
-                    className={ cn('custom-field') }
+                    className={ cn('custom-control') }
                     disabledAttr={ this.state.isNativeInputEnabled }
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                     mask='11.11.1111'
@@ -287,7 +287,7 @@ class CalendarInput extends React.Component {
                                 this.nativeCalendarTarget = nativeCalendarTarget;
                             } }
                             { ...commonProps }
-                            className={ cn('native-field') }
+                            className={ cn('native-control') }
                             type='date'
                             value={ formatDateIntoNative(value) }
                             onBlur={ this.handleNativeInputBlur }

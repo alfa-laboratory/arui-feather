@@ -81,7 +81,7 @@ module.exports = function (config) {
         : getTestsGlobs(process.env.TESTS, 'test');
 
     testsFiles.unshift('./src/polyfills.js');
-    // testsFiles.unshift('./tools/karma-warnings.js');
+    testsFiles.unshift('./tools/karma-warnings.js');
 
     Object.assign(cfg, {
         frameworks: ['mocha', 'chai-spies', 'chai-dom', 'chai'],

@@ -46,6 +46,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 
 class StateFullInput extends React.Component {
     constructor() {
+        super();
         this.state = { value: 'Корм для кота' };
     }
     render() {

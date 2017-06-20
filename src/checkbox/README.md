@@ -3,7 +3,7 @@
 <div>
     <div>
         {['m', 'l'].map(size => (
-            <div className={'row'} key={ size }>
+            <div className='row' key={ size }>
                 <div className='column'>
                     <CheckBox
                         text='Обычный чекбокс'

@@ -1,4 +1,4 @@
-```
+```javascript
 const radioStyle = {
     margin: '10px'
 };

@@ -66,9 +66,6 @@ function Circle({ background }) {
         <span style={ circleStyles } />
     )
 }
-Circle.propTypes = {
-    background: React.PropTypes.string
-};
 const socialNetworks = [
     {
         value: 'Автотранспорт',

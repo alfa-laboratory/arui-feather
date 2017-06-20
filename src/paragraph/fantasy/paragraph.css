@@ -5,7 +5,8 @@
 @import '../../vars-fantasy.css';
 
 .paragraph {
-    margin: 0 0 15px;
+    margin: 0;
+    padding: 0 0 15px;
     font-family: var(--font);
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-normal);

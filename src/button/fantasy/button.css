@@ -20,6 +20,13 @@
     transition-timing-function: ease;
     border-radius: var(--border-radius-control);
 
+    &,
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
     &::-moz-focus-inner {
         padding: 0;
         border: 0;

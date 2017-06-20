@@ -5,6 +5,13 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-condensed);
 
+    &,
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
     &_size_s {
         margin-top: 20px;
         margin-bottom: 20px;

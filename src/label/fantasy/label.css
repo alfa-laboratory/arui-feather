@@ -9,6 +9,13 @@
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
 
+    &,
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
     &__inner {
         display: inline-block;
         max-width: 100%;

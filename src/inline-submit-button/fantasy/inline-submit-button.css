@@ -17,6 +17,13 @@
     box-shadow: none;
     transition: opacity .25s ease-in-out;
 
+    &,
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
     &_disabled {
         opacity: var(--opacity-disabled);
         cursor: default;

@@ -1,3 +1,19 @@
+<a name="6.5.0"></a>
+# [6.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.4.1...v6.5.0) (2017-06-20)
+
+
+### Bug Fixes
+
+* **fantasy:** add box-sizing border-box to each component ([#94](https://github.com/alfa-laboratory/arui-feather/issues/94)) ([3fd3281](https://github.com/alfa-laboratory/arui-feather/commit/3fd3281))
+
+
+### Features
+
+* **fantasy:** add amount ([#95](https://github.com/alfa-laboratory/arui-feather/issues/95)) ([bcb7900](https://github.com/alfa-laboratory/arui-feather/commit/bcb7900))
+* **fantasy:** add card-input, email-input, phone-input ([#96](https://github.com/alfa-laboratory/arui-feather/issues/96)) ([ca919c4](https://github.com/alfa-laboratory/arui-feather/commit/ca919c4))
+
+
+
 <a name="6.4.1"></a>
 ## [6.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.4.0...v6.4.1) (2017-06-19)
 

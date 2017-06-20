@@ -6,6 +6,10 @@
     display: inline-block;
     position: relative;
 
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &_width_available {
         width: 100%;
     }

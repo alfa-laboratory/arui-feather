@@ -21,6 +21,10 @@
     transition-property: background, color, width;
     transition-timing-function: ease;
 
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &_hovered,
     &_hovered.tag-button_focused,
     &_focused {

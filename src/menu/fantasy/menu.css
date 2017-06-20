@@ -8,6 +8,10 @@
     outline: 0;
     user-select: none;
     font-family: var(--font);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 }
 
 .menu_view_horizontal {

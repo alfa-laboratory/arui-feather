@@ -16,6 +16,10 @@
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
 
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &__inner {
         display: inline-table;
         position: relative;
@@ -39,7 +43,6 @@
     }
 
     &__sub {
-        box-sizing: border-box;
         display: table-caption;
         caption-side: bottom;
         padding-top: 5px;
@@ -48,7 +51,6 @@
     }
 
     &__control {
-        box-sizing: border-box;
         overflow-y: auto;
         display: table-cell;
         vertical-align: top;

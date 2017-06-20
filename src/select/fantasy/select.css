@@ -18,6 +18,10 @@
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
 
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &__inner {
         position: relative;
         display: inline-table;

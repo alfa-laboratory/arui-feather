@@ -11,6 +11,10 @@
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
 
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &_view_lead {
         margin-bottom: 25px;
         font-size: var(--font-size-xl);

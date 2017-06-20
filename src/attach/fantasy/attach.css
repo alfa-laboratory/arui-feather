@@ -9,6 +9,10 @@
     font-family: var(--font);
     white-space: nowrap;
 
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &__label,
     &__control {
         position: absolute;

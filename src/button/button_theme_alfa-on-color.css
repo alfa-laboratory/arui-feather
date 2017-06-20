@@ -32,6 +32,7 @@
         background: rgba(0, 0, 0, .1);
     }
 
+    &.button_checked,
     &.button_view_action {
         color: var(--color-content-alfa-on-color);
         background: rgba(255, 255, 255, .2);

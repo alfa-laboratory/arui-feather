@@ -30,6 +30,7 @@
         border-color: var(--color-content-alfa-on-white);
     }
 
+    &.button_checked,
     &.button_view_action {
         color: var(--color-content-alfa-on-white);
         background: rgba(10, 30, 50, .15);

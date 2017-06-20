@@ -49,10 +49,10 @@ function renderAddons() {
 
 ```
 <div>
-    <span style={{ marginRight: 12 }}>
+    <span style={ { marginRight: 12 } }>
         <Input placeholder='Input...' />
     </span>
-    <span style={{ marginRight: 12 }}>
+    <span style={ { marginRight: 12 } }>
         <Input placeholder='Input...' clear={ true } />
     </span>
     <span>

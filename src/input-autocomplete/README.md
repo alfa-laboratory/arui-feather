@@ -33,22 +33,21 @@ function handleItemSelect(item) {
 function handleChange(value) {
     setState({ value });
 }
-<div style={{width: '300px'}}>
-<InputAutocomplete
-    size='m'
-    width='available'
-    value={ state.value }
-    onChange={ handleChange }
-    onItemSelect={ handleItemSelect }
-    placeholder='Введите название социальной сети'
-    options={ getFilteredOptions(socialNetworks, state.value) }
-/>
+<div style={ { width: '300px' } }>
+    <InputAutocomplete
+        size='m'
+        width='available'
+        value={ state.value }
+        onChange={ handleChange }
+        onItemSelect={ handleItemSelect }
+        placeholder='Введите название социальной сети'
+        options={ getFilteredOptions(socialNetworks, state.value) }
+    />
 </div>
 ```
 
 Элементы с кастомной разметкой
 ```
-
 function Circle({ background }) {
     const circleStyles = {
         width: '14px',
@@ -64,29 +63,41 @@ function Circle({ background }) {
         marginLeft: '-20px'
     };
     return (
-        <span style={ circleStyles }></span>
+        <span style={ circleStyles } />
     )
 }
+Circle.propTypes = {
+    background: React.PropTypes.string
+};
 const socialNetworks = [
     {
         value: 'Автотранспорт',
-        description: 
+        description:
             <Label size='l'>
-                <div style={{ display: 'flex' }}><Circle background={'green'} /> Автотранспорт</div>
+                <div style={ { display: 'flex' } }>
+                    <Circle background='green' />
+                    Автотранспорт
+                </div>
             </Label>
     },
     {
         value: 'Facebook',
         description:
             <Label size='l'>
-                <div style={{ display: 'flex' }}><Circle background={'blue'} /> Гипермаркет</div>
+                <div style={ { display: 'flex' } }>
+                    <Circle background='blue' />
+                    Гипермаркет
+                </div>
             </Label>
     },
     {
         value: 'Twitter',
-        description:  
+        description:
             <Label size='l'>
-                <div style={{ display: 'flex' }}><Circle background={'rgb(217, 50, 128)'} /> Штрафы, налоги, комиссии</div>
+                <div style={ { display: 'flex' } }>
+                    <Circle background='rgb(217, 50, 128)' />
+                    Штрафы, налоги, комиссии
+                </div>
             </Label>
     }
 ];

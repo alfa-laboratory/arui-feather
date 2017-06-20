@@ -28,7 +28,7 @@
 <div>
     <div>
         {['s', 'm', 'l', 'xl'].map(size => (
-            <div className={'row'} key={ size }>
+            <div className='row' key={ size }>
                 <div className='column'>
                     <CheckBox
                         text='Чекбокс - кнопка'

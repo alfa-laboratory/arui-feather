@@ -1,9 +1,5 @@
 ```
 class CalendarInputWithState extends React.Component {
-    static propTypes = {
-        size: React.propTypes.string
-    }
-
     constructor(props) {
         super(props);
         this.state = { date: '01.02.2016' };

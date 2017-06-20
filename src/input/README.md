@@ -7,7 +7,7 @@ function renderAddons() {
                 <Radio
                     key={ item }
                     size='m'
-                    type={ 'button' }
+                    type='button'
                     text={ item }
                 />
             )}
@@ -21,7 +21,7 @@ function renderAddons() {
         rightAddons={ renderAddons() }
         type='number'
     />
-</div>    
+</div>
 ```
 
 Обычные
@@ -30,11 +30,11 @@ const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <Input
+            <Input
                 placeholder='Введите что-нибудь'
                 view='line'
                 size={ size }
-             />
+            />
         </div>
     ))}
 </div>
@@ -56,9 +56,9 @@ class StateFullInput extends React.Component {
                 value={ this.state.value }
                 clear={ true }
                 view='line'
-                onChange={(value) => this.setState({ value })}
+                onChange={ value => this.setState({ value }) }
                 size={ this.props.size }
-             />
+            />
         );
     }
 }
@@ -77,12 +77,12 @@ const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <Input
+            <Input
                 placeholder='Введите что-нибудь длинное'
                 width='available'
                 view='line'
                 size={ size }
-             />
+            />
         </div>
     ))}
 </div>
@@ -98,17 +98,17 @@ initialState = {
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <Input
+            <Input
                 placeholder='Введите что-нибудь'
-                error={ state.error ? 'Только кириллические символы': null }
+                error={ state.error ? 'Только кириллические символы' : null }
                 view='line'
                 size={ size }
                 value={ state.value }
-                onChange={ (value) => setState({
+                onChange={ value => setState({
                     value,
                     error: value.search(/[a-z]/i) !== -1
                 }) }
-             />
+            />
         </div>
     ))}
 </div>
@@ -120,12 +120,12 @@ const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <Input
+            <Input
                 placeholder='Введите ваше имя'
                 view='line'
                 size={ size }
                 icon={ <Icon size={ size } icon='user' /> }
-             />
+            />
         </div>
     ))}
 </div>
@@ -137,12 +137,12 @@ const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <Input
+            <Input
                 placeholder='Введите ваше имя'
                 disabled={ true }
                 view='line'
                 size={ size }
-             />
+            />
         </div>
     ))}
 </div>

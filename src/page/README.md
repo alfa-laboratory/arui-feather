@@ -1,10 +1,11 @@
 Данные пример демонстрирует использование компонентов Page, Header, AppTitle, AppMenu, AppContent, Footer 
 ```
 const PreviewFrame = require('../../arui-demo/components/preview-frame').default;
+
 <PreviewFrame>
-    <Page 
-        header={ 
-            <Header 
+    <Page
+        header={
+            <Header
                 user={
                     <User
                         url='#'
@@ -28,9 +29,10 @@ const PreviewFrame = require('../../arui-demo/components/preview-frame').default
                 }
             />
         }
-        footer={ 
+        footer={
             <Footer />
-        }>
+        }
+    >
         <AppTitle>
             <Heading>Кредитные карты и кредиты</Heading>
         </AppTitle>

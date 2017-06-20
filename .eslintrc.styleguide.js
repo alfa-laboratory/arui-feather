@@ -7,7 +7,8 @@ module.exports = {
         'react/jsx-no-undef': 0,
         'chai-friendly/no-unused-expressions': 0,
         'react/jsx-indent': 0,
-        'semi': 0
+        'semi': 0,
+        'react/prop-types': 0
     },
     plugins: [
         'markdown'

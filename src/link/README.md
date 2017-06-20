@@ -37,7 +37,7 @@ const columnStyle = {
     display: 'flex',
     width: '50%'
 };
-<div style={{ width: '100%' }}>
+<div style={ { width: '100%' } }>
     {['s', 'm', 'l', 'xl'].map(size => (
         <span className='row'>
             <div className='column' style={ columnStyle }>

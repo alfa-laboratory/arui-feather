@@ -3,8 +3,9 @@
     {['s', 'm', 'l', 'xl'].map(size => (
         <div key={ size }>
             <FormField
-                size={size}
-                label='Label' >
+                size={ size }
+                label='Label'
+            >
                 <Input placeholder='Input' />
             </FormField>
         </div>
@@ -24,7 +25,8 @@ const layoutStyles = {
                 view='line'
                 label={
                     <Label>Label</Label>
-                }>
+                }
+            >
                 <Input placeholder='Input' />
             </FormField>
         </div>

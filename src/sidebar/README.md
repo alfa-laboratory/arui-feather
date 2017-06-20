@@ -21,7 +21,6 @@ initialState = {
                 error='Something went wrong'
             />
         </div>
-        
         <Button size='m' view='extra'>Рыба</Button>
     </Sidebar>
 </div>

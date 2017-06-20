@@ -9,6 +9,7 @@ import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
 import Input from './input';
+import MaskedInput from '../masked-input';
 import Icon from '../icon/icon';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -350,6 +351,34 @@ describe('input', () => {
         let controlNode = input.node.querySelector('input');
 
         expect(controlNode.value).to.equal('А 456 ИТ');
+    });
+
+    it('should return `HTMLInputElement` when `getControl` method called', () => {
+        let input = render(<Input />);
+        let controlNode = input.instance.getControl();
+
+        expect(controlNode).to.be.instanceOf(HTMLInputElement);
+    });
+
+    it('should return `HTMLInputElement` when `getControl` method called and mask is set', () => {
+        let input = render(<Input mask='111' />);
+        let controlNode = input.instance.getControl();
+
+        expect(controlNode).to.be.instanceOf(HTMLInputElement);
+    });
+
+    it('should return null when `getMaskedInputInstance` method is called and mask is not set', () => {
+        let input = render(<Input />);
+        let maskedInputInstance = input.instance.getMaskedInputInstance();
+
+        expect(maskedInputInstance).to.be.null;
+    });
+
+    it('should return MaskedInput instance when getMaskedInputInstance method is called and mask is set', () => {
+        let input = render(<Input mask='111' />);
+        let maskedInputInstance = input.instance.getMaskedInputInstance();
+
+        expect(maskedInputInstance).to.be.instanceOf(MaskedInput);
     });
 
     if (bowser.mobile) {

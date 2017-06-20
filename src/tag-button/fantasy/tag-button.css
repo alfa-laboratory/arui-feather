@@ -21,10 +21,7 @@
     transition-property: background, color, width;
     transition-timing-function: ease;
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

@@ -16,10 +16,7 @@
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

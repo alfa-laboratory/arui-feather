@@ -19,10 +19,7 @@
 
     z-index: 9999;
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

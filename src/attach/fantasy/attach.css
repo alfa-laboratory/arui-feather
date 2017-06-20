@@ -9,10 +9,7 @@
     font-family: var(--font);
     white-space: nowrap;
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

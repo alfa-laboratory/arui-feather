@@ -5,10 +5,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-condensed);
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

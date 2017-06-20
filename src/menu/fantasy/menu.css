@@ -9,10 +9,7 @@
     user-select: none;
     font-family: var(--font);
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 }

@@ -13,10 +13,7 @@
     font-weight: var(--font-weight-normal);
     border-radius: var(--border-radius-control);
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

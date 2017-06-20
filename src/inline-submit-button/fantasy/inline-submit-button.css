@@ -17,10 +17,7 @@
     box-shadow: none;
     transition: opacity .25s ease-in-out;
 
-    &,
-    *,
-    *:before,
-    *:after {
+    &, *, *:before, *:after {
         box-sizing: border-box;
     }
 

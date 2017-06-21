@@ -2,7 +2,7 @@
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <Attach size={size} />
+            <Attach size={ size } />
         </div>
     ))}
 </div>
@@ -14,12 +14,12 @@ C Иконкой
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
             <Attach
-                size={size}
+                size={ size }
                 buttonContent='Пожалуйста, выберите файл'
                 noFileText='в формате PDF'
                 buttonProps={ {
                     pseudo: true,
-                    icon: <Icon size={size} icon='search' />
+                    icon: <Icon size={ size } icon='search' />
                 } }
             />
         </div>
@@ -30,7 +30,7 @@ C Иконкой
 С изменяемым текстом
 ```
 function handleChange(value) {
-   setState({value});
+    setState({ value });
 }
 
 <div>
@@ -50,7 +50,7 @@ Disabled
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <Attach size={size} disabled={ true } />
+            <Attach size={ size } disabled={ true } />
         </div>
     ))}
 </div>
@@ -60,7 +60,7 @@ Disabled
 С установлеными типами файлов, доступными для выбора
 ```
 function handleChange(value) {
-   setState({value});
+    setState({ value });
 }
 
 <div>

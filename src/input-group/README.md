@@ -2,9 +2,9 @@
 ```
 const inputs = [1, 2, 3, 4];
 <InputGroup>
-    { inputs.map((input, index) =>
+    { inputs.map(input =>
         <Input
-            key={ index }
+            key={ input }
             placeholder='Input ...'
         />
     ) }
@@ -15,9 +15,9 @@ const inputs = [1, 2, 3, 4];
 ```
 const inputs = [1, 2, 3, 4];
 <InputGroup width='available' >
-    { inputs.map((input, index) =>
+    { inputs.map(input =>
         <Input
-            key={ index }
+            key={ input }
             placeholder='Input ...'
         />
     ) }

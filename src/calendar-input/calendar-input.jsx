@@ -79,8 +79,10 @@ function calculateMonth(value) {
 @performance(true)
 class CalendarInput extends React.Component {
     static propTypes = {
-        /** Содержимое поля ввода, указанное по умолчанию */
+        /** Содержимое поля ввода */
         value: Type.string,
+        /** Содержимое поля ввода, указанное по умолчанию */
+        defaultValue: Type.string,
         /** Свойства компонента [Calendar](../calendar/) */
         calendar: Type.shape({
             value: Type.number,
@@ -169,7 +171,7 @@ class CalendarInput extends React.Component {
         isInputFocused: false,
         isCalendarFocused: false,
         opened: false,
-        value: '',
+        value: this.props.defaultValue || '',
         month: calculateMonth(this.props.value)
     };
 

@@ -47,6 +47,23 @@ module.exports = {
             }
         }
     },
+    sections: [
+        {
+            name: 'Controls',
+            components: './src/!(page|app-content|app-title|app-menu|header|footer)/index.js'
+        },
+        {
+            name: 'Page Components',
+            components: () => [
+                'src/page/index.js',
+                'src/header/index.js',
+                'src/app-title/index.js',
+                'src/app-menu/index.js',
+                'src/app-content/index.js',
+                'src/footer/index.js'
+            ]
+        }
+    ],
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
     propsParser(filePath, source, resolver, handlers) {

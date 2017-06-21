@@ -1,5 +1,6 @@
 ```
 const LOREM_IPSUM = require('../vars').LOREM_IPSUM;
+
 function handleSlideDownToggle() {
     setState({ isExpanded: !state.isExpanded });
 }

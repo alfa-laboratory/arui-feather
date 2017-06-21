@@ -4,7 +4,7 @@
         <div className='row' >
             {['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <div className='column l' >
-                    <Icon 
+                    <Icon
                         size={ size }
                         icon={ icon }
                     />

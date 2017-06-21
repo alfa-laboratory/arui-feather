@@ -1,6 +1,4 @@
 ```
-const { LOREM_IPSUM } = require('../vars');
-
 class PopupDemo extends React.Component {
     constructor() {
         super();

@@ -18,7 +18,7 @@ initialState = {
 };
 function handleChangeAsync(value) {
     setTimeout(() => {
-        setState({value});
+        setState({ value });
     }, 200);
 }
 <div>
@@ -42,7 +42,7 @@ initialState = {
 };
 function handleChangeAsync(value) {
     setTimeout(() => {
-        setState({value});
+        setState({ value });
     }, 200);
 }
 <div>
@@ -55,6 +55,5 @@ function handleChangeAsync(value) {
     <Message visible={ true }>
        {`current value in textarea: ${state.value}`}
     </Message>
-    <span></span>
 </div>
 ```

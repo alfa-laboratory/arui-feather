@@ -27,7 +27,8 @@ import Input from 'arui-feather/input';
 | clear | Boolean |  |  | Управление наличием крестика, сбрасывающего значение 'value' |
 | id | String |  |  | Уникальный идентификатор блока |
 | name | String |  |  | Уникальное имя блока |
-| value | String |  |  | Содержимое поля ввода, указанное по умолчанию |
+| value | String |  |  | Содержимое поля ввода |
+| defaultValue | String |  |  | Содержимое поля ввода, указанное по умолчанию |
 | tabIndex | Number |  |  | Последовательность перехода между контролами при нажатии на Tab |
 | mask | String |  |  | Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) |
 | maskFormatCharacters | objectOf |  |  | Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` |

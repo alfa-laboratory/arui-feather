@@ -8,6 +8,7 @@ import Type from 'prop-types';
 
 import Icon from '../icon/icon';
 import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
+import LazyRenderer from '../lazy-renderer';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -63,25 +64,27 @@ class Sidebar extends React.Component {
         const { hasCloser, children, visible } = this.props;
 
         return (
-            <PopupContainerProvider className={ cn({ visible }) }>
-                <div>
-                    {
-                        hasCloser &&
-                        <button
-                            className={ cn('closer') }
-                            onClick={ this.handleCloserClick }
-                        >
-                            <Icon
-                                icon='close'
-                                size='xl'
-                            />
-                        </button>
-                    }
-                    <div className={ cn('content') }>
-                        { children }
+            <LazyRenderer visible={ visible } >
+                <PopupContainerProvider className={ cn({ visible }) }>
+                    <div>
+                        {
+                            hasCloser &&
+                            <button
+                                className={ cn('closer') }
+                                onClick={ this.handleCloserClick }
+                            >
+                                <Icon
+                                    icon='close'
+                                    size='xl'
+                                />
+                            </button>
+                        }
+                        <div className={ cn('content') }>
+                            { children }
+                        </div>
                     </div>
-                </div>
-            </PopupContainerProvider>
+                </PopupContainerProvider>
+            </LazyRenderer>
         );
     }
 

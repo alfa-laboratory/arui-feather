@@ -10,7 +10,7 @@ import Type from 'prop-types';
 
 import Icon from '../icon/icon';
 import Message from '../message/message';
-
+import LazyRenderer from '../lazy-renderer';
 import cn from '../cn';
 import { isEventOutsideClientBounds } from '../lib/window';
 import performance from '../performance';
@@ -105,49 +105,51 @@ class Notification extends React.Component {
 
     render(cn) {
         return (
-            <div
-                className={ cn({
-                    visible: this.props.visible,
-                    status: this.props.status,
-                    hovered: this.state.hovered,
-                    'stick-to': this.props.stickTo
-                }) }
-                onMouseEnter={ this.handleMouseEnter }
-                onMouseLeave={ this.handleMouseLeave }
-                onClick={ this.handleClick }
-                style={ this.getPosition() }
-                ref={ (root) => { this.root = root; } }
-            >
-                <div className={ cn('icon') }>
+            <LazyRenderer visible={ this.props.visible } >
+                <div
+                    className={ cn({
+                        visible: this.props.visible,
+                        status: this.props.status,
+                        hovered: this.state.hovered,
+                        'stick-to': this.props.stickTo
+                    }) }
+                    onMouseEnter={ this.handleMouseEnter }
+                    onMouseLeave={ this.handleMouseLeave }
+                    onClick={ this.handleClick }
+                    style={ this.getPosition() }
+                    ref={ (root) => { this.root = root; } }
+                >
+                    <div className={ cn('icon') }>
+                        {
+                            this.props.icon ||
+                            <Icon
+                                theme='alfa-on-colored'
+                                icon={ this.props.status }
+                                size='m'
+                            />
+                        }
+                    </div>
+                    { this.props.title &&
+                        <div className={ cn('title') }>
+                            { this.props.title }
+                        </div>
+                    }
+                    <div className={ cn('content') }>
+                        <Message className={ cn('message') }>
+                            { this.props.children }
+                        </Message>
+                    </div>
                     {
-                        this.props.icon ||
+                        this.props.hasCloser &&
                         <Icon
-                            theme='alfa-on-colored'
-                            icon={ this.props.status }
+                            className={ cn('close') }
                             size='m'
+                            icon='close'
+                            onClick={ this.handleCloserClick }
                         />
                     }
                 </div>
-                { this.props.title &&
-                    <div className={ cn('title') }>
-                        { this.props.title }
-                    </div>
-                }
-                <div className={ cn('content') }>
-                    <Message className={ cn('message') }>
-                        { this.props.children }
-                    </Message>
-                </div>
-                {
-                    this.props.hasCloser &&
-                    <Icon
-                        className={ cn('close') }
-                        size='m'
-                        icon='close'
-                        onClick={ this.handleCloserClick }
-                    />
-                }
-            </div>
+            </LazyRenderer>
         );
     }
 

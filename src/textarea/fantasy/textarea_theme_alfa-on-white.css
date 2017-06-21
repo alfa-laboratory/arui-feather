@@ -38,7 +38,7 @@
         }
 
         .textarea__control {
-            border-bottom-color: transparent;
+            border-bottom-style: dotted;
         }
     }
 }

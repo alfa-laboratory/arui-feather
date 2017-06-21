@@ -7,6 +7,7 @@
 .attach {
     display: inline-block;
     font-family: var(--font);
+    font-weight: var(--font-weight);
     white-space: nowrap;
 
     &__label,
@@ -36,6 +37,26 @@
         width: 100px;
         height: 50px;
         transform: scale(20);
+    }
+
+    &_size_s &__file,
+    &_size_s &__no-file {
+        font-size: var(--font-size-s);
+    }
+
+    &_size_m &__file,
+    &_size_m &__no-file {
+        font-size: var(--font-size-m);
+    }
+
+    &_size_l &__file,
+    &_size_l &__no-file {
+        font-size: var(--font-size-l);
+    }
+
+    &_size_xl &__file,
+    &_size_xl &__no-file {
+        font-size: var(--font-size-xl);
     }
 
     &__file,

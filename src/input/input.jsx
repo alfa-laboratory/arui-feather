@@ -380,14 +380,32 @@ class Input extends React.Component {
     }
 
     /**
-     * Возвращает ссылку на инстанс контрола.
-     * Для полей ввода с маской ссылку на объект `MaskedInput`.
+     * Возвращает ссылку на HTMLElement инпута.
      *
      * @public
-     * @returns {HTMLInputElement|MaskedInput}
+     * @returns {HTMLInputElement}
      */
     getControl() {
+        if (this.props.mask !== undefined) {
+            return this.control.getControl();
+        }
+
         return this.control;
+    }
+
+    /**
+     * Возвращает ссылку на инстанс MaskedInput.
+     * Если маска не была установлена, возвращает null.
+     *
+     * @public
+     * @returns {MaskedInput|null}
+     */
+    getMaskedInputInstance() {
+        if (this.props.mask !== undefined) {
+            return this.control;
+        }
+
+        return null;
     }
 
     /**

@@ -46,8 +46,10 @@ class Input extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию */
+        /** Содержимое поля ввода */
         value: Type.string,
+        /** Содержимое поля ввода, указанное по умолчанию */
+        defaultValue: Type.string,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
         /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
@@ -119,7 +121,7 @@ class Input extends React.Component {
 
     state = {
         focused: false,
-        value: ''
+        value: this.props.defaultValue || ''
     };
 
     /**

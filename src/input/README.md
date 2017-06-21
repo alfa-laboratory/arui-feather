@@ -43,29 +43,16 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С крестиком "Очистить"
 ```
 const sizes = ['s', 'm', 'l', 'xl'];
-
-class StateFullInput extends React.Component {
-    constructor() {
-        super();
-        this.state = { value: 'Корм для кота' };
-    }
-    render() {
-        return (
-            <Input
-                placeholder='Введите что-нибудь'
-                value={ this.state.value }
-                clear={ true }
-                view='line'
-                onChange={ value => this.setState({ value }) }
-                size={ this.props.size }
-            />
-        );
-    }
-}
 <div>
     {sizes.map(size => (
         <div className='row'>
-             <StateFullInput size={ size } />
+            <Input 
+                placeholder='Введите что-нибудь'
+                defaultValue='Корм для кота'
+                clear={ true }
+                view='line'
+                size={ size }
+            />
         </div>
     ))}
 </div>

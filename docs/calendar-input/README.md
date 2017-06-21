@@ -14,7 +14,8 @@ import CalendarInput from 'arui-feather/calendar-input';
 
 | Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| value | String |  |  | Содержимое поля ввода, указанное по умолчанию |
+| value | String |  |  | Содержимое поля ввода |
+| defaultValue | String |  |  | Содержимое поля ввода, указанное по умолчанию |
 | calendar | [CalendarType](#CalendarType) |  |  | Свойства компонента [Calendar](../calendar/) |
 | opened | Boolean |  |  | Управление возможностью раскрытия календаря |
 | width | [WidthEnum](#WidthEnum) |  |  | Управление возможностью компонента занимать всю ширину родителя |

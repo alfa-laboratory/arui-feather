@@ -16,7 +16,6 @@ const AMOUNT = {
         </div>
     ))}
 </div>
-
 ```
 
 Использовать компонент Heading для вывода числа
@@ -25,7 +24,7 @@ const AMOUNT = {
     value: 123343,
     currency: {
         code: 'RUR',
-        minority: 10
+        minority: 100
     }
 };
 <div>

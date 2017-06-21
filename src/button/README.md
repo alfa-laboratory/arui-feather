@@ -1,15 +1,15 @@
 Обычные кнопки
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button size={ size }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button size={ size }>{`${name}`}</Button>
         </div>
     ))}
 </div>
@@ -18,15 +18,15 @@ const buttons = [
 Псевдокнопки
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button pseudo={true} size={ size }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button pseudo={ true } size={ size }>{`${name}`}</Button>
         </div>
     ))}
 </div>
@@ -36,15 +36,15 @@ const buttons = [
 
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button view="action" size={ size }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button view='action' size={ size }>{`${name}`}</Button>
         </div>
     ))}
 </div>
@@ -53,15 +53,15 @@ const buttons = [
 Экстра кнопки
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button view="extra" size={ size }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button view='extra' size={ size }>{`${name}`}</Button>
         </div>
     ))}
 </div>
@@ -70,15 +70,15 @@ const buttons = [
 Другие кнопки
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button view="other" size={ size }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button view='other' size={ size }>{`${name}`}</Button>
         </div>
     ))}
 </div>
@@ -87,19 +87,19 @@ const buttons = [
 С иконкой
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
+        <div className='row' key={ size }>
             <Button size={ size }>
-                <div style={{ marginRight: '12px', display: 'inline-block' }} >
+                <div style={ { marginRight: '12px', display: 'inline-block' } } >
                     <Icon size={ size } icon='ok' />
                 </div>
-                {`${ name }`}
+                {`${name}`}
             </Button>
         </div>
     ))}
@@ -109,15 +109,15 @@ const buttons = [
 Со 100%-ой шириной
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button width="available" size={ size }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button width='available' size={ size }>{`${name}`}</Button>
         </div>
     ))}
 </div>
@@ -126,15 +126,15 @@ const buttons = [
 Disabled
 ```
 const buttons = [
-    { size: 's', name: 'Маленькая'},
-    { size: 'm', name: 'Средняя'},
-    { size: 'l', name: 'Большая'},
-    { size: 'xl', name: 'Очень большая'}
+    { size: 's', name: 'Маленькая' },
+    { size: 'm', name: 'Средняя' },
+    { size: 'l', name: 'Большая' },
+    { size: 'xl', name: 'Очень большая' }
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className={'row'} key={ size }>
-            <Button size={ size } disabled={ true }>{`${ name }`}</Button>
+        <div className='row' key={ size }>
+            <Button size={ size } disabled={ true }>{`${name}`}</Button>
         </div>
     ))}
 </div>

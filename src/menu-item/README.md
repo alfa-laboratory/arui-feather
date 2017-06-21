@@ -7,11 +7,11 @@ const layoutStyle = {
         <div key={ type }>
             {['s', 'm', 'l', 'xl'].map(size => (
                 <span style={ layoutStyle }>
-                    <MenuItem {...{
-                        size,
-                        type,
-                        popup: 'Popup content'
-                    }}>
+                    <MenuItem
+                        size={ size }
+                        type={ type }
+                        popup='Popup content'
+                    >
                         {type} menu item
                     </MenuItem>
                 </span>

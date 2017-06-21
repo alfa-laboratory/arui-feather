@@ -2,8 +2,7 @@ module.exports = {
     extends: require.resolve('arui-presets/eslint'),
     rules: {
         'func-names': 0,
-        'react/jsx-filename-extension': [2, { 'extensions': ['gemini.js', '.jsx'] }],
-        'react/jsx-filename-extension': 0,
+        'react/jsx-filename-extension': [2, { 'extensions': ['gemini.js', '.jsx', '.md'] }],
         'react/jsx-no-undef': 0,
         'chai-friendly/no-unused-expressions': 0,
         'react/jsx-indent': 0,
@@ -14,8 +13,8 @@ module.exports = {
         'markdown'
     ],
     globals : {
-        "state": true,
-        "initialState": true,
-        "setState": true
+        state: true,
+        initialState: true,
+        setState: true
     }
 };

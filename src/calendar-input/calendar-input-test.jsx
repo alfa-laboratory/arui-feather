@@ -227,17 +227,6 @@ describe('calendar-input', () => {
         expect(onInputChange).to.have.been.called.with('01.08.2016');
     });
 
-    it('should receive `null` value prop correctly', () => {
-        const onInputChange = chai.spy();
-        const { inputNode } = renderCalendarInput({ onInputChange });
-        function changeFn() {
-            simulate(inputNode, 'change', { target: { value: null } });
-        }
-
-        expect(changeFn).to.not.throw(Error);
-        expect(onInputChange).to.have.been.called.with(null);
-    });
-
     if (!bowser.mobile) {
         it('should open calendar after input was focused', (done) => {
             let { calendarInput, popupNode } = renderCalendarInput();

@@ -1,0 +1,51 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../../vars-fantasy.css';
+
+.checkbox-group {
+    display: inline-block;
+    outline: none;
+    font-family: var(--font);
+    font-weight: var(--font-weight-normal);
+}
+
+.checkbox-group_invalid {
+    border-left: 1px solid var(--color-error-translucent);
+    padding-left: 10px;
+}
+
+.checkbox_size_m {
+    margin-bottom: 10px;
+}
+
+.checkbox_size_l {
+    margin-bottom: 12px;
+}
+
+.checkbox-group_type_button {
+    white-space: nowrap;
+
+    .checkbox {
+        margin-bottom: 0;
+    }
+}
+
+.checkbox-group_type_line {
+    .checkbox {
+        margin-bottom: 0;
+    }
+
+    .checkbox_size_m {
+        margin-right: 13px;
+    }
+
+    .checkbox_size_l {
+        margin-right: 15px;
+    }
+
+    .checkbox:last-child {
+        margin-right: 0;
+    }
+}

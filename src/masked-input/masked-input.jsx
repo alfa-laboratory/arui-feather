@@ -192,6 +192,16 @@ class MaskedInput extends React.Component {
     }
 
     /**
+     * Возвращает ссылку на HTMLElement инпута.
+     *
+     * @public
+     * @returns {HTMLInputElement}
+     */
+    getControl() {
+        return this.input;
+    }
+
+    /**
      * Синхронно обновляет маску на поле ввода.
      *
      * @public

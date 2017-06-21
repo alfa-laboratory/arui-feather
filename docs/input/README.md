@@ -66,8 +66,9 @@ import Input from 'arui-feather/input';
 | ------ | -------- |
 | getNode(): HTMLElement | Возвращает корневой `HTMLElement` компонента. |
 | getBoxNode(): HTMLSpanElement | Возвращает ссылку на инстанс контейнера для контрола. |
-| getControl(): union | Возвращает ссылку на инстанс контрола.
-Для полей ввода с маской ссылку на объект `MaskedInput`. |
+| getControl(): HTMLInputElement | Возвращает ссылку на HTMLElement инпута. |
+| getMaskedInputInstance(): union | Возвращает ссылку на инстанс MaskedInput.
+Если маска не была установлена, возвращает null. |
 | focus() | Устанавливает фокус на поле ввода. |
 | blur() | Убирает фокус с поля ввода. |
 | scrollTo() | Скроллит страницу до поля ввода. |

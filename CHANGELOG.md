@@ -1,3 +1,14 @@
+<a name="6.6.1"></a>
+## [6.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.0...v6.6.1) (2017-06-21)
+
+
+### Bug Fixes
+
+* **attach:** add missed font properties ([#103](https://github.com/alfa-laboratory/arui-feather/issues/103)) ([aae7c06](https://github.com/alfa-laboratory/arui-feather/commit/aae7c06))
+* **fantasy:** fix textarea disabled border style ([#104](https://github.com/alfa-laboratory/arui-feather/issues/104)) ([995e3ee](https://github.com/alfa-laboratory/arui-feather/commit/995e3ee))
+
+
+
 <a name="6.6.0"></a>
 # [6.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.5.0...v6.6.0) (2017-06-21)
 

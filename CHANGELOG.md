@@ -1,3 +1,22 @@
+<a name="6.6.0"></a>
+# [6.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.5.0...v6.6.0) (2017-06-21)
+
+
+### Bug Fixes
+
+* **input-autocomplete:** ability to work with masks ([#102](https://github.com/alfa-laboratory/arui-feather/issues/102)) ([0792485](https://github.com/alfa-laboratory/arui-feather/commit/0792485))
+
+
+### Features
+
+* **fantasy:** add checkbox & checkbox-group ([#98](https://github.com/alfa-laboratory/arui-feather/issues/98)) ([b89b2b9](https://github.com/alfa-laboratory/arui-feather/commit/b89b2b9))
+* **fantasy:** add collapse ([#97](https://github.com/alfa-laboratory/arui-feather/issues/97)) ([6cc95e9](https://github.com/alfa-laboratory/arui-feather/commit/6cc95e9))
+* **fantasy:** add input-group ([#99](https://github.com/alfa-laboratory/arui-feather/issues/99)) ([6b4944b](https://github.com/alfa-laboratory/arui-feather/commit/6b4944b))
+* **fantasy:** add radio & radio-group ([#100](https://github.com/alfa-laboratory/arui-feather/issues/100)) ([361610c](https://github.com/alfa-laboratory/arui-feather/commit/361610c))
+* **fantasy:** add spin ([#101](https://github.com/alfa-laboratory/arui-feather/issues/101)) ([e3ce80b](https://github.com/alfa-laboratory/arui-feather/commit/e3ce80b))
+
+
+
 <a name="6.5.0"></a>
 # [6.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.4.1...v6.5.0) (2017-06-20)
 

@@ -192,7 +192,7 @@ class MoneyInput extends React.Component {
         this.mask = new Mask(this.maskPattern);
 
         if (this.root) {
-            this.root.getControl().setMask(this.maskPattern);
+            this.root.getMaskedInputInstance().setMask(this.maskPattern);
         }
     }
 

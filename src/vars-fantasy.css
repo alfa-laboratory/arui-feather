@@ -11,7 +11,8 @@
 @import './vars/fantasy/shadow.css';
 
 :root {
-    --small-screen-padding: 12px;
+    --gap-s: 12px;
+    --gap-m: 24px;
     --small-header-height: 80px;
     --large-screen-content-width: 1000px;
     --xlarge-screen-content-width: 1100px;

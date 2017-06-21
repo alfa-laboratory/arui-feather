@@ -137,7 +137,6 @@ class CheckBox extends React.Component {
                     size={ this.props.size || 'm' }
                     focused={ this.state.focused }
                     hovered={ this.state.hovered }
-                    view={ checked ? 'action' : null }
                     onClick={ this.handleChange }
                 >
                     {

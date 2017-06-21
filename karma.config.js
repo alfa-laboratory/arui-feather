@@ -11,57 +11,27 @@ const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 const IS_MOBILE = !!process.env.MOBILE;
 
 function getTestsGlobs(tests, postfix) {
-    return tests.split(',').map(function (testName) {
-        return `./src/${testName}/*-${postfix}.{js,jsx}`;
-    });
+    return tests.split(',').map(testName => `./src/${testName}/*-${postfix}.{js,jsx}`);
 }
 
 let babelLoaderConfig = ARUI_TEMPLATE.module.loaders.find(l => l.loader === 'babel-loader');
 delete babelLoaderConfig.exclude;
 
-module.exports = function (config) {
-    const cfg = {
-        browsers: ['PhantomJS_Desktop'],
-
+module.exports = (config) => {
+    let cfg = {
         singleRun: true,
-
         plugins: [
             require('karma-webpack'),
-            require('karma-chrome-launcher'),
-            require('karma-phantomjs-launcher'),
             require('karma-sourcemap-loader')
         ],
-
         webpack: merge.smart(ARUI_TEMPLATE, {
             devtool: 'inline-source-map'
         }),
-
         webpackMiddleware: {
             noInfo: true,
             quiet: true
-        },
-
-        customLaunchers: {
-            PhantomJS_Desktop: {
-                base: 'PhantomJS',
-                options: {
-                    viewportSize: {
-                        width: 1280,
-                        height: 100
-                    }
-                }
-            }
-        },
-
-        browserNoActivityTimeout: 20000
+        }
     };
-
-    if (IS_MOBILE) {
-        cfg.browsers = ['MobileSafari'];
-        cfg.plugins.push(
-            require('karma-ios-simulator-launcher')
-        );
-    }
 
     cfg.webpack = merge.strategy({ 'module.loaders': 'append' })(
         cfg.webpack,
@@ -76,7 +46,7 @@ module.exports = function (config) {
         }
     );
 
-    const testsFiles = !process.env.TESTS
+    let testsFiles = !process.env.TESTS
         ? ['./src/**/*-test.js?(x)']
         : getTestsGlobs(process.env.TESTS, 'test');
 
@@ -103,7 +73,8 @@ module.exports = function (config) {
         junitReporter: {
             outputFile: 'test-results.xml',
             useBrowserName: false
-        }
+        },
+        logLevel: cfg.LOG_DEBUG
     });
 
     cfg.plugins.push(
@@ -115,6 +86,57 @@ module.exports = function (config) {
         require('karma-junit-reporter'),
         require('karma-coverage')
     );
+
+    if (IS_MOBILE) {
+        cfg.customLaunchers = {
+            sauceChromeAndroid: {
+                base: 'SauceLabs',
+                browserName: 'Chrome',
+                deviceName: 'Android Emulator',
+                platformName: 'Android',
+                platformVersion: '6.0',
+                timeZone: 'Moscow'
+            }
+            // sauceSafariIOS: {
+            //     base: 'SauceLabs',
+            //     browserName: 'iPhone',
+            //     platform: 'OS X 10.12',
+            //     version: '10.2',
+            //     timeZone: 'Moscow'
+            // }
+        };
+
+        cfg.browserDisconnectTimeout = 10000;
+        cfg.browserDisconnectTolerance = 1;
+        cfg.browserNoActivityTimeout = 4 * 60 * 1000;
+        cfg.captureTimeout = 4 * 60 * 1000;
+        cfg.client = {
+            captureConsole: true,
+            mocha: {
+                timeout: 20000 // override default 2000
+            }
+        };
+
+        cfg.plugins.push(require('karma-sauce-launcher'));
+        cfg.reporters = ['mocha', 'saucelabs'];
+        cfg.sauceLabs = { testName: 'ARUI Feather Unit Tests' };
+    } else {
+        cfg.browserNoActivityTimeout = 20000;
+        cfg.customLaunchers = {
+            phantomJS: {
+                base: 'PhantomJS',
+                options: {
+                    viewportSize: {
+                        width: 1280,
+                        height: 100
+                    }
+                }
+            }
+        };
+        cfg.plugins.push(require('karma-phantomjs-launcher'));
+    }
+
+    cfg.browsers = Object.keys(cfg.customLaunchers);
 
     config.set(cfg);
 };

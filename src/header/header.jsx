@@ -64,7 +64,6 @@ class Header extends React.Component {
         if (this.props.fixed) {
             window.addEventListener('scroll', this.handleScroll);
         }
-        this.recountHeightStyleState();
     }
 
     componentWillUnmount() {

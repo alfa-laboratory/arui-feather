@@ -114,29 +114,6 @@ describe('select', () => {
         expect(popupWidth).to.be.at.least(buttonWidth);
     });
 
-    it('should set popup width equal to button width when equalPopupWidth = true', () => {
-        let selectProps = {
-            options: [
-                {
-                    value: 1,
-                    text: <div>Very long option text in block element to make select popup strech</div>
-                },
-                {
-                    value: 2,
-                    text: <div>Much, much longer option text in another block element to make select popup strech</div>
-                }
-            ],
-            equalPopupWidth: true,
-            opened: true
-        };
-
-        let { popupNode, buttonNode } = renderSelect(selectProps);
-        let popupWidth = popupNode.getBoundingClientRect().width;
-        let buttonWidth = buttonNode.getBoundingClientRect().width;
-
-        expect(popupWidth).to.be.equal(buttonWidth);
-    });
-
     it('should show multiply options', () => {
         let checkedOptions = [OPTIONS[1], OPTIONS[2]];
         let selectProps = {
@@ -327,6 +304,31 @@ describe('select', () => {
             expect(optGroup).to.have.attr('label', 'Select something');
         });
     } else {
+        it('should set popup width equal to button width when equalPopupWidth = true', () => {
+            let selectProps = {
+                options: [
+                    {
+                        value: 1,
+                        text: <div>Very long option text in block element to make select popup strech</div>
+                    },
+                    {
+                        value: 2,
+                        text: <div>
+                            Much, much longer option text in another block element to make select popup strech
+                        </div>
+                    }
+                ],
+                equalPopupWidth: true,
+                opened: true
+            };
+
+            let { popupNode, buttonNode } = renderSelect(selectProps);
+            let popupWidth = popupNode.getBoundingClientRect().width;
+            let buttonWidth = buttonNode.getBoundingClientRect().width;
+
+            expect(popupWidth).to.be.equal(buttonWidth);
+        });
+
         it('should call `onButtonFocus` after component was focused', (done) => {
             let onButtonFocus = chai.spy();
             let { select } = renderSelect({ options: OPTIONS, onButtonFocus });

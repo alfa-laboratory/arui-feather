@@ -29,6 +29,7 @@ import MaskedInput from 'arui-feather/masked-input';
 | ------ | -------- |
 | focus() | Устанавливает фокус на поле ввода. |
 | blur() | Снимает фокус с поля ввода. |
+| getControl(): HTMLInputElement | Возвращает ссылку на HTMLElement инпута. |
 | setMask(newMask: String, formatCharacters) | Синхронно обновляет маску на поле ввода. |
 
 

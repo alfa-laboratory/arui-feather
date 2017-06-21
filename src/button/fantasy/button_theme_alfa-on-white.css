@@ -169,12 +169,12 @@
                 border-left-color: var(--color-content-alfa-on-white);
             }
 
-            &.button_disabled {
-                border-left: transparent;
-            }
-
             &.button_focused {
                 border-color: var(--color-content-alfa-on-white);
+            }
+
+            &.button_disabled {
+                border-left: transparent;
             }
         }
 

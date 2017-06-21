@@ -181,4 +181,11 @@ describe('masked-input', () => {
             done();
         }, 0);
     });
+
+    it('should return `HTMLInputElement` when `getControl` method called', () => {
+        let maskedInput = render(<MaskedInput mask='111' />);
+        let controlNode = maskedInput.instance.getControl();
+
+        expect(controlNode).to.be.instanceOf(HTMLInputElement);
+    });
 });

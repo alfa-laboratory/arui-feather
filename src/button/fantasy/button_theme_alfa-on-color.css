@@ -167,6 +167,10 @@
             &.button_focused {
                 border-color: var(--color-background-control-alfa-on-white);
             }
+
+            &.button_disabled {
+                border-left: transparent;
+            }
         }
 
         > .button:last-child,
@@ -185,7 +189,6 @@
         > .button_checked:last-child,
         > :last-child .button_checked {
             border-color: transparent;
-            border-left-color: rgba(255, 255, 255, .3);
 
             &.button_hovered {
                 border-color: var(--color-background-control-alfa-on-white);

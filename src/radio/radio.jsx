@@ -148,7 +148,6 @@ class Radio extends React.Component {
                     focused={ this.state.focused }
                     hovered={ this.state.hovered }
                     tabIndex={ -1 }
-                    view={ checked ? 'action' : undefined }
                     onClick={ this.handleChange }
                 >
                     {

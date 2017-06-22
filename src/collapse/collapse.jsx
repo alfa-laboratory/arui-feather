@@ -7,7 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Link from '../link/link';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import SlideDown from '../slide-down/slide-down';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -23,8 +23,10 @@ class Collapse extends React.Component {
         isExpanded: Type.bool,
         /** Текст ссылки в `expand` состоянии */
         collapsedLabel: Type.string,
-        /** Текст ссылки в `collapse` состоянии */
+        /** Текст ссылки в `collapse` состоянии, можно указать состояниме null и тогда он не будет показан */
         expandedLabel: Type.string,
+        /** Направление раскрытия collapse, вниз (down) или наверх (up), по умолчанию он расскрывается вверх */
+        direction: Type.oneOf(['up', 'down']),
         /** Дочерние элементы `Collapse` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Тема компонента */
@@ -36,90 +38,76 @@ class Collapse extends React.Component {
     };
 
     static defaultProps = {
-        expandedLabel: 'Collapse',
-        collapsedLabel: 'Expand'
+        collapsedLabel: 'Раскрыть',
+        expandedLabel: 'Закрыть',
+        direction: 'up'
     };
 
     state = {
         isExpanded: false
     };
 
-    content;
-    contentCase;
-
-    componentDidMount() {
-        this.updateContentHeight();
-    }
-
-    componentDidUpdate() {
-        this.updateContentHeight();
-    }
-
     render(cn) {
-        let expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
+        return this.props.direction === 'up' ? this.renderUp(cn) : this.renderDown(cn);
+    }
 
+    renderDown(cn) {
         return (
-            <div
-                className={ cn({
-                    expanded
-                }) }
-            >
-                <div
-                    ref={ (content) => { this.content = content; } }
-                    className={ cn('content') }
-                >
-                    <div ref={ (contentCase) => { this.contentCase = contentCase; } }>
-                        { this.props.children }
-                    </div>
-                    <ResizeSensor onResize={ this.updateContentHeight } />
-                </div>
-                <Link
-                    className={ cn('link') }
-                    pseudo={ true }
-                    onClick={ this.handleExpandedChange }
-                    text={
-                        expanded
-                            ? this.props.expandedLabel
-                            : this.props.collapsedLabel
-                    }
-                />
+            <div className={ cn }>
+                { this.renderExpandedLink(cn) }
+                { this.renderSlideDown() }
             </div>
         );
     }
 
-    @autobind
-    handleExpandedChange() {
-        let newExpandedValue = this.props.isExpanded !== undefined
-            ? !this.props.isExpanded
-            : !this.state.isExpanded;
+    renderUp(cn) {
+        return (
+            <div className={ cn }>
+                { this.renderSlideDown() }
+                { this.renderExpandedLink(cn) }
+            </div>
+        );
+    }
 
-        this.setState({
-            isExpanded: newExpandedValue
-        });
+    renderSlideDown() {
+        return (
+            <SlideDown
+                isExpanded={ this.state.isExpanded }
+            >
+                { this.props.children }
+            </SlideDown>
+        );
+    }
 
-        if (this.props.onExpandedChange) {
-            this.props.onExpandedChange(newExpandedValue);
+    renderExpandedLink(cn) {
+        return (
+            <Link
+                className={ cn('link') }
+                pseudo={ true }
+                onClick={ this.handleExpandedChange }
+                text={ this.renderText() }
+            />
+        );
+    }
+
+    renderText() {
+        const expanded = this.props.isExpanded !== undefined
+            ? this.props.isExpanded
+            : this.state.isExpanded;
+        if (this.props.expandedLabel === null) {
+            return this.props.collapsedLabel;
         }
+        return expanded ? this.props.expandedLabel : this.props.collapsedLabel;
     }
 
     @autobind
-    updateContentHeight() {
-        let expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
-
-        let contentHeight;
-
-        if (expanded) {
-            contentHeight = this.contentCase.offsetHeight;
-        } else {
-            contentHeight = 0;
-        }
-
-        if (this.content) {
-            this.content.style.height = `${contentHeight}px`;
+    handleExpandedChange() {
+        const newExpandedValue = this.props.isExpanded !== undefined ? this.props.isExpanded : this.state.isExpanded;
+        this.setState({
+            isExpanded: newExpandedValue
+        });
+        if (this.props.onExpandedChange) {
+            this.props.onExpandedChange(newExpandedValue);
         }
     }
 }

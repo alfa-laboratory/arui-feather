@@ -47,7 +47,7 @@ describe('collapse', () => {
                 />
             </Collapse>
         );
-        let collapseContent = collapse.node.querySelector('.collapse__content');
+        let collapseContent = collapse.node.querySelector('.slide-down__content');
         let linkNode = collapse.node.querySelector('.link');
 
         setTimeout(() => {
@@ -56,7 +56,7 @@ describe('collapse', () => {
             linkNode.click();
 
             setTimeout(() => {
-                expect(collapseContent.style.height).to.equal(`${HEIGHT_DELTA}px`);
+                expect(collapseContent.clientHeight).to.equal(HEIGHT_DELTA);
                 done();
             }, 0);
         }, 0);
@@ -117,13 +117,6 @@ describe('collapse', () => {
         let collapse = render(<Collapse isExpanded={ false }>Collapsing text</Collapse>);
         let linkNode = collapse.node.querySelector('.link');
 
-        expect(linkNode).to.have.text('Expand');
-    });
-
-    it('should have default collapsed label', () => {
-        let collapse = render(<Collapse isExpanded={ true }>Collapsing text</Collapse>);
-        let linkNode = collapse.node.querySelector('.link');
-
-        expect(linkNode).to.have.text('Collapse');
+        expect(linkNode).to.have.text('Раскрыть');
     });
 });

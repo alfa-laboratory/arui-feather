@@ -11,7 +11,7 @@
 ```
 
 ```
-<RadioGroup error='Обязательно' >
+<RadioGroup error='Обязательно'>
     {['Один', 'Два', 'Три', 'Четыре'].map(text =>
         <Radio
             text={ text }
@@ -23,7 +23,7 @@
 ```
 
 ```
-<RadioGroup type='button' error='Обязательно' >
+<RadioGroup type='button' error='Обязательно'>
     {['Один', 'Два', 'Три', 'Четыре'].map(text =>
         <Radio
             text={ text }
@@ -36,7 +36,20 @@
 ```
 
 ```
-<RadioGroup type='line' >
+<RadioGroup width='available' type='button'>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+        <Radio
+            text={ text }
+            key={ text }
+            value={ text }
+            type='button'
+        />
+    )}
+</RadioGroup>
+```
+
+```
+<RadioGroup type='line'>
     {['Один', 'Два', 'Три', 'Четыре'].map(text =>
         <Radio
             text={ text }

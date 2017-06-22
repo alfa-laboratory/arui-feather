@@ -37,7 +37,7 @@ after_success:
       sh ./tools/publish-styleguide.sh
     fi
   - |
-    if [ "${TEST_SCOPE}" == "unit" ]; then
+    if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
       sh ./tools/publish-styleguide-fantasy.sh
     fi
 

@@ -120,6 +120,7 @@ class Radio extends React.Component {
                         type='radio'
                         className={ cn('control') }
                         ref={ (control) => { this.control = control; } }
+                        onClick={ this.handleInputControlClick }
                         onChange={ this.handleChange }
                     />
                 </span>
@@ -171,6 +172,11 @@ class Radio extends React.Component {
                 />
             </div>
         );
+    }
+
+    @autobind
+    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+        event.stopPropagation();
     }
 
     @autobind

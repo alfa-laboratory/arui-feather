@@ -110,6 +110,7 @@ class CheckBox extends React.Component {
                         value={ this.props.value }
                         checked={ checked }
                         disabled={ this.props.disabled }
+                        onClick={ this.handleInputControlClick }
                         onChange={ this.handleChange }
                     />
                 </span>
@@ -159,6 +160,11 @@ class CheckBox extends React.Component {
                 />
             </div>
         );
+    }
+
+    @autobind
+    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+        event.stopPropagation();
     }
 
     @autobind

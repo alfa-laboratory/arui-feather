@@ -8,6 +8,7 @@ import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
 import CalendarInput from './calendar-input';
+import * as calendarUtils from './utils';
 import keyboardCode from '../lib/keyboard-code';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -373,4 +374,56 @@ describe('calendar-input', () => {
             }, 0);
         });
     }
+
+    describe('calendar utils', () => {
+        it('should change format of a date', () => {
+            const result = calendarUtils.changeDateFormat('2012-11-10', 'YYYY-MM-DD', 'DD.MM.YYYY');
+            expect(result).to.be.eql('10.11.2012');
+        });
+
+        it('should return start of month', () => {
+            const result = new Date(calendarUtils.calculateMonth('2012-11-10', 'YYYY-MM-DD'));
+            expect(result.getMonth() + 1).to.be.eql(11); // getMonth is zero based
+            expect(result.getFullYear()).to.be.eql(2012);
+        });
+
+        it('should return current month if not valid value given', () => {
+            const result = new Date(calendarUtils.calculateMonth('foo', 'YYYY-MM-DD'));
+            const now = new Date();
+            expect(result.getMonth()).to.be.eql(now.getMonth());
+            expect(result.getFullYear()).to.be.eql(now.getFullYear());
+        });
+
+        it('should return earlierLimit month if it after given date', () => {
+            const result = new Date(calendarUtils.calculateMonth(
+                '2012-11-10',
+                'YYYY-MM-DD',
+                (new Date(2013, 8, 10).getTime())
+            ));
+            expect(result.getMonth()).to.be.eql(8);
+            expect(result.getFullYear()).to.be.eql(2013);
+        });
+
+        it('should return laterLimit month if it before given date', () => {
+            const result = new Date(calendarUtils.calculateMonth(
+                '2012-11-10',
+                'YYYY-MM-DD',
+                (new Date(2011, 8, 10).getTime()),
+                (new Date(2011, 9, 10).getTime())
+            ));
+            expect(result.getMonth()).to.be.eql(9);
+            expect(result.getFullYear()).to.be.eql(2011);
+        });
+
+        it('should return start of month if earlier and later limit given, but value is between them', () => {
+            const result = new Date(calendarUtils.calculateMonth(
+                '2012-11-10',
+                'YYYY-MM-DD',
+                (new Date(2011, 8, 10).getTime()),
+                (new Date(2014, 9, 10).getTime())
+            ));
+            expect(result.getMonth() + 1).to.be.eql(11); // getMonth is zero based
+            expect(result.getFullYear()).to.be.eql(2012);
+        });
+    });
 });

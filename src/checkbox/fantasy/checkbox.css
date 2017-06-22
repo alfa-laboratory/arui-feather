@@ -102,7 +102,7 @@
     display: inline-block;
 
     &.checkbox_checked .button__text {
-        font-weight: var(--font-weight);
+        font-weight: var(--font-weight-normal);
     }
 }
 

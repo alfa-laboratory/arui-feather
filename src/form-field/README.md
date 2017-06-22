@@ -4,9 +4,9 @@
         <div key={ size }>
             <FormField
                 size={ size }
-                label='Label'
+                label='Комментарий'
             >
-                <Input placeholder='Input' />
+                <Input size={ size } placeholder='Введите что-нибудь' />
             </FormField>
         </div>
     ))}
@@ -15,7 +15,7 @@
 Компонент может использоваться для отображения заголовков слева от блока
 ```
 const layoutStyles = {
-    marginLeft: '80px'
+    marginLeft: '120px'
 };
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
@@ -24,10 +24,10 @@ const layoutStyles = {
                 size={ size }
                 view='line'
                 label={
-                    <Label>Label</Label>
+                    <Label >Комментарий</Label>
                 }
             >
-                <Input placeholder='Input' />
+                <Input size={ size } placeholder='Введите что-нибудь' />
             </FormField>
         </div>
     ))}

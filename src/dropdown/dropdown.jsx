@@ -15,7 +15,7 @@ import performance from '../performance';
 import { POPUP_MAIN_OFFSET } from '../vars';
 
 /**
- * Компонент "выпадашка": ссылка или кнопка. По клику показывается Popup.
+ * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
 @cn('dropdown')
 @performance()

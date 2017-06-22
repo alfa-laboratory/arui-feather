@@ -1,3 +1,15 @@
+<a name="6.6.3"></a>
+## [6.6.3](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.2...v6.6.3) (2017-06-22)
+
+
+### Bug Fixes
+
+* fix click on checkbox and radio fires twice ([#112](https://github.com/alfa-laboratory/arui-feather/issues/112)) ([41f0eb0](https://github.com/alfa-laboratory/arui-feather/commit/41f0eb0))
+* **fantasy:** fix checkbox vars in styles ([#110](https://github.com/alfa-laboratory/arui-feather/issues/110)) ([343c6ab](https://github.com/alfa-laboratory/arui-feather/commit/343c6ab))
+* **masked-input:** correct caret control condition ([#111](https://github.com/alfa-laboratory/arui-feather/issues/111)) ([4b56fb9](https://github.com/alfa-laboratory/arui-feather/commit/4b56fb9))
+
+
+
 <a name="6.6.2"></a>
 ## [6.6.2](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.1...v6.6.2) (2017-06-22)
 

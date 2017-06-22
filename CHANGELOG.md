@@ -1,3 +1,13 @@
+<a name="6.6.4"></a>
+## [6.6.4](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.3...v6.6.4) (2017-06-22)
+
+
+### Bug Fixes
+
+* **radio-group:** fix error styles ([#113](https://github.com/alfa-laboratory/arui-feather/issues/113)) ([56c098d](https://github.com/alfa-laboratory/arui-feather/commit/56c098d))
+
+
+
 <a name="6.6.3"></a>
 ## [6.6.3](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.2...v6.6.3) (2017-06-22)
 

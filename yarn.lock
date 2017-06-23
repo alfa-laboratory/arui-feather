@@ -331,9 +331,9 @@ arrify@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-arui-presets@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-2.4.0.tgz#26fda11bbd45b08ca663b9c95cea6610935cf5c5"
+arui-presets@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-2.5.0.tgz#bc5502de40914f3aebb3158707d3e0e030b195cc"
   dependencies:
     autoprefixer "^6.3.1"
     babel-core "^6.4.5"
@@ -369,6 +369,7 @@ arui-presets@2.4.0:
     postcss-color-function "^4.0.0"
     postcss-custom-media "^5.0.1"
     postcss-custom-properties "^5.0.0"
+    postcss-discard-comments "^2.0.4"
     postcss-each "^0.9.0"
     postcss-for "^2.0.1"
     postcss-import "^8.0.2"
@@ -3300,13 +3301,9 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-"emoji-regex@>=6.0.0 <=6.1.1":
+"emoji-regex@>=6.0.0 <=6.1.1", emoji-regex@^6.1.0:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.1.1.tgz#c6cd0ec1b0642e2a3c67a1137efc5e796da4f88e"
-
-emoji-regex@^6.1.0:
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.4.2.tgz#a30b6fee353d406d96cfb9fa765bdc82897eff6e"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -3604,6 +3601,14 @@ eslint-plugin-jsx-a11y@^4.0.0:
     emoji-regex "^6.1.0"
     jsx-ast-utils "^1.0.0"
     object-assign "^4.0.1"
+
+eslint-plugin-markdown@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-markdown/-/eslint-plugin-markdown-1.0.0-beta.6.tgz#d9e62666eea4e76387e85f502df668abdfbd4395"
+  dependencies:
+    object-assign "^4.0.1"
+    remark-parse "^3.0.0"
+    unified "^6.1.2"
 
 eslint-plugin-react@^6.10.0:
   version "6.10.3"
@@ -9308,13 +9313,13 @@ semver-utils@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/semver-utils/-/semver-utils-1.1.1.tgz#27d92fec34d27cfa42707d3b40d025ae9855f2df"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.1.0, semver@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
-
-semver@^4.0.3, semver@^4.1.0, semver@^4.3.3, semver@~4.3.3:
+"semver@2 || 3 || 4 || 5", semver@^4.0.3, semver@^4.1.0, semver@^4.3.3, semver@~4.3.3:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
+
+semver@^5.0.1, semver@^5.1.0, semver@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
 semver@~5.0.1:
   version "5.0.3"

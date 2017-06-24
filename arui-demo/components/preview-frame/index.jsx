@@ -57,7 +57,7 @@ export default class PreviewFrame extends Component {
             <div className={ cn } >
                 <Frame { ...iframeProps } ref={ (node) => { this.iframe = node; } } >
                     { styleLinks.map(({ href }) => (
-                        <link href={ href } type='text/css' rel='stylesheet' />
+                        <link key={ href } href={ href } type='text/css' rel='stylesheet' />
                     )) }
                     <style dangerouslySetInnerHTML={ { __html: styles } } />
                     { this.props.children }

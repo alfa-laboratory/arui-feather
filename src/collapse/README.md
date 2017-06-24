@@ -1,6 +1,6 @@
 ```
-function handleExpandedChange(isExpanded){
-   setState({ isExpanded });
+function handleExpandedChange(isExpanded) {
+    setState({ isExpanded });
 }
 initialState = {
     isExpanded: true

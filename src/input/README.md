@@ -46,7 +46,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
         <div className='row'>
-            <Input 
+            <Input
                 placeholder='Введите что-нибудь'
                 defaultValue='Корм для кота'
                 clear={ true }

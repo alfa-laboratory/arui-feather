@@ -12,7 +12,7 @@ function renderAddons() {
             {['₽', '$', '€'].map(item =>
                 <Radio
                     key={ item }
-                    size='m'
+                    size='s'
                     type='button'
                     text={ item }
                     onChange={ handleMoneyChange }

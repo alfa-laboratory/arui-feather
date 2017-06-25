@@ -73,14 +73,7 @@
 }
 
 .radio-group_width_available {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-
-    .radio {
-        display: table-cell;
-        width: auto;
-    }
+    display: flex;
 
     &.radio-group_invalid {
         .radio-group__sub {

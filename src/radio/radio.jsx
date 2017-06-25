@@ -16,7 +16,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 /**
  * Компонент радио-кнопки.
  */
-@cn('radio')
+@cn('radio', Button)
 @performance()
 class Radio extends React.Component {
     static propTypes = {
@@ -72,7 +72,7 @@ class Radio extends React.Component {
     label;
     control;
 
-    render(cn) {
+    render(cn, Button) {
         let checked = this.props.checked !== undefined
             ? this.props.checked
             : this.state.checked;
@@ -98,7 +98,7 @@ class Radio extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                    ? this.renderButtonRadio(cn, checked)
+                    ? this.renderButtonRadio(cn, checked, Button)
                     : this.renderNormalRadio(cn, checked)
                 }
             </label>
@@ -137,7 +137,7 @@ class Radio extends React.Component {
         );
     }
 
-    renderButtonRadio(cn, checked) {
+    renderButtonRadio(cn, checked, Button) {
         return (
             <div>
                 <Button

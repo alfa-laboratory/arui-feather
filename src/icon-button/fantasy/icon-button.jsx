@@ -7,11 +7,11 @@ import Button from '../../button/button';
 import cn from '../../cn';
 
 /**
- * Компонент сабмит кнопки для встраивания в поля ввода.
+ * Компонент кнопки с иконкой.
  *
  * @extends Button
  */
-@cn('inline-submit-button')
-class InlineSubmitButton extends Button {}
+@cn('icon-button')
+class IconButton extends Button {}
 
-export default InlineSubmitButton;
+export default IconButton;

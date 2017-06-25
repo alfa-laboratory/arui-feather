@@ -30,3 +30,5 @@
 * Anna Voshkarina
 * Anton Kamyshansky
 * Stepan Mikhaylyuk
+* Aleksandr Simonov (palmflip)
+* Zar Zakharov (Severenit)

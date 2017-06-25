@@ -1,3 +1,13 @@
+<a name="6.7.0"></a>
+# [6.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.6...v6.7.0) (2017-06-25)
+
+
+### Features
+
+* **fantasy:** update checkbox & radio type button ([#116](https://github.com/alfa-laboratory/arui-feather/issues/116)) ([79e42c4](https://github.com/alfa-laboratory/arui-feather/commit/79e42c4))
+
+
+
 <a name="6.6.6"></a>
 ## [6.6.6](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.5...v6.6.6) (2017-06-23)
 

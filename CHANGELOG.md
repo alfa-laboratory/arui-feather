@@ -1,3 +1,23 @@
+<a name="6.6.6"></a>
+## [6.6.6](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.5...v6.6.6) (2017-06-23)
+
+
+### Bug Fixes
+
+* **slide-down:** fix slide-down wrong behavior ([#105](https://github.com/alfa-laboratory/arui-feather/issues/105)) ([710b13b](https://github.com/alfa-laboratory/arui-feather/commit/710b13b))
+
+
+
+<a name="6.6.5"></a>
+## [6.6.5](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.4...v6.6.5) (2017-06-23)
+
+
+### Bug Fixes
+
+* **input:** fix input with addons styles ([#115](https://github.com/alfa-laboratory/arui-feather/issues/115)) ([6b81569](https://github.com/alfa-laboratory/arui-feather/commit/6b81569))
+
+
+
 <a name="6.6.4"></a>
 ## [6.6.4](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.3...v6.6.4) (2017-06-22)
 

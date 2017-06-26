@@ -110,7 +110,7 @@ const MENU_2 = [
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
-                {`Горизонтальное меню с множественным выбором (mode='check')`}
+                Горизонтальное меню с множественным выбором mode check
             </Heading>
             <Menu
                 mode='check'
@@ -123,7 +123,7 @@ const MENU_2 = [
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
-                {`Вертикальное меню с множественным выбором (mode='check')`}
+                Вертикальное меню с множественным выбором mode check
             </Heading>
             <Menu
                 mode='check'
@@ -135,7 +135,7 @@ const MENU_2 = [
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
-                {`Горизонтальное меню с одиночным обязательным выбором (mode='radio')`}
+                Горизонтальное меню с одиночным обязательным выбором mode radio
             </Heading>
             <Menu
                 mode='radio'
@@ -148,7 +148,7 @@ const MENU_2 = [
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
-                {`Вертикальное меню с одиночным обязательным выбором (mode='radio')`}
+                Вертикальное меню с одиночным обязательным выбором mode radio
             </Heading>
             <Menu
                 mode='radio'
@@ -160,7 +160,7 @@ const MENU_2 = [
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
-                {`Горизонтальное меню с одиночным необязательным выбором (mode='radio-check')`}
+                Горизонтальное меню с одиночным необязательным выбором mode radio-check
             </Heading>
             <Menu
                 mode='radio-check'
@@ -173,7 +173,7 @@ const MENU_2 = [
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
-                {`Вертикальное меню с одиночным необязательным выбором (mode='radio-check')`}
+                Вертикальное меню с одиночным необязательным выбором mode radio-check
             </Heading>
             <Menu
                 mode='radio-check'

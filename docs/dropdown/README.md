@@ -1,6 +1,6 @@
 # Dropdown
 
-Компонент "выпадашка": ссылка или кнопка. По клику показывается Popup.
+Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
 
 ```javascript
 import Dropdown from 'arui-feather/dropdown';

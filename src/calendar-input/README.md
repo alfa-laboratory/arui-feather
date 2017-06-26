@@ -15,17 +15,19 @@
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <CalendarInput size={ size } error='Что-то пошло не так' />
+            <CalendarInput size={ size } defaultValue='41.12.2031' error='Что-то пошло не так' />
         </div>
     ))}
 </div>
 ```
 
 ```
+const formatDate = require('date-fns/format');
+
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <CalendarInput size={ size } width='available' />
+            <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'DD.MM.YYYY') } width='available' />
         </div>
     ))}
 </div>

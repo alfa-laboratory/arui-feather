@@ -1,3 +1,18 @@
+<a name="6.8.0"></a>
+# [6.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.7.1...v6.8.0) (2017-06-26)
+
+
+### Bug Fixes
+
+* **calendar-input:** correctly set month when limits given ([61bfa67](https://github.com/alfa-laboratory/arui-feather/commit/61bfa67))
+
+
+### Features
+
+* **radio-group:** add disabled prop ([#107](https://github.com/alfa-laboratory/arui-feather/issues/107)) ([17fedc6](https://github.com/alfa-laboratory/arui-feather/commit/17fedc6))
+
+
+
 <a name="6.7.1"></a>
 ## [6.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.7.0...v6.7.1) (2017-06-26)
 

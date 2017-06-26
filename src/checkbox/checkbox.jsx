@@ -16,7 +16,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 /**
  * Компонент чекбокса.
  */
-@cn('checkbox')
+@cn('checkbox', Button)
 @performance()
 class CheckBox extends React.Component {
     static propTypes = {
@@ -67,7 +67,7 @@ class CheckBox extends React.Component {
 
     root;
 
-    render(cn) {
+    render(cn, Button) {
         let checked = this.props.checked !== undefined
             ? this.props.checked
             : this.state.checked;
@@ -90,7 +90,7 @@ class CheckBox extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                        ? this.renderButtonCheckbox(cn, checked)
+                        ? this.renderButtonCheckbox(cn, checked, Button)
                         : this.renderNormalCheckbox(cn, checked)
                 }
             </label>
@@ -127,7 +127,7 @@ class CheckBox extends React.Component {
         );
     }
 
-    renderButtonCheckbox(cn, checked) {
+    renderButtonCheckbox(cn, checked, Button) {
         return (
             <div>
                 <Button

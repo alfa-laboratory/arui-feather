@@ -144,12 +144,6 @@ class Input extends React.Component {
         let value = this.props.value !== undefined
             ? this.props.value
             : this.state.value;
-
-        let content = this.renderContent(cn, MaskedInput);
-        if (hasAddons) {
-            content = <span className={ cn('addons-layout') }>{ content }</span>;
-        }
-
         let focused = this.getFocused();
 
         return (
@@ -176,7 +170,7 @@ class Input extends React.Component {
                             { this.props.label }
                         </span>
                     }
-                    { content }
+                    { this.renderContent(cn, MaskedInput) }
                     {
                         (this.props.error || this.props.hint) &&
                         <span className={ cn('sub') }>
@@ -189,20 +183,6 @@ class Input extends React.Component {
     }
 
     renderContent(cn, MaskedInput) {
-        return ([
-            this.props.leftAddons &&
-                <span className={ cn('addons', { left: true }) } key='left-addons'>
-                    { this.props.leftAddons }
-                </span>,
-            this.renderInput(cn, MaskedInput),
-            this.props.rightAddons &&
-                <span className={ cn('addons', { right: true }) } key='right-addons'>
-                    { this.props.rightAddons }
-                </span>
-        ]);
-    }
-
-    renderInput(cn, MaskedInput) {
         let isMaskedInput = this.props.mask !== undefined;
         let value = this.props.value !== undefined
             ? this.props.value
@@ -243,6 +223,12 @@ class Input extends React.Component {
                 ref={ (box) => { this.box = box; } }
             >
                 {
+                    this.props.leftAddons &&
+                    <span className={ cn('addons', { left: true }) } key='left-addons'>
+                        { this.props.leftAddons }
+                    </span>
+                }
+                {
                     !isMaskedInput
                         ? <input { ...inputProps } />
                         : <MaskedInput
@@ -263,6 +249,12 @@ class Input extends React.Component {
                     this.props.icon &&
                     <span className={ cn('icon') }>
                         { this.props.icon }
+                    </span>
+                }
+                {
+                    this.props.rightAddons &&
+                    <span className={ cn('addons', { right: true }) } key='right-addons'>
+                        { this.props.rightAddons }
                     </span>
                 }
             </span>

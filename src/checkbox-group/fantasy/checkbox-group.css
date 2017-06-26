@@ -30,6 +30,10 @@
     .checkbox {
         margin-bottom: 0;
     }
+
+    .checkbox + .checkbox {
+        margin-left: calc(var(--gap-s) / 2);
+    }
 }
 
 .checkbox-group_type_line {

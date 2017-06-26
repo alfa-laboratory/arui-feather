@@ -73,7 +73,7 @@
     &_view_action &__text,
     &_view_extra &__text,
     &_view_other &__text {
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-medium);
     }
 
     & > :last-child {

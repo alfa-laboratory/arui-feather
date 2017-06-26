@@ -35,6 +35,17 @@ module.exports = {
     title: 'ARUI FEATHER',
     serverPort: 3013,
     styles: {
+        SectionHeading: {
+            heading: {
+                fontSize: '48px',
+                fontWeight: 'bold'
+            }
+        },
+        ToolbarButton: {
+            button: {
+                display: 'none'
+            }
+        },
         Playground: {
             preview: {
                 borderRadius: 0,

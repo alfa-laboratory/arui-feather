@@ -2,7 +2,12 @@
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <Attach size={ size } />
+            <div className='column'>
+                <Attach size={ size } noFileText='' />
+            </div>
+            <div className='column'>
+                <Attach size={ size } noFileText='' disabled={ true } />
+            </div>
         </div>
     ))}
 </div>
@@ -16,7 +21,7 @@ C Иконкой
             <Attach
                 size={ size }
                 buttonContent='Пожалуйста, выберите файл'
-                noFileText='в формате PDF'
+                noFileText=''
                 buttonProps={ {
                     pseudo: true,
                     icon: <Icon size={ size } icon='search' />
@@ -37,25 +42,14 @@ function handleChange(value) {
     <div className='row'>
         <Attach
             size='s'
-            buttonContent={ state.value ? 'Choose another file' : 'Choose a file' }
+            noFileText=''
+            buttonContent={ state.value ? 'Выберите другой файл' : 'Выберите файл' }
             onChange={ handleChange }
             value={ state.value }
         />
     </div>
 </div>
 ```
-
-Disabled
-```
-<div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' key={ size }>
-            <Attach size={ size } disabled={ true } />
-        </div>
-    ))}
-</div>
-```
-
 
 С установлеными типами файлов, доступными для выбора
 ```
@@ -66,8 +60,9 @@ function handleChange(value) {
 <div>
     <div className='row'>
         <Attach
-            accept='text/plain'
-            buttonContent={ 'Выберите текстовый файл' }
+            accept='text/plain,'
+            noFileText='.pdf, .xls'
+            buttonContent={ 'Выберите файл' }
             size='s'
             onChange={ handleChange }
             value={ state.value }

@@ -1,3 +1,13 @@
+<a name="6.7.1"></a>
+## [6.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.7.0...v6.7.1) (2017-06-26)
+
+
+### Bug Fixes
+
+* **fantasy:** change button extra views font-weight from bold to medium ([#121](https://github.com/alfa-laboratory/arui-feather/issues/121)) ([47718a8](https://github.com/alfa-laboratory/arui-feather/commit/47718a8))
+
+
+
 <a name="6.7.0"></a>
 # [6.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.6.6...v6.7.0) (2017-06-25)
 

@@ -236,6 +236,7 @@ class Select extends React.Component {
                 ref={ (button) => { this.button = button; } }
                 size={ this.props.size }
                 disabled={ this.props.disabled }
+                name={ this.props.name }
                 text={ this.renderButtonContent() }
                 rightAddons={ [
                     <Icon

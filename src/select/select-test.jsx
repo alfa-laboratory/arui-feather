@@ -137,6 +137,15 @@ describe('select', () => {
         expect(buttonNode).to.have.text(checkedOption.checkedText);
     });
 
+    it('should set name attribute on button when name prop is passed', () => {
+        let selectProps = {
+            name: 'select-name'
+        };
+
+        let { buttonNode } = renderSelect(selectProps);
+        expect(buttonNode).to.have.attribute('name', 'select-name');
+    });
+
     it('should set class on public focus method', (done) => {
         let { select } = renderSelect({ options: OPTIONS });
 

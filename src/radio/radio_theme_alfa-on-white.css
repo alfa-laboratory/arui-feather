@@ -42,12 +42,14 @@
         box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
     }
 
-    &.radio_disabled {
+    &.radio_disabled,
+    &.radio_disabled.radio_hovered {
         color: var(--color-content-minor-alfa-on-white);
 
         .radio__box {
             border-color: transparent;
             background: var(--color-background-control-disabled-alfa-on-white);
+            box-shadow: none;
         }
 
         &.radio_checked .radio__box:after {

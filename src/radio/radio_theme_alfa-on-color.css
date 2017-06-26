@@ -42,12 +42,14 @@
         box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
     }
 
-    &.radio_disabled {
+    &.radio_disabled,
+    &.radio_disabled.radio_hovered {
         color: var(--color-content-minor-alfa-on-color);
 
         .radio__box {
             border-color: transparent;
             background: var(--color-background-control-disabled-alfa-on-color);
+            box-shadow: none;
 
             &:after {
                 background: var(--color-accent-content-minor);

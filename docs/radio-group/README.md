@@ -19,6 +19,7 @@ import RadioGroup from 'arui-feather/radio-group';
 | error | Node |  |  | Отображение попапа с ошибкой в момент когда фокус находится на компоненте |
 | width | [WidthEnum](#WidthEnum) |  |  | Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя |
 | name | String |  |  | Уникальное имя блока |
+| disabled | Boolean |  |  | Управление возможностью изменения состояния 'checked' дочерних компонентов `Radio` |
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |

@@ -191,4 +191,31 @@ describe('radio-group', () => {
 
         expect(onChange).to.have.been.called.once;
     });
+
+    it('should disable all child radios when disabled=true', () => {
+        let radioGroup = render(
+            <RadioGroup disabled={ true }>
+                <Radio key='1' />
+                <Radio key='2' />
+                <Radio key='3' />
+            </RadioGroup>
+        );
+
+        let disabledRadioNodes = radioGroup.node.querySelectorAll('.radio_disabled');
+        expect(disabledRadioNodes.length).to.equal(3);
+    });
+
+    it('shouldn\'t call `onChange` callback when disabled=true', function () {
+        let onChange = chai.spy();
+        let radioGroup = render(
+            <RadioGroup onChange={ onChange } disabled={ true }>
+                <Radio key='1' />
+            </RadioGroup>
+        );
+        let radio = radioGroup.node.querySelector('.radio');
+
+        simulate(radio, 'change');
+
+        expect(onChange).to.have.not.been.called;
+    });
 });

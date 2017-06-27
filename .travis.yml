@@ -1,29 +1,32 @@
+os: osx
+
 language: node_js
 
 node_js:
   - stable
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-
 env:
-  global:
-    - CXX=g++-4.8
   matrix:
     - TEST_SCOPE: lint
     - TEST_SCOPE: desktop_unit
     - TEST_SCOPE: mobile_unit
-    # - TEST_SCOPE: gemini
+    - TEST_SCOPE: gemini
 
 matrix:
   fast_finish: true
 
+before_install:
+  - rvm use ruby-2.0.0-p648
+
 install:
   - yarn install
+
+before_script:
+  - |
+      if [ "${TEST_SCOPE}" == "gemini" ]; then
+        curl -L https://gist.githubusercontent.com/teryaew/ab7c8a1c377ba0796f20a007a1d830eb/raw/sauce-connect.sh | bash
+        cat .gemini.js
+      fi
 
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi

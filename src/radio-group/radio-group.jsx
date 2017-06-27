@@ -27,6 +27,8 @@ class RadioGroup extends React.Component {
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,
+        /** Управление возможностью изменения состояния 'checked' дочерних компонентов `Radio` */
+        disabled: Type.bool,
         /** Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Тема компонента */
@@ -54,6 +56,10 @@ class RadioGroup extends React.Component {
         let children = null;
         let props = { name: this.props.name };
         let radioGroupParts = {};
+
+        if (this.props.disabled !== undefined) {
+            props.disabled = this.props.disabled;
+        }
 
         if (this.props.children) {
             children = this.props.children.length ? this.props.children : [this.props.children];

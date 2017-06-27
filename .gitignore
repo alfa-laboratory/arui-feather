@@ -12,6 +12,5 @@ arui-demo/styleguide*
 coverage/
 gemini-coverage/
 gemini-report/
-gemini-utils/polyfills.js
 test-results.xml
 tools/modernizr.js

@@ -1,3 +1,13 @@
+<a name="6.8.1"></a>
+## [6.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.8.0...v6.8.1) (2017-06-27)
+
+
+### Bug Fixes
+
+* **input:** fix control height in ie11 ([#123](https://github.com/alfa-laboratory/arui-feather/issues/123)) ([332e01f](https://github.com/alfa-laboratory/arui-feather/commit/332e01f))
+
+
+
 <a name="6.8.0"></a>
 # [6.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.7.1...v6.8.0) (2017-06-26)
 

@@ -2,7 +2,7 @@ global.React = require('react');
 
 module.exports = {
     gridUrl: 'http://ondemand.saucelabs.com/wd/hub',
-    rootUrl: 'http://localhost:8888',
+    rootUrl: 'http://localhost:8668',
     windowSize: '1024x768',
 
     httpTimeout: 60000,
@@ -25,7 +25,7 @@ module.exports = {
         exclude: [
             '.build/',
             'coverage/',
-            'demo/',
+            '*demo/',
             'docs/',
             'gemini/screens/',
             'gemini-*/',
@@ -39,11 +39,11 @@ module.exports = {
                 jsModules: [
                     './gemini-utils/gemini-main.css'
                 ],
-                port: 8888,
+                port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.config.gemini.js'
             },
-            sauce: {}
+            'saucelabs-info': {}
         },
         tempDir: './'
     }

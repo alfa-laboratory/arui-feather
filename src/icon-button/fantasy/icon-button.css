@@ -4,8 +4,12 @@
 
 @import '../../vars-fantasy.css';
 
-.inline-submit-button {
+.icon-button {
+    opacity: var(--opacity-default);
+    overflow: hidden;
     display: inline-block;
+    margin: 0;
+    padding: 0;
     cursor: pointer;
     outline: none;
     user-select: none;
@@ -13,12 +17,19 @@
     background-position: center;
     background-repeat: no-repeat;
     border: none;
-    border-radius: 0;
+    border-radius: 50%;
     box-shadow: none;
-    transition: opacity .25s ease-in-out;
+    transition-duration: 250ms;
+    transition-property: background, opacity;
+    transition-timing-function: ease;
 
     &, *, *:before, *:after {
         box-sizing: border-box;
+    }
+
+    &_hovered,
+    &_focused {
+        opacity: var(--opacity-active);
     }
 
     &_disabled {
@@ -29,32 +40,32 @@
     &_size_s {
         width: 30px;
         height: 30px;
-        background-size: 19px 19px;
     }
 
     &_size_m {
         width: 40px;
         height: 40px;
-        background-size: 26px 26px;
     }
 
     &_size_l {
         width: 50px;
         height: 50px;
-        background-size: 36px 36px;
     }
 
     &_size_xl {
         width: 60px;
         height: 60px;
-        background-size: 46px 46px;
     }
 }
 
-.inline-submit-button_theme_alfa-on-color {
-    background-image: url('./images/button_inline_submit.button_theme_alfa-on-color.svg');
+.icon-button_theme_alfa-on-color {
+    &.icon-button_hovered {
+        background-color: var(--color-background-control-hovered-alfa-on-color);
+    }
 }
 
-.inline-submit-button_theme_alfa-on-white {
-    background-image: url('./images/button_inline_submit.button_theme_alfa-on-white.svg');
+.icon-button_theme_alfa-on-white {
+    &.icon-button_hovered {
+        background-color: var(--color-background-control-hovered-alfa-on-white);
+    }
 }

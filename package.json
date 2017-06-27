@@ -128,7 +128,6 @@
     "karma-chai-dom": "^1.1.0",
     "karma-chai-spies": "^0.1.4",
     "karma-coverage": "^1.1.1",
-    "karma-ios-simulator-launcher": "^0.0.4",
     "karma-junit-reporter": "^1.1.0",
     "karma-mocha": "^1.1.1",
     "karma-mocha-reporter": "^2.2.3",

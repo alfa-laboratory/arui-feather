@@ -19,34 +19,24 @@
 Горизонтальная группа чекбоксов, состоящая из обычных кнопок
 ```
 <CheckBoxGroup type='button'>
-    <div className='row'>
-        <div className='column'>
-            <CheckBox
-                disabled={ true }
-                text='Текущий'
-                type='button'
-            />
-        </div>
-        <div className='column'>
-            <CheckBox
-                text='Основной'
-                type='button'
-            />
-        </div>
-        <div className='column'>
-            <CheckBox
-                text='Семейный'
-                disabled={ true }
-                type='button'
-            />
-        </div>
-        <div className='column'>
-            <CheckBox
-                text='Зарплатный'
-                type='button'
-            />
-        </div>
-    </div>
+    <CheckBox
+        disabled={ true }
+        text='Текущий'
+        type='button'
+    />
+    <CheckBox
+        text='Основной'
+        type='button'
+    />
+    <CheckBox
+        text='Семейный'
+        disabled={ true }
+        type='button'
+    />
+    <CheckBox
+        text='Зарплатный'
+        type='button'
+    />
 </CheckBoxGroup>
 ```
 

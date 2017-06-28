@@ -31,7 +31,7 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
 
 
 /**
- * Компонент поля ввода даты.
+ * Компонент для ввода даты.
  */
 @cn('calendar-input', Input, Popup)
 @performance(true)

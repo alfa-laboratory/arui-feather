@@ -1,6 +1,6 @@
 # CalendarInput
 
-Компонент поля ввода даты.
+Компонент для ввода даты.
 
 ```javascript
 import CalendarInput from 'arui-feather/calendar-input';

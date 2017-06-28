@@ -18,7 +18,7 @@ const AMOUNT = {
 </div>
 ```
 
-Использовать компонент Heading для вывода числа
+Использовать Heading для вывода числа
 ```
 const AMOUNT = {
     value: 123343,

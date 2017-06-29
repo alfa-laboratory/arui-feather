@@ -328,6 +328,18 @@ describe('select', () => {
 
             expect(optGroup).to.have.attr('label', 'Select something');
         });
+
+        it('should render popup when mobileMenuMode = popup', () => {
+            let selectProps = {
+                options: OPTIONS,
+                mobileMenuMode: 'popup',
+                opened: true
+            };
+            let { nativeSelectNode, popupNode } = renderSelect(selectProps);
+
+            expect(nativeSelectNode).to.not.exist;
+            expect(popupNode).to.have.class('popup');
+        });
     } else {
         it('should set popup width equal to button width when equalPopupWidth = true', () => {
             let selectProps = {

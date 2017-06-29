@@ -67,8 +67,8 @@ class Popup extends React.Component {
             'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position' */
-        target: Type.oneOf(['anchor', 'position']),
+        /** Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen' */
+        target: Type.oneOf(['anchor', 'position', 'screen']),
         /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно основного направления */
         mainOffset: Type.number,
         /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно второстепенного направления */
@@ -223,6 +223,7 @@ class Popup extends React.Component {
                     className={ cn({
                         direction: this.state.direction,
                         type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
+                        target: this.props.target,
                         size: this.props.size,
                         visible: this.props.visible,
                         invalid: this.props.invalid,
@@ -403,7 +404,9 @@ class Popup extends React.Component {
      * @returns {Boolean}
      */
     isPropsToPositionCorrect() {
-        return (this.props.target === 'anchor' && this.anchor) || (this.props.target === 'position' && this.position);
+        return (this.props.target === 'anchor' && this.anchor)
+            || (this.props.target === 'position' && this.position)
+            || (this.props.target === 'screen');
     }
 
     @autobind
@@ -422,9 +425,25 @@ class Popup extends React.Component {
         }
 
         let popupHash = this.getPopupHash();
-        let bestDrawingParams = this.props.target === 'position'
-            ? { top: this.position.top, left: this.position.left }
-            : calcBestDrawingParams(popupHash, calcTargetDimensions(popupHash), calcFitContainerDimensions(popupHash));
+        let bestDrawingParams;
+
+        switch (this.props.target) {
+            case 'position':
+                bestDrawingParams = { top: this.position.top, left: this.position.left };
+                break;
+
+            case 'screen':
+                bestDrawingParams = { top: 0, left: 0, right: 0, bottom: 0 };
+                break;
+
+            case 'anchor':
+                bestDrawingParams = calcBestDrawingParams(
+                    popupHash,
+                    calcTargetDimensions(popupHash),
+                    calcFitContainerDimensions(popupHash)
+                );
+                break;
+        }
 
         this.setState({
             direction: bestDrawingParams.direction,
@@ -458,6 +477,8 @@ class Popup extends React.Component {
         return {
             top: drawingParams.top,
             left: drawingParams.left,
+            right: drawingParams.right,
+            bottom: drawingParams.bottom,
             height: this.props.height === 'adaptive' ? drawingParams.height : 'auto'
         };
     }

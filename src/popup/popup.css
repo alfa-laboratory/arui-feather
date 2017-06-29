@@ -126,6 +126,12 @@
     &_padded.popup_size_xl &__content {
         padding: 17px 22px;
     }
+
+    &_target_screen {
+        position: fixed;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }
 
 .popup_type_tooltip {

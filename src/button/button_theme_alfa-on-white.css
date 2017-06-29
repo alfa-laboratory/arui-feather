@@ -124,6 +124,17 @@
 
             &.button_hovered {
                 border-right-color: var(--color-content-alfa-on-white);
+                border-left-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        > .button:first-child,
+        > :first-child .button {
+            border-left-color: var(--color-content-minor-alfa-on-white);
+
+            &.button_hovered {
+                border-right-color: var(--color-content-alfa-on-white);
+                border-left-color: var(--color-content-alfa-on-white);
             }
         }
 
@@ -138,7 +149,6 @@
 
         & .button_focused {
             border-color: var(--color-content-alfa-on-white);
-            background-color: rgba(0, 0, 0, .08);
             box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
         }
 
@@ -216,10 +226,20 @@
     }
 
     &.radio-group_theme_alfa-on-white {
+        .button {
+            border-left-color: rgba(0, 0, 0, .15);
+            border-right-color: rgba(0, 0, 0, .15);
+
+            &.button_hovered, &.button_focused {
+                border-color: var(--color-border-control-focused-alfa-on-white);
+            }
+        }
+
         .button_checked {
             background-color: var(--color-background-control-checked-alfa-on-white);
             border-color: var(--color-border-control-checked-alfa-on-white);
             border-right-color: transparent;
+            border-left-color: transparent;
         }
 
         > .button_checked:last-child,
@@ -235,9 +255,14 @@
             }
         }
 
+        > .button_disabled:last-child,
+        > :last-child .button_disabled {
+            border-right-color: transparent;
+        }
+
         > .button_checked:first-child,
         > :first-child .button_checked {
-            border-left-color: transparent;
+            border-left-color: var(--color-border-control-checked-alfa-on-white);
 
             &.button_hovered {
                 border-color: var(--color-content-alfa-on-white);
@@ -245,6 +270,64 @@
 
             &.button_focused {
                 border-left-color: var(--color-content-alfa-on-white);
+            }
+        }
+
+        > .button_disabled:first-child,
+        > :first-child .button_disabled {
+            border-left-color: transparent;
+        }
+
+        &.radio-group_invalid {
+            .button {
+                border-left-color: rgba(248, 96, 101, .4);
+                border-right-color: rgba(248, 96, 101, .4);
+
+                &.button_hovered, &.button_focused {
+                    border-color: var(--color-border-control-focused-alfa-on-white);
+                }
+
+                &.button_checked {
+                    &.button_hovered {
+                        background-color: rgba(0, 0, 0, .25);
+                    }
+                }
+            }
+
+            > .button:first-child,
+            > :first-child .button {
+                border-left-color: var(--color-error-translucent);
+
+                &.button_hovered, &.button_focused {
+                    border-right-color: var(--color-border-control-focused-alfa-on-white);
+                    border-left-color: var(--color-border-control-focused-alfa-on-white);
+                }
+
+                &.button_checked {
+                    border-left-color: var(--color-border-control-checked-alfa-on-white);
+
+                    &.button_hovered, &.button_focused {
+                        border-left-color: var(--color-border-control-focused-alfa-on-white);
+                    }
+                }
+            }
+
+            > .button:last-of-type,
+            > :last-of-type .button {
+                border-right-color: var(--color-error-translucent);
+
+                &.button_hovered, &.button_focused {
+                    border-right-color: var(--color-border-control-focused-alfa-on-white);
+                    border-left-color: var(--color-border-control-focused-alfa-on-white);
+                }
+
+                &.button_checked {
+                    border-right-color: var(--color-border-control-checked-alfa-on-white);
+
+                    &.button_hovered, &.button_focused {
+                        border-right-color: var(--color-border-control-focused-alfa-on-white);
+                    }
+                }
             }
         }
     }

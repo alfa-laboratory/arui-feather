@@ -1,11 +1,9 @@
-os: osx
-
-osx_image: xcode8.3
+dist: trusty
 
 language: node_js
 
 node_js:
-  - stable
+  - '7.4.0'
 
 env:
   matrix:
@@ -28,10 +26,10 @@ before_script:
       fi
 
 script:
-  - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
-  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then npm run test; fi
-  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 npm run test; fi
-  - if [ "${TEST_SCOPE}" == "gemini" ]; then npm run gemini; fi
+  - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
+  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then yarn test; fi
+  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 yarn test; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini-ci; fi
 
 after_success:
   - |

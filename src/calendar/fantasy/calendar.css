@@ -67,7 +67,7 @@
     }
 
     &__arrow:hover {
-        opacity: 1;
+        opacity: var(--opacity-active);
     }
 
     &__arrow_direction_left, &__double_arrow_direction_left {

@@ -74,7 +74,7 @@
         }
 
         &::-moz-placeholder {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
 
         &::placeholder {
@@ -89,7 +89,7 @@
 
         &.textarea_focused {
             .textarea__control::placeholder {
-                opacity: 1;
+                opacity: var(--opacity-active);
             }
         }
     }

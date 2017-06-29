@@ -183,7 +183,7 @@
             }
 
             &.button_disabled {
-                border-left: transparent;
+                border-left-color: transparent;
             }
 
             &.button_focused {
@@ -191,16 +191,21 @@
             }
         }
 
+        > .button:last-child,
+        > :last-child .button {
+            &.button_disabled {
+                border-right-color: transparent;
+            }
+        }
+
         .button_checked {
             background-color: var(--color-background-control-checked-alfa-on-white);
             border-color: transparent;
-            border-left-color: var(--color-border-control-checked-alfa-on-white);
         }
 
         > .button_checked:last-child,
         > :last-child .button_checked {
             border-color: transparent;
-            border-left-color: var(--color-border-control-checked-alfa-on-white);
 
             &.button_hovered {
                 border-color: var(--color-content-alfa-on-white);

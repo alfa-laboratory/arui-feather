@@ -119,12 +119,17 @@ class Mask {
         let cleanValueChar;
 
         let patternIndex = 0;
+        let patternChar;
         let patternLength = this.pattern.length;
 
         while (patternIndex < patternLength && cleanValueIndex < cleanValueLength) {
             if (!this.pattern.isEditableIndex(patternIndex)) {
-                formattedValue += this.pattern.pattern[patternIndex];
+                patternChar = this.pattern.pattern[patternIndex];
+                formattedValue += patternChar;
                 patternIndex += 1;
+                if (cleanValue.charAt(cleanValueIndex) === patternChar) {
+                    cleanValueIndex += 1;
+                }
             } else {
                 while ((cleanValueChar = cleanValue.charAt(cleanValueIndex)) !== '') { // eslint-disable-line no-cond-assign
                     if (this.pattern.isValidAtIndex(cleanValueChar, patternIndex)) {

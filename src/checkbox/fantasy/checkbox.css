@@ -87,7 +87,7 @@
     }
 
     &_checked &__box:after {
-        opacity: 1;
+        opacity: var(--opacity-active);
         visibility: visible;
         transition-delay: 0s;
         transform: translateY(0);

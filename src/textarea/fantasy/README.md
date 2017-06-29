@@ -23,14 +23,11 @@ function handleChangeAsync(value) {
 }
 <div>
     <Textarea
+        label='Current value in textarea: ${state.value}'
         placeholder='Textarea autosize...'
-        autosize={ true }
         value={ state.value }
         onChange={ handleChangeAsync }
     />
-    <Message visible={ true } >
-       {`current value in textarea: ${state.value}`}
-    </Message>
 </div>
 ```
 Если вам не нужно модифицировать введенные пользователем данные -
@@ -47,13 +44,10 @@ function handleChangeAsync(value) {
 }
 <div>
     <Textarea
-        placeholder='Textarea autosize...'
-        autosize={ true }
         defaultValue={ state.value }
+        label='Current value in textarea: ${state.value}'
+        placeholder='Textarea autosize...'
         onChange={ handleChangeAsync }
     />
-    <Message visible={ true }>
-       {`current value in textarea: ${state.value}`}
-    </Message>
 </div>
 ```

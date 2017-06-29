@@ -151,7 +151,7 @@
 
     &_focused &__tick,
     .select-button_hovered &__tick {
-        opacity: 1;
+        opacity: var(--opacity-active);
     }
 
     &_width_available {

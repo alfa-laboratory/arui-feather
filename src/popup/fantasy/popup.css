@@ -68,7 +68,7 @@
     }
 
     &_height_available.popup_visible {
-        opacity: 1;
+        opacity: var(--opacity-active);
         margin: 0 0 0 -35px;
     }
 

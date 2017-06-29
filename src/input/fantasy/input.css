@@ -90,7 +90,7 @@
         }
 
         &::-moz-placeholder {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
 
         &::-ms-clear {
@@ -121,7 +121,7 @@
 
         &.input_focused {
             .input__control::placeholder {
-                opacity: 1;
+                opacity: var(--opacity-active);
             }
         }
     }
@@ -150,7 +150,7 @@
         transition: opacity 0.1s ease-out;
 
         &:hover {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
     }
 
@@ -208,7 +208,7 @@
 
     /* reset for ios */
     &__control:disabled {
-        opacity: 1;
+        opacity: var(--opacity-active);
     }
 }
 

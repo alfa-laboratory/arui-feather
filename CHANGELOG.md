@@ -1,3 +1,13 @@
+<a name="7.0.1"></a>
+## [7.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.0...v7.0.1) (2017-06-30)
+
+
+### Bug Fixes
+
+* **fantasy:** fix select error styles ([#136](https://github.com/alfa-laboratory/arui-feather/issues/136)) ([d41451f](https://github.com/alfa-laboratory/arui-feather/commit/d41451f))
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.8.1...v7.0.0) (2017-06-30)
 

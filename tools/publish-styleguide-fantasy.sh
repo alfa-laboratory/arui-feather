@@ -21,3 +21,6 @@ cp -r $SOURCE_SHOWCASE_DIR/* $PUBLISH_SHOWCASE_DIR
 git add -A -f "$PUBLISH_SHOWCASE_DIR"
 git commit -q -m "chore(*): update fantasy styleguide by travis build $TRAVIS_BUILD_NUMBER"
 git push -q upstream HEAD:gh-pages
+
+echo "Fantasy styleguide was successfully published to
+https://alfa-laboratory.github.io/arui-feather/styleguide-fantasy/"

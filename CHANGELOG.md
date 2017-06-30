@@ -1,3 +1,25 @@
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v6.8.1...v7.0.0) (2017-06-30)
+
+
+### Bug Fixes
+
+* **fantasy:** update checked link styles ([#124](https://github.com/alfa-laboratory/arui-feather/issues/124)) ([3c2a0e6](https://github.com/alfa-laboratory/arui-feather/commit/3c2a0e6))
+* **masked-input:** preformatted chars format ([#132](https://github.com/alfa-laboratory/arui-feather/issues/132)) ([8b8eb43](https://github.com/alfa-laboratory/arui-feather/commit/8b8eb43))
+* **radio-group:** fix border color ([#135](https://github.com/alfa-laboratory/arui-feather/issues/135)) ([dd915aa](https://github.com/alfa-laboratory/arui-feather/commit/dd915aa))
+* **radio-group:** fix radio-group styles ([#129](https://github.com/alfa-laboratory/arui-feather/issues/129)) ([0caec11](https://github.com/alfa-laboratory/arui-feather/commit/0caec11))
+
+
+### Features
+
+* use icon-button instead of inline-submit-button ([#120](https://github.com/alfa-laboratory/arui-feather/issues/120)) ([3a41752](https://github.com/alfa-laboratory/arui-feather/commit/3a41752))
+* **card-number:** remove cardNumber component ([#126](https://github.com/alfa-laboratory/arui-feather/issues/126)) ([2624809](https://github.com/alfa-laboratory/arui-feather/commit/2624809))
+* **fantasy:** add notification ([#131](https://github.com/alfa-laboratory/arui-feather/issues/131)) ([63f15ac](https://github.com/alfa-laboratory/arui-feather/commit/63f15ac))
+* **message:** remove message component ([#130](https://github.com/alfa-laboratory/arui-feather/issues/130)) ([d1b1a0f](https://github.com/alfa-laboratory/arui-feather/commit/d1b1a0f))
+* **select:** add removed hidden input ([#134](https://github.com/alfa-laboratory/arui-feather/issues/134)) ([dd52bab](https://github.com/alfa-laboratory/arui-feather/commit/dd52bab))
+
+
+
 <a name="6.8.1"></a>
 ## [6.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v6.8.0...v6.8.1) (2017-06-27)
 

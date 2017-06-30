@@ -25,6 +25,12 @@
             display: block;
         }
     }
+
+    &.radio-group_width_available {
+        .radio {
+            margin-right: -1px;
+        }
+    }
 }
 
 .radio-group__label {

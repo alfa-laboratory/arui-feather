@@ -35,6 +35,11 @@ describe('mask', () => {
         expect(mask.format('Adn7903hG7!nd5s2a27-13')).to.be.equal('+7 903 752-27-13');
     });
 
+    it('should format formattable chars during `format` call ignoring preformatted chars', () => {
+        let mask = new Mask('+7 111 111-11-11');
+        expect(mask.format('+7Adn903hG7!nd5s2a27-13')).to.be.equal('+7 903 752-27-13');
+    });
+
     it('should format chars with custom formatter', () => {
         const cyrillic = {
             c: {

@@ -70,12 +70,39 @@ describe('select', () => {
         expect(popupNode).to.have.class('popup');
     });
 
+    it('should render hidden input', () => {
+        let { select } = renderSelect({ options: OPTIONS });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.exist;
+    });
+
+    it('should render hidden input with proper id attr', () => {
+        let { select } = renderSelect({ options: OPTIONS, id: 'id' });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.have.attr('id', 'id');
+    });
+
+    it('should render hidden input with proper name attr', () => {
+        let { select } = renderSelect({ options: OPTIONS, name: 'name' });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.have.attr('name', 'name');
+    });
+
+    it('should render hidden input with proper value attr', () => {
+        let { select } = renderSelect({ options: OPTIONS, value: ['value'] });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.have.attr('value', 'value');
+    });
+
     it('should render with `label` from props', () => {
         let { select } = renderSelect({ options: OPTIONS, label: 'Label' });
-        let labelNode = select.node.querySelector('.select__top');
+        let topNode = select.node.querySelector('.select__top');
 
-        expect(labelNode).to.exist;
-        expect(labelNode).to.have.text('Label');
+        expect(topNode).to.have.text('Label');
     });
 
     it('should render with `placeholder` from props', () => {
@@ -88,7 +115,6 @@ describe('select', () => {
         let { select } = renderSelect({ options: OPTIONS, hint: 'Hint' });
         let subNode = select.node.querySelector('.select__sub');
 
-        expect(subNode).to.exist;
         expect(subNode).to.have.text('Hint');
     });
 
@@ -96,7 +122,6 @@ describe('select', () => {
         let { select } = renderSelect({ options: OPTIONS, error: 'Error' });
         let subNode = select.node.querySelector('.select__sub');
 
-        expect(subNode).to.exist;
         expect(subNode).to.have.text('Error');
     });
 

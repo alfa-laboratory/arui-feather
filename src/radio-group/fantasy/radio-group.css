@@ -31,6 +31,13 @@
     }
 }
 
+.radio-group__label {
+    margin-bottom: 14px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: var(--font-weight-bold);
+}
+
 .radio-group_invalid {
     padding-left: 10px;
     border-left: 1px solid var(--color-error-translucent);

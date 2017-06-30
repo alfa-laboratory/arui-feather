@@ -35,6 +35,8 @@ class RadioGroup extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Лейбл для группы */
+        label: Type.node,
         /** Обработчик фокуса радиогруппы */
         onFocus: Type.func,
         /** Обработчик снятия фокуса с радиогруппы */
@@ -103,6 +105,12 @@ class RadioGroup extends React.Component {
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
             >
+                {
+                    !!this.props.label &&
+                    <div className={ cn('label') }>
+                        { this.props.label }
+                    </div>
+                }
                 { createFragment(radioGroupParts) }
                 {
                     this.props.error &&

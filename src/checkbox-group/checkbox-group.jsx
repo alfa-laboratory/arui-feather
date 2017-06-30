@@ -23,7 +23,9 @@ class CheckBoxGroup extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Лейбл для группы */
+        label: Type.node
     };
 
     render(cn) {
@@ -49,6 +51,12 @@ class CheckBoxGroup extends React.Component {
                 role='group'
                 tabIndex='-1'
             >
+                {
+                    !!this.props.label &&
+                    <div className={ cn('label') }>
+                        { this.props.label }
+                    </div>
+                }
                 { createFragment(checkboxGroupParts) }
             </span>
         );

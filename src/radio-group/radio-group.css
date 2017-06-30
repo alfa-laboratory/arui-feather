@@ -27,6 +27,12 @@
     }
 }
 
+.radio-group__label {
+    margin-bottom: 10px;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-accent);
+}
+
 .radio-group_invalid {
     padding-left: 10px;
     border-left: 1px solid var(--color-error-translucent);

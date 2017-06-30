@@ -210,6 +210,12 @@ class Select extends React.Component {
                 ref={ (root) => { this.root = root; } }
             >
                 <span className={ cn('inner') }>
+                    <input
+                        id={ this.props.id }
+                        name={ this.props.name }
+                        type='hidden'
+                        value={ value }
+                    />
                     {
                         !!this.props.label &&
                         <span className={ cn('top') }>

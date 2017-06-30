@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Label from '../src/label/label';
-import Menu from '../src/menu/menu';
+import Label from '../src/label';
+import Menu from '../src/menu';
 
 const NAME = 'menu';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
@@ -138,16 +138,7 @@ geminiReact.suite(NAME, function () {
 
                     suite
                         .render(template)
-                        .capture('plain')
-                        .capture('hovered', function (actions) {
-                            actions.mouseMove(this.renderedComponent);
-                        })
-                        .capture('pressed', function (actions) {
-                            actions.mouseDown(this.renderedComponent);
-                        })
-                        .capture('clicked', function (actions) {
-                            actions.mouseUp(this.renderedComponent);
-                        });
+                        .capture('plain');
                 });
             });
         });

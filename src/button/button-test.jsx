@@ -70,6 +70,21 @@ describe('button', () => {
         expect(onClick).to.have.been.called.once;
     });
 
+    it('should unset class `hovered` and `focused` on disabled button', () => {
+        let button = render(<Button />);
+
+        simulate(button.node, 'mouseEnter');
+        button.instance.focus();
+
+        expect(button.node).to.have.class('button_hovered');
+        expect(button.node).to.have.class('button_focused');
+
+        button = render(<Button disabled={ true } />);
+
+        expect(button.node).to.not.have.class('button_hovered');
+        expect(button.node).to.not.have.class('button_focused');
+    });
+
     it('should call `onFocus` callback after button was focused', (done) => {
         let onFocus = chai.spy();
         let button = render(<Button onFocus={ onFocus } />);

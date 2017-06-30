@@ -1,31 +1,11 @@
 ```
-class CalendarInputWithState extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { date: '01.02.2016' };
-    }
-    
-    render() {
-        return(
+<div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <div className='row' key={ size }>
             <CalendarInput
-                size={ this.props.size }
-                value={ this.state.date }
-                onInputChange={ (val) => this.handleCalendarChange(val) }
-                onCalendarChange={ (val) => this.handleCalendarChange(val) }
+                size={ size }
+                defaultValue='01.02.2016'
             />
-        );
-    }
-
-    handleCalendarChange(newDate) {
-        this.setState({
-            date: newDate
-        });
-    }
-}
-<div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div key={ size }>
-            <CalendarInputWithState size={ size } />
         </div>
     ))}
 </div>
@@ -34,18 +14,20 @@ class CalendarInputWithState extends React.Component {
 ```
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div key={ size }>
-            <CalendarInput size={ size } error='something went wrong' />
+        <div className='row' key={ size }>
+            <CalendarInput size={ size } defaultValue='41.12.2031' error='Что-то пошло не так' />
         </div>
     ))}
 </div>
 ```
 
 ```
+const formatDate = require('date-fns/format');
+
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div key={ size }>
-            <CalendarInput size={ size } width='available' />
+        <div className='row' key={ size }>
+            <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'DD.MM.YYYY') } width='available' />
         </div>
     ))}
 </div>

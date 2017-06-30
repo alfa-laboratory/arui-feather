@@ -1,8 +1,8 @@
 import React from 'react';
-import Heading from '../src/heading/heading';
-import Label from '../src/label/label';
-import Select from '../src/select/select';
-import ThemeProvider from '../src/theme-provider/theme-provider';
+import Heading from '../src/heading';
+import Label from '../src/label';
+import Select from '../src/select';
+import ThemeProvider from '../src/theme-provider';
 
 import cn from '../src/cn';
 import './demo.css';

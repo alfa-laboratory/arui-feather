@@ -1,8 +1,8 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Link from '../src/link/link';
-import Paragraph from '../src/paragraph/paragraph';
-import Plate from '../src/plate/plate';
-import ThemeProvider from '../src/theme-provider/theme-provider';
+import Link from '../src/link';
+import Paragraph from '../src/paragraph';
+import Plate from '../src/plate';
+import ThemeProvider from '../src/theme-provider';
 import { LOREM_IPSUM } from '../src/vars';
 
 const NAME = 'plate';

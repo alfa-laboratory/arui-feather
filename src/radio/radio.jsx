@@ -13,14 +13,10 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-import './radio_theme_alfa-on-color.css';
-import './radio_theme_alfa-on-white.css';
-import './radio.css';
-
 /**
  * Компонент радио-кнопки.
  */
-@cn('radio')
+@cn('radio', Button)
 @performance()
 class Radio extends React.Component {
     static propTypes = {
@@ -76,7 +72,7 @@ class Radio extends React.Component {
     label;
     control;
 
-    render(cn) {
+    render(cn, Button) {
         let checked = this.props.checked !== undefined
             ? this.props.checked
             : this.state.checked;
@@ -102,7 +98,7 @@ class Radio extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                    ? this.renderButtonRadio(cn, checked)
+                    ? this.renderButtonRadio(cn, checked, Button)
                     : this.renderNormalRadio(cn, checked)
                 }
             </label>
@@ -124,6 +120,7 @@ class Radio extends React.Component {
                         type='radio'
                         className={ cn('control') }
                         ref={ (control) => { this.control = control; } }
+                        onClick={ this.handleInputControlClick }
                         onChange={ this.handleChange }
                     />
                 </span>
@@ -140,7 +137,7 @@ class Radio extends React.Component {
         );
     }
 
-    renderButtonRadio(cn, checked) {
+    renderButtonRadio(cn, checked, Button) {
         return (
             <div>
                 <Button
@@ -152,7 +149,6 @@ class Radio extends React.Component {
                     focused={ this.state.focused }
                     hovered={ this.state.hovered }
                     tabIndex={ -1 }
-                    view={ checked ? 'action' : undefined }
                     onClick={ this.handleChange }
                 >
                     {
@@ -176,6 +172,11 @@ class Radio extends React.Component {
                 />
             </div>
         );
+    }
+
+    @autobind
+    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+        event.stopPropagation();
     }
 
     @autobind

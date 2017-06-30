@@ -1,4 +1,4 @@
-import Footer from '../src/footer/footer';
+import Footer from '../src/footer';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'footer';

@@ -7,12 +7,8 @@ import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
 
-import Popup from '../popup/popup';
-
 import cn from '../cn';
 import performance from '../performance';
-
-import './radio-group.css';
 
 /**
  * Компонент группы радио-кнопок.
@@ -27,12 +23,12 @@ class RadioGroup extends React.Component {
         value: Type.string,
         /** Отображение попапа с ошибкой в момент когда фокус находится на компоненте */
         error: Type.node,
-        /** Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия */
-        errorDirections: Type.arrayOf(Type.string),
         /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,
+        /** Управление возможностью изменения состояния 'checked' дочерних компонентов `Radio` */
+        disabled: Type.bool,
         /** Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Тема компонента */
@@ -48,8 +44,7 @@ class RadioGroup extends React.Component {
     };
 
     static defaultProps = {
-        type: 'normal',
-        errorDirections: ['right-center', 'right-top', 'right-bottom', 'bottom-left']
+        type: 'normal'
     };
 
     state = {
@@ -57,20 +52,14 @@ class RadioGroup extends React.Component {
         focused: false
     };
 
-    root;
-
-    componentDidMount() {
-        this.ensureErrorPopupTarget();
-    }
-
-    componentDidUpdate() {
-        this.ensureErrorPopupTarget();
-    }
-
     render(cn) {
         let children = null;
         let props = { name: this.props.name };
         let radioGroupParts = {};
+
+        if (this.props.disabled !== undefined) {
+            props.disabled = this.props.disabled;
+        }
 
         if (this.props.children) {
             children = this.props.children.length ? this.props.children : [this.props.children];
@@ -102,36 +91,26 @@ class RadioGroup extends React.Component {
         }
         return (
             <span
-                className={ `${cn({
-                    type: this.props.type,
-                    invalid: !!this.props.error,
-                    ...props
-                })} control-group` }
+                className={
+                    `${cn({
+                        type: this.props.type,
+                        invalid: !!this.props.error,
+                        ...props
+                    })} control-group${this.props.error ? ' control-group_invalid' : ''}`
+                }
                 role='group'
                 tabIndex='-1'
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
-                ref={ (root) => { this.root = root; } }
             >
                 { createFragment(radioGroupParts) }
-                { this.renderErrorPopup() }
+                {
+                    this.props.error &&
+                    <span className={ cn('sub') }>
+                        { this.props.error }
+                    </span>
+                }
             </span>
-        );
-    }
-
-    renderErrorPopup() {
-        return (
-            this.props.error && this.state.focused &&
-            <Popup
-                directions={ this.props.errorDirections }
-                ref={ (popup) => { this.errorPopup = popup; } }
-                type='tooltip'
-                mainOffset={ 13 }
-                visible={ true }
-                invalid={ true }
-            >
-                { this.props.error }
-            </Popup>
         );
     }
 
@@ -183,12 +162,6 @@ class RadioGroup extends React.Component {
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();
-        }
-    }
-
-    ensureErrorPopupTarget() {
-        if (this.props.error && this.state.focused) {
-            this.errorPopup.setTarget(this.root);
         }
     }
 }

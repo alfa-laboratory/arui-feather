@@ -1,0 +1,92 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../../vars-fantasy.css';
+
+.radio-group {
+    display: inline-block;
+    outline: none;
+    font-family: var(--font);
+    font-weight: var(--font-weight-normal);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    .radio_size_s,
+    .radio_size_m {
+        margin-bottom: 10px;
+    }
+
+    .radio_size_l,
+    .radio_size_xl {
+        margin-bottom: 12px;
+    }
+
+    &_type_normal {
+        .radio {
+            display: block;
+        }
+    }
+}
+
+.radio-group_invalid {
+    padding-left: 10px;
+    border-left: 1px solid var(--color-error-translucent);
+
+    .radio-group__sub {
+        display: table-caption;
+        caption-side: bottom;
+        padding-top: 5px;
+        color: var(--color-error);
+        font-size: var(--font-size-s);
+    }
+
+    &.radio-group_type_normal .radio-group__sub {
+        padding-top: 0;
+    }
+}
+
+.radio-group_type_button {
+    white-space: nowrap;
+
+    .radio {
+        margin-bottom: 0;
+    }
+
+    .radio + .radio {
+        margin-left: calc(var(--gap-s) / 2);
+    }
+}
+
+.radio-group_type_line {
+    .radio {
+        margin-bottom: 0;
+    }
+
+    .radio_size_s,
+    .radio_size_m {
+        margin-right: 13px;
+    }
+
+    .radio_size_l,
+    .radio_size_xl {
+        margin-right: 15px;
+    }
+
+    .radio:last-child {
+        margin-right: 0;
+    }
+}
+
+.radio-group_width_available {
+    display: flex;
+
+    &.radio-group_invalid {
+        .radio-group__sub {
+            padding-left: 10px;
+            border-left: 1px solid var(--color-error-translucent);
+        }
+    }
+}

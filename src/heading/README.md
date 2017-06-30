@@ -1,9 +1,17 @@
 ```
 <div>
-    <Heading>Heading H1 by default</Heading>
-    <Heading size='s'>Heading H4</Heading>
-    <Heading size='m'>Heading H3</Heading>
-    <Heading size='l'>Heading H2</Heading>
-    <Heading size='xl'>Heading H1</Heading>
+    <Heading size='xl'>
+        Заголовок первого уровня
+    </Heading>
+    <Heading size='l'>
+        Многострочный заголовок, длина которого иногда бывает так некстати
+    </Heading>
+    <Heading size='m'>
+        Очень длинный загловок в&nbsp;несколько строчек,
+        чтобы проверить правильность интерлиньяжа
+    </Heading>
+    <Heading size='s'>
+        Низкоуровневый заголовок
+    </Heading>
 </div>
 ```

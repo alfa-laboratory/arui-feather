@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from '../../src/button/button';
+import Button from '../../src/button';
 import DemoSection from '../demo-section';
 import { LOREM_IPSUM } from '../../src/vars';
-import Paragraph from '../../src/paragraph/paragraph';
-import Popup from '../../src/popup/popup';
-import PopupContainerProvider from '../../src/popup-container-provider/popup-container-provider';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Paragraph from '../../src/paragraph';
+import Popup from '../../src/popup';
+import PopupContainerProvider from '../../src/popup-container-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 

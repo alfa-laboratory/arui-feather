@@ -1,51 +1,53 @@
+Обычная ссылка
 ```
-const layoutStyle = {
-    paddingRight: '10px'
-};
 <div>
-    {['', 'pseudo', 'disabled', 'checked'].map(mod => (
-        <div key={ mod }>
-            {['s', 'm', 'l', 'xl'].map(size => (
-                <span style={ layoutStyle }>
-                    <Link {...{
-                        text: `${mod} link`,
-                        size,
-                        [mod]: true
-                    }} />
-                </span>
-            ))}
-        </div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <span className='row'>
+            <div className='column'>
+                <Link
+                    text='Вернуться в интернет-банк'
+                    size={ size }
+                />
+            </div>
+        </span>
+    ))}
+</div>
+```
+Псевдо ссылка
+```
+<div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <span className='row'>
+            <div className='column'>
+                <Link
+                    text='Показать больше'
+                    size={ size }
+                    pseudo={ true }
+                />
+            </div>
+        </span>
     ))}
 </div>
 ```
 
+Ссылки без подчеркивания
 ```
-const layoutStyle = {
-    paddingRight: '10px'
+const columnStyle = {
+    justifyContent: 'center',
+    display: 'flex',
+    width: '50%'
 };
-const iconStyle = {
-    marginRight: '5px'
-};
-<div>
-    {['', 'pseudo', 'disabled', 'checked'].map(mod => (
-        <div key={ mod }>
-            {['s', 'm', 'l', 'xl'].map(size => {
-                const props = {
-                    text: `${mod} link`,
-                    size,
-                    [mod]: true
-                };
-                return  (
-                    <span style={ layoutStyle }>
-                        <Link { ...props } >
-                            <Icon { ...props } 
-                                style={ iconStyle }
-                                icon='ok' />
-                        </Link>
-                    </span>
-                );
-            })}
-        </div>
+<div style={ { width: '100%' } }>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <span className='row'>
+            <div className='column' style={ columnStyle }>
+                <Link size={ size } >😊</Link>
+            </div>
+            <div className='column' style={ columnStyle }>
+
+                <Link size={ size } >¯\_(ツ)_/¯</Link>
+            </div>
+        </span>
     ))}
 </div>
 ```

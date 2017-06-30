@@ -6,6 +6,7 @@
     overflow: hidden;
     transition: height .3s ease;
     position: relative;
+    width: 100%;
 
     &__content {
         position: absolute;

@@ -7,25 +7,13 @@
 import Footer from 'arui-feather/footer';
 ```
 
-## Примеры
-
-
-```javascript
-import Page from 'arui-feather/page';
-import Header from 'arui-feather/header';
-import Footer from 'arui-feather/footer';
-
-<Page header={ <Header /> } footer={ <Footer /> }>
-    Контент страницы...
-</Page>
-```
 
 
 
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | menu | Node |  |  | Меню в подвале |
 | additional | Node | `'Сделано в Альфа-Лаборатории'`  |  | Дополнительный текст |

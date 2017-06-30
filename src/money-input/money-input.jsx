@@ -53,7 +53,7 @@ function splitInteger(str) {
 }
 
 /**
- * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей
+ * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
  *
  * @extends Input
  */
@@ -192,7 +192,7 @@ class MoneyInput extends React.Component {
         this.mask = new Mask(this.maskPattern);
 
         if (this.root) {
-            this.root.getControl().setMask(this.maskPattern);
+            this.root.getMaskedInputInstance().setMask(this.maskPattern);
         }
     }
 

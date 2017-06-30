@@ -1,6 +1,6 @@
-import Attach from '../src/attach/attach';
+import Attach from '../src/attach';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Icon from '../src/icon/icon';
+import Icon from '../src/icon';
 
 const NAME = 'attach';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
@@ -51,11 +51,8 @@ geminiReact.suite(NAME, function () {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused-hard', function (actions) {
-                                actions.focus(this.renderedComponent);
+                            .capture('focused', function (actions, find) {
+                                actions.focus(find('.attach__control'));
                             });
                     } else {
                         suite

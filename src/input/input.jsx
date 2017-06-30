@@ -7,22 +7,16 @@ import React from 'react';
 import Type from 'prop-types';
 
 import MaskedInput from '../masked-input/masked-input';
-import Popup from '../popup/popup';
 
 import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
-import { INPUT_SIZE_CORRECTION_RATIO, SCROLL_TO_CORRECTION } from '../vars';
-
-import './input_mode_link.css';
-import './input_theme_alfa-on-color.css';
-import './input_theme_alfa-on-white.css';
-import './input.css';
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
  * Компонент текстового поля ввода.
  */
-@cn('input', Popup, MaskedInput)
+@cn('input', MaskedInput)
 @performance()
 class Input extends React.Component {
     static propTypes = {
@@ -34,8 +28,6 @@ class Input extends React.Component {
         type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
-        /** Визуальный стиль поля */
-        view: Type.oneOf(['default', 'line']),
         /** Управление автозаполнением компонента */
         autocomplete: Type.bool,
         /** Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления */
@@ -54,12 +46,12 @@ class Input extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию */
+        /** Содержимое поля ввода */
         value: Type.string,
+        /** Содержимое поля ввода, указанное по умолчанию */
+        defaultValue: Type.string,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
-        /** Подсказка в текстовом поле */
-        placeholder: Type.string,
         /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
         mask: Type.string,
         /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
@@ -77,12 +69,14 @@ class Input extends React.Component {
         leftAddons: Type.node,
         /** Добавление дополнительных элементов к инпуту справа */
         rightAddons: Type.node,
-        /** Отображение попапа с ошибкой в момент когда фокус находится в поле ввода */
+        /** Лейбл для поля */
+        label: Type.node,
+        /** Подсказка в поле */
+        placeholder: Type.string,
+        /** Подсказка под полем */
+        hint: Type.node,
+        /** Отображение ошибки */
         error: Type.node,
-        /** Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия */
-        errorDirections: Type.arrayOf(Type.string),
-        /** Управление возможностью отображения попапа с ошибкой */
-        showErrorPopup: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -121,38 +115,35 @@ class Input extends React.Component {
 
     static defaultProps = {
         noValidate: false,
-        showErrorPopup: true,
-        errorDirections: ['right-center', 'right-top', 'right-bottom', 'bottom-left'],
         size: 'm',
-        type: 'text',
-        view: 'default'
+        type: 'text'
     };
 
     state = {
         focused: false,
-        value: ''
+        value: this.props.defaultValue || ''
     };
 
+    /**
+     * @type {HTMLSpanElement}
+     */
     root;
+
+    /**
+     * @type {HTMLSpanElement}
+     */
+    box;
+
+    /**
+     * @type {HTMLInputElement}
+     */
     control;
-    errorPopup;
 
-    componentDidMount() {
-        this.ensureErrorPopupTarget();
-    }
-
-    componentDidUpdate() {
-        this.ensureErrorPopupTarget();
-    }
-
-    render(cn, Popup, MaskedInput) {
+    render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
-
-        let content = this.renderContent(cn, MaskedInput);
-        if (hasAddons) {
-            content = <span className={ cn('addons-layout') }>{ content }</span>;
-        }
-
+        let value = this.props.value !== undefined
+            ? this.props.value
+            : this.state.value;
         let focused = this.getFocused();
 
         return (
@@ -161,37 +152,37 @@ class Input extends React.Component {
                     type: this.props.type,
                     disabled: this.props.disabled,
                     focused,
-                    width: this.props.width,
                     size: this.props.size,
+                    width: this.props.width,
+                    'has-label': !!this.props.label,
+                    'has-value': !!value,
                     'has-icon': !!this.props.icon,
                     'has-clear': !!this.props.clear,
                     'has-addons': hasAddons,
-                    invalid: !!this.props.error,
-                    view: this.props.view
+                    invalid: !!this.props.error
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
-                { content }
-                { this.renderErrorPopup(Popup) }
+                <span className={ cn('inner') }>
+                    {
+                        !!this.props.label &&
+                        <span className={ cn('top') }>
+                            { this.props.label }
+                        </span>
+                    }
+                    { this.renderContent(cn, MaskedInput) }
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
+                </span>
             </span>
         );
     }
 
     renderContent(cn, MaskedInput) {
-        return ([
-            this.props.leftAddons &&
-                <span className={ cn('addons', { left: true }) } key='left-addons'>
-                    { this.props.leftAddons }
-                </span>,
-            this.renderInput(cn, MaskedInput),
-            this.props.rightAddons &&
-                <span className={ cn('addons', { right: true }) } key='right-addons'>
-                    { this.props.rightAddons }
-                </span>
-        ]);
-    }
-
-    renderInput(cn, MaskedInput) {
         let isMaskedInput = this.props.mask !== undefined;
         let value = this.props.value !== undefined
             ? this.props.value
@@ -211,7 +202,6 @@ class Input extends React.Component {
             placeholder: this.props.placeholder,
             pattern: this.props.pattern,
             ref: (control) => { this.control = control; },
-            size: this.getOptimalSize(),
             title: this.props.title,
             onChange: this.handleChange,
             onFocus: this.handleFocus,
@@ -227,7 +217,17 @@ class Input extends React.Component {
         };
 
         return (
-            <span className={ cn('box') } key='input-wrapper'>
+            <span
+                className={ cn('box') }
+                key='input-wrapper'
+                ref={ (box) => { this.box = box; } }
+            >
+                {
+                    this.props.leftAddons &&
+                    <span className={ cn('addons', { left: true }) } key='left-addons'>
+                        { this.props.leftAddons }
+                    </span>
+                }
                 {
                     !isMaskedInput
                         ? <input { ...inputProps } />
@@ -251,25 +251,13 @@ class Input extends React.Component {
                         { this.props.icon }
                     </span>
                 }
+                {
+                    this.props.rightAddons &&
+                    <span className={ cn('addons', { right: true }) } key='right-addons'>
+                        { this.props.rightAddons }
+                    </span>
+                }
             </span>
-        );
-    }
-
-    renderErrorPopup(Popup) {
-        return (
-            this.props.error && this.props.showErrorPopup && this.getFocused() &&
-            <Popup
-                directions={ this.props.errorDirections }
-                ref={ (errorPopup) => { this.errorPopup = errorPopup; } }
-                for={ this.props.name }
-                size={ this.props.size }
-                type='tooltip'
-                mainOffset={ 13 }
-                visible={ true }
-                invalid={ true }
-            >
-                { this.props.error }
-            </Popup>
         );
     }
 
@@ -374,6 +362,45 @@ class Input extends React.Component {
     }
 
     /**
+     * Возвращает ссылку на инстанс контейнера для контрола.
+     *
+     * @public
+     * @returns {HTMLSpanElement}
+     */
+    getBoxNode() {
+        return this.box;
+    }
+
+    /**
+     * Возвращает ссылку на HTMLElement инпута.
+     *
+     * @public
+     * @returns {HTMLInputElement}
+     */
+    getControl() {
+        if (this.props.mask !== undefined) {
+            return this.control.getControl();
+        }
+
+        return this.control;
+    }
+
+    /**
+     * Возвращает ссылку на инстанс MaskedInput.
+     * Если маска не была установлена, возвращает null.
+     *
+     * @public
+     * @returns {MaskedInput|null}
+     */
+    getMaskedInputInstance() {
+        if (this.props.mask !== undefined) {
+            return this.control;
+        }
+
+        return null;
+    }
+
+    /**
      * Устанавливает фокус на поле ввода.
      *
      * @public
@@ -416,17 +443,6 @@ class Input extends React.Component {
     }
 
     /**
-     * Возвращает ссылку на инстанс контрола.
-     * Для полей ввода с маской ссылку на объект `MaskedInput`.
-     *
-     * @public
-     * @returns {React.Component}
-     */
-    getControl() {
-        return this.control;
-    }
-
-    /**
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
      * @param {String} value Новое значение
@@ -439,12 +455,6 @@ class Input extends React.Component {
         }
     }
 
-    ensureErrorPopupTarget() {
-        if (this.props.error && this.props.showErrorPopup && this.getFocused()) {
-            this.errorPopup.setTarget(this.root);
-        }
-    }
-
     /**
      * Возвращает состояние фокуса.
      *
@@ -452,23 +462,6 @@ class Input extends React.Component {
      */
     getFocused() {
         return this.props.focused !== undefined ? this.props.focused : this.state.focused;
-    }
-
-    /**
-     * Вычисляет оптимальную длину для атрибута `size` с корректировкой на использование пропорционального шрифта.
-     * Для нормализации минимальной ширины поля ввода между браузерами и переопределения установленного
-     * по-умолчанию в браузере значения атрибута `size` равному 20.
-     * Коэффициент с корректировкой на пропорциональный шрифт необходим для переопределения вычисления браузером
-     * итоговой ширины поля на основе значения `size` и ширины глифов моноширинного шрифта.
-     * https://www.w3.org/TR/html4/interact/forms.html#adef-size-INPUT
-     *
-     * @returns {Number}
-     */
-    getOptimalSize() {
-        let { mask, maxLength } = this.props;
-        let length = mask !== undefined ? mask.length : maxLength || 1;
-
-        return Math.floor(length * INPUT_SIZE_CORRECTION_RATIO);
     }
 }
 

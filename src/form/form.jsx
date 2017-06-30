@@ -9,8 +9,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-import './form.css';
-
 /**
  * Компонент формы.
  */

@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Textarea from '../src/textarea/textarea';
+import Textarea from '../src/textarea';
 
 const NAME = 'textarea';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
@@ -52,11 +52,8 @@ geminiReact.suite(NAME, () => {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
                             .capture('focused', function (actions) {
-                                actions.focus(this.renderedComponent);
+                                actions.mouseUp(this.renderedComponent);
                             });
                     }
                 });

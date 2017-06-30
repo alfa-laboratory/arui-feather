@@ -37,8 +37,8 @@ function renderSelect(props) {
         }
     );
 
-    let nativeSelectNode = select.node.querySelector('.select_native');
-    let buttonNode = select.node.querySelector('.select__button');
+    let nativeSelectNode = select.node.querySelector('.select__native-control');
+    let buttonNode = select.node.querySelector('.select-button');
     let popupNode = document.querySelector('.popup');
     let menuNode = popupNode.querySelector('.select__menu');
 
@@ -63,19 +63,66 @@ describe('select', () => {
         expect(select.node).to.exist;
     });
 
-    it('should render button and popup with options', () => {
-        let { select, popupNode, buttonNode } = renderSelect({ options: OPTIONS });
+    it('should render popup with options', () => {
+        let { select, popupNode } = renderSelect({ options: OPTIONS });
 
         expect(select.node).to.exist;
         expect(popupNode).to.have.class('popup');
-        expect(buttonNode).to.have.class('button');
     });
 
-    it('should render placeholder text', () => {
-        let selectProps = { options: OPTIONS, placeholder: 'Select something' };
-        let { buttonNode } = renderSelect(selectProps);
+    it('should render hidden input', () => {
+        let { select } = renderSelect({ options: OPTIONS });
+        let hiddenInputNode = select.node.querySelector('input');
 
-        expect(buttonNode).to.have.text('Select something');
+        expect(hiddenInputNode).to.exist;
+    });
+
+    it('should render hidden input with proper id attr', () => {
+        let { select } = renderSelect({ options: OPTIONS, id: 'id' });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.have.attr('id', 'id');
+    });
+
+    it('should render hidden input with proper name attr', () => {
+        let { select } = renderSelect({ options: OPTIONS, name: 'name' });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.have.attr('name', 'name');
+    });
+
+    it('should render hidden input with proper value attr', () => {
+        let { select } = renderSelect({ options: OPTIONS, value: ['value'] });
+        let hiddenInputNode = select.node.querySelector('input');
+
+        expect(hiddenInputNode).to.have.attr('value', 'value');
+    });
+
+    it('should render with `label` from props', () => {
+        let { select } = renderSelect({ options: OPTIONS, label: 'Label' });
+        let topNode = select.node.querySelector('.select__top');
+
+        expect(topNode).to.have.text('Label');
+    });
+
+    it('should render with `placeholder` from props', () => {
+        let { buttonNode } = renderSelect({ options: OPTIONS, placeholder: 'Placeholder' });
+
+        expect(buttonNode).to.have.text('Placeholder');
+    });
+
+    it('should render with `hint` from props', () => {
+        let { select } = renderSelect({ options: OPTIONS, hint: 'Hint' });
+        let subNode = select.node.querySelector('.select__sub');
+
+        expect(subNode).to.have.text('Hint');
+    });
+
+    it('should render with `error` from props', () => {
+        let { select } = renderSelect({ options: OPTIONS, error: 'Error' });
+        let subNode = select.node.querySelector('.select__sub');
+
+        expect(subNode).to.have.text('Error');
     });
 
     it('should set width to popup equal or more than button width', () => {
@@ -90,29 +137,6 @@ describe('select', () => {
         let buttonWidth = buttonNode.getBoundingClientRect().width;
 
         expect(popupWidth).to.be.at.least(buttonWidth);
-    });
-
-    it('should set popup width equal to button width when equalPopupWidth = true', () => {
-        let selectProps = {
-            options: [
-                {
-                    value: 1,
-                    text: <div>Very long option text in block element to make select popup strech</div>
-                },
-                {
-                    value: 2,
-                    text: <div>Much, much longer option text in another block element to make select popup strech</div>
-                }
-            ],
-            equalPopupWidth: true,
-            opened: true
-        };
-
-        let { popupNode, buttonNode } = renderSelect(selectProps);
-        let popupWidth = popupNode.getBoundingClientRect().width;
-        let buttonWidth = buttonNode.getBoundingClientRect().width;
-
-        expect(popupWidth).to.be.equal(buttonWidth);
     });
 
     it('should show multiply options', () => {
@@ -305,6 +329,31 @@ describe('select', () => {
             expect(optGroup).to.have.attr('label', 'Select something');
         });
     } else {
+        it('should set popup width equal to button width when equalPopupWidth = true', () => {
+            let selectProps = {
+                options: [
+                    {
+                        value: 1,
+                        text: <div>Very long option text in block element to make select popup strech</div>
+                    },
+                    {
+                        value: 2,
+                        text: <div>
+                            Much, much longer option text in another block element to make select popup strech
+                        </div>
+                    }
+                ],
+                equalPopupWidth: true,
+                opened: true
+            };
+
+            let { popupNode, buttonNode } = renderSelect(selectProps);
+            let popupWidth = popupNode.getBoundingClientRect().width;
+            let buttonWidth = buttonNode.getBoundingClientRect().width;
+
+            expect(popupWidth).to.be.equal(buttonWidth);
+        });
+
         it('should call `onButtonFocus` after component was focused', (done) => {
             let onButtonFocus = chai.spy();
             let { select } = renderSelect({ options: OPTIONS, onButtonFocus });

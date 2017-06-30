@@ -1,6 +1,6 @@
 # Collapse
 
-Компонент "подката": позволяет спрятать кусок текста за ссылку "Еще...".
+Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
 
 ```javascript
 import Collapse from 'arui-feather/collapse';
@@ -12,7 +12,7 @@ import Collapse from 'arui-feather/collapse';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | isExpanded | Boolean |  |  | Управление состоянием `expand`/`collapse` компонента |
 | collapsedLabel | String | `'Expand'`  |  | Текст ссылки в `expand` состоянии |

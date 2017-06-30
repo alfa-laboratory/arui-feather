@@ -1,9 +1,14 @@
 ```
 <div>
     {['error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'].map(icon => (
-        <div>
+        <div className='row' >
             {['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <Icon {...{size, icon}} />
+                <div className='column l' >
+                    <Icon
+                        size={ size }
+                        icon={ icon }
+                    />
+                </div>
             ))}
         </div>
     ))}
@@ -13,14 +18,15 @@
 ```
 <div>
     {['error', 'ok'].map(icon => (
-        <div>
+        <div className='row' >
             {['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <Icon {...{
-                        size,
-                        icon,
-                        theme: 'alfa-on-colored'
-                    }
-                } />
+                <div className='column l' >
+                    <Icon
+                        size={ size }
+                        icon={ icon }
+                        theme='alfa-on-colored'
+                    />
+                </div>
             ))}
         </div>
     ))}

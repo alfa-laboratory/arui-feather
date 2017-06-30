@@ -21,9 +21,11 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
-import './select.css';
-import './select_theme_alfa-on-color.css';
-import './select_theme_alfa-on-white.css';
+/**
+ * Элемент кнопки для выпадающего списка.
+ */
+@cn('select-button')
+class SelectButton extends Button {}
 
 /**
  * @typedef {Object} CheckedOption
@@ -36,7 +38,7 @@ import './select_theme_alfa-on-white.css';
 /**
  * Компонент выпадающего списка.
  */
-@cn('select', Popup)
+@cn('select', SelectButton, Popup)
 @performance(true)
 class Select extends React.Component {
     static propTypes = {
@@ -51,8 +53,6 @@ class Select extends React.Component {
             'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Подсказка, которая отображается в кнопке раскрывающегося списка, в случае, если ни один из пунктов выбран */
-        placeholder: Type.string,
         /** Управление возможностью редактирования значения */
         disabled: Type.bool,
         /** Управление видимостью выпадающего списка */
@@ -92,13 +92,14 @@ class Select extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Содержание попапа с ошибкой */
+        /** Лейбл для поля */
+        label: Type.node,
+        /** Подсказка в поле */
+        placeholder: Type.string,
+        /** Подсказка под полем */
+        hint: Type.node,
+        /** Отображение ошибки */
         error: Type.node,
-        /** Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия */
-        errorDirections: Type.arrayOf(Type.oneOf([
-            'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom',
-            'right-top', 'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
-        ])),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -130,7 +131,6 @@ class Select extends React.Component {
         disabled: false,
         size: 'm',
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
-        errorDirections: ['right-center', 'right-top', 'right-bottom', 'bottom-left'],
         width: 'default',
         equalPopupWidth: false,
         options: [],
@@ -142,12 +142,12 @@ class Select extends React.Component {
     };
 
     state = {
-        opened: !!this.props.opened,
         buttonFocused: false,
+        hasGroup: false,
         nativeFocused: false,
-        value: this.props.value || [],
+        opened: !!this.props.opened,
         popupStyles: {},
-        hasGroup: false
+        value: this.props.value || []
     };
 
     /**
@@ -170,11 +170,6 @@ class Select extends React.Component {
      */
     menu;
 
-    /**
-     * @type {Popup}
-     */
-    errorPopup;
-
     componentWillMount() {
         this.setState({
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
@@ -184,7 +179,6 @@ class Select extends React.Component {
     componentDidMount() {
         this.popup.setTarget(this.button.getNode());
         this.updatePopupStyles();
-        this.ensureErrorPopupTarget();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -197,11 +191,7 @@ class Select extends React.Component {
         });
     }
 
-    componentDidUpdate() {
-        this.ensureErrorPopupTarget();
-    }
-
-    render(cn, Popup) {
+    render(cn, SelectButton, Popup) {
         let value = this.getValue();
 
         return (
@@ -213,30 +203,44 @@ class Select extends React.Component {
                     disabled: this.props.disabled,
                     checked: this.props.mode !== 'radio' && value.length > 0,
                     focused: this.getFocused(),
+                    'has-label': !!this.props.label,
+                    'has-value': !!value,
                     invalid: !!this.props.error
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
-                <input
-                    type='hidden'
-                    name={ this.props.name }
-                    id={ this.props.id }
-                    value={ value }
-                />
-                { this.renderButton(cn) }
-                { this.renderNativeSelect(cn) }
-                { this.renderPopup(cn, Popup) }
-                { this.renderErrorPopup(Popup) }
+                <span className={ cn('inner') }>
+                    <input
+                        id={ this.props.id }
+                        name={ this.props.name }
+                        type='hidden'
+                        value={ value }
+                    />
+                    {
+                        !!this.props.label &&
+                        <span className={ cn('top') }>
+                            { this.props.label }
+                        </span>
+                    }
+                    { this.renderButton(cn, SelectButton) }
+                    { this.renderNativeSelect(cn) }
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
+                    { this.renderPopup(cn, Popup) }
+                </span>
             </div>
         );
     }
 
-    renderButton(cn) {
+    renderButton(cn, SelectButton) {
         return (
-            <Button
-                className={ cn('button') }
-                size={ this.props.size }
+            <SelectButton
                 ref={ (button) => { this.button = button; } }
+                size={ this.props.size }
                 disabled={ this.props.disabled }
                 text={ this.renderButtonContent() }
                 rightAddons={ [
@@ -270,7 +274,7 @@ class Select extends React.Component {
             >
                 <select
                     ref={ (nativeSelect) => { this.nativeSelect = nativeSelect; } }
-                    className={ cn({ native: true }) }
+                    className={ cn('native-control') }
                     disabled={ this.props.disabled }
                     multiple={ isCheckMode && 'multiple' }
                     value={ value }
@@ -410,23 +414,6 @@ class Select extends React.Component {
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
         return checkedItemsText || this.props.placeholder;
-    }
-
-    renderErrorPopup(Popup) {
-        return (
-            this.props.error && this.getFocused() &&
-            <Popup
-                directions={ this.props.errorDirections }
-                ref={ (errorPopup) => { this.errorPopup = errorPopup; } }
-                type='tooltip'
-                mainOffset={ 13 }
-                size={ this.props.size }
-                visible={ true }
-                invalid={ true }
-            >
-                { this.props.error }
-            </Popup>
-        );
     }
 
     @autobind
@@ -671,7 +658,7 @@ class Select extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.button.getNode().getBoundingClientRect();
+        let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
@@ -687,12 +674,6 @@ class Select extends React.Component {
         this.menu.focus();
         scrollContainer.scrollTop = posX;
         scrollContainer.scrollLeft = posY;
-    }
-
-    ensureErrorPopupTarget() {
-        if (this.props.error && this.getFocused()) {
-            this.errorPopup.setTarget(this.root);
-        }
     }
 
     /**

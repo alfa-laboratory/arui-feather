@@ -11,8 +11,6 @@ import Button from '../button/button';
 import cn from '../cn';
 import performance from '../performance';
 
-import './attach.css';
-
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 
 /**
@@ -114,6 +112,8 @@ class Attach extends React.Component {
             onKeyDown: Type.func,
             onKeyUp: Type.func
         }),
+        /** Доступные для выбора MIME типы файлов */
+        accept: Type.string,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
         /** Управляет возможностью выбора нескольких файлов */
@@ -217,6 +217,7 @@ class Attach extends React.Component {
                             onChange={ this.handleInputChange }
                             onFocus={ this.handleFocus }
                             onBlur={ this.handleBlur }
+                            accept={ this.props.accept }
                         />
                     </label>
                 }

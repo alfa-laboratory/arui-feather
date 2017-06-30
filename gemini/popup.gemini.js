@@ -1,10 +1,11 @@
 import React from 'react';
 import Type from 'prop-types';
-import Button from '../src/button/button';
-import Paragraph from '../src/paragraph/paragraph';
-import Popup from '../src/popup/popup';
-import PopupContainerProvider from '../src/popup-container-provider/popup-container-provider';
-import ThemeProvider from '../src/theme-provider/theme-provider';
+
+import Button from '../src/button';
+import Paragraph from '../src/paragraph';
+import Popup from '../src/popup';
+import PopupContainerProvider from '../src/popup-container-provider';
+import ThemeProvider from '../src/theme-provider';
 import { LOREM_IPSUM } from '../src/vars';
 
 const NAME = 'popup';
@@ -86,7 +87,7 @@ class TestButtonPopupContainer extends React.Component {
 geminiReact.suite(NAME, function () {
     THEMES.forEach((theme) => {
         let themeSelector = `${NAME}_theme_${theme}`;
-        let providerSelector = `${themeSelector + NAME}_container-provider`;
+        let providerSelector = `${themeSelector}.${NAME}_container-provider`;
 
         SIZES.forEach((size) => {
             let sizeSelector = `${NAME}_size_${size}`;
@@ -103,7 +104,7 @@ geminiReact.suite(NAME, function () {
                     );
 
                     suite
-                        .setExtraCaptureElements(['.popup'])
+                        .setExtraCaptureElements([`.${NAME}`])
                         .render(template)
                         .capture('plain');
                 });

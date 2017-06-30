@@ -32,7 +32,7 @@ import Heading from 'arui-feather/heading';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | children | Node |  |  | Дочерний элемент `ThemeProvider` |
 | className | Function\|String |  |  | Дополнительный класс |

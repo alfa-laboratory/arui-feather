@@ -12,13 +12,12 @@ import Input from 'arui-feather/input';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | type | [TypeEnum](#TypeEnum) | `'text'`  |  | Тип поля.
 Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
 Подробнее: http://w3c.github.io/html/sec-forms.html#does-not-apply |
 | width | [WidthEnum](#WidthEnum) |  |  | Управление возможностью компонента занимать всю ширину родителя |
-| view | [ViewEnum](#ViewEnum) | `'default'`  |  | Визуальный стиль поля |
 | autocomplete | Boolean |  |  | Управление автозаполнением компонента |
 | disabled | Boolean |  |  | Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления |
 | disabledAttr | Boolean |  |  | Управление возможностью изменения атрибута компонента (без установки класса-модификатора для оформления) |
@@ -28,18 +27,19 @@ import Input from 'arui-feather/input';
 | clear | Boolean |  |  | Управление наличием крестика, сбрасывающего значение 'value' |
 | id | String |  |  | Уникальный идентификатор блока |
 | name | String |  |  | Уникальное имя блока |
-| value | String |  |  | Содержимое поля ввода, указанное по умолчанию |
+| value | String |  |  | Содержимое поля ввода |
+| defaultValue | String |  |  | Содержимое поля ввода, указанное по умолчанию |
 | tabIndex | Number |  |  | Последовательность перехода между контролами при нажатии на Tab |
-| placeholder | String |  |  | Подсказка в текстовом поле |
 | mask | String |  |  | Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) |
 | maskFormatCharacters | objectOf |  |  | Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` |
 | pattern | String |  |  | Стандартное ствойство HTMLInputElement 'pattern'. Может быть использовано для показа корректной клавиатуры на мобильных устройствах. |
 | noValidate | Boolean | `false`  |  | Управление встроенной проверкой данных введённых пользователем в поле на корректность |
 | leftAddons | Node |  |  | Добавление дополнительных элементов к инпуту слева |
 | rightAddons | Node |  |  | Добавление дополнительных элементов к инпуту справа |
-| error | Node |  |  | Отображение попапа с ошибкой в момент когда фокус находится в поле ввода |
-| errorDirections | Array.<String> | `['right-center', 'right-top', 'right-bottom', 'bottom-left']`  |  | Расположение попапа с ошибкой (в порядке приоритета) относительно точки открытия |
-| showErrorPopup | Boolean | `true`  |  | Управление возможностью отображения попапа с ошибкой |
+| label | Node |  |  | Лейбл для поля |
+| placeholder | String |  |  | Подсказка в поле |
+| hint | Node |  |  | Подсказка под полем |
+| error | Node |  |  | Отображение ошибки |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |
@@ -66,12 +66,14 @@ import Input from 'arui-feather/input';
 | Метод  | Описание |
 | ------ | -------- |
 | getNode(): HTMLElement | Возвращает корневой `HTMLElement` компонента. |
+| getBoxNode(): HTMLSpanElement | Возвращает ссылку на инстанс контейнера для контрола. |
+| getControl(): HTMLInputElement | Возвращает ссылку на HTMLElement инпута. |
+| getMaskedInputInstance(): union | Возвращает ссылку на инстанс MaskedInput.
+Если маска не была установлена, возвращает null. |
 | focus() | Устанавливает фокус на поле ввода. |
 | blur() | Убирает фокус с поля ввода. |
 | scrollTo() | Скроллит страницу до поля ввода. |
 | setSelectionRange(start, end) | Устанавливает начальное и конечное положение выделения текста в элементе. |
-| getControl(): React.Component | Возвращает ссылку на инстанс контрола.
-Для полей ввода с маской ссылку на объект `MaskedInput`. |
 
 
 
@@ -101,12 +103,6 @@ import Input from 'arui-feather/input';
 
  * `'default'`
  * `'available'`
-
-
-### <a id="ViewEnum"></a>ViewEnum
-
- * `'default'`
- * `'line'`
 
 
 ### <a id="SizeEnum"></a>SizeEnum

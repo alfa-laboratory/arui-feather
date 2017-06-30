@@ -6,6 +6,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const reactDockGen = require('react-docgen');
+const upperCamelCase = require('uppercamelcase');
 const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
@@ -33,10 +34,64 @@ function reactDocGenWithMergedComposed(filePath, resolver, handlers) {
 module.exports = {
     title: 'ARUI FEATHER',
     serverPort: 3013,
+    styles: {
+        SectionHeading: {
+            heading: {
+                fontSize: '48px',
+                fontWeight: 'bold'
+            }
+        },
+        ToolbarButton: {
+            button: {
+                display: 'none'
+            }
+        },
+        Playground: {
+            preview: {
+                borderRadius: 0,
+                padding: 0
+            }
+        },
+        StyleGuide: {
+            content: {
+                maxWidth: 'none'
+            }
+        }
+    },
+    sections: [
+        {
+            name: 'Controls',
+            components: './src/!(page|app-content|app-title|app-menu|header|footer)/index.js'
+        },
+        {
+            name: 'Page Components',
+            components: () => [
+                'src/page/index.js',
+                'src/header/index.js',
+                'src/app-title/index.js',
+                'src/app-menu/index.js',
+                'src/app-content/index.js',
+                'src/footer/index.js'
+            ]
+        }
+    ],
     skipComponentsWithoutExample: true,
-    components: 'src/**/**/[a-z]*.jsx',
+    components: './src/*/index.js',
     propsParser(filePath, source, resolver, handlers) {
-        return reactDocGenWithMergedComposed(filePath, resolver, handlers);
+        // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
+        const componentDirName = path.dirname(filePath);
+        const componentName = componentDirName.split(path.sep).pop();
+        const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
+        return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
+    },
+    getComponentPathLine(filePath) {
+        const componentDirName = path.dirname(filePath);
+        const componentSourcesFileName = componentDirName.split(path.sep).pop();
+        const componentName = upperCamelCase(componentSourcesFileName);
+        return `import ${componentName} from 'arui-feather/${componentSourcesFileName}';`;
+    },
+    getExampleFilename(componentPath) {
+        return path.resolve(path.dirname(componentPath), './README.md');
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),

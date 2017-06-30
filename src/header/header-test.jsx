@@ -67,15 +67,12 @@ describe('header', () => {
         let onResize = chai.spy();
         let header = render(<Header onResize={ onResize } />);
 
+        header.node.style.height = '200px';
+
         setTimeout(() => {
             expect(onResize).to.have.been.called.once;
-            header.node.style.height = '200px';
-
-            setTimeout(() => {
-                expect(onResize).to.have.been.called.twice;
-                done();
-            }, 100);
-        }, 0);
+            done();
+        }, 100);
     });
 
     it('should call `onClick` callback after logotype was clicked', (done) => {

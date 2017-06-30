@@ -3,15 +3,15 @@ ol
 const ITEMS_OL = [
     {
         key: 'one',
-        value: 'One'
+        value: 'Накопительные счета'
     },
     {
         key: 'two',
-        value: 'Two'
+        value: 'Депозиты'
     },
     {
         key: 'three',
-        value: 'Three'
+        value: 'Бесплатные сервисы для накоплений'
     }
 ];
 
@@ -25,15 +25,15 @@ ul
 const ITEMS_UL = [
     {
         key: 'one',
-        value: 'Apple'
+        value: 'Индивидуальное обслуживание в любом отделении в России'
     },
     {
         key: 'two',
-        value: 'Orange'
+        value: 'Повышенные % ставки по депозитам'
     },
     {
         key: 'three',
-        value: 'Banana'
+        value: 'Льготная конвертация валют.'
     }
 ];
 <List

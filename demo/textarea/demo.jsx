@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Textarea from '../../src/textarea/textarea';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Textarea from '../../src/textarea';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 
@@ -25,7 +25,7 @@ class Demo extends React.Component {
                         <div>
                             <Textarea
                                 placeholder='Textarea...'
-                                error='something went wrong'
+                                error='Something went wrong'
                             />
                         </div>
                     </ThemeProvider>
@@ -52,7 +52,7 @@ class Demo extends React.Component {
                         <div>
                             <Textarea
                                 placeholder='Textarea...'
-                                error='something went wrong'
+                                error='Something went wrong'
                             />
                         </div>
                     </ThemeProvider>

@@ -4,28 +4,23 @@
 
 .playground-with-share-example-button {
     position: relative;
-
-    &:hover .playground-with-share-example-button__share-code {
-        opacity: 1;
-    }
+    margin-top: 60px;
 
     &__share-code {
-        color: #1978c8;
-        background: white;
-        border: none;
-        font-size: 14px;
-        margin: 1px;
+        background-image: url(./icon.svg);
+        background-color: white;
+        height: 24px;
+        width: 24px;
         position: absolute;
-        right: 120px;
-        top: 0;
-        padding: 6px 8px;
-        font-size: 14px;
-        opacity: 0;
-        transition: opacity ease-in-out .15s .2s;
-        z-index: 1;
+        right: 0;
+        top: -32px;
+        border: none;
+
+        &:focus {
+            outline: 1px dotted #f28a25;
+        }
 
         &:hover {
-            color: #f28a25;
             cursor: pointer;
         }
     }

@@ -4,14 +4,12 @@
 
 /* eslint max-len: 0 */
 
-// Коэффициент с корректировкой на пропорциональный шрифт для переопределения вычисления браузером
-// итоговой ширины поля на основе значения `size` и ширины глифов моноширинного шрифта.
-export const INPUT_SIZE_CORRECTION_RATIO = 1.1;
-
 export const SCROLL_TO_CORRECTION = 16;
 export const SCROLL_TO_DEFAULT_DURATION = 0;
 export const SCROLL_TO_NORMAL_DURATION = 250;
 export const SCROLL_TO_EASING = 'easeInOutSine';
+
+export const POPUP_MAIN_OFFSET = 12;
 
 export const LOREM_IPSUM = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',

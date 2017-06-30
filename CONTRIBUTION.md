@@ -262,7 +262,7 @@ function setTarget(target) {
 ```
 // Good
 
-feat(input): my new feature for input
+feat(input): add new feature for input
 ```
 
 ```

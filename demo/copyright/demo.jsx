@@ -1,7 +1,7 @@
 import React from 'react';
-import Copyright from '../../src/copyright/copyright';
+import Copyright from '../../src/copyright';
 import DemoSection from '../demo-section';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import ThemeProvider from '../../src/theme-provider';
 
 class Demo extends React.Component {
     render() {

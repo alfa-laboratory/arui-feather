@@ -1,28 +1,31 @@
 global.React = require('react');
 
 module.exports = {
-    gridUrl: 'http://localhost:8887',
-    rootUrl: 'http://localhost:8888',
+    gridUrl: 'http://ondemand.saucelabs.com/wd/hub',
+    rootUrl: 'http://localhost:8668',
     windowSize: '1024x768',
 
     httpTimeout: 60000,
     retry: 2,
     sessionsPerBrowser: 3,
-    suitesPerSession: 100,
+    suitesPerSession: 150,
 
     browsers: {
-        PhantomJS: {
+        chromeWin7: {
             desiredCapabilities: {
-                browserName: 'phantomjs'
+                browserName: 'chrome',
+                version: '57',
+                platform: 'Windows 7'
             }
         }
     },
 
     system: {
+        debug: false,
         exclude: [
             '.build/',
             'coverage/',
-            'demo/',
+            '*demo/',
             'docs/',
             'gemini/screens/',
             'gemini-*/',
@@ -34,14 +37,13 @@ module.exports = {
             optipng: true,
             react: {
                 jsModules: [
-                    './gemini-utils/polyfills.js',
-                    './gemini-utils/gemini-main.css',
-                    './src/main.css'
+                    './gemini-utils/gemini-main.css'
                 ],
-                port: 8888,
+                port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.config.gemini.js'
-            }
+            },
+            'saucelabs-info': {}
         },
         tempDir: './'
     }

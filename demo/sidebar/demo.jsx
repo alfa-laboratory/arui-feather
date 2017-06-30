@@ -1,14 +1,14 @@
 import React from 'react';
 import { autobind } from 'core-decorators';
 
-import Button from '../../src/button/button';
+import Button from '../../src/button';
 import DemoSection from '../demo-section';
-import Input from '../../src/input/input';
-import Heading from '../../src/heading/heading';
+import Input from '../../src/input';
+import Heading from '../../src/heading';
 import { LOREM_IPSUM } from '../../src/vars';
-import Paragraph from '../../src/paragraph/paragraph';
-import Sidebar from '../../src/sidebar/sidebar';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Paragraph from '../../src/paragraph';
+import Sidebar from '../../src/sidebar';
+import ThemeProvider from '../../src/theme-provider';
 
 import cn from '../../src/cn';
 
@@ -42,7 +42,7 @@ class Demo extends React.Component {
                                         <Input
                                             size='m'
                                             placeholder='Input...'
-                                            error='something went wrong'
+                                            error='Something went wrong'
                                         />
                                     </div>
                                     <Paragraph>

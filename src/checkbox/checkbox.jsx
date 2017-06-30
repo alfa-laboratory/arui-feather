@@ -13,14 +13,10 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-import './checkbox.css';
-import './checkbox_theme_alfa-on-color.css';
-import './checkbox_theme_alfa-on-white.css';
-
 /**
  * Компонент чекбокса.
  */
-@cn('checkbox')
+@cn('checkbox', Button)
 @performance()
 class CheckBox extends React.Component {
     static propTypes = {
@@ -71,7 +67,7 @@ class CheckBox extends React.Component {
 
     root;
 
-    render(cn) {
+    render(cn, Button) {
         let checked = this.props.checked !== undefined
             ? this.props.checked
             : this.state.checked;
@@ -94,7 +90,7 @@ class CheckBox extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                        ? this.renderButtonCheckbox(cn, checked)
+                        ? this.renderButtonCheckbox(cn, checked, Button)
                         : this.renderNormalCheckbox(cn, checked)
                 }
             </label>
@@ -114,6 +110,7 @@ class CheckBox extends React.Component {
                         value={ this.props.value }
                         checked={ checked }
                         disabled={ this.props.disabled }
+                        onClick={ this.handleInputControlClick }
                         onChange={ this.handleChange }
                     />
                 </span>
@@ -130,7 +127,7 @@ class CheckBox extends React.Component {
         );
     }
 
-    renderButtonCheckbox(cn, checked) {
+    renderButtonCheckbox(cn, checked, Button) {
         return (
             <div>
                 <Button
@@ -141,7 +138,6 @@ class CheckBox extends React.Component {
                     size={ this.props.size || 'm' }
                     focused={ this.state.focused }
                     hovered={ this.state.hovered }
-                    view={ checked ? 'action' : null }
                     onClick={ this.handleChange }
                 >
                     {
@@ -164,6 +160,11 @@ class CheckBox extends React.Component {
                 />
             </div>
         );
+    }
+
+    @autobind
+    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+        event.stopPropagation();
     }
 
     @autobind

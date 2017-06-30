@@ -1,10 +1,11 @@
+Всплывающее окно слева
 ```
 initialState = {
     visible: false
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Все ок слева
+        Нажми на меня!
     </Button>
     <Notification
         visible={ state.visible }
@@ -14,18 +15,19 @@ initialState = {
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Something went right
+        Я слева!
     </Notification>
 </div>
 ```
 
+Всплывающее окно справа
 ```
 initialState = {
     visible: false
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Все так себе
+        Нажми на меня!
     </Button>
     <Notification
         visible={ state.visible }
@@ -36,18 +38,19 @@ initialState = {
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Все так себе
+        Я справа
     </Notification>
 </div>
 ```
 
+Всплывающее окно с ошибкой
 ```
 initialState = {
     visible: false
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Все очень плохо
+        Нажми на меня!
     </Button>
     <Notification
         visible={ state.visible }
@@ -58,19 +61,19 @@ initialState = {
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Все очень плохо
+        Все очень плохо!
     </Notification>
 </div>
 ```
 
-
+Сообщение с иконкой
 ```
 initialState = {
     visible: false
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Custom notification
+        Нажми на меня!
     </Button>
     <Notification
         visible={ state.visible }
@@ -81,7 +84,7 @@ initialState = {
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        You can search
+        Ничего не найдено, попробуйте повторить поиск
     </Notification>
 </div>
 ```

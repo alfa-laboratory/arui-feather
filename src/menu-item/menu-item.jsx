@@ -12,8 +12,6 @@ import Link from '../link/link';
 import cn from '../cn';
 import performance from '../performance';
 
-import './menu-item.css';
-
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
@@ -95,8 +93,7 @@ class MenuItem extends React.Component {
                         switcherText={ content }
                         popupContent={ this.props.popup }
                         popupProps={ {
-                            directions: ['top-left'],
-                            height: 'available',
+                            directions: ['bottom-left'],
                             target: 'anchor'
                         } }
                         mode='hover'

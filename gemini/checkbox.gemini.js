@@ -1,4 +1,4 @@
-import Checkbox from '../src/checkbox/checkbox';
+import Checkbox from '../src/checkbox';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'checkbox';
@@ -52,10 +52,10 @@ geminiReact.suite(NAME, function () {
                                 actions.mouseDown(this.renderedComponent);
                             })
                             .capture('clicked', function (actions) {
-                                actions.click(this.renderedComponent);
+                                actions.mouseUp(this.renderedComponent);
                             })
-                            .capture('focused', function (actions) {
-                                actions.focus(this.renderedComponent);
+                            .capture('focused', function (actions, find) {
+                                actions.focus(find('.checkbox__control'));
                             });
                     }
                 });

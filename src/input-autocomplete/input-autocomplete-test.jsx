@@ -61,8 +61,8 @@ describe('input-autocomplete', () => {
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {
-        let { inputAutocomplete } = renderInputAutocomplete();
-        let elemTopPosition = inputAutocomplete.node.getBoundingClientRect().top;
+        let { inputAutocomplete, inputNode } = renderInputAutocomplete();
+        let elemTopPosition = inputNode.getBoundingClientRect().top;
         let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         inputAutocomplete.instance.scrollTo();
@@ -97,6 +97,32 @@ describe('input-autocomplete', () => {
         let popupWidth = popupNode.getBoundingClientRect().width;
 
         expect(popupWidth).to.be.at.least(inputWidth);
+    });
+
+    it('should set popup width equal to input width when equalPopupWidth = true', () => {
+        let props = {
+            options: [
+                {
+                    value: `Very, very long option text
+                            used just to make autocomplete popup
+                            strech really really wide and another
+                            couple of words just to be sure`
+                }
+            ],
+            equalPopupWidth: true,
+            opened: true
+        };
+
+        let { popupNode, inputNode } = renderInputAutocomplete(props);
+        let popupWidth = popupNode.getBoundingClientRect().width;
+        let inputWidth = inputNode.getBoundingClientRect().width;
+
+        expect(popupWidth).to.be.equal(inputWidth);
+    });
+
+    it('should set directions to popup', () => {
+        let { popupNode } = renderInputAutocomplete({ options: OPTIONS, directions: ['right-bottom'] });
+        expect(popupNode).to.have.class('popup_direction_right-bottom');
     });
 
     it('should render all options when input value is empty', () => {

@@ -1,7 +1,7 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Input from '../src/input/input';
-import Radio from '../src/radio/radio';
-import RadioGroup from '../src/radio-group/radio-group';
+import Input from '../src/input';
+import Radio from '../src/radio';
+import RadioGroup from '../src/radio-group';
 
 function renderAddons(size) {
     let buttonControlNodes = [1, 2, 3].map(item => (
@@ -42,9 +42,6 @@ const PROP_SETS = [
     },
     {
         disabled: true
-    },
-    {
-        view: 'line'
     }
 ];
 
@@ -90,11 +87,8 @@ geminiReact.suite(NAME, function () {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused-hard', function (actions) {
-                                actions.focus(this.renderedComponent);
+                            .capture('focused', function (actions, find) {
+                                actions.focus(find('.input__control'));
                             });
                     }
                 });

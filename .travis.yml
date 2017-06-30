@@ -1,24 +1,49 @@
+dist: trusty
+
 language: node_js
 
 node_js:
-  - stable
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+  - '7.4.0'
 
 env:
-  - CXX=g++-4.8
+  matrix:
+    - TEST_SCOPE: lint
+    - TEST_SCOPE: desktop_unit
+    - TEST_SCOPE: mobile_unit
+    - TEST_SCOPE: gemini
+
+matrix:
+  fast_finish: true
 
 install:
   - yarn install
 
-script:
-  - yarn lint
-  - yarn test
+before_script:
+  - |
+      if [ "${TEST_SCOPE}" == "gemini" ]; then
+        curl -L https://gist.githubusercontent.com/teryaew/ab7c8a1c377ba0796f20a007a1d830eb/raw/sauce-connect.sh | bash
+        cat .gemini.js
+      fi
 
-matrix:
-  fast_finish: true
+script:
+  - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
+  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then yarn test; fi
+  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 yarn test; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini-ci; fi
+
+after_success:
+  - |
+    if [ "${TRAVIS_BRANCH}" == "master" ]; then
+      if [ "${TEST_SCOPE}" == "lint" ]; then
+        sh ./tools/publish-styleguide.sh
+      fi
+      if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
+        sh ./tools/publish-styleguide-fantasy.sh
+      fi
+    fi
+
+after_failure:
+  - |
+    if [ "${TEST_SCOPE}" == "gemini" ]; then
+      sh ./tools/publish-gemini-report.sh
+    fi

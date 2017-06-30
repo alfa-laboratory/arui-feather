@@ -192,6 +192,16 @@ class MaskedInput extends React.Component {
     }
 
     /**
+     * Возвращает ссылку на HTMLElement инпута.
+     *
+     * @public
+     * @returns {HTMLInputElement}
+     */
+    getControl() {
+        return this.input;
+    }
+
+    /**
      * Синхронно обновляет маску на поле ввода.
      *
      * @public
@@ -222,7 +232,7 @@ class MaskedInput extends React.Component {
         // Если изменение поля ввода произошло не в конце ввода,
         // то необходимо починить стандартное поведение Реакта и
         // вернуть каретку к последнему изменению.
-        if (prevSelection < currentValue.length) {
+        if (prevSelection <= currentValue.length) {
             let newSelection = prevSelection;
 
             // Определяем тип операции, который был произведен над текстовым полем.

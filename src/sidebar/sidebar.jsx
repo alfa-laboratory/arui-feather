@@ -5,15 +5,12 @@
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import Icon from '../icon/icon';
 import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
 
 import cn from '../cn';
 import performance from '../performance';
-
-import './sidebar.css';
 
 /**
  * Изменяет класс для body. Нужен для управления скроллом
@@ -63,22 +60,6 @@ class Sidebar extends React.Component {
     }
 
     render(cn) {
-        const visible = this.props.visible;
-
-        return (
-            <CSSTransitionGroup
-                transitionName='sidebar-transition'
-                transitionAppear={ visible }
-                transitionAppearTimeout={ 450 }
-                transitionEnterTimeout={ 450 }
-                transitionLeaveTimeout={ 450 }
-            >
-                { visible ? this.renderSidebar(cn) : null }
-            </CSSTransitionGroup>
-        );
-    }
-
-    renderSidebar(cn) {
         const { hasCloser, children, visible } = this.props;
 
         return (

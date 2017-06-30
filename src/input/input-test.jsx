@@ -9,6 +9,7 @@ import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
 import Input from './input';
+import MaskedInput from '../masked-input';
 import Icon from '../icon/icon';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -83,24 +84,31 @@ describe('input', () => {
         }, 0);
     });
 
-    it('should set selection to all value when `setSelectionRange` method was called without parameters', () => {
+    it('should set selection to all value when `setSelectionRange` method was called without parameters', (done) => {
         let input = render(<Input value='test' />);
 
-        input.instance.setSelectionRange();
+        input.instance.focus();
 
-        expect(window.getSelection().toString()).to.be.eq('test');
+        setTimeout(() => {
+            input.instance.setSelectionRange();
+            expect(window.getSelection().toString()).to.be.eq('test');
+            done();
+        }, 500);
     });
 
-    it('should set selection when setSelection range was called with parameters', () => {
+    it('should set selection when setSelection range was called with parameters', (done) => {
         let input = render(<Input value='test' />);
 
-        input.instance.setSelectionRange(0, 2);
+        input.instance.focus();
 
-        expect(window.getSelection().toString()).to.be.eq('te');
+        setTimeout(() => {
+            input.instance.setSelectionRange(0, 2);
+            expect(window.getSelection().toString()).to.be.eq('te');
 
-        input.instance.setSelectionRange(2, 4);
-
-        expect(window.getSelection().toString()).to.be.eq('st');
+            input.instance.setSelectionRange(2, 4);
+            expect(window.getSelection().toString()).to.be.eq('st');
+            done();
+        }, 200);
     });
 
     it('should render without problems', function () {
@@ -125,6 +133,37 @@ describe('input', () => {
         let input = render(<Input focused={ true } />);
 
         expect(input.node).to.have.class('input_focused');
+    });
+
+    it('should render with `label` from props', () => {
+        let input = render(<Input label='Label' />);
+        let topNode = input.node.querySelector('.input__top');
+
+        expect(topNode).to.exist;
+        expect(topNode).to.have.text('Label');
+    });
+
+    it('should render with `placeholder` from props', () => {
+        let input = render(<Input placeholder='Placeholder' />);
+        let controlNode = input.node.querySelector('input');
+
+        expect(controlNode).to.have.attr('placeholder', 'Placeholder');
+    });
+
+    it('should render with `hint` from props', () => {
+        let input = render(<Input hint='Hint' />);
+        let subNode = input.node.querySelector('.input__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('Hint');
+    });
+
+    it('should render with `error` from props', () => {
+        let input = render(<Input error='Error' />);
+        let subNode = input.node.querySelector('.input__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('Error');
     });
 
     it('should render with `off` autocomplete attribute', () => {
@@ -319,6 +358,34 @@ describe('input', () => {
         let controlNode = input.node.querySelector('input');
 
         expect(controlNode.value).to.equal('А 456 ИТ');
+    });
+
+    it('should return `HTMLInputElement` when `getControl` method called', () => {
+        let input = render(<Input />);
+        let controlNode = input.instance.getControl();
+
+        expect(controlNode).to.be.instanceOf(HTMLInputElement);
+    });
+
+    it('should return `HTMLInputElement` when `getControl` method called and mask is set', () => {
+        let input = render(<Input mask='111' />);
+        let controlNode = input.instance.getControl();
+
+        expect(controlNode).to.be.instanceOf(HTMLInputElement);
+    });
+
+    it('should return null when `getMaskedInputInstance` method is called and mask is not set', () => {
+        let input = render(<Input />);
+        let maskedInputInstance = input.instance.getMaskedInputInstance();
+
+        expect(maskedInputInstance).to.be.null;
+    });
+
+    it('should return MaskedInput instance when getMaskedInputInstance method is called and mask is set', () => {
+        let input = render(<Input mask='111' />);
+        let maskedInputInstance = input.instance.getMaskedInputInstance();
+
+        expect(maskedInputInstance).to.be.instanceOf(MaskedInput);
     });
 
     if (bowser.mobile) {

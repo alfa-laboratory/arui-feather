@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from '../../src/button/button';
+import Button from '../../src/button';
 import DemoSection from '../demo-section';
-import Form from '../../src/form/form';
-import FormField from '../../src/form-field/form-field';
-import Input from '../../src/input/input';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Form from '../../src/form';
+import FormField from '../../src/form-field';
+import Input from '../../src/input';
+import ThemeProvider from '../../src/theme-provider';
 
 /* eslint no-alert: 0 */
 class Demo extends React.Component {

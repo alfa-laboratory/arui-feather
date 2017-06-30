@@ -160,23 +160,6 @@ describe('radio-group', () => {
         }, 0);
     });
 
-    it('should render error-popup on focus when error set', (done) => {
-        let radioGroup = render(
-            <RadioGroup error={ 'Текст ошибки' } >
-                <Radio key='1' />
-            </RadioGroup>
-        );
-
-        radioGroup.instance.focus();
-
-        setTimeout(() => {
-            let popupNode = document.querySelector('.popup');
-            expect(popupNode).to.exist;
-            expect(popupNode).to.contain.text('Текст ошибки');
-            done();
-        }, 0);
-    });
-
     it('should change other radio checked status when check one', function () {
         const radioGroupNode = render(
             <RadioGroup value='1'>
@@ -207,5 +190,32 @@ describe('radio-group', () => {
         simulate(secondRadioControlNode, 'change');
 
         expect(onChange).to.have.been.called.once;
+    });
+
+    it('should disable all child radios when disabled=true', () => {
+        let radioGroup = render(
+            <RadioGroup disabled={ true }>
+                <Radio key='1' />
+                <Radio key='2' />
+                <Radio key='3' />
+            </RadioGroup>
+        );
+
+        let disabledRadioNodes = radioGroup.node.querySelectorAll('.radio_disabled');
+        expect(disabledRadioNodes.length).to.equal(3);
+    });
+
+    it('shouldn\'t call `onChange` callback when disabled=true', function () {
+        let onChange = chai.spy();
+        let radioGroup = render(
+            <RadioGroup onChange={ onChange } disabled={ true }>
+                <Radio key='1' />
+            </RadioGroup>
+        );
+        let radio = radioGroup.node.querySelector('.radio');
+
+        simulate(radio, 'change');
+
+        expect(onChange).to.have.not.been.called;
     });
 });

@@ -1,6 +1,6 @@
 ```
     initialState = {
-      date: Date.now()
+        date: Date.now()
     };
     <Calendar
         value={ state.date }
@@ -9,17 +9,17 @@
                 date: newDate
             });
         } }
-    />   
+    />
 ```
 
 ```
 const addDays = require('date-fns/add_days');
-const startOfDay = require('date-fns/start_of_day');
 const subtractDays = require('date-fns/sub_days');
+
 initialState = {
-  date: Date.now(),
-  earlierLimit: subtractDays(new Date(), 3).valueOf(),
-  laterLimit: addDays(new Date(), 1).valueOf()
+    date: Date.now(),
+    earlierLimit: subtractDays(new Date(), 3).valueOf(),
+    laterLimit: addDays(new Date(), 1).valueOf()
 };
 
 <Calendar
@@ -38,11 +38,12 @@ initialState = {
 const addDays = require('date-fns/add_days');
 const startOfDay = require('date-fns/start_of_day');
 const subtractDays = require('date-fns/sub_days');
+
 initialState = {
-  date: Date.now()
+    date: Date.now()
 };
 const offDays = [subtractDays(new Date(), 2), addDays(new Date(), 2)]
-    .map(date => startOfDay().valueOf());
+    .map(date => startOfDay().valueOf(date));
 
 <Calendar
     value={ state.date }

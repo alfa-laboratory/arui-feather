@@ -21,47 +21,40 @@
 Можно заметить, что если начать печатать в середине textarea - курсор перескакивает в конец
 ```
 initialState = {
-	value: 'default'
+    value: 'default'
 };
 function handleChangeAsync(value) {
     setTimeout(() => {
-        setState({value});
+        setState({ value });
     }, 200);
 }
 <div>
     <Textarea
-        placeholder='Textarea autosize...'
-        autosize={ true }
+        hint={ `Current value in textarea: ${state.value}` }
+        placeholder='Textarea...'
         value={ state.value }
         onChange={ handleChangeAsync }
     />
-    <Message visible={ true } >
-       {`current value in textarea: ${state.value}`}
-    </Message>
 </div>
 ```
-Если вам не нужно модифицировать введенные пользователем данные - 
+Если вам не нужно модифицировать введенные пользователем данные -
 используйте параметр defaultValue для того чтобы задать начальное значение
 и синхронизируйте значение компонента с нужным хранилищем
 ```
 initialState = {
-	value: 'default'
+    value: 'default'
 };
 function handleChangeAsync(value) {
     setTimeout(() => {
-        setState({value});
+        setState({ value });
     }, 200);
 }
 <div>
     <Textarea
-        placeholder='Textarea autosize...'
-        autosize={ true }
         defaultValue={ state.value }
+        hint={ `Current value in textarea: ${state.value}` }
+        placeholder='Textarea...'
         onChange={ handleChangeAsync }
     />
-    <Message visible={ true }>
-       {`current value in textarea: ${state.value}`}
-    </Message>
-    <span></span>
 </div>
 ```

@@ -2,16 +2,16 @@
 ```
 <CheckBoxGroup>
     <CheckBox
-        text='Чекбокс'
+        text='Текущий счет'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Основной счет'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Семейный счет'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Зарплатный счет'
     />
 </CheckBoxGroup>
 ```
@@ -21,20 +21,20 @@
 <CheckBoxGroup type='button'>
     <CheckBox
         disabled={ true }
-        text='Чекбокс'
+        text='Текущий'
         type='button'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Основной'
         type='button'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Семейный'
         disabled={ true }
         type='button'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Зарплатный'
         type='button'
     />
 </CheckBoxGroup>
@@ -44,16 +44,16 @@
 ```
 <CheckBoxGroup type='line'>
     <CheckBox
-        text='Чекбокс'
+        text='Текущий'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Основной'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Семейный'
     />
     <CheckBox
-        text='Чекбокс'
+        text='Зарплатный'
     />
 </CheckBoxGroup>
 ```

@@ -11,8 +11,6 @@ import IsolatedContainer from '../isolated-container/isolated-container';
 import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 
-import './popup-container.css';
-
 /**
  * Становится родительским элементом для всех дочерних блоков `Popup`.
  * Предполагается задавать этому элементу `position: fixed` в стилях.

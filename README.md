@@ -71,6 +71,8 @@ Alfa Bank UI lightweight library
 
 Запуск тестов производится командой `npm run gemini`.
 
+В схеме тестирования участвует сервис [`Sauce Labs`](https://saucelabs.com), для доступа к нему необходимо указать переменные окружения: `SAUCE_USERNAME=alfalab.js SAUCE_ACCESS_KEY={ ключ взять у мейнтейнеров }`.
+
 Обновление или создание новых эталонных скриншотов: `npm run gemini-update`.
 
 Запуск `gemini` на выборочное число сьютов (используется опция `--grep` c JS RegExp): `SUITES='button|select' npm run gemini`.
@@ -153,6 +155,26 @@ npm run modernizr
 Мобильная вёрстка
 -----------------
 [Использование в адаптивной/мобильной среде](./README_MOBILE.md)
+
+Дизайн 2017 (aka Fantasy)
+-------------------------
+
+Work in progress
+
+[Демо](https://alfa-laboratory.github.io/arui-feather/styleguide-fantasy/)
+
+Для использования обновлённой дизайн системы импортируйте компоненты следующим образом:
+
+```
+import Input from 'arui-feather/input/fantasy'
+```
+
+Благодарности
+-------------
+
+[<img src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png" width="120">](https://www.browserstack.com/)
+
+Мы используем [BrowserStack](https://www.browserstack.com/) для тестирования наших интерфейсов.
 
 Лицензия
 --------

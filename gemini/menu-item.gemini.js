@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import MenuItem from '../src/menu-item/menu-item';
+import MenuItem from '../src/menu-item';
 
 const NAME = 'menu-item';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
@@ -44,12 +44,6 @@ geminiReact.suite(NAME, function () {
                             })
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
-                            })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused', function (actions) {
-                                actions.mouseMove(this.renderedComponent, { x: 100, y: 0 });
                             });
                     }
                 });

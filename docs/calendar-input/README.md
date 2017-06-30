@@ -12,10 +12,10 @@ import CalendarInput from 'arui-feather/calendar-input';
 ## Props
 
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
-| value | String |  |  | Содержимое поля ввода, указанное по умолчанию |
-| error | Node |  |  | Отображение попапа с ошибкой в момент когда фокус находится в поле ввода |
+| value | String |  |  | Содержимое поля ввода |
+| defaultValue | String |  |  | Содержимое поля ввода, указанное по умолчанию |
 | calendar | [CalendarType](#CalendarType) |  |  | Свойства компонента [Calendar](../calendar/) |
 | opened | Boolean |  |  | Управление возможностью раскрытия календаря |
 | width | [WidthEnum](#WidthEnum) |  |  | Управление возможностью компонента занимать всю ширину родителя |
@@ -24,7 +24,10 @@ import CalendarInput from 'arui-feather/calendar-input';
 | size | [SizeEnum](#SizeEnum) |  |  | Размер компонента |
 | tabIndex | Number |  |  | Последовательность перехода между контролами при нажатии на Tab |
 | withIcon | Boolean | `true`  |  | Показывать иконку календаря в инпуте |
-| placeholder | String | `'00.00.0000'`  |  | Подсказка в текстовом поле |
+| label | Node |  |  | Лейбл для поля |
+| placeholder | String | `'00.00.0000'`  |  | Подсказка в поле |
+| hint | Node |  |  | Подсказка под полем |
+| error | Node |  |  | Отображение ошибки |
 | id | String |  |  | Идентификатор компонента в DOM |
 | name | String |  |  | Имя компонента в DOM |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |

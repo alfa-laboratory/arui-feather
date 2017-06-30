@@ -1,7 +1,7 @@
 import React from 'react';
 import DemoSection from '../demo-section';
-import Radio from '../../src/radio/radio';
-import ThemeProvider from '../../src/theme-provider/theme-provider';
+import Radio from '../../src/radio';
+import ThemeProvider from '../../src/theme-provider';
 
 import './demo.css';
 

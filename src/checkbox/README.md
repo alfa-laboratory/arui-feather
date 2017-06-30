@@ -1,46 +1,22 @@
+Обычный чекбокс
 ```
 <div>
     <div>
         {['m', 'l'].map(size => (
-            <div key={ size }>
-                <CheckBox
-                    text='Чекбокс'
-                    size={ size }
-                />
-            </div>
-        ))}
-    </div>
-    <div>
-        {['m', 'l'].map(size => (
-            <div key={ size }>
-                <CheckBox
-                    text='Чекбокс disabled'
-                    size={ size }
-                    disabled={ true }
-                />
-            </div>
-        ))}
-    </div>
-    <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
-            <div key={ size }>
-                <CheckBox
-                    text='Чекбокс - кнопка'
-                    size={ size }
-                    type='button'
-                />
-            </div>
-        ))}
-    </div>
-    <div>
-        {['s', 'm', 'l', 'xl'].map(size => (
-            <div key={ size }>
-                <CheckBox
-                    text='Чекбокс - кнопка'
-                    size={ size }
-                    type='button'
-                    disabled={ true }
-                />
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <CheckBox
+                        text='Согласен с условиями'
+                        size={ size }
+                    />
+                </div>
+                <div className='column'>
+                    <CheckBox
+                        text='Согласен с условиями'
+                        size={ size }
+                        disabled={ true }
+                    />
+                </div>
             </div>
         ))}
     </div>

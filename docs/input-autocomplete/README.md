@@ -12,13 +12,15 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 ## Props
 Расширяет props [Input](../input)
 
-| Prop  | Тип  | По-умолчанию | Обязательный | Описание |
+| Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | options | Array.<[OptionsType](#OptionsType)> | `[]`  |  | Список вариантов выбора |
 | disabled | Boolean | `false`  |  | Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления |
 | opened | Boolean |  |  | Управление видимостью выпадающего списка |
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
+| equalPopupWidth | Boolean | `false`  |  | Ширинa выпадающего списка равна ширине инпута |
+| directions | Array.<[DirectionsEnum](#DirectionsEnum)> | `['bottom-left', 'bottom-right', 'top-left', 'top-right']`  |  | Направления, в которые может открываться попап компонента |
 | onItemSelect | Function |  |  | Обработчик выбора пункта в выпадающем меню |
 
 
@@ -74,6 +76,22 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 
  * `'default'`
  * `'available'`
+
+
+### <a id="DirectionsEnum"></a>DirectionsEnum
+
+ * `'top-left'`
+ * `'top-center'`
+ * `'top-right'`
+ * `'left-top'`
+ * `'left-center'`
+ * `'left-bottom'`
+ * `'right-top'`
+ * `'right-center'`
+ * `'right-bottom'`
+ * `'bottom-left'`
+ * `'bottom-center'`
+ * `'bottom-right'`
 
 
 

@@ -1,4 +1,4 @@
-import CalendarInput from '../src/calendar-input/calendar-input';
+import CalendarInput from '../src/calendar-input';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const DATE = '28.09.2016';
@@ -57,11 +57,8 @@ geminiReact.suite(NAME, function () {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
-                            .capture('focused', function (actions) {
-                                actions.mouseMove(this.renderedComponent, { x: 100, y: 0 });
+                            .capture('focused', function (actions, find) {
+                                actions.focus(find('.input__control'));
                             });
                     }
                 });

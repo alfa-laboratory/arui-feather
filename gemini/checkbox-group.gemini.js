@@ -1,5 +1,5 @@
-import Checkbox from '../src/checkbox/checkbox';
-import CheckboxGroup from '../src/checkbox-group/checkbox-group';
+import Checkbox from '../src/checkbox';
+import CheckboxGroup from '../src/checkbox-group';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'checkbox-group';
@@ -43,27 +43,9 @@ geminiReact.suite(NAME, function () {
                 }
 
                 geminiReact.suite(selector, function (suite) {
-                    if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
-                    } else {
-                        suite
-                            .render(template)
-                            .capture('plain')
-                            .capture('hovered', function (actions) {
-                                actions.mouseMove(this.renderedComponent);
-                            })
-                            .capture('pressed', function (actions) {
-                                actions.mouseDown(this.renderedComponent);
-                            })
-                            .capture('clicked', function (actions) {
-                                actions.click(this.renderedComponent);
-                            })
-                            .capture('focused', function (actions) {
-                                actions.focus(this.renderedComponent);
-                            });
-                    }
+                    suite
+                        .render(template)
+                        .capture('plain');
                 });
             });
         });

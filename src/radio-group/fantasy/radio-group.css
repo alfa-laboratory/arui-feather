@@ -33,7 +33,7 @@
 
 .radio-group__label {
     margin-bottom: 14px;
-    font-size: 17px;
+    font-size: var(--font-size-l);
     line-height: 24px;
     font-weight: var(--font-weight-bold);
 }

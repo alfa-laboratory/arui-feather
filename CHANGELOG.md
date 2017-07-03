@@ -1,3 +1,14 @@
+<a name="7.0.2"></a>
+## [7.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.1...v7.0.2) (2017-07-03)
+
+
+### Bug Fixes
+
+* **fantasy:** fix form controls styles with disabled & invalid simultaneous states ([#141](https://github.com/alfa-laboratory/arui-feather/issues/141)) ([e2fd3c6](https://github.com/alfa-laboratory/arui-feather/commit/e2fd3c6))
+* **fantasy:** fix link border colors ([#143](https://github.com/alfa-laboratory/arui-feather/issues/143)) ([cc5f9d2](https://github.com/alfa-laboratory/arui-feather/commit/cc5f9d2))
+
+
+
 <a name="7.0.1"></a>
 ## [7.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.0...v7.0.1) (2017-06-30)
 

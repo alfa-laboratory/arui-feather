@@ -56,6 +56,10 @@
     }
 
     &.select_invalid {
+        .select__sub {
+            color: var(--color-error);
+        }
+
         .select-button {
             border-bottom-color: var(--color-error-translucent);
         }

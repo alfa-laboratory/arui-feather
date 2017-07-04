@@ -1,3 +1,13 @@
+<a name="7.1.0"></a>
+# [7.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.2...v7.1.0) (2017-07-04)
+
+
+### Features
+
+* **menu:** allow checked items for basic mode ([#142](https://github.com/alfa-laboratory/arui-feather/issues/142)) ([4822919](https://github.com/alfa-laboratory/arui-feather/commit/4822919))
+
+
+
 <a name="7.0.2"></a>
 ## [7.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.1...v7.0.2) (2017-07-03)
 

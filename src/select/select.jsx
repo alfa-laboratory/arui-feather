@@ -100,6 +100,8 @@ class Select extends React.Component {
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
+        /** Управление нативным режимом на мобильных устройствах **/
+        mobileMenuMode: Type.oneOf(['native', 'popup']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -134,7 +136,8 @@ class Select extends React.Component {
         width: 'default',
         equalPopupWidth: false,
         options: [],
-        placeholder: 'Выберите:'
+        placeholder: 'Выберите:',
+        mobileMenuMode: 'native'
     };
 
     static contextTypes = {
@@ -145,6 +148,7 @@ class Select extends React.Component {
         buttonFocused: false,
         hasGroup: false,
         nativeFocused: false,
+        isMobile: false,
         opened: !!this.props.opened,
         popupStyles: {},
         value: this.props.value || []
@@ -223,7 +227,16 @@ class Select extends React.Component {
                         </span>
                     }
                     { this.renderButton(cn, SelectButton) }
-                    { this.renderNativeSelect(cn) }
+                    <Mq
+                        query='--small-only'
+                        touch={ true }
+                        onMatchChange={ this.handleMqMatchChange }
+                    >
+                        {
+                            this.props.mobileMenuMode === 'native' &&
+                            this.renderNativeSelect(cn)
+                        }
+                    </Mq>
                     {
                         (this.props.error || this.props.hint) &&
                         <span className={ cn('sub') }>
@@ -268,46 +281,41 @@ class Select extends React.Component {
         }
 
         return (
-            <Mq
-                query='--small-only'
-                touch={ true }
+            <select
+                ref={ (nativeSelect) => { this.nativeSelect = nativeSelect; } }
+                className={ cn('native-control') }
+                disabled={ this.props.disabled }
+                multiple={ isCheckMode && 'multiple' }
+                value={ value }
+                onChange={ this.handleNativeOptionCheck }
+                onClick={ this.handleNativeClick }
+                onFocus={ this.handleNativeFocus }
+                onBlur={ this.handleNativeBlur }
             >
-                <select
-                    ref={ (nativeSelect) => { this.nativeSelect = nativeSelect; } }
-                    className={ cn('native-control') }
-                    disabled={ this.props.disabled }
-                    multiple={ isCheckMode && 'multiple' }
-                    value={ value }
-                    onChange={ this.handleNativeOptionCheck }
-                    onClick={ this.handleNativeClick }
-                    onFocus={ this.handleNativeFocus }
-                    onBlur={ this.handleNativeBlur }
-                >
-                    {
-                        /*
-                            Хак с пустым <optgroup> — для фикса странного поведения select с атрибутом multiple на iOS7+:
-                            1. If no option is selected, it selects the first option in the list.
-                            2. If one option is selected, it deselects that option.
-                            3. If multiple options are selected, it deselects the last option to be tapped.
-                            4. If an option previously selected is deselected, it reselects the option.
-                            https://discussions.apple.com/message/23745665
-                            https://discussions.apple.com/message/24694954
-                        */
-                        hasEmptyOptGroup &&
-                        <optgroup
-                            disabled={ true }
-                            label={ this.props.placeholder }
-                        />
-                    }
-                    {
-                        hasEmptyOption &&
-                        <option disabled={ true } value=''>
-                            { this.props.placeholder }
-                        </option>
-                    }
-                    { this.renderNativeOptionsList(this.props.options) }
-                </select>
-            </Mq>
+                {
+                    /*
+                        Хак с пустым <optgroup> — для фикса странного поведения select с атрибутом multiple на iOS7+:
+                        1. If no option is selected, it selects the first option in the list.
+                        2. If one option is selected, it deselects that option.
+                        3. If multiple options are selected, it deselects the last option to be tapped.
+                        4. If an option previously selected is deselected, it reselects the option.
+                        https://discussions.apple.com/message/23745665
+                        https://discussions.apple.com/message/24694954
+                    */
+                    hasEmptyOptGroup &&
+                    <optgroup
+                        disabled={ true }
+                        label={ this.props.placeholder }
+                    />
+                }
+                {
+                    hasEmptyOption &&
+                    <option disabled={ true } value=''>
+                        { this.props.placeholder }
+                    </option>
+                }
+                { this.renderNativeOptionsList(this.props.options) }
+            </select>
         );
     }
 
@@ -327,7 +335,7 @@ class Select extends React.Component {
                 height='adaptive'
                 padded={ false }
                 size={ this.props.size }
-                target='anchor'
+                target={ this.state.isMobile ? 'screen' : 'anchor' }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
@@ -620,6 +628,11 @@ class Select extends React.Component {
         if (this.props.onBlur) {
             this.props.onBlur(this.getRevisedEvent(event));
         }
+    }
+
+    @autobind
+    handleMqMatchChange(isMatched) {
+        this.setState({ isMobile: isMatched });
     }
 
     /**

@@ -81,7 +81,7 @@
         color: var(--color-content-accent-alfa-on-color);
 
         .link__text {
-            border-color: rgba(255, 255, 255, 1);
+            border-color: rgba(--color-content-accent-alfa-on-color);
         }
     }
 
@@ -99,10 +99,10 @@
 
     &.link_hovered,
     &.link_focused {
-        color: var(--color-content-heavy-accent-alfa-on-white);
+        color: var(--color-content-accent-alfa-on-white);
 
         .link__text {
-            border-color: var(--color-accent-translucent);
+            border-color: var(--color-content-accent-alfa-on-white);
         }
     }
 

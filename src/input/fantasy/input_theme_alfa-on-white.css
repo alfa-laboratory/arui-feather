@@ -64,6 +64,24 @@
         }
     }
 
+    &.input_invalid {
+        .input__top,
+        .input__sub {
+            color: var(--color-error);
+        }
+
+        .input__box {
+            border-bottom-color: var(--color-error-translucent);
+        }
+
+        &.input_focused {
+            .input__box {
+                border-bottom-color: var(--color-error-translucent);
+                box-shadow: inset 0 -1px 0 var(--color-error-translucent);
+            }
+        }
+    }
+
     &.input_size_s .input__clear,
     &.input_size_m .input__clear {
         background-size: 10px;

@@ -1,6 +1,6 @@
 # CardInput
 
-Компонент поля ввода номера карты по маске
+Поле ввода номера карты с маской
 
 ```javascript
 import CardInput from 'arui-feather/card-input';

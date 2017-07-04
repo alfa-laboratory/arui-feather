@@ -265,7 +265,7 @@ class Popup extends React.Component {
         let { scrollTop, offsetHeight, scrollHeight } = event.target;
         let isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
 
-        if (this.props.height === 'adaptive') {
+        if (this.props.height === 'adaptive' || this.props.target === 'screen') {
             let gradientStyles = {
                 right: this.state.gradientStyles.right
             };
@@ -433,7 +433,13 @@ class Popup extends React.Component {
                 break;
 
             case 'screen':
-                bestDrawingParams = { top: 0, left: 0, right: 0, bottom: 0 };
+                bestDrawingParams = {
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    overflow: this.inner.scrollHeight > this.inner.clientHeight
+                };
                 break;
 
             case 'anchor':

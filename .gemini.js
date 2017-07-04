@@ -6,7 +6,7 @@ module.exports = {
     windowSize: '1024x768',
 
     httpTimeout: 60000,
-    retry: 2,
+    retry: 1,
     sessionsPerBrowser: 3,
     suitesPerSession: 150,
 
@@ -23,8 +23,6 @@ module.exports = {
     system: {
         debug: false,
         exclude: [
-            '.build/',
-            'coverage/',
             '*demo/',
             'docs/',
             'gemini/screens/',
@@ -34,6 +32,7 @@ module.exports = {
         ],
         plugins: {
             babel: true,
+            'html-reporter': {},
             optipng: true,
             react: {
                 jsModules: [
@@ -45,6 +44,7 @@ module.exports = {
             },
             'saucelabs-info': {}
         },
+        projectRoot: './',
         tempDir: './'
     }
 };

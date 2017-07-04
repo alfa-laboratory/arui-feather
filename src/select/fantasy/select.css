@@ -246,9 +246,3 @@
         }
     }
 }
-
-.select.select_invalid {
-    .select__sub {
-        color: var(--color-error);
-    }
-}

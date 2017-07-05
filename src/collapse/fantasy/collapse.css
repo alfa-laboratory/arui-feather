@@ -39,7 +39,7 @@
     &_expanded &__content {
         visibility: visible;
         height: auto;
-        padding-bottom: 15px;
+        margin-bottom: 15px;
     }
 
     &_expanded &__link:after {

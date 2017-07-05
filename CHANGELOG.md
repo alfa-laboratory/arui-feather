@@ -1,3 +1,13 @@
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.1.0...v7.2.0) (2017-07-04)
+
+
+### Features
+
+* **popup:** full-screen popup mode for select on mobile ([#145](https://github.com/alfa-laboratory/arui-feather/issues/145)) ([03c58aa](https://github.com/alfa-laboratory/arui-feather/commit/03c58aa))
+
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.2...v7.1.0) (2017-07-04)
 

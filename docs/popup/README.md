@@ -19,7 +19,7 @@ import Popup from 'arui-feather/popup';
 | type | [TypeEnum](#TypeEnum) |  |  | Тип попапа |
 | height | [HeightEnum](#HeightEnum) |  |  | Подстраивание высоты попапа под край окна ('adaptive'), занятие попапом всей возможной высоты ('available'), 'default' |
 | directions | Array.<[DirectionsEnum](#DirectionsEnum)> |  |  | Только для target='anchor', расположение (в порядке приоритета) относительно точки открытия. Первым указывается главное направление, через дефис - второстепенное направление |
-| target | [TargetEnum](#TargetEnum) | `'anchor'`  |  | Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position' |
+| target | [TargetEnum](#TargetEnum) | `'anchor'`  |  | Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen' |
 | mainOffset | Number |  |  | Только для target='anchor'. Смещение в пикселях всплывающего окна относительно основного направления |
 | secondaryOffset | Number | `0`  |  | Только для target='anchor'. Смещение в пикселях всплывающего окна относительно второстепенного направления |
 | fitContaiterOffset | Number | `0`  |  | Только для target='anchor'. Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера |
@@ -92,6 +92,7 @@ import Popup from 'arui-feather/popup';
 
  * `'anchor'`
  * `'position'`
+ * `'screen'`
 
 
 ### <a id="SizeEnum"></a>SizeEnum

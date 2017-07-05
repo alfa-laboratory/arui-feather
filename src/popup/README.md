@@ -7,7 +7,8 @@ class PopupDemo extends React.Component {
             popup2: false,
             popup3: false,
             popup4: false,
-            popup5: false
+            popup5: false,
+            popup6: false,
         };
 
         this.popup1;
@@ -15,12 +16,14 @@ class PopupDemo extends React.Component {
         this.popup3;
         this.popup4;
         this.popup5;
+        this.popup6;
 
         this.target1;
         this.target2;
         this.target3;
         this.target4;
         this.target5;
+        this.target6;
     }
 
     componentDidMount() {
@@ -128,6 +131,30 @@ class PopupDemo extends React.Component {
                         onClickOutside={ () => { this.setState({ popup5: false }); } }
                     >
                         { 'Popup with autoclosable="true"' }
+                    </Popup>
+                </div>
+                <div className='row'>
+                    <Button
+                        ref={ (target) => { this.target6 = target; } }
+                        size='m'
+                        onClick={ () => { this.setState({ popup6: !this.state.popup6 }); } }
+                    >
+                        Click me
+                    </Button>
+                    <Popup
+                        ref={ (popup) => { this.popup6 = popup; } }
+                        target='screen'
+                        visible={ this.state.popup6 }
+                    >
+                        <p>Popup with target="screen"</p>
+                        <p>
+                            <Button
+                                size='m'
+                                onClick={ () => { this.setState({ popup6: false }); } }
+                            >
+                                Close
+                            </Button>
+                        </p>
                     </Popup>
                 </div>
             </div>

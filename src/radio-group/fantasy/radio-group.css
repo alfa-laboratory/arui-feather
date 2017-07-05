@@ -32,10 +32,10 @@
 }
 
 .radio-group__label {
-    margin-bottom: 14px;
-    font-size: var(--font-size-l);
-    line-height: 24px;
-    font-weight: var(--font-weight-bold);
+    margin-bottom: 8px;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-normal);
+    color: var(--color-content-minor-alfa-on-white);
 }
 
 .radio-group_invalid {

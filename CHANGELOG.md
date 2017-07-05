@@ -1,3 +1,14 @@
+<a name="7.2.1"></a>
+## [7.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v7.2.0...v7.2.1) (2017-07-05)
+
+
+### Bug Fixes
+
+* **fantasy:** fix collapse expanded content margin ([#146](https://github.com/alfa-laboratory/arui-feather/issues/146)) ([66ff510](https://github.com/alfa-laboratory/arui-feather/commit/66ff510))
+* **icon:** remove icon_undefined class name ([#147](https://github.com/alfa-laboratory/arui-feather/issues/147)) ([5b2debd](https://github.com/alfa-laboratory/arui-feather/commit/5b2debd))
+
+
+
 <a name="7.2.0"></a>
 # [7.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.1.0...v7.2.0) (2017-07-04)
 

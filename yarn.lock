@@ -6148,9 +6148,9 @@ lexical-scope@^1.2.0:
   dependencies:
     astw "^2.0.0"
 
-library-utils@^1.3.3:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.4.0.tgz#986c44a838c3cdf5ed275c89bd6860eb4dc710cb"
+library-utils@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.4.2.tgz#95e9e147ac8809a1be9850db6bf55018d844d0dc"
   dependencies:
     del "^2.2.2"
     ejs "^2.5.6"

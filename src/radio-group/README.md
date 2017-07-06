@@ -13,7 +13,7 @@
 
 Та же группа, теперь с заголовком и ошибкой
 ```
-<RadioGroup error='Обязательно' label='Сколько?'>
+<RadioGroup error='Обязательно' label=<Label size='m'>Сколько?</Label>>
     {['Один', 'Два', 'Три', 'Четыре'].map(text =>
         <Radio
             text={ text }

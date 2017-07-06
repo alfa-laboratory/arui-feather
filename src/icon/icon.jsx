@@ -43,12 +43,17 @@ class Icon extends React.Component {
     };
 
     render(cn) {
+        let mods = {
+            size: this.props.size
+        };
+
+        if (this.props.icon) {
+            mods[this.props.icon] = true;
+        }
+
         return (
             <span
-                className={ cn({
-                    size: this.props.size,
-                    [this.props.icon]: true
-                }) }
+                className={ cn(mods) }
                 onClick={ this.handleClick }
             />
         );

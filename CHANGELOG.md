@@ -1,3 +1,34 @@
+<a name="7.2.1"></a>
+## [7.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v7.2.0...v7.2.1) (2017-07-05)
+
+
+### Bug Fixes
+
+* **fantasy:** fix collapse expanded content margin ([#146](https://github.com/alfa-laboratory/arui-feather/issues/146)) ([66ff510](https://github.com/alfa-laboratory/arui-feather/commit/66ff510))
+* **icon:** remove icon_undefined class name ([#147](https://github.com/alfa-laboratory/arui-feather/issues/147)) ([5b2debd](https://github.com/alfa-laboratory/arui-feather/commit/5b2debd))
+
+
+
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.1.0...v7.2.0) (2017-07-04)
+
+
+### Features
+
+* **popup:** full-screen popup mode for select on mobile ([#145](https://github.com/alfa-laboratory/arui-feather/issues/145)) ([03c58aa](https://github.com/alfa-laboratory/arui-feather/commit/03c58aa))
+
+
+
+<a name="7.1.0"></a>
+# [7.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.2...v7.1.0) (2017-07-04)
+
+
+### Features
+
+* **menu:** allow checked items for basic mode ([#142](https://github.com/alfa-laboratory/arui-feather/issues/142)) ([4822919](https://github.com/alfa-laboratory/arui-feather/commit/4822919))
+
+
+
 <a name="7.0.2"></a>
 ## [7.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.1...v7.0.2) (2017-07-03)
 

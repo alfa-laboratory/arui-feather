@@ -8,7 +8,7 @@
     color: var(--color-content-alfa-on-white);
     box-shadow: var(--shadow-light);
 
-    .popup__inner {
+    .popup__container {
         background-color: var(--color-background-alfa-on-white);
     }
 

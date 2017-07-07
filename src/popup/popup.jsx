@@ -83,6 +83,8 @@ class Popup extends React.Component {
         autoclosable: Type.bool,
         /** Управление выставлением модификатора для добавления внутренних отступов в стилях */
         padded: Type.bool,
+        /** Элемент закреплённого заголовка для компонента */
+        header: Type.node,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -240,21 +242,30 @@ class Popup extends React.Component {
                     onMouseEnter={ this.handleMouseEnter }
                     onMouseLeave={ this.handleMouseLeave }
                 >
-                    <div
-                        ref={ (inner) => { this.inner = inner; } }
-                        className={ cn('inner') }
-                        onScroll={ this.handleInnerScroll }
-                    >
-                        <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
-                            { this.props.children }
-                            <ResizeSensor onResize={ this.handleResize } />
+                    <div className={ cn('container') }>
+                        {
+                            this.props.header && (
+                                <div className={ cn('header') }>
+                                    { this.props.header }
+                                </div>
+                            )
+                        }
+                        <div
+                            ref={ (inner) => { this.inner = inner; } }
+                            className={ cn('inner') }
+                            onScroll={ this.handleInnerScroll }
+                        >
+                            <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
+                                { this.props.children }
+                                <ResizeSensor onResize={ this.handleResize } />
+                            </div>
                         </div>
+                        {
+                            this.state.hasScrollbar && (
+                                <div className={ cn('gradient') } style={ this.state.gradientStyles } />
+                            )
+                        }
                     </div>
-                    {
-                        this.state.hasScrollbar && (
-                            <div className={ cn('gradient') } style={ this.state.gradientStyles } />
-                        )
-                    }
                 </div>
             </RenderInContainer>
         );

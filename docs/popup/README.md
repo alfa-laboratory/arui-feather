@@ -27,6 +27,7 @@ import Popup from 'arui-feather/popup';
 | visible | Boolean | `false`  |  | Управление видимостью компонента |
 | autoclosable | Boolean | `false`  |  | Управление возможностью автозакрытия компонента |
 | padded | Boolean | `true`  |  | Управление выставлением модификатора для добавления внутренних отступов в стилях |
+| header | Node |  |  | Элемент закреплённого заголовка для компонента |
 | size | [SizeEnum](#SizeEnum) | `'s'`  |  | Размер компонента |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | onMouseEnter | Function |  |  | Обработчик события наведения курсора на попап |

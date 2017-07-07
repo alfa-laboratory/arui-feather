@@ -3,5 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './checkbox-group.css';
+import './checkbox-group_theme_alfa-on-color.css';
+import './checkbox-group_theme-alfa-on-white.css';
 
 export default from './checkbox-group';

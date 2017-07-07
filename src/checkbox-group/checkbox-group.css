@@ -16,6 +16,12 @@
     padding-left: 10px;
 }
 
+.checkbox-group__label {
+    margin-bottom: 10px;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-accent);
+}
+
 .checkbox_size_m {
     margin-bottom: 10px;
 }

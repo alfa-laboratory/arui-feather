@@ -81,7 +81,7 @@
         color: var(--color-content-accent-alfa-on-color);
 
         .link__text {
-            border-color: rgba(--color-content-accent-alfa-on-color);
+            border-color: var(--color-content-accent-alfa-on-color);
         }
     }
 

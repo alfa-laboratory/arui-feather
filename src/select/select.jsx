@@ -100,8 +100,10 @@ class Select extends React.Component {
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
-        /** Управление нативным режимом на мобильных устройствах **/
+        /** Управление нативным режимом на мобильных устройствах */
         mobileMenuMode: Type.oneOf(['native', 'popup']),
+        /** Подсказка над меню в мобильном режиме */
+        mobileTitle: Type.node,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -336,6 +338,7 @@ class Select extends React.Component {
                 padded={ false }
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
+                header={ this.state.isMobile && this.renderMobileHeader(cn) }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
@@ -422,6 +425,21 @@ class Select extends React.Component {
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
         return checkedItemsText || this.props.placeholder;
+    }
+
+    renderMobileHeader(cn) {
+        return (
+            <div className={ cn('mobile-header', { size: this.props.size }) }>
+                <Icon
+                    className={ cn('mobile-closer') }
+                    size={ this.props.size }
+                    icon='close'
+                />
+                <div className={ cn('mobile-title') }>
+                    { this.props.mobileTitle || this.props.placeholder }
+                </div>
+            </div>
+        );
     }
 
     @autobind

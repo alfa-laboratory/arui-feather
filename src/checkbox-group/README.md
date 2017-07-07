@@ -1,6 +1,6 @@
-Вертикальная группа чекбоксов
+Вертикальная группа чекбоксов с заголовком
 ```
-<CheckBoxGroup>
+<CheckBoxGroup label={ <Label size='m'>Выберите счёт</Label> }>
     <CheckBox
         text='Текущий счет'
     />

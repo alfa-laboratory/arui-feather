@@ -2,10 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import '../popup';
+@import '../vars.css';
 
-import './radio-group.css';
-import './radio-group_theme_alfa-on-color.css';
-import './radio-group_theme_alfa-on-white.css';
-
-export default from './radio-group';
+.checkbox-group_theme_alfa-on-color {
+    .checkbox-group__label {
+        color: var(--color-content-alfa-on-color);
+    }
+}

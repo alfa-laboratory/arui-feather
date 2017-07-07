@@ -23,6 +23,7 @@ import RadioGroup from 'arui-feather/radio-group';
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |
+| label | Node |  |  | Лейбл для группы |
 | onFocus | Function |  |  | Обработчик фокуса радиогруппы |
 | onBlur | Function |  |  | Обработчик снятия фокуса с радиогруппы |
 | onChange | Function |  |  | Обработчик изменения значения 'checked' одного из дочерних радио-кнопок |

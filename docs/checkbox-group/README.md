@@ -18,6 +18,7 @@ import CheckboxGroup from 'arui-feather/checkbox-group';
 | children | Array.<Node>\|Node |  |  | Дочерние элементы `CheckBoxGroup`, как правило, компоненты `CheckBox` |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |
+| label | Node |  |  | Лейбл для группы |
 
 
 

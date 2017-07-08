@@ -29,7 +29,10 @@ script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
   - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then yarn test; fi
   - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 yarn test; fi
-  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini-ci; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then
+      if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then export ALL_SIZES=1; fi;
+      yarn gemini-ci;
+    fi
 
 after_script:
   - |

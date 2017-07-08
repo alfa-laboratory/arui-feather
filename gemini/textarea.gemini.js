@@ -38,7 +38,7 @@ geminiReact.suite(NAME, () => {
                         </GeminiBox>
                     );
 
-                    if (set.template) {
+                    if (set.disabled) {
                         suite
                             .render(template)
                             .capture('plain');

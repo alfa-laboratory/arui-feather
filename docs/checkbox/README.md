@@ -23,6 +23,7 @@ import Checkbox from 'arui-feather/checkbox';
 | type | [TypeEnum](#TypeEnum) | `'normal'`  |  | Тип чекбокса |
 | disabled | Boolean |  |  | Управление возможностью изменять состояние 'checked' компонента |
 | checked | Boolean |  |  | Управление состоянием вкл/выкл компонента |
+| undetermined | Boolean |  |  | Управление неопределенным состоянием чекбокса |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | className | Function\|String |  |  | Дополнительный класс |
 | onChange | Function |  |  | Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента |

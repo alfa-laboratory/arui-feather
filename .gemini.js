@@ -1,12 +1,14 @@
 global.React = require('react');
 
-module.exports = {
+const IS_TRAVIS_CRON_BUILD = process.env.TRAVIS_EVENT_TYPE === 'cron';
+
+let config = {
     gridUrl: 'http://ondemand.saucelabs.com/wd/hub',
     rootUrl: 'http://localhost:8668',
     windowSize: '1024x768',
 
     httpTimeout: 60000,
-    retry: 1,
+    retry: 2,
     sessionsPerBrowser: 3,
     suitesPerSession: 150,
 
@@ -40,7 +42,7 @@ module.exports = {
                 ],
                 port: 8668,
                 staticRoot: './',
-                webpackConfig: './webpack.config.gemini.js'
+                webpackConfig: './webpack.gemini.config.js'
             },
             'saucelabs-info': {}
         },
@@ -48,3 +50,26 @@ module.exports = {
         tempDir: './'
     }
 };
+
+if (IS_TRAVIS_CRON_BUILD) {
+    config.system.plugins.react.jsModules.unshift('./.build/polyfills.js');
+
+    Object.assign(config.browsers, {
+        ie10Win7: {
+            desiredCapabilities: {
+                browserName: 'internet explorer',
+                version: '10',
+                platform: 'Windows 7'
+            }
+        },
+        ie11Win81: {
+            desiredCapabilities: {
+                browserName: 'internet explorer',
+                version: '11',
+                platform: 'Windows 8.1'
+            }
+        }
+    });
+}
+
+module.exports = config;

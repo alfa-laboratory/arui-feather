@@ -107,8 +107,8 @@
         transition-delay: 0s;
     }
 
-    &_undetermined &__box:after {
-        background-image: url(./images/checkbox__box_undetermined.svg);
+    &_indeterminate &__box:after {
+        background-image: url(./images/checkbox__box_indeterminate.svg);
     }
 
     &_disabled {

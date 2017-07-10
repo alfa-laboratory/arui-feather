@@ -12,14 +12,13 @@
     transition: color 200ms ease-out;
     -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
 
-    &, *, *:before, *:after {
-        box-sizing: border-box;
+    @media (--small-only) {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
-    &__text {
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        transition: border-color 200ms ease-out;
+    &, *, *:before, *:after {
+        box-sizing: border-box;
     }
 
     &__icon {
@@ -56,7 +55,6 @@
 
     &_checked {
         border-bottom-style: solid;
-        font-weight: var(--font-weight-medium);
     }
 
     &_disabled &__icon, &_checked &__icon {
@@ -65,8 +63,7 @@
 }
 
 .tab-item_theme_alfa-on-color {
-    font-weight: var(--font-weight-light);
-    color: rgba(255, 255, 255, .6);
+    color: var(--color-content-minor-alfa-on-color);
 
     &.tab-item_hovered,
     &.tab-item_focused {
@@ -74,8 +71,12 @@
     }
 
     &.tab-item_checked {
-        color: var(--color-content-alfa-on-color);
         border-bottom-color: var(--color-accent);
+        color: var(--color-content-alfa-on-color);
+
+        @media (--small-only) {
+            color: var(--color-content-accent-alfa-on-color);
+        }
     }
 
     &.tab-item_disabled {
@@ -84,8 +85,7 @@
 }
 
 .tab-item_theme_alfa-on-white {
-    font-weight: var(--font-weight-normal);
-    color: rgba(10, 30, 50, 0.6);
+    color: var(--color-content-minor-alfa-on-white);
 
     &.tab-item_hovered,
     &.tab-item_focused {
@@ -94,17 +94,14 @@
 
     &.tab-item_checked {
         border-bottom-color: var(--color-accent);
-        color: var(--color-accent);
+        color: var(--color-content-alfa-on-white);
+
+        @media (--small-only) {
+            color: var(--color-content-accent-alfa-on-white);
+        }
     }
 
     &.tab-item_disabled {
         color: var(--color-content-minor-alfa-on-white);
-    }
-}
-
-.tab-item_theme_alfa-on-color,
-.tab-item_theme_alfa-on-white {
-    &.tab-item_checked {
-        font-weight: var(--font-weight-medium);
     }
 }

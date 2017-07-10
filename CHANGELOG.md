@@ -1,3 +1,8 @@
+<a name="8.1.1"></a>
+## [8.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.0...v8.1.1) (2017-07-10)
+
+
+
 <a name="8.1.0"></a>
 # [8.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.0.0...v8.1.0) (2017-07-10)
 

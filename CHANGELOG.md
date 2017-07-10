@@ -1,3 +1,14 @@
+<a name="8.1.0"></a>
+# [8.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.0.0...v8.1.0) (2017-07-10)
+
+
+### Features
+
+* **checkbox:** add indetermined state ([#152](https://github.com/alfa-laboratory/arui-feather/issues/152)) ([4b83723](https://github.com/alfa-laboratory/arui-feather/commit/4b83723))
+* **font:** add roboto rouble fallback symbol font for win xp-8.1 ([#155](https://github.com/alfa-laboratory/arui-feather/issues/155)) ([5110fdb](https://github.com/alfa-laboratory/arui-feather/commit/5110fdb))
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.3.0...v8.0.0) (2017-07-10)
 

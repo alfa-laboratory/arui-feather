@@ -131,6 +131,12 @@
         position: fixed;
         border-radius: 0;
         box-shadow: none;
+
+        .popup__container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
     }
 }
 

@@ -199,7 +199,7 @@ class Menu extends React.Component {
             <MenuItem
                 { ...menuItemProps }
                 ref={ (instance) => { menuItem.instance = instance; } }
-                key={ item.value }
+                key={ item.key || item.value }
                 checked={ this.getIndexInCheckedItemsList(item.value) !== -1 }
                 type={ this.props.mode !== 'basic' ? 'block' : itemProps.type }
                 onMouseEnter={ () => this.handleMenuItemMouseEnter(menuItem) }

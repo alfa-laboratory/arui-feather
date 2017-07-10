@@ -39,6 +39,11 @@ function renderPopup(popupProps, anchorProps) {
         );
     }
 
+    let popupHeaderNode;
+    if (popup) {
+        popupHeaderNode = popup.node.querySelector('.popup__header');
+    }
+
     let popupContentNode;
     if (popup) {
         popupContentNode = popup.node.querySelector('.popup__content');
@@ -48,7 +53,7 @@ function renderPopup(popupProps, anchorProps) {
         popup.instance.setTarget(anchor.node);
     }
 
-    return { popup, anchor, popupContentNode };
+    return { popup, anchor, popupHeaderNode, popupContentNode };
 }
 
 function getPopupDimensions(popupNode, popupContentNode) {
@@ -176,6 +181,18 @@ describe('popup', () => {
             expect(onClickOutside).to.not.have.been.called();
             done();
         }, 0);
+    });
+
+    it('should not render a header element by default', () => {
+        let { popupHeaderNode } = renderPopup({ visible: true }, {});
+
+        expect(popupHeaderNode).to.not.exist;
+    });
+
+    it('should render a header element when header parameter is present', () => {
+        let { popupHeaderNode } = renderPopup({ header: <div />, visible: true }, {});
+
+        expect(popupHeaderNode).to.exist;
     });
 
     describe('popup calculate drawing params', () => {

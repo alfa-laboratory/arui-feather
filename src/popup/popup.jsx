@@ -75,14 +75,14 @@ class Popup extends React.Component {
         secondaryOffset: Type.number,
         /** Только для target='anchor'. Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера */
         fitContaiterOffset: Type.number,
-        /** Отображение попапа как сообщения об ошибке */
-        invalid: Type.bool,
         /** Управление видимостью компонента */
         visible: Type.bool,
         /** Управление возможностью автозакрытия компонента */
         autoclosable: Type.bool,
         /** Управление выставлением модификатора для добавления внутренних отступов в стилях */
         padded: Type.bool,
+        /** Элемент закреплённого заголовка для компонента */
+        header: Type.node,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -102,7 +102,6 @@ class Popup extends React.Component {
     };
 
     static defaultProps = {
-        invalid: false,
         visible: false,
         autoclosable: false,
         padded: true,
@@ -226,7 +225,6 @@ class Popup extends React.Component {
                         target: this.props.target,
                         size: this.props.size,
                         visible: this.props.visible,
-                        invalid: this.props.invalid,
                         height: this.props.height,
                         hovered: this.state.hovered,
                         autoclosable: this.props.autoclosable,
@@ -240,21 +238,30 @@ class Popup extends React.Component {
                     onMouseEnter={ this.handleMouseEnter }
                     onMouseLeave={ this.handleMouseLeave }
                 >
-                    <div
-                        ref={ (inner) => { this.inner = inner; } }
-                        className={ cn('inner') }
-                        onScroll={ this.handleInnerScroll }
-                    >
-                        <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
-                            { this.props.children }
-                            <ResizeSensor onResize={ this.handleResize } />
+                    <div className={ cn('container') }>
+                        {
+                            this.props.header && (
+                                <div className={ cn('header') }>
+                                    { this.props.header }
+                                </div>
+                            )
+                        }
+                        <div
+                            ref={ (inner) => { this.inner = inner; } }
+                            className={ cn('inner') }
+                            onScroll={ this.handleInnerScroll }
+                        >
+                            <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
+                                { this.props.children }
+                                <ResizeSensor onResize={ this.handleResize } />
+                            </div>
                         </div>
+                        {
+                            this.state.hasScrollbar && (
+                                <div className={ cn('gradient') } style={ this.state.gradientStyles } />
+                            )
+                        }
                     </div>
-                    {
-                        this.state.hasScrollbar && (
-                            <div className={ cn('gradient') } style={ this.state.gradientStyles } />
-                        )
-                    }
                 </div>
             </RenderInContainer>
         );

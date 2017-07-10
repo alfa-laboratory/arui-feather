@@ -23,7 +23,7 @@
         box-sizing: border-box;
     }
 
-    &__inner {
+    &__container {
         position: relative;
         width: 100%;
         height: 100%;
@@ -136,7 +136,9 @@
         border-radius: 0;
         box-shadow: none;
 
-        .popup__inner {
+        .popup__container {
+            display: flex;
+            flex-direction: column;
             border-radius: 0;
         }
     }

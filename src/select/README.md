@@ -178,7 +178,7 @@ const options = [
     { value: '49', text: 'Facebook' },
 ];
 <div>
-    {['s'].map(size => (
+    {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' >
             <div className='column'>
                 <Select
@@ -186,6 +186,7 @@ const options = [
                     mode='radio'
                     options={ options }
                     mobileMenuMode='popup'
+                    mobileTitle='Очень длинный заголовок на мобильном устройстве'
                 />
             </div>
             <div className='column'>

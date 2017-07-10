@@ -60,6 +60,7 @@ module.exports = (config) => {
             './src/**/*': ['webpack', 'sourcemap']
         },
         files: testsFiles,
+        captureConsole: true,
         coverageReporter: {
             check: {
                 global: {
@@ -111,7 +112,6 @@ module.exports = (config) => {
         cfg.browserNoActivityTimeout = 4 * 60 * 1000;
         cfg.captureTimeout = 4 * 60 * 1000;
         cfg.client = {
-            captureConsole: true,
             mocha: {
                 timeout: 20000 // override default 2000
             }
@@ -121,19 +121,12 @@ module.exports = (config) => {
         cfg.reporters = ['mocha', 'saucelabs'];
         cfg.sauceLabs = { testName: 'ARUI Feather Unit Tests' };
     } else {
-        cfg.browserNoActivityTimeout = 20000;
         cfg.customLaunchers = {
-            phantomJS: {
-                base: 'PhantomJS',
-                options: {
-                    viewportSize: {
-                        width: 1280,
-                        height: 100
-                    }
-                }
+            CustomChromeHeadless: {
+                base: 'ChromeHeadless'
             }
         };
-        cfg.plugins.push(require('karma-phantomjs-launcher'));
+        cfg.plugins.push(require('karma-chrome-launcher'));
     }
 
     cfg.browsers = Object.keys(cfg.customLaunchers);

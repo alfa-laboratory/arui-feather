@@ -30,7 +30,8 @@ import Select from 'arui-feather/select';
 | placeholder | String | `'Выберите:'`  |  | Подсказка в поле |
 | hint | Node |  |  | Подсказка под полем |
 | error | Node |  |  | Отображение ошибки |
-| mobileMenuMode | [MobileMenuModeEnum](#MobileMenuModeEnum) | `'native'`  |  | Управление нативным режимом на мобильных устройствах * |
+| mobileMenuMode | [MobileMenuModeEnum](#MobileMenuModeEnum) | `'native'`  |  | Управление нативным режимом на мобильных устройствах |
+| mobileTitle | Node |  |  | Подсказка над меню в мобильном режиме |
 | theme | [ThemeEnum](#ThemeEnum) |  |  | Тема компонента |
 | onFocus | Function |  |  | Обработчик фокуса на компоненте |
 | onBlur | Function |  |  | Обработчик потери фокуса компонентом |

@@ -26,6 +26,24 @@ class Demo extends React.Component {
                             />
                         </span>
                     </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='m'
+                                indeterminate={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='l'
+                                indeterminate={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
                 </DemoSection>
                 <DemoSection theme='alfa-on-white'>
                     <ThemeProvider theme='alfa-on-color'>
@@ -41,6 +59,24 @@ class Demo extends React.Component {
                             <Checkbox
                                 text='Чекбокс'
                                 size='l'
+                            />
+                        </span>
+                    </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='m'
+                                indeterminate={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='l'
+                                indeterminate={ true }
                             />
                         </span>
                     </ThemeProvider>
@@ -65,6 +101,26 @@ class Demo extends React.Component {
                             />
                         </span>
                     </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='m'
+                                disabled={ true }
+                                indeterminate={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-white'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='l'
+                                disabled={ true }
+                                indeterminate={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
                 </DemoSection>
                 <DemoSection theme='alfa-on-white'>
                     <ThemeProvider theme='alfa-on-color'>
@@ -82,6 +138,26 @@ class Demo extends React.Component {
                                 text='Чекбокс'
                                 size='l'
                                 disabled={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='m'
+                                disabled={ true }
+                                indeterminate={ true }
+                            />
+                        </span>
+                    </ThemeProvider>
+                    <ThemeProvider theme='alfa-on-color'>
+                        <span className='layout'>
+                            <Checkbox
+                                text='Чекбокс'
+                                size='l'
+                                disabled={ true }
+                                indeterminate={ true }
                             />
                         </span>
                     </ThemeProvider>

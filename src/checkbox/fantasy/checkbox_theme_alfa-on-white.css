@@ -48,5 +48,9 @@
             opacity: var(--opacity-disabled);
             background-image: url(../images/checkbox__box_disabled.svg);
         }
+
+        &.checkbox_checked.checkbox_indeterminate .checkbox__box:after {
+            background-image: url(./images/checkbox__box_indeterminate-disabled.svg);
+        }
     }
 }

@@ -46,11 +46,6 @@
         transform: none;
     }
 
-    &_invalid {
-        color: var(--color-error-content);
-        background-color: var(--color-error);
-    }
-
     &_height_available {
         bottom: 0;
         top: 0 !important;

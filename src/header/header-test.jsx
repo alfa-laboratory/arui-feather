@@ -67,12 +67,17 @@ describe('header', () => {
         let onResize = chai.spy();
         let header = render(<Header onResize={ onResize } />);
 
-        header.node.style.height = '200px';
-
         setTimeout(() => {
-            expect(onResize).to.have.been.called.once;
-            done();
-        }, 100);
+            // As we don't have component styles in tests,
+            // we need to include position styling for proper `onResize` testing.
+            header.node.style.position = 'relative';
+            header.node.style.height = '200px';
+
+            setTimeout(() => {
+                expect(onResize).to.have.been.called.at.least(1);
+                done();
+            }, 100);
+        }, 0);
     });
 
     it('should call `onClick` callback after logotype was clicked', (done) => {

@@ -1,3 +1,14 @@
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.3.0...v8.0.0) (2017-07-10)
+
+
+### Features
+
+* **popup:** remove invalid popup prop ([#149](https://github.com/alfa-laboratory/arui-feather/issues/149)) ([7d71174](https://github.com/alfa-laboratory/arui-feather/commit/7d71174))
+* **select:** add header to fullscreen select ([#148](https://github.com/alfa-laboratory/arui-feather/issues/148)) ([fb9e804](https://github.com/alfa-laboratory/arui-feather/commit/fb9e804))
+
+
+
 <a name="7.3.0"></a>
 # [7.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.2.1...v7.3.0) (2017-07-07)
 

@@ -1,3 +1,13 @@
+<a name="8.1.2"></a>
+## [8.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.1...v8.1.2) (2017-07-11)
+
+
+### Bug Fixes
+
+* **checkbox:** update gemini screens, fix incorrect img import ([8a6fa94](https://github.com/alfa-laboratory/arui-feather/commit/8a6fa94))
+
+
+
 <a name="8.1.1"></a>
 ## [8.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.0...v8.1.1) (2017-07-10)
 

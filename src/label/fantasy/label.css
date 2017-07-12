@@ -42,7 +42,7 @@
 }
 
 .label_theme_alfa-on-color {
-    color: var(--color-content-minor-alfa-on-color);
+    color: var(--color-content-alfa-on-color);
 
     &.label_disabled {
         color: var(--color-content-minor-alfa-on-color);
@@ -50,7 +50,7 @@
 }
 
 .label_theme_alfa-on-white {
-    color: var(--color-content-minor-alfa-on-white);
+    color: var(--color-content-alfa-on-white);
 
     &.label_disabled {
         color: var(--color-content-minor-alfa-on-white);

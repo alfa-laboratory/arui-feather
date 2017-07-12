@@ -10,9 +10,9 @@ describe('tabs', () => {
     afterEach(cleanUp);
 
     it('should render without problems', () => {
-        let user = render(<Tabs />);
+        let tabs = render(<Tabs />);
 
-        expect(user.node).to.exist;
-        expect(user.node).to.have.class('tabs');
+        expect(tabs.node).to.exist;
+        expect(tabs.node).to.have.class('tabs');
     });
 });

@@ -186,7 +186,7 @@
 
     &__mobile-title {
         font-weight: var(--font-weight-accent);
-        line-height: var(--line-height-normal);
+        line-height: 1.4;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

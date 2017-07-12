@@ -1,3 +1,15 @@
+<a name="8.1.4"></a>
+## [8.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.3...v8.1.4) (2017-07-12)
+
+
+### Bug Fixes
+
+* **button:** fix focused style on pseudo button ([#160](https://github.com/alfa-laboratory/arui-feather/issues/160)) ([a0564fa](https://github.com/alfa-laboratory/arui-feather/commit/a0564fa))
+* **font:** use roboto rouble with woff ([#163](https://github.com/alfa-laboratory/arui-feather/issues/163)) ([6ecb51d](https://github.com/alfa-laboratory/arui-feather/commit/6ecb51d))
+* **label:** fix label colors ([#162](https://github.com/alfa-laboratory/arui-feather/issues/162)) ([0671ff8](https://github.com/alfa-laboratory/arui-feather/commit/0671ff8))
+
+
+
 <a name="8.1.3"></a>
 ## [8.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.2...v8.1.3) (2017-07-12)
 

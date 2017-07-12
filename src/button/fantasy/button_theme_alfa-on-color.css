@@ -94,11 +94,14 @@
         border-style: dashed;
 
         &.button_focused {
-            border-color: var(--color-content-alfa-on-color);
             border-style: solid;
+            border-color: var(--color-content-alfa-on-color);
+
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
 
             &.button_hovered {
-                border-style: dashed;
+                box-shadow: 0 0 0 1px rgba(255, 255, 255, .7);
+                border-color: rgba(255, 255, 255, .7);
             }
         }
     }

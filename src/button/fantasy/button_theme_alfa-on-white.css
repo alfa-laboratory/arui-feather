@@ -96,8 +96,11 @@
             border-color: var(--color-content-alfa-on-white);
             border-style: solid;
 
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+
             &.button_hovered {
-                border-style: dashed;
+                border-color: rgba(0, 0, 0, .7);
+                box-shadow: 0 0 0 1px rgba(0, 0, 0, .7);
             }
         }
     }

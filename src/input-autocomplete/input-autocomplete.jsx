@@ -426,6 +426,7 @@ class InputAutocomplete extends React.Component {
                 }
 
                 return ({
+                    key: option.key || option.value,
                     value: option.value,
                     content: option.description || option.value
                 });

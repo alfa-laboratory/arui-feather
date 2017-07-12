@@ -14,6 +14,16 @@ const OPTIONS = [
     { value: 'Twitter' }
 ];
 
+const OPTIONS2 = [
+    {
+        value: 'Vkontakte'
+    },
+    {
+        value: 'Vkontakte',
+        key: 'vk2'
+    }
+];
+
 function renderInputAutocomplete(props = {}) {
     let inputAutocomplete = render(<InputAutocomplete { ...props } />);
 
@@ -40,6 +50,13 @@ describe('input-autocomplete', () => {
         let { inputAutocomplete } = renderInputAutocomplete();
 
         expect(inputAutocomplete.node).to.exist;
+    });
+
+    it('should render without problem when give item with duplicate value', () => {
+        let { popupNode } = renderInputAutocomplete({ options: OPTIONS2 });
+        let optionsNode = popupNode.querySelectorAll('.menu-item');
+
+        expect(optionsNode.length).is.equal(OPTIONS2.length);
     });
 
     it('should render input and popup with options', () => {

@@ -24,6 +24,13 @@ const MENU_ITEM2 = {
     }
 };
 
+const MENU_ITEM2_CLONE = {
+    type: 'item',
+    content: 'MenuItem 2',
+    value: 'value2',
+    key: 'value3'
+};
+
 const MENU_GROUP = {
     type: 'group',
     title: 'Group Title',
@@ -108,6 +115,14 @@ describe('menu', () => {
         let menuItemsNum = getNumberOfItemsWithClass(menuChildsNode, 'menu-item_disabled');
 
         expect(menuItemsNum).to.equal(menuChildsNode.length);
+    });
+
+    it('should render without problem when give item with duplicate value', () => {
+        let content = [MENU_ITEM1, MENU_ITEM2, MENU_ITEM2_CLONE];
+        let menu = render(<Menu content={ content } />);
+        let menuChildNodes = menu.node.querySelectorAll('.menu-item');
+
+        expect(menuChildNodes.length).to.equal(content.length);
     });
 
     it('should call `onItemCheck` callback after menu-item was clicked and if `mode` is identified', () => {

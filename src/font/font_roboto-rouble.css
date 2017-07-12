@@ -6,26 +6,26 @@
     font-family: 'Roboto Rouble';
     font-style: normal;
     font-weight: 300;
-    src: url('./font_roboto-rouble_light.ttf');
+    src: url('./font_roboto-rouble_light.woff');
 }
 
 @font-face {
     font-family: 'Roboto Rouble';
     font-style: normal;
     font-weight: 400;
-    src: url('./font_roboto-rouble_regular.ttf');
+    src: url('./font_roboto-rouble_regular.woff');
 }
 
 @font-face {
     font-family: 'Roboto Rouble';
     font-style: normal;
     font-weight: 500;
-    src: url('./font_roboto-rouble_medium.ttf');
+    src: url('./font_roboto-rouble_medium.woff');
 }
 
 @font-face {
     font-family: 'Roboto Rouble';
     font-style: normal;
     font-weight: 700;
-    src: url('./font_roboto-rouble_bold.ttf');
+    src: url('./font_roboto-rouble_bold.woff');
 }

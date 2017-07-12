@@ -1,3 +1,13 @@
+<a name="8.1.5"></a>
+## [8.1.5](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.4...v8.1.5) (2017-07-12)
+
+
+### Bug Fixes
+
+* **select.css:** unused var ([3728019](https://github.com/alfa-laboratory/arui-feather/commit/3728019))
+
+
+
 <a name="8.1.4"></a>
 ## [8.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.3...v8.1.4) (2017-07-12)
 

@@ -469,8 +469,14 @@ class CalendarInput extends React.Component {
 
                 this.setState({
                     opened: true,
-                    month: calculateMonth(value)
+                    month: calculateMonth(
+                        value,
+                        CUSTOM_DATE_FORMAT,
+                        this.props.calendar ? this.props.calendar.earlierLimit : undefined,
+                        this.props.calendar ? this.props.calendar.laterLimit : undefined
+                    )
                 });
+
                 this.calendar.focus();
 
                 break;

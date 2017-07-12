@@ -134,6 +134,21 @@ describe('calendar', () => {
         expect(onMonthChange).to.have.been.calledWith((new Date(2015, 0, 1)).valueOf());
     });
 
+    it('should call `onMonthChange` callback when month was changed by arrow key press', () => {
+        const LAST_DAY_OF_MONTH = startOfDay(new Date('2016-01-31'));
+        let onMonthChange = sinon.spy();
+        let calendar = render(
+            <Calendar
+                value={ LAST_DAY_OF_MONTH.valueOf() }
+                onMonthChange={ onMonthChange }
+            />
+        );
+
+        simulate(calendar.node, 'keyDown', { which: keyboardCode.DOWN_ARROW });
+
+        expect(onMonthChange).to.have.been.calledWith((new Date(2016, 1, 7)).valueOf());
+    });
+
     it('should select date on next week after down arrow key was pressed', () => {
         let onValueChange = sinon.spy();
         let calendar = render(

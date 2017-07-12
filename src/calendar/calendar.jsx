@@ -16,6 +16,7 @@ import addDays from 'date-fns/add_days';
 import addYears from 'date-fns/add_years';
 import subtractYears from 'date-fns/sub_years';
 import formatDate from 'date-fns/format';
+import isSameMonth from 'date-fns/is_same_month';
 import sortedIndexOf from 'lodash.sortedindexof';
 
 import cn from '../cn';
@@ -488,7 +489,12 @@ class Calendar extends React.Component {
         if (!this.value) {
             this.performChange(this.state.month, true);
         } else {
-            this.performChange(addDays(value, dayShift).valueOf(), isTriggeredByKeyboard);
+            let shiftedValue = addDays(value, dayShift);
+            this.performChange(shiftedValue.valueOf(), isTriggeredByKeyboard);
+
+            if (this.props.onMonthChange && !isSameMonth(shiftedValue, value)) {
+                this.props.onMonthChange(shiftedValue.valueOf());
+            }
         }
     }
 

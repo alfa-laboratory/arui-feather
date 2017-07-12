@@ -5,7 +5,7 @@
 @import '../vars.css';
 
 .radio-group_theme_alfa-on-color {
-    .radio-group__label {
+    .label {
         color: var(--color-content-alfa-on-color);
     }
 }

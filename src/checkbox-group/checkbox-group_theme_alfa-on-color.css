@@ -5,7 +5,7 @@
 @import '../vars.css';
 
 .checkbox-group_theme_alfa-on-color {
-    .checkbox-group__label {
+    .label {
         color: var(--color-content-alfa-on-color);
     }
 }

@@ -5,7 +5,7 @@
 @import '../../vars-fantasy.css';
 
 .checkbox-group_theme_alfa-on-color {
-    .checkbox-group__label {
+    .label {
         color: var(--color-content-minor-alfa-on-color);
     }
 }

@@ -1,3 +1,13 @@
+<a name="8.1.3"></a>
+## [8.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.2...v8.1.3) (2017-07-12)
+
+
+### Bug Fixes
+
+* **tab-items:** fix tab-items styles according to new design ([8b5a113](https://github.com/alfa-laboratory/arui-feather/commit/8b5a113))
+
+
+
 <a name="8.1.2"></a>
 ## [8.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.1...v8.1.2) (2017-07-11)
 

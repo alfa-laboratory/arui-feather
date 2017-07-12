@@ -45,8 +45,8 @@ geminiReact.suite(NAME, function () {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('focused', function (actions) {
-                                actions.sendKeys(this.renderedComponent, global.gemini.TAB);
+                            .capture('focused', function (actions, find) {
+                                actions.focus(find('.attach__control'));
                             });
                     } else {
                         suite

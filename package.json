@@ -7,10 +7,9 @@
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "demo": "node demo",
     "test": "karma start ./karma.config.js",
     "lint": "npm run lint-css && npm run lint-js",
-    "lint-js": "eslint ./*.js ./src/ ./demo/ ./gemini/ ./arui-demo/components --ext .js,.jsx",
+    "lint-js": "eslint ./*.js ./src/ ./gemini/ ./arui-demo/components --ext .js,.jsx",
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
     "lint-css": "stylelint ./src/**/*.css ./arui-demo/**/*.css",
     "gemini": "gemini test --grep=`env | grep '^SUITES' | awk -F= '{print $NF}'`",
@@ -26,12 +25,11 @@
     "postversion": "git push origin master && git push --tags && npm run pub",
     "modernizr": "node ./tools/modernizr-build.js",
     "commitmsg": "validate-commit-msg",
-    "precommit": "npm run docs && git add docs && lint-staged",
-    "docs": "gulp --cwd . docs",
+    "precommit": "lint-staged",
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
-    "styleguide": "styleguidist server",
-    "styleguide-fantasy": "styleguidist server --config ./styleguide-fantasy.config.js",
+    "demo": "styleguidist server",
+    "demo:fantasy": "styleguidist server --config ./styleguide-fantasy.config.js",
     "styleguide-build": "styleguidist build",
     "styleguide-build-fantasy": "styleguidist build --config ./styleguide-fantasy.config.js",
     "lint-staged": "lint-staged"
@@ -56,6 +54,9 @@
     "src/**/*.{js,jsx}": [
       "eslint",
       "test"
+    ],
+    "src/**/*.md": [
+      "lint-md"
     ]
   },
   "maintainers": [
@@ -144,15 +145,15 @@
     "node-noop": "^1.0.0",
     "react-frame-component": "^1.1.0",
     "react-hot-loader": "3.0.0-beta.1",
-    "react-styleguidist": "git:github.com/styleguidist/react-styleguidist.git#six",
+    "react-styleguidist": "^6.0.0-beta.1",
     "redbox-react": "^1.3.5",
     "sinon": "^2.3.8",
     "sinon-chai": "^2.11.0",
     "stylelint": "^7.11.0",
     "uppercamelcase": "^1.1.0",
     "validate-commit-message": "^3.0.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1",
     "webpack-merge": "^4.1.0"
   }
 }

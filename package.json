@@ -106,7 +106,7 @@
     "react-textarea-autosize": "^4.3.2"
   },
   "devDependencies": {
-    "arui-presets": "2.5.0",
+    "arui-presets": "3.0.1",
     "babel-core": "^6.24.1",
     "bowser": "^1.7.0",
     "chai": "^3.5.0",
@@ -142,10 +142,9 @@
     "lint-staged": "^3.6.1",
     "mocha": "^3.4.2",
     "node-noop": "^1.0.0",
-    "react-docgen": "^2.15.0",
     "react-frame-component": "^1.1.0",
     "react-hot-loader": "3.0.0-beta.1",
-    "react-styleguidist": "5.4.1",
+    "react-styleguidist": "git:github.com/styleguidist/react-styleguidist.git#six",
     "redbox-react": "^1.3.5",
     "sinon": "^2.3.8",
     "sinon-chai": "^2.11.0",

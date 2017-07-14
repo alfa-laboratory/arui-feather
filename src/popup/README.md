@@ -1,4 +1,4 @@
-```
+```jsx
 class PopupDemo extends React.Component {
     constructor() {
         super();
@@ -9,7 +9,7 @@ class PopupDemo extends React.Component {
             popup4: false,
             popup5: false,
             popup6: false,
-            popup7: false,
+            popup7: false
         };
 
         this.popup1;
@@ -150,7 +150,7 @@ class PopupDemo extends React.Component {
                         target='screen'
                         visible={ this.state.popup6 }
                     >
-                        <p>Popup with target="screen"</p>
+                        <p>Popup with target screen</p>
                         <p>
                             <Button
                                 size='m'

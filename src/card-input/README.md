@@ -1,4 +1,4 @@
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (

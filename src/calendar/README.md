@@ -1,4 +1,4 @@
-```
+```jsx
     initialState = {
         date: Date.now()
     };
@@ -12,7 +12,7 @@
     />
 ```
 
-```
+```jsx
 const addDays = require('date-fns/add_days');
 const subtractDays = require('date-fns/sub_days');
 
@@ -34,7 +34,7 @@ initialState = {
 />
 ```
 
-```
+```jsx
 const addDays = require('date-fns/add_days');
 const startOfDay = require('date-fns/start_of_day');
 const subtractDays = require('date-fns/sub_days');

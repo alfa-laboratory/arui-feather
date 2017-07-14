@@ -1,4 +1,4 @@
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
@@ -11,7 +11,7 @@
 </div>
 ```
 
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
@@ -21,7 +21,7 @@
 </div>
 ```
 
-```
+```jsx
 const formatDate = require('date-fns/format');
 
 <div>

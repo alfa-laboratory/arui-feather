@@ -1,4 +1,4 @@
-```
+```jsx
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
 }

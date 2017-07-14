@@ -1,5 +1,5 @@
 Вертикальная группа чекбоксов с заголовком
-```
+```jsx
 <CheckBoxGroup label={ <Label size='m'>Выберите счёт</Label> }>
     <CheckBox
         text='Текущий счет'
@@ -17,7 +17,7 @@
 ```
 
 Горизонтальная группа чекбоксов, состоящая из обычных кнопок
-```
+```jsx
 <CheckBoxGroup type='button'>
     <CheckBox
         disabled={ true }
@@ -41,7 +41,7 @@
 ```
 
 Горизонтальная группа чекбоксов
-```
+```jsx
 <CheckBoxGroup type='line'>
     <CheckBox
         text='Текущий'

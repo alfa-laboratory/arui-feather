@@ -1,5 +1,5 @@
 Всплывающее окно слева
-```
+```jsx
 initialState = {
     visible: false
 };
@@ -21,7 +21,7 @@ initialState = {
 ```
 
 Всплывающее окно справа
-```
+```jsx
 initialState = {
     visible: false
 };
@@ -44,7 +44,7 @@ initialState = {
 ```
 
 Всплывающее окно с ошибкой
-```
+```jsx
 initialState = {
     visible: false
 };
@@ -67,7 +67,7 @@ initialState = {
 ```
 
 Сообщение с иконкой
-```
+```jsx
 initialState = {
     visible: false
 };

@@ -1,4 +1,4 @@
-```
+```jsx
 const MENU_1 = [
     {
         type: 'item',

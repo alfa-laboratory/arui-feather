@@ -1,4 +1,4 @@
-```
+```jsx
 function handleExpandedChange(isExpanded) {
     setState({ isExpanded });
 }

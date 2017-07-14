@@ -1,5 +1,5 @@
 ol
-```
+```jsx
 const ITEMS_OL = [
     {
         key: 'one',
@@ -21,7 +21,7 @@ const ITEMS_OL = [
 ```
 
 ul
-```
+```jsx
 const ITEMS_UL = [
     {
         key: 'one',

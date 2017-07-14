@@ -1,5 +1,5 @@
 Обычные кнопки
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Применить' },
     { size: 'm', name: 'Применить' },
@@ -21,7 +21,7 @@ const buttons = [
 ```
 
 Псевдокнопки
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Показать' },
     { size: 'm', name: 'Показать' },
@@ -39,7 +39,7 @@ const buttons = [
 
 Кнопки действия
 
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Продолжить' },
     { size: 'm', name: 'Продолжить' },
@@ -56,7 +56,7 @@ const buttons = [
 ```
 
 Экстра кнопки
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Оплатить' },
     { size: 'm', name: 'Оплатить' },
@@ -73,7 +73,7 @@ const buttons = [
 ```
 
 Другие кнопки
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Подтвердить' },
     { size: 'm', name: 'Подтвердить' },
@@ -90,7 +90,7 @@ const buttons = [
 ```
 
 С иконкой
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Скачать' },
     { size: 'm', name: 'Скачать' },
@@ -112,7 +112,7 @@ const buttons = [
 ```
 
 Со 100%-й шириной
-```
+```jsx
 const buttons = [
     { size: 's', name: 'Заказать карту' },
     { size: 'm', name: 'Заказать карту' },

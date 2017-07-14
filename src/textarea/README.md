@@ -1,15 +1,15 @@
-```
+```jsx
 <Textarea placeholder='Textarea...' />
 ```
 
-```
+```jsx
 <Textarea
     placeholder='Textarea...'
     error='something went wrong'
 />
 ```
 
-```
+```jsx
 <Textarea
     placeholder='Textarea autosize...'
     autosize={ true }
@@ -19,7 +19,7 @@
 ## Use as controlled
 Данный пример эмулирует задержку обновления при хранении состояния поля в сторе приложения.
 Можно заметить, что если начать печатать в середине textarea - курсор перескакивает в конец
-```
+```jsx
 initialState = {
     value: 'default'
 };
@@ -40,7 +40,7 @@ function handleChangeAsync(value) {
 Если вам не нужно модифицировать введенные пользователем данные -
 используйте параметр defaultValue для того чтобы задать начальное значение
 и синхронизируйте значение компонента с нужным хранилищем
-```
+```jsx
 initialState = {
     value: 'default'
 };

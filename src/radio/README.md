@@ -1,4 +1,4 @@
-```
+```jsx
 const radioStyle = {
     margin: '10px'
 };

@@ -53,29 +53,29 @@ describe('attach', () => {
     });
 
     it('should call `onClick` callback after attach button was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let attach = render(<Attach onClick={ onClick } />);
         let buttonNode = attach.node.querySelector('.button');
 
         buttonNode.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 
     it('should call `onFocus` callback after attach was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let attach = render(<Attach onFocus={ onFocus } />);
 
         attach.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after attach was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let attach = render(<Attach onBlur={ onBlur } />);
 
         attach.instance.focus();
@@ -84,27 +84,27 @@ describe('attach', () => {
             attach.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should call `onMouseEnter` callback after attach was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let attach = render(<Attach onMouseEnter={ onMouseEnter } />);
 
         simulate(attach.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after attach was leaved by cursor', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let attach = render(<Attach onMouseLeave={ onMouseLeave } />);
 
         simulate(attach.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 });

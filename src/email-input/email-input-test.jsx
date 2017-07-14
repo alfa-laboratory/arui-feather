@@ -20,7 +20,7 @@ describe('email-input', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -43,7 +43,7 @@ describe('email-input', () => {
         emailInput.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });

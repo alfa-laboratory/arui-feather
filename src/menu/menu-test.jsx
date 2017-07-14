@@ -126,31 +126,31 @@ describe('menu', () => {
     });
 
     it('should call `onItemCheck` callback after menu-item was clicked and if `mode` is identified', () => {
-        let onItemCheck = chai.spy();
+        let onItemCheck = sinon.spy();
         let menu = render(<Menu onItemCheck={ onItemCheck } mode='check' content={ [MENU_ITEM1, MENU_ITEM2] } />);
         let menuFirstItemNode = menu.node.firstChild;
 
         menuFirstItemNode.click();
 
-        expect(onItemCheck).to.have.been.called.once;
+        expect(onItemCheck).to.have.been.calledOnce;
     });
 
     it('should call `onMouseEnter` callback after menu was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let menu = render(<Menu onMouseEnter={ onMouseEnter } />);
 
         simulate(menu.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after menu was unhovered', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let menu = render(<Menu onMouseLeave={ onMouseLeave } />);
 
         simulate(menu.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should set/unset class when menu-item hovered/unhovered', () => {
@@ -190,19 +190,19 @@ describe('menu', () => {
     });
 
     it('should call `onFocus` callback after menu was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let menu = render(<Menu onFocus={ onFocus } />);
 
         menu.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after menu lost focus', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let menu = render(<Menu onBlur={ onBlur } />);
 
         menu.instance.focus();

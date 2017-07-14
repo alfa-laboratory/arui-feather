@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { render, cleanUp, simulate } from '../test-utils';
+import { render, cleanUp, simulate, eventPersist } from '../test-utils';
 
 import Radio from './radio';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -20,7 +20,7 @@ describe('radio', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -131,19 +131,19 @@ describe('radio', () => {
     });
 
     it('should call `onFocus` callback after radio was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let radio = renderRadio(<Radio onFocus={ onFocus } />);
 
         radio.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after radio was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let radio = renderRadio(<Radio onBlur={ onBlur } />);
 
         radio.instance.focus();
@@ -152,28 +152,25 @@ describe('radio', () => {
             radio.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should call `onFocus` callback after radio was focused with value', (done) => {
-        let value;
-        let onFocus = chai.spy((event) => { value = event.target.value; });
+        let onFocus = sinon.spy(eventPersist);
         let radio = renderRadio(<Radio value='test' onFocus={ onFocus } />);
-
         radio.instance.focus();
 
         setTimeout(() => {
-            expect(value).to.be.equal('test');
+            expect(onFocus).to.have.been.calledWith(sinon.match({ target: { value: 'test' } }));
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after radio was blured with value', (done) => {
-        let value;
-        let onBlur = chai.spy((event) => { value = event.target.value; });
+        let onBlur = sinon.spy(eventPersist);
         let radio = renderRadio(<Radio value='test' onBlur={ onBlur } />);
 
         radio.instance.focus();
@@ -182,7 +179,7 @@ describe('radio', () => {
             radio.instance.blur();
 
             setTimeout(() => {
-                expect(value).to.be.equal('test');
+                expect(onBlur).to.have.been.calledWith(sinon.match({ target: { value: 'test' } }));
                 done();
             }, 0);
         }, 0);
@@ -209,21 +206,21 @@ describe('radio', () => {
     });
 
     it('should call `onMouseEnter` callback after radio was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let radio = renderRadio(<Radio onMouseEnter={ onMouseEnter } />);
 
         simulate(radio.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after radio was leaved by cursor', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let radio = renderRadio(<Radio onMouseLeave={ onMouseLeave } />);
 
         simulate(radio.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should set class on radio change', () => {
@@ -236,29 +233,23 @@ describe('radio', () => {
     });
 
     it('should call `onChange` callback after radio was changed', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let radio = renderRadio(<Radio onChange={ onChange } />);
         let radioInputNode = radio.node.querySelector('input');
 
         simulate(radioInputNode, 'change');
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should call `onChange` callback after radio was changed with value and checked state', () => {
-        let eventValue;
-        let eventChecked;
-        let onChange = chai.spy((value, checked) => {
-            eventValue = value;
-            eventChecked = checked;
-        });
+        let onChange = sinon.spy();
         let radio = renderRadio(<Radio checked={ false } value='test' onChange={ onChange } />);
         let radioInputNode = radio.node.querySelector('input');
 
         simulate(radioInputNode, 'change');
 
-        expect(eventValue).to.be.equal('test');
-        expect(eventChecked).to.be.equal(true);
+        expect(onChange).to.have.been.calledWith('test', true);
     });
 
     it('should set class on radio button change', () => {
@@ -272,13 +263,13 @@ describe('radio', () => {
     });
 
     it('should call `onChange` callback after radio button was clicked', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let radio = renderRadio(<Radio type='button' onChange={ onChange } />);
         let buttonNode = radio.node.querySelector('button');
 
         buttonNode.click();
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should work with props.checked', () => {
@@ -305,7 +296,7 @@ describe('radio', () => {
         radio.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });

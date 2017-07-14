@@ -43,57 +43,57 @@ describe('dropdown', () => {
     });
 
     it('should call `onSwitcherMouseEnter` callback after switcher was hovered', () => {
-        let onSwitcherMouseEnter = chai.spy();
+        let onSwitcherMouseEnter = sinon.spy();
         let { switcherNode } = renderDropdown({ onSwitcherMouseEnter, switcherType: 'button' });
 
         simulate(switcherNode, 'mouseEnter');
 
-        expect(onSwitcherMouseEnter).to.have.been.called.once;
+        expect(onSwitcherMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onSwitcherMouseLeave` callback after switcher was unhovered', () => {
-        let onSwitcherMouseLeave = chai.spy();
+        let onSwitcherMouseLeave = sinon.spy();
         let { switcherNode } = renderDropdown({ onSwitcherMouseLeave, switcherType: 'button' });
 
         simulate(switcherNode, 'mouseLeave');
 
-        expect(onSwitcherMouseLeave).to.have.been.called.once;
+        expect(onSwitcherMouseLeave).to.have.been.calledOnce;
     });
 
     it('should call `onSwitcherClick` callback after switcher was clicked', () => {
-        let onSwitcherClick = chai.spy();
+        let onSwitcherClick = sinon.spy();
         let { switcherNode } = renderDropdown({ onSwitcherClick, switcherType: 'button' });
 
         switcherNode.click();
 
-        expect(onSwitcherClick).to.have.been.called.once;
+        expect(onSwitcherClick).to.have.been.calledOnce;
     });
 
     it('should not call `onSwitcherClick` callback after switcher was clicked with disabled=true', () => {
-        let onSwitcherClick = chai.spy();
+        let onSwitcherClick = sinon.spy();
         let { switcherNode } = renderDropdown({ onSwitcherClick, disabled: true, switcherType: 'button' });
 
         switcherNode.click();
 
-        expect(onSwitcherClick).to.not.have.been.called.once;
+        expect(onSwitcherClick).to.not.have.been.calledOnce;
     });
 
     it('should call `onPopupMouseEnter` callback after popup was hovered', () => {
-        let onPopupMouseEnter = chai.spy();
+        let onPopupMouseEnter = sinon.spy();
         let { popupNode } = renderDropdown({ onPopupMouseEnter, opened: true });
 
         simulate(popupNode, 'mouseEnter');
 
-        expect(onPopupMouseEnter).to.have.been.called.once;
+        expect(onPopupMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onPopupMouseLeave` callback after popup was unhovered', () => {
-        let onPopupMouseLeave = chai.spy();
+        let onPopupMouseLeave = sinon.spy();
         let { popupNode } = renderDropdown({ onPopupMouseLeave, opened: true });
 
         simulate(popupNode, 'mouseLeave');
 
-        expect(onPopupMouseLeave).to.have.been.called.once;
+        expect(onPopupMouseLeave).to.have.been.calledOnce;
     });
 
     it('should set class checked to switcher button then togglable=`check` and popup open', () => {

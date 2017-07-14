@@ -5,7 +5,7 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 import bowser from 'bowser';
-import { render, cleanUp, simulate } from '../test-utils';
+import { render, cleanUp, simulate, eventPersist } from '../test-utils';
 
 import CalendarInput from './calendar-input';
 import * as calendarUtils from './utils';
@@ -33,7 +33,7 @@ describe('calendar-input', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -64,44 +64,44 @@ describe('calendar-input', () => {
     });
 
     it('should call `onInputChange` callback after input value was changed', () => {
-        let onInputChange = chai.spy();
+        let onInputChange = sinon.spy();
         let { inputNode } = renderCalendarInput({ onInputChange });
 
         simulate(inputNode, 'change');
 
-        expect(onInputChange).to.have.been.called.once;
+        expect(onInputChange).to.have.been.calledOnce;
     });
 
     it('should call `onChange` callback after input value was changed', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let { inputNode } = renderCalendarInput({ onChange });
 
         simulate(inputNode, 'change');
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should focus input on after `focus` call', (done) => {
-        let onInputFocus = chai.spy();
+        let onInputFocus = sinon.spy();
         let { calendarInput } = renderCalendarInput({ onInputFocus });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
-            expect(onInputFocus).to.have.been.called.once;
+            expect(onInputFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should blur input on after `blur` call', (done) => {
-        let onInputBlur = chai.spy();
+        let onInputBlur = sinon.spy();
         let { calendarInput } = renderCalendarInput({ onInputBlur });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
             calendarInput.instance.blur();
-            expect(onInputBlur).to.have.been.called.once;
+            expect(onInputBlur).to.have.been.calledOnce;
             done();
         }, 0);
     });
@@ -114,118 +114,112 @@ describe('calendar-input', () => {
         calendarInput.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });
 
     it('should receive SyntheticEvent with type blur from input in first argument of `onInputFocus` callback',
     (done) => {
-        let type = '';
-        let onInputFocus = chai.spy((event) => { type = event.type; });
+        let onInputFocus = sinon.spy(eventPersist);
         let { calendarInput } = renderCalendarInput({ onInputFocus });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
-            expect(onInputFocus).to.have.been.called.once;
-            expect(type).to.equal('focus');
+            expect(onInputFocus).to.have.been.calledOnce;
+            expect(onInputFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
             done();
         }, 0);
     });
 
     it('should receive SyntheticEvent with type blur from input in first argument of `onInputBlur` callback',
     (done) => {
-        let type = '';
-        let onInputBlur = chai.spy((event) => { type = event.type; });
+        let onInputBlur = sinon.spy(eventPersist);
         let { calendarInput } = renderCalendarInput({ onInputBlur });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
             calendarInput.instance.blur();
-            expect(onInputBlur).to.have.been.called.once;
-            expect(type).to.equal('blur');
+            expect(onInputBlur).to.have.been.calledOnce;
+            expect(onInputBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
             done();
         }, 0);
     });
 
     it('should receive SyntheticEvent with type focus from component in first argument of `onFocus` callback',
     (done) => {
-        let type = '';
-        let onFocus = chai.spy((event) => { type = event.type; });
+        let onFocus = sinon.spy(eventPersist);
         let { calendarInput } = renderCalendarInput({ onFocus });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
-            expect(type).to.equal('focus');
+            expect(onFocus).to.have.been.calledOnce;
+            expect(onFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
             done();
         }, 0);
     });
 
     it('should receive SyntheticEvent with type blur from component in first argument of `onBlur` callback',
     (done) => {
-        let type = '';
-        let onBlur = chai.spy((event) => { type = event.type; });
+        let onBlur = sinon.spy(eventPersist);
         let { calendarInput } = renderCalendarInput({ onBlur });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
             calendarInput.instance.blur();
-            expect(onBlur).to.have.been.called.once;
-            expect(type).to.equal('blur');
+            expect(onBlur).to.have.been.calledOnce;
+            expect(onBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
             done();
         }, 0);
     });
 
     it('should receive custom formatted date from event.target.value on `onFocus` callback', (done) => {
-        let value = '';
-        let onFocus = chai.spy((event) => { value = event.target.value; });
+        let onFocus = sinon.spy(eventPersist);
         let { calendarInput } = renderCalendarInput({ value: '01.08.2016', onFocus });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
-            expect(value).to.equal('01.08.2016');
+            expect(onFocus).to.have.been.calledOnce;
+            expect(onFocus).to.have.been.calledWith(sinon.match({ target: { value: '01.08.2016' } }));
             done();
         }, 0);
     });
 
     it('should receive custom formatted date from event.target.value on `onBlur` callback', (done) => {
-        let value = '';
-        let onBlur = chai.spy((event) => { value = event.target.value; });
+        let onBlur = sinon.spy(eventPersist);
         let { calendarInput } = renderCalendarInput({ value: '01.08.2016', onBlur });
 
         calendarInput.instance.focus();
 
         setTimeout(() => {
             calendarInput.instance.blur();
-            expect(onBlur).to.have.been.called.once;
-            expect(value).to.equal('01.08.2016');
+            expect(onBlur).to.have.been.calledOnce;
+            expect(onBlur).to.have.been.calledWith(sinon.match({ target: { value: '01.08.2016' } }));
             done();
         }, 0);
     });
 
     it('should receive custom formatted date from event.target.value on `onChange` callback', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let { inputNode } = renderCalendarInput({ onChange });
 
         simulate(inputNode, 'change', { target: { value: '01.08.2016' } });
 
-        expect(onChange).to.have.been.called.with('01.08.2016');
+        expect(onChange).to.have.been.calledWith('01.08.2016');
     });
 
     it('should receive custom formatted date from event.target.value on `onInputChange` callback', () => {
-        let onInputChange = chai.spy();
+        let onInputChange = sinon.spy();
         let { inputNode } = renderCalendarInput({ onInputChange });
 
         simulate(inputNode, 'change', { target: { value: '01.08.2016' } });
 
-        expect(onInputChange).to.have.been.called.with('01.08.2016');
+        expect(onInputChange).to.have.been.calledWith('01.08.2016');
     });
 
     if (!bowser.mobile) {
@@ -241,23 +235,23 @@ describe('calendar-input', () => {
         });
 
         it('should call `onCalendarChange` callback after calendar value was changed', () => {
-            let onCalendarChange = chai.spy();
+            let onCalendarChange = sinon.spy();
             let { calendarNode } = renderCalendarInput({ onCalendarChange, opened: true });
             let dayNodes = calendarNode.querySelectorAll('.calendar__day');
 
             dayNodes[15].click();
 
-            expect(onCalendarChange).to.have.been.called.once;
+            expect(onCalendarChange).to.have.been.calledOnce;
         });
 
         it('should call `onChange` callback after calendar value was changed', () => {
-            let onChange = chai.spy();
+            let onChange = sinon.spy();
             let { calendarNode } = renderCalendarInput({ onChange, opened: true });
             let dayNodes = calendarNode.querySelectorAll('.calendar__day');
 
             dayNodes[15].click();
 
-            expect(onChange).to.have.been.called.once;
+            expect(onChange).to.have.been.calledOnce;
         });
 
         it('should close calendar popup after calendar value was changed by mouse click', () => {
@@ -313,63 +307,63 @@ describe('calendar-input', () => {
         });
 
         it('should focus on input after escape key was pressed in calendar', (done) => {
-            let onInputFocus = chai.spy();
+            let onInputFocus = sinon.spy();
             let { calendarNode } = renderCalendarInput({ onInputFocus });
 
             simulate(calendarNode, 'keyDown', { which: keyboardCode.ESCAPE });
 
             setTimeout(() => {
-                expect(onInputFocus).to.have.been.called.once;
+                expect(onInputFocus).to.have.been.calledOnce;
                 done();
             }, 0);
         });
 
         it('should focus on input after calendar icon was clicked', (done) => {
-            let onInputFocus = chai.spy();
+            let onInputFocus = sinon.spy();
             let { calendarInput } = renderCalendarInput({ onInputFocus });
             let iconNode = calendarInput.node.querySelector('.icon');
 
             iconNode.click();
 
             setTimeout(() => {
-                expect(onInputFocus).to.have.been.called.once;
+                expect(onInputFocus).to.have.been.calledOnce;
                 done();
             }, 0);
         });
 
         it('should call `onCalendarKeyDown` callback after any key was pressed in calendar', (done) => {
-            let onCalendarKeyDown = chai.spy();
+            let onCalendarKeyDown = sinon.spy();
             let { calendarNode } = renderCalendarInput({ onCalendarKeyDown });
 
             simulate(calendarNode, 'keyDown', { which: keyboardCode.NUMBER_0 });
 
             setTimeout(() => {
-                expect(onCalendarKeyDown).to.have.been.called.once;
+                expect(onCalendarKeyDown).to.have.been.calledOnce;
                 done();
             }, 0);
         });
 
         it('should call `onInputKeyDown` callback after any key was pressed in input', (done) => {
-            let onInputKeyDown = chai.spy();
+            let onInputKeyDown = sinon.spy();
             let { inputNode } = renderCalendarInput({ onInputKeyDown });
 
             simulate(inputNode, 'keyDown', { which: keyboardCode.NUMBER_0 });
 
             setTimeout(() => {
-                expect(onInputKeyDown).to.have.been.called.once;
+                expect(onInputKeyDown).to.have.been.calledOnce;
                 done();
             }, 0);
         });
 
         it('should call `onKeyDown` callback after any key was pressed in input and in calendar', (done) => {
-            let onKeyDown = chai.spy();
+            let onKeyDown = sinon.spy();
             let { inputNode, calendarNode } = renderCalendarInput({ onKeyDown });
 
             simulate(inputNode, 'keyDown', { which: keyboardCode.NUMBER_0 });
             simulate(calendarNode, 'keyDown', { which: keyboardCode.NUMBER_0 });
 
             setTimeout(() => {
-                expect(onKeyDown).to.have.been.called.twice;
+                expect(onKeyDown).to.have.been.calledTwice;
                 done();
             }, 0);
         });

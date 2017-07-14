@@ -12,7 +12,7 @@ describe('money-input', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -66,23 +66,23 @@ describe('money-input', () => {
     });
 
     it('should call `onChange` callback after input was changed', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let moneyInput = render(<MoneyInput onChange={ onChange } />);
         let controlNode = moneyInput.node.querySelector('input');
 
         simulate(controlNode, 'change');
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should call `onChange` with 2 params after input was changed', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let moneyInput = render(<MoneyInput onChange={ onChange } />);
         let controlNode = moneyInput.node.querySelector('input');
 
         simulate(controlNode, 'change', { target: { value: '1 234 567,89' } });
 
-        expect(onChange).to.have.been.called.with('1 234 567,89', 1234567.89);
+        expect(onChange).to.have.been.calledWith('1 234 567,89', 1234567.89);
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {
@@ -93,7 +93,7 @@ describe('money-input', () => {
         moneyInput.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });

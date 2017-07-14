@@ -38,7 +38,7 @@ describe('input-autocomplete', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -85,7 +85,7 @@ describe('input-autocomplete', () => {
         inputAutocomplete.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });
@@ -162,48 +162,48 @@ describe('input-autocomplete', () => {
     });
 
     it('should call `onItemSelect` callback after option was clicked', () => {
-        let onItemSelect = chai.spy();
+        let onItemSelect = sinon.spy();
         let { popupNode } = renderInputAutocomplete({ onItemSelect, options: OPTIONS });
         let firstOptionNode = popupNode.querySelector('.menu-item');
 
         firstOptionNode.click();
 
-        expect(onItemSelect).to.have.been.called.once;
+        expect(onItemSelect).to.have.been.calledOnce;
     });
 
     it('should call `onChange` callback after option was clicked and pass value to it', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let { popupNode } = renderInputAutocomplete({ onChange, options: OPTIONS });
         let firstOptionNode = popupNode.querySelector('.menu-item');
 
         firstOptionNode.click();
 
-        expect(onChange).to.have.been.called.with('Vkontakte');
+        expect(onChange).to.have.been.calledWith('Vkontakte');
     });
 
     it('should call `onKeyDown` callback after key down in input', () => {
-        let onKeyDown = chai.spy();
+        let onKeyDown = sinon.spy();
         let { controlNode } = renderInputAutocomplete({ onKeyDown });
 
         simulate(controlNode, 'keyDown');
 
-        expect(onKeyDown).to.have.been.called.once;
+        expect(onKeyDown).to.have.been.calledOnce;
     });
 
     it('should call `onFocus` callback after component was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let { inputAutocomplete } = renderInputAutocomplete({ onFocus });
 
         inputAutocomplete.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after component was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let { inputAutocomplete } = renderInputAutocomplete({ onBlur });
 
         inputAutocomplete.instance.focus();
@@ -212,18 +212,18 @@ describe('input-autocomplete', () => {
             inputAutocomplete.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should call `onChange` callback', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let { controlNode } = renderInputAutocomplete({ onChange });
 
         simulate(controlNode, 'change', { target: { value: 'other value' } });
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 });

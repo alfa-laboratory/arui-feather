@@ -137,11 +137,11 @@ class Textarea extends React.Component {
                     }
                     {
                         !this.props.autosize
-                        ? <textarea { ...textareaProps } />
-                        : <TextareaAutosize
-                            { ...textareaProps }
-                            onHeightChange={ this.handleHeightChange }
-                        />
+                            ? <textarea { ...textareaProps } />
+                            : <TextareaAutosize
+                                { ...textareaProps }
+                                onHeightChange={ this.handleHeightChange }
+                            />
                     }
                     {
                         (this.props.error || this.props.hint) &&

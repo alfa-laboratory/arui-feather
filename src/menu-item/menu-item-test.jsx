@@ -45,13 +45,13 @@ describe('menu-item', () => {
     });
 
     it('should render `Dropdown` with `Link` and `Popup` content from `popup` property when type=`dropdown`',
-    function () {
-        let { popupNode, controlNode, switcherNode } = renderMenuItem({ type: 'dropdown', popup: 'MenuItem Popup' });
+        function () {
+            let { popupNode, controlNode, switcherNode } = renderMenuItem({ type: 'dropdown', popup: 'MenuItem Popup' });
 
-        expect(switcherNode.tagName).to.equal('A');
-        expect(controlNode).to.have.class('dropdown');
-        expect(popupNode).to.have.text('MenuItem Popup');
-    });
+            expect(switcherNode.tagName).to.equal('A');
+            expect(controlNode).to.have.class('dropdown');
+            expect(popupNode).to.have.text('MenuItem Popup');
+        });
 
     it('should show popup when menu-item type=`dropdown` was hovered', () => {
         let { popupNode, switcherNode } = renderMenuItem({ type: 'dropdown' });

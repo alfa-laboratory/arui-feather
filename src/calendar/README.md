@@ -1,15 +1,15 @@
 ```jsx
-    initialState = {
-        date: Date.now()
-    };
-    <Calendar
-        value={ state.date }
-        onValueChange={ (newDate) => {
-            setState({
-                date: newDate
-            });
-        } }
-    />
+initialState = {
+    date: Date.now()
+};
+<Calendar
+    value={ state.date }
+    onValueChange={ (newDate) => {
+        setState({
+            date: newDate
+        });
+    } }
+/>
 ```
 
 ```jsx

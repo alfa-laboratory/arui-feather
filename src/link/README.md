@@ -41,7 +41,7 @@ const columnStyle = {
     {['s', 'm', 'l', 'xl'].map(size => (
         <span className='row'>
             <div className='column' style={ columnStyle }>
-                <Link size={ size } >😊</Link>
+                <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
             </div>
             <div className='column' style={ columnStyle }>
 

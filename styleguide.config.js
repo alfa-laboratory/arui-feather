@@ -7,7 +7,6 @@ const path = require('path');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
-const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
 module.exports = {
@@ -56,7 +55,7 @@ module.exports = {
     ],
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
-    propsParser(filePath, source, resolver, handlers) {
+    propsParser(filePath) {
         return reactDoc(filePath);
     },
     getComponentPathLine(filePath) {

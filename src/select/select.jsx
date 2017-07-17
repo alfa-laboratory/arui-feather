@@ -46,6 +46,8 @@ class Select extends React.Component {
         className: Type.oneOfType([Type.func, Type.string]),
         /** Тип выпадающего списка */
         mode: Type.oneOf(['check', 'radio', 'radio-check']),
+        /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
+        groupView: Type.oneOf(['default', 'line']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -132,6 +134,7 @@ class Select extends React.Component {
 
     static defaultProps = {
         mode: 'check',
+        groupView: 'default',
         disabled: false,
         size: 'm',
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
@@ -350,6 +353,7 @@ class Select extends React.Component {
                     size={ this.props.size }
                     disabled={ this.props.disabled }
                     mode={ this.props.mode }
+                    groupView={ this.props.groupView }
                     content={ optionsList }
                     onItemCheck={ this.handleOptionCheck }
                     checkedItems={ value }

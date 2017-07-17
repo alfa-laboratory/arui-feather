@@ -15,6 +15,7 @@ import Menu from 'arui-feather/menu';
 | Prop  | Тип  | По умолчанию | Обязательный | Описание |
 | ----- | ---- | ------------ | ------------ |----------|
 | view | String |  |  | Тип расположения меню: 'horizontal' |
+| groupView | [GroupViewEnum](#GroupViewEnum) | `'default'`  |  | Размещение заголовка групп: обычное или в одну строку с первым элементом группы |
 | mode | [ModeEnum](#ModeEnum) | `'basic'`  |  | Тип списка вариантов меню |
 | disabled | Boolean |  |  | Управление возможностью изменения значения |
 | focused | Boolean |  |  | Управление состоянием фокуса элемента |
@@ -77,6 +78,12 @@ import Menu from 'arui-feather/menu';
 
 
 
+
+
+### <a id="GroupViewEnum"></a>GroupViewEnum
+
+ * `'default'`
+ * `'line'`
 
 
 ### <a id="ModeEnum"></a>ModeEnum

@@ -25,6 +25,8 @@ class Menu extends React.Component {
     static propTypes = {
         /** Тип расположения меню: 'horizontal' */
         view: Type.string,
+        /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
+        groupView: Type.oneOf(['default', 'line']),
         /** Тип списка вариантов меню */
         mode: Type.oneOf(['basic', 'check', 'radio', 'radio-check']),
         /** Управление возможностью изменения значения */
@@ -87,6 +89,7 @@ class Menu extends React.Component {
     static defaultProps = {
         size: 'm',
         mode: 'basic',
+        groupView: 'default',
         autoFocusFirstItem: false
     };
 
@@ -129,6 +132,7 @@ class Menu extends React.Component {
                 className={ cn({
                     size: this.props.size,
                     view: this.props.view,
+                    'group-view': this.props.groupView,
                     hovered: this.state.hovered,
                     disabled: this.props.disabled,
                     mode: this.props.mode

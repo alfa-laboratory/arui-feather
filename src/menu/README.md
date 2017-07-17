@@ -84,6 +84,67 @@ const MENU_2 = [
     }
 ];
 
+const MENU_3 = [
+    {
+        type: 'group',
+        title: ' ',
+        content: [
+            {
+                type: 'item',
+                content: 'Москва',
+                value: 'moscow'
+            },
+            {
+                type: 'item',
+                content: 'Санкт-Петербург',
+                value: 'peterburg'
+            }
+        ]
+    },
+    {
+        type: 'group',
+        title: 'А',
+        content: [
+            {
+                type: 'item',
+                content: 'Абакан',
+                value: 'abakan'
+            },
+            {
+                type: 'item',
+                content: 'Альметьевск',
+                value: 'almetyevsk'
+            },
+            {
+                type: 'item',
+                content: 'Ангарск',
+                value: 'angarsk'
+            }
+        ]
+    },
+    {
+        type: 'group',
+        title: 'Б',
+        content: [
+            {
+                type: 'item',
+                content: 'Балашиха',
+                value: 'balashiha'
+            },
+            {
+                type: 'item',
+                content: 'Барнаул',
+                value: 'barnaul'
+            },
+            {
+                type: 'item',
+                content: 'Белгород',
+                value: 'belgorod'
+            }
+        ]
+    }
+];
+
 <div>
     <div className='row'>
         <div className='column'>
@@ -96,6 +157,7 @@ const MENU_2 = [
             />
         </div>
     </div>
+
     <div className='row'>
         <div className='column'>
             <Heading size='s'>
@@ -103,6 +165,18 @@ const MENU_2 = [
             </Heading>
             <Menu
                 content={ MENU_2 }
+            />
+        </div>
+    </div>
+
+    <div className='row'>
+        <div className='column'>
+            <Heading size='s'>
+                Вертикальное меню с короткими заголовками групп
+            </Heading>
+            <Menu
+                groupView='line'
+                content={ MENU_3 }
             />
         </div>
     </div>

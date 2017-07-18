@@ -19,7 +19,7 @@
     .select-button {
         color: var(--color-content-alfa-on-white);
         background: transparent;
-        border-bottom-color: rgba(0, 0, 0, .4);
+        border-bottom-color: var(--color-content-minor-alfa-on-white);
         border-bottom-style: solid;
         border-bottom-width: 1px;
 

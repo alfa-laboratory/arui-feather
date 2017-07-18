@@ -45,6 +45,7 @@ class ResizeSensor extends React.Component {
             zIndex: -1
         };
 
+        /* eslint-disable jsx-a11y/iframe-has-title */
         return (
             <iframe
                 ref={ (iframe) => { this.iframe = iframe; } }
@@ -52,6 +53,7 @@ class ResizeSensor extends React.Component {
                 tabIndex='-1'
             />
         );
+        /* eslint-enable jsx-a11y/iframe-has-title */
     }
 
     @autobind

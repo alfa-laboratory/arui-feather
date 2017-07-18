@@ -107,7 +107,7 @@
     "react-textarea-autosize": "^4.3.2"
   },
   "devDependencies": {
-    "arui-presets": "3.0.1",
+    "arui-presets": "3.0.2",
     "babel-core": "^6.24.1",
     "bowser": "^1.7.0",
     "chai": "^3.5.0",

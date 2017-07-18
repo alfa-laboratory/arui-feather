@@ -46,7 +46,11 @@ describe('menu-item', () => {
 
     it('should render `Dropdown` with `Link` and `Popup` content from `popup` property when type=`dropdown`',
         function () {
-            let { popupNode, controlNode, switcherNode } = renderMenuItem({ type: 'dropdown', popup: 'MenuItem Popup' });
+            let {
+                popupNode,
+                controlNode,
+                switcherNode
+            } = renderMenuItem({ type: 'dropdown', popup: 'MenuItem Popup' });
 
             expect(switcherNode.tagName).to.equal('A');
             expect(controlNode).to.have.class('dropdown');

@@ -1,3 +1,19 @@
+<a name="8.2.0"></a>
+# [8.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.6...v8.2.0) (2017-07-18)
+
+
+### Bug Fixes
+
+* **select:** mobile header style ([#169](https://github.com/alfa-laboratory/arui-feather/issues/169)) ([865b022](https://github.com/alfa-laboratory/arui-feather/commit/865b022))
+
+
+### Features
+
+* migrate callback tests from chai-spies to sinon-chai. ([#167](https://github.com/alfa-laboratory/arui-feather/issues/167)) ([765a14e](https://github.com/alfa-laboratory/arui-feather/commit/765a14e))
+* **menu:** add in-line group titles ([#170](https://github.com/alfa-laboratory/arui-feather/issues/170)) ([aa3e70d](https://github.com/alfa-laboratory/arui-feather/commit/aa3e70d))
+
+
+
 <a name="8.1.6"></a>
 ## [8.1.6](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.5...v8.1.6) (2017-07-13)
 

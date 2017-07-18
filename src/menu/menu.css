@@ -273,3 +273,44 @@
         border-top: 0;
     }
 }
+
+.menu_group-view_line {
+    .menu__group {
+        position: relative;
+    }
+
+    .menu__group-title {
+        position: absolute;
+        line-height: 1.4;
+    }
+
+    &.menu_mode_basic {
+        .menu__group-title {
+            line-height: 1.5;
+        }
+    }
+
+    &.menu_size_s {
+        .menu__group-title {
+            padding: 6px 3px;
+        }
+    }
+
+    &.menu_size_m {
+        .menu__group-title {
+            padding: 9px 13px;
+        }
+    }
+
+    &.menu_size_l {
+        .menu__group-title {
+            padding: 12px 8px;
+        }
+    }
+
+    &.menu_size_xl {
+        .menu__group-title {
+            padding: 11px 5px;
+        }
+    }
+}

@@ -16,6 +16,7 @@ import Select from 'arui-feather/select';
 | ----- | ---- | ------------ | ------------ |----------|
 | className | Function\|String |  |  | Дополнительный класс |
 | mode | [ModeEnum](#ModeEnum) | `'check'`  |  | Тип выпадающего списка |
+| groupView | [GroupViewEnum](#GroupViewEnum) | `'default'`  |  | Размещение заголовка групп: обычное или в одну строку с первым элементом группы |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
 | directions | Array.<[DirectionsEnum](#DirectionsEnum)> | `['bottom-left', 'bottom-right', 'top-left', 'top-right']`  |  | Направления, в которые может открываться попап компонента |
 | disabled | Boolean | `false`  |  | Управление возможностью редактирования значения |
@@ -89,6 +90,12 @@ import Select from 'arui-feather/select';
  * `'check'`
  * `'radio'`
  * `'radio-check'`
+
+
+### <a id="GroupViewEnum"></a>GroupViewEnum
+
+ * `'default'`
+ * `'line'`
 
 
 ### <a id="WidthEnum"></a>WidthEnum

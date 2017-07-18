@@ -29,12 +29,13 @@ export default class PreviewFrame extends Component {
 
     render(cn) {
         const styleLinks = Array.from(document.querySelectorAll('link[type="text/css"]'));
+        const appStyles = Array.from(document.querySelectorAll('style')).map(style => style.innerText).join('\n');
         const styles = `
             html { height: 100%; }
 
             body { 
                 height: 100%;
-                background: none;
+                background: none !important;
                 margin: 0;
             }
 
@@ -45,7 +46,7 @@ export default class PreviewFrame extends Component {
             .frame-content {
                 height: 100%;
             }
-        `;
+        ${appStyles}`;
         let height = 0;
         if (this.contentDocument) {
             height = `${this.contentDocument.body.scrollHeight}px`;

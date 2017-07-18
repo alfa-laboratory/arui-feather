@@ -7,6 +7,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
+const upperCamelCase = require('uppercamelcase');
 const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
@@ -27,6 +28,12 @@ module.exports = {
         }
         const featherExamplesPath = path.resolve(path.dirname(componentPath), '../README.md');
         return featherExamplesPath;
+    },
+    getComponentPathLine(filePath) {
+        const componentDirName = path.dirname(path.resolve(filePath, '../'));
+        const componentSourcesFileName = componentDirName.split(path.sep).pop();
+        const componentName = upperCamelCase(componentSourcesFileName);
+        return `import ${componentName} from 'arui-feather/${componentSourcesFileName}/fantasy';`;
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),

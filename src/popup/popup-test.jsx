@@ -137,25 +137,25 @@ describe('popup', () => {
     });
 
     it('should call `onMouseEnter` callback after popup was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let { popup } = renderPopup({ onMouseEnter }, {});
 
         simulate(popup.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after popup was unhovered', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let { popup } = renderPopup({ onMouseLeave }, {});
 
         simulate(popup.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should call `onClickOutside` callback after click outside popup', (done) => {
-        let onClickOutside = chai.spy();
+        let onClickOutside = sinon.spy();
         renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
 
         let outsideElement = document.createElement('div');
@@ -167,18 +167,18 @@ describe('popup', () => {
 
         setTimeout(() => {
             outsideElement.click();
-            expect(onClickOutside).to.have.been.called.once;
+            expect(onClickOutside).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should not call `onClickOutside` callback after click inside popup', (done) => {
-        let onClickOutside = chai.spy();
+        let onClickOutside = sinon.spy();
         let { popupContentNode } = renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
 
         setTimeout(() => {
             popupContentNode.click();
-            expect(onClickOutside).to.not.have.been.called();
+            expect(onClickOutside).to.not.have.been.called;
             done();
         }, 0);
     });

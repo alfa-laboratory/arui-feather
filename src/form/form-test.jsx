@@ -25,11 +25,11 @@ describe('form', () => {
     });
 
     it('should call `onSubmit` callback after form was submitted', () => {
-        let onSubmit = chai.spy();
+        let onSubmit = sinon.spy();
         let form = render(<Form onSubmit={ onSubmit } />);
 
         simulate(form.node, 'submit');
 
-        expect(onSubmit).to.have.been.called.once;
+        expect(onSubmit).to.have.been.calledOnce;
     });
 });

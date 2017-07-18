@@ -45,48 +45,48 @@ describe('link', () => {
     });
 
     it('should call `onClick` callback after link was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let link = render(<Link onClick={ onClick }>Link-example</Link>);
 
         link.node.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 
     it('should call `onFocus` callback after link was focused', () => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let link = render(<Link onFocus={ onFocus }>Link-example</Link>);
 
         simulate(link.node, 'focus');
 
-        expect(onFocus).to.have.been.called.once;
+        expect(onFocus).to.have.been.calledOnce;
     });
 
     it('should call `onBlur` callback after link was blured', () => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let link = render(<Link onBlur={ onBlur }>Link-example</Link>);
 
         simulate(link.node, 'blur');
 
-        expect(onBlur).to.have.been.called.once;
+        expect(onBlur).to.have.been.calledOnce;
     });
 
     it('should call `onMouseEnter` callback after link was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let link = render(<Link onMouseEnter={ onMouseEnter }>Link-example</Link>);
 
         simulate(link.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after link was leaved by cursor', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let link = render(<Link onMouseLeave={ onMouseLeave }>Link-example</Link>);
 
         simulate(link.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should set "disabled" class when disabled=true', () => {

@@ -34,7 +34,7 @@ describe('scroll-to', () => {
         `;
         document.body.appendChild(domContainerNode);
 
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -48,7 +48,7 @@ describe('scroll-to', () => {
             targetY: 100,
             duration: 200
         }).then(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, 100);
+            expect(window.scrollTo).to.have.been.calledWith(0, 100);
             done();
         }).catch(done);
     });

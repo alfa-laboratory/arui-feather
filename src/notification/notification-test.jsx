@@ -21,7 +21,7 @@ describe('notification', () => {
     });
 
     it('should call `onClick` callback after notification was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let notification = render(
             <Notification
                 position={ [0, 0] }
@@ -35,11 +35,11 @@ describe('notification', () => {
 
         notification.node.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 
     it('should call `onCloserClick` callback after notification\'s cross was clicked', () => {
-        let onCloserClick = chai.spy();
+        let onCloserClick = sinon.spy();
         let notification = render(
             <Notification
                 position={ [0, 0] }
@@ -54,11 +54,11 @@ describe('notification', () => {
 
         crossIconNode.click();
 
-        expect(onCloserClick).to.have.been.called.once;
+        expect(onCloserClick).to.have.been.calledOnce;
     });
 
     it('should call `onCloseTimeout` callback after close timeout was ended', (done) => {
-        let onCloseTimeout = chai.spy();
+        let onCloseTimeout = sinon.spy();
         let notification = render(
             <Notification
                 position={ [0, 0] }
@@ -74,7 +74,7 @@ describe('notification', () => {
         simulate(notification.node, 'mouseLeave');
 
         setTimeout(() => {
-            expect(onCloseTimeout).to.have.been.called.once;
+            expect(onCloseTimeout).to.have.been.calledOnce;
             done();
         }, 100);
     });

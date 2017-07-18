@@ -54,7 +54,7 @@ module.exports = (config) => {
     testsFiles.unshift('./tools/karma-warnings.js');
 
     Object.assign(cfg, {
-        frameworks: ['mocha', 'chai-spies', 'chai-dom', 'chai'],
+        frameworks: ['mocha', 'chai-dom', 'chai', 'sinon-chai'],
         reporters: ['mocha', 'coverage', 'junit'],
         preprocessors: {
             './src/**/*': ['webpack', 'sourcemap']
@@ -81,11 +81,11 @@ module.exports = (config) => {
     cfg.plugins.push(
         require('karma-mocha'),
         require('karma-chai'),
-        require('karma-chai-spies'),
         require('karma-chai-dom'),
         require('karma-mocha-reporter'),
         require('karma-junit-reporter'),
-        require('karma-coverage')
+        require('karma-coverage'),
+        require('karma-sinon-chai')
     );
 
     if (IS_MOBILE) {

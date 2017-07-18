@@ -11,7 +11,7 @@ describe('card-input', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -34,7 +34,7 @@ describe('card-input', () => {
         cardInput.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
 
             done();
         }, 0);

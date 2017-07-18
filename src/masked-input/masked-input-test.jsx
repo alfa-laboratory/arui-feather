@@ -105,7 +105,7 @@ describe('masked-input', () => {
     });
 
     it('should call `onProcessInputEvent` during `onInput` process', (done) => {
-        let onProcessInputEvent = chai.spy();
+        let onProcessInputEvent = sinon.spy();
         let maskedInput = render(
             <MaskedInput
                 mask='1111 1111 1111 1111'
@@ -120,7 +120,7 @@ describe('masked-input', () => {
             simulate(maskedInput.node, 'beforeInput');
             simulate(maskedInput.node, 'input', { target: { value: '1234 5' } });
 
-            expect(onProcessInputEvent).to.have.been.called.once;
+            expect(onProcessInputEvent).to.have.been.calledOnce;
             done();
         }, 0);
     });

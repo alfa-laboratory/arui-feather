@@ -19,7 +19,7 @@ describe('calendar', () => {
     afterEach(cleanUp);
 
     it('should call `onDayClick` callback on day change', () => {
-        let onValueChange = chai.spy();
+        let onValueChange = sinon.spy();
         let calendar = render(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -30,7 +30,7 @@ describe('calendar', () => {
 
         dayNodes[15].click();
 
-        expect(onValueChange).to.have.been.called.with(addDays(INITIAL_DAY, 1).valueOf(), '16.01.2016');
+        expect(onValueChange).to.have.been.calledWith(addDays(INITIAL_DAY, 1).valueOf(), '16.01.2016');
     });
 
     it('should render without problems', () => {
@@ -120,7 +120,7 @@ describe('calendar', () => {
     });
 
     it('should call `onMonthChange` callback on month change', () => {
-        let onMonthChange = chai.spy();
+        let onMonthChange = sinon.spy();
         let calendar = render(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -131,11 +131,11 @@ describe('calendar', () => {
 
         arrowNode.click();
 
-        expect(onMonthChange).to.have.been.called.with((new Date(2015, 0, 1)).valueOf());
+        expect(onMonthChange).to.have.been.calledWith((new Date(2015, 0, 1)).valueOf());
     });
 
     it('should select date on next week after down arrow key was pressed', () => {
-        let onValueChange = chai.spy();
+        let onValueChange = sinon.spy();
         let calendar = render(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -145,11 +145,11 @@ describe('calendar', () => {
 
         simulate(calendar.node, 'keyDown', { which: keyboardCode.DOWN_ARROW });
 
-        expect(onValueChange).to.have.been.called.with(addDays(INITIAL_DAY, 7).valueOf());
+        expect(onValueChange).to.have.been.calledWith(addDays(INITIAL_DAY, 7).valueOf());
     });
 
     it('should select date on previous week after up arrow key was pressed', () => {
-        let onValueChange = chai.spy();
+        let onValueChange = sinon.spy();
         let calendar = render(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -159,11 +159,11 @@ describe('calendar', () => {
 
         simulate(calendar.node, 'keyDown', { which: keyboardCode.UP_ARROW });
 
-        expect(onValueChange).to.have.been.called.with(subtractDays(INITIAL_DAY, 7).valueOf());
+        expect(onValueChange).to.have.been.calledWith(subtractDays(INITIAL_DAY, 7).valueOf());
     });
 
     it('should select date jump over off day when navigate using keyboard', () => {
-        let onValueChange = chai.spy();
+        let onValueChange = sinon.spy();
         let calendar = render(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -174,7 +174,7 @@ describe('calendar', () => {
 
         simulate(calendar.node, 'keyDown', { which: keyboardCode.RIGHT_ARROW });
 
-        expect(onValueChange).to.have.been.called.with(addDays(INITIAL_DAY, 2).valueOf());
+        expect(onValueChange).to.have.been.calledWith(addDays(INITIAL_DAY, 2).valueOf());
     });
 
     it('should hide prev year/month arrows when earlier limit is in current month', () => {

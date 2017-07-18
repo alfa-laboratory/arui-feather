@@ -17,11 +17,11 @@ describe('user', () => {
     });
 
     it('should call `onClick` callback after user was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let user = render(<User onClick={ onClick } text='user' />);
 
         user.node.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 });

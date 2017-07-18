@@ -76,3 +76,14 @@ export function cleanUp() {
 export function simulate(node, event, data) {
     TestUtils.Simulate[event](node, data);
 }
+
+/**
+ * Обеспечивает сохранение полей события в случае SyntheticEvent.
+ *
+ * @param {Object} event Событие
+ */
+export function eventPersist(event) {
+    if (event.persist) {
+        event.persist();
+    }
+}

@@ -32,7 +32,7 @@ describe('sidebar component', () => {
 
 
     it('should call `onCloserClick` callback after cross icon was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let sidebar = render(
             <Sidebar
                 visible={ true }
@@ -46,6 +46,6 @@ describe('sidebar component', () => {
 
         closeIcon.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 });

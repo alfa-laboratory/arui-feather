@@ -6,7 +6,7 @@
 
 import bowser from 'bowser';
 
-import { render, cleanUp, simulate } from '../test-utils';
+import { render, cleanUp, simulate, eventPersist } from '../test-utils';
 
 import Input from './input';
 import MaskedInput from '../masked-input';
@@ -16,9 +16,8 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('input', () => {
     let originalWindowScrollTo = window.scrollTo;
-
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -79,7 +78,7 @@ describe('input', () => {
         input.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });
@@ -197,70 +196,67 @@ describe('input', () => {
     });
 
     it('should call `onFocus` callback after input was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let input = render(<Input onFocus={ onFocus } />);
 
         input.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onClick` callback after input was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let input = render(<Input onClick={ onClick } />);
         let controlNode = input.node.querySelector('input');
 
         controlNode.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 
     it('should call `onKeyDown` callback after key down in input', () => {
-        let onKeyDown = chai.spy();
+        let onKeyDown = sinon.spy();
         let input = render(<Input onKeyDown={ onKeyDown } />);
         let controlNode = input.node.querySelector('input');
 
         simulate(controlNode, 'keyDown');
 
-        expect(onKeyDown).to.have.been.called.once;
+        expect(onKeyDown).to.have.been.calledOnce;
     });
 
     it('should call `onBlur` callback after input was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let input = render(<Input onBlur={ onBlur } />);
-
         input.instance.focus();
 
         setTimeout(() => {
             input.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should receive SyntheticEvent with type focus in first argument of `onFocus` callback', (done) => {
-        let type = '';
-        let onFocus = chai.spy((event) => { type = event.type; });
+        let onFocus = sinon.spy(eventPersist);
         let input = render(<Input onFocus={ onFocus } />);
 
         input.instance.focus();
 
         setTimeout(() => {
             expect(onFocus).to.have.been.called.once;
-            expect(type).to.equal('focus');
+            expect(onFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
             done();
         }, 0);
     });
 
     it('should receive SyntheticEvent with type blur in first argument of `onBlur` callback', (done) => {
-        let type = '';
-        let onBlur = chai.spy((event) => { type = event.type; });
+        let onBlur = sinon.spy(eventPersist);
         let input = render(<Input onBlur={ onBlur } />);
 
         input.instance.focus();
@@ -269,19 +265,19 @@ describe('input', () => {
             input.instance.blur();
 
             expect(onBlur).to.have.been.called.once;
-            expect(type).to.equal('blur');
+            expect(onBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
             done();
         }, 0);
     });
 
     it('should call `onChange` callback', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let input = render(<Input onChange={ onChange } />);
         let controlNode = input.node.querySelector('input');
 
         simulate(controlNode, 'change', { target: { value: 'other value' } });
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should render with clear element', () => {
@@ -292,7 +288,7 @@ describe('input', () => {
     });
 
     it('should call `onClearClick` callback on clear icon click', () => {
-        let onClearClick = chai.spy();
+        let onClearClick = sinon.spy();
         let input = render(<Input clear={ true } onClearClick={ onClearClick } />);
         let controlNode = input.node.querySelector('input');
         simulate(controlNode, 'change', { target: { value: 'value' } });
@@ -300,7 +296,7 @@ describe('input', () => {
 
         clearNode.click();
 
-        expect(onClearClick).to.have.been.called.once;
+        expect(onClearClick).to.have.been.calledOnce;
     });
 
     it('should clear value after clear icon click', () => {
@@ -315,7 +311,7 @@ describe('input', () => {
     });
 
     it('should call `onChange` listener after clear icon click', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let input = render(
             <Input
                 value='text'
@@ -327,7 +323,7 @@ describe('input', () => {
 
         clearNode.click();
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should render with icon', function () {
@@ -390,103 +386,84 @@ describe('input', () => {
 
     if (bowser.mobile) {
         it('should call `onTouchStart` callback after input was touched', () => {
-            let onTouchStart = chai.spy();
+            let onTouchStart = sinon.spy();
             let input = render(<Input onTouchStart={ onTouchStart } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchStart');
 
-            expect(onTouchStart).to.have.been.called.once;
+            expect(onTouchStart).to.have.been.calledOnce;
         });
 
         it('should call `onTouchEnd` callback after input was released on touch', () => {
-            let onTouchEnd = chai.spy();
+            let onTouchEnd = sinon.spy();
             let input = render(<Input onTouchEnd={ onTouchEnd } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchEnd');
 
-            expect(onTouchEnd).to.have.been.called.once;
+            expect(onTouchEnd).to.have.been.calledOnce;
         });
 
         it('should call `onTouchCancel` callback after input was disrupted on touch', () => {
-            let onTouchCancel = chai.spy();
+            let onTouchCancel = sinon.spy();
             let input = render(<Input onTouchCancel={ onTouchCancel } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchCancel');
 
-            expect(onTouchCancel).to.have.been.called.once;
+            expect(onTouchCancel).to.have.been.calledOnce;
         });
 
         it('should call `onTouchMove` callback after input was touched and moved', () => {
-            let onTouchMove = chai.spy();
+            let onTouchMove = sinon.spy();
             let input = render(<Input onTouchMove={ onTouchMove } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchMove');
 
-            expect(onTouchMove).to.have.been.called.once;
+            expect(onTouchMove).to.have.been.calledOnce;
         });
 
-        it('should call `onTouchStart` callback with argument as SyntheticEvent and type \'touchstart\'', (done) => {
-            let type = '';
-            let onTouchStart = chai.spy((event) => { type = event.type; });
+        it('should call `onTouchStart` callback with argument as SyntheticEvent and type \'touchstart\'', () => {
+            let onTouchStart = sinon.spy();
             let input = render(<Input onTouchStart={ onTouchStart } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchStart');
 
-            setTimeout(() => {
-                expect(onTouchStart).to.have.been.called.once;
-                expect(type).to.equal('touchstart');
-                done();
-            }, 0);
+            expect(onTouchStart).to.have.been.calledOnce;
+            expect(onTouchStart).to.have.been.calledWith(sinon.match({ type: 'touchstart' }));
         });
 
-        it('should call `onTouchEnd` callback with argument as SyntheticEvent and type \'touchend\'', (done) => {
-            let type = '';
-            let onTouchEnd = chai.spy((event) => { type = event.type; });
+        it('should call `onTouchEnd` callback with argument as SyntheticEvent and type \'touchend\'', () => {
+            let onTouchEnd = sinon.spy();
             let input = render(<Input onTouchEnd={ onTouchEnd } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchEnd');
-
-            setTimeout(() => {
-                expect(onTouchEnd).to.have.been.called.once;
-                expect(type).to.equal('touchend');
-                done();
-            }, 0);
+            expect(onTouchEnd).to.have.been.calledOnce;
+            expect(onTouchEnd).to.have.been.calledWith(sinon.match({ type: 'touchend' }));
         });
 
-        it('should call `onTouchMove` callback with argument as SyntheticEvent and type \'touchmove\'', (done) => {
-            let type = '';
-            let onTouchMove = chai.spy((event) => { type = event.type; });
+        it('should call `onTouchMove` callback with argument as SyntheticEvent and type \'touchmove\'', () => {
+            let onTouchMove = sinon.spy();
             let input = render(<Input onTouchMove={ onTouchMove } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchMove');
-
-            setTimeout(() => {
-                expect(onTouchMove).to.have.been.called.once;
-                expect(type).to.equal('touchmove');
-                done();
-            }, 0);
+            expect(onTouchMove).to.have.been.calledOnce;
+            expect(onTouchMove).to.have.been.calledWith(sinon.match({ type: 'touchmove' }));
         });
 
-        it('should call `onTouchCancel` callback with argument as SyntheticEvent and type \'touchcancel\'', (done) => {
-            let type = '';
-            let onTouchCancel = chai.spy((event) => { type = event.type; });
+        it('should call `onTouchCancel` callback with argument as SyntheticEvent and type \'touchcancel\'', () => {
+            let onTouchCancel = sinon.spy();
             let input = render(<Input onTouchCancel={ onTouchCancel } />);
             let controlNode = input.node.querySelector('input');
 
             simulate(controlNode, 'touchCancel');
-
-            setTimeout(() => {
-                expect(onTouchCancel).to.have.been.called.once;
-                expect(type).to.equal('touchcancel');
-                done();
-            }, 0);
+            expect(onTouchCancel).to.have.been.calledOnce;
+            expect(onTouchCancel).to.have.been.calledWith(sinon.match({ type: 'touchcancel' }));
         });
     }
 });

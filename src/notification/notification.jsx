@@ -223,9 +223,11 @@ class Notification extends React.Component {
         this.clickEventBindTimeout = setTimeout(() => {
             if (!this.isWindowClickBinded && isNeedBindEvent) {
                 window.addEventListener('click', this.handleWindowClick);
+                window.addEventListener('touchend', this.handleWindowClick);
                 this.isWindowClickBinded = true;
             } else if (this.isWindowClickBinded && !isNeedBindEvent) {
                 window.removeEventListener('click', this.handleWindowClick);
+                window.removeEventListener('touchend', this.handleWindowClick);
                 this.isWindowClickBinded = false;
             }
         }, 0);

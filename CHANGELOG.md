@@ -1,3 +1,13 @@
+<a name="8.2.1"></a>
+## [8.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.2.0...v8.2.1) (2017-07-20)
+
+
+### Bug Fixes
+
+* autoclosing on ios ([#171](https://github.com/alfa-laboratory/arui-feather/issues/171)) ([ddcba37](https://github.com/alfa-laboratory/arui-feather/commit/ddcba37))
+
+
+
 <a name="8.2.0"></a>
 # [8.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.6...v8.2.0) (2017-07-18)
 

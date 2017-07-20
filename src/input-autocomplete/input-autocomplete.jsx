@@ -37,6 +37,8 @@ class InputAutocomplete extends React.Component {
             value: Type.string,
             /** Отображение варианта */
             description: Type.node,
+            /** Текст, который должен быть записан в текстовое поле при выборе варианта */
+            text: Type.string,
             /** Список вариантов, только для type='group' */
             content: Type.array
         })),
@@ -50,6 +52,8 @@ class InputAutocomplete extends React.Component {
         width: Type.oneOf(['default', 'available']),
         /** Ширинa выпадающего списка равна ширине инпута */
         equalPopupWidth: Type.bool,
+        /** Определяет нужно или нет обновлять значение текстового поля при выборе варианта */
+        updateValueOnItemSelect: Type.bool,
         /** Направления, в которые может открываться попап компонента */
         directions: Type.arrayOf(Type.oneOf([
             'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
@@ -64,6 +68,7 @@ class InputAutocomplete extends React.Component {
         size: 'm',
         width: 'default',
         options: [],
+        updateValueOnItemSelect: true,
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         equalPopupWidth: false
     };
@@ -211,16 +216,20 @@ class InputAutocomplete extends React.Component {
         let checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
         let checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
-        let newValue = checkedItem ? checkedItem.value : this.state.value;
-
-        this.setState({ value: newValue });
+        let newValue = checkedItem
+            ? (checkedItem.text || checkedItem.value)
+            : this.state.value;
 
         if (this.props.onItemSelect) {
             this.props.onItemSelect(checkedItem);
         }
 
-        if (this.props.onChange) {
-            this.props.onChange(newValue);
+        if (this.props.updateValueOnItemSelect) {
+            this.setState({ value: newValue });
+
+            if (this.props.onChange) {
+                this.props.onChange(newValue);
+            }
         }
 
         if (this.inputFocusTimeout) {

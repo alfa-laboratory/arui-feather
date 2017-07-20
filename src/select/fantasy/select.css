@@ -169,54 +169,6 @@
         min-width: 0;
         height: 100%;
     }
-
-    &__mobile-title {
-        font-weight: var(--font-weight-medium);
-        line-height: var(--line-height-normal);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        text-align: center;
-    }
-
-    &__mobile-closer {
-        position: absolute;
-        left: 8px;
-    }
-
-    &__mobile-header {
-        &_size_s {
-            padding: 6px 48px;
-
-            .select__mobile-closer {
-                top: 6px;
-            }
-        }
-
-        &_size_m {
-            padding: 9px 48px;
-
-            .select__mobile-closer {
-                top: 8px;
-            }
-        }
-
-        &_size_l {
-            padding: 12px 48px;
-
-            .select__mobile-closer {
-                top: 10px;
-            }
-        }
-
-        &_size_xl {
-            padding: 11px 48px;
-
-            .select__mobile-closer {
-                top: 8px;
-            }
-        }
-    }
 }
 
 .select_size_s {

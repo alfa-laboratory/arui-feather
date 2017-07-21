@@ -1,13 +1,11 @@
-```
+```jsx
 initialState = {
     page: '/about'
 };
-function handleClick(event, page) {
+function handleClick(event) {
     event.preventDefault();
     setState({ page: event.target.getAttribute('href') });
 }
-<div>
-
 <Tabs>
     <TabItem url='/about' onClick={ handleClick } checked={ state.page === '/about' }>
         О кредите
@@ -19,6 +17,4 @@ function handleClick(event, page) {
         Реквизиты
     </TabItem>
 </Tabs>
-
-</div>
 ```

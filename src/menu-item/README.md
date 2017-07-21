@@ -1,4 +1,4 @@
-```
+```jsx
 const layoutStyle = {
     paddingRight: '10px'
 };

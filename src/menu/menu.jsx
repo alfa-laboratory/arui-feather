@@ -125,6 +125,7 @@ class Menu extends React.Component {
     }
 
     render(cn) {
+        /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
         return (
             <div
                 ref={ (root) => { this.root = root; } }
@@ -148,6 +149,7 @@ class Menu extends React.Component {
                 { !!this.props.content && this.renderMenuItemList(cn, this.props.content) }
             </div>
         );
+        /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
     }
 
     renderMenuItemList(cn, content) {

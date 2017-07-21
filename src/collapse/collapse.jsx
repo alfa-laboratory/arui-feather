@@ -81,8 +81,8 @@ class Collapse extends React.Component {
                     onClick={ this.handleExpandedChange }
                     text={
                         expanded
-                        ? this.props.expandedLabel
-                        : this.props.collapsedLabel
+                            ? this.props.expandedLabel
+                            : this.props.collapsedLabel
                     }
                 />
             </div>

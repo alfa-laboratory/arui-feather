@@ -61,8 +61,8 @@ class TestButtonPopup extends React.Component {
                 >
                     { `Popup ${
                         this.props.target === 'position'
-                        ? 'with position 100px 100px'
-                        : ''
+                            ? 'with position 100px 100px'
+                            : ''
                     }` }
                 </Popup>
             </div>

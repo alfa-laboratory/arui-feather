@@ -125,6 +125,7 @@ class Calendar extends React.Component {
             <div
                 ref={ (root) => { this.root = root; } }
                 className={ cn }
+                role='grid'
                 tabIndex='0'
                 onBlur={ this.handleBlur }
                 onFocus={ this.handleFocus }
@@ -278,6 +279,7 @@ class Calendar extends React.Component {
                     className={ cn('day', mods) }
                     data-day={ dataDay }
                     key={ day || `day_${index + 1}` }
+                    role='gridcell'
                     onClick={ this.handleDayClick }
                 >
                     { day ? day.getDate() : '' }

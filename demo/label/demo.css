@@ -1,7 +1,0 @@
-.demo {
-    &__ellipsis-box {
-        width: 100px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-}

@@ -14,7 +14,7 @@ function getTestsGlobs(tests, postfix) {
     return tests.split(',').map(testName => `./src/${testName}/*-${postfix}.{js,jsx}`);
 }
 
-let babelLoaderConfig = ARUI_TEMPLATE.module.loaders.find(l => l.loader === 'babel-loader');
+let babelLoaderConfig = ARUI_TEMPLATE.module.rules.find(l => l.loader === 'babel-loader');
 delete babelLoaderConfig.exclude;
 
 module.exports = (config) => {
@@ -22,7 +22,8 @@ module.exports = (config) => {
         singleRun: true,
         plugins: [
             require('karma-webpack'),
-            require('karma-sourcemap-loader')
+            require('karma-sourcemap-loader'),
+            require('karma-coverage-istanbul-reporter')
         ],
         webpack: merge.smart(ARUI_TEMPLATE, {
             devtool: 'inline-source-map'
@@ -33,16 +34,15 @@ module.exports = (config) => {
         }
     };
 
-    cfg.webpack = merge.strategy({ 'module.loaders': 'append' })(
-        cfg.webpack,
+    cfg.webpack.module.rules.push(
         {
-            module: { loaders: [
-                {
-                    test: /\.jsx$/,
-                    loader: 'isparta',
-                    include: path.resolve('src')
-                }
-            ] }
+            test: /\.jsx$/,
+            use: {
+                loader: 'istanbul-instrumenter-loader',
+                options: { esModules: true }
+            },
+            enforce: 'post',
+            include: path.resolve('./src')
         }
     );
 
@@ -55,11 +55,15 @@ module.exports = (config) => {
 
     Object.assign(cfg, {
         frameworks: ['mocha', 'chai-dom', 'chai', 'sinon-chai'],
-        reporters: ['mocha', 'coverage', 'junit'],
+        reporters: ['mocha', 'coverage-istanbul', 'junit'],
         preprocessors: {
             './src/**/*': ['webpack', 'sourcemap']
         },
         files: testsFiles,
+        coverageIstanbulReporter: {
+            reports: ['text-summary'],
+            fixWebpackSourcePaths: true
+        },
         captureConsole: true,
         coverageReporter: {
             check: {

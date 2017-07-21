@@ -1,4 +1,4 @@
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
@@ -14,7 +14,7 @@
 ```
 
 C Иконкой
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
@@ -33,7 +33,7 @@ C Иконкой
 ```
 
 С изменяемым текстом
-```
+```jsx
 function handleChange(value) {
     setState({ value });
 }
@@ -52,7 +52,7 @@ function handleChange(value) {
 ```
 
 С установлеными типами файлов, доступными для выбора
-```
+```jsx
 function handleChange(value) {
     setState({ value });
 }

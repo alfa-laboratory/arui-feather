@@ -35,8 +35,8 @@ geminiReact.suite(NAME, function () {
                         <Plate { ...props }>
                             {
                                 set.isFlat
-                                ? innerTemplate
-                                : <ThemeProvider theme='alfa-on-white'>{ innerTemplate }</ThemeProvider>
+                                    ? innerTemplate
+                                    : <ThemeProvider theme='alfa-on-white'>{ innerTemplate }</ThemeProvider>
                             }
                         </Plate>
                     </GeminiBox>

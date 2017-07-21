@@ -1,5 +1,5 @@
 Обычный чекбокс
-```
+```jsx
 <div>
     <div>
         {['m', 'l'].map(size => (
@@ -23,8 +23,8 @@
 </div>
 ```
 
-Interminate 
-```
+Неустановленное состояние
+```jsx
 <div>
     {['m', 'l'].map(size => (
         <div className='row' key={ size }>

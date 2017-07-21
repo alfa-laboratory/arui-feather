@@ -1,5 +1,5 @@
 Режим "radio"
-```
+```jsx
 const options = [
     { value: 'Vkontakte', text: 'Vkontakte' },
     { value: 'Facebook', text: 'Facebook' },
@@ -29,7 +29,7 @@ const options = [
 ```
 
 Режим "check"
-```
+```jsx
 const options = [
     { value: 'Vkontakte', text: 'Vkontakte' },
     { value: 'Facebook', text: 'Facebook' },
@@ -59,7 +59,7 @@ const options = [
 ```
 
 Режим "radio-check"
-```
+```jsx
 const options = [
     { value: 'Vkontakte', text: 'Vkontakte' },
     { value: 'Facebook', text: 'Facebook' },
@@ -89,7 +89,7 @@ const options = [
 ```
 
 Select с тянущейся шириной
-```
+```jsx
 const options = [
     { value: '1', text: 'i saw the ghost of lena zavaroni' },
     { value: '2', text: 'vanilla strawberry knickbocker glory' },
@@ -124,7 +124,7 @@ const options = [
 ```
 
 Без фолбэка на нативный контрол на мобильном устройстве
-```
+```jsx
 const options = [
     { value: '00', text: 'Vkontakte' },
     { value: '01', text: 'Facebook' },
@@ -175,7 +175,7 @@ const options = [
     { value: '46', text: 'Facebook' },
     { value: '47', text: 'Twitter' },
     { value: '48', text: 'Vkontakte' },
-    { value: '49', text: 'Facebook' },
+    { value: '49', text: 'Facebook' }
 ];
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (

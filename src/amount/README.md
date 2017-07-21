@@ -1,4 +1,4 @@
-```
+```jsx
 const AMOUNT = {
     value: 123535,
     currency: {
@@ -19,7 +19,7 @@ const AMOUNT = {
 ```
 
 Использовать Heading для вывода числа
-```
+```jsx
 const AMOUNT = {
     value: 123343,
     currency: {
@@ -38,5 +38,4 @@ const AMOUNT = {
         </div>
     ))}
 </div>
-
 ```

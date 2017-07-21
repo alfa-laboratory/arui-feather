@@ -276,8 +276,8 @@ export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimen
         area: popup.width * popup.height
     };
     let directions = popup.directions
-            ? popup.directions
-            : (popup.isHeightAvailable && ['top-left']) || DEFAULT_DIRECTIONS;
+        ? popup.directions
+        : (popup.isHeightAvailable && ['top-left']) || DEFAULT_DIRECTIONS;
     let i = 0;
     let direction = '';
     let heightToEdge = 0;

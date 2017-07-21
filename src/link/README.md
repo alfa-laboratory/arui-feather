@@ -1,5 +1,5 @@
 Обычная ссылка
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <span className='row'>
@@ -14,7 +14,7 @@
 </div>
 ```
 Псевдо ссылка
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <span className='row'>
@@ -31,7 +31,7 @@
 ```
 
 Ссылки без подчеркивания
-```
+```jsx
 const columnStyle = {
     justifyContent: 'center',
     display: 'flex',
@@ -41,7 +41,7 @@ const columnStyle = {
     {['s', 'm', 'l', 'xl'].map(size => (
         <span className='row'>
             <div className='column' style={ columnStyle }>
-                <Link size={ size } >😊</Link>
+                <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
             </div>
             <div className='column' style={ columnStyle }>
 

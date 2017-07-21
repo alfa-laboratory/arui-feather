@@ -6,57 +6,18 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const reactDockGen = require('react-docgen');
+const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
 const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
-
-const documentation = { };
-function reactDocGenWithMergedComposed(filePath, resolver, handlers, componentName) {
-    if (documentation[filePath]) {
-        return documentation[filePath];
-    }
-    const content = fs.readFileSync(filePath);
-    // react-docgen считает компонент реакт компонентом, только если он наследуется от React.Component
-    // для такого кейса оставляем заглушку
-    let doc;
-    try {
-        doc = reactDockGen.parse(content, resolver, handlers)[0];
-    } catch (e) {
-        doc = {
-            displayName: componentName
-        };
-    }
-    doc.filePath = filePath;
-    if (doc.composes) {
-        doc.composes = doc.composes.map((relativePath) => {
-            const composeComponentPath = path.resolve(path.dirname(filePath), `${relativePath}.jsx`);
-            return reactDocGenWithMergedComposed(composeComponentPath, resolver, handlers, componentName);
-        });
-    } else {
-        doc.composes = [];
-    }
-    doc.props = doc.composes.reduce((prev, item) => Object.assign({}, prev, item.props), doc.props || {});
-    documentation[filePath] = doc;
-    return doc;
-}
 
 module.exports = {
     title: 'ARUI FEATHER',
     serverPort: 3014,
     skipComponentsWithoutExample: true,
     components: './src/**/fantasy/index.js',
-    propsParser(filePath, source, resolver, handlers) {
-        // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
-        const componentDirName = path.dirname(filePath);
-        const componentSourcesFileName = path.resolve(filePath, '../..').split(path.sep).pop();
-        const componentSourcesPath = path.resolve(componentDirName, `${componentSourcesFileName}.jsx`);
-        const componentName = upperCamelCase(componentSourcesFileName);
-        if (fs.existsSync(componentSourcesPath)) {
-            return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers, componentName);
-        }
-        const mainComponentPath = path.resolve(componentDirName, `../${componentSourcesFileName}.jsx`);
-        return reactDocGenWithMergedComposed(mainComponentPath, resolver, handlers);
+    propsParser(filePath) {
+        return reactDoc(filePath);
     },
     getExampleFilename(componentPath) {
         // если в дирректории src/componentname/fantasy/ есть файл README.md - то по умолчанию будет использован он
@@ -67,6 +28,12 @@ module.exports = {
         }
         const featherExamplesPath = path.resolve(path.dirname(componentPath), '../README.md');
         return featherExamplesPath;
+    },
+    getComponentPathLine(filePath) {
+        const componentDirName = path.dirname(path.resolve(filePath, '../'));
+        const componentSourcesFileName = componentDirName.split(path.sep).pop();
+        const componentName = upperCamelCase(componentSourcesFileName);
+        return `import ${componentName} from 'arui-feather/${componentSourcesFileName}/fantasy';`;
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),

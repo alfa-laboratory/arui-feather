@@ -120,62 +120,62 @@ describe('calendar-input', () => {
     });
 
     it('should receive SyntheticEvent with type blur from input in first argument of `onInputFocus` callback',
-    (done) => {
-        let onInputFocus = sinon.spy(eventPersist);
-        let { calendarInput } = renderCalendarInput({ onInputFocus });
+        (done) => {
+            let onInputFocus = sinon.spy(eventPersist);
+            let { calendarInput } = renderCalendarInput({ onInputFocus });
 
-        calendarInput.instance.focus();
+            calendarInput.instance.focus();
 
-        setTimeout(() => {
-            expect(onInputFocus).to.have.been.calledOnce;
-            expect(onInputFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
-            done();
-        }, 0);
-    });
+            setTimeout(() => {
+                expect(onInputFocus).to.have.been.calledOnce;
+                expect(onInputFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
+                done();
+            }, 0);
+        });
 
     it('should receive SyntheticEvent with type blur from input in first argument of `onInputBlur` callback',
-    (done) => {
-        let onInputBlur = sinon.spy(eventPersist);
-        let { calendarInput } = renderCalendarInput({ onInputBlur });
+        (done) => {
+            let onInputBlur = sinon.spy(eventPersist);
+            let { calendarInput } = renderCalendarInput({ onInputBlur });
 
-        calendarInput.instance.focus();
+            calendarInput.instance.focus();
 
-        setTimeout(() => {
-            calendarInput.instance.blur();
-            expect(onInputBlur).to.have.been.calledOnce;
-            expect(onInputBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
-            done();
-        }, 0);
-    });
+            setTimeout(() => {
+                calendarInput.instance.blur();
+                expect(onInputBlur).to.have.been.calledOnce;
+                expect(onInputBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
+                done();
+            }, 0);
+        });
 
     it('should receive SyntheticEvent with type focus from component in first argument of `onFocus` callback',
-    (done) => {
-        let onFocus = sinon.spy(eventPersist);
-        let { calendarInput } = renderCalendarInput({ onFocus });
+        (done) => {
+            let onFocus = sinon.spy(eventPersist);
+            let { calendarInput } = renderCalendarInput({ onFocus });
 
-        calendarInput.instance.focus();
+            calendarInput.instance.focus();
 
-        setTimeout(() => {
-            expect(onFocus).to.have.been.calledOnce;
-            expect(onFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
-            done();
-        }, 0);
-    });
+            setTimeout(() => {
+                expect(onFocus).to.have.been.calledOnce;
+                expect(onFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
+                done();
+            }, 0);
+        });
 
     it('should receive SyntheticEvent with type blur from component in first argument of `onBlur` callback',
-    (done) => {
-        let onBlur = sinon.spy(eventPersist);
-        let { calendarInput } = renderCalendarInput({ onBlur });
+        (done) => {
+            let onBlur = sinon.spy(eventPersist);
+            let { calendarInput } = renderCalendarInput({ onBlur });
 
-        calendarInput.instance.focus();
+            calendarInput.instance.focus();
 
-        setTimeout(() => {
-            calendarInput.instance.blur();
-            expect(onBlur).to.have.been.calledOnce;
-            expect(onBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
-            done();
-        }, 0);
-    });
+            setTimeout(() => {
+                calendarInput.instance.blur();
+                expect(onBlur).to.have.been.calledOnce;
+                expect(onBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
+                done();
+            }, 0);
+        });
 
     it('should receive custom formatted date from event.target.value on `onFocus` callback', (done) => {
         let onFocus = sinon.spy(eventPersist);

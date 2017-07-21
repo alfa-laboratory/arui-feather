@@ -72,6 +72,9 @@ module.exports = {
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),
     webpackConfig: merge.smart(ARUI_TEMPLATE, {
+        devServer: {
+            disableHostCheck: true
+        },
         resolve: {
             alias: {
                 // Переопределяем компоненты styleguidist

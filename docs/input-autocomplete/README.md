@@ -20,6 +20,7 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 | size | [SizeEnum](#SizeEnum) | `'m'`  |  | Размер компонента |
 | width | [WidthEnum](#WidthEnum) | `'default'`  |  | Управление возможностью компонента занимать всю ширину родителя |
 | equalPopupWidth | Boolean | `false`  |  | Ширинa выпадающего списка равна ширине инпута |
+| updateValueOnItemSelect | Boolean | `true`  |  | Определяет нужно или нет обновлять значение текстового поля при выборе варианта |
 | directions | Array.<[DirectionsEnum](#DirectionsEnum)> | `['bottom-left', 'bottom-right', 'top-left', 'top-right']`  |  | Направления, в которые может открываться попап компонента |
 | onItemSelect | Function |  |  | Обработчик выбора пункта в выпадающем меню |
 
@@ -50,6 +51,7 @@ import InputAutocomplete from 'arui-feather/input-autocomplete';
 | type | [TypeEnum](#TypeEnum) | Тип списка вариантов |
 | value | String | Уникальное значение, которое будет отправлено на сервер, если вариант выбран |
 | description | Node | Отображение варианта |
+| text | String | Текст, который должен быть записан в текстовое поле при выборе варианта |
 | content | Array | Список вариантов, только для type='group' |
 
 

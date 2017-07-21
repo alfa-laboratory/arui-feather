@@ -181,6 +181,31 @@ describe('input-autocomplete', () => {
         expect(onChange).to.have.been.calledWith('Vkontakte');
     });
 
+    it('should call `onChange` callback after option was clicked and pass `text` when `option.text` is exist', () => {
+        let onChange = sinon.spy();
+        const OPTIONS = [
+            { value: 'Vkontakte', text: 'Вконтакте' },
+            { value: 'Facebook', text: 'Фейсбук' },
+            { value: 'Twitter', text: 'Твиттер' }
+        ];
+        let { popupNode } = renderInputAutocomplete({ onChange, options: OPTIONS });
+        let firstOptionNode = popupNode.querySelector('.menu-item');
+
+        firstOptionNode.click();
+
+        expect(onChange).to.have.been.calledWith('Вконтакте');
+    });
+
+    it('should not call `onChange` callback after option was clicked when updateValueOnItemSelect = false', () => {
+        let onChange = sinon.spy();
+        let { popupNode } = renderInputAutocomplete({ onChange, updateValueOnItemSelect: false, options: OPTIONS });
+        let firstOptionNode = popupNode.querySelector('.menu-item');
+
+        firstOptionNode.click();
+
+        expect(onChange).to.not.have.been.called;
+    });
+
     it('should call `onKeyDown` callback after key down in input', () => {
         let onKeyDown = sinon.spy();
         let { controlNode } = renderInputAutocomplete({ onKeyDown });

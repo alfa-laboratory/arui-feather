@@ -9,9 +9,11 @@ const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
+const PORT = parseInt(process.env.PORT ? process.env.PORT : 8080, 10);
+
 module.exports = {
     title: 'ARUI FEATHER',
-    serverPort: 3013,
+    serverPort: PORT,
     styles: {
         SectionHeading: {
             heading: {

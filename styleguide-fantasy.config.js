@@ -11,9 +11,11 @@ const upperCamelCase = require('uppercamelcase');
 const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
+const PORT = parseInt(process.env.PORT ? process.env.PORT : 8080, 10);
+
 module.exports = {
-    title: 'ARUI FEATHER',
-    serverPort: 3014,
+    title: 'ARUI FEATHER (fantasy)',
+    serverPort: PORT,
     skipComponentsWithoutExample: true,
     components: './src/**/fantasy/index.js',
     propsParser(filePath) {

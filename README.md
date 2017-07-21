@@ -74,17 +74,15 @@ import Input from 'arui-feather/input/fantasy'
 1. `npm i`
 2. `npm run demo`
 
+Запустить демо fantasy
+
+`npm run demo:fantasy`
+
 Запустить demo на произвольном порту:
 
 `PORT=8888 npm run demo`
 
-Запустить demo для отдельных компонентов:
 
-`COMPONENTS="calendar-input, popup" npm run demo`
-
-Запустить demo с автоматичесим обновлением содержимого страницы при изменении компонента:
-
-`COMPONENTS="calendar-input, popup" HOT_LOADER=1 npm run demo `
 
 Использовать только для обновления нескольких компонентов. Иначе не хватает памяти.
 

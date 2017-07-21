@@ -12,6 +12,7 @@ import Icon from '../icon/icon';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
+import PopupHeader from '../popup-header/popup-header';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
@@ -433,16 +434,11 @@ class Select extends React.Component {
 
     renderMobileHeader(cn) {
         return (
-            <div className={ cn('mobile-header', { size: this.props.size }) }>
-                <Icon
-                    className={ cn('mobile-closer') }
-                    size={ this.props.size }
-                    icon='close'
-                />
-                <div className={ cn('mobile-title') }>
-                    { this.props.mobileTitle || this.props.placeholder }
-                </div>
-            </div>
+            <PopupHeader
+                className={ cn('mobile-header') }
+                size={ this.props.size }
+                title={ this.props.mobileTitle || this.props.placeholder }
+            />
         );
     }
 

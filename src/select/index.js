@@ -7,6 +7,7 @@ import '../icon';
 import '../menu';
 import '../mq';
 import '../popup';
+import '../popup-header';
 import '../resize-sensor';
 
 import './select.css';

@@ -3,6 +3,7 @@ import '../../icon/fantasy';
 import '../../menu/fantasy';
 import '../../mq';
 import '../../popup/fantasy';
+import '../../popup-header/fantasy';
 import '../../resize-sensor';
 
 import './select.css';

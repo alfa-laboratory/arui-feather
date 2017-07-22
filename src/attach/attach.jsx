@@ -7,6 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
+import Icon from '../icon/icon';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -139,9 +140,9 @@ class Attach extends React.Component {
     };
 
     static defaultProps = {
-        buttonProps: {},
         buttonContent: 'Выберите файл',
         size: 'm',
+        buttonProps: { icon: <Icon size='m' icon='attachment' /> },
         disabled: false,
         multiple: false,
         noFileText: 'Нет файла'
@@ -187,6 +188,8 @@ class Attach extends React.Component {
     }
 
     renderButton(cn) {
+        this.props.buttonProps.icon = <Icon size={ this.props.size } icon='attachment' />;
+
         let buttonProps = {
             ...this.props.buttonProps,
             className: cn('button'),

@@ -3,20 +3,50 @@ const layoutStyle = {
     paddingRight: '10px'
 };
 <div>
-    {['link', 'dropdown', 'block'].map(type => (
-        <div key={ type }>
-            {['s', 'm', 'l', 'xl'].map(size => (
-                <span style={ layoutStyle }>
-                    <MenuItem
-                        size={ size }
-                        type={ type }
-                        popup='Popup content'
-                    >
-                        {type} menu item
-                    </MenuItem>
-                </span>
-            ))}
-        </div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <span style={ layoutStyle }>
+            <MenuItem
+                size={ size }
+                type={ 'dropdown' }
+                popup='Информация о тарифах'
+            >
+                Тарифы
+            </MenuItem>
+        </span>
+    ))}
+</div>
+```
+```jsx
+const layoutStyle = {
+    paddingRight: '10px'
+};
+<div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <span style={ layoutStyle }>
+            <MenuItem
+                size={ size }
+                type={ 'block' }
+            >
+                Депозиты
+            </MenuItem>
+        </span>
+    ))}
+</div>
+```
+```jsx
+const layoutStyle = {
+    paddingRight: '10px'
+};
+<div>
+    {['s', 'm', 'l', 'xl'].map(size => (
+        <span style={ layoutStyle }>
+            <MenuItem
+                size={ size }
+                type={ 'link' }
+            >
+                Овердрафты
+            </MenuItem>
+        </span>
     ))}
 </div>
 ```

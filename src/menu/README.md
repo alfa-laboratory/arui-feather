@@ -2,7 +2,7 @@
 const MENU_1 = [
     {
         type: 'item',
-        content: 'MenuItem 1',
+        content: 'Тарифы',
         value: 'value1',
         props: {
             url: '#1'
@@ -10,7 +10,7 @@ const MENU_1 = [
     },
     {
         type: 'item',
-        content: 'MenuItem 2',
+        content: 'Депозиты',
         value: 'value2',
         props: {
             url: '#2'
@@ -18,7 +18,7 @@ const MENU_1 = [
     },
     {
         type: 'item',
-        content: 'MenuItem 3',
+        content: 'Овердрафты',
         value: 'value3',
         props: {
             url: '#3',
@@ -30,7 +30,7 @@ const MENU_1 = [
 const MENU_2 = [
     {
         type: 'item',
-        content: 'MenuItem 1',
+        content: 'Компании',
         value: '1',
         props: {
             url: '#1'
@@ -38,11 +38,11 @@ const MENU_2 = [
     },
     {
         type: 'group',
-        title: 'Group Title',
+        title: 'Платежи и переводы',
         content: [
             {
                 type: 'item',
-                content: 'MenuItem 2',
+                content: 'Новый платёж',
                 value: '2',
                 props: {
                     url: '#2'
@@ -50,7 +50,7 @@ const MENU_2 = [
             },
             {
                 type: 'item',
-                content: 'MenuItem 3',
+                content: 'Платежи в работе',
                 value: '3',
                 props: {
                     url: '#3'
@@ -60,11 +60,11 @@ const MENU_2 = [
     },
     {
         type: 'group',
-        title: 'Group Title',
+        title: 'Текущая деятельность',
         content: [
             {
                 type: 'item',
-                content: 'MenuItem 4',
+                content: 'Счета и депозиты',
                 value: '4',
                 props: {
                     url: '#4'
@@ -72,7 +72,7 @@ const MENU_2 = [
             },
             {
                 type: 'item',
-                content: 'MenuItem 5',
+                content: 'Депозиты',
                 value: '5',
                 props: {
                     url: '#5',

@@ -1,3 +1,21 @@
+<a name="8.3.0"></a>
+# [8.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.2.1...v8.3.0) (2017-07-24)
+
+
+### Bug Fixes
+
+* fix plaground button according breaking changes in six version of sstyleguidist ([#180](https://github.com/alfa-laboratory/arui-feather/issues/180)) ([7059dfd](https://github.com/alfa-laboratory/arui-feather/commit/7059dfd))
+* **calendar:** keyboard navigation ([#161](https://github.com/alfa-laboratory/arui-feather/issues/161)) ([86eaade](https://github.com/alfa-laboratory/arui-feather/commit/86eaade))
+* **popup:** fix UIWebView popup bugs ([#178](https://github.com/alfa-laboratory/arui-feather/issues/178)) ([e55d9bb](https://github.com/alfa-laboratory/arui-feather/commit/e55d9bb))
+
+
+### Features
+
+* custom text onChange when item selected ([#173](https://github.com/alfa-laboratory/arui-feather/issues/173)) ([3002af6](https://github.com/alfa-laboratory/arui-feather/commit/3002af6))
+* **popup-header:** add popup-header component ([#174](https://github.com/alfa-laboratory/arui-feather/issues/174)) ([2714c4c](https://github.com/alfa-laboratory/arui-feather/commit/2714c4c))
+
+
+
 <a name="8.2.1"></a>
 ## [8.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.2.0...v8.2.1) (2017-07-20)
 

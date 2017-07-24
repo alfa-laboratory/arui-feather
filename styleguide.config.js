@@ -18,7 +18,9 @@ module.exports = {
         SectionHeading: {
             heading: {
                 fontSize: '48px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis'
             }
         },
         ToolbarButton: {

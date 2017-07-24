@@ -41,6 +41,9 @@ module.exports = {
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),
     template: path.resolve(__dirname, './arui-demo/template.html'),
     webpackConfig: merge.smart(ARUI_TEMPLATE, {
+        devServer: {
+            disableHostCheck: true
+        },
         resolve: {
             alias: {
                 // Переопределяем компоненты styleguidist

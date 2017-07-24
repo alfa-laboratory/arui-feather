@@ -39,6 +39,7 @@ module.exports = {
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),
+    template: path.resolve(__dirname, './arui-demo/template.html'),
     webpackConfig: merge.smart(ARUI_TEMPLATE, {
         resolve: {
             alias: {

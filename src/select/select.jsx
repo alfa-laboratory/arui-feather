@@ -438,6 +438,7 @@ class Select extends React.Component {
                 className={ cn('mobile-header') }
                 size={ this.props.size }
                 title={ this.props.mobileTitle || this.props.placeholder }
+                onCloseClick={ this.handlePopupCloseClick }
             />
         );
     }
@@ -653,6 +654,13 @@ class Select extends React.Component {
         this.setState({ isMobile: isMatched });
     }
 
+    @autobind
+    handlePopupCloseClick() {
+        this.setState({
+            opened: false
+        });
+    }
+
     /**
      * Устанавливает фокус на компонент.
      *
@@ -697,6 +705,8 @@ class Select extends React.Component {
     }
 
     focusOnMenu() {
+        if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
+
         let scrollContainer = this.getScrollContainer();
 
         let posX = scrollContainer.scrollTop;

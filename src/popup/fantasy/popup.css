@@ -141,6 +141,11 @@
             flex-direction: column;
             border-radius: 0;
         }
+
+        .popup__content {
+            /* чтобы контент с position:relative в UIWebView не исчезал при быстром скролле */
+            transform: translateZ(0);
+        }
     }
 }
 

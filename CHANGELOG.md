@@ -1,3 +1,19 @@
+<a name="8.4.0"></a>
+# [8.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.3.0...v8.4.0) (2017-07-25)
+
+
+### Bug Fixes
+
+* fix height for adaptive popup ([#182](https://github.com/alfa-laboratory/arui-feather/issues/182)) ([a73110f](https://github.com/alfa-laboratory/arui-feather/commit/a73110f))
+
+
+### Features
+
+* add mobile adaptive demo ([#185](https://github.com/alfa-laboratory/arui-feather/issues/185)) ([681a3b4](https://github.com/alfa-laboratory/arui-feather/commit/681a3b4))
+* **calendar-input:** full-screen popup mode for calendar-input on mobile ([#176](https://github.com/alfa-laboratory/arui-feather/issues/176)) ([f1087ec](https://github.com/alfa-laboratory/arui-feather/commit/f1087ec))
+
+
+
 <a name="8.3.0"></a>
 # [8.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.2.1...v8.3.0) (2017-07-24)
 

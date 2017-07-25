@@ -107,6 +107,10 @@
         overflow-y: auto;
     }
 
+    &_height_adaptive &__container {
+        height: 100%;
+    }
+
     &__content {
         /* Для resize-sensor */
         position: relative;

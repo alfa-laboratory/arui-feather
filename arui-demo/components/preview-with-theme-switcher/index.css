@@ -21,6 +21,8 @@
         margin: 15px;
         display: inline-block;
         width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     &__button-group {

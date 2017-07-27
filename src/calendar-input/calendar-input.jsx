@@ -212,7 +212,7 @@ class CalendarInput extends React.Component {
             noValidate: true
         };
 
-        let wrapperProps = this.isMobilePopup()
+        let wrapperProps = this.isMobilePopup() && !this.props.disabled
             ? {
                 role: 'button',
                 tabIndex: 0,

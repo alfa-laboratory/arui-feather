@@ -15,6 +15,7 @@ export default class TabItem extends Link {
         size: 'l',
         disabled: false,
         checked: false,
-        pseudo: false
+        pseudo: false,
+        tabIndex: 0
     };
 }

@@ -1,3 +1,13 @@
+<a name="8.4.3"></a>
+## [8.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.2...v8.4.3) (2017-07-28)
+
+
+### Features
+
+* negotiation pseudoclasses ([#190](https://github.com/alfa-laboratory/arui-feather/issues/190)) ([4124e54](https://github.com/alfa-laboratory/arui-feather/commit/4124e54))
+
+
+
 <a name="8.4.2"></a>
 ## [8.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.1...v8.4.2) (2017-07-28)
 

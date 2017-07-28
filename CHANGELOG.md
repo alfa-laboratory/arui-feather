@@ -1,3 +1,14 @@
+<a name="8.4.1"></a>
+## [8.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.0...v8.4.1) (2017-07-28)
+
+
+### Bug Fixes
+
+* **calendar-input:** fix clickable disabled calendar-input in mobile popup mode ([#186](https://github.com/alfa-laboratory/arui-feather/issues/186)) ([4e8381f](https://github.com/alfa-laboratory/arui-feather/commit/4e8381f))
+* **link:** set hover/focus styles with css instead of js ([aa40492](https://github.com/alfa-laboratory/arui-feather/commit/aa40492))
+
+
+
 <a name="8.4.0"></a>
 # [8.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.3.0...v8.4.0) (2017-07-25)
 

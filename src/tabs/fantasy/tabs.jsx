@@ -16,6 +16,8 @@ import performance from '../../performance';
 @performance()
 export default class Tabs extends React.Component {
     static propTypes = {
+        /** Управление возможность скроллить компонент по-горизонтали */
+        scrollable: Type.bool,
         /** Дочерние компоненты */
         children: Type.node,
         /** Тема компонента */
@@ -24,10 +26,18 @@ export default class Tabs extends React.Component {
         className: Type.oneOfType([Type.func, Type.string])
     };
 
+    static defaultProps = {
+        scrollable: true
+    }
+
     render(cn) {
         return (
-            <div className={ cn }>
-                { this.props.children }
+            <div className={ cn({ scrollable: this.props.scrollable }) }>
+                <div className={ cn('panel') }>
+                    <div className={ cn('content') }>
+                        { this.props.children }
+                    </div>
+                </div>
             </div>
         );
     }

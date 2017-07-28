@@ -114,7 +114,7 @@
         }
     }
 
-    &_has-label:not(&_invalid) {
+    &_has-label:not(.input_invalid) {
         .input__control::placeholder {
             opacity: 0;
         }

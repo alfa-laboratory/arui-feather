@@ -1,3 +1,18 @@
+<a name="8.4.2"></a>
+## [8.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.1...v8.4.2) (2017-07-28)
+
+
+### Bug Fixes
+
+* **windows-adaptation:** fix some colors in variables ([13f854b](https://github.com/alfa-laboratory/arui-feather/commit/13f854b))
+
+
+### Features
+
+* **tabs:** add scrollable functionality ([#188](https://github.com/alfa-laboratory/arui-feather/issues/188)) ([0e44596](https://github.com/alfa-laboratory/arui-feather/commit/0e44596))
+
+
+
 <a name="8.4.1"></a>
 ## [8.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.0...v8.4.1) (2017-07-28)
 

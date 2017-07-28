@@ -1,6 +1,6 @@
 @import '../../vars-fantasy.css';
 
-.tabs {
+.tabs__content {
     box-sizing: border-box;
     position: relative;
 
@@ -18,13 +18,37 @@
 }
 
 .tabs_theme_alfa-on-color {
-    &:after {
+    .tabs__content:after {
         border-bottom-color: var(--color-background-control-disabled-alfa-on-color);
     }
 }
 
 .tabs_theme_alfa-on-white {
-    &:after {
+    .tabs__content:after {
         border-bottom-color: var(--color-background-control-disabled-alfa-on-white);
+    }
+}
+
+@media (--small-only) {
+    .tabs_scrollable {
+        overflow: hidden;
+        width: 100%;
+
+        &:after {
+            content: '';
+            display: block;
+            margin-bottom: -20px;
+        }
+
+        .tabs__panel {
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0 0 20px;
+        }
+
+        .tabs__content {
+            display: inline-block;
+        }
     }
 }

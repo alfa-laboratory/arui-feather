@@ -98,7 +98,7 @@ class Textarea extends React.Component {
 
         let textareaProps = {
             className: cn('control'),
-            ref: (control) => { this.control = control; },
+            [this.props.autosize ? 'inputRef' : 'ref']: (control) => { this.control = control; },
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled,
             id: this.props.id,

@@ -95,7 +95,7 @@ class SlideDown extends React.Component {
     setHeightToNull() {
         this.setHeightToContentHeight();
 
-         // Заставляем React перерисовать элемент
+        // Заставляем React перерисовать элемент
         this.forceUpdate(() => {
             // Заставляем браузер сделать reflow
             this.slideDown.getBoundingClientRect();

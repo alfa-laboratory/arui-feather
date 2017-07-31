@@ -16,7 +16,7 @@ describe('resize-sensor', () => {
     });
 
     it('should call `onResize` callback when `ResizeSensor` was change dimensions', (done) => {
-        let onResize = chai.spy();
+        let onResize = sinon.spy();
         render(
             <div id='resize-sensor-parent' style={ { position: 'relative', width: '10px', height: '10px' } }>
                 <ResizeSensor onResize={ onResize } />
@@ -29,7 +29,7 @@ describe('resize-sensor', () => {
             resizeSensorNode.style.height = '20px';
 
             setTimeout(() => {
-                expect(onResize).to.have.been.called.at.least(1);
+                expect(onResize).to.have.been.called;
                 done();
             }, 100);
         }, 0);

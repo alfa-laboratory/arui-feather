@@ -11,6 +11,7 @@ import {
 } from 'react-styleguidist/lib/utils/utils';
 import { getPlayground, isPlayground } from '../playground-with-share-example-button/utils';
 import '../../../src/font/font_roboto.css';
+import '../../../src/font/font_roboto-rouble.css';
 import './demo-styles.css';
 
 export default function (props) {
@@ -23,10 +24,8 @@ export default function (props) {
         slugger.reset();
         const sections = setSlugs(getPlayground(processSections(styleguide.sections))); // подменяем секции для отображения
         /* eslint react/prop-types: 0 */
-        // Показываем код сразу
-        const config = { ...props.config, showCode: true };
         return (
-            <StyleGuide { ...props } config={ config } sections={ sections } isolatedComponent={ true } />
+            <StyleGuide { ...props } sections={ sections } isolatedComponent={ true } />
         );
     }
 

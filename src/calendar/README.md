@@ -1,18 +1,18 @@
-```
-    initialState = {
-        date: Date.now()
-    };
-    <Calendar
-        value={ state.date }
-        onValueChange={ (newDate) => {
-            setState({
-                date: newDate
-            });
-        } }
-    />
+```jsx
+initialState = {
+    date: Date.now()
+};
+<Calendar
+    value={ state.date }
+    onValueChange={ (newDate) => {
+        setState({
+            date: newDate
+        });
+    } }
+/>
 ```
 
-```
+```jsx
 const addDays = require('date-fns/add_days');
 const subtractDays = require('date-fns/sub_days');
 
@@ -34,7 +34,7 @@ initialState = {
 />
 ```
 
-```
+```jsx
 const addDays = require('date-fns/add_days');
 const startOfDay = require('date-fns/start_of_day');
 const subtractDays = require('date-fns/sub_days');

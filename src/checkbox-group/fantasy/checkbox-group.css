@@ -11,6 +11,12 @@
     font-weight: var(--font-weight-normal);
 }
 
+.checkbox-group__label {
+    margin-bottom: 8px;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-normal);
+}
+
 .checkbox-group_invalid {
     border-left: 1px solid var(--color-error-translucent);
     padding-left: 10px;

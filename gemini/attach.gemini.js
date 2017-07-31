@@ -45,12 +45,6 @@ geminiReact.suite(NAME, function () {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
-                                actions.mouseMove(this.renderedComponent);
-                            })
-                            .capture('pressed', function (actions) {
-                                actions.mouseDown(this.renderedComponent);
-                            })
                             .capture('focused', function (actions, find) {
                                 actions.focus(find('.attach__control'));
                             });

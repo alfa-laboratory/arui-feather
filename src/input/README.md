@@ -1,5 +1,5 @@
 
-```
+```jsx
 initialState = {
     money: ''
 };
@@ -9,7 +9,7 @@ function handleMoneyChange(money) {
 function renderAddons() {
     return (
         <RadioGroup type={ 'button' }>
-            {['₽', '$', '€'].map(item =>
+            {['₽', '$', '€'].map(item => (
                 <Radio
                     key={ item }
                     size='m'
@@ -17,7 +17,7 @@ function renderAddons() {
                     text={ item }
                     onChange={ handleMoneyChange }
                 />
-            )}
+            ))}
         </RadioGroup>
     );
 }
@@ -32,7 +32,7 @@ function renderAddons() {
 ```
 
 Обычные
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
@@ -48,7 +48,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```
 
 С крестиком "Очистить"
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
@@ -66,7 +66,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```
 
 С шириной 100%
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
@@ -83,7 +83,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```
 
 С ошибкой
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 initialState = {
     value: 'Конsтантин',
@@ -109,7 +109,7 @@ initialState = {
 ```
 
 С Иконкой
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
@@ -126,7 +126,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```
 
 Disabled
-```
+```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (

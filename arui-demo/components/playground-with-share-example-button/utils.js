@@ -14,6 +14,9 @@ export function getPlayground(sections) {
                 examples: [{
                     content: code,
                     type: 'code',
+                    settings: {
+                        showcode: true
+                    },
                     evalInContext
                 }],
                 methods: []

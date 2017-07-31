@@ -70,6 +70,7 @@
 
     &_disabled {
         cursor: default;
+        pointer-events: none;
     }
 
     &_disabled &__icon {
@@ -180,7 +181,7 @@
         }
     }
 
-    &:not(&_invalid) {
+    &:not(.control-group_invalid) {
         .checkbox-group_theme_alfa-on-color,
         .checkbox-group_theme_alfa-on-white,
         .radio-group_theme_alfa-on-color,

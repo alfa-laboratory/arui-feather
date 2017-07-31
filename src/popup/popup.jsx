@@ -67,22 +67,22 @@ class Popup extends React.Component {
             'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position' */
-        target: Type.oneOf(['anchor', 'position']),
+        /** Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen' */
+        target: Type.oneOf(['anchor', 'position', 'screen']),
         /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно основного направления */
         mainOffset: Type.number,
         /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно второстепенного направления */
         secondaryOffset: Type.number,
         /** Только для target='anchor'. Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера */
         fitContaiterOffset: Type.number,
-        /** Отображение попапа как сообщения об ошибке */
-        invalid: Type.bool,
         /** Управление видимостью компонента */
         visible: Type.bool,
         /** Управление возможностью автозакрытия компонента */
         autoclosable: Type.bool,
         /** Управление выставлением модификатора для добавления внутренних отступов в стилях */
         padded: Type.bool,
+        /** Элемент закреплённого заголовка для компонента */
+        header: Type.node,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -102,7 +102,6 @@ class Popup extends React.Component {
     };
 
     static defaultProps = {
-        invalid: false,
         visible: false,
         autoclosable: false,
         padded: true,
@@ -165,7 +164,7 @@ class Popup extends React.Component {
             this.ensureClickEvent();
         }
 
-        if (this.props.height === 'adaptive') {
+        if (this.props.height === 'adaptive' || this.props.target === 'screen') {
             this.setGradientStyles();
         }
 
@@ -223,9 +222,9 @@ class Popup extends React.Component {
                     className={ cn({
                         direction: this.state.direction,
                         type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
+                        target: this.props.target,
                         size: this.props.size,
                         visible: this.props.visible,
-                        invalid: this.props.invalid,
                         height: this.props.height,
                         hovered: this.state.hovered,
                         autoclosable: this.props.autoclosable,
@@ -239,21 +238,30 @@ class Popup extends React.Component {
                     onMouseEnter={ this.handleMouseEnter }
                     onMouseLeave={ this.handleMouseLeave }
                 >
-                    <div
-                        ref={ (inner) => { this.inner = inner; } }
-                        className={ cn('inner') }
-                        onScroll={ this.handleInnerScroll }
-                    >
-                        <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
-                            { this.props.children }
-                            <ResizeSensor onResize={ this.handleResize } />
+                    <div className={ cn('container') }>
+                        {
+                            this.props.header && (
+                                <div className={ cn('header') }>
+                                    { this.props.header }
+                                </div>
+                            )
+                        }
+                        <div
+                            ref={ (inner) => { this.inner = inner; } }
+                            className={ cn('inner') }
+                            onScroll={ this.handleInnerScroll }
+                        >
+                            <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
+                                { this.props.children }
+                                <ResizeSensor onResize={ this.handleResize } />
+                            </div>
                         </div>
+                        {
+                            this.state.hasScrollbar && (
+                                <div className={ cn('gradient') } style={ this.state.gradientStyles } />
+                            )
+                        }
                     </div>
-                    {
-                        this.state.hasScrollbar && (
-                            <div className={ cn('gradient') } style={ this.state.gradientStyles } />
-                        )
-                    }
                 </div>
             </RenderInContainer>
         );
@@ -264,7 +272,7 @@ class Popup extends React.Component {
         let { scrollTop, offsetHeight, scrollHeight } = event.target;
         let isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
 
-        if (this.props.height === 'adaptive') {
+        if (this.props.height === 'adaptive' || this.props.target === 'screen') {
             let gradientStyles = {
                 right: this.state.gradientStyles.right
             };
@@ -403,7 +411,9 @@ class Popup extends React.Component {
      * @returns {Boolean}
      */
     isPropsToPositionCorrect() {
-        return (this.props.target === 'anchor' && this.anchor) || (this.props.target === 'position' && this.position);
+        return (this.props.target === 'anchor' && this.anchor)
+            || (this.props.target === 'position' && this.position)
+            || (this.props.target === 'screen');
     }
 
     @autobind
@@ -422,9 +432,31 @@ class Popup extends React.Component {
         }
 
         let popupHash = this.getPopupHash();
-        let bestDrawingParams = this.props.target === 'position'
-            ? { top: this.position.top, left: this.position.left }
-            : calcBestDrawingParams(popupHash, calcTargetDimensions(popupHash), calcFitContainerDimensions(popupHash));
+        let bestDrawingParams;
+
+        switch (this.props.target) {
+            case 'position':
+                bestDrawingParams = { top: this.position.top, left: this.position.left };
+                break;
+
+            case 'screen':
+                bestDrawingParams = {
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    overflow: this.inner.scrollHeight > this.inner.clientHeight
+                };
+                break;
+
+            case 'anchor':
+                bestDrawingParams = calcBestDrawingParams(
+                    popupHash,
+                    calcTargetDimensions(popupHash),
+                    calcFitContainerDimensions(popupHash)
+                );
+                break;
+        }
 
         this.setState({
             direction: bestDrawingParams.direction,
@@ -446,9 +478,11 @@ class Popup extends React.Component {
         this.clickEventBindTimeout = setTimeout(() => {
             if (!this.isWindowClickBinded && isNeedBindEvent) {
                 window.addEventListener('click', this.handleWindowClick);
+                window.addEventListener('touchend', this.handleWindowClick);
                 this.isWindowClickBinded = true;
             } else if (this.isWindowClickBinded && !isNeedBindEvent) {
                 window.removeEventListener('click', this.handleWindowClick);
+                window.removeEventListener('touchend', this.handleWindowClick);
                 this.isWindowClickBinded = false;
             }
         }, 0);
@@ -458,6 +492,8 @@ class Popup extends React.Component {
         return {
             top: drawingParams.top,
             left: drawingParams.left,
+            right: drawingParams.right,
+            bottom: drawingParams.bottom,
             height: this.props.height === 'adaptive' ? drawingParams.height : 'auto'
         };
     }

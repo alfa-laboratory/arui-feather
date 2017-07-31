@@ -1,4 +1,4 @@
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
@@ -11,7 +11,7 @@
 </div>
 ```
 
-```
+```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
@@ -21,7 +21,7 @@
 </div>
 ```
 
-```
+```jsx
 const formatDate = require('date-fns/format');
 
 <div>
@@ -30,5 +30,16 @@ const formatDate = require('date-fns/format');
             <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'DD.MM.YYYY') } width='available' />
         </div>
     ))}
+</div>
+```
+
+Без фолбэка на нативный контрол на мобильном устройстве
+```
+<div>
+    <CalendarInput
+        size='m'
+        defaultValue='01.10.2017'
+        mobileMode='popup'
+    />
 </div>
 ```

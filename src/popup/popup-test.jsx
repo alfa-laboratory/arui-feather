@@ -39,6 +39,11 @@ function renderPopup(popupProps, anchorProps) {
         );
     }
 
+    let popupHeaderNode;
+    if (popup) {
+        popupHeaderNode = popup.node.querySelector('.popup__header');
+    }
+
     let popupContentNode;
     if (popup) {
         popupContentNode = popup.node.querySelector('.popup__content');
@@ -48,7 +53,7 @@ function renderPopup(popupProps, anchorProps) {
         popup.instance.setTarget(anchor.node);
     }
 
-    return { popup, anchor, popupContentNode };
+    return { popup, anchor, popupHeaderNode, popupContentNode };
 }
 
 function getPopupDimensions(popupNode, popupContentNode) {
@@ -132,25 +137,25 @@ describe('popup', () => {
     });
 
     it('should call `onMouseEnter` callback after popup was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let { popup } = renderPopup({ onMouseEnter }, {});
 
         simulate(popup.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after popup was unhovered', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let { popup } = renderPopup({ onMouseLeave }, {});
 
         simulate(popup.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should call `onClickOutside` callback after click outside popup', (done) => {
-        let onClickOutside = chai.spy();
+        let onClickOutside = sinon.spy();
         renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
 
         let outsideElement = document.createElement('div');
@@ -162,20 +167,32 @@ describe('popup', () => {
 
         setTimeout(() => {
             outsideElement.click();
-            expect(onClickOutside).to.have.been.called.once;
+            expect(onClickOutside).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should not call `onClickOutside` callback after click inside popup', (done) => {
-        let onClickOutside = chai.spy();
+        let onClickOutside = sinon.spy();
         let { popupContentNode } = renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
 
         setTimeout(() => {
             popupContentNode.click();
-            expect(onClickOutside).to.not.have.been.called();
+            expect(onClickOutside).to.not.have.been.called;
             done();
         }, 0);
+    });
+
+    it('should not render a header element by default', () => {
+        let { popupHeaderNode } = renderPopup({ visible: true }, {});
+
+        expect(popupHeaderNode).to.not.exist;
+    });
+
+    it('should render a header element when header parameter is present', () => {
+        let { popupHeaderNode } = renderPopup({ header: <div />, visible: true }, {});
+
+        expect(popupHeaderNode).to.exist;
     });
 
     describe('popup calculate drawing params', () => {

@@ -51,9 +51,6 @@ geminiReact.suite(NAME, function () {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('clicked', function (actions) {
-                                actions.mouseUp(this.renderedComponent);
-                            })
                             .capture('focused', function (actions, find) {
                                 actions.focus(find('.checkbox__control'));
                             });

@@ -1,61 +1,66 @@
-```
+Вертикальная группа радио инпутов с заголовком
+```jsx
 <RadioGroup>
-    {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
         <Radio
             text={ text }
             key={ text }
             value={ text }
         />
-    )}
+    ))}
 </RadioGroup>
 ```
 
-```
-<RadioGroup error='Обязательно'>
-    {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+Та же группа, теперь с заголовком и ошибкой
+```jsx
+<RadioGroup error='Обязательно' label={ <Label size='m'>Сколько?</Label> }>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
         <Radio
             text={ text }
             key={ text }
             value={ text }
         />
-    )}
+    ))}
 </RadioGroup>
 ```
 
-```
+Горизонтальная группа радио кнопок с ошибкой, состоящая из обычных кнопок
+```jsx
 <RadioGroup type='button' error='Обязательно'>
-    {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
         <Radio
             text={ text }
             key={ text }
             value={ text }
             type='button'
         />
-    )}
+    ))}
 </RadioGroup>
 ```
 
-```
+Горизонтальная группа радио кнопок со 100% шириной
+```jsx
 <RadioGroup width='available' type='button'>
-    {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
         <Radio
             text={ text }
             key={ text }
             value={ text }
             type='button'
         />
-    )}
+    ))}
 </RadioGroup>
 ```
 
-```
+Горизонтальная группа радио кнопок
+```jsx
 <RadioGroup type='line'>
-    {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
         <Radio
             text={ text }
             key={ text }
             value={ text }
         />
-    )}
+    ))}
 </RadioGroup>
 ```

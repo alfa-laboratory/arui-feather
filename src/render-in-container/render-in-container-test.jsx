@@ -56,7 +56,7 @@ describe('render-in-container', () => {
     });
 
     it('should call `onRender` callback after element was rendered', () => {
-        let onRender = chai.spy();
+        let onRender = sinon.spy();
 
         render(
             <RenderInContainer onRender={ onRender }>
@@ -64,6 +64,6 @@ describe('render-in-container', () => {
             </RenderInContainer>
         );
 
-        expect(onRender).to.have.been.called.once;
+        expect(onRender).to.have.been.calledOnce;
     });
 });

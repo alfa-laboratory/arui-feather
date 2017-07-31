@@ -20,8 +20,7 @@ const PROP_SETS = [
     {
         directions: ['right-center', 'right-top', 'right-bottom'],
         type: 'tooltip',
-        mainOffset: 13,
-        invalid: true
+        mainOffset: 13
     },
     {
         target: 'position'
@@ -62,8 +61,8 @@ class TestButtonPopup extends React.Component {
                 >
                     { `Popup ${
                         this.props.target === 'position'
-                        ? 'with position 100px 100px'
-                        : ''
+                            ? 'with position 100px 100px'
+                            : ''
                     }` }
                 </Popup>
             </div>

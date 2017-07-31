@@ -23,7 +23,7 @@
         box-sizing: border-box;
     }
 
-    &__inner {
+    &__container {
         position: relative;
         width: 100%;
         height: 100%;
@@ -72,7 +72,8 @@
         margin: 0 0 0 -35px;
     }
 
-    &_height_adaptive &__gradient {
+    &_height_adaptive &__gradient,
+    &_target_screen &__gradient {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -84,23 +85,28 @@
         z-index: 3;
     }
 
-    &_height_adaptive.popup_size_s &__gradient {
+    &_height_adaptive.popup_size_s &__gradient,
+    &_target_screen.popup_size_s &__gradient {
         height: 31px;
     }
 
-    &_height_adaptive.popup_size_m &__gradient {
+    &_height_adaptive.popup_size_m &__gradient,
+    &_target_screen.popup_size_m &__gradient {
         height: 40px;
     }
 
-    &_height_adaptive.popup_size_l &__gradient {
+    &_height_adaptive.popup_size_l &__gradient,
+    &_target_screen.popup_size_l &__gradient {
         height: 50px;
     }
 
-    &_height_adaptive.popup_size_xl &__gradient {
+    &_height_adaptive.popup_size_xl &__gradient,
+    &_target_screen.popup_size_xl &__gradient {
         height: 58px;
     }
 
-    &_height_adaptive &__inner {
+    &_height_adaptive &__inner,
+    &_target_screen &__inner {
         -webkit-overflow-scrolling: touch;
         overflow-x: hidden;
         overflow-y: auto;
@@ -128,6 +134,23 @@
 
         &.popup_size_xl .popup__content {
             padding: 17px 22px;
+        }
+    }
+
+    &_target_screen {
+        position: fixed;
+        border-radius: 0;
+        box-shadow: none;
+
+        .popup__container {
+            display: flex;
+            flex-direction: column;
+            border-radius: 0;
+        }
+
+        .popup__content {
+            /* чтобы контент с position:relative в UIWebView не исчезал при быстром скролле */
+            transform: translateZ(0);
         }
     }
 }

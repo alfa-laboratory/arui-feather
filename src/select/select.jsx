@@ -12,6 +12,7 @@ import Icon from '../icon/icon';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
+import PopupHeader from '../popup-header/popup-header';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
@@ -46,6 +47,8 @@ class Select extends React.Component {
         className: Type.oneOfType([Type.func, Type.string]),
         /** Тип выпадающего списка */
         mode: Type.oneOf(['check', 'radio', 'radio-check']),
+        /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
+        groupView: Type.oneOf(['default', 'line']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -100,6 +103,10 @@ class Select extends React.Component {
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
+        /** Управление нативным режимом на мобильных устройствах */
+        mobileMenuMode: Type.oneOf(['native', 'popup']),
+        /** Подсказка над меню в мобильном режиме */
+        mobileTitle: Type.node,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -128,13 +135,15 @@ class Select extends React.Component {
 
     static defaultProps = {
         mode: 'check',
+        groupView: 'default',
         disabled: false,
         size: 'm',
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         width: 'default',
         equalPopupWidth: false,
         options: [],
-        placeholder: 'Выберите:'
+        placeholder: 'Выберите:',
+        mobileMenuMode: 'native'
     };
 
     static contextTypes = {
@@ -145,6 +154,7 @@ class Select extends React.Component {
         buttonFocused: false,
         hasGroup: false,
         nativeFocused: false,
+        isMobile: false,
         opened: !!this.props.opened,
         popupStyles: {},
         value: this.props.value || []
@@ -223,7 +233,16 @@ class Select extends React.Component {
                         </span>
                     }
                     { this.renderButton(cn, SelectButton) }
-                    { this.renderNativeSelect(cn) }
+                    <Mq
+                        query='--small-only'
+                        touch={ true }
+                        onMatchChange={ this.handleMqMatchChange }
+                    >
+                        {
+                            this.props.mobileMenuMode === 'native' &&
+                            this.renderNativeSelect(cn)
+                        }
+                    </Mq>
                     {
                         (this.props.error || this.props.hint) &&
                         <span className={ cn('sub') }>
@@ -268,46 +287,41 @@ class Select extends React.Component {
         }
 
         return (
-            <Mq
-                query='--small-only'
-                touch={ true }
+            <select
+                ref={ (nativeSelect) => { this.nativeSelect = nativeSelect; } }
+                className={ cn('native-control') }
+                disabled={ this.props.disabled }
+                multiple={ isCheckMode && 'multiple' }
+                value={ value }
+                onChange={ this.handleNativeOptionCheck }
+                onClick={ this.handleNativeClick }
+                onFocus={ this.handleNativeFocus }
+                onBlur={ this.handleNativeBlur }
             >
-                <select
-                    ref={ (nativeSelect) => { this.nativeSelect = nativeSelect; } }
-                    className={ cn('native-control') }
-                    disabled={ this.props.disabled }
-                    multiple={ isCheckMode && 'multiple' }
-                    value={ value }
-                    onChange={ this.handleNativeOptionCheck }
-                    onClick={ this.handleNativeClick }
-                    onFocus={ this.handleNativeFocus }
-                    onBlur={ this.handleNativeBlur }
-                >
-                    {
-                        /*
-                            Хак с пустым <optgroup> — для фикса странного поведения select с атрибутом multiple на iOS7+:
-                            1. If no option is selected, it selects the first option in the list.
-                            2. If one option is selected, it deselects that option.
-                            3. If multiple options are selected, it deselects the last option to be tapped.
-                            4. If an option previously selected is deselected, it reselects the option.
-                            https://discussions.apple.com/message/23745665
-                            https://discussions.apple.com/message/24694954
-                        */
-                        hasEmptyOptGroup &&
-                        <optgroup
-                            disabled={ true }
-                            label={ this.props.placeholder }
-                        />
-                    }
-                    {
-                        hasEmptyOption &&
-                        <option disabled={ true } value=''>
-                            { this.props.placeholder }
-                        </option>
-                    }
-                    { this.renderNativeOptionsList(this.props.options) }
-                </select>
-            </Mq>
+                {
+                    /*
+                        Хак с пустым <optgroup> — для фикса странного поведения select с атрибутом multiple на iOS7+:
+                        1. If no option is selected, it selects the first option in the list.
+                        2. If one option is selected, it deselects that option.
+                        3. If multiple options are selected, it deselects the last option to be tapped.
+                        4. If an option previously selected is deselected, it reselects the option.
+                        https://discussions.apple.com/message/23745665
+                        https://discussions.apple.com/message/24694954
+                    */
+                    hasEmptyOptGroup &&
+                    <optgroup
+                        disabled={ true }
+                        label={ this.props.placeholder }
+                    />
+                }
+                {
+                    hasEmptyOption &&
+                    <option disabled={ true } value=''>
+                        { this.props.placeholder }
+                    </option>
+                }
+                { this.renderNativeOptionsList(this.props.options) }
+            </select>
         );
     }
 
@@ -327,7 +341,8 @@ class Select extends React.Component {
                 height='adaptive'
                 padded={ false }
                 size={ this.props.size }
-                target='anchor'
+                target={ this.state.isMobile ? 'screen' : 'anchor' }
+                header={ this.state.isMobile && this.renderMobileHeader(cn) }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
@@ -339,6 +354,7 @@ class Select extends React.Component {
                     size={ this.props.size }
                     disabled={ this.props.disabled }
                     mode={ this.props.mode }
+                    groupView={ this.props.groupView }
                     content={ optionsList }
                     onItemCheck={ this.handleOptionCheck }
                     checkedItems={ value }
@@ -414,6 +430,17 @@ class Select extends React.Component {
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
         return checkedItemsText || this.props.placeholder;
+    }
+
+    renderMobileHeader(cn) {
+        return (
+            <PopupHeader
+                className={ cn('mobile-header') }
+                size={ this.props.size }
+                title={ this.props.mobileTitle || this.props.placeholder }
+                onCloseClick={ this.handlePopupCloseClick }
+            />
+        );
     }
 
     @autobind
@@ -622,6 +649,18 @@ class Select extends React.Component {
         }
     }
 
+    @autobind
+    handleMqMatchChange(isMatched) {
+        this.setState({ isMobile: isMatched });
+    }
+
+    @autobind
+    handlePopupCloseClick() {
+        this.setState({
+            opened: false
+        });
+    }
+
     /**
      * Устанавливает фокус на компонент.
      *
@@ -666,6 +705,8 @@ class Select extends React.Component {
     }
 
     focusOnMenu() {
+        if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
+
         let scrollContainer = this.getScrollContainer();
 
         let posX = scrollContainer.scrollTop;

@@ -12,7 +12,7 @@ describe('checkbox', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -80,19 +80,19 @@ describe('checkbox', () => {
     });
 
     it('should call `onFocus` callback after checkbox was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let checkbox = render(<CheckBox onFocus={ onFocus } />);
 
         checkbox.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after checkbox was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let checkbox = render(<CheckBox onBlur={ onBlur } />);
 
         checkbox.instance.focus();
@@ -101,7 +101,7 @@ describe('checkbox', () => {
             checkbox.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
@@ -126,21 +126,21 @@ describe('checkbox', () => {
     });
 
     it('should call `onMouseEnter` callback after checkbox was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let checkbox = render(<CheckBox onMouseEnter={ onMouseEnter } />);
 
         simulate(checkbox.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after checkbox was leaved by cursor', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let checkbox = render(<CheckBox onMouseLeave={ onMouseLeave } />);
 
         simulate(checkbox.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should set class on checkbox change', () => {
@@ -153,13 +153,13 @@ describe('checkbox', () => {
     });
 
     it('should call `onChange` callback after checkbox was changed', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let checkbox = render(<CheckBox onChange={ onChange } />);
         let controlNode = checkbox.node.querySelector('input');
 
         simulate(controlNode, 'change');
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should set class on checkbox button change', () => {
@@ -173,13 +173,13 @@ describe('checkbox', () => {
     });
 
     it('should call `onChange` callback after checkbox button was clicked', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let checkbox = render(<CheckBox type='button' onChange={ onChange } />);
         let buttonNode = checkbox.node.querySelector('button');
 
         buttonNode.click();
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should work with props.checked', () => {
@@ -206,7 +206,7 @@ describe('checkbox', () => {
         checkbox.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
     });

@@ -1,4 +1,4 @@
-```
+```jsx
 const elipsisBoxStyles = {
     width: '200px',
     overflow: 'hidden',

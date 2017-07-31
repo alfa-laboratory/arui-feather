@@ -1,3 +1,236 @@
+<a name="8.4.3"></a>
+## [8.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.2...v8.4.3) (2017-07-28)
+
+
+### Features
+
+* negotiation pseudoclasses ([#190](https://github.com/alfa-laboratory/arui-feather/issues/190)) ([4124e54](https://github.com/alfa-laboratory/arui-feather/commit/4124e54))
+
+
+
+<a name="8.4.2"></a>
+## [8.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.1...v8.4.2) (2017-07-28)
+
+
+### Bug Fixes
+
+* **windows-adaptation:** fix some colors in variables ([13f854b](https://github.com/alfa-laboratory/arui-feather/commit/13f854b))
+
+
+### Features
+
+* **tabs:** add scrollable functionality ([#188](https://github.com/alfa-laboratory/arui-feather/issues/188)) ([0e44596](https://github.com/alfa-laboratory/arui-feather/commit/0e44596))
+
+
+
+<a name="8.4.1"></a>
+## [8.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.0...v8.4.1) (2017-07-28)
+
+
+### Bug Fixes
+
+* **calendar-input:** fix clickable disabled calendar-input in mobile popup mode ([#186](https://github.com/alfa-laboratory/arui-feather/issues/186)) ([4e8381f](https://github.com/alfa-laboratory/arui-feather/commit/4e8381f))
+* **link:** set hover/focus styles with css instead of js ([aa40492](https://github.com/alfa-laboratory/arui-feather/commit/aa40492))
+
+
+
+<a name="8.4.0"></a>
+# [8.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.3.0...v8.4.0) (2017-07-25)
+
+
+### Bug Fixes
+
+* fix height for adaptive popup ([#182](https://github.com/alfa-laboratory/arui-feather/issues/182)) ([a73110f](https://github.com/alfa-laboratory/arui-feather/commit/a73110f))
+
+
+### Features
+
+* add mobile adaptive demo ([#185](https://github.com/alfa-laboratory/arui-feather/issues/185)) ([681a3b4](https://github.com/alfa-laboratory/arui-feather/commit/681a3b4))
+* **calendar-input:** full-screen popup mode for calendar-input on mobile ([#176](https://github.com/alfa-laboratory/arui-feather/issues/176)) ([f1087ec](https://github.com/alfa-laboratory/arui-feather/commit/f1087ec))
+
+
+
+<a name="8.3.0"></a>
+# [8.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.2.1...v8.3.0) (2017-07-24)
+
+
+### Bug Fixes
+
+* fix plaground button according breaking changes in six version of sstyleguidist ([#180](https://github.com/alfa-laboratory/arui-feather/issues/180)) ([7059dfd](https://github.com/alfa-laboratory/arui-feather/commit/7059dfd))
+* **calendar:** keyboard navigation ([#161](https://github.com/alfa-laboratory/arui-feather/issues/161)) ([86eaade](https://github.com/alfa-laboratory/arui-feather/commit/86eaade))
+* **popup:** fix UIWebView popup bugs ([#178](https://github.com/alfa-laboratory/arui-feather/issues/178)) ([e55d9bb](https://github.com/alfa-laboratory/arui-feather/commit/e55d9bb))
+
+
+### Features
+
+* custom text onChange when item selected ([#173](https://github.com/alfa-laboratory/arui-feather/issues/173)) ([3002af6](https://github.com/alfa-laboratory/arui-feather/commit/3002af6))
+* **popup-header:** add popup-header component ([#174](https://github.com/alfa-laboratory/arui-feather/issues/174)) ([2714c4c](https://github.com/alfa-laboratory/arui-feather/commit/2714c4c))
+
+
+
+<a name="8.2.1"></a>
+## [8.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.2.0...v8.2.1) (2017-07-20)
+
+
+### Bug Fixes
+
+* autoclosing on ios ([#171](https://github.com/alfa-laboratory/arui-feather/issues/171)) ([ddcba37](https://github.com/alfa-laboratory/arui-feather/commit/ddcba37))
+
+
+
+<a name="8.2.0"></a>
+# [8.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.6...v8.2.0) (2017-07-18)
+
+
+### Bug Fixes
+
+* **select:** mobile header style ([#169](https://github.com/alfa-laboratory/arui-feather/issues/169)) ([865b022](https://github.com/alfa-laboratory/arui-feather/commit/865b022))
+
+
+### Features
+
+* migrate callback tests from chai-spies to sinon-chai. ([#167](https://github.com/alfa-laboratory/arui-feather/issues/167)) ([765a14e](https://github.com/alfa-laboratory/arui-feather/commit/765a14e))
+* **menu:** add in-line group titles ([#170](https://github.com/alfa-laboratory/arui-feather/issues/170)) ([aa3e70d](https://github.com/alfa-laboratory/arui-feather/commit/aa3e70d))
+
+
+
+<a name="8.1.6"></a>
+## [8.1.6](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.5...v8.1.6) (2017-07-13)
+
+
+### Bug Fixes
+
+* **tabs-tests.jsx:** var name ([6210fdf](https://github.com/alfa-laboratory/arui-feather/commit/6210fdf))
+
+
+
+<a name="8.1.5"></a>
+## [8.1.5](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.4...v8.1.5) (2017-07-12)
+
+
+### Bug Fixes
+
+* **select.css:** unused var ([3728019](https://github.com/alfa-laboratory/arui-feather/commit/3728019))
+
+
+
+<a name="8.1.4"></a>
+## [8.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.3...v8.1.4) (2017-07-12)
+
+
+### Bug Fixes
+
+* **button:** fix focused style on pseudo button ([#160](https://github.com/alfa-laboratory/arui-feather/issues/160)) ([a0564fa](https://github.com/alfa-laboratory/arui-feather/commit/a0564fa))
+* **font:** use roboto rouble with woff ([#163](https://github.com/alfa-laboratory/arui-feather/issues/163)) ([6ecb51d](https://github.com/alfa-laboratory/arui-feather/commit/6ecb51d))
+* **label:** fix label colors ([#162](https://github.com/alfa-laboratory/arui-feather/issues/162)) ([0671ff8](https://github.com/alfa-laboratory/arui-feather/commit/0671ff8))
+
+
+
+<a name="8.1.3"></a>
+## [8.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.2...v8.1.3) (2017-07-12)
+
+
+### Bug Fixes
+
+* **tab-items:** fix tab-items styles according to new design ([8b5a113](https://github.com/alfa-laboratory/arui-feather/commit/8b5a113))
+
+
+
+<a name="8.1.2"></a>
+## [8.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.1...v8.1.2) (2017-07-11)
+
+
+### Bug Fixes
+
+* **checkbox:** update gemini screens, fix incorrect img import ([8a6fa94](https://github.com/alfa-laboratory/arui-feather/commit/8a6fa94))
+
+
+
+<a name="8.1.1"></a>
+## [8.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.1.0...v8.1.1) (2017-07-10)
+
+
+
+<a name="8.1.0"></a>
+# [8.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.0.0...v8.1.0) (2017-07-10)
+
+
+### Features
+
+* **checkbox:** add indetermined state ([#152](https://github.com/alfa-laboratory/arui-feather/issues/152)) ([4b83723](https://github.com/alfa-laboratory/arui-feather/commit/4b83723))
+* **font:** add roboto rouble fallback symbol font for win xp-8.1 ([#155](https://github.com/alfa-laboratory/arui-feather/issues/155)) ([5110fdb](https://github.com/alfa-laboratory/arui-feather/commit/5110fdb))
+
+
+
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.3.0...v8.0.0) (2017-07-10)
+
+
+### Features
+
+* **popup:** remove invalid popup prop ([#149](https://github.com/alfa-laboratory/arui-feather/issues/149)) ([7d71174](https://github.com/alfa-laboratory/arui-feather/commit/7d71174))
+* **select:** add header to fullscreen select ([#148](https://github.com/alfa-laboratory/arui-feather/issues/148)) ([fb9e804](https://github.com/alfa-laboratory/arui-feather/commit/fb9e804))
+
+
+
+<a name="7.3.0"></a>
+# [7.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.2.1...v7.3.0) (2017-07-07)
+
+
+### Bug Fixes
+
+* **button:** fix mouseover after disabled button ([#140](https://github.com/alfa-laboratory/arui-feather/issues/140)) ([67fd626](https://github.com/alfa-laboratory/arui-feather/commit/67fd626))
+
+
+### Features
+
+* add labels to checkbox-group & radio-group ([#137](https://github.com/alfa-laboratory/arui-feather/issues/137)) ([e9f2766](https://github.com/alfa-laboratory/arui-feather/commit/e9f2766))
+* **tabs:** add tabs component ([#150](https://github.com/alfa-laboratory/arui-feather/issues/150)) ([483e534](https://github.com/alfa-laboratory/arui-feather/commit/483e534))
+
+
+
+<a name="7.2.1"></a>
+## [7.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v7.2.0...v7.2.1) (2017-07-05)
+
+
+### Bug Fixes
+
+* **fantasy:** fix collapse expanded content margin ([#146](https://github.com/alfa-laboratory/arui-feather/issues/146)) ([66ff510](https://github.com/alfa-laboratory/arui-feather/commit/66ff510))
+* **icon:** remove icon_undefined class name ([#147](https://github.com/alfa-laboratory/arui-feather/issues/147)) ([5b2debd](https://github.com/alfa-laboratory/arui-feather/commit/5b2debd))
+
+
+
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.1.0...v7.2.0) (2017-07-04)
+
+
+### Features
+
+* **popup:** full-screen popup mode for select on mobile ([#145](https://github.com/alfa-laboratory/arui-feather/issues/145)) ([03c58aa](https://github.com/alfa-laboratory/arui-feather/commit/03c58aa))
+
+
+
+<a name="7.1.0"></a>
+# [7.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.2...v7.1.0) (2017-07-04)
+
+
+### Features
+
+* **menu:** allow checked items for basic mode ([#142](https://github.com/alfa-laboratory/arui-feather/issues/142)) ([4822919](https://github.com/alfa-laboratory/arui-feather/commit/4822919))
+
+
+
+<a name="7.0.2"></a>
+## [7.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.1...v7.0.2) (2017-07-03)
+
+
+### Bug Fixes
+
+* **fantasy:** fix form controls styles with disabled & invalid simultaneous states ([#141](https://github.com/alfa-laboratory/arui-feather/issues/141)) ([e2fd3c6](https://github.com/alfa-laboratory/arui-feather/commit/e2fd3c6))
+* **fantasy:** fix link border colors ([#143](https://github.com/alfa-laboratory/arui-feather/issues/143)) ([cc5f9d2](https://github.com/alfa-laboratory/arui-feather/commit/cc5f9d2))
+
+
+
 <a name="7.0.1"></a>
 ## [7.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v7.0.0...v7.0.1) (2017-06-30)
 

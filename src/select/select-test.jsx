@@ -5,7 +5,7 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 import bowser from 'bowser';
-import { render, cleanUp, simulate } from '../test-utils';
+import { render, cleanUp, simulate, eventPersist } from '../test-utils';
 
 import Select from './select';
 import keyboardCode from '../lib/keyboard-code';
@@ -49,7 +49,7 @@ describe('select', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -198,24 +198,24 @@ describe('select', () => {
         select.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
 
             done();
         }, 0);
     });
 
     it('should call `onClick` callback after button was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let selectProps = { options: OPTIONS, onClick };
         let { buttonNode } = renderSelect(selectProps);
 
         buttonNode.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 
     it('should call `onChange` callback after option was clicked', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let selectProps = {
             options: OPTIONS,
             onChange
@@ -225,12 +225,12 @@ describe('select', () => {
 
         firstOptionNode.click();
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     // add after decorator update
     it('should call `onClickOutside` callback after click outside of open popup', (done) => {
-        let onClickOutside = chai.spy();
+        let onClickOutside = sinon.spy();
         let selectProps = {
             options: OPTIONS,
             onClickOutside
@@ -247,25 +247,25 @@ describe('select', () => {
 
         setTimeout(() => {
             outsideElement.click();
-            expect(onClickOutside).to.have.been.called.once;
+            expect(onClickOutside).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onFocus` after button was clicked', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
 
         buttonNode.click();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` after escape key was pressed', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
 
         buttonNode.click();
@@ -274,29 +274,26 @@ describe('select', () => {
             simulate(menuNode, 'keyDown', { which: keyboardCode.ESCAPE });
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should receive event.target.value on `onFocus` callback', (done) => {
-        let value = '';
-        let onFocus = chai.spy((event) => { value = event.target.value; });
+        let onFocus = sinon.spy(eventPersist);
         let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onFocus });
-
         select.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
-            expect(value).to.deep.equal([1, 2]);
+            expect(onFocus).to.have.been.calledOnce;
+            expect(onFocus).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
             done();
         }, 0);
     });
 
     it('should receive event.target.value on `onBlur` callback', (done) => {
-        let value = '';
-        let onBlur = chai.spy((event) => { value = event.target.value; });
+        let onBlur = sinon.spy(eventPersist);
         let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onBlur });
 
         select.instance.focus();
@@ -305,8 +302,8 @@ describe('select', () => {
             select.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
-                expect(value).to.deep.equal([1, 2]);
+                expect(onBlur).to.have.been.calledOnce;
+                expect(onBlur).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                 done();
             }, 0);
         }, 0);
@@ -327,6 +324,18 @@ describe('select', () => {
             let optGroup = nativeSelectNode.querySelector('optgroup');
 
             expect(optGroup).to.have.attr('label', 'Select something');
+        });
+
+        it('should render popup when mobileMenuMode = popup', () => {
+            let selectProps = {
+                options: OPTIONS,
+                mobileMenuMode: 'popup',
+                opened: true
+            };
+            let { nativeSelectNode, popupNode } = renderSelect(selectProps);
+
+            expect(nativeSelectNode).to.not.exist;
+            expect(popupNode).to.have.class('popup');
         });
     } else {
         it('should set popup width equal to button width when equalPopupWidth = true', () => {
@@ -355,19 +364,19 @@ describe('select', () => {
         });
 
         it('should call `onButtonFocus` after component was focused', (done) => {
-            let onButtonFocus = chai.spy();
+            let onButtonFocus = sinon.spy();
             let { select } = renderSelect({ options: OPTIONS, onButtonFocus });
 
             select.instance.focus();
 
             setTimeout(() => {
-                expect(onButtonFocus).to.have.been.called.once;
+                expect(onButtonFocus).to.have.been.calledOnce;
                 done();
             }, 0);
         });
 
         it('should call `onButtonBlur` after component was focused', (done) => {
-            let onButtonBlur = chai.spy();
+            let onButtonBlur = sinon.spy();
             let { select } = renderSelect({ options: OPTIONS, onButtonBlur });
 
             select.instance.focus();
@@ -376,26 +385,26 @@ describe('select', () => {
                 select.instance.blur();
 
                 setTimeout(() => {
-                    expect(onButtonBlur).to.have.been.called.once;
+                    expect(onButtonBlur).to.have.been.calledOnce;
                     done();
                 }, 0);
             }, 0);
         });
 
         it('should call `onMenuFocus` after component was focused', (done) => {
-            let onMenuFocus = chai.spy();
+            let onMenuFocus = sinon.spy();
             let { select } = renderSelect({ options: OPTIONS, onMenuFocus });
 
             select.instance.focus();
 
             setTimeout(() => {
-                expect(onMenuFocus).to.have.been.called.once;
+                expect(onMenuFocus).to.have.been.calledOnce;
                 done();
             }, 0);
         });
 
         it('should call `onMenuBlur` after component was focused', (done) => {
-            let onMenuBlur = chai.spy();
+            let onMenuBlur = sinon.spy();
             let { select } = renderSelect({ options: OPTIONS, onMenuBlur });
 
             select.instance.focus();
@@ -404,29 +413,27 @@ describe('select', () => {
                 select.instance.blur();
 
                 setTimeout(() => {
-                    expect(onMenuBlur).to.have.been.called.once;
+                    expect(onMenuBlur).to.have.been.calledOnce;
                     done();
                 }, 0);
             }, 0);
         });
 
         it('should receive event.target.value on `onButtonFocus` callback', (done) => {
-            let value = '';
-            let onButtonFocus = chai.spy((event) => { value = event.target.value; });
+            let onButtonFocus = sinon.spy();
             let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonFocus });
 
             select.instance.focus();
 
             setTimeout(() => {
-                expect(onButtonFocus).to.have.been.called.once;
-                expect(value).to.deep.equal([1, 2]);
+                expect(onButtonFocus).to.have.been.calledOnce;
+                expect(onButtonFocus).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                 done();
             }, 0);
         });
 
         it('should receive event.target.value on `onButtonBlur` callback', (done) => {
-            let value = '';
-            let onButtonBlur = chai.spy((event) => { value = event.target.value; });
+            let onButtonBlur = sinon.spy();
             let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonBlur });
 
             select.instance.focus();
@@ -435,30 +442,28 @@ describe('select', () => {
                 select.instance.blur();
 
                 setTimeout(() => {
-                    expect(onButtonBlur).to.have.been.called.once;
-                    expect(value).to.deep.equal([1, 2]);
+                    expect(onButtonBlur).to.have.been.calledOnce;
+                    expect(onButtonBlur).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                     done();
                 }, 0);
             }, 0);
         });
 
         it('should receive event.target.value on `onMenuFocus` callback', (done) => {
-            let value = '';
-            let onMenuFocus = chai.spy((event) => { value = event.target.value; });
+            let onMenuFocus = sinon.spy(eventPersist);
             let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuFocus });
 
             select.instance.focus();
 
             setTimeout(() => {
-                expect(onMenuFocus).to.have.been.called.once;
-                expect(value).to.deep.equal([1, 2]);
+                expect(onMenuFocus).to.have.been.calledOnce;
+                expect(onMenuFocus).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                 done();
             }, 0);
         });
 
         it('should receive event.target.value on `onMenuBlur` callback', (done) => {
-            let value = '';
-            let onMenuBlur = chai.spy((event) => { value = event.target.value; });
+            let onMenuBlur = sinon.spy(eventPersist);
             let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
 
             select.instance.focus();
@@ -467,8 +472,8 @@ describe('select', () => {
                 select.instance.blur();
 
                 setTimeout(() => {
-                    expect(onMenuBlur).to.have.been.called.once;
-                    expect(value).to.deep.equal([1, 2]);
+                    expect(onMenuBlur).to.have.been.calledOnce;
+                    expect(onMenuBlur).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                     done();
                 }, 0);
             }, 0);

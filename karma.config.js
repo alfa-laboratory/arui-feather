@@ -14,7 +14,7 @@ function getTestsGlobs(tests, postfix) {
     return tests.split(',').map(testName => `./src/${testName}/*-${postfix}.{js,jsx}`);
 }
 
-let babelLoaderConfig = ARUI_TEMPLATE.module.loaders.find(l => l.loader === 'babel-loader');
+let babelLoaderConfig = ARUI_TEMPLATE.module.rules.find(l => l.loader === 'babel-loader');
 delete babelLoaderConfig.exclude;
 
 module.exports = (config) => {
@@ -22,7 +22,8 @@ module.exports = (config) => {
         singleRun: true,
         plugins: [
             require('karma-webpack'),
-            require('karma-sourcemap-loader')
+            require('karma-sourcemap-loader'),
+            require('karma-coverage-istanbul-reporter')
         ],
         webpack: merge.smart(ARUI_TEMPLATE, {
             devtool: 'inline-source-map'
@@ -33,16 +34,15 @@ module.exports = (config) => {
         }
     };
 
-    cfg.webpack = merge.strategy({ 'module.loaders': 'append' })(
-        cfg.webpack,
+    cfg.webpack.module.rules.push(
         {
-            module: { loaders: [
-                {
-                    test: /\.jsx$/,
-                    loader: 'isparta',
-                    include: path.resolve('src')
-                }
-            ] }
+            test: /\.jsx$/,
+            use: {
+                loader: 'istanbul-instrumenter-loader',
+                options: { esModules: true }
+            },
+            enforce: 'post',
+            include: path.resolve('./src')
         }
     );
 
@@ -54,12 +54,17 @@ module.exports = (config) => {
     testsFiles.unshift('./tools/karma-warnings.js');
 
     Object.assign(cfg, {
-        frameworks: ['mocha', 'chai-spies', 'chai-dom', 'chai'],
-        reporters: ['mocha', 'coverage', 'junit'],
+        frameworks: ['mocha', 'chai-dom', 'chai', 'sinon-chai'],
+        reporters: ['mocha', 'coverage-istanbul', 'junit'],
         preprocessors: {
             './src/**/*': ['webpack', 'sourcemap']
         },
         files: testsFiles,
+        coverageIstanbulReporter: {
+            reports: ['text-summary'],
+            fixWebpackSourcePaths: true
+        },
+        captureConsole: true,
         coverageReporter: {
             check: {
                 global: {
@@ -80,11 +85,11 @@ module.exports = (config) => {
     cfg.plugins.push(
         require('karma-mocha'),
         require('karma-chai'),
-        require('karma-chai-spies'),
         require('karma-chai-dom'),
         require('karma-mocha-reporter'),
         require('karma-junit-reporter'),
-        require('karma-coverage')
+        require('karma-coverage'),
+        require('karma-sinon-chai')
     );
 
     if (IS_MOBILE) {
@@ -111,7 +116,6 @@ module.exports = (config) => {
         cfg.browserNoActivityTimeout = 4 * 60 * 1000;
         cfg.captureTimeout = 4 * 60 * 1000;
         cfg.client = {
-            captureConsole: true,
             mocha: {
                 timeout: 20000 // override default 2000
             }
@@ -121,19 +125,12 @@ module.exports = (config) => {
         cfg.reporters = ['mocha', 'saucelabs'];
         cfg.sauceLabs = { testName: 'ARUI Feather Unit Tests' };
     } else {
-        cfg.browserNoActivityTimeout = 20000;
         cfg.customLaunchers = {
-            phantomJS: {
-                base: 'PhantomJS',
-                options: {
-                    viewportSize: {
-                        width: 1280,
-                        height: 100
-                    }
-                }
+            CustomChromeHeadless: {
+                base: 'ChromeHeadless'
             }
         };
-        cfg.plugins.push(require('karma-phantomjs-launcher'));
+        cfg.plugins.push(require('karma-chrome-launcher'));
     }
 
     cfg.browsers = Object.keys(cfg.customLaunchers);

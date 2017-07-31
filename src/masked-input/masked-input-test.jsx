@@ -105,7 +105,7 @@ describe('masked-input', () => {
     });
 
     it('should call `onProcessInputEvent` during `onInput` process', (done) => {
-        let onProcessInputEvent = chai.spy();
+        let onProcessInputEvent = sinon.spy();
         let maskedInput = render(
             <MaskedInput
                 mask='1111 1111 1111 1111'
@@ -120,67 +120,67 @@ describe('masked-input', () => {
             simulate(maskedInput.node, 'beforeInput');
             simulate(maskedInput.node, 'input', { target: { value: '1234 5' } });
 
-            expect(onProcessInputEvent).to.have.been.called.once;
+            expect(onProcessInputEvent).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should move caret position from uneditable position to next editable position during `onInput`',
-    (done) => {
-        let maskedInput = render(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
+        (done) => {
+            let maskedInput = render(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
 
-        maskedInput.instance.focus();
+            maskedInput.instance.focus();
 
-        setTimeout(() => {
-            maskedInput.node.selectionStart = 4;
-            maskedInput.node.selectionEnd = 4;
+            setTimeout(() => {
+                maskedInput.node.selectionStart = 4;
+                maskedInput.node.selectionEnd = 4;
 
-            simulate(maskedInput.node, 'beforeInput');
-            simulate(maskedInput.node, 'input', { target: { value: '1234 5' } });
+                simulate(maskedInput.node, 'beforeInput');
+                simulate(maskedInput.node, 'input', { target: { value: '1234 5' } });
 
-            expect(maskedInput.node.selectionStart).to.equal(5);
-            expect(maskedInput.node.selectionEnd).to.equal(5);
-            done();
-        }, 0);
-    });
+                expect(maskedInput.node.selectionStart).to.equal(5);
+                expect(maskedInput.node.selectionEnd).to.equal(5);
+                done();
+            }, 0);
+        });
 
     it('should move caret position from uneditable position to prev editable position during `onInput` (delete)',
-    (done) => {
-        let maskedInput = render(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
+        (done) => {
+            let maskedInput = render(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
 
-        maskedInput.instance.focus();
+            maskedInput.instance.focus();
 
-        setTimeout(() => {
-            maskedInput.node.selectionStart = 5;
-            maskedInput.node.selectionEnd = 5;
+            setTimeout(() => {
+                maskedInput.node.selectionStart = 5;
+                maskedInput.node.selectionEnd = 5;
 
-            simulate(maskedInput.node, 'beforeInput');
-            simulate(maskedInput.node, 'input', { target: { value: '1234 ' } });
+                simulate(maskedInput.node, 'beforeInput');
+                simulate(maskedInput.node, 'input', { target: { value: '1234 ' } });
 
-            expect(maskedInput.node.selectionStart).to.equal(4);
-            expect(maskedInput.node.selectionEnd).to.equal(4);
-            done();
-        }, 0);
-    });
+                expect(maskedInput.node.selectionStart).to.equal(4);
+                expect(maskedInput.node.selectionEnd).to.equal(4);
+                done();
+            }, 0);
+        });
 
     it('should move caret position from uneditable position to next editable position during `onInput` (replace)',
-    (done) => {
-        let maskedInput = render(<MaskedInput mask='+1 111 11 11 11' value='+7 903 752' />);
+        (done) => {
+            let maskedInput = render(<MaskedInput mask='+1 111 11 11 11' value='+7 903 752' />);
 
-        maskedInput.instance.focus();
+            maskedInput.instance.focus();
 
-        setTimeout(() => {
-            maskedInput.node.selectionStart = 2;
-            maskedInput.node.selectionEnd = 5;
+            setTimeout(() => {
+                maskedInput.node.selectionStart = 2;
+                maskedInput.node.selectionEnd = 5;
 
-            simulate(maskedInput.node, 'beforeInput');
-            simulate(maskedInput.node, 'input', { target: { value: '+7 84' } });
+                simulate(maskedInput.node, 'beforeInput');
+                simulate(maskedInput.node, 'input', { target: { value: '+7 84' } });
 
-            expect(maskedInput.node.selectionStart).to.equal(3);
-            expect(maskedInput.node.selectionEnd).to.equal(3);
-            done();
-        }, 0);
-    });
+                expect(maskedInput.node.selectionStart).to.equal(3);
+                expect(maskedInput.node.selectionEnd).to.equal(3);
+                done();
+            }, 0);
+        });
 
     it('should return `HTMLInputElement` when `getControl` method called', () => {
         let maskedInput = render(<MaskedInput mask='111' />);

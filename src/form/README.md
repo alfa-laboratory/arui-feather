@@ -1,4 +1,4 @@
-```
+```jsx
 <Form onSubmit={ function () { alert('Мы перезвоним вам в течение 5 минут'); } }>
     <FormField label='Телефон'>
         <Input placeholder='Введите номер' />

@@ -62,12 +62,12 @@ describe('button', () => {
     });
 
     it('should call `onClick` callback after button was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let button = render(<Button onClick={ onClick } />);
 
         button.node.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 
     it('should unset class `hovered` and `focused` on disabled button', () => {
@@ -86,19 +86,19 @@ describe('button', () => {
     });
 
     it('should call `onFocus` callback after button was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let button = render(<Button onFocus={ onFocus } />);
 
         button.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after button was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let button = render(<Button onBlur={ onBlur } />);
 
         button.instance.focus();
@@ -107,46 +107,46 @@ describe('button', () => {
             button.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should call `onMouseEnter` callback after button was hovered', () => {
-        let onMouseEnter = chai.spy();
+        let onMouseEnter = sinon.spy();
         let button = render(<Button onMouseEnter={ onMouseEnter } />);
 
         simulate(button.node, 'mouseEnter');
 
-        expect(onMouseEnter).to.have.been.called.once;
+        expect(onMouseEnter).to.have.been.calledOnce;
     });
 
     it('should call `onMouseLeave` callback after button was leaved by cursor', () => {
-        let onMouseLeave = chai.spy();
+        let onMouseLeave = sinon.spy();
         let button = render(<Button onMouseLeave={ onMouseLeave } />);
 
         simulate(button.node, 'mouseLeave');
 
-        expect(onMouseLeave).to.have.been.called.once;
+        expect(onMouseLeave).to.have.been.calledOnce;
     });
 
     it('should call `onMouseDown` callback after button was pressed', () => {
-        let onMouseDown = chai.spy();
+        let onMouseDown = sinon.spy();
         let button = render(<Button onMouseDown={ onMouseDown } />);
 
         simulate(button.node, 'mouseDown');
 
-        expect(onMouseDown).to.have.been.called.once;
+        expect(onMouseDown).to.have.been.calledOnce;
     });
 
     it('should call `onMouseUp` callback after button was unpressed', () => {
-        let onMouseUp = chai.spy();
+        let onMouseUp = sinon.spy();
         let button = render(<Button onMouseUp={ onMouseUp } />);
 
         simulate(button.node, 'mouseUp');
 
-        expect(onMouseUp).to.have.been.called.once;
+        expect(onMouseUp).to.have.been.calledOnce;
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {

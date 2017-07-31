@@ -11,6 +11,7 @@ import Icon from '../icon/icon';
 import Input from '../input/input';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
+import PopupHeader from '../popup-header/popup-header';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
@@ -31,7 +32,7 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
 
 
 /**
- * Компонент поля ввода даты.
+ * Компонент для ввода даты.
  */
 @cn('calendar-input', Input, Popup)
 @performance(true)
@@ -90,6 +91,10 @@ class CalendarInput extends React.Component {
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
+        /** Управление нативным режимом на мобильных устройствах */
+        mobileMode: Type.oneOf(['native', 'popup']),
+        /** Подсказка над меню в мобильном режиме */
+        mobileTitle: Type.node,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Имя компонента в DOM */
@@ -121,11 +126,12 @@ class CalendarInput extends React.Component {
     static defaultProps = {
         withIcon: true,
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
-        placeholder: '00.00.0000'
+        placeholder: '00.00.0000',
+        mobileMode: 'native'
     };
 
     state = {
-        isNativeInputEnabled: false,
+        isMobile: false,
         isInputFocused: false,
         isCalendarFocused: false,
         opened: false,
@@ -206,15 +212,26 @@ class CalendarInput extends React.Component {
             noValidate: true
         };
 
+        let wrapperProps = this.isMobilePopup() && !this.props.disabled
+            ? {
+                role: 'button',
+                tabIndex: 0,
+                onClick: this.handleMobileWrapperClick
+            }
+            : {};
+
         return (
-            <span className={ cn({ width: this.props.width }) }>
+            <span
+                className={ cn({ width: this.props.width }) }
+                { ...wrapperProps }
+            >
                 <Input
                     ref={ (customCalendarTarget) => {
                         this.customCalendarTarget = customCalendarTarget;
                     } }
                     { ...commonProps }
                     className={ cn('custom-control') }
-                    disabledAttr={ this.state.isNativeInputEnabled }
+                    disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                     mask='11.11.1111'
                     size={ this.props.size }
@@ -246,7 +263,7 @@ class CalendarInput extends React.Component {
                     onMatchChange={ this.handleMqMatchChange }
                 >
                     {
-                        SUPPORTS_INPUT_TYPE_DATE &&
+                        this.canBeNative() &&
                         <input
                             ref={ (nativeCalendarTarget) => {
                                 this.nativeCalendarTarget = nativeCalendarTarget;
@@ -261,12 +278,12 @@ class CalendarInput extends React.Component {
                         />
                     }
                 </Mq>
-                { this.renderPopup(value, Popup) }
+                { this.renderPopup(cn, value, Popup) }
             </span>
         );
     }
 
-    renderPopup(value, Popup) {
+    renderPopup(cn, value, Popup) {
         let opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.opened;
@@ -278,19 +295,33 @@ class CalendarInput extends React.Component {
                 autoclosable={ true }
                 visible={ opened }
                 directions={ this.props.directions }
+                target={ this.isMobilePopup() ? 'screen' : 'anchor' }
+                header={ this.isMobilePopup() && this.renderMobileHeader() }
             >
-                <Calendar
-                    ref={ (calendar) => { this.calendar = calendar; } }
-                    month={ this.state.month }
-                    { ...this.props.calendar }
-                    value={ parseDate(value, CUSTOM_DATE_FORMAT) }
-                    onBlur={ this.handleCalendarBlur }
-                    onFocus={ this.handleCalendarFocus }
-                    onKeyDown={ this.handleCalendarKeyDown }
-                    onValueChange={ this.handleCalendarChange }
-                    onMonthChange={ this.handleCalendarMonthChange }
-                />
+                <div className={ cn('calendar-wrapper', { mobile: this.isMobilePopup() }) }>
+                    <Calendar
+                        ref={ (calendar) => { this.calendar = calendar; } }
+                        month={ this.state.month }
+                        { ...this.props.calendar }
+                        value={ parseDate(value, CUSTOM_DATE_FORMAT) }
+                        onBlur={ this.handleCalendarBlur }
+                        onFocus={ this.handleCalendarFocus }
+                        onKeyDown={ this.handleCalendarKeyDown }
+                        onValueChange={ this.handleCalendarChange }
+                        onMonthChange={ this.handleCalendarMonthChange }
+                    />
+                </div>
             </Popup>
+        );
+    }
+
+    renderMobileHeader() {
+        return (
+            <PopupHeader
+                size={ this.props.size }
+                title={ this.props.mobileTitle || this.props.label || 'Выберите дату' }
+                onCloseClick={ this.handlePopupCloseClick }
+            />
         );
     }
 
@@ -469,8 +500,14 @@ class CalendarInput extends React.Component {
 
                 this.setState({
                     opened: true,
-                    month: calculateMonth(value)
+                    month: calculateMonth(
+                        value,
+                        CUSTOM_DATE_FORMAT,
+                        this.props.calendar ? this.props.calendar.earlierLimit : undefined,
+                        this.props.calendar ? this.props.calendar.laterLimit : undefined
+                    )
                 });
+
                 this.calendar.focus();
 
                 break;
@@ -498,8 +535,18 @@ class CalendarInput extends React.Component {
     @autobind
     handleMqMatchChange(isMatched) {
         this.setState({
-            isNativeInputEnabled: isMatched && SUPPORTS_INPUT_TYPE_DATE
+            isMobile: isMatched
         });
+    }
+
+    @autobind
+    handleMobileWrapperClick() {
+        this.setOpened(true);
+    }
+
+    @autobind
+    handlePopupCloseClick() {
+        this.setOpened(false);
     }
 
     /**
@@ -531,6 +578,18 @@ class CalendarInput extends React.Component {
      */
     scrollTo() {
         this.customCalendarTarget.scrollTo();
+    }
+
+    canBeNative() {
+        return SUPPORTS_INPUT_TYPE_DATE && this.props.mobileMode === 'native';
+    }
+
+    isNativeInput() {
+        return this.state.isMobile && this.canBeNative();
+    }
+
+    isMobilePopup() {
+        return this.state.isMobile && this.props.mobileMode === 'popup';
     }
 
     changeFocused(focusedState, event) {
@@ -566,32 +625,36 @@ class CalendarInput extends React.Component {
             this.props.onBlur(event);
         }
 
-        if (!this.state.isNativeInputEnabled) {
-            if (this.timeoutId) {
-                clearTimeout(this.timeoutId);
-            }
-            this.timeoutId = setTimeout(() => {
-                let value = this.props.value !== undefined
-                    ? this.props.value
-                    : this.state.value;
-
-                let newMonth = this.state.opened !== newOpened
-                    ? calculateMonth(
-                        value,
-                        CUSTOM_DATE_FORMAT,
-                        this.props.calendar ? this.props.calendar.earlierLimit : undefined,
-                        this.props.calendar ? this.props.calendar.laterLimit : undefined
-                    )
-                    : this.state.month;
-
-                this.setState({
-                    opened: newOpened,
-                    month: newMonth
-                });
-
-                this.timeoutId = null;
-            }, 0);
+        if (!this.isNativeInput()) {
+            this.setOpened(newOpened);
         }
+    }
+
+    setOpened(opened) {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+        }
+        this.timeoutId = setTimeout(() => {
+            let value = this.props.value !== undefined
+                ? this.props.value
+                : this.state.value;
+
+            let newMonth = this.state.opened !== opened
+                ? calculateMonth(
+                    value,
+                    CUSTOM_DATE_FORMAT,
+                    this.props.calendar ? this.props.calendar.earlierLimit : undefined,
+                    this.props.calendar ? this.props.calendar.laterLimit : undefined
+                )
+                : this.state.month;
+
+            this.setState({
+                opened,
+                month: newMonth
+            });
+
+            this.timeoutId = null;
+        }, 0);
     }
 }
 

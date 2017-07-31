@@ -5,40 +5,22 @@
 
 const path = require('path');
 const merge = require('webpack-merge');
-const reactDockGen = require('react-docgen');
+const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
-const fs = require('fs');
 const ARUI_TEMPLATE = require('arui-presets/webpack.base');
 
-const documentation = { };
-function reactDocGenWithMergedComposed(filePath, resolver, handlers) {
-    if (documentation[filePath]) {
-        return documentation[filePath];
-    }
-    const content = fs.readFileSync(filePath);
-    const doc = reactDockGen.parse(content, resolver, handlers)[0];
-    doc.filePath = filePath;
-    if (doc.composes) {
-        doc.composes = doc.composes.map((relativePath) => {
-            const composeComponentPath = path.resolve(path.dirname(filePath), `${relativePath}.jsx`);
-            return reactDocGenWithMergedComposed(composeComponentPath, resolver, handlers);
-        });
-    } else {
-        doc.composes = [];
-    }
-    doc.props = doc.composes.reduce((prev, item) => Object.assign({}, prev, item.props), doc.props || {});
-    documentation[filePath] = doc;
-    return doc;
-}
+const PORT = parseInt(process.env.PORT || 8080, 10);
 
 module.exports = {
     title: 'ARUI FEATHER',
-    serverPort: 3013,
+    serverPort: PORT,
     styles: {
         SectionHeading: {
             heading: {
                 fontSize: '48px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis'
             }
         },
         ToolbarButton: {
@@ -77,12 +59,8 @@ module.exports = {
     ],
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
-    propsParser(filePath, source, resolver, handlers) {
-        // react-docgen не понимает реекспорт, поэтому явно сообщаем откуда брать описание
-        const componentDirName = path.dirname(filePath);
-        const componentName = componentDirName.split(path.sep).pop();
-        const componentSourcesPath = path.resolve(componentDirName, `${componentName}.jsx`);
-        return reactDocGenWithMergedComposed(componentSourcesPath, resolver, handlers);
+    propsParser(filePath) {
+        return reactDoc(filePath);
     },
     getComponentPathLine(filePath) {
         const componentDirName = path.dirname(filePath);
@@ -95,7 +73,11 @@ module.exports = {
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './arui-demo/styleguide/'),
+    template: path.resolve(__dirname, './arui-demo/template.html'),
     webpackConfig: merge.smart(ARUI_TEMPLATE, {
+        devServer: {
+            disableHostCheck: true
+        },
         resolve: {
             alias: {
                 // Переопределяем компоненты styleguidist

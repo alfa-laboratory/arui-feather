@@ -1,4 +1,4 @@
-```
+```jsx
 const socialNetworks = [
     { value: 'Facebook' },
     { value: 'Twitter' },
@@ -47,7 +47,7 @@ function handleChange(value) {
 ```
 
 Элементы с кастомной разметкой
-```
+```jsx
 function Circle({ background }) {
     const circleStyles = {
         width: '14px',

@@ -17,7 +17,7 @@ describe('collapse', () => {
     });
 
     it('should call `onExpandedChange` callback after expand/collapse', () => {
-        let onExpandedChange = chai.spy();
+        let onExpandedChange = sinon.spy();
         let collapse = render(
             <Collapse
                 collapsedLabel='Expand'
@@ -31,7 +31,7 @@ describe('collapse', () => {
 
         linkNode.click();
 
-        expect(onExpandedChange).to.have.been.called.once;
+        expect(onExpandedChange).to.have.been.calledOnce;
     });
 
     it('should update component height', (done) => {

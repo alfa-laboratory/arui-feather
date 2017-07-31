@@ -24,13 +24,13 @@ describe('support', () => {
     });
 
     it('should call `onPhoneClick` callback after phone Link was clicked', () => {
-        let onPhoneClick = chai.spy();
+        let onPhoneClick = sinon.spy();
         let support = render(<Support onPhoneClick={ onPhoneClick } phone='+7 123 123 12 31' />);
         let supportPhoneLinkNode = support.node.querySelector('.support__phone').firstChild;
 
         supportPhoneLinkNode.click();
 
-        expect(onPhoneClick).to.have.been.called.once;
+        expect(onPhoneClick).to.have.been.calledOnce;
     });
 
     it('should render `Link` with text from property `city`', () => {
@@ -42,12 +42,12 @@ describe('support', () => {
     });
 
     it('should call `onCityClick` callback after city `Link` was clicked', () => {
-        let onCityClick = chai.spy();
+        let onCityClick = sinon.spy();
         let support = render(<Support onCityClick={ onCityClick } city='Москва' />);
         let supportCityLinkNode = support.node.querySelector('.support__city').firstChild;
 
         supportCityLinkNode.click();
 
-        expect(onCityClick).to.have.been.called.once;
+        expect(onCityClick).to.have.been.calledOnce;
     });
 });

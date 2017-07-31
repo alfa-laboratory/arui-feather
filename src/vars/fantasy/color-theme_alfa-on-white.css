@@ -26,7 +26,7 @@
      * Цвет второстепенного контента для `alfa-on-white`.
      * Например, используется на неактивных полях ввода.
      */
-    --color-content-minor-alfa-on-white: rgba(10, 30, 50, .4);
+    --color-content-minor-alfa-on-white: rgba(10, 30, 50, .6);
 
     /**
      * Цвет фона компонентов для `alfa-on-white`.

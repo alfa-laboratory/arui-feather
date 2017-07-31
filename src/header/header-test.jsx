@@ -64,29 +64,29 @@ describe('header', () => {
     });
 
     it('should call `onResize` callback when header was change height', (done) => {
-        let onResize = chai.spy();
+        let onResize = sinon.spy();
         let header = render(<Header onResize={ onResize } />);
 
-        header.node.style.height = '200px';
-
         setTimeout(() => {
-            expect(onResize).to.have.been.called.once;
-            done();
-        }, 100);
+            // As we don't have component styles in tests,
+            // we need to include position styling for proper `onResize` testing.
+            header.node.style.position = 'relative';
+            header.node.style.height = '200px';
+
+            setTimeout(() => {
+                expect(onResize).to.have.been.called;
+                done();
+            }, 100);
+        }, 0);
     });
 
-    it('should call `onClick` callback after logotype was clicked', (done) => {
-        let type = '';
-        let onClick = chai.spy((event) => { type = event.type; });
+    it('should call `onClick` callback after logotype was clicked', () => {
+        let onClick = sinon.spy();
         let header = render(<Header onLogoClick={ onClick } logo={ <span /> } />);
         let logoLinkNode = header.node.querySelector('.header__logo');
-
         simulate(logoLinkNode, 'click');
 
-        setTimeout(() => {
-            expect(onClick).to.have.been.called.once;
-            expect(type).to.equal('click');
-            done();
-        }, 0);
+        expect(onClick).to.have.been.calledOnce;
+        expect(onClick).to.have.been.calledWith(sinon.match({ type: 'click' }));
     });
 });

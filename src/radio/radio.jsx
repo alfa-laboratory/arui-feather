@@ -98,8 +98,8 @@ class Radio extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                    ? this.renderButtonRadio(cn, checked, Button)
-                    : this.renderNormalRadio(cn, checked)
+                        ? this.renderButtonRadio(cn, checked, Button)
+                        : this.renderNormalRadio(cn, checked)
                 }
             </label>
         );

@@ -25,7 +25,7 @@ describe('plate', () => {
     });
 
     it('should call `onCloserClick` callback after plate cross was clicked', () => {
-        let onCloserClick = chai.spy();
+        let onCloserClick = sinon.spy();
         let plate = render(
             <Plate hasCloser={ true } onCloserClick={ onCloserClick }>plate-text</Plate>
         );
@@ -33,17 +33,17 @@ describe('plate', () => {
 
         crossIconNode.click();
 
-        expect(onCloserClick).to.have.been.called.once;
+        expect(onCloserClick).to.have.been.calledOnce;
     });
 
     it('should call `onClick` callback after plate was clicked', () => {
-        let onClick = chai.spy();
+        let onClick = sinon.spy();
         let plate = render(
             <Plate hasCloser={ true } onClick={ onClick }>plate-text</Plate>
         );
 
         plate.node.click();
 
-        expect(onClick).to.have.been.called.once;
+        expect(onClick).to.have.been.calledOnce;
     });
 });

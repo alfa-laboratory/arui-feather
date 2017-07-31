@@ -107,7 +107,7 @@ describe('radio-group', () => {
     });
 
     it('should call `onFocus` callback after radio-group was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let radioGroup = render(
             <RadioGroup onFocus={ onFocus }>
                 <Radio key='1' />
@@ -117,13 +117,13 @@ describe('radio-group', () => {
         radioGroup.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after radio-group was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let radioGroup = render(
             <RadioGroup onBlur={ onBlur }>
                 <Radio key='1' />
@@ -136,14 +136,14 @@ describe('radio-group', () => {
             radioGroup.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should call `onChange` callback after radio-group was checked', (done) => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let radioGroup = render(
             <RadioGroup onChange={ onChange }>
                 <Radio key='1' value={ '1' } />
@@ -154,8 +154,8 @@ describe('radio-group', () => {
         simulate(radioControlNode, 'change');
 
         setTimeout(() => {
-            expect(onChange).to.have.been.called.once;
-            expect(onChange).to.have.been.called.with('1');
+            expect(onChange).to.have.been.calledOnce;
+            expect(onChange).to.have.been.calledWith('1');
             done();
         }, 0);
     });
@@ -176,7 +176,7 @@ describe('radio-group', () => {
     });
 
     it('shouldn\'t call `onChange` twice when press to the same radio twice', function () {
-        const onChange = chai.spy();
+        const onChange = sinon.spy();
         const radioGroupNode = render(
             <RadioGroup value='1' onChange={ onChange }>
                 <Radio key='1' value='1' />
@@ -189,7 +189,7 @@ describe('radio-group', () => {
         simulate(secondRadioControlNode, 'change');
         simulate(secondRadioControlNode, 'change');
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should disable all child radios when disabled=true', () => {
@@ -206,7 +206,7 @@ describe('radio-group', () => {
     });
 
     it('shouldn\'t call `onChange` callback when disabled=true', function () {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let radioGroup = render(
             <RadioGroup onChange={ onChange } disabled={ true }>
                 <Radio key='1' />

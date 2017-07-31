@@ -5,5 +5,7 @@
 import '../../popup/fantasy';
 
 import './radio-group.css';
+import './radio-group_theme_alfa-on-color.css';
+import './radio-group_theme_alfa-on-white.css';
 
 export default from '../radio-group';

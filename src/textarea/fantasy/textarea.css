@@ -82,7 +82,7 @@
         }
     }
 
-    &_has-label:not(&_invalid) {
+    &_has-label:not(.textarea_invalid) {
         .textarea__control::placeholder {
             opacity: 0;
         }
@@ -256,24 +256,6 @@
             .textarea__top {
                 transform: scale(var(--top-scale-xl)) translate3d(0, -50px, 0);
             }
-        }
-    }
-}
-
-.textarea.textarea_invalid {
-    .textarea__top,
-    .textarea__sub {
-        color: var(--color-error);
-    }
-
-    .textarea__control {
-        border-bottom-color: var(--color-error-translucent);
-    }
-
-    &.textarea_focused {
-        .textarea__control {
-            border-bottom-color: var(--color-error-translucent);
-            box-shadow: inset 0 -1px 0 var(--color-error-translucent);
         }
     }
 }

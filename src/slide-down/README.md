@@ -1,4 +1,4 @@
-```
+```jsx
 const LOREM_IPSUM = require('../vars').LOREM_IPSUM;
 
 function handleSlideDownToggle() {

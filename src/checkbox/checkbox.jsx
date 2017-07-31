@@ -38,6 +38,8 @@ class CheckBox extends React.Component {
         disabled: Type.bool,
         /** Управление состоянием вкл/выкл компонента */
         checked: Type.bool,
+        /** Управление неопределенным состоянием чекбокса */
+        indeterminate: Type.bool,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -77,7 +79,8 @@ class CheckBox extends React.Component {
                 className={ cn({
                     size: this.props.size,
                     disabled: this.props.disabled,
-                    checked,
+                    checked: checked || this.props.indeterminate,
+                    indeterminate: this.props.indeterminate,
                     focused: this.state.focused,
                     hovered: this.state.hovered
                 }) }

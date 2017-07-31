@@ -20,16 +20,28 @@ install:
 
 before_script:
   - |
-      if [ "${TEST_SCOPE}" == "gemini" ]; then
-        curl -L https://gist.githubusercontent.com/teryaew/ab7c8a1c377ba0796f20a007a1d830eb/raw/sauce-connect.sh | bash
-        cat .gemini.js
-      fi
+    if [ "${TEST_SCOPE}" == "gemini" ]; then
+      curl -L https://gist.githubusercontent.com/teryaew/ab7c8a1c377ba0796f20a007a1d830eb/raw/sauce-connect.sh | bash
+      cat .gemini.js
+    fi
 
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
   - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then yarn test; fi
   - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 yarn test; fi
-  - if [ "${TEST_SCOPE}" == "gemini" ]; then yarn gemini-ci; fi
+  - if [ "${TEST_SCOPE}" == "gemini" ]; then
+      if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then
+        export ALL_SIZES=1;
+        yarn build-polyfills;
+      fi;
+      yarn gemini-ci;
+    fi
+
+after_script:
+  - |
+    if [ "${TEST_SCOPE}" == "gemini" ]; then
+      kill -9 `lsof -i :4445 -t`
+    fi
 
 after_success:
   - |

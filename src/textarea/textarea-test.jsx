@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { render, cleanUp, simulate } from '../test-utils';
+import { render, cleanUp, simulate, eventPersist } from '../test-utils';
 
 import Textarea from './textarea';
 
@@ -23,7 +23,7 @@ describe('textarea', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        window.scrollTo = chai.spy();
+        window.scrollTo = sinon.spy();
     });
 
     afterEach(() => {
@@ -93,19 +93,19 @@ describe('textarea', () => {
     });
 
     it('should call `onFocus` callback after textarea was focused', (done) => {
-        let onFocus = chai.spy();
+        let onFocus = sinon.spy();
         let textarea = renderTextarea({ onFocus });
 
         textarea.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             done();
         }, 0);
     });
 
     it('should call `onBlur` callback after textarea was blured', (done) => {
-        let onBlur = chai.spy();
+        let onBlur = sinon.spy();
         let textarea = renderTextarea({ onBlur });
 
         textarea.instance.focus();
@@ -114,15 +114,14 @@ describe('textarea', () => {
             textarea.instance.blur();
 
             setTimeout(() => {
-                expect(onBlur).to.have.been.called.once;
+                expect(onBlur).to.have.been.calledOnce;
                 done();
             }, 0);
         }, 0);
     });
 
     it('should receive SyntheticEvent with type blur in first argument of `onBlur` callback', (done) => {
-        let eventType;
-        let onBlur = chai.spy((...args) => { eventType = args[0].type; });
+        let onBlur = sinon.spy(eventPersist);
         let textarea = renderTextarea({ onBlur });
 
         textarea.instance.focus();
@@ -131,7 +130,7 @@ describe('textarea', () => {
             textarea.instance.blur();
 
             setTimeout(() => {
-                expect(eventType).to.equal('blur');
+                expect(onBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
                 done();
             }, 0);
         }, 0);
@@ -152,12 +151,12 @@ describe('textarea', () => {
     });
 
     it('should call onChange callback', () => {
-        let onChange = chai.spy();
+        let onChange = sinon.spy();
         let textarea = renderTextarea({ onChange });
 
         simulate(textarea.controlNode, 'change', { target: { value: 'other value' } });
 
-        expect(onChange).to.have.been.called.once;
+        expect(onChange).to.have.been.calledOnce;
     });
 
     it('should render with `off` autocomplete attribute', () => {
@@ -204,7 +203,7 @@ describe('textarea', () => {
         textarea.instance.scrollTo();
 
         setTimeout(() => {
-            expect(window.scrollTo).to.have.been.called.with(0, elemScrollTo);
+            expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
 
             done();
         }, 0);
@@ -217,11 +216,11 @@ describe('textarea', () => {
     });
 
     it('should call `onHeightChange` callback after add new line with autoresize=true', () => {
-        let onHeightChange = chai.spy();
+        let onHeightChange = sinon.spy();
         let textarea = renderTextarea({ autosize: true, value: 'value', onHeightChange });
 
         simulate(textarea.controlNode, 'change', { target: { value: 'other value\n' } });
 
-        expect(onHeightChange).to.have.been.called.once;
+        expect(onHeightChange).to.have.been.calledOnce;
     });
 });

@@ -4,6 +4,8 @@
 Alfa Bank UI lightweight library
 ================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/alfa-laboratory/arui-feather.svg)](https://greenkeeper.io/)
+
 [![NPM version][npm-img]][npm] [![Travis Build Status][travis-img]][travis] [![AppVeyor Build Status][appveyor-img]][appveyor]
 
 [appveyor-img]: https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win

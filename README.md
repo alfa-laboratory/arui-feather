@@ -190,13 +190,6 @@ npm run modernizr
 Запуск этих команд автоматически сформирует changelog, сделает новый git tag,
 запустит сборку и публикацию.
 
-Благодарности
--------------
-
-[<img src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png" width="120">](https://www.browserstack.com/)
-
-Мы используем [BrowserStack](https://www.browserstack.com/) для тестирования наших интерфейсов.
-
 Лицензия
 --------
 

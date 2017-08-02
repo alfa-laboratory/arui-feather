@@ -7,6 +7,6 @@
 .attach_theme_alfa-on-color {
     .attach__file,
     .attach__no-file {
-        color: var(--color-content-alfa-on-white);
+        color: var(--color-content-alfa-on-color);
     }
 }

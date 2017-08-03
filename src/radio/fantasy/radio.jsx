@@ -10,7 +10,7 @@ import cn from '../../cn';
 /**
  * Компонент радио-кнопки в обновлённом дизайне.
  *
- * @extends OriginalRadio
+ * @extends Radio
  */
 @cn('radio', TagButton)
 class Radio extends OriginalRadio {}

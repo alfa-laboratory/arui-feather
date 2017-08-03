@@ -126,10 +126,10 @@ class RadioGroup extends React.Component {
     handleRadioChange(value) {
         if (this.state.value !== value) {
             this.setState({ value });
+        }
 
-            if (this.props.onChange) {
-                this.props.onChange(value);
-            }
+        if (this.props.value !== value && this.props.onChange) {
+            this.props.onChange(value);
         }
     }
 

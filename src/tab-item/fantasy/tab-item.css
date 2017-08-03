@@ -65,8 +65,8 @@
 .tab-item_theme_alfa-on-color {
     color: var(--color-content-minor-alfa-on-color);
 
-    &.tab-item_hovered,
-    &.tab-item_focused {
+    &:hover:not(.tab-item_disabled),
+    &:focus:not(.tab-item_disabled) {
         color: var(--color-content-alfa-on-color);
     }
 
@@ -87,8 +87,8 @@
 .tab-item_theme_alfa-on-white {
     color: var(--color-content-minor-alfa-on-white);
 
-    &.tab-item_hovered,
-    &.tab-item_focused {
+    &:hover:not(.tab-item_disabled),
+    &:focus:not(.tab-item_disabled) {
         color: var(--color-content-alfa-on-white);
     }
 

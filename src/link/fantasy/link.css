@@ -76,8 +76,8 @@
         border-color: rgba(255, 255, 255, .4);
     }
 
-    &.link_hovered,
-    &.link_focused {
+    &:hover,
+    &:focus {
         color: var(--color-content-accent-alfa-on-color);
 
         .link__text {
@@ -97,8 +97,8 @@
         border-color: rgba(0, 0, 0, .4);
     }
 
-    &.link_hovered,
-    &.link_focused {
+    &:hover,
+    &:focus {
         color: var(--color-content-accent-alfa-on-white);
 
         .link__text {

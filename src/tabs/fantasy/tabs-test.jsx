@@ -15,4 +15,11 @@ describe('tabs', () => {
         expect(tabs.node).to.exist;
         expect(tabs.node).to.have.class('tabs');
     });
+
+    it('should set scrollable className when scrollable=true without problems', () => {
+        let tabs = render(<Tabs />);
+
+        expect(tabs.node).to.exist;
+        expect(tabs.node).to.have.class('tabs_scrollable');
+    });
 });

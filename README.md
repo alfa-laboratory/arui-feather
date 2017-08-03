@@ -4,14 +4,16 @@
 Alfa Bank UI lightweight library
 ================================
 
-[![NPM version][npm-img]][npm] [![Travis Build Status][travis-img]][travis] [![AppVeyor Build Status][appveyor-img]][appveyor]
+[![NPM version][npm-img]][npm] [![Travis Build Status][travis-img]][travis] [![AppVeyor Build Status][appveyor-img]][appveyor] [![Greenkeeper badge][greenkeeper-img]][greenkeeper]
 
-[appveyor-img]: https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
-[npm-img]:      https://img.shields.io/npm/v/arui-feather.svg
-[travis-img]:   https://img.shields.io/travis/alfa-laboratory/arui-feather/master.svg?label=unix
-[appveyor]:     https://ci.appveyor.com/project/teryaew/arui-feather
-[npm]:          https://www.npmjs.org/package/arui-feather
-[travis]:       https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
+[appveyor-img]:    https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
+[greenkeeper-img]: https://badges.greenkeeper.io/alfa-laboratory/arui-feather.svg
+[npm-img]:         https://img.shields.io/npm/v/arui-feather.svg
+[travis-img]:      https://img.shields.io/travis/alfa-laboratory/arui-feather/master.svg?label=unix
+[appveyor]:        https://ci.appveyor.com/project/teryaew/arui-feather
+[greenkeeper]:     https://greenkeeper.io
+[npm]:             https://www.npmjs.org/package/arui-feather
+[travis]:          https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
 
 <br />
 
@@ -187,13 +189,6 @@ npm run modernizr
 
 Запуск этих команд автоматически сформирует changelog, сделает новый git tag,
 запустит сборку и публикацию.
-
-Благодарности
--------------
-
-[<img src="https://www.browserstack.com/images/mail/browserstack-logo-footer.png" width="120">](https://www.browserstack.com/)
-
-Мы используем [BrowserStack](https://www.browserstack.com/) для тестирования наших интерфейсов.
 
 Лицензия
 --------

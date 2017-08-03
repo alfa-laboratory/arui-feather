@@ -5,6 +5,7 @@ createTasks('arui-feather', {
         'src/*/*.jsx',
         'src/*/fantasy/index.js',
         'src/*/fantasy/*.jsx',
+        '!src/*/fantasy/*-test.jsx',
         '!src/*/*-test.jsx',
         '!src/*/*-benchmark.jsx'
     ]

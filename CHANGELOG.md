@@ -1,3 +1,39 @@
+<a name="8.4.3"></a>
+## [8.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.2...v8.4.3) (2017-07-28)
+
+
+### Features
+
+* negotiation pseudoclasses ([#190](https://github.com/alfa-laboratory/arui-feather/issues/190)) ([4124e54](https://github.com/alfa-laboratory/arui-feather/commit/4124e54))
+
+
+
+<a name="8.4.2"></a>
+## [8.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.1...v8.4.2) (2017-07-28)
+
+
+### Bug Fixes
+
+* **windows-adaptation:** fix some colors in variables ([13f854b](https://github.com/alfa-laboratory/arui-feather/commit/13f854b))
+
+
+### Features
+
+* **tabs:** add scrollable functionality ([#188](https://github.com/alfa-laboratory/arui-feather/issues/188)) ([0e44596](https://github.com/alfa-laboratory/arui-feather/commit/0e44596))
+
+
+
+<a name="8.4.1"></a>
+## [8.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.0...v8.4.1) (2017-07-28)
+
+
+### Bug Fixes
+
+* **calendar-input:** fix clickable disabled calendar-input in mobile popup mode ([#186](https://github.com/alfa-laboratory/arui-feather/issues/186)) ([4e8381f](https://github.com/alfa-laboratory/arui-feather/commit/4e8381f))
+* **link:** set hover/focus styles with css instead of js ([aa40492](https://github.com/alfa-laboratory/arui-feather/commit/aa40492))
+
+
+
 <a name="8.4.0"></a>
 # [8.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.3.0...v8.4.0) (2017-07-25)
 

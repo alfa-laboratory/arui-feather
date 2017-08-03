@@ -15,10 +15,14 @@ env:
 matrix:
   fast_finish: true
 
+before_install:
+  - yarn global add greenkeeper-lockfile@1
+
 install:
   - yarn install
 
 before_script:
+  - greenkeeper-lockfile-update
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       curl -L https://gist.githubusercontent.com/teryaew/ab7c8a1c377ba0796f20a007a1d830eb/raw/sauce-connect.sh | bash
@@ -38,6 +42,7 @@ script:
     fi
 
 after_script:
+  - greenkeeper-lockfile-upload
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       kill -9 `lsof -i :4445 -t`

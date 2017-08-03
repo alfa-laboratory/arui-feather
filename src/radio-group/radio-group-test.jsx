@@ -175,7 +175,7 @@ describe('radio-group', () => {
         expect(radioGroupNode).to.have.valueOf('2');
     });
 
-    it('shouldn\'t call `onChange` twice when press to the same radio twice', function () {
+    it('shouldn\'t call `onChange` when radio group value and radio value are same', function () {
         const onChange = sinon.spy();
         const radioGroupNode = render(
             <RadioGroup value='1' onChange={ onChange }>
@@ -184,12 +184,11 @@ describe('radio-group', () => {
             </RadioGroup>
         ).node;
         const radios = radioGroupNode.querySelectorAll('input[type="radio"]');
-        const secondRadioControlNode = radios[1];
+        const secondRadioControlNode = radios[0];
 
         simulate(secondRadioControlNode, 'change');
-        simulate(secondRadioControlNode, 'change');
 
-        expect(onChange).to.have.been.calledOnce;
+        expect(onChange).not.to.have.been.called;
     });
 
     it('should disable all child radios when disabled=true', () => {

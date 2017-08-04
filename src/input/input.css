@@ -102,8 +102,6 @@
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
         &:-webkit-autofill:after {
-            -webkit-text-fill-color: #fff !important;
-
             /* Hack from http://stackoverflow.com/a/29350537 */
             transition: background-color 5000s ease-in-out 0s;
         }

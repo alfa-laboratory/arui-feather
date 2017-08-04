@@ -17,6 +17,13 @@
         &::placeholder {
             color: var(--color-content-minor-alfa-on-white);
         }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:after {
+            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
+        }
     }
 
     .input__top,

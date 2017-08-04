@@ -1,3 +1,19 @@
+<a name="9.0.0"></a>
+# [9.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.3...v9.0.0) (2017-08-04)
+
+
+### Bug Fixes
+
+* fix repeated click on the same radio after value in radio group was reseted ([#195](https://github.com/alfa-laboratory/arui-feather/issues/195)) ([9f85cf4](https://github.com/alfa-laboratory/arui-feather/commit/9f85cf4))
+
+
+### Features
+
+* remove unused highlight ([#191](https://github.com/alfa-laboratory/arui-feather/issues/191)) ([a6c3eb3](https://github.com/alfa-laboratory/arui-feather/commit/a6c3eb3))
+* **textarea:** update react-textarea-autosize to latest ([#193](https://github.com/alfa-laboratory/arui-feather/issues/193)) ([c4537fd](https://github.com/alfa-laboratory/arui-feather/commit/c4537fd))
+
+
+
 <a name="8.4.3"></a>
 ## [8.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.2...v8.4.3) (2017-07-28)
 

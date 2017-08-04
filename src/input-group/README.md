@@ -5,7 +5,7 @@ const inputs = [1, 2, 3, 4];
     { inputs.map(input => (
         <Input
             key={ input }
-            placeholder='Input ...'
+            placeholder='Укажите получателя'
         />
     )) }
 </InputGroup>
@@ -18,7 +18,7 @@ const inputs = [1, 2, 3, 4];
     { inputs.map(input => (
         <Input
             key={ input }
-            placeholder='Input ...'
+            placeholder='Укажите получателя'
         />
     )) }
 </InputGroup>

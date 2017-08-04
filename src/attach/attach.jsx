@@ -7,6 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
+import Icon from '../icon/icon';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -75,6 +76,8 @@ class Attach extends React.Component {
         name: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
+        /** Иконка */
+        icon: Type.node,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
         /** Текст для случая, когда файл не загружен */
@@ -84,7 +87,6 @@ class Attach extends React.Component {
         /** Свойства для кнопки */
         buttonProps: Type.shape({
             text: Type.node,
-            icon: Type.node,
             rightAddons: Type.node,
             leftAddons: Type.node,
             view: Type.oneOf(['default', 'action', 'extra', 'other']),
@@ -139,7 +141,6 @@ class Attach extends React.Component {
     };
 
     static defaultProps = {
-        buttonProps: {},
         buttonContent: 'Выберите файл',
         size: 'm',
         disabled: false,
@@ -192,6 +193,7 @@ class Attach extends React.Component {
             className: cn('button'),
             disabled: this.props.disabled,
             size: this.props.size,
+            icon: this.props.icon ? this.props.icon : <Icon size={ this.props.size } icon='attachment' />,
             focused: this.state.focused
         };
 

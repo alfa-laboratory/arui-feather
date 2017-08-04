@@ -13,25 +13,6 @@
 </div>
 ```
 
-C Иконкой
-```jsx
-<div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' key={ size }>
-            <Attach
-                size={ size }
-                buttonContent='Пожалуйста, выберите файл'
-                noFileText=''
-                buttonProps={ {
-                    pseudo: true,
-                    icon: <Icon size={ size } icon='search' />
-                } }
-            />
-        </div>
-    ))}
-</div>
-```
-
 С изменяемым текстом
 ```jsx
 function handleChange(value) {
@@ -45,6 +26,7 @@ function handleChange(value) {
             noFileText=''
             buttonContent={ state.value ? 'Выберите другой файл' : 'Выберите файл' }
             onChange={ handleChange }
+            buttonProps={ { pseudo: true } }
             value={ state.value }
         />
     </div>

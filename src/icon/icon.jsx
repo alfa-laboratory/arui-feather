@@ -24,7 +24,7 @@ class Icon extends React.Component {
     static propTypes = {
         /** Тип иконки */
         icon: Type.oneOf([
-            'error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'
+            'error', 'fail', 'ok', 'ok_filled', 'attachment', 'calendar', 'search', 'close', 'user'
         ]),
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),

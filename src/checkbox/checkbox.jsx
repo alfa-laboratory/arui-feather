@@ -32,6 +32,8 @@ class CheckBox extends React.Component {
         value: Type.string,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
+        width: Type.oneOf(['default', 'available']),
         /** Тип чекбокса */
         type: Type.oneOf(['normal', 'button']),
         /** Управление возможностью изменять состояние 'checked' компонента */
@@ -82,7 +84,8 @@ class CheckBox extends React.Component {
                     checked: checked || this.props.indeterminate,
                     indeterminate: this.props.indeterminate,
                     focused: this.state.focused,
-                    hovered: this.state.hovered
+                    hovered: this.state.hovered,
+                    width: this.props.type === 'button' ? this.props.width : null
                 }) }
                 htmlFor={ this.props.id }
                 onFocus={ this.handleFocus }
@@ -139,6 +142,7 @@ class CheckBox extends React.Component {
                     title={ this.props.title }
                     disabled={ this.props.disabled }
                     size={ this.props.size || 'm' }
+                    width={ this.props.width }
                     focused={ this.state.focused }
                     hovered={ this.state.hovered }
                     onClick={ this.handleChange }

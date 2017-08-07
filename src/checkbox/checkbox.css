@@ -124,6 +124,10 @@
     }
 }
 
+.checkbox_width_available {
+    width: 100%;
+}
+
 .checkbox_view_line {
     &.checkbox_size_m {
         margin-right: 13px;

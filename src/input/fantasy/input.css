@@ -66,10 +66,7 @@
         position: relative;
         width: 100%;
 
-        /**
-        safari fix
-        Если использовать height: 100% поле схлопывается
-         */
+        /** safari fix. Если использовать height: 100% поле схлопывается **/
         min-height: 100%;
         margin: 0;
         padding: 0;

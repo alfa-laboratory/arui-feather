@@ -1,3 +1,20 @@
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.0.0...v9.1.0) (2017-08-07)
+
+
+### Bug Fixes
+
+* **checkbox:** rename fantasy component ([0156187](https://github.com/alfa-laboratory/arui-feather/commit/0156187))
+* **radio:** rename fantasy component ([0eaa653](https://github.com/alfa-laboratory/arui-feather/commit/0eaa653))
+
+
+### Features
+
+* remove black color ([#172](https://github.com/alfa-laboratory/arui-feather/issues/172)) ([4bb2ebc](https://github.com/alfa-laboratory/arui-feather/commit/4bb2ebc))
+* **icon:** add attachment icons ([#166](https://github.com/alfa-laboratory/arui-feather/issues/166)) ([627ba94](https://github.com/alfa-laboratory/arui-feather/commit/627ba94))
+
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.3...v9.0.0) (2017-08-04)
 

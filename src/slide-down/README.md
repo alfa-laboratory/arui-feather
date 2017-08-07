@@ -11,12 +11,12 @@ initialState = {
     <Button
         onClick={ handleSlideDownToggle }
     >
-        Toggle slide down
+        Как узнать дату и сумму платежа
     </Button>
     <div className='row' >
         <SlideDown isExpanded={ state.isExpanded }>
             <Paragraph>
-                { LOREM_IPSUM.slice(0, 3) }
+                Узнать сумму платежа по кредиту с ежемесячным погашением равными частями вы можете из графика погашения, предоставленного при оформлении кредита.
             </Paragraph>
         </SlideDown>
     </div>

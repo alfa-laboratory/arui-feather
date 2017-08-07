@@ -1,17 +1,17 @@
 ```jsx
-<Textarea placeholder='Textarea...' />
+<Textarea placeholder='Введите назначение платежа' />
 ```
 
 ```jsx
 <Textarea
-    placeholder='Textarea...'
-    error='something went wrong'
+    placeholder='Введите назначение платежа'
+    error='Нужно указать назначение платежа'
 />
 ```
 
 ```jsx
 <Textarea
-    placeholder='Textarea autosize...'
+    placeholder='Введите назначение платежа'
     autosize={ true }
 />
 ```
@@ -21,7 +21,7 @@
 Можно заметить, что если начать печатать в середине textarea - курсор перескакивает в конец
 ```jsx
 initialState = {
-    value: 'default'
+    value: 'Благотворительный взнос в фонд «Бедные дизайнеры»'
 };
 function handleChangeAsync(value) {
     setTimeout(() => {
@@ -30,8 +30,8 @@ function handleChangeAsync(value) {
 }
 <div>
     <Textarea
-        hint={ `Current value in textarea: ${state.value}` }
-        placeholder='Textarea...'
+        hint={ `Текущее значение в поле: ${state.value}` }
+        placeholder='Введите назначение платежа'
         value={ state.value }
         onChange={ handleChangeAsync }
     />
@@ -42,7 +42,7 @@ function handleChangeAsync(value) {
 и синхронизируйте значение компонента с нужным хранилищем
 ```jsx
 initialState = {
-    value: 'default'
+    value: 'Благотворительный взнос в фонд «Бедные дизайнеры»'
 };
 function handleChangeAsync(value) {
     setTimeout(() => {
@@ -52,8 +52,8 @@ function handleChangeAsync(value) {
 <div>
     <Textarea
         defaultValue={ state.value }
-        hint={ `Current value in textarea: ${state.value}` }
-        placeholder='Textarea...'
+        hint={ `Текущее значение в поле: ${state.value}` }
+        placeholder='Введите назначение платежа'
         onChange={ handleChangeAsync }
     />
 </div>

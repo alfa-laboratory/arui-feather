@@ -7,7 +7,7 @@
 .textarea_theme_alfa-on-color {
     .textarea__control {
         color: var(--color-content-alfa-on-color);
-        border-bottom: 1px solid rgba(255, 255, 255, .4);
+        border-bottom: 1px solid var(--color-border-control-alfa-on-color);
 
         &::placeholder {
             color: var(--color-content-minor-alfa-on-color);

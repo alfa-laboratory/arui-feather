@@ -9,7 +9,7 @@
 
     .checkbox__box {
         background: var(--color-background-control-alfa-on-color);
-        border: 1px solid rgba(255, 255, 255, .5);
+        border: 1px solid var(--color-border-control-alfa-on-color);
         transition: all 200ms ease;
     }
 
@@ -28,12 +28,12 @@
     &.checkbox_focused,
     &.checkbox_hovered {
         .checkbox__box {
-            border-color: var(--color-content-alfa-on-color);
+            border-color: var(--color-border-control-focused-alfa-on-color);
         }
     }
 
     &.checkbox_focused .checkbox__box {
-        box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
+        box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
     }
 
     &.checkbox_disabled {

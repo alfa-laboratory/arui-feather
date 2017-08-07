@@ -6,7 +6,7 @@
 
 .input_theme_alfa-on-white {
     .input__box {
-        border-bottom-color: rgba(0, 0, 0, .4);
+        border-bottom-color: var(--color-border-control-alfa-on-white);
         border-bottom-style: solid;
         border-bottom-width: 1px;
     }
@@ -50,7 +50,7 @@
 
     &.input_disabled {
         .input__box {
-            border-bottom-color: rgba(0, 0, 0, .2);
+            border-bottom-color: var(--color-border-control-disabled-alfa-on-white);
             border-bottom-style: dotted;
         }
 

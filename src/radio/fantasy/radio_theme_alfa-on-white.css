@@ -9,7 +9,7 @@
 
     .radio__box {
         background: var(--color-background-control-alfa-on-white);
-        border: 1px solid rgba(10, 30, 50, .3);
+        border: 1px solid var(--color-border-control-alfa-on-white);
         transition: all 200ms ease;
     }
 
@@ -32,12 +32,12 @@
     &.radio_focused,
     &.radio_hovered {
         .radio__box {
-            border-color: rgba(10, 30, 50, .9);
+            border-color: var(--color-border-control-focused-alfa-on-white);
         }
     }
 
     &.radio_focused .radio__box {
-        box-shadow: 0 0 0 1px rgba(10, 30, 50, .9);
+        box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-white);
     }
 
     &.radio_disabled {

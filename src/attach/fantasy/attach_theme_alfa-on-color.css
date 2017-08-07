@@ -2,10 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import '../../button/fantasy';
+@import '../../vars-fantasy.css';
 
-import './attach.css';
-import './attach_theme_alfa-on-color.css';
-import './attach_theme_alfa-on-white.css';
-
-export default from '../attach';
+.attach_theme_alfa-on-color {
+    .attach__file,
+    .attach__no-file {
+        color: var(--color-content-alfa-on-white);
+    }
+}

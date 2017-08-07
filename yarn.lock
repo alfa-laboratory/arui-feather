@@ -8342,17 +8342,7 @@ postcss-unique-selectors@^2.0.2:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss-url@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/postcss-url/-/postcss-url-7.1.1.tgz#efcd010d152a1a6c7d6d4bdd5702c3879cc94375"
-  dependencies:
-    mime "^1.2.11"
-    minimatch "^3.0.0"
-    mkdirp "^0.5.0"
-    postcss "^6.0.1"
-    xxhashjs "^0.2.1"
-
-"postcss-url@git://github.com/teryaew/postcss-url.git#feat/fallback-to-array-find":
+postcss-url@^7.1.1, "postcss-url@git://github.com/teryaew/postcss-url.git#feat/fallback-to-array-find":
   version "7.1.1"
   resolved "git://github.com/teryaew/postcss-url.git#9d10249f1696d4953aa67b2dfc6f41bd8c4fb4e5"
   dependencies:
@@ -9607,7 +9597,7 @@ sinon-chai@^2.11.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.12.0.tgz#da71e9642ef7b893ba3cf2af806396a00aa45927"
 
-sinon@3.0.0:
+sinon@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/sinon/-/sinon-3.0.0.tgz#f6919755c8c705e0b4ae977e8351bbcbaf6d91de"
   dependencies:

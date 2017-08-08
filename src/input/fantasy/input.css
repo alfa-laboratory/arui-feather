@@ -253,7 +253,6 @@
         line-height: 30px;
     }
 
-    &.input_invalid,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -300,7 +299,6 @@
         line-height: 40px;
     }
 
-    &.input_invalid,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -358,7 +356,6 @@
         line-height: 50px;
     }
 
-    &.input_invalid,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -405,7 +402,6 @@
         line-height: 60px;
     }
 
-    &.input_invalid,
     &.input_focused,
     &.input_has-value {
         .input__top {

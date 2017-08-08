@@ -1,3 +1,13 @@
+<a name="9.1.2"></a>
+## [9.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.1...v9.1.2) (2017-08-08)
+
+
+### Bug Fixes
+
+* **input:** fix invalid input label styles ([#204](https://github.com/alfa-laboratory/arui-feather/issues/204)) ([c097d7f](https://github.com/alfa-laboratory/arui-feather/commit/c097d7f))
+
+
+
 <a name="9.1.1"></a>
 ## [9.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.0...v9.1.1) (2017-08-08)
 

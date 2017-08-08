@@ -1,3 +1,13 @@
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.0...v9.1.1) (2017-08-08)
+
+
+### Bug Fixes
+
+* **input:** fix autofill color for white theme and safari bug when input collapsing ([#199](https://github.com/alfa-laboratory/arui-feather/issues/199)) ([ea2162d](https://github.com/alfa-laboratory/arui-feather/commit/ea2162d))
+
+
+
 <a name="9.1.0"></a>
 # [9.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.0.0...v9.1.0) (2017-08-07)
 

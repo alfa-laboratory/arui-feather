@@ -154,7 +154,6 @@
             font-size: var(--font-size-xs);
         }
 
-        &.textarea_invalid,
         &.textarea_focused,
         &.textarea_has-value {
             .textarea__top {
@@ -186,7 +185,6 @@
             font-size: var(--font-size-s);
         }
 
-        &.textarea_invalid,
         &.textarea_focused,
         &.textarea_has-value {
             .textarea__top {
@@ -218,7 +216,6 @@
             font-size: var(--font-size-m);
         }
 
-        &.textarea_invalid,
         &.textarea_focused,
         &.textarea_has-value {
             .textarea__top {
@@ -250,7 +247,6 @@
             font-size: var(--font-size-l);
         }
 
-        &.textarea_invalid,
         &.textarea_focused,
         &.textarea_has-value {
             .textarea__top {

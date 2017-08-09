@@ -1,3 +1,15 @@
+<a name="9.1.3"></a>
+## [9.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.2...v9.1.3) (2017-08-09)
+
+
+### Bug Fixes
+
+* fix label, placeholder & error styling in controls ([#206](https://github.com/alfa-laboratory/arui-feather/issues/206)) ([b2c5c6e](https://github.com/alfa-laboratory/arui-feather/commit/b2c5c6e))
+* **arui-demo/components/preview-with-theme-switcher:** paddings fot avoid components slice ([#207](https://github.com/alfa-laboratory/arui-feather/issues/207)) ([fd98b80](https://github.com/alfa-laboratory/arui-feather/commit/fd98b80))
+* **checkbox:** amend indeterminate checkbox's styles in fantasy ([#205](https://github.com/alfa-laboratory/arui-feather/issues/205)) ([e29587f](https://github.com/alfa-laboratory/arui-feather/commit/e29587f))
+
+
+
 <a name="9.1.2"></a>
 ## [9.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.1...v9.1.2) (2017-08-08)
 

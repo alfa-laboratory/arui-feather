@@ -81,10 +81,6 @@
         }
 
         &.input_focused {
-            .input__top {
-                color: var(--color-error);
-            }
-
             .input__box {
                 border-bottom-color: var(--color-error-translucent);
                 box-shadow: inset 0 -1px 0 var(--color-error-translucent);

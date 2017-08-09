@@ -82,7 +82,7 @@
         }
     }
 
-    &_has-label:not(.textarea_invalid) {
+    &_has-label {
         .textarea__control::placeholder {
             opacity: 0;
         }

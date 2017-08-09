@@ -44,7 +44,7 @@ script:
 after_script:
   - greenkeeper-lockfile-upload
   - |
-    if [ "${TRAVIS_BRANCH}" == "master" && -n "${TRAVIS_TAG}" ]; then
+    if [ "${TRAVIS_BRANCH}" == "master" ] && [ "${TEST_SCOPE}" == "lint" ] && [ -n "${TRAVIS_TAG}" ]; then
       yarn github-release
     fi
   - |

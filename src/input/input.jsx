@@ -154,11 +154,11 @@ class Input extends React.Component {
                     focused,
                     size: this.props.size,
                     width: this.props.width,
+                    'has-addons': hasAddons,
+                    'has-clear': !!this.props.clear,
+                    'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    'has-icon': !!this.props.icon,
-                    'has-clear': !!this.props.clear,
-                    'has-addons': hasAddons,
                     invalid: !!this.props.error
                 }) }
                 ref={ (root) => { this.root = root; } }

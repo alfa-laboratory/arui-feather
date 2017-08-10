@@ -1,0 +1,277 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.popup {
+    visibility: hidden;
+    position: absolute;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Roboto Rouble', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+
+    /* Чтобы IE9 не рисовал лишний скролл */
+    clip: rect(0, 0, 0, 0);
+
+    /* Чтобы попап не прокликивался и браузер не рисовал лишний скролл */
+    -webkit-transform: translate(-9999px, -9999px);
+            transform: translate(-9999px, -9999px);
+
+    z-index: 9999;
+}
+
+.popup, .popup *, .popup *:before, .popup *:after {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+.popup__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        z-index: 2;
+    }
+
+.popup_size_s {
+        font-size: 13px;
+    }
+
+.popup_size_m {
+        font-size: 16px;
+    }
+
+.popup_size_l {
+        font-size: 18px;
+    }
+
+.popup_size_xl {
+        font-size: 22px;
+    }
+
+.popup_visible {
+        visibility: visible;
+        clip: auto;
+        -webkit-transform: none;
+                transform: none;
+    }
+
+.popup_height_available {
+        opacity: 0;
+        position: fixed;
+        top: 0 !important;
+        bottom: 0;
+        width: 300px;
+        border-radius: 0;
+        -webkit-transition: opacity 400ms ease;
+        transition: opacity 400ms ease;
+    }
+
+.popup_height_available .popup__content {
+            padding: 12px 24px;
+        }
+
+.popup_height_available.popup_visible {
+        opacity: 1;
+        margin: 0 0 0 -35px;
+    }
+
+.popup_height_adaptive .popup__gradient,
+    .popup_target_screen .popup__gradient {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        -webkit-transition: height 200ms ease-in-out;
+        transition: height 200ms ease-in-out;
+        z-index: 3;
+    }
+
+.popup_height_adaptive.popup_size_s .popup__gradient,
+    .popup_target_screen.popup_size_s .popup__gradient {
+        height: 31px;
+    }
+
+.popup_height_adaptive.popup_size_m .popup__gradient,
+    .popup_target_screen.popup_size_m .popup__gradient {
+        height: 40px;
+    }
+
+.popup_height_adaptive.popup_size_l .popup__gradient,
+    .popup_target_screen.popup_size_l .popup__gradient {
+        height: 50px;
+    }
+
+.popup_height_adaptive.popup_size_xl .popup__gradient,
+    .popup_target_screen.popup_size_xl .popup__gradient {
+        height: 58px;
+    }
+
+.popup_height_adaptive .popup__inner,
+    .popup_target_screen .popup__inner {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+.popup__content {
+        /* Для resize-sensor */
+        position: relative;
+    }
+
+.popup_padded:not(.popup_height_available).popup_size_s .popup__content {
+            padding: 7px 12px 8px;
+        }
+
+.popup_padded:not(.popup_height_available).popup_size_m .popup__content {
+            padding: 10px 14px 11px;
+        }
+
+.popup_padded:not(.popup_height_available).popup_size_l .popup__content {
+            padding: 14px 18px 15px;
+        }
+
+.popup_padded:not(.popup_height_available).popup_size_xl .popup__content {
+            padding: 17px 22px;
+        }
+
+.popup_target_screen {
+        position: fixed;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+.popup_target_screen .popup__container {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            border-radius: 0;
+        }
+
+.popup_target_screen .popup__content {
+            /* чтобы контент с position:relative в UIWebView не исчезал при быстром скролле */
+            -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+        }
+
+.popup_type_tooltip:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        margin: -7px;
+        border-style: solid;
+        border-width: 7px;
+        -webkit-filter: drop-shadow(0 0 2px rgba(10, 30, 50, 0.2));
+                filter: drop-shadow(0 0 2px rgba(10, 30, 50, 0.2));
+        z-index: 1;
+    }
+
+/* top */
+
+.popup_type_tooltip.popup_direction_top-left:before { bottom: -7px; }
+
+.popup_type_tooltip.popup_direction_top-center:before { bottom: -7px; left: 50%; }
+
+.popup_type_tooltip.popup_direction_top-right:before { bottom: -7px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_top-left:before { left: 15px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_top-right:before { right: 15px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_top-left:before { left: 20px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_top-right:before { right: 20px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_top-left:before { left: 25px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_top-right:before { right: 25px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_top-left:before { left: 30px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_top-right:before { right: 30px; }
+
+/* left */
+
+.popup_type_tooltip.popup_direction_left-top:before { right: -7px; }
+
+.popup_type_tooltip.popup_direction_left-center:before { top: 50%; right: -7px; }
+
+.popup_type_tooltip.popup_direction_left-bottom:before { right: -7px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_left-top:before { top: 15px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_left-bottom:before { bottom: 15px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_left-top:before { top: 20px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_left-bottom:before { bottom: 20px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_left-top:before { top: 25px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_left-bottom:before { bottom: 25px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_left-top:before { top: 30px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_left-bottom:before { bottom: 30px; }
+
+/* right */
+
+.popup_type_tooltip.popup_direction_right-top:before { left: -7px; }
+
+.popup_type_tooltip.popup_direction_right-center:before { top: 50%; left: -7px; }
+
+.popup_type_tooltip.popup_direction_right-bottom:before { left: -7px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_right-top:before { top: 15px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_right-bottom:before { bottom: 15px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_right-top:before { top: 20px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_right-bottom:before { bottom: 20px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_right-top:before { top: 25px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_right-bottom:before { bottom: 25px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_right-top:before { top: 30px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_right-bottom:before { bottom: 30px; }
+
+/* bottom */
+
+.popup_type_tooltip.popup_direction_bottom-left:before { top: -7px; }
+
+.popup_type_tooltip.popup_direction_bottom-center:before { top: -7px; left: 50%; }
+
+.popup_type_tooltip.popup_direction_bottom-right:before { top: -7px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_bottom-left:before { left: 15px; }
+
+.popup_type_tooltip.popup_size_s.popup_direction_bottom-right:before { right: 15px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_bottom-left:before { left: 20px; }
+
+.popup_type_tooltip.popup_size_m.popup_direction_bottom-right:before { right: 20px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_bottom-left:before { left: 25px; }
+
+.popup_type_tooltip.popup_size_l.popup_direction_bottom-right:before { right: 25px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_bottom-left:before { left: 30px; }
+
+.popup_type_tooltip.popup_size_xl.popup_direction_bottom-right:before { right: 30px; }
+
+/*# sourceMappingURL=popup.css.map */

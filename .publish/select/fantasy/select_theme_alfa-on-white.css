@@ -1,0 +1,79 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.select_theme_alfa-on-white.select_size_s .select__tick {
+            background-image: url(../images/select__tick_theme_alfa-on-white__s.svg);
+        }
+
+.select_theme_alfa-on-white.select_size_m .select__tick {
+            background-image: url(../images/select__tick_theme_alfa-on-white__m.svg);
+        }
+
+.select_theme_alfa-on-white.select_size_l .select__tick {
+            background-image: url(../images/select__tick_theme_alfa-on-white__l.svg);
+        }
+
+.select_theme_alfa-on-white.select_size_xl .select__tick {
+            background-image: url(../images/select__tick_theme_alfa-on-white__xl.svg);
+        }
+
+.select_theme_alfa-on-white .select__top,
+    .select_theme_alfa-on-white .select__sub {
+        color: rgba(10, 30, 50, .6);
+    }
+
+.select_theme_alfa-on-white .select-button {
+        color: rgba(10, 30, 50, .9);
+        background: transparent;
+        border-bottom-color: rgba(10, 30, 50, .4);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+    }
+
+.select_theme_alfa-on-white .select-button_hovered {
+            border-bottom-color: rgba(10, 30, 50, .9);
+        }
+
+.select_theme_alfa-on-white .select-button_focused {
+            border-bottom-color: rgba(10, 30, 50, .9);
+            -webkit-box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+                    box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+        }
+
+.select_theme_alfa-on-white .select-button_focused.select-button_hovered {
+                border-bottom-color: rgba(10, 30, 50, .9);
+                -webkit-box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+                        box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+            }
+
+.select_theme_alfa-on-white .select-button_pressed {
+            border-bottom-color: rgba(10, 30, 50, .9);
+        }
+
+.select_theme_alfa-on-white .select-button_disabled {
+            border-bottom-color: rgba(10, 30, 50, .2);
+            border-bottom-style: dotted;
+        }
+
+.select_theme_alfa-on-white.select_focused .select-button, .select_theme_alfa-on-white.select_opened .select-button {
+            border-bottom-color: rgba(10, 30, 50, .9);
+            -webkit-box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+                    box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+        }
+
+.select_theme_alfa-on-white.select_invalid .select__sub {
+            color: rgba(240, 50, 38, 1);
+        }
+
+.select_theme_alfa-on-white.select_invalid .select-button {
+            border-bottom-color: rgba(240, 50, 38, .85);
+        }
+
+.select_theme_alfa-on-white.select_invalid.select_focused .select-button, .select_theme_alfa-on-white.select_invalid.select_opened .select-button {
+                border-bottom-color: rgba(240, 50, 38, .85);
+                -webkit-box-shadow: inset 0 -1px 0 rgba(240, 50, 38, .85);
+                        box-shadow: inset 0 -1px 0 rgba(240, 50, 38, .85);
+            }
+
+/*# sourceMappingURL=select_theme_alfa-on-white.css.map */

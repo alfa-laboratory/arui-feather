@@ -1,0 +1,34 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.menu-item {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    line-height: 1.4;
+    -webkit-transition: background 200ms ease;
+    transition: background 200ms ease;
+}
+
+.menu-item_disabled {
+        cursor: default;
+    }
+
+.menu-item_checked {
+        cursor: default;
+    }
+
+.menu-item_hidden {
+        display: none;
+    }
+
+.menu-item_type_link {
+        cursor: default;
+    }
+
+.menu-item_type_link .menu-item__link {
+        outline: none;
+    }
+
+/*# sourceMappingURL=menu-item.css.map */

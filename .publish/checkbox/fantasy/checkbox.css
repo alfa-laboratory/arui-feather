@@ -1,0 +1,142 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.checkbox {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Roboto Rouble', sans-serif;
+    font-weight: 400;
+}
+
+.checkbox, .checkbox *, .checkbox *:before, .checkbox *:after {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+.checkbox__control {
+        opacity: 0;
+        position: absolute;
+        margin: 0;
+        z-index: -1;
+    }
+
+.checkbox__box {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        border-radius: 3px;
+    }
+
+.checkbox__box:after {
+            content: '';
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            background-image: url(../images/checkbox__box.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            -webkit-transition: opacity 50ms ease-out, -webkit-transform 50ms ease-out;
+            transition: opacity 50ms ease-out, -webkit-transform 50ms ease-out;
+            transition: transform 50ms ease-out, opacity 50ms ease-out;
+            transition: transform 50ms ease-out, opacity 50ms ease-out, -webkit-transform 50ms ease-out;
+        }
+
+.checkbox__text {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+.checkbox_size_m {
+        font-size: 16px;
+    }
+
+.checkbox_size_m .checkbox__text {
+            padding-left: 4px;
+        }
+
+.checkbox_size_m .checkbox__box {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+
+.checkbox_size_m .checkbox__box:after {
+            width: 12px;
+            height: 12px;
+        }
+
+.checkbox_size_l {
+        font-size: 22px;
+    }
+
+.checkbox_size_l .checkbox__box {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+.checkbox_size_l .checkbox__box:after {
+            width: 16px;
+            height: 16px;
+        }
+
+.checkbox_size_l .checkbox__text {
+        padding-left: 2px;
+    }
+
+.checkbox_checked .checkbox__box:after {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+
+.checkbox_indeterminate .checkbox__box:after {
+        background-image: url(../images/checkbox__box_indeterminate.svg);
+    }
+
+.checkbox_disabled {
+        cursor: default;
+    }
+
+.checkbox_type_button {
+    display: inline-block;
+}
+
+.checkbox_type_button.checkbox_checked .button__text {
+        font-weight: 400;
+    }
+
+.checkbox_view_line.checkbox_size_m {
+        margin-right: 13px;
+    }
+
+.checkbox_view_line.checkbox_size_l {
+        margin-right: 15px;
+    }
+
+.checkbox_view_line:last-child {
+        margin-right: 0;
+    }
+
+.checkbox_invalid .checkbox__box {
+        border-color: rgba(240, 50, 38, .85);
+    }
+
+.checkbox_invalid.checkbox_focused .checkbox__box, .checkbox_invalid.checkbox_hovered .checkbox__box {
+            border-color: rgba(240, 50, 38, .85);
+            -webkit-box-shadow: 0 0 0 1px rgba(240, 50, 38, .85);
+                    box-shadow: 0 0 0 1px rgba(240, 50, 38, .85);
+        }
+
+/*# sourceMappingURL=checkbox.css.map */

@@ -1,0 +1,55 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.checkbox-group {
+    display: inline-block;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.checkbox-group_invalid {
+    border-left: 1px solid rgba(248, 96, 101, .85);
+    padding-left: 10px;
+}
+
+.checkbox-group__label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.checkbox_size_m {
+    margin-bottom: 10px;
+}
+
+.checkbox_size_l {
+    margin-bottom: 12px;
+}
+
+.checkbox-group_type_button {
+    white-space: nowrap;
+}
+
+.checkbox-group_type_button .checkbox {
+        margin-bottom: 0;
+    }
+
+.checkbox-group_type_line .checkbox {
+        margin-bottom: 0;
+    }
+
+.checkbox-group_type_line .checkbox_size_m {
+        margin-right: 13px;
+    }
+
+.checkbox-group_type_line .checkbox_size_l {
+        margin-right: 15px;
+    }
+
+.checkbox-group_type_line .checkbox:last-child {
+        margin-right: 0;
+    }
+
+/*# sourceMappingURL=checkbox-group.css.map */

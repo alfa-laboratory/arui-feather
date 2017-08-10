@@ -1,0 +1,29 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.input-group {
+    display: inline-block;
+    outline: none;
+    white-space: nowrap;
+}
+
+.input-group .input {
+        vertical-align: top;
+        margin-bottom: 0;
+    }
+
+.input-group_width_available {
+        display: table;
+        width: 100%;
+    }
+
+.input-group_width_available .input-group__input-case {
+        display: table-cell;
+    }
+
+.input-group__input-case + .input-group__input-case {
+        padding-left: 12px;
+    }
+
+/*# sourceMappingURL=input-group.css.map */

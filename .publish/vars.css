@@ -1,0 +1,18 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import './vars/font.css';
+@import './vars/color.css';
+@import './vars/color-theme_alfa-on-color.css';
+@import './vars/color-theme_alfa-on-white.css';
+@import './vars/opacity.css';
+@import './vars/border-radius.css';
+@import './vars/shadow.css';
+
+:root {
+    --small-screen-padding: 16px;
+    --small-header-height: 80px;
+    --large-screen-content-width: 1000px;
+    --xlarge-screen-content-width: 1100px;
+}

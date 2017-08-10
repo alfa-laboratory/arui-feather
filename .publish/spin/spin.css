@@ -1,0 +1,77 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.spin {
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-animation: spin_animation .8s infinite linear;
+            animation: spin_animation .8s infinite linear;
+}
+
+.spin_visible {
+        display: inline-block;
+    }
+
+.spin_size_s {
+        width: 16px;
+        height: 16px;
+    }
+
+.spin_size_m {
+        width: 20px;
+        height: 20px;
+    }
+
+.spin_size_l {
+        width: 26px;
+        height: 26px;
+    }
+
+.spin_size_xl {
+        width: 30px;
+        height: 30px;
+    }
+
+.spin_theme_alfa-on-color.spin_size_s { background-image: url('images/c_s.png'); }
+
+.spin_theme_alfa-on-color.spin_size_m { background-image: url('images/c_m.png'); }
+
+.spin_theme_alfa-on-color.spin_size_l { background-image: url('images/c_l.png'); }
+
+.spin_theme_alfa-on-color.spin_size_xl { background-image: url('images/c_xl.png'); }
+
+.spin_theme_alfa-on-white.spin_size_s { background-image: url('images/w_s.png'); }
+
+.spin_theme_alfa-on-white.spin_size_m { background-image: url('images/w_m.png'); }
+
+.spin_theme_alfa-on-white.spin_size_l { background-image: url('images/w_l.png'); }
+
+.spin_theme_alfa-on-white.spin_size_xl { background-image: url('images/w_xl.png'); }
+
+@-webkit-keyframes spin_animation {
+    from {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@keyframes spin_animation {
+    from {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+/*# sourceMappingURL=spin.css.map */

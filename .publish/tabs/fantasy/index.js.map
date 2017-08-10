@@ -1,0 +1,1 @@
+{"version":3,"sources":["tabs/fantasy/index.js"],"names":["default"],"mappings":";;;;;;;AAAA;;;;;;;;QAEOA,O","file":"index.js","sourcesContent":["import './tabs.css';\n\nexport default from './tabs';\n"]}

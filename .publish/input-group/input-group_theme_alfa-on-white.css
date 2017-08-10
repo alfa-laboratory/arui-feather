@@ -1,0 +1,14 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.input-group_theme_alfa-on-white {
+    background: rgba(255, 255, 255, .9);
+    border-radius: 4px;
+}
+
+.input-group_theme_alfa-on-white .input {
+        background: transparent;
+    }
+
+/*# sourceMappingURL=input-group_theme_alfa-on-white.css.map */

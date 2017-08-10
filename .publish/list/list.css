@@ -1,0 +1,63 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.list {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    padding: 0 0 0 5px;
+    margin: 25px 0;
+}
+
+.list .list {
+        padding-left: 15px;
+    }
+
+.list__item {
+        /* margin-left: -.6em; */
+        margin-bottom: 6px;
+
+        text-indent: -1.35em;
+
+        padding-left: .7em;
+
+        list-style: none;
+    }
+
+.list__item:before {
+            content: '\2014\a0\a0';
+        }
+
+.list_type_ordered {
+        counter-reset: item;
+    }
+
+.list_type_ordered .list__item {
+        padding-left: 1em;
+    }
+
+.list_type_ordered .list__item:before {
+            content: counter(item) '.\a0\a0';
+            counter-increment: item;
+        }
+
+.list_theme_alfa-on-color {
+    color: rgba(255, 255, 255, .9);
+}
+
+.list_theme_alfa-on-color .list__item:before {
+        color: inherit;
+    }
+
+.list_theme_alfa-on-white {
+    color: rgba(0, 0, 0, .9);
+}
+
+.list_theme_alfa-on-white .list__item:before {
+        color: rgba(178, 12, 0, 1);
+    }
+
+/*# sourceMappingURL=list.css.map */

@@ -1,0 +1,186 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.footer_theme_alfa-on-color {
+        color: rgba(255, 255, 255, .9);
+    }
+
+.footer_theme_alfa-on-white {
+        color: rgba(0, 0, 0, .9);
+    }
+
+.footer__inner {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        margin: auto;
+        padding: 35px 0;
+    }
+
+.footer__inner:after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+
+.footer__menu {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        float: left;
+    }
+
+.footer__additional {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        float: left;
+        line-height: 1.5;
+    }
+
+.footer__info {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        float: right;
+    }
+
+.footer__social {
+        min-height: 24px;
+        margin-bottom: 15px;
+    }
+
+@media screen and (max-width: 47.9375em) {
+        .footer__inner {
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .footer__menu {
+            width: 100%;
+            padding-top: 0;
+            padding-bottom: 25px;
+        }
+
+            .footer__menu .menu-item {
+                display: block;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+        .footer__additional {
+            clear: both;
+            float: none;
+            width: 100%;
+            padding: 0;
+        }
+
+        .footer__info {
+            clear: both;
+            float: none;
+            width: auto;
+            padding-top: 15px;
+        }
+
+        .footer__social {
+            min-height: 0;
+        }
+}
+
+@media screen and (min-width: 48em) {
+        .footer__additional:first-of-type + .footer__info .footer__copyright:first-of-type {
+            padding-top: 40px;
+        }
+}
+
+@media screen and (min-width: 48em) and (max-width: 64em) {
+        .footer__menu {
+            width: 50%;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+            .footer__menu .menu-item {
+                display: block;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+        .footer__additional,
+        .footer__info {
+            width: 50%;
+            padding-left: 0;
+            padding-right: 60px;
+        }
+
+        .footer__additional:first-of-type {
+            padding-top: 40px;
+        }
+
+        .footer__menu + .footer__additional {
+            padding-top: 13px;
+            padding-bottom: 15px;
+        }
+
+        .footer__menu,
+        .footer__additional:first-of-type {
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+}
+
+@media screen and (min-width: 64.0625em) {
+        .footer__menu {
+            width: 53%;
+            padding-left: 10px;
+        }
+
+            .footer__menu .menu {
+                margin-left: -12px;
+            }
+
+                .footer__menu .menu .menu-item.menu-item_type_link:first-child {
+                    padding-left: 12px;
+                }
+
+        .footer__additional:first-of-type {
+            padding-top: 40px;
+        }
+
+        .footer__menu + .footer__additional,
+        .footer__menu ~ .footer__info {
+            padding-top: 13px;
+        }
+
+        .footer__menu ~ .footer__info .footer__social {
+            margin-top: -39px;
+        }
+
+        .footer__additional {
+            width: 26%;
+            padding-left: 40px;
+            padding-right: 30px;
+        }
+
+        .footer__info {
+            width: 21%;
+        }
+}
+
+@media screen and (min-width: 64.0625em) and (max-width: 90em) {
+        .footer__additional:first-of-type {
+            padding-left: 10px;
+        }
+}
+
+@media screen and (min-width: 90.0625em) {
+        .footer__menu,
+        .footer__additional {
+            padding-left: 60px;
+        }
+}
+
+/*# sourceMappingURL=footer.css.map */

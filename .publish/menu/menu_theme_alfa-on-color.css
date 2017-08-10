@@ -1,0 +1,49 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.menu_theme_alfa-on-color .menu-item {
+        color: rgba(255, 255, 255, .9);
+    }
+
+.menu_theme_alfa-on-color .menu-item_hovered {
+        background-color: rgba(255, 255, 255, .1);
+    }
+
+.menu_theme_alfa-on-color .menu-item_hovered.menu-item_type_link, .menu_theme_alfa-on-color .menu-item_hovered.menu-item_type_dropdown {
+            background-color: transparent;
+        }
+
+.menu_theme_alfa-on-color .menu-item_disabled {
+        color: rgba(255, 255, 255, .3);
+    }
+
+.menu_theme_alfa-on-color.menu_mode_check.menu_size_s .menu-item_checked:before {
+                background-image: url('images/menu_mode_check.menu_theme_alfa-on-color__s.svg');
+            }
+
+.menu_theme_alfa-on-color.menu_mode_check.menu_size_m .menu-item_checked:before {
+                background-image: url('images/menu_mode_check.menu_theme_alfa-on-color__m.svg');
+            }
+
+.menu_theme_alfa-on-color.menu_mode_check.menu_size_l .menu-item_checked:before {
+                background-image: url('images/menu_mode_check.menu_theme_alfa-on-color__l.svg');
+            }
+
+.menu_theme_alfa-on-color.menu_mode_check.menu_size_xl .menu-item_checked:before {
+                background-image: url('images/menu_mode_check.menu_theme_alfa-on-color__xl.svg');
+            }
+
+.menu_theme_alfa-on-color.menu_mode_radio .menu-item_checked:before, .menu_theme_alfa-on-color.menu_mode_radio-check .menu-item_checked:before {
+            background-color: rgba(255, 255, 255, .9);
+        }
+
+.menu_theme_alfa-on-color.menu_mode_check .menu-item_disabled.menu-item_checked:before, .menu_theme_alfa-on-color.menu_mode_radio .menu-item_disabled.menu-item_checked:before, .menu_theme_alfa-on-color.menu_mode_radio-check .menu-item_disabled.menu-item_checked:before {
+                opacity: .25;
+            }
+
+.menu_theme_alfa-on-color .menu__group-title {
+        color: rgba(255, 255, 255, .3);
+    }
+
+/*# sourceMappingURL=menu_theme_alfa-on-color.css.map */

@@ -1,0 +1,25 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.form {
+    padding-bottom: 60px;
+}
+
+.form:last-child {
+        padding-bottom: 0;
+    }
+
+.form__footer {
+        padding-top: 20px;
+    }
+
+.form_view_line.form_size_s .form__footer, .form_view_line.form_size_m .form__footer {
+            padding-left: 115px;
+        }
+
+.form_view_line.form_size_l .form__footer, .form_view_line.form_size_xl .form__footer {
+            padding-left: 165px;
+        }
+
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,71 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.select_theme_alfa-on-color.select_size_s .select__tick {
+            background-image: url(images/select__tick_theme_alfa-on-color__s.svg);
+        }
+
+.select_theme_alfa-on-color.select_size_m .select__tick {
+            background-image: url(images/select__tick_theme_alfa-on-color__m.svg);
+        }
+
+.select_theme_alfa-on-color.select_size_l .select__tick {
+            background-image: url(images/select__tick_theme_alfa-on-color__l.svg);
+        }
+
+.select_theme_alfa-on-color.select_size_xl .select__tick {
+            background-image: url(images/select__tick_theme_alfa-on-color__xl.svg);
+        }
+
+.select_theme_alfa-on-color .select-button {
+        color: rgba(255, 255, 255, .9);
+        border-color: rgba(255, 255, 255, .4);
+        border-style: solid;
+        border-radius: 4px;
+        border-width: 1px;
+    }
+
+.select_theme_alfa-on-color .select-button_hovered {
+            border-color: rgba(255, 255, 255, .9);
+        }
+
+.select_theme_alfa-on-color .select-button_focused {
+            border-color: rgba(255, 255, 255, .9);
+            -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+                    box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+        }
+
+.select_theme_alfa-on-color .select-button_focused.select-button_hovered {
+                border-color: rgba(255, 255, 255, .9);
+                -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+                        box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+            }
+
+.select_theme_alfa-on-color .select-button_pressed {
+            border-color: rgba(255, 255, 255, .9);
+        }
+
+.select_theme_alfa-on-color.select_focused .select-button, .select_theme_alfa-on-color.select_opened .select-button {
+            border-color: rgba(255, 255, 255, .9);
+            -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+                    box-shadow: 0 0 0 1px rgba(255, 255, 255, .9);
+            background-color: rgba(0, 0, 0, .15);
+        }
+
+.select_theme_alfa-on-color.select_disabled .select-button {
+            border-color: rgba(255, 255, 255, .2);
+        }
+
+.select_theme_alfa-on-color.select_invalid .select-button {
+            border-color: rgba(248, 96, 101, .85);
+        }
+
+.select_theme_alfa-on-color.select_invalid.select_focused .select-button, .select_theme_alfa-on-color.select_invalid.select_opened .select-button {
+                border-color: rgba(248, 96, 101, .85);
+                -webkit-box-shadow: 0 0 0 1px rgba(248, 96, 101, .85);
+                        box-shadow: 0 0 0 1px rgba(248, 96, 101, .85);
+                background: rgba(248, 96, 101, .08);
+            }
+
+/*# sourceMappingURL=select_theme_alfa-on-color.css.map */

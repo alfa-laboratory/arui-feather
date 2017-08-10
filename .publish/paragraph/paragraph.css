@@ -1,0 +1,27 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.paragraph {
+    margin: 0 0 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.paragraph_view_lead {
+        margin-bottom: 25px;
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+.paragraph_theme_alfa-on-color {
+        color: rgb(255, 255, 255);
+    }
+
+.paragraph_theme_alfa-on-white {
+        color: rgb(0, 0, 0);
+    }
+
+/*# sourceMappingURL=paragraph.css.map */

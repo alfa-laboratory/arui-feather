@@ -1,0 +1,53 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.app__title,
+    .app__menu,
+    .app__content {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+.app__title + .app__content {
+        margin-top: 32px;
+    }
+
+.app__menu {
+        margin-bottom: 40px;
+    }
+
+@media screen and (max-width: 47.9375em) {
+        .app__title,
+        .app__content {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            width: 100%;
+            padding: 0 16px;
+        }
+
+        .app__menu {
+            overflow: hidden;
+            width: 100%;
+        }
+
+            .app__menu:after {
+                content: '';
+                display: block;
+                margin-bottom: -20px;
+            }
+
+        .app__menu-case {
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0 0 20px;
+        }
+
+        .app__menu-content {
+            display: inline-block;
+            padding: 0 16px 0;
+        }
+}
+
+/*# sourceMappingURL=app.css.map */

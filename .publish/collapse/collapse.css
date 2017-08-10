@@ -1,0 +1,49 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.collapse__content {
+        position: relative;
+    }
+
+.collapse__link {
+        outline: none;
+    }
+
+.collapse__link:after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            background-size: 100% 100%;
+        }
+
+.collapse__content {
+        height: 0;
+        visibility: hidden;
+        -webkit-transition: height 0.2s;
+        transition: height 0.2s;
+        overflow: hidden;
+    }
+
+.collapse_expanded .collapse__content {
+        height: auto;
+        visibility: visible;
+        padding-bottom: 15px;
+    }
+
+.collapse_expanded .collapse__link:after {
+        -webkit-transform: scaleY(-1);
+                transform: scaleY(-1);
+    }
+
+.collapse_theme_alfa-on-color .collapse__link:after {
+        background-image: url('images/collapse__link_theme_alfa-on-color.svg');
+    }
+
+.collapse_theme_alfa-on-white .collapse__link:after {
+        background-image: url('images/collapse__link_theme_alfa-on-white.svg');
+    }
+
+/*# sourceMappingURL=collapse.css.map */

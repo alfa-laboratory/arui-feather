@@ -1,0 +1,123 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.link {
+    cursor: pointer;
+    outline: none;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Roboto Rouble', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    -webkit-transition: color 200ms ease-out;
+    transition: color 200ms ease-out;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.link, .link *, .link *:before, .link *:after {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+.link__text {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        -webkit-transition: border-color 200ms ease-out;
+        transition: border-color 200ms ease-out;
+    }
+
+.link__icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        line-height: 0;
+    }
+
+.link_size_xs {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+.link_size_s {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+.link_size_m {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+.link_size_l {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+.link_size_xl {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+.link_pseudo .link__text {
+        border-bottom-style: dotted;
+    }
+
+.link_disabled,
+    .link_checked {
+        cursor: default;
+    }
+
+.link_disabled .link__icon, .link_checked .link__icon {
+        opacity: .25;
+    }
+
+.link_theme_alfa-on-color {
+    color: rgba(255, 255, 255, .9);
+}
+
+.link_theme_alfa-on-color .link__text {
+        border-color: rgba(255, 255, 255, .4);
+    }
+
+.link_theme_alfa-on-color:hover,
+    .link_theme_alfa-on-color:focus {
+        color: rgb(255, 255, 255);
+    }
+
+.link_theme_alfa-on-color:hover .link__text, .link_theme_alfa-on-color:focus .link__text {
+            border-color: rgb(255, 255, 255);
+        }
+
+.link_theme_alfa-on-color.link_disabled {
+        color: rgba(255, 255, 255, .4);
+    }
+
+.link_theme_alfa-on-white {
+    color: rgba(10, 30, 50, .9);
+}
+
+.link_theme_alfa-on-white .link__text {
+        border-color: rgba(10, 30, 50, .6);
+    }
+
+.link_theme_alfa-on-white:hover,
+    .link_theme_alfa-on-white:focus {
+        color: rgb(10, 30, 50);
+    }
+
+.link_theme_alfa-on-white:hover .link__text, .link_theme_alfa-on-white:focus .link__text {
+            border-color: rgb(10, 30, 50);
+        }
+
+.link_theme_alfa-on-white.link_disabled {
+        color: rgba(10, 30, 50, .6);
+    }
+
+.link_theme_alfa-on-color.link_disabled .link__text, .link_theme_alfa-on-color.link_checked .link__text, .link_theme_alfa-on-white.link_disabled .link__text, .link_theme_alfa-on-white.link_checked .link__text {
+            border-color: transparent;
+        }
+
+.link_theme_alfa-on-color.link_checked, .link_theme_alfa-on-white.link_checked {
+        font-weight: 500;
+    }
+
+/*# sourceMappingURL=link.css.map */

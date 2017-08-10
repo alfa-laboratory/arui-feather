@@ -1,0 +1,239 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.select {
+    display: inline-block;
+    max-width: 100%;
+    min-width: 150px;
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Roboto Rouble', sans-serif;
+    font-weight: 400;
+}
+
+.select, .select *, .select *:before, .select *:after {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+.select__inner {
+        position: relative;
+        display: inline-table;
+        width: 100%;
+    }
+
+.select_width_available .select__inner {
+        table-layout: fixed;
+    }
+
+.select__top {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-transform: scale(1) translate3d(0, 0, 0);
+                transform: scale(1) translate3d(0, 0, 0);
+        -webkit-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+        -webkit-transition-duration: 200ms;
+                transition-duration: 200ms;
+        -webkit-transition-property: color, -webkit-transform;
+        transition-property: color, -webkit-transform;
+        transition-property: color, transform;
+        transition-property: color, transform, -webkit-transform;
+        -webkit-transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+                transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+    }
+
+.select__sub {
+        display: table-caption;
+        caption-side: bottom;
+        padding-top: 5px;
+        padding-right: 12px;
+        white-space: normal;
+    }
+
+.select_size_s .select__sub {
+            font-size: 12px;
+        }
+
+.select_size_m .select__sub {
+            font-size: 13px;
+        }
+
+.select_size_l .select__sub {
+            font-size: 16px;
+        }
+
+.select_size_xl .select__sub {
+            font-size: 18px;
+        }
+
+.select .select-button,
+    .select__native-control {
+        display: table-cell;
+    }
+
+.select .select-button {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        padding-right: 30px;
+        cursor: pointer;
+        outline: 0;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Roboto Rouble', sans-serif;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        -webkit-transition-duration: 250ms;
+                transition-duration: 250ms;
+        -webkit-transition-property: border-bottom-color, color, width, -webkit-box-shadow;
+        transition-property: border-bottom-color, color, width, -webkit-box-shadow;
+        transition-property: border-bottom-color, box-shadow, color, width;
+        transition-property: border-bottom-color, box-shadow, color, width, -webkit-box-shadow;
+        -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+                transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+/* TODO @teryaew: add custom easings to styles */
+
+.select .select-button::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+
+.select .select-button_size_s {
+            min-height: 30px;
+            font-size: 13px;
+            line-height: 28px;
+        }
+
+.select .select-button_size_m {
+            min-height: 40px;
+            font-size: 16px;
+            line-height: 38px;
+        }
+
+.select .select-button_size_l {
+            min-height: 50px;
+            font-size: 18px;
+            line-height: 48px;
+        }
+
+.select .select-button_size_xl {
+            min-height: 60px;
+            font-size: 22px;
+            line-height: 58px;
+        }
+
+.select .select-button_disabled {
+            cursor: default;
+        }
+
+.select .select-button_disabled .select-button__text {
+                opacity: .6;
+            }
+
+.select__tick {
+        opacity: .6;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-position: center;
+    }
+
+.select_disabled .select__tick {
+        opacity: .25;
+    }
+
+.select_focused .select__tick,
+    .select-button_hovered .select__tick {
+        opacity: 1;
+    }
+
+.select_width_available {
+        width: 100%;
+        min-width: 0;
+    }
+
+.select__native-control {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: 100%;
+    }
+
+.select_size_s.select_has-label {
+        padding-top: 9px;
+    }
+
+.select_size_s .select__top {
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+.select_size_s.select_focused .select__top, .select_size_s.select_has-value .select__top {
+            -webkit-transform: scale(0.92308) translate3d(0, -22px, 0);
+                    transform: scale(0.92308) translate3d(0, -22px, 0);
+        }
+
+.select_size_m.select_has-label {
+        padding-top: 6px;
+    }
+
+.select_size_m .select__top {
+        font-size: 16px;
+        line-height: 40px;
+    }
+
+.select_size_m.select_focused .select__top, .select_size_m.select_has-value .select__top {
+            -webkit-transform: scale(0.8125) translate3d(0, -30px, 0);
+                    transform: scale(0.8125) translate3d(0, -30px, 0);
+        }
+
+.select_size_l.select_has-label {
+        padding-top: 14px;
+    }
+
+.select_size_l .select__top {
+        font-size: 18px;
+        line-height: 50px;
+    }
+
+.select_size_l.select_focused .select__top, .select_size_l.select_has-value .select__top {
+            -webkit-transform: scale(0.88889) translate3d(0, -40px, 0);
+                    transform: scale(0.88889) translate3d(0, -40px, 0);
+        }
+
+.select_size_xl.select_has-label {
+        padding-top: 13px;
+    }
+
+.select_size_xl .select__top {
+        font-size: 22px;
+        line-height: 60px;
+    }
+
+.select_size_xl.select_focused .select__top, .select_size_xl.select_has-value .select__top {
+            -webkit-transform: scale(0.81818) translate3d(0, -50px, 0);
+                    transform: scale(0.81818) translate3d(0, -50px, 0);
+        }
+
+/*# sourceMappingURL=select.css.map */

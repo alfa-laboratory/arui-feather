@@ -1,0 +1,121 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.button_theme_alfa-on-white {
+    color: rgba(10, 30, 50, .9);
+    background: transparent;
+    border-color: rgba(10, 30, 50, .4);
+    border-style: solid;
+    border-width: 1px;
+}
+
+.button_theme_alfa-on-white.button_hovered {
+        border-color: rgba(10, 30, 50, .9);
+    }
+
+.button_theme_alfa-on-white.button_focused {
+        border-color: rgba(10, 30, 50, .9);
+        -webkit-box-shadow: inset 0 0 0 1px rgba(10, 30, 50, .9);
+                box-shadow: inset 0 0 0 1px rgba(10, 30, 50, .9);
+    }
+
+.button_theme_alfa-on-white.button_focused.button_hovered {
+            border-color: rgba(10, 30, 50, .9);
+            -webkit-box-shadow: inset 0 0 0 1px rgba(10, 30, 50, .9);
+                    box-shadow: inset 0 0 0 1px rgba(10, 30, 50, .9);
+        }
+
+.button_theme_alfa-on-white.button_pressed {
+        background: rgba(10, 30, 50, .05);
+        border-color: rgba(10, 30, 50, .9);
+    }
+
+.button_theme_alfa-on-white.button_checked,
+    .button_theme_alfa-on-white.button_view_action {
+        color: rgba(10, 30, 50, .9);
+        background: rgba(10, 30, 50, .15);
+        border-color: rgba(10, 30, 50, .5);
+    }
+
+.button_theme_alfa-on-white.button_checked.button_hovered, .button_theme_alfa-on-white.button_view_action.button_hovered {
+            background: rgba(10, 30, 50, .25);
+        }
+
+.button_theme_alfa-on-white.button_checked.button_pressed, .button_theme_alfa-on-white.button_view_action.button_pressed {
+            background: rgba(10, 30, 50, .3);
+        }
+
+.button_theme_alfa-on-white.button_checked.button_focused, .button_theme_alfa-on-white.button_view_action.button_focused {
+            border-color: rgba(10, 30, 50, .9);
+        }
+
+.button_theme_alfa-on-white.button_view_extra {
+        color: rgb(255, 255, 255);
+        background: rgba(240, 50, 38, .85);
+        border-color: rgba(240, 50, 38, .85);
+    }
+
+.button_theme_alfa-on-white.button_view_extra.button_hovered {
+            background: rgba(240, 50, 38, 1);
+            border-color: rgba(240, 50, 38, 1);
+        }
+
+.button_theme_alfa-on-white.button_view_extra.button_focused {
+            border-color: rgba(10, 30, 50, .9);
+        }
+
+.button_theme_alfa-on-white.button_view_extra.button_pressed {
+            background: rgba(158, 12, 0, 1);
+            border-color: rgba(158, 12, 0, 1);
+        }
+
+.button_theme_alfa-on-white.button_view_other {
+        color: rgb(255, 255, 255);
+        background: rgba(80, 64, 218, .85);
+        border-color: rgba(80, 64, 218, .85);
+    }
+
+.button_theme_alfa-on-white.button_view_other.button_hovered {
+            background: rgba(71, 57, 195, .85);
+            border-color: rgba(71, 57, 195, .85);
+        }
+
+.button_theme_alfa-on-white.button_view_other.button_focused {
+            border-color: rgba(10, 30, 50, .9);
+        }
+
+.button_theme_alfa-on-white.button_view_other.button_pressed {
+            background: rgba(64, 51, 174, .85);
+            border-color: rgba(64, 51, 174, .85);
+        }
+
+.button_theme_alfa-on-white.button_pseudo {
+        border-style: dashed;
+    }
+
+.button_theme_alfa-on-white.button_pseudo.button_focused {
+            border-color: rgba(10, 30, 50, .9);
+            border-style: solid;
+
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+
+                    box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+        }
+
+.button_theme_alfa-on-white.button_pseudo.button_focused.button_hovered {
+                border-color: rgba(0, 0, 0, .7);
+                -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .7);
+                        box-shadow: 0 0 0 1px rgba(0, 0, 0, .7);
+            }
+
+.button_theme_alfa-on-white.button_disabled {
+        border-color: transparent;
+        background: rgba(10, 30, 50, .08);
+    }
+
+.button_theme_alfa-on-white.button_disabled .button__text {
+            color: rgba(10, 30, 50, .6);
+        }
+
+/*# sourceMappingURL=button_theme_alfa-on-white.css.map */

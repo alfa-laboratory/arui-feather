@@ -1,0 +1,127 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.calendar {
+    display: inline-block;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+
+    padding: 0;
+    border-radius: 4px;
+
+    -webkit-box-sizing: border-box;
+
+            box-sizing: border-box;
+
+    outline: 0;
+}
+
+.calendar__name {
+        text-align: center;
+    }
+
+.calendar__layout {
+        border-spacing: 0;
+        border-collapse: separate;
+    }
+
+.calendar__title {
+        padding: 20px 15px 5px;
+        line-height: 20px;
+        vertical-align: middle;
+    }
+
+.calendar__layout {
+        padding: 0 15px 15px;
+    }
+
+.calendar__dayname,
+    .calendar__day {
+        font-size: 13px;
+    }
+
+.calendar__dayname {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 34px;
+
+        cursor: default;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+.calendar__day {
+        line-height: 30px;
+
+        width: 30px;
+
+        text-align: center;
+        cursor: pointer;
+    }
+
+.calendar__arrow, .calendar__double_arrow {
+        width: 18px;
+        height: 18px;
+        opacity: .5;
+        cursor: pointer;
+        -webkit-transition: all 0.1s ease-out;
+        transition: all 0.1s ease-out;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+.calendar__arrow:hover {
+        opacity: 1;
+    }
+
+.calendar__arrow_direction_left, .calendar__double_arrow_direction_left {
+        float: left;
+    }
+
+.calendar__arrow_direction_right, .calendar__double_arrow_direction_right {
+        float: right;
+    }
+
+.calendar__day_type_weekend {
+        font-weight: 500;
+    }
+
+.calendar__day_state_current {
+        color: rgba(255, 255, 255, 1);
+        position: relative;
+        z-index: 2;
+
+        margin: 0 -1px 0 0;
+
+        text-align: center;
+
+        outline: 0;
+
+        -webkit-user-select: none;
+
+           -moz-user-select: none;
+
+            -ms-user-select: none;
+
+                user-select: none;
+    }
+
+.calendar__day_state_current {
+        background: rgba(178, 12, 0, 1);
+        border-radius: 4px;
+    }
+
+.calendar__day_type_off,
+    .calendar__day_type_weekend-off {
+        cursor: default;
+        opacity: .5;
+    }
+
+.calendar__arrow_disabled {
+        visibility: hidden;
+    }
+
+/*# sourceMappingURL=calendar.css.map */

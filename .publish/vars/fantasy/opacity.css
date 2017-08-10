@@ -1,0 +1,25 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+:root {
+    /**
+     * Прозрачность по умолчанию.
+     */
+    --opacity-default: .9;
+
+    /**
+     * Прозрачность при наведении или фокусе на элементе.
+     */
+    --opacity-active: 1;
+
+    /**
+     * Прозрачность для второстепенной информации.
+     */
+    --opacity-minor: .6;
+
+    /**
+     * Прозрачность для заблокированных элементов.
+     */
+    --opacity-disabled: .25;
+}

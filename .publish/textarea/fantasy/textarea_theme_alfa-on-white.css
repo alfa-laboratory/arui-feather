@@ -1,0 +1,59 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.textarea_theme_alfa-on-white .textarea__control {
+        color: rgba(10, 30, 50, .9);
+        border-bottom: 1px solid rgba(10, 30, 50, .4);
+    }
+
+.textarea_theme_alfa-on-white .textarea__control::-webkit-input-placeholder {
+            color: rgba(10, 30, 50, .6);
+        }
+
+.textarea_theme_alfa-on-white .textarea__control:-ms-input-placeholder {
+            color: rgba(10, 30, 50, .6);
+        }
+
+.textarea_theme_alfa-on-white .textarea__control::placeholder {
+            color: rgba(10, 30, 50, .6);
+        }
+
+.textarea_theme_alfa-on-white .textarea__top,
+    .textarea_theme_alfa-on-white .textarea__sub {
+        color: rgba(10, 30, 50, .6);
+    }
+
+.textarea_theme_alfa-on-white.textarea_focused .textarea__control {
+            border-bottom-color: rgba(10, 30, 50, .9);
+        }
+
+.textarea_theme_alfa-on-white.textarea_focused .textarea__control {
+            -webkit-box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+                    box-shadow: inset 0 -1px 0 rgba(10, 30, 50, .9);
+        }
+
+.textarea_theme_alfa-on-white.textarea_disabled,
+        .textarea_theme_alfa-on-white.textarea_disabled .textarea__control {
+            color: rgba(10, 30, 50, .6);
+        }
+
+.textarea_theme_alfa-on-white.textarea_disabled .textarea__control {
+            border-bottom-style: dotted;
+        }
+
+.textarea_theme_alfa-on-white.textarea_invalid .textarea__sub {
+            color: rgba(240, 50, 38, 1);
+        }
+
+.textarea_theme_alfa-on-white.textarea_invalid .textarea__control {
+            border-bottom-color: rgba(240, 50, 38, .85);
+        }
+
+.textarea_theme_alfa-on-white.textarea_invalid.textarea_focused .textarea__control {
+                border-bottom-color: rgba(240, 50, 38, .85);
+                -webkit-box-shadow: inset 0 -1px 0 rgba(240, 50, 38, .85);
+                        box-shadow: inset 0 -1px 0 rgba(240, 50, 38, .85);
+            }
+
+/*# sourceMappingURL=textarea_theme_alfa-on-white.css.map */

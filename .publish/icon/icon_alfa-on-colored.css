@@ -1,0 +1,37 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.icon_theme_alfa-on-colored.icon_size_s.icon_error {
+                    background-image: url('images/icon_error__s__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_s.icon_ok {
+                    background-image: url('images/icon_ok__s__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_m.icon_error {
+                    background-image: url('images/icon_error__m__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_m.icon_ok {
+                    background-image: url('images/icon_ok__m__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_l.icon_error {
+                    background-image: url('images/icon_error__l__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_l.icon_ok {
+                    background-image: url('images/icon_ok__l__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_xl.icon_error {
+                    background-image: url('images/icon_error__xl__colored.svg');
+                }
+
+.icon_theme_alfa-on-colored.icon_size_xl.icon_ok {
+                    background-image: url('images/icon_ok__xl__colored.svg');
+                }
+
+/*# sourceMappingURL=icon_alfa-on-colored.css.map */

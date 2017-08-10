@@ -1,0 +1,1 @@
+{"version":3,"sources":["tab-item/fantasy/index.js"],"names":["default"],"mappings":";;;;;;;AAAA;;AACA;;;;;;;;QAEOA,O","file":"index.js","sourcesContent":["import '../../link/fantasy';\nimport './tab-item.css';\n\nexport default from './tab-item';\n"]}

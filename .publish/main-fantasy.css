@@ -1,0 +1,65 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@font-face{
+    font-family:'Roboto Rouble';
+    font-style:normal;
+    font-weight:300;
+    src:url('font/font_roboto-rouble_light.woff');
+}
+
+@font-face{
+    font-family:'Roboto Rouble';
+    font-style:normal;
+    font-weight:400;
+    src:url('font/font_roboto-rouble_regular.woff');
+}
+
+@font-face{
+    font-family:'Roboto Rouble';
+    font-style:normal;
+    font-weight:500;
+    src:url('font/font_roboto-rouble_medium.woff');
+}
+
+@font-face{
+    font-family:'Roboto Rouble';
+    font-style:normal;
+    font-weight:700;
+    src:url('font/font_roboto-rouble_bold.woff');
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgba(10, 30, 50, .9);
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Roboto Rouble', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+#react-app {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: inherit;
+}
+
+/*# sourceMappingURL=main-fantasy.css.map */

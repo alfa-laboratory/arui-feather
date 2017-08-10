@@ -1,0 +1,85 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.input_mode_link {
+    padding-left: 0;
+    min-width: 0;
+    -webkit-transition-property: color, border, background, opacity;
+    transition-property: color, border, background, opacity;
+}
+
+.input_mode_link .input__box {
+        padding-right: 0;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.input_mode_link .input__trigger {
+        outline: none;
+    }
+
+.input_mode_link .input__control {
+        min-width: 0;
+        display: none;
+    }
+
+.input_mode_link.input_focused,
+    .input_mode_link.input_focused .input__control {
+        min-width: 150px;
+    }
+
+.input_mode_link.input_focused .input__trigger {
+            display: none;
+        }
+
+.input_mode_link.input_focused .input__box {
+            padding-right: 0;
+            margin-right: 0;
+
+            max-width: inherit;
+        }
+
+.input_mode_link.input_focused .input__control {
+            display: inline-block;
+        }
+
+.input_mode_link.input_size_s .input__box {
+            height: 28px;
+            padding: 0 10px;
+        }
+
+.input_mode_link.input_size_s .input__trigger {
+            line-height: 32px;
+        }
+
+.input_mode_link.input_size_m .input__box {
+            height: 38px;
+            padding: 0 12px;
+        }
+
+.input_mode_link.input_size_m .input__trigger {
+            line-height: 40px;
+        }
+
+.input_mode_link.input_size_l .input__box {
+            height: 48px;
+            padding: 0 15px;
+        }
+
+.input_mode_link.input_size_l .input__trigger {
+            line-height: 48px;
+        }
+
+.input_mode_link.input_size_xl .input__box {
+            height: 58px;
+            padding: 0 15px;
+        }
+
+.input_mode_link.input_size_xl .input__trigger {
+            line-height: 56px;
+        }
+
+/*# sourceMappingURL=input_mode_link.css.map */

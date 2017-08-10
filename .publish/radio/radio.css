@@ -1,0 +1,160 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.radio {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.radio__control {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        z-index: -1;
+    }
+
+.radio__box {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+
+        border-radius: 50%;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+.radio__box:after {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            content: '';
+
+            visibility: hidden;
+            opacity: 0;
+
+            border-radius: 50%;
+
+            -webkit-transition:
+                opacity .05s ease-out,
+                visibility 0s linear .05s,
+                -webkit-transform .05s ease-out;
+
+            transition:
+                opacity .05s ease-out,
+                visibility 0s linear .05s,
+                -webkit-transform .05s ease-out;
+
+            transition:
+                transform .05s ease-out,
+                opacity .05s ease-out,
+                visibility 0s linear .05s;
+
+            transition:
+                transform .05s ease-out,
+                opacity .05s ease-out,
+                visibility 0s linear .05s,
+                -webkit-transform .05s ease-out;
+        }
+
+.radio__text {
+        display: inline-block;
+        white-space: normal;
+        vertical-align: middle;
+    }
+
+.radio_size_m {
+        font-size: 16px;
+    }
+
+.radio_size_m .radio__box {
+        width: 14px;
+        height: 14px;
+
+        margin-right: 6px;
+    }
+
+.radio_size_m .radio__box:after {
+            margin-top: -3px;
+            margin-left: -3px;
+
+            width: 6px;
+            height: 6px;
+        }
+
+.radio_size_l {
+        font-size: 22px;
+    }
+
+.radio_size_l .radio__box {
+        width: 18px;
+        height: 18px;
+
+        margin-right: 10px;
+    }
+
+.radio_size_l .radio__box:after {
+            margin-top: -4px;
+            margin-left: -4px;
+
+            width: 8px;
+            height: 8px;
+        }
+
+.radio_checked .radio__box:after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.radio_disabled {
+        cursor: default;
+    }
+
+.radio_type_button {
+    display: inline-block;
+}
+
+.radio_type_button .radio__control {
+        position: absolute;
+
+        visibility: hidden;
+    }
+
+.radio_type_button.radio_checked .button__text {
+        font-weight: 300;
+    }
+
+/* FIXME: maybe remove cascade? */
+
+.radio_type_button .button_checked {
+        cursor: default;
+    }
+
+.radio_width_available {
+    width: 100%;
+}
+
+.radio_invalid .radio__box {
+        border-color: rgba(248, 96, 101, .85);
+    }
+
+.radio_invalid.radio_focused .radio__box, .radio_invalid.radio_hovered .radio__box {
+            border-color: rgba(248, 96, 101, .85);
+            -webkit-box-shadow: 0 0 0 1px rgba(248, 96, 101, .85);
+                    box-shadow: 0 0 0 1px rgba(248, 96, 101, .85);
+        }
+
+/*# sourceMappingURL=radio.css.map */

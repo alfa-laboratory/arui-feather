@@ -1,0 +1,337 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.button_theme_alfa-on-white {
+    color: rgba(0, 0, 0, .9);
+
+    background: transparent;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.button_theme_alfa-on-white.button_hovered {
+        border-color: rgba(0, 0, 0, .9);
+    }
+
+.button_theme_alfa-on-white.button_focused {
+        border-color: rgba(0, 0, 0, .9);
+        -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .4);
+                box-shadow: 0 0 0 1px rgba(0, 0, 0, .4);
+    }
+
+.button_theme_alfa-on-white.button_focused.button_hovered {
+            border-color: rgba(0, 0, 0, .9);
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+                    box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+        }
+
+.button_theme_alfa-on-white.button_pressed {
+        border-color: rgba(0, 0, 0, .9);
+        background: rgba(0, 0, 0, .05);
+    }
+
+.button_theme_alfa-on-white.button_checked,
+    .button_theme_alfa-on-white.button_view_action {
+        color: rgba(0, 0, 0, .9);
+        background: rgba(0, 0, 0, .15);
+        border-color: rgba(0, 0, 0, .05);
+    }
+
+.button_theme_alfa-on-white.button_checked.button_hovered, .button_theme_alfa-on-white.button_view_action.button_hovered {
+            background: rgba(0, 0, 0, .25);
+        }
+
+.button_theme_alfa-on-white.button_checked.button_pressed, .button_theme_alfa-on-white.button_view_action.button_pressed {
+            background: rgba(0, 0, 0, .3);
+        }
+
+.button_theme_alfa-on-white.button_checked.button_focused, .button_theme_alfa-on-white.button_view_action.button_focused {
+            border-color: rgba(0, 0, 0, .9);
+        }
+
+.button_theme_alfa-on-white.button_view_extra {
+        color: rgb(255, 255, 255);
+        background: rgba(178, 12, 0, .85);
+        border-color: rgba(178, 12, 0, .85);
+    }
+
+.button_theme_alfa-on-white.button_view_extra.button_hovered {
+            background: rgba(178, 12, 0, 1);
+            border-color: rgba(178, 12, 0, 1);
+        }
+
+.button_theme_alfa-on-white.button_view_extra.button_focused {
+            border-color: rgba(0, 0, 0, .9);
+        }
+
+.button_theme_alfa-on-white.button_view_extra.button_pressed {
+            background: rgba(158, 12, 0, 1);
+            border-color: rgba(158, 12, 0, 1);
+        }
+
+.button_theme_alfa-on-white.button_view_other {
+        background: rgba(80, 64, 218, .85);
+        border-color: rgba(80, 64, 218, .85);
+
+        color: rgb(255, 255, 255);
+    }
+
+.button_theme_alfa-on-white.button_view_other.button_hovered {
+            background: rgba(71, 57, 195, .85);
+            border-color: rgba(71, 57, 195, .85);
+        }
+
+.button_theme_alfa-on-white.button_view_other.button_focused {
+            border-color: rgba(0, 0, 0, .9);
+        }
+
+.button_theme_alfa-on-white.button_view_other.button_pressed {
+            background: rgba(64, 51, 174, .85);
+            border-color: rgba(64, 51, 174, .85);
+        }
+
+.button_theme_alfa-on-white.button_pseudo {
+        border-style: dashed;
+    }
+
+.button_theme_alfa-on-white.button_pseudo.button_focused {
+            border-color: rgba(0, 0, 0, .9);
+            border-style: solid;
+
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+
+                    box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+        }
+
+.button_theme_alfa-on-white.button_pseudo.button_focused.button_hovered {
+                border-color: rgba(0, 0, 0, .7);
+                -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .7);
+                        box-shadow: 0 0 0 1px rgba(0, 0, 0, .7);
+            }
+
+.button_theme_alfa-on-white.button_disabled {
+        border-color: transparent;
+        background: rgba(0, 0, 0, .08);
+    }
+
+.button_theme_alfa-on-white.button_disabled .button__text {
+            color: rgba(0, 0, 0, .3);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:last-child,
+        .control-group.checkbox-group_theme_alfa-on-white > :last-child .button,
+        .control-group.radio-group_theme_alfa-on-white > .button:last-child,
+        .control-group.radio-group_theme_alfa-on-white > :last-child .button {
+            border-right-color: rgba(0, 0, 0, .3);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:last-child.button_hovered, .control-group.checkbox-group_theme_alfa-on-white > :last-child .button.button_hovered, .control-group.radio-group_theme_alfa-on-white > .button:last-child.button_hovered, .control-group.radio-group_theme_alfa-on-white > :last-child .button.button_hovered {
+                border-right-color: rgba(0, 0, 0, .9);
+                border-left-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:first-child,
+        .control-group.checkbox-group_theme_alfa-on-white > :first-child .button,
+        .control-group.radio-group_theme_alfa-on-white > .button:first-child,
+        .control-group.radio-group_theme_alfa-on-white > :first-child .button {
+            border-left-color: rgba(0, 0, 0, .3);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:first-child.button_hovered, .control-group.checkbox-group_theme_alfa-on-white > :first-child .button.button_hovered, .control-group.radio-group_theme_alfa-on-white > .button:first-child.button_hovered, .control-group.radio-group_theme_alfa-on-white > :first-child .button.button_hovered {
+                border-right-color: rgba(0, 0, 0, .9);
+                border-left-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_hovered, .control-group.radio-group_theme_alfa-on-white .button_hovered {
+            border-color: rgba(0, 0, 0, .9);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_checked.button_hovered, .control-group.radio-group_theme_alfa-on-white .button_checked.button_hovered {
+            border-color: rgba(0, 0, 0, .9);
+            background-color: rgba(0, 0, 0, .25);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_focused, .control-group.radio-group_theme_alfa-on-white .button_focused {
+            border-color: rgba(0, 0, 0, .9);
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
+                    box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_checked.button_focused, .control-group.radio-group_theme_alfa-on-white .button_checked.button_focused {
+            border-color: rgba(0, 0, 0, .9);
+            -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
+                    box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white .button {
+            border-left-color: rgba(0, 0, 0, .15);
+            border-right-color: rgba(0, 0, 0, .15);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white .button.button_hovered {
+                border-right-color: rgba(0, 0, 0, .9);
+                border-left-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white .button.button_focused {
+                border-left-color: rgba(0, 0, 0, .9);
+                border-right-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:first-child,
+        .control-group.checkbox-group_theme_alfa-on-white > :first-child .button {
+            border-left-color: rgba(0, 0, 0, .3);
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:first-child.button_hovered, .control-group.checkbox-group_theme_alfa-on-white > :first-child .button.button_hovered {
+                border-left-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:first-child.button_disabled, .control-group.checkbox-group_theme_alfa-on-white > :first-child .button.button_disabled {
+                border-left-color: transparent;
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:first-child.button_focused, .control-group.checkbox-group_theme_alfa-on-white > :first-child .button.button_focused {
+                border-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button:last-child.button_disabled, .control-group.checkbox-group_theme_alfa-on-white > :last-child .button.button_disabled {
+                border-right-color: transparent;
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_checked {
+            background-color: rgba(0, 0, 0, .15);
+            border-color: transparent;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button_checked:last-child,
+        .control-group.checkbox-group_theme_alfa-on-white > :last-child .button_checked {
+            border-color: transparent;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button_checked:last-child.button_hovered, .control-group.checkbox-group_theme_alfa-on-white > :last-child .button_checked.button_hovered {
+                border-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button_checked:first-child,
+        .control-group.checkbox-group_theme_alfa-on-white > :first-child .button_checked {
+            border-color: transparent;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white > .button_checked:first-child.button_hovered, .control-group.checkbox-group_theme_alfa-on-white > :first-child .button_checked.button_hovered {
+                border-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_focused {
+            background-color: transparent;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-white .button_focused.button_checked {
+                background-color: rgba(0, 0, 0, .15);
+            }
+
+.control-group.radio-group_theme_alfa-on-white .button {
+            border-left-color: rgba(0, 0, 0, .15);
+            border-right-color: rgba(0, 0, 0, .15);
+        }
+
+.control-group.radio-group_theme_alfa-on-white .button.button_hovered, .control-group.radio-group_theme_alfa-on-white .button.button_focused {
+                border-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.radio-group_theme_alfa-on-white .button_checked {
+            background-color: rgba(0, 0, 0, .15);
+            border-color: rgba(0, 0, 0, .15);
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+
+.control-group.radio-group_theme_alfa-on-white > .button_checked:last-child,
+        .control-group.radio-group_theme_alfa-on-white > :last-child .button_checked {
+            border-right-color: rgba(0, 0, 0, .15);
+        }
+
+.control-group.radio-group_theme_alfa-on-white > .button_checked:last-child.button_hovered, .control-group.radio-group_theme_alfa-on-white > :last-child .button_checked.button_hovered {
+                border-right-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.radio-group_theme_alfa-on-white > .button_checked:last-child.button_focused, .control-group.radio-group_theme_alfa-on-white > :last-child .button_checked.button_focused {
+                border-right-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.radio-group_theme_alfa-on-white > .button_disabled:last-child,
+        .control-group.radio-group_theme_alfa-on-white > :last-child .button_disabled {
+            border-right-color: transparent;
+        }
+
+.control-group.radio-group_theme_alfa-on-white > .button_checked:first-child,
+        .control-group.radio-group_theme_alfa-on-white > :first-child .button_checked {
+            border-left-color: rgba(0, 0, 0, .15);
+        }
+
+.control-group.radio-group_theme_alfa-on-white > .button_checked:first-child.button_hovered, .control-group.radio-group_theme_alfa-on-white > :first-child .button_checked.button_hovered {
+                border-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.radio-group_theme_alfa-on-white > .button_checked:first-child.button_focused, .control-group.radio-group_theme_alfa-on-white > :first-child .button_checked.button_focused {
+                border-left-color: rgba(0, 0, 0, .9);
+            }
+
+.control-group.radio-group_theme_alfa-on-white > .button_disabled:first-child,
+        .control-group.radio-group_theme_alfa-on-white > :first-child .button_disabled {
+            border-left-color: transparent;
+        }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid .button {
+                border-left-color: rgba(248, 96, 101, .4);
+                border-right-color: rgba(248, 96, 101, .4);
+            }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid .button.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid .button.button_focused {
+                    border-color: rgba(0, 0, 0, .9);
+                }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid .button.button_checked.button_hovered {
+                        background-color: rgba(0, 0, 0, .25);
+                    }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:first-child,
+            .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :first-child .button {
+                border-left-color: rgba(248, 96, 101, .85);
+            }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:first-child.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:first-child.button_focused, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :first-child .button.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :first-child .button.button_focused {
+                    border-right-color: rgba(0, 0, 0, .9);
+                    border-left-color: rgba(0, 0, 0, .9);
+                }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:first-child.button_checked, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :first-child .button.button_checked {
+                    border-left-color: rgba(0, 0, 0, .15);
+                }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:first-child.button_checked.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:first-child.button_checked.button_focused, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :first-child .button.button_checked.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :first-child .button.button_checked.button_focused {
+                        border-left-color: rgba(0, 0, 0, .9);
+                    }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:last-of-type,
+            .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :last-of-type .button {
+                border-right-color: rgba(248, 96, 101, .85);
+            }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:last-of-type.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:last-of-type.button_focused, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :last-of-type .button.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :last-of-type .button.button_focused {
+                    border-right-color: rgba(0, 0, 0, .9);
+                    border-left-color: rgba(0, 0, 0, .9);
+                }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:last-of-type.button_checked, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :last-of-type .button.button_checked {
+                    border-right-color: rgba(0, 0, 0, .15);
+                }
+
+.control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:last-of-type.button_checked.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > .button:last-of-type.button_checked.button_focused, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :last-of-type .button.button_checked.button_hovered, .control-group.radio-group_theme_alfa-on-white.radio-group_invalid > :last-of-type .button.button_checked.button_focused {
+                        border-right-color: rgba(0, 0, 0, .9);
+                    }
+
+/*# sourceMappingURL=button_theme_alfa-on-white.css.map */

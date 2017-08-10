@@ -1,0 +1,198 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.button {
+    font-family: 'Roboto', sans-serif;
+
+    position: relative;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+
+    -webkit-user-select: none;
+
+       -moz-user-select: none;
+
+        -ms-user-select: none;
+
+            user-select: none;
+
+    border-radius: 4px;
+
+    outline: 0;
+
+    text-align: center;
+    white-space: nowrap;
+
+    -webkit-transition: all 200ms ease;
+
+    transition: all 200ms ease;
+
+    cursor: pointer;
+}
+
+.button + .button {
+        margin-left: 10px;
+    }
+
+.button::-moz-focus-inner {
+        padding: 0;
+
+        border: 0;
+    }
+
+.button__text {
+        position: relative;
+        display: inline-block;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: top;
+
+        font-weight: 300;
+    }
+
+.button__icon {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        padding-right: 10px;
+    }
+
+.button_width_available {
+        width: 100%;
+    }
+
+.button_type_link {
+        text-decoration: none;
+    }
+
+.button_focused {
+        z-index: 1;
+    }
+
+.button_disabled {
+        cursor: default;
+        pointer-events: none;
+    }
+
+.button_disabled .button__icon {
+        opacity: .25;
+    }
+
+.button_view_action .button__text,
+    .button_view_extra .button__text,
+    .button_view_other .button__text {
+        font-weight: 500;
+    }
+
+.button > :last-child {
+        padding-right: 0;
+    }
+
+.button_size_s {
+        min-height: 30px;
+        padding: 0 15px;
+        font-size: 13px;
+        line-height: 28px;
+    }
+
+.button_size_s .button__icon {
+        margin-left: -4px;
+    }
+
+.button_size_m {
+        min-height: 40px;
+        padding: 0 20px;
+        font-size: 16px;
+        line-height: 38px;
+    }
+
+.button_size_m .button__icon {
+        margin-left: -8px;
+    }
+
+.button_size_l {
+        min-height: 50px;
+        padding: 0 25px;
+        font-size: 18px;
+        line-height: 48px;
+    }
+
+.button_size_l .button__icon {
+        margin-left: -12px;
+        min-width: 2px;
+    }
+
+.button_size_xl {
+        min-height: 60px;
+        padding: 0 30px;
+        font-size: 22px;
+        line-height: 58px;
+    }
+
+.button_size_xl .button__icon {
+        margin-left: -16px;
+        min-width: 6px;
+    }
+
+.control-group .button {
+        position: relative;
+        border-radius: 0;
+    }
+
+.control-group > .button:first-of-type,
+    .control-group > :first-of-type .button {
+        border-radius: 4px 0 0 4px;
+    }
+
+.control-group > .button:last-of-type,
+    .control-group > :last-of-type .button {
+        border-radius: 0 4px 4px 0;
+    }
+
+.control-group > :only-child .button {
+        border-radius: 4px;
+    }
+
+.control-group.checkbox-group_theme_alfa-on-color,
+    .control-group.checkbox-group_theme_alfa-on-white,
+    .control-group.radio-group_theme_alfa-on-color,
+    .control-group.radio-group_theme_alfa-on-white {
+        outline: none;
+    }
+
+.control-group.checkbox-group_theme_alfa-on-color .button, .control-group.checkbox-group_theme_alfa-on-white .button, .control-group.radio-group_theme_alfa-on-color .button, .control-group.radio-group_theme_alfa-on-white .button {
+            margin-right: -1px;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-color .button__text, .control-group.checkbox-group_theme_alfa-on-white .button__text, .control-group.radio-group_theme_alfa-on-color .button__text, .control-group.radio-group_theme_alfa-on-white .button__text {
+            font-weight: 300;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-color .button_checked, .control-group.checkbox-group_theme_alfa-on-white .button_checked, .control-group.radio-group_theme_alfa-on-color .button_checked, .control-group.radio-group_theme_alfa-on-white .button_checked {
+            z-index: 1;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-color .button_focused, .control-group.checkbox-group_theme_alfa-on-white .button_focused, .control-group.radio-group_theme_alfa-on-color .button_focused, .control-group.radio-group_theme_alfa-on-white .button_focused {
+            z-index: 2;
+        }
+
+.control-group.checkbox-group_theme_alfa-on-color .button_hovered, .control-group.checkbox-group_theme_alfa-on-white .button_hovered, .control-group.radio-group_theme_alfa-on-color .button_hovered, .control-group.radio-group_theme_alfa-on-white .button_hovered {
+            z-index: 3;
+        }
+
+.control-group:not(.control-group_invalid) .checkbox-group_theme_alfa-on-color .button, .control-group:not(.control-group_invalid) .checkbox-group_theme_alfa-on-white .button, .control-group:not(.control-group_invalid) .radio-group_theme_alfa-on-color .button, .control-group:not(.control-group_invalid) .radio-group_theme_alfa-on-white .button {
+                border-right-color: transparent;
+            }
+
+.control-group_invalid .button {
+        border-color: rgba(248, 96, 101, .85);
+    }
+
+/*# sourceMappingURL=button.css.map */

@@ -1,3 +1,13 @@
+<a name="9.1.4"></a>
+## [9.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.3...v9.1.4) (2017-08-10)
+
+
+### Bug Fixes
+
+* **input-autocomplete:** turn off autocomplete ([#208](https://github.com/alfa-laboratory/arui-feather/issues/208)) ([76834b8](https://github.com/alfa-laboratory/arui-feather/commit/76834b8))
+
+
+
 <a name="9.1.3"></a>
 ## [9.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.2...v9.1.3) (2017-08-09)
 

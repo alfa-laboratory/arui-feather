@@ -47,7 +47,7 @@ class PopupDemo extends React.Component {
                         size='s'
                         onClick={ () => { this.setState({ popup1: !this.state.popup1 }); } }
                     >
-                        Click me
+                        Перейти на тариф
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup1 = popup; } }
@@ -56,7 +56,7 @@ class PopupDemo extends React.Component {
                         type='tooltip'
                         visible={ this.state.popup1 }
                     >
-                        Popup on top or bottom
+                        Переход на этот тариф бесплатен
                     </Popup>
                 </div>
                 <div className='row'>
@@ -66,7 +66,7 @@ class PopupDemo extends React.Component {
                         onMouseEnter={ () => { this.setState({ popup2: true }); } }
                         onMouseLeave={ () => { this.setState({ popup2: false }); } }
                     >
-                        Hover me
+                        Сколько стоит?
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup2 = popup; } }
@@ -78,7 +78,7 @@ class PopupDemo extends React.Component {
                         onMouseLeave={ () => { this.setState({ popup2: false }); } }
                         onMouseEnter={ () => { this.setState({ popup2: true }); } }
                     >
-                        Popup
+                        2 400 ₽ в месяц при оплате за год 
                     </Popup>
                 </div>
                 <div className='row'>
@@ -88,7 +88,7 @@ class PopupDemo extends React.Component {
                         onMouseEnter={ () => { this.setState({ popup3: true }); } }
                         onMouseLeave={ () => { this.setState({ popup3: false }); } }
                     >
-                        Hover me
+                        Облачные бухгалтерии
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup3 = popup; } }
@@ -97,7 +97,12 @@ class PopupDemo extends React.Component {
                         onMouseLeave={ () => { this.setState({ popup3: false }); } }
                         onMouseEnter={ () => { this.setState({ popup3: true }); } }
                     >
-                        Popup with available height
+<p>
+В настоящий момент в системе «Альфа-Бизнес Онлайн» реализована интеграция с облачными бухгалтериями <a class="menu" href="http://www.moedelo.org">«Мое дело»</a>, <a class="menu" href="http://www.e-kontur.ru">«Бухгалтерия.Контур»</a> и <a class="menu" href="http://www.b2b-center.ru/">«B2B-Center»</a>. При подключении интеграции в Альфа-Бизнес Онлайн у сервисов «Мое дело», «Бухгалтерия.Контур», «B2B-Center» появится возможность автоматически создавать в Альфа-Бизнес Онлайн неподписанные платежные поручения и подгружать из «Альфа-Бизнес Онлайн» информацию о движениях по счетам. </p>
+<p>
+Уполномоченное лицо может подключить один аккаунт сервиса «Бухгалтерия.Контур» и (или) один аккаунт сервиса «Мое дело» только к одному Клиенту.</p>
+<p>
+Подключить интеграцию с сервисом «Бухгалтерия.Контур» в Настройках. Для этого нажмите на ссылку «Настройки» в правом верхнем углу страницы и на открывшейся странице нажмите на ссылку или на пиктограмму «Услуги партнеров Альфа-Банка»</p>
                     </Popup>
                 </div>
                 <div className='row'>
@@ -107,7 +112,7 @@ class PopupDemo extends React.Component {
                         onMouseEnter={ () => { this.setState({ popup4: true }); } }
                         onMouseLeave={ () => { this.setState({ popup4: false }); } }
                     >
-                        Hover me
+                        Облачные бухгалтерии
                     </Button>
                     <Popup
                         ref={ (ref) => { this.popup4 = ref; } }
@@ -117,7 +122,12 @@ class PopupDemo extends React.Component {
                         onMouseLeave={ () => { this.setState({ popup4: false }); } }
                         onMouseEnter={ () => { this.setState({ popup4: true }); } }
                     >
-                        Popup with available height
+<p>
+В настоящий момент в системе «Альфа-Бизнес Онлайн» реализована интеграция с облачными бухгалтериями <a class="menu" href="http://www.moedelo.org">«Мое дело»</a>, <a class="menu" href="http://www.e-kontur.ru">«Бухгалтерия.Контур»</a> и <a class="menu" href="http://www.b2b-center.ru/">«B2B-Center»</a>. При подключении интеграции в Альфа-Бизнес Онлайн у сервисов «Мое дело», «Бухгалтерия.Контур», «B2B-Center» появится возможность автоматически создавать в Альфа-Бизнес Онлайн неподписанные платежные поручения и подгружать из «Альфа-Бизнес Онлайн» информацию о движениях по счетам. </p>
+<p>
+Уполномоченное лицо может подключить один аккаунт сервиса «Бухгалтерия.Контур» и (или) один аккаунт сервиса «Мое дело» только к одному Клиенту.</p>
+<p>
+Подключить интеграцию с сервисом «Бухгалтерия.Контур» в Настройках. Для этого нажмите на ссылку «Настройки» в правом верхнем углу страницы и на открывшейся странице нажмите на ссылку или на пиктограмму «Услуги партнеров Альфа-Банка»</p>
                     </Popup>
                 </div>
                 <div className='row'>
@@ -126,7 +136,7 @@ class PopupDemo extends React.Component {
                         size='m'
                         onClick={ () => { this.setState({ popup5: !this.state.popup5 }); } }
                     >
-                        Click me
+                        Сколько стоит?
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup5 = popup; } }
@@ -134,7 +144,7 @@ class PopupDemo extends React.Component {
                         visible={ this.state.popup5 }
                         onClickOutside={ () => { this.setState({ popup5: false }); } }
                     >
-                        { 'Popup with autoclosable="true"' }
+                        { '2 400 ₽ в месяц при оплате за год' }
                     </Popup>
                 </div>
                 <div className='row'>
@@ -143,20 +153,25 @@ class PopupDemo extends React.Component {
                         size='m'
                         onClick={ () => { this.setState({ popup6: !this.state.popup6 }); } }
                     >
-                        Click me
+                        Облачные бухгалтерии
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup6 = popup; } }
                         target='screen'
                         visible={ this.state.popup6 }
                     >
-                        <p>Popup with target screen</p>
+                        <p>
+В настоящий момент в системе «Альфа-Бизнес Онлайн» реализована интеграция с облачными бухгалтериями <a class="menu" href="http://www.moedelo.org">«Мое дело»</a>, <a class="menu" href="http://www.e-kontur.ru">«Бухгалтерия.Контур»</a> и <a class="menu" href="http://www.b2b-center.ru/">«B2B-Center»</a>. При подключении интеграции в Альфа-Бизнес Онлайн у сервисов «Мое дело», «Бухгалтерия.Контур», «B2B-Center» появится возможность автоматически создавать в Альфа-Бизнес Онлайн неподписанные платежные поручения и подгружать из «Альфа-Бизнес Онлайн» информацию о движениях по счетам. </p>
+<p>
+Уполномоченное лицо может подключить один аккаунт сервиса «Бухгалтерия.Контур» и (или) один аккаунт сервиса «Мое дело» только к одному Клиенту.</p>
+<p>
+Подключить интеграцию с сервисом «Бухгалтерия.Контур» в Настройках. Для этого нажмите на ссылку «Настройки» в правом верхнем углу страницы и на открывшейся странице нажмите на ссылку или на пиктограмму «Услуги партнеров Альфа-Банка»</p>
                         <p>
                             <Button
                                 size='m'
                                 onClick={ () => { this.setState({ popup6: false }); } }
                             >
-                                Close
+                                Ясно
                             </Button>
                         </p>
                     </Popup>
@@ -167,18 +182,18 @@ class PopupDemo extends React.Component {
                         size='m'
                         onClick={ () => { this.setState({ popup7: !this.state.popup7 }); } }
                     >
-                        Click me
+                        Сколько стоит
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup7 = popup; } }
                         autoclosable={ true }
                         visible={ this.state.popup7 }
                         header={
-                            <Heading size='xs'>Popup Header</Heading>
+                            <Heading size='xs'>При оплате за год</Heading>
                         }
                         onClickOutside={ () => { this.setState({ popup7: false }); } }
                     >
-                        { 'Popup with header' }
+                        { '2 400 ₽ в месяц' }
                     </Popup>
                 </div>
             </div>

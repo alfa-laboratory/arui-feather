@@ -14,7 +14,7 @@ const layoutStyle = {
                 }
                 size={ size }
             >
-                Кнопка
+                Документы загружаются...
             </Button>
         </span>
     ))}

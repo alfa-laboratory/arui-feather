@@ -7,7 +7,7 @@ const radioStyle = {
         {['m', 'l'].map(size => (
             <span style={ radioStyle } >
                 <Radio
-                    text='Радио'
+                    text='Текущий счёт'
                     size={ size }
                 />
             </span>
@@ -17,7 +17,7 @@ const radioStyle = {
         {['m', 'l'].map(size => (
             <span style={ radioStyle } >
                 <Radio
-                    text='Радио'
+                    text='Основной счёт'
                     size={ size }
                     error={ true }
                 />
@@ -28,7 +28,7 @@ const radioStyle = {
         {['m', 'l'].map(size => (
             <span style={ radioStyle } >
                 <Radio
-                    text='Радио'
+                    text='Семейный счёт'
                     size={ size }
                     disabled={ true }
                 />
@@ -39,7 +39,7 @@ const radioStyle = {
         {['s', 'm', 'l', 'xl'].map(size => (
             <span style={ radioStyle } >
                 <Radio
-                    text='Радио'
+                    text='Текущий счёт'
                     size={ size }
                     type='button'
                 />
@@ -50,7 +50,7 @@ const radioStyle = {
         {['s', 'm', 'l', 'xl'].map(size => (
             <span style={ radioStyle } >
                 <Radio
-                    text='Радио'
+                    text='Семейный счёт'
                     size={ size }
                     type='button'
                     disabled={ true }

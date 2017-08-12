@@ -273,6 +273,7 @@ class Attach extends React.Component {
 
     @autobind
     handleClearClick() {
+        this.input.value = '';
         this.performChange([]);
     }
 

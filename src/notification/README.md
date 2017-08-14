@@ -5,17 +5,17 @@ initialState = {
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Нажми на меня!
+        Отправить платёж
     </Button>
     <Notification
         visible={ state.visible }
         status='ok'
         offset={ 10 }
-        title={ 'Message title' }
+        title={ 'Платёж отправлен' }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Я слева!
+        Платёж на сумму 150 000 ₽ для ИП Фридман М.М. отправлен
     </Notification>
 </div>
 ```
@@ -27,18 +27,18 @@ initialState = {
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Нажми на меня!
+        Отправить платёж
     </Button>
     <Notification
         visible={ state.visible }
         status='fail'
         offset={ 100 }
         stickTo='right'
-        title={ 'Message title' }
+        title={ 'Платёж отправлен' }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Я справа
+        Платёж на сумму 150 000 ₽ для ИП Фридман М.М. отправлен
     </Notification>
 </div>
 ```
@@ -50,18 +50,18 @@ initialState = {
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Нажми на меня!
+        Повторить платёж
     </Button>
     <Notification
         visible={ state.visible }
         status='error'
         offset={ 190 }
         stickTo='right'
-        title={ 'Message title' }
+        title={ 'Недостаточно средств' }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Все очень плохо!
+        Не хватает 9 ₽, чтобы отправить платёж на сумму 150 000 ₽ для ИП Фридман М.М.
     </Notification>
 </div>
 ```
@@ -73,18 +73,18 @@ initialState = {
 };
 <div>
     <Button onClick={ () => setState({ visible: !state.visible }) }>
-        Нажми на меня!
+        Отправить позже
     </Button>
     <Notification
         visible={ state.visible }
         status='ok'
         offset={ 30 }
-        title={ 'Message title' }
-        icon={ <Icon icon='search' size='m' /> }
+        title={ 'Платёж запланирован' }
+        icon={ <Icon icon='calendar' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
-        Ничего не найдено, попробуйте повторить поиск
+        Платёж будет отправлен 31 февраля 2018 года
     </Notification>
 </div>
 ```

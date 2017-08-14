@@ -15,7 +15,7 @@
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <CalendarInput size={ size } defaultValue='41.12.2031' error='Что-то пошло не так' />
+            <CalendarInput size={ size } defaultValue='41.12.2031' error='Такой даты не существует' />
         </div>
     ))}
 </div>

@@ -1,9 +1,9 @@
 Режим "radio"
 ```jsx
 const options = [
-    { value: 'Vkontakte', text: 'Vkontakte' },
-    { value: 'Facebook', text: 'Facebook' },
-    { value: 'Twitter', text: 'Twitter' }
+    { value: '01', text: 'ИП Фридман М.М.' },
+    { value: '02', text: 'ООО «Виктори»' },
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
 <div>
     {['s'].map(size => (
@@ -31,9 +31,9 @@ const options = [
 Режим "check"
 ```jsx
 const options = [
-    { value: 'Vkontakte', text: 'Vkontakte' },
-    { value: 'Facebook', text: 'Facebook' },
-    { value: 'Twitter', text: 'Twitter' }
+    { value: '01', text: 'ИП Фридман М.М.' },
+    { value: '02', text: 'ООО «Виктори»' },
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
 <div>
     {['m'].map(size => (
@@ -61,9 +61,9 @@ const options = [
 Режим "radio-check"
 ```jsx
 const options = [
-    { value: 'Vkontakte', text: 'Vkontakte' },
-    { value: 'Facebook', text: 'Facebook' },
-    { value: 'Twitter', text: 'Twitter' }
+    { value: '01', text: 'ИП Фридман М.М.' },
+    { value: '02', text: 'ООО «Виктори»' },
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
 <div>
     {['xl'].map(size => (
@@ -91,12 +91,12 @@ const options = [
 Select с тянущейся шириной
 ```jsx
 const options = [
-    { value: '1', text: 'i saw the ghost of lena zavaroni' },
-    { value: '2', text: 'vanilla strawberry knickbocker glory' },
-    { value: '3', text: 'hans christian andersen plays musical statues' },
-    { value: '4', text: 'to don\'t take it out on this world by adams apples' },
-    { value: '5', text: 'sprinkling hundreds and thousands on a knickerbocker glory' },
-    { value: '6', text: 'i saw the ghost of lena zavaroni' }
+    { value: '1', text: 'ФГУП НПП ВНИИЭМ им. Андроника Гевондовича Иосифьяна' },
+    { value: '2', text: 'Муниципальное образовательное учреждение дополнительного образования детей специализированная детско-юношеская спортивная школа олимпийского резерва по боксу' },
+    { value: '3', text: 'Федеральное государственное учреждение Ивановский научно-исследовательский институт материнства и детства имени Виктора Николаевича Городкова' },
+    { value: '4', text: 'ООО «Брянсеметаллстройтехкомплект»' },
+    { value: '5', text: 'ГОУ ДПО БелРИПКППС' },
+    { value: '6', text: 'ООО «Абсолютная власть»' }
 ];
 <div>
     {['l'].map(size => (
@@ -126,56 +126,41 @@ const options = [
 Без фолбэка на нативный контрол на мобильном устройстве
 ```jsx
 const options = [
-    { value: '00', text: 'Vkontakte' },
-    { value: '01', text: 'Facebook' },
-    { value: '02', text: 'Twitter' },
-    { value: '03', text: 'Vkontakte' },
-    { value: '04', text: 'Facebook' },
-    { value: '05', text: 'Twitter' },
-    { value: '06', text: 'Vkontakte' },
-    { value: '07', text: 'Facebook' },
-    { value: '08', text: 'Twitter' },
-    { value: '09', text: 'Vkontakte' },
-    { value: '10', text: 'Facebook' },
-    { value: '11', text: 'Twitter' },
-    { value: '12', text: 'Vkontakte' },
-    { value: '13', text: 'Facebook' },
-    { value: '14', text: 'Twitter' },
-    { value: '15', text: 'Vkontakte' },
-    { value: '16', text: 'Facebook' },
-    { value: '17', text: 'Twitter' },
-    { value: '18', text: 'Vkontakte' },
-    { value: '19', text: 'Facebook' },
-    { value: '20', text: 'Twitter' },
-    { value: '21', text: 'Vkontakte' },
-    { value: '22', text: 'Facebook' },
-    { value: '23', text: 'Twitter' },
-    { value: '24', text: 'Vkontakte' },
-    { value: '25', text: 'Facebook' },
-    { value: '26', text: 'Twitter' },
-    { value: '27', text: 'Vkontakte' },
-    { value: '28', text: 'Facebook' },
-    { value: '29', text: 'Twitter' },
-    { value: '30', text: 'Vkontakte' },
-    { value: '31', text: 'Facebook' },
-    { value: '32', text: 'Twitter' },
-    { value: '33', text: 'Vkontakte' },
-    { value: '34', text: 'Facebook' },
-    { value: '35', text: 'Twitter' },
-    { value: '36', text: 'Vkontakte' },
-    { value: '37', text: 'Facebook' },
-    { value: '38', text: 'Twitter' },
-    { value: '39', text: 'Vkontakte' },
-    { value: '40', text: 'Facebook' },
-    { value: '41', text: 'Twitter' },
-    { value: '42', text: 'Vkontakte' },
-    { value: '43', text: 'Facebook' },
-    { value: '44', text: 'Twitter' },
-    { value: '45', text: 'Vkontakte' },
-    { value: '46', text: 'Facebook' },
-    { value: '47', text: 'Twitter' },
-    { value: '48', text: 'Vkontakte' },
-    { value: '49', text: 'Facebook' }
+    { value: '00', text: 'ИП Фридман М.М.' },
+    { value: '01', text: 'ООО «Виктори»' },
+    { value: '02', text: 'ФГУП НПП ВНИИЭМ' },
+    { value: '03', text: 'ООО «Абсолютная власть»' },
+    { value: '04', text: 'ГОУ ДПО БелРИПКППС' },
+    { value: '05', text: 'ООО «Здравый смысл»' },
+    { value: '06', text: 'ООО «Владимирский Централ»' },
+    { value: '07', text: 'ЗАО «Вам и не снилось»' },
+    { value: '08', text: 'ООО «Лучше наличными»' },
+    { value: '09', text: 'ООО «Какие Люди»' },
+    { value: '10', text: 'ООО «Ы»' },
+    { value: '11', text: 'ООО «Ооо»' },
+    { value: '12', text: 'ООО Банк «Прохладный»' },
+    { value: '13', text: 'ООО «Хомячки»' },
+    { value: '14', text: 'ИП Фридман М.М.' },
+    { value: '16', text: 'ООО «Виктори»' },
+    { value: '17', text: 'ФГУП НПП ВНИИЭМ' },
+    { value: '18', text: 'ООО «Паньки»' },
+    { value: '19', text: 'ЗАО «Хотя нет»' },
+    { value: '20', text: 'ООО «Какой большой!»' },
+    { value: '21', text: 'ООО «ДАА»' },
+    { value: '22', text: 'ИП Фридман М.М.' },
+    { value: '23', text: 'ООО «Какие Люди»' },
+    { value: '24', text: 'ООО «Лучше наличными»' },
+    { value: '25', text: 'ГОУ ДПО БелРИПКППС' },
+    { value: '26', text: 'ООО Банк «Прохладный»' },
+    { value: '27', text: 'ГОУ ДПО БелРИПКППС' },
+    { value: '28', text: 'ЗАО «Вам и не снилось»' },
+    { value: '29', text: 'ООО «Виктори»' },
+    { value: '30', text: 'ФГУП НПП ВНИИЭМ' },
+    { value: '31', text: 'ООО «Хомячки»' },
+    { value: '32', text: 'ООО «Владимирский Централ»' },
+    { value: '33', text: 'ООО «Какие Люди»' },
+    { value: '34', text: 'ООО «Здравый смысл»' },
+    { value: '35', text: 'ООО «Ооо»' },
 ];
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (

@@ -95,11 +95,21 @@ describe('link', () => {
         expect(link.node).to.have.class('link_disabled');
     });
 
-    it('it renders span tag and valid attributes when checked=true', () => {
+    it('should render span tag with valid attributes when checked=true', () => {
         let link = render(<Link checked={ true }>Link-example</Link>);
         let node = link.instance.getNode();
 
         expect(node).to.have.class('link_checked');
+        expect(node.tagName).to.equal('SPAN');
+        expect(node).to.not.have.attr('target');
+        expect(node).to.not.have.attr('href');
+    });
+
+    it('should render span tag with valid attributes when disabled=true', () => {
+        let link = render(<Link disabled={ true }>Link-example</Link>);
+        let node = link.instance.getNode();
+
+        expect(node).to.have.class('link_disabled');
         expect(node.tagName).to.equal('SPAN');
         expect(node).to.not.have.attr('target');
         expect(node).to.not.have.attr('href');

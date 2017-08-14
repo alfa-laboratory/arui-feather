@@ -69,7 +69,7 @@ class Link extends React.Component {
     root;
 
     render(cn) {
-        let linkElement = this.props.checked ? 'span' : 'a';
+        let linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
 
         let linkProps = {
             ref: (root) => { this.root = root; },
@@ -89,7 +89,7 @@ class Link extends React.Component {
             onMouseLeave: this.handleMouseLeave
         };
 
-        if (!this.props.checked) {
+        if (!this.props.checked && !this.props.disabled) {
             linkProps.href = this.props.url;
             linkProps.target = this.props.target;
         }

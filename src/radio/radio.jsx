@@ -202,7 +202,9 @@ class Radio extends React.Component {
             this.setState({ focused: true });
         }
 
-        event.target.value = this.props.value;
+        if (this.props.type !== 'button') {
+            event.target.value = this.props.value;
+        }
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
@@ -215,7 +217,9 @@ class Radio extends React.Component {
             this.setState({ focused: false });
         }
 
-        event.target.value = this.props.value;
+        if (this.props.type !== 'button') {
+            event.target.value = this.props.value;
+        }
 
         if (this.props.onBlur) {
             this.props.onBlur(event);

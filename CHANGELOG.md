@@ -1,3 +1,13 @@
+<a name="9.2.0"></a>
+# [9.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.2.0) (2017-08-14)
+
+
+### Bug Fixes
+
+* allow to select, remove, and select file again ([#213](https://github.com/alfa-laboratory/arui-feather/issues/213)) ([89a1d7c](https://github.com/alfa-laboratory/arui-feather/commit/89a1d7c))
+
+
+
 <a name="9.1.4"></a>
 ## [9.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.3...v9.1.4) (2017-08-10)
 

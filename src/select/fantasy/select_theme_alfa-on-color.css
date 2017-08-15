@@ -19,12 +19,12 @@
     .select-button {
         color: var(--color-content-alfa-on-color);
         background: transparent;
-        border-bottom-color: rgba(255, 255, 255, .4);
+        border-bottom-color: var(--color-border-control-alfa-on-color);
         border-bottom-style: solid;
         border-bottom-width: 1px;
 
         &_hovered {
-            border-bottom-color: var(--color-content-alfa-on-color);
+            border-bottom-color: var(--color-border-control-hovered-alfa-on-color);
         }
 
         &_focused {
@@ -38,11 +38,11 @@
         }
 
         &_pressed {
-            border-bottom-color: var(--color-content-alfa-on-color);
+            border-bottom-color: var(--color-border-control-pressed-alfa-on-color);
         }
 
         &_disabled {
-            border-bottom-color: rgba(255, 255, 255, .2);
+            border-bottom-color: var(--color-border-control-disabled-alfa-on-color);
             border-bottom-style: dotted;
         }
     }

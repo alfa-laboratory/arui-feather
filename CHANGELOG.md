@@ -1,3 +1,72 @@
+<a name="9.2.0"></a>
+# [9.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.2.0) (2017-08-14)
+
+
+### Bug Fixes
+
+* allow to select, remove, and select file again ([#213](https://github.com/alfa-laboratory/arui-feather/issues/213)) ([89a1d7c](https://github.com/alfa-laboratory/arui-feather/commit/89a1d7c))
+
+
+
+<a name="9.1.4"></a>
+## [9.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.3...v9.1.4) (2017-08-10)
+
+
+### Bug Fixes
+
+* **input-autocomplete:** turn off autocomplete ([#208](https://github.com/alfa-laboratory/arui-feather/issues/208)) ([76834b8](https://github.com/alfa-laboratory/arui-feather/commit/76834b8))
+
+
+
+<a name="9.1.3"></a>
+## [9.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.2...v9.1.3) (2017-08-09)
+
+
+### Bug Fixes
+
+* fix label, placeholder & error styling in controls ([#206](https://github.com/alfa-laboratory/arui-feather/issues/206)) ([b2c5c6e](https://github.com/alfa-laboratory/arui-feather/commit/b2c5c6e))
+* **arui-demo/components/preview-with-theme-switcher:** paddings fot avoid components slice ([#207](https://github.com/alfa-laboratory/arui-feather/issues/207)) ([fd98b80](https://github.com/alfa-laboratory/arui-feather/commit/fd98b80))
+* **checkbox:** amend indeterminate checkbox's styles in fantasy ([#205](https://github.com/alfa-laboratory/arui-feather/issues/205)) ([e29587f](https://github.com/alfa-laboratory/arui-feather/commit/e29587f))
+
+
+
+<a name="9.1.2"></a>
+## [9.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.1...v9.1.2) (2017-08-08)
+
+
+### Bug Fixes
+
+* **input:** fix invalid input label styles ([#204](https://github.com/alfa-laboratory/arui-feather/issues/204)) ([c097d7f](https://github.com/alfa-laboratory/arui-feather/commit/c097d7f))
+
+
+
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.0...v9.1.1) (2017-08-08)
+
+
+### Bug Fixes
+
+* **input:** fix autofill color for white theme and safari bug when input collapsing ([#199](https://github.com/alfa-laboratory/arui-feather/issues/199)) ([ea2162d](https://github.com/alfa-laboratory/arui-feather/commit/ea2162d))
+
+
+
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.0.0...v9.1.0) (2017-08-07)
+
+
+### Bug Fixes
+
+* **checkbox:** rename fantasy component ([0156187](https://github.com/alfa-laboratory/arui-feather/commit/0156187))
+* **radio:** rename fantasy component ([0eaa653](https://github.com/alfa-laboratory/arui-feather/commit/0eaa653))
+
+
+### Features
+
+* remove black color ([#172](https://github.com/alfa-laboratory/arui-feather/issues/172)) ([4bb2ebc](https://github.com/alfa-laboratory/arui-feather/commit/4bb2ebc))
+* **icon:** add attachment icons ([#166](https://github.com/alfa-laboratory/arui-feather/issues/166)) ([627ba94](https://github.com/alfa-laboratory/arui-feather/commit/627ba94))
+
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v8.4.3...v9.0.0) (2017-08-04)
 

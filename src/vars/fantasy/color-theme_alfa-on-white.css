@@ -54,7 +54,32 @@
     --color-background-control-disabled-alfa-on-white: rgba(10, 30, 50, .08);
 
     /**
+    * Цвет рамки для контролов для `alfa-on-white`.
+    */
+    --color-border-control-alfa-on-white: rgba(10, 30, 50, .4);
+
+    /**
      * Цвет рамки для контролов в фокусе для `alfa-on-white`.
      */
     --color-border-control-focused-alfa-on-white: rgba(10, 30, 50, .9);
+
+    /**
+     * Цвет рамки для контролов при наведении для `alfa-on-color`.
+     */
+    --color-border-control-hovered-alfa-on-white: rgba(10, 30, 50, .9);
+
+    /**
+     * Цвет рамки для нажатых контролов для `alfa-on-color`.
+     */
+    --color-border-control-pressed-alfa-on-white: rgba(10, 30, 50, .9);
+
+    /**
+    * Цвет рамки для выбранных контролов с фоном для `alfa-on-color`.
+    */
+    --color-border-control-checked-alfa-on-white: rgba(10, 30, 50, .5);
+
+    /**
+     * Цвет рамки для неактивных контролов для `alfa-on-color`.
+     */
+    --color-border-control-disabled-alfa-on-white: rgba(10, 30, 50, .2);
 }

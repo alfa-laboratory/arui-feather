@@ -21,6 +21,13 @@
         &::placeholder {
             color: var(--color-content-minor-alfa-on-color);
         }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:after {
+            -webkit-text-fill-color: var(--color-content-alfa-on-color) !important;
+        }
     }
 
     .input__clear {

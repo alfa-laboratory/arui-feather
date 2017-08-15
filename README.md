@@ -78,7 +78,7 @@ import Input from 'arui-feather/input/fantasy'
 
 Запустить демо fantasy
 
-`npm run demo:fantasy`
+`npm run demo-fantasy`
 
 Запустить demo на произвольном порту:
 

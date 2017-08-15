@@ -6,7 +6,7 @@
 
 .input_theme_alfa-on-white {
     .input__box {
-        border-bottom-color: rgba(0, 0, 0, .4);
+        border-bottom-color: var(--color-border-control-alfa-on-white);
         border-bottom-style: solid;
         border-bottom-width: 1px;
     }
@@ -16,6 +16,13 @@
 
         &::placeholder {
             color: var(--color-content-minor-alfa-on-white);
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:after {
+            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
         }
     }
 
@@ -50,7 +57,7 @@
 
     &.input_disabled {
         .input__box {
-            border-bottom-color: rgba(0, 0, 0, .2);
+            border-bottom-color: var(--color-border-control-disabled-alfa-on-white);
             border-bottom-style: dotted;
         }
 
@@ -65,7 +72,6 @@
     }
 
     &.input_invalid {
-        .input__top,
         .input__sub {
             color: var(--color-error);
         }

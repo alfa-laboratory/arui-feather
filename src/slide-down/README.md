@@ -1,6 +1,4 @@
 ```jsx
-const LOREM_IPSUM = require('../vars').LOREM_IPSUM;
-
 function handleSlideDownToggle() {
     setState({ isExpanded: !state.isExpanded });
 }
@@ -16,7 +14,8 @@ initialState = {
     <div className='row' >
         <SlideDown isExpanded={ state.isExpanded }>
             <Paragraph>
-                Узнать сумму платежа по кредиту с ежемесячным погашением равными частями вы можете из графика погашения, предоставленного при оформлении кредита.
+                Узнать сумму платежа по кредиту с ежемесячным погашением равными частями вы
+                можете из графика погашения, предоставленного при оформлении кредита.
             </Paragraph>
         </SlideDown>
     </div>

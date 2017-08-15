@@ -19,6 +19,16 @@ describe('button', () => {
         expect(button.node).to.not.have.class('button_pressed');
     });
 
+    it('should unset pressed class on mouse out', () => {
+        let button = render(<Button>Button-example</Button>);
+
+        simulate(button.node, 'mouseDown');
+        expect(button.node).to.have.class('button_pressed');
+
+        simulate(button.node, 'mouseOut');
+        expect(button.node).to.not.have.class('button_pressed');
+    });
+
     it('should render without problems', () => {
         let button = render(<Button>Button-example</Button>);
 

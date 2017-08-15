@@ -25,7 +25,8 @@
         }
     }
 
-    &.button_pressed {
+    &.button_pressed,
+    &:active {
         background: rgba(10, 30, 50, .05);
         border-color: var(--color-border-control-focused-alfa-on-white);
     }
@@ -40,7 +41,8 @@
             background: rgba(10, 30, 50, .25);
         }
 
-        &.button_pressed {
+        &.button_pressed,
+        &:active {
             background: rgba(10, 30, 50, .3);
         }
 
@@ -63,7 +65,8 @@
             border-color: var(--color-content-alfa-on-white);
         }
 
-        &.button_pressed {
+        &.button_pressed,
+        &:active {
             background: var(--color-accent-alt);
             border-color: var(--color-accent-alt);
         }
@@ -83,7 +86,8 @@
             border-color: var(--color-content-alfa-on-white);
         }
 
-        &.button_pressed {
+        &.button_pressed,
+        &:active {
             background: rgba(64, 51, 174, .85);
             border-color: rgba(64, 51, 174, .85);
         }

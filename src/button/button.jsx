@@ -73,6 +73,8 @@ class Button extends React.Component {
         onMouseDown: Type.func,
         /** Обработчик события отжатия кнопки мыши в момент */
         onMouseUp: Type.func,
+        /** Обработчик события отведения курсора с кнопки */
+        onMouseOut: Type.func,
         /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
         onKeyDown: Type.func,
         /** Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
@@ -136,6 +138,7 @@ class Button extends React.Component {
             onMouseLeave: this.handleMouseLeave,
             onMouseDown: this.handleMouseDown,
             onMouseUp: this.handleMouseUp,
+            onMouseOut: this.handleMouseOut,
             onKeyDown: this.handleKeyDown,
             onKeyUp: this.handleKeyUp
         };
@@ -228,6 +231,17 @@ class Button extends React.Component {
 
         if (this.props.onMouseUp) {
             this.props.onMouseUp(event);
+        }
+    }
+
+    @autobind
+    handleMouseOut(event) {
+        if (!this.props.disabled) {
+            this.setState({ pressed: false });
+        }
+
+        if (this.props.onMouseOut) {
+            this.props.onMouseOut(event);
         }
     }
 

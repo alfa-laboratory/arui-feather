@@ -228,7 +228,7 @@
         display: none;
     }
 
-    .input__control {
+    .input_has-value {
         &::placeholder {
             opacity: var(--opacity-minor);
         }

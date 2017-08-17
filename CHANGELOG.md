@@ -1,3 +1,22 @@
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.3.0) (2017-08-17)
+
+
+### Bug Fixes
+
+* allow to select, remove, and select file again ([#213](https://github.com/alfa-laboratory/arui-feather/issues/213)) ([89a1d7c](https://github.com/alfa-laboratory/arui-feather/commit/89a1d7c))
+* **button:** remove pressed style on mouse out ([#210](https://github.com/alfa-laboratory/arui-feather/issues/210)) ([48bba2b](https://github.com/alfa-laboratory/arui-feather/commit/48bba2b))
+* **input:** label styles for disabled input ([#216](https://github.com/alfa-laboratory/arui-feather/issues/216)) ([8fa7e75](https://github.com/alfa-laboratory/arui-feather/commit/8fa7e75))
+* **radio:** fix value attribute on button tag ([#214](https://github.com/alfa-laboratory/arui-feather/issues/214)) ([64daa46](https://github.com/alfa-laboratory/arui-feather/commit/64daa46))
+
+
+### Features
+
+* **link:** change tag for disabled link ([#211](https://github.com/alfa-laboratory/arui-feather/issues/211)) ([4fe989a](https://github.com/alfa-laboratory/arui-feather/commit/4fe989a))
+* **list:** add fantasy list ([#218](https://github.com/alfa-laboratory/arui-feather/issues/218)) ([4e8c292](https://github.com/alfa-laboratory/arui-feather/commit/4e8c292))
+
+
+
 <a name="9.2.0"></a>
 # [9.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.2.0) (2017-08-14)
 

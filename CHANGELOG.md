@@ -1,3 +1,74 @@
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.3.0) (2017-08-17)
+
+
+### Bug Fixes
+
+* allow to select, remove, and select file again ([#213](https://github.com/alfa-laboratory/arui-feather/issues/213)) ([89a1d7c](https://github.com/alfa-laboratory/arui-feather/commit/89a1d7c))
+* **button:** remove pressed style on mouse out ([#210](https://github.com/alfa-laboratory/arui-feather/issues/210)) ([48bba2b](https://github.com/alfa-laboratory/arui-feather/commit/48bba2b))
+* **input:** label styles for disabled input ([#216](https://github.com/alfa-laboratory/arui-feather/issues/216)) ([8fa7e75](https://github.com/alfa-laboratory/arui-feather/commit/8fa7e75))
+* **radio:** fix value attribute on button tag ([#214](https://github.com/alfa-laboratory/arui-feather/issues/214)) ([64daa46](https://github.com/alfa-laboratory/arui-feather/commit/64daa46))
+
+
+### Features
+
+* **link:** change tag for disabled link ([#211](https://github.com/alfa-laboratory/arui-feather/issues/211)) ([4fe989a](https://github.com/alfa-laboratory/arui-feather/commit/4fe989a))
+* **list:** add fantasy list ([#218](https://github.com/alfa-laboratory/arui-feather/issues/218)) ([4e8c292](https://github.com/alfa-laboratory/arui-feather/commit/4e8c292))
+
+
+
+<a name="9.2.0"></a>
+# [9.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.2.0) (2017-08-14)
+
+
+### Bug Fixes
+
+* allow to select, remove, and select file again ([#213](https://github.com/alfa-laboratory/arui-feather/issues/213)) ([89a1d7c](https://github.com/alfa-laboratory/arui-feather/commit/89a1d7c))
+
+
+
+<a name="9.1.4"></a>
+## [9.1.4](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.3...v9.1.4) (2017-08-10)
+
+
+### Bug Fixes
+
+* **input-autocomplete:** turn off autocomplete ([#208](https://github.com/alfa-laboratory/arui-feather/issues/208)) ([76834b8](https://github.com/alfa-laboratory/arui-feather/commit/76834b8))
+
+
+
+<a name="9.1.3"></a>
+## [9.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.2...v9.1.3) (2017-08-09)
+
+
+### Bug Fixes
+
+* fix label, placeholder & error styling in controls ([#206](https://github.com/alfa-laboratory/arui-feather/issues/206)) ([b2c5c6e](https://github.com/alfa-laboratory/arui-feather/commit/b2c5c6e))
+* **arui-demo/components/preview-with-theme-switcher:** paddings fot avoid components slice ([#207](https://github.com/alfa-laboratory/arui-feather/issues/207)) ([fd98b80](https://github.com/alfa-laboratory/arui-feather/commit/fd98b80))
+* **checkbox:** amend indeterminate checkbox's styles in fantasy ([#205](https://github.com/alfa-laboratory/arui-feather/issues/205)) ([e29587f](https://github.com/alfa-laboratory/arui-feather/commit/e29587f))
+
+
+
+<a name="9.1.2"></a>
+## [9.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.1...v9.1.2) (2017-08-08)
+
+
+### Bug Fixes
+
+* **input:** fix invalid input label styles ([#204](https://github.com/alfa-laboratory/arui-feather/issues/204)) ([c097d7f](https://github.com/alfa-laboratory/arui-feather/commit/c097d7f))
+
+
+
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.0...v9.1.1) (2017-08-08)
+
+
+### Bug Fixes
+
+* **input:** fix autofill color for white theme and safari bug when input collapsing ([#199](https://github.com/alfa-laboratory/arui-feather/issues/199)) ([ea2162d](https://github.com/alfa-laboratory/arui-feather/commit/ea2162d))
+
+
+
 <a name="9.1.0"></a>
 # [9.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.0.0...v9.1.0) (2017-08-07)
 

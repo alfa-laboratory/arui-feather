@@ -72,7 +72,6 @@
     }
 
     &.input_invalid {
-        .input__top,
         .input__sub {
             color: var(--color-error);
         }

@@ -47,7 +47,24 @@ const sizes = ['s', 'm', 'l', 'xl'];
 </div>
 ```
 
-С крестиком "Очистить"
+С лейблами
+```jsx
+const sizes = ['s', 'm', 'l', 'xl'];
+<div>
+    {sizes.map(size => (
+        <div className='row'>
+            <Input
+                label='Имя'
+                placeholder='Введите ваше имя'
+                view='line'
+                size={ size }
+            />
+        </div>
+    ))}
+</div>
+```
+
+С крестиком «Очистить»
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
@@ -125,7 +142,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 </div>
 ```
 
-Disabled
+В неактивном состоянии
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>

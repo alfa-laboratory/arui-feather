@@ -107,4 +107,66 @@ describe('attach', () => {
 
         expect(onMouseLeave).to.have.been.calledOnce;
     });
+
+    it('should render selected file name if one file selected', () => {
+        let attach = render(<Attach />);
+        let controlNode = attach.node.querySelector('.attach__control');
+        simulate(controlNode, 'change', {
+            target: {
+                files: [{
+                    name: 'test.txt', type: 'application/text'
+                }]
+            }
+        });
+
+        let fileTitleNode = attach.node.querySelector('.attach__text');
+        expect(fileTitleNode).to.have.text('test.txt');
+    });
+
+    it('should render selected files count if several files selected', () => {
+        let attach = render(<Attach />);
+        let controlNode = attach.node.querySelector('.attach__control');
+        simulate(controlNode, 'change', {
+            target: {
+                files: [
+                    {
+                        name: 'test1.txt', type: 'application/text'
+                    },
+                    {
+                        name: 'test2.txt', type: 'application/text'
+                    },
+                    {
+                        name: 'test3.txt', type: 'application/text'
+                    }
+                ]
+            }
+        });
+
+        let filesTitleNode = attach.node.querySelector('.attach__text abbr');
+        expect(filesTitleNode).to.have.text('3 файла');
+    });
+
+    it('should render "no file" and clear input value after clear button was clicked', (done) => {
+        let attach = render(<Attach />);
+        let controlNode = attach.node.querySelector('.attach__control');
+        simulate(controlNode, 'change', {
+            target: {
+                files: [{
+                    name: 'test.txt', type: 'application/text'
+                }]
+            }
+        });
+
+        let fileTitleNode = attach.node.querySelector('.attach__text');
+        expect(fileTitleNode).to.have.text('test.txt');
+
+        let clearButtonNode = attach.node.querySelector('.attach__clear');
+        simulate(clearButtonNode, 'click');
+        setTimeout(() => {
+            let statusNode = attach.node.querySelector('.attach__no-file');
+            expect(statusNode).to.have.text('Нет файла');
+            expect(controlNode).to.have.value('');
+            done();
+        }, 0);
+    });
 });

@@ -30,12 +30,7 @@ const OPTIONS = [
 ];
 
 function renderSelect(props) {
-    let select = render(
-        <Select { ...props } />,
-        {
-            css: 'min-width: 9999px; min-height: 9999px; padding: 50px 0 0;'
-        }
-    );
+    let select = render(<Select { ...props } />);
 
     let nativeSelectNode = select.node.querySelector('.select__native-control');
     let buttonNode = select.node.querySelector('.select-button');

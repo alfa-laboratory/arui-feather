@@ -25,7 +25,6 @@ let sharedContainer = null;
  *
  * @param {Object} jsx JSX для рендера.
  * @param {Object} [options] Опции для рендера.
- * @param {String} [options.css] Стили для рендер контейнера.
  * @param {Node} [options.container] Контейнер, в который нарендерить компонент.
  * @returns {TestWrapper}
  */
@@ -38,10 +37,6 @@ export function render(jsx, options = {}) {
             document.body.appendChild(sharedContainer);
         }
         container = sharedContainer;
-    }
-
-    if (options.css) {
-        container.setAttribute('style', options.css);
     }
 
     let instance = ReactDOM.render(jsx, container);

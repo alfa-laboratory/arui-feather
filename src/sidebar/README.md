@@ -6,22 +6,24 @@ initialState = {
     isOpen: false
 };
 <div>
-    <Button onClick={ toggleSidebar }>Toggle Sidebar</Button>
+    <Button onClick={ toggleSidebar }>Выписка по счёту</Button>
     <Sidebar
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
     >
         <Heading size='m'>
-            Я вместительный холодильник с мороженой рыбой
+            Выписка по счёту
         </Heading>
+        <Label>
+            Куда отправить выписку?
+        </Label>
         <div style={ { marginBottom: 20 } }>
             <Input
                 size='m'
-                placeholder='Input...'
-                error='Something went wrong'
+                placeholder='Адрес электронной почты'
             />
         </div>
-        <Button size='m' view='extra'>Рыба</Button>
+        <Button size='m' view='extra'>Отправить</Button>
     </Sidebar>
 </div>
 ```

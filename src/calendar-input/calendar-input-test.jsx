@@ -13,12 +13,7 @@ import keyboardCode from '../lib/keyboard-code';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 function renderCalendarInput(props = {}) {
-    let calendarInput = render(
-        <CalendarInput { ...props } />,
-        {
-            css: 'min-width: 9999px; min-height: 9999px; padding: 50px 0 0;'
-        }
-    );
+    let calendarInput = render(<CalendarInput { ...props } />);
 
     let inputNode =
         calendarInput.node.querySelector('.calendar-input__native-control') ||

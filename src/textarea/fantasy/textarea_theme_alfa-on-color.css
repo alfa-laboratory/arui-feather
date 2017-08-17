@@ -43,7 +43,6 @@
     }
 
     &.textarea_invalid {
-        .textarea__top,
         .textarea__sub {
             color: var(--color-error);
         }

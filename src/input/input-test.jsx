@@ -249,7 +249,7 @@ describe('input', () => {
         input.instance.focus();
 
         setTimeout(() => {
-            expect(onFocus).to.have.been.called.once;
+            expect(onFocus).to.have.been.calledOnce;
             expect(onFocus).to.have.been.calledWith(sinon.match({ type: 'focus' }));
             done();
         }, 0);
@@ -264,7 +264,7 @@ describe('input', () => {
         setTimeout(() => {
             input.instance.blur();
 
-            expect(onBlur).to.have.been.called.once;
+            expect(onBlur).to.have.been.calledOnce;
             expect(onBlur).to.have.been.calledWith(sinon.match({ type: 'blur' }));
             done();
         }, 0);

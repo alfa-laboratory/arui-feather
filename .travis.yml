@@ -44,6 +44,11 @@ script:
 after_script:
   - greenkeeper-lockfile-upload
   - |
+    if [ "${TRAVIS_BRANCH}" == "master" ] && [ "${TEST_SCOPE}" == "lint" ] && [ -n "${TRAVIS_TAG}" ]; then
+      yarn github-release;
+      echo "GitHub Releases were successfully updated";
+    fi
+  - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       kill -9 `lsof -i :4445 -t`
     fi

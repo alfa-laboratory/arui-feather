@@ -101,14 +101,14 @@ module.exports = (config) => {
                 platformName: 'Android',
                 platformVersion: '6.0',
                 timeZone: 'Moscow'
+            },
+            sauceSafariIOS: {
+                base: 'SauceLabs',
+                browserName: 'iPhone',
+                platform: 'OS X 10.12',
+                version: '10.3',
+                timeZone: 'Moscow'
             }
-            // sauceSafariIOS: {
-            //     base: 'SauceLabs',
-            //     browserName: 'iPhone',
-            //     platform: 'OS X 10.12',
-            //     version: '10.2',
-            //     timeZone: 'Moscow'
-            // }
         };
 
         cfg.browserDisconnectTimeout = 10000;

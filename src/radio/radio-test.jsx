@@ -8,12 +8,7 @@ import Radio from './radio';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 function renderRadio(jsx) {
-    return render(
-        jsx,
-        {
-            css: 'min-width: 9999px; min-height: 9999px; padding: 50px 0 0;'
-        }
-    );
+    return render(jsx);
 }
 
 describe('radio', () => {

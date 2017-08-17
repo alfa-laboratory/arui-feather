@@ -9,13 +9,10 @@ import Textarea from './textarea';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 function renderTextarea(props = {}) {
-    let textarea = render(
-        <Textarea { ...props } />,
-        {
-            css: 'min-width: 9999px; min-height: 9999px; padding: 50px 0 0;'
-        }
-    );
+    let textarea = render(<Textarea { ...props } />);
+
     textarea.controlNode = textarea.node.querySelector('.textarea__control');
+
     return textarea;
 }
 

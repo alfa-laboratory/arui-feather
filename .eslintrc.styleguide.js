@@ -2,6 +2,7 @@ module.exports = {
     extends: require.resolve('arui-presets/eslint'),
     rules: {
         'func-names': 0,
+        'max-len': 0,
         'react/jsx-filename-extension': [2, { 'extensions': ['gemini.js', '.jsx', '.md'] }],
         'react/jsx-no-undef': 0,
         'chai-friendly/no-unused-expressions': 0,

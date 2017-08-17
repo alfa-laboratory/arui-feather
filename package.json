@@ -9,9 +9,9 @@
   "scripts": {
     "test": "karma start ./karma.config.js",
     "lint": "npm run lint-css && npm run lint-js",
-    "lint-js": "eslint ./*.js ./src/ ./gemini/ ./arui-demo/components --ext .js,.jsx",
+    "lint-js": "eslint ./*.js ./src/ ./gemini/ ./demo/components --ext .js,.jsx",
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
-    "lint-css": "stylelint ./src/**/*.css ./arui-demo/**/*.css",
+    "lint-css": "stylelint ./src/**/*.css ./demo/**/*.css",
     "gemini": "gemini test --grep=`env | grep '^SUITES' | awk -F= '{print $NF}'`",
     "gemini-ci": "node ./gemini-utils/gemini-ci.js",
     "gemini-update": "ALL_SIZES=1 gemini update --grep=`env | grep '^SUITES' | awk -F= '{print $NF}'`",
@@ -46,7 +46,7 @@
     "gemini/**/*.{js,jsx}": [
       "eslint"
     ],
-    "arui-demo/components/**/*.{js,jsx}": [
+    "demo/components/**/*.{js,jsx}": [
       "eslint"
     ],
     "*.css": [

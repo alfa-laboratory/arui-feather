@@ -8,12 +8,7 @@ import EmailInput from './email-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 function renderEmailInput(jsx) {
-    return render(
-        jsx,
-        {
-            css: 'min-width: 9999px; min-height: 9999px; padding: 50px 0 0;'
-        }
-    );
+    return render(jsx);
 }
 
 describe('email-input', () => {

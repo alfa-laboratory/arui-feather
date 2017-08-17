@@ -14,9 +14,9 @@ initialState = {
         <Heading size='m'>
             Выписка по счёту
         </Heading>
-                <Label>
-                   Куда отправить выписку?
-                </Label>
+        <Label>
+            Куда отправить выписку?
+        </Label>
         <div style={ { marginBottom: 20 } }>
             <Input
                 size='m'

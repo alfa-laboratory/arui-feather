@@ -123,7 +123,7 @@
     "gemini-react": "^0.11.0",
     "gemini-saucelabs-info": "^1.0.0",
     "gulp": "^3.9.1",
-    "html-reporter": "^0.2.0",
+    "html-reporter": "^0.3.0",
     "husky": "^0.13.3",
     "istanbul": "^0.4.2",
     "istanbul-instrumenter-loader": "^2.0.0",

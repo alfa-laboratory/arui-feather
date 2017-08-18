@@ -55,3 +55,7 @@
         margin-right: 0;
     }
 }
+
+.checkbox-group_width_available {
+    display: flex;
+}

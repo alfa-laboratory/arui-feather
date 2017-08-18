@@ -1,3 +1,18 @@
+<a name="9.3.1"></a>
+## [9.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.3.0...v9.3.1) (2017-08-18)
+
+
+### Bug Fixes
+
+* **calendar-input:** add forgotten className propType ([684a7a9](https://github.com/alfa-laboratory/arui-feather/commit/684a7a9))
+
+
+### Features
+
+* checkboxgroup now can control child checkboxes ([#159](https://github.com/alfa-laboratory/arui-feather/issues/159)) ([bb34ff4](https://github.com/alfa-laboratory/arui-feather/commit/bb34ff4))
+
+
+
 <a name="9.3.0"></a>
 # [9.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.3.0) (2017-08-17)
 

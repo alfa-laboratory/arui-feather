@@ -38,8 +38,8 @@ module.exports = {
         return `import ${componentName} from 'arui-feather/${componentSourcesFileName}/fantasy';`;
     },
     ignore: ['**/*-test.jsx'],
-    styleguideDir: path.resolve(__dirname, './arui-demo/styleguide-fantasy/'),
-    template: path.resolve(__dirname, './arui-demo/template.html'),
+    styleguideDir: path.resolve(__dirname, './demo/styleguide-fantasy/'),
+    template: path.resolve(__dirname, './demo/template.html'),
     webpackConfig: merge.smart(ARUI_TEMPLATE, {
         devServer: {
             disableHostCheck: true
@@ -47,10 +47,10 @@ module.exports = {
         resolve: {
             alias: {
                 // Переопределяем компоненты styleguidist
-                'rsg-components/Wrapper': path.resolve(__dirname, './arui-demo/components/preview-with-theme-switcher'),
-                'rsg-components/Logo': path.resolve(__dirname, './arui-demo/components/logo.jsx'),
+                'rsg-components/Wrapper': path.resolve(__dirname, './demo/components/preview-with-theme-switcher'),
+                'rsg-components/Logo': path.resolve(__dirname, './demo/components/logo.jsx'),
                 'rsg-components/Playground/PlaygroundRenderer': path.resolve(__dirname,
-                    './arui-demo/components/playground-with-share-example-button'
+                    './demo/components/playground-with-share-example-button'
                 ),
                 'rsg-components/StyleGuide/StyleGuideRenderer': path.resolve(__dirname,
                     './node_modules/react-styleguidist/lib/rsg-components/StyleGuide/StyleGuideRenderer'
@@ -58,7 +58,7 @@ module.exports = {
                 'rsg-components/StyleGuide/index': path.resolve(__dirname,
                     './node_modules/react-styleguidist/lib/rsg-components/StyleGuide/index'
                 ),
-                'rsg-components/StyleGuide': path.resolve(__dirname, './arui-demo/components/styleguide')
+                'rsg-components/StyleGuide': path.resolve(__dirname, './demo/components/styleguide')
             }
         },
         plugins: [

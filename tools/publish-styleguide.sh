@@ -5,7 +5,7 @@ echo "Publishing styleguide..."
 STYLEGUIDE_NAME="styleguide"
 
 ROOT="$(dirname $(dirname $0))"
-SOURCE_SHOWCASE_DIR="$ROOT/arui-demo/$STYLEGUIDE_NAME"
+SOURCE_SHOWCASE_DIR="$ROOT/demo/$STYLEGUIDE_NAME"
 PUBLISH_SHOWCASE_DIR="$ROOT/$STYLEGUIDE_NAME"
 
 git config user.name "Travis CI"

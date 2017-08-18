@@ -1,6 +1,6 @@
 Данные пример демонстрирует использование компонентов Page, Header, AppTitle, AppMenu, AppContent, Footer 
 ```jsx
-const PreviewFrame = require('../../arui-demo/components/preview-frame').default;
+const PreviewFrame = require('../../demo/components/preview-frame').default;
 
 <PreviewFrame>
     <Page

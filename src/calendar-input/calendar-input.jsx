@@ -99,6 +99,8 @@ class CalendarInput extends React.Component {
         id: Type.string,
         /** Имя компонента в DOM */
         name: Type.string,
+        /** Дополнительный класс */
+        className: Type.oneOfType([Type.func, Type.string]),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик установки фокуса на компонент */

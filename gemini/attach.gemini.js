@@ -1,4 +1,4 @@
-import Attach from '../src/attach';
+import Attach from '../src/attach/fantasy';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 import Icon from '../src/icon';
 
@@ -41,18 +41,9 @@ geminiReact.suite(NAME, function () {
                 );
 
                 geminiReact.suite(selector, function (suite) {
-                    if (index <= 1) {
-                        suite
-                            .render(template)
-                            .capture('plain')
-                            .capture('focused', function (actions, find) {
-                                actions.focus(find('.attach__control'));
-                            });
-                    } else {
-                        suite
-                            .render(template)
-                            .capture('plain');
-                    }
+                    suite
+                        .render(template)
+                        .capture('plain');
                 });
             });
         });

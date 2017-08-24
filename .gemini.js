@@ -8,7 +8,7 @@ let config = {
     windowSize: '1024x768',
 
     httpTimeout: 60000,
-    retry: 2,
+    retry: 1,
     sessionsPerBrowser: 3,
     suitesPerSession: 150,
 
@@ -16,7 +16,7 @@ let config = {
         chromeWin7: {
             desiredCapabilities: {
                 browserName: 'chrome',
-                version: '57',
+                version: '60',
                 platform: 'Windows 7'
             }
         }
@@ -25,7 +25,7 @@ let config = {
     system: {
         debug: false,
         exclude: [
-            '*demo/',
+            'demo/',
             'docs/',
             'gemini/screens/',
             'gemini-*/',

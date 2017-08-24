@@ -1,7 +1,7 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Link from '../src/link';
-import Paragraph from '../src/paragraph';
-import Plate from '../src/plate';
+import Link from '../src/link/fantasy';
+import Paragraph from '../src/paragraph/fantasy';
+import Plate from '../src/plate/fantasy';
 import ThemeProvider from '../src/theme-provider';
 import { LOREM_IPSUM } from '../src/vars';
 

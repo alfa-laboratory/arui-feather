@@ -1,4 +1,4 @@
-import Checkbox from '../src/checkbox';
+import Checkbox from '../src/checkbox/fantasy';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'checkbox';

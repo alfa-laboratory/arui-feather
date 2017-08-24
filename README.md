@@ -122,7 +122,7 @@ import Input from 'arui-feather/input/fantasy'
 
 Запуск `gemini` на выборочное число сьютов (используется опция `--grep` c JS RegExp): `SUITES='button|select' npm run gemini`.
 
-Во время тестирования рендер каждого сьюта доступен по URL, например: `http://localhost:8888/popup/popup_theme_alfa-on-color.popup_size_m.popup_prop-set_1`
+Во время тестирования рендер каждого сьюта доступен по URL, например: `http://localhost:8668/popup/popup_theme_alfa-on-color.popup_size_m.popup_prop-set_1`
 
 Минификация svg
 ---------------

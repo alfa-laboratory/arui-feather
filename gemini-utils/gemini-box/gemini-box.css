@@ -1,3 +1,5 @@
+@import '../../src/vars-fantasy.css';
+
 .gemini-box {
     box-sizing: border-box;
     display: inline-block;
@@ -10,11 +12,10 @@
 }
 
 .gemini-box_theme_alfa-on-white {
-    color: #000;
+    color: var(--color-content-alfa-on-white);
 }
 
 .gemini-box_theme_alfa-on-color {
-    color: #fff;
-    background: #4d545b;
-    background: linear-gradient(to bottom, #4d545b 0%, #4d545b 50%, #282c36 100%);
+    color: var(--color-content-alfa-on-color);
+    background: var(--color-background-alfa-on-color);
 }

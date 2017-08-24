@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Radio from '../src/radio';
-import RadioGroup from '../src/radio-group';
+import Radio from '../src/radio/fantasy';
+import RadioGroup from '../src/radio-group/fantasy';
 
 const NAME = 'radio-group';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

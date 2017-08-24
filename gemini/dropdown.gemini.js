@@ -1,6 +1,6 @@
-import Dropdown from '../src/dropdown';
+import Dropdown from '../src/dropdown/fantasy';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Label from '../src/label';
+import Label from '../src/label/fantasy';
 
 const NAME = 'dropdown';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

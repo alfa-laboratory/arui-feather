@@ -5198,7 +5198,7 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.0.x"
 
-html-reporter@0.3.0:
+html-reporter@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-0.3.0.tgz#df939031324c792c81cafb5793a70e0ebf59edd1"
   dependencies:

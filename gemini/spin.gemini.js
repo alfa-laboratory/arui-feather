@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Button from '../src/button';
-import Spin from '../src/spin';
+import Button from '../src/button/fantasy';
+import Spin from '../src/spin/fantasy';
 
 const NAME = 'spin';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];

@@ -1,3 +1,13 @@
+<a name="9.4.0"></a>
+# [9.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.3.1...v9.4.0) (2017-08-24)
+
+
+### Features
+
+* add remaining fantasy components (form*, plate, slide-down) ([#222](https://github.com/alfa-laboratory/arui-feather/issues/222)) ([ea80026](https://github.com/alfa-laboratory/arui-feather/commit/ea80026))
+
+
+
 <a name="9.3.1"></a>
 ## [9.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.3.0...v9.3.1) (2017-08-18)
 

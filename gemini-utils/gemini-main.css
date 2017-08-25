@@ -9,9 +9,9 @@
 }
 
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
@@ -21,8 +21,8 @@ body {
 
 body > div,
 #react-app {
-    table-layout: fixed;
     display: table;
+    table-layout: fixed;
     width: 100%;
     height: inherit;
 }

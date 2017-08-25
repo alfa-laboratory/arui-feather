@@ -11,9 +11,10 @@ module.exports = merge.smart(ARUI_TEMPLATE, {
     devtool: 'eval',
     module: {
         rules: [
-            // TODO @akitov: temporary fix, I'm not sure which module isn't compile
+            // We need to transpile at least `gemini-react/lib/client-wrapper.js` for IE10
             {
-                test: /\.jsx?$/,
+                test: /gemini-react\/lib\/client-wrapper\.js$/,
+                exclude: /node_modules\/(?!gemini-react\/).*/,
                 loader: 'babel-loader'
             }
         ]

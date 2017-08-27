@@ -49,7 +49,7 @@ let config = {
     }
 };
 
-// if (IS_TRAVIS_CRON_BUILD) {
+if (IS_TRAVIS_CRON_BUILD) {
     config.system.plugins.react.jsModules.unshift('./src/polyfills.js');
 
     Object.assign(config.browsers, {
@@ -68,6 +68,6 @@ let config = {
             }
         }
     });
-// }
+}
 
 module.exports = config;

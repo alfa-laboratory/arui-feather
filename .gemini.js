@@ -37,9 +37,7 @@ let config = {
             'html-reporter': {},
             optipng: true,
             react: {
-                jsModules: [
-                    './gemini-utils/gemini-main.css'
-                ],
+                jsModules: ['./gemini-utils/gemini-main.css'],
                 port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.gemini.config.js'
@@ -52,7 +50,7 @@ let config = {
 };
 
 if (IS_TRAVIS_CRON_BUILD) {
-    config.system.plugins.react.jsModules.unshift('./.build/polyfills.js');
+    config.system.plugins.react.jsModules.unshift('./src/polyfills.js');
 
     Object.assign(config.browsers, {
         ie10Win7: {

@@ -1,3 +1,13 @@
+<a name="9.4.1"></a>
+## [9.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.4.0...v9.4.1) (2017-08-27)
+
+
+### Bug Fixes
+
+* **polyfills:** fix es6-weak-map implementation ([#223](https://github.com/alfa-laboratory/arui-feather/issues/223)) ([9f5b1ee](https://github.com/alfa-laboratory/arui-feather/commit/9f5b1ee))
+
+
+
 <a name="9.4.0"></a>
 # [9.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.3.1...v9.4.0) (2017-08-24)
 

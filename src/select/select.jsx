@@ -211,7 +211,7 @@ class Select extends React.Component {
                     size: this.props.size,
                     width: this.props.width,
                     disabled: this.props.disabled,
-                    checked: this.props.mode !== 'radio' && value.length > 0,
+                    checked: value.length > 0,
                     focused: this.getFocused(),
                     'has-label': !!this.props.label,
                     'has-value': !!value,

@@ -38,6 +38,20 @@
 </RadioGroup>
 ```
 
+Горизонтальная группа радио кнопок с подсказкой
+```jsx
+<RadioGroup type='button' hint='Уточняющий текст'>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
+        <Radio
+            text={ text }
+            key={ text }
+            value={ text }
+            type='button'
+        />
+    ))}
+</RadioGroup>
+```
+
 Горизонтальная группа радио кнопок со 100% шириной
 ```jsx
 <RadioGroup width='available' type='button'>

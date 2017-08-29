@@ -64,6 +64,42 @@ describe('radio-group', () => {
         expect(radioNode).to.have.class('radio_invalid');
     });
 
+    it('should render with `error` from props', () => {
+        let radioGroup = render(
+            <RadioGroup error='errorText'>
+                <Radio key='1' />
+            </RadioGroup>
+        );
+        let subNode = radioGroup.node.querySelector('.radio-group__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('errorText');
+    });
+
+    it('should render with `hint` from props', () => {
+        let radioGroup = render(
+            <RadioGroup hint='hintText'>
+                <Radio key='1' />
+            </RadioGroup>
+        );
+        let subNode = radioGroup.node.querySelector('.radio-group__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('hintText');
+    });
+
+    it('should render with `error` and without `hint` when both of them passed via props', () => {
+        let radioGroup = render(
+            <RadioGroup error='errorText' hint='hintText'>
+                <Radio key='1' />
+            </RadioGroup>
+        );
+        let subNode = radioGroup.node.querySelector('.radio-group__sub');
+
+        expect(subNode).to.exist;
+        expect(subNode).to.have.text('errorText');
+    });
+
     it('should focus first child radio-button on public focus method', (done) => {
         let radioGroup = render(
             <RadioGroup>

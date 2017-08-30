@@ -5,39 +5,11 @@
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
-
 import Modernizr from '../modernizr';
-import MqList from './mq.json';
+import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_TOUCH = IS_BROWSER && (Modernizr.pointerevents || Modernizr.touchevents);
-
-let pool = {};
-let refCounters = {};
-
-function getMatchMedia(queryProp) {
-    let query = MqList[queryProp] || queryProp;
-
-    if (!pool[query]) {
-        pool[query] = window.matchMedia(query);
-        refCounters[query] = 1;
-    } else {
-        refCounters[query] += 1;
-    }
-
-    return pool[query];
-}
-
-function releaseMatchMedia(queryProp) {
-    let query = MqList[queryProp] || queryProp;
-
-    refCounters[query] -= 1;
-
-    if (pool[query] && refCounters[query] === 0) {
-        delete pool[query];
-        delete refCounters[query];
-    }
-}
 
 /**
  * Компонент, имплементирующий поддержку медиа запросов в шаблонах.
@@ -53,7 +25,7 @@ class Mq extends React.Component {
         /** Запрос на поддержку тач-событий */
         touch: Type.bool,
         /** Дочерние элементы `Mq` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        children: Type.node,
         /** Обработчик изменений в совпадении запросов */
         onMatchChange: Type.func
     };

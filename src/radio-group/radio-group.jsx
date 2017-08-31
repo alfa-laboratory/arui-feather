@@ -37,6 +37,8 @@ class RadioGroup extends React.Component {
         className: Type.oneOfType([Type.func, Type.string]),
         /** Лейбл для группы */
         label: Type.node,
+        /** Подсказка под полем */
+        hint: Type.node,
         /** Обработчик фокуса радиогруппы */
         onFocus: Type.func,
         /** Обработчик снятия фокуса с радиогруппы */
@@ -113,9 +115,9 @@ class RadioGroup extends React.Component {
                 }
                 { createFragment(radioGroupParts) }
                 {
-                    this.props.error &&
+                    (this.props.error || this.props.hint) &&
                     <span className={ cn('sub') }>
-                        { this.props.error }
+                        { this.props.error || this.props.hint }
                     </span>
                 }
             </span>

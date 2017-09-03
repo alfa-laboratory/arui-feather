@@ -369,7 +369,7 @@ class InputAutocomplete extends React.Component {
             case keyboardCode.DOWN_ARROW:
             case keyboardCode.UP_ARROW:
                 event.preventDefault();
-                this.syncKeyboardNavigationWithScroll(highlightedItem);
+                this.scrollToHighlightedItem(highlightedItem);
                 break;
 
             case keyboardCode.ESCAPE:
@@ -502,7 +502,7 @@ class InputAutocomplete extends React.Component {
     /**
      * @param {MenuItem} highlightedItem Выбранный пункт меню
      */
-    syncKeyboardNavigationWithScroll(highlightedItem) {
+    scrollToHighlightedItem(highlightedItem) {
         let element = highlightedItem.getNode();
         let container = this.popup.getInnerNode();
         let correction = element.offsetHeight;

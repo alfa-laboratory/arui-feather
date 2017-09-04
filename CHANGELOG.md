@@ -1,3 +1,15 @@
+<a name="9.5.0"></a>
+# [9.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.4.1...v9.5.0) (2017-09-04)
+
+
+### Features
+
+* add `checked` className for radio Select ([#226](https://github.com/alfa-laboratory/arui-feather/issues/226)) ([3a5b56c](https://github.com/alfa-laboratory/arui-feather/commit/3a5b56c))
+* add `hint` prop for radio-group ([#227](https://github.com/alfa-laboratory/arui-feather/issues/227)) ([f3550a2](https://github.com/alfa-laboratory/arui-feather/commit/f3550a2))
+* deprecate complex app components ([#229](https://github.com/alfa-laboratory/arui-feather/issues/229)) ([0c3422b](https://github.com/alfa-laboratory/arui-feather/commit/0c3422b))
+
+
+
 <a name="9.4.1"></a>
 ## [9.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.4.0...v9.4.1) (2017-08-27)
 

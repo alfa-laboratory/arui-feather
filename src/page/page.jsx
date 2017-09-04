@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { autobind } from 'core-decorators';
+import deprecated from 'deprecated-decorator';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -12,11 +13,14 @@ const SMALL_HEADER_HEIGHT = 80;
 const PADDING_FROM_HEADER = 15;
 
 /**
+ * @deprecated since v9.5.0
+ *
  * Компонент страницы.
  * Как правило является корневым компонентов страницы.
  * Обычно используется совместно с компонентами `Header`, `Footer`
  * и компонентами `AppTitle`, `AppMenu` и `AppContent`.
  */
+@deprecated('arui-private')
 @cn('page')
 class Page extends React.Component {
     static propTypes = {

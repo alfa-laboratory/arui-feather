@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import deprecated from 'deprecated-decorator';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -11,9 +12,12 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
+ * @deprecated since v9.5.0
+ *
  * Компонент подвала сайта.
  * Обычно используется совместно с компонентом `Page`.
  */
+@deprecated('arui-private')
 @cn('footer')
 @performance()
 class Footer extends React.Component {

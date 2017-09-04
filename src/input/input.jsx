@@ -12,6 +12,7 @@ import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
+import { deprecated } from '../lib/prop-types';
 
 /**
  * Компонент текстового поля ввода.
@@ -64,7 +65,16 @@ class Input extends React.Component {
         /** Стандартное ствойство HTMLInputElement 'pattern'. Может быть использовано для показа корректной клавиатуры на мобильных устройствах. */
         pattern: Type.string,
         /** Управление встроенной проверкой данных введённых пользователем в поле на корректность */
-        noValidate: Type.bool,
+        formNoValidate: Type.bool,
+
+        /**
+         * Атрибут формы, а не компонента
+         * @deprecated
+         */
+        noValidate: deprecated(
+            Type.bool,
+            'noValidate property is nonexistent property of input element. Use formNoValidate instead'
+        ),
         /** Добавление дополнительных элементов к инпуту слева */
         leftAddons: Type.node,
         /** Добавление дополнительных элементов к инпуту справа */
@@ -114,7 +124,7 @@ class Input extends React.Component {
     };
 
     static defaultProps = {
-        noValidate: false,
+        formNoValidate: false,
         size: 'm',
         type: 'text'
     };
@@ -183,6 +193,7 @@ class Input extends React.Component {
     }
 
     renderContent(cn, MaskedInput) {
+        let hasValidateAttr = this.props.formNoValidate !== undefined;
         let isMaskedInput = this.props.mask !== undefined;
         let value = this.props.value !== undefined
             ? this.props.value
@@ -191,7 +202,7 @@ class Input extends React.Component {
         let inputProps = {
             className: cn('control'),
             type: this.props.type,
-            noValidate: this.props.noValidate,
+            formNoValidate: hasValidateAttr ? this.props.formNoValidate : this.props.noValidate,
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled || this.props.disabledAttr,
             maxLength: this.props.maxLength,

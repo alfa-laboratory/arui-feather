@@ -66,6 +66,10 @@ acorn@4.X, acorn@^4.0.3:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
+acorn@5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.1.2.tgz#911cb53e036807cf0fa778dc5d370fbd864246d7"
+
 acorn@^1.0.3:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-1.2.2.tgz#c8ce27de0acc76d896d2b1fad3df588d9e82f014"
@@ -5198,9 +5202,9 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.0.x"
 
-html-reporter@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-0.4.0.tgz#8ec30a20d8e29074c1f91e15b94ccb2e8124f513"
+html-reporter@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-0.4.1.tgz#c8640e2c9bf9395a181e6d01ad5c96dbb7013caf"
   dependencies:
     bluebird "^3.4.7"
     browserify "^13.0.0"
@@ -5211,6 +5215,7 @@ html-reporter@0.4.0:
     handlebars "^4.0.5"
     lodash "^4.17.4"
     uglify-js "^2.7.3"
+    urijs "^1.18.12"
 
 html-tags@^2.0.0:
   version "2.0.0"
@@ -10830,6 +10835,10 @@ uppercamelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/uppercamelcase/-/uppercamelcase-3.0.0.tgz#380b321b8d73cba16fec4d752a575152d1ef7317"
   dependencies:
     camelcase "^4.1.0"
+
+urijs@^1.18.12:
+  version "1.18.12"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.18.12.tgz#f04d91e1fabb29c16fc842f9a14ee8ddc3fda64e"
 
 urix@^0.1.0, urix@~0.1.0:
   version "0.1.0"

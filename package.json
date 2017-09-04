@@ -106,7 +106,7 @@
     "react-textarea-autosize": "^5.1.0"
   },
   "devDependencies": {
-    "acorn": "^3.3.0",
+    "acorn": "^5.1.2",
     "arui-presets": "^3.0.3",
     "bowser": "^1.7.0",
     "chai": "^4.1.1",

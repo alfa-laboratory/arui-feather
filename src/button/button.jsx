@@ -43,6 +43,8 @@ class Button extends React.Component {
         pseudo: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
+        /** отключает валидацию полей формы, у которых есть атрибут pattern */
+        formNoValidate: Type.bool,
         /** Имя компонента в DOM */
         name: Type.string,
         /** Текст всплывающей подсказки */
@@ -84,7 +86,8 @@ class Button extends React.Component {
     static defaultProps = {
         type: 'button',
         tag: 'button',
-        size: 'm'
+        size: 'm',
+        formNoValidate: false
     };
 
     state = {
@@ -109,6 +112,7 @@ class Button extends React.Component {
 
     render(cn) {
         let buttonElement = this.props.tag === 'span' ? 'span' : 'button';
+        const isButton = buttonElement === 'button';
 
         let buttonProps = {
             ref: (control) => { this.control = control; },
@@ -119,6 +123,7 @@ class Button extends React.Component {
             title: this.props.title,
             tabIndex: this.props.tabIndex,
             disabled: this.props.disabled,
+            formNoValidate: isButton ? this.props.formNoValidate : false,
             className: cn({
                 disabled: this.props.disabled,
                 pseudo: this.props.pseudo,

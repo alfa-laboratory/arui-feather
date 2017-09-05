@@ -34,6 +34,7 @@
 }
 
 .radio-group__label {
+    display: inline-block;
     margin-bottom: 10px;
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-accent);
@@ -85,12 +86,9 @@
 }
 
 .radio-group_width_available {
-    display: flex;
+    display: block;
 
-    &.radio-group_invalid {
-        .radio-group__sub {
-            padding-left: 10px;
-            border-left: 1px solid var(--color-error-translucent);
-        }
+    .radio-group__box {
+        display: flex;
     }
 }

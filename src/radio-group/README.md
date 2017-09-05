@@ -13,7 +13,7 @@
 
 Та же группа, теперь с заголовком и ошибкой
 ```jsx
-<RadioGroup error='Обязательно' label={ <Label size='m'>Сколько?</Label> }>
+<RadioGroup error='Обязательно' label='Сколько?'>
     {['Один', 'Два', 'Три', 'Четыре'].map(text => (
         <Radio
             text={ text }
@@ -74,6 +74,21 @@
             text={ text }
             key={ text }
             value={ text }
+        />
+    ))}
+</RadioGroup>
+```
+
+Горизонтальная группа радио кнопок с лейблом и со 100% шириной
+
+```jsx
+<RadioGroup label='Число' type='button' error='Обязательно' width='available'>
+    {['Один', 'Два', 'Три', 'Четыре'].map(text => (
+        <Radio
+            text={ text }
+            key={ text }
+            value={ text }
+            type='button'
         />
     ))}
 </RadioGroup>

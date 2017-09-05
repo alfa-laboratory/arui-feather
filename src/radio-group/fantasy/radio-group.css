@@ -31,18 +31,27 @@
     }
 }
 
-.radio-group__label {
-    margin-bottom: 8px;
-    font-size: var(--font-size-m);
+.radio-group__top {
+    box-sizing: border-box;
+    caption-side: top;
+    color: rgba(10, 30, 50, 0.6);
+    font-size: var(--font-size-s);
     line-height: var(--line-height-normal);
-    color: var(--color-content-minor-alfa-on-white);
+    display: inline-block;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    word-break: normal;
+}
+
+.radio-group_theme_alfa-on-color .radio-group__top {
+    color: rgba(255, 255, 255, .4);
 }
 
 .radio-group__sub {
-    display: table-caption;
     caption-side: bottom;
     padding-top: 5px;
     font-size: var(--font-size-s);
+    white-space: pre-wrap;
 }
 
 .radio-group_invalid {
@@ -87,12 +96,9 @@
 }
 
 .radio-group_width_available {
-    display: flex;
+    display: block;
 
-    &.radio-group_invalid {
-        .radio-group__sub {
-            padding-left: 10px;
-            border-left: 1px solid var(--color-error-translucent);
-        }
+    .radio-group__box {
+        display: flex;
     }
 }

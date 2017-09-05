@@ -94,7 +94,7 @@ class RadioGroup extends React.Component {
             });
         }
         return (
-            <span
+            <div
                 className={
                     `${cn({
                         type: this.props.type,
@@ -109,18 +109,18 @@ class RadioGroup extends React.Component {
             >
                 {
                     !!this.props.label &&
-                    <div className={ cn('label') }>
-                        { this.props.label }
-                    </div>
+                    <div className={ cn('top') }>{ this.props.label }</div>
                 }
-                { createFragment(radioGroupParts) }
+                <div className={ cn('box') }>
+                    { createFragment(radioGroupParts) }
+                </div>
                 {
                     (this.props.error || this.props.hint) &&
                     <span className={ cn('sub') }>
                         { this.props.error || this.props.hint }
                     </span>
                 }
-            </span>
+            </div>
         );
     }
 

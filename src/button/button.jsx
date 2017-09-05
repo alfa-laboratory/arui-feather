@@ -43,7 +43,7 @@ class Button extends React.Component {
         pseudo: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** отключает валидацию полей формы, у которых есть атрибут pattern */
+        /** Отключает валидацию полей формы, у которых есть атрибут pattern */
         formNoValidate: Type.bool,
         /** Имя компонента в DOM */
         name: Type.string,
@@ -123,7 +123,7 @@ class Button extends React.Component {
             title: this.props.title,
             tabIndex: this.props.tabIndex,
             disabled: this.props.disabled,
-            formNoValidate: isButton ? this.props.formNoValidate : false,
+            formNoValidate: isButton ? this.props.formNoValidate : null,
             className: cn({
                 disabled: this.props.disabled,
                 pseudo: this.props.pseudo,

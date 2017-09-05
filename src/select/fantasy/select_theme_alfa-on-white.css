@@ -48,7 +48,6 @@
         }
     }
 
-    &.select_focused,
     &.select_opened {
         .select-button {
             border-bottom-color: var(--color-border-control-focused-alfa-on-white);
@@ -65,7 +64,6 @@
             border-bottom-color: var(--color-error-translucent);
         }
 
-        &.select_focused,
         &.select_opened {
             .select-button {
                 border-bottom-color: var(--color-error-translucent);

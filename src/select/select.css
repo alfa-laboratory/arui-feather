@@ -146,7 +146,7 @@
         padding-left: 15px;
     }
 
-    &_focused &__tick,
+    &_opened &__tick,
     .select-button_hovered &__tick {
         opacity: 1;
     }

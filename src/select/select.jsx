@@ -151,9 +151,7 @@ class Select extends React.Component {
     };
 
     state = {
-        buttonFocused: false,
         hasGroup: false,
-        nativeFocused: false,
         isMobile: false,
         opened: !!this.props.opened,
         popupStyles: {},
@@ -187,11 +185,18 @@ class Select extends React.Component {
     }
 
     componentDidMount() {
-        this.popup.setTarget(this.button.getNode());
-        this.updatePopupStyles();
+        if (this.popup) {
+            this.setPopupTarget();
+            this.updatePopupStyles();
+        }
     }
 
     componentWillReceiveProps(nextProps) {
+        if (this.popup) {
+            this.setPopupTarget();
+            this.updatePopupStyles();
+        }
+
         if (this.state.opened && nextProps.disabled) {
             this.toggleOpened();
         }
@@ -210,12 +215,12 @@ class Select extends React.Component {
                     mode: this.props.mode,
                     size: this.props.size,
                     width: this.props.width,
-                    disabled: this.props.disabled,
                     checked: value.length > 0,
-                    focused: this.getFocused(),
+                    disabled: this.props.disabled,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    invalid: !!this.props.error
+                    invalid: !!this.props.error,
+                    opened: this.getOpened()
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
@@ -249,7 +254,11 @@ class Select extends React.Component {
                             { this.props.error || this.props.hint }
                         </span>
                     }
-                    { this.renderPopup(cn, Popup) }
+                    {
+                        (!this.state.isMobile ||
+                        (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
+                        this.renderPopup(cn, Popup)
+                    }
                 </span>
             </div>
         );
@@ -261,6 +270,7 @@ class Select extends React.Component {
                 ref={ (button) => { this.button = button; } }
                 size={ this.props.size }
                 disabled={ this.props.disabled }
+                focused={ this.getOpened() }
                 text={ this.renderButtonContent() }
                 rightAddons={ [
                     <Icon
@@ -469,8 +479,6 @@ class Select extends React.Component {
 
     @autobind
     handleButtonFocus(event) {
-        this.setState({ buttonFocused: true });
-
         if (this.props.onButtonFocus) {
             this.props.onButtonFocus(this.getRevisedEvent(event));
         }
@@ -478,8 +486,6 @@ class Select extends React.Component {
 
     @autobind
     handleButtonBlur(event) {
-        this.setState({ buttonFocused: false });
-
         if (this.props.onButtonBlur) {
             this.props.onButtonBlur(this.getRevisedEvent(event));
         }
@@ -500,11 +506,13 @@ class Select extends React.Component {
 
     @autobind
     handleMenuBlur(event) {
-        this.setState({
-            opened: false
-        });
-
         event.target.value = this.getValue();
+
+        if (event.relatedTarget !== this.button.getNode()) {
+            this.setState({
+                opened: false
+            });
+        }
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
@@ -579,6 +587,10 @@ class Select extends React.Component {
 
     @autobind
     handleNativeClick(event) {
+        if (!this.props.disabled) {
+            this.toggleOpened();
+        }
+
         if (this.props.onClick) {
             this.props.onClick(event);
         }
@@ -629,10 +641,6 @@ class Select extends React.Component {
 
     @autobind
     handleNativeFocus(event) {
-        this.setState({
-            nativeFocused: true
-        });
-
         if (this.props.onFocus) {
             this.props.onFocus(this.getRevisedEvent(event));
         }
@@ -640,10 +648,6 @@ class Select extends React.Component {
 
     @autobind
     handleNativeBlur(event) {
-        this.setState({
-            nativeFocused: false
-        });
-
         if (this.props.onBlur) {
             this.props.onBlur(this.getRevisedEvent(event));
         }
@@ -651,7 +655,9 @@ class Select extends React.Component {
 
     @autobind
     handleMqMatchChange(isMatched) {
-        this.setState({ isMobile: isMatched });
+        this.setState({
+            isMobile: isMatched
+        });
     }
 
     @autobind
@@ -743,14 +749,13 @@ class Select extends React.Component {
     toggleOpened() {
         let newOpenedState = !this.getOpened();
 
-        this.setState(
-            { opened: newOpenedState },
-            () => {
-                if (newOpenedState) {
-                    this.focusOnMenu();
-                }
+        this.setState({
+            opened: newOpenedState
+        }, () => {
+            if (newOpenedState && this.menu) {
+                this.focusOnMenu();
             }
-        );
+        });
     }
 
     @autobind
@@ -763,6 +768,11 @@ class Select extends React.Component {
         }
 
         this.setState({ popupStyles });
+    }
+
+    @autobind
+    setPopupTarget() {
+        this.popup.setTarget(this.button.getNode());
     }
 
     getCheckedItems(options) {
@@ -804,15 +814,6 @@ class Select extends React.Component {
      */
     getScrollContainer() {
         return this.context.positioningContainerElement || document.body;
-    }
-
-    /**
-     * Возвращает `true`, если компонент находится в состоянии фокуса.
-     *
-     * @returns {Boolean}
-     */
-    getFocused() {
-        return this.getOpened() || this.state.buttonFocused || this.state.nativeFocused;
     }
 }
 

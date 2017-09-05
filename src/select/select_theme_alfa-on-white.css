@@ -37,7 +37,6 @@
         }
     }
 
-    &.select_focused,
     &.select_opened {
         .select-button {
             border-color: rgba(0, 0, 0, .9);
@@ -57,7 +56,6 @@
             border-color: var(--color-error-translucent);
         }
 
-        &.select_focused,
         &.select_opened {
             .select-button {
                 border-color: var(--color-error-translucent);

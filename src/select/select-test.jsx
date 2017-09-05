@@ -163,7 +163,7 @@ describe('select', () => {
         select.instance.focus();
 
         setTimeout(() => {
-            expect(select.node).to.have.class('select_focused');
+            expect(select.node).to.have.class('select_opened');
             done();
         }, 0);
     });
@@ -174,12 +174,12 @@ describe('select', () => {
         select.instance.focus();
 
         setTimeout(() => {
-            expect(select.node).to.have.class('select_focused');
+            expect(select.node).to.have.class('select_opened');
 
             select.instance.blur();
 
             setTimeout(() => {
-                expect(select.node).to.not.have.class('select_focused');
+                expect(select.node).to.not.have.class('select_opened');
                 done();
             }, 0);
         }, 0);

@@ -5,7 +5,13 @@
 @import '../../vars-fantasy.css';
 
 .radio-group_theme_alfa-on-color {
-    .label {
+    .label, .radio-group__sub {
         color: var(--color-content-minor-alfa-on-color);
+    }
+
+    &.radio-group_invalid {
+        .radio-group__sub {
+            color: var(--color-error);
+        }
     }
 }

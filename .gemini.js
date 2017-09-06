@@ -8,7 +8,7 @@ let config = {
     windowSize: '1024x768',
 
     httpTimeout: 60000,
-    retry: 2,
+    retry: 1,
     sessionsPerBrowser: 3,
     suitesPerSession: 150,
 
@@ -16,7 +16,7 @@ let config = {
         chromeWin7: {
             desiredCapabilities: {
                 browserName: 'chrome',
-                version: '57',
+                version: '60',
                 platform: 'Windows 7'
             }
         }
@@ -25,7 +25,7 @@ let config = {
     system: {
         debug: false,
         exclude: [
-            '*demo/',
+            'demo/',
             'docs/',
             'gemini/screens/',
             'gemini-*/',
@@ -37,9 +37,7 @@ let config = {
             'html-reporter': {},
             optipng: true,
             react: {
-                jsModules: [
-                    './gemini-utils/gemini-main.css'
-                ],
+                jsModules: ['./gemini-utils/gemini-main.css'],
                 port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.gemini.config.js'
@@ -52,7 +50,7 @@ let config = {
 };
 
 if (IS_TRAVIS_CRON_BUILD) {
-    config.system.plugins.react.jsModules.unshift('./.build/polyfills.js');
+    config.system.plugins.react.jsModules.unshift('./src/polyfills.js');
 
     Object.assign(config.browsers, {
         ie10Win7: {

@@ -1,7 +1,7 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Input from '../src/input';
-import Radio from '../src/radio';
-import RadioGroup from '../src/radio-group';
+import Input from '../src/input/fantasy';
+import Radio from '../src/radio/fantasy';
+import RadioGroup from '../src/radio-group/fantasy';
 
 function renderAddons(size) {
     let buttonControlNodes = [1, 2, 3].map(item => (

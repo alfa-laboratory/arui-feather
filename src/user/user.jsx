@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { autobind } from 'core-decorators';
+import deprecated from 'deprecated-decorator';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -13,8 +14,11 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
+ * @deprecated since v9.5.0
+ *
  * Компонент доступа к пользовательскому профилю: cодержит имя пользователя и кнопку "Выйти".
  */
+@deprecated('arui-private')
 @cn('user')
 @performance()
 class User extends React.Component {

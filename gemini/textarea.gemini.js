@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Textarea from '../src/textarea';
+import Textarea from '../src/textarea/fantasy';
 
 const NAME = 'textarea';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

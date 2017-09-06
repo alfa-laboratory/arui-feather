@@ -1,7 +1,8 @@
 import startOfDay from 'date-fns/start_of_day';
 import addDays from 'date-fns/add_days';
 import subtractDays from 'date-fns/sub_days';
-import Calendar from '../src/calendar';
+
+import Calendar from '../src/calendar/fantasy';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const DATE = startOfDay(new Date('2016-09-23'));

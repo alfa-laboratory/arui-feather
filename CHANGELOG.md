@@ -1,3 +1,61 @@
+<a name="9.6.0"></a>
+# [9.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.5.0...v9.6.0) (2017-09-05)
+
+
+### Features
+
+* **button:** added formNoValidate attribute ([#235](https://github.com/alfa-laboratory/arui-feather/issues/235)) ([49a059a](https://github.com/alfa-laboratory/arui-feather/commit/49a059a))
+* **menu-item:** update view prop ([#236](https://github.com/alfa-laboratory/arui-feather/issues/236)) ([702f0a8](https://github.com/alfa-laboratory/arui-feather/commit/702f0a8))
+
+
+
+<a name="9.5.0"></a>
+# [9.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.4.1...v9.5.0) (2017-09-04)
+
+
+### Features
+
+* add `checked` className for radio Select ([#226](https://github.com/alfa-laboratory/arui-feather/issues/226)) ([3a5b56c](https://github.com/alfa-laboratory/arui-feather/commit/3a5b56c))
+* add `hint` prop for radio-group ([#227](https://github.com/alfa-laboratory/arui-feather/issues/227)) ([f3550a2](https://github.com/alfa-laboratory/arui-feather/commit/f3550a2))
+* deprecate complex app components ([#229](https://github.com/alfa-laboratory/arui-feather/issues/229)) ([0c3422b](https://github.com/alfa-laboratory/arui-feather/commit/0c3422b))
+
+
+
+<a name="9.4.1"></a>
+## [9.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.4.0...v9.4.1) (2017-08-27)
+
+
+### Bug Fixes
+
+* **polyfills:** fix es6-weak-map implementation ([#223](https://github.com/alfa-laboratory/arui-feather/issues/223)) ([9f5b1ee](https://github.com/alfa-laboratory/arui-feather/commit/9f5b1ee))
+
+
+
+<a name="9.4.0"></a>
+# [9.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.3.1...v9.4.0) (2017-08-24)
+
+
+### Features
+
+* add remaining fantasy components (form*, plate, slide-down) ([#222](https://github.com/alfa-laboratory/arui-feather/issues/222)) ([ea80026](https://github.com/alfa-laboratory/arui-feather/commit/ea80026))
+
+
+
+<a name="9.3.1"></a>
+## [9.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.3.0...v9.3.1) (2017-08-18)
+
+
+### Bug Fixes
+
+* **calendar-input:** add forgotten className propType ([684a7a9](https://github.com/alfa-laboratory/arui-feather/commit/684a7a9))
+
+
+### Features
+
+* checkboxgroup now can control child checkboxes ([#159](https://github.com/alfa-laboratory/arui-feather/issues/159)) ([bb34ff4](https://github.com/alfa-laboratory/arui-feather/commit/bb34ff4))
+
+
+
 <a name="9.3.0"></a>
 # [9.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.1.4...v9.3.0) (2017-08-17)
 

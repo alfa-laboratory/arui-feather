@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import deprecated from 'deprecated-decorator';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -14,6 +15,8 @@ import Page from '../page/page';
 import cn from '../cn';
 
 /**
+ * @deprecated since v9.5.0
+ *
  * Компонент страницы ошибки.
  * Как правило является корневым компонентом страницы.
  * Используется вместо компонента Page.
@@ -28,6 +31,7 @@ import cn from '../cn';
  * />
  * ```
  */
+@deprecated('arui-private')
 @cn('error-page')
 class ErrorPage extends React.Component {
     static propTypes = {

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { autobind } from 'core-decorators';
+import deprecated from 'deprecated-decorator';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -12,9 +13,12 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
+ * @deprecated since v9.5.0
+ *
  * Компонент с информацией о поддержке для клиентов.
  * Включает в себя город и телефон.
  */
+@deprecated('arui-private')
 @cn('support')
 @performance()
 class Support extends React.Component {

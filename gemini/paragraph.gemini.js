@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Paragraph from '../src/paragraph';
+import Paragraph from '../src/paragraph/fantasy';
 import { LOREM_IPSUM } from '../src/vars';
 
 const NAME = 'paragraph';

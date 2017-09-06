@@ -304,6 +304,29 @@ describe('select', () => {
         }, 0);
     });
 
+    it('should set `checked` class when item is selected', () => {
+        let checkedOption = OPTIONS[0];
+        let selectProps = {
+            options: OPTIONS,
+            value: [checkedOption.value]
+        };
+        let { select } = renderSelect(selectProps);
+
+        expect(select.node).to.have.class('select_checked');
+    });
+
+    it('should set `checked` class when item is selected and select type is `radio`', () => {
+        let checkedOption = OPTIONS[0];
+        let selectProps = {
+            mode: 'radio',
+            options: OPTIONS,
+            value: [checkedOption.value]
+        };
+        let { select } = renderSelect(selectProps);
+
+        expect(select.node).to.have.class('select_checked');
+    });
+
     if (bowser.mobile) {
         it('should render default placeholder text', () => {
             let selectProps = { options: OPTIONS };

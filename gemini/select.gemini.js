@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Select from '../src/select';
+import Select from '../src/select/fantasy';
 
 const NAME = 'select';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

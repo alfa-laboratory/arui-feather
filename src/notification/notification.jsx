@@ -7,6 +7,7 @@
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
+import Hammer from 'react-hammerjs';
 
 import Icon from '../icon/icon';
 
@@ -104,48 +105,60 @@ class Notification extends React.Component {
 
     render(cn) {
         return (
-            <div
-                className={ cn({
-                    visible: this.props.visible,
-                    status: this.props.status,
-                    hovered: this.state.hovered,
-                    'stick-to': this.props.stickTo
-                }) }
-                onMouseEnter={ this.handleMouseEnter }
-                onMouseLeave={ this.handleMouseLeave }
-                onClick={ this.handleClick }
-                style={ this.getPosition() }
-                ref={ (root) => { this.root = root; } }
-            >
-                <div className={ cn('icon') }>
+            <Hammer onSwipe={ this.handleSwipe }>
+                <div
+                    className={ cn({
+                        visible: this.props.visible,
+                        status: this.props.status,
+                        hovered: this.state.hovered,
+                        'stick-to': this.props.stickTo
+                    }) }
+                    onMouseEnter={ this.handleMouseEnter }
+                    onMouseLeave={ this.handleMouseLeave }
+                    onClick={ this.handleClick }
+                    style={ this.getPosition() }
+                    ref={ (root) => { this.root = root; } }
+                >
+                    <div className={ cn('icon') }>
+                        {
+                            this.props.icon ||
+                            <Icon
+                                theme='alfa-on-colored'
+                                icon={ this.props.status }
+                                size='m'
+                            />
+                        }
+                    </div>
+                    { this.props.title &&
+                        <div className={ cn('title') }>
+                            { this.props.title }
+                        </div>
+                    }
+                    <div className={ cn('content') }>
+                        { this.props.children }
+                    </div>
                     {
-                        this.props.icon ||
+                        this.props.hasCloser &&
                         <Icon
-                            theme='alfa-on-colored'
-                            icon={ this.props.status }
+                            className={ cn('close') }
                             size='m'
+                            icon='close'
+                            onClick={ this.handleCloserClick }
                         />
                     }
                 </div>
-                { this.props.title &&
-                    <div className={ cn('title') }>
-                        { this.props.title }
-                    </div>
-                }
-                <div className={ cn('content') }>
-                    { this.props.children }
-                </div>
-                {
-                    this.props.hasCloser &&
-                    <Icon
-                        className={ cn('close') }
-                        size='m'
-                        icon='close'
-                        onClick={ this.handleCloserClick }
-                    />
-                }
-            </div>
+            </Hammer>
         );
+    }
+
+    @autobind
+    handleSwipe({ deltaX }) {
+        if (
+            (this.props.stickTo === 'left' && deltaX < -100) ||
+            (this.props.stickTo === 'right' && deltaX > 100)
+        ) {
+            this.handleCloserClick();
+        }
     }
 
     @autobind

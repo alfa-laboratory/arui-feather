@@ -103,6 +103,7 @@
     "react": "^15.5.3",
     "react-addons-create-fragment": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-hammerjs": "^0.5.0",
     "react-style-proptype": "^3.0.0",
     "react-textarea-autosize": "^5.1.0"
   },

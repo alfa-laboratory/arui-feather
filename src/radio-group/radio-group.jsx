@@ -94,7 +94,7 @@ class RadioGroup extends React.Component {
             });
         }
         return (
-            <span
+            <div
                 className={
                     `${cn({
                         type: this.props.type,
@@ -107,20 +107,22 @@ class RadioGroup extends React.Component {
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
             >
-                {
-                    !!this.props.label &&
-                    <div className={ cn('label') }>
-                        { this.props.label }
+                <div className={ cn('inner') }>
+                    {
+                        !!this.props.label &&
+                        <div className={ cn('top') }>{ this.props.label }</div>
+                    }
+                    <div className={ cn('box') }>
+                        { createFragment(radioGroupParts) }
                     </div>
-                }
-                { createFragment(radioGroupParts) }
-                {
-                    (this.props.error || this.props.hint) &&
-                    <span className={ cn('sub') }>
-                        { this.props.error || this.props.hint }
-                    </span>
-                }
-            </span>
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
+                </div>
+            </div>
         );
     }
 

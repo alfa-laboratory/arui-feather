@@ -28,10 +28,6 @@
         word-break: normal;
     }
 
-    &__box {
-        display: flex;
-    }
-
     &__sub {
         display: table-caption;
         caption-side: bottom;
@@ -53,6 +49,12 @@
     &_type_normal {
         .radio {
             display: block;
+        }
+    }
+
+    &_type_button {
+        .radio-group__box {
+            display: flex;
         }
     }
 }

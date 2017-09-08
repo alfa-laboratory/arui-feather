@@ -107,19 +107,21 @@ class RadioGroup extends React.Component {
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
             >
-                {
-                    !!this.props.label &&
-                    <div className={ cn('top') }>{ this.props.label }</div>
-                }
-                <div className={ cn('box') }>
-                    { createFragment(radioGroupParts) }
+                <div className={ cn('inner') }>
+                    {
+                        !!this.props.label &&
+                        <div className={ cn('top') }>{ this.props.label }</div>
+                    }
+                    <div className={ cn('box') }>
+                        { createFragment(radioGroupParts) }
+                    </div>
+                    {
+                        (this.props.error || this.props.hint) &&
+                        <span className={ cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    }
                 </div>
-                {
-                    (this.props.error || this.props.hint) &&
-                    <span className={ cn('sub') }>
-                        { this.props.error || this.props.hint }
-                    </span>
-                }
             </div>
         );
     }

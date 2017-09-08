@@ -5,11 +5,14 @@
 @import '../../vars-fantasy.css';
 
 .radio-group_theme_alfa-on-white {
-    .label, .radio-group__sub {
+    .radio-group__top,
+    .radio-group__sub {
         color: var(--color-content-minor-alfa-on-white);
     }
 
     &.radio-group_invalid {
+        border-left: 1px solid var(--color-error-translucent);
+
         .radio-group__sub {
             color: var(--color-error);
         }

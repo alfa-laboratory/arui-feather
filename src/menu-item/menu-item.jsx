@@ -22,7 +22,7 @@ class MenuItem extends React.Component {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),
         /** Тип ссылки, для компонента с type='link' */
-        view: Type.oneOf(['default', 'link', 'pseudo']),
+        view: Type.oneOf(['plain', 'underlined', 'pseudo']),
         /** href ссылки, для компонента с type='link' */
         url: Type.string,
         /** target для ссылки */
@@ -63,7 +63,8 @@ class MenuItem extends React.Component {
     };
 
     static defaultProps = {
-        type: 'link'
+        type: 'link',
+        view: 'plain'
     };
 
     state = {
@@ -126,7 +127,7 @@ class MenuItem extends React.Component {
                         pseudo={ this.props.view === 'pseudo' }
                         disabled={ this.props.disabled }
                         checked={ this.props.checked }
-                        text={ content }
+                        text={ this.props.view !== 'plain' && content }
                         url={ this.props.url }
                         target={ this.props.target }
                         onClick={ this.handleClick }
@@ -134,7 +135,9 @@ class MenuItem extends React.Component {
                         onBlur={ this.handleBlur }
                         onMouseEnter={ this.handleMouseEnter }
                         onMouseLeave={ this.handleMouseLeave }
-                    />
+                    >
+                        { this.props.view === 'plain' && content }
+                    </Link>
                 );
                 break;
         }

@@ -1,3 +1,14 @@
+<a name="9.6.0"></a>
+# [9.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.5.0...v9.6.0) (2017-09-05)
+
+
+### Features
+
+* **button:** added formNoValidate attribute ([#235](https://github.com/alfa-laboratory/arui-feather/issues/235)) ([49a059a](https://github.com/alfa-laboratory/arui-feather/commit/49a059a))
+* **menu-item:** update view prop ([#236](https://github.com/alfa-laboratory/arui-feather/issues/236)) ([702f0a8](https://github.com/alfa-laboratory/arui-feather/commit/702f0a8))
+
+
+
 <a name="9.5.0"></a>
 # [9.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.4.1...v9.5.0) (2017-09-04)
 

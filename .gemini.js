@@ -1,6 +1,6 @@
 global.React = require('react');
 
-const IS_TRAVIS_CRON_BUILD = process.env.TRAVIS_EVENT_TYPE === 'cron';
+const ALL_BROWSERS = !!process.env.ALL_BROWSERS;
 
 let config = {
     gridUrl: 'http://ondemand.saucelabs.com/wd/hub',
@@ -49,7 +49,7 @@ let config = {
     }
 };
 
-if (IS_TRAVIS_CRON_BUILD) {
+if (ALL_BROWSERS) {
     config.system.plugins.react.jsModules.unshift('./src/polyfills.js');
 
     Object.assign(config.browsers, {

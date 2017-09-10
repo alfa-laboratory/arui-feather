@@ -3,11 +3,20 @@ import Input from '../src/input/fantasy';
 import Radio from '../src/radio/fantasy';
 import RadioGroup from '../src/radio-group/fantasy';
 
-function renderAddons(size) {
+function renderAddons(inputSize) {
+    let radioSize;
+
+    switch (inputSize) {
+        case 's':
+        case 'm': radioSize = 's'; break;
+        case 'l': radioSize = 'm'; break;
+        case 'xl': radioSize = 'l'; break;
+    }
+
     let buttonControlNodes = [1, 2, 3].map(item => (
         <Radio
             key={ item }
-            size={ size }
+            size={ radioSize }
             type={ 'button' }
             text={ item }
         />

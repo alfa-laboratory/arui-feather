@@ -1,0 +1,14 @@
+@import 'arui-feather/vars-fantasy.css';
+
+.progress-bar {
+    display: flex;
+    width: 100%;
+    min-width: 200px;
+    height: 3px;
+    background: var(--color-background-control-disabled-alfa-on-white);
+    overflow: hidden;
+
+    &__current-value {
+        background: var(--color-accent);
+    }
+}

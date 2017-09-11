@@ -35,7 +35,7 @@ function renderSelect(props) {
     let nativeSelectNode = select.node.querySelector('.select__native-control');
     let buttonNode = select.node.querySelector('.select-button');
     let popupNode = document.querySelector('.popup');
-    let menuNode = popupNode.querySelector('.select__menu');
+    let menuNode = popupNode ? popupNode.querySelector('.select__menu') : null;
 
     return { select, nativeSelectNode, popupNode, buttonNode, menuNode };
 }

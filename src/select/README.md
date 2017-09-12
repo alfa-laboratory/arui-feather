@@ -187,3 +187,76 @@ const options = [
     ))}
 </div>
 ```
+
+Группированный селект (у второго селекта размещение заголовка в одну линию)
+```jsx
+const options = [
+    {
+        type: 'group',
+        title: 'ИП УСН 6%',
+        content: [
+            { value: '1', text: 'ИП Иванов' },
+            { value: '2', text: 'ИП Баринов' }
+        ]
+    },
+    {
+        type: 'group',
+        title: 'ИП УСН 15%',
+        content: [
+            { value: '3', text: 'ИП Семёнов' },
+            { value: '4', text: 'ИП Лягушкин' }
+        ]
+    },
+    {
+        type: 'group',
+        title: '',
+        content: [
+            { value: '5', text: 'ИП Лукина' }
+        ]
+    }
+];
+const options2 = [
+    {
+        type: 'group',
+        title: 'а)',
+        content: [
+            { value: '1', text: 'ИП Иванов' },
+            { value: '2', text: 'ИП Баринов' }
+        ]
+    },
+    {
+        type: 'group',
+        title: 'б)',
+        content: [
+            { value: '3', text: 'ИП Семёнов' },
+            { value: '4', text: 'ИП Лягушкин' }
+        ]
+    },
+    {
+        type: 'group',
+        title: '',
+        content: [
+            { value: '5', text: 'ИП Лукина' }
+        ]
+    }
+];
+<div>
+    <div className='row' >
+        <div className='column'>
+            <Select
+                groupView='default'
+                options={ options }
+                mode='radio'
+            />
+        </div>
+        <div className='column'>
+            <Select
+                groupView='line'
+                options={ options2 }
+                mode='radio'
+                value={ ['4'] }
+            />
+        </div>
+    </div>
+</div>
+```

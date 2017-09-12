@@ -188,15 +188,13 @@ class Attach extends React.Component {
     }
 
     renderButton(cn) {
-        let btnProps = this.props.buttonProps || {};
         let buttonProps = {
-            ...btnProps,
+            ...this.props.buttonProps,
             className: cn('button'),
             disabled: this.props.disabled,
             size: this.props.size,
             icon: this.props.icon ? this.props.icon : <Icon size={ this.props.size } icon='attachment' />,
-            focused: this.state.focused,
-            type: btnProps.type || 'button'
+            focused: this.state.focused
         };
 
         return (
@@ -256,6 +254,7 @@ class Attach extends React.Component {
                     <button
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
+                        type='button'
                     />
                 </div>
             );

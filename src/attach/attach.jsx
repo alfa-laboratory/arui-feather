@@ -252,9 +252,9 @@ class Attach extends React.Component {
                         { content }
                     </span>
                     <button
+                        type='button'
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
-                        type='button'
                     />
                 </div>
             );

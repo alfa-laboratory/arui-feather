@@ -34,11 +34,15 @@
     &.textarea_disabled {
         &,
         .textarea__control {
-            color: var(--color-content-minor-alfa-on-white);
+            color: var(--color-content-disabled-alfa-on-white);
         }
 
         .textarea__control {
             border-bottom-style: dotted;
+
+            &::placeholder {
+                color: var(--color-content-disabled-alfa-on-white);
+            }
         }
     }
 

@@ -41,7 +41,7 @@
     }
 
     &.radio_disabled {
-        color: var(--color-content-minor-alfa-on-color);
+        color: var(--color-content-disabled-alfa-on-color);
 
         .radio__box {
             background: var(--color-background-control-disabled-alfa-on-color);

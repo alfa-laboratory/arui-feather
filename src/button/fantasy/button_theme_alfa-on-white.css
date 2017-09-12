@@ -114,7 +114,7 @@
         background: rgba(10, 30, 50, .08);
 
         .button__text {
-            color: var(--color-content-minor-alfa-on-white);
+            color: var(--color-content-disabled-alfa-on-white);
         }
     }
 }

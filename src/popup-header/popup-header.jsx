@@ -26,6 +26,8 @@ class PopupHeader extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика по кнопке закрытия */
         onCloseClick: Type.func
     };
@@ -36,6 +38,7 @@ class PopupHeader extends React.Component {
                 className={ cn({
                     size: this.props.size
                 }) }
+                id={ this.props.id }
             >
                 <Icon
                     className={ cn('closer') }

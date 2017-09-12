@@ -30,6 +30,8 @@ class Plate extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика по плашке */
         onClick: Type.func,
         /** Обработчик клика по крестику */
@@ -53,6 +55,7 @@ class Plate extends React.Component {
                     hidden: hasCloser && this.state.isHidden,
                     flat: this.props.isFlat
                 }) }
+                id={ this.props.id }
                 onClick={ this.handleClick }
             >
                 { this.props.children }

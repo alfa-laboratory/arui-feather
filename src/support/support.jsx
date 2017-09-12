@@ -33,6 +33,8 @@ class Support extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика по городу */
         onCityClick: Type.func,
         /** Обработчик клика по телефону */
@@ -45,7 +47,7 @@ class Support extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn } id={ this.props.id }>
                 <div className={ cn('city') }>
                     <Link
                         size={ this.props.size }

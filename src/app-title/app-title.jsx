@@ -24,13 +24,15 @@ class AppTitle extends React.Component {
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     render(cn) {
         return (
-            <div className={ cn('title') }>
+            <div className={ cn('title') } id={ this.props.id }>
                 { this.props.children }
             </div>
         );

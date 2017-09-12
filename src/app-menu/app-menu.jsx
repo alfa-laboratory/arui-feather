@@ -24,13 +24,15 @@ class AppMenu extends React.Component {
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     render(cn) {
         return (
-            <div className={ cn('menu') }>
+            <div className={ cn('menu') } id={ this.props.id }>
                 <div className={ cn('menu-case') }>
                     <div className={ cn('menu-content') }>
                         { this.props.children }

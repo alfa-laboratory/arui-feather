@@ -66,6 +66,8 @@ class Menu extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика по варианту меню */
         onItemClick: Type.func,
         /** Обработчик выбора варианта меню */
@@ -138,6 +140,7 @@ class Menu extends React.Component {
                     disabled: this.props.disabled,
                     mode: this.props.mode
                 }) }
+                id={ this.props.id }
                 tabIndex={ 0 }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }

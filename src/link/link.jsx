@@ -40,6 +40,8 @@ class Link extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика но ссылке */
         onClick: Type.func,
         /** Обработчик фокуса компонента */
@@ -81,6 +83,7 @@ class Link extends React.Component {
                 focused: this.state.focused,
                 hovered: this.state.hovered
             }),
+            id: this.props.id,
             tabIndex: this.props.tabIndex,
             onClick: this.handleClick,
             onFocus: this.handleFocus,

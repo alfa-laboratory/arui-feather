@@ -27,7 +27,9 @@ class List extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     render(cn) {
@@ -45,7 +47,8 @@ class List extends React.Component {
         let listProps = {
             className: cn({
                 type: this.props.type
-            })
+            }),
+            id: this.props.id
         };
 
         return React.createElement(

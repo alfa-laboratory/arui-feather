@@ -24,12 +24,14 @@ class Paragraph extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     render(cn) {
         return (
-            <p className={ cn({ view: this.props.view }) }>
+            <p className={ cn({ view: this.props.view }) } id={ this.props.id }>
                 { this.props.mark &&
                     <span className={ cn('marker') }>{ this.props.mark }</span>
                 }

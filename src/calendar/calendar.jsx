@@ -69,6 +69,8 @@ class Calendar extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
         onKeyDown: Type.func,
         /** Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
@@ -125,6 +127,7 @@ class Calendar extends React.Component {
             <div
                 ref={ (root) => { this.root = root; } }
                 className={ cn }
+                id={ this.props.id }
                 role='grid'
                 tabIndex='0'
                 onBlur={ this.handleBlur }

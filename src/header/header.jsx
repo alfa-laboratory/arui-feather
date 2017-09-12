@@ -37,6 +37,8 @@ class Header extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик события изменение размера шапки */
         onResize: Type.func,
         /** Обработчик события клика по логотипу Альфа-Банк */
@@ -74,7 +76,11 @@ class Header extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn({ fixed: this.state.fixed }) } ref={ (root) => { this.root = root; } }>
+            <div
+                className={ cn({ fixed: this.state.fixed }) }
+                id={ this.props.id }
+                ref={ (root) => { this.root = root; } }
+            >
                 { this.props.topContent &&
                     <div className={ cn('top-content') } ref={ (topContent) => { this.topContent = topContent; } }>
                         { this.props.topContent }

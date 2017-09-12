@@ -37,7 +37,9 @@ class Footer extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     static defaultProps = {
@@ -49,7 +51,7 @@ class Footer extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn } id={ this.props.id }>
                 <div className={ cn('inner') }>
                     {
                         this.props.menu && (

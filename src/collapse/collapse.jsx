@@ -31,6 +31,8 @@ class Collapse extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик смены состояния `expand`/`collapse` */
         onExpandedChange: Type.func
     };
@@ -65,6 +67,7 @@ class Collapse extends React.Component {
                 className={ cn({
                     expanded
                 }) }
+                id={ this.props.id }
             >
                 <div
                     ref={ (content) => { this.content = content; } }

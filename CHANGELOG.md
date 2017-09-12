@@ -1,3 +1,14 @@
+<a name="9.6.1"></a>
+## [9.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.6.0...v9.6.1) (2017-09-12)
+
+
+### Bug Fixes
+
+* **attach:** added type property for clear button ([#242](https://github.com/alfa-laboratory/arui-feather/issues/242)) ([a45ca8e](https://github.com/alfa-laboratory/arui-feather/commit/a45ca8e))
+* **radio-group:** fixed radio-group with width=available ([#237](https://github.com/alfa-laboratory/arui-feather/issues/237)) ([b7b7fef](https://github.com/alfa-laboratory/arui-feather/commit/b7b7fef))
+
+
+
 <a name="9.6.0"></a>
 # [9.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.5.0...v9.6.0) (2017-09-05)
 

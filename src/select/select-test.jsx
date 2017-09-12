@@ -202,42 +202,6 @@ describe('select', () => {
         expect(onChange).to.have.been.calledOnce;
     });
 
-    // add after decorator update
-    it('should call `onClickOutside` callback after click outside of open popup', (done) => {
-        let onClickOutside = sinon.spy();
-        let selectProps = {
-            options: OPTIONS,
-            onClickOutside
-        };
-        let { select, buttonNode } = renderSelect(selectProps);
-        let outsideElement = document.createElement('div');
-        outsideElement.setAttribute('style',
-            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
-        );
-        outsideElement.setAttribute('id', 'outside');
-        select.container.appendChild(outsideElement);
-
-        buttonNode.click();
-
-        setTimeout(() => {
-            outsideElement.click();
-            expect(onClickOutside).to.have.been.calledOnce;
-            done();
-        }, 0);
-    });
-
-    it('should call `onFocus` after button was clicked', (done) => {
-        let onFocus = sinon.spy();
-        let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
-
-        buttonNode.click();
-
-        setTimeout(() => {
-            expect(onFocus).to.have.been.calledOnce;
-            done();
-        }, 0);
-    });
-
     it('should receive event.target.value on `onFocus` callback', (done) => {
         let onFocus = sinon.spy(eventPersist);
         let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onFocus });
@@ -290,6 +254,7 @@ describe('select', () => {
         expect(select.node).to.have.class('select_checked');
     });
 
+
     if (bowser.mobile) {
         it('should render default placeholder text', () => {
             let selectProps = { options: OPTIONS };
@@ -317,6 +282,34 @@ describe('select', () => {
 
             expect(nativeSelectNode).to.not.exist;
             expect(popupNode).to.have.class('popup');
+        });
+
+        it('should call `onFocus` after native select was focused', (done) => {
+            let onFocus = sinon.spy();
+            let { nativeSelectNode } = renderSelect({ options: OPTIONS, onFocus });
+
+            nativeSelectNode.focus();
+
+            setTimeout(() => {
+                expect(onFocus).to.have.been.calledOnce;
+                done();
+            }, 0);
+        });
+
+        it('should call `onBlur` after native select was blurred', (done) => {
+            let onBlur = sinon.spy();
+            let { nativeSelectNode } = renderSelect({ options: OPTIONS, onBlur });
+
+            nativeSelectNode.focus();
+
+            setTimeout(() => {
+                nativeSelectNode.blur();
+
+                setTimeout(() => {
+                    expect(onBlur).to.have.been.calledOnce;
+                    done();
+                }, 0);
+            }, 0);
         });
     } else {
         it('should render popup with options', () => {
@@ -363,6 +356,18 @@ describe('select', () => {
             let buttonWidth = buttonNode.getBoundingClientRect().width;
 
             expect(popupWidth).to.be.equal(buttonWidth);
+        });
+
+        it('should call `onFocus` after button was clicked', (done) => {
+            let onFocus = sinon.spy();
+            let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
+
+            buttonNode.click();
+
+            setTimeout(() => {
+                expect(onFocus).to.have.been.calledOnce;
+                done();
+            }, 0);
         });
 
         it('should call `onBlur` after escape key was pressed', (done) => {
@@ -494,6 +499,30 @@ describe('select', () => {
                     expect(onMenuBlur).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                     done();
                 }, 0);
+            }, 0);
+        });
+
+        // add after decorator update
+        it('should call `onClickOutside` callback after click outside of open popup', (done) => {
+            let onClickOutside = sinon.spy();
+            let selectProps = {
+                options: OPTIONS,
+                onClickOutside
+            };
+            let { select, buttonNode } = renderSelect(selectProps);
+            let outsideElement = document.createElement('div');
+            outsideElement.setAttribute('style',
+                'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
+            );
+            outsideElement.setAttribute('id', 'outside');
+            select.container.appendChild(outsideElement);
+
+            buttonNode.click();
+
+            setTimeout(() => {
+                outsideElement.click();
+                expect(onClickOutside).to.have.been.calledOnce;
+                done();
             }, 0);
         });
     }

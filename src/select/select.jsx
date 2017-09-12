@@ -586,17 +586,6 @@ class Select extends React.Component {
     }
 
     @autobind
-    handleNativeClick(event) {
-        if (!this.props.disabled) {
-            this.toggleOpened();
-        }
-
-        if (this.props.onClick) {
-            this.props.onClick(event);
-        }
-    }
-
-    @autobind
     handleClickOutside() {
         this.setState({
             opened: false
@@ -641,6 +630,10 @@ class Select extends React.Component {
 
     @autobind
     handleNativeFocus(event) {
+        if (!this.props.disabled) {
+            this.toggleOpened();
+        }
+
         if (this.props.onFocus) {
             this.props.onFocus(this.getRevisedEvent(event));
         }
@@ -648,8 +641,19 @@ class Select extends React.Component {
 
     @autobind
     handleNativeBlur(event) {
+        if (!this.props.disabled) {
+            this.toggleOpened();
+        }
+
         if (this.props.onBlur) {
             this.props.onBlur(this.getRevisedEvent(event));
+        }
+    }
+
+    @autobind
+    handleNativeClick(event) {
+        if (this.props.onClick) {
+            this.props.onClick(this.getRevisedEvent(event));
         }
     }
 

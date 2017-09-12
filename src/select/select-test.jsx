@@ -188,20 +188,6 @@ describe('select', () => {
         expect(onClick).to.have.been.calledOnce;
     });
 
-    it('should call `onChange` callback after option was clicked', () => {
-        let onChange = sinon.spy();
-        let selectProps = {
-            options: OPTIONS,
-            onChange
-        };
-        let { popupNode } = renderSelect(selectProps);
-        let firstOptionNode = popupNode.querySelector('.menu-item');
-
-        firstOptionNode.click();
-
-        expect(onChange).to.have.been.calledOnce;
-    });
-
     it('should receive event.target.value on `onFocus` callback', (done) => {
         let onFocus = sinon.spy(eventPersist);
         let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onFocus });
@@ -500,6 +486,20 @@ describe('select', () => {
                     done();
                 }, 0);
             }, 0);
+        });
+
+        it('should call `onChange` callback in custom select after option was clicked', () => {
+            let onChange = sinon.spy();
+            let selectProps = {
+                options: OPTIONS,
+                onChange
+            };
+            let { popupNode } = renderSelect(selectProps);
+            let firstOptionNode = popupNode.querySelector('.menu-item');
+
+            firstOptionNode.click();
+
+            expect(onChange).to.have.been.calledOnce;
         });
 
         // add after decorator update

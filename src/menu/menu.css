@@ -34,12 +34,6 @@
     }
 }
 
-.menu_mode_nav {
-    .menu-item_checked {
-        opacity: var(--opacity-minor);
-    }
-}
-
 .menu_mode_check,
 .menu_mode_radio,
 .menu_mode_radio-check {

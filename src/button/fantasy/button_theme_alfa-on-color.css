@@ -115,7 +115,7 @@
         border-color: transparent;
 
         .button__text {
-            color: var(--color-content-minor-alfa-on-color);
+            color: var(--color-content-disabled-alfa-on-color);
         }
     }
 }

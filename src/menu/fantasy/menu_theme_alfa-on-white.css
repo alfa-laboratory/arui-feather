@@ -18,7 +18,7 @@
     }
 
     .menu-item_disabled {
-        color: var(--color-content-minor-alfa-on-white);
+        color: var(--color-content-disabled-alfa-on-white);
     }
 
     @each $size in s, m, l, xl {

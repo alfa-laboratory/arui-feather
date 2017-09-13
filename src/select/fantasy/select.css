@@ -129,10 +129,6 @@
 
         &_disabled {
             cursor: default;
-
-            .select-button__text {
-                opacity: var(--opacity-minor);
-            }
         }
     }
 

@@ -19,9 +19,14 @@
 
     /**
      * Цвет второстепенного контента для `alfa-on-color`.
+     */
+    --color-content-minor-alfa-on-color: rgba(255, 255, 255, .6);
+
+    /**
+     * Цвет неактивного контента для `alfa-on-color`.
      * Например, используется на неактивных полях ввода.
      */
-    --color-content-minor-alfa-on-color: rgba(255, 255, 255, .4);
+    --color-content-disabled-alfa-on-color: rgba(255, 255, 255, .35);
 
     /**
      * Цвет фона компонентов для `alfa-on-color`.

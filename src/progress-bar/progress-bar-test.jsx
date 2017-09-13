@@ -21,5 +21,5 @@ describe('progress-bar', () => {
         let currentValueWrapper = progressBar.node.querySelector('.progress-bar__current-value');
 
         expect(currentValueWrapper).to.have.attribute('style', 'width: 50%;');
-    })
+    });
 });

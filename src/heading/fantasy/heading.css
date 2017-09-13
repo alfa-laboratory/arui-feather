@@ -40,7 +40,7 @@
         margin-bottom: 20px;
         font-size: var(--font-size-3xl);
 
-        @media (--large) {
+        @media (--medium) {
             margin-top: 35px;
             margin-bottom: 30px;
             font-size: var(--font-size-4xl);

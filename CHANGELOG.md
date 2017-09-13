@@ -1,3 +1,13 @@
+<a name="9.7.0"></a>
+# [9.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.6.1...v9.7.0) (2017-09-13)
+
+
+### Features
+
+* add ids ([#244](https://github.com/alfa-laboratory/arui-feather/issues/244)) ([a9b04c0](https://github.com/alfa-laboratory/arui-feather/commit/a9b04c0))
+
+
+
 <a name="9.6.1"></a>
 ## [9.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.6.0...v9.6.1) (2017-09-12)
 

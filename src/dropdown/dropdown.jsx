@@ -68,6 +68,8 @@ class Dropdown extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика по кнопке компонента */
         onSwitcherClick: Type.func,
         /** Обработчик события наведения курсора на кнопку компонента */
@@ -104,7 +106,7 @@ class Dropdown extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn } id={ this.props.id }>
                 { this.renderSwitcher(cn) }
                 { this.renderPopup(cn) }
             </div>

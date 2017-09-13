@@ -23,7 +23,9 @@ export default class Tabs extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     static defaultProps = {
@@ -32,7 +34,7 @@ export default class Tabs extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn({ scrollable: this.props.scrollable }) }>
+            <div className={ cn({ scrollable: this.props.scrollable }) } id={ this.props.id }>
                 <div className={ cn('panel') }>
                     <div className={ cn('content') }>
                         { this.props.children }

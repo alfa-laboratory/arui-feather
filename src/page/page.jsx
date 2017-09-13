@@ -33,7 +33,9 @@ class Page extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     state = {
@@ -52,7 +54,7 @@ class Page extends React.Component {
         }
 
         return (
-            <div className={ cn }>
+            <div className={ cn } id={ this.props.id }>
                 { header }
                 <div className={ cn('inner') } style={ { marginTop: this.state.innerMargin } }>
                     <div className={ cn('content') } style={ { paddingTop: this.state.contentPadding } }>

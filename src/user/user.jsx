@@ -25,6 +25,8 @@ class User extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Иконка пользователя */
         icon: Type.node,
         /** Имя пользователя */
@@ -49,6 +51,7 @@ class User extends React.Component {
         return (
             <Link
                 className={ cn }
+                id={ this.props.id }
                 icon={ icon }
                 text={ this.props.text }
                 url={ this.props.url }

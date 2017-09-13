@@ -94,7 +94,9 @@ class Amount extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     static defaultProps = {
@@ -118,7 +120,7 @@ class Amount extends React.Component {
         );
 
         return (
-            <div className={ cn }>
+            <div className={ cn } id={ this.props.id }>
                 {
                     this.props.isHeading
                         ? <Heading size={ size }>

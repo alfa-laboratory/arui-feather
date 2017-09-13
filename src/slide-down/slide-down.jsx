@@ -25,7 +25,9 @@ class SlideDown extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.string, Type.func])
+        className: Type.oneOfType([Type.string, Type.func]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     state = {
@@ -56,6 +58,7 @@ class SlideDown extends React.Component {
         return (
             <div
                 className={ cn }
+                id={ this.props.id }
                 style={
                     { height: this.getHeight() }
                 }

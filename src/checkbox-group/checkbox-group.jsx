@@ -33,6 +33,8 @@ class CheckBoxGroup extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Лейбл для группы */
         label: Type.node,
         /** Обработчик фокуса радиогруппы */
@@ -101,6 +103,7 @@ class CheckBoxGroup extends React.Component {
                         width: props.width ? props.width : null
                     })} control-group`
                 }
+                id={ this.props.id }
                 role='group'
                 tabIndex='-1'
                 onFocus={ this.handleFocus }

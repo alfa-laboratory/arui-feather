@@ -33,6 +33,8 @@ class Sidebar extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Дочерние компоненты */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Признак для отрисовки элемента закрытия */
@@ -64,7 +66,7 @@ class Sidebar extends React.Component {
 
         return (
             <PopupContainerProvider className={ cn({ visible }) }>
-                <div>
+                <div id={ this.props.id }>
                     {
                         hasCloser &&
                         <button

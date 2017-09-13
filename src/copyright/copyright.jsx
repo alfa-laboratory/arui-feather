@@ -25,6 +25,8 @@ class Copyright extends React.Component {
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Отображение годов */
         showYears: Type.bool,
         /** Тема компонента */
@@ -37,7 +39,7 @@ class Copyright extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn } id={ this.props.id }>
                 { this.props.children || this.renderDefaultCopyright(cn) }
             </div>
         );

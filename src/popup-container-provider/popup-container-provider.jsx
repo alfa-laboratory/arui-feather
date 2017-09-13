@@ -49,6 +49,8 @@ class PopupContainerProvider extends React.Component {
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Объект со стилями */
         style: styleType,
         /** Тема компонента */
@@ -81,6 +83,7 @@ class PopupContainerProvider extends React.Component {
         return (
             <div
                 className={ cn }
+                id={ this.props.id }
                 ref={ (positioningContainer) => { this.positioningContainer = positioningContainer; } }
                 style={ this.props.style }
             >

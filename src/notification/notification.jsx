@@ -37,6 +37,8 @@ class Notification extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Заголовок сообщения */
         title: Type.node,
         /** Замена стандартной иконки */
@@ -111,6 +113,7 @@ class Notification extends React.Component {
                     hovered: this.state.hovered,
                     'stick-to': this.props.stickTo
                 }) }
+                id={ this.props.id }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
                 onClick={ this.handleClick }

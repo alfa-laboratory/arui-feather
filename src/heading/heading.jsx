@@ -29,7 +29,9 @@ class Heading extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string
     };
 
     static defaultProps = {
@@ -40,7 +42,8 @@ class Heading extends React.Component {
         let headingProps = {
             className: cn({
                 size: this.props.size
-            })
+            }),
+            id: this.props.id
         };
 
         return React.createElement(`h${HEADING_LEVEL[this.props.size]}`,

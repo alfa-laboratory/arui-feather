@@ -56,6 +56,8 @@ class Popup extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Дочерние элементы `Popup` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Тип попапа */
@@ -230,6 +232,7 @@ class Popup extends React.Component {
                         autoclosable: this.props.autoclosable,
                         padded: this.props.padded
                     }) }
+                    id={ this.props.id }
                     style={ {
                         ...this.state.styles,
                         minWidth: this.getMinWidth(),

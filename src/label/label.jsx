@@ -23,6 +23,8 @@ class Label extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Управление возможностью рендерить компонент в одну сроку */
         isNoWrap: Type.bool
     };
@@ -39,6 +41,7 @@ class Label extends React.Component {
                     size: this.props.size,
                     'no-wrap': this.props.isNoWrap
                 }) }
+                id={ this.props.id }
             >
                 <span className={ cn('inner') }>
                     { this.props.children }

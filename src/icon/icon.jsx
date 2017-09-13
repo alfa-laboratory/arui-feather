@@ -34,6 +34,8 @@ class Icon extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор компонента в DOM */
+        id: Type.string,
         /** Обработчик клика по иконке */
         onClick: Type.func
     };
@@ -54,6 +56,7 @@ class Icon extends React.Component {
         return (
             <span
                 className={ cn(mods) }
+                id={ this.props.id }
                 onClick={ this.handleClick }
             />
         );

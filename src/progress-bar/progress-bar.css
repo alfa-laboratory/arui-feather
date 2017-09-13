@@ -9,10 +9,14 @@
     width: 100%;
     min-width: 200px;
     height: 3px;
-    background: var(--color-background-control-disabled-alfa-on-white);
+    background: var(--color-background-minor-alfa-on-white);
     overflow: hidden;
 
     &__current-value {
         background: var(--color-accent);
+    }
+
+    &_size_m {
+        height: 3px;
     }
 }

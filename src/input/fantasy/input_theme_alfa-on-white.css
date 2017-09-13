@@ -58,7 +58,7 @@
     &.input_disabled {
         .input__box {
             border-bottom-color: var(--color-border-control-disabled-alfa-on-white);
-            border-bottom-style: dotted;
+            border-bottom-style: var(--border-style-control-disabled);
         }
 
         &,

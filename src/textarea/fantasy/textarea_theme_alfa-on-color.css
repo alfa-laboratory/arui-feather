@@ -38,7 +38,7 @@
         }
 
         .textarea__control {
-            border-bottom-style: dotted;
+            border-bottom-style: var(--border-style-control-disabled);
 
             &::placeholder {
                 color: var(--color-content-disabled-alfa-on-color);

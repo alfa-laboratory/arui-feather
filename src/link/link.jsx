@@ -30,7 +30,7 @@ class Link extends React.Component {
         disabled: Type.bool,
         /** Управление состоянием ссылки выбран/не выбран */
         checked: Type.bool,
-        /** Псевдо-ссылка (border-bottom: dotted) */
+        /** Псевдо-ссылка (border-bottom: dashed) */
         pseudo: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),

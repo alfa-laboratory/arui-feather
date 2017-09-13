@@ -17,7 +17,7 @@
         border: none;
 
         &:focus {
-            outline: 1px dotted #f28a25;
+            outline: 1px dashed #f28a25;
         }
 
         &:hover {

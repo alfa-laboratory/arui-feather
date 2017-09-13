@@ -7,10 +7,11 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 import performance from '../performance';
+import { deprecated } from '../lib/prop-types';
 
 /**
- * Компонент поля формы: cодержит заголовок контрола и сам контрол.
- * Контрол должен быть передан дочерним компонентов.
+ * Компонент поля формы.
+ * Необходим для вертикального ритма в форме.
  */
 @cn('form-field')
 @performance()
@@ -18,8 +19,8 @@ class FormField extends React.Component {
     static propTypes = {
         /** Дочерние элементы `FormField` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Заголовок для контрола */
-        label: Type.node,
+        /** @deprecated Заголовок для контрола */
+        label: deprecated(Type.node, 'Use \'label\' property directly on controls.'),
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Расположение элемента label: 'line' */

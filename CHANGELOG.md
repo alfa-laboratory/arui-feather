@@ -1,3 +1,23 @@
+<a name="9.8.0"></a>
+# [9.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.7.0...v9.8.0) (2017-09-14)
+
+
+### Bug Fixes
+
+* **input:** fix noValidate attribute ([#233](https://github.com/alfa-laboratory/arui-feather/issues/233)) ([33cffe3](https://github.com/alfa-laboratory/arui-feather/commit/33cffe3))
+* **slide-down:** add styles for fantasy slide-down ([#249](https://github.com/alfa-laboratory/arui-feather/issues/249)) ([02c1743](https://github.com/alfa-laboratory/arui-feather/commit/02c1743))
+
+
+### Features
+
+* add progress-bar ([#241](https://github.com/alfa-laboratory/arui-feather/issues/241)) ([2631e00](https://github.com/alfa-laboratory/arui-feather/commit/2631e00))
+* update border style from dotted to dashed for disabled controls ([#247](https://github.com/alfa-laboratory/arui-feather/issues/247)) ([6888fbe](https://github.com/alfa-laboratory/arui-feather/commit/6888fbe))
+* update content color variables for minor & disabled states ([#245](https://github.com/alfa-laboratory/arui-feather/issues/245)) ([0e58ffb](https://github.com/alfa-laboratory/arui-feather/commit/0e58ffb))
+* **form-field:** deprecate label property ([#240](https://github.com/alfa-laboratory/arui-feather/issues/240)) ([9f8e716](https://github.com/alfa-laboratory/arui-feather/commit/9f8e716))
+* **typography:** update font 4xl size ([#246](https://github.com/alfa-laboratory/arui-feather/issues/246)) ([8a32845](https://github.com/alfa-laboratory/arui-feather/commit/8a32845))
+
+
+
 <a name="9.7.0"></a>
 # [9.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.6.1...v9.7.0) (2017-09-13)
 

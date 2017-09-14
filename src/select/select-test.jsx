@@ -35,7 +35,7 @@ function renderSelect(props) {
     let nativeSelectNode = select.node.querySelector('.select__native-control');
     let buttonNode = select.node.querySelector('.select-button');
     let popupNode = document.querySelector('.popup');
-    let menuNode = popupNode.querySelector('.select__menu');
+    let menuNode = popupNode ? popupNode.querySelector('.select__menu') : null;
 
     return { select, nativeSelectNode, popupNode, buttonNode, menuNode };
 }
@@ -56,13 +56,6 @@ describe('select', () => {
         let { select } = renderSelect({ options: OPTIONS });
 
         expect(select.node).to.exist;
-    });
-
-    it('should render popup with options', () => {
-        let { select, popupNode } = renderSelect({ options: OPTIONS });
-
-        expect(select.node).to.exist;
-        expect(popupNode).to.have.class('popup');
     });
 
     it('should render hidden input', () => {
@@ -120,21 +113,7 @@ describe('select', () => {
         expect(subNode).to.have.text('Error');
     });
 
-    it('should set width to popup equal or more than button width', () => {
-        let selectProps = {
-            options: OPTIONS,
-            placeholder: 'Long text placeholder',
-            opened: true
-        };
-
-        let { popupNode, buttonNode } = renderSelect(selectProps);
-        let popupWidth = popupNode.getBoundingClientRect().width;
-        let buttonWidth = buttonNode.getBoundingClientRect().width;
-
-        expect(popupWidth).to.be.at.least(buttonWidth);
-    });
-
-    it('should show multiply options', () => {
+    it('should show multiple options', () => {
         let checkedOptions = [OPTIONS[1], OPTIONS[2]];
         let selectProps = {
             options: OPTIONS,
@@ -163,7 +142,7 @@ describe('select', () => {
         select.instance.focus();
 
         setTimeout(() => {
-            expect(select.node).to.have.class('select_focused');
+            expect(select.node).to.have.class('select_opened');
             done();
         }, 0);
     });
@@ -174,12 +153,12 @@ describe('select', () => {
         select.instance.focus();
 
         setTimeout(() => {
-            expect(select.node).to.have.class('select_focused');
+            expect(select.node).to.have.class('select_opened');
 
             select.instance.blur();
 
             setTimeout(() => {
-                expect(select.node).to.not.have.class('select_focused');
+                expect(select.node).to.not.have.class('select_opened');
                 done();
             }, 0);
         }, 0);
@@ -207,72 +186,6 @@ describe('select', () => {
         buttonNode.click();
 
         expect(onClick).to.have.been.calledOnce;
-    });
-
-    it('should call `onChange` callback after option was clicked', () => {
-        let onChange = sinon.spy();
-        let selectProps = {
-            options: OPTIONS,
-            onChange
-        };
-        let { popupNode } = renderSelect(selectProps);
-        let firstOptionNode = popupNode.querySelector('.menu-item');
-
-        firstOptionNode.click();
-
-        expect(onChange).to.have.been.calledOnce;
-    });
-
-    // add after decorator update
-    it('should call `onClickOutside` callback after click outside of open popup', (done) => {
-        let onClickOutside = sinon.spy();
-        let selectProps = {
-            options: OPTIONS,
-            onClickOutside
-        };
-        let { select, buttonNode } = renderSelect(selectProps);
-        let outsideElement = document.createElement('div');
-        outsideElement.setAttribute('style',
-            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
-        );
-        outsideElement.setAttribute('id', 'outside');
-        select.container.appendChild(outsideElement);
-
-        buttonNode.click();
-
-        setTimeout(() => {
-            outsideElement.click();
-            expect(onClickOutside).to.have.been.calledOnce;
-            done();
-        }, 0);
-    });
-
-    it('should call `onFocus` after button was clicked', (done) => {
-        let onFocus = sinon.spy();
-        let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
-
-        buttonNode.click();
-
-        setTimeout(() => {
-            expect(onFocus).to.have.been.calledOnce;
-            done();
-        }, 0);
-    });
-
-    it('should call `onBlur` after escape key was pressed', (done) => {
-        let onBlur = sinon.spy();
-        let { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
-
-        buttonNode.click();
-
-        setTimeout(() => {
-            simulate(menuNode, 'keyDown', { which: keyboardCode.ESCAPE });
-
-            setTimeout(() => {
-                expect(onBlur).to.have.been.calledOnce;
-                done();
-            }, 0);
-        }, 0);
     });
 
     it('should receive event.target.value on `onFocus` callback', (done) => {
@@ -327,6 +240,7 @@ describe('select', () => {
         expect(select.node).to.have.class('select_checked');
     });
 
+
     if (bowser.mobile) {
         it('should render default placeholder text', () => {
             let selectProps = { options: OPTIONS };
@@ -355,7 +269,56 @@ describe('select', () => {
             expect(nativeSelectNode).to.not.exist;
             expect(popupNode).to.have.class('popup');
         });
+
+        it('should call `onFocus` after native select was focused', (done) => {
+            let onFocus = sinon.spy();
+            let { nativeSelectNode } = renderSelect({ options: OPTIONS, onFocus });
+
+            nativeSelectNode.focus();
+
+            setTimeout(() => {
+                expect(onFocus).to.have.been.calledOnce;
+                done();
+            }, 0);
+        });
+
+        it('should call `onBlur` after native select was blurred', (done) => {
+            let onBlur = sinon.spy();
+            let { nativeSelectNode } = renderSelect({ options: OPTIONS, onBlur });
+
+            nativeSelectNode.focus();
+
+            setTimeout(() => {
+                nativeSelectNode.blur();
+
+                setTimeout(() => {
+                    expect(onBlur).to.have.been.calledOnce;
+                    done();
+                }, 0);
+            }, 0);
+        });
     } else {
+        it('should render popup with options', () => {
+            let { select, popupNode } = renderSelect({ options: OPTIONS });
+
+            expect(select.node).to.exist;
+            expect(popupNode).to.have.class('popup');
+        });
+
+        it('should set width to popup equal or more than button width', () => {
+            let selectProps = {
+                options: OPTIONS,
+                placeholder: 'Long text placeholder',
+                opened: true
+            };
+
+            let { popupNode, buttonNode } = renderSelect(selectProps);
+            let popupWidth = popupNode.getBoundingClientRect().width;
+            let buttonWidth = buttonNode.getBoundingClientRect().width;
+
+            expect(popupWidth).to.be.at.least(buttonWidth);
+        });
+
         it('should set popup width equal to button width when equalPopupWidth = true', () => {
             let selectProps = {
                 options: [
@@ -379,6 +342,34 @@ describe('select', () => {
             let buttonWidth = buttonNode.getBoundingClientRect().width;
 
             expect(popupWidth).to.be.equal(buttonWidth);
+        });
+
+        it('should call `onFocus` after button was clicked', (done) => {
+            let onFocus = sinon.spy();
+            let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
+
+            buttonNode.click();
+
+            setTimeout(() => {
+                expect(onFocus).to.have.been.calledOnce;
+                done();
+            }, 0);
+        });
+
+        it('should call `onBlur` after escape key was pressed', (done) => {
+            let onBlur = sinon.spy();
+            let { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
+
+            buttonNode.click();
+
+            setTimeout(() => {
+                simulate(menuNode, 'keyDown', { which: keyboardCode.ESCAPE });
+
+                setTimeout(() => {
+                    expect(onBlur).to.have.been.calledOnce;
+                    done();
+                }, 0);
+            }, 0);
         });
 
         it('should call `onButtonFocus` after component was focused', (done) => {
@@ -494,6 +485,44 @@ describe('select', () => {
                     expect(onMenuBlur).to.have.been.calledWith(sinon.match({ target: { value: [1, 2] } }));
                     done();
                 }, 0);
+            }, 0);
+        });
+
+        it('should call `onChange` callback in custom select after option was clicked', () => {
+            let onChange = sinon.spy();
+            let selectProps = {
+                options: OPTIONS,
+                onChange
+            };
+            let { popupNode } = renderSelect(selectProps);
+            let firstOptionNode = popupNode.querySelector('.menu-item');
+
+            firstOptionNode.click();
+
+            expect(onChange).to.have.been.calledOnce;
+        });
+
+        // add after decorator update
+        it('should call `onClickOutside` callback after click outside of open popup', (done) => {
+            let onClickOutside = sinon.spy();
+            let selectProps = {
+                options: OPTIONS,
+                onClickOutside
+            };
+            let { select, buttonNode } = renderSelect(selectProps);
+            let outsideElement = document.createElement('div');
+            outsideElement.setAttribute('style',
+                'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
+            );
+            outsideElement.setAttribute('id', 'outside');
+            select.container.appendChild(outsideElement);
+
+            buttonNode.click();
+
+            setTimeout(() => {
+                outsideElement.click();
+                expect(onClickOutside).to.have.been.calledOnce;
+                done();
             }, 0);
         });
     }

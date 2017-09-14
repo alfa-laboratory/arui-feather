@@ -98,7 +98,7 @@
         color: var(--color-content-disabled-alfa-on-color);
         background: transparent;
         border-color: var(--color-border-control-disabled-alfa-on-color);
-        border-style: dotted;
+        border-style: var(--border-style-control-disabled);
         border-width: 1px;
     }
 }
@@ -128,7 +128,7 @@
         color: var(--color-content-disabled-alfa-on-white);
         background: transparent;
         border-color: var(--color-border-control-disabled-alfa-on-white);
-        border-style: dotted;
+        border-style: var(--border-style-control-disabled);
         border-width: 1px;
     }
 }

@@ -56,7 +56,7 @@
     }
 
     &_pseudo &__text {
-        border-bottom-style: dotted;
+        border-bottom-style: dashed;
     }
 
     &_disabled,

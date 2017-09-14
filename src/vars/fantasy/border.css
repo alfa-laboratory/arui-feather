@@ -7,4 +7,9 @@
      * Стандартное скругление углов.
      */
     --border-radius-control: 3px;
+
+    /**
+     * Стиль рамки на неактивных полях ввода.
+     */
+    --border-style-control-disabled: dashed;
 }

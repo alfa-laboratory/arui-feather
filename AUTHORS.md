@@ -32,3 +32,4 @@
 * Stepan Mikhaylyuk ([@stepancar](//github.com/stepancar))
 * Aleksandr Simonov ([@palmflip](//github.com/palmflip))
 * Zar Zakharov ([@Severenit](//github.com/Severenit))
+* Timur Gurbanov ([@hexbooster](//github.com/hexbooster))

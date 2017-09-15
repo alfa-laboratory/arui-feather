@@ -4,6 +4,11 @@
 
 @import '../../vars-fantasy.css';
 
+:root {
+    --size-m-box: 16px;
+    --size-l-box: 20px;
+}
+
 .checkbox {
     display: inline-block;
     position: relative;
@@ -11,6 +16,7 @@
     user-select: none;
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
+    line-height: 1;
 
     &, *, *:before, *:after {
         box-sizing: border-box;
@@ -24,9 +30,10 @@
     }
 
     &__box {
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
         border-radius: var(--border-radius-control);
 
         &:after {
@@ -44,22 +51,16 @@
     }
 
     &__text {
-        display: inline-block;
-        vertical-align: middle;
+        display: block;
     }
 
     &_size_m {
         font-size: var(--font-size-m);
-
-        .checkbox__text {
-            padding-left: 4px;
-        }
     }
 
     &_size_m &__box {
-        width: 16px;
-        height: 16px;
-        margin-right: 6px;
+        width: var(--size-m-box);
+        height: var(--size-m-box);
 
         &:after {
             width: 12px;
@@ -67,14 +68,18 @@
         }
     }
 
+    &_size_m &__text {
+        padding-left: calc(var(--size-m-box) + 10px);
+    }
+
     &_size_l {
         font-size: var(--font-size-xl);
     }
 
     &_size_l &__box {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
+        width: var(--size-l-box);
+        height: var(--size-l-box);
+        margin-top: 1px;
 
         &:after {
             width: 16px;
@@ -83,7 +88,7 @@
     }
 
     &_size_l &__text {
-        padding-left: 2px;
+        padding-left: calc(var(--size-l-box) + 12px);
     }
 
     &_checked &__box:after {

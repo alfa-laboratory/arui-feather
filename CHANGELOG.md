@@ -1,3 +1,13 @@
+<a name="9.8.1"></a>
+## [9.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.8.0...v9.8.1) (2017-09-15)
+
+
+### Bug Fixes
+
+* **select:** fix select opened state toggling & styles ([#243](https://github.com/alfa-laboratory/arui-feather/issues/243)) ([f79e441](https://github.com/alfa-laboratory/arui-feather/commit/f79e441))
+
+
+
 <a name="9.8.0"></a>
 # [9.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.7.0...v9.8.0) (2017-09-14)
 

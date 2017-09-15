@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import ProgressBar from '../src/progress-bar';
+import ProgressBar from '../src/progress-bar/fantasy';
 
 const NAME = 'progress-bar';
 

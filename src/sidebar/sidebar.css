@@ -36,8 +36,8 @@
         position: absolute;
         top: 0;
         right: 0;
-        margin-top: calc(var(--sidebar-padding) - 6);
-        margin-right: calc(var(--sidebar-shift) + var(--sidebar-padding) - 6);
+        margin-top: calc(var(--sidebar-padding) - 6px);
+        margin-right: calc(var(--sidebar-shift) + var(--sidebar-padding) - 6px);
         margin-bottom: 0;
         margin-left: 0;
         padding: 0;

@@ -5145,9 +5145,9 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.0.x"
 
-html-reporter@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-0.5.0.tgz#e2e6b01371bc70c79855b130f23477818ff19164"
+html-reporter@0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-0.6.0.tgz#aa6a0bfb772b8f89a046e38087ab9ae262f3ac8e"
   dependencies:
     bluebird "^3.4.7"
     browserify "^13.0.0"

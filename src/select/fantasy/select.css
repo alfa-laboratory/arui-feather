@@ -161,6 +161,7 @@
 
     &__native-control {
         opacity: 0;
+        overflow-x: hidden;
         position: absolute;
         top: 0;
         left: 0;

@@ -63,6 +63,7 @@
         display: inline-block;
         position: relative;
         width: 100%;
+        min-width: 0; /* Avoid component pruning with right addons in small width containers (Firefox 55.0.3) */
         height: 100%;
         margin: 0;
         padding: 0;

@@ -1,3 +1,19 @@
+<a name="9.9.0"></a>
+# [9.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.8.1...v9.9.0) (2017-09-18)
+
+
+### Bug Fixes
+
+* **sidebar-closer:** fix css rules for sidebar__closer ([#257](https://github.com/alfa-laboratory/arui-feather/issues/257)) ([320836e](https://github.com/alfa-laboratory/arui-feather/commit/320836e))
+
+
+### Features
+
+* **progress-bar:** add progress-bar fantasy styles ([#253](https://github.com/alfa-laboratory/arui-feather/issues/253)) ([56e7600](https://github.com/alfa-laboratory/arui-feather/commit/56e7600))
+* **progress-bar:** add themes ([#255](https://github.com/alfa-laboratory/arui-feather/issues/255)) ([5a25e9c](https://github.com/alfa-laboratory/arui-feather/commit/5a25e9c))
+
+
+
 <a name="9.8.1"></a>
 ## [9.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.8.0...v9.8.1) (2017-09-15)
 

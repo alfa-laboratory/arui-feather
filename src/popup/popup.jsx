@@ -189,6 +189,10 @@ class Popup extends React.Component {
                 this.ensureClickEvent(!this.props.visible);
             }
         }
+
+        if (prevProps.visible !== this.props.visible && this.props.visible) {
+            this.redraw();
+        }
     }
 
     componentWillUnmount() {

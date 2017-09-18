@@ -181,9 +181,19 @@ class Select extends React.Component {
     menu;
 
     componentWillMount() {
-        this.setState({
+        let value = this.getValue();
+        let newState = {
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
-        });
+        };
+
+        if (!!this.props.options && this.props.options.length > 0 && this.props.options[0].value
+            && (!value || value.length === 0)
+            && this.props.mode === 'radio'
+        ) {
+            newState.value = [this.props.options[0].value];
+        }
+
+        this.setState(newState);
     }
 
     componentDidMount() {
@@ -712,7 +722,10 @@ class Select extends React.Component {
         let posX = scrollContainer.scrollTop;
         let posY = scrollContainer.scrollLeft;
 
-        this.menu.focus();
+        if (this.menu) {
+            this.menu.focus();
+        }
+
         scrollContainer.scrollTop = posX;
         scrollContainer.scrollLeft = posY;
     }

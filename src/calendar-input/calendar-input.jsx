@@ -333,7 +333,8 @@ class CalendarInput extends React.Component {
             this.changeCloseTimeoutId = setTimeout(() => {
                 this.calendar.blur(); // FF не испускает событие `blur` когда элементы становятся невидимыми, делаем это явно
                 this.setState({
-                    opened: false
+                    opened: false,
+                    isCalendarFocused: false
                 });
                 this.changeCloseTimeoutId = null;
             }, 0);
@@ -510,7 +511,9 @@ class CalendarInput extends React.Component {
                     )
                 });
 
-                this.calendar.focus();
+                if (this.calendar) {
+                    this.calendar.focus();
+                }
 
                 break;
             }
@@ -559,7 +562,9 @@ class CalendarInput extends React.Component {
     focus() {
         let targetRef = this.nativeCalendarTarget || this.customCalendarTarget;
 
-        targetRef.focus();
+        if (targetRef) {
+            targetRef.focus();
+        }
     }
 
     /**
@@ -570,7 +575,9 @@ class CalendarInput extends React.Component {
     blur() {
         let targetRef = this.nativeCalendarTarget || this.customCalendarTarget;
 
-        targetRef.blur();
+        if (targetRef) {
+            targetRef.blur();
+        }
     }
 
     /**
@@ -607,7 +614,7 @@ class CalendarInput extends React.Component {
             event.explicitOriginalTarget || // не поддерживается в IE
             document.activeElement; // В IE вернет не <calendar> а конкретную ноду, на которую пришел фокус
 
-        let calendarWillReceiveFocus = !isNodeOutsideElement(relatedTarget, this.calendar.getNode());
+        let calendarWillReceiveFocus = this.calendar && !isNodeOutsideElement(relatedTarget, this.calendar.getNode());
 
         let newFocused = newState.isInputFocused
             || newState.isCalendarFocused

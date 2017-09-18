@@ -69,7 +69,7 @@ describe('popup', () => {
     afterEach(cleanUp);
 
     it('should set anchor target', () => {
-        let { popup, anchor } = renderPopup({}, {});
+        let { popup, anchor } = renderPopup({ visible: true }, {});
 
         popup.instance.setTarget(anchor.node);
 
@@ -77,13 +77,13 @@ describe('popup', () => {
     });
 
     it('should throw Error without setting anchor target', () => {
-        let { popup } = renderPopup({}, null);
+        let { popup } = renderPopup({ visible: true }, null);
 
         expect(popup.instance.redraw).to.throw('Cannot show popup without target or position');
     });
 
     it('should set position', () => {
-        let { popup } = renderPopup({ target: 'position' }, null);
+        let { popup } = renderPopup({ visible: true, target: 'position' }, null);
 
         popup.instance.setPosition(100, 200);
 
@@ -91,25 +91,25 @@ describe('popup', () => {
     });
 
     it('should throw Error with target=`position` but without setting position', () => {
-        let { popup } = renderPopup({ target: 'position' }, null);
+        let { popup } = renderPopup({ visible: true, target: 'position' }, null);
 
         expect(popup.instance.redraw).to.throw('Cannot show popup without target or position');
     });
 
     it('should render text inside', () => {
-        let { popup } = renderPopup({}, {});
+        let { popup } = renderPopup({ visible: true }, {});
 
         expect(popup.node).to.have.text('Popup');
     });
 
     it('should set data-for when `for` prop is set', () => {
-        let { popup } = renderPopup({ for: 'example' }, {});
+        let { popup } = renderPopup({ for: 'example', visible: true }, {});
 
         expect(popup.node.dataset.for).to.equal('example');
     });
 
     it('should have tooltip with target=`anchor` and type=`tooltip`', () => {
-        let { popup } = renderPopup({ type: 'tooltip' }, {});
+        let { popup } = renderPopup({ type: 'tooltip', visible: true }, {});
 
         expect(popup.node).to.have.class('popup_type_tooltip');
     });
@@ -118,7 +118,8 @@ describe('popup', () => {
         let { popup } = renderPopup({
             target: 'position',
             position: [0, 0],
-            type: 'tooltip'
+            type: 'tooltip',
+            visible: true
         }, null);
 
         popup.instance.setPosition(100, 200);
@@ -127,7 +128,7 @@ describe('popup', () => {
     });
 
     it('should set/unset class on popup hovered/unhovered', () => {
-        let { popup } = renderPopup({}, {});
+        let { popup } = renderPopup({ visible: true }, {});
 
         simulate(popup.node, 'mouseEnter');
         expect(popup.node).to.have.class('popup_hovered');
@@ -138,7 +139,7 @@ describe('popup', () => {
 
     it('should call `onMouseEnter` callback after popup was hovered', () => {
         let onMouseEnter = sinon.spy();
-        let { popup } = renderPopup({ onMouseEnter }, {});
+        let { popup } = renderPopup({ onMouseEnter, visible: true }, {});
 
         simulate(popup.node, 'mouseEnter');
 
@@ -147,7 +148,7 @@ describe('popup', () => {
 
     it('should call `onMouseLeave` callback after popup was unhovered', () => {
         let onMouseLeave = sinon.spy();
-        let { popup } = renderPopup({ onMouseLeave }, {});
+        let { popup } = renderPopup({ onMouseLeave, visible: true }, {});
 
         simulate(popup.node, 'mouseLeave');
 

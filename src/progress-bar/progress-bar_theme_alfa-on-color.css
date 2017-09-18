@@ -4,18 +4,6 @@
 
 @import '../vars.css';
 
-.progress-bar {
-    display: flex;
-    width: 100%;
-    min-width: 200px;
-    height: 3px;
-    overflow: hidden;
-
-    &__current-value {
-        background: var(--color-accent);
-    }
-
-    &_size_m {
-        height: 3px;
-    }
+.progress-bar_theme_alfa-on-color {
+    background: var(--color-background-minor-alfa-on-color);
 }

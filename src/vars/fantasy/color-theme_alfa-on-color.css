@@ -34,6 +34,11 @@
     --color-background-alfa-on-color: rgb(10, 30, 50);
 
     /**
+     * Цвет фона для для второстепенного контента `alfa-on-white`.
+     */
+    --color-background-minor-alfa-on-color: rgba(255, 255, 255, .08);
+
+    /**
      * Цвет фона для контролов для `alfa-on-color`.
      */
     --color-background-control-alfa-on-color: transparent;

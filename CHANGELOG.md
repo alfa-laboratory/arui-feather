@@ -1,3 +1,20 @@
+<a name="9.10.0"></a>
+# [9.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.9.0...v9.10.0) (2017-09-19)
+
+
+### Bug Fixes
+
+* **checkbox:** update layout styles ([#254](https://github.com/alfa-laboratory/arui-feather/issues/254)) ([8559700](https://github.com/alfa-laboratory/arui-feather/commit/8559700))
+* **input:** avoid component pruning with right addons in small width containers in firefox ([#252](https://github.com/alfa-laboratory/arui-feather/issues/252)) ([c8f34c8](https://github.com/alfa-laboratory/arui-feather/commit/c8f34c8))
+* **select:** overflow long options for native select ([#258](https://github.com/alfa-laboratory/arui-feather/issues/258)) ([be8d6dd](https://github.com/alfa-laboratory/arui-feather/commit/be8d6dd))
+
+
+### Features
+
+* **phone-input:** add mask to default props ([#261](https://github.com/alfa-laboratory/arui-feather/issues/261)) ([3cc020e](https://github.com/alfa-laboratory/arui-feather/commit/3cc020e))
+
+
+
 <a name="9.9.0"></a>
 # [9.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.8.1...v9.9.0) (2017-09-18)
 

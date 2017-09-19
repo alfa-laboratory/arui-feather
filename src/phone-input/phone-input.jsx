@@ -20,13 +20,15 @@ import performance from '../performance';
 class PhoneInput extends React.Component {
     static propTypes = {
         ...Input.propTypes,
+        /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
+        mask: Type.string,
         /** Подсказка в текстовом поле */
         placeholder: Type.string
     };
 
     static defaultProps = {
-        placeholder: '+7 000 000 00 00',
-        mask: '+1 111 111 11 11'
+        mask: '+1 111 111 11 11',
+        placeholder: '+7 000 000 00 00'
     };
 
     root;

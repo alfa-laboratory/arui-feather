@@ -1,3 +1,13 @@
+<a name="9.10.1"></a>
+## [9.10.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.0...v9.10.1) (2017-09-19)
+
+
+### Bug Fixes
+
+* **phone-input:** pass mask in prop types explicitly for proper typings generation ([#262](https://github.com/alfa-laboratory/arui-feather/issues/262)) ([df2187b](https://github.com/alfa-laboratory/arui-feather/commit/df2187b))
+
+
+
 <a name="9.10.0"></a>
 # [9.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.9.0...v9.10.0) (2017-09-19)
 

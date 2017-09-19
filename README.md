@@ -116,9 +116,13 @@ import Input from 'arui-feather/input/fantasy'
 
 Запуск тестов производится командой `npm run gemini`.
 
-В схеме тестирования участвует сервис [`Sauce Labs`](https://saucelabs.com), для доступа к нему необходимо указать переменные окружения: `SAUCE_USERNAME=alfalab.js SAUCE_ACCESS_KEY={ ключ взять у мейнтейнеров }`.
-
 Обновление или создание новых эталонных скриншотов: `npm run gemini-update`.
+
+Для запуска тестов или обновления скриншотов необходимы следующие шаги:
+
+- `export SAUCE_USERNAME=alfalab.js SAUCE_ACCESS_KEY={ ключ взять у мейнтейнеров }`
+- `npm run sauce-connect`
+- `npm run gemini` или `npm run gemini-update`
 
 Запуск `gemini` на выборочное число сьютов (используется опция `--grep` c JS RegExp): `SUITES='button|select' npm run gemini`.
 

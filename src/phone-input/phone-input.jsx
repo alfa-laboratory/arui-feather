@@ -25,7 +25,8 @@ class PhoneInput extends React.Component {
     };
 
     static defaultProps = {
-        placeholder: '+7 000 000 00 00'
+        placeholder: '+7 000 000 00 00',
+        mask: '+1 111 111 11 11'
     };
 
     root;
@@ -36,7 +37,6 @@ class PhoneInput extends React.Component {
                 { ...this.props }
                 type='tel'
                 ref={ (root) => { this.root = root; } }
-                mask='+1 111 111 11 11'
                 noValidate={ true }
                 className={ cn }
             />

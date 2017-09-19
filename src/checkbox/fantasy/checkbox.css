@@ -31,7 +31,6 @@
 
     &__box {
         position: absolute;
-        display: block;
         left: 0;
         top: 0;
         border-radius: var(--border-radius-control);

@@ -25,7 +25,7 @@ before_script:
   - greenkeeper-lockfile-update
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
-      curl -L https://gist.githubusercontent.com/teryaew/ab7c8a1c377ba0796f20a007a1d830eb/raw/sauce-connect.sh | bash
+      sh ./tools/sauce-connect.sh
       cat .gemini.js
     fi
 

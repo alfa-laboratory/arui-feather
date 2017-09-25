@@ -1,3 +1,13 @@
+<a name="9.10.2"></a>
+## [9.10.2](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.1...v9.10.2) (2017-09-25)
+
+
+### Bug Fixes
+
+* **select:** fix popup breaking on window resize ([#263](https://github.com/alfa-laboratory/arui-feather/issues/263)) ([1f59698](https://github.com/alfa-laboratory/arui-feather/commit/1f59698))
+
+
+
 <a name="9.10.1"></a>
 ## [9.10.1](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.0...v9.10.1) (2017-09-19)
 

@@ -145,7 +145,7 @@ class Popup extends React.Component {
     inner;
     content;
 
-    handleResizeWindow = debounce(() => {
+    handleWindowResize = debounce(() => {
         if (this.isPropsToPositionCorrect()) {
             this.redraw();
         }
@@ -170,7 +170,7 @@ class Popup extends React.Component {
             this.setGradientStyles();
         }
 
-        window.addEventListener('resize', this.handleResizeWindow);
+        window.addEventListener('resize', this.handleWindowResize);
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -208,7 +208,9 @@ class Popup extends React.Component {
             this.ensureClickEvent(true);
         }
 
-        window.removeEventListener('resize', this.handleResizeWindow);
+        // Cancel debouncing to avoid `this.setState()` invocation in unmounted component state
+        this.handleWindowResize.cancel();
+        window.removeEventListener('resize', this.handleWindowResize);
     }
 
     render(cn) {

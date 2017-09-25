@@ -661,6 +661,11 @@ class Select extends React.Component {
     handleMqMatchChange(isMatched) {
         this.setState({
             isMobile: isMatched
+        }, () => {
+            if (this.popup) {
+                this.setPopupTarget();
+                this.updatePopupStyles();
+            }
         });
     }
 

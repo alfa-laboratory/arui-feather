@@ -82,6 +82,7 @@
     }
 
     body.sidebar-visible {
+        position: fixed;
         overflow: hidden;
     }
 }

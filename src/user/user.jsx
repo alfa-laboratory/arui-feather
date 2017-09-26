@@ -46,7 +46,7 @@ class User extends React.Component {
     render(cn) {
         let icon = this.props.icon !== undefined
             ? this.props.icon
-            : <Icon className={ cn('icon') } size='s' icon='user' />;
+            : <Icon className={ cn('icon') } size='s' name='user' />;
 
         return (
             <Link

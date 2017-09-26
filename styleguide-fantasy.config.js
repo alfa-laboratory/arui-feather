@@ -63,6 +63,27 @@ module.exports = {
         },
         plugins: [
             new webpack.NormalModuleReplacementPlugin(/font_roboto\.css$/, 'node-noop')
-        ]
+        ],
+        module: {
+            rules: [
+                {
+                    test: /\.svg$/,
+                    exclude: /node_modules/,
+                    use: [
+                        'babel-loader',
+                        {
+                            loader: 'svg-sprite-loader',
+                            options: {
+                                runtimeGenerator: require.resolve('./src/lib/svg-to-icon-component-runtime-generator'),
+                                runtimeOptions: {
+                                    iconModule: './src/icon/icon.jsx' // Relative to current build context folder
+                                }
+                            }
+                        },
+                        'svgo-loader'
+                    ]
+                }
+            ]
+        }
     })
 };

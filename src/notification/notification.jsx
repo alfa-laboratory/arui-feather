@@ -125,7 +125,7 @@ class Notification extends React.Component {
                         this.props.icon ||
                         <Icon
                             theme='alfa-on-colored'
-                            icon={ this.props.status }
+                            name={ this.props.status }
                             size='m'
                         />
                     }
@@ -143,7 +143,7 @@ class Notification extends React.Component {
                     <Icon
                         className={ cn('close') }
                         size='m'
-                        icon='close'
+                        name='close'
                         onClick={ this.handleCloserClick }
                     />
                 }

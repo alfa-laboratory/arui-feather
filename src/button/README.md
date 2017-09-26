@@ -102,7 +102,7 @@ const buttons = [
         <div className='row' key={ size }>
             <Button size={ size }>
                 <div style={ { marginRight: '8px', display: 'inline-block' } } >
-                    <Icon size={ size } icon='ok' />
+                    <Icon size={ size } name='ok' />
                 </div>
                 {`${name}`}
             </Button>

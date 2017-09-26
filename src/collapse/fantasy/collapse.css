@@ -47,10 +47,10 @@
     }
 
     &_theme_alfa-on-color &__link:after {
-        background-image: url('../images/collapse__link_theme_alfa-on-color.svg');
+        /*background-image: url('../images/collapse__link_theme_alfa-on-color.svg');*/
     }
 
     &_theme_alfa-on-white &__link:after {
-        background-image: url('../images/collapse__link_theme_alfa-on-white.svg');
+        /*background-image: url('../images/collapse__link_theme_alfa-on-white.svg');*/
     }
 }

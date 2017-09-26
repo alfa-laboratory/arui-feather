@@ -327,7 +327,7 @@ describe('input', () => {
     });
 
     it('should render with icon', function () {
-        let input = render(<Input icon={ <Icon icon='search' /> } />);
+        let input = render(<Input icon={ <Icon name='search' /> } />);
         let iconNode = input.node.querySelector('.input__icon');
 
         expect(iconNode).to.exist;

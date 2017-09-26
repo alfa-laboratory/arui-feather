@@ -13,7 +13,7 @@ const PROP_SETS = [
         noFileText: 'file in pdf format',
         buttonProps: {
             pseudo: true,
-            icon: <Icon size='s' icon='search' />
+            icon: <Icon size='s' name='search' />
         }
     },
     {

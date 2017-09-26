@@ -5,18 +5,18 @@
     background-color: var(--color-background-alfa-on-color);
 
     .calendar__arrow_direction_left {
-        background-image: url(../images/arrow_cl.svg);
+        /*background-image: url(../images/arrow_cl.svg);*/
 
         &.calendar__arrow_double {
-            background-image: url(../images/2_arrow_cl.svg);
+            /*background-image: url(../images/2_arrow_cl.svg);*/
         }
     }
 
     .calendar__arrow_direction_right {
-        background-image: url(../images/arrow_cr.svg);
+        /*background-image: url(../images/arrow_cr.svg);*/
 
         &.calendar__arrow_double {
-            background-image: url(../images/2_arrow_cr.svg);
+            /*background-image: url(../images/2_arrow_cr.svg);*/
         }
     }
 }

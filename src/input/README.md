@@ -135,7 +135,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
                 placeholder='Введите ваше имя'
                 view='line'
                 size={ size }
-                icon={ <Icon size={ size } icon='user' /> }
+                icon={ <Icon size={ size } name='user' /> }
             />
         </div>
     ))}

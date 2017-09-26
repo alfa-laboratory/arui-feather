@@ -24,7 +24,7 @@
     @each $size in s, m, l, xl {
         &.menu_mode_check.menu_size_$(size) {
             .menu-item_checked:before {
-                background-image: url('../images/menu_mode_check.menu_theme_alfa-on-white__$(size).svg');
+                /*background-image: url('../images/menu_mode_check.menu_theme_alfa-on-white__$(size).svg');*/
             }
         }
     }

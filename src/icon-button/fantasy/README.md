@@ -6,7 +6,7 @@
             className='column l'
         >
             <IconButton size={ size }>
-                <Icon size={ size } icon='close' />
+                <Icon size={ size } name='close' />
             </IconButton>
         </span>
     ))}

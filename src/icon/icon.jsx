@@ -28,6 +28,8 @@ class Icon extends React.Component {
         colored: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
+        /** URL изображения для рендера в inline стиле */
+        imageUrl: Type.string,
         /** Название иконки */
         name: Type.string,
         /** Размер иконки */
@@ -61,7 +63,7 @@ class Icon extends React.Component {
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
-                style={ { backgroundImage: `url(${require(`alfa-ui-icons/${this.getIconFileName()}.svg`)})` } }
+                style={ { backgroundImage: `url(${require(`${this.props.imageUrl}`)})` } }
             />
         );
     }
@@ -71,17 +73,6 @@ class Icon extends React.Component {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
-
-    getIconFileName() {
-        let cnTheme = this.props.theme || this.context.theme;
-        let iconColor = cnTheme === 'alfa-on-white' ? 'black' : 'white';
-
-        if (this.props.colored) {
-            iconColor = 'color';
-        }
-
-        return `icon_${this.props.name}_${this.props.size}_${iconColor}`;
     }
 }
 

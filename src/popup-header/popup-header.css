@@ -19,42 +19,27 @@
 
     &__closer {
         position: absolute;
-        left: 12px;
+        top: 0;
+        left: 0;
     }
 
     &_size_s {
         padding: 6px 48px;
         font-size: var(--font-size-s);
-
-        .popup-header__closer {
-            top: 6px;
-        }
     }
 
     &_size_m {
         padding: 9px 48px;
         font-size: var(--font-size-m);
-
-        .popup-header__closer {
-            top: 8px;
-        }
     }
 
     &_size_l {
         padding: 12px 48px;
         font-size: var(--font-size-l);
-
-        .popup-header__closer {
-            top: 10px;
-        }
     }
 
     &_size_xl {
         padding: 11px 48px;
         font-size: var(--font-size-xl);
-
-        .popup-header__closer {
-            top: 8px;
-        }
     }
 }

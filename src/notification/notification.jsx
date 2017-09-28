@@ -9,6 +9,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Icon from '../icon/icon';
+import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
 import { isEventOutsideClientBounds } from '../lib/window';
@@ -140,12 +141,15 @@ class Notification extends React.Component {
                 </div>
                 {
                     this.props.hasCloser &&
-                    <Icon
-                        className={ cn('close') }
-                        size='m'
-                        icon='close'
+                    <IconButton
+                        className={ cn('closer') }
                         onClick={ this.handleCloserClick }
-                    />
+                    >
+                        <Icon
+                            size='m'
+                            icon='close'
+                        />
+                    </IconButton>
                 }
             </div>
         );

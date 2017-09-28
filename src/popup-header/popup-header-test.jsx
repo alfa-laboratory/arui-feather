@@ -15,4 +15,14 @@ describe('popup-header', () => {
         expect(popupHeader.node).to.exist;
         expect(popupHeader.node).to.have.text('Title');
     });
+
+    it('should call `onCloserClick` callback after closer was clicked', () => {
+        let onCloserClick = sinon.spy();
+        let popupHeader = render(<PopupHeader onCloserClick={ onCloserClick } />);
+        let closer = popupHeader.node.querySelector('.popup-header__closer');
+
+        closer.click();
+
+        expect(onCloserClick).to.have.been.calledOnce;
+    });
 });

@@ -19,19 +19,19 @@ describe('plate', () => {
 
     it('should render with cross without problems', () => {
         let plate = render(<Plate hasCloser={ true }>plate-text</Plate>);
-        let crossNode = plate.node.querySelector('.plate__clear');
+        let crossNode = plate.node.querySelector('.plate__closer');
 
         expect(crossNode).to.exist;
     });
 
-    it('should call `onCloserClick` callback after plate cross was clicked', () => {
+    it('should call `onCloserClick` callback after plate closer was clicked', () => {
         let onCloserClick = sinon.spy();
         let plate = render(
             <Plate hasCloser={ true } onCloserClick={ onCloserClick }>plate-text</Plate>
         );
-        let crossIconNode = plate.node.querySelector('.plate__clear > .icon');
+        let closer = plate.node.querySelector('.plate__closer');
 
-        crossIconNode.click();
+        closer.click();
 
         expect(onCloserClick).to.have.been.calledOnce;
     });

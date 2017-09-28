@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -35,9 +34,7 @@ class Icon extends React.Component {
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
         /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Обработчик клика по иконке */
-        onClick: Type.func
+        id: Type.string
     };
 
     static defaultProps = {
@@ -60,13 +57,6 @@ class Icon extends React.Component {
                 onClick={ this.handleClick }
             />
         );
-    }
-
-    @autobind
-    handleClick(event) {
-        if (this.props.onClick) {
-            this.props.onClick(event);
-        }
     }
 }
 

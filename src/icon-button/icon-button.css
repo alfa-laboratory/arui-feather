@@ -8,6 +8,7 @@
     opacity: var(--opacity-default);
     overflow: hidden;
     display: inline-block;
+    vertical-align: middle;
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -17,7 +18,7 @@
     background-position: center;
     background-repeat: no-repeat;
     border: none;
-    border-radius: 50%;
+    border-radius: none;
     box-shadow: none;
     transition-duration: 250ms;
     transition-property: background, opacity;
@@ -55,17 +56,5 @@
     &_size_xl {
         width: 60px;
         height: 60px;
-    }
-}
-
-.icon-button_theme_alfa-on-color {
-    &.icon-button_hovered {
-        background-color: var(--color-background-control-hovered-alfa-on-color);
-    }
-}
-
-.icon-button_theme_alfa-on-white {
-    &.icon-button_hovered {
-        background-color: var(--color-background-control-hovered-alfa-on-white);
     }
 }

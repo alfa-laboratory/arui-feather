@@ -18,16 +18,15 @@
         display: none;
     }
 
-    &_has-clear {
+    &_has-closer {
         padding-right: 34px;
     }
 
-    /* FIXME: maybe remove cascade? */
-    &__clear > .icon {
+    &__closer {
         opacity: var(--opacity-minor);
         position: absolute;
-        top: var(--gap-s);
-        right: var(--gap-s);
+        top: 0;
+        right: 0;
         cursor: pointer;
         transition: opacity .1s ease-out;
 

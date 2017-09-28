@@ -2,6 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint-disable class-methods-use-this-regexp/class-methods-use-this */
+
+
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
@@ -10,7 +13,19 @@ import Icon from '../icon/icon';
 import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
 
 import cn from '../cn';
+import Mq from '../mq';
 import performance from '../performance';
+
+let savedScrollPosition;
+
+/**
+ * Восстанавливает исходную позацию скролла
+ * после закрытия холодильника на мобильной версии.
+ */
+function setCurrentPosition() {
+    document.body.style.top = `-${savedScrollPosition}px`;
+    document.body.scrollTop = savedScrollPosition;
+}
 
 /**
  * Изменяет класс для body. Нужен для управления скроллом
@@ -20,6 +35,7 @@ import performance from '../performance';
  */
 function setBodyClass(visible) {
     document.body.classList[visible ? 'add' : 'remove']('sidebar-visible');
+    setCurrentPosition();
 }
 
 /**
@@ -49,8 +65,13 @@ class Sidebar extends React.Component {
         hasCloser: true
     };
 
+    state = {
+        isMobile: false
+    };
+
     componentDidMount() {
         setBodyClass(this.props.visible);
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -59,6 +80,7 @@ class Sidebar extends React.Component {
 
     componentWillUnmount() {
         setBodyClass(false);
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     render(cn) {
@@ -66,6 +88,10 @@ class Sidebar extends React.Component {
 
         return (
             <PopupContainerProvider className={ cn({ visible }) }>
+                <Mq
+                    query='--small-only'
+                    onMatchChange={ this.handleMqMatchChange }
+                />
                 <div id={ this.props.id }>
                     {
                         hasCloser &&
@@ -88,9 +114,23 @@ class Sidebar extends React.Component {
     }
 
     @autobind
+    handleMqMatchChange(isMatched) {
+        this.setState({ isMobile: isMatched });
+    }
+
+    @autobind
     handleCloserClick() {
         if (this.props.onCloserClick) {
+            if (this.state.isMobile) {
+                document.body.scrollTop = savedScrollPosition;
+            }
             this.props.onCloserClick();
+        }
+    }
+
+    handleScroll() {
+        if (document.body.scrollTop !== 0) {
+            savedScrollPosition = document.body.scrollTop;
         }
     }
 }

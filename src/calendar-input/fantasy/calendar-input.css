@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import '../../vars-fantasy.css';
+
 .calendar-input {
     display: inline-block;
     position: relative;
@@ -41,5 +43,21 @@
         display: block;
         width: 265px;
         margin: 0 auto;
+    }
+}
+
+.calendar-input_theme_alfa-on-color {
+    .calendar-input__native-control + .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-content-alfa-on-color) !important;
+        }
+    }
+}
+
+.calendar-input_theme_alfa-on-white {
+    .calendar-input__native-control + .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
+        }
     }
 }

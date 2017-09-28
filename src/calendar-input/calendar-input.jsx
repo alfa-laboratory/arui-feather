@@ -227,6 +227,27 @@ class CalendarInput extends React.Component {
                 className={ cn({ width: this.props.width }) }
                 { ...wrapperProps }
             >
+                <Mq
+                    query='--small-only'
+                    touch={ true }
+                    onMatchChange={ this.handleMqMatchChange }
+                >
+                    {
+                        this.canBeNative() &&
+                        <input
+                            ref={ (nativeCalendarTarget) => {
+                                this.nativeCalendarTarget = nativeCalendarTarget;
+                            } }
+                            { ...commonProps }
+                            className={ cn('native-control') }
+                            type='date'
+                            value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
+                            onBlur={ this.handleNativeInputBlur }
+                            onChange={ this.handleNativeInputChange }
+                            onFocus={ this.handleNativeInputFocus }
+                        />
+                    }
+                </Mq>
                 <Input
                     ref={ (customCalendarTarget) => {
                         this.customCalendarTarget = customCalendarTarget;
@@ -259,27 +280,6 @@ class CalendarInput extends React.Component {
                         />
                     }
                 />
-                <Mq
-                    query='--small-only'
-                    touch={ true }
-                    onMatchChange={ this.handleMqMatchChange }
-                >
-                    {
-                        this.canBeNative() &&
-                        <input
-                            ref={ (nativeCalendarTarget) => {
-                                this.nativeCalendarTarget = nativeCalendarTarget;
-                            } }
-                            { ...commonProps }
-                            className={ cn('native-control') }
-                            type='date'
-                            value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
-                            onBlur={ this.handleNativeInputBlur }
-                            onChange={ this.handleNativeInputChange }
-                            onFocus={ this.handleNativeInputFocus }
-                        />
-                    }
-                </Mq>
                 { this.renderPopup(cn, value, Popup) }
             </span>
         );

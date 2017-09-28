@@ -27,4 +27,13 @@ describe('icon', () => {
             })
         ));
     })();
+
+    it('should call `onClick` callback after icon was clicked', () => {
+        let onClick = sinon.spy();
+        let icon = render(<Icon onClick={ onClick } />);
+
+        icon.node.click();
+
+        expect(onClick).to.have.been.calledOnce;
+    });
 });

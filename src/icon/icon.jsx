@@ -4,6 +4,7 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
+import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -32,7 +33,9 @@ class Icon extends React.Component {
         /** Размер иконки */
         size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
+        /** Обработчик клика по иконке */
+        onClick: Type.func
     };
 
     static defaultProps = {
@@ -61,6 +64,13 @@ class Icon extends React.Component {
                 style={ { backgroundImage: `url(${require(`alfa-ui-icons/${this.getIconFileName()}.svg`)})` } }
             />
         );
+    }
+
+    @autobind
+    handleClick(event) {
+        if (this.props.onClick) {
+            this.props.onClick(event);
+        }
     }
 
     getIconFileName() {

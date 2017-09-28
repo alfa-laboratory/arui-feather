@@ -16,14 +16,15 @@ describe('icon', () => {
 
     (() => {
         let icons = [
-            'error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'
+            'action-check', 'action-down', 'action-error', 'action-fail',
+            'action-ok', 'action-ok-filled', 'action-up', 'tool-attachment', 'tool-calendar', 'tool-close'
         ];
 
-        return icons.forEach(iconItem => (
-            it(`render ${iconItem} icon without problems`, () => {
-                let icon = render(<Icon icon={ iconItem } />);
+        return icons.forEach(name => (
+            it(`render ${name} icon without problems`, () => {
+                let icon = render(<Icon name={ name } />);
 
-                expect(icon.node).to.have.class(`icon_${iconItem}`);
+                expect(icon.node).to.have.class(`icon_name_${name}`);
             })
         ));
     })();

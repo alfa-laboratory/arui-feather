@@ -1,6 +1,5 @@
 import Attach from '../src/attach';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Icon from '../src/icon';
 
 const NAME = 'attach';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
@@ -8,14 +7,6 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
 const PROP_SETS = [
     {},
-    {
-        buttonContent: 'Please, choose a file',
-        noFileText: 'file in pdf format',
-        buttonProps: {
-            pseudo: true,
-            icon: <Icon size='s' icon='search' />
-        }
-    },
     {
         value: [{ name: 'Document.pdf' }]
     },

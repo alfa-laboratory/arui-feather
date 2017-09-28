@@ -69,7 +69,7 @@ class Plate extends React.Component {
                         >
                             <Icon
                                 theme='alfa-on-white'
-                                icon='close'
+                                name='tool-close'
                             />
                         </IconButton>
                     }

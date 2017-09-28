@@ -9,6 +9,7 @@ import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
 
+import Icon from '../icon/icon';
 import MenuItem from '../menu-item/menu-item';
 
 import cn from '../cn';
@@ -185,6 +186,7 @@ class Menu extends React.Component {
 
     renderMenuItem(item) {
         let itemProps = item.props || {};
+        let isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
         let isItemDisabled = this.props.disabled || itemProps.disabled;
         let clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
         let menuItem = {
@@ -201,6 +203,12 @@ class Menu extends React.Component {
         let highlightedItem = this.props.highlightedItem === undefined
             ? this.state.highlightedItem
             : this.props.highlightedItem;
+        let iconSize;
+
+        switch (this.props.size) {
+            case 's': case 'm': iconSize = 's'; break;
+            case 'l': case 'xl': iconSize = 'm'; break;
+        }
 
         this.menuItemList.push(menuItem);
 
@@ -209,12 +217,19 @@ class Menu extends React.Component {
                 { ...menuItemProps }
                 ref={ (instance) => { menuItem.instance = instance; } }
                 key={ item.key || item.value }
-                checked={ this.getIndexInCheckedItemsList(item.value) !== -1 }
+                checked={ isItemChecked }
                 type={ this.props.mode !== 'basic' ? 'block' : itemProps.type }
                 onMouseEnter={ () => this.handleMenuItemMouseEnter(menuItem) }
                 onMouseLeave={ this.handleMenuItemMouseLeave }
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
             >
+                {
+                    this.props.mode === 'check' && isItemChecked &&
+                    <Icon
+                        name='action-check'
+                        size={ iconSize }
+                    />
+                }
                 { item.content }
             </MenuItem>
         );

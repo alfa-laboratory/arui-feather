@@ -18,15 +18,6 @@
 
     &__link {
         outline: none;
-
-        &:after {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            margin-left: 5px;
-            background-size: 100% 100%;
-        }
     }
 
     &__content {
@@ -40,17 +31,5 @@
         visibility: visible;
         height: auto;
         margin-bottom: 15px;
-    }
-
-    &_expanded &__link:after {
-        transform: scaleY(-1);
-    }
-
-    &_theme_alfa-on-color &__link:after {
-        background-image: url('./images/collapse__link_theme_alfa-on-color.svg');
-    }
-
-    &_theme_alfa-on-white &__link:after {
-        background-image: url('./images/collapse__link_theme_alfa-on-white.svg');
     }
 }

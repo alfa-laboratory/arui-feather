@@ -125,8 +125,8 @@ class Notification extends React.Component {
                     {
                         this.props.icon ||
                         <Icon
-                            theme='alfa-on-colored'
-                            icon={ this.props.status }
+                            colored={ this.props.status === 'ok' || this.props.status === 'error' }
+                            name={ `action-${this.props.status}` }
                             size='m'
                         />
                     }
@@ -143,11 +143,12 @@ class Notification extends React.Component {
                     this.props.hasCloser &&
                     <IconButton
                         className={ cn('closer') }
+                        size='m'
                         onClick={ this.handleCloserClick }
                     >
                         <Icon
+                            name='tool-close'
                             size='m'
-                            icon='close'
                         />
                     </IconButton>
                 }

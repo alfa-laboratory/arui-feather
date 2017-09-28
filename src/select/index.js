@@ -4,6 +4,7 @@
 
 import '../button';
 import '../icon';
+import '../icon-button';
 import '../menu';
 import '../mq';
 import '../popup';

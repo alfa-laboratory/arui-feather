@@ -100,7 +100,7 @@ class Sidebar extends React.Component {
                             onClick={ this.handleCloserClick }
                         >
                             <Icon
-                                icon='close'
+                                name='close'
                                 size='xl'
                             />
                         </button>

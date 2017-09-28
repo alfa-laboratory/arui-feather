@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -22,26 +21,26 @@ import performance from '../performance';
 @performance()
 class Icon extends React.Component {
     static propTypes = {
-        /** Тип иконки */
-        icon: Type.oneOf([
-            'error', 'fail', 'ok', 'ok_filled', 'attachment', 'calendar', 'search', 'close', 'user'
-        ]),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
-        /** Дочерние элементы `Icon` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Управление цветностью иконки */
+        colored: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика по иконке */
-        onClick: Type.func
+        /** Название иконки */
+        name: Type.string,
+        /** Размер иконки */
+        size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
+        /** Тема компонента */
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     static defaultProps = {
         size: 'm'
+    };
+
+    static contextTypes = {
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     render(cn) {
@@ -49,24 +48,30 @@ class Icon extends React.Component {
             size: this.props.size
         };
 
-        if (this.props.icon) {
-            mods[this.props.icon] = true;
+        if (this.props.name) {
+            mods[this.props.name] = true;
+        } else {
+            return null;
         }
 
         return (
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
-                onClick={ this.handleClick }
+                style={ { backgroundImage: `url(${require(`alfa-ui-icons/${this.getIconFileName()}.svg`)})` } }
             />
         );
     }
 
-    @autobind
-    handleClick(event) {
-        if (this.props.onClick) {
-            this.props.onClick(event);
+    getIconFileName() {
+        let cnTheme = this.props.theme || this.context.theme;
+        let iconColor = cnTheme === 'alfa-on-white' ? 'black' : 'white';
+
+        if (this.props.colored) {
+            iconColor = 'color';
         }
+
+        return `icon_${this.props.name}_${this.props.size}_${iconColor}`;
     }
 }
 

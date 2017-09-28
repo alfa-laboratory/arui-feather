@@ -25,7 +25,7 @@ const PROP_SETS = [
     },
     {
         visible: true,
-        icon: <Icon icon='search' theme='alfa-on-color' size='m' />,
+        icon: <Icon name='search' theme='alfa-on-color' size='m' />,
         status: 'ok',
         stickTo: 'right',
         offset: 10

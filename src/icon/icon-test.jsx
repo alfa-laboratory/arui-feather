@@ -16,24 +16,15 @@ describe('icon', () => {
 
     (() => {
         let icons = [
-            'error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'
+            'error', 'fail', 'ok', 'ok-filled', 'calendar', 'search', 'close', 'user'
         ];
 
         return icons.forEach(iconItem => (
             it(`render ${iconItem} icon without problems`, () => {
-                let icon = render(<Icon icon={ iconItem } />);
+                let icon = render(<Icon name={ iconItem } />);
 
                 expect(icon.node).to.have.class(`icon_${iconItem}`);
             })
         ));
     })();
-
-    it('should call `onClick` callback after icon was clicked', () => {
-        let onClick = sinon.spy();
-        let icon = render(<Icon onClick={ onClick } />);
-
-        icon.node.click();
-
-        expect(onClick).to.have.been.calledOnce;
-    });
 });

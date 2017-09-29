@@ -30,7 +30,7 @@ class EmailInput extends React.Component {
                 { ...this.props }
                 type='email'
                 ref={ (root) => { this.root = root; } }
-                noValidate={ true }
+                formNoValidate={ true }
                 className={ cn }
             />
         );

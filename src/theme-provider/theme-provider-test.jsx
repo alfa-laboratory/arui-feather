@@ -51,7 +51,6 @@ describe('theme-provider', () => {
         let headingNode = themeProvider.node.querySelector('.heading');
         let paragraphNode = themeProvider.node.querySelector('.paragraph');
 
-        expect(themeProvider.node).to.have.class('page_theme_alfa-on-color');
         expect(headingNode).to.have.class('heading_theme_alfa-on-color');
         expect(paragraphNode).to.have.class('paragraph_theme_alfa-on-white');
     });

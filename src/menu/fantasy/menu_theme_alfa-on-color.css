@@ -12,7 +12,7 @@
     .menu-item_hovered {
         background-color: var(--color-background-control-hovered-alfa-on-color);
 
-        &.menu-item_type_link, &.menu-item_type_dropdown {
+        &.menu-item_type_link, &.menu-item_type_drop-around {
             background-color: transparent;
         }
     }

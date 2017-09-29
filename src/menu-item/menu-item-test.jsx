@@ -9,7 +9,7 @@ import MenuItem from './menu-item';
 function renderMenuItem(props) {
     let menuItem = render(<MenuItem { ...props }>MenuItem</MenuItem>);
     let controlNode = menuItem.node.querySelector('.menu-item__control');
-    let switcherNode = menuItem.node.querySelector('.dropdown__switcher');
+    let switcherNode = menuItem.node.querySelector('.drop-around__switcher');
     let popupNode = document.querySelector('.popup');
 
     return { menuItem, switcherNode, controlNode, popupNode };
@@ -44,21 +44,21 @@ describe('menu-item', () => {
         expect(controlNode.tagName).to.equal('SPAN');
     });
 
-    it('should render `Dropdown` with `Link` and `Popup` content from `popup` property when type=`dropdown`',
+    it('should render `DropAround` with `Link` and `Popup` content from `popup` property when type=`drop-around`',
         function () {
             let {
                 popupNode,
                 controlNode,
                 switcherNode
-            } = renderMenuItem({ type: 'dropdown', popup: 'MenuItem Popup' });
+            } = renderMenuItem({ type: 'drop-around', popup: 'MenuItem Popup' });
 
             expect(switcherNode.tagName).to.equal('A');
-            expect(controlNode).to.have.class('dropdown');
+            expect(controlNode).to.have.class('drop-around');
             expect(popupNode).to.have.text('MenuItem Popup');
         });
 
-    it('should show popup when menu-item type=`dropdown` was hovered', () => {
-        let { popupNode, switcherNode } = renderMenuItem({ type: 'dropdown' });
+    it('should show popup when menu-item type=`drop-around` was hovered', () => {
+        let { popupNode, switcherNode } = renderMenuItem({ type: 'drop-around' });
 
         simulate(switcherNode, 'mouseEnter');
 

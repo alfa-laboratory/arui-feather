@@ -7,7 +7,7 @@ const layoutStyle = {
         <span style={ layoutStyle }>
             <MenuItem
                 size={ size }
-                type={ 'dropdown' }
+                type={ 'drop-around' }
                 popup='Информация о тарифах'
             >
                 Тарифы

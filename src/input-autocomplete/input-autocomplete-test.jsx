@@ -251,4 +251,20 @@ describe('input-autocomplete', () => {
 
         expect(onChange).to.have.been.calledOnce;
     });
+
+    it('should close popup after item select if closeOnSelect is set', (done) => {
+        let { popupNode, inputAutocomplete } = renderInputAutocomplete({ closeOnSelect: true,
+            updateValueOnItemSelect: false,
+            options: OPTIONS });
+        inputAutocomplete.instance.focus();
+        setTimeout(() => {
+            expect(popupNode).to.have.class('popup_visible');
+            let firstOptionNode = popupNode.querySelector('.menu-item');
+            firstOptionNode.click();
+            setTimeout(() => {
+                expect(popupNode).to.not.have.class('popup_visible');
+                done();
+            }, 20);
+        }, 20);
+    });
 });

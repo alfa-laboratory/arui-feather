@@ -60,9 +60,6 @@ module.exports = {
                 ),
                 'rsg-components/StyleGuide': path.resolve(__dirname, './demo/components/styleguide')
             }
-        },
-        plugins: [
-            new webpack.NormalModuleReplacementPlugin(/font_roboto\.css$/, 'node-noop')
-        ]
+        }
     })
 };

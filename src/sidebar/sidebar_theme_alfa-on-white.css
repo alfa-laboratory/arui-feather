@@ -1,0 +1,20 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+@import '../vars.css';
+
+.sidebar_theme_alfa-on-white {
+    background-color: var(--color-accent-content);
+}
+
+@media (--small-only) {
+    .sidebar_theme_alfa-on-white {
+        .sidebar__footer:after {
+            background-image: var(--color-gradient-edge-screen-alfa-on-white);
+        }
+
+        .sidebar__header_has-border {
+            border-bottom: 1px solid var(--color-border-separator-alfa-on-white);
+        }
+    }
+}

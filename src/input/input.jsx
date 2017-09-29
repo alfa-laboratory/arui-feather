@@ -449,8 +449,8 @@ class Input extends React.Component {
      * @param {Number} [start=0] Индекс первого выделенного символа.
      * @param {Number} [end=value.length] Индекс символа после последнего выделенного символа.
      */
-    setSelectionRange(start = 0, end = this.control.value.length) {
-        this.control.setSelectionRange(start, end);
+    setSelectionRange(start = 0, end = this.getControl().value.length) {
+        this.getControl().setSelectionRange(start, end);
     }
 
     /**

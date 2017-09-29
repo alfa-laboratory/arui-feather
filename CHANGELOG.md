@@ -1,3 +1,13 @@
+<a name="9.10.4"></a>
+## [9.10.4](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.3...v9.10.4) (2017-09-29)
+
+
+### Bug Fixes
+
+* **mq:** move match media utils functions to lib ([#228](https://github.com/alfa-laboratory/arui-feather/issues/228)) ([52acf1d](https://github.com/alfa-laboratory/arui-feather/commit/52acf1d))
+
+
+
 <a name="9.10.3"></a>
 ## [9.10.3](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.2...v9.10.3) (2017-09-29)
 

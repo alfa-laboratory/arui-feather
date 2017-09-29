@@ -1,0 +1,58 @@
+@import '../vars.css';
+
+.tabs {
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    &__content {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            bottom: 1px;
+            left: 0;
+            right: 0;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
+    }
+}
+
+.tabs_theme_alfa-on-color {
+    .tabs__content:after {
+        border-bottom-color: var(--color-background-control-disabled-alfa-on-color);
+    }
+}
+
+.tabs_theme_alfa-on-white {
+    .tabs__content:after {
+        border-bottom-color: var(--color-background-control-disabled-alfa-on-white);
+    }
+}
+
+@media (--small-only) {
+    .tabs_scrollable {
+        overflow: hidden;
+        width: 100%;
+
+        &:after {
+            content: '';
+            display: block;
+            margin-bottom: -20px;
+        }
+
+        .tabs__panel {
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0 0 20px;
+        }
+
+        .tabs__content {
+            display: inline-block;
+        }
+    }
+}

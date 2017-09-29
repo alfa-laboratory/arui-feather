@@ -6,7 +6,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Button from '../button/button';
+import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -16,7 +16,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 /**
  * Компонент радио-кнопки.
  */
-@cn('radio', Button)
+@cn('radio', TagButton)
 @performance()
 class Radio extends React.Component {
     static propTypes = {
@@ -72,7 +72,7 @@ class Radio extends React.Component {
     label;
     control;
 
-    render(cn, Button) {
+    render(cn, TagButton) {
         let checked = this.props.checked !== undefined
             ? this.props.checked
             : this.state.checked;
@@ -98,7 +98,7 @@ class Radio extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                        ? this.renderButtonRadio(cn, checked, Button)
+                        ? this.renderButtonRadio(cn, checked, TagButton)
                         : this.renderNormalRadio(cn, checked)
                 }
             </label>
@@ -137,10 +137,10 @@ class Radio extends React.Component {
         );
     }
 
-    renderButtonRadio(cn, checked, Button) {
+    renderButtonRadio(cn, checked, TagButton) {
         return (
             <div>
-                <Button
+                <TagButton
                     togglable='check'
                     checked={ checked }
                     disabled={ this.props.disabled }
@@ -156,7 +156,7 @@ class Radio extends React.Component {
                             ? this.props.text
                             : ''
                     }
-                </Button>
+                </TagButton>
                 <input
                     checked={ checked }
                     disabled={ this.props.disabled }

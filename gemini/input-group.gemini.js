@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Input from '../src/input/fantasy';
-import InputGroup from '../src/input-group/fantasy';
+import Input from '../src/input';
+import InputGroup from '../src/input-group';
 
 const NAME = 'input-group';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];

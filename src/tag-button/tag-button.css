@@ -1,0 +1,134 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.tag-button {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: 0;
+    user-select: none;
+    font-family: var(--font);
+    text-align: center;
+    white-space: nowrap;
+    border-color: transparent;
+    border-radius: 30px;
+    transition-duration: 200ms;
+    transition-property: background, color, width;
+    transition-timing-function: ease;
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    &_hovered,
+    &_hovered.tag-button_focused,
+    &_focused {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    &__text {
+        font-weight: var(--font-weight-medium);
+    }
+
+    &_size_s {
+        min-height: 30px;
+        padding: 0 10px;
+        font-size: var(--font-size-s);
+        line-height: 28px;
+    }
+
+    &_size_m {
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: var(--font-size-m);
+        line-height: 38px;
+    }
+
+    &_size_l {
+        min-height: 50px;
+        padding: 0 18px;
+        font-size: var(--font-size-l);
+        line-height: 48px;
+    }
+
+    &_size_xl {
+        min-height: 60px;
+        padding: 0 22px;
+        font-size: var(--font-size-xl);
+        line-height: 58px;
+    }
+
+    &_width_available {
+        width: 100%;
+    }
+
+    &_disabled {
+        cursor: default;
+    }
+}
+
+.tag-button_theme_alfa-on-color {
+    color: var(--color-content-alfa-on-color);
+    background: color(var(--color-background-alfa-on-white) a(.3));
+
+    &.tag-button_hovered {
+        background: color(var(--color-background-alfa-on-white) a(.4));
+    }
+
+    &.tag-button_focused {
+        background: color(var(--color-background-alfa-on-white) a(.55));
+    }
+
+    &.tag-button_pressed {
+        background: color(var(--color-background-alfa-on-white) a(.6));
+    }
+
+    &.tag-button_checked {
+        color: var(--color-content-alfa-on-white);
+        background: color(var(--color-background-alfa-on-white) a(.75));
+    }
+
+    &.tag-button_disabled {
+        color: var(--color-content-disabled-alfa-on-color);
+        background: transparent;
+        border-color: var(--color-border-control-disabled-alfa-on-color);
+        border-style: var(--border-style-control-disabled);
+        border-width: 1px;
+    }
+}
+
+.tag-button_theme_alfa-on-white {
+    color: var(--color-content-alfa-on-white);
+    background: color(var(--color-background-alfa-on-color) a(.05));
+
+    &.tag-button_hovered {
+        background: color(var(--color-background-alfa-on-color) a(.08));
+    }
+
+    &.tag-button_focused {
+        background: color(var(--color-background-alfa-on-color) a(.14));
+    }
+
+    &.tag-button_pressed {
+        background: color(var(--color-background-alfa-on-color) a(.18));
+    }
+
+    &.tag-button_checked {
+        color: var(--color-content-alfa-on-color);
+        background: color(var(--color-background-alfa-on-color) a(.9));
+    }
+
+    &.tag-button_disabled {
+        color: var(--color-content-disabled-alfa-on-white);
+        background: transparent;
+        border-color: var(--color-border-control-disabled-alfa-on-white);
+        border-style: var(--border-style-control-disabled);
+        border-width: 1px;
+    }
+}

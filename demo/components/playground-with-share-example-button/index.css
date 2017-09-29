@@ -7,7 +7,7 @@
     margin-top: 60px;
 
     &__share-code {
-        background-image: url(./icon.svg);
+        background-image: url('./icon.svg');
         background-color: white;
         height: 24px;
         width: 24px;

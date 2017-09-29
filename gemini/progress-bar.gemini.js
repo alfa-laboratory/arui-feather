@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import ProgressBar from '../src/progress-bar/fantasy';
+import ProgressBar from '../src/progress-bar';
 
 const NAME = 'progress-bar';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Label from '../src/label/fantasy';
+import Label from '../src/label';
 
 const NAME = 'label';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];

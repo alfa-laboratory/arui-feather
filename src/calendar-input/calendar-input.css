@@ -2,9 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import '../vars.css';
+
 .calendar-input {
-    position: relative;
     display: inline-block;
+    position: relative;
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &_width_available {
         width: 100%;
@@ -22,8 +28,6 @@
 
     &__native-control {
         opacity: 0;
-        appearance: none;
-        box-sizing: border-box;
         position: absolute;
         top: 0;
         left: 0;
@@ -31,6 +35,7 @@
         max-width: 100%;
         min-width: 0;
         height: 100%;
+        appearance: none;
         z-index: 1;
     }
 
@@ -38,5 +43,21 @@
         display: block;
         width: 265px;
         margin: 0 auto;
+    }
+}
+
+.calendar-input_theme_alfa-on-color {
+    .calendar-input__native-control + .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-content-alfa-on-color) !important;
+        }
+    }
+}
+
+.calendar-input_theme_alfa-on-white {
+    .calendar-input__native-control + .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
+        }
     }
 }

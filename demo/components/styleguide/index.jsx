@@ -10,7 +10,7 @@ import {
     slugger
 } from 'react-styleguidist/lib/utils/utils';
 import { getPlayground, isPlayground } from '../playground-with-share-example-button/utils';
-import '../../../src/font/font_roboto-rouble.css';
+import '../../../src/main.css';
 import './demo-styles.css';
 
 export default function (props) {

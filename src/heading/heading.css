@@ -1,58 +1,57 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 @import '../vars.css';
 
 .heading {
     font-family: var(--font);
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-condensed);
 
-    &_size_xl {
-        margin-top: 35px;
-        margin-bottom: 30px;
-        font-size: var(--font-size-4xl);
-        line-height: 1.3;
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
-        @media (--small-only) {
-            font-size: var(--font-size-3xl);
+    &_size_s {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: var(--font-size-l);
+    }
+
+    &_size_m {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: var(--font-size-xl);
+
+        @media (--medium) {
+            font-size: var(--font-size-2xl);
         }
     }
 
     &_size_l {
         margin-top: 30px;
         margin-bottom: 25px;
-        font-size: var(--font-size-3xl);
-        line-height: 1.3;
+        font-size: var(--font-size-2xl);
 
-        @media (--small-only) {
-            font-size: var(--font-size-2xl);
+        @media (--medium) {
+            font-size: var(--font-size-3xl);
         }
     }
 
-    &_size_m {
+    &_size_xl {
         margin-top: 25px;
         margin-bottom: 20px;
-        font-size: var(--font-size-2xl);
-        line-height: 1.4;
+        font-size: var(--font-size-3xl);
 
-        @media (--small-only) {
-            font-size: var(--font-size-xl);
+        @media (--medium) {
+            margin-top: 35px;
+            margin-bottom: 30px;
+            font-size: var(--font-size-4xl);
         }
-    }
-
-    &_size_s {
-        margin-top: 20px;
-        margin-bottom: 15px;
-        font-size: var(--font-size-xl);
-        line-height: 1.4;
     }
 
     &_theme_alfa-on-color {
-        color: var(--color-content-accent-alfa-on-color);
+        color: var(--color-content-alfa-on-color);
     }
 
     &_theme_alfa-on-white {
-        color: var(--color-content-accent-alfa-on-white);
+        color: var(--color-content-alfa-on-white);
     }
 }

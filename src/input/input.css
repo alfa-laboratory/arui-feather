@@ -4,74 +4,78 @@
 
 @import '../vars.css';
 
+:root {
+    --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
+    --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
+    --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
+    --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
+}
+
 .input {
-    box-sizing: border-box;
     display: inline-block;
-    position: relative;
     font-family: var(--font);
-    font-weight: var(--font-weight);
+    font-weight: var(--font-weight-normal);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &__inner {
         display: inline-table;
+        position: relative;
         width: 100%;
     }
 
-    &_width_available &__inner {
-        table-layout: fixed;
-    }
-
     &__box {
-        box-sizing: border-box;
+        overflow: hidden;
         display: table-cell;
         position: relative;
-        min-width: 150px;
         user-select: none;
-        border-radius: var(--border-radius-control);
-        transition-duration: 200ms;
-        transition-property: background, border-color, box-shadow, width;
-        transition-timing-function: ease;
+        transition-duration: 250ms;
+        transition-property: border-bottom-color, box-shadow, width;
+        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
         -webkit-touch-callout: none;
     }
 
+    &__top {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        font-size: var(--font-size-m);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transform: scale(1) translate3d(0, 0, 0);
+        transform-origin: 0 100%;
+        transition-duration: 200ms;
+        transition-property: color, transform;
+        transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+    }
+
     &__sub {
-        box-sizing: border-box;
         display: table-caption;
         caption-side: bottom;
         padding-top: 5px;
         padding-right: 12px;
         white-space: normal;
-
-        .input_size_s & {
-            font-size: var(--font-size-xs);
-        }
-
-        .input_size_m & {
-            font-size: var(--font-size-s);
-        }
-
-        .input_size_l & {
-            font-size: var(--font-size-m);
-        }
-
-        .input_size_xl & {
-            font-size: var(--font-size-l);
-        }
     }
 
     &__control {
-        box-sizing: border-box;
         display: inline-block;
         position: relative;
         width: 100%;
-        min-width: 0; /* Avoid component pruning with right addons in small width containers (Firefox 55.0.3) */
-        height: 100%;
+
+        /** Если использовать `height: 100%` поле схлопывается в Safari v10.1.2. **/
+        min-height: 100%;
         margin: 0;
         padding: 0;
         outline: none;
         font: inherit;
-        font-weight: var(--font-weight);
+        font-weight: var(--font-weight-normal);
+        line-height: inherit;
         background: none;
-        border: 0;
+        border: none;
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -88,14 +92,16 @@
         }
 
         &::-moz-placeholder {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
 
         &::-ms-clear {
             display: none;
         }
 
+        &[placeholder],
         &::placeholder {
+            text-overflow: ellipsis;
             transition: opacity .2s ease-in-out;
         }
 
@@ -115,12 +121,12 @@
 
         &.input_focused {
             .input__control::placeholder {
-                opacity: 1;
+                opacity: var(--opacity-active);
             }
         }
     }
 
-    &&_has-clear &__control {
+    &_has-clear &__control {
         padding-right: 0;
         text-overflow: ellipsis;
     }
@@ -132,7 +138,7 @@
         right: 0;
         margin: 0;
         padding: 0;
-        cursor: text;
+        cursor: pointer;
         outline: none;
         user-select: none;
         color: inherit;
@@ -144,8 +150,7 @@
         transition: opacity 0.1s ease-out;
 
         &:hover {
-            cursor: pointer;
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
     }
 
@@ -164,33 +169,37 @@
 
     &_width_available {
         width: 100%;
-        min-width: 0;
     }
 
-    /* Override table styles by flex */
-    &_has-addons .input__box {
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
+    &&_has-addons {
+        /* Override table styles by flex */
+        .input__box {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+
+        .input__control {
+            padding-right: var(--gap-s);
+        }
+
+        .input__addons_left + .input__control {
+            padding-right: 0;
+            padding-left: var(--gap-s);
+        }
+
+        /* If has left & right addons */
+        .input__control:nth-child(2):nth-last-child(2) {
+            padding-right: var(--gap-s);
+        }
     }
 
     &__addons {
         display: flex;
         align-items: center;
-
-        &_left .control-group > .button:last-child,
-        &_left .control-group > :last-child .button,
-        &_right .control-group > .button:first-child,
-        &_right .control-group > :first-child .button {
-            border-radius: 0;
-        }
-    }
-
-    &__addons_left {
-        margin-left: -1px;
     }
 
     &_type_hidden {
@@ -199,7 +208,7 @@
 
     /* reset for ios */
     &__control:disabled {
-        opacity: 1;
+        opacity: var(--opacity-active);
     }
 }
 
@@ -219,6 +228,12 @@
         display: none;
     }
 
+    .input_has-value {
+        &::placeholder {
+            opacity: var(--opacity-minor);
+        }
+    }
+
     .input__box,
     .input__control {
         cursor: default;
@@ -230,50 +245,94 @@
 }
 
 .input_size_s {
+    &.input_has-label {
+        padding-top: 9px;
+    }
+
+    .input__top {
+        line-height: 30px;
+    }
+
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-s)) translate3d(0, -22px, 0);
+        }
+    }
+
+    .input__top,
     .input__box {
-        height: 30px;
         font-size: var(--font-size-s);
     }
 
-    .input__control {
-        padding: 0 10px;
-        line-height: 28px;
-    }
-
-    &.input_has-clear .input__box,
-    &.input_has-icon .input__box {
-        padding-right: 28px; /* -2px borders */
-    }
-
-    &.input_has-clear .input__clear,
-    &.input_has-icon .input__icon { /* TODO: Maybe icon should not have set this width/height */
-        width: 28px;
-        height: 28px;
-        line-height: 26px;
-    }
-}
-
-.input_size_m {
     .input__box {
-        height: 40px;
-        font-size: var(--font-size-m);
+        height: 30px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-xs);
     }
 
     .input__control {
-        padding: 0 12px;
-        line-height: 38px;
+        padding: 7px 0;
     }
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 38px;
+        padding-right: 30px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 38px;
-        height: 38px;
-        line-height: 36px;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+    }
+}
+
+.input_size_m {
+    &.input_has-label {
+        padding-top: 6px;
+    }
+
+    .input__top {
+        line-height: 40px;
+    }
+
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-m)) translate3d(0, -30px, 0);
+        }
+    }
+
+    .input__top,
+    .input__box {
+        font-size: var(--font-size-m);
+    }
+
+    .input__box {
+        height: 40px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-s);
+    }
+
+    .input__control {
+        padding: 10px 0;
+    }
+
+    &.input_has-clear .input__box,
+    &.input_has-icon .input__box {
+        padding-right: 34px;
+    }
+
+    &.input_has-clear .input__clear,
+    &.input_has-icon .input__icon {
+        width: 34px;
+        height: 40px;
+        line-height: 38px;
     }
 
     &.input_mode_link {
@@ -289,138 +348,93 @@
 }
 
 .input_size_l {
+    &.input_has-label {
+        padding-top: 14px;
+    }
+
+    .input__top {
+        line-height: 50px;
+    }
+
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-l)) translate3d(0, -40px, 0);
+        }
+    }
+
+    .input__top,
     .input__box {
-        height: 50px;
         font-size: var(--font-size-l);
     }
 
+    .input__box {
+        height: 50px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-m);
+    }
+
     .input__control {
-        padding: 0 15px;
-        line-height: 48px;
+        padding: 14px 0;
     }
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 48px;
+        padding-right: 44px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 48px;
-        height: 48px;
-        line-height: 46px;
+        width: 44px;
+        height: 50px;
+        line-height: 48px;
     }
 }
 
 .input_size_xl {
+    &.input_has-label {
+        padding-top: 13px;
+    }
+
+    .input__top {
+        line-height: 60px;
+    }
+
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            transform: scale(var(--top-scale-xl)) translate3d(0, -50px, 0);
+        }
+    }
+
+    .input__top,
     .input__box {
-        height: 60px;
         font-size: var(--font-size-xl);
     }
 
+    .input__box {
+        height: 60px;
+    }
+
+    .input__sub {
+        font-size: var(--font-size-l);
+    }
+
     .input__control {
-        padding: 0 15px;
-        line-height: 58px;
+        padding: 17px 0;
     }
 
     &.input_has-clear .input__box,
     &.input_has-icon .input__box {
-        padding-right: 60px;
+        padding-right: 52px;
     }
 
     &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
-        width: 58px;
-        height: 58px;
-        line-height: 56px;
-    }
-}
-
-.input_invalid {
-    .input__box {
-        border-color: var(--color-error-translucent);
-    }
-
-    &.input_focused {
-        .input__box {
-            background: var(--color-error-transparent);
-            border-color: var(--color-error-translucent);
-            box-shadow: 0 0 0 1px var(--color-error-translucent);
-        }
-    }
-
-    .input__sub {
-        color: var(--color-error);
-    }
-}
-
-.control-group {
-    .input__box {
-        border-radius: 0;
-    }
-
-    .input-group__input-case_invalid + * {
-        .input {
-            padding-left: 1px;
-
-            .input__box {
-                border-left: none;
-            }
-        }
-
-        .input_theme_alfa-on-white:not(.input_focused),
-        .input_theme_alfa-on-color:not(.input_focused) {
-            padding-left: 1px;
-
-            .input__box {
-                border-left: none;
-                box-shadow: -1px 0 0 0 var(--color-error-translucent);
-            }
-        }
-    }
-
-    .input_theme_alfa-on-white.input_invalid,
-    .input_theme_alfa-on-color.input_invalid {
-        &.input_focused {
-            .input__box {
-                border-color: var(--color-error-translucent);
-            }
-        }
-    }
-
-    > :last-child .input {
-        .input__box {
-            border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
-        }
-
-        &.input_theme_alfa-on-white.input_invalid,
-        &.input_theme_alfa-on-color.input_invalid {
-            .input__box {
-                border-color: var(--color-error-translucent);
-            }
-        }
-    }
-
-    > :first-child .input__box {
-        border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
-
-        &.input_invalid.input_focused {
-            box-shadow: 0 0 0 1px var(--color-error-translucent);
-        }
-    }
-
-    > :not(:first-child):not(:last-child) .input {
-        &.input_invalid.input_focused {
-            padding-left: 1px;
-
-            .input__box {
-                border-left: none;
-                box-shadow: -1px 0 0 1px var(--color-error-translucent), 0 0 0 1px var(--color-error-translucent);
-            }
-        }
-    }
-
-    > :only-child .input__box {
-        border-radius: var(--border-radius-control);
+        width: 52px;
+        height: 60px;
+        line-height: 58px;
     }
 }

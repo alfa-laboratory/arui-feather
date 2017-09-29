@@ -14,8 +14,8 @@
 
     &__currency {
         display: inline-block;
-        text-align: right;
         min-width: 1em;
+        text-align: right;
     }
 
     &__separator, &__minor, &__currency {

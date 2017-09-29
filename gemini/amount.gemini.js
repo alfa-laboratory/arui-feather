@@ -1,4 +1,4 @@
-import Amount from '../src/amount/fantasy';
+import Amount from '../src/amount';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'amount';

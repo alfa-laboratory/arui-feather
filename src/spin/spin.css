@@ -4,9 +4,9 @@
 
 .spin {
     display: none;
+    animation: spin_animation .8s infinite linear;
     background-repeat: no-repeat;
     background-size: 100%;
-    animation: spin_animation .8s infinite linear;
 
     &_visible {
         display: inline-block;

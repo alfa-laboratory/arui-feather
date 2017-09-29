@@ -29,9 +29,7 @@
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
     "demo": "styleguidist server",
-    "demo-fantasy": "styleguidist server --config ./styleguide-fantasy.config.js",
     "styleguide-build": "styleguidist build",
-    "styleguide-build-fantasy": "styleguidist build --config ./styleguide-fantasy.config.js",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {

@@ -7,7 +7,6 @@ describe('match-media', () => {
             const query = 'screen and (max-width: 48em)';
             const mql = getMatchMedia(query);
 
-            expect(mql).to.be.instanceOf(MediaQueryList);
             expect(mql.media).to.be.eql('screen and (max-width: 48em)');
 
             releaseMatchMedia(query);

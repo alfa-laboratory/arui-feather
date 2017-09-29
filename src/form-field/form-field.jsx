@@ -7,7 +7,6 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 import performance from '../performance';
-import { deprecated } from '../lib/prop-types';
 
 /**
  * Компонент поля формы.
@@ -19,18 +18,14 @@ class FormField extends React.Component {
     static propTypes = {
         /** Дочерние элементы `FormField` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** @deprecated Заголовок для контрола */
-        label: deprecated(Type.node, 'Use \'label\' property directly on controls.'),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Расположение элемента label: 'line' */
-        view: Type.string,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Размер компонента */
+        size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        /** Тема компонента */
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     static defaultProps = {
@@ -40,20 +35,10 @@ class FormField extends React.Component {
     render(cn) {
         return (
             <div
-                className={ cn({
-                    size: this.props.size,
-                    view: this.props.view
-                }) }
+                className={ cn({ size: this.props.size }) }
                 id={ this.props.id }
             >
-                { this.props.label &&
-                    <div className={ cn('label') }>
-                        { this.props.label }
-                    </div>
-                }
-                <div className={ cn('control') }>
-                    { this.props.children }
-                </div>
+                { this.props.children }
             </div>
         );
     }

@@ -43,6 +43,10 @@
             &::placeholder {
                 color: var(--color-content-disabled-alfa-on-color);
             }
+
+            &:disabled {
+                -webkit-text-fill-color: var(--color-content-disabled-alfa-on-color) !important;
+            }
         }
     }
 

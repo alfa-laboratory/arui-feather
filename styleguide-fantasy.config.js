@@ -4,7 +4,6 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');

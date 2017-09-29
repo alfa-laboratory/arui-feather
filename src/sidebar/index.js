@@ -6,5 +6,7 @@ import '../icon';
 import '../popup-container-provider';
 
 import './sidebar.css';
+import './sidebar_theme_alfa-on-color.css';
+import './sidebar_theme_alfa-on-white.css';
 
 export default from './sidebar';

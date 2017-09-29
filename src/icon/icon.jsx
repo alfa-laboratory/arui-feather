@@ -41,11 +41,8 @@ class Icon extends React.Component {
     };
 
     static defaultProps = {
+        imageUrl: './images',
         size: 'm'
-    };
-
-    static contextTypes = {
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     render(cn) {

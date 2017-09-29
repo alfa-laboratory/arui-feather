@@ -26,7 +26,7 @@ const PROP_SETS = [
     },
     {
         switcherType: 'button',
-        popupContent: 'Drop around popup',
+        popupContent: 'Dropped popup',
         popupProps: {
             directions: ['right-center'],
             mainOffset: 13,

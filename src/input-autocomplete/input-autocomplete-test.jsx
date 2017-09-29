@@ -264,7 +264,7 @@ describe('input-autocomplete', () => {
             setTimeout(() => {
                 expect(popupNode).to.not.have.class('popup_visible');
                 done();
-            }, 20);
-        }, 20);
+            }, 50);
+        }, 50);
     });
 });

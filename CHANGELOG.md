@@ -1,3 +1,15 @@
+<a name="9.10.3"></a>
+## [9.10.3](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.2...v9.10.3) (2017-09-29)
+
+
+### Bug Fixes
+
+* fix disabled control color in calendar-input & textarea ([#271](https://github.com/alfa-laboratory/arui-feather/issues/271)) ([c54b640](https://github.com/alfa-laboratory/arui-feather/commit/c54b640))
+* **input:** properly select range when mask is set ([#272](https://github.com/alfa-laboratory/arui-feather/issues/272)) ([706ccd4](https://github.com/alfa-laboratory/arui-feather/commit/706ccd4))
+* **sidebar:** fix sidebar scroll ([#264](https://github.com/alfa-laboratory/arui-feather/issues/264)) ([970a5f6](https://github.com/alfa-laboratory/arui-feather/commit/970a5f6))
+
+
+
 <a name="9.10.2"></a>
 ## [9.10.2](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.1...v9.10.2) (2017-09-25)
 

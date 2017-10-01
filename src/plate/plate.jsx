@@ -50,7 +50,7 @@ class Plate extends React.Component {
     render(cn) {
         let hasCloser = this.props.hasCloser;
         return (
-            <span
+            <div
                 className={ cn({
                     'has-closer': hasCloser,
                     hidden: hasCloser && this.state.isHidden,
@@ -59,20 +59,22 @@ class Plate extends React.Component {
                 id={ this.props.id }
                 onClick={ this.handleClick }
             >
-                { this.props.children }
-                {
-                    hasCloser &&
-                    <IconButton
-                        className={ cn('closer') }
-                        onClick={ this.handleCloserClick }
-                    >
-                        <Icon
-                            theme='alfa-on-white'
-                            icon='close'
-                        />
-                    </IconButton>
-                }
-            </span>
+                <div className={ cn('content') }>
+                    { this.props.children }
+                    {
+                        hasCloser &&
+                        <IconButton
+                            className={ cn('closer') }
+                            onClick={ this.handleCloserClick }
+                        >
+                            <Icon
+                                theme='alfa-on-white'
+                                icon='close'
+                            />
+                        </IconButton>
+                    }
+                </div>
+            </div>
         );
     }
 

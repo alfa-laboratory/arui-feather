@@ -1,7 +1,9 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
+import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
 import InputAutocomplete from './input-autocomplete';
@@ -257,6 +259,7 @@ describe('input-autocomplete', () => {
             updateValueOnItemSelect: false,
             options: OPTIONS });
         inputAutocomplete.instance.focus();
+        const timeout = bowser.mobile ? 200 : 50;
         setTimeout(() => {
             expect(popupNode).to.have.class('popup_visible');
             let firstOptionNode = popupNode.querySelector('.menu-item');
@@ -264,7 +267,7 @@ describe('input-autocomplete', () => {
             setTimeout(() => {
                 expect(popupNode).to.not.have.class('popup_visible');
                 done();
-            }, 50);
-        }, 50);
+            }, timeout);
+        }, timeout);
     });
 });

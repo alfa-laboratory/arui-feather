@@ -79,7 +79,7 @@ const MENU_2 = [
                 value: '5',
                 props: {
                     url: '#5',
-                    type: 'dropdown',
+                    type: 'drop-around',
                     popup: 'Popup Menu'
                 }
             }

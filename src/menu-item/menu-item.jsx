@@ -6,7 +6,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Dropdown from '../dropdown/dropdown';
+import DropAround from '../drop-around/drop-around';
 import Link from '../link/link';
 
 import cn from '../cn';
@@ -20,7 +20,7 @@ import performance from '../performance';
 class MenuItem extends React.Component {
     static propTypes = {
         /** Тип элемента меню */
-        type: Type.oneOf(['link', 'dropdown', 'block']),
+        type: Type.oneOf(['link', 'drop-around', 'block']),
         /** Тип ссылки, для компонента с type='link' */
         view: Type.oneOf(['plain', 'underlined', 'pseudo']),
         /** href ссылки, для компонента с type='link' */
@@ -32,7 +32,7 @@ class MenuItem extends React.Component {
             Type.string,
             Type.number
         ]),
-        /** Попап для компонента с type='dropdown' */
+        /** Попап для компонента с type='drop-around' */
         popup: Type.node,
         /** Управление возможностью выбирать данный компонент */
         disabled: Type.bool,
@@ -83,11 +83,11 @@ class MenuItem extends React.Component {
         };
 
         switch (this.props.type) {
-            case 'dropdown':
+            case 'drop-around':
                 itemElement = (
-                    <Dropdown
+                    <DropAround
                         ref={ (control) => { this.control = control; } }
-                        className={ `${cn('control')} ${cn('dropdown')}` }
+                        className={ `${cn('control')} ${cn('drop-around')}` }
                         size={ this.props.size }
                         opened={ this.state.hovered }
                         switcherType='link'

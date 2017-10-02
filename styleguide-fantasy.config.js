@@ -4,7 +4,6 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
@@ -60,9 +59,6 @@ module.exports = {
                 ),
                 'rsg-components/StyleGuide': path.resolve(__dirname, './demo/components/styleguide')
             }
-        },
-        plugins: [
-            new webpack.NormalModuleReplacementPlugin(/font_roboto\.css$/, 'node-noop')
-        ]
+        }
     })
 };

@@ -85,7 +85,7 @@ class Collapse extends React.Component {
                     icon={
                         <Icon
                             name={ expanded ? 'action-down' : 'action-up' }
-                            size='s'
+                            size='xs'
                         />
                     }
                     iconPosition='right'

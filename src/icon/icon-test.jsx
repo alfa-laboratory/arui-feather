@@ -16,7 +16,7 @@ describe('icon', () => {
 
     (() => {
         let icons = [
-            'error', 'fail', 'ok', 'ok-filled', 'calendar', 'search', 'close', 'user'
+            'error', 'fail', 'ok', 'ok-filled', 'calendar', 'close'
         ];
 
         return icons.forEach(iconItem => (

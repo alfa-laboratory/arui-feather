@@ -1,6 +1,6 @@
 ```jsx
 <div>
-    {['error', 'fail', 'ok', 'ok-filled', 'calendar', 'search', 'close', 'user'].map(icon => (
+    {['action-error', 'action-fail', 'action-ok', 'action-ok-filled', 'action-close', 'calendar'].map(icon => (
         <div className='row' >
             {['s', 'm', 'l', 'xl'].map(size => (
                 <div className='column l' >
@@ -14,10 +14,11 @@
     ))}
 </div>
 ```
+
 Пример использования цветных иконок
 ```jsx
 <div>
-    {['error', 'ok'].map(icon => (
+    {['action-error', 'action-ok'].map(icon => (
         <div className='row' >
             {['s', 'm', 'l', 'xl'].map(size => (
                 <div className='column l' >

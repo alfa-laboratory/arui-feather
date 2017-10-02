@@ -69,12 +69,15 @@
         margin-left: 0.5em;
     }
 
+<<<<<<< HEAD
     &__file .icon {
         width: 1em;
         margin-right: 0.3em;
         background-image: url('./images/attach.png');
     }
 
+=======
+>>>>>>> 3ff49194... feat(*): update collapse, update select
     &__clear {
         margin: 0 0 0 5px;
         padding: 0;

@@ -42,8 +42,8 @@ class PopupHeader extends React.Component {
             >
                 <Icon
                     className={ cn('closer') }
+                    name='close'
                     size={ this.props.size }
-                    icon='close'
                     onClick={ this.handleCloseClick }
                 />
                 <div className={ cn('title') }>

@@ -41,26 +41,32 @@ class Icon extends React.Component {
     };
 
     static defaultProps = {
-        imageUrl: './images',
         size: 'm'
     };
 
+    static contextTypes = {
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+    };
+
     render(cn) {
-        let mods = {
-            size: this.props.size
-        };
+        let imageUrl = null;
+        let mods = { size: this.props.size };
 
         if (this.props.name) {
             mods[this.props.name] = true;
-        } else {
-            return null;
+        }
+
+        if (this.props.imageUrl) {
+            imageUrl = require(this.props.imageUrl);
+        } else if (this.props.name) {
+            imageUrl = require(`./images/${this.getIconFileName()}.svg`);
         }
 
         return (
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
-                style={ { backgroundImage: `url(${require(`${this.props.imageUrl}`)})` } }
+                style={ { backgroundImage: imageUrl && `url('${imageUrl}')` } }
             />
         );
     }
@@ -70,6 +76,17 @@ class Icon extends React.Component {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
+    }
+
+    getIconFileName() {
+        let cnTheme = this.props.theme || this.context.theme;
+        let color = cnTheme === 'alfa-on-white' ? 'black' : 'white';
+
+        if (this.props.colored) {
+            color = 'color';
+        }
+
+        return `icon_${this.props.name}_${this.props.size}_${color}`;
     }
 }
 

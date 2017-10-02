@@ -81,7 +81,7 @@ class CalendarInput extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
-        /** Показывать иконку календаря в инпуте */
+        /** Управление рендером иконки календаря в инпуте */
         withIcon: Type.bool,
         /** Лейбл для поля */
         label: Type.node,
@@ -275,7 +275,7 @@ class CalendarInput extends React.Component {
                         this.props.withIcon &&
                         <Icon
                             size={ this.props.size }
-                            icon='calendar'
+                            name='calendar'
                             onClick={ this.handleIconClick }
                         />
                     }

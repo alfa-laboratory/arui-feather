@@ -18,6 +18,8 @@ class Link extends React.Component {
     static propTypes = {
         /** Иконка ссылки */
         icon: Type.node,
+        /** Позиционирование иконки в ссылке */
+        iconPosition: Type.oneOf(['left', 'right']),
         /** Текст ссылки */
         text: Type.node,
         /** href ссылки */
@@ -55,6 +57,7 @@ class Link extends React.Component {
     };
 
     static defaultProps = {
+        iconPosition: 'left',
         size: 'm',
         url: '#',
         tabIndex: 0,
@@ -97,15 +100,23 @@ class Link extends React.Component {
             linkProps.target = this.props.target;
         }
 
-        let linkContent = [
-            this.props.children,
+        let linkContent = [this.props.children];
+        let iconTemplate = (
             this.props.icon && <span key={ 'icon' } className={ cn('icon') }>
                 { this.props.icon }
-            </span>,
+            </span>
+        );
+        let textTemplate = (
             this.props.text && <span key={ 'text' } className={ cn('text') }>
                 { this.props.text }
             </span>
-        ];
+        );
+
+        if (this.props.iconPosition === 'left') {
+            linkContent.push(iconTemplate, textTemplate);
+        } else if (this.props.iconPosition === 'right') {
+            linkContent.push(textTemplate, iconTemplate);
+        }
 
         return React.createElement(linkElement,
             linkProps,

@@ -9,7 +9,7 @@ import Type from 'prop-types';
 
 import Button from '../button/button';
 import Icon from '../icon/icon';
-import IconButton from '../icon-button/fantasy/icon-button'; /* TODO @teryaew: fix path after merging PR#270 */
+import IconButton from '../icon-button/icon-button';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';

@@ -33,7 +33,7 @@ class Icon extends React.Component {
         /** Название иконки */
         name: Type.string,
         /** Размер иконки */
-        size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
+        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик клика по иконке */

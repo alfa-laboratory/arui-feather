@@ -7,7 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Icon from '../icon/icon';
-import IconButton from '../icon-button/fantasy/icon-button'; /* TODO @teryaew: fix path after merging PR#270 */
+import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import cn from '../cn';

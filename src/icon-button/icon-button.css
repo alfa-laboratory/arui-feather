@@ -45,17 +45,17 @@
     }
 
     &_size_m {
-        width: 40px;
+        width: 34px;
         height: 40px;
     }
 
     &_size_l {
-        width: 50px;
+        width: 44px;
         height: 50px;
     }
 
     &_size_xl {
-        width: 60px;
+        width: 52px;
         height: 60px;
     }
 }

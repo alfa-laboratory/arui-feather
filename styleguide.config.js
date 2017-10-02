@@ -77,6 +77,17 @@ module.exports = {
                 ),
                 'rsg-components/StyleGuide': path.resolve(__dirname, './demo/components/styleguide')
             }
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(svg)$/i,
+                    loader: 'file-loader',
+                    options: Object.assign({ mimetype: 'image/svg+xml' }, {
+                        name: '[name]_[md5:hash:base64:8].[ext]'
+                    })
+                }
+            ]
         }
     })
 };

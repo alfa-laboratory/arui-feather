@@ -26,8 +26,12 @@
     &__icon {
         display: inline-block;
         vertical-align: middle;
-        margin-right: 5px;
         line-height: 0;
+    }
+
+    &__icon + &__text,
+    &__text + &__icon {
+        margin-left: 10px;
     }
 
     &_size_xs {

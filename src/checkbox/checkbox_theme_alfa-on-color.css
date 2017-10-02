@@ -8,46 +8,45 @@
     color: var(--color-content-alfa-on-color);
 
     .checkbox__box {
-        transition: all 200ms ease;
-
         background: var(--color-background-control-alfa-on-color);
-
-        border: 1px solid rgba(255, 255, 255, .5);
+        border: 1px solid var(--color-border-control-alfa-on-color);
+        transition: all 200ms ease;
     }
 
     &.checkbox_checked {
         .checkbox__box {
-            border-color: transparent;
             background: var(--color-accent-translucent);
+            border-color: transparent;
         }
 
         &.checkbox_hovered .checkbox__box {
-            border-color: transparent;
             background: var(--color-accent);
+            border-color: transparent;
         }
     }
 
     &.checkbox_focused,
     &.checkbox_hovered {
         .checkbox__box {
-            border-color: var(--color-content-alfa-on-color);
+            border-color: var(--color-border-control-focused-alfa-on-color);
         }
     }
 
     &.checkbox_focused .checkbox__box {
-        box-shadow: 0 0 0 1px var(--color-content-alfa-on-color);
+        box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
     }
 
     &.checkbox_disabled {
-        color: var(--color-content-minor-alfa-on-color);
+        color: var(--color-content-disabled-alfa-on-color);
 
         .checkbox__box {
-            border-color: transparent;
             background: var(--color-background-control-disabled-alfa-on-color);
+            border-color: transparent;
         }
 
         &.checkbox_checked .checkbox__box:after {
             opacity: var(--opacity-disabled);
+            background-image: url('./images/checkbox__box_disabled.svg');
         }
     }
 }

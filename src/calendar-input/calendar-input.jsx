@@ -211,7 +211,7 @@ class CalendarInput extends React.Component {
         let commonProps = {
             disabled: this.props.disabled,
             tabIndex: this.props.tabIndex,
-            noValidate: true
+            formNoValidate: true
         };
 
         let wrapperProps = this.isMobilePopup() && !this.props.disabled

@@ -5,30 +5,26 @@
 @import '../vars.css';
 
 .list {
+    margin: 25px 0;
+    padding: 0 0 0 25px;
     font-family: var(--font);
     font-size: var(--font-size-m);
-    font-weight: var(--font-weight);
-    line-height: 1.5;
-
-    padding: 0 0 0 5px;
-    margin: 25px 0;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
 
     & & {
         padding-left: 15px;
     }
 
     &__item {
-        /* margin-left: -.6em; */
-        margin-bottom: 6px;
-
-        text-indent: -1.35em;
-
-        padding-left: .7em;
-
+        margin-bottom: 10px;
         list-style: none;
+        font-size: var(--font-size-m);
 
         &:before {
             content: '\2014\a0\a0';
+            display: inline-block;
+            min-width: 25px;
         }
     }
 
@@ -37,8 +33,6 @@
     }
 
     &_type_ordered &__item {
-        padding-left: 1em;
-
         &:before {
             content: counter(item) '.\a0\a0';
             counter-increment: item;
@@ -48,16 +42,8 @@
 
 .list_theme_alfa-on-color {
     color: var(--color-content-alfa-on-color);
-
-    .list__item:before {
-        color: inherit;
-    }
 }
 
 .list_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
-
-    .list__item:before {
-        color: var(--color-content-heavy-accent-alfa-on-white);
-    }
 }

@@ -1,4 +1,4 @@
-import Attach from '../src/attach/fantasy';
+import Attach from '../src/attach';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 import Icon from '../src/icon';
 

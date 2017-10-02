@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Link from '../src/link/fantasy';
+import Link from '../src/link';
 
 const NAME = 'link';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

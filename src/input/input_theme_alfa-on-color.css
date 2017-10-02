@@ -6,18 +6,14 @@
 
 .input_theme_alfa-on-color {
     .input__box {
-        background: var(--color-background-control-alfa-on-color);
-        border-color: rgba(255, 255, 255, .4);
-        border-style: solid;
-        border-width: 1px;
+        border-bottom-color: var(--color-border-control-alfa-on-color);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
     }
 
-    &,
     .input__control {
         color: var(--color-content-alfa-on-color);
-    }
 
-    .input__control {
         &::placeholder {
             color: var(--color-content-minor-alfa-on-color);
         }
@@ -30,8 +26,13 @@
         }
     }
 
+    .input__top,
+    .input__sub {
+        color: var(--color-content-minor-alfa-on-color);
+    }
+
     .input__clear {
-        background-image: url(./images/input__clear_color.svg);
+        background-image: url('./images/input__clear_color.svg');
     }
 
     &.input_has-icon {
@@ -43,32 +44,51 @@
 
     &.input_mode_link {
         .input__box {
-            background: transparent;
-            border-color: transparent;
+            border-bottom-color: transparent;
         }
     }
 
     &.input_focused {
         .input__box {
-            background-color: var(--color-background-control-focused-alfa-on-color);
-            border-color: var(--color-border-control-focused-alfa-on-color);
-            box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
+            border-bottom-color: var(--color-border-control-focused-alfa-on-color);
+            box-shadow: inset 0 -1px 0 var(--color-border-control-focused-alfa-on-color);
         }
     }
 
     &.input_disabled {
         .input__box {
-            background: var(--color-background-control-disabled-alfa-on-color);
-            border-color: transparent;
+            border-bottom-color: var(--color-border-control-disabled-alfa-on-color);
+            border-bottom-style: var(--border-style-control-disabled);
         }
 
         &,
         .input__control {
-            color: var(--color-content-minor-alfa-on-color);
+            color: var(--color-content-disabled-alfa-on-color);
+        }
+
+        .input__control::placeholder {
+            color: var(--color-content-disabled-alfa-on-color);
         }
 
         .input__icon {
             opacity: var(--opacity-disabled);
+        }
+    }
+
+    &.input_invalid {
+        .input__sub {
+            color: var(--color-error);
+        }
+
+        .input__box {
+            border-bottom-color: var(--color-error-translucent);
+        }
+
+        &.input_focused {
+            .input__box {
+                border-bottom-color: var(--color-error-translucent);
+                box-shadow: inset 0 -1px 0 var(--color-error-translucent);
+            }
         }
     }
 
@@ -80,59 +100,5 @@
     &.input_size_l .input__clear,
     &.input_size_xl .input__clear {
         background-size: 14px;
-    }
-}
-
-.control-group {
-    .input_theme_alfa-on-color {
-        &.input_focused {
-            .input__box {
-                border-top-color: var(--color-border-control-focused-alfa-on-color);
-                border-right-color: var(--color-border-control-focused-alfa-on-color);
-                border-bottom-color: var(--color-border-control-focused-alfa-on-color);
-            }
-        }
-    }
-
-    .input-group__input-case:not(.input-group__input-case_invalid) + .input-group__input-case_disabled {
-        margin-left: 1px;
-
-        .input_theme_alfa-on-color.input_disabled {
-            .input__box {
-                box-shadow: -1px 0 0 0 rgba(255, 255, 255, .4);
-            }
-        }
-    }
-
-    > :not(:last-of-type) {
-        .input_theme_alfa-on-color {
-            .input__box {
-                border-right: none;
-            }
-
-            &.input_focused:not(.input_invalid) .input__box {
-                box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color), 1px 0 0 1px var(--color-border-control-focused-alfa-on-color);
-            }
-        }
-    }
-
-    .input-group__input-case_invalid + * {
-        .input_theme_alfa-on-color {
-            &.input_focused:not(.input_invalid) .input__box {
-                box-shadow: -1px 0 0 1px var(--color-border-control-focused-alfa-on-color), 1px 0 0 1px var(--color-border-control-focused-alfa-on-color);
-            }
-        }
-    }
-
-    > :last-of-type {
-        .input_theme_alfa-on-color:not(.input_disabled) {
-            .input__box {
-                border-right-color: rgba(255, 255, 255, .4);
-            }
-
-            &.input_focused .input__box {
-                border-right-color: var(--color-border-control-focused-alfa-on-color);
-            }
-        }
     }
 }

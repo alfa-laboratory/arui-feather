@@ -6,10 +6,14 @@
 
 .menu-item {
     position: relative;
-    font-family: var(--font);
     cursor: pointer;
+    font-family: var(--font);
     line-height: 1.4;
     transition: background 200ms ease;
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &_disabled {
         cursor: default;

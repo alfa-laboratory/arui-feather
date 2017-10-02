@@ -5,7 +5,16 @@
 @import '../vars.css';
 
 .radio-group_theme_alfa-on-color {
-    .label {
-        color: var(--color-content-alfa-on-color);
+    .radio-group__top,
+    .radio-group__sub {
+        color: var(--color-content-minor-alfa-on-color);
+    }
+
+    &.radio-group_invalid {
+        border-left: 1px solid var(--color-error-translucent);
+
+        .radio-group__sub {
+            color: var(--color-error);
+        }
     }
 }

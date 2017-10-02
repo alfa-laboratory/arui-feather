@@ -21,14 +21,6 @@
         color: var(--color-content-disabled-alfa-on-color);
     }
 
-    @each $size in s, m, l, xl {
-        &.menu_mode_check.menu_size_$(size) {
-            .menu-item_checked:before {
-                background-image: url('./images/menu_mode_check.menu_theme_alfa-on-color__$(size).svg');
-            }
-        }
-    }
-
     &.menu_mode_radio, &.menu_mode_radio-check {
         .menu-item_checked:before {
             background-color: var(--color-content-alfa-on-color);

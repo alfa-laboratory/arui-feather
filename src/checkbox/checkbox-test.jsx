@@ -169,7 +169,7 @@ describe('checkbox', () => {
         buttonNode.click();
 
         expect(checkbox.node).to.have.class('checkbox_checked');
-        expect(buttonNode).to.have.class('button_checked');
+        expect(buttonNode).to.have.class('tag-button_checked');
     });
 
     it('should call `onChange` callback after checkbox button was clicked', () => {

@@ -1,7 +1,7 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Input from '../src/input/fantasy';
-import Radio from '../src/radio/fantasy';
-import RadioGroup from '../src/radio-group/fantasy';
+import Input from '../src/input';
+import Radio from '../src/radio';
+import RadioGroup from '../src/radio-group';
 
 function renderAddons(inputSize) {
     let radioSize;

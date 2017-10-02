@@ -6,50 +6,48 @@
 
 .button_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
-
     background: transparent;
-
-    border-width: 1px;
+    border-color: var(--color-border-control-alfa-on-white);
     border-style: solid;
-    border-color: rgba(0, 0, 0, .3);
+    border-width: 1px;
 
     &.button_hovered {
-        border-color: var(--color-content-alfa-on-white);
+        border-color: var(--color-border-control-hovered-alfa-on-white);
     }
 
     &.button_focused {
-        border-color: var(--color-content-alfa-on-white);
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, .4);
+        border-color: var(--color-border-control-focused-alfa-on-white);
+        box-shadow: inset 0 0 0 1px var(--color-content-alfa-on-white);
 
         &.button_hovered {
-            border-color: var(--color-content-alfa-on-white);
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
+            border-color: var(--color-border-control-focused-alfa-on-white);
+            box-shadow: inset 0 0 0 1px var(--color-content-alfa-on-white);
         }
     }
 
     &.button_pressed,
     &:active {
-        border-color: var(--color-content-alfa-on-white);
-        background: rgba(0, 0, 0, .05);
+        background: rgba(10, 30, 50, .05);
+        border-color: var(--color-border-control-focused-alfa-on-white);
     }
 
     &.button_checked,
     &.button_view_action {
         color: var(--color-content-alfa-on-white);
-        background: rgba(0, 0, 0, .15);
-        border-color: rgba(0, 0, 0, .05);
+        background: rgba(10, 30, 50, .15);
+        border-color: var(--color-border-control-checked-alfa-on-white);
 
         &.button_hovered {
-            background: rgba(0, 0, 0, .25);
+            background: rgba(10, 30, 50, .25);
         }
 
         &.button_pressed,
         &:active {
-            background: rgba(0, 0, 0, .3);
+            background: rgba(10, 30, 50, .3);
         }
 
         &.button_focused {
-            border-color: var(--color-content-alfa-on-white);
+            border-color: var(--color-border-control-focused-alfa-on-white);
         }
     }
 
@@ -75,10 +73,9 @@
     }
 
     &.button_view_other {
+        color: var(--color-content-accent-alfa-on-color);
         background: rgba(80, 64, 218, .85);
         border-color: rgba(80, 64, 218, .85);
-
-        color: var(--color-content-accent-alfa-on-color);
 
         &.button_hovered {
             background: rgba(71, 57, 195, .85);
@@ -114,233 +111,10 @@
 
     &.button_disabled {
         border-color: transparent;
-        background: rgba(0, 0, 0, .08);
+        background: rgba(10, 30, 50, .08);
 
         .button__text {
-            color: var(--color-content-minor-alfa-on-white);
-        }
-    }
-}
-
-.control-group {
-    &.checkbox-group_theme_alfa-on-white,
-    &.radio-group_theme_alfa-on-white {
-        > .button:last-child,
-        > :last-child .button {
-            border-right-color: var(--color-content-minor-alfa-on-white);
-
-            &.button_hovered {
-                border-right-color: var(--color-content-alfa-on-white);
-                border-left-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        > .button:first-child,
-        > :first-child .button {
-            border-left-color: var(--color-content-minor-alfa-on-white);
-
-            &.button_hovered {
-                border-right-color: var(--color-content-alfa-on-white);
-                border-left-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        & .button_hovered {
-            border-color: var(--color-content-alfa-on-white);
-        }
-
-        & .button_checked.button_hovered {
-            border-color: var(--color-content-alfa-on-white);
-            background-color: rgba(0, 0, 0, .25);
-        }
-
-        & .button_focused {
-            border-color: var(--color-content-alfa-on-white);
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
-        }
-
-        & .button_checked.button_focused {
-            border-color: var(--color-content-alfa-on-white);
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, .8);
-        }
-    }
-
-    &.checkbox-group_theme_alfa-on-white {
-        .button {
-            border-left-color: rgba(0, 0, 0, .15);
-            border-right-color: rgba(0, 0, 0, .15);
-
-            &.button_hovered {
-                border-right-color: var(--color-content-alfa-on-white);
-                border-left-color: var(--color-content-alfa-on-white);
-            }
-
-            &.button_focused {
-                border-left-color: var(--color-content-alfa-on-white);
-                border-right-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        > .button:first-child,
-        > :first-child .button {
-            border-left-color: var(--color-content-minor-alfa-on-white);
-
-            &.button_hovered {
-                border-left-color: var(--color-content-alfa-on-white);
-            }
-
-            &.button_disabled {
-                border-left-color: transparent;
-            }
-
-            &.button_focused {
-                border-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        > .button:last-child,
-        > :last-child .button {
-            &.button_disabled {
-                border-right-color: transparent;
-            }
-        }
-
-        .button_checked {
-            background-color: var(--color-background-control-checked-alfa-on-white);
-            border-color: transparent;
-        }
-
-        > .button_checked:last-child,
-        > :last-child .button_checked {
-            border-color: transparent;
-
-            &.button_hovered {
-                border-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        > .button_checked:first-child,
-        > :first-child .button_checked {
-            border-color: transparent;
-
-            &.button_hovered {
-                border-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        .button_focused {
-            background-color: transparent;
-
-            &.button_checked {
-                background-color: var(--color-background-control-checked-alfa-on-white);
-            }
-        }
-    }
-
-    &.radio-group_theme_alfa-on-white {
-        .button {
-            border-left-color: rgba(0, 0, 0, .15);
-            border-right-color: rgba(0, 0, 0, .15);
-
-            &.button_hovered, &.button_focused {
-                border-color: var(--color-border-control-focused-alfa-on-white);
-            }
-        }
-
-        .button_checked {
-            background-color: var(--color-background-control-checked-alfa-on-white);
-            border-color: var(--color-border-control-checked-alfa-on-white);
-            border-right-color: transparent;
-            border-left-color: transparent;
-        }
-
-        > .button_checked:last-child,
-        > :last-child .button_checked {
-            border-right-color: var(--color-background-control-focused-alfa-on-color);
-
-            &.button_hovered {
-                border-right-color: var(--color-content-alfa-on-white);
-            }
-
-            &.button_focused {
-                border-right-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        > .button_disabled:last-child,
-        > :last-child .button_disabled {
-            border-right-color: transparent;
-        }
-
-        > .button_checked:first-child,
-        > :first-child .button_checked {
-            border-left-color: var(--color-border-control-checked-alfa-on-white);
-
-            &.button_hovered {
-                border-color: var(--color-content-alfa-on-white);
-            }
-
-            &.button_focused {
-                border-left-color: var(--color-content-alfa-on-white);
-            }
-        }
-
-        > .button_disabled:first-child,
-        > :first-child .button_disabled {
-            border-left-color: transparent;
-        }
-
-        &.radio-group_invalid {
-            .button {
-                border-left-color: rgba(248, 96, 101, .4);
-                border-right-color: rgba(248, 96, 101, .4);
-
-                &.button_hovered, &.button_focused {
-                    border-color: var(--color-border-control-focused-alfa-on-white);
-                }
-
-                &.button_checked {
-                    &.button_hovered {
-                        background-color: rgba(0, 0, 0, .25);
-                    }
-                }
-            }
-
-            > .button:first-child,
-            > :first-child .button {
-                border-left-color: var(--color-error-translucent);
-
-                &.button_hovered, &.button_focused {
-                    border-right-color: var(--color-border-control-focused-alfa-on-white);
-                    border-left-color: var(--color-border-control-focused-alfa-on-white);
-                }
-
-                &.button_checked {
-                    border-left-color: var(--color-border-control-checked-alfa-on-white);
-
-                    &.button_hovered, &.button_focused {
-                        border-left-color: var(--color-border-control-focused-alfa-on-white);
-                    }
-                }
-            }
-
-            > .button:last-of-type,
-            > :last-of-type .button {
-                border-right-color: var(--color-error-translucent);
-
-                &.button_hovered, &.button_focused {
-                    border-right-color: var(--color-border-control-focused-alfa-on-white);
-                    border-left-color: var(--color-border-control-focused-alfa-on-white);
-                }
-
-                &.button_checked {
-                    border-right-color: var(--color-border-control-checked-alfa-on-white);
-
-                    &.button_hovered, &.button_focused {
-                        border-right-color: var(--color-border-control-focused-alfa-on-white);
-                    }
-                }
-            }
+            color: var(--color-content-disabled-alfa-on-white);
         }
     }
 }

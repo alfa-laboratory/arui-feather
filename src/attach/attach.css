@@ -7,8 +7,12 @@
 .attach {
     display: inline-block;
     font-family: var(--font);
-    font-weight: var(--font-weight);
+    font-weight: var(--font-weight-normal);
     white-space: nowrap;
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &__label,
     &__control {
@@ -18,18 +22,18 @@
     }
 
     &__label {
-        z-index: 2;
         overflow: hidden;
         width: 100%;
         height: 100%;
+        z-index: 2;
     }
 
     &__control {
-        cursor: pointer;
         opacity: 0;
+        cursor: pointer;
 
         /*
-         * Хак для обхода поведения IE10+, где левая половина контрола — "поле ввода",
+         * Хак для обхода поведения IE10+, где левая половина контрола — «поле ввода»,
          * в которое можно поставить курсор. Нажатие в такое поле не вызывает click,
          * а только ставит курсор, который виден независимо от видимости контрола.
          * Cкейлинг размещает в видимом пространстве кнопки именно кнопку инпута.
@@ -62,15 +66,13 @@
     &__file,
     &__no-file {
         display: inline;
-
         margin-left: 0.5em;
     }
 
     &__file .icon {
         width: 1em;
         margin-right: 0.3em;
-
-        background-image: url(./images/attach.png);
+        background-image: url('./images/attach.png');
     }
 
     &__clear {

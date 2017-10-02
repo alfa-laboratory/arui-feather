@@ -5,15 +5,13 @@
 @import '../vars.css';
 
 .plate {
-    position: relative;
     display: inline-block;
-    padding: 16px;
-    border-radius: var(--border-radius-control);
-    box-shadow: var(--shadow);
-
+    position: relative;
     margin-right: 7px;
     margin-bottom: 7px;
-
+    padding: var(--gap-s);
+    border-radius: var(--border-radius-control);
+    box-shadow: var(--shadow);
     background-color: #fff;
 
     &_hidden {
@@ -26,30 +24,27 @@
 
     /* FIXME: maybe remove cascade? */
     &__clear > .icon {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-
         opacity: var(--opacity-minor);
-
+        position: absolute;
+        top: var(--gap-s);
+        right: var(--gap-s);
+        cursor: pointer;
         transition: opacity .1s ease-out;
 
         &:hover {
             opacity: 1;
         }
-
-        cursor: pointer;
     }
 
     &_flat {
         box-shadow: none;
-    }
 
-    &_theme_alfa-on-color.plate_flat {
-        background-color: rgba(255, 255, 255, .06);
-    }
+        &.plate_theme_alfa-on-color {
+            background-color: rgba(255, 255, 255, .06);
+        }
 
-    &_theme_alfa-on-white.plate_flat {
-        background-color: rgba(0, 0, 0, .06);
+        &.plate_theme_alfa-on-white {
+            background-color: rgba(0, 0, 0, .06);
+        }
     }
 }

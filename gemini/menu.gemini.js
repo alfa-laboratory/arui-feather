@@ -1,6 +1,6 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Label from '../src/label/fantasy';
-import Menu from '../src/menu/fantasy';
+import Label from '../src/label';
+import Menu from '../src/menu';
 
 const NAME = 'menu';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

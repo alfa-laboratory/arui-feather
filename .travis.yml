@@ -55,9 +55,6 @@ after_success:
       if [ "${TEST_SCOPE}" == "lint" ]; then
         sh ./tools/publish-styleguide.sh
       fi
-      if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
-        sh ./tools/publish-styleguide-fantasy.sh
-      fi
     fi
 
 after_failure:

@@ -47,22 +47,11 @@ npm install arui-feather --save
   * Android 4.1+
   * iOS *(две последние стабильные версии)*
 
+
 Мобильная вёрстка
 -----------------
 [Использование в адаптивной/мобильной среде](./README_MOBILE.md)
 
-Дизайн 2017 (aka Fantasy)
--------------------------
-
-Work in progress
-
-[Демо](https://alfa-laboratory.github.io/arui-feather/styleguide-fantasy/)
-
-Для использования обновлённой дизайн-системы импортируйте компоненты следующим образом:
-
-```
-import Input from 'arui-feather/input/fantasy'
-```
 
 Разработка
 ----------
@@ -76,17 +65,12 @@ import Input from 'arui-feather/input/fantasy'
 1. `npm i`
 2. `npm run demo`
 
-Запустить демо fantasy
-
-`npm run demo-fantasy`
-
 Запустить demo на произвольном порту:
 
 `PORT=8888 npm run demo`
 
-
-
 Использовать только для обновления нескольких компонентов. Иначе не хватает памяти.
+
 
 Автоматические проверки кода
 ----------------------------

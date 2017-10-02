@@ -4,40 +4,68 @@
 
 @import '../vars.css';
 
+:root {
+    --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
+    --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
+    --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
+    --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
+}
+
 .textarea {
     display: inline-block;
-    vertical-align: top;
-    position: relative;
     font-family: var(--font);
-    font-weight: var(--font-weight);
+    font-weight: var(--font-weight-normal);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &__inner {
         display: inline-table;
+        position: relative;
         width: 100%;
     }
 
-    &_width_available &__inner {
-        table-layout: fixed;
+    &__top {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        font-size: var(--font-size-m);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transform: scale(1) translate3d(0, 0, 0);
+        transform-origin: 0 100%;
+        transition-duration: 200ms;
+        transition-property: color, transform;
+        transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+    }
+
+    &__sub {
+        display: table-caption;
+        caption-side: bottom;
+        padding-top: 5px;
+        padding-right: 12px;
+        white-space: normal;
     }
 
     &__control {
-        box-sizing: border-box;
         overflow-y: auto;
         display: table-cell;
         vertical-align: top;
         position: relative;
         width: 100%;
         min-width: 150px;
-        min-height: 5em;
         margin: 0;
         padding: 0;
         outline: none;
         font: inherit;
         background: none;
-        border-radius: var(--border-radius-control);
+        border: none;
         transition-duration: 250ms;
         transition-property: border-bottom-color, box-shadow, width;
-        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
+        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -46,21 +74,11 @@
         }
 
         &::-moz-placeholder {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
 
         &::placeholder {
             transition: opacity .2s ease-in-out;
-        }
-
-        &:-webkit-autofill,
-        &:-webkit-autofill:hover,
-        &:-webkit-autofill:focus,
-        &:-webkit-autofill:after {
-            -webkit-text-fill-color: #fff !important;
-
-            /* Hack from http://stackoverflow.com/a/29350537 */
-            transition: background-color 5000s ease-in-out 0s;
         }
     }
 
@@ -71,7 +89,7 @@
 
         &.textarea_focused {
             .textarea__control::placeholder {
-                opacity: 1;
+                opacity: var(--opacity-active);
             }
         }
     }
@@ -85,38 +103,6 @@
 
         .textarea__control {
             resize: none;
-        }
-    }
-
-    &_size_s {
-        font-size: var(--font-size-s);
-
-        .textarea__control {
-            padding: 8px 10px;
-        }
-    }
-
-    &_size_m {
-        font-size: var(--font-size-m);
-
-        .textarea__control {
-            padding: 10px 12px;
-        }
-    }
-
-    &_size_l {
-        font-size: var(--font-size-l);
-
-        .textarea__control {
-            padding: 12px 15px;
-        }
-    }
-
-    &_size_xl {
-        font-size: var(--font-size-xl);
-
-        .textarea__control {
-            padding: 14px 15px;
         }
     }
 
@@ -145,46 +131,127 @@
         overflow-y: hidden;
     }
 
-    &.textarea_invalid {
+    &_size_s {
+        &.textarea_has-label {
+            padding-top: 9px;
+        }
+
+        .textarea__top {
+            line-height: 30px;
+        }
+
+        .textarea__top,
         .textarea__control {
-            border-color: var(--color-error-translucent);
-        }
-
-        &.textarea_focused {
-            .textarea__control {
-                background: var(--color-error-transparent);
-                border-color: var(--color-error-translucent);
-                box-shadow: 0 0 0 1px var(--color-error-translucent);
-            }
-        }
-
-        .textarea__sub {
-            color: var(--color-error);
-        }
-    }
-
-    &__sub {
-        box-sizing: border-box;
-        display: table-caption;
-        caption-side: bottom;
-        padding-top: 5px;
-        padding-right: 12px;
-        white-space: normal;
-
-        .textarea_size_s & {
-            font-size: var(--font-size-xs);
-        }
-
-        .textarea_size_m & {
             font-size: var(--font-size-s);
         }
 
-        .textarea_size_l & {
+        .textarea__control {
+            min-height: 30px;
+            padding: 8px 0;
+        }
+
+        .textarea__sub {
+            font-size: var(--font-size-xs);
+        }
+
+        &.textarea_focused,
+        &.textarea_has-value {
+            .textarea__top {
+                transform: scale(var(--top-scale-s)) translate3d(0, -22px, 0);
+            }
+        }
+    }
+
+    &_size_m {
+        &.textarea_has-label {
+            padding-top: 6px;
+        }
+
+        .textarea__top {
+            line-height: 40px;
+        }
+
+        .textarea__top,
+        .textarea__control {
             font-size: var(--font-size-m);
         }
 
-        .textarea_size_xl & {
+        .textarea__control {
+            min-height: 40px;
+            padding: 10px 0;
+        }
+
+        .textarea__sub {
+            font-size: var(--font-size-s);
+        }
+
+        &.textarea_focused,
+        &.textarea_has-value {
+            .textarea__top {
+                transform: scale(var(--top-scale-m)) translate3d(0, -30px, 0);
+            }
+        }
+    }
+
+    &_size_l {
+        &.textarea_has-label {
+            padding-top: 14px;
+        }
+
+        .textarea__top {
+            line-height: 50px;
+        }
+
+        .textarea__top,
+        .textarea__control {
             font-size: var(--font-size-l);
+        }
+
+        .textarea__control {
+            min-height: 50px;
+            padding: 12px 0;
+        }
+
+        .textarea__sub {
+            font-size: var(--font-size-m);
+        }
+
+        &.textarea_focused,
+        &.textarea_has-value {
+            .textarea__top {
+                transform: scale(var(--top-scale-l)) translate3d(0, -40px, 0);
+            }
+        }
+    }
+
+    &_size_xl {
+        &.textarea_has-label {
+            padding-top: 13px;
+        }
+
+        .textarea__top {
+            line-height: 60px;
+        }
+
+        .textarea__top,
+        .textarea__control {
+            font-size: var(--font-size-xl);
+        }
+
+        .textarea__control {
+            min-height: 60px;
+            padding: 14px 0;
+        }
+
+        .textarea__sub {
+            font-size: var(--font-size-l);
+        }
+
+        &.textarea_focused,
+        &.textarea_has-value {
+            .textarea__top {
+                transform: scale(var(--top-scale-xl)) translate3d(0, -50px, 0);
+            }
         }
     }
 }

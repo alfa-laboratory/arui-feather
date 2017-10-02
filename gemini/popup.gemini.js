@@ -1,9 +1,9 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import Button from '../src/button/fantasy';
-import Paragraph from '../src/paragraph/fantasy';
-import Popup from '../src/popup/fantasy';
+import Button from '../src/button';
+import Paragraph from '../src/paragraph';
+import Popup from '../src/popup';
 import PopupContainerProvider from '../src/popup-container-provider';
 import ThemeProvider from '../src/theme-provider';
 import { LOREM_IPSUM } from '../src/vars';

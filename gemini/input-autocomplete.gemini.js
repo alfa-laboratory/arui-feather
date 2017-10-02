@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import InputAutocomplete from '../src/input-autocomplete/fantasy';
+import InputAutocomplete from '../src/input-autocomplete';
 
 const NAME = 'input-autocomplete';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];

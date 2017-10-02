@@ -6,6 +6,6 @@
 
 .checkbox-group_theme_alfa-on-color {
     .label {
-        color: var(--color-content-alfa-on-color);
+        color: var(--color-content-minor-alfa-on-color);
     }
 }

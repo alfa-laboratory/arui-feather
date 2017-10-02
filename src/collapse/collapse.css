@@ -2,7 +2,16 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import '../vars.css';
+
 .collapse {
+    font-family: var(--font);
+    font-weight: var(--font-weight-normal);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
     &__content {
         position: relative;
     }
@@ -21,16 +30,16 @@
     }
 
     &__content {
-        height: 0;
-        visibility: hidden;
-        transition: height 0.2s;
         overflow: hidden;
+        visibility: hidden;
+        height: 0;
+        transition: height 0.2s;
     }
 
     &_expanded &__content {
-        height: auto;
         visibility: visible;
-        padding-bottom: 15px;
+        height: auto;
+        margin-bottom: 15px;
     }
 
     &_expanded &__link:after {

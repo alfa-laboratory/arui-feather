@@ -7,11 +7,11 @@
 @import './vars/color-theme_alfa-on-color.css';
 @import './vars/color-theme_alfa-on-white.css';
 @import './vars/opacity.css';
-@import './vars/border-radius.css';
+@import './vars/border.css';
 @import './vars/shadow.css';
 
 :root {
-    --small-screen-padding: 16px;
+    --gap-s: 12px;
     --small-header-height: 80px;
     --large-screen-content-width: 1000px;
     --xlarge-screen-content-width: 1100px;

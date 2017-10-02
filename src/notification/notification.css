@@ -5,64 +5,55 @@
 @import '../vars.css';
 
 :root {
-    --width: 325px;
-    --offset: 20px;
+    --width: 315px;
 }
 
 .notification {
-    position: fixed;
     visibility: hidden;
-    box-sizing: border-box;
-    border-radius: var(--border-radius-control);
-    padding: 15px 45px 15px 25px;
-    width: 315px;
+    position: fixed;
+    width: var(--width);
     min-height: 80px;
-
+    padding: var(--gap-s) calc(var(--gap-s) * 4) var(--gap-s) calc(var(--gap-s) * 2);
+    font-family: var(--font);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-condensed);
+    border-radius: var(--border-radius-control);
+    transition: all .2s ease-out;
     z-index: 9999;
 
-    font-family: var(--font);
-    font-weight: var(--font-weight);
-    line-height: 1.2;
-    font-size: var(--font-size-m);
-
-    transition: all .2s ease-out;
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &_stick-to_left {
+        left: var(--gap-s);
         transform: translate(calc(var(--width) * -1), 0);
-        left: var(--offset);
     }
 
     &_stick-to_right {
+        right: var(--gap-s);
         transform: translate(var(--width), 0);
-        right: var(--offset);
     }
 
     &_theme_alfa-on-color {
         color: var(--color-content-alfa-on-color);
-
         background: var(--color-background-alfa-on-color);
-
         box-shadow: var(--shadow-light);
     }
 
     &_theme_alfa-on-white {
         color: var(--color-content-alfa-on-white);
-
         background: var(--color-background-alfa-on-white);
-
         box-shadow: var(--shadow-light);
     }
 
     &__title {
-        font-size: var(--font-size-m);
-        line-height: 1.2;
         padding-bottom: 10px;
-        margin-top: -2px;
+        font-size: var(--font-size-m);
     }
 
     &__content {
         font-size: var(--font-size-s);
-        line-height: 1.2;
     }
 
     &__icon,
@@ -77,14 +68,14 @@
     }
 
     &__close {
+        opacity: var(--opacity-minor);
         top: 10px;
         right: 10px;
         cursor: pointer;
         transition: opacity 200ms;
-        opacity: var(--opacity-minor);
 
         &:hover {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
     }
 
@@ -109,7 +100,6 @@
     .notification {
         width: 100%;
         border-radius: 0;
-
         transform: translate(0, -500px);
 
         &_visible {

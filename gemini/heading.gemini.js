@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Heading from '../src/heading/fantasy';
+import Heading from '../src/heading';
 
 const NAME = 'heading';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];

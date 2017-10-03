@@ -34,4 +34,10 @@
     &_type_link &__link {
         outline: none;
     }
+
+    .icon {
+        position: absolute;
+        top: 0;
+        left: -20px;
+    }
 }

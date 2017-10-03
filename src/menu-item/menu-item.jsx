@@ -154,6 +154,13 @@ class MenuItem extends React.Component {
                 }) }
                 { ...menuItemProps }
             >
+                {
+                    this.props.checked && this.props.mode === 'check' &&
+                    <Icon
+                        name='action-check'
+                        size={ this.props.size }
+                    />
+                }
                 { itemElement }
             </div>
         );

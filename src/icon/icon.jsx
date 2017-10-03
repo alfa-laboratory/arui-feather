@@ -22,20 +22,20 @@ import performance from '../performance';
 @performance()
 class Icon extends React.Component {
     static propTypes = {
-        /** Тип иконки */
-        icon: Type.oneOf([
-            'error', 'fail', 'ok', 'ok_filled', 'attachment', 'calendar', 'search', 'close', 'user'
-        ]),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
-        /** Дочерние элементы `Icon` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Управление цветностью иконки */
+        colored: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
+        /** URL изображения для рендера в inline стиле */
+        imageUrl: Type.string,
+        /** Название иконки */
+        name: Type.string,
+        /** Размер иконки */
+        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']),
+        /** Тема компонента */
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик клика по иконке */
         onClick: Type.func
     };
@@ -44,20 +44,30 @@ class Icon extends React.Component {
         size: 'm'
     };
 
-    render(cn) {
-        let mods = {
-            size: this.props.size
-        };
+    static contextTypes = {
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+    };
 
-        if (this.props.icon) {
-            mods[this.props.icon] = true;
+    render(cn) {
+        let imageUrl = null;
+        let mods = { size: this.props.size };
+
+        if (this.props.name) {
+            mods[this.props.name] = true;
+        }
+
+        if (this.props.imageUrl) {
+            imageUrl = this.props.imageUrl;
+        } else if (this.props.name) {
+            // eslint-disable-next-line global-require, import/no-dynamic-require
+            imageUrl = require(`./images/${this.getIconFileName()}.svg`);
         }
 
         return (
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
-                onClick={ this.handleClick }
+                style={ { backgroundImage: imageUrl && `url('${imageUrl}')` } }
             />
         );
     }
@@ -67,6 +77,17 @@ class Icon extends React.Component {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
+    }
+
+    getIconFileName() {
+        let cnTheme = this.props.theme || this.context.theme;
+        let color = cnTheme === 'alfa-on-white' ? 'black' : 'white';
+
+        if (this.props.colored) {
+            color = 'color';
+        }
+
+        return `icon_${this.props.name}_${this.props.size}_${color}`;
     }
 }
 

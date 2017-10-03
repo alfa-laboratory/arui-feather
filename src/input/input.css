@@ -214,12 +214,6 @@
 
 .input_focused {
     z-index: 1;
-
-    &.input_mode_link {
-        .input__control {
-            padding-left: 0;
-        }
-    }
 }
 
 .input_disabled {
@@ -282,7 +276,6 @@
         padding-right: 30px;
     }
 
-    &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 30px;
         height: 30px;
@@ -328,22 +321,10 @@
         padding-right: 34px;
     }
 
-    &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 34px;
         height: 40px;
         line-height: 38px;
-    }
-
-    &.input_mode_link {
-        .input__box {
-            height: 38px;
-            padding: 0 12px;
-        }
-
-        .input__trigger {
-            line-height: 40px;
-        }
     }
 }
 
@@ -385,7 +366,6 @@
         padding-right: 44px;
     }
 
-    &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 44px;
         height: 50px;
@@ -431,7 +411,6 @@
         padding-right: 52px;
     }
 
-    &.input_has-clear .input__clear,
     &.input_has-icon .input__icon {
         width: 52px;
         height: 60px;

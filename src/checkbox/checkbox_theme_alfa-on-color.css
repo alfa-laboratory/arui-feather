@@ -43,10 +43,5 @@
             background: var(--color-background-control-disabled-alfa-on-color);
             border-color: transparent;
         }
-
-        &.checkbox_checked .checkbox__box:after {
-            opacity: var(--opacity-disabled);
-            background-image: url('./images/checkbox__box_disabled.svg');
-        }
     }
 }

@@ -6,6 +6,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
+import Icon from '../icon/icon';
 import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
@@ -119,6 +120,24 @@ class CheckBox extends React.Component {
                         onClick={ this.handleInputControlClick }
                         onChange={ this.handleChange }
                     />
+                    {
+                        checked &&
+                        <Icon
+                            className={ cn('icon') }
+                            name='action-check'
+                            size={ this.props.size === 'l' ? 'm' : 's' }
+                            theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        />
+                    }
+                    {
+                        !checked && this.props.indeterminate &&
+                        <Icon
+                            className={ cn('icon') }
+                            name='action-check-indeterminate'
+                            size={ this.props.size === 'l' ? 'm' : 's' }
+                            theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        />
+                    }
                 </span>
                 {
                     this.props.text &&

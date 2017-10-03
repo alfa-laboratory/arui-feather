@@ -16,12 +16,12 @@ describe('icon', () => {
 
     (() => {
         let icons = [
-            'error', 'fail', 'ok', 'ok_filled', 'calendar', 'search', 'close', 'user'
+            'action-error', 'action-fail', 'action-ok', 'action-ok-filled', 'tool-calendar', 'tool-close'
         ];
 
         return icons.forEach(iconItem => (
             it(`render ${iconItem} icon without problems`, () => {
-                let icon = render(<Icon icon={ iconItem } />);
+                let icon = render(<Icon name={ iconItem } />);
 
                 expect(icon.node).to.have.class(`icon_${iconItem}`);
             })

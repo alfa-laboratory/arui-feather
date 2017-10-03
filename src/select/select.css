@@ -83,7 +83,6 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        padding-right: 30px;
         cursor: pointer;
         outline: 0;
         user-select: none;
@@ -105,24 +104,28 @@
 
         &_size_s {
             min-height: 30px;
+            padding-right: 30px;
             font-size: var(--font-size-s);
             line-height: 28px;
         }
 
         &_size_m {
             min-height: 40px;
+            padding-right: 34px;
             font-size: var(--font-size-m);
             line-height: 38px;
         }
 
         &_size_l {
             min-height: 50px;
+            padding-right: 44px;
             font-size: var(--font-size-l);
             line-height: 48px;
         }
 
         &_size_xl {
             min-height: 60px;
+            padding-right: 52px;
             font-size: var(--font-size-xl);
             line-height: 58px;
         }
@@ -133,12 +136,9 @@
     }
 
     &__tick {
-        opacity: var(--opacity-minor);
         position: absolute;
         top: 0;
         right: 0;
-        height: 100%;
-        background-position: center;
     }
 
     &_disabled &__tick {
@@ -148,10 +148,6 @@
     &_opened &__tick,
     .select-button_hovered &__tick {
         opacity: var(--opacity-active);
-    }
-
-    &_opened &__tick {
-        transform: rotate(180deg);
     }
 
     &_width_available {

@@ -6,6 +6,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
+import Icon from '../icon/icon';
 import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
@@ -19,11 +20,11 @@ import performance from '../performance';
 @performance()
 class Collapse extends React.Component {
     static propTypes = {
-        /** Управление состоянием `expand`/`collapse` компонента */
+        /** Управление `expanded` состоянием компонента */
         isExpanded: Type.bool,
-        /** Текст ссылки в `expand` состоянии */
+        /** Текст ссылки в `expanded` состоянии */
         collapsedLabel: Type.string,
-        /** Текст ссылки в `collapse` состоянии */
+        /** Текст ссылки в `collapsed` состоянии */
         expandedLabel: Type.string,
         /** Дочерние элементы `Collapse` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
@@ -33,7 +34,7 @@ class Collapse extends React.Component {
         className: Type.oneOfType([Type.func, Type.string]),
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик смены состояния `expand`/`collapse` */
+        /** Обработчик смены состояний `expanded/collapsed` */
         onExpandedChange: Type.func
     };
 
@@ -81,6 +82,13 @@ class Collapse extends React.Component {
                 <Link
                     className={ cn('link') }
                     pseudo={ true }
+                    icon={
+                        <Icon
+                            name={ expanded ? 'action-down' : 'action-up' }
+                            size='xs'
+                        />
+                    }
+                    iconPosition='right'
                     onClick={ this.handleExpandedChange }
                     text={
                         expanded

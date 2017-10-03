@@ -121,7 +121,7 @@
     "gemini-saucelabs-info": "^1.0.0",
     "gulp": "^3.9.1",
     "html-reporter": "^0.6.0",
-    "husky": "^0.13.3",
+    "husky": "^0.15.0-beta.2",
     "istanbul": "^0.4.2",
     "istanbul-instrumenter-loader": "^2.0.0",
     "karma": "^1.7.0",

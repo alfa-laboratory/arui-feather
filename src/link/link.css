@@ -31,7 +31,7 @@
 
     &__icon + &__text,
     &__text + &__icon {
-        margin-left: 10px;
+        margin-left: 6px;
     }
 
     &_size_xs {

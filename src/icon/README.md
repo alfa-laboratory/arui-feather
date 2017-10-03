@@ -1,6 +1,6 @@
 ```jsx
 <div>
-    {['action-error', 'action-fail', 'action-ok', 'action-ok-filled', 'action-close', 'calendar'].map(icon => (
+    {['action-error', 'action-fail', 'action-ok', 'action-ok-filled', 'tool-close', 'tool-calendar'].map(icon => (
         <div className='row' >
             {['s', 'm', 'l', 'xl'].map(size => (
                 <div className='column l' >

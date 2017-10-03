@@ -57,8 +57,9 @@ class Icon extends React.Component {
         }
 
         if (this.props.imageUrl) {
-            imageUrl = require(this.props.imageUrl);
+            imageUrl = this.props.imageUrl;
         } else if (this.props.name) {
+            // eslint-disable-next-line global-require, import/no-dynamic-require
             imageUrl = require(`./images/${this.getIconFileName()}.svg`);
         }
 

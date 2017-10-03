@@ -248,7 +248,7 @@ class Input extends React.Component {
                         onClick={ this.handleClearClick }
                     >
                         <Icon
-                            name='action-close'
+                            name='tool-close'
                             size={ this.props.size }
                         />
                     </IconButton>

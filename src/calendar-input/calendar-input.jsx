@@ -275,7 +275,7 @@ class CalendarInput extends React.Component {
                         this.props.withIcon &&
                         <Icon
                             size={ this.props.size }
-                            name='calendar'
+                            name='tool-calendar'
                             onClick={ this.handleIconClick }
                         />
                     }

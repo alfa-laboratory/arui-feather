@@ -80,7 +80,7 @@ initialState = {
         status='ok'
         offset={ 30 }
         title={ 'Платёж запланирован' }
-        icon={ <Icon name='calendar' size='m' /> }
+        icon={ <Icon name='tool-calendar' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >

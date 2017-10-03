@@ -143,7 +143,7 @@ class Notification extends React.Component {
                     <Icon
                         className={ cn('close') }
                         size='m'
-                        icon='action-close'
+                        icon='tool-close'
                         onClick={ this.handleCloserClick }
                     />
                 }

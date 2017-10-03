@@ -62,7 +62,7 @@ class Plate extends React.Component {
                 { hasCloser &&
                     <div className={ cn('clear') } >
                         <Icon
-                            name='action-close'
+                            name='tool-close'
                             theme='alfa-on-white'
                             onClick={ this.handleCloserClick }
                         />

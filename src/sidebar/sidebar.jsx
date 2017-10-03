@@ -25,6 +25,7 @@ let savedScrollPosition;
 function setCurrentPosition() {
     document.body.style.top = `-${savedScrollPosition}px`;
     document.body.scrollTop = savedScrollPosition;
+    document.documentElement.scrollTop = savedScrollPosition;
 }
 
 /**
@@ -123,14 +124,17 @@ class Sidebar extends React.Component {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
+                document.documentElement.scrollTop = savedScrollPosition;
             }
             this.props.onCloserClick();
         }
     }
 
     handleScroll() {
-        if (document.body.scrollTop !== 0) {
-            savedScrollPosition = document.body.scrollTop;
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (Boolean(scrollTop)) {
+            savedScrollPosition = scrollTop
         }
     }
 }

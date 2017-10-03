@@ -15,18 +15,4 @@ describe('form-field', () => {
         expect(formField.node).to.exist;
         expect(formField.node).to.have.text('FormField-test');
     });
-
-    it('should render view line without problems', () => {
-        let formField = render(<FormField view='line'>FormField-test</FormField>);
-
-        expect(formField.node).to.have.class('form-field_view_line');
-    });
-
-    it('should render Label with text from property `label`', () => {
-        let formField = render(<FormField label='FormField Label'>FormField-test</FormField>);
-        let formFieldLabelNode = formField.node.firstChild;
-
-        expect(formFieldLabelNode).to.have.class('form-field__label');
-        expect(formFieldLabelNode).to.have.text('FormField Label');
-    });
 });

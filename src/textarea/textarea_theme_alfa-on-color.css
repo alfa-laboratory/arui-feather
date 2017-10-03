@@ -5,43 +5,65 @@
 @import '../vars.css';
 
 .textarea_theme_alfa-on-color {
-    &,
     .textarea__control {
         color: var(--color-content-alfa-on-color);
-    }
-
-    .textarea__control {
-        background: var(--color-background-control-alfa-on-color);
-        border: 1px solid rgba(255, 255, 255, .4);
-        transition: all 200ms ease;
+        border-bottom: 1px solid var(--color-border-control-alfa-on-color);
 
         &::placeholder {
             color: var(--color-content-minor-alfa-on-color);
         }
     }
 
+    .textarea__top,
+    .textarea__sub {
+        color: var(--color-content-minor-alfa-on-color);
+    }
+
     &.textarea_focused {
         .textarea__control {
-            border-color: var(--color-border-control-focused-alfa-on-color);
+            border-bottom-color: var(--color-border-control-focused-alfa-on-color);
         }
     }
 
     &.textarea_focused {
         .textarea__control {
-            background-color: var(--color-background-control-focused-alfa-on-color);
-            box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
+            box-shadow: inset 0 -1px 0 var(--color-border-control-focused-alfa-on-color);
         }
     }
 
     &.textarea_disabled {
         &,
         .textarea__control {
-            color: var(--color-content-minor-alfa-on-color);
+            color: var(--color-content-disabled-alfa-on-color);
         }
 
         .textarea__control {
-            border-color: transparent;
-            background: var(--color-background-control-disabled-alfa-on-color);
+            border-bottom-style: var(--border-style-control-disabled);
+
+            &::placeholder {
+                color: var(--color-content-disabled-alfa-on-color);
+            }
+
+            &:disabled {
+                -webkit-text-fill-color: var(--color-content-disabled-alfa-on-color) !important;
+            }
+        }
+    }
+
+    &.textarea_invalid {
+        .textarea__sub {
+            color: var(--color-error);
+        }
+
+        .textarea__control {
+            border-bottom-color: var(--color-error-translucent);
+        }
+
+        &.textarea_focused {
+            .textarea__control {
+                border-bottom-color: var(--color-error-translucent);
+                box-shadow: inset 0 -1px 0 var(--color-error-translucent);
+            }
         }
     }
 }

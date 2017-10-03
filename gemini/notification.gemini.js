@@ -1,5 +1,5 @@
-import Icon from '../src/icon/fantasy';
-import Notification from '../src/notification/fantasy';
+import Icon from '../src/icon';
+import Notification from '../src/notification';
 import ThemeProvider from '../src/theme-provider';
 
 const NAME = 'notification';

@@ -6,7 +6,6 @@ import { render, cleanUp } from '../test-utils';
 
 import ThemeProvider from './theme-provider';
 import Button from '../button/button';
-import Page from '../page/page';
 import Heading from '../heading/heading';
 import Paragraph from '../paragraph/paragraph';
 
@@ -39,20 +38,19 @@ describe('theme-provider', () => {
     it('should render children with redefinition theme', () => {
         let themeProvider = render(
             <ThemeProvider theme='alfa-on-color'>
-                <Page>
+                <div>
                     <Heading>Title-test</Heading>
                     <div style={ { background: 'white' } }>
                         <ThemeProvider theme='alfa-on-white'>
                             <Paragraph>Paragraph-test</Paragraph>
                         </ThemeProvider>
                     </div>
-                </Page>
+                </div>
             </ThemeProvider>
         );
         let headingNode = themeProvider.node.querySelector('.heading');
         let paragraphNode = themeProvider.node.querySelector('.paragraph');
 
-        expect(themeProvider.node).to.have.class('page_theme_alfa-on-color');
         expect(headingNode).to.have.class('heading_theme_alfa-on-color');
         expect(paragraphNode).to.have.class('paragraph_theme_alfa-on-white');
     });

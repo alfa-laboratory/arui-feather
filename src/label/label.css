@@ -6,13 +6,17 @@
 
 .label {
     font-family: var(--font);
-    font-weight: var(--font-weight);
-    line-height: 1.5;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &__inner {
         display: inline-block;
-        line-height: 1.25;
         max-width: 100%;
+        line-height: var(--line-height-condensed);
     }
 
     &_no-wrap &__inner {
@@ -41,7 +45,7 @@
     color: var(--color-content-alfa-on-color);
 
     &.label_disabled {
-        color: var(--color-content-minor-alfa-on-color);
+        color: var(--color-content-disabled-alfa-on-color);
     }
 }
 
@@ -49,6 +53,6 @@
     color: var(--color-content-alfa-on-white);
 
     &.label_disabled {
-        color: var(--color-content-minor-alfa-on-white);
+        color: var(--color-content-disabled-alfa-on-white);
     }
 }

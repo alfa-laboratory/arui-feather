@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import '../vars.css';
+
 .input-group {
     display: inline-block;
     outline: none;
@@ -13,11 +15,15 @@
     }
 
     &_width_available {
-        width: 100%;
         display: table;
+        width: 100%;
     }
 
     &_width_available &__input-case {
         display: table-cell;
+    }
+
+    &__input-case + &__input-case {
+        padding-left: var(--gap-s);
     }
 }

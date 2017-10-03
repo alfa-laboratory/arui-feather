@@ -41,7 +41,7 @@ class CardInput extends React.Component {
                 type='tel'
                 ref={ (root) => { this.root = root; } }
                 mask='1111 1111 1111 1111 11'
-                noValidate={ true }
+                formNoValidate={ true }
                 className={ cn }
             />
         );

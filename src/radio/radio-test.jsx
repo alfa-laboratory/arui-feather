@@ -254,7 +254,7 @@ describe('radio', () => {
         buttonNode.click();
 
         expect(radio.node).to.have.class('radio_checked');
-        expect(buttonNode).to.have.class('button_checked');
+        expect(buttonNode).to.have.class('tag-button_checked');
     });
 
     it('should call `onChange` callback after radio button was clicked', () => {

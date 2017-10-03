@@ -5,15 +5,17 @@
 @import '../vars.css';
 
 .radio {
-    font-family: var(--font);
-    font-weight: var(--font-weight);
-
     display: inline-block;
-    white-space: nowrap;
     position: relative;
-
     cursor: pointer;
     outline: none;
+    font-family: var(--font);
+    font-weight: var(--font-weight-normal);
+    white-space: nowrap;
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &__control {
         opacity: 0;
@@ -30,34 +32,24 @@
         display: inline-block;
         vertical-align: middle;
         position: relative;
-
         border-radius: 50%;
-        box-sizing: border-box;
 
         &:after {
+            opacity: 0;
+            visibility: hidden;
+            content: '';
             position: absolute;
-
             top: 50%;
             left: 50%;
-
-            content: '';
-
-            visibility: hidden;
-            opacity: 0;
-
             border-radius: 50%;
-
-            transition:
-                transform .05s ease-out,
-                opacity .05s ease-out,
-                visibility 0s linear .05s;
+            transition: transform .05s ease-out, opacity .05s ease-out, visibility 0s linear .05s;
         }
     }
 
     &__text {
         display: inline-block;
-        white-space: normal;
         vertical-align: middle;
+        white-space: normal;
     }
 
     &_size_m {
@@ -67,15 +59,13 @@
     &_size_m &__box {
         width: 14px;
         height: 14px;
-
-        margin-right: 6px;
+        margin-right: 10px;
 
         &:after {
-            margin-top: -3px;
-            margin-left: -3px;
-
             width: 6px;
             height: 6px;
+            margin-top: -3px;
+            margin-left: -3px;
         }
     }
 
@@ -86,21 +76,19 @@
     &_size_l &__box {
         width: 18px;
         height: 18px;
-
-        margin-right: 10px;
+        margin-right: 12px;
 
         &:after {
-            margin-top: -4px;
-            margin-left: -4px;
-
             width: 8px;
             height: 8px;
+            margin-top: -4px;
+            margin-left: -4px;
         }
     }
 
     &_checked &__box:after {
+        opacity: var(--opacity-active);
         visibility: visible;
-        opacity: 1;
     }
 
     &_disabled {
@@ -112,18 +100,12 @@
     display: inline-block;
 
     .radio__control {
-        position: absolute;
-
         visibility: hidden;
+        position: absolute;
     }
 
     &.radio_checked .button__text {
-        font-weight: var(--font-weight);
-    }
-
-    /* FIXME: maybe remove cascade? */
-    .button_checked {
-        cursor: default;
+        font-weight: var(--font-weight-normal);
     }
 }
 

@@ -4,15 +4,15 @@
 
 .slide-down {
     overflow: hidden;
-    transition: height .3s ease;
     position: relative;
     width: 100%;
+    transition: height .3s ease;
 
     &__content {
         position: absolute;
+        right: 0;
         bottom: 0;
         left: 0;
-        right: 0;
 
         &_expanded {
             position: static;

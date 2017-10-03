@@ -1,5 +1,5 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import MenuItem from '../src/menu-item/fantasy';
+import MenuItem from '../src/menu-item';
 
 const NAME = 'menu-item';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];

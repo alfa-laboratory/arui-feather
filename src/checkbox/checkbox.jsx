@@ -6,7 +6,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Button from '../button/button';
+import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -16,7 +16,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 /**
  * Компонент чекбокса.
  */
-@cn('checkbox', Button)
+@cn('checkbox', TagButton)
 @performance()
 class CheckBox extends React.Component {
     static propTypes = {
@@ -71,7 +71,7 @@ class CheckBox extends React.Component {
 
     root;
 
-    render(cn, Button) {
+    render(cn, TagButton) {
         let checked = this.props.checked !== undefined
             ? this.props.checked
             : this.state.checked;
@@ -96,7 +96,7 @@ class CheckBox extends React.Component {
             >
                 {
                     this.props.type === 'button'
-                        ? this.renderButtonCheckbox(cn, checked, Button)
+                        ? this.renderButtonCheckbox(cn, checked, TagButton)
                         : this.renderNormalCheckbox(cn, checked)
                 }
             </label>
@@ -133,10 +133,10 @@ class CheckBox extends React.Component {
         );
     }
 
-    renderButtonCheckbox(cn, checked, Button) {
+    renderButtonCheckbox(cn, checked, TagButton) {
         return (
             <div>
-                <Button
+                <TagButton
                     togglable='check'
                     checked={ checked }
                     title={ this.props.title }
@@ -152,7 +152,7 @@ class CheckBox extends React.Component {
                             ? this.props.text
                             : ''
                     }
-                </Button>
+                </TagButton>
                 <input
                     className={ cn('control') }
                     type='checkbox'

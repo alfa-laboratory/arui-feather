@@ -5,16 +5,20 @@
 @import '../vars.css';
 
 .paragraph {
-    margin: 0 0 15px;
+    margin: 0;
+    padding: 0 0 15px;
     font-family: var(--font);
     font-size: var(--font-size-m);
-    font-weight: var(--font-weight);
-    line-height: 1.5;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+
+    &, *, *:before, *:after {
+        box-sizing: border-box;
+    }
 
     &_view_lead {
         margin-bottom: 25px;
         font-size: var(--font-size-xl);
-        line-height: 1.4;
     }
 
     &_theme_alfa-on-color {

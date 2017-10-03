@@ -1,7 +1,3 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 @import '../vars.css';
 
 .calendar_theme_alfa-on-white {
@@ -9,18 +5,18 @@
     background-color: var(--color-background-alfa-on-white);
 
     .calendar__arrow_direction_left {
-        background-image: url(./images/arrow_wl.svg);
+        background-image: url('./images/arrow_wl.svg');
 
         &.calendar__arrow_double {
-            background-image: url(./images/2_arrow_wl.svg);
+            background-image: url('./images/2_arrow_wl.svg');
         }
     }
 
     .calendar__arrow_direction_right {
-        background-image: url(./images/arrow_wr.svg);
+        background-image: url('./images/arrow_wr.svg');
 
         &.calendar__arrow_double {
-            background-image: url(./images/2_arrow_wr.svg);
+            background-image: url('./images/2_arrow_wr.svg');
         }
     }
 }

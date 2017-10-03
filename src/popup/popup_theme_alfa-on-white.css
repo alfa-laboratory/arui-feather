@@ -6,8 +6,11 @@
 
 .popup_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
-    background-color: var(--color-background-alfa-on-white);
     box-shadow: var(--shadow-light);
+
+    .popup__container {
+        background-color: var(--color-background-alfa-on-white);
+    }
 
     &.popup_height_adaptive .popup__gradient,
     &.popup_target_screen .popup__gradient {

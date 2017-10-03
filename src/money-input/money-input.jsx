@@ -107,13 +107,13 @@ class MoneyInput extends React.Component {
             <Input
                 { ...this.props }
                 ref={ (root) => { this.root = root; } }
-                mask={ this.maskPattern }
-                value={ this.getValue() }
-                maxLength={ this.getMaxLength() }
-                onProcessMaskInputEvent={ this.handleProcessMaskInputEvent }
-                onChange={ this.handleChange }
-                noValidate={ true }
                 className={ cn }
+                formNoValidate={ true }
+                mask={ this.maskPattern }
+                maxLength={ this.getMaxLength() }
+                value={ this.getValue() }
+                onChange={ this.handleChange }
+                onProcessMaskInputEvent={ this.handleProcessMaskInputEvent }
             />
         );
     }

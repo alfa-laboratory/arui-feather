@@ -1,5 +1,5 @@
-import Checkbox from '../src/checkbox/fantasy';
-import CheckboxGroup from '../src/checkbox-group/fantasy';
+import Checkbox from '../src/checkbox';
+import CheckboxGroup from '../src/checkbox-group';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'checkbox-group';

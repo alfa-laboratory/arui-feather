@@ -258,12 +258,16 @@ describe('input-autocomplete', () => {
         let { popupNode, inputAutocomplete } = renderInputAutocomplete({ closeOnSelect: true,
             updateValueOnItemSelect: false,
             options: OPTIONS });
+
         inputAutocomplete.instance.focus();
-        const timeout = bowser.mobile ? 200 : 50; // Увеличенный таймаут для Trevis, который не успевает на мобилке закрыть попапчик
+
+        const timeout = bowser.mobile ? 300 : 50; // Увеличенный таймаут для Travis, который не успевает на мобилке закрыть попапчик
         setTimeout(() => {
             expect(popupNode).to.have.class('popup_visible');
             let firstOptionNode = popupNode.querySelector('.menu-item');
+
             firstOptionNode.click();
+
             setTimeout(() => {
                 expect(popupNode).to.not.have.class('popup_visible');
                 done();

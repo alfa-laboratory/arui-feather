@@ -123,7 +123,7 @@ function handleChange(value) {
 />
 ```
 
-Мультиселект
+Автокомплит с автозакрытием после выбора
 ```jsx
 
 const socialNetworks = [
@@ -179,8 +179,8 @@ function handleChange(value) {
         options={ getFilteredOptions(socialNetworks, state.value) }
     />
 
-    <div>
-        { state.values && state.values.map(value => <div> { value } </div>) }
+    <div style={ { marginTop: '5px' } }>
+        { state.values && state.values.map(value => <TagButton size='s'>{ value }</TagButton>) }
     </div>
 </div>
 ```

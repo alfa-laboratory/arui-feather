@@ -130,6 +130,11 @@ class InputAutocomplete extends React.Component {
             this.blurTimeout = null;
         }
 
+        if (this.inputBlurTimeout) {
+            clearTimeout(this.inputBlurTimeout);
+            this.inputBlurTimeout = null;
+        }
+
         if (this.inputFocusTimeout) {
             clearTimeout(this.inputFocusTimeout);
             this.inputFocusTimeout = null;

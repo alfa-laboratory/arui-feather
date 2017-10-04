@@ -60,7 +60,9 @@ class InputAutocomplete extends React.Component {
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
         /** Обработчик выбора пункта в выпадающем меню */
-        onItemSelect: Type.func
+        onItemSelect: Type.func,
+        /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
+        closeOnSelect: Type.bool
     };
 
     static defaultProps = {
@@ -70,7 +72,8 @@ class InputAutocomplete extends React.Component {
         options: [],
         updateValueOnItemSelect: true,
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
-        equalPopupWidth: false
+        equalPopupWidth: false,
+        closeOnSelect: false
     };
 
     state = {
@@ -125,6 +128,11 @@ class InputAutocomplete extends React.Component {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
+        }
+
+        if (this.inputBlurTimeout) {
+            clearTimeout(this.inputBlurTimeout);
+            this.inputBlurTimeout = null;
         }
 
         if (this.inputFocusTimeout) {
@@ -237,7 +245,15 @@ class InputAutocomplete extends React.Component {
             clearTimeout(this.inputFocusTimeout);
         }
 
-        this.inputFocusTimeout = setTimeout(() => this.input.focus(), 0);
+        if (this.inputBlurTimeout) {
+            clearTimeout(this.inputBlurTimeout);
+        }
+
+        if (this.props.closeOnSelect) {
+            this.inputBlurTimeout = setTimeout(() => this.input.blur(), 0);
+        } else {
+            this.inputFocusTimeout = setTimeout(() => this.input.focus(), 0);
+        }
     }
 
     @autobind

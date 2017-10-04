@@ -1,4 +1,5 @@
 ```jsx
+
 const socialNetworks = [
     { value: 'Facebook' },
     { value: 'Twitter' },
@@ -107,6 +108,7 @@ function getFilteredOptions(list, typedValue) {
 function handleItemSelect(item) {
     setState({ value: item.text })
 }
+
 function handleChange(value) {
     setState({ value });
 }
@@ -119,4 +121,66 @@ function handleChange(value) {
     placeholder='Выберите категорию'
     options={ getFilteredOptions(socialNetworks, state.value) }
 />
+```
+
+Автокомплит с автозакрытием после выбора
+```jsx
+
+const socialNetworks = [
+    { value: 'Facebook' },
+    { value: 'Twitter' },
+    { value: 'LinkedIn' },
+    { value: 'Sina Weibo' },
+    { value: 'Pinterest' },
+    { value: 'VKontakte' },
+    { value: 'Instagram' },
+    { value: 'Tumblr' },
+    { value: 'Flickr' },
+    { value: 'Odnoklassniki' },
+    { value: 'Renren' },
+    { value: 'douban' },
+    { value: 'LiveJournal' },
+    { value: 'DeviantArt' },
+    { value: 'StumbleUpon' },
+    { value: 'Myspace' },
+    { value: 'Yelp, Inc.' },
+    { value: 'Taringa!' },
+    { value: 'mixi' },
+    { value: 'XING' }
+];
+function getFilteredOptions(list, typedValue) {
+    if (!typedValue) {
+        return list;
+    }
+    return list.filter(({ value }) => value !== typedValue && value.indexOf(typedValue) !== -1);
+}
+
+function handleItemSelect(item) {
+    let values = state.values || [];
+    if (!values.includes(item.value)) {
+        setState({ values: values.concat([item.value]) });
+    }
+}
+
+function handleChange(value) {
+    setState({ value });
+}
+
+<div>
+    <InputAutocomplete
+        size='l'
+        value={ state.value }
+        width='available'
+        closeOnSelect={ true }
+        onChange={ handleChange }
+        onItemSelect={ handleItemSelect }
+        updateValueOnItemSelect={ false }
+        placeholder='Выберите категорию'
+        options={ getFilteredOptions(socialNetworks, state.value) }
+    />
+
+    <div style={ { marginTop: '5px' } }>
+        { state.values && state.values.map(value => <TagButton size='s'>{ value }</TagButton>) }
+    </div>
+</div>
 ```

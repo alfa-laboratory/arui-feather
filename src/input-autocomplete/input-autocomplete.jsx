@@ -252,7 +252,10 @@ class InputAutocomplete extends React.Component {
         if (this.props.closeOnSelect) {
             this.inputBlurTimeout = setTimeout(() => this.input.blur(), 0);
         } else {
-            this.inputFocusTimeout = setTimeout(() => this.input.focus(), 0);
+            this.inputFocusTimeout = setTimeout(() => {
+                this.input.focus();
+                this.input.setSelectionRange(newValue.length);
+            }, 0);
         }
     }
 

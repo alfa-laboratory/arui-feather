@@ -1,7 +1,9 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
+import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
 import InputAutocomplete from './input-autocomplete';
@@ -250,5 +252,26 @@ describe('input-autocomplete', () => {
         simulate(controlNode, 'change', { target: { value: 'other value' } });
 
         expect(onChange).to.have.been.calledOnce;
+    });
+
+    it('should close popup after item select if closeOnSelect is set', (done) => {
+        let { popupNode, inputAutocomplete } = renderInputAutocomplete({ closeOnSelect: true,
+            updateValueOnItemSelect: false,
+            options: OPTIONS });
+
+        inputAutocomplete.instance.focus();
+
+        const timeout = bowser.mobile ? 300 : 50; // Увеличенный таймаут для Travis, который не успевает на мобилке закрыть попапчик
+        setTimeout(() => {
+            expect(popupNode).to.have.class('popup_visible');
+            let firstOptionNode = popupNode.querySelector('.menu-item');
+
+            firstOptionNode.click();
+
+            setTimeout(() => {
+                expect(popupNode).to.not.have.class('popup_visible');
+                done();
+            }, timeout);
+        }, timeout);
     });
 });

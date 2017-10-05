@@ -7,6 +7,7 @@ import Type from 'prop-types';
 import { autobind } from 'core-decorators';
 
 import Icon from '../icon/icon';
+import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -29,7 +30,7 @@ class PopupHeader extends React.Component {
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Обработчик клика по кнопке закрытия */
-        onCloseClick: Type.func
+        onCloserClick: Type.func
     };
 
     render(cn) {
@@ -40,12 +41,15 @@ class PopupHeader extends React.Component {
                 }) }
                 id={ this.props.id }
             >
-                <Icon
+                <IconButton
                     className={ cn('closer') }
-                    size={ this.props.size }
-                    icon='close'
-                    onClick={ this.handleCloseClick }
-                />
+                    onClick={ this.handleCloserClick }
+                >
+                    <Icon
+                        size={ this.props.size }
+                        icon='close'
+                    />
+                </IconButton>
                 <div className={ cn('title') }>
                     { this.props.title }
                 </div>
@@ -54,9 +58,9 @@ class PopupHeader extends React.Component {
     }
 
     @autobind
-    handleCloseClick() {
-        if (this.props.onCloseClick) {
-            this.props.onCloseClick();
+    handleCloserClick() {
+        if (this.props.onCloserClick) {
+            this.props.onCloserClick();
         }
     }
 }

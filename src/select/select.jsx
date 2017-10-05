@@ -448,7 +448,7 @@ class Select extends React.Component {
                 className={ cn('mobile-header') }
                 size={ this.props.size }
                 title={ this.props.mobileTitle || this.props.placeholder }
-                onCloseClick={ this.handlePopupCloseClick }
+                onCloserClick={ this.handlePopupCloserClick }
             />
         );
     }
@@ -670,7 +670,7 @@ class Select extends React.Component {
     }
 
     @autobind
-    handlePopupCloseClick() {
+    handlePopupCloserClick() {
         this.setState({
             opened: false
         });

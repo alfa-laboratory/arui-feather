@@ -50,7 +50,7 @@ describe('notification', () => {
                 notification-text
             </Notification>
         );
-        let crossIconNode = notification.node.querySelector('.notification__close');
+        let crossIconNode = notification.node.querySelector('.notification__closer');
 
         crossIconNode.click();
 

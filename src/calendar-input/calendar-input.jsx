@@ -8,6 +8,7 @@ import Type from 'prop-types';
 
 import Calendar from '../calendar/calendar';
 import Icon from '../icon/icon';
+import IconButton from '../icon-button/icon-button';
 import Input from '../input/input';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
@@ -273,11 +274,12 @@ class CalendarInput extends React.Component {
                     onKeyDown={ this.handleInputKeyDown }
                     icon={
                         this.props.withIcon &&
-                        <Icon
-                            size={ this.props.size }
-                            icon='calendar'
-                            onClick={ this.handleIconClick }
-                        />
+                        <IconButton onClick={ this.handleIconButtonClick }>
+                            <Icon
+                                size={ this.props.size }
+                                icon='calendar'
+                            />
+                        </IconButton>
                     }
                 />
                 { this.renderPopup(cn, value, Popup) }
@@ -322,7 +324,7 @@ class CalendarInput extends React.Component {
             <PopupHeader
                 size={ this.props.size }
                 title={ this.props.mobileTitle || this.props.label || 'Выберите дату' }
-                onCloseClick={ this.handlePopupCloseClick }
+                onCloserClick={ this.handlePopupCloserClick }
             />
         );
     }
@@ -393,7 +395,7 @@ class CalendarInput extends React.Component {
     }
 
     @autobind
-    handleIconClick() {
+    handleIconButtonClick() {
         this.customCalendarTarget.focus();
     }
 
@@ -547,7 +549,7 @@ class CalendarInput extends React.Component {
     }
 
     @autobind
-    handlePopupCloseClick() {
+    handlePopupCloserClick() {
         this.setOpened(false);
     }
 

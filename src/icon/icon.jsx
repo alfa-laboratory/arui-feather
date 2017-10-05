@@ -2,9 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* eslint jsx-a11y/no-static-element-interactions: 0 */
-
-import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -35,9 +32,7 @@ class Icon extends React.Component {
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
         /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Обработчик клика по иконке */
-        onClick: Type.func
+        id: Type.string
     };
 
     static defaultProps = {
@@ -57,16 +52,8 @@ class Icon extends React.Component {
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
-                onClick={ this.handleClick }
             />
         );
-    }
-
-    @autobind
-    handleClick(event) {
-        if (this.props.onClick) {
-            this.props.onClick(event);
-        }
     }
 }
 

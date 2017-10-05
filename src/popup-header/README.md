@@ -17,21 +17,23 @@ class PopupHeaderDemo extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    {['s', 'm', 'l', 'xl'].map(size => (
-                        <PopupHeader
-                            size={ size }
-                            title='Заголовок'
-                        />
-                    ))}
+                <div className='row'>
+                    <div style={ { width: '100%' } }>
+                        {['s', 'm', 'l', 'xl'].map(size => (
+                            <PopupHeader
+                                size={ size }
+                                title='Заголовок'
+                            />
+                        ))}
+                    </div>
                 </div>
-                <div>
+                <div className='row'>
                     <Button
                         ref={ (target) => { this.target = target; } }
                         size='m'
                         onClick={ () => { this.setState({ popup: !this.state.popup }); } }
                     >
-                        Click me
+                        Узнать время работы
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup = popup; } }
@@ -42,7 +44,7 @@ class PopupHeaderDemo extends React.Component {
                             <PopupHeader
                                 size='m'
                                 title='График работы'
-                                onCloseClick={ () => { this.setState({ popup: false }); } }
+                                onCloserClick={ () => { this.setState({ popup: false }); } }
                             />
                         ) }
                         visible={ this.state.popup }

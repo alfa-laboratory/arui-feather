@@ -9,6 +9,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Icon from '../icon/icon';
+import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -49,26 +50,31 @@ class Plate extends React.Component {
     render(cn) {
         let hasCloser = this.props.hasCloser;
         return (
-            <span
+            <div
                 className={ cn({
-                    'has-clear': hasCloser,
+                    'has-closer': hasCloser,
                     hidden: hasCloser && this.state.isHidden,
                     flat: this.props.isFlat
                 }) }
                 id={ this.props.id }
                 onClick={ this.handleClick }
             >
-                { this.props.children }
-                { hasCloser &&
-                    <div className={ cn('clear') } >
-                        <Icon
-                            theme='alfa-on-white'
+                <div className={ cn('content') }>
+                    { this.props.children }
+                    {
+                        hasCloser &&
+                        <IconButton
+                            className={ cn('closer') }
                             onClick={ this.handleCloserClick }
-                            icon='close'
-                        />
-                    </div>
-                }
-            </span>
+                        >
+                            <Icon
+                                theme='alfa-on-white'
+                                icon='close'
+                            />
+                        </IconButton>
+                    }
+                </div>
+            </div>
         );
     }
 

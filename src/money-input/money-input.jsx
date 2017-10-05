@@ -107,7 +107,7 @@ class MoneyInput extends React.Component {
             <Input
                 { ...this.props }
                 ref={ (root) => { this.root = root; } }
-                className={ cn }
+                className={ cn() }
                 formNoValidate={ true }
                 mask={ this.maskPattern }
                 maxLength={ this.getMaxLength() }

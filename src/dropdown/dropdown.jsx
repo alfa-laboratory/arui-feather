@@ -106,7 +106,7 @@ class Dropdown extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn } id={ this.props.id }>
+            <div className={ cn() } id={ this.props.id }>
                 { this.renderSwitcher(cn) }
                 { this.renderPopup(cn) }
             </div>

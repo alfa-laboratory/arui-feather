@@ -57,7 +57,7 @@ class SlideDown extends React.Component {
     render(cn) {
         return (
             <div
-                className={ cn }
+                className={ cn() }
                 id={ this.props.id }
                 style={
                     { height: this.getHeight() }

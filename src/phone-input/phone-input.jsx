@@ -40,7 +40,7 @@ class PhoneInput extends React.Component {
                 type='tel'
                 ref={ (root) => { this.root = root; } }
                 formNoValidate={ true }
-                className={ cn }
+                className={ cn() }
             />
         );
     }

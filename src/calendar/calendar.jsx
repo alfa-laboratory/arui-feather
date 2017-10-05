@@ -126,7 +126,7 @@ class Calendar extends React.Component {
         return (
             <div
                 ref={ (root) => { this.root = root; } }
-                className={ cn }
+                className={ cn() }
                 id={ this.props.id }
                 role='grid'
                 tabIndex='0'

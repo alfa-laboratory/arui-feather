@@ -120,7 +120,7 @@ class Amount extends React.Component {
         );
 
         return (
-            <div className={ cn } id={ this.props.id }>
+            <div className={ cn() } id={ this.props.id }>
                 {
                     this.props.isHeading
                         ? <Heading size={ size }>

@@ -70,6 +70,15 @@
             background: var(--color-accent-alt);
             border-color: var(--color-accent-alt);
         }
+
+        &.button_disabled {
+            border-color: transparent;
+            background: var(--color-accent-half-transparent);
+
+            .button__text {
+                color: var(--color-content-accent-alfa-on-color);
+            }
+        }
     }
 
     &.button_view_other {
@@ -90,6 +99,15 @@
         &:active {
             background: rgba(64, 51, 174, .85);
             border-color: rgba(64, 51, 174, .85);
+        }
+
+        &.button_disabled {
+            border-color: transparent;
+            background: rgba(80, 64, 218, .5);
+
+            .button__text {
+                color: var(--color-content-accent-alfa-on-color);
+            }
         }
     }
 

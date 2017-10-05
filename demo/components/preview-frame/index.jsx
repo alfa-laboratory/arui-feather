@@ -33,7 +33,7 @@ export default class PreviewFrame extends Component {
         const styles = `
             html { height: 100%; }
 
-            body { 
+            body {
                 height: 100%;
                 background: none !important;
                 margin: 0;
@@ -56,7 +56,7 @@ export default class PreviewFrame extends Component {
             style: { height }
         };
         return (
-            <div className={ cn } >
+            <div className={ cn() } >
                 <Frame { ...iframeProps } ref={ (node) => { this.iframe = node; } } >
                     { styleLinks.map(({ href }) => (
                         <link key={ href } href={ href } type='text/css' rel='stylesheet' />

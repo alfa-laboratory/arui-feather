@@ -73,7 +73,7 @@
 
         &.button_disabled {
             border-color: transparent;
-            background: rgba(240, 50, 38, .5);
+            background: var(--color-accent-heavy-translucent);
 
             .button__text {
                 color: var(--color-content-accent-alfa-on-color);

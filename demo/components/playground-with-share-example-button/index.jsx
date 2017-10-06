@@ -22,7 +22,7 @@ export class PlayGroundRenderer extends Component {
 
     render(cn) {
         return (
-            <div className={ cn }>
+            <div className={ cn() }>
                 <button className={ cn('share-code') } onClick={ this.handleShareExampleClick } />
                 <PlayGroundRendererStyleguidist { ...this.props } />
             </div>

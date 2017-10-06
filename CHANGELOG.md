@@ -1,3 +1,27 @@
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.4...v10.0.0) (2017-10-06)
+
+
+### Bug Fixes
+
+* **autocomplete:** set carriage position to end of new value on option ([#290](https://github.com/alfa-laboratory/arui-feather/issues/290)) ([2670a11](https://github.com/alfa-laboratory/arui-feather/commit/2670a11))
+
+
+### Features
+
+* 🚀 set fantasy design as default 🎉🎉🎉 ([#282](https://github.com/alfa-laboratory/arui-feather/issues/282)) ([64d5f8a](https://github.com/alfa-laboratory/arui-feather/commit/64d5f8a))
+* normalize closers usage among the components ([#270](https://github.com/alfa-laboratory/arui-feather/issues/270)) ([1438a60](https://github.com/alfa-laboratory/arui-feather/commit/1438a60))
+* remove deprecated components ([#275](https://github.com/alfa-laboratory/arui-feather/issues/275)) ([7d83c18](https://github.com/alfa-laboratory/arui-feather/commit/7d83c18))
+* remove deprecated header ([#285](https://github.com/alfa-laboratory/arui-feather/issues/285)) ([735c4c9](https://github.com/alfa-laboratory/arui-feather/commit/735c4c9))
+* remove deprecated noValidate prop in input ([#278](https://github.com/alfa-laboratory/arui-feather/issues/278)) ([aae1eed](https://github.com/alfa-laboratory/arui-feather/commit/aae1eed))
+* remove deprecated props in form-field ([#276](https://github.com/alfa-laboratory/arui-feather/issues/276)) ([e4b196f](https://github.com/alfa-laboratory/arui-feather/commit/e4b196f))
+* remove roboto font ([#277](https://github.com/alfa-laboratory/arui-feather/issues/277)) ([437539f](https://github.com/alfa-laboratory/arui-feather/commit/437539f))
+* **autocomplete:** close on click ([#283](https://github.com/alfa-laboratory/arui-feather/issues/283)) ([1cb4f6e](https://github.com/alfa-laboratory/arui-feather/commit/1cb4f6e))
+* **icon:** use name prop instead of icon, reuse lib icons among the … ([#291](https://github.com/alfa-laboratory/arui-feather/issues/291)) ([37d62e4](https://github.com/alfa-laboratory/arui-feather/commit/37d62e4))
+* **vars:** remove color-error-transparent color var ([#294](https://github.com/alfa-laboratory/arui-feather/issues/294)) ([3e0e780](https://github.com/alfa-laboratory/arui-feather/commit/3e0e780))
+
+
+
 <a name="9.10.4"></a>
 ## [9.10.4](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.3...v9.10.4) (2017-09-29)
 

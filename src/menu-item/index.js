@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import '../dropdown';
+import '../icon';
 import '../link';
 
 import './menu-item.css';

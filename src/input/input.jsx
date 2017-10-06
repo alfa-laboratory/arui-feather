@@ -6,6 +6,8 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
+import Icon from '../icon/icon';
+import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import cn from '../cn';
@@ -240,10 +242,16 @@ class Input extends React.Component {
                 }
                 {
                     this.props.clear && value &&
-                    <button
+                    <IconButton
                         className={ cn('clear') }
+                        size={ this.props.size }
                         onClick={ this.handleClearClick }
-                    />
+                    >
+                        <Icon
+                            name='tool-close'
+                            size={ this.props.size }
+                        />
+                    </IconButton>
                 }
                 {
                     this.props.icon &&

@@ -9,30 +9,24 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
- * Компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
- * Все иконки доступны в двух цветовых темах `alfa-on-color` и `alfa-on-white`.
- *
- * Для иконок `error` и `ок` также есть цветной вариант,
- * реализуемый темой `alfa-on-colored`.
+ * Базовый компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
  */
 @cn('icon')
 @performance()
 class Icon extends React.Component {
     static propTypes = {
-        /** Тип иконки */
-        icon: Type.oneOf([
-            'error', 'fail', 'ok', 'ok_filled', 'attachment', 'calendar', 'search', 'close', 'user'
-        ]),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
-        /** Дочерние элементы `Icon` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']),
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
+        /** Управление цветностью иконки */
+        colored: Type.bool,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Название иконки */
+        name: Type.string,
+        /** Размер иконки */
+        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']),
+        /** Тема компонента */
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     static defaultProps = {
@@ -40,12 +34,14 @@ class Icon extends React.Component {
     };
 
     render(cn) {
-        let mods = {
-            size: this.props.size
-        };
+        let mods = { size: this.props.size };
 
-        if (this.props.icon) {
-            mods[this.props.icon] = true;
+        if (this.props.name) {
+            mods.name = this.props.name;
+        }
+
+        if (this.props.colored) {
+            mods.colored = true;
         }
 
         return (

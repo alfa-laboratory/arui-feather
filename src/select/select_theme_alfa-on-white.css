@@ -5,12 +5,6 @@
 @import '../vars.css';
 
 .select_theme_alfa-on-white {
-    @each $size in s, m, l, xl {
-        &.select_size_$(size) .select__tick {
-            background-image: url('./images/select__tick_theme_alfa-on-white__$(size).svg');
-        }
-    }
-
     .select__top,
     .select__sub {
         color: var(--color-content-minor-alfa-on-white);

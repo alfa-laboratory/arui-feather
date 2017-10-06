@@ -9,6 +9,7 @@ import Type from 'prop-types';
 
 import Button from '../button/button';
 import Icon from '../icon/icon';
+import IconButton from '../icon-button/icon-button';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
@@ -265,6 +266,13 @@ class Select extends React.Component {
     }
 
     renderButton(cn, SelectButton) {
+        let tickSize;
+
+        switch (this.props.size) {
+            case 's': case 'm': tickSize = 'xs'; break;
+            case 'l': case 'xl': tickSize = 's'; break;
+        }
+
         return (
             <SelectButton
                 ref={ (button) => { this.button = button; } }
@@ -273,10 +281,17 @@ class Select extends React.Component {
                 focused={ this.getOpened() }
                 text={ this.renderButtonContent() }
                 rightAddons={ [
-                    <Icon
-                        key='addon-icon'
+                    <IconButton
                         className={ cn('tick') }
-                    />,
+                        key='addon-icon'
+                        size={ this.props.size }
+                        tag='span'
+                    >
+                        <Icon
+                            name={ this.getOpened() ? 'action-up' : 'action-down' }
+                            size={ tickSize }
+                        />
+                    </IconButton>,
                     <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
                 ] }
                 onClick={ this.handleButtonClick }

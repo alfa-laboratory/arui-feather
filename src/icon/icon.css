@@ -5,8 +5,13 @@
 .icon {
     display: inline-block;
     vertical-align: middle;
-
+    background-position: center;
     background-repeat: no-repeat;
+}
+
+.icon_size_xs {
+    width: 12px;
+    height: 12px;
 }
 
 .icon_size_s {

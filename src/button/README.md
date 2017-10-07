@@ -65,8 +65,13 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <Button view='extra' size={ size }>{`${name}`}</Button>
+        <div className='row'>
+            <div className='column' key={ size }>
+                <Button view='extra' size={ size }>{`${name}`}</Button>
+            </div>
+            <div className='column'>
+                <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
+            </div>
         </div>
     ))}
 </div>
@@ -81,9 +86,14 @@ const buttons = [
     { size: 'xl', name: 'Подтвердить' }
 ];
 <div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <Button view='other' size={ size }>{`${name}`}</Button>
+   {buttons.map(({ size, name }) => (
+        <div className='row'>
+            <div className='column' key={ size }>
+                <Button view='other' size={ size }>{`${name}`}</Button>
+            </div>
+            <div className='column'>
+                <Button view='other' size={ size } disabled={ true }>{`${name}`}</Button>
+            </div>
         </div>
     ))}
 </div>

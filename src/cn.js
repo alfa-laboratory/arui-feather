@@ -4,4 +4,4 @@
 
 import cn from 'cn-decorator';
 
-export default cn.create(['alfa-on-color', 'alfa-on-white', 'alfa-on-colored']);
+export default cn.create(['alfa-on-white', 'alfa-on-color']);

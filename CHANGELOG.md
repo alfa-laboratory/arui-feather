@@ -1,3 +1,14 @@
+<a name="10.1.0"></a>
+# [10.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.0.0...v10.1.0) (2017-10-08)
+
+
+### Features
+
+* **button:** add disabled extra and other buttons' colors ([#292](https://github.com/alfa-laboratory/arui-feather/issues/292)) ([34b60c9](https://github.com/alfa-laboratory/arui-feather/commit/34b60c9))
+* **cn:** set alfa-on-white theme as default, remove alfa-on-colored theme ([#298](https://github.com/alfa-laboratory/arui-feather/issues/298)) ([8d799c6](https://github.com/alfa-laboratory/arui-feather/commit/8d799c6))
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v9.10.4...v10.0.0) (2017-10-06)
 

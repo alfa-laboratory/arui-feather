@@ -1,3 +1,13 @@
+<a name="10.1.2"></a>
+## [10.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.1...v10.1.2) (2017-10-09)
+
+
+### Bug Fixes
+
+* **input:** remove default browser box-shadow from invalid input ([#300](https://github.com/alfa-laboratory/arui-feather/issues/300)) ([4b60a13](https://github.com/alfa-laboratory/arui-feather/commit/4b60a13))
+
+
+
 <a name="10.1.1"></a>
 ## [10.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.0...v10.1.1) (2017-10-09)
 

@@ -1,3 +1,13 @@
+<a name="10.1.1"></a>
+## [10.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.0...v10.1.1) (2017-10-09)
+
+
+### Bug Fixes
+
+* **select:** set height to tick element ([#299](https://github.com/alfa-laboratory/arui-feather/issues/299)) ([371a6be](https://github.com/alfa-laboratory/arui-feather/commit/371a6be))
+
+
+
 <a name="10.1.0"></a>
 # [10.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.0.0...v10.1.0) (2017-10-08)
 

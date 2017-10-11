@@ -1,4 +1,4 @@
-Сайтбар
+Сайдбар
 ```jsx
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
@@ -29,7 +29,7 @@ initialState = {
 </div>
 ```
 
-Сайтбар с контентом в шапке сайтбара
+Сайдбар с контентом в шапке сайдбара
 ```jsx
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
@@ -61,7 +61,7 @@ initialState = {
 </div>
 ```
 
-Сайтбар в котором всегда есть бордер в шапке сайтбара, по дефолту бордер появляется при скролле контента (актуально для мобильной версии)
+Сайдбар в котором всегда есть бордер в шапке сайдбара, по дефолту бордер появляется при скролле контента (актуально для мобильной версии)
 ```jsx
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
@@ -89,23 +89,24 @@ initialState = {
             />
         </div>
         <Paragraph>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-            like Aldus PageMaker including versions of Lorem Ipsum.
+            100-дневный беспроцентный период начинается с момента образования задолженности по кредитной карте
+            и возобновляется на следующий день после полного ее погашения. Беспроцентный период действует
+            при условии внесения ежемесячного мин. платежа - 5% от суммы долга (мин. 320 руб.).
+            Ставка - от 23,99% годовых, определяется индивидуально. Стоимость обслуживания карты - от 1190 р. до 6 990 руб.
+            в год. АО «Альфа-Банк» не взимает комиссию за снятие наличных при месячном лимите снятия не более 50 000 руб.
+            При снятии суммы выше лимита взимается комиссия на разницу в размере 3.9%-5,9%, мин. 300-500 руб.
+            (зависит от категории карты). Банк оставляет за собой исключительное право на предоставление или отказ
+            в предоставлении кредита. АО «Альфа-Банк». Ген. лицензия ЦБ РФ №1326 от 16.01.2015
         </Paragraph>
         <Paragraph>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-            like Aldus PageMaker including versions of Lorem Ipsum.
+            100-дневный беспроцентный период начинается с момента образования задолженности по кредитной карте
+            и возобновляется на следующий день после полного ее погашения. Беспроцентный период действует
+            при условии внесения ежемесячного мин. платежа - 5% от суммы долга (мин. 320 руб.).
+            Ставка - от 23,99% годовых, определяется индивидуально. Стоимость обслуживания карты - от 1190 р. до 6 990 руб.
+            в год. АО «Альфа-Банк» не взимает комиссию за снятие наличных при месячном лимите снятия не более 50 000 руб.
+            При снятии суммы выше лимита взимается комиссия на разницу в размере 3.9%-5,9%, мин. 300-500 руб.
+            (зависит от категории карты). Банк оставляет за собой исключительное право на предоставление или отказ
+            в предоставлении кредита. АО «Альфа-Банк». Ген. лицензия ЦБ РФ №1326 от 16.01.2015
         </Paragraph>
         <Button size='m' view='extra'>Отправить</Button>
     </Sidebar>

@@ -1,3 +1,13 @@
+<a name="10.1.3"></a>
+## [10.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.2...v10.1.3) (2017-10-11)
+
+
+### Bug Fixes
+
+* fix labeled inputs on ios11 ([#304](https://github.com/alfa-laboratory/arui-feather/issues/304)) ([9dae4f0](https://github.com/alfa-laboratory/arui-feather/commit/9dae4f0))
+
+
+
 <a name="10.1.2"></a>
 ## [10.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.1...v10.1.2) (2017-10-09)
 

@@ -30,8 +30,6 @@ body.sidebar-overlay {
 
     width: calc(var(--sidebar-width) + var(--sidebar-shift));
     height: 100%;
-
-    box-sizing: border-box;
     padding: 0;
 
     transform: translateX(100%);

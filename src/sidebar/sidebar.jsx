@@ -117,6 +117,9 @@ class Sidebar extends React.Component {
         let style = {
             width: this.state.isMobile ? '100%' : `${sidebarWidth + offset}px`
         };
+        let contentStyle = {
+            marginRight: this.state.isMobile ? 0 : `-${offset}px`
+        };
 
         return (
             <PopupContainerProvider className={ cn({ visible }) } style={ style }>
@@ -156,6 +159,7 @@ class Sidebar extends React.Component {
                         }
                     </header>
                     <div
+                        style={ contentStyle }
                         className={ cn('content') }
                         ref={ (content) => { this.content = content; } }
                     >

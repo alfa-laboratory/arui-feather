@@ -133,8 +133,8 @@ class Sidebar extends React.Component {
     handleScroll() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-        if (Boolean(scrollTop)) {
-            savedScrollPosition = scrollTop
+        if (scrollTop) {
+            savedScrollPosition = scrollTop;
         }
     }
 }

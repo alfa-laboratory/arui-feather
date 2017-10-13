@@ -86,6 +86,7 @@
     "cn-decorator": "^2.0.0",
     "core-decorators": "^0.20.0",
     "date-fns": "^1.28.2",
+    "es6-map": "^0.1.5",
     "es6-object-assign": "^1.1.0",
     "es6-promise": "^4.1.0",
     "es6-weak-map": "^2.0.2",

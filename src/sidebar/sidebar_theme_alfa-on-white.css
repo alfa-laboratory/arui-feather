@@ -4,21 +4,22 @@
 @import '../vars.css';
 
 .sidebar_theme_alfa-on-white {
-    background-color: var(--color-accent-content);
+    color: var(--color-content-alfa-on-white);
+    background-color: var(--color-background-alfa-on-white);
 }
 
 @media (--small-only) {
-    .sidebar__header {
-        background-color: var(--color-accent-content);
-    }
-
     .sidebar_theme_alfa-on-white {
-        .sidebar__footer:after {
-            background-image: var(--color-gradient-edge-screen-alfa-on-white);
+        .sidebar__header {
+            background-color: var(--color-background-alfa-on-white);
+
+            &_has-border {
+                border-bottom: 1px solid var(--color-border-separator-alfa-on-white);
+            }
         }
 
-        .sidebar__header_has-border {
-            border-bottom: 1px solid var(--color-border-separator-alfa-on-white);
+        .sidebar__footer:after {
+            background-image: var(--color-gradient-edge-screen-alfa-on-white);
         }
     }
 }

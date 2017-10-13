@@ -128,8 +128,6 @@ body.sidebar-overlay {
             width: 100%;
             height: var(--sidebar-header-height);
             padding: 15px var(--sidebar-padding-small);
-
-            background-color: var(--color-accent-content);
         }
 
         &__inner {

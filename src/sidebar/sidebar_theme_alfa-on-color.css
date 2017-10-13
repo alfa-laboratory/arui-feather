@@ -9,6 +9,10 @@
 
 @media (--small-only) {
     .sidebar_theme_alfa-on-color {
+        .sidebar__header {
+            background-color: var(--color-background-alfa-on-color);
+        }
+
         .sidebar__footer:after {
             background-image: var(--color-gradient-edge-screen-alfa-on-color);
         }

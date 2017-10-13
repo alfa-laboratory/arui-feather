@@ -64,7 +64,7 @@ class Sidebar extends React.Component {
         /** Признак для отрисовки оверлея */
         hasOverlay: Type.bool,
         /** Признак для того чтобы всегда показывать бордер в шапке холодильника */
-        alwaysHasBorder: Type.bool,
+        hasHeaderBorder: Type.bool,
         /** Признак появления холодильника */
         visible: Type.bool.isRequired,
         /** Контент в шапке сайтбара */
@@ -75,16 +75,16 @@ class Sidebar extends React.Component {
 
     static defaultProps = {
         hasOverlay: true,
-        alwaysHasBorder: false,
+        hasHeaderBorder: false,
         hasCloser: true
     };
 
     state = {
-        hasBorder: false,
+        hasHeaderBorder: false,
         isMobile: false
     };
 
-    sidebarHeader;
+    header;
     content;
 
     componentDidMount() {
@@ -138,8 +138,10 @@ class Sidebar extends React.Component {
                     id={ this.props.id }
                 >
                     <header
-                        className={ cn('header', { 'has-border': this.props.alwaysHasBorder || this.state.hasBorder }) }
-                        ref={ (sidebarHeader) => { this.sidebarHeader = sidebarHeader; } }
+                        className={ cn('header',
+                            { 'has-border': this.props.hasHeaderBorder || this.state.hasHeaderBorder })
+                        }
+                        ref={ (header) => { this.header = header; } }
                     >
                         {
                             hasCloser &&
@@ -207,7 +209,7 @@ class Sidebar extends React.Component {
 
     @autobind
     handleSidebarContentScroll() {
-        this.setState({ hasBorder: this.content.scrollTop > this.sidebarHeader.offsetHeight });
+        this.setState({ hasHeaderBorder: this.content.scrollTop > this.header.offsetHeight });
     }
 
     handleScroll() {

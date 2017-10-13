@@ -72,18 +72,16 @@ initialState = {
 <div>
     <Button onClick={ toggleSidebar }>Выписка по счёту</Button>
     <Sidebar
-        alwaysHasBorder={ true }
+        hasHeaderBorder={ true }
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
     >
         <Heading size='m'>
             Выписка по счёту
         </Heading>
-        <Label>
-            Куда отправить выписку?
-        </Label>
         <div style={ { marginBottom: 20 } }>
             <Input
+                label='Куда отправить выписку?'
                 size='m'
                 placeholder='Адрес электронной почты'
             />
@@ -108,7 +106,7 @@ initialState = {
             (зависит от категории карты). Банк оставляет за собой исключительное право на предоставление или отказ
             в предоставлении кредита. АО «Альфа-Банк». Ген. лицензия ЦБ РФ №1326 от 16.01.2015
         </Paragraph>
-        <Button size='m' view='extra'>Отправить</Button>
+        <Button size='m' view='extra' style={ { marginBottom: 35 } }>Отправить</Button>
     </Sidebar>
 </div>
 ```

@@ -35,7 +35,7 @@ geminiReact.suite(NAME, function () {
                 );
 
                 suite
-                    .setExtraCaptureElements(!set.hasOverlay ? [`.${NAME}`] : ['body'])
+                    .setExtraCaptureElements(set.hasOverlay === false ? [`.${NAME}`] : ['body'])
                     .render(template)
                     .capture('plain');
             });

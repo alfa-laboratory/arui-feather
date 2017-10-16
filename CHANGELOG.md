@@ -1,3 +1,18 @@
+<a name="10.2.0"></a>
+# [10.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.3...v10.2.0) (2017-10-16)
+
+
+### Bug Fixes
+
+* **sidebar:** fix save position on sidebar ([#289](https://github.com/alfa-laboratory/arui-feather/issues/289)) ([738fef9](https://github.com/alfa-laboratory/arui-feather/commit/738fef9))
+
+
+### Features
+
+* remove black font weight ([#305](https://github.com/alfa-laboratory/arui-feather/issues/305)) ([e460b4f](https://github.com/alfa-laboratory/arui-feather/commit/e460b4f))
+
+
+
 <a name="10.1.3"></a>
 ## [10.1.3](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.2...v10.1.3) (2017-10-11)
 

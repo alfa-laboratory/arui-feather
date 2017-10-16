@@ -5,9 +5,10 @@
 
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const ARUI_TEMPLATE = require('arui-presets/webpack.base');
+const WEBPACK_BASE_TEMPLATE = require('arui-presets/webpack.base');
+const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');
 
-module.exports = merge.smart(ARUI_TEMPLATE, {
+module.exports = merge.smart(WEBPACK_BASE_TEMPLATE, WEBPACK_DEV_TEMPLATE, {
     devtool: 'eval',
     module: {
         rules: [

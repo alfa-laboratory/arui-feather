@@ -27,23 +27,23 @@
 
     &.button_pressed,
     &:active {
-        background: rgba(10, 30, 50, .05);
+        background: rgba(11, 31, 53, .05);
         border-color: var(--color-border-control-focused-alfa-on-white);
     }
 
     &.button_checked,
     &.button_view_action {
         color: var(--color-content-alfa-on-white);
-        background: rgba(10, 30, 50, .15);
+        background: rgba(11, 31, 53, .15);
         border-color: var(--color-border-control-checked-alfa-on-white);
 
         &.button_hovered {
-            background: rgba(10, 30, 50, .25);
+            background: rgba(11, 31, 53, .25);
         }
 
         &.button_pressed,
         &:active {
-            background: rgba(10, 30, 50, .3);
+            background: rgba(11, 31, 53, .3);
         }
 
         &.button_focused {
@@ -129,7 +129,7 @@
 
     &.button_disabled {
         border-color: transparent;
-        background: rgba(10, 30, 50, .08);
+        background: rgba(11, 31, 53, .08);
 
         .button__text {
             color: var(--color-content-disabled-alfa-on-white);

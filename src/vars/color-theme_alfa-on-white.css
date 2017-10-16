@@ -15,23 +15,23 @@
      * Например для заголовков страниц, набранных тонким шрифтом, что делает
      * их "слишком светлыми" при использовании стандартного `--color-content-alfa-on-white`.
      */
-    --color-content-accent-alfa-on-white: rgb(10, 30, 50);
+    --color-content-accent-alfa-on-white: rgb(11, 31, 53);
 
     /**
      * Цвет контента для темы `alfa-on-white`.
      */
-    --color-content-alfa-on-white: rgba(10, 30, 50, .9);
+    --color-content-alfa-on-white: rgba(11, 31, 53, .95);
 
     /**
      * Цвет второстепенного контента для `alfa-on-white`.
      */
-    --color-content-minor-alfa-on-white: rgba(10, 30, 50, .55);
+    --color-content-minor-alfa-on-white: rgba(11, 31, 53, .6);
 
     /**
      * Цвет неактивного контента для `alfa-on-white`.
      * Например, используется на неактивных полях ввода.
      */
-    --color-content-disabled-alfa-on-white: rgba(10, 30, 50, .3);
+    --color-content-disabled-alfa-on-white: rgba(11, 31, 53, .3);
 
     /**
      * Цвет фона компонентов для `alfa-on-white`.
@@ -41,7 +41,7 @@
     /**
      * Цвет фона для для второстепенного контента `alfa-on-white`.
      */
-    --color-background-minor-alfa-on-white: rgba(10, 30, 50, .08);
+    --color-background-minor-alfa-on-white: rgba(11, 31, 53, .08);
 
     /**
      * Цвет фона для контролов для `alfa-on-white`.
@@ -51,45 +51,45 @@
     /**
      * Цвет фона для контролов при наведении для `alfa-on-white`.
      */
-    --color-background-control-hovered-alfa-on-white: rgba(10, 30, 50, .08);
+    --color-background-control-hovered-alfa-on-white: rgba(11, 31, 53, .08);
 
     /**
      * Цвет фона для контролов в фокусе для `alfa-on-white`.
      */
-    --color-background-control-focused-alfa-on-white: rgba(10, 30, 50, .08);
+    --color-background-control-focused-alfa-on-white: rgba(11, 31, 53, .08);
 
     /**
      * Цвет фона для замороженных контролов для `alfa-on-white`.
      */
-    --color-background-control-disabled-alfa-on-white: rgba(10, 30, 50, .08);
+    --color-background-control-disabled-alfa-on-white: rgba(11, 31, 53, .08);
 
     /**
     * Цвет рамки для контролов для `alfa-on-white`.
     */
-    --color-border-control-alfa-on-white: rgba(10, 30, 50, .4);
+    --color-border-control-alfa-on-white: rgba(11, 31, 53, .4);
 
     /**
      * Цвет рамки для контролов в фокусе для `alfa-on-white`.
      */
-    --color-border-control-focused-alfa-on-white: rgba(10, 30, 50, .9);
+    --color-border-control-focused-alfa-on-white: rgba(11, 31, 53, .9);
 
     /**
      * Цвет рамки для контролов при наведении для `alfa-on-color`.
      */
-    --color-border-control-hovered-alfa-on-white: rgba(10, 30, 50, .9);
+    --color-border-control-hovered-alfa-on-white: rgba(11, 31, 53, .9);
 
     /**
      * Цвет рамки для нажатых контролов для `alfa-on-color`.
      */
-    --color-border-control-pressed-alfa-on-white: rgba(10, 30, 50, .9);
+    --color-border-control-pressed-alfa-on-white: rgba(11, 31, 53, .9);
 
     /**
     * Цвет рамки для выбранных контролов с фоном для `alfa-on-color`.
     */
-    --color-border-control-checked-alfa-on-white: rgba(10, 30, 50, .5);
+    --color-border-control-checked-alfa-on-white: rgba(11, 31, 53, .5);
 
     /**
      * Цвет рамки для неактивных контролов для `alfa-on-color`.
      */
-    --color-border-control-disabled-alfa-on-white: rgba(10, 30, 50, .2);
+    --color-border-control-disabled-alfa-on-white: rgba(11, 31, 53, .2);
 }

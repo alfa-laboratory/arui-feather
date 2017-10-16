@@ -41,7 +41,7 @@
         font-size: var(--font-size-m);
         text-overflow: ellipsis;
         white-space: nowrap;
-        transform: scale(1) translate3d(0, 0, 0);
+        transform: scale(1) translateY(0);
         transform-origin: 0 100%;
         transition-duration: 200ms;
         transition-property: color, transform;
@@ -182,7 +182,7 @@
     &.select_opened,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-s)) translate3d(0, -22px, 0);
+            transform: scale(var(--top-scale-s)) translateY(-22px);
         }
     }
 }
@@ -200,7 +200,7 @@
     &.select_opened,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-m)) translate3d(0, -30px, 0);
+            transform: scale(var(--top-scale-m)) translateY(-30px);
         }
     }
 }
@@ -218,7 +218,7 @@
     &.select_opened,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-l)) translate3d(0, -40px, 0);
+            transform: scale(var(--top-scale-l)) translateY(-40px);
         }
     }
 }
@@ -236,7 +236,7 @@
     &.select_opened,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-xl)) translate3d(0, -50px, 0);
+            transform: scale(var(--top-scale-xl)) translateY(-50px);
         }
     }
 }

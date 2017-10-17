@@ -1,3 +1,13 @@
+<a name="10.2.1"></a>
+## [10.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.0...v10.2.1) (2017-10-17)
+
+
+### Bug Fixes
+
+* **vars:** sync colors & border radius with mobile ([#306](https://github.com/alfa-laboratory/arui-feather/issues/306)) ([10be78b](https://github.com/alfa-laboratory/arui-feather/commit/10be78b))
+
+
+
 <a name="10.2.0"></a>
 # [10.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.1.3...v10.2.0) (2017-10-16)
 

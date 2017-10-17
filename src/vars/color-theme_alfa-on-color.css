@@ -15,23 +15,23 @@
     /**
      * Цвет контента для темы `alfa-on-color`.
      */
-    --color-content-alfa-on-color: rgba(255, 255, 255, .9);
+    --color-content-alfa-on-color: rgba(255, 255, 255, 1);
 
     /**
      * Цвет второстепенного контента для `alfa-on-color`.
      */
-    --color-content-minor-alfa-on-color: rgba(255, 255, 255, .6);
+    --color-content-minor-alfa-on-color: rgba(255, 255, 255, .7);
 
     /**
      * Цвет неактивного контента для `alfa-on-color`.
      * Например, используется на неактивных полях ввода.
      */
-    --color-content-disabled-alfa-on-color: rgba(255, 255, 255, .35);
+    --color-content-disabled-alfa-on-color: rgba(255, 255, 255, .4);
 
     /**
      * Цвет фона компонентов для `alfa-on-color`.
      */
-    --color-background-alfa-on-color: rgb(10, 30, 50);
+    --color-background-alfa-on-color: rgb(11, 31, 53);
 
     /**
      * Цвет фона для для второстепенного контента `alfa-on-white`.
@@ -51,7 +51,7 @@
     /**
      * Цвет фона для контролов в фокусе для `alfa-on-color`.
      */
-    --color-background-control-focused-alfa-on-color: rgba(10, 30, 50, .15);
+    --color-background-control-focused-alfa-on-color: rgba(11, 31, 53, .15);
 
     /**
      * Цвет фона для замороженных контролов для `alfa-on-color`.

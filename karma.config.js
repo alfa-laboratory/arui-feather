@@ -6,7 +6,8 @@
 
 const path = require('path');
 const merge = require('webpack-merge');
-const ARUI_TEMPLATE = require('arui-presets/webpack.base');
+const WEBPACK_BASE_TEMPLATE = require('arui-presets/webpack.base');
+const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');
 
 const IS_MOBILE = !!process.env.MOBILE;
 
@@ -14,7 +15,7 @@ function getTestsGlobs(tests, postfix) {
     return tests.split(',').map(testName => `./src/${testName}/*-${postfix}.{js,jsx}`);
 }
 
-let babelLoaderConfig = ARUI_TEMPLATE.module.rules.find(l => l.loader === 'babel-loader');
+let babelLoaderConfig = WEBPACK_BASE_TEMPLATE.module.rules.find(l => l.loader === 'babel-loader');
 delete babelLoaderConfig.exclude;
 
 module.exports = (config) => {
@@ -25,7 +26,7 @@ module.exports = (config) => {
             require('karma-sourcemap-loader'),
             require('karma-coverage-istanbul-reporter')
         ],
-        webpack: merge.smart(ARUI_TEMPLATE, {
+        webpack: merge.smart(WEBPACK_BASE_TEMPLATE, WEBPACK_DEV_TEMPLATE, {
             devtool: 'inline-source-map'
         }),
         webpackMiddleware: {

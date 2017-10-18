@@ -36,7 +36,7 @@ import performance from '../performance';
  * @property {String} bestDirection Приоритетное расположение
  * @property {Boolean} isHeightAdaptive Подстраивается ли высота попапа под край окна
  * @property {Boolean} isHeightAvailable Занимает ли попап всю возможную высоту
- * @property {Boolean} isTargetAnchor Привязал ли попап к другому элементу
+ * @property {Boolean} isTargetAnchor Привязан ли попап к другому элементу
  * @property {Boolean} isHaveTooltip Имеет ли попап тип "tooltip"
  * @property {Number} width Ширина попапа
  * @property {Number} height Высота попапа
@@ -122,7 +122,6 @@ class Popup extends React.Component {
     state = {
         direction: null,
         hasScrollbar: false,
-        hovered: false,
         receivedContainer: false,
         styles: {
             top: 0,
@@ -230,7 +229,6 @@ class Popup extends React.Component {
                         size: this.props.size,
                         visible: this.props.visible,
                         height: this.props.height,
-                        hovered: this.state.hovered,
                         autoclosable: this.props.autoclosable,
                         padded: this.props.padded
                     }) }
@@ -294,8 +292,6 @@ class Popup extends React.Component {
 
     @autobind
     handleMouseEnter() {
-        this.setState({ hovered: true });
-
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter();
         }
@@ -303,8 +299,6 @@ class Popup extends React.Component {
 
     @autobind
     handleMouseLeave() {
-        this.setState({ hovered: false });
-
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave();
         }

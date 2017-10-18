@@ -3,7 +3,7 @@ dist: trusty
 language: node_js
 
 node_js:
-  - '7.4.0'
+  - "7.4.0"
 
 env:
   matrix:
@@ -54,6 +54,9 @@ after_success:
     if [ "${TRAVIS_BRANCH}" == "master" ]; then
       if [ "${TEST_SCOPE}" == "lint" ]; then
         sh ./tools/publish-styleguide.sh
+      fi
+      if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
+        cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
       fi
     fi
 

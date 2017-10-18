@@ -12,5 +12,4 @@ demo/styleguide*
 coverage/
 gemini-coverage/
 gemini-report/
-test-results.xml
 tools/modernizr.js

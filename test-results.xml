@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+<testsuite name="HeadlessChrome 0.0.0 (Mac OS X 10.12.6)" package="" timestamp="2017-10-18T14:12:51" id="0" hostname="MacBook-Pro-6.local" tests="466" errors="0" failures="0" time="6.083">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/61.0.3163.100 Safari/537.36"/>
+  </properties>
+  <testcase name="amount should render without problems" time="0.015" classname="amount"/>
+  <testcase name="amount should render when amount is negative" time="0.002" classname="amount"/>
+  <testcase name="amount should render when amount value without minor number" time="0.001" classname="amount"/>
+  <testcase name="amount should render without zero minor part when prop showZeroMinorPart=false " time="0.001" classname="amount"/>
+  <testcase name="amount should render when minority equals 1" time="0.001" classname="amount"/>
+  <testcase name="attach should render without problems" time="0.016" classname="attach"/>
+  <testcase name="attach should set/unset class on attach focused/unfocused" time="0.031" classname="attach"/>
+  <testcase name="attach should set/unset class on attach hovered/unhovered" time="0.005" classname="attach"/>
+  <testcase name="attach should call `onClick` callback after attach button was clicked" time="0.004" classname="attach"/>
+  <testcase name="attach should call `onFocus` callback after attach was focused" time="0.008" classname="attach"/>
+  <testcase name="attach should call `onBlur` callback after attach was blured" time="0.014" classname="attach"/>
+  <testcase name="attach should call `onMouseEnter` callback after attach was hovered" time="0.003" classname="attach"/>
+  <testcase name="attach should call `onMouseLeave` callback after attach was leaved by cursor" time="0.002" classname="attach"/>
+  <testcase name="attach should render selected file name if one file selected" time="0.005" classname="attach"/>
+  <testcase name="attach should render selected files count if several files selected" time="0.004" classname="attach"/>
+  <testcase name="attach should render &quot;no file&quot; and clear input value after clear button was clicked" time="0.009" classname="attach"/>
+  <testcase name="button should set/unset class on button pressed/unpressed" time="0.017" classname="button"/>
+  <testcase name="button should unset pressed class on mouse out" time="0.002" classname="button"/>
+  <testcase name="button should render without problems" time="0.001" classname="button"/>
+  <testcase name="button should set/unset class on button focused/unfocused" time="0.002" classname="button"/>
+  <testcase name="button should set &quot;focused&quot; class when focused=true" time="0" classname="button"/>
+  <testcase name="button should set/unset class on button hovered/unhovered" time="0.002" classname="button"/>
+  <testcase name="button should not set class `hovered` on disabled button" time="0.001" classname="button"/>
+  <testcase name="button should call `onClick` callback after button was clicked" time="0.003" classname="button"/>
+  <testcase name="button should unset class `hovered` and `focused` on disabled button" time="0.004" classname="button"/>
+  <testcase name="button should call `onFocus` callback after button was focused" time="0.005" classname="button"/>
+  <testcase name="button should call `onBlur` callback after button was blured" time="0.012" classname="button"/>
+  <testcase name="button should call `onMouseEnter` callback after button was hovered" time="0.001" classname="button"/>
+  <testcase name="button should call `onMouseLeave` callback after button was leaved by cursor" time="0" classname="button"/>
+  <testcase name="button should call `onMouseDown` callback after button was pressed" time="0" classname="button"/>
+  <testcase name="button should call `onMouseUp` callback after button was unpressed" time="0.001" classname="button"/>
+  <testcase name="button should return root `HTMLElement` after `getNode` method call" time="0.001" classname="button"/>
+  <testcase name="calendar-input should render without problems" time="0.08" classname="calendar-input"/>
+  <testcase name="calendar-input should render with calendar icon by default" time="0.015" classname="calendar-input"/>
+  <testcase name="calendar-input should render without calendar icon with withIcon=false" time="0.015" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onInputChange` callback after input value was changed" time="0.015" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onChange` callback after input value was changed" time="0.014" classname="calendar-input"/>
+  <testcase name="calendar-input should focus input on after `focus` call" time="0.027" classname="calendar-input"/>
+  <testcase name="calendar-input should blur input on after `blur` call" time="0.027" classname="calendar-input"/>
+  <testcase name="calendar-input should scroll window to element on public scrollTo method" time="0.02" classname="calendar-input"/>
+  <testcase name="calendar-input should receive SyntheticEvent with type blur from input in first argument of `onInputFocus` callback" time="0.023" classname="calendar-input"/>
+  <testcase name="calendar-input should receive SyntheticEvent with type blur from input in first argument of `onInputBlur` callback" time="0.031" classname="calendar-input"/>
+  <testcase name="calendar-input should receive SyntheticEvent with type focus from component in first argument of `onFocus` callback" time="0.025" classname="calendar-input"/>
+  <testcase name="calendar-input should receive SyntheticEvent with type blur from component in first argument of `onBlur` callback" time="0.025" classname="calendar-input"/>
+  <testcase name="calendar-input should receive custom formatted date from event.target.value on `onFocus` callback" time="0.023" classname="calendar-input"/>
+  <testcase name="calendar-input should receive custom formatted date from event.target.value on `onBlur` callback" time="0.025" classname="calendar-input"/>
+  <testcase name="calendar-input should receive custom formatted date from event.target.value on `onChange` callback" time="0.029" classname="calendar-input"/>
+  <testcase name="calendar-input should receive custom formatted date from event.target.value on `onInputChange` callback" time="0.024" classname="calendar-input"/>
+  <testcase name="calendar-input should open calendar after input was focused" time="0.02" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onCalendarChange` callback after calendar value was changed" time="0.018" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onChange` callback after calendar value was changed" time="0.025" classname="calendar-input"/>
+  <testcase name="calendar-input should close calendar popup after calendar value was changed by mouse click" time="0.024" classname="calendar-input"/>
+  <testcase name="calendar-input should open calendar popup after down key was pressed in input" time="0.022" classname="calendar-input"/>
+  <testcase name="calendar-input should close calendar popup after escape key was pressed in input" time="0.021" classname="calendar-input"/>
+  <testcase name="calendar-input should close calendar popup after tab key was pressed in input" time="0.024" classname="calendar-input"/>
+  <testcase name="calendar-input should close calendar popup after enter or space key was pressed in calendar" time="0.023" classname="calendar-input"/>
+  <testcase name="calendar-input should focus on input after escape key was pressed in calendar" time="0.026" classname="calendar-input"/>
+  <testcase name="calendar-input should focus on input after calendar icon was clicked" time="0.025" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onCalendarKeyDown` callback after any key was pressed in calendar" time="0.021" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onInputKeyDown` callback after any key was pressed in input" time="0.018" classname="calendar-input"/>
+  <testcase name="calendar-input should call `onKeyDown` callback after any key was pressed in input and in calendar" time="0.017" classname="calendar-input"/>
+  <testcase name="calendar-input calendar utils should change format of a date" time="0" classname="calendar-input"/>
+  <testcase name="calendar-input calendar utils should return start of month" time="0" classname="calendar-input"/>
+  <testcase name="calendar-input calendar utils should return current month if not valid value given" time="0" classname="calendar-input"/>
+  <testcase name="calendar-input calendar utils should return earlierLimit month if it after given date" time="0" classname="calendar-input"/>
+  <testcase name="calendar-input calendar utils should return laterLimit month if it before given date" time="0" classname="calendar-input"/>
+  <testcase name="calendar-input calendar utils should return start of month if earlier and later limit given, but value is between them" time="0" classname="calendar-input"/>
+  <testcase name="calendar should call `onDayClick` callback on day change" time="0.032" classname="calendar"/>
+  <testcase name="calendar should render without problems" time="0.009" classname="calendar"/>
+  <testcase name="calendar should display current date" time="0.004" classname="calendar"/>
+  <testcase name="calendar should display days off" time="0.006" classname="calendar"/>
+  <testcase name="calendar should display earlier limit" time="0.004" classname="calendar"/>
+  <testcase name="calendar should display later limit" time="0.004" classname="calendar"/>
+  <testcase name="calendar should re set current day if it is day off with earlier limit" time="0.005" classname="calendar"/>
+  <testcase name="calendar should re set current day if it is day off with later limit" time="0.004" classname="calendar"/>
+  <testcase name="calendar should call `onMonthChange` callback on month change" time="0.005" classname="calendar"/>
+  <testcase name="calendar should call `onMonthChange` callback when month was changed by arrow key press" time="0.005" classname="calendar"/>
+  <testcase name="calendar should select date on next week after down arrow key was pressed" time="0.004" classname="calendar"/>
+  <testcase name="calendar should select date on previous week after up arrow key was pressed" time="0.005" classname="calendar"/>
+  <testcase name="calendar should select date jump over off day when navigate using keyboard" time="0.004" classname="calendar"/>
+  <testcase name="calendar should hide prev year/month arrows when earlier limit is in current month" time="0.004" classname="calendar"/>
+  <testcase name="calendar should hide next year/month arrows when laterLimit is in current month" time="0.016" classname="calendar"/>
+  <testcase name="calendar should show prev month arrow when earlierLimit is in prev month" time="0.01" classname="calendar"/>
+  <testcase name="calendar should show next month arrow when laterLimit is in next month" time="0.012" classname="calendar"/>
+  <testcase name="calendar should return root `HTMLElement` after `getNode` method call" time="0.013" classname="calendar"/>
+  <testcase name="card-input should render without problems" time="0.014" classname="card-input"/>
+  <testcase name="card-input should scroll window to element on public `scrollTo` method call" time="0.007" classname="card-input"/>
+  <testcase name="card-input should set/unset class on public focus/blur methods" time="0.011" classname="card-input"/>
+  <testcase name="card-input should set `type` attribute to `tel`" time="0.002" classname="card-input"/>
+  <testcase name="checkbox-group should render without children" time="0.011" classname="checkbox-group"/>
+  <testcase name="checkbox-group should render with only one children" time="0.006" classname="checkbox-group"/>
+  <testcase name="checkbox-group should render with many checkbox children without problems" time="0.002" classname="checkbox-group"/>
+  <testcase name="checkbox-group should render checked checkbox with value from `value` props" time="0.003" classname="checkbox-group"/>
+  <testcase name="checkbox-group should focus first child checkbox-button on public focus method" time="0.015" classname="checkbox-group"/>
+  <testcase name="checkbox-group should lose focus on public blur method" time="0.016" classname="checkbox-group"/>
+  <testcase name="checkbox-group should call `onFocus` callback after checkbox-group was focused" time="0.008" classname="checkbox-group"/>
+  <testcase name="checkbox-group should call `onBlur` callback after checkbox-group was blured" time="0.014" classname="checkbox-group"/>
+  <testcase name="checkbox-group should call `onChange` callback after checkbox-group was checked" time="0.01" classname="checkbox-group"/>
+  <testcase name="checkbox-group should disable all child radios when disabled=true" time="0.002" classname="checkbox-group"/>
+  <testcase name="checkbox-group shouldn't call `onChange` callback when disabled=true" time="0.001" classname="checkbox-group"/>
+  <testcase name="checkbox should render without problems" time="0.014" classname="checkbox"/>
+  <testcase name="checkbox should checkbox render with type `button`" time="0.004" classname="checkbox"/>
+  <testcase name="checkbox should checkbox render with type `normal`" time="0.001" classname="checkbox"/>
+  <testcase name="checkbox should checkbox render without any type" time="0.001" classname="checkbox"/>
+  <testcase name="checkbox should set class on checkbox focus" time="0.012" classname="checkbox"/>
+  <testcase name="checkbox should unset class on checkbox blur" time="0.014" classname="checkbox"/>
+  <testcase name="checkbox should call `onFocus` callback after checkbox was focused" time="0.007" classname="checkbox"/>
+  <testcase name="checkbox should call `onBlur` callback after checkbox was blured" time="0.014" classname="checkbox"/>
+  <testcase name="checkbox should set class on checkbox mouse enter" time="0.002" classname="checkbox"/>
+  <testcase name="checkbox should unset class on checkbox mouse leave" time="0.002" classname="checkbox"/>
+  <testcase name="checkbox should call `onMouseEnter` callback after checkbox was hovered" time="0.002" classname="checkbox"/>
+  <testcase name="checkbox should call `onMouseLeave` callback after checkbox was leaved by cursor" time="0.001" classname="checkbox"/>
+  <testcase name="checkbox should set class on checkbox change" time="0.002" classname="checkbox"/>
+  <testcase name="checkbox should call `onChange` callback after checkbox was changed" time="0.001" classname="checkbox"/>
+  <testcase name="checkbox should set class on checkbox button change" time="0.005" classname="checkbox"/>
+  <testcase name="checkbox should call `onChange` callback after checkbox button was clicked" time="0.004" classname="checkbox"/>
+  <testcase name="checkbox should work with props.checked" time="0.002" classname="checkbox"/>
+  <testcase name="checkbox should not checked with disabled props" time="0.001" classname="checkbox"/>
+  <testcase name="checkbox should scroll window to element on public scrollTo method" time="0.005" classname="checkbox"/>
+  <testcase name="collapse should render without problem" time="0.02" classname="collapse"/>
+  <testcase name="collapse should call `onExpandedChange` callback after expand/collapse" time="0.016" classname="collapse"/>
+  <testcase name="collapse should update component height" time="0.016" classname="collapse"/>
+  <testcase name="collapse should not update component height when it is collapsed" time="1.013" classname="collapse"/>
+  <testcase name="collapse should apply custom expanded label" time="0.007" classname="collapse"/>
+  <testcase name="collapse should apply custom collapsed label" time="0.006" classname="collapse"/>
+  <testcase name="collapse should have default expanded label" time="0.006" classname="collapse"/>
+  <testcase name="collapse should have default collapsed label" time="0.007" classname="collapse"/>
+  <testcase name="dropdown should render without problems" time="0.031" classname="dropdown"/>
+  <testcase name="dropdown should render link switcher by default" time="0.008" classname="dropdown"/>
+  <testcase name="dropdown should render button switcher with property switcherType=`button`" time="0.007" classname="dropdown"/>
+  <testcase name="dropdown should call `onSwitcherMouseEnter` callback after switcher was hovered" time="0.009" classname="dropdown"/>
+  <testcase name="dropdown should call `onSwitcherMouseLeave` callback after switcher was unhovered" time="0.007" classname="dropdown"/>
+  <testcase name="dropdown should call `onSwitcherClick` callback after switcher was clicked" time="0.01" classname="dropdown"/>
+  <testcase name="dropdown should not call `onSwitcherClick` callback after switcher was clicked with disabled=true" time="0.008" classname="dropdown"/>
+  <testcase name="dropdown should call `onPopupMouseEnter` callback after popup was hovered" time="0.01" classname="dropdown"/>
+  <testcase name="dropdown should call `onPopupMouseLeave` callback after popup was unhovered" time="0.007" classname="dropdown"/>
+  <testcase name="dropdown should set class checked to switcher button then togglable=`check` and popup open" time="0.006" classname="dropdown"/>
+  <testcase name="dropdown should toggle popup visibility by click on switcher" time="0.012" classname="dropdown"/>
+  <testcase name="email-input should render without problems" time="0.014" classname="email-input"/>
+  <testcase name="email-input should scroll window to element on public scrollTo method" time="0.007" classname="email-input"/>
+  <testcase name="email-input should set/unset class on public focus/blur methods" time="0.011" classname="email-input"/>
+  <testcase name="form-field should render without problems" time="0.008" classname="form-field"/>
+  <testcase name="form should render without problems" time="0.01" classname="form"/>
+  <testcase name="form should render footer at the end of a form" time="0.001" classname="form"/>
+  <testcase name="form should call `onSubmit` callback after form was submitted" time="0.002" classname="form"/>
+  <testcase name="heading should render without problem" time="0.012" classname="heading"/>
+  <testcase name="heading should render Heading size=`s` with tag H4" time="0.001" classname="heading"/>
+  <testcase name="heading should render Heading size=`m` with tag H3" time="0.001" classname="heading"/>
+  <testcase name="heading should render Heading size=`l` with tag H2" time="0" classname="heading"/>
+  <testcase name="heading should render Heading size=`xl` with tag H1" time="0" classname="heading"/>
+  <testcase name="icon renders without problems" time="0.009" classname="icon"/>
+  <testcase name="icon render action-check icon without problems" time="0.001" classname="icon"/>
+  <testcase name="icon render action-down icon without problems" time="0" classname="icon"/>
+  <testcase name="icon render action-error icon without problems" time="0.001" classname="icon"/>
+  <testcase name="icon render action-fail icon without problems" time="0" classname="icon"/>
+  <testcase name="icon render action-ok icon without problems" time="0.001" classname="icon"/>
+  <testcase name="icon render action-ok-filled icon without problems" time="0" classname="icon"/>
+  <testcase name="icon render action-up icon without problems" time="0" classname="icon"/>
+  <testcase name="icon render tool-attachment icon without problems" time="0.001" classname="icon"/>
+  <testcase name="icon render tool-calendar icon without problems" time="0" classname="icon"/>
+  <testcase name="icon render tool-close icon without problems" time="0" classname="icon"/>
+  <testcase name="input-autocomplete should render without problem" time="0.018" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should render without problem when give item with duplicate value" time="0.023" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should render input and popup with options" time="0.014" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should set class on public focus method" time="0.022" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should scroll window to element on public scrollTo method" time="0.007" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should unset class on input blur" time="0.015" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should set width to popup equal or more than button width" time="0.013" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should set popup width equal to input width when equalPopupWidth = true" time="0.013" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should set directions to popup" time="0.012" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should render all options when input value is empty" time="0.012" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should change input value after option was clicked" time="0.026" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onItemSelect` callback after option was clicked" time="0.018" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onChange` callback after option was clicked and pass value to it" time="0.019" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onChange` callback after option was clicked and pass `text` when `option.text` is exist" time="0.019" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should not call `onChange` callback after option was clicked when updateValueOnItemSelect = false" time="0.017" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onKeyDown` callback after key down in input" time="0.003" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onFocus` callback after component was focused" time="0.01" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onBlur` callback after component was blured" time="0.019" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should call `onChange` callback" time="0.003" classname="input-autocomplete"/>
+  <testcase name="input-autocomplete should close popup after item select if closeOnSelect is set" time="0.128" classname="input-autocomplete"/>
+  <testcase name="input-group should render without any children" time="0.014" classname="input-group"/>
+  <testcase name="input-group should render with only one children" time="0.008" classname="input-group"/>
+  <testcase name="input-group should render with many input children without problems" time="0.002" classname="input-group"/>
+  <testcase name="isolated-container should render without problems" time="0.007" classname="isolated-container"/>
+  <testcase name="isolated-container should return root `HTMLElement` after `getNode` method call" time="0.001" classname="isolated-container"/>
+  <testcase name="label should render without problems" time="0.009" classname="label"/>
+  <testcase name="label should render with size=`m` by default" time="0.001" classname="label"/>
+  <testcase name="date utils normalizeDate should return Date object when other date is passed" time="0" classname="date utils"/>
+  <testcase name="date utils normalizeDate should return Date object when timestamp is passed" time="0" classname="date utils"/>
+  <testcase name="date utils getRussianWeekDay should return correct russian weekday indexes for entire week" time="0" classname="date utils"/>
+  <testcase name="date utils parse should parse default russian format" time="0.001" classname="date utils"/>
+  <testcase name="date utils parse should allow to use any symbol as delimiter between date tokens" time="0" classname="date utils"/>
+  <testcase name="date utils parse should return start of the month if only YYYY and MM is presented in format" time="0" classname="date utils"/>
+  <testcase name="date utils parse should return invalid date if string didn't match input format" time="0.001" classname="date utils"/>
+  <testcase name="date utils parse should return invalid date if date tokens is out of ranges" time="0" classname="date utils"/>
+  <testcase name="date utils parse should return valid date if date token is out of range and strict = false" time="0" classname="date utils"/>
+  <testcase name="match-media getMatchMedia should return instance of match media with correct query" time="0" classname="match-media"/>
+  <testcase name="match-media getMatchMedia should get query from `src/mq/mq.json`" time="0" classname="match-media"/>
+  <testcase name="match-media releaseMatchMedia should work" time="0.001" classname="match-media"/>
+  <testcase name="scroll-to should scroll to Y in window" time="0.214" classname="scroll-to"/>
+  <testcase name="scroll-to should scroll to Y in container" time="0.001" classname="scroll-to"/>
+  <testcase name="scroll-to should catch error with incorrect easing" time="0" classname="scroll-to"/>
+  <testcase name="scroll-to should catch error with incorrect duration" time="0" classname="scroll-to"/>
+  <testcase name="scroll-to should scroll down to element in container" time="0" classname="scroll-to"/>
+  <testcase name="scroll-to should scroll up to element in container" time="0" classname="scroll-to"/>
+  <testcase name="link should render without problems" time="0.011" classname="link"/>
+  <testcase name="link should render with `target` prop passed" time="0.001" classname="link"/>
+  <testcase name="link should set/unset class on link focused/unfocused" time="0.005" classname="link"/>
+  <testcase name="link should set/unset class on link hovered/unhovered" time="0.001" classname="link"/>
+  <testcase name="link should call `onClick` callback after link was clicked" time="0.006" classname="link"/>
+  <testcase name="link should call `onFocus` callback after link was focused" time="0.001" classname="link"/>
+  <testcase name="link should call `onBlur` callback after link was blured" time="0.001" classname="link"/>
+  <testcase name="link should call `onMouseEnter` callback after link was hovered" time="0.001" classname="link"/>
+  <testcase name="link should call `onMouseLeave` callback after link was leaved by cursor" time="0.001" classname="link"/>
+  <testcase name="link should set &quot;disabled&quot; class when disabled=true" time="0.001" classname="link"/>
+  <testcase name="link should render span tag with valid attributes when checked=true" time="0.001" classname="link"/>
+  <testcase name="link should render span tag with valid attributes when disabled=true" time="0" classname="link"/>
+  <testcase name="link should return root `HTMLElement` after `getNode` method call" time="0.001" classname="link"/>
+  <testcase name="list should render without problem" time="0.009" classname="list"/>
+  <testcase name="list should render ul type without problem" time="0.003" classname="list"/>
+  <testcase name="mask should set `length` as public property" time="0" classname="mask"/>
+  <testcase name="mask should set `firstEditableIndex` as public property" time="0" classname="mask"/>
+  <testcase name="mask should set `lastEditableIndex` as public property" time="0" classname="mask"/>
+  <testcase name="mask should return `false` during `isEditableIndex` call on not editable index" time="0" classname="mask"/>
+  <testcase name="mask should return `true` during `isEditableIndex` call on editable index" time="0" classname="mask"/>
+  <testcase name="mask should format formattable chars during `format` call" time="0" classname="mask"/>
+  <testcase name="mask should format formattable chars during `format` call ignoring preformatted chars" time="0" classname="mask"/>
+  <testcase name="mask should format chars with custom formatter" time="0" classname="mask"/>
+  <testcase name="masked-input should render without problems" time="0.01" classname="masked-input"/>
+  <testcase name="masked-input should format unformatted value" time="0.001" classname="masked-input"/>
+  <testcase name="masked-input should format unformatted value with custom formatter" time="0.001" classname="masked-input"/>
+  <testcase name="masked-input should strip value size to mask size" time="0" classname="masked-input"/>
+  <testcase name="masked-input should format value skipping non maskable chars" time="0.001" classname="masked-input"/>
+  <testcase name="masked-input should reformat value by new mask after mask was changed" time="0.002" classname="masked-input"/>
+  <testcase name="masked-input should reformat value by new mask after formatCharacters was changed" time="0.001" classname="masked-input"/>
+  <testcase name="masked-input should reformat value after value was changed" time="0.001" classname="masked-input"/>
+  <testcase name="masked-input should focus on input after focus() call" time="0.009" classname="masked-input"/>
+  <testcase name="masked-input should remove focus from input after blur() call" time="0.01" classname="masked-input"/>
+  <testcase name="masked-input should call `onProcessInputEvent` during `onInput` process" time="0.009" classname="masked-input"/>
+  <testcase name="masked-input should move caret position from uneditable position to next editable position during `onInput`" time="0.007" classname="masked-input"/>
+  <testcase name="masked-input should move caret position from uneditable position to prev editable position during `onInput` (delete)" time="0.007" classname="masked-input"/>
+  <testcase name="masked-input should move caret position from uneditable position to next editable position during `onInput` (replace)" time="0.008" classname="masked-input"/>
+  <testcase name="masked-input should return `HTMLInputElement` when `getControl` method called" time="0.001" classname="masked-input"/>
+  <testcase name="menu-item should render without problem" time="0.012" classname="menu-item"/>
+  <testcase name="menu-item should render `Link` element by default" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should render `Link` with url" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should render just SPAN element inside when type=`block`" time="0.001" classname="menu-item"/>
+  <testcase name="menu-item should render `Dropdown` with `Link` and `Popup` content from `popup` property when type=`dropdown`" time="0.018" classname="menu-item"/>
+  <testcase name="menu-item should show popup when menu-item type=`dropdown` was hovered" time="0.01" classname="menu-item"/>
+  <testcase name="menu-item should set/unset class when menu-item focus/blur" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should set class when menu-item hovered" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should call `onClick` callback after menu-item was clicked" time="0.005" classname="menu-item"/>
+  <testcase name="menu-item should not call `onClick` callback after menu-item was clicked then disabled=true" time="0.504" classname="menu-item"/>
+  <testcase name="menu-item should prevent default link behavior when disabled=true" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should call `onFocus` callback after menu-item was focused" time="0.009" classname="menu-item"/>
+  <testcase name="menu-item should call `onBlur` callback after menu-item was unfocused" time="0.016" classname="menu-item"/>
+  <testcase name="menu-item should call `onMouseEnter` callback after menu-item was hovered" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should call `onMouseLeave` callback after menu-item was unhovered" time="0.002" classname="menu-item"/>
+  <testcase name="menu-item should return root `HTMLElement` after `getNode` method call" time="0.001" classname="menu-item"/>
+  <testcase name="menu should render without problem" time="0.011" classname="menu"/>
+  <testcase name="menu should render menu items as type=`block` when property `mode` is identified" time="0.005" classname="menu"/>
+  <testcase name="menu should render menu items in group with group title" time="0.002" classname="menu"/>
+  <testcase name="menu should auto check first item when mode=`radio` and `checkedItems` property is empty" time="0.005" classname="menu"/>
+  <testcase name="menu shouldn't crash when mode=`radio`, and `checkedItems` and `content` properties is empty" time="0.001" classname="menu"/>
+  <testcase name="menu should have just one checked menu-item when mode=`radio`" time="0.014" classname="menu"/>
+  <testcase name="menu should check every menu-item when mode=`check`" time="0.01" classname="menu"/>
+  <testcase name="menu should disabled all menu-items when menu property disabled=true" time="0.001" classname="menu"/>
+  <testcase name="menu should render without problem when give item with duplicate value" time="0.003" classname="menu"/>
+  <testcase name="menu should call `onItemCheck` callback after menu-item was clicked and if `mode` is identified" time="0.006" classname="menu"/>
+  <testcase name="menu should call `onMouseEnter` callback after menu was hovered" time="0.001" classname="menu"/>
+  <testcase name="menu should call `onMouseLeave` callback after menu was unhovered" time="0.001" classname="menu"/>
+  <testcase name="menu should set/unset class when menu-item hovered/unhovered" time="0.001" classname="menu"/>
+  <testcase name="menu should focus on menu after `focus` method call" time="0.016" classname="menu"/>
+  <testcase name="menu should remove focus from menu after `blur` method call" time="0.013" classname="menu"/>
+  <testcase name="menu should call `onFocus` callback after menu was focused" time="0.007" classname="menu"/>
+  <testcase name="menu should call `onBlur` callback after menu lost focus" time="0.015" classname="menu"/>
+  <testcase name="menu should return root `HTMLElement` after `getNode` method call" time="0.001" classname="menu"/>
+  <testcase name="money-input should render without problems" time="0.016" classname="money-input"/>
+  <testcase name="money-input should set focused class on `focus()` call" time="0.013" classname="money-input"/>
+  <testcase name="money-input should unset focused class on `blur()` call" time="0.013" classname="money-input"/>
+  <testcase name="money-input should format input value passed with props" time="0.002" classname="money-input"/>
+  <testcase name="money-input should format fraction part of input value when fractionLength is 4" time="0.001" classname="money-input"/>
+  <testcase name="money-input should call `onChange` callback after input was changed" time="0.003" classname="money-input"/>
+  <testcase name="money-input should call `onChange` with 2 params after input was changed" time="0.003" classname="money-input"/>
+  <testcase name="money-input should scroll window to element on public scrollTo method" time="0.007" classname="money-input"/>
+  <testcase name="money-input should format new value received in props" time="0.003" classname="money-input"/>
+  <testcase name="mq should not render this.props.children on conditions mismatch" time="0.015" classname="mq"/>
+  <testcase name="mq should render with matching query and matching touch screen" time="0.002" classname="mq"/>
+  <testcase name="mq should render with matching query and matching non-touch screen" time="0.001" classname="mq"/>
+  <testcase name="mq should render with matching query and missing touch" time="0.001" classname="mq"/>
+  <testcase name="mq should render with missing query and matching touch screen" time="0.003" classname="mq"/>
+  <testcase name="mq should render with missing query and matching non-touch screen" time="0.001" classname="mq"/>
+  <testcase name="mq should render with missing query and missing touch" time="0" classname="mq"/>
+  <testcase name="mq should not render with non-matching query" time="0.001" classname="mq"/>
+  <testcase name="mq should not render with non-matching query" time="0" classname="mq"/>
+  <testcase name="notification should render without problems" time="0.016" classname="notification"/>
+  <testcase name="notification should call `onClick` callback after notification was clicked" time="0.008" classname="notification"/>
+  <testcase name="notification should call `onCloserClick` callback after notification's cross was clicked" time="0.005" classname="notification"/>
+  <testcase name="notification should call `onCloseTimeout` callback after close timeout was ended" time="0.108" classname="notification"/>
+  <testcase name="notification should render passed custom icon component" time="0.002" classname="notification"/>
+  <testcase name="paragraph should render without problems" time="0.01" classname="paragraph"/>
+  <testcase name="paragraph should render block `p` with text inside" time="0.002" classname="paragraph"/>
+  <testcase name="paragraph should render marker from property `mark` before text" time="0.001" classname="paragraph"/>
+  <testcase name="isEqual shallow equality should return `true` when equal primitive values passed" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `false` when different primitive values passed" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `true` when same objects are passed" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `true` when same arrays are passed" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `true` when different objects with same values are passed" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `true` when different arrays with same values are passed" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `false` when objects has props with different primitive values" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `true` when objects has props with same object values" time="0" classname="isEqual"/>
+  <testcase name="isEqual shallow equality should return `false` when objects has props with different objects" time="0" classname="isEqual"/>
+  <testcase name="isEqual deep equality should return `true` when objects has props with different objects" time="0" classname="isEqual"/>
+  <testcase name="phone-input should scroll window to element on public scrollTo method" time="0.019" classname="phone-input"/>
+  <testcase name="phone-input should set/unset class on public focus/blur methods" time="0.025" classname="phone-input"/>
+  <testcase name="plate should render without problems" time="0.01" classname="plate"/>
+  <testcase name="plate should render with cross without problems" time="0.004" classname="plate"/>
+  <testcase name="plate should call `onCloserClick` callback after plate closer was clicked" time="0.012" classname="plate"/>
+  <testcase name="plate should call `onClick` callback after plate was clicked" time="0.005" classname="plate"/>
+  <testcase name="popup-container-provider should render without problems" time="0.018" classname="popup-container-provider"/>
+  <testcase name="popup-container-provider should render child" time="0.002" classname="popup-container-provider"/>
+  <testcase name="popup-container-provider should set childContext with&#xA;        isInFixedContainer = true,&#xA;        renderContainerElement = HTMLElement to which popup will be appended,&#xA;        positioningContainerElement = HTMLElement in which popup will try to fit" time="0.001" classname="popup-container-provider"/>
+  <testcase name="popup-container-provider should render children popups inside itself’s DOM node" time="0.011" classname="popup-container-provider"/>
+  <testcase name="popup-header should render without problems" time="0.013" classname="popup-header"/>
+  <testcase name="popup-header should call `onCloserClick` callback after closer was clicked" time="0.007" classname="popup-header"/>
+  <testcase name="popup should set anchor target" time="0.026" classname="popup"/>
+  <testcase name="popup should throw Error without setting anchor target" time="0.005" classname="popup"/>
+  <testcase name="popup should set position" time="0.007" classname="popup"/>
+  <testcase name="popup should throw Error with target=`position` but without setting position" time="0.004" classname="popup"/>
+  <testcase name="popup should render text inside" time="0.006" classname="popup"/>
+  <testcase name="popup should set data-for when `for` prop is set" time="0.005" classname="popup"/>
+  <testcase name="popup should have tooltip with target=`anchor` and type=`tooltip`" time="0.005" classname="popup"/>
+  <testcase name="popup should not have tooltip with target=`position` and type=`tooltip`" time="0.005" classname="popup"/>
+  <testcase name="popup should call `onMouseEnter` callback after popup was hovered" time="0.008" classname="popup"/>
+  <testcase name="popup should call `onMouseLeave` callback after popup was unhovered" time="0.006" classname="popup"/>
+  <testcase name="popup should call `onClickOutside` callback after click outside popup" time="0.015" classname="popup"/>
+  <testcase name="popup should not call `onClickOutside` callback after click inside popup" time="0.014" classname="popup"/>
+  <testcase name="popup should not render a header element by default" time="0.005" classname="popup"/>
+  <testcase name="popup should render a header element when header parameter is present" time="0.005" classname="popup"/>
+  <testcase name="popup popup calculate drawing params should draw on right side width margin by main directions = 20, by second direction = 40" time="0.006" classname="popup"/>
+  <testcase name="popup popup calculate drawing params should draw on available left side" time="0.006" classname="popup"/>
+  <testcase name="popup popup calculate drawing params should draw with margin=POPUP_MAIN_OFFSET by main direction when type=`tooltip` &amp; mainOffset=null" time="0.005" classname="popup"/>
+  <testcase name="popup popup calculate drawing params should draw adaptive to the bottom window edge popup" time="0.007" classname="popup"/>
+  <testcase name="popup popup calculate drawing params should draw adaptive to the top window edge popup" time="0.008" classname="popup"/>
+  <testcase name="popup popup calculate drawing params should draw overflowed popup when content height > height to window edge" time="0.007" classname="popup"/>
+  <testcase name="progress-bar should render without problems" time="0.01" classname="progress-bar"/>
+  <testcase name="progress-bar should display current value" time="0.001" classname="progress-bar"/>
+  <testcase name="radio-group should render without any children" time="0.01" classname="radio-group"/>
+  <testcase name="radio-group should render with only one children" time="0.006" classname="radio-group"/>
+  <testcase name="radio-group should render with many radio children without problems" time="0.003" classname="radio-group"/>
+  <testcase name="radio-group should render checked radio with value from `value` props" time="0.003" classname="radio-group"/>
+  <testcase name="radio-group should render radio in error state with error on radioGroup" time="0.001" classname="radio-group"/>
+  <testcase name="radio-group should render with `error` from props" time="0.001" classname="radio-group"/>
+  <testcase name="radio-group should render with `hint` from props" time="0.001" classname="radio-group"/>
+  <testcase name="radio-group should render with `error` and without `hint` when both of them passed via props" time="0.002" classname="radio-group"/>
+  <testcase name="radio-group should focus first child radio-button on public focus method" time="0.015" classname="radio-group"/>
+  <testcase name="radio-group should lose focus on public blur method" time="0.029" classname="radio-group"/>
+  <testcase name="radio-group should call `onFocus` callback after radio-group was focused" time="0.01" classname="radio-group"/>
+  <testcase name="radio-group should call `onBlur` callback after radio-group was blured" time="0.02" classname="radio-group"/>
+  <testcase name="radio-group should call `onChange` callback after radio-group was checked" time="0.01" classname="radio-group"/>
+  <testcase name="radio-group should change other radio checked status when check one" time="0.003" classname="radio-group"/>
+  <testcase name="radio-group shouldn't call `onChange` when radio group value and radio value are same" time="0.003" classname="radio-group"/>
+  <testcase name="radio-group should disable all child radios when disabled=true" time="0.004" classname="radio-group"/>
+  <testcase name="radio-group shouldn't call `onChange` callback when disabled=true" time="0.002" classname="radio-group"/>
+  <testcase name="radio should render without problems" time="0.012" classname="radio"/>
+  <testcase name="radio should radio input render without problems" time="0.001" classname="radio"/>
+  <testcase name="radio should radio render with type `button`" time="0.003" classname="radio"/>
+  <testcase name="radio should radio render with type `normal`" time="0.001" classname="radio"/>
+  <testcase name="radio should radio render without any type" time="0.001" classname="radio"/>
+  <testcase name="radio should set class on radio focus" time="0.013" classname="radio"/>
+  <testcase name="radio should unset class on radio blur" time="0.016" classname="radio"/>
+  <testcase name="radio should set class on public focus method" time="0.009" classname="radio"/>
+  <testcase name="radio should unset class on public blur method" time="0.02" classname="radio"/>
+  <testcase name="radio should call `onFocus` callback after radio was focused" time="0.009" classname="radio"/>
+  <testcase name="radio should call `onBlur` callback after radio was blured" time="0.021" classname="radio"/>
+  <testcase name="radio should call `onFocus` callback after radio was focused with value" time="0.01" classname="radio"/>
+  <testcase name="radio should call `onBlur` callback after radio was blured with value" time="0.016" classname="radio"/>
+  <testcase name="radio should set class on radio mouse enter" time="0.002" classname="radio"/>
+  <testcase name="radio should unset class on radio mouse leave" time="0.001" classname="radio"/>
+  <testcase name="radio should call `onMouseEnter` callback after radio was hovered" time="0.001" classname="radio"/>
+  <testcase name="radio should call `onMouseLeave` callback after radio was leaved by cursor" time="0.001" classname="radio"/>
+  <testcase name="radio should set class on radio change" time="0.002" classname="radio"/>
+  <testcase name="radio should call `onChange` callback after radio was changed" time="0.001" classname="radio"/>
+  <testcase name="radio should call `onChange` callback after radio was changed with value and checked state" time="0.002" classname="radio"/>
+  <testcase name="radio should set class on radio button change" time="0.007" classname="radio"/>
+  <testcase name="radio should call `onChange` callback after radio button was clicked" time="0.005" classname="radio"/>
+  <testcase name="radio should work with props.checked" time="0" classname="radio"/>
+  <testcase name="radio should not checked with disabled props" time="0.001" classname="radio"/>
+  <testcase name="radio should scroll window to element on public scrollTo method" time="0.005" classname="radio"/>
+  <testcase name="render-in-container should place children in body when `container` prop not set" time="0.012" classname="render-in-container"/>
+  <testcase name="render-in-container should call `onRender` callback after element was rendered" time="0.001" classname="render-in-container"/>
+  <testcase name="render-in-container with custom container should render empty component and place it in container set via `container` prop" time="0.001" classname="render-in-container"/>
+  <testcase name="resize-sensor should render without problem" time="0.013" classname="resize-sensor"/>
+  <testcase name="resize-sensor should call `onResize` callback when `ResizeSensor` was change dimensions" time="0.113" classname="resize-sensor"/>
+  <testcase name="select should render without problem" time="0.05" classname="select"/>
+  <testcase name="select should render hidden input" time="0.016" classname="select"/>
+  <testcase name="select should render hidden input with proper id attr" time="0.014" classname="select"/>
+  <testcase name="select should render hidden input with proper name attr" time="0.014" classname="select"/>
+  <testcase name="select should render hidden input with proper value attr" time="0.015" classname="select"/>
+  <testcase name="select should render with `label` from props" time="0.014" classname="select"/>
+  <testcase name="select should render with `placeholder` from props" time="0.014" classname="select"/>
+  <testcase name="select should render with `hint` from props" time="0.013" classname="select"/>
+  <testcase name="select should render with `error` from props" time="0.014" classname="select"/>
+  <testcase name="select should show multiple options" time="0.013" classname="select"/>
+  <testcase name="select should show checkedText of checked options in button if it is undefined" time="0.014" classname="select"/>
+  <testcase name="select should set class on public focus method" time="0.042" classname="select"/>
+  <testcase name="select should unset class on public blur method" time="0.045" classname="select"/>
+  <testcase name="select should scroll window to element on public scrollTo method" time="0.021" classname="select"/>
+  <testcase name="select should call `onClick` callback after button was clicked" time="0.022" classname="select"/>
+  <testcase name="select should receive event.target.value on `onFocus` callback" time="0.029" classname="select"/>
+  <testcase name="select should receive event.target.value on `onBlur` callback" time="0.041" classname="select"/>
+  <testcase name="select should set `checked` class when item is selected" time="0.013" classname="select"/>
+  <testcase name="select should set `checked` class when item is selected and select type is `radio`" time="0.013" classname="select"/>
+  <testcase name="select should render popup with options" time="0.016" classname="select"/>
+  <testcase name="select should set width to popup equal or more than button width" time="0.013" classname="select"/>
+  <testcase name="select should set popup width equal to button width when equalPopupWidth = true" time="0.014" classname="select"/>
+  <testcase name="select should call `onFocus` after button was clicked" time="0.028" classname="select"/>
+  <testcase name="select should call `onBlur` after escape key was pressed" time="0.05" classname="select"/>
+  <testcase name="select should call `onButtonFocus` after component was focused" time="0.037" classname="select"/>
+  <testcase name="select should call `onButtonBlur` after component was focused" time="0.04" classname="select"/>
+  <testcase name="select should call `onMenuFocus` after component was focused" time="0.037" classname="select"/>
+  <testcase name="select should call `onMenuBlur` after component was focused" time="0.035" classname="select"/>
+  <testcase name="select should receive event.target.value on `onButtonFocus` callback" time="0.03" classname="select"/>
+  <testcase name="select should receive event.target.value on `onButtonBlur` callback" time="0.046" classname="select"/>
+  <testcase name="select should receive event.target.value on `onMenuFocus` callback" time="0.028" classname="select"/>
+  <testcase name="select should receive event.target.value on `onMenuBlur` callback" time="0.039" classname="select"/>
+  <testcase name="select should call `onChange` callback in custom select after option was clicked" time="0.021" classname="select"/>
+  <testcase name="select should call `onClickOutside` callback after click outside of open popup" time="0.032" classname="select"/>
+  <testcase name="sidebar component should render without problems" time="0.019" classname="sidebar component"/>
+  <testcase name="sidebar component should render cross icon by default" time="0.003" classname="sidebar component"/>
+  <testcase name="sidebar component shouldn`t render cross icon with special param" time="0.002" classname="sidebar component"/>
+  <testcase name="sidebar component should call `onCloserClick` callback after cross icon was clicked" time="0.01" classname="sidebar component"/>
+  <testcase name="slide-down should render without problems" time="0.011" classname="slide-down"/>
+  <testcase name="slide-down should render with height=0 by default" time="0.001" classname="slide-down"/>
+  <testcase name="slide-down should render with height=auto when isExpanded=true" time="0.004" classname="slide-down"/>
+  <testcase name="slide-down should set `slide-down__content_expanded` class to content when isExpanded=true" time="0.001" classname="slide-down"/>
+  <testcase name="spin should render without problems" time="0.009" classname="spin"/>
+  <testcase name="spin should set class `spin_visible` when visible=true" time="0.001" classname="spin"/>
+  <testcase name="tabs should render without problems" time="0.01" classname="tabs"/>
+  <testcase name="tabs should set scrollable className when scrollable=true without problems" time="0.001" classname="tabs"/>
+  <testcase name="textarea should unset class on textarea blur" time="0.022" classname="textarea"/>
+  <testcase name="textarea should render with disabled class" time="0.003" classname="textarea"/>
+  <testcase name="textarea should set class on public focus method" time="0.019" classname="textarea"/>
+  <testcase name="textarea should unset class on public blur method" time="0.017" classname="textarea"/>
+  <testcase name="textarea should render without problems" time="0.002" classname="textarea"/>
+  <testcase name="textarea should set class on textarea focus" time="0.01" classname="textarea"/>
+  <testcase name="textarea should call `onFocus` callback after textarea was focused" time="0.011" classname="textarea"/>
+  <testcase name="textarea should call `onBlur` callback after textarea was blured" time="0.019" classname="textarea"/>
+  <testcase name="textarea should receive SyntheticEvent with type blur in first argument of `onBlur` callback" time="0.02" classname="textarea"/>
+  <testcase name="textarea should change the state value when props is not defined" time="0.004" classname="textarea"/>
+  <testcase name="textarea should set value from props" time="0.002" classname="textarea"/>
+  <testcase name="textarea should call onChange callback" time="0.002" classname="textarea"/>
+  <testcase name="textarea should render with `off` autocomplete attribute" time="0.001" classname="textarea"/>
+  <testcase name="textarea should render with `on` autocomplete attribute" time="0.002" classname="textarea"/>
+  <testcase name="textarea should render with resize `none` class" time="0.002" classname="textarea"/>
+  <testcase name="textarea should render with resize `both` class" time="0.001" classname="textarea"/>
+  <testcase name="textarea should render with resize `vertical` class" time="0.002" classname="textarea"/>
+  <testcase name="textarea should render with resize `horizontal` class" time="0.002" classname="textarea"/>
+  <testcase name="textarea should scroll window to element on public scrollTo method" time="0.006" classname="textarea"/>
+  <testcase name="textarea should render with autosize class" time="0.002" classname="textarea"/>
+  <testcase name="textarea should call `onHeightChange` callback after add new line with autoresize=true" time="0.003" classname="textarea"/>
+  <testcase name="theme-provider should render without problems" time="0.008" classname="theme-provider"/>
+  <testcase name="theme-provider should render child" time="0" classname="theme-provider"/>
+  <testcase name="theme-provider should render Button with `alfa-on-color` theme" time="0.004" classname="theme-provider"/>
+  <testcase name="theme-provider should render children with redefinition theme" time="0.003" classname="theme-provider"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

@@ -56,13 +56,13 @@ module.exports = (config) => {
 
     Object.assign(cfg, {
         frameworks: ['mocha', 'chai-dom', 'chai', 'sinon-chai'],
-        reporters: ['mocha', 'coverage-istanbul', 'junit'],
+        reporters: ['mocha', 'coverage-istanbul'],
         preprocessors: {
             './src/**/*': ['webpack', 'sourcemap']
         },
         files: testsFiles,
         coverageIstanbulReporter: {
-            reports: ['text-summary'],
+            reports: ['text'],
             fixWebpackSourcePaths: true
         },
         captureConsole: true,
@@ -76,10 +76,6 @@ module.exports = (config) => {
                 }
             }
         },
-        junitReporter: {
-            outputFile: 'test-results.xml',
-            useBrowserName: false
-        },
         logLevel: cfg.LOG_DEBUG
     });
 
@@ -88,7 +84,6 @@ module.exports = (config) => {
         require('karma-chai'),
         require('karma-chai-dom'),
         require('karma-mocha-reporter'),
-        require('karma-junit-reporter'),
         require('karma-coverage'),
         require('karma-sinon-chai')
     );

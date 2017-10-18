@@ -4,16 +4,26 @@
 Alfa Bank UI lightweight library
 ================================
 
-[![NPM version][npm-img]][npm] [![Travis Build Status][travis-img]][travis] [![AppVeyor Build Status][appveyor-img]][appveyor] [![Greenkeeper badge][greenkeeper-img]][greenkeeper]
+[![npm][npm-img]][npm]
+[![license][license-img]][license]
+[![travis][travis-img]][travis]
+[![appveyor][appveyor-img]][appveyor]
+<br />
+[![coveralls][coveralls-img]][coveralls]
+[![greenkeeper][greenkeeper-img]][greenkeeper]
 
-[appveyor-img]:    https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
-[greenkeeper-img]: https://badges.greenkeeper.io/alfa-laboratory/arui-feather.svg
-[npm-img]:         https://img.shields.io/npm/v/arui-feather.svg
-[travis-img]:      https://img.shields.io/travis/alfa-laboratory/arui-feather/master.svg?label=unix
 [appveyor]:        https://ci.appveyor.com/project/teryaew/arui-feather
+[appveyor-img]:    https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
+[coveralls]:       https://coveralls.io/github/alfa-laboratory/arui-feather?branch=master
+[coveralls-img]:   https://coveralls.io/repos/github/alfa-laboratory/arui-feather/badge.svg?branch=master
 [greenkeeper]:     https://greenkeeper.io
+[greenkeeper-img]: https://badges.greenkeeper.io/alfa-laboratory/arui-feather.svg
+[license]:         https://opensource.org/licenses/MPL-2.0
+[license-img]:     https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg
 [npm]:             https://www.npmjs.org/package/arui-feather
+[npm-img]:         https://img.shields.io/npm/v/arui-feather.svg
 [travis]:          https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
+[travis-img]:      https://img.shields.io/travis/alfa-laboratory/arui-feather/master.svg?label=unix
 
 <br />
 

@@ -62,7 +62,7 @@ module.exports = (config) => {
         },
         files: testsFiles,
         coverageIstanbulReporter: {
-            reports: ['text'],
+            reports: ['lcov', 'text'],
             fixWebpackSourcePaths: true
         },
         captureConsole: true,

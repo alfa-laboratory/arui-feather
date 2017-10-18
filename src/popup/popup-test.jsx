@@ -126,16 +126,6 @@ describe('popup', () => {
         expect(popup.node).to.not.have.class('popup_type_tooltip');
     });
 
-    it('should set/unset class on popup hovered/unhovered', () => {
-        let { popup } = renderPopup({}, {});
-
-        simulate(popup.node, 'mouseEnter');
-        expect(popup.node).to.have.class('popup_hovered');
-
-        simulate(popup.node, 'mouseLeave');
-        expect(popup.node).to.not.have.class('popup_hovered');
-    });
-
     it('should call `onMouseEnter` callback after popup was hovered', () => {
         let onMouseEnter = sinon.spy();
         let { popup } = renderPopup({ onMouseEnter }, {});

@@ -4,7 +4,6 @@
 
 'use strict';
 
-const path = require('path');
 const merge = require('webpack-merge');
 const WEBPACK_BASE_TEMPLATE = require('arui-presets/webpack.base');
 const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');

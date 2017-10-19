@@ -43,7 +43,8 @@ module.exports = (config) => {
                 options: { esModules: true }
             },
             enforce: 'post',
-            include: path.resolve('./src')
+            include: path.resolve('./src'),
+            exclude: /-test.jsx$/
         }
     );
 

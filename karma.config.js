@@ -4,7 +4,6 @@
 
 'use strict';
 
-const path = require('path');
 const merge = require('webpack-merge');
 const WEBPACK_BASE_TEMPLATE = require('arui-presets/webpack.base');
 const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');
@@ -37,14 +36,18 @@ module.exports = (config) => {
 
     cfg.webpack.module.rules.push(
         {
-            test: /\.jsx$/,
+            test: /\.jsx?$/,
             use: {
                 loader: 'istanbul-instrumenter-loader',
                 options: { esModules: true }
             },
             enforce: 'post',
-            include: path.resolve('./src'),
-            exclude: /-test.jsx$/
+            exclude: [
+                /node_modules/,
+                /-test\.jsx?$/,
+                /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
+                /(currency-codes|easings|keyboard-code)\.js$/
+            ]
         }
     );
 

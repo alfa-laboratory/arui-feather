@@ -22,66 +22,6 @@ initialState = {
                 placeholder='Адрес электронной почты'
             />
         </div>
-        <Button size='m' view='extra'>Отправить</Button>
-    </Sidebar>
-</div>
-```
-
-Сайдбар с контентом в шапке сайдбара
-```jsx
-function toggleSidebar() {
-    setState({ isOpen: !state.isOpen });
-}
-initialState = {
-    isOpen: false
-};
-<div>
-    <Button onClick={ toggleSidebar }>Выписка по счёту</Button>
-    <Sidebar
-        headerContent={ <Button>Кнопка</Button> }
-        visible={ state.isOpen }
-        onCloserClick={ toggleSidebar }
-    >
-        <Heading size='m'>
-            Выписка по счёту
-        </Heading>
-        <div style={ { marginBottom: 20 } }>
-            <Input
-                label='Куда отправить выписку?'
-                size='m'
-                placeholder='Адрес электронной почты'
-            />
-        </div>
-        <Button size='m' view='extra'>Отправить</Button>
-    </Sidebar>
-</div>
-```
-
-Сайдбар в котором всегда есть бордер в шапке сайдбара, по дефолту бордер появляется при скролле контента (актуально для мобильной версии)
-```jsx
-function toggleSidebar() {
-    setState({ isOpen: !state.isOpen });
-}
-initialState = {
-    isOpen: false
-};
-<div>
-    <Button onClick={ toggleSidebar }>Выписка по счёту</Button>
-    <Sidebar
-        hasHeaderBorder={ true }
-        visible={ state.isOpen }
-        onCloserClick={ toggleSidebar }
-    >
-        <Heading size='m'>
-            Выписка по счёту
-        </Heading>
-        <div style={ { marginBottom: 20 } }>
-            <Input
-                label='Куда отправить выписку?'
-                size='m'
-                placeholder='Адрес электронной почты'
-            />
-        </div>
         <Paragraph>
             100-дневный беспроцентный период начинается с момента образования задолженности по кредитной карте
             и возобновляется на следующий день после полного ее погашения. Беспроцентный период действует
@@ -102,9 +42,88 @@ initialState = {
             (зависит от категории карты). Банк оставляет за собой исключительное право на предоставление или отказ
             в предоставлении кредита. АО «Альфа-Банк». Ген. лицензия ЦБ РФ №1326 от 16.01.2015
         </Paragraph>
-        <div style={ { marginBottom: 35 } }>
-            <Button size='m' view='extra'>Отправить</Button>
-        </div>
+        <Button size='m' view='extra'>Отправить</Button>
     </Sidebar>
 </div>
 ```
+
+Сайдбар с кнопкой в шапке сайдбара (используется только в мобильной версии)
+```jsx
+function toggleSidebar() {
+    setState({ isOpen: !state.isOpen });
+}
+initialState = {
+    isOpen: false
+};
+<div>
+    <Button onClick={ toggleSidebar }>Фильтр</Button>
+    <Sidebar
+        headerContent={ 
+            <button 
+                style={ {
+                    margin: 0,
+                    padding: 0,
+                    border: 0,
+                    background: 'none',
+                    outline: 'none',
+                    font: 'inherit',
+                    cursor: 'pointer'
+                } }
+                onClick={ toggleSidebar }
+            >
+                Применить
+            </button> 
+        }
+        visible={ state.isOpen }
+        onCloserClick={ toggleSidebar }
+    >
+        <div style={ { marginBottom: 40 } }>
+            <Heading size='s'>
+                Тип операции
+            </Heading>
+            <RadioGroup type='button'>
+                {['Пополнение', 'Списание'].map(text => (
+                    <Radio
+                        text={ text }
+                        key={ text }
+                        value={ text }
+                        type='button'
+                    />
+                ))}
+            </RadioGroup>
+        </div>
+        <div style={ { marginBottom: 40 } }>    
+            <Heading size='s'>
+                Счета
+            </Heading>
+            <CheckBoxGroup type='button'>
+                {['Счёт ₽ ··2331', 'Счёт $ ··2331'].map(text => (
+                    <CheckBox
+                        text={ text }
+                        key={ text }
+                        value={ text }
+                        type='button'
+                    />
+                ))}
+            </CheckBoxGroup>
+        </div>
+        <div style={ { marginBottom: 40 } }>    
+            <Heading size='s'>
+                Дата операции
+            </Heading>
+            <RadioGroup type='button'>
+                {['День', 'Месяц', 'Год'].map(text => (
+                    <Radio
+                        text={ text }
+                        key={ text }
+                        value={ text }
+                        type='button'
+                    />
+                ))}
+            </RadioGroup>
+        </div>     
+    </Sidebar>
+</div>
+```
+
+

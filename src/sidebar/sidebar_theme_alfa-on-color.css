@@ -12,10 +12,7 @@
     .sidebar_theme_alfa-on-color {
         .sidebar__header {
             background-color: var(--color-background-alfa-on-color);
-
-            &_has-border {
-                border-bottom: 1px solid var(--color-border-separator-alfa-on-color);
-            }
+            border-bottom: 1px solid var(--color-border-separator-alfa-on-color);
         }
 
         .sidebar__footer:after {

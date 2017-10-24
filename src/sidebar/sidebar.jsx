@@ -63,8 +63,6 @@ class Sidebar extends React.Component {
         hasCloser: Type.bool,
         /** Признак для отрисовки оверлея */
         hasOverlay: Type.bool,
-        /** Признак для того чтобы всегда показывать бордер в шапке холодильника */
-        hasHeaderBorder: Type.bool,
         /** Признак появления холодильника */
         visible: Type.bool.isRequired,
         /** Контент в шапке сайтбара */
@@ -75,23 +73,17 @@ class Sidebar extends React.Component {
 
     static defaultProps = {
         hasOverlay: true,
-        hasHeaderBorder: false,
         hasCloser: true
     };
 
     state = {
-        hasHeaderBorder: false,
         isMobile: false
     };
-
-    header;
-    content;
 
     componentDidMount() {
         setBodyClass(this.props.visible);
         window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('scroll', this.handleScroll);
-        this.content.addEventListener('scroll', this.handleSidebarContentScroll);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -107,7 +99,6 @@ class Sidebar extends React.Component {
         setBodyClass(false);
         window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('scroll', this.handleScroll);
-        this.content.removeEventListener('scroll', this.handleSidebarContentScroll);
     }
 
     render(cn) {
@@ -117,6 +108,7 @@ class Sidebar extends React.Component {
         let style = {
             width: this.state.isMobile ? '100%' : `${sidebarWidth + offset}px`
         };
+
         let contentStyle = {
             marginRight: this.state.isMobile ? 0 : `-${offset}px`
         };
@@ -138,10 +130,7 @@ class Sidebar extends React.Component {
                     id={ this.props.id }
                 >
                     <header
-                        className={ cn('header',
-                            { 'has-border': this.props.hasHeaderBorder || this.state.hasHeaderBorder })
-                        }
-                        ref={ (header) => { this.header = header; } }
+                        className={ cn('header') }
                     >
                         {
                             hasCloser &&
@@ -163,7 +152,6 @@ class Sidebar extends React.Component {
                     <div
                         style={ contentStyle }
                         className={ cn('content') }
-                        ref={ (content) => { this.content = content; } }
                     >
                         { children }
                     </div>
@@ -205,11 +193,6 @@ class Sidebar extends React.Component {
                 this.handleClose();
                 break;
         }
-    }
-
-    @autobind
-    handleSidebarContentScroll() {
-        this.setState({ hasHeaderBorder: this.content.scrollTop > this.header.offsetHeight });
     }
 
     handleScroll() {

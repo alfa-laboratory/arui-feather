@@ -27,5 +27,5 @@
     /**
      * Тень для оверлея, Используется, например, в сайдбаре
      */
-    --shadow-overlay-color: rgba(0, 0, 0, 0.5);
+    --shadow-overlay-color: color(var(--shadow-color) a(.5));
 }

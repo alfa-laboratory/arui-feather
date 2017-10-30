@@ -1,6 +1,6 @@
-import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Sidebar from '../src/sidebar';
 import Paragpaph from '../src/paragraph';
+import Sidebar from '../src/sidebar';
+import ThemeProvider from '../src/theme-provider';
 
 const NAME = 'sidebar';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
@@ -21,7 +21,7 @@ geminiReact.suite(NAME, function () {
             geminiReact.suite(selector, function (suite) {
                 let props = { theme, ...set, visible: true };
                 let template = (
-                    <GeminiBox theme={ theme }>
+                    <ThemeProvider theme={ theme }>
                         <Sidebar { ...props }>
                             <Paragpaph>
                                 100-дневный беспроцентный период начинается с момента образования задолженности по
@@ -36,7 +36,7 @@ geminiReact.suite(NAME, function () {
                                 РФ №1326 от 16.01.2015
                             </Paragpaph>
                         </Sidebar>
-                    </GeminiBox>
+                    </ThemeProvider>
                 );
 
                 suite

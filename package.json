@@ -34,28 +34,15 @@
   },
   "lint-staged": {
     "concurrent": false,
-    "./*.js": [
-      "eslint"
-    ],
-    "demo/**/*.{js,jsx}": [
-      "eslint"
-    ],
-    "gemini/**/*.{js,jsx}": [
-      "eslint"
-    ],
-    "demo/components/**/*.{js,jsx}": [
-      "eslint"
-    ],
-    "*.css": [
-      "lint-css"
-    ],
-    "src/**/*.{js,jsx}": [
-      "eslint",
-      "test"
-    ],
-    "src/**/*.md": [
-      "lint-md"
-    ]
+    "linters": {
+      "./*.js": ["eslint"],
+      "demo/**/*.{js,jsx}": ["eslint"],
+      "gemini/**/*.{js,jsx}": ["eslint"],
+      "demo/components/**/*.{js,jsx}": ["eslint"],
+      "*.css": ["lint-css"],
+      "src/**/*.{js,jsx}": ["eslint","test"],
+      "src/**/*.md": ["lint-md"]
+    }
   },
   "maintainers": [
     {
@@ -137,7 +124,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.4",
     "library-utils": "^1.5.1",
-    "lint-staged": "^4.0.3",
+    "lint-staged": "^4.3.0",
     "mocha": "^4.0.0",
     "postcss-url": "git://github.com/teryaew/postcss-url.git#feat/fallback-to-array-find",
     "react-frame-component": "^2.0.0",

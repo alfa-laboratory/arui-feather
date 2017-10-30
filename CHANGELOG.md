@@ -1,3 +1,13 @@
+<a name="10.2.2"></a>
+## [10.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.1...v10.2.2) (2017-10-30)
+
+
+### Features
+
+* **popup:** remove unused hovered state ([#308](https://github.com/alfa-laboratory/arui-feather/issues/308)) ([51cdf63](https://github.com/alfa-laboratory/arui-feather/commit/51cdf63))
+
+
+
 <a name="10.2.1"></a>
 ## [10.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.0...v10.2.1) (2017-10-17)
 

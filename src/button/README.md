@@ -86,7 +86,7 @@ const buttons = [
     { size: 'xl', name: 'Подтвердить' }
 ];
 <div>
-   {buttons.map(({ size, name }) => (
+    { buttons.map(({ size, name }) => (
         <div className='row'>
             <div className='column' key={ size }>
                 <Button view='other' size={ size }>{`${name}`}</Button>

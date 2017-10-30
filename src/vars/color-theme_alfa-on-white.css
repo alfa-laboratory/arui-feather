@@ -92,4 +92,14 @@
      * Цвет рамки для неактивных контролов для `alfa-on-color`.
      */
     --color-border-control-disabled-alfa-on-white: rgba(11, 31, 53, .2);
+
+    /**
+    Цвет для разделительных бордеров для `alfa-on-white`.
+    */
+    --color-border-separator-alfa-on-white: rgba(10, 30, 50, .07);
+
+    /**
+    * Цвет для градиента на краях экрана для `alfa-on-white`.
+    */
+    --color-gradient-edge-screen-alfa-on-white: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
 }

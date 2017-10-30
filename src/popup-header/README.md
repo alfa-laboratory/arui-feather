@@ -21,6 +21,7 @@ class PopupHeaderDemo extends React.Component {
                     <div style={ { width: '100%' } }>
                         {['s', 'm', 'l', 'xl'].map(size => (
                             <PopupHeader
+                                key={ size }
                                 size={ size }
                                 title='Заголовок'
                             />

@@ -125,7 +125,7 @@ class MoneyInput extends React.Component {
 
         // При удалении отрезаем запятую, если исчезла дробная часть.
         if (newValue.length < currentValue.length) {
-            let [fractionPart] = getValueParts(newValue);
+            let [,fractionPart] = getValueParts(newValue); // Отбрасываем целую часть
 
             // `fractionPart !== undefined` - значит запятая введена, но
             // `fractionPart.length === 0` - значит цифр после запятой нет.

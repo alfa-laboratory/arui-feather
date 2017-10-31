@@ -35,13 +35,28 @@
   "lint-staged": {
     "concurrent": false,
     "linters": {
-      "./*.js": ["eslint"],
-      "demo/**/*.{js,jsx}": ["eslint"],
-      "gemini/**/*.{js,jsx}": ["eslint"],
-      "demo/components/**/*.{js,jsx}": ["eslint"],
-      "*.css": ["lint-css"],
-      "src/**/*.{js,jsx}": ["eslint","test"],
-      "src/**/*.md": ["lint-md"]
+      "./*.js": [
+        "eslint"
+      ],
+      "demo/**/*.{js,jsx}": [
+        "eslint"
+      ],
+      "gemini/**/*.{js,jsx}": [
+        "eslint"
+      ],
+      "demo/components/**/*.{js,jsx}": [
+        "eslint"
+      ],
+      "*.css": [
+        "lint-css"
+      ],
+      "src/**/*.{js,jsx}": [
+        "eslint",
+        "test"
+      ],
+      "src/**/*.md": [
+        "lint-md"
+      ]
     }
   },
   "maintainers": [

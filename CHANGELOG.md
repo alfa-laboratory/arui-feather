@@ -1,3 +1,19 @@
+<a name="10.2.3"></a>
+## [10.2.3](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.2...v10.2.3) (2017-10-31)
+
+
+### Bug Fixes
+
+* fix missing key prop in PopupHeader ([#315](https://github.com/alfa-laboratory/arui-feather/issues/315)) ([201bfb6](https://github.com/alfa-laboratory/arui-feather/commit/201bfb6))
+* **vars:** fix --color-border-separator-alfa-on-white css var ([3d5e7ad](https://github.com/alfa-laboratory/arui-feather/commit/3d5e7ad))
+
+
+### Features
+
+* fix sidebar styles ([#312](https://github.com/alfa-laboratory/arui-feather/issues/312)) ([109d0e0](https://github.com/alfa-laboratory/arui-feather/commit/109d0e0))
+
+
+
 <a name="10.2.2"></a>
 ## [10.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.1...v10.2.2) (2017-10-30)
 

@@ -42,7 +42,7 @@ describe('sidebar component', () => {
                 defaultText
             </Sidebar>
         );
-        let closeIcon = sidebar.node.querySelector('.sidebar__closer');
+        let closeIcon = sidebar.node.querySelector('.sidebar__closer .icon-button');
 
         closeIcon.click();
 

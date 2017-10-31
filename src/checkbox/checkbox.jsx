@@ -106,7 +106,7 @@ class CheckBox extends React.Component {
 
     renderNormalCheckbox(cn, checked) {
         return (
-            <div>
+            <div className={cn('container')}>
                 <span className={ cn('box') }>
                     <input
                         className={ cn('control') }
@@ -154,7 +154,7 @@ class CheckBox extends React.Component {
 
     renderButtonCheckbox(cn, checked, TagButton) {
         return (
-            <div>
+            <div className={cn('container')}>
                 <TagButton
                     togglable='check'
                     checked={ checked }

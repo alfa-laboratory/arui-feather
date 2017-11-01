@@ -105,6 +105,8 @@ class Sidebar extends React.Component {
         const { hasCloser, children, visible, headerContent, hasOverlay } = this.props;
         let offset = visible ? getScrollbarWidth() : 0;
 
+        document.body.style.marginRight = !this.state.isMobile && hasOverlay ? `${offset}px` : 0;
+
         let style = {
             width: this.state.isMobile ? '100%' : `${sidebarWidth + offset}px`
         };

@@ -1,3 +1,18 @@
+<a name="10.3.0"></a>
+# [10.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.3...v10.3.0) (2017-11-01)
+
+
+### Bug Fixes
+
+* **money-input:** fix incorrect behavior ([#318](https://github.com/alfa-laboratory/arui-feather/issues/318)) ([bf92040](https://github.com/alfa-laboratory/arui-feather/commit/bf92040))
+
+
+### Features
+
+* **swipeable:** add swipeable component ([#279](https://github.com/alfa-laboratory/arui-feather/issues/279)) ([e3eed1c](https://github.com/alfa-laboratory/arui-feather/commit/e3eed1c))
+
+
+
 <a name="10.2.3"></a>
 ## [10.2.3](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.2...v10.2.3) (2017-10-31)
 

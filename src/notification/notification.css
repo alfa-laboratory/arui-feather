@@ -20,6 +20,7 @@
     border-radius: var(--border-radius-control);
     transition: all .2s ease-out;
     z-index: 9999;
+    user-select: none;
 
     &, *, *:before, *:after {
         box-sizing: border-box;

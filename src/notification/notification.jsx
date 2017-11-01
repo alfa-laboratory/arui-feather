@@ -14,6 +14,7 @@ import IconButton from '../icon-button/icon-button';
 import cn from '../cn';
 import { isEventOutsideClientBounds } from '../lib/window';
 import performance from '../performance';
+import Swipeable from '../swipeable';
 
 /**
  * Компонент всплывающего окна.
@@ -107,53 +108,62 @@ class Notification extends React.Component {
 
     render(cn) {
         return (
-            <div
-                className={ cn({
-                    visible: this.props.visible,
-                    status: this.props.status,
-                    hovered: this.state.hovered,
-                    'stick-to': this.props.stickTo
-                }) }
-                id={ this.props.id }
-                onMouseEnter={ this.handleMouseEnter }
-                onMouseLeave={ this.handleMouseLeave }
-                onClick={ this.handleClick }
-                style={ this.getPosition() }
-                ref={ (root) => { this.root = root; } }
-            >
-                <div className={ cn('icon') }>
+            <Swipeable onSwipe={ this.handleSwipe }>
+                <div
+                    className={ cn({
+                        visible: this.props.visible,
+                        status: this.props.status,
+                        hovered: this.state.hovered,
+                        'stick-to': this.props.stickTo
+                    }) }
+                    id={ this.props.id }
+                    onMouseEnter={ this.handleMouseEnter }
+                    onMouseLeave={ this.handleMouseLeave }
+                    onClick={ this.handleClick }
+                    style={ this.getPosition() }
+                    ref={ (root) => { this.root = root; } }
+                >
+                    <div className={ cn('icon') }>
+                        {
+                            this.props.icon ||
+                            <Icon
+                                colored={ this.props.status === 'ok' || this.props.status === 'error' }
+                                name={ `action-${this.props.status}` }
+                                size='m'
+                            />
+                        }
+                    </div>
+                    { this.props.title &&
+                        <div className={ cn('title') }>
+                            { this.props.title }
+                        </div>
+                    }
+                    <div className={ cn('content') }>
+                        { this.props.children }
+                    </div>
                     {
-                        this.props.icon ||
-                        <Icon
-                            colored={ this.props.status === 'ok' || this.props.status === 'error' }
-                            name={ `action-${this.props.status}` }
+                        this.props.hasCloser &&
+                        <IconButton
+                            className={ cn('closer') }
                             size='m'
-                        />
+                            onClick={ this.handleCloserClick }
+                        >
+                            <Icon
+                                name='tool-close'
+                                size='m'
+                            />
+                        </IconButton>
                     }
                 </div>
-                { this.props.title &&
-                    <div className={ cn('title') }>
-                        { this.props.title }
-                    </div>
-                }
-                <div className={ cn('content') }>
-                    { this.props.children }
-                </div>
-                {
-                    this.props.hasCloser &&
-                    <IconButton
-                        className={ cn('closer') }
-                        size='m'
-                        onClick={ this.handleCloserClick }
-                    >
-                        <Icon
-                            name='tool-close'
-                            size='m'
-                        />
-                    </IconButton>
-                }
-            </div>
+            </Swipeable>
         );
+    }
+
+    @autobind
+    handleSwipe(direction) {
+        if (direction === 'left' || direction === 'right' || direction === 'top') {
+            this.handleCloserClick();
+        }
     }
 
     @autobind

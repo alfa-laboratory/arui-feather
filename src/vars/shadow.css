@@ -6,7 +6,7 @@
     /**
      * Цвет для использования в тенях.
      */
-    --shadow-color: rgb(0, 0, 0);
+    --shadow-color: rgb(11, 31, 53);
 
     /**
      * Цвет для использования в облегчённых тенях.
@@ -27,5 +27,5 @@
     /**
      * Тень для оверлея, Используется, например, в сайдбаре
      */
-    --shadow-overlay-color: color(var(--shadow-color) a(.5));
+    --shadow-overlay-color: color(rgb(0, 0, 0) a(var(--opacity-minor)));
 }

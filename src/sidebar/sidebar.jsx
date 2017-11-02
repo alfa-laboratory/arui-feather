@@ -21,7 +21,7 @@ import Mq from '../mq';
 import performance from '../performance';
 
 let savedScrollPosition;
-const sidebarWidth = 390;
+const SIDEBAR_WIDTH = 430;
 
 /**
  * Восстанавливает исходную позацию скролла
@@ -63,17 +63,20 @@ class Sidebar extends React.Component {
         hasCloser: Type.bool,
         /** Признак для отрисовки оверлея */
         hasOverlay: Type.bool,
-        /** Признак появления холодильника */
+        /** Признак появления сайдбара */
         visible: Type.bool.isRequired,
-        /** Контент в шапке сайтбара */
+        /** Контент в шапке сайдбара */
         headerContent: Type.node,
+        /** Ширина сайдбара */
+        width: Type.number,
         /** Обработчик клика на элемент закрытия */
         onCloserClick: Type.func
     };
 
     static defaultProps = {
         hasOverlay: true,
-        hasCloser: true
+        hasCloser: true,
+        width: SIDEBAR_WIDTH
     };
 
     state = {
@@ -102,13 +105,13 @@ class Sidebar extends React.Component {
     }
 
     render(cn) {
-        const { hasCloser, children, visible, headerContent, hasOverlay } = this.props;
+        const { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
         let offset = visible ? getScrollbarWidth() : 0;
 
         document.body.style.marginRight = !this.state.isMobile && hasOverlay ? `${offset}px` : 0;
 
         let style = {
-            width: this.state.isMobile ? '100%' : `${sidebarWidth + offset}px`
+            width: this.state.isMobile ? '100%' : `${width + offset}px`
         };
 
         let contentStyle = {

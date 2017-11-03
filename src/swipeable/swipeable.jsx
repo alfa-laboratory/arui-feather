@@ -5,9 +5,9 @@ import { autobind } from 'core-decorators';
 
 import performance from '../performance';
 
-export const getCoordinates = ({ touches, clientX, clientY }) => (
-    touches
-        ? { clientX: touches[0].clientX, clientY: touches[0].clientY }
+export const getCoordinates = ({ touches, changedTouches, clientX, clientY }) => (
+    (touches && changedTouches)
+        ? { clientX: (touches[0] || changedTouches[0]).clientX, clientY: (touches[0] || changedTouches[0]).clientY }
         : { clientX, clientY }
 );
 
@@ -56,7 +56,6 @@ export default class Swipeable extends React.Component {
 
         this.handleSwipeStart(event);
 
-        document.addEventListener('mousemove', this.handleSwipeMove);
         document.addEventListener('mouseup', this.handleSwipeEnd);
         document.addEventListener('mouseup', this.removeListeners);
     }
@@ -71,7 +70,6 @@ export default class Swipeable extends React.Component {
 
         this.handleSwipeStart(event);
 
-        document.addEventListener('touchmove', this.handleSwipeMove);
         document.addEventListener('touchend', this.handleSwipeEnd);
         document.addEventListener('touchend', this.removeListeners);
         document.addEventListener('touchcancel', this.removeListeners);
@@ -86,25 +84,21 @@ export default class Swipeable extends React.Component {
     }
 
     @autobind
-    handleSwipeMove(event) {
+    handleSwipeEnd(event) {
+        const { props: { delta, onSwipe } } = this;
         const { clientX, clientY } = getCoordinates(event);
 
         this.deltaX = this.swipeStartX - clientX;
         this.deltaY = this.swipeStartY - clientY;
-    }
-
-    @autobind
-    handleSwipeEnd() {
-        const { deltaX, deltaY, props: { delta, onSwipe } } = this;
 
         if (typeof onSwipe === 'function') {
-            if (deltaX > delta) {
+            if (this.deltaX > delta) {
                 onSwipe('left');
-            } else if (deltaX < -delta) {
+            } else if (this.deltaX < -delta) {
                 onSwipe('right');
-            } else if (deltaY > delta) {
+            } else if (this.deltaY > delta) {
                 onSwipe('top');
-            } else if (deltaY < -delta) {
+            } else if (this.deltaY < -delta) {
                 onSwipe('bottom');
             }
         }
@@ -112,10 +106,8 @@ export default class Swipeable extends React.Component {
 
     @autobind
     removeListeners() {
-        document.removeEventListener('mousemove', this.handleSwipe);
         document.removeEventListener('mouseup', this.handleSwipeEnd);
         document.removeEventListener('mouseup', this.removeListeners);
-        document.removeEventListener('touchmove', this.handleSwipe);
         document.removeEventListener('touchend', this.handleSwipeEnd);
         document.removeEventListener('touchend', this.removeListeners);
         document.removeEventListener('touchcancel', this.removeListeners);

@@ -26,7 +26,6 @@ let config = {
         debug: false,
         exclude: [
             'demo/',
-            'docs/',
             'gemini/screens/',
             'gemini-*/',
             'node_modules/',

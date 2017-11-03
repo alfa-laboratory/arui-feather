@@ -138,10 +138,10 @@ class Sidebar extends React.Component {
                             hasCloser &&
                             <div className={ cn('closer') }>
                                 <IconButton
-                                    size={ 'm' }
+                                    size={ this.state.isMobile ? 'm' : 'l' }
                                     onClick={ this.handleClose }
                                 >
-                                    <Icon size={ 'm' } name='tool-close' />
+                                    <Icon size={ this.state.isMobile ? 'm' : 'l' } name='tool-close' />
                                 </IconButton>
                             </div>
                         }

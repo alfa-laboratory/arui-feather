@@ -23,7 +23,7 @@ class Plate extends React.Component {
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,
-        /** Плоская тема */
+        /** Управление наличием тени у компонента */
         isFlat: Type.bool,
         /** Дочерние элементы `Plate` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),

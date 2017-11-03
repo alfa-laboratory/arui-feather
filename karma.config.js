@@ -46,7 +46,7 @@ module.exports = (config) => {
                 /node_modules/,
                 /-test\.jsx?$/,
                 /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
-                /(currency-codes|easings|keyboard-code)\.js$/
+                /(countries|currency-codes|easings|keyboard-code)\.js$/
             ]
         }
     );

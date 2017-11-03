@@ -1,0 +1,26 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.flag-icon_mode_chunk.flag-icon_size_{{size}} {
+    background-size: cover;
+
+    {{#chunks}}
+    &.flag-icon_country_{{name}} {
+        width: {{width}};
+        height: {{height}};
+        background-image: url('{{url}}');
+    }
+    {{/chunks}}
+
+    @media
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+        {{#retinaChunks}}
+        &.flag-icon_country_{{name}} {
+            background-image: url('{{url}}');
+        }
+        {{/retinaChunks}}
+    }
+}

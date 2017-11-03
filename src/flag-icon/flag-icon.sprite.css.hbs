@@ -1,0 +1,27 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.flag-icon_mode_sprite.flag-icon_size_{{#options}}{{size}}{{/options}} {
+    {{#spritesheet}}
+    background-image: url('./images/sprites/{{image}}');
+    background-size: {{px.width}} {{px.height}};
+    {{/spritesheet}}
+
+    {{#retina_spritesheet}}
+    @media
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+        background-image: url('./images/sprites/{{image}}');
+    }
+    {{/retina_spritesheet}}
+
+    {{#sprites}}
+    &{{selector}} {
+        width: {{px.width}};
+        height: {{px.height}};
+        background-position: {{px.offset_x}} {{px.offset_y}};
+    }
+    {{/sprites}}
+}

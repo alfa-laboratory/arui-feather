@@ -6520,7 +6520,7 @@ liftoff@^2.1.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-lint-staged@^4.0.3:
+lint-staged@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-4.3.0.tgz#ed0779ad9a42c0dc62bb3244e522870b41125879"
   dependencies:
@@ -8566,17 +8566,7 @@ postcss-unique-selectors@^2.0.2:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss-url@7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/postcss-url/-/postcss-url-7.1.1.tgz#efcd010d152a1a6c7d6d4bdd5702c3879cc94375"
-  dependencies:
-    mime "^1.2.11"
-    minimatch "^3.0.0"
-    mkdirp "^0.5.0"
-    postcss "^6.0.1"
-    xxhashjs "^0.2.1"
-
-"postcss-url@git://github.com/teryaew/postcss-url.git#feat/fallback-to-array-find":
+postcss-url@7.1.1, "postcss-url@git://github.com/teryaew/postcss-url.git#feat/fallback-to-array-find":
   version "7.1.1"
   resolved "git://github.com/teryaew/postcss-url.git#9d10249f1696d4953aa67b2dfc6f41bd8c4fb4e5"
   dependencies:

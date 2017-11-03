@@ -2,7 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import bowser from 'bowser';
 import { render, cleanUp } from '../test-utils';
+import getScrollbarWidth from '../lib/scrollbar-width';
 
 import Sidebar from './sidebar';
 
@@ -48,4 +50,19 @@ describe('sidebar component', () => {
 
         expect(onClick).to.have.been.calledOnce;
     });
+
+    if (!bowser.mobile) {
+        it('should render with `width` from props', () => {
+            let sidebar = render(
+                <Sidebar
+                    visible={ true }
+                    width={ 500 }
+                >
+                    defaultText
+                </Sidebar>
+            );
+
+            expect(sidebar.node).to.have.attr('style', `width: ${500 + getScrollbarWidth()}px;`);
+        });
+    }
 });

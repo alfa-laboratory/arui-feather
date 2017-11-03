@@ -1,3 +1,15 @@
+<a name="10.3.1"></a>
+## [10.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.3.0...v10.3.1) (2017-11-03)
+
+
+### Bug Fixes
+
+* **sidebar:** fix hidden scrollbar ([#323](https://github.com/alfa-laboratory/arui-feather/issues/323)) ([075f80a](https://github.com/alfa-laboratory/arui-feather/commit/075f80a))
+* **sidebar:** fix sidebar styles ([#327](https://github.com/alfa-laboratory/arui-feather/issues/327)) ([76fd00c](https://github.com/alfa-laboratory/arui-feather/commit/76fd00c))
+* **swipeable:** fix swipeable delta calculation ([#330](https://github.com/alfa-laboratory/arui-feather/issues/330)) ([50186ef](https://github.com/alfa-laboratory/arui-feather/commit/50186ef))
+
+
+
 <a name="10.3.0"></a>
 # [10.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.3...v10.3.0) (2017-11-01)
 

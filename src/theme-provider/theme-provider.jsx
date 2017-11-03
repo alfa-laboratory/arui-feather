@@ -34,7 +34,7 @@ class ThemeProvider extends React.Component {
         /** Дополнительный класс */
         className: Type.oneOfType([Type.func, Type.string]),
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-colored', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     static contextTypes = {

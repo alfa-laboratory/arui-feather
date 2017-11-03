@@ -242,7 +242,7 @@ function setTarget(target) {
 
 ## Commit messages
 
-Для commit messages используйте [формат Angular](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit).
+Для commit messages используйте [формат Angular](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
 В теме сообщения указывайте глагол в настоящем времени, который информирует об изменениях.
 Для валидации commit messages на соответствующем git hook используется `validate-commit-message`.
 

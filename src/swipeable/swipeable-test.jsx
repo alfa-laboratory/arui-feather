@@ -58,14 +58,12 @@ describe('swipeable', () => {
             expect(spyHandler).to.have.callCount(2);
         });
 
-        it('should add document mousemove and mouseup listeners when handleMouseDown is called', () => {
-            swipeable.instance.handleSwipeMove = spyHandler;
+        it('should add document and mouseup listeners when handleMouseDown is called', () => {
             swipeable.instance.handleSwipeEnd = spyHandler;
             swipeable.instance.removeListeners = spyHandler;
             swipeable.instance.handleMouseDown({});
-            document.dispatchEvent(new Event('mousemove'));
             document.dispatchEvent(new Event('mouseup'));
-            expect(spyHandler).to.have.callCount(3);
+            expect(spyHandler).to.have.callCount(2);
         });
 
         it('shouldn\'t call handleSwipeStart when handleTouchStart is called with 2 or more touches', () => {
@@ -80,15 +78,13 @@ describe('swipeable', () => {
             expect(spyHandler).to.have.callCount(2);
         });
 
-        it('should add document touchmove, touchend and touchcancel listeners when handleTouchStart is called', () => {
-            swipeable.instance.handleSwipeMove = spyHandler;
+        it('should add document touchend and touchcancel listeners when handleTouchStart is called', () => {
             swipeable.instance.handleSwipeEnd = spyHandler;
             swipeable.instance.removeListeners = spyHandler;
             swipeable.instance.handleTouchStart({});
-            document.dispatchEvent(new Event('touchmove'));
             document.dispatchEvent(new Event('touchend'));
             document.dispatchEvent(new Event('touchcancel'));
-            expect(spyHandler).to.have.callCount(4);
+            expect(spyHandler).to.have.callCount(3);
         });
 
         it('should calculate swipeStartX and swipeStartY when handleSwipeStart is called', () => {
@@ -97,8 +93,8 @@ describe('swipeable', () => {
             expect(swipeable.instance.swipeStartY).to.equal(50);
         });
 
-        it('should calculate deltaX and deltaY when handleSwipeStart is called', () => {
-            swipeable.instance.handleSwipeMove({ clientX: 100, clientY: 50 });
+        it('should calculate deltaX and deltaY when handleSwipeEnd is called', () => {
+            swipeable.instance.handleSwipeEnd({ clientX: 100, clientY: 50 });
             expect(swipeable.instance.deltaX).to.equal(-100);
             expect(swipeable.instance.deltaY).to.equal(-50);
         });
@@ -107,10 +103,10 @@ describe('swipeable', () => {
     describe('swipe directions', () => {
         let swipeable;
         const testData = [
-            { direction: 'left', deltaX: 151, deltaY: 0 },
-            { direction: 'top', deltaX: 0, deltaY: 151 },
-            { direction: 'right', deltaX: -151, deltaY: 0 },
-            { direction: 'bottom', deltaX: 0, deltaY: -151 }
+            { direction: 'left', clientX: -151, clientY: 0 },
+            { direction: 'top', clientX: 0, clientY: -151 },
+            { direction: 'right', clientX: 151, clientY: 0 },
+            { direction: 'bottom', clientX: 0, clientY: 151 }
         ];
 
         beforeEach(() => {
@@ -121,26 +117,28 @@ describe('swipeable', () => {
             );
         });
 
-        testData.forEach(({ direction, deltaX, deltaY }) => (
+        testData.forEach(({ direction, clientX, clientY }) => (
             it(`should call onSwipe with '${direction}' when it swiped to ${direction}`, () => {
-                swipeable.instance.deltaX = deltaX;
-                swipeable.instance.deltaY = deltaY;
-                swipeable.instance.handleSwipeEnd({});
+                swipeable.instance.handleSwipeStart({ clientX: 0, clientY: 0 });
+                swipeable.instance.handleSwipeEnd({ clientX, clientY });
                 expect(swipeable.instance.props.onSwipe).to.have.been.calledWith(direction);
             })
         ));
     });
 
     describe('getCoordinates', () => {
-        const clientX = 100;
-        const clientY = 500;
+        const touch = { clientX: 100, clientY: 500 };
 
-        it('should return clientX and clientY from first touch of touch event', () => {
-            expect(getCoordinates({ touches: [{ clientX, clientY }] })).to.deep.equal({ clientX, clientY });
+        it('should return clientX and clientY from first touch of event touches ', () => {
+            expect(getCoordinates({ touches: [touch], changedTouches: [] })).to.deep.equal(touch);
+        });
+
+        it('should return clientX and clientY from first touch of event changedTouches', () => {
+            expect(getCoordinates({ touches: [], changedTouches: [touch] })).to.deep.equal(touch);
         });
 
         it('should return clientX and clientY from mouse event', () => {
-            expect(getCoordinates({ clientX, clientY })).to.deep.equal({ clientX, clientY });
+            expect(getCoordinates(touch)).to.deep.equal(touch);
         });
     });
 });

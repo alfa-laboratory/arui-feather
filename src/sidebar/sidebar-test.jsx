@@ -53,12 +53,9 @@ describe('sidebar component', () => {
 
     if (!bowser.mobile) {
         it('should render with `width` from props', () => {
-            let onClick = sinon.spy();
             let sidebar = render(
                 <Sidebar
                     visible={ true }
-                    hasCloser={ true }
-                    onCloserClick={ onClick }
                     width={ 500 }
                 >
                     defaultText

@@ -2125,12 +2125,6 @@ collapse-white-space@^1.0.2:
     regexp-escape "0.0.1"
     weak-map "^1.0.4"
 
-collections@^0.2.0:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/collections/-/collections-0.2.2.tgz#1f23026b2ef36f927eecc901e99c5f0d48fa334e"
-  dependencies:
-    weak-map "1.0.0"
-
 color-convert@^1.3.0, color-convert@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.0.tgz#1accf97dd739b983bf994d56fec8f95853641b7a"
@@ -2171,7 +2165,7 @@ colormin@^1.0.5:
     css-color-names "0.0.4"
     has "^1.0.1"
 
-colors@^1.1.0, colors@^1.1.2, colors@~1.1.2:
+colors@^1.1.0, colors@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
 
@@ -4278,12 +4272,6 @@ findup-sync@^0.4.2:
     micromatch "^2.3.7"
     resolve-dir "^0.1.0"
 
-findup-sync@~0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/findup-sync/-/findup-sync-0.3.0.tgz#37930aa5d816b777c03445e1966cc6790a4c0b16"
-  dependencies:
-    glob "~5.0.0"
-
 findup@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/findup/-/findup-0.1.5.tgz#8ad929a3393bac627957a7e5de4623b06b0e2ceb"
@@ -4552,16 +4540,16 @@ gemini-coverage@^1.0.0:
     q "^1.4.1"
     q-io "^2.0.6"
 
-gemini-optipng@^1.0.0:
+"gemini-optipng@git://github.com/teryaew/gemini-optipng.git#feat/update-q-io-to-v2":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gemini-optipng/-/gemini-optipng-1.0.0.tgz#bde4d43a41e871a1a726835b855e29dae049e1d9"
+  resolved "git://github.com/teryaew/gemini-optipng.git#211d4e76d0ac1603f9b470bfe82c382083b830ed"
   dependencies:
     chalk "^1.1.3"
     debug "^2.2.0"
     lodash "^4.15.0"
     optipng-bin "^3.1.2"
     q "^1.4.1"
-    q-io "^1.13.2"
+    q-io "^2.0.6"
 
 gemini-react@^0.11.0:
   version "0.11.0"
@@ -4806,7 +4794,7 @@ glob@^4.3.1:
     minimatch "^2.0.1"
     once "^1.3.0"
 
-glob@^5.0.15, glob@^5.0.3, glob@~5.0.0:
+glob@^5.0.15, glob@^5.0.3:
   version "5.0.15"
   resolved "https://registry.yarnpkg.com/glob/-/glob-5.0.15.tgz#1bc936b9e02f4a603fcc222ecf7633d30b8b93b1"
   dependencies:
@@ -7224,7 +7212,7 @@ mime@1.4.1, "mime@>=1.2.11 <2.0.0", mime@^1.2.11, mime@^1.3.4:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
-"mimeparse@>=0.1.4 <0.2.0", mimeparse@^0.1.4:
+"mimeparse@>=0.1.4 <0.2.0":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/mimeparse/-/mimeparse-0.1.4.tgz#dafb02752370fd226093ae3152c271af01ac254a"
 
@@ -7736,7 +7724,7 @@ opn@5.1.0, opn@^5.1.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimist@^0.6.1, optimist@~0.6.0:
+optimist@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
   dependencies:
@@ -8319,8 +8307,8 @@ postcss-js@^1.0.0:
     postcss "^6.0.11"
 
 postcss-less@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-1.1.1.tgz#4bd240db517ce3407583d927858184f50045f4ab"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-1.1.2.tgz#97225f852972225926c8c66726256fa250c88558"
   dependencies:
     postcss "^5.2.16"
 
@@ -8587,16 +8575,6 @@ postcss-url@7.1.1:
     postcss "^6.0.1"
     xxhashjs "^0.2.1"
 
-"postcss-url@git://github.com/teryaew/postcss-url.git#feat/fallback-to-array-find":
-  version "7.1.2"
-  resolved "git://github.com/teryaew/postcss-url.git#c8604cca13157748dbbf25167b6557b338b8058f"
-  dependencies:
-    mime "^1.2.11"
-    minimatch "^3.0.0"
-    mkdirp "^0.5.0"
-    postcss "^6.0.1"
-    xxhashjs "^0.2.1"
-
 postcss-value-parser@^3.0.1, postcss-value-parser@^3.0.2, postcss-value-parser@^3.1.1, postcss-value-parser@^3.1.2, postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
@@ -8634,7 +8612,7 @@ postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.2, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.9:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.2, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.9:
   version "6.0.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
   dependencies:
@@ -8778,17 +8756,6 @@ q-i@^1.1.4:
     is-plain-object "^2.0.4"
     stringify-object "^3.2.0"
 
-q-io@^1.13.2:
-  version "1.13.4"
-  resolved "https://registry.yarnpkg.com/q-io/-/q-io-1.13.4.tgz#a96a0a04ea26ada3f7fa432eb742d486c72cff2d"
-  dependencies:
-    collections "^0.2.0"
-    mime "^1.2.11"
-    mimeparse "^0.1.4"
-    q "^1.0.1"
-    qs "^6.4.0"
-    url2 "^0.0.0"
-
 q-io@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/q-io/-/q-io-2.0.6.tgz#f1c78276edc5d313153abfac5cec86aa06c83709"
@@ -8819,7 +8786,7 @@ q@1.4.1, q@~1.4.1:
     pop-iterate "^1.0.1"
     weak-map "^1.0.5"
 
-q@^1.0.1, q@^1.1.2, q@^1.2.0, q@^1.4.1, q@^1.5.0:
+q@^1.1.2, q@^1.2.0, q@^1.4.1, q@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
@@ -8833,7 +8800,7 @@ qjobs@^1.1.4:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/qjobs/-/qjobs-1.1.5.tgz#659de9f2cf8dcc27a1481276f205377272382e73"
 
-qs@6.5.1, qs@^6.4.0, qs@~6.5.1:
+qs@6.5.1, qs@~6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
 
@@ -10482,10 +10449,10 @@ subarg@^1.0.0:
     minimist "^1.1.0"
 
 sugarss@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/sugarss/-/sugarss-1.0.0.tgz#65e51b3958432fb70d5451a68bb33e32d0cf1ef7"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/sugarss/-/sugarss-1.0.1.tgz#be826d9003e0f247735f92365dc3fd7f1bae9e44"
   dependencies:
-    postcss "^6.0.0"
+    postcss "^6.0.14"
 
 sum-up@^1.0.1:
   version "1.0.3"
@@ -10811,11 +10778,11 @@ tslint-config-airbnb@5.2.1:
     vrsource-tslint-rules "^5.1.0"
 
 tslint-consistent-codestyle@^1.4.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.8.0.tgz#ede0b5ec6777f8ff4426d9838bc9bf18e8174480"
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.9.0.tgz#633ed6908776015b4003ee638bc7968035bd7e3e"
   dependencies:
     tslib "^1.7.1"
-    tsutils "^2.12.0"
+    tsutils "^2.12.2"
 
 tslint-eslint-rules@^4.1.1:
   version "4.1.1"
@@ -10831,25 +10798,27 @@ tslint-microsoft-contrib@^5.0.0:
   dependencies:
     tsutils "^1.4.0"
 
-tslint@~5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.1.0.tgz#51a47baeeb58956fcd617bd2cf00e2ef0eea2ed9"
+tslint@~5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.8.0.tgz#1f49ad5b2e77c76c3af4ddcae552ae4e3612eb13"
   dependencies:
     babel-code-frame "^6.22.0"
-    colors "^1.1.2"
+    builtin-modules "^1.1.1"
+    chalk "^2.1.0"
+    commander "^2.9.0"
     diff "^3.2.0"
-    findup-sync "~0.3.0"
     glob "^7.1.1"
-    optimist "~0.6.0"
+    minimatch "^3.0.4"
     resolve "^1.3.2"
     semver "^5.3.0"
-    tsutils "^1.4.0"
+    tslib "^1.7.1"
+    tsutils "^2.12.1"
 
 tsutils@^1.4.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-1.9.1.tgz#b9f9ab44e55af9681831d5f28d0aeeaf5c750cb0"
 
-tsutils@^2.12.0:
+tsutils@^2.12.1, tsutils@^2.12.2:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.12.2.tgz#ad58a4865d17ec3ddb6631b6ca53be14a5656ff3"
   dependencies:
@@ -10914,8 +10883,8 @@ ua-parser-js@^0.7.9:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
 
 uglify-es@^3.0.24:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.1.6.tgz#b0f818c055a7e9538abc2286e70c743f2938311f"
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.1.7.tgz#4994b6d7dee6ae0b05bd4fb5d18c9ae2023b6d58"
   dependencies:
     commander "~2.11.0"
     source-map "~0.6.1"
@@ -10930,8 +10899,8 @@ uglify-js@2.x.x, uglify-js@^2.6, uglify-js@^2.7.3, uglify-js@^2.8.27, uglify-js@
     uglify-to-browserify "~1.0.0"
 
 uglify-js@3.1.x:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.1.6.tgz#918832602036e95d2318e11f27ee8461a8592c5d"
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.1.7.tgz#13379168b7fcf132ed977254a7802e0a294b1ffb"
   dependencies:
     commander "~2.11.0"
     source-map "~0.6.1"
@@ -11164,10 +11133,6 @@ url-regex@^3.0.0:
   dependencies:
     url ">=0.7.9 <0.8.0"
 
-url2@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/url2/-/url2-0.0.0.tgz#4eaabd1d5c3ac90d62ab4485c998422865a04b1a"
-
 "url@>=0.7.9 <0.8.0":
   version "0.7.9"
   resolved "https://registry.yarnpkg.com/url/-/url-0.7.9.tgz#1959b1a8b361fc017b59513a7c7fa9827f5e4ed0"
@@ -11379,10 +11344,10 @@ void-elements@^2.0.0:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
 vrsource-tslint-rules@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/vrsource-tslint-rules/-/vrsource-tslint-rules-5.1.1.tgz#9bef7a60bc34f6cdc637d7ba1b8d745b71f6dcbe"
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/vrsource-tslint-rules/-/vrsource-tslint-rules-5.8.0.tgz#b476f160b93cb0e3403fcea0848d665936a7a08f"
   dependencies:
-    tslint "~5.1.0"
+    tslint "~5.8.0"
 
 walkdir@^0.0.11:
   version "0.0.11"
@@ -11438,10 +11403,6 @@ wd@^1.4.0:
     request "2.79.0"
     underscore.string "3.3.4"
     vargs "0.1.0"
-
-weak-map@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/weak-map/-/weak-map-1.0.0.tgz#b66e56a9df0bd25a76bbf1b514db129080614a37"
 
 weak-map@^1.0.4, weak-map@^1.0.5:
   version "1.0.5"
@@ -11548,11 +11509,11 @@ webpack-postcss-tools@1.1.1:
     resolve "^1.1.6"
 
 webpack-sources@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.0.1.tgz#c7356436a4d13123be2e2426a05d1dad9cbe65cf"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.0.2.tgz#d0148ec083b3b5ccef1035a6b3ec16442983b27a"
   dependencies:
     source-list-map "^2.0.0"
-    source-map "~0.5.3"
+    source-map "~0.6.1"
 
 webpack@3.4.1:
   version "3.4.1"

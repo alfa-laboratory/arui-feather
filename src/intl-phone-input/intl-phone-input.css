@@ -1,0 +1,97 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.intl-phone-input {
+    display: inline-block;
+
+    &__input {
+        &.input .input__addons_left + .input__control {
+            padding-left: 0;
+        }
+    }
+
+    &__select {
+        .flag-icon {
+            margin-top: -3px;
+            margin-left: 2px;
+        }
+
+        /* Override select button border */
+        &.select {
+            margin-bottom: -1px;
+
+            .select-button {
+                border-bottom-color: transparent;
+                box-shadow: none;
+
+                &_size_m {
+                    min-width: 56px;
+                }
+            }
+        }
+    }
+
+    &__select-option-flag {
+        display: inline-block;
+        text-align: center;
+    }
+
+    &__select-option-code {
+        opacity: var(--opacity-minor);
+        margin-left: 6px;
+    }
+
+    &_size_s {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-s);
+        }
+    }
+
+    &_size_m {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-m);
+        }
+    }
+
+    &_size_l {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-l);
+        }
+    }
+
+    &_size_xl {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-xl);
+        }
+    }
+}
+
+.select__popup {
+    .flag-icon {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+
+    &.popup_size_s .intl-phone-input__select-option-flag {
+        min-width: 16px;
+        margin-right: 8px;
+    }
+
+    &.popup_size_m .intl-phone-input__select-option-flag {
+        min-width: 20px;
+        margin-right: 10px;
+    }
+
+    &.popup_size_l .intl-phone-input__select-option-flag {
+        min-width: 22px;
+        margin-right: 12px;
+    }
+
+    &.popup_size_xl .intl-phone-input__select-option-flag {
+        min-width: 24px;
+        margin-right: 16px;
+    }
+}

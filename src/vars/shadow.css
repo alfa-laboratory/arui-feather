@@ -11,7 +11,7 @@
     /**
      * Цвет для использования в облегчённых тенях.
      */
-    --shadow-light-color: color(var(--shadow-color) a(.2));
+    --shadow-light-color: color(var(--shadow-color) a(.25));
 
     /**
      * Тень для компонентов. Использутеся, например, для plate.

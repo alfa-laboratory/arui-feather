@@ -118,7 +118,7 @@
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "gemini": "^4.19.3",
     "gemini-babel": "^1.0.0",
-    "gemini-optipng": "git://github.com/teryaew/gemini-optipng.git#feat/update-q-io-to-v2",
+    "gemini-optipng": "^1.1.0",
     "gemini-react": "^0.11.0",
     "gemini-saucelabs-info": "^1.0.0",
     "html-reporter": "^1.0.0",

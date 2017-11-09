@@ -45,11 +45,10 @@ describe('swipeable', () => {
             );
         });
 
-        it('should call handleSwipeEnd and removeListeners when componentWillUnmount is called', () => {
-            swipeable.instance.handleSwipeEnd = spyHandler;
+        it('should call removeListeners when componentWillUnmount is called', () => {
             swipeable.instance.removeListeners = spyHandler;
             swipeable.instance.componentWillUnmount();
-            expect(spyHandler).to.have.callCount(2);
+            expect(spyHandler).to.have.callCount(1);
         });
 
         it('should call handleSwipeStart and child onMouseDown when handleMouseDown is called', () => {

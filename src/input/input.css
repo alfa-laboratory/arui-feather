@@ -203,6 +203,7 @@
 
     &__addons {
         display: flex;
+        flex-shrink: 0; /* Avoid overflow cutting of addons in IE11 */
         align-items: center;
     }
 

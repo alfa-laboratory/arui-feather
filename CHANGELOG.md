@@ -1,3 +1,14 @@
+<a name="10.4.1"></a>
+## [10.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.0...v10.4.1) (2017-11-09)
+
+
+### Bug Fixes
+
+* **input:** avoid overflow cutting of addons in ie11 ([#342](https://github.com/alfa-laboratory/arui-feather/issues/342)) ([9a0985d](https://github.com/alfa-laboratory/arui-feather/commit/9a0985d))
+* **swipeable:** remove handleSwipeEnd on component unmount ([#350](https://github.com/alfa-laboratory/arui-feather/issues/350)) ([ac9d42a](https://github.com/alfa-laboratory/arui-feather/commit/ac9d42a))
+
+
+
 <a name="10.4.0"></a>
 # [10.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.3.1...v10.4.0) (2017-11-06)
 

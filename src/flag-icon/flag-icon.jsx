@@ -15,7 +15,7 @@ import performance from '../performance';
 @performance()
 class FlagIcon extends React.Component {
     static propTypes = {
-        /** Код страны (ISO2) */
+        /** Код страны из [ISO 3166-1 alpha-2](https://ru.wikipedia.org/wiki/ISO_3166-1_alpha-2) */
         country: Type.string,
         /** Режим отображения */
         mode: Type.oneOf(['chunk', 'sprite']),

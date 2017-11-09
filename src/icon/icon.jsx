@@ -16,7 +16,7 @@ import performance from '../performance';
 class Icon extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Управление цветностью иконки */
         colored: Type.bool,
         /** Идентификатор компонента в DOM */

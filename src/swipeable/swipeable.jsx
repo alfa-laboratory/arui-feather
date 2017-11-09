@@ -37,7 +37,6 @@ export default class Swipeable extends React.Component {
     deltaY = 0;
 
     componentWillUnmount() {
-        this.handleSwipeEnd();
         this.removeListeners();
     }
 

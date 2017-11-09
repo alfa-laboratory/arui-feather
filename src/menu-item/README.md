@@ -4,7 +4,7 @@ const layoutStyle = {
 };
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span style={ layoutStyle }>
+        <span style={ layoutStyle } key={ size }>
             <MenuItem
                 size={ size }
                 type={ 'dropdown' }
@@ -22,7 +22,7 @@ const layoutStyle = {
 };
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span style={ layoutStyle }>
+        <span style={ layoutStyle } key={ size }>
             <MenuItem
                 size={ size }
                 type={ 'block' }
@@ -39,7 +39,7 @@ const layoutStyle = {
 };
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span style={ layoutStyle }>
+        <span style={ layoutStyle } key={ size }>
             <MenuItem
                 size={ size }
                 type={ 'link' }

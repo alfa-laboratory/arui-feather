@@ -25,8 +25,8 @@ class RenderInContainer extends React.Component {
     };
 
     componentDidMount() {
-        this.buildElements();
-        this.renderLayer();
+        // this.buildElements();
+        // this.renderLayer();
     }
 
     componentDidUpdate() {
@@ -42,6 +42,9 @@ class RenderInContainer extends React.Component {
     }
 
     render() {
+        // eslint-disable-next-line max-len, no-console
+        console.error('Component RenderInContainer is depricated. Use ReactDOM.createPortal instead. https://reactjs.org/docs/portals.html');
+
         return false;
     }
 

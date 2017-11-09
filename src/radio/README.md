@@ -5,7 +5,7 @@ const radioStyle = {
 <div>
     <div>
         {['m', 'l'].map(size => (
-            <span style={ radioStyle } >
+            <span style={ radioStyle } key={ size } >
                 <Radio
                     text='Текущий счёт'
                     size={ size }
@@ -15,7 +15,7 @@ const radioStyle = {
     </div>
     <div>
         {['m', 'l'].map(size => (
-            <span style={ radioStyle } >
+            <span style={ radioStyle } key={ size } >
                 <Radio
                     text='Основной счёт'
                     size={ size }
@@ -26,7 +26,7 @@ const radioStyle = {
     </div>
     <div>
         {['m', 'l'].map(size => (
-            <span style={ radioStyle } >
+            <span style={ radioStyle } key={ size } >
                 <Radio
                     text='Семейный счёт'
                     size={ size }
@@ -37,7 +37,7 @@ const radioStyle = {
     </div>
     <div>
         {['s', 'm', 'l', 'xl'].map(size => (
-            <span style={ radioStyle } >
+            <span style={ radioStyle } key={ size } >
                 <Radio
                     text='Текущий счёт'
                     size={ size }
@@ -48,7 +48,7 @@ const radioStyle = {
     </div>
     <div className='row'>
         {['s', 'm', 'l', 'xl'].map(size => (
-            <span style={ radioStyle } >
+            <span style={ radioStyle } key={ size } >
                 <Radio
                     text='Семейный счёт'
                     size={ size }

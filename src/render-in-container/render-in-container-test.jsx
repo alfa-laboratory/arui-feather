@@ -6,7 +6,7 @@ import { render, cleanUp } from '../test-utils';
 
 import RenderInContainer from './render-in-container';
 
-describe('render-in-container', () => {
+xdescribe('render-in-container', () => {
     afterEach(cleanUp);
 
     it('should place children in body when `container` prop not set', () => {

@@ -2,7 +2,7 @@
 ```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span className='row'>
+        <span className='row' key={ size }>
             <div className='column'>
                 <Link
                     text='Вернуться в интернет-банк'
@@ -17,7 +17,7 @@
 ```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span className='row'>
+        <span className='row' key={ size }>
             <div className='column'>
                 <Link
                     text='Показать больше'
@@ -39,7 +39,7 @@ const columnStyle = {
 };
 <div style={ { width: '100%' } }>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <span className='row'>
+        <span className='row' key={ size }>
             <div className='column' style={ columnStyle }>
                 <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
             </div>

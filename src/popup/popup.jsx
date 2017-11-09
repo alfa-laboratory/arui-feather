@@ -6,8 +6,7 @@ import { autobind } from 'core-decorators';
 import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
-
-import RenderInContainer from '../render-in-container/render-in-container';
+import ReactDOM from 'react-dom';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
@@ -218,7 +217,7 @@ class Popup extends React.Component {
         }
 
         return (
-            <RenderInContainer container={ this.getRenderContainer() }>
+            ReactDOM.createPortal(
                 <div
                     ref={ (popup) => { this.popup = popup; } }
                     data-for={ this.props.for }
@@ -265,8 +264,8 @@ class Popup extends React.Component {
                             )
                         }
                     </div>
-                </div>
-            </RenderInContainer>
+                </div>,
+                this.getRenderContainer())
         );
     }
 
@@ -366,7 +365,7 @@ class Popup extends React.Component {
      */
     getRenderContainer() {
         if (!this.context.isInCustomContainer) {
-            return null;
+            return document.body;
         }
 
         return this.context.renderContainerElement;

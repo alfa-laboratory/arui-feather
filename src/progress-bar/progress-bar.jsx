@@ -16,7 +16,7 @@ class ProgressBar extends Component {
         /** Размер компонента */
         size: Type.oneOf(['m']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.string
     };
 
     static defaultProps = {

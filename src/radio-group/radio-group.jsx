@@ -34,7 +34,7 @@ class RadioGroup extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Лейбл для группы */
         label: Type.node,
         /** Подсказка под полем */

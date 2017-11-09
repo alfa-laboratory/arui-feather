@@ -45,7 +45,7 @@ class SelectButton extends Button {}
 class Select extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Тип выпадающего списка */
         mode: Type.oneOf(['check', 'radio', 'radio-check']),
         /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */

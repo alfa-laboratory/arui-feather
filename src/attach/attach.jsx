@@ -103,7 +103,7 @@ class Attach extends React.Component {
             togglable: Type.oneOf(['check', 'radio']),
             checked: Type.bool,
             theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-            className: Type.oneOfType([Type.func, Type.string]),
+            className: Type.string,
             onClick: Type.func,
             onFocus: Type.func,
             onBlur: Type.func,
@@ -125,7 +125,7 @@ class Attach extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Обработчик клика по компоненту кнопки */
         onClick: Type.func,
         /** Обработчик изменения значения 'value' */

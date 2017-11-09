@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
@@ -9,7 +9,7 @@ import performance from '../performance';
  */
 @cn('progress-bar')
 @performance()
-class ProgressBar extends Component {
+class ProgressBar extends React.Component {
     static propTypes = {
         /** Прогресс в процентах */
         percent: Type.number,

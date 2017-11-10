@@ -21,6 +21,7 @@ import performance from '../performance';
 
 let savedScrollPosition;
 const SIDEBAR_WIDTH = 430;
+const IS_BROWSER = typeof window !== 'undefined';
 
 /**
  * Восстанавливает исходную позацию скролла
@@ -107,7 +108,9 @@ class Sidebar extends React.Component {
         const { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
         let offset = visible ? getScrollbarWidth() : 0;
 
-        document.body.style.marginRight = !this.state.isMobile && hasOverlay ? `${offset}px` : 0;
+        if (IS_BROWSER) {
+            document.body.style.marginRight = !this.state.isMobile && hasOverlay ? `${offset}px` : 0;
+        }
 
         let style = {
             width: this.state.isMobile ? '100%' : `${width + offset}px`

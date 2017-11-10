@@ -4,7 +4,7 @@
 
 import { render, cleanUp, simulate } from '../test-utils';
 
-import Notification from './notification';
+import Notification from './';
 
 describe('notification', () => {
     afterEach(cleanUp);
@@ -77,6 +77,30 @@ describe('notification', () => {
             expect(onCloseTimeout).to.have.been.calledOnce;
             done();
         }, 100);
+    });
+
+    it('should call `onClickOutside` callback after click outside notification', (done) => {
+        let onClickOutside = sinon.spy();
+        render(
+            <Notification
+                visible={ true }
+                onClickOutside={ onClickOutside }
+            >
+                notification-text
+            </Notification>
+        );
+
+        let outsideElement = document.createElement('div');
+        outsideElement.setAttribute('style',
+            'width: 10px; height: 10px; position: absolute; left: 500px; top: 500px;'
+        );
+        document.body.appendChild(outsideElement);
+
+        setTimeout(() => {
+            outsideElement.click();
+            expect(onClickOutside).to.have.been.calledOnce;
+            done();
+        }, 0);
     });
 
     it('should render passed custom icon component', () => {

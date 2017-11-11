@@ -11,7 +11,7 @@ describe('notification', () => {
 
     it('should render without problems', () => {
         let notification = render(
-            <Notification position={ [0, 0] }>
+            <Notification>
                 notification-text
             </Notification>
         );
@@ -24,7 +24,6 @@ describe('notification', () => {
         let onClick = sinon.spy();
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 visible={ true }
                 onClick={ onClick }
@@ -42,7 +41,6 @@ describe('notification', () => {
         let onCloserClick = sinon.spy();
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 visible={ true }
                 onCloserClick={ onCloserClick }
@@ -61,7 +59,6 @@ describe('notification', () => {
         let onCloseTimeout = sinon.spy();
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 autoCloseDelay={ 100 }
                 onCloseTimeout={ onCloseTimeout }
@@ -106,7 +103,6 @@ describe('notification', () => {
     it('should render passed custom icon component', () => {
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 icon={ <div className='super-icon' /> }
             >

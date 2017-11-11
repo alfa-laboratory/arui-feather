@@ -117,7 +117,6 @@ describe('popup', () => {
     it('should not have tooltip with target=`position` and type=`tooltip`', () => {
         let { popup } = renderPopup({
             target: 'position',
-            position: [0, 0],
             type: 'tooltip'
         }, null);
 

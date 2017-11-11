@@ -89,8 +89,9 @@ describe('notification', () => {
 
         let outsideElement = document.createElement('div');
         outsideElement.setAttribute('style',
-            'width: 10px; height: 10px; position: absolute; left: 500px; top: 500px;'
+            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
         );
+        outsideElement.setAttribute('id', 'outside');
         document.body.appendChild(outsideElement);
 
         setTimeout(() => {

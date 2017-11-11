@@ -12,7 +12,7 @@ import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
-import { isEventOutsideClientBounds } from '../lib/window';
+import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
 import Swipeable from '../swipeable';
 
@@ -200,7 +200,7 @@ class Notification extends React.Component {
     @autobind
     handleWindowClick(event) {
         if (this.props.onClickOutside && this.root &&
-            isEventOutsideClientBounds(event, this.root)) {
+            isNodeOutsideElement(event.target, this.root)) {
             this.props.onClickOutside(event);
         }
     }

@@ -151,7 +151,6 @@ describe('popup', () => {
         outsideElement.setAttribute('style',
             'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
         );
-        outsideElement.setAttribute('id', 'outside');
         document.body.appendChild(outsideElement);
 
         setTimeout(() => {

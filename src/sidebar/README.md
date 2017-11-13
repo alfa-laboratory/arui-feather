@@ -58,8 +58,8 @@ initialState = {
 <div>
     <Button onClick={ toggleSidebar }>Фильтр</Button>
     <Sidebar
-        headerContent={ 
-            <button 
+        headerContent={
+            <button
                 style={ {
                     margin: 0,
                     padding: 0,
@@ -72,7 +72,7 @@ initialState = {
                 onClick={ toggleSidebar }
             >
                 Применить
-            </button> 
+            </button>
         }
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
@@ -92,7 +92,7 @@ initialState = {
                 ))}
             </RadioGroup>
         </div>
-        <div style={ { marginBottom: 40 } }>    
+        <div style={ { marginBottom: 40 } }>
             <Heading size='s'>
                 Счета
             </Heading>
@@ -107,7 +107,7 @@ initialState = {
                 ))}
             </CheckBoxGroup>
         </div>
-        <div style={ { marginBottom: 40 } }>    
+        <div style={ { marginBottom: 40 } }>
             <Heading size='s'>
                 Дата операции
             </Heading>
@@ -121,9 +121,7 @@ initialState = {
                     />
                 ))}
             </RadioGroup>
-        </div>     
+        </div>
     </Sidebar>
 </div>
 ```
-
-

@@ -199,6 +199,7 @@ class IntlPhoneInput extends React.Component {
                     <span className={ cn('select-option-code') }>+{ country.dialCode }</span>
                 </span>
             ),
+            nativeText: `${country.name} +${country.dialCode}`,
             icon: (
                 <span className={ cn('select-option-flag') }>
                     { this.renderFlagIcon(country.iso2) }
@@ -225,9 +226,13 @@ class IntlPhoneInput extends React.Component {
 
         let relatedTarget = getRelatedTarget(event);
         let hasMatchedRelatedTarget = relatedTarget === event.target;
+        let hasSelectRelatedTarget = false;
+
         // Check classNames matching in popup's button (relatedTarget) & menu (focused target)
-        let hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
-            Array.from(event.target.classList).some(item => /select/.test(item));
+        if (relatedTarget.classList && event.target.classList) {
+            hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
+                Array.from(event.target.classList).some(item => /select/.test(item));
+        }
 
         if (event.type === 'focus') {
             if (hasMatchedRelatedTarget || hasSelectRelatedTarget) {

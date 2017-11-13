@@ -2,9 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+
+import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
-import IntlPhoneInput from './';
+import IntlPhoneInput from './intl-phone-input';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -52,7 +55,7 @@ describe('intl-phone-input', () => {
 
     it('should scroll window to element on public `scrollTo` method', (done) => {
         let elem = render(<IntlPhoneInput />);
-        let elemTopPosition = elem.node.getBoundingClientRect().top;
+        let elemTopPosition = elem.instance.input.getNode().getBoundingClientRect().top;
         let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         elem.instance.scrollTo();
@@ -63,10 +66,6 @@ describe('intl-phone-input', () => {
         }, 0);
     });
 
-    it('should show certain country in popup list on matching input change', () => {
-        // TODO @teryaew
-    });
-
     it('should call `onChange` callback after component input was changed', () => {
         let onChange = sinon.spy();
         let elem = render(<IntlPhoneInput onChange={ onChange } />);
@@ -75,19 +74,7 @@ describe('intl-phone-input', () => {
         simulate(controlNode, 'change', { target: { value: '+61' } });
 
         expect(onChange).to.have.been.calledOnce;
-    });
-
-    it('should call `onChange` callback after component select was changed', () => {
-        let onChange = sinon.spy();
-
-        render(<IntlPhoneInput onChange={ onChange } />);
-
-        let popupNode = document.querySelector('.popup');
-        let firstOptionNode = popupNode.querySelector('.menu-item');
-
-        firstOptionNode.click();
-
-        expect(onChange).to.have.been.calledOnce;
+        expect(onChange).to.have.been.calledWith('+61');
     });
 
     it('should have default country flag icon', () => {
@@ -101,4 +88,19 @@ describe('intl-phone-input', () => {
 
         expect(elem.node.querySelector('.flag-icon')).to.have.class('flag-icon_country_au');
     });
+
+    if (!bowser.mobile) {
+        it('should call `onChange` callback after component select was changed', () => {
+            let onChange = sinon.spy();
+
+            render(<IntlPhoneInput onChange={ onChange } />);
+
+            let popupNode = document.querySelector('.popup');
+            let firstOptionNode = popupNode.querySelector('.menu-item');
+
+            firstOptionNode.click();
+
+            expect(onChange).to.have.been.calledOnce;
+        });
+    }
 });

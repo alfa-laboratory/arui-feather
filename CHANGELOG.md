@@ -1,3 +1,31 @@
+<a name="10.4.1"></a>
+## [10.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.0...v10.4.1) (2017-11-09)
+
+
+### Bug Fixes
+
+* **input:** avoid overflow cutting of addons in ie11 ([#342](https://github.com/alfa-laboratory/arui-feather/issues/342)) ([9a0985d](https://github.com/alfa-laboratory/arui-feather/commit/9a0985d))
+* **swipeable:** remove handleSwipeEnd on component unmount ([#350](https://github.com/alfa-laboratory/arui-feather/issues/350)) ([ac9d42a](https://github.com/alfa-laboratory/arui-feather/commit/ac9d42a))
+
+
+
+<a name="10.4.0"></a>
+# [10.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.3.1...v10.4.0) (2017-11-06)
+
+
+### Bug Fixes
+
+* **popup:** fix gradient colors ([#333](https://github.com/alfa-laboratory/arui-feather/issues/333)) ([8605231](https://github.com/alfa-laboratory/arui-feather/commit/8605231))
+
+
+### Features
+
+* add mq decorator ([#317](https://github.com/alfa-laboratory/arui-feather/issues/317)) ([f56af9b](https://github.com/alfa-laboratory/arui-feather/commit/f56af9b))
+* **sidebar:** add width prop ([#336](https://github.com/alfa-laboratory/arui-feather/issues/336)) ([25ea5f9](https://github.com/alfa-laboratory/arui-feather/commit/25ea5f9))
+* **theme-provider:** remove alfa-on-colored from theme prop values ([#332](https://github.com/alfa-laboratory/arui-feather/issues/332)) ([ac6e58d](https://github.com/alfa-laboratory/arui-feather/commit/ac6e58d))
+
+
+
 <a name="10.3.1"></a>
 ## [10.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.3.0...v10.3.1) (2017-11-03)
 

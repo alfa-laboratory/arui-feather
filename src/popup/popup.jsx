@@ -55,7 +55,7 @@ import performance from '../performance';
 class Popup extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Дочерние элементы `Popup` */

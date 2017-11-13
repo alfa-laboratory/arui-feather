@@ -45,7 +45,7 @@ class Radio extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента */
         onChange: Type.func,
         /** Обработчик фокуса комнонента */

@@ -68,7 +68,7 @@ class Calendar extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */

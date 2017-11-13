@@ -59,8 +59,8 @@ body.sidebar-overlay {
         width: 100vw;
         height: 200vw;
 
-        outline: none;
         border: none;
+        outline: none;
 
         content: '';
 

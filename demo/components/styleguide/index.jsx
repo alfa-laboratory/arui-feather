@@ -2,7 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint import/first: 0 */
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+import '../../../src/polyfills';
+
 import StyleGuide from 'react-styleguidist/lib/rsg-components/StyleGuide';
 import {
     processSections,
@@ -10,6 +13,7 @@ import {
     slugger
 } from 'react-styleguidist/lib/utils/utils';
 import { getPlayground, isPlayground } from '../playground-with-share-example-button/utils';
+
 import '../../../src/main.css';
 import './demo-styles.css';
 

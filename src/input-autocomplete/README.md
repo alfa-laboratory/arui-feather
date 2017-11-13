@@ -79,7 +79,7 @@ const socialNetworks = [
             </Label>
     },
     {
-        value: 'Facebook',
+        value: 'Гипермаркет',
         description:
             <Label size='l'>
                 <div style={ { display: 'flex' } }>
@@ -89,7 +89,7 @@ const socialNetworks = [
             </Label>
     },
     {
-        value: 'Twitter',
+        value: 'Штрафы, налоги, комиссии',
         description:
             <Label size='l'>
                 <div style={ { display: 'flex' } }>

@@ -416,9 +416,9 @@ arrify@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-arui-presets@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-4.3.0.tgz#7fc573ccbe337eff07e8e47b03b17b0e17fcd486"
+arui-presets@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-4.3.1.tgz#604059c9208357c9aa6d445a0b7d8868955ff42a"
   dependencies:
     autoprefixer "7.1.2"
     babel-core "6.25.0"
@@ -448,8 +448,8 @@ arui-presets@4.3.0:
     eslint-plugin-import "2.7.0"
     eslint-plugin-jsdoc "3.1.2"
     eslint-plugin-jsx-a11y "6.0.2"
-    eslint-plugin-react "7.1.0"
-    eslint-plugin-sort-class-members "1.1.1"
+    eslint-plugin-react "7.4.0"
+    eslint-plugin-sort-class-members "1.2.2"
     extract-text-webpack-plugin "3.0.0"
     file-loader "0.11.2"
     find-parent-dir "0.3.0"
@@ -3783,17 +3783,18 @@ eslint-plugin-markdown@^1.0.0-beta.6:
     remark-parse "^3.0.0"
     unified "^6.1.2"
 
-eslint-plugin-react@7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.1.0.tgz#27770acf39f5fd49cd0af4083ce58104eb390d4c"
+eslint-plugin-react@7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.4.0.tgz#300a95861b9729c087d362dd64abcc351a74364a"
   dependencies:
     doctrine "^2.0.0"
     has "^1.0.1"
-    jsx-ast-utils "^1.4.1"
+    jsx-ast-utils "^2.0.0"
+    prop-types "^15.5.10"
 
-eslint-plugin-sort-class-members@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.1.1.tgz#dedbb30054fced1a55a9d443bb2b842a0cfc95f1"
+eslint-plugin-sort-class-members@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.2.2.tgz#c8719f80a2b7a84707d1ee3c0a7cb34d815c4f5a"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -6611,9 +6612,15 @@ jss@^8.1.0:
     is-in-browser "^1.0.2"
     warning "^3.0.0"
 
-jsx-ast-utils@^1.4.0, jsx-ast-utils@^1.4.1:
+jsx-ast-utils@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
+
+jsx-ast-utils@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.0.1.tgz#e801b1b39985e20fffc87b40e3748080e2dcac7f"
+  dependencies:
+    array-includes "^3.0.3"
 
 just-extend@^1.1.26:
   version "1.1.27"

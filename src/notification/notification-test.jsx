@@ -93,4 +93,17 @@ describe('notification', () => {
 
         expect(iconNode).to.exist;
     });
+
+    it('should render traceId', () => {
+        let notification = render(
+            <Notification
+                traceId='6b634f93f610b2de'
+                status={ 'error' }
+            >
+                notification-text
+            </Notification>);
+        let notificationTraceIdNode = notification.node.querySelector('.notification__trace-id');
+
+        expect(notificationTraceIdNode).to.exist;
+    });
 });

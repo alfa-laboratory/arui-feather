@@ -58,6 +58,7 @@ initialState = {
         offset={ 190 }
         stickTo='right'
         title={ 'Недостаточно средств' }
+        traceId={ '228991488' }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >

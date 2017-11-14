@@ -10,6 +10,7 @@ import Type from 'prop-types';
 
 import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
+import Label from '../label/label';
 
 import cn from '../cn';
 import { isEventOutsideClientBounds } from '../lib/window';
@@ -43,6 +44,8 @@ class Notification extends React.Component {
         id: Type.string,
         /** Заголовок сообщения */
         title: Type.node,
+        /** TraceId запроса на котором произошла ошибка */
+        traceId: Type.node,
         /** Замена стандартной иконки */
         icon: Type.node,
         /** Время до закрытия компонента */
@@ -141,6 +144,16 @@ class Notification extends React.Component {
                     <div className={ cn('content') }>
                         { this.props.children }
                     </div>
+                    {
+                        this.props.traceId && this.props.status === 'error'
+                            ? <Label
+                                className={ cn('trace-id') }
+                                size='s'
+                            >
+                                Код ошибки: { this.props.traceId }
+                            </Label>
+                            : null
+                    }
                     {
                         this.props.hasCloser &&
                         <IconButton

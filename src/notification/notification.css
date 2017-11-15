@@ -68,6 +68,13 @@
         left: 18px;
     }
 
+    &__trace-id {
+        display: block;
+
+        margin-top: 8px;
+        opacity: var(--opacity-minor);
+    }
+
     &__closer {
         opacity: var(--opacity-minor);
         top: 0;

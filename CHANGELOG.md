@@ -1,3 +1,101 @@
+<a name="10.5.0"></a>
+# [10.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.1...v10.5.0) (2017-11-13)
+
+
+### Bug Fixes
+
+* fix react undefined in progress bar ([#353](https://github.com/alfa-laboratory/arui-feather/issues/353)) ([b87c53e](https://github.com/alfa-laboratory/arui-feather/commit/b87c53e))
+* **sidebar:** fix offset on render ([#356](https://github.com/alfa-laboratory/arui-feather/issues/356)) ([2a60d68](https://github.com/alfa-laboratory/arui-feather/commit/2a60d68))
+
+
+### Features
+
+* add flag-icon component ([#334](https://github.com/alfa-laboratory/arui-feather/issues/334)) ([670ee37](https://github.com/alfa-laboratory/arui-feather/commit/670ee37))
+* use classname prop type string-only ([#352](https://github.com/alfa-laboratory/arui-feather/issues/352)) ([4229d4d](https://github.com/alfa-laboratory/arui-feather/commit/4229d4d))
+
+
+
+<a name="10.4.1"></a>
+## [10.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.0...v10.4.1) (2017-11-09)
+
+
+### Bug Fixes
+
+* **input:** avoid overflow cutting of addons in ie11 ([#342](https://github.com/alfa-laboratory/arui-feather/issues/342)) ([9a0985d](https://github.com/alfa-laboratory/arui-feather/commit/9a0985d))
+* **swipeable:** remove handleSwipeEnd on component unmount ([#350](https://github.com/alfa-laboratory/arui-feather/issues/350)) ([ac9d42a](https://github.com/alfa-laboratory/arui-feather/commit/ac9d42a))
+
+
+
+<a name="10.4.0"></a>
+# [10.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.3.1...v10.4.0) (2017-11-06)
+
+
+### Bug Fixes
+
+* **popup:** fix gradient colors ([#333](https://github.com/alfa-laboratory/arui-feather/issues/333)) ([8605231](https://github.com/alfa-laboratory/arui-feather/commit/8605231))
+
+
+### Features
+
+* add mq decorator ([#317](https://github.com/alfa-laboratory/arui-feather/issues/317)) ([f56af9b](https://github.com/alfa-laboratory/arui-feather/commit/f56af9b))
+* **sidebar:** add width prop ([#336](https://github.com/alfa-laboratory/arui-feather/issues/336)) ([25ea5f9](https://github.com/alfa-laboratory/arui-feather/commit/25ea5f9))
+* **theme-provider:** remove alfa-on-colored from theme prop values ([#332](https://github.com/alfa-laboratory/arui-feather/issues/332)) ([ac6e58d](https://github.com/alfa-laboratory/arui-feather/commit/ac6e58d))
+
+
+
+<a name="10.3.1"></a>
+## [10.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.3.0...v10.3.1) (2017-11-03)
+
+
+### Bug Fixes
+
+* **sidebar:** fix hidden scrollbar ([#323](https://github.com/alfa-laboratory/arui-feather/issues/323)) ([075f80a](https://github.com/alfa-laboratory/arui-feather/commit/075f80a))
+* **sidebar:** fix sidebar styles ([#327](https://github.com/alfa-laboratory/arui-feather/issues/327)) ([76fd00c](https://github.com/alfa-laboratory/arui-feather/commit/76fd00c))
+* **swipeable:** fix swipeable delta calculation ([#330](https://github.com/alfa-laboratory/arui-feather/issues/330)) ([50186ef](https://github.com/alfa-laboratory/arui-feather/commit/50186ef))
+
+
+
+<a name="10.3.0"></a>
+# [10.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.3...v10.3.0) (2017-11-01)
+
+
+### Bug Fixes
+
+* **money-input:** fix incorrect behavior ([#318](https://github.com/alfa-laboratory/arui-feather/issues/318)) ([bf92040](https://github.com/alfa-laboratory/arui-feather/commit/bf92040))
+
+
+### Features
+
+* **swipeable:** add swipeable component ([#279](https://github.com/alfa-laboratory/arui-feather/issues/279)) ([e3eed1c](https://github.com/alfa-laboratory/arui-feather/commit/e3eed1c))
+
+
+
+<a name="10.2.3"></a>
+## [10.2.3](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.2...v10.2.3) (2017-10-31)
+
+
+### Bug Fixes
+
+* fix missing key prop in PopupHeader ([#315](https://github.com/alfa-laboratory/arui-feather/issues/315)) ([201bfb6](https://github.com/alfa-laboratory/arui-feather/commit/201bfb6))
+* **vars:** fix --color-border-separator-alfa-on-white css var ([3d5e7ad](https://github.com/alfa-laboratory/arui-feather/commit/3d5e7ad))
+
+
+### Features
+
+* fix sidebar styles ([#312](https://github.com/alfa-laboratory/arui-feather/issues/312)) ([109d0e0](https://github.com/alfa-laboratory/arui-feather/commit/109d0e0))
+
+
+
+<a name="10.2.2"></a>
+## [10.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.1...v10.2.2) (2017-10-30)
+
+
+### Features
+
+* **popup:** remove unused hovered state ([#308](https://github.com/alfa-laboratory/arui-feather/issues/308)) ([51cdf63](https://github.com/alfa-laboratory/arui-feather/commit/51cdf63))
+
+
+
 <a name="10.2.1"></a>
 ## [10.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.2.0...v10.2.1) (2017-10-17)
 

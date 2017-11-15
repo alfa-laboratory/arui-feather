@@ -29,7 +29,7 @@ class Dropdown extends React.Component {
         popupContent: Type.node,
         /** Свойства для компонента [Popup](../popup/) */
         popupProps: Type.shape({
-            className: Type.oneOfType([Type.func, Type.string]),
+            className: Type.string,
             type: Type.oneOf(['default', 'tooltip']),
             height: Type.oneOf(['default', 'available', 'adaptive']),
             directions: Type.arrayOf(Type.oneOf([
@@ -67,7 +67,7 @@ class Dropdown extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Обработчик клика по кнопке компонента */

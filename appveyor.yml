@@ -1,5 +1,9 @@
 image: Visual Studio 2017
 
+branches:
+  except:
+    - gh-pages
+
 environment:
   matrix:
     - nodejs_version: stable

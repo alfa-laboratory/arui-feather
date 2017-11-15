@@ -19,7 +19,7 @@ class FormField extends React.Component {
         /** Дочерние элементы `FormField` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Размер компонента */

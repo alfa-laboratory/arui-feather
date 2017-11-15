@@ -4,17 +4,22 @@
 
 /* eslint-disable class-methods-use-this-regexp/class-methods-use-this */
 
-
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
 import Icon from '../icon/icon';
+import IconButton from '../icon-button';
 import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
+
+import keyboardCode from '../lib/keyboard-code';
+import getScrollbarWidth from '../lib/scrollbar-width';
 
 import cn from '../cn';
 import Mq from '../mq';
 import performance from '../performance';
+
+const SIDEBAR_WIDTH = 430;
 
 let savedScrollPosition;
 
@@ -49,21 +54,29 @@ class Sidebar extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Дочерние компоненты */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Признак для отрисовки элемента закрытия */
         hasCloser: Type.bool,
-        /** Признак появления холодильника */
+        /** Признак для отрисовки оверлея */
+        hasOverlay: Type.bool,
+        /** Признак появления сайдбара */
         visible: Type.bool.isRequired,
+        /** Контент в шапке сайдбара */
+        headerContent: Type.node,
+        /** Ширина сайдбара */
+        width: Type.number,
         /** Обработчик клика на элемент закрытия */
         onCloserClick: Type.func
     };
 
     static defaultProps = {
-        hasCloser: true
+        hasOverlay: true,
+        hasCloser: true,
+        width: SIDEBAR_WIDTH
     };
 
     state = {
@@ -71,46 +84,90 @@ class Sidebar extends React.Component {
     };
 
     componentDidMount() {
+        this.styleBodyRightMargin();
         setBodyClass(this.props.visible);
+        window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillReceiveProps(nextProps) {
         setBodyClass(nextProps.visible);
+        if (nextProps.visible && this.props.hasOverlay) {
+            document.body.classList.add('sidebar-overlay');
+        } else {
+            document.body.classList.remove('sidebar-overlay');
+        }
+    }
+
+    componentDidUpdate() {
+        this.styleBodyRightMargin();
     }
 
     componentWillUnmount() {
         setBodyClass(false);
+        window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('scroll', this.handleScroll);
     }
 
     render(cn) {
-        const { hasCloser, children, visible } = this.props;
+        let { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
+        let offset = visible ? getScrollbarWidth() : 0;
+        let style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        let contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
-            <PopupContainerProvider className={ cn({ visible }) }>
+            <PopupContainerProvider className={ cn({ visible }) } style={ style }>
+                <div
+                    role='button'
+                    tabIndex='-1'
+                    className={ cn('overlay', { visible: visible && hasOverlay }) }
+                    onClick={ this.handleClose }
+                />
                 <Mq
                     query='--small-only'
                     onMatchChange={ this.handleMqMatchChange }
                 />
-                <div id={ this.props.id }>
-                    {
-                        hasCloser &&
-                        <button
-                            className={ cn('closer') }
-                            onClick={ this.handleCloserClick }
-                        >
-                            <Icon
-                                name='tool-close'
-                                size='xl'
-                            />
-                        </button>
-                    }
-                    <div className={ cn('content') }>
+                <div
+                    className={ cn('inner') }
+                    id={ this.props.id }
+                >
+                    <header
+                        className={ cn('header') }
+                    >
+                        {
+                            hasCloser &&
+                            <div className={ cn('closer') }>
+                                <IconButton
+                                    size={ this.state.isMobile ? 'm' : 'l' }
+                                    onClick={ this.handleClose }
+                                >
+                                    <Icon size={ this.state.isMobile ? 'm' : 'l' } name='tool-close' />
+                                </IconButton>
+                            </div>
+                        }
+                        {
+                            headerContent
+                                ? this.renderHeaderContent(cn)
+                                : null
+                        }
+                    </header>
+                    <div
+                        style={ contentStyle }
+                        className={ cn('content') }
+                    >
                         { children }
                     </div>
+                    <footer className={ cn('footer') } />
                 </div>
             </PopupContainerProvider>
+        );
+    }
+
+    renderHeaderContent(cn) {
+        return (
+            <div className={ cn('header-content') }>
+                { this.props.headerContent }
+            </div>
         );
     }
 
@@ -120,7 +177,7 @@ class Sidebar extends React.Component {
     }
 
     @autobind
-    handleCloserClick() {
+    handleClose() {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
@@ -130,12 +187,27 @@ class Sidebar extends React.Component {
         }
     }
 
+    @autobind
+    handleKeyDown(event) {
+        switch (event.which) {
+            case keyboardCode.ESCAPE:
+                event.preventDefault();
+                this.handleClose();
+                break;
+        }
+    }
+
     handleScroll() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
         if (scrollTop) {
             savedScrollPosition = scrollTop;
         }
+    }
+
+    styleBodyRightMargin() {
+        let offset = this.props.visible ? getScrollbarWidth() : 0;
+        document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : 0;
     }
 }
 

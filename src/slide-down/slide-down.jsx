@@ -25,7 +25,7 @@ class SlideDown extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.string, Type.func]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string
     };

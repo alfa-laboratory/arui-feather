@@ -60,7 +60,7 @@ class Button extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Обработчик клика по кнопке */
         onClick: Type.func,
         /** Обработчик фокуса кнопки */

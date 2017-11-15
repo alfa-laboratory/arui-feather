@@ -20,7 +20,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 class Textarea extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Управление автозаполнением компонента */

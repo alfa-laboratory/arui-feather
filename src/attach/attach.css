@@ -5,10 +5,10 @@
 @import '../vars.css';
 
 .attach {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
-    white-space: nowrap;
 
     &, *, *:before, *:after {
         box-sizing: border-box;

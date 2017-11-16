@@ -1,3 +1,13 @@
+<a name="10.5.1"></a>
+## [10.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.5.0...v10.5.1) (2017-11-16)
+
+
+### Bug Fixes
+
+* **button:** fix content alignment ([#364](https://github.com/alfa-laboratory/arui-feather/issues/364)) ([9726d7f](https://github.com/alfa-laboratory/arui-feather/commit/9726d7f))
+
+
+
 <a name="10.5.0"></a>
 # [10.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.1...v10.5.0) (2017-11-13)
 

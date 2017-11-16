@@ -71,10 +71,10 @@ describe('intl-phone-input', () => {
         let elem = render(<IntlPhoneInput onChange={ onChange } />);
         let controlNode = elem.node.querySelector('.input__control');
 
-        simulate(controlNode, 'change', { target: { value: '+61' } });
+        simulate(controlNode, 'change', { target: { value: '+1868' } });
 
         expect(onChange).to.have.been.calledOnce;
-        expect(onChange).to.have.been.calledWith('+61');
+        expect(onChange).to.have.been.calledWith('+1868');
     });
 
     it('should have default country flag icon', () => {

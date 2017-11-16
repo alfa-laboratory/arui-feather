@@ -13,12 +13,7 @@ import cn from '../cn';
 import performance from '../performance';
 
 import countries from '../lib/countries';
-
-function getRelatedTarget(event) {
-    return event.relatedTarget || // не поддерживается в FF и IE10 https://github.com/facebook/react/issues/2011
-        event.explicitOriginalTarget || // не поддерживается в IE
-        document.activeElement; // В IE вернет не <Select> а конкретную ноду, на которую пришел фокус
-}
+import getRelatedTarget from '../lib/related-target';
 
 /**
  * Компонент ввода международного телефона по маске.
@@ -277,7 +272,7 @@ class IntlPhoneInput extends React.Component {
                         if (this.state.countryIso2 !== country.iso2 && country.priority === 0) {
                             this.setCountry(country.iso2, inputValue);
                         }
-                    // Otherwise don't change country already selected country
+                    // Otherwise don't change already selected country
                     } else if (this.state.countryIso2 === country.iso2) {
                         this.setCountry(country.iso2, inputValue);
                     }

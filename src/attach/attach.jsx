@@ -247,7 +247,7 @@ class Attach extends React.Component {
                 );
 
             return (
-                <div className={ cn('file') }>
+                <span className={ cn('file') }>
                     <span className={ cn('text') }>
                         { content }
                     </span>
@@ -256,14 +256,14 @@ class Attach extends React.Component {
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
                     />
-                </div>
+                </span>
             );
         }
 
         return (
-            <div className={ cn('no-file') }>
+            <span className={ cn('no-file') }>
                 { this.props.noFileText }
-            </div>
+            </span>
         );
     }
 

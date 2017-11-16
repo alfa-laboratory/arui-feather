@@ -1,4 +1,5 @@
 import Button from '../src/button';
+import Icon from '../src/icon';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'button';
@@ -21,36 +22,38 @@ geminiReact.suite(NAME, function () {
         SIZES.forEach((size) => {
             let sizeSelector = `${NAME}_size_${size}`;
 
-            PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+            PROP_SETS
+                .concat([{ icon: <Icon size={ size } name='action-ok' /> }])
+                .forEach((set, index) => {
+                    let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 
-                geminiReact.suite(selector, function (suite) {
-                    let props = { theme, size, ...set };
-                    let template = (
-                        <GeminiBox theme={ theme }>
-                            <Button { ...props }>
-                                Button
-                            </Button>
-                        </GeminiBox>
-                    );
+                    geminiReact.suite(selector, function (suite) {
+                        let props = { theme, size, ...set };
+                        let template = (
+                            <GeminiBox theme={ theme }>
+                                <Button { ...props }>
+                                    Button
+                                </Button>
+                            </GeminiBox>
+                        );
 
-                    if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
-                    } else {
-                        suite
-                            .render(template)
-                            .capture('plain')
-                            .capture('hovered', function (actions) {
-                                actions.mouseMove(this.renderedComponent);
-                            })
-                            .capture('pressed', function (actions) {
-                                actions.mouseDown(this.renderedComponent);
-                            });
-                    }
+                        if (set.disabled) {
+                            suite
+                                .render(template)
+                                .capture('plain');
+                        } else {
+                            suite
+                                .render(template)
+                                .capture('plain')
+                                .capture('hovered', function (actions) {
+                                    actions.mouseMove(this.renderedComponent);
+                                })
+                                .capture('pressed', function (actions) {
+                                    actions.mouseDown(this.renderedComponent);
+                                });
+                        }
+                    });
                 });
-            });
         });
     });
 });

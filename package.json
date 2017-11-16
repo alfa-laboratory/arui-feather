@@ -125,7 +125,7 @@
     "gemini-saucelabs-info": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-gm": "^0.0.8",
-    "gulp-imagemin": "^3.4.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp.spritesmith": "^6.5.1",
     "handlebars": "^4.0.11",

@@ -110,10 +110,10 @@ const buttons = [
 <div>
     {buttons.map(({ size, name }) => (
         <div className='row' key={ size }>
-            <Button size={ size }>
-                <div style={ { marginRight: '8px', display: 'inline-block' } } >
-                    <Icon size={ size } name='action-ok' />
-                </div>
+            <Button
+                icon={ <Icon size={ size } name='action-ok' /> }
+                size={ size }
+            >
                 {`${name}`}
             </Button>
         </div>

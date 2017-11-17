@@ -13,6 +13,34 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
+const BUTTON_TYPE_SIZES = ['s', 'm', 'l', 'xl'];
+const NORMAL_TYPE_SIZES = ['m', 'l'];
+
+/**
+ * Проверка входящих свойств размера компонента.
+ *
+ * @param {Object} props Свойства компонента.
+ * @param {String} propName Конкретное свойство компонента.
+ * @param {String} componentName Имя компонента.
+ * @returns {Error|null}
+ */
+function checkSizeProp(props, propName, componentName) {
+    let values = JSON.stringify(props.type === 'button' ? BUTTON_TYPE_SIZES : NORMAL_TYPE_SIZES);
+
+    if (props.type === 'button') {
+        if (!new RegExp(BUTTON_TYPE_SIZES.join('|')).test(props.size)) {
+            return new Error(`Invalid prop \`${propName}\` of value \`${props.size}\` supplied to \`${componentName}\`, expected one of ${values}.`); // eslint-disable-line max-len
+        }
+    } if (props.type === 'normal' || props.type === undefined) {
+        if (!new RegExp(NORMAL_TYPE_SIZES.join('|')).test(props.size)) {
+            return new Error(`Invalid prop \`${propName}\` of value \`${props.size}\` supplied to \`${componentName}\`, expected one of ${values}.`); // eslint-disable-line max-len
+        }
+    }
+
+    return null;
+}
+
+
 /**
  * Компонент радио-кнопки.
  */
@@ -37,7 +65,7 @@ class Radio extends React.Component {
         /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        size: checkSizeProp,
         /** Отображение в состоянии ошибки */
         error: Type.bool,
         /** Последовательность перехода между контролами при нажатии на Tab */

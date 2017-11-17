@@ -1,3 +1,13 @@
+<a name="10.6.0"></a>
+# [10.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.5.1...v10.6.0) (2017-11-17)
+
+
+### Features
+
+* **dropdown:** add custom target ([#366](https://github.com/alfa-laboratory/arui-feather/issues/366)) ([5ecab68](https://github.com/alfa-laboratory/arui-feather/commit/5ecab68))
+
+
+
 <a name="10.5.1"></a>
 ## [10.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.5.0...v10.5.1) (2017-11-16)
 

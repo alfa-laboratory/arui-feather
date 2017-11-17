@@ -29,10 +29,13 @@
         z-index: -1;
     }
 
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
     &__box {
-        position: absolute;
-        left: 0;
-        top: 0;
+        position: relative;
         border-radius: var(--border-radius-control);
     }
 
@@ -58,7 +61,7 @@
         }
 
         .checkbox__text {
-            padding-left: calc(var(--size-m-box) + 10px);
+            padding-left: 10px;
         }
     }
 
@@ -76,7 +79,7 @@
         }
 
         .checkbox__text {
-            padding-left: calc(var(--size-l-box) + 12px);
+            padding-left: 12px;
         }
     }
 

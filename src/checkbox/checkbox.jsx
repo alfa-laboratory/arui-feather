@@ -27,14 +27,15 @@ const NORMAL_TYPE_SIZES = ['m', 'l'];
  */
 function checkSizeProp(props, propName, componentName) {
     let values = JSON.stringify(props.type === 'button' ? BUTTON_TYPE_SIZES : NORMAL_TYPE_SIZES);
+    let message = `Invalid prop \`${propName}\` of value \`${props.size}\` supplied to \`${componentName}\`, expected one of ${values}.`; // eslint-disable-line max-len
 
     if (props.type === 'button') {
-        if (!new RegExp(BUTTON_TYPE_SIZES.join('|')).test(props.size)) {
-            return new Error(`Invalid prop \`${propName}\` of value \`${props.size}\` supplied to \`${componentName}\`, expected one of ${values}.`); // eslint-disable-line max-len
+        if (!new RegExp(BUTTON_TYPE_SIZES.map(item => `^${item}$`).join('|')).test(props.size)) {
+            return new Error(message);
         }
     } if (props.type === 'normal' || props.type === undefined) {
-        if (!new RegExp(NORMAL_TYPE_SIZES.join('|')).test(props.size)) {
-            return new Error(`Invalid prop \`${propName}\` of value \`${props.size}\` supplied to \`${componentName}\`, expected one of ${values}.`); // eslint-disable-line max-len
+        if (!new RegExp(NORMAL_TYPE_SIZES.map(item => `^${item}$`).join('|')).test(props.size)) {
+            return new Error(message);
         }
     }
 

@@ -5,7 +5,7 @@
 @import '../vars.css';
 
 .intl-phone-input {
-    display: inline-block;
+    display: inline-flex;
 
     &__input {
         &.input .input__addons_left + .input__control {
@@ -14,11 +14,6 @@
     }
 
     &__select {
-        .flag-icon {
-            margin-top: -3px;
-            margin-left: 2px;
-        }
-
         /* Override select button border */
         &.select {
             margin-bottom: -1px;
@@ -26,17 +21,8 @@
             .select-button {
                 border-bottom-color: transparent;
                 box-shadow: none;
-
-                &_size_m {
-                    min-width: 56px;
-                }
             }
         }
-    }
-
-    &__select-option-flag {
-        display: inline-block;
-        text-align: center;
     }
 
     &__select-option-code {
@@ -70,11 +56,6 @@
 }
 
 .select__popup {
-    .flag-icon {
-        display: inline-block;
-        vertical-align: baseline;
-    }
-
     &.popup_size_s .intl-phone-input__select-option-flag {
         min-width: 16px;
         margin-right: 8px;

@@ -1,7 +1,13 @@
-```jsx
-function handleChange(value) {
-    setState({ value });
-}
+Обычные
 
-<IntlPhoneInput value={ state.value } onChange={ handleChange } />
+```jsx
+const SIZES = ['s', 'm', 'l', 'xl'];
+
+<div>
+    {SIZES.map(size => (
+        <div className='row'>
+            <IntlPhoneInput size={ size } />
+        </div>
+    ))}
+</div>
 ```

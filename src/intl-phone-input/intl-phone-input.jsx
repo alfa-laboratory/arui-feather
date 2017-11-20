@@ -223,7 +223,7 @@ class IntlPhoneInput extends React.Component {
         let hasMatchedRelatedTarget = relatedTarget === event.target;
         let hasSelectRelatedTarget = false;
 
-        // Check classNames matching in popup's button (relatedTarget) & menu (focused target)
+        // Check classNames matching in select's button (relatedTarget) & menu (focused target)
         if (relatedTarget.classList && event.target.classList) {
             hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
                 Array.from(event.target.classList).some(item => /select/.test(item));

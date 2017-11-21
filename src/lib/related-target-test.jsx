@@ -9,25 +9,23 @@ describe('related-target', () => {
     afterEach(cleanUp);
 
     it('should return relatedTarget on focus', () => {
-        let onFocus = sinon.spy(event => event.persist());
-        let input = render(<input onFocus={ onFocus } />);
+        let relatedTarget;
+        let input = render(<input onFocus={ (event) => { relatedTarget = getRelatedTarget(event); } } />);
 
         input.node.focus();
 
-        let relatedTarget = getRelatedTarget(onFocus.getCall(0).args[0]);
         expect(relatedTarget.isEqualNode(input.node)).to.be.true;
     });
 
     it('should return relatedTarget on blur', (done) => {
-        let onBlur = sinon.spy(event => event.persist());
-        let input = render(<input onBlur={ onBlur } />);
+        let relatedTarget;
+        let input = render(<input onBlur={ (event) => { relatedTarget = getRelatedTarget(event); } } />);
 
         input.node.focus();
 
         setTimeout(() => {
             input.node.blur();
 
-            let relatedTarget = getRelatedTarget(onBlur.getCall(0).args[0]);
             expect(relatedTarget.isEqualNode(document.body)).to.be.true;
 
             done();
@@ -35,12 +33,13 @@ describe('related-target', () => {
     });
 
     it('should return relatedTargets on focus switch between components', (done) => {
-        let onBlur = sinon.spy(event => event.persist());
-        let onFocus = sinon.spy(event => event.persist());
+        let blurRelatedTarget;
+        let focusRelatedTarget;
+
         let inputs = render(
             <div>
-                <input id='foo' onBlur={ onBlur } />
-                <input id='bar' onFocus={ onFocus } />
+                <input id='foo' onBlur={ (event) => { blurRelatedTarget = getRelatedTarget(event); } } />
+                <input id='bar' onFocus={ (event) => { focusRelatedTarget = getRelatedTarget(event); } } />
             </div>
         );
         let inputA = inputs.node.querySelector('#foo');
@@ -51,8 +50,6 @@ describe('related-target', () => {
         setTimeout(() => {
             inputB.focus();
 
-            let blurRelatedTarget = getRelatedTarget(onBlur.getCall(0).args[0]);
-            let focusRelatedTarget = getRelatedTarget(onFocus.getCall(0).args[0]);
             expect(blurRelatedTarget.isEqualNode(inputB)).to.be.true;
             expect(focusRelatedTarget.isEqualNode(inputA)).to.be.true;
 

@@ -8,8 +8,9 @@ import bowser from 'bowser';
 import { render, cleanUp, simulate } from '../test-utils';
 
 import IntlPhoneInput from './intl-phone-input';
-
 import { SCROLL_TO_CORRECTION } from '../vars';
+
+const SIZES = ['s', 'm', 'l', 'xl'];
 
 describe('intl-phone-input', () => {
     let originalWindowScrollTo = window.scrollTo;
@@ -26,6 +27,20 @@ describe('intl-phone-input', () => {
     it('renders without problems', () => {
         let intlPhoneInput = render(<IntlPhoneInput />);
         expect(intlPhoneInput.node).to.have.exist;
+    });
+
+    it('renders without problems in all sizes', () => {
+        SIZES.forEach(size => {
+            let intlPhoneInput = render(<IntlPhoneInput size={ size } />);
+            expect(intlPhoneInput.node).to.have.exist;
+        });
+    });
+
+    it('should return `HTMLInputElement` when `getControl` method called', () => {
+        let elem = render(<IntlPhoneInput />);
+        let controlNode = elem.instance.getControl();
+
+        expect(controlNode).to.be.instanceOf(HTMLInputElement);
     });
 
     it('should call `onFocus` callback on public `focus` method call', (done) => {
@@ -66,15 +81,37 @@ describe('intl-phone-input', () => {
         }, 0);
     });
 
-    it('should call `onChange` callback after component input was changed', () => {
+    it('should call `onChange` callback after input was changed with dial code of country without priority', () => {
         let onChange = sinon.spy();
         let elem = render(<IntlPhoneInput onChange={ onChange } />);
-        let controlNode = elem.node.querySelector('.input__control');
+        let controlNode = elem.instance.getControl();
+
+        simulate(controlNode, 'change', { target: { value: '+54' } });
+
+        expect(onChange).to.have.been.calledOnce;
+        expect(onChange).to.have.been.calledWith('+54');
+    });
+
+    it('should call `onChange` callback after input was changed with dial code of country from NANP', () => {
+        let onChange = sinon.spy();
+        let elem = render(<IntlPhoneInput onChange={ onChange } />);
+        let controlNode = elem.instance.getControl();
 
         simulate(controlNode, 'change', { target: { value: '+1868' } });
 
         expect(onChange).to.have.been.calledOnce;
         expect(onChange).to.have.been.calledWith('+1868');
+    });
+
+    it('should call `onChange` callback after input was changed with whole russian number', () => {
+        let onChange = sinon.spy();
+        let elem = render(<IntlPhoneInput onChange={ onChange } />);
+        let controlNode = elem.instance.getControl();
+
+        simulate(controlNode, 'change', { target: { value: '+74957888878' } });
+
+        expect(onChange).to.have.been.calledOnce;
+        expect(onChange).to.have.been.calledWith('+74957888878');
     });
 
     it('should have default country flag icon', () => {
@@ -89,8 +126,26 @@ describe('intl-phone-input', () => {
         expect(elem.node.querySelector('.flag-icon')).to.have.class('flag-icon_country_au');
     });
 
+    it('should focus on input after select was closed by button toggle', (done) => {
+        let elem = render(<IntlPhoneInput />);
+        let selectButtonNode = elem.node.querySelector('.select-button');
+        let controlNode = elem.instance.getControl();
+
+        selectButtonNode.click();
+
+        setTimeout(() => {
+            selectButtonNode.click();
+
+            setTimeout(() => {
+                expect(document.activeElement.isEqualNode(controlNode)).to.be.true;
+
+                done();
+            }, 0);
+        }, 0);
+    });
+
     if (!bowser.mobile) {
-        it('should call `onChange` callback after component select was changed', () => {
+        it('should call `onChange` callback after select was changed', () => {
             let onChange = sinon.spy();
 
             render(<IntlPhoneInput onChange={ onChange } />);
@@ -101,6 +156,22 @@ describe('intl-phone-input', () => {
             firstOptionNode.click();
 
             expect(onChange).to.have.been.calledOnce;
+        });
+
+        it('should focus on input after select was changed', (done) => {
+            let elem = render(<IntlPhoneInput />);
+            let controlNode = elem.instance.getControl();
+            let popupNode = document.querySelector('.popup');
+            let firstOptionNode = popupNode.querySelector('.menu-item');
+
+            firstOptionNode.click();
+
+            setTimeout(() => {
+                console.log(elem.instance.timeoutId);
+                expect(document.activeElement.isEqualNode(controlNode)).to.be.true;
+
+                done();
+            }, 0);
         });
     }
 });

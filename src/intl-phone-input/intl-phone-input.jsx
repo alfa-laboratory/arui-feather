@@ -15,6 +15,8 @@ import performance from '../performance';
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';
 
+const MAX_DIAL_CODE_LENGTH = 4;
+
 /**
  * Компонент ввода международного телефона по маске.
  *
@@ -47,7 +49,7 @@ class IntlPhoneInput extends React.Component {
 
     componentDidMount() {
         this.loadUtil();
-        this.setCountryFromValue();
+        this.setCountry();
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -65,15 +67,6 @@ class IntlPhoneInput extends React.Component {
     }
 
     render(cn, Input, Select) {
-        let offset;
-
-        switch (this.props.size) {
-            case 's': offset = -22; break;
-            case 'm': offset = -28; break;
-            case 'l': offset = -33; break;
-            case 'xl': offset = -38; break;
-        }
-
         return (
             <div className={ cn() }>
                 <Input
@@ -88,7 +81,7 @@ class IntlPhoneInput extends React.Component {
                             disabled={ this.props.disabled }
                             mode='radio'
                             options={ this.getOptions(cn) }
-                            popupSecondaryOffset={ offset }
+                            popupSecondaryOffset={ this.getSelectPopupOffset() }
                             renderButtonContent={ this.renderSelectButtonContent }
                             size={ this.props.size }
                             value={ [this.state.countryIso2] }
@@ -158,7 +151,7 @@ class IntlPhoneInput extends React.Component {
 
     @autobind
     handleSelectClick() {
-        // Set focus to input on select button toggle
+        // Set focus to input on select closing by it's button toggle
         if (this.state.selectFocused) {
             this.input.focus();
             this.input.setSelectionRange(-1);
@@ -179,7 +172,7 @@ class IntlPhoneInput extends React.Component {
     handleInputChange(value) {
         this.setState({
             inputValue: value.length === 1 && value !== '+' ? `+${value}` : value
-        }, this.setCountryFromValue);
+        }, this.setCountry);
     }
 
     @autobind
@@ -203,8 +196,19 @@ class IntlPhoneInput extends React.Component {
         }));
     }
 
+    getSelectPopupOffset() {
+        switch (this.props.size) {
+            case 's': return -22;
+            case 'm': return -28;
+            case 'l': return -33;
+            case 'xl': return -38;
+        }
+    }
+
     getValue() {
-        return this.props.value || this.state.inputValue;
+        // Use value from state not props, cause of some formatting steps in component
+        // Sync props.value with state.inputValue in componentWillUpdate
+        return this.state.inputValue;
     }
 
     loadUtil() {
@@ -261,29 +265,33 @@ class IntlPhoneInput extends React.Component {
         }
     }
 
-    setCountryFromValue() {
+    setCountry() {
         let inputValue = this.getValue().replace(/ /g, '');
 
         this.countries.forEach((country) => {
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
+                // Handle countries with priority field
                 if (country.priority !== undefined) {
-                    if (inputValue.length <= 3) {
+                    // Check max dial code length to allow country change
+                    // For countries with identical dial codes or North American Numbering Plan (NANP)
+                    if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
                         // Handle country change with input change & set highest by priority
                         if (this.state.countryIso2 !== country.iso2 && country.priority === 0) {
-                            this.setCountry(country.iso2, inputValue);
+                            this.setValue(country.iso2, inputValue);
                         }
-                    // Otherwise don't change already selected country
+                    // Otherwise don't change already selected country, just set value
                     } else if (this.state.countryIso2 === country.iso2) {
-                        this.setCountry(country.iso2, inputValue);
+                        this.setValue(country.iso2, inputValue);
                     }
+                // Handle all other countries
                 } else {
-                    this.setCountry(country.iso2, inputValue);
+                    this.setValue(country.iso2, inputValue);
                 }
             }
         });
     }
 
-    setCountry(countryIso2, inputValue) {
+    setValue(countryIso2, inputValue) {
         let resultValue = this.util
             ? new this.util.asYouType(countryIso2.toUpperCase()).input(inputValue) // eslint-disable-line new-cap
             : inputValue;
@@ -292,6 +300,16 @@ class IntlPhoneInput extends React.Component {
             inputValue: resultValue,
             countryIso2
         });
+    }
+
+    /**
+     * Возвращает ссылку на HTMLElement инпута.
+     *
+     * @public
+     * @returns {HTMLInputElement}
+     */
+    getControl() {
+        return this.input.getControl();
     }
 
     /**

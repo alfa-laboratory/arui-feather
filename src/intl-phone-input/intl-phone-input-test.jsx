@@ -30,7 +30,7 @@ describe('intl-phone-input', () => {
     });
 
     it('renders without problems in all sizes', () => {
-        SIZES.forEach(size => {
+        SIZES.forEach((size) => {
             let intlPhoneInput = render(<IntlPhoneInput size={ size } />);
             expect(intlPhoneInput.node).to.have.exist;
         });
@@ -167,7 +167,6 @@ describe('intl-phone-input', () => {
             firstOptionNode.click();
 
             setTimeout(() => {
-                console.log(elem.instance.timeoutId);
                 expect(document.activeElement.isEqualNode(controlNode)).to.be.true;
 
                 done();

@@ -203,6 +203,8 @@ class IntlPhoneInput extends React.Component {
             case 'l': return -33;
             case 'xl': return -38;
         }
+
+        return 0;
     }
 
     getValue() {

@@ -126,24 +126,6 @@ describe('intl-phone-input', () => {
         expect(elem.node.querySelector('.flag-icon')).to.have.class('flag-icon_country_au');
     });
 
-    it('should focus on input after select was closed by button toggle', (done) => {
-        let elem = render(<IntlPhoneInput />);
-        let selectButtonNode = elem.node.querySelector('.select-button');
-        let controlNode = elem.instance.getControl();
-
-        selectButtonNode.click();
-
-        setTimeout(() => {
-            selectButtonNode.click();
-
-            setTimeout(() => {
-                expect(document.activeElement.isEqualNode(controlNode)).to.be.true;
-
-                done();
-            }, 0);
-        }, 0);
-    });
-
     if (!bowser.mobile) {
         it('should call `onChange` callback after select was changed', () => {
             let onChange = sinon.spy();
@@ -170,6 +152,24 @@ describe('intl-phone-input', () => {
                 expect(document.activeElement.isEqualNode(controlNode)).to.be.true;
 
                 done();
+            }, 0);
+        });
+
+        it('should focus on input after select was closed by button toggle', (done) => {
+            let elem = render(<IntlPhoneInput />);
+            let selectButtonNode = elem.node.querySelector('.select-button');
+            let controlNode = elem.instance.getControl();
+
+            selectButtonNode.click();
+
+            setTimeout(() => {
+                selectButtonNode.click();
+
+                setTimeout(() => {
+                    expect(document.activeElement.isEqualNode(controlNode)).to.be.true;
+
+                    done();
+                }, 0);
             }, 0);
         });
     }

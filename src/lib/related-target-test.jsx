@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import getRelatedTarget from './related-target';
-import { render } from '../test-utils';
+import { cleanUp, render } from '../test-utils';
 
 describe('related-target', () => {
+    afterEach(cleanUp);
+
     it('should return relatedTarget on focus', () => {
         let onFocus = sinon.spy(event => event.persist());
         let input = render(<input onFocus={ onFocus } />);

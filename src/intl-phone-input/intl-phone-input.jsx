@@ -63,6 +63,7 @@ class IntlPhoneInput extends React.Component {
     componentWillUnmount() {
         if (this.timeoutId) {
             clearTimeout(this.timeoutId);
+            this.timeoutId = null;
         }
     }
 

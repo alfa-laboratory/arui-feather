@@ -51,7 +51,7 @@ class RadioGroup extends React.Component {
 
     static defaultProps = {
         type: 'normal',
-        size: 's'
+        size: 'm'
     };
 
     state = {

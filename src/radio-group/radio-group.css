@@ -21,7 +21,6 @@
 
     &__top {
         display: inline-block;
-        font-size: var(--font-size-s);
         line-height: var(--line-height-normal);
         margin-bottom: 8px;
         white-space: nowrap;
@@ -32,7 +31,6 @@
         display: table-caption;
         caption-side: bottom;
         padding-top: 8px;
-        font-size: var(--font-size-s);
         white-space: normal;
     }
 
@@ -44,6 +42,56 @@
     .radio_size_l,
     .radio_size_xl {
         margin-bottom: 12px;
+    }
+
+    &_size_xs {
+        .radio-group__sub {
+            font-size: var(--font-size-xs);
+        }
+
+        .radio-group__top {
+            font-size: var(--font-size-xs);
+        }
+    }
+
+    &_size_s {
+        .radio-group__sub {
+            font-size: var(--font-size-s);
+        }
+
+        .radio-group__top {
+            font-size: var(--font-size-s);
+        }
+    }
+
+    &_size_m {
+        .radio-group__sub {
+            font-size: var(--font-size-m);
+        }
+
+        .radio-group__top {
+            font-size: var(--font-size-m);
+        }
+    }
+
+    &_size_l {
+        .radio-group__sub {
+            font-size: var(--font-size-l);
+        }
+
+        .radio-group__top {
+            font-size: var(--font-size-l);
+        }
+    }
+
+    &_size_xl {
+        .radio-group__sub {
+            font-size: var(--font-size-xl);
+        }
+
+        .radio-group__top {
+            font-size: var(--font-size-xl);
+        }
     }
 
     &_type_normal {

@@ -24,6 +24,28 @@
 </RadioGroup>
 ```
 
+Разные размеры групп
+```jsx
+<div>
+    {['m', 'l'].map(size => (
+        <RadioGroup key={ size } size={ size } error='Обязательно' label='Сколько?'>
+            {['Один', 'Два', 'Три', 'Четыре'].map(text => <Radio text={ text } key={ text } value={ text } />)}
+        </RadioGroup>
+    ))}
+</div>
+```
+```jsx
+<div>
+    {['xs', 's', 'm', 'l', 'xl'].map(size => (
+        <RadioGroup key={ size } size={ size } error='Обязательно' label='Сколько?'>
+            {['Один', 'Два', 'Три', 'Четыре'].map(text => (
+                <Radio text={ text } key={ text } value={ text } type='button' />
+            ))}
+        </RadioGroup>
+    ))}
+</div>
+```
+
 Горизонтальная группа радио кнопок с ошибкой, состоящая из обычных кнопок
 ```jsx
 <RadioGroup type='button' error='Обязательно'>

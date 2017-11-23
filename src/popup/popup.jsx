@@ -7,6 +7,7 @@ import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
 
+import Autoclosable from '../autoclosable/autoclosable';
 import RenderInContainer from '../render-in-container/render-in-container';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
@@ -14,7 +15,6 @@ import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions
 import cn from '../cn';
 import getScrollbarWidth from '../lib/scrollbar-width';
 import { HtmlElement } from '../lib/prop-types';
-import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
 
 /**
@@ -162,10 +162,6 @@ class Popup extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.autoclosable) {
-            this.ensureClickEvent();
-        }
-
         if (this.props.height === 'adaptive' || this.props.target === 'screen') {
             this.setGradientStyles();
         }
@@ -193,21 +189,7 @@ class Popup extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.autoclosable) {
-            if (prevProps.onClickOutside !== this.props.onClickOutside) {
-                this.ensureClickEvent();
-            } else if (prevProps.visible !== this.props.visible) {
-                this.ensureClickEvent(!this.props.visible);
-            }
-        }
-    }
-
     componentWillUnmount() {
-        if (this.props.autoclosable) {
-            this.ensureClickEvent(true);
-        }
-
         // Cancel debouncing to avoid `this.setState()` invocation in unmounted component state
         this.handleWindowResize.cancel();
         window.removeEventListener('resize', this.handleWindowResize);
@@ -220,55 +202,67 @@ class Popup extends React.Component {
 
         return (
             <RenderInContainer container={ this.getRenderContainer() }>
-                <div
-                    ref={ (popup) => { this.popup = popup; } }
-                    data-for={ this.props.for }
-                    className={ cn({
-                        direction: this.state.direction,
-                        type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
-                        target: this.props.target,
-                        size: this.props.size,
-                        visible: this.props.visible,
-                        height: this.props.height,
-                        autoclosable: this.props.autoclosable,
-                        padded: this.props.padded
-                    }) }
-                    id={ this.props.id }
-                    style={ {
-                        ...this.state.styles,
-                        minWidth: this.getMinWidth(),
-                        maxWidth: this.getMaxWidth()
-                    } }
-                    onMouseEnter={ this.handleMouseEnter }
-                    onMouseLeave={ this.handleMouseLeave }
+                <Autoclosable
+                    active={ this.props.visible }
+                    onClickOutside={ this.handleClickOutside }
                 >
-                    <div className={ cn('container') }>
-                        {
-                            this.props.header && (
-                                <div className={ cn('header') }>
-                                    { this.props.header }
+                    <div
+                        ref={ (popup) => { this.popup = popup; } }
+                        data-for={ this.props.for }
+                        className={ cn({
+                            direction: this.state.direction,
+                            type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') &&
+                                this.props.type,
+                            target: this.props.target,
+                            size: this.props.size,
+                            visible: this.props.visible,
+                            height: this.props.height,
+                            padded: this.props.padded
+                        }) }
+                        id={ this.props.id }
+                        style={ {
+                            ...this.state.styles,
+                            minWidth: this.getMinWidth(),
+                            maxWidth: this.getMaxWidth()
+                        } }
+                        onMouseEnter={ this.handleMouseEnter }
+                        onMouseLeave={ this.handleMouseLeave }
+                    >
+                        <div className={ cn('container') }>
+                            {
+                                this.props.header && (
+                                    <div className={ cn('header') }>
+                                        { this.props.header }
+                                    </div>
+                                )
+                            }
+                            <div
+                                ref={ (inner) => { this.inner = inner; } }
+                                className={ cn('inner') }
+                                onScroll={ this.handleInnerScroll }
+                            >
+                                <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
+                                    { this.props.children }
+                                    <ResizeSensor onResize={ this.handleResize } />
                                 </div>
-                            )
-                        }
-                        <div
-                            ref={ (inner) => { this.inner = inner; } }
-                            className={ cn('inner') }
-                            onScroll={ this.handleInnerScroll }
-                        >
-                            <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
-                                { this.props.children }
-                                <ResizeSensor onResize={ this.handleResize } />
                             </div>
+                            {
+                                this.state.hasScrollbar && (
+                                    <div className={ cn('gradient') } style={ this.state.gradientStyles } />
+                                )
+                            }
                         </div>
-                        {
-                            this.state.hasScrollbar && (
-                                <div className={ cn('gradient') } style={ this.state.gradientStyles } />
-                            )
-                        }
                     </div>
-                </div>
+                </Autoclosable>
             </RenderInContainer>
         );
+    }
+
+    @autobind
+    handleClickOutside(event) {
+        if (this.props.autoclosable && this.props.onClickOutside) {
+            this.props.onClickOutside(event);
+        }
     }
 
     @autobind
@@ -302,15 +296,6 @@ class Popup extends React.Component {
     handleMouseLeave() {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave();
-        }
-    }
-
-    @autobind
-    handleWindowClick(event) {
-        if (this.props.autoclosable && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
-            if (this.props.onClickOutside) {
-                this.props.onClickOutside(event);
-            }
         }
     }
 
@@ -464,29 +449,6 @@ class Popup extends React.Component {
             hasScrollbar: bestDrawingParams.overflow,
             styles: this.getDrawingCss(bestDrawingParams)
         });
-    }
-
-    ensureClickEvent(isDestroy) {
-        let isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
-
-        // We need timeouts to not to catch the event that causes
-        // popup opening (because it propagates to the `window`).
-        if (this.clickEventBindTimeout) {
-            clearTimeout(this.clickEventBindTimeout);
-            this.clickEventBindTimeout = null;
-        }
-
-        this.clickEventBindTimeout = setTimeout(() => {
-            if (!this.isWindowClickBinded && isNeedBindEvent) {
-                window.addEventListener('click', this.handleWindowClick);
-                window.addEventListener('touchend', this.handleWindowClick);
-                this.isWindowClickBinded = true;
-            } else if (this.isWindowClickBinded && !isNeedBindEvent) {
-                window.removeEventListener('click', this.handleWindowClick);
-                window.removeEventListener('touchend', this.handleWindowClick);
-                this.isWindowClickBinded = false;
-            }
-        }, 0);
     }
 
     getDrawingCss(drawingParams) {

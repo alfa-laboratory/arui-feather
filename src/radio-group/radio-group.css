@@ -44,53 +44,31 @@
         margin-bottom: 12px;
     }
 
-    &_size_xs {
-        .radio-group__sub {
-            font-size: var(--font-size-xs);
-        }
-
-        .radio-group__top {
-            font-size: var(--font-size-xs);
-        }
+    .radio-group__sub {
+        padding-top: 0;
     }
 
     &_size_s {
-        .radio-group__sub {
-            font-size: var(--font-size-s);
-        }
-
-        .radio-group__top {
-            font-size: var(--font-size-s);
+        .radio-group__sub, .radio-group__top {
+            font-size: var(--font-size-xs);
         }
     }
 
     &_size_m {
-        .radio-group__sub {
-            font-size: var(--font-size-m);
-        }
-
-        .radio-group__top {
-            font-size: var(--font-size-m);
+        .radio-group__sub, .radio-group__top {
+            font-size: var(--font-size-s);
         }
     }
 
     &_size_l {
-        .radio-group__sub {
-            font-size: var(--font-size-l);
-        }
-
-        .radio-group__top {
-            font-size: var(--font-size-l);
+        .radio-group__sub, .radio-group__top {
+            font-size: var(--font-size-m);
         }
     }
 
     &_size_xl {
-        .radio-group__sub {
-            font-size: var(--font-size-xl);
-        }
-
-        .radio-group__top {
-            font-size: var(--font-size-xl);
+        .radio-group__sub, .radio-group__top {
+            font-size: var(--font-size-l);
         }
     }
 

@@ -30,7 +30,6 @@
     &__sub {
         display: table-caption;
         caption-side: bottom;
-        padding-top: 8px;
         white-space: normal;
     }
 
@@ -44,30 +43,30 @@
         margin-bottom: 12px;
     }
 
-    .radio-group__sub {
-        padding-top: 0;
-    }
-
     &_size_s {
-        .radio-group__sub, .radio-group__top {
+        .radio-group__sub,
+        .radio-group__top {
             font-size: var(--font-size-xs);
         }
     }
 
     &_size_m {
-        .radio-group__sub, .radio-group__top {
+        .radio-group__sub,
+        .radio-group__top {
             font-size: var(--font-size-s);
         }
     }
 
     &_size_l {
-        .radio-group__sub, .radio-group__top {
+        .radio-group__sub,
+        .radio-group__top {
             font-size: var(--font-size-m);
         }
     }
 
     &_size_xl {
-        .radio-group__sub, .radio-group__top {
+        .radio-group__sub,
+        .radio-group__top {
             font-size: var(--font-size-l);
         }
     }

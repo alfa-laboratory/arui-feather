@@ -24,7 +24,7 @@ class RadioGroup extends React.Component {
         /** Отображение попапа с ошибкой в момент когда фокус находится на компоненте */
         error: Type.node,
         /** Размеры pub и sub */
-        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),
+        size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
@@ -62,7 +62,7 @@ class RadioGroup extends React.Component {
     render(cn) {
         let children = null;
         let { size, name } = this.props;
-        let props = { name, size };
+        let props = { name };
         let radioGroupParts = {};
 
         if (this.props.disabled !== undefined) {
@@ -103,6 +103,7 @@ class RadioGroup extends React.Component {
                     `${cn({
                         type: this.props.type,
                         invalid: !!this.props.error,
+                        size,
                         ...props
                     })} control-group${this.props.error ? ' control-group_invalid' : ''}`
                 }

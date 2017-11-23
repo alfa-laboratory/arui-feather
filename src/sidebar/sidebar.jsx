@@ -19,8 +19,9 @@ import cn from '../cn';
 import Mq from '../mq';
 import performance from '../performance';
 
-let savedScrollPosition;
 const SIDEBAR_WIDTH = 430;
+
+let savedScrollPosition;
 
 /**
  * Восстанавливает исходную позацию скролла
@@ -83,6 +84,7 @@ class Sidebar extends React.Component {
     };
 
     componentDidMount() {
+        this.styleBodyRightMargin();
         setBodyClass(this.props.visible);
         window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('scroll', this.handleScroll);
@@ -97,6 +99,10 @@ class Sidebar extends React.Component {
         }
     }
 
+    componentDidUpdate() {
+        this.styleBodyRightMargin();
+    }
+
     componentWillUnmount() {
         setBodyClass(false);
         window.removeEventListener('keydown', this.handleKeyDown);
@@ -104,18 +110,10 @@ class Sidebar extends React.Component {
     }
 
     render(cn) {
-        const { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
+        let { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
         let offset = visible ? getScrollbarWidth() : 0;
-
-        document.body.style.marginRight = !this.state.isMobile && hasOverlay ? `${offset}px` : 0;
-
-        let style = {
-            width: this.state.isMobile ? '100%' : `${width + offset}px`
-        };
-
-        let contentStyle = {
-            marginRight: this.state.isMobile ? 0 : `-${offset}px`
-        };
+        let style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        let contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
             <PopupContainerProvider className={ cn({ visible }) } style={ style }>
@@ -205,6 +203,11 @@ class Sidebar extends React.Component {
         if (scrollTop) {
             savedScrollPosition = scrollTop;
         }
+    }
+
+    styleBodyRightMargin() {
+        let offset = this.props.visible ? getScrollbarWidth() : 0;
+        document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : 0;
     }
 }
 

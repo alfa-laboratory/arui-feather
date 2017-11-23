@@ -125,5 +125,3 @@ initialState = {
     </Sidebar>
 </div>
 ```
-
-

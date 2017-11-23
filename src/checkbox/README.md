@@ -1,4 +1,4 @@
-Обычный чекбокс
+Чекбокс обычного вида
 ```jsx
 <div>
     <div>
@@ -23,7 +23,34 @@
 </div>
 ```
 
-Неустановленное состояние
+Чекбокс в виде кнопки (применяется обычно в нескольких экземплярах в [CheckboxGroup](#checkboxgroup))
+```jsx
+<div>
+    <div>
+        {['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <CheckBox
+                        text='Согласен с условиями'
+                        type='button'
+                        size={ size }
+                    />
+                </div>
+                <div className='column'>
+                    <CheckBox
+                        text='Согласен с условиями'
+                        type='button'
+                        size={ size }
+                        disabled={ true }
+                    />
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+```
+
+Чекбокс с неустановленным состоянием
 ```jsx
 <div>
     {['m', 'l'].map(size => (

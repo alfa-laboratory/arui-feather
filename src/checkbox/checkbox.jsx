@@ -105,87 +105,83 @@ class CheckBox extends React.Component {
     }
 
     renderNormalCheckbox(cn, checked) {
-        return (
-            <div>
-                <span className={ cn('box') }>
-                    <input
-                        className={ cn('control') }
-                        type='checkbox'
-                        autoComplete='off'
-                        name={ this.props.name }
-                        id={ this.props.id }
-                        value={ this.props.value }
-                        checked={ checked }
-                        disabled={ this.props.disabled }
-                        onClick={ this.handleInputControlClick }
-                        onChange={ this.handleChange }
-                    />
-                    {
-                        checked &&
-                        <Icon
-                            className={ cn('icon') }
-                            name='action-check'
-                            size={ this.props.size === 'l' ? 'm' : 's' }
-                            theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
-                        />
-                    }
-                    {
-                        !checked && this.props.indeterminate &&
-                        <Icon
-                            className={ cn('icon') }
-                            name='action-check-indeterminate'
-                            size={ this.props.size === 'l' ? 'm' : 's' }
-                            theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
-                        />
-                    }
-                </span>
-                {
-                    this.props.text &&
-                    <span
-                        className={ cn('text') }
-                        role='presentation'
-                    >
-                        { this.props.text }
-                    </span>
-                }
-            </div>
-        );
-    }
-
-    renderButtonCheckbox(cn, checked, TagButton) {
-        return (
-            <div>
-                <TagButton
-                    togglable='check'
-                    checked={ checked }
-                    title={ this.props.title }
-                    disabled={ this.props.disabled }
-                    size={ this.props.size || 'm' }
-                    width={ this.props.width }
-                    focused={ this.state.focused }
-                    hovered={ this.state.hovered }
-                    onClick={ this.handleChange }
-                >
-                    {
-                        this.props.text
-                            ? this.props.text
-                            : ''
-                    }
-                </TagButton>
+        return [
+            <span
+                className={ cn('box') }
+                key='box'
+            >
                 <input
                     className={ cn('control') }
                     type='checkbox'
-                    tabIndex={ -1 }
                     autoComplete='off'
                     name={ this.props.name }
                     id={ this.props.id }
                     value={ this.props.value }
                     checked={ checked }
                     disabled={ this.props.disabled }
+                    onClick={ this.handleInputControlClick }
                     onChange={ this.handleChange }
                 />
-            </div>
-        );
+                {
+                    checked &&
+                    <Icon
+                        className={ cn('icon') }
+                        name='action-check'
+                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                    />
+                }
+                {
+                    !checked && this.props.indeterminate &&
+                    <Icon
+                        className={ cn('icon') }
+                        name='action-check-indeterminate'
+                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                    />
+                }
+            </span>,
+            this.props.text &&
+            <span
+                className={ cn('text') }
+                key='text'
+                role='presentation'
+            >
+                { this.props.text }
+            </span>
+        ];
+    }
+
+    renderButtonCheckbox(cn, checked, TagButton) {
+        return [
+            <TagButton
+                key='button'
+                togglable='check'
+                checked={ checked }
+                title={ this.props.title }
+                disabled={ this.props.disabled }
+                size={ this.props.size || 'm' }
+                width={ this.props.width }
+                focused={ this.state.focused }
+                hovered={ this.state.hovered }
+                onClick={ this.handleChange }
+            >
+                { this.props.text ? this.props.text : '' }
+            </TagButton>,
+            <input
+                className={ cn('control') }
+                key='control'
+                type='checkbox'
+                tabIndex={ -1 }
+                autoComplete='off'
+                name={ this.props.name }
+                id={ this.props.id }
+                value={ this.props.value }
+                checked={ checked }
+                disabled={ this.props.disabled }
+                onChange={ this.handleChange }
+            />
+        ];
     }
 
     @autobind

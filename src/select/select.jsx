@@ -108,6 +108,10 @@ class Select extends React.Component {
         mobileMenuMode: Type.oneOf(['native', 'popup']),
         /** Подсказка над меню в мобильном режиме */
         mobileTitle: Type.node,
+        /** Смещение в пикселях всплывающего окна относительно основного направления (только на десктопе) */
+        popupMainOffset: Type.number,
+        /** Смещение в пикселях всплывающего окна относительно второстепенного направления (только на десктопе) */
+        popupSecondaryOffset: Type.number,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -364,6 +368,8 @@ class Select extends React.Component {
                 directions={ this.props.directions }
                 height='adaptive'
                 padded={ false }
+                mainOffset={ this.props.popupMainOffset }
+                secondaryOffset={ this.props.popupSecondaryOffset }
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
                 header={ this.state.isMobile && this.renderMobileHeader(cn) }
@@ -384,6 +390,7 @@ class Select extends React.Component {
                     checkedItems={ value }
                     onFocus={ this.handleMenuFocus }
                     onBlur={ this.handleMenuBlur }
+                    onHighlightItem={ this.handleMenuHighlightItem }
                     onKeyDown={ this.handleMenuKeyDown }
                 />
             </Popup>
@@ -538,6 +545,14 @@ class Select extends React.Component {
     }
 
     @autobind
+    handleMenuHighlightItem(highlightedItem) {
+        if (!this.getOpened() && highlightedItem) {
+            this.popup.getInnerNode().scrollTop = 0;
+            this.scrollToHighlightedItem(highlightedItem);
+        }
+    }
+
+    @autobind
     handleOptionCheck(value) {
         let opened = this.getOpened();
 
@@ -618,7 +633,7 @@ class Select extends React.Component {
             case keyboardCode.DOWN_ARROW:
             case keyboardCode.UP_ARROW:
                 event.preventDefault();
-                this.syncKeyboardNavigationWithScroll(highlightedItem);
+                this.scrollToHighlightedItem(highlightedItem);
                 break;
             case keyboardCode.ENTER:
             case keyboardCode.SPACE:
@@ -691,6 +706,16 @@ class Select extends React.Component {
     }
 
     /**
+     * Возвращает корневой `HTMLElement` компонента.
+     *
+     * @public
+     * @returns {HTMLElement}
+     */
+    getNode() {
+        return this.root;
+    }
+
+    /**
      * Устанавливает фокус на компонент.
      *
      * @public
@@ -749,23 +774,25 @@ class Select extends React.Component {
     /**
      * @param {MenuItem} highlightedItem Выбранный в текущий момент пункт меню
      */
-    syncKeyboardNavigationWithScroll(highlightedItem) {
+    scrollToHighlightedItem(highlightedItem) {
         let element = highlightedItem.getNode();
         let container = this.popup.getInnerNode();
         let correction = element.offsetHeight;
 
-        if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
-            scrollTo({
-                container,
-                targetY: element.offsetTop,
-                duration: SCROLL_TO_NORMAL_DURATION
-            });
-        } else if (element.offsetTop < container.scrollTop) {
-            scrollTo({
-                container,
-                targetY: (element.offsetTop - container.offsetHeight) + correction,
-                duration: SCROLL_TO_NORMAL_DURATION
-            });
+        if (container) {
+            if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
+                scrollTo({
+                    container,
+                    targetY: element.offsetTop,
+                    duration: SCROLL_TO_NORMAL_DURATION
+                });
+            } else if (element.offsetTop < container.scrollTop) {
+                scrollTo({
+                    container,
+                    targetY: (element.offsetTop - container.offsetHeight) + correction,
+                    duration: SCROLL_TO_NORMAL_DURATION
+                });
+            }
         }
     }
 

@@ -1,3 +1,40 @@
+<a name="10.6.0"></a>
+# [10.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.5.1...v10.6.0) (2017-11-17)
+
+
+### Features
+
+* **dropdown:** add custom target ([#366](https://github.com/alfa-laboratory/arui-feather/issues/366)) ([5ecab68](https://github.com/alfa-laboratory/arui-feather/commit/5ecab68))
+
+
+
+<a name="10.5.1"></a>
+## [10.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.5.0...v10.5.1) (2017-11-16)
+
+
+### Bug Fixes
+
+* **button:** fix content alignment ([#364](https://github.com/alfa-laboratory/arui-feather/issues/364)) ([9726d7f](https://github.com/alfa-laboratory/arui-feather/commit/9726d7f))
+
+
+
+<a name="10.5.0"></a>
+# [10.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.1...v10.5.0) (2017-11-13)
+
+
+### Bug Fixes
+
+* fix react undefined in progress bar ([#353](https://github.com/alfa-laboratory/arui-feather/issues/353)) ([b87c53e](https://github.com/alfa-laboratory/arui-feather/commit/b87c53e))
+* **sidebar:** fix offset on render ([#356](https://github.com/alfa-laboratory/arui-feather/issues/356)) ([2a60d68](https://github.com/alfa-laboratory/arui-feather/commit/2a60d68))
+
+
+### Features
+
+* add flag-icon component ([#334](https://github.com/alfa-laboratory/arui-feather/issues/334)) ([670ee37](https://github.com/alfa-laboratory/arui-feather/commit/670ee37))
+* use classname prop type string-only ([#352](https://github.com/alfa-laboratory/arui-feather/issues/352)) ([4229d4d](https://github.com/alfa-laboratory/arui-feather/commit/4229d4d))
+
+
+
 <a name="10.4.1"></a>
 ## [10.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v10.4.0...v10.4.1) (2017-11-09)
 

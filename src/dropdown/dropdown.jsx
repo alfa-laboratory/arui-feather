@@ -36,7 +36,7 @@ class Dropdown extends React.Component {
                 'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
                 'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
             ])),
-            target: Type.oneOf(['anchor', 'position']),
+            target: Type.oneOf(['anchor', 'position', 'screen']),
             mainOffset: Type.number,
             secondaryOffset: Type.number,
             fitContaiterOffset: Type.number,
@@ -87,6 +87,9 @@ class Dropdown extends React.Component {
         switcherType: 'link',
         switcherText: 'Switcher',
         disabled: false,
+        popupProps: {
+            target: 'anchor'
+        },
         size: 'm'
     };
 
@@ -188,7 +191,6 @@ class Dropdown extends React.Component {
                     (!this.props.disabled && opened) ||
                     (this.props.mode === 'hover' && (this.state.switcherHovered || this.state.popupHovered))
                 }
-                target='anchor'
                 onMouseEnter={ this.handlePopupMouseEnter }
                 onMouseLeave={ this.handlePopupMouseLeave }
                 onClickOutside={ this.handlePopupClickOutside }

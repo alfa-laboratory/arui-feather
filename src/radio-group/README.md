@@ -29,11 +29,15 @@
 <div>
     {['m', 'l'].map(size => (
         <RadioGroup key={ size } size={ size } error='Обязательно' label='Сколько?'>
-            {['Один', 'Два', 'Три', 'Четыре'].map(text => <Radio text={ text } key={ text } value={ text } />)}
+            {['Один', 'Два', 'Три', 'Четыре'].map(text =>
+                <Radio text={ text } key={ text } value={ text } />
+            )}
         </RadioGroup>
     ))}
 </div>
 ```
+
+Разные размеры групп радио кнопок
 ```jsx
 <div>
     {['xs', 's', 'm', 'l', 'xl'].map(size => (

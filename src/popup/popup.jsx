@@ -79,8 +79,6 @@ class Popup extends React.Component {
         fitContaiterOffset: Type.number,
         /** Управление видимостью компонента */
         visible: Type.bool,
-        /** Управление возможностью автозакрытия компонента */
-        autoclosable: Type.bool,
         /** Управление выставлением модификатора для добавления внутренних отступов в стилях */
         padded: Type.bool,
         /** Элемент закреплённого заголовка для компонента */
@@ -105,7 +103,6 @@ class Popup extends React.Component {
 
     static defaultProps = {
         visible: false,
-        autoclosable: false,
         padded: true,
         secondaryOffset: 0,
         fitContaiterOffset: 0,
@@ -161,7 +158,7 @@ class Popup extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.autoclosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent();
         }
 
@@ -193,7 +190,7 @@ class Popup extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.autoclosable) {
+        if (this.props.onClickOutside) {
             if (prevProps.onClickOutside !== this.props.onClickOutside) {
                 this.ensureClickEvent();
             } else if (prevProps.visible !== this.props.visible) {
@@ -203,7 +200,7 @@ class Popup extends React.Component {
     }
 
     componentWillUnmount() {
-        if (this.props.autoclosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent(true);
         }
 
@@ -229,7 +226,6 @@ class Popup extends React.Component {
                         size: this.props.size,
                         visible: this.props.visible,
                         height: this.props.height,
-                        autoclosable: this.props.autoclosable,
                         padded: this.props.padded
                     }) }
                     id={ this.props.id }
@@ -306,10 +302,8 @@ class Popup extends React.Component {
 
     @autobind
     handleWindowClick(event) {
-        if (this.props.autoclosable && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
-            if (this.props.onClickOutside) {
-                this.props.onClickOutside(event);
-            }
+        if (this.props.onClickOutside && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
+            this.props.onClickOutside(event);
         }
     }
 

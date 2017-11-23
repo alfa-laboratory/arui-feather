@@ -145,7 +145,7 @@ describe('popup', () => {
 
     it('should call `onClickOutside` callback after click outside popup', (done) => {
         let onClickOutside = sinon.spy();
-        renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
+        renderPopup({ onClickOutside, visible: true }, {});
 
         let outsideElement = document.createElement('div');
         outsideElement.setAttribute('style',
@@ -162,7 +162,7 @@ describe('popup', () => {
 
     it('should not call `onClickOutside` callback after click inside popup', (done) => {
         let onClickOutside = sinon.spy();
-        let { popupContentNode } = renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
+        let { popupContentNode } = renderPopup({ onClickOutside, visible: true }, {});
 
         setTimeout(() => {
             popupContentNode.click();

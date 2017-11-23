@@ -296,7 +296,6 @@ class CalendarInput extends React.Component {
             <Popup
                 ref={ (calendarPopup) => { this.calendarPopup = calendarPopup; } }
                 for={ this.props.name }
-                autoclosable={ true }
                 visible={ opened }
                 directions={ this.props.directions }
                 target={ this.isMobilePopup() ? 'screen' : 'anchor' }

@@ -259,11 +259,7 @@ class Select extends React.Component {
                             { this.props.error || this.props.hint }
                         </span>
                     }
-                    {
-                        (!this.state.isMobile ||
-                        (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
-                        this.renderPopup(cn, Popup)
-                    }
+                    { this.renderPopup(cn, Popup) }
                 </span>
             </div>
         );

@@ -118,7 +118,7 @@
         }
 
         .radio {
-             margin-bottom: 0;
+            margin-bottom: 0;
         }
 
         .radio + .radio {
@@ -128,7 +128,7 @@
 
     &&_type_line {
         .radio {
-             margin-bottom: 0;
+            margin-bottom: 0;
         }
 
         .radio_size_s,

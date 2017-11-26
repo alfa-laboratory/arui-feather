@@ -22,7 +22,6 @@
     &__top {
         display: inline-block;
         line-height: var(--line-height-normal);
-        margin-bottom: 8px;
         white-space: nowrap;
         word-break: normal;
     }
@@ -44,6 +43,10 @@
     }
 
     &_size_s {
+        .radio-group__top {
+            margin-bottom: 10px;
+        }
+
         .radio-group__sub,
         .radio-group__top {
             font-size: var(--font-size-xs);
@@ -51,6 +54,10 @@
     }
 
     &_size_m {
+        .radio-group__top {
+            margin-bottom: 10px;
+        }
+
         .radio-group__sub,
         .radio-group__top {
             font-size: var(--font-size-s);
@@ -58,6 +65,10 @@
     }
 
     &_size_l {
+        .radio-group__top {
+            margin-bottom: 12px;
+        }
+
         .radio-group__sub,
         .radio-group__top {
             font-size: var(--font-size-m);
@@ -65,6 +76,10 @@
     }
 
     &_size_xl {
+        .radio-group__top {
+            margin-bottom: 12px;
+        }
+
         .radio-group__sub,
         .radio-group__top {
             font-size: var(--font-size-l);
@@ -89,20 +104,12 @@
 }
 
 .radio-group_type_button {
-    .radio {
-        margin-bottom: 0;
-    }
-
     .radio + .radio {
         margin-left: calc(var(--gap-s) / 2);
     }
 }
 
 .radio-group_type_line {
-    .radio {
-        margin-bottom: 0;
-    }
-
     .radio_size_s,
     .radio_size_m {
         margin-right: 13px;

@@ -41,12 +41,23 @@
 
 Разные размеры групп радио кнопок
 ```jsx
-<div className='row'>
+<div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='column'>
-            <RadioGroup key={ size } size={ size } error='Обязательно' label='Сколько?'>
+        <div className='row'>
+            <RadioGroup
+                key={ size }
+                error='Обязательно'
+                label='Сколько?'
+                size={ size }
+                type='button'
+            >
                 {['Один', 'Два', 'Три', 'Четыре'].map(text => (
-                    <Radio text={ text } key={ text } value={ text } type='button' />
+                    <Radio
+                        key={ text }
+                        size={ size }
+                        text={ text }
+                        value={ text } type='button'
+                    />
                 ))}
             </RadioGroup>
         </div>

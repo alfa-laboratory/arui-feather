@@ -116,6 +116,22 @@ class Menu extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.mode !== 'check' && nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
+            let highlightedItem = null;
+
+            this.menuItemList.forEach((item, index, menuItemList) => {
+                if (item.ref === nextProps.checkedItems[0]) {
+                    highlightedItem = menuItemList[index].instance;
+                }
+            });
+
+            if (this.props.onHighlightItem) {
+                this.props.onHighlightItem(highlightedItem);
+            }
+        }
+    }
+
     componentWillUpdate() {
         this.menuItemList = [];
     }
@@ -238,6 +254,10 @@ class Menu extends React.Component {
     @autobind
     handleMenuItemClick(item) {
         this.setNewCheckedItems(item);
+
+        if (this.props.onItemClick) {
+            this.props.onItemClick(item);
+        }
     }
 
     @autobind
@@ -469,10 +489,6 @@ class Menu extends React.Component {
                 break;
             default:
                 break;
-        }
-
-        if (this.props.onItemClick) {
-            this.props.onItemClick(item);
         }
 
         this.changeCheckedItems(checkedItems);

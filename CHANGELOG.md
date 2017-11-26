@@ -1,3 +1,19 @@
+<a name="10.7.0"></a>
+# [10.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.6.0...v10.7.0) (2017-11-26)
+
+
+### Bug Fixes
+
+* **checkbox:** fix alignment without text ([#367](https://github.com/alfa-laboratory/arui-feather/issues/367)) ([38a155c](https://github.com/alfa-laboratory/arui-feather/commit/38a155c))
+
+
+### Features
+
+* add intl-phone-input component ([#345](https://github.com/alfa-laboratory/arui-feather/issues/345)) ([362ada9](https://github.com/alfa-laboratory/arui-feather/commit/362ada9))
+* add sizes for radio-group ([#369](https://github.com/alfa-laboratory/arui-feather/issues/369)) ([2429fbb](https://github.com/alfa-laboratory/arui-feather/commit/2429fbb))
+
+
+
 <a name="10.6.0"></a>
 # [10.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.5.1...v10.6.0) (2017-11-17)
 

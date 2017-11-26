@@ -1,0 +1,78 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.intl-phone-input {
+    display: inline-flex;
+
+    &__input {
+        &.input .input__addons_left + .input__control {
+            padding-left: 0;
+        }
+    }
+
+    &__select {
+        /* Override select button border */
+        &.select {
+            margin-bottom: -1px;
+
+            .select-button {
+                border-bottom-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__select-option-code {
+        opacity: var(--opacity-minor);
+        margin-left: 6px;
+    }
+
+    &_size_s {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-s);
+        }
+    }
+
+    &_size_m {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-m);
+        }
+    }
+
+    &_size_l {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-l);
+        }
+    }
+
+    &_size_xl {
+        .intl-phone-input__select-option-code {
+            font-size: var(--font-size-xl);
+        }
+    }
+}
+
+.select__popup {
+    &.popup_size_s .intl-phone-input__select-option-flag {
+        min-width: 16px;
+        margin-right: 8px;
+    }
+
+    &.popup_size_m .intl-phone-input__select-option-flag {
+        min-width: 20px;
+        margin-right: 10px;
+    }
+
+    &.popup_size_l .intl-phone-input__select-option-flag {
+        min-width: 22px;
+        margin-right: 12px;
+    }
+
+    &.popup_size_xl .intl-phone-input__select-option-flag {
+        min-width: 24px;
+        margin-right: 16px;
+    }
+}

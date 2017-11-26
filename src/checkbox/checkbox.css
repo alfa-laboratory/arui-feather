@@ -10,8 +10,8 @@
 }
 
 .checkbox {
-    display: inline-block;
-    position: relative;
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
     user-select: none;
     font-family: var(--font);
@@ -30,18 +30,13 @@
     }
 
     &__box {
-        position: absolute;
-        left: 0;
-        top: 0;
+        display: inline-flex;
+        position: relative;
         border-radius: var(--border-radius-control);
     }
 
     &__icon {
         position: absolute;
-    }
-
-    &__text {
-        display: block;
     }
 
     &_size_m {
@@ -58,7 +53,7 @@
         }
 
         .checkbox__text {
-            padding-left: calc(var(--size-m-box) + 10px);
+            padding-left: 10px;
         }
     }
 
@@ -76,7 +71,7 @@
         }
 
         .checkbox__text {
-            padding-left: calc(var(--size-l-box) + 12px);
+            padding-left: 12px;
         }
     }
 
@@ -95,7 +90,7 @@
 
 .checkbox_view_line {
     &.checkbox_size_m {
-        margin-right: 13px;
+        margin-right: 12px;
     }
 
     &.checkbox_size_l {

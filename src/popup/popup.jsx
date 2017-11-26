@@ -135,6 +135,7 @@ class Popup extends React.Component {
     anchor = null;
     clickEventBindTimeout = null;
     domElemPopup = null;
+    domElemPopupInner = null;
     domElemPopupContent = null;
     isWindowClickBinded = false;
     position = null;
@@ -355,7 +356,7 @@ class Popup extends React.Component {
      * @returns {HTMLElement}
      */
     getInnerNode() {
-        return this.inner;
+        return this.domElemPopupInner;
     }
 
     /**
@@ -426,6 +427,7 @@ class Popup extends React.Component {
 
         if (!this.domElemPopup) {
             this.domElemPopup = this.popup;
+            this.domElemPopupInner = this.inner;
             this.domElemPopupContent = this.content;
         }
 

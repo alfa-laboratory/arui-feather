@@ -34,12 +34,16 @@
 
     .radio_size_s,
     .radio_size_m {
-        margin-bottom: 10px;
+        &:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
     }
 
     .radio_size_l,
     .radio_size_xl {
-        margin-bottom: 12px;
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
     }
 
     &_size_s {
@@ -47,8 +51,12 @@
             margin-bottom: 10px;
         }
 
-        .radio-group__sub,
-        .radio-group__top {
+        .radio-group__sub {
+            margin-top: 10px;
+        }
+
+        .radio-group__top,
+        .radio-group__sub {
             font-size: var(--font-size-xs);
         }
     }
@@ -58,8 +66,12 @@
             margin-bottom: 10px;
         }
 
-        .radio-group__sub,
-        .radio-group__top {
+        .radio-group__sub {
+            margin-top: 10px;
+        }
+
+        .radio-group__top,
+        .radio-group__sub {
             font-size: var(--font-size-s);
         }
     }
@@ -69,8 +81,12 @@
             margin-bottom: 12px;
         }
 
-        .radio-group__sub,
-        .radio-group__top {
+        .radio-group__sub {
+            margin-top: 12px;
+        }
+
+        .radio-group__top,
+        .radio-group__sub {
             font-size: var(--font-size-m);
         }
     }
@@ -80,8 +96,12 @@
             margin-bottom: 12px;
         }
 
-        .radio-group__sub,
-        .radio-group__top {
+        .radio-group__sub {
+            margin-top: 12px;
+        }
+
+        .radio-group__top,
+        .radio-group__sub {
             font-size: var(--font-size-l);
         }
     }
@@ -92,39 +112,45 @@
         }
     }
 
-    &_type_button {
+    &&_type_button {
         .radio-group__box {
             display: flex;
         }
-    }
-}
 
-.radio-group_invalid {
-    padding-left: 10px;
-}
+        .radio {
+             margin-bottom: 0;
+        }
 
-.radio-group_type_button {
-    .radio + .radio {
-        margin-left: calc(var(--gap-s) / 2);
-    }
-}
-
-.radio-group_type_line {
-    .radio_size_s,
-    .radio_size_m {
-        margin-right: 13px;
+        .radio + .radio {
+            margin-left: calc(var(--gap-s) / 2);
+        }
     }
 
-    .radio_size_l,
-    .radio_size_xl {
-        margin-right: 15px;
+    &&_type_line {
+        .radio {
+             margin-bottom: 0;
+        }
+
+        .radio_size_s,
+        .radio_size_m {
+            margin-right: 13px;
+        }
+
+        .radio_size_l,
+        .radio_size_xl {
+            margin-right: 15px;
+        }
+
+        .radio:last-child {
+            margin-right: 0;
+        }
     }
 
-    .radio:last-child {
-        margin-right: 0;
+    &_width_available {
+        display: block;
     }
-}
 
-.radio-group_width_available {
-    display: block;
+    &_invalid {
+        padding-left: 10px;
+    }
 }

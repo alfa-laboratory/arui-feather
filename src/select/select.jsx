@@ -364,7 +364,6 @@ class Select extends React.Component {
                 key='popup'
                 ref={ (popup) => { this.popup = popup; } }
                 for={ this.props.name }
-                autoclosable={ true }
                 className={ cn('popup') }
                 directions={ this.props.directions }
                 height='adaptive'

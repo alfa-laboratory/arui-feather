@@ -88,3 +88,24 @@ initialState = {
     </Notification>
 </div>
 ```
+
+Уведомление закрывается по клику снаружи компонента
+```jsx
+initialState = {
+    visible: false
+};
+<div>
+    <Button onClick={ () => setState({ visible: !state.visible }) }>
+        Сохранить как черновик
+    </Button>
+    <Notification
+        visible={ state.visible }
+        status='ok'
+        offset={ 10 }
+        title={ 'Черновик сохранен' }
+        onClickOutside={ () => { setState({ visible: false }); } }
+    >
+        Можно вернуться к редактированию черновика позже
+    </Notification>
+</div>
+```

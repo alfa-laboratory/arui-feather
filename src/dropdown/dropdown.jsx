@@ -42,7 +42,6 @@ class Dropdown extends React.Component {
             fitContaiterOffset: Type.number,
             invalid: Type.bool,
             visible: Type.bool,
-            autoclosable: Type.bool,
             padded: Type.bool,
             size: Type.oneOf(['s', 'm', 'l', 'xl']),
             theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
@@ -180,7 +179,6 @@ class Dropdown extends React.Component {
         let popupProps = {
             className: cn('popup'),
             size: this.props.size,
-            autoclosable: true,
             mainOffset,
             ...this.props.popupProps
         };

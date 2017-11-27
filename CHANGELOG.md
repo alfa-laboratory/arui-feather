@@ -1,3 +1,14 @@
+<a name="11.0.0"></a>
+# [11.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.7.0...v11.0.0) (2017-11-27)
+
+
+### Features
+
+* migrate to react v16 ([#349](https://github.com/alfa-laboratory/arui-feather/issues/349)) ([bfbc9ee](https://github.com/alfa-laboratory/arui-feather/commit/bfbc9ee))
+* use only onClickOutside prop for autoclosable behavior ([#354](https://github.com/alfa-laboratory/arui-feather/issues/354)) ([f7c86a2](https://github.com/alfa-laboratory/arui-feather/commit/f7c86a2))
+
+
+
 <a name="10.7.0"></a>
 # [10.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.6.0...v10.7.0) (2017-11-26)
 

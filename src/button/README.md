@@ -8,7 +8,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className='row' key={ size } >
+        <div className='row' key={ size }>
             <div className='column' key={ size }>
                 <Button size={ size }>{`${name}`}</Button>
             </div>
@@ -65,7 +65,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className='row' key={ size } >
+        <div className='row' key={ size }>
             <div className='column' key={ size }>
                 <Button view='extra' size={ size }>{`${name}`}</Button>
             </div>

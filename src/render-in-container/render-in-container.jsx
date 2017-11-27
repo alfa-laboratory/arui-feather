@@ -25,8 +25,8 @@ class RenderInContainer extends React.Component {
     };
 
     componentDidMount() {
-        // this.buildElements();
-        // this.renderLayer();
+        this.buildElements();
+        this.renderLayer();
     }
 
     componentDidUpdate() {

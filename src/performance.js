@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import { isValidElement } from 'react';
+
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
@@ -48,6 +50,10 @@ export function isEqual(objA, objB, deep = false) {
                 return false;
             }
 
+            // https://github.com/erikras/redux-form/issues/3461
+            // https://github.com/erikras/redux-form/pull/3481
+            if (isValidElement(a) || isValidElement(b)) return false;
+
             if (!isEqual(a, b, deep)) {
                 return false;
             }
@@ -58,7 +64,7 @@ export function isEqual(objA, objB, deep = false) {
 }
 
 /**
- * "Поверхностная" проверка равенства props и state компонента.
+ * Поверхностная проверка равенства props и state компонента.
  *
  * @param {*} nextProps next component props
  * @param {*} nextState next component state

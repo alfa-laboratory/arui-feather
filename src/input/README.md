@@ -36,7 +36,7 @@ function renderAddons() {
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 placeholder='Введите что-нибудь'
                 view='line'
@@ -52,7 +52,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 label='Имя'
                 placeholder='Введите ваше имя'
@@ -69,7 +69,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 placeholder='Введите что-нибудь'
                 defaultValue='Корм для кота'
@@ -87,7 +87,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 placeholder='Введите что-нибудь длинное'
                 width='available'
@@ -108,7 +108,7 @@ initialState = {
 };
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 placeholder='Введите что-нибудь'
                 error={ state.error ? 'Только кириллические символы' : null }
@@ -130,7 +130,7 @@ initialState = {
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 placeholder='Введите ваше имя'
                 view='line'
@@ -147,7 +147,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <Input
                 placeholder='Введите ваше имя'
                 disabled={ true }

@@ -105,7 +105,7 @@
     "raf": "^3.3.0",
     "react": "16.1.1",
     "react-addons-create-fragment": "15.6.2",
-    "react-dom": "16.1.1",
+    "react-dom": "16.2.0",
     "react-style-proptype": "3.1.0",
     "react-textarea-autosize": "5.2.1"
   },

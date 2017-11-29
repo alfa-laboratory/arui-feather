@@ -1,3 +1,18 @@
+<a name="11.1.0"></a>
+# [11.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.0.0...v11.1.0) (2017-11-29)
+
+
+### Bug Fixes
+
+* **popup:** fix server-side rendering ([#379](https://github.com/alfa-laboratory/arui-feather/issues/379)) ([b5ddba7](https://github.com/alfa-laboratory/arui-feather/commit/b5ddba7))
+
+
+### Features
+
+* update & freeze deps ([#374](https://github.com/alfa-laboratory/arui-feather/issues/374)) ([21c74b1](https://github.com/alfa-laboratory/arui-feather/commit/21c74b1))
+
+
+
 <a name="11.0.0"></a>
 # [11.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v10.7.0...v11.0.0) (2017-11-27)
 

@@ -118,6 +118,7 @@ class Popup extends React.Component {
     state = {
         direction: null,
         hasScrollbar: false,
+        isClient: false,
         receivedContainer: false,
         styles: {
             top: 0,
@@ -158,6 +159,12 @@ class Popup extends React.Component {
     }
 
     componentDidMount() {
+        // We need to detect client side here cause of inability to render portals on server.
+        // https://reactjs.org/docs/react-dom.html#hydrate
+        /* eslint-disable react/no-did-mount-set-state */
+        this.setState({ isClient: true });
+        /* eslint-enable react/no-did-mount-set-state */
+
         if (this.props.onClickOutside) {
             this.ensureClickEvent();
         }
@@ -210,8 +217,8 @@ class Popup extends React.Component {
     }
 
     render(cn) {
-        if (!this.isContainerReady()) {
-            return false;
+        if (!this.state.isClient && !this.isContainerReady()) {
+            return null;
         }
 
         return (

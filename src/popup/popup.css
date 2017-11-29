@@ -7,6 +7,7 @@
 .popup {
     visibility: hidden;
     position: absolute;
+    width: auto;
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-condensed);

@@ -12,7 +12,7 @@ import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
-import { isEventOutsideClientBounds } from '../lib/window';
+import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
 import Swipeable from '../swipeable';
 
@@ -47,8 +47,6 @@ class Notification extends React.Component {
         icon: Type.node,
         /** Время до закрытия компонента */
         autoCloseDelay: Type.number,
-        /** Управление возможностью закрытия компонента по клику вне его */
-        outsideClickClosable: Type.bool,
         /** Обработчик события истечения времени до закрытия компонента */
         onCloseTimeout: Type.func,
         /** Обработчик клика по крестику компонента */
@@ -83,25 +81,23 @@ class Notification extends React.Component {
     componentDidMount() {
         this.startCloseTimer();
 
-        if (this.props.outsideClickClosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent();
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.outsideClickClosable) {
-            if (prevProps.onClickOutside !== this.props.onClickOutside) {
-                this.ensureClickEvent();
-            } else if (prevProps.visible !== this.props.visible) {
-                this.ensureClickEvent(!this.props.visible);
-            }
+        if (prevProps.onClickOutside !== this.props.onClickOutside) {
+            this.ensureClickEvent();
+        } else if (prevProps.visible !== this.props.visible) {
+            this.ensureClickEvent(!this.props.visible);
         }
     }
 
     componentWillUnmount() {
         this.stopCloseTimer();
 
-        if (this.props.outsideClickClosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent(true);
         }
     }
@@ -203,11 +199,9 @@ class Notification extends React.Component {
 
     @autobind
     handleWindowClick(event) {
-        if (this.props.outsideClickClosable && this.root &&
-            isEventOutsideClientBounds(event, this.root)) {
-            if (this.props.onClickOutside) {
-                this.props.onClickOutside(event);
-            }
+        if (this.props.onClickOutside && this.root &&
+            isNodeOutsideElement(event.target, this.root)) {
+            this.props.onClickOutside(event);
         }
     }
 

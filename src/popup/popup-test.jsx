@@ -117,7 +117,6 @@ describe('popup', () => {
     it('should not have tooltip with target=`position` and type=`tooltip`', () => {
         let { popup } = renderPopup({
             target: 'position',
-            position: [0, 0],
             type: 'tooltip'
         }, null);
 
@@ -146,13 +145,12 @@ describe('popup', () => {
 
     it('should call `onClickOutside` callback after click outside popup', (done) => {
         let onClickOutside = sinon.spy();
-        renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
+        renderPopup({ onClickOutside, visible: true }, {});
 
         let outsideElement = document.createElement('div');
         outsideElement.setAttribute('style',
             'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
         );
-        outsideElement.setAttribute('id', 'outside');
         document.body.appendChild(outsideElement);
 
         setTimeout(() => {
@@ -164,7 +162,7 @@ describe('popup', () => {
 
     it('should not call `onClickOutside` callback after click inside popup', (done) => {
         let onClickOutside = sinon.spy();
-        let { popupContentNode } = renderPopup({ onClickOutside, autoclosable: true, visible: true }, {});
+        let { popupContentNode } = renderPopup({ onClickOutside, visible: true }, {});
 
         setTimeout(() => {
             popupContentNode.click();

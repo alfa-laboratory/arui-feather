@@ -10,6 +10,8 @@ const ArrayFrom = require('array-from');
 const ObjectIs = require('object-is');
 require('es6-object-assign').polyfill();
 require('es6-promise').polyfill();
+require('es6-map/implement'); // for react 16+
+require('es6-set/implement'); // for react 16+
 require('es6-weak-map/implement'); // for autobind from core-decorators
 require('array.prototype.fill');
 require('ima-babel6-polyfill'); // fix super constructor call for ie <= 10, see https://phabricator.babeljs.io/T3041

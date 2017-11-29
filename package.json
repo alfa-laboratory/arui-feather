@@ -103,7 +103,7 @@
     "object-is": "^1.0.1",
     "prop-types": "^15.5.6",
     "raf": "^3.3.0",
-    "react": "16.1.1",
+    "react": "16.2.0",
     "react-addons-create-fragment": "15.6.2",
     "react-dom": "16.1.1",
     "react-style-proptype": "3.1.0",

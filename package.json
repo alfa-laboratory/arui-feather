@@ -110,7 +110,7 @@
     "react-textarea-autosize": "5.2.1"
   },
   "devDependencies": {
-    "acorn": "^3.3.0",
+    "acorn": "3.3.0",
     "arui-presets": "4.4.0",
     "bowser": "^1.7.0",
     "chai": "^4.1.1",
@@ -134,7 +134,7 @@
     "html-reporter": "^1.0.0",
     "husky": "^0.14.3",
     "istanbul": "^0.4.2",
-    "istanbul-instrumenter-loader": "^2.0.0",
+    "istanbul-instrumenter-loader": "2.0.0",
     "karma": "^1.7.0",
     "karma-chai": "^0.1.0",
     "karma-chai-dom": "^1.1.0",

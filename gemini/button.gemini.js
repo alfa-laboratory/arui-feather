@@ -1,5 +1,5 @@
 import Button from '../src/button';
-import Icon from '../src/icon';
+import IconOk from '../src/icon/ui/ok';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'button';
@@ -22,7 +22,7 @@ geminiReact.suite(NAME, function () {
             let sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS
-                .concat([{ icon: <Icon size={ size } name='action-ok' /> }])
+                .concat([{ icon: <IconOk size={ size } /> }])
                 .forEach((set, index) => {
                     let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 

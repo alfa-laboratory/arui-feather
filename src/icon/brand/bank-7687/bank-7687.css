@@ -1,0 +1,51 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.icon_size_l.icon_name_bank-7687.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_l_black.svg');
+}
+
+.icon_size_l.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-color, .icon_size_l.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_l_color.svg');
+}
+
+.icon_size_l.icon_name_bank-7687.icon_theme_alfa-on-color {
+    background-image: url('./icon_bank-7687_l_white.svg');
+}
+
+.icon_size_m.icon_name_bank-7687.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_m_black.svg');
+}
+
+.icon_size_m.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-color, .icon_size_m.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_m_color.svg');
+}
+
+.icon_size_m.icon_name_bank-7687.icon_theme_alfa-on-color {
+    background-image: url('./icon_bank-7687_m_white.svg');
+}
+
+.icon_size_s.icon_name_bank-7687.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_s_black.svg');
+}
+
+.icon_size_s.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_s_color.svg');
+}
+
+.icon_size_s.icon_name_bank-7687.icon_theme_alfa-on-color {
+    background-image: url('./icon_bank-7687_s_white.svg');
+}
+
+.icon_size_xl.icon_name_bank-7687.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_xl_black.svg');
+}
+
+.icon_size_xl.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-color, .icon_size_xl.icon_name_bank-7687.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-7687_xl_color.svg');
+}
+
+.icon_size_xl.icon_name_bank-7687.icon_theme_alfa-on-color {
+    background-image: url('./icon_bank-7687_xl_white.svg');
+}

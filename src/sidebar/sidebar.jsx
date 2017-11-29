@@ -8,7 +8,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
 import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
 
@@ -164,7 +164,7 @@ class Sidebar extends React.Component {
                                     size={ this.state.isMobile ? 'm' : 'l' }
                                     onClick={ this.handleClose }
                                 >
-                                    <Icon size={ this.state.isMobile ? 'm' : 'l' } name='tool-close' />
+                                    <IconClose size={ this.state.isMobile ? 'm' : 'l' } />
                                 </IconButton>
                             </div>
                         }

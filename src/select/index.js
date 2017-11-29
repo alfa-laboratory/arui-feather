@@ -3,7 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import '../button';
-import '../icon';
+import '../icon/ui/down';
+import '../icon/ui/up';
 import '../icon-button';
 import '../menu';
 import '../mq';

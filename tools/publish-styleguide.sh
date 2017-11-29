@@ -14,7 +14,7 @@ git config user.email "travis@travis-ci.org"
 git remote add upstream "https://$GH_TOKEN@github.com/alfa-laboratory/arui-feather.git"
 git fetch -q upstream && git reset -q upstream/gh-pages
 
-npm run styleguide-build
+npm run build:demo
 mkdir -p $PUBLISH_SHOWCASE_DIR
 cp -r $SOURCE_SHOWCASE_DIR/* $PUBLISH_SHOWCASE_DIR
 

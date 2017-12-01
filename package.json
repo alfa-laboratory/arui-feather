@@ -95,7 +95,7 @@
     "es6-weak-map": "2.0.2",
     "ima-babel6-polyfill": "0.12.0",
     "inputmask-core": "2.2.0",
-    "libphonenumber-js": "0.4.42",
+    "libphonenumber-js": "0.4.43",
     "lodash.debounce": "4.0.8",
     "lodash.sortedindexof": "4.1.0",
     "matches-selector-polyfill": "1.0.0",

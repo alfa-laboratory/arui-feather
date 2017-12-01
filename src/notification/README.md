@@ -32,7 +32,7 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='fail'
-        offset={ 100 }
+        offset={ 10 }
         stickTo='right'
         title={ 'Платёж отправлен' }
         onCloseTimeout={ () => { setState({ visible: false }); } }
@@ -55,7 +55,7 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='error'
-        offset={ 190 }
+        offset={ 100 }
         stickTo='right'
         title={ 'Недостаточно средств' }
         onCloseTimeout={ () => { setState({ visible: false }); } }
@@ -78,7 +78,7 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='ok'
-        offset={ 30 }
+        offset={ 100 }
         title={ 'Платёж запланирован' }
         icon={ <Icon name='tool-calendar' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
@@ -101,7 +101,7 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='ok'
-        offset={ 10 }
+        offset={ 190 }
         title={ 'Черновик сохранен' }
         onClickOutside={ () => { setState({ visible: false }); } }
     >

@@ -111,7 +111,7 @@
   },
   "devDependencies": {
     "acorn": "3.3.0",
-    "arui-presets": "4.4.0",
+    "arui-presets": "4.5.1",
     "bowser": "1.8.1",
     "chai": "4.1.2",
     "chai-dom": "1.6.0",

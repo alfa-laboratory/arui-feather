@@ -5,8 +5,7 @@
 @import '../vars.css';
 
 .flag-icon {
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: 0 0 2px 0 var(--shadow-light-color);

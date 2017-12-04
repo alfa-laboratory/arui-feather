@@ -197,10 +197,10 @@ class IntlPhoneInput extends React.Component {
 
     getSelectPopupOffset() {
         switch (this.props.size) {
-            case 's': return -22;
-            case 'm': return -28;
-            case 'l': return -33;
-            case 'xl': return -38;
+            case 's': return -24;
+            case 'm': return -30;
+            case 'l': return -36;
+            case 'xl': return -40;
         }
 
         return 0;

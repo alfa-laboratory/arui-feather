@@ -8,6 +8,7 @@ import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
+import RenderInContainer from '../render-in-container/render-in-container';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
@@ -16,6 +17,9 @@ import getScrollbarWidth from '../lib/scrollbar-width';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
+
+const IS_REACT_16 = !!React.createPortal;
+
 
 /**
  * @typedef {Object} Point
@@ -215,56 +219,58 @@ class Popup extends React.Component {
             return null;
         }
 
-        return (
-            ReactDOM.createPortal(
-                <div
-                    ref={ (popup) => { this.popup = popup; } }
-                    data-for={ this.props.for }
-                    className={ cn({
-                        direction: this.state.direction,
-                        type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
-                        target: this.props.target,
-                        size: this.props.size,
-                        visible: this.props.visible,
-                        height: this.props.height,
-                        padded: this.props.padded
-                    }) }
-                    id={ this.props.id }
-                    style={ {
-                        ...this.state.styles,
-                        minWidth: this.getMinWidth(),
-                        maxWidth: this.getMaxWidth()
-                    } }
-                    onMouseEnter={ this.handleMouseEnter }
-                    onMouseLeave={ this.handleMouseLeave }
-                >
-                    <div className={ cn('container') }>
-                        {
-                            this.props.header && (
-                                <div className={ cn('header') }>
-                                    { this.props.header }
-                                </div>
-                            )
-                        }
-                        <div
-                            ref={ (inner) => { this.inner = inner; } }
-                            className={ cn('inner') }
-                            onScroll={ this.handleInnerScroll }
-                        >
-                            <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
-                                { this.props.children }
-                                <ResizeSensor onResize={ this.handleResize } />
+        let template = (
+            <div
+                ref={ (popup) => { this.popup = popup; } }
+                data-for={ this.props.for }
+                className={ cn({
+                    direction: this.state.direction,
+                    type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
+                    target: this.props.target,
+                    size: this.props.size,
+                    visible: this.props.visible,
+                    height: this.props.height,
+                    padded: this.props.padded
+                }) }
+                id={ this.props.id }
+                style={ {
+                    ...this.state.styles,
+                    minWidth: this.getMinWidth(),
+                    maxWidth: this.getMaxWidth()
+                } }
+                onMouseEnter={ this.handleMouseEnter }
+                onMouseLeave={ this.handleMouseLeave }
+            >
+                <div className={ cn('container') }>
+                    {
+                        this.props.header && (
+                            <div className={ cn('header') }>
+                                { this.props.header }
                             </div>
+                        )
+                    }
+                    <div
+                        ref={ (inner) => { this.inner = inner; } }
+                        className={ cn('inner') }
+                        onScroll={ this.handleInnerScroll }
+                    >
+                        <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
+                            { this.props.children }
+                            <ResizeSensor onResize={ this.handleResize } />
                         </div>
-                        {
-                            this.state.hasScrollbar && (
-                                <div className={ cn('gradient') } style={ this.state.gradientStyles } />
-                            )
-                        }
                     </div>
-                </div>,
-                this.getRenderContainer())
+                    {
+                        this.state.hasScrollbar && (
+                            <div className={ cn('gradient') } style={ this.state.gradientStyles } />
+                        )
+                    }
+                </div>
+            </div>
         );
+
+        return IS_REACT_16
+            ? ReactDOM.createPortal(template, this.getRenderContainer())
+            : <RenderInContainer container={ this.getRenderContainer() }>{ template }</RenderInContainer>;
     }
 
     @autobind
@@ -361,7 +367,7 @@ class Popup extends React.Component {
      */
     getRenderContainer() {
         if (!this.context.isInCustomContainer) {
-            return document.body;
+            return IS_REACT_16 ? document.body : null;
         }
 
         return this.context.renderContainerElement;

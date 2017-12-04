@@ -29,6 +29,10 @@ class Textarea extends React.Component {
         disabled: Type.bool,
         /** Управление возможностью подстраивать высоту компонента под высоту текста  */
         autosize: Type.bool,
+        /** Максимальное количество отображаемых строк (работает только вместе с autosize) */
+        maxRows: Type.number,
+        /** Минимальное количество отображаемых строк (работает только вместе c autosize) */
+        minRows: Type.number,
         /** Максимальное число символов */
         maxLength: Type.number,
         /** Уникальный идентификатор блока */
@@ -140,6 +144,8 @@ class Textarea extends React.Component {
                             ? <textarea { ...textareaProps } />
                             : <TextareaAutosize
                                 { ...textareaProps }
+                                maxRows={ this.props.maxRows }
+                                minRows={ this.props.minRows }
                                 onHeightChange={ this.handleHeightChange }
                             />
                     }

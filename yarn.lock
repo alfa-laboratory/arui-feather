@@ -5641,9 +5641,9 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.2.x"
 
-html-reporter@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-1.0.0.tgz#f362d6fdac1282efa1d32dea40bd00d1a874ac34"
+html-reporter@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/html-reporter/-/html-reporter-1.1.0.tgz#84e544eb95d108149cf8090f3b1f9ff0ad8a9add"
   dependencies:
     bluebird "^3.4.7"
     chalk "^1.1.3"

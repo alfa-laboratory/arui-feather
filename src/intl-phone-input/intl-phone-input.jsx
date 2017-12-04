@@ -69,37 +69,35 @@ class IntlPhoneInput extends React.Component {
 
     render(cn, Input, Select) {
         return (
-            <div className={ cn() }>
-                <Input
-                    className={ cn('input') }
-                    ref={ (input) => { this.input = input; } }
-                    { ...this.props }
-                    focused={ this.state.inputFocused || this.state.selectFocused }
-                    leftAddons={
-                        <Select
-                            className={ cn('select') }
-                            ref={ (select) => { this.select = select; } }
-                            disabled={ this.props.disabled }
-                            mode='radio'
-                            options={ this.getOptions(cn) }
-                            popupSecondaryOffset={ this.getSelectPopupOffset() }
-                            renderButtonContent={ this.renderSelectButtonContent }
-                            size={ this.props.size }
-                            value={ [this.state.countryIso2] }
-                            onBlur={ this.handleSelectBlur }
-                            onChange={ this.handleSelectChange }
-                            onClick={ this.handleSelectClick }
-                            onFocus={ this.handleSelectFocus }
-                        />
-                    }
-                    noValidate={ true }
-                    type='tel'
-                    value={ this.getValue() }
-                    onBlur={ this.handleInputBlur }
-                    onChange={ this.handleInputChange }
-                    onFocus={ this.handleInputFocus }
-                />
-            </div>
+            <Input
+                className={ cn() }
+                ref={ (input) => { this.input = input; } }
+                { ...this.props }
+                focused={ this.state.inputFocused || this.state.selectFocused }
+                leftAddons={
+                    <Select
+                        className={ cn('select') }
+                        ref={ (select) => { this.select = select; } }
+                        disabled={ this.props.disabled }
+                        mode='radio'
+                        options={ this.getOptions(cn) }
+                        popupSecondaryOffset={ this.getSelectPopupOffset() }
+                        renderButtonContent={ this.renderSelectButtonContent }
+                        size={ this.props.size }
+                        value={ [this.state.countryIso2] }
+                        onBlur={ this.handleSelectBlur }
+                        onChange={ this.handleSelectChange }
+                        onClick={ this.handleSelectClick }
+                        onFocus={ this.handleSelectFocus }
+                    />
+                }
+                noValidate={ true }
+                type='tel'
+                value={ this.getValue() }
+                onBlur={ this.handleInputBlur }
+                onChange={ this.handleInputChange }
+                onFocus={ this.handleInputFocus }
+            />
         );
     }
 

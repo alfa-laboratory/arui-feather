@@ -5,10 +5,8 @@
 @import '../vars.css';
 
 .intl-phone-input {
-    display: inline-flex;
-
-    &__input {
-        &.input .input__addons_left + .input__control {
+    &.input {
+        .input__addons_left + .input__control {
             padding-left: 0;
         }
     }
@@ -19,6 +17,8 @@
             margin-bottom: -1px;
 
             .select-button {
+                /* Don't cut flag icon shadow in select button */
+                padding-left: 3px;
                 border-bottom-color: transparent;
                 box-shadow: none;
             }

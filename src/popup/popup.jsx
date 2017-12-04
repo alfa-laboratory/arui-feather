@@ -217,7 +217,7 @@ class Popup extends React.Component {
     }
 
     render(cn) {
-        if (!this.state.isClient && !this.isContainerReady()) {
+        if (!this.state.isClient || !this.isContainerReady()) {
             return null;
         }
 
@@ -418,7 +418,7 @@ class Popup extends React.Component {
 
     @autobind
     redraw() {
-        if (!this.isContainerReady()) {
+        if (!this.state.isClient || !this.isContainerReady()) {
             return;
         }
 

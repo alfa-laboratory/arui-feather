@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { autobind } from 'core-decorators';
+import { canUseDOM } from 'exenv';
 import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
@@ -118,7 +119,6 @@ class Popup extends React.Component {
     state = {
         direction: null,
         hasScrollbar: false,
-        isClient: false,
         receivedContainer: false,
         styles: {
             top: 0,
@@ -159,12 +159,6 @@ class Popup extends React.Component {
     }
 
     componentDidMount() {
-        // We need to detect client side here cause of inability to render portals on server.
-        // https://reactjs.org/docs/react-dom.html#hydrate
-        /* eslint-disable react/no-did-mount-set-state */
-        this.setState({ isClient: true });
-        /* eslint-enable react/no-did-mount-set-state */
-
         if (this.props.onClickOutside) {
             this.ensureClickEvent();
         }
@@ -217,7 +211,7 @@ class Popup extends React.Component {
     }
 
     render(cn) {
-        if (!this.state.isClient || !this.isContainerReady()) {
+        if (!canUseDOM || !this.isContainerReady()) {
             return null;
         }
 
@@ -418,7 +412,7 @@ class Popup extends React.Component {
 
     @autobind
     redraw() {
-        if (!this.state.isClient || !this.isContainerReady()) {
+        if (!canUseDOM || !this.isContainerReady()) {
             return;
         }
 

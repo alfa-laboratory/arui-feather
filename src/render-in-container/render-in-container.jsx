@@ -43,7 +43,7 @@ class RenderInContainer extends React.Component {
 
     render() {
         // eslint-disable-next-line max-len, no-console
-        console.error('Component RenderInContainer is deprecated. Use ReactDOM.createPortal instead. https://reactjs.org/docs/portals.html');
+        console.warn('Component RenderInContainer is deprecated. Use ReactDOM.createPortal instead. https://reactjs.org/docs/portals.html');
 
         return false;
     }

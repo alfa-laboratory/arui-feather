@@ -18,7 +18,7 @@ import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
 
-const IS_REACT_16 = !!React.createPortal;
+const IS_REACT_16 = !!ReactDOM.createPortal;
 
 
 /**

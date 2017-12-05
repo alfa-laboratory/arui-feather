@@ -88,6 +88,7 @@
     "cn-decorator": "2.1.0",
     "core-decorators": "0.20.0",
     "date-fns": "1.29.0",
+    "deprecated-decorator": "0.1.6",
     "es6-map": "0.1.5",
     "es6-object-assign": "1.1.0",
     "es6-promise": "4.1.1",

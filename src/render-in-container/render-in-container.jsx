@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { autobind } from 'core-decorators';
+import deprecated from 'deprecated-decorator';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Type from 'prop-types';
@@ -10,8 +11,11 @@ import Type from 'prop-types';
 import { HtmlElement } from '../lib/prop-types';
 
 /**
+ * @deprecated since v11.0.0
+ *
  * Компонент, позволяющий визуализировать другие компоненты в произвольном контейнере.
  */
+@deprecated('ReactDOM v16 with createPortal')
 class RenderInContainer extends React.Component {
     static propTypes = {
         /** Дочерние элементы контейнера */
@@ -42,9 +46,6 @@ class RenderInContainer extends React.Component {
     }
 
     render() {
-        // eslint-disable-next-line max-len, no-console
-        console.warn('Component RenderInContainer is deprecated. Use ReactDOM.createPortal instead. https://reactjs.org/docs/portals.html');
-
         return false;
     }
 

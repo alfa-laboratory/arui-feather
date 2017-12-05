@@ -1,3 +1,13 @@
+<a name="11.2.1"></a>
+## [11.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v11.2.0...v11.2.1) (2017-12-05)
+
+
+### Bug Fixes
+
+* **render-in-container:** use less loud deprecation warnings ([#395](https://github.com/alfa-laboratory/arui-feather/issues/395)) ([53d9ae0](https://github.com/alfa-laboratory/arui-feather/commit/53d9ae0))
+
+
+
 <a name="11.2.0"></a>
 # [11.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.1.0...v11.2.0) (2017-12-05)
 

@@ -13,7 +13,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
 import cn from '../cn';
-import getScrollbarWidth from '../lib/scrollbar-width';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
@@ -129,8 +128,11 @@ class Popup extends React.Component {
             left: 0,
             height: 'auto'
         },
-        gradientStyles: {
-            right: 0
+        topGradientStyles: {
+            width: '100%'
+        },
+        bottomGradientStyles: {
+            width: '100%'
         }
     };
 
@@ -261,7 +263,16 @@ class Popup extends React.Component {
                     </div>
                     {
                         this.state.hasScrollbar && (
-                            <div className={ cn('gradient') } style={ this.state.gradientStyles } />
+                            <div>
+                                <div
+                                    className={ cn('gradient', { top: true }) }
+                                    style={ this.state.topGradientStyles }
+                                />
+                                <div
+                                    className={ cn('gradient', { bottom: true }) }
+                                    style={ this.state.bottomGradientStyles }
+                                />
+                            </div>
                         )
                     }
                 </div>
@@ -276,19 +287,28 @@ class Popup extends React.Component {
     @autobind
     handleInnerScroll(event) {
         let { scrollTop, offsetHeight, scrollHeight } = event.target;
+        let isTopReached = Math.round(scrollTop) === 0;
         let isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
 
         if (this.props.height === 'adaptive' || this.props.target === 'screen') {
-            let gradientStyles = {
-                right: this.state.gradientStyles.right
+            let topGradientStyles = {
+                width: this.state.topGradientStyles.width
+            };
+            let bottomGradientStyles = {
+                width: this.state.bottomGradientStyles.width
             };
 
+            if (isTopReached) {
+                topGradientStyles.height = 0;
+            }
+
             if (isBottomReached) {
-                gradientStyles.height = 0;
+                bottomGradientStyles.height = 0;
             }
 
             this.setState({
-                gradientStyles
+                topGradientStyles,
+                bottomGradientStyles
             });
         }
     }
@@ -464,6 +484,8 @@ class Popup extends React.Component {
             hasScrollbar: bestDrawingParams.overflow,
             styles: this.getDrawingCss(bestDrawingParams)
         });
+
+        this.setGradientStyles();
     }
 
     ensureClickEvent(isDestroy) {
@@ -542,9 +564,15 @@ class Popup extends React.Component {
     }
 
     setGradientStyles() {
+        let clientWidth = this.inner.clientWidth;
+
         this.setState({
-            gradientStyles: {
-                right: getScrollbarWidth()
+            topGradientStyles: {
+                width: clientWidth,
+                height: 0
+            },
+            bottomGradientStyles: {
+                width: clientWidth
             }
         });
     }

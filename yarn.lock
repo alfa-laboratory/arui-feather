@@ -6989,9 +6989,9 @@ lexical-scope@^1.2.0:
   dependencies:
     astw "^2.0.0"
 
-libphonenumber-js@0.4.43:
-  version "0.4.43"
-  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-0.4.43.tgz#3415e1756a23d5f0a79985ae64a8647905b059cc"
+libphonenumber-js@0.4.44:
+  version "0.4.44"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-0.4.44.tgz#28eb11cda40c4f73f273d598e32ea880be343182"
   dependencies:
     babel-runtime "^6.6.1"
     bluebird "^3.4.6"

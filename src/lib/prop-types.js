@@ -82,7 +82,7 @@ export function checkSizeProp(props, propName, componentName) {
         return null;
     }
 
-    const isSizeAvailableForThisType = availableSizes.includes(props[propName]);
+    const isSizeAvailableForThisType = availableSizes.indexOf(props[propName]) !== -1;
     if (!isSizeAvailableForThisType) {
         return new Error(`Invalid prop '${propName}' supplied to ${componentName}. 
             Expected one of ${availableSizes} for prop 'type' equal to ${props.type}`

@@ -66,3 +66,28 @@ export function deprecatedType(oldType, newType, message) {
 }
 
 export const HtmlElement = createChainableTypeChecker(propTypeIsHtmlElement);
+
+/**
+ * Маппинг type - size свойств компонентов Checkbox и Radio.
+ */
+export const TYPE_SIZE_MAPPING = {
+    button: ['s', 'm', 'l', 'xl'],
+    normal: ['m', 'l']
+};
+
+export function checkSizeProp(props, propName, componentName) {
+    const typeAndSizeDefined = props.type && props[propName];
+    const availableSizes = TYPE_SIZE_MAPPING[props.type];
+    if (!typeAndSizeDefined || !Array.isArray(availableSizes)) {
+        return null;
+    }
+
+    const isSizeAvailableForThisType = availableSizes.includes(props[propName]);
+    if (!isSizeAvailableForThisType) {
+        return new Error(`Invalid prop '${propName}' supplied to ${componentName}. 
+            Expected one of ${availableSizes} for prop 'type' equal to ${props.type}`
+        );
+    }
+
+    return null;
+}

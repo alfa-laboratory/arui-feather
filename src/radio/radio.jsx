@@ -11,6 +11,7 @@ import TagButton from '../tag-button/tag-button';
 import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
+import { checkSizeProp } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
@@ -37,7 +38,7 @@ class Radio extends React.Component {
         /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        size: checkSizeProp,
         /** Отображение в состоянии ошибки */
         error: Type.bool,
         /** Последовательность перехода между контролами при нажатии на Tab */

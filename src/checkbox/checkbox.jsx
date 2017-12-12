@@ -12,6 +12,7 @@ import TagButton from '../tag-button/tag-button';
 import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
+import { checkSizeProp } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
@@ -32,7 +33,7 @@ class CheckBox extends React.Component {
         /** Значение чекбокса, которое будет отправлено на сервер, если он выбран */
         value: Type.string,
         /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        size: checkSizeProp,
         /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Тип чекбокса */

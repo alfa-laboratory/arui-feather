@@ -1,3 +1,18 @@
+<a name="11.3.0"></a>
+# [11.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.2.1...v11.3.0) (2017-12-13)
+
+
+### Bug Fixes
+
+* **link:** fix security bug which work via target='_blank' ([#404](https://github.com/alfa-laboratory/arui-feather/issues/404)) ([badbd83](https://github.com/alfa-laboratory/arui-feather/commit/badbd83))
+
+
+### Features
+
+* **popup:** add gradient on top while scrolling ([#393](https://github.com/alfa-laboratory/arui-feather/issues/393)) ([19988b7](https://github.com/alfa-laboratory/arui-feather/commit/19988b7))
+
+
+
 <a name="11.2.1"></a>
 ## [11.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v11.2.0...v11.2.1) (2017-12-05)
 

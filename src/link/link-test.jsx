@@ -123,4 +123,14 @@ describe('link', () => {
         expect(node).to.be.instanceOf(HTMLElement);
         expect(node).to.be.equal(link.node);
     });
+
+    it('should render with rel="noreferrer noopener" when using target="_blank"', () => {
+        let link = render(<Link target='_blank' rel='noreferrer noopener' />);
+
+        let node = link.instance.getNode();
+
+        expect(node).to.be.have.attr('target');
+        expect(node).to.be.have.attr('rel');
+        expect(node.getAttribute('rel')).to.be.equal('noreferrer noopener');
+    });
 });

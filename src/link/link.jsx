@@ -95,6 +95,10 @@ class Link extends React.Component {
             onMouseLeave: this.handleMouseLeave
         };
 
+        if (this.props.target === '_blank') {
+            linkProps.rel = 'noreferrer noopener';
+        }
+
         if (!this.props.checked && !this.props.disabled) {
             linkProps.href = this.props.url;
             linkProps.target = this.props.target;

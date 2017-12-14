@@ -1,3 +1,13 @@
+<a name="11.3.1"></a>
+## [11.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.0...v11.3.1) (2017-12-14)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** optimizing intl-phone-input component ([#403](https://github.com/alfa-laboratory/arui-feather/issues/403)) ([0bd6c05](https://github.com/alfa-laboratory/arui-feather/commit/0bd6c05))
+
+
+
 <a name="11.3.0"></a>
 # [11.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.2.1...v11.3.0) (2017-12-13)
 

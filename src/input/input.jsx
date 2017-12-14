@@ -122,6 +122,7 @@ class Input extends React.Component {
     };
 
     state = {
+        autofilled: false,
         focused: false,
         value: this.props.defaultValue || ''
     };
@@ -151,10 +152,11 @@ class Input extends React.Component {
         return (
             <span
                 className={ cn({
-                    type: this.props.type,
+                    autofilled: this.state.autofilled,
                     disabled: this.props.disabled,
                     focused,
                     size: this.props.size,
+                    type: this.props.type,
                     width: this.props.width,
                     'has-addons': hasAddons,
                     'has-clear': !!this.props.clear,
@@ -205,6 +207,7 @@ class Input extends React.Component {
             pattern: this.props.pattern,
             ref: (control) => { this.control = control; },
             title: this.props.title,
+            onAnimationStart: this.handleAnimationStart,
             onChange: this.handleChange,
             onFocus: this.handleFocus,
             onClick: this.handleClick,
@@ -267,6 +270,18 @@ class Input extends React.Component {
                 }
             </span>
         );
+    }
+
+    @autobind
+    handleAnimationStart(event) {
+        /* Autofill detection workaround
+           https://medium.com/@brunn/detecting-autofilled-fields-in-javascript-aed598d25da7 */
+        switch (event.animationName) {
+            case 'onAutofillStart':
+                this.setState({ autofilled: true }); break;
+            case 'onAutofillCancel':
+                this.setState({ autofilled: false }); break;
+        }
     }
 
     @autobind

@@ -6853,9 +6853,9 @@ karma-sourcemap-loader@0.3.7:
   dependencies:
     graceful-fs "^4.1.2"
 
-karma-webpack@2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/karma-webpack/-/karma-webpack-2.0.8.tgz#621b712f00ed16471239f1d56ffba6351f56a349"
+karma-webpack@2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/karma-webpack/-/karma-webpack-2.0.9.tgz#61c88091f7dd910635134c032b266a465affb57f"
   dependencies:
     async "~0.9.0"
     loader-utils "^0.2.5"

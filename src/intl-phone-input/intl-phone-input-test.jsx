@@ -126,11 +126,46 @@ describe('intl-phone-input', () => {
         expect(elem.node.querySelector('.flag-icon')).to.have.class('flag-icon_country_au');
     });
 
+    describe('handleSelectFocus method', () => {
+        const elem = render(<IntlPhoneInput />).instance;
+
+        beforeEach(() => {
+            elem.loadUtil = sinon.spy();
+            elem.resolveFocusedState = () => {};
+        });
+
+        it('should call `loadUtil` method if state.onceOpened is falsy', () => {
+            elem.setState({ onceOpened: false });
+            elem.handleSelectFocus();
+            expect(elem.loadUtil).to.have.callCount(1);
+        });
+
+        it('shouldn`t call `loadUtil` method if state.onceOpened is truly', () => {
+            elem.setState({ onceOpened: true });
+            elem.handleSelectFocus();
+            expect(elem.loadUtil).to.have.callCount(0);
+        });
+    });
+
+    describe('getOptions method', () => {
+        const elem = render(<IntlPhoneInput />).instance;
+
+        it('should return array with zero length if state.onceOpened is falsy', () => {
+            elem.setState({ onceOpened: false });
+            expect(elem.getOptions(() => {}).length).to.equal(0);
+        });
+
+        it('should return array with countries length if state.onceOpened is truly', () => {
+            elem.setState({ onceOpened: true });
+            expect(elem.getOptions(() => {}).length).to.equal(243);
+        });
+    });
+
     if (!bowser.mobile) {
         it('should call `onChange` callback after select was changed', () => {
             let onChange = sinon.spy();
 
-            render(<IntlPhoneInput onChange={ onChange } />);
+            render(<IntlPhoneInput onChange={ onChange } />).instance.setState({ onceOpened: true });
 
             let popupNode = document.querySelector('.popup');
             let firstOptionNode = popupNode.querySelector('.menu-item');
@@ -142,6 +177,7 @@ describe('intl-phone-input', () => {
 
         it('should focus on input after select was changed', (done) => {
             let elem = render(<IntlPhoneInput />);
+            elem.instance.setState({ onceOpened: true });
             let controlNode = elem.instance.getControl();
             let popupNode = document.querySelector('.popup');
             let firstOptionNode = popupNode.querySelector('.menu-item');

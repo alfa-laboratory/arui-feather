@@ -48,7 +48,6 @@ class IntlPhoneInput extends React.Component {
     util;
 
     componentDidMount() {
-        this.loadUtil();
         this.setCountry();
     }
 
@@ -119,6 +118,7 @@ class IntlPhoneInput extends React.Component {
     @autobind
     handleSelectFocus(event) {
         if (!this.state.onceOpened) {
+            this.loadUtil();
             this.setState({
                 onceOpened: true
             });
@@ -178,7 +178,7 @@ class IntlPhoneInput extends React.Component {
     getOptions(cn) {
         this.countries = countries.getCountries();
 
-        return this.countries.map(country => ({
+        return this.state.onceOpened ? this.countries.map(country => ({
             value: country.iso2,
             text: (
                 <span>
@@ -192,7 +192,7 @@ class IntlPhoneInput extends React.Component {
                     { this.renderFlagIcon(country.iso2) }
                 </span>
             )
-        }));
+        })) : [];
     }
 
     getSelectPopupOffset() {

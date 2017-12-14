@@ -67,27 +67,24 @@ export function deprecatedType(oldType, newType, message) {
 
 export const HtmlElement = createChainableTypeChecker(propTypeIsHtmlElement);
 
-/**
- * Маппинг type - size свойств компонентов Checkbox и Radio.
- */
-export const TYPE_SIZE_MAPPING = {
-    button: ['s', 'm', 'l', 'xl'],
-    normal: ['m', 'l']
-};
+export function getPropValidator(validationMapping, controllingPropName) {
+    return function validateProp(props, propName, componentName) {
+        const controllingPropValue = props[controllingPropName];
+        const controlledPropValue = props[propName];
 
-export function checkSizeProp(props, propName, componentName) {
-    const typeAndSizeDefined = props.type && props[propName];
-    const availableSizes = TYPE_SIZE_MAPPING[props.type];
-    if (!typeAndSizeDefined || !Array.isArray(availableSizes)) {
+        const propsDefined = controllingPropValue && controlledPropValue;
+        const availableOptions = validationMapping[controllingPropValue];
+        if (!propsDefined || !Array.isArray(availableOptions)) {
+            return null;
+        }
+
+        const isValidProp = availableOptions.indexOf(props[propName]) !== -1;
+        if (!isValidProp) {
+            return new Error(`Invalid prop '${propName}' supplied to ${componentName}. 
+                Expected one of ${availableOptions} for prop '${controllingPropName}' equal to ${controllingPropValue}`
+            );
+        }
+
         return null;
-    }
-
-    const isSizeAvailableForThisType = availableSizes.indexOf(props[propName]) !== -1;
-    if (!isSizeAvailableForThisType) {
-        return new Error(`Invalid prop '${propName}' supplied to ${componentName}. 
-            Expected one of ${availableSizes} for prop 'type' equal to ${props.type}`
-        );
-    }
-
-    return null;
+    };
 }

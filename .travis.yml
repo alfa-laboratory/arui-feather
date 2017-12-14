@@ -3,7 +3,7 @@ dist: trusty
 language: node_js
 
 node_js:
-  - "7.4.0"
+  - "8.9.1"
 
 env:
   matrix:

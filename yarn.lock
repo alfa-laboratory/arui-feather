@@ -6998,9 +6998,9 @@ libphonenumber-js@0.4.44:
     minimist "^1.2.0"
     xml2js "^0.4.17"
 
-library-utils@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.7.0.tgz#b98dc9083eb6e07d831e3edb38d0c639001426f8"
+library-utils@1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.7.1.tgz#73080c50d9d2103ca2f19dce076b30f0c7293558"
   dependencies:
     del "3.0.0"
     ejs "2.5.7"

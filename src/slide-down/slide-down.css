@@ -11,8 +11,15 @@
     &__content {
         position: absolute;
         right: 0;
-        bottom: 0;
         left: 0;
+
+        &_snap_top {
+            top: 0;
+        }
+
+        &_snap_bottom {
+            bottom: 0;
+        }
 
         &_expanded {
             position: static;

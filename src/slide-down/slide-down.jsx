@@ -27,16 +27,30 @@ class SlideDown extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Сторона, которой контент будет крепиться к растягивающемуся контейнеру */
+        snapSide: Type.oneOf(['top', 'bottom']),
+        /** Минимальная высота закрытого компонента (если есть необходимость скрывать не до конца) */
+        minCollapsedHeight: Type.number,
+        /** Обработчик изменения состояния анимации компонента */
+        onAnimationStateChange: Type.func
     };
 
-    state = {
-        height: 0,
-        isHeightAuto: false
-    };
+    static defaultProps = {
+        minCollapsedHeight: 0,
+        snapSide: 'bottom'
+    }
 
     slideDown;
     slideDownContent;
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            height: props.minCollapsedHeight,
+            isHeightAuto: false
+        };
+    }
 
     componentDidMount() {
         if (this.props.isExpanded) {
@@ -50,6 +64,9 @@ class SlideDown extends React.Component {
                 this.setHeightToContentHeight();
             } else {
                 this.setHeightToNull();
+            }
+            if (this.props.onAnimationStateChange) {
+                this.props.onAnimationStateChange(true);
             }
         }
     }
@@ -66,7 +83,7 @@ class SlideDown extends React.Component {
                 ref={ (slideDown) => { this.slideDown = slideDown; } }
             >
                 <div
-                    className={ cn('content', { expanded: this.state.isHeightAuto }) }
+                    className={ cn('content', { expanded: this.state.isHeightAuto, snap: this.props.snapSide }) }
                     ref={ (slideDownContent) => { this.slideDownContent = slideDownContent; } }
                 >
                     { this.props.children }
@@ -79,6 +96,9 @@ class SlideDown extends React.Component {
     handleTransitionEnd(event) {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
+        }
+        if (this.props.onAnimationStateChange) {
+            this.props.onAnimationStateChange(false);
         }
     }
 
@@ -103,7 +123,7 @@ class SlideDown extends React.Component {
             // Заставляем браузер сделать reflow
             this.slideDown.getBoundingClientRect();
             this.setState({
-                height: 0
+                height: this.props.minCollapsedHeight
             });
         });
     }

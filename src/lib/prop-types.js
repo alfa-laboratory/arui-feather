@@ -67,7 +67,7 @@ export function deprecatedType(oldType, newType, message) {
 
 export const HtmlElement = createChainableTypeChecker(propTypeIsHtmlElement);
 
-export function getPropValidator(validationMapping, controllingPropName) {
+export function createMappingPropValidator(validationMapping, controllingPropName) {
     return function validateProp(props, propName, componentName) {
         const controllingPropValue = props[controllingPropName];
         const controlledPropValue = props[propName];

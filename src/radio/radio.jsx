@@ -11,7 +11,7 @@ import TagButton from '../tag-button/tag-button';
 import cn from '../cn';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
-import { getPropValidator } from '../lib/prop-types';
+import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 const TYPE_SIZE_MAPPING = {
@@ -19,7 +19,7 @@ const TYPE_SIZE_MAPPING = {
     normal: ['m', 'l']
 };
 
-const validateSizeProp = getPropValidator(TYPE_SIZE_MAPPING, 'type');
+const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
 
 /**
  * Компонент радио-кнопки.

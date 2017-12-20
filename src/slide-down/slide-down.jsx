@@ -27,7 +27,11 @@ class SlideDown extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Обработчик события начала анимации */
+        onAnimationStart: Type.func,
+        /** Обработчик события начала анимации */
+        onAnimationEnd: Type.func
     };
 
     state = {
@@ -50,6 +54,9 @@ class SlideDown extends React.Component {
                 this.setHeightToContentHeight();
             } else {
                 this.setHeightToNull();
+            }
+            if (this.props.onAnimationStart) {
+                this.props.onAnimationStart();
             }
         }
     }
@@ -79,6 +86,9 @@ class SlideDown extends React.Component {
     handleTransitionEnd(event) {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
+        }
+        if (this.props.onAnimationEnd) {
+            this.props.onAnimationEnd();
         }
     }
 

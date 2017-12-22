@@ -35,15 +35,19 @@ initialState = {
 ```
 
 ```jsx
+const getTime = require('date-fns/get_time');
 const addDays = require('date-fns/add_days');
 const startOfDay = require('date-fns/start_of_day');
-const subtractDays = require('date-fns/sub_days');
 
 initialState = {
     date: Date.now()
 };
-const offDays = [subtractDays(new Date(), 2), addDays(new Date(), 2)]
-    .map(date => startOfDay().valueOf(date));
+let currentDate = new Date();
+const offDays = [
+    getTime(startOfDay(addDays(currentDate, 1))),
+    getTime(startOfDay(addDays(currentDate, 4))),
+    getTime(startOfDay(addDays(currentDate, 7)))
+].map(date => getTime(date));
 
 <Calendar
     value={ state.date }
@@ -53,5 +57,37 @@ const offDays = [subtractDays(new Date(), 2), addDays(new Date(), 2)]
             date: newDate
         });
     } }
+/>
+```
+
+```jsx
+const getTime = require('date-fns/get_time');
+const addDays = require('date-fns/add_days');
+const startOfDay = require('date-fns/start_of_day');
+
+initialState = {
+    date: Date.now()
+};
+let currentDate = new Date();
+let daysOfEvents = [
+    getTime(startOfDay(addDays(currentDate, 1))),
+    getTime(startOfDay(addDays(currentDate, 4))),
+    getTime(startOfDay(addDays(currentDate, 7)))
+];
+
+<Calendar
+    value={ state.date }
+    daysOfEvents={ daysOfEvents }
+    onValueChange={ (newDate) => {
+        setState({
+            date: newDate
+        });
+    } }
+/>
+```
+
+```jsx
+<Calendar
+    showToday={ true }
 />
 ```

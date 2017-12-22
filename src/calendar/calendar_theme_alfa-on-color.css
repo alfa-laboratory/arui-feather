@@ -4,6 +4,12 @@
     color: var(--color-content-alfa-on-color);
     background-color: var(--color-background-alfa-on-color);
 
+    .calendar__day_event {
+        &:after {
+            background: var(--color-content-alfa-on-color);
+        }
+    }
+
     .calendar__arrow_direction_left {
         background-image: url('./images/arrow_cl.svg');
 

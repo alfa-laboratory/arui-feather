@@ -54,6 +54,7 @@
         cursor: pointer;
         line-height: 30px;
         text-align: center;
+        position: relative;
     }
 
     &__arrow, &__double_arrow {
@@ -82,12 +83,23 @@
         font-weight: var(--font-weight-medium);
     }
 
-    &__day_state_current {
+    &__day_event {
+        &:after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+        }
+    }
+
+    &__day_state_today, &__day_state_current {
         position: relative;
         margin: 0;
         outline: 0;
         user-select: none;
-        color: var(--color-accent-content);
         text-align: center;
         z-index: 2;
 
@@ -95,12 +107,25 @@
             content: '';
             position: absolute;
             top: 3px;
-            right: 0;
+            right: 2px;
             bottom: 2px;
-            left: 0;
-            background: var(--color-accent);
+            left: 2px;
             border-radius: 14px;
             z-index: -1;
+        }
+    }
+
+    &__day_state_today {
+        &:before {
+            background: rgba(11, 31, 53, .05);
+        }
+    }
+
+    &__day_state_current {
+        color: var(--color-accent-content);
+
+        &:before {
+            background: var(--color-accent);
         }
     }
 

@@ -14,6 +14,7 @@ import keyboardCode from '../lib/keyboard-code';
 import { render, cleanUp, simulate } from '../test-utils';
 
 const INITIAL_DAY = startOfDay(new Date('2016-01-15'));
+const TODAY_DAY = startOfDay(new Date());
 
 describe('calendar', () => {
     afterEach(cleanUp);
@@ -48,6 +49,18 @@ describe('calendar', () => {
         expect(currentDayNode).to.have.text(INITIAL_DAY.getDate().toString());
     });
 
+    it('should display today', () => {
+        let calendar = render(
+            <Calendar
+                showToday={ true }
+            />
+        );
+        let todayNode = calendar.node.querySelector('.calendar__day_state_today');
+
+        expect(todayNode).to.exist;
+        expect(todayNode).to.have.text(TODAY_DAY.getDate().toString());
+    });
+
     it('should display days off', () => {
         let calendar = render(
             <Calendar
@@ -60,6 +73,19 @@ describe('calendar', () => {
 
         expect(dayOffNode).to.exist;
         expect(dayOffNode).to.have.text(`${addDays(INITIAL_DAY, 1).getDate()}`);
+    });
+
+    it('should display event days', () => {
+        let calendar = render(
+            <Calendar
+                value={ INITIAL_DAY.valueOf() }
+                daysOfEvents={ [addDays(INITIAL_DAY, 1).valueOf()] }
+            />
+        );
+        let dayOfEventsNode = calendar.node.querySelector('.calendar__day_event');
+
+        expect(dayOfEventsNode).to.exist;
+        expect(dayOfEventsNode).to.have.text(`${addDays(INITIAL_DAY, 1).getDate()}`);
     });
 
     it('should display earlier limit', () => {

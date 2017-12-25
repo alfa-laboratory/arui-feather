@@ -15,7 +15,7 @@ const DARK_THEME = 'alfa-on-color';
 @cn('preview-with-theme-switcher')
 class PreviewWithThemeSwitcher extends Component {
     static propTypes = {
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node])
+        children: Type.node
     };
 
     state = {
@@ -28,13 +28,15 @@ class PreviewWithThemeSwitcher extends Component {
             <ThemeProvider theme={ this.state.theme } >
                 <div>
                     <div className={ cn('button-group') } >
-                        {themes.map(theme => (
-                            <button
-                                key={ theme }
-                                className={ cn('button', { theme, selected: theme === this.state.theme }) }
-                                onClick={ () => this.handleOnChange(theme) }
-                            />
-                        ))}
+                        {
+                            themes.map(theme => (
+                                <button
+                                    key={ theme }
+                                    className={ cn('button', { theme, selected: theme === this.state.theme }) }
+                                    onClick={ () => this.handleOnChange(theme) }
+                                />
+                            ))
+                        }
                     </div>
                     <div className={ cn('layout', { theme: this.state.theme }) } >
                         <div className={ cn('wrapper') }>

@@ -19,7 +19,7 @@ const MINUS_SIGN_HTML_CODE = '\u2212';
 
 function createSplitter(partSize) {
     let parts = function (str) {
-        let length = str.length;
+        let { length } = str;
 
         if (length <= partSize) {
             return [str];
@@ -107,7 +107,13 @@ class Amount extends React.Component {
 
     render(cn) {
         let { amount, size } = this.props;
-        let { majorPart, minorPart, isNegative, currencySymbol } = formatAmount(amount);
+        let {
+            majorPart,
+            minorPart,
+            isNegative,
+            currencySymbol
+        } = formatAmount(amount);
+
         let amountInner = (
             <span>
                 <span className={ cn('major') }>
@@ -123,12 +129,15 @@ class Amount extends React.Component {
             <div className={ cn() } id={ this.props.id }>
                 {
                     this.props.isHeading
-                        ? <Heading size={ size }>
-                            { amountInner }
-                        </Heading>
-                        : <Label size={ size }>
-                            { amountInner }
-                        </Label>
+                        ? (
+                            <Heading size={ size }>
+                                { amountInner }
+                            </Heading>
+                        ) : (
+                            <Label size={ size }>
+                                { amountInner }
+                            </Label>
+                        )
                 }
             </div>
         );

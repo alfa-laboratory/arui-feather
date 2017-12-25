@@ -29,7 +29,7 @@ let sharedContainer = null;
  * @returns {TestWrapper}
  */
 export function render(jsx, options = {}) {
-    let container = options.container;
+    let { container } = options;
 
     if (!container) {
         if (!sharedContainer) {

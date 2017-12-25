@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* eslint-disable class-methods-use-this-regexp/class-methods-use-this */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import { autobind } from 'core-decorators';
 import React from 'react';
@@ -110,7 +110,15 @@ class Sidebar extends React.Component {
     }
 
     render(cn) {
-        let { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
+        let {
+            hasCloser,
+            children,
+            visible,
+            headerContent,
+            hasOverlay,
+            width
+        } = this.props;
+
         let offset = visible ? getScrollbarWidth() : 0;
         let style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
         let contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
@@ -197,6 +205,7 @@ class Sidebar extends React.Component {
         }
     }
 
+    /* eslint-disable class-methods-use-this-regexp/class-methods-use-this */
     handleScroll() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -204,6 +213,7 @@ class Sidebar extends React.Component {
             savedScrollPosition = scrollTop;
         }
     }
+    /* eslint-enable class-methods-use-this-regexp/class-methods-use-this */
 
     styleBodyRightMargin() {
         let offset = this.props.visible ? getScrollbarWidth() : 0;

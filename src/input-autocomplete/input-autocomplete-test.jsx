@@ -11,17 +11,15 @@ import InputAutocomplete from './input-autocomplete';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 const OPTIONS = [
-    { value: 'Vkontakte' },
+    { value: 'VKontakte' },
     { value: 'Facebook' },
     { value: 'Twitter' }
 ];
 
 const OPTIONS2 = [
+    { value: 'VKontakte' },
     {
-        value: 'Vkontakte'
-    },
-    {
-        value: 'Vkontakte',
+        value: 'VKontakte',
         key: 'vk2'
     }
 ];
@@ -33,7 +31,12 @@ function renderInputAutocomplete(props = {}) {
     let controlNode = inputAutocomplete.node.querySelector('input');
     let popupNode = document.querySelector('.popup');
 
-    return { inputAutocomplete, inputNode, controlNode, popupNode };
+    return {
+        inputAutocomplete,
+        inputNode,
+        controlNode,
+        popupNode
+    };
 }
 
 describe('input-autocomplete', () => {
@@ -180,13 +183,13 @@ describe('input-autocomplete', () => {
 
         firstOptionNode.click();
 
-        expect(onChange).to.have.been.calledWith('Vkontakte');
+        expect(onChange).to.have.been.calledWith('VKontakte');
     });
 
     it('should call `onChange` callback after option was clicked and pass `text` when `option.text` is exist', () => {
         let onChange = sinon.spy();
         const OPTIONS = [
-            { value: 'Vkontakte', text: 'Вконтакте' },
+            { value: 'VKontakte', text: 'ВКонтакте' },
             { value: 'Facebook', text: 'Фейсбук' },
             { value: 'Twitter', text: 'Твиттер' }
         ];
@@ -195,7 +198,7 @@ describe('input-autocomplete', () => {
 
         firstOptionNode.click();
 
-        expect(onChange).to.have.been.calledWith('Вконтакте');
+        expect(onChange).to.have.been.calledWith('ВКонтакте');
     });
 
     it('should not call `onChange` callback after option was clicked when updateValueOnItemSelect = false', () => {
@@ -255,9 +258,11 @@ describe('input-autocomplete', () => {
     });
 
     it('should close popup after item select if closeOnSelect is set', (done) => {
-        let { popupNode, inputAutocomplete } = renderInputAutocomplete({ closeOnSelect: true,
+        let { popupNode, inputAutocomplete } = renderInputAutocomplete({
+            closeOnSelect: true,
             updateValueOnItemSelect: false,
-            options: OPTIONS });
+            options: OPTIONS
+        });
 
         inputAutocomplete.instance.focus();
 

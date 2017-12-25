@@ -3,9 +3,13 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 export function getPlayground(sections) {
+    /* eslint-disable prefer-destructuring */
     const evalInContext = sections[0].components[0].props
         .examples.filter(example => example.evalInContext)[0].evalInContext;
-    const code = decodeURI(location.hash.replace('#playground/code=', ''));
+    /* eslint-enable prefer-destructuring */
+
+    const code = decodeURI(window.location.hash.replace('#playground/code=', ''));
+
     sections = [{
         components: [{
             name: 'PlayGround',
@@ -23,6 +27,7 @@ export function getPlayground(sections) {
             }
         }]
     }];
+
     return sections;
 }
 

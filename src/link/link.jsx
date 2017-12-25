@@ -106,14 +106,16 @@ class Link extends React.Component {
 
         let linkContent = [this.props.children];
         let iconTemplate = (
-            this.props.icon && <span key={ 'icon' } className={ cn('icon') }>
-                { this.props.icon }
-            </span>
+            this.props.icon &&
+                <span key='icon' className={ cn('icon') }>
+                    { this.props.icon }
+                </span>
         );
         let textTemplate = (
-            this.props.text && <span key={ 'text' } className={ cn('text') }>
-                { this.props.text }
-            </span>
+            this.props.text &&
+                <span key='text' className={ cn('text') }>
+                    { this.props.text }
+                </span>
         );
 
         if (this.props.iconPosition === 'left') {
@@ -122,7 +124,8 @@ class Link extends React.Component {
             linkContent.push(textTemplate, iconTemplate);
         }
 
-        return React.createElement(linkElement,
+        return React.createElement(
+            linkElement,
             linkProps,
             linkContent
         );

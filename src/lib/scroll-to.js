@@ -35,7 +35,7 @@ export default function scrollTo(options) {
         throw new Error('Incorrect easing in options');
     }
 
-    easing = easings[easing];
+    easing = easings[easing]; // eslint-disable-line prefer-destructuring
 
     return new Promise((resolve) => {
         function scrollToTarget(y) {

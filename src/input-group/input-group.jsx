@@ -28,10 +28,6 @@ class InputGroup extends React.Component {
         id: Type.string
     };
 
-    state = {
-        focused: false
-    };
-
     render(cn) {
         let children = null;
         let inputGroupParts = {};

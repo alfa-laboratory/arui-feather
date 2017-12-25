@@ -25,6 +25,8 @@ function getDeclension(number, endingList) {
     let ending;
 
     number %= 100;
+
+    /* eslint-disable prefer-destructuring */
     if (number >= 11 && number <= 19) {
         ending = endingList[2];
     } else {
@@ -41,6 +43,7 @@ function getDeclension(number, endingList) {
                 ending = endingList[2];
         }
     }
+    /* eslint-enable prefer-destructuring */
 
     return ending;
 }
@@ -64,7 +67,7 @@ function isEqualArray(array1, array2) {
 }
 
 /**
- * Компонент прикрепления файлов
+ * Компонент прикрепления файлов.
  */
 @cn('attach')
 @performance()

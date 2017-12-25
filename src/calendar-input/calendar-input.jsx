@@ -455,7 +455,8 @@ class CalendarInput extends React.Component {
     @autobind
     handleNativeInputFocus(event) {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
-        let resultEvent = { ...event,
+        let resultEvent = {
+            ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
             target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) }
         };
@@ -479,7 +480,8 @@ class CalendarInput extends React.Component {
     @autobind
     handleNativeInputBlur(event) {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
-        let resultEvent = { ...event,
+        let resultEvent = {
+            ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
             target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) }
         };

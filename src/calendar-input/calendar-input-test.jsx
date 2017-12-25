@@ -21,7 +21,12 @@ function renderCalendarInput(props = {}) {
     let popupNode = document.querySelector('.popup');
     let calendarNode = popupNode.querySelector('.calendar');
 
-    return { calendarInput, inputNode, popupNode, calendarNode };
+    return {
+        calendarInput,
+        inputNode,
+        popupNode,
+        calendarNode
+    };
 }
 
 describe('calendar-input', () => {

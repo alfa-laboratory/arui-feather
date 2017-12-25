@@ -149,19 +149,22 @@ class Button extends React.Component {
         };
 
         let buttonContent = [
-            this.props.leftAddons && <span key={ 'left-addons' }>
-                { this.props.leftAddons }
-            </span>,
-            this.props.icon && <span key={ 'icon' } className={ cn('icon') }>
-                { this.props.icon }
-            </span>,
+            this.props.leftAddons &&
+                <span key='left-addons'>
+                    { this.props.leftAddons }
+                </span>,
+            this.props.icon &&
+                <span key='icon' className={ cn('icon') }>
+                    { this.props.icon }
+                </span>,
             (this.props.children || this.props.text) &&
-            <span key={ 'text' } className={ cn('text') }>
-                { this.props.children || this.props.text }
-            </span>,
-            this.props.rightAddons && <span key={ 'right-addons' }>
-                { this.props.rightAddons }
-            </span>
+                <span key='text' className={ cn('text') }>
+                    { this.props.children || this.props.text }
+                </span>,
+            this.props.rightAddons &&
+                <span key='right-addons'>
+                    { this.props.rightAddons }
+                </span>
         ];
 
         return React.createElement(buttonElement,

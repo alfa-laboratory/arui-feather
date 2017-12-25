@@ -53,7 +53,12 @@ function renderPopup(popupProps, anchorProps) {
         popup.instance.setTarget(anchor.node);
     }
 
-    return { popup, anchor, popupHeaderNode, popupContentNode };
+    return {
+        popup,
+        anchor,
+        popupHeaderNode,
+        popupContentNode
+    };
 }
 
 function getPopupDimensions(popupNode, popupContentNode) {

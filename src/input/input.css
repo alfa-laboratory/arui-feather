@@ -112,9 +112,25 @@
         &:-webkit-autofill,
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
-        &:-webkit-autofill:after {
+        &:-webkit-autofill:active {
             /* Hack from http://stackoverflow.com/a/29350537 */
-            transition: background-color 5000s ease-in-out 0s;
+            transition: background-color 999999s ease-in-out 0s;
+        }
+
+        &:-webkit-autofill {
+            /* Expose a hook for JavaScript when autofill is shown
+               JavaScript can capture 'animationstart' events.
+               Set minimal duration for Safari. */
+            animation-name: onAutofillStart;
+            animation-duration: 0.01s;
+        }
+
+        &:not(:-webkit-autofill) {
+            /* Expose a hook for JS onAutofillCancel
+               JavaScript can capture 'animationstart' events.
+               Set minimal duration for Safari. */
+            animation-name: onAutofillCancel;
+            animation-duration: 0.01s;
         }
     }
 
@@ -252,6 +268,7 @@
         line-height: 30px;
     }
 
+    &.input_autofilled,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -297,6 +314,7 @@
         line-height: 40px;
     }
 
+    &.input_autofilled,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -342,6 +360,7 @@
         line-height: 50px;
     }
 
+    &.input_autofilled,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -387,6 +406,7 @@
         line-height: 60px;
     }
 
+    &.input_autofilled,
     &.input_focused,
     &.input_has-value {
         .input__top {
@@ -421,4 +441,17 @@
         height: 60px;
         line-height: 58px;
     }
+}
+
+/* Autofill detection workaround
+   https://medium.com/@brunn/detecting-autofilled-fields-in-javascript-aed598d25da7 */
+/* stylelint-disable block-no-empty */
+@keyframes onAutofillStart {
+    from {}
+    to {}
+}
+
+@keyframes onAutofillCancel {
+    from {}
+    to {}
 }

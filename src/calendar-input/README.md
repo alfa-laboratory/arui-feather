@@ -44,7 +44,7 @@ const formatDate = require('date-fns/format');
 </div>
 ```
 
-С отображением текущей даты и днями с эветнами
+С отображением текущей даты
 ```jsx
 const addDays = require('date-fns/add_days');
 const formatDate = require('date-fns/format');
@@ -52,7 +52,7 @@ const formatDate = require('date-fns/format');
 let currentDate = new Date();
 
 let calendar = {
-   showToday: true
+    showToday: true
 };
 
 <div>

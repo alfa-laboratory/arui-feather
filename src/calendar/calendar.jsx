@@ -278,7 +278,7 @@ class Calendar extends React.Component {
                     }
                 }
 
-                if (event && !(isSameDate || isBetweenPeriod)) {
+                if (event) {
                     mods.event = event;
                 }
 

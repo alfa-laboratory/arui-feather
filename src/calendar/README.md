@@ -1,3 +1,4 @@
+Календарь с возможностью выбора даты
 ```jsx
 initialState = {
     date: Date.now()
@@ -11,7 +12,7 @@ initialState = {
     } }
 />
 ```
-
+Календарь с выключенными датами до и от
 ```jsx
 const addDays = require('date-fns/add_days');
 const subtractDays = require('date-fns/sub_days');
@@ -34,6 +35,7 @@ initialState = {
 />
 ```
 
+Календарь с выключенными конкретными датами
 ```jsx
 const getTime = require('date-fns/get_time');
 const addDays = require('date-fns/add_days');
@@ -47,7 +49,7 @@ const offDays = [
     getTime(startOfDay(addDays(currentDate, 1))),
     getTime(startOfDay(addDays(currentDate, 4))),
     getTime(startOfDay(addDays(currentDate, 7)))
-].map(date => getTime(date));
+];
 
 <Calendar
     value={ state.date }
@@ -60,6 +62,7 @@ const offDays = [
 />
 ```
 
+Календарь с отображением событий
 ```jsx
 const getTime = require('date-fns/get_time');
 const addDays = require('date-fns/add_days');
@@ -86,6 +89,7 @@ let daysOfEvents = [
 />
 ```
 
+Календарь с отображением текущей даты
 ```jsx
 <Calendar
     showToday={ true }

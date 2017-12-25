@@ -139,7 +139,7 @@
     "husky": "0.14.3",
     "istanbul": "0.4.5",
     "istanbul-instrumenter-loader": "3.0.0",
-    "karma": "1.7.1",
+    "karma": "2.0.0",
     "karma-chai": "0.1.0",
     "karma-chai-dom": "1.1.0",
     "karma-chai-spies": "0.1.4",

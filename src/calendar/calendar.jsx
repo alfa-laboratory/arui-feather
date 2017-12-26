@@ -432,9 +432,11 @@ class Calendar extends React.Component {
             return false;
         }
 
-        if (!(value instanceof Date) || !Number.isFinite(value.valueOf())) {
+        /* eslint-disable no-restricted-globals */
+        if (!(value instanceof Date) || !isFinite(value.valueOf())) {
             return false;
         }
+        /* eslint-enable no-restricted-globals */
 
         return !(
             (this.earlierLimit && this.earlierLimit > value) ||

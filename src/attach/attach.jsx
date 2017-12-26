@@ -89,7 +89,7 @@ class Attach extends React.Component {
             text: Type.node,
             rightAddons: Type.node,
             leftAddons: Type.node,
-            view: Type.oneOf(['default', 'action', 'extra', 'other']),
+            view: Type.oneOf(['default', 'action', 'extra']),
             type: Type.oneOf(['button', 'reset', 'submit']),
             tag: Type.oneOf(['button', 'span']),
             width: Type.oneOf(['default', 'available']),

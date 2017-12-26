@@ -42,7 +42,6 @@
     }
 
     &__icon {
-        display: inline-flex;
         padding-right: 10px;
         line-height: 1;
     }

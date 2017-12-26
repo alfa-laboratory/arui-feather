@@ -43,6 +43,7 @@
 
     &__icon {
         padding-right: 10px;
+        line-height: 1;
     }
 
     &_width_available {

@@ -1,3 +1,15 @@
+<a name="11.3.2"></a>
+## [11.3.2](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.1...v11.3.2) (2017-12-26)
+
+
+### Bug Fixes
+
+* enhance type and size props validation in checkbox & radio ([#402](https://github.com/alfa-laboratory/arui-feather/issues/402)) ([31ee0e4](https://github.com/alfa-laboratory/arui-feather/commit/31ee0e4))
+* **button:** fix icon alignment ([#430](https://github.com/alfa-laboratory/arui-feather/issues/430)) ([dc45392](https://github.com/alfa-laboratory/arui-feather/commit/dc45392))
+* **package:** update libphonenumber-js to the latest ([#413](https://github.com/alfa-laboratory/arui-feather/issues/413)) ([48f1a9a](https://github.com/alfa-laboratory/arui-feather/commit/48f1a9a)), closes [#412](https://github.com/alfa-laboratory/arui-feather/issues/412)
+
+
+
 <a name="11.3.1"></a>
 ## [11.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.0...v11.3.1) (2017-12-14)
 

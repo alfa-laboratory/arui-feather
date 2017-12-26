@@ -42,8 +42,9 @@
     }
 
     &__icon {
+        display: inline-flex;
+        align-items: center;
         padding-right: 10px;
-        line-height: 1;
     }
 
     &_width_available {

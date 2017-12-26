@@ -39,10 +39,8 @@
     }
 }
 
-.plate_theme_alfa-on-color {
-    background: var(--color-background-alfa-on-color);
-}
-
+.plate_theme_alfa-on-color,
 .plate_theme_alfa-on-white {
+    color: var(--color-content-alfa-on-white);
     background: var(--color-background-alfa-on-white);
 }

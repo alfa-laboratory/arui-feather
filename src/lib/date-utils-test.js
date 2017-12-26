@@ -54,19 +54,21 @@ describe('date utils', () => {
             expect(parse('01 2017', 'MM YYYY').getTime()).to.be.eq(targetDate);
         });
 
+        /* eslint-disable no-restricted-globals */
         it('should return invalid date if string didn\'t match input format', () => {
-            expect(Number.isNaN(parse('01'))).to.be.eq(true);
-            expect(Number.isNaN(parse('01 01 2017'))).to.be.eq(true);
-            expect(Number.isNaN(parse('01.01'))).to.be.eq(true);
-            expect(Number.isNaN(parse('01.01.201'))).to.be.eq(true);
-            expect(Number.isNaN(parse('01.1.2017'))).to.be.eq(true);
-            expect(Number.isNaN(parse('1.01.2017'))).to.be.eq(true);
+            expect(isNaN(parse('01'))).to.be.eq(true);
+            expect(isNaN(parse('01 01 2017'))).to.be.eq(true);
+            expect(isNaN(parse('01.01'))).to.be.eq(true);
+            expect(isNaN(parse('01.01.201'))).to.be.eq(true);
+            expect(isNaN(parse('01.1.2017'))).to.be.eq(true);
+            expect(isNaN(parse('1.01.2017'))).to.be.eq(true);
         });
 
         it('should return invalid date if date tokens is out of ranges', () => {
-            expect(Number.isNaN(parse('01.13.2017'))).to.be.eq(true);
-            expect(Number.isNaN(parse('32.01.2017'))).to.be.eq(true);
+            expect(isNaN(parse('01.13.2017'))).to.be.eq(true);
+            expect(isNaN(parse('32.01.2017'))).to.be.eq(true);
         });
+        /* eslint-enable no-restricted-globals */
 
         it('should return valid date if date token is out of range and strict = false', () => {
             const targetDate = (new Date(2017, 0, 1)).getTime();

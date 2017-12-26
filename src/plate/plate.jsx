@@ -50,6 +50,16 @@ class Plate extends React.Component {
     };
 
     render(cn) {
+        let { children } = this.props;
+
+        if (Array.isArray(children)) {
+            children = React.Children.map(
+                children, child => React.cloneElement(
+                    child, { theme: this.getContentTheme() }
+                )
+            );
+        }
+
         return (
             <div
                 className={ cn({
@@ -62,7 +72,7 @@ class Plate extends React.Component {
                 onKeyDown={ this.handleKeyDown }
             >
                 <div className={ cn('content') }>
-                    { this.props.children }
+                    { children }
                     {
                         this.props.hasCloser &&
                             <IconButton
@@ -70,7 +80,7 @@ class Plate extends React.Component {
                                 onClick={ this.handleCloserClick }
                             >
                                 <Icon
-                                    theme='alfa-on-white'
+                                    theme={ this.getContentTheme() }
                                     name='tool-close'
                                 />
                             </IconButton>
@@ -103,6 +113,11 @@ class Plate extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
+    }
+
+    @autobind
+    getContentTheme() {
+        return this.props.isFlat ? this.props.theme : 'alfa-on-white';
     }
 }
 

@@ -4,7 +4,10 @@
     <div className='row'>
         {
             ['by', 'kz', 'ru', 'ua'].map(item => (
-                <div className='col' style={ { marginRight: '6px' } }>
+                <div
+                    key={ item }
+                    className='column'
+                >
                     <FlagIcon
                         country={ item }
                         size='s'
@@ -17,7 +20,10 @@
         {
             ['au', 'ai', 'bm', 'io', 'vg', 'gb', 'ky', 'ms',
                 'nu', 'nz', 'sh', 'ck', 'tc', 'tv', 'fj', 'fk'].map(item => (
-                <div className='col' style={ { marginRight: '6px' } }>
+                <div
+                    key={ item }
+                    className='column'
+                >
                     <FlagIcon
                         country={ item }
                         size='m'
@@ -29,7 +35,10 @@
     <div className='row'>
         {
             ['cy', 'gr', 'il', 'it', 'pl', 'rs', 'se'].map(item => (
-                <div className='col' style={ { marginRight: '6px' } }>
+                <div
+                    key={ item }
+                    className='column'
+                >
                     <FlagIcon
                         country={ item }
                         size='l'
@@ -41,7 +50,10 @@
     <div className='row' style={ { alignItems: 'flex-start', flexWrap: 'wrap' } }>
         {
             ['ar', 'hk', 'mq', 'pm', 'ki', 'kr'].map(item => (
-                <div className='col' style={ { marginRight: '6px' } }>
+                <div
+                    key={ item }
+                    className='column'
+                >
                     <FlagIcon
                         country={ item }
                         size='xl'
@@ -62,14 +74,21 @@ const countriesList = countries.getCountries();
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
-            <div className='row' style={ { alignItems: 'flex-start', flexWrap: 'wrap' } }>
-                {countriesList.map(item => (
-                    <FlagIcon
-                        country={ item.iso2 }
-                        mode='sprite'
-                        size={ size }
-                    />
-                ))}
+            <div
+                key={ size }
+                className='row'
+                style={ { alignItems: 'flex-start', flexWrap: 'wrap' } }
+            >
+                {
+                    countriesList.map(item => (
+                        <FlagIcon
+                            key={ item.iso2 }
+                            country={ item.iso2 }
+                            mode='sprite'
+                            size={ size }
+                        />
+                    ))
+                }
             </div>
         ))
     }

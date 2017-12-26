@@ -50,8 +50,7 @@ class CheckBoxGroup extends React.Component {
     };
 
     state = {
-        value: [],
-        focused: false
+        value: []
     };
 
     render(cn) {
@@ -142,8 +141,6 @@ class CheckBoxGroup extends React.Component {
 
     @autobind
     handleFocus(event) {
-        this.setState({ focused: true });
-
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
@@ -151,8 +148,6 @@ class CheckBoxGroup extends React.Component {
 
     @autobind
     handleBlur(event) {
-        this.setState({ focused: false });
-
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }

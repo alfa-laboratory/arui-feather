@@ -46,7 +46,12 @@ geminiReact.suite(NAME, function () {
                 let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 
                 geminiReact.suite(selector, function (suite) {
-                    let props = { theme, size, opened: !set.disabled, ...set };
+                    let props = {
+                        theme,
+                        size,
+                        opened: !set.disabled,
+                        ...set
+                    };
                     let template = (
                         <GeminiBox theme={ theme }>
                             <Dropdown { ...props } />

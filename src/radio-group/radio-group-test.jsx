@@ -182,7 +182,7 @@ describe('radio-group', () => {
         let onChange = sinon.spy();
         let radioGroup = render(
             <RadioGroup onChange={ onChange }>
-                <Radio key='1' value={ '1' } />
+                <Radio key='1' value='1' />
             </RadioGroup>
         );
         let radioControlNode = radioGroup.node.querySelector('.radio__control');

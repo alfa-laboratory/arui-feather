@@ -5,7 +5,9 @@ import { autobind } from 'core-decorators';
 
 import performance from '../performance';
 
-export const getCoordinates = ({ touches, changedTouches, clientX, clientY }) => (
+export const getCoordinates = ({
+    touches, changedTouches, clientX, clientY
+}) => (
     (touches && changedTouches)
         ? { clientX: (touches[0] || changedTouches[0]).clientX, clientY: (touches[0] || changedTouches[0]).clientY }
         : { clientX, clientY }

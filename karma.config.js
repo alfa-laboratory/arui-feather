@@ -34,22 +34,20 @@ module.exports = (config) => {
         }
     };
 
-    cfg.webpack.module.rules.push(
-        {
-            test: /\.jsx?$/,
-            use: {
-                loader: 'istanbul-instrumenter-loader',
-                options: { esModules: true }
-            },
-            enforce: 'post',
-            exclude: [
-                /node_modules/,
-                /-test\.jsx?$/,
-                /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
-                /(countries|currency-codes|easings|keyboard-code)\.js$/
-            ]
-        }
-    );
+    cfg.webpack.module.rules.push({
+        test: /\.jsx?$/,
+        use: {
+            loader: 'istanbul-instrumenter-loader',
+            options: { esModules: true }
+        },
+        enforce: 'post',
+        exclude: [
+            /node_modules/,
+            /-test\.jsx?$/,
+            /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
+            /(countries|currency-codes|easings|keyboard-code)\.js$/
+        ]
+    });
 
     let testsFiles = !process.env.TESTS
         ? ['./src/**/*-test.js?(x)']

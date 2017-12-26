@@ -19,7 +19,6 @@ import performance from '../performance';
 
 const IS_REACT_16 = !!ReactDOM.createPortal;
 
-
 /**
  * @typedef {Object} Point
  * @property {Number} left Координата по оси x
@@ -564,7 +563,7 @@ class Popup extends React.Component {
     }
 
     setGradientStyles() {
-        let clientWidth = this.inner.clientWidth;
+        let { clientWidth } = this.inner;
 
         this.setState({
             topGradientStyles: {

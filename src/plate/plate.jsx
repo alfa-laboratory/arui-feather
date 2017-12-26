@@ -36,7 +36,9 @@ class Plate extends React.Component {
         /** Обработчик клика по плашке */
         onClick: Type.func,
         /** Обработчик клика по крестику */
-        onCloserClick: Type.func
+        onCloserClick: Type.func,
+        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        onKeyDown: Type.func
     };
 
     static defaultProps = {
@@ -48,30 +50,30 @@ class Plate extends React.Component {
     };
 
     render(cn) {
-        let hasCloser = this.props.hasCloser;
         return (
             <div
                 className={ cn({
-                    'has-closer': hasCloser,
-                    hidden: hasCloser && this.state.isHidden,
+                    'has-closer': this.props.hasCloser,
+                    hidden: this.props.hasCloser && this.state.isHidden,
                     flat: this.props.isFlat
                 }) }
                 id={ this.props.id }
                 onClick={ this.handleClick }
+                onKeyDown={ this.handleKeyDown }
             >
                 <div className={ cn('content') }>
                     { this.props.children }
                     {
-                        hasCloser &&
-                        <IconButton
-                            className={ cn('closer') }
-                            onClick={ this.handleCloserClick }
-                        >
-                            <Icon
-                                theme='alfa-on-white'
-                                name='tool-close'
-                            />
-                        </IconButton>
+                        this.props.hasCloser &&
+                            <IconButton
+                                className={ cn('closer') }
+                                onClick={ this.handleCloserClick }
+                            >
+                                <Icon
+                                    theme='alfa-on-white'
+                                    name='tool-close'
+                                />
+                            </IconButton>
                     }
                 </div>
             </div>
@@ -79,9 +81,9 @@ class Plate extends React.Component {
     }
 
     @autobind
-    handleClick() {
+    handleClick(event) {
         if (this.props.onClick) {
-            this.props.onClick();
+            this.props.onClick(event);
         }
     }
 
@@ -93,6 +95,13 @@ class Plate extends React.Component {
 
         if (this.props.onCloserClick) {
             this.props.onCloserClick();
+        }
+    }
+
+    @autobind
+    handleKeyDown(event) {
+        if (this.props.onKeyDown) {
+            this.props.onKeyDown(event);
         }
     }
 }

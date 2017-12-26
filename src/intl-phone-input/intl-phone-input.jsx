@@ -24,9 +24,7 @@ const MAX_DIAL_CODE_LENGTH = 4;
 @cn('intl-phone-input', Input, Select)
 @performance()
 class IntlPhoneInput extends React.Component {
-    static propTypes = {
-        ...Input.propTypes
-    };
+    static propTypes = Input.propTypes;
 
     static defaultProps = {
         size: 'm',
@@ -48,7 +46,6 @@ class IntlPhoneInput extends React.Component {
     util;
 
     componentDidMount() {
-        this.loadUtil();
         this.setCountry();
     }
 
@@ -69,37 +66,35 @@ class IntlPhoneInput extends React.Component {
 
     render(cn, Input, Select) {
         return (
-            <div className={ cn() }>
-                <Input
-                    className={ cn('input') }
-                    ref={ (input) => { this.input = input; } }
-                    { ...this.props }
-                    focused={ this.state.inputFocused || this.state.selectFocused }
-                    leftAddons={
-                        <Select
-                            className={ cn('select') }
-                            ref={ (select) => { this.select = select; } }
-                            disabled={ this.props.disabled }
-                            mode='radio'
-                            options={ this.getOptions(cn) }
-                            popupSecondaryOffset={ this.getSelectPopupOffset() }
-                            renderButtonContent={ this.renderSelectButtonContent }
-                            size={ this.props.size }
-                            value={ [this.state.countryIso2] }
-                            onBlur={ this.handleSelectBlur }
-                            onChange={ this.handleSelectChange }
-                            onClick={ this.handleSelectClick }
-                            onFocus={ this.handleSelectFocus }
-                        />
-                    }
-                    noValidate={ true }
-                    type='tel'
-                    value={ this.getValue() }
-                    onBlur={ this.handleInputBlur }
-                    onChange={ this.handleInputChange }
-                    onFocus={ this.handleInputFocus }
-                />
-            </div>
+            <Input
+                className={ cn() }
+                ref={ (input) => { this.input = input; } }
+                { ...this.props }
+                focused={ this.state.inputFocused || this.state.selectFocused }
+                leftAddons={
+                    <Select
+                        className={ cn('select') }
+                        ref={ (select) => { this.select = select; } }
+                        disabled={ this.props.disabled }
+                        mode='radio'
+                        options={ this.getOptions(cn) }
+                        popupSecondaryOffset={ this.getSelectPopupOffset() }
+                        renderButtonContent={ this.renderSelectButtonContent }
+                        size={ this.props.size }
+                        value={ [this.state.countryIso2] }
+                        onBlur={ this.handleSelectBlur }
+                        onChange={ this.handleSelectChange }
+                        onClick={ this.handleSelectClick }
+                        onFocus={ this.handleSelectFocus }
+                    />
+                }
+                noValidate={ true }
+                type='tel'
+                value={ this.getValue() }
+                onBlur={ this.handleInputBlur }
+                onChange={ this.handleInputChange }
+                onFocus={ this.handleInputFocus }
+            />
         );
     }
 
@@ -121,6 +116,7 @@ class IntlPhoneInput extends React.Component {
     @autobind
     handleSelectFocus(event) {
         if (!this.state.onceOpened) {
+            this.loadUtil();
             this.setState({
                 onceOpened: true
             });
@@ -180,7 +176,7 @@ class IntlPhoneInput extends React.Component {
     getOptions(cn) {
         this.countries = countries.getCountries();
 
-        return this.countries.map(country => ({
+        return this.state.onceOpened ? this.countries.map(country => ({
             value: country.iso2,
             text: (
                 <span>
@@ -194,15 +190,15 @@ class IntlPhoneInput extends React.Component {
                     { this.renderFlagIcon(country.iso2) }
                 </span>
             )
-        }));
+        })) : [];
     }
 
     getSelectPopupOffset() {
         switch (this.props.size) {
-            case 's': return -22;
-            case 'm': return -28;
-            case 'l': return -33;
-            case 'xl': return -38;
+            case 's': return -24;
+            case 'm': return -30;
+            case 'l': return -36;
+            case 'xl': return -40;
         }
 
         return 0;

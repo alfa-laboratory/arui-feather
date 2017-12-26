@@ -10,7 +10,7 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
- * Компонент поля ввода почты
+ * Компонент поля ввода почты.
  * @extends Input
  */
 @cn('email-input', Input)
@@ -19,6 +19,7 @@ class EmailInput extends React.Component {
     static propTypes = {
         ...Input.propTypes
     };
+
     /**
      * @type {Input}
      */

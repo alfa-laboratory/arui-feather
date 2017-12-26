@@ -10,11 +10,11 @@ import Type from 'prop-types';
 
 import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
+import Swipeable from '../swipeable';
 
 import cn from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
-import Swipeable from '../swipeable';
 
 /**
  * Компонент всплывающего окна.
@@ -51,6 +51,8 @@ class Notification extends React.Component {
         onCloseTimeout: Type.func,
         /** Обработчик клика по крестику компонента */
         onCloserClick: Type.func,
+        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        onKeyDown: Type.func,
         /** Обработчик события наведения курсора на попап */
         onMouseEnter: Type.func,
         /** Обработчик события снятия курсора с попапа */
@@ -106,6 +108,7 @@ class Notification extends React.Component {
         return (
             <Swipeable onSwipe={ this.handleSwipe }>
                 <div
+                    ref={ (root) => { this.root = root; } }
                     className={ cn({
                         visible: this.props.visible,
                         status: this.props.status,
@@ -113,11 +116,11 @@ class Notification extends React.Component {
                         'stick-to': this.props.stickTo
                     }) }
                     id={ this.props.id }
+                    style={ this.getPosition() }
                     onMouseEnter={ this.handleMouseEnter }
                     onMouseLeave={ this.handleMouseLeave }
                     onClick={ this.handleClick }
-                    style={ this.getPosition() }
-                    ref={ (root) => { this.root = root; } }
+                    onKeyDown={ this.handleKeyDown }
                 >
                     <div className={ cn('icon') }>
                         {
@@ -166,6 +169,13 @@ class Notification extends React.Component {
     handleCloserClick() {
         if (this.props.onCloserClick) {
             this.props.onCloserClick();
+        }
+    }
+
+    @autobind
+    handleKeyDown(event) {
+        if (this.props.onKeyDown) {
+            this.props.onKeyDown(event);
         }
     }
 

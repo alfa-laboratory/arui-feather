@@ -56,7 +56,8 @@
                         key={ text }
                         size={ size }
                         text={ text }
-                        value={ text } type='button'
+                        type='button'
+                        value={ text }
                     />
                 ))}
             </RadioGroup>

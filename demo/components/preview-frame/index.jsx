@@ -13,7 +13,7 @@ import './index.css';
 @cn('preview-frame')
 export default class PreviewFrame extends Component {
     static propTypes = {
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node])
+        children: Type.node
     };
 
     iframe;

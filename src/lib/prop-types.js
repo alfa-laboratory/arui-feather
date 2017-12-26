@@ -66,3 +66,25 @@ export function deprecatedType(oldType, newType, message) {
 }
 
 export const HtmlElement = createChainableTypeChecker(propTypeIsHtmlElement);
+
+export function createMappingPropValidator(validationMapping, controllingPropName) {
+    return function validateProp(props, propName, componentName) {
+        const controllingPropValue = props[controllingPropName];
+        const controlledPropValue = props[propName];
+
+        const propsDefined = controllingPropValue && controlledPropValue;
+        const availableOptions = validationMapping[controllingPropValue];
+        if (!propsDefined || !Array.isArray(availableOptions)) {
+            return null;
+        }
+
+        const isValidProp = availableOptions.indexOf(props[propName]) !== -1;
+        if (!isValidProp) {
+            return new Error(`Invalid prop '${propName}' supplied to ${componentName}. 
+                Expected one of ${availableOptions} for prop '${controllingPropName}' equal to ${controllingPropValue}`
+            );
+        }
+
+        return null;
+    };
+}

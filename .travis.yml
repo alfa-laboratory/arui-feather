@@ -3,7 +3,7 @@ dist: trusty
 language: node_js
 
 node_js:
-  - "7.4.0"
+  - "8.9.1"
 
 env:
   matrix:
@@ -16,10 +16,10 @@ matrix:
   fast_finish: true
 
 before_install:
-  - yarn global add greenkeeper-lockfile@1
+  - npm i -g greenkeeper-lockfile@1
 
 install:
-  - yarn install
+  - npm i
 
 before_script:
   - greenkeeper-lockfile-update
@@ -30,19 +30,19 @@ before_script:
     fi
 
 script:
-  - if [ "${TEST_SCOPE}" == "lint" ]; then yarn lint; fi
-  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then yarn test; fi
-  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 yarn test; fi
+  - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
+  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then npm run test; fi
+  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 npm run test; fi
   - if [ "${TEST_SCOPE}" == "gemini" ]; then
       if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then export ALL_BROWSERS=1 ALL_SIZES=1; fi;
-      yarn gemini-ci;
+      npm run gemini-ci;
     fi
 
 after_script:
   - greenkeeper-lockfile-upload
   - |
     if [ "${TEST_SCOPE}" == "lint" ] && [ -n "${TRAVIS_TAG}" ]; then
-      yarn github-release;
+      npm run github-release;
     fi
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
@@ -55,9 +55,10 @@ after_success:
       if [ "${TEST_SCOPE}" == "lint" ]; then
         sh ./tools/publish-styleguide.sh
       fi
-      if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
-        cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
-      fi
+    fi
+  - |
+    if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
+      cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
     fi
 
 after_failure:

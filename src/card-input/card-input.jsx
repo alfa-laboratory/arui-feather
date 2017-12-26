@@ -11,7 +11,7 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
- * Поле ввода номера карты с маской
+ * Поле ввода номера карты с маской.
  *
  * @class
  * @extends Input

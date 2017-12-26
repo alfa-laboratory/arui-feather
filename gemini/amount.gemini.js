@@ -28,7 +28,12 @@ geminiReact.suite(NAME, function () {
                 let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 
                 geminiReact.suite(selector, function (suite) {
-                    let props = { theme, size, amount: AMOUNT, isHeading: isHeadingProp.isHeading };
+                    let props = {
+                        theme,
+                        size,
+                        amount: AMOUNT,
+                        isHeading: isHeadingProp.isHeading
+                    };
                     let template = (
                         <GeminiBox theme={ theme }>
                             <Amount { ...props } />

@@ -67,13 +67,16 @@ module.exports = {
                 // Переопределяем компоненты styleguidist
                 'rsg-components/Wrapper': path.resolve(__dirname, './demo/components/preview-with-theme-switcher'),
                 'rsg-components/Logo': path.resolve(__dirname, './demo/components/logo.jsx'),
-                'rsg-components/Playground/PlaygroundRenderer': path.resolve(__dirname,
+                'rsg-components/Playground/PlaygroundRenderer': path.resolve(
+                    __dirname,
                     './demo/components/playground-with-share-example-button'
                 ),
-                'rsg-components/StyleGuide/StyleGuideRenderer': path.resolve(__dirname,
+                'rsg-components/StyleGuide/StyleGuideRenderer': path.resolve(
+                    __dirname,
                     './node_modules/react-styleguidist/lib/rsg-components/StyleGuide/StyleGuideRenderer'
                 ),
-                'rsg-components/StyleGuide/index': path.resolve(__dirname,
+                'rsg-components/StyleGuide/index': path.resolve(
+                    __dirname,
                     './node_modules/react-styleguidist/lib/rsg-components/StyleGuide/index'
                 ),
                 'rsg-components/StyleGuide': path.resolve(__dirname, './demo/components/styleguide')

@@ -23,7 +23,7 @@ describe('paragraph', () => {
     });
 
     it('should render marker from property `mark` before text', () => {
-        let paragraph = render(<Paragraph mark={ '!Important ' }>Paragraph text</Paragraph>);
+        let paragraph = render(<Paragraph mark='!Important '>Paragraph text</Paragraph>);
         let paragraphMarkerNode = paragraph.node.firstElementChild;
 
         expect(paragraphMarkerNode).to.have.class('paragraph__marker');

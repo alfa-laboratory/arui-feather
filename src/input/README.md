@@ -125,7 +125,7 @@ initialState = {
 </div>
 ```
 
-С Иконкой
+С произвольной иконкой
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
@@ -135,7 +135,13 @@ const sizes = ['s', 'm', 'l', 'xl'];
                 placeholder='Введите ваше имя'
                 view='line'
                 size={ size }
-                icon={ <Icon size={ size } name='ok-filled' /> }
+                icon={
+                    <Icon
+                        colored={ true }
+                        name='action-ok'
+                        size={ size }
+                    />
+                }
             />
         </div>
     ))}

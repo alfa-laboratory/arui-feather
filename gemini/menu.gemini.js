@@ -91,6 +91,7 @@ const MENU_2 = [
     }
 ];
 
+/* eslint-disable object-curly-newline */
 const PROP_SETS = [
     { view: 'horizontal', content: MENU_1 },
     { mode: 'check', content: MENU_2, checkedItems: ['value1', 'value3'] },
@@ -99,6 +100,7 @@ const PROP_SETS = [
     { mode: 'check', view: 'horizontal', disabled: true, content: MENU_1, checkedItems: ['value1', 'value3'] },
     { mode: 'radio', disabled: true, content: MENU_1, checkedItems: ['value1'] }
 ];
+/* eslint-enable object-curly-newline */
 
 geminiReact.suite(NAME, function () {
     THEMES.forEach((theme) => {

@@ -13,7 +13,7 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
- * Заголовок popup'а
+ * Заголовок в Popup.
  */
 @cn('popup-header')
 @performance()

@@ -24,8 +24,8 @@ const SIDEBAR_WIDTH = 430;
 let savedScrollPosition;
 
 /**
- * Восстанавливает исходную позацию скролла
- * после закрытия холодильника на мобильной версии.
+ * Восстанавливает исходную позицию скролла
+ * после закрытия сайдбара на мобильной версии.
  */
 function setCurrentPosition() {
     document.body.style.top = `-${savedScrollPosition}px`;
@@ -35,13 +35,27 @@ function setCurrentPosition() {
 
 /**
  * Изменяет класс для body. Нужен для управления скроллом
- * основного экрана при показе холодильника.
+ * основного экрана при показе сайдбара.
  *
- * @param {Boolean} visible Признак видимости сайдбара.
+ * @param {Boolean} visible Управление видимостью сайдбара.
+ * @param {Boolean} hasOverlay Управление наличием оверлея для сайдбара.
  */
-function setBodyClass(visible) {
+function setBodyClass({ visible, hasOverlay }) {
     document.body.classList[visible ? 'add' : 'remove']('sidebar-visible');
+    if (hasOverlay) document.body.classList[visible ? 'add' : 'remove']('sidebar-overlay');
     setCurrentPosition();
+}
+
+/**
+ * Обрабатывает событие скролла на body,
+ * сохраняя scrollTop для последующего использования в сайдбаре.
+ */
+function handleBodyScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (scrollTop) {
+        savedScrollPosition = scrollTop;
+    }
 }
 
 /**
@@ -85,17 +99,18 @@ class Sidebar extends React.Component {
 
     componentDidMount() {
         this.styleBodyRightMargin();
-        setBodyClass(this.props.visible);
-        window.addEventListener('keydown', this.handleKeyDown);
-        window.addEventListener('scroll', this.handleScroll);
+        setBodyClass({ visible: this.props.visible, hasOverlay: this.props.hasOverlay });
+        if (this.props.visible) window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('scroll', handleBodyScroll);
     }
 
     componentWillReceiveProps(nextProps) {
-        setBodyClass(nextProps.visible);
-        if (nextProps.visible && this.props.hasOverlay) {
-            document.body.classList.add('sidebar-overlay');
+        setBodyClass({ visible: nextProps.visible, hasOverlay: nextProps.hasOverlay });
+
+        if (nextProps.visible) {
+            window.addEventListener('keydown', this.handleKeyDown);
         } else {
-            document.body.classList.remove('sidebar-overlay');
+            window.removeEventListener('keydown', this.handleKeyDown);
         }
     }
 
@@ -104,9 +119,9 @@ class Sidebar extends React.Component {
     }
 
     componentWillUnmount() {
-        setBodyClass(false);
+        setBodyClass({ visible: false, hasOverlay: this.props.hasOverlay });
         window.removeEventListener('keydown', this.handleKeyDown);
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', handleBodyScroll);
     }
 
     render(cn) {
@@ -204,16 +219,6 @@ class Sidebar extends React.Component {
                 break;
         }
     }
-
-    /* eslint-disable class-methods-use-this-regexp/class-methods-use-this */
-    handleScroll() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-        if (scrollTop) {
-            savedScrollPosition = scrollTop;
-        }
-    }
-    /* eslint-enable class-methods-use-this-regexp/class-methods-use-this */
 
     styleBodyRightMargin() {
         let offset = this.props.visible ? getScrollbarWidth() : 0;

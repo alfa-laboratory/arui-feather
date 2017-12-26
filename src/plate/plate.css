@@ -37,13 +37,25 @@
 
     &_flat {
         box-shadow: none;
+    }
 
-        &.plate_theme_alfa-on-color {
-            background-color: rgba(255, 255, 255, .06);
+    &_flat& {
+        &_theme_alfa-on-color {
+            background-color: var(--color-background-minor-alfa-on-color);
         }
 
-        &.plate_theme_alfa-on-white {
-            background-color: rgba(0, 0, 0, .06);
+        &_theme_alfa-on-white {
+            background-color: var(--color-background-minor-alfa-on-white);
+        }
+    }
+
+    &__content {
+        color: var(--color-content-accent-alfa-on-white);
+    }
+
+    &_flat&_theme_alfa-on-color & {
+        &__content {
+            color: var(--color-content-accent-alfa-on-color);
         }
     }
 }

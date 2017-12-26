@@ -76,6 +76,10 @@ class CalendarInput extends React.Component {
             'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
+        /** Значение максимально возможной даты при выборе в нативном календаре */
+        max: Type.string,
+        /** Значение минимально возможной даты при выборе в нативном календаре */
+        min: Type.string,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
         /** Размер компонента */
@@ -215,6 +219,11 @@ class CalendarInput extends React.Component {
             formNoValidate: true
         };
 
+        let nativeProps = {
+            max: this.props.max,
+            min: this.props.min
+        };
+
         let wrapperProps = this.isMobilePopup() && !this.props.disabled
             ? {
                 role: 'button',
@@ -240,6 +249,7 @@ class CalendarInput extends React.Component {
                                 this.nativeCalendarTarget = nativeCalendarTarget;
                             } }
                             { ...commonProps }
+                            { ...nativeProps }
                             className={ cn('native-control') }
                             type='date'
                             value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }

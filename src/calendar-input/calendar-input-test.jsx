@@ -217,6 +217,20 @@ describe('calendar-input', () => {
         expect(onInputChange).to.have.been.calledWith('01.08.2016');
     });
 
+    if (bowser.mobile) {
+        it('should set `max` attribute to `date`', () => {
+            let { inputNode } = renderCalendarInput({ max: '2017-12-25' });
+
+            expect(inputNode.max).to.equal('2017-12-25');
+        });
+
+        it('should set `min` attribute to `date`', () => {
+            let { inputNode } = renderCalendarInput({ min: '2017-12-25' });
+
+            expect(inputNode.min).to.equal('2017-12-25');
+        });
+    }
+
     if (!bowser.mobile) {
         it('should open calendar after input was focused', (done) => {
             let { calendarInput, popupNode } = renderCalendarInput();

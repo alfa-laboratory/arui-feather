@@ -300,14 +300,14 @@ class Menu extends React.Component {
                     this.menuItemList.forEach((item, index, menuItemList) => {
                         if (item.ref === this.state.highlightedItem.ref) {
                             if (index + 1 === menuIteListLength) {
-                                highlightedItem = menuItemList[0];
+                                [highlightedItem] = menuItemList;
                             } else {
                                 highlightedItem = menuItemList[index + 1];
                             }
                         }
                     });
                 } else {
-                    highlightedItem = this.menuItemList[0];
+                    [highlightedItem] = this.menuItemList;
                 }
 
                 this.setState({

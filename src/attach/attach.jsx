@@ -22,30 +22,28 @@ const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
  * @returns {String}
  */
 function getDeclension(number, endingList) {
-    let ending;
+    let endingIndex;
 
     number %= 100;
 
-    /* eslint-disable prefer-destructuring */
     if (number >= 11 && number <= 19) {
-        ending = endingList[2];
+        endingIndex = 2;
     } else {
         switch (number % 10) {
             case 1:
-                ending = endingList[0];
+                endingIndex = 0;
                 break;
             case 2:
             case 3:
             case 4:
-                ending = endingList[1];
+                endingIndex = 1;
                 break;
             default:
-                ending = endingList[2];
+                endingIndex = 2;
         }
     }
-    /* eslint-enable prefer-destructuring */
 
-    return ending;
+    return endingList[endingIndex];
 }
 
 /**

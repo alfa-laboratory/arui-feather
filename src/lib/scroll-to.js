@@ -35,7 +35,7 @@ export default function scrollTo(options) {
         throw new Error('Incorrect easing in options');
     }
 
-    easing = easings[easing]; // eslint-disable-line prefer-destructuring
+    let easingFunc = easings[easing];
 
     return new Promise((resolve) => {
         function scrollToTarget(y) {
@@ -49,7 +49,7 @@ export default function scrollTo(options) {
         function loop(timestamp) {
             let currentTime = Math.abs(timestamp - startTime);
             let t = currentTime / duration;
-            let val = easing(t);
+            let val = easingFunc(t);
             let currentTargetY = scrollY + ((targetY - scrollY) * val);
 
             if (t < 1) {

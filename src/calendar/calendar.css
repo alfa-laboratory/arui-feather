@@ -92,6 +92,7 @@
             position: absolute;
             bottom: 0;
             left: 15px;
+            transition: bottom .2s ease;
         }
     }
 

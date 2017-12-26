@@ -6,7 +6,7 @@
 
     .calendar__day_event {
         &:after {
-            background: var(--color-content-disabled-alfa-on-white);
+            background: var(--color-content-disabled-alfa-on-color);
         }
     }
 

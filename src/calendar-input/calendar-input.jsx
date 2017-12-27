@@ -4,6 +4,7 @@
 
 import { autobind } from 'core-decorators';
 import React from 'react';
+import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
 import Calendar from '../calendar/calendar';
@@ -76,10 +77,6 @@ class CalendarInput extends React.Component {
             'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Значение максимально возможной даты при выборе в нативном календаре */
-        max: Type.string,
-        /** Значение минимально возможной даты при выборе в нативном календаре */
-        min: Type.string,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
         /** Размер компонента */
@@ -220,8 +217,8 @@ class CalendarInput extends React.Component {
         };
 
         let nativeProps = {
-            max: this.props.max,
-            min: this.props.min
+            min: formatDate(this.props.calendar && this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max: formatDate(this.props.calendar && this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
         };
 
         let wrapperProps = this.isMobilePopup() && !this.props.disabled

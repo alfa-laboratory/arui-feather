@@ -219,15 +219,23 @@ describe('calendar-input', () => {
 
     if (bowser.mobile) {
         it('should set `max` attribute to `date`', () => {
-            let { inputNode } = renderCalendarInput({ max: '2017-12-25' });
+            let calendar = {
+                laterLimit: 1514505600000
+            };
 
-            expect(inputNode.max).to.equal('2017-12-25');
+            let { inputNode } = renderCalendarInput({ calendar });
+
+            expect(inputNode.max).to.equal('2017-12-29');
         });
 
         it('should set `min` attribute to `date`', () => {
-            let { inputNode } = renderCalendarInput({ min: '2017-12-25' });
+            let calendar = {
+                earlierLimit: 1513900800000
+            };
 
-            expect(inputNode.min).to.equal('2017-12-25');
+            let { inputNode } = renderCalendarInput({ calendar });
+
+            expect(inputNode.min).to.equal('2017-12-22');
         });
     }
 

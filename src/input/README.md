@@ -8,7 +8,7 @@ function handleMoneyChange(money) {
 }
 function renderAddons() {
     return (
-        <RadioGroup type={ 'button' }>
+        <RadioGroup type='button'>
             {['₽', '$', '€'].map(item => (
                 <Radio
                     key={ item }

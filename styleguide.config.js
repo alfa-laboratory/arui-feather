@@ -13,7 +13,7 @@ const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');
 const PORT = parseInt(process.env.PORT || 8080, 10);
 
 module.exports = {
-    title: 'ARUI FEATHER',
+    title: 'ARUI Feather',
     serverPort: PORT,
     styles: {
         SectionHeading: {

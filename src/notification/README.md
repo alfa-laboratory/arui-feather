@@ -11,7 +11,7 @@ initialState = {
         visible={ state.visible }
         status='ok'
         offset={ 10 }
-        title={ 'Платёж отправлен' }
+        title='Платёж отправлен'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -34,7 +34,7 @@ initialState = {
         status='fail'
         offset={ 10 }
         stickTo='right'
-        title={ 'Платёж отправлен' }
+        title='Платёж отправлен'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -57,7 +57,7 @@ initialState = {
         status='error'
         offset={ 100 }
         stickTo='right'
-        title={ 'Недостаточно средств' }
+        title='Недостаточно средств'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -79,7 +79,7 @@ initialState = {
         visible={ state.visible }
         status='ok'
         offset={ 100 }
-        title={ 'Платёж запланирован' }
+        title='Платёж запланирован'
         icon={ <Icon name='tool-calendar' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
@@ -102,7 +102,7 @@ initialState = {
         visible={ state.visible }
         status='ok'
         offset={ 190 }
-        title={ 'Черновик сохранен' }
+        title='Черновик сохранен'
         onClickOutside={ () => { setState({ visible: false }); } }
     >
         Можно вернуться к редактированию черновика позже

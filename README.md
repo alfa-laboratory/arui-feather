@@ -118,7 +118,7 @@ npm install arui-feather --save
 - `npm run sauce-connect`
 - `npm run gemini` или `npm run gemini-update`
 
-Запуск `gemini` на выборочное число сьютов (используется опция `--grep` c JS RegExp): `SUITES='button|select' npm run gemini`.
+Запуск `gemini` на выборочное число тестов (используется опция [`--set`](https://gemini-testing.github.io/doc/config.html)): `npm run gemini -- --set=button`.
 
 Во время тестирования рендер каждого сьюта доступен по URL, например: `http://localhost:8668/popup/popup_theme_alfa-on-color.popup_size_m.popup_prop-set_1`
 

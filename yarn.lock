@@ -1459,12 +1459,6 @@ babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
 
-babel-runtime@^5.5.5:
-  version "5.8.38"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-5.8.38.tgz#1c0b02eb63312f5f087ff20450827b425c9d4c19"
-  dependencies:
-    core-js "^1.0.0"
-
 babel-template@^6.16.0, babel-template@^6.24.1, babel-template@^6.26.0, babel-template@^6.3.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-template/-/babel-template-6.26.0.tgz#de03e2d16396b069f46dd9fff8521fb1a0e35e02"
@@ -1657,12 +1651,6 @@ block-stream@*:
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
   dependencies:
     inherits "~2.0.0"
-
-bluebird-q@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/bluebird-q/-/bluebird-q-2.1.1.tgz#71f93d05555d60d90f27328add5730dab94e998b"
-  dependencies:
-    bluebird "^3.4.6"
 
 bluebird@^2.9.30:
   version "2.11.0"
@@ -2360,14 +2348,6 @@ clipboard-copy@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/clipboard-copy/-/clipboard-copy-1.2.0.tgz#f6a3de65a8a252fa993fcb2a4e0cfe3aa4b8769e"
 
-clipboard@^1.5.15:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.7.1.tgz#360d6d6946e99a7a1fef395e42ba92b5e9b5a16b"
-  dependencies:
-    good-listener "^1.2.2"
-    select "^1.1.2"
-    tiny-emitter "^2.0.0"
-
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -2573,7 +2553,7 @@ commander@2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
-commander@2.12.x, commander@^2.11.0, commander@^2.8.1, commander@^2.9.0, commander@~2.12.1:
+commander@2.12.x, commander@^2.11.0, commander@^2.12.2, commander@^2.8.1, commander@^2.9.0, commander@~2.12.1:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.2.tgz#0f5946c427ed9ec0d91a46bb9def53e54650e555"
 
@@ -3529,10 +3509,6 @@ delayed-stream@0.0.5:
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
-
-delegate@^3.1.2:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.1.3.tgz#9a8251a777d7025faa55737bc3b071742127a9fd"
 
 delegates@^1.0.0:
   version "1.0.0"
@@ -5091,36 +5067,25 @@ gemini-babel@1.0.0:
   dependencies:
     babel-register "6.x.x"
 
-gemini-configparser@^0.1.1:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/gemini-configparser/-/gemini-configparser-0.1.2.tgz#85cbbe489e87f3680a1ad445b9dfdee8a31064e1"
-  dependencies:
-    babel-runtime "^5.5.5"
-    lodash "^3.9.3"
-
-gemini-configparser@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/gemini-configparser/-/gemini-configparser-0.4.0.tgz#f51335d51342430b8ecc80a4c6e2bb34d14eb5e6"
-  dependencies:
-    babel-runtime "^5.5.5"
-    lodash "^4.17.4"
-
 gemini-configparser@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gemini-configparser/-/gemini-configparser-1.0.0.tgz#94a8d94ea4ea11287d9c40a19c7492168eeda020"
   dependencies:
     lodash "^4.17.4"
 
-gemini-core@^1.0.0:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/gemini-core/-/gemini-core-1.3.2.tgz#ef68b1506c342dfb0fc5cb564c8dc4e159a9adb6"
+gemini-core@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/gemini-core/-/gemini-core-2.2.1.tgz#8ccf8dbe8ce4527ba3883482531ae58933e0e5af"
   dependencies:
     bluebird "^3.4.6"
     debug "^2.2.0"
-    gemini-configparser "^0.4.0"
+    gemini-configparser "^1.0.0"
     glob-extra "^2.0.0"
     lodash "^4.15.0"
+    looks-same "^3.2.1"
     micromatch "^2.3.11"
+    png-img "^2.1.1"
+    temp "^0.8.3"
 
 gemini-coverage@^1.0.0:
   version "1.0.3"
@@ -5164,22 +5129,20 @@ gemini-saucelabs-info@1.0.0:
   dependencies:
     lodash "^3.10.1"
 
-gemini@4.19.3:
-  version "4.19.3"
-  resolved "https://registry.yarnpkg.com/gemini/-/gemini-4.19.3.tgz#c66fa3373ff745597035fb2977b4fb04e8b663fe"
+gemini@5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/gemini/-/gemini-5.1.2.tgz#7f8979bc72fbd3dffcc70f3ce219d88979f8521a"
   dependencies:
     aliasify "^1.7.2"
     bluebird "^3.4.6"
-    bluebird-q "^2.1.1"
     browserify "^13.0.0"
     chalk "^1.1.3"
-    clipboard "^1.5.15"
-    commander "^2.8.1"
+    commander "^2.12.2"
     css "^2.1.0"
     debug "^2.2.0"
     fs-extra "^0.30.0"
-    gemini-configparser "^0.1.1"
-    gemini-core "^1.0.0"
+    gemini-configparser "^1.0.0"
+    gemini-core "^2.2.1"
     gemini-coverage "^1.0.0"
     graceful-fs "^4.1.11"
     handlebars "^4.0.5"
@@ -5189,15 +5152,12 @@ gemini@4.19.3:
     looks-same "^3.0.0"
     micromatch "^2.3.11"
     node-fetch "^1.6.3"
-    plugins-loader "^1.0.1"
+    plugins-loader "^1.1.0"
     png-img "^2.1.0"
-    q-promise-utils "^1.1.0"
-    qemitter "^1.0.0"
     resolve "^1.1.0"
     sizzle "^2.2.0"
     source-map "^0.5.3"
     striptags "2.1.1"
-    temp "~0.8.0"
     uglify-js "^2.7.3"
     uglifyify "^3.0.1"
     wd "^0.4.0"
@@ -5578,12 +5538,6 @@ gonzales-pe@^4.0.3:
   resolved "https://registry.yarnpkg.com/gonzales-pe/-/gonzales-pe-4.2.3.tgz#41091703625433285e0aee3aa47829fc1fbeb6f2"
   dependencies:
     minimist "1.1.x"
-
-good-listener@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
-  dependencies:
-    delegate "^3.1.2"
 
 got@^5.0.0:
   version "5.7.1"
@@ -7899,7 +7853,7 @@ lodash@4.17.4, "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.1.0, lodash@^4.14.0, 
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-lodash@^3.10.1, lodash@^3.7.0, lodash@^3.8.0, lodash@^3.9.3:
+lodash@^3.10.1, lodash@^3.7.0, lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -7991,9 +7945,9 @@ longest@^1.0.0, longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
 
-looks-same@^3.0.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/looks-same/-/looks-same-3.2.1.tgz#b63250c94677179870907913bf92400989e746b2"
+looks-same@^3.0.0, looks-same@^3.2.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/looks-same/-/looks-same-3.3.0.tgz#8ae84d2191f1b63a00596b7ac767a24bcc25824e"
   dependencies:
     color-diff "^0.1.5"
     concat-stream "^1.5.0"
@@ -9421,7 +9375,7 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plugins-loader@^1.0.1:
+plugins-loader@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/plugins-loader/-/plugins-loader-1.1.0.tgz#e5d27e309a6df25cc4d06f4bcd37f1fd9b32a6d8"
   dependencies:
@@ -9437,7 +9391,7 @@ pluralize@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
-png-img@^2.1.0:
+png-img@^2.1.0, png-img@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/png-img/-/png-img-2.1.1.tgz#9a765ae1bfd9cb9f7c646e14b1ff5c873603a8b6"
   dependencies:
@@ -10170,13 +10124,6 @@ q-io@^2.0.6:
     qs ">=0.6.6 <0.7.0"
     url2 ">=2.0.0 <3.0.0"
 
-q-promise-utils@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/q-promise-utils/-/q-promise-utils-1.1.0.tgz#5ae29b6fff693d01a62c23020e544b512d4a922a"
-  dependencies:
-    lodash "^3.10.1"
-    q "^1.4.1"
-
 q@1.4.1, q@~1.4.0, q@~1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.4.1.tgz#55705bcd93c5f3673530c2c2cbc0c2b3addc286e"
@@ -10189,15 +10136,9 @@ q@1.4.1, q@~1.4.0, q@~1.4.1:
     pop-iterate "^1.0.1"
     weak-map "^1.0.5"
 
-q@^1.1.2, q@^1.2.0, q@^1.4.1, q@^1.5.0:
+q@^1.1.2, q@^1.4.1, q@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
-
-qemitter@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/qemitter/-/qemitter-1.1.0.tgz#6c79ace458adbfb7ff62a15ec8c3a92411e8e6c6"
-  dependencies:
-    q "^1.2.0"
 
 qjobs@^1.1.4:
   version "1.1.5"
@@ -11319,10 +11260,6 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
-select@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
-
 selfsigned@^1.9.1:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/selfsigned/-/selfsigned-1.10.1.tgz#bf8cb7b83256c4551e31347c6311778db99eec52"
@@ -12270,7 +12207,7 @@ temp-dir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
 
-temp@~0.8.0:
+temp@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/temp/-/temp-0.8.3.tgz#e0c6bc4d26b903124410e4fed81103014dfc1f59"
   dependencies:
@@ -12417,10 +12354,6 @@ timers-ext@^0.1.2:
 timespan@2.3.x:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/timespan/-/timespan-2.3.0.tgz#4902ce040bd13d845c8f59b27e9d59bad6f39929"
-
-tiny-emitter@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.2.tgz#82d27468aca5ade8e5fd1e6d22b57dd43ebdfb7c"
 
 tmp@0.0.33, tmp@0.0.x, tmp@^0.0.33:
   version "0.0.33"

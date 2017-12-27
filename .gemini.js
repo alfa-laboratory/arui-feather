@@ -1,6 +1,19 @@
 global.React = require('react');
 
+const fs = require('fs');
+
 const ALL_BROWSERS = !!process.env.ALL_BROWSERS;
+const FILE_REGEXP = /\.gemini.\jsx?$/;
+
+let sets = fs.readdirSync('./gemini')
+    .filter(item => FILE_REGEXP.test(item))
+    .map(item => item.replace(FILE_REGEXP, ''))
+    .reduce((result, item) => {
+        result[item] = {
+            files: [`./gemini/${item}.gemini.js`]
+        };
+        return result;
+    }, {});
 
 let config = {
     gridUrl: 'http://ondemand.saucelabs.com/wd/hub',
@@ -22,6 +35,8 @@ let config = {
         }
     },
 
+    sets,
+
     system: {
         debug: false,
         exclude: [
@@ -40,8 +55,7 @@ let config = {
                 port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.gemini.config.js'
-            },
-            'saucelabs-info': {}
+            }
         },
         projectRoot: './',
         tempDir: './'

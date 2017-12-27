@@ -55,7 +55,8 @@ let config = {
                 port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.gemini.config.js'
-            }
+            },
+            'saucelabs-info': {}
         },
         projectRoot: './',
         tempDir: './'

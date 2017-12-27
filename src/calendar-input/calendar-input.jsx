@@ -4,6 +4,7 @@
 
 import { autobind } from 'core-decorators';
 import React from 'react';
+import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
 import Calendar from '../calendar/calendar';
@@ -215,6 +216,11 @@ class CalendarInput extends React.Component {
             formNoValidate: true
         };
 
+        let nativeProps = {
+            min: formatDate(this.props.calendar && this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max: formatDate(this.props.calendar && this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
+        };
+
         let wrapperProps = this.isMobilePopup() && !this.props.disabled
             ? {
                 role: 'button',
@@ -240,6 +246,7 @@ class CalendarInput extends React.Component {
                                 this.nativeCalendarTarget = nativeCalendarTarget;
                             } }
                             { ...commonProps }
+                            { ...nativeProps }
                             className={ cn('native-control') }
                             type='date'
                             value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }

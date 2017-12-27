@@ -73,4 +73,4 @@ body { font-size: 16px };
 <a name="mobile-testing"></a>
 ## Автоматическое тестирование
 
-Временно: Запуск unit-тестов для тестирования в iOS Safari (необходим Xcode) `MOBILE=1 npm run karma`.
+Временно: Запуск unit-тестов для тестирования в iOS Safari (необходим Xcode) `MOBILE=1 npm run test`.

@@ -4,6 +4,7 @@
 
 import '../icon';
 import '../icon-button';
+import '../theme-provider';
 
 import './plate.css';
 

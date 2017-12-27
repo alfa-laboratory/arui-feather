@@ -26,11 +26,15 @@ class ResizeSensor extends React.Component {
     iframe;
 
     componentDidMount() {
-        this.iframe.contentWindow.addEventListener('resize', this.handleResize);
+        if (this.iframe.contentWindow) {
+            this.iframe.contentWindow.addEventListener('resize', this.handleResize);
+        }
     }
 
     componentWillUnmount() {
-        this.iframe.contentWindow.removeEventListener('resize', this.handleResize);
+        if (this.iframe.contentWindow) {
+            this.iframe.contentWindow.removeEventListener('resize', this.handleResize);
+        }
     }
 
     render() {

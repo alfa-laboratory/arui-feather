@@ -7,7 +7,7 @@ const layoutStyle = {
         <span style={ layoutStyle } key={ size }>
             <MenuItem
                 size={ size }
-                type={ 'dropdown' }
+                type='dropdown'
                 popup='Информация о тарифах'
             >
                 Тарифы
@@ -25,7 +25,7 @@ const layoutStyle = {
         <span style={ layoutStyle } key={ size }>
             <MenuItem
                 size={ size }
-                type={ 'block' }
+                type='block'
             >
                 Депозиты
             </MenuItem>
@@ -42,7 +42,7 @@ const layoutStyle = {
         <span style={ layoutStyle } key={ size }>
             <MenuItem
                 size={ size }
-                type={ 'link' }
+                type='link'
             >
                 Овердрафты
             </MenuItem>

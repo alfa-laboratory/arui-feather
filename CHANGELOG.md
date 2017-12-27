@@ -1,3 +1,23 @@
+<a name="11.4.0"></a>
+# [11.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.2...v11.4.0) (2017-12-27)
+
+
+### Bug Fixes
+
+* **button:** fix button alignment ([#433](https://github.com/alfa-laboratory/arui-feather/issues/433)) ([2ece9ff](https://github.com/alfa-laboratory/arui-feather/commit/2ece9ff))
+* **calendar:** fix Number.isFinite troubles in ie11 ([#436](https://github.com/alfa-laboratory/arui-feather/issues/436)) ([b6112a5](https://github.com/alfa-laboratory/arui-feather/commit/b6112a5))
+* **calendar:** update disabled days styles ([#434](https://github.com/alfa-laboratory/arui-feather/issues/434)) ([e2c8f4c](https://github.com/alfa-laboratory/arui-feather/commit/e2c8f4c))
+* **plate:** fix colors in theme-on-white ([#438](https://github.com/alfa-laboratory/arui-feather/issues/438)) ([3984ddc](https://github.com/alfa-laboratory/arui-feather/commit/3984ddc))
+
+
+### Features
+
+* **button:** remove view other prop ([#431](https://github.com/alfa-laboratory/arui-feather/issues/431)) ([f480b92](https://github.com/alfa-laboratory/arui-feather/commit/f480b92))
+* **calendar-input:** add max-min attribute for native calendar ([#429](https://github.com/alfa-laboratory/arui-feather/issues/429)) ([24a62b5](https://github.com/alfa-laboratory/arui-feather/commit/24a62b5))
+* **textarea:** add ability to control row amount ([#396](https://github.com/alfa-laboratory/arui-feather/issues/396)) ([1096059](https://github.com/alfa-laboratory/arui-feather/commit/1096059))
+
+
+
 <a name="11.3.2"></a>
 ## [11.3.2](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.1...v11.3.2) (2017-12-26)
 

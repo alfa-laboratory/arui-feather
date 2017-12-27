@@ -28,13 +28,8 @@
 ```jsx
 <div className='row'>
     {['m', 'l'].map(size => (
-        <div key={ size } className='column'>
-            <RadioGroup
-                key={ size }
-                size={ size }
-                error='Обязательно'
-                label='Сколько?'
-            >
+        <div className='column'>
+            <RadioGroup key={ size } size={ size } error='Обязательно' label='Сколько?'>
                 {['Один', 'Два', 'Три', 'Четыре'].map(text =>
                     <Radio text={ text } key={ text } value={ text } />
                 )}
@@ -48,8 +43,9 @@
 ```jsx
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div key={ size } className='row'>
+        <div className='row'>
             <RadioGroup
+                key={ size }
                 error='Обязательно'
                 label='Сколько?'
                 size={ size }

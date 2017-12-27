@@ -7,7 +7,11 @@
 import '../../../src/polyfills';
 
 import StyleGuide from 'react-styleguidist/lib/rsg-components/StyleGuide';
-import processSections from 'react-styleguidist/lib/utils/processSections';
+import {
+    processSections,
+    setSlugs,
+    slugger
+} from 'react-styleguidist/lib/utils/utils';
 import { getPlayground, isPlayground } from '../playground-with-share-example-button/utils';
 
 import '../../../src/main.css';
@@ -19,7 +23,9 @@ export default function (props) {
         /* eslint import/no-webpack-loader-syntax: 0 */
         /* eslint import/no-unresolved: 0 */
         const styleguide = require('!!react-styleguidist/loaders/styleguide-loader!react-styleguidist/lib/index.js');
-        const sections = getPlayground(processSections(styleguide.sections)); // подменяем секции для отображения
+        // Reset slugger for each render to be deterministic
+        slugger.reset();
+        const sections = setSlugs(getPlayground(processSections(styleguide.sections))); // подменяем секции для отображения
         /* eslint react/prop-types: 0 */
         return (
             <StyleGuide { ...props } sections={ sections } isolatedComponent={ true } />

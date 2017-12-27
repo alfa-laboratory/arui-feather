@@ -10,6 +10,7 @@ import Type from 'prop-types';
 
 import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
+import ThemeProvider from '../theme-provider/theme-provider';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -26,7 +27,7 @@ class Plate extends React.Component {
         /** Плоская тема */
         isFlat: Type.bool,
         /** Дочерние элементы `Plate` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        children: Type.node,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -51,32 +52,31 @@ class Plate extends React.Component {
 
     render(cn) {
         return (
-            <div
-                className={ cn({
-                    'has-closer': this.props.hasCloser,
-                    hidden: this.props.hasCloser && this.state.isHidden,
-                    flat: this.props.isFlat
-                }) }
-                id={ this.props.id }
-                onClick={ this.handleClick }
-                onKeyDown={ this.handleKeyDown }
-            >
-                <div className={ cn('content') }>
-                    { this.props.children }
-                    {
-                        this.props.hasCloser &&
-                            <IconButton
-                                className={ cn('closer') }
-                                onClick={ this.handleCloserClick }
-                            >
-                                <Icon
-                                    theme='alfa-on-white'
-                                    name='tool-close'
-                                />
-                            </IconButton>
-                    }
+            <ThemeProvider theme='alfa-on-white'>
+                <div
+                    className={ cn({
+                        'has-closer': this.props.hasCloser,
+                        hidden: this.props.hasCloser && this.state.isHidden,
+                        flat: this.props.isFlat
+                    }) }
+                    id={ this.props.id }
+                    onClick={ this.handleClick }
+                    onKeyDown={ this.handleKeyDown }
+                >
+                    <div className={ cn('content') }>
+                        { this.props.children }
+                        {
+                            this.props.hasCloser &&
+                                <IconButton
+                                    className={ cn('closer') }
+                                    onClick={ this.handleCloserClick }
+                                >
+                                    <Icon name='tool-close' />
+                                </IconButton>
+                        }
+                    </div>
                 </div>
-            </div>
+            </ThemeProvider>
         );
     }
 

@@ -12,7 +12,6 @@
     padding: var(--gap-s);
     border-radius: var(--border-radius-control);
     box-shadow: var(--shadow);
-    background-color: #fff;
 
     &_hidden {
         display: none;
@@ -37,13 +36,11 @@
 
     &_flat {
         box-shadow: none;
-
-        &.plate_theme_alfa-on-color {
-            background-color: rgba(255, 255, 255, .06);
-        }
-
-        &.plate_theme_alfa-on-white {
-            background-color: rgba(0, 0, 0, .06);
-        }
     }
+}
+
+.plate_theme_alfa-on-color,
+.plate_theme_alfa-on-white {
+    color: var(--color-content-alfa-on-white);
+    background: var(--color-background-alfa-on-white);
 }

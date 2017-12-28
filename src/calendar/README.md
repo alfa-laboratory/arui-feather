@@ -72,15 +72,23 @@ initialState = {
     date: Date.now()
 };
 let currentDate = new Date();
-let daysOfEvents = [
-    getTime(startOfDay(addDays(currentDate, 1))),
-    getTime(startOfDay(addDays(currentDate, 4))),
-    getTime(startOfDay(addDays(currentDate, 7)))
+let eventDays = [
+    getTime(startOfDay(addDays(currentDate, -25))),
+    getTime(startOfDay(addDays(currentDate, -24))),
+    getTime(startOfDay(addDays(currentDate, -23))),
+    getTime(startOfDay(addDays(currentDate, -19))),
+    getTime(startOfDay(addDays(currentDate, -18))),
+    getTime(startOfDay(addDays(currentDate, -15))),
+    getTime(startOfDay(addDays(currentDate, -14))),
+    getTime(startOfDay(addDays(currentDate, -13))),
+    getTime(startOfDay(addDays(currentDate, -12))),
+    getTime(startOfDay(addDays(currentDate, 2))),
+    getTime(startOfDay(addDays(currentDate, 4)))
 ];
 
 <Calendar
     value={ state.date }
-    daysOfEvents={ daysOfEvents }
+    eventDays={ eventDays }
     onValueChange={ (newDate) => {
         setState({
             date: newDate

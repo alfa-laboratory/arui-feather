@@ -10,12 +10,10 @@ import Type from 'prop-types';
 
 import differenceInMonths from 'date-fns/difference_in_months';
 import differenceInMilliseconds from 'date-fns/difference_in_milliseconds';
-import startOfToday from 'date-fns/start_of_today';
 import startOfDay from 'date-fns/start_of_day';
 import startOfMonth from 'date-fns/start_of_month';
 import addDays from 'date-fns/add_days';
 import addYears from 'date-fns/add_years';
-import getTime from 'date-fns/get_time';
 import subtractYears from 'date-fns/sub_years';
 import formatDate from 'date-fns/format';
 import isSameMonth from 'date-fns/is_same_month';
@@ -24,6 +22,7 @@ import sortedIndexOf from 'lodash.sortedindexof';
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
+import isCurrentDay from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
 
@@ -64,7 +63,7 @@ class Calendar extends React.Component {
         /** Список выходных дней в виде unix timestamp, отсортированный по возрастанию */
         offDays: Type.arrayOf(Type.number),
         /** Спиоск дней с событиями в виде unix timestamp, отсортированный по возрастанию */
-        daysOfEvents: Type.arrayOf(Type.number),
+        eventDays: Type.arrayOf(Type.number),
         /** Отображение текущей даты */
         showToday: Type.bool,
         /** Отображение стрелок навигации по месяцам */
@@ -95,7 +94,7 @@ class Calendar extends React.Component {
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
         offDays: [],
-        daysOfEvents: [],
+        eventDays: [],
         showToday: false,
         showArrows: true,
         isKeyboard: true
@@ -261,7 +260,7 @@ class Calendar extends React.Component {
         return week.map((day, index) => {
             let off = !this.isValidDate(day);
             let event = this.isEventDay(day);
-            let current = this.isCurrentDay(day);
+            let current = isCurrentDay(day);
             let val = this.value;
             let weekend = index > 4;
             let mods = {};
@@ -278,9 +277,7 @@ class Calendar extends React.Component {
                     }
                 }
 
-                if (event) {
-                    mods.event = event;
-                }
+                mods.event = event;
 
                 if (current && this.props.showToday) {
                     mods.state = 'today';
@@ -304,6 +301,7 @@ class Calendar extends React.Component {
                     onClick={ this.handleDayClick }
                 >
                     { day ? day.getDate() : '' }
+                    { mods.event ? <span data-day={ dataDay } className={ cn('event') } /> : '' }
                 </td>
             );
         });
@@ -460,7 +458,7 @@ class Calendar extends React.Component {
      * @returns {Boolean}
      */
     isOffDay(date) {
-        if (this.props.offDays && this.props.offDays.length) {
+        if (this.props.offDays && Array.isArray(this.props.offDays)) {
             let timestamp = date.valueOf();
 
             // Поскольку offDays - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
@@ -477,25 +475,11 @@ class Calendar extends React.Component {
      * @returns {Boolean}
      */
     isEventDay(date) {
-        if (this.props.daysOfEvents && this.props.daysOfEvents.length && date !== null) {
+        if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
             let timestamp = date.valueOf();
 
             // Поскольку events - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
-            return sortedIndexOf(this.props.daysOfEvents, timestamp) !== -1;
-        }
-
-        return false;
-    }
-
-    /**
-     * Возвращает `true`, если переданная дата является текущей датой.
-     *
-     * @param {Data|Number} date Дата для проверки
-     * @returns {Boolean}
-     */
-    isCurrentDay(date) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
-        if (date !== null) {
-            return date.valueOf() === getTime(startOfToday());
+            return sortedIndexOf(this.props.eventDays, timestamp) !== -1;
         }
 
         return false;

@@ -79,7 +79,7 @@ describe('calendar', () => {
         let calendar = render(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
-                daysOfEvents={ [addDays(INITIAL_DAY, 1).valueOf()] }
+                eventDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
             />
         );
         let dayOfEventsNode = calendar.node.querySelector('.calendar__day_event');

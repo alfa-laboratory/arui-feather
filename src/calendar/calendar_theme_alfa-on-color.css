@@ -4,9 +4,17 @@
     color: var(--color-content-alfa-on-color);
     background-color: var(--color-background-alfa-on-color);
 
-    .calendar__day_event {
+    .calendar__event {
+        background-color: var(--color-background-alfa-on-color);
+
         &:after {
-            background: var(--color-content-disabled-alfa-on-color);
+            background-color: var(--color-content-disabled-alfa-on-color);
+        }
+    }
+
+    .calendar__day_state_today {
+        &:before {
+            background-color: var(--color-content-disabled-alfa-on-color);
         }
     }
 

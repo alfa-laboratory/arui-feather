@@ -31,7 +31,7 @@ const PROP_SETS = [
     },
     {
         value: CURRENT_DATE.valueOf(),
-        daysOfEvents: [
+        eventDays: [
             getTime(startOfDay(addDays(CURRENT_DATE, 1))),
             getTime(startOfDay(addDays(CURRENT_DATE, 4))),
             getTime(startOfDay(addDays(CURRENT_DATE, 7)))

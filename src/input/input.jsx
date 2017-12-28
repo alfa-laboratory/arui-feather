@@ -141,12 +141,20 @@ class Input extends React.Component {
      */
     control;
 
+    componentDidMount() {
+        // Invoke rerender with new value from browser pre/auto-fill.
+        // Seems to be the one & only cross-browser solution for
+        // https://github.com/alfa-laboratory/arui-feather/issues/361
+        if (this.props.value === '' && this.control.value && this.control.value.length) {
+            // eslint-disable-next-line react/no-did-mount-set-state
+            this.setState({ value: this.control.value });
+        }
+    }
+
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
         let focused = this.getFocused();
+        let value = this.getValue();
 
         return (
             <span
@@ -186,9 +194,7 @@ class Input extends React.Component {
 
     renderContent(cn, MaskedInput) {
         let isMaskedInput = this.props.mask !== undefined;
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        let value = this.getValue();
 
         let inputProps = {
             className: cn('control'),
@@ -470,6 +476,19 @@ class Input extends React.Component {
      */
     getFocused() {
         return this.props.focused !== undefined ? this.props.focused : this.state.focused;
+    }
+
+    /**
+     * Возвращает актуальное значение для поля.
+     *
+     * @returns {String}
+     */
+    getValue() {
+        if ((this.props.value === '' && this.state.value) || this.props.value === undefined) {
+            return this.state.value;
+        }
+
+        return this.props.value;
     }
 }
 

@@ -153,10 +153,8 @@ class Input extends React.Component {
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
         let focused = this.getFocused();
+        let value = this.getValue();
 
         return (
             <span

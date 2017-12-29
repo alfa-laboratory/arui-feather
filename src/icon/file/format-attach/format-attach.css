@@ -1,0 +1,35 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.icon_size_l.icon_name_format-attach.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-attach_l_black.svg');
+}
+
+.icon_size_l.icon_name_format-attach.icon_theme_alfa-on-color {
+    background-image: url('./icon_format-attach_l_white.svg');
+}
+
+.icon_size_m.icon_name_format-attach.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-attach_m_black.svg');
+}
+
+.icon_size_m.icon_name_format-attach.icon_theme_alfa-on-color {
+    background-image: url('./icon_format-attach_m_white.svg');
+}
+
+.icon_size_s.icon_name_format-attach.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-attach_s_black.svg');
+}
+
+.icon_size_s.icon_name_format-attach.icon_theme_alfa-on-color {
+    background-image: url('./icon_format-attach_s_white.svg');
+}
+
+.icon_size_xl.icon_name_format-attach.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-attach_xl_black.svg');
+}
+
+.icon_size_xl.icon_name_format-attach.icon_theme_alfa-on-color {
+    background-image: url('./icon_format-attach_xl_white.svg');
+}

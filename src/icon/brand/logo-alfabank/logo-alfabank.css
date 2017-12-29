@@ -1,0 +1,11 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.icon_size_s.icon_name_logo-alfabank.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_logo-alfabank.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_logo-alfabank_s_color.svg');
+}
+
+.icon_size_xl.icon_name_logo-alfabank.icon_colored.icon_theme_alfa-on-color, .icon_size_xl.icon_name_logo-alfabank.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_logo-alfabank_xl_color.svg');
+}

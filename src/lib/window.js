@@ -3,19 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /**
- * Check that mouse was outside element.
- *
- * @param {Object} event - MouseEvent
- * @param {Element} element - Element to check bounds
- * @returns {Boolean}
- */
-export function isEventOusideBounds(event, element) {
-    let rect = element.getBoundingClientRect();
-    return ((event.pageX < rect.left || event.pageX > rect.right) ||
-            (event.pageY < rect.top || event.pageY > rect.bottom));
-}
-
-/**
  * Check that node is outside given element.
  *
  * @param {Node} node Node to search

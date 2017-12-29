@@ -22,6 +22,7 @@ import sortedIndexOf from 'lodash.sortedindexof';
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
+import isCurrentDay from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
 
@@ -61,6 +62,10 @@ class Calendar extends React.Component {
         weekdays: Type.arrayOf(Type.string),
         /** Список выходных дней в виде unix timestamp, отсортированный по возрастанию */
         offDays: Type.arrayOf(Type.number),
+        /** Спиоск дней с событиями в виде unix timestamp, отсортированный по возрастанию */
+        eventDays: Type.arrayOf(Type.number),
+        /** Отображение текущей даты */
+        showToday: Type.bool,
         /** Отображение стрелок навигации по месяцам */
         showArrows: Type.bool,
         /** Возможность управления календарём с клавиатуры */
@@ -89,6 +94,8 @@ class Calendar extends React.Component {
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
         offDays: [],
+        eventDays: [],
+        showToday: false,
         showArrows: true,
         isKeyboard: true
     };
@@ -260,6 +267,8 @@ class Calendar extends React.Component {
     renderWeek(cn, week) {
         return week.map((day, index) => {
             let off = !this.isValidDate(day);
+            let event = this.isEventDay(day);
+            let current = isCurrentDay(day);
             let val = this.value;
             let weekend = index > 4;
             let mods = {};
@@ -274,6 +283,12 @@ class Calendar extends React.Component {
                     } else {
                         mods.type = 'off';
                     }
+                }
+
+                mods.event = event;
+
+                if (current && this.props.showToday) {
+                    mods.state = 'today';
                 }
 
                 if (isSameDate || isBetweenPeriod) {
@@ -294,6 +309,7 @@ class Calendar extends React.Component {
                     onClick={ this.handleDayClick }
                 >
                     { day ? day.getDate() : '' }
+                    { mods.event && <span data-day={ dataDay } className={ cn('event') } /> }
                 </td>
             );
         });
@@ -452,11 +468,28 @@ class Calendar extends React.Component {
      * @returns {Boolean}
      */
     isOffDay(date) {
-        if (this.props.offDays && this.props.offDays.length) {
+        if (this.props.offDays && Array.isArray(this.props.offDays)) {
             let timestamp = date.valueOf();
 
             // Поскольку offDays - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
             return sortedIndexOf(this.props.offDays, timestamp) !== -1;
+        }
+
+        return false;
+    }
+
+    /**
+     * Возвращает `true`, если переданная дата является днм с событиями.
+     *
+     * @param {Data|Number} date Дата для проверки
+     * @returns {Boolean}
+     */
+    isEventDay(date) {
+        if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
+            let timestamp = date.valueOf();
+
+            // Поскольку events - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
+            return sortedIndexOf(this.props.eventDays, timestamp) !== -1;
         }
 
         return false;

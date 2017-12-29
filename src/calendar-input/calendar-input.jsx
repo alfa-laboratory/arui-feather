@@ -58,6 +58,8 @@ class CalendarInput extends React.Component {
             months: Type.arrayOf(Type.string),
             weekdays: Type.arrayOf(Type.string),
             offDays: Type.arrayOf(Type.number),
+            eventDays: Type.arrayOf(Type.number),
+            showToday: Type.bool,
             showArrows: Type.bool,
             isKeyboard: Type.bool,
             error: Type.node,

@@ -67,13 +67,13 @@ if (ALL_BROWSERS) {
     config.system.plugins.react.jsModules.unshift('./src/polyfills.js');
 
     Object.assign(config.browsers, {
-        // ie10Win7: {
-        //     desiredCapabilities: {
-        //         browserName: 'internet explorer',
-        //         version: '10',
-        //         platform: 'Windows 7'
-        //     }
-        // },
+        ie10Win7: {
+            desiredCapabilities: {
+                browserName: 'internet explorer',
+                version: '10',
+                platform: 'Windows 7'
+            }
+        },
         ie11Win81: {
             desiredCapabilities: {
                 browserName: 'internet explorer',

@@ -178,13 +178,17 @@ acorn@3.3.0, acorn@^3.0.4, acorn@^3.1.0, acorn@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
-acorn@4.X, acorn@^4.0.3:
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
+acorn@5.X:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.3.0.tgz#7446d39459c54fb49a80e6ee6478149b940ec822"
 
 acorn@^1.0.3:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-1.2.2.tgz#c8ce27de0acc76d896d2b1fad3df588d9e82f014"
+
+acorn@^4.0.3:
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
 acorn@^5.0.0, acorn@^5.0.3, acorn@^5.2.1:
   version "5.2.1"
@@ -3323,9 +3327,9 @@ dateformat@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.2.tgz#9a4df4bff158ac2f34bc637abdb15471607e1659"
 
-debug-fabulous@>=0.1.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/debug-fabulous/-/debug-fabulous-0.2.1.tgz#57e1164ba0e9ad6d9a65f20075ff3c2bd6bde0dc"
+debug-fabulous@1.X:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/debug-fabulous/-/debug-fabulous-1.0.0.tgz#57f6648646097b1b0849dcda0017362c1ec00f8b"
   dependencies:
     debug "3.X"
     memoizee "0.4.X"
@@ -5672,22 +5676,21 @@ gulp-sourcemaps@1.6.0:
     through2 "^2.0.0"
     vinyl "^1.0.0"
 
-gulp-sourcemaps@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-2.6.1.tgz#833a4e28f0b8f4661075032cd782417f7cd8fb0b"
+gulp-sourcemaps@2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-2.6.2.tgz#4f41c72b35a7ea06b666d2e3f57917e2c0e71c4e"
   dependencies:
     "@gulp-sourcemaps/identity-map" "1.X"
     "@gulp-sourcemaps/map-sources" "1.X"
-    acorn "4.X"
+    acorn "5.X"
     convert-source-map "1.X"
     css "2.X"
-    debug-fabulous ">=0.1.1"
+    debug-fabulous "1.X"
     detect-newline "2.X"
     graceful-fs "4.X"
     source-map "0.X"
     strip-bom-string "1.X"
     through2 "2.X"
-    vinyl "1.X"
 
 gulp-typescript@3.2.3:
   version "3.2.3"
@@ -5711,7 +5714,7 @@ gulp-util@^2.2.14, gulp-util@~2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7, gulp-util@~3.0.8:
+gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -5734,18 +5737,18 @@ gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7, gulp-uti
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp.spritesmith@6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/gulp.spritesmith/-/gulp.spritesmith-6.7.0.tgz#9f4eb2e83194f9a7bda8208dd34f7c52056f3e54"
+gulp.spritesmith@6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/gulp.spritesmith/-/gulp.spritesmith-6.8.0.tgz#ed2bd86d95bab13790dd0202aa62fc1a339a5c57"
   dependencies:
     async "~2.1.5"
-    gulp-util "~3.0.8"
     minimatch "~3.0.3"
     spritesheet-templates "~10.2.0"
     spritesmith "~3.1.0"
     through2 "~2.0.3"
     underscore "~1.8.3"
     url2 "~1.0.4"
+    vinyl "~2.1.0"
 
 gulp@3.9.1:
   version "3.9.1"
@@ -7428,9 +7431,9 @@ libqp@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/libqp/-/libqp-1.1.0.tgz#f5e6e06ad74b794fb5b5b66988bf728ef1dedbe8"
 
-library-utils@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.7.1.tgz#73080c50d9d2103ca2f19dce076b30f0c7293558"
+library-utils@1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.7.2.tgz#69e528deb344ed78122dc92d2d691c450a31580e"
   dependencies:
     del "3.0.0"
     ejs "2.5.7"
@@ -7440,7 +7443,7 @@ library-utils@1.7.1:
     gulp-clone "1.0.0"
     gulp-postcss "7.0.0"
     gulp-rename "1.2.2"
-    gulp-sourcemaps "2.6.1"
+    gulp-sourcemaps "2.6.2"
     gulp-typescript "3.2.3"
     react-component-info "1.1.1"
     react-docgen "3.0.0-beta8"
@@ -7449,7 +7452,7 @@ library-utils@1.7.1:
     resolve "1.5.0"
     through2 "2.0.3"
     typescript "2.6.2"
-    typescript-formatter "7.0.0"
+    typescript-formatter "7.0.1"
     uppercamelcase "3.0.0"
     vinyl "2.1.0"
 
@@ -8360,9 +8363,9 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
-mocha@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-4.0.1.tgz#0aee5a95cf69a4618820f5e51fa31717117daf1b"
+mocha@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-4.1.0.tgz#7d86cfbcf35cb829e2754c32e17355ec05338794"
   dependencies:
     browser-stdout "1.3.0"
     commander "2.11.0"
@@ -12619,9 +12622,9 @@ typedarray@^0.0.6, typedarray@~0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript-formatter@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/typescript-formatter/-/typescript-formatter-7.0.0.tgz#f159ab6448e979f5c0fbbb596b92b1f9a859f2a8"
+typescript-formatter@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/typescript-formatter/-/typescript-formatter-7.0.1.tgz#1e0c2b885e6e895ce2d77d3fe2ca028f4bd3ead9"
   dependencies:
     commandpost "^1.0.0"
     editorconfig "^0.15.0"
@@ -13120,14 +13123,6 @@ vinyl-sourcemaps-apply@^0.2.0, vinyl-sourcemaps-apply@^0.2.1:
   dependencies:
     source-map "^0.5.1"
 
-vinyl@1.X, vinyl@^1.0.0, vinyl@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-1.2.0.tgz#5c88036cf565e5df05558bfc911f8656df218884"
-  dependencies:
-    clone "^1.0.0"
-    clone-stats "^0.0.1"
-    replace-ext "0.0.1"
-
 vinyl@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-2.1.0.tgz#021f9c2cf951d6b939943c89eb5ee5add4fd924c"
@@ -13155,6 +13150,14 @@ vinyl@^0.4.0, vinyl@^0.4.3:
 vinyl@^0.5.0:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-0.5.3.tgz#b0455b38fc5e0cf30d4325132e461970c2091cde"
+  dependencies:
+    clone "^1.0.0"
+    clone-stats "^0.0.1"
+    replace-ext "0.0.1"
+
+vinyl@^1.0.0, vinyl@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-1.2.0.tgz#5c88036cf565e5df05558bfc911f8656df218884"
   dependencies:
     clone "^1.0.0"
     clone-stats "^0.0.1"

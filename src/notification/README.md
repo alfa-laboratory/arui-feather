@@ -81,7 +81,7 @@ initialState = {
         visible={ state.visible }
         status='ok'
         offset={ 100 }
-        title={ 'Платёж запланирован' }
+        title='Платёж запланирован'
         icon={ <IconCalendar size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }

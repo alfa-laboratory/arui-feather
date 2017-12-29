@@ -1,3 +1,21 @@
+<a name="12.0.0"></a>
+# [12.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.4.0...v12.0.0) (2017-12-29)
+
+
+### Bug Fixes
+
+* **input:** fix autofill styling ([#451](https://github.com/alfa-laboratory/arui-feather/issues/451)) ([99fcd0c](https://github.com/alfa-laboratory/arui-feather/commit/99fcd0c))
+
+
+### Features
+
+* reorganize icons ([#398](https://github.com/alfa-laboratory/arui-feather/issues/398)) ([84fc9ae](https://github.com/alfa-laboratory/arui-feather/commit/84fc9ae))
+* update currency codes for KZT and KGS currencies ([#423](https://github.com/alfa-laboratory/arui-feather/issues/423)) ([f5bdeac](https://github.com/alfa-laboratory/arui-feather/commit/f5bdeac))
+* **calendar:** add today & events ([#427](https://github.com/alfa-laboratory/arui-feather/issues/427)) ([7c5a4af](https://github.com/alfa-laboratory/arui-feather/commit/7c5a4af))
+* **slidedown:** add animation callbacks ([#452](https://github.com/alfa-laboratory/arui-feather/issues/452)) ([0e2f3ac](https://github.com/alfa-laboratory/arui-feather/commit/0e2f3ac))
+
+
+
 <a name="11.4.0"></a>
 # [11.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.2...v11.4.0) (2017-12-27)
 

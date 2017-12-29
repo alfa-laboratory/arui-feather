@@ -9,69 +9,58 @@ describe('window utils', () => {
     afterEach(cleanUp);
 
     describe('isNodeOutsideElement', () => {
-        it('should return false - node inside element', () => {
+        it('should return false if node is inside of element', () => {
             let container = document.createElement('div');
-            container.className = 'container';
+            let elem = document.createElement('div');
 
-            let div = document.createElement('div');
-            div.className = 'div';
-
-            container.appendChild(div);
+            container.appendChild(elem);
             document.body.appendChild(container);
 
-            expect(isNodeOutsideElement(div, container)).to.be.eql(false);
+            expect(isNodeOutsideElement(elem, container)).to.be.false;
         });
 
-        it('should return true - node outside element', () => {
-            let div1 = document.createElement('div');
-            div1.className = 'div1';
+        it('should return true if node is outside of element', () => {
+            let elem1 = document.createElement('div');
+            let elem2 = document.createElement('div');
 
-            let div2 = document.createElement('div');
-            div2.className = 'div2';
+            document.body.appendChild(elem1);
+            document.body.appendChild(elem2);
 
-            document.body.appendChild(div1);
-            document.body.appendChild(div2);
-
-            expect(isNodeOutsideElement(div1, div2)).to.be.eql(true);
+            expect(isNodeOutsideElement(elem1, elem2)).to.be.true;
         });
     });
 
     describe('isEventOutsideClientBounds', () => {
-        it('should return false - click event inside element rect', () => {
+        it('should return false if click event is inside of element rect', () => {
             let isEventOutsideCB;
-            let div1 = document.createElement('div');
-            div1.className = 'div1';
-            div1.style.width = '100px';
-            div1.style.height = '100px';
-            div1.style.background = 'black';
-            // place div1 to 0,0
+            let elem = document.createElement('div');
+            elem.style.width = '100px';
+            elem.style.height = '100px';
             document.body.style.margin = '0px';
 
-            div1.addEventListener('click', (event) => {
+            elem.addEventListener('click', (event) => {
                 isEventOutsideCB = isEventOutsideClientBounds(event, event.target);
             });
-            document.body.appendChild(div1);
-            div1.click();
+            document.body.appendChild(elem);
+            elem.click();
 
-            expect(isEventOutsideCB).to.be.eql(false);
+            expect(isEventOutsideCB).to.be.false;
         });
 
-        it('should return true - click event outside element rect', () => {
+        it('should return true if click event is outside of element rect', () => {
             let isEventOutsideCB;
-            let div1 = document.createElement('div');
-            div1.className = 'div1';
-            div1.style.width = '100px';
-            div1.style.height = '100px';
-            div1.style.background = 'black';
+            let elem = document.createElement('div');
+            elem.style.width = '100px';
+            elem.style.height = '100px';
             document.body.style.margin = '8px';
 
             document.body.addEventListener('click', (event) => {
                 isEventOutsideCB = isEventOutsideClientBounds(event, document.body);
             });
-            document.body.appendChild(div1);
+            document.body.appendChild(elem);
             document.body.click();
 
-            expect(isEventOutsideCB).to.be.eql(true);
+            expect(isEventOutsideCB).to.be.true;
         });
     });
 });

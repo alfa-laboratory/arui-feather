@@ -12,7 +12,12 @@ function renderMenuItem(props) {
     let switcherNode = menuItem.node.querySelector('.dropdown__switcher');
     let popupNode = document.querySelector('.popup');
 
-    return { menuItem, switcherNode, controlNode, popupNode };
+    return {
+        menuItem,
+        controlNode,
+        switcherNode,
+        popupNode
+    };
 }
 
 describe('menu-item', () => {

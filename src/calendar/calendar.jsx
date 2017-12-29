@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* eslint jsx-a11y/no-static-element-interactions: 0 */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import { autobind } from 'core-decorators';
 import React from 'react';
@@ -188,6 +188,8 @@ class Calendar extends React.Component {
                         }
                         data-step='-12'
                         data-disabled={ !isPrevMonthEnabled }
+                        role='button'
+                        tabIndex='0'
                         onClick={ this.handleArrowClick }
                     />
                 }
@@ -202,6 +204,8 @@ class Calendar extends React.Component {
                         }
                         data-step='-1'
                         data-disabled={ !isPrevMonthEnabled }
+                        role='button'
+                        tabIndex='0'
                         onClick={ this.handleArrowClick }
                     />
                 }
@@ -217,6 +221,8 @@ class Calendar extends React.Component {
                         }
                         data-step='12'
                         data-disabled={ !isNextMonthEnabled }
+                        role='button'
+                        tabIndex='0'
                         onClick={ this.handleArrowClick }
                     />
                 }
@@ -231,6 +237,8 @@ class Calendar extends React.Component {
                         }
                         data-step='1'
                         data-disabled={ !isNextMonthEnabled }
+                        role='button'
+                        tabIndex='0'
                         onClick={ this.handleArrowClick }
                     />
                 }
@@ -440,9 +448,11 @@ class Calendar extends React.Component {
             return false;
         }
 
+        /* eslint-disable no-restricted-globals */
         if (!(value instanceof Date) || !isFinite(value.valueOf())) {
             return false;
         }
+        /* eslint-enable no-restricted-globals */
 
         return !(
             (this.earlierLimit && this.earlierLimit > value) ||
@@ -519,18 +529,17 @@ class Calendar extends React.Component {
             return;
         }
 
-        let value = this.value;
-        while (this.isOffDay(addDays(value, dayShift))) {
+        while (this.isOffDay(addDays(this.value, dayShift))) {
             dayShift += Math.abs(dayShift) / dayShift;
         }
 
         if (!this.value) {
             this.performChange(this.state.month, true);
         } else {
-            let shiftedValue = addDays(value, dayShift);
+            let shiftedValue = addDays(this.value, dayShift);
             this.performChange(shiftedValue.valueOf(), isTriggeredByKeyboard);
 
-            if (this.props.onMonthChange && !isSameMonth(shiftedValue, value)) {
+            if (this.props.onMonthChange && !isSameMonth(shiftedValue, this.value)) {
                 this.props.onMonthChange(shiftedValue.valueOf());
             }
         }

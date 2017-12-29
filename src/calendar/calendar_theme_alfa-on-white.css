@@ -33,4 +33,9 @@
             background-image: url('./images/2_arrow_wr.svg');
         }
     }
+
+    .calendar__day_type_off,
+    .calendar__day_type_weekend-off {
+        color: var(--color-content-disabled-alfa-on-white);
+    }
 }

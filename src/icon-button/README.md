@@ -5,7 +5,7 @@
             key={ size }
             className='column l'
         >
-            <IconButton size={ size } onClick={ () => { confirm('Подтвердите удаление') } }>
+            <IconButton size={ size } onClick={ () => { alert('Подтвердите удаление') } }>
                 <Icon size={ size } name='tool-close' />
             </IconButton>
         </span>

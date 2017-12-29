@@ -43,8 +43,8 @@
 
     &__icon {
         display: inline-flex;
+        align-items: center;
         padding-right: 10px;
-        line-height: 1;
     }
 
     &_width_available {
@@ -69,8 +69,7 @@
     }
 
     &_view_action &__text,
-    &_view_extra &__text,
-    &_view_other &__text {
+    &_view_extra &__text {
         font-weight: var(--font-weight-medium);
     }
 

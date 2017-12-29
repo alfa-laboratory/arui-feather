@@ -10,6 +10,7 @@
 
     &_visible {
         display: inline-block;
+        vertical-align: middle;
     }
 
     &_size_s {

@@ -22,27 +22,28 @@ const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
  * @returns {String}
  */
 function getDeclension(number, endingList) {
-    let ending;
+    let endingIndex;
 
     number %= 100;
+
     if (number >= 11 && number <= 19) {
-        ending = endingList[2];
+        endingIndex = 2;
     } else {
         switch (number % 10) {
             case 1:
-                ending = endingList[0];
+                endingIndex = 0;
                 break;
             case 2:
             case 3:
             case 4:
-                ending = endingList[1];
+                endingIndex = 1;
                 break;
             default:
-                ending = endingList[2];
+                endingIndex = 2;
         }
     }
 
-    return ending;
+    return endingList[endingIndex];
 }
 
 /**
@@ -64,7 +65,7 @@ function isEqualArray(array1, array2) {
 }
 
 /**
- * Компонент прикрепления файлов
+ * Компонент прикрепления файлов.
  */
 @cn('attach')
 @performance()
@@ -89,7 +90,7 @@ class Attach extends React.Component {
             text: Type.node,
             rightAddons: Type.node,
             leftAddons: Type.node,
-            view: Type.oneOf(['default', 'action', 'extra', 'other']),
+            view: Type.oneOf(['default', 'action', 'extra']),
             type: Type.oneOf(['button', 'reset', 'submit']),
             tag: Type.oneOf(['button', 'span']),
             width: Type.oneOf(['default', 'available']),

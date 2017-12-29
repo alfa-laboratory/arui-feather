@@ -37,7 +37,9 @@ function renderSelect(props) {
     let popupNode = document.querySelector('.popup');
     let menuNode = popupNode ? popupNode.querySelector('.select__menu') : null;
 
-    return { select, nativeSelectNode, popupNode, buttonNode, menuNode };
+    return {
+        select, nativeSelectNode, popupNode, buttonNode, menuNode
+    };
 }
 
 describe('select', () => {
@@ -328,9 +330,11 @@ describe('select', () => {
                     },
                     {
                         value: 2,
-                        text: <div>
-                            Much, much longer option text in another block element to make select popup strech
-                        </div>
+                        text: (
+                            <div>
+                                Much, much longer option text in another block element to make select popup strech
+                            </div>
+                        )
                     }
                 ],
                 equalPopupWidth: true,
@@ -511,7 +515,8 @@ describe('select', () => {
             };
             let { select, buttonNode } = renderSelect(selectProps);
             let outsideElement = document.createElement('div');
-            outsideElement.setAttribute('style',
+            outsideElement.setAttribute(
+                'style',
                 'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
             );
             outsideElement.setAttribute('id', 'outside');

@@ -17,13 +17,13 @@ function renderAddons(inputSize) {
         <Radio
             key={ item }
             size={ radioSize }
-            type={ 'button' }
+            type='button'
             text={ item }
         />
     ));
 
     return (
-        <RadioGroup type={ 'button' }>
+        <RadioGroup type='button'>
             { buttonControlNodes }
         </RadioGroup>
     );

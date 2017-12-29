@@ -24,9 +24,7 @@ const MAX_DIAL_CODE_LENGTH = 4;
 @cn('intl-phone-input', Input, Select)
 @performance()
 class IntlPhoneInput extends React.Component {
-    static propTypes = {
-        ...Input.propTypes
-    };
+    static propTypes = Input.propTypes;
 
     static defaultProps = {
         size: 'm',

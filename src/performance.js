@@ -4,7 +4,7 @@
 
 import { isValidElement } from 'react';
 
-const hasOwnProperty = Object.prototype.hasOwnProperty;
+const { hasOwnProperty } = Object.prototype;
 
 /**
  * Функции проверки равенства двух объектов.

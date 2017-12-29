@@ -137,7 +137,7 @@ const IconUserLogout = require('./action/user-logout').default;
                 </span>
             ))
         }
-        <span className='column l'><IconDislike size='m' colored='true' /></span>
+        <span className='column l'><IconDislike size='m' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -192,7 +192,7 @@ const IconUserLogout = require('./action/user-logout').default;
                 </span>
             ))
         }
-        <span className='column l'><IconLike size='m' colored='true' /></span>
+        <span className='column l'><IconLike size='m' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -930,10 +930,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank2449 size='s' colored='true' /></span>
-        <span className='column l'><IconBank2449 size='m' colored='true' /></span>
-        <span className='column l'><IconBank2449 size='l' colored='true' /></span>
-        <span className='column l'><IconBank2449 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank2449 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank2449 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank2449 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank2449 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -943,10 +943,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank3308 size='s' colored='true' /></span>
-        <span className='column l'><IconBank3308 size='m' colored='true' /></span>
-        <span className='column l'><IconBank3308 size='l' colored='true' /></span>
-        <span className='column l'><IconBank3308 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank3308 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank3308 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank3308 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank3308 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -956,10 +956,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank10223 size='s' colored='true' /></span>
-        <span className='column l'><IconBank10223 size='m' colored='true' /></span>
-        <span className='column l'><IconBank10223 size='l' colored='true' /></span>
-        <span className='column l'><IconBank10223 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank10223 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank10223 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank10223 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank10223 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -969,10 +969,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank439 size='s' colored='true' /></span>
-        <span className='column l'><IconBank439 size='m' colored='true' /></span>
-        <span className='column l'><IconBank439 size='l' colored='true' /></span>
-        <span className='column l'><IconBank439 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank439 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank439 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank439 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank439 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -982,10 +982,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank9908 size='s' colored='true' /></span>
-        <span className='column l'><IconBank9908 size='m' colored='true' /></span>
-        <span className='column l'><IconBank9908 size='l' colored='true' /></span>
-        <span className='column l'><IconBank9908 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank9908 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank9908 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank9908 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank9908 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -995,10 +995,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank3001 size='s' colored='true' /></span>
-        <span className='column l'><IconBank3001 size='m' colored='true' /></span>
-        <span className='column l'><IconBank3001 size='l' colored='true' /></span>
-        <span className='column l'><IconBank3001 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank3001 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank3001 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank3001 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank3001 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1008,10 +1008,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank5475 size='s' colored='true' /></span>
-        <span className='column l'><IconBank5475 size='m' colored='true' /></span>
-        <span className='column l'><IconBank5475 size='l' colored='true' /></span>
-        <span className='column l'><IconBank5475 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank5475 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank5475 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank5475 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank5475 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1021,10 +1021,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank1490 size='s' colored='true' /></span>
-        <span className='column l'><IconBank1490 size='m' colored='true' /></span>
-        <span className='column l'><IconBank1490 size='l' colored='true' /></span>
-        <span className='column l'><IconBank1490 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank1490 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank1490 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank1490 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank1490 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1034,10 +1034,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank4267 size='s' colored='true' /></span>
-        <span className='column l'><IconBank4267 size='m' colored='true' /></span>
-        <span className='column l'><IconBank4267 size='l' colored='true' /></span>
-        <span className='column l'><IconBank4267 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank4267 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank4267 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank4267 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank4267 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1047,10 +1047,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank7311 size='s' colored='true' /></span>
-        <span className='column l'><IconBank7311 size='m' colored='true' /></span>
-        <span className='column l'><IconBank7311 size='l' colored='true' /></span>
-        <span className='column l'><IconBank7311 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank7311 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank7311 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank7311 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank7311 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1060,10 +1060,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank1516 size='s' colored='true' /></span>
-        <span className='column l'><IconBank1516 size='m' colored='true' /></span>
-        <span className='column l'><IconBank1516 size='l' colored='true' /></span>
-        <span className='column l'><IconBank1516 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank1516 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank1516 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank1516 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank1516 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1073,10 +1073,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank1309 size='s' colored='true' /></span>
-        <span className='column l'><IconBank1309 size='m' colored='true' /></span>
-        <span className='column l'><IconBank1309 size='l' colored='true' /></span>
-        <span className='column l'><IconBank1309 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank1309 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank1309 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank1309 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank1309 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1086,10 +1086,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank8967 size='s' colored='true' /></span>
-        <span className='column l'><IconBank8967 size='m' colored='true' /></span>
-        <span className='column l'><IconBank8967 size='l' colored='true' /></span>
-        <span className='column l'><IconBank8967 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank8967 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank8967 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank8967 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank8967 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1099,10 +1099,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank6415 size='s' colored='true' /></span>
-        <span className='column l'><IconBank6415 size='m' colored='true' /></span>
-        <span className='column l'><IconBank6415 size='l' colored='true' /></span>
-        <span className='column l'><IconBank6415 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank6415 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank6415 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank6415 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank6415 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1112,10 +1112,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank285 size='s' colored='true' /></span>
-        <span className='column l'><IconBank285 size='m' colored='true' /></span>
-        <span className='column l'><IconBank285 size='l' colored='true' /></span>
-        <span className='column l'><IconBank285 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank285 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank285 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank285 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank285 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1125,10 +1125,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank4924 size='s' colored='true' /></span>
-        <span className='column l'><IconBank4924 size='m' colored='true' /></span>
-        <span className='column l'><IconBank4924 size='l' colored='true' /></span>
-        <span className='column l'><IconBank4924 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank4924 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank4924 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank4924 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank4924 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1138,10 +1138,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank5030 size='s' colored='true' /></span>
-        <span className='column l'><IconBank5030 size='m' colored='true' /></span>
-        <span className='column l'><IconBank5030 size='l' colored='true' /></span>
-        <span className='column l'><IconBank5030 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank5030 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank5030 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank5030 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank5030 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1151,10 +1151,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank351 size='s' colored='true' /></span>
-        <span className='column l'><IconBank351 size='m' colored='true' /></span>
-        <span className='column l'><IconBank351 size='l' colored='true' /></span>
-        <span className='column l'><IconBank351 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank351 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank351 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank351 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank351 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1164,10 +1164,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank256 size='s' colored='true' /></span>
-        <span className='column l'><IconBank256 size='m' colored='true' /></span>
-        <span className='column l'><IconBank256 size='l' colored='true' /></span>
-        <span className='column l'><IconBank256 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank256 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank256 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank256 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank256 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1177,10 +1177,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank1415 size='s' colored='true' /></span>
-        <span className='column l'><IconBank1415 size='m' colored='true' /></span>
-        <span className='column l'><IconBank1415 size='l' colored='true' /></span>
-        <span className='column l'><IconBank1415 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank1415 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank1415 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank1415 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank1415 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1190,10 +1190,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank7687 size='s' colored='true' /></span>
-        <span className='column l'><IconBank7687 size='m' colored='true' /></span>
-        <span className='column l'><IconBank7687 size='l' colored='true' /></span>
-        <span className='column l'><IconBank7687 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank7687 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank7687 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank7687 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank7687 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1203,10 +1203,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank7686 size='s' colored='true' /></span>
-        <span className='column l'><IconBank7686 size='m' colored='true' /></span>
-        <span className='column l'><IconBank7686 size='l' colored='true' /></span>
-        <span className='column l'><IconBank7686 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank7686 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank7686 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank7686 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank7686 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1216,10 +1216,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank2377 size='s' colored='true' /></span>
-        <span className='column l'><IconBank2377 size='m' colored='true' /></span>
-        <span className='column l'><IconBank2377 size='l' colored='true' /></span>
-        <span className='column l'><IconBank2377 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank2377 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank2377 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank2377 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank2377 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1229,10 +1229,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank244 size='s' colored='true' /></span>
-        <span className='column l'><IconBank244 size='m' colored='true' /></span>
-        <span className='column l'><IconBank244 size='l' colored='true' /></span>
-        <span className='column l'><IconBank244 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank244 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank244 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank244 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank244 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1242,10 +1242,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconBank404 size='s' colored='true' /></span>
-        <span className='column l'><IconBank404 size='m' colored='true' /></span>
-        <span className='column l'><IconBank404 size='l' colored='true' /></span>
-        <span className='column l'><IconBank404 size='xl' colored='true' /></span>
+        <span className='column l'><IconBank404 size='s' colored={ true } /></span>
+        <span className='column l'><IconBank404 size='m' colored={ true } /></span>
+        <span className='column l'><IconBank404 size='l' colored={ true } /></span>
+        <span className='column l'><IconBank404 size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1255,10 +1255,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconCardBelkart size='s' colored='true' /></span>
-        <span className='column l'><IconCardBelkart size='m' colored='true' /></span>
-        <span className='column l'><IconCardBelkart size='l' colored='true' /></span>
-        <span className='column l'><IconCardBelkart size='xl' colored='true' /></span>
+        <span className='column l'><IconCardBelkart size='s' colored={ true } /></span>
+        <span className='column l'><IconCardBelkart size='m' colored={ true } /></span>
+        <span className='column l'><IconCardBelkart size='l' colored={ true } /></span>
+        <span className='column l'><IconCardBelkart size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1268,10 +1268,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconCardMaestro size='s' colored='true' /></span>
-        <span className='column l'><IconCardMaestro size='m' colored='true' /></span>
-        <span className='column l'><IconCardMaestro size='l' colored='true' /></span>
-        <span className='column l'><IconCardMaestro size='xl' colored='true' /></span>
+        <span className='column l'><IconCardMaestro size='s' colored={ true } /></span>
+        <span className='column l'><IconCardMaestro size='m' colored={ true } /></span>
+        <span className='column l'><IconCardMaestro size='l' colored={ true } /></span>
+        <span className='column l'><IconCardMaestro size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1281,10 +1281,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconCardMastercard size='s' colored='true' /></span>
-        <span className='column l'><IconCardMastercard size='m' colored='true' /></span>
-        <span className='column l'><IconCardMastercard size='l' colored='true' /></span>
-        <span className='column l'><IconCardMastercard size='xl' colored='true' /></span>
+        <span className='column l'><IconCardMastercard size='s' colored={ true } /></span>
+        <span className='column l'><IconCardMastercard size='m' colored={ true } /></span>
+        <span className='column l'><IconCardMastercard size='l' colored={ true } /></span>
+        <span className='column l'><IconCardMastercard size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1303,10 +1303,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconCardVisa size='s' colored='true' /></span>
-        <span className='column l'><IconCardVisa size='m' colored='true' /></span>
-        <span className='column l'><IconCardVisa size='l' colored='true' /></span>
-        <span className='column l'><IconCardVisa size='xl' colored='true' /></span>
+        <span className='column l'><IconCardVisa size='s' colored={ true } /></span>
+        <span className='column l'><IconCardVisa size='m' colored={ true } /></span>
+        <span className='column l'><IconCardVisa size='l' colored={ true } /></span>
+        <span className='column l'><IconCardVisa size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1316,10 +1316,10 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconCardVisaElectron size='s' colored='true' /></span>
-        <span className='column l'><IconCardVisaElectron size='m' colored='true' /></span>
-        <span className='column l'><IconCardVisaElectron size='l' colored='true' /></span>
-        <span className='column l'><IconCardVisaElectron size='xl' colored='true' /></span>
+        <span className='column l'><IconCardVisaElectron size='s' colored={ true } /></span>
+        <span className='column l'><IconCardVisaElectron size='m' colored={ true } /></span>
+        <span className='column l'><IconCardVisaElectron size='l' colored={ true } /></span>
+        <span className='column l'><IconCardVisaElectron size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1329,8 +1329,8 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconLogoAlfabank size='s' colored='true' /></span>
-        <span className='column l'><IconLogoAlfabank size='xl' colored='true' /></span>
+        <span className='column l'><IconLogoAlfabank size='s' colored={ true } /></span>
+        <span className='column l'><IconLogoAlfabank size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1340,8 +1340,8 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconMaestro size='s' colored='true' /></span>
-        <span className='column l'><IconMaestro size='l' colored='true' /></span>
+        <span className='column l'><IconMaestro size='s' colored={ true } /></span>
+        <span className='column l'><IconMaestro size='l' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1351,8 +1351,8 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconMastercard size='s' colored='true' /></span>
-        <span className='column l'><IconMastercard size='l' colored='true' /></span>
+        <span className='column l'><IconMastercard size='s' colored={ true } /></span>
+        <span className='column l'><IconMastercard size='l' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -1362,7 +1362,7 @@ const IconVisa = require('./brand/visa').default;
                 </span>
             ))
         }
-        <span className='column l'><IconMir size='l' colored='true' /></span>
+        <span className='column l'><IconMir size='l' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -2791,10 +2791,10 @@ const IconVerifying = require('./ui/verifying').default;
                 </span>
             ))
         }
-        <span className='column l'><IconError size='s' colored='true' /></span>
-        <span className='column l'><IconError size='m' colored='true' /></span>
-        <span className='column l'><IconError size='l' colored='true' /></span>
-        <span className='column l'><IconError size='xl' colored='true' /></span>
+        <span className='column l'><IconError size='s' colored={ true } /></span>
+        <span className='column l'><IconError size='m' colored={ true } /></span>
+        <span className='column l'><IconError size='l' colored={ true } /></span>
+        <span className='column l'><IconError size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -2840,7 +2840,7 @@ const IconVerifying = require('./ui/verifying').default;
                 </span>
             ))
         }
-        <span className='column l'><IconFavourites size='m' colored='true' /></span>
+        <span className='column l'><IconFavourites size='m' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -2877,7 +2877,7 @@ const IconVerifying = require('./ui/verifying').default;
                 </span>
             ))
         }
-        <span className='column l'><IconFeedbackStarSelected size='m' colored='true' /></span>
+        <span className='column l'><IconFeedbackStarSelected size='m' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -2941,10 +2941,10 @@ const IconVerifying = require('./ui/verifying').default;
                 </span>
             ))
         }
-        <span className='column l'><IconOk size='s' colored='true' /></span>
-        <span className='column l'><IconOk size='m' colored='true' /></span>
-        <span className='column l'><IconOk size='l' colored='true' /></span>
-        <span className='column l'><IconOk size='xl' colored='true' /></span>
+        <span className='column l'><IconOk size='s' colored={ true } /></span>
+        <span className='column l'><IconOk size='m' colored={ true } /></span>
+        <span className='column l'><IconOk size='l' colored={ true } /></span>
+        <span className='column l'><IconOk size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {

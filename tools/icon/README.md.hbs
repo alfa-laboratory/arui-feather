@@ -16,7 +16,7 @@ const {{this.componentName}} = require('./{{this.category}}/{{this.name}}').defa
         }
     {{#each this.size as |size sizeID|}}
         {{#if size.colored}}
-        <span className='column l'><{{icon.componentName}} size='{{size.size}}' colored='true' /></span>
+        <span className='column l'><{{icon.componentName}} size='{{size.size}}' colored={ true } /></span>
         {{/if}}
     {{/each}}
     </div>

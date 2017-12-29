@@ -5714,7 +5714,7 @@ gulp-util@^2.2.14, gulp-util@~2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7, gulp-util@~3.0.8:
+gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -5737,18 +5737,18 @@ gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7, gulp-uti
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp.spritesmith@6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/gulp.spritesmith/-/gulp.spritesmith-6.7.0.tgz#9f4eb2e83194f9a7bda8208dd34f7c52056f3e54"
+gulp.spritesmith@6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/gulp.spritesmith/-/gulp.spritesmith-6.8.0.tgz#ed2bd86d95bab13790dd0202aa62fc1a339a5c57"
   dependencies:
     async "~2.1.5"
-    gulp-util "~3.0.8"
     minimatch "~3.0.3"
     spritesheet-templates "~10.2.0"
     spritesmith "~3.1.0"
     through2 "~2.0.3"
     underscore "~1.8.3"
     url2 "~1.0.4"
+    vinyl "~2.1.0"
 
 gulp@3.9.1:
   version "3.9.1"

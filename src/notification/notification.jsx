@@ -114,7 +114,7 @@ class Notification extends React.Component {
             case 'error': ToggledIcon = IconError; break;
             case 'fail': ToggledIcon = IconFail; break;
             case 'ok': ToggledIcon = IconOk; break;
-            default : ToggledIcon = IconOk; break;
+            default: ToggledIcon = IconOk; break;
         }
 
         return (

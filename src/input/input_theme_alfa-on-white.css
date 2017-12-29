@@ -21,7 +21,7 @@
         &:-webkit-autofill,
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
-        &:-webkit-autofill:after {
+        &:-webkit-autofill:active {
             -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
         }
     }

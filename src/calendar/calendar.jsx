@@ -309,7 +309,7 @@ class Calendar extends React.Component {
                     onClick={ this.handleDayClick }
                 >
                     { day ? day.getDate() : '' }
-                    { mods.event ? <span data-day={ dataDay } className={ cn('event') } /> : '' }
+                    { mods.event && <span data-day={ dataDay } className={ cn('event') } /> }
                 </td>
             );
         });

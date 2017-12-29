@@ -89,7 +89,7 @@
         height: 9px;
         border-radius: 50%;
         position: absolute;
-        bottom: 0;
+        bottom: -1px;
         left: 13px;
 
         &:after {

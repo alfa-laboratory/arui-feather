@@ -2,11 +2,48 @@
 * License, v. 2.0. If a copy of the MPL was not distributed with this
 * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { isNodeOutsideElement, isEventOutsideClientBounds } from './window';
+import { isEventOusideBounds, isNodeOutsideElement, isEventOutsideClientBounds } from './window';
 import { cleanUp } from '../test-utils';
 
 describe('window utils', () => {
-    afterEach(cleanUp);
+    afterEach(() => {
+        cleanUp();
+        document.body.style.margin = '0px';
+    });
+
+    describe('isEventOusideBounds', () => {
+        it('should return false if click event is inside of element rect', () => {
+            let isEventOutsideCB;
+            let elem = document.createElement('div');
+            elem.style.width = '100px';
+            elem.style.height = '100px';
+            document.body.style.margin = '0px';
+
+            elem.addEventListener('click', (event) => {
+                isEventOutsideCB = isEventOusideBounds(event, event.target);
+            });
+            document.body.appendChild(elem);
+            elem.click();
+
+            expect(isEventOutsideCB).to.be.false;
+        });
+
+        it('should return true if click event is outside of element rect', () => {
+            let isEventOutsideCB;
+            let elem = document.createElement('div');
+            elem.style.width = '100px';
+            elem.style.height = '100px';
+            document.body.style.margin = '8px';
+
+            document.body.addEventListener('click', (event) => {
+                isEventOutsideCB = isEventOusideBounds(event, document.body);
+            });
+            document.body.appendChild(elem);
+            document.body.click();
+
+            expect(isEventOutsideCB).to.be.true;
+        });
+    });
 
     describe('isNodeOutsideElement', () => {
         it('should return false if node is inside of element', () => {

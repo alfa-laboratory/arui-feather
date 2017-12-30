@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import '../../../src/vars.css';
+
 .row {
     display: flex;
     align-items: center;
@@ -29,4 +31,20 @@
     & + & {
         margin-top: 20px;
     }
+}
+
+.icon_theme_alfa-on-color {
+    background-image:
+        linear-gradient(
+            color(var(--color-background-alfa-on-white) a(.03)) 3%,
+            color(var(--color-background-alfa-on-white) a(.03)) 3%
+        );
+}
+
+.icon_theme_alfa-on-white {
+    background-image:
+        linear-gradient(
+            color(var(--color-background-alfa-on-color) a(.03)) 3%,
+            color(var(--color-background-alfa-on-color) a(.03)) 3%
+        );
 }

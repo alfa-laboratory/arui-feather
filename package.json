@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "11.4.0",
+  "version": "12.0.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -29,9 +29,10 @@
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
     "demo": "styleguidist server",
-    "styleguide-build": "styleguidist build",
     "lint-staged": "lint-staged",
-    "flag-icon-build": "gulp --gulpfile ./src/flag-icon/flag-icon.gulpfile.js"
+    "build:demo": "styleguidist build",
+    "build:flag-icons": "gulp --gulpfile ./src/flag-icon/flag-icon.gulpfile.js",
+    "build:icons": "node ./tools/icon/build-icons.js"
   },
   "lint-staged": {
     "concurrent": false,
@@ -115,6 +116,7 @@
   },
   "devDependencies": {
     "acorn": "3.3.0",
+    "alfa-ui-primitives": "0.9.0",
     "arui-presets": "4.10.0",
     "bowser": "1.9.1",
     "chai": "4.1.2",
@@ -129,6 +131,7 @@
     "gemini-optipng": "1.1.0",
     "gemini-react": "0.11.0",
     "gemini-saucelabs-info": "1.0.0",
+    "glob": "^7.1.2",
     "gulp": "3.9.1",
     "gulp-gm": "0.0.8",
     "gulp-imagemin": "4.0.0",
@@ -152,9 +155,10 @@
     "karma-sinon-chai": "1.3.3",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.9",
-    "lint-staged": "6.0.0",
     "library-utils": "1.7.2",
+    "lint-staged": "6.0.0",
     "merge-stream": "1.0.1",
+    "mkdirp": "0.5.1",
     "mocha": "4.1.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",

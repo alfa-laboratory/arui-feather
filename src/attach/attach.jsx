@@ -7,7 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
-import Icon from '../icon/icon';
+import IconAttachment from '../icon/action/attachment';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -194,7 +194,7 @@ class Attach extends React.Component {
             className: cn('button'),
             disabled: this.props.disabled,
             size: this.props.size,
-            icon: this.props.icon ? this.props.icon : <Icon size={ this.props.size } name='tool-attachment' />,
+            icon: this.props.icon ? this.props.icon : <IconAttachment size={ this.props.size } />,
             focused: this.state.focused
         };
 

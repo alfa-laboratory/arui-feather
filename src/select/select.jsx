@@ -8,8 +8,9 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
-import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
+import IconDown from '../icon/ui/down';
+import IconUp from '../icon/ui/up';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
@@ -271,10 +272,17 @@ class Select extends React.Component {
 
     renderButton(cn, SelectButton) {
         let tickSize;
+        let ToggledIcon;
+        let opened = this.getOpened();
+
+        switch (opened) {
+            case true: ToggledIcon = IconUp; break;
+            case false: ToggledIcon = IconDown; break;
+        }
 
         switch (this.props.size) {
-            case 's': case 'm': tickSize = 'xs'; break;
-            case 'l': case 'xl': tickSize = 's'; break;
+            case 's': case 'm': tickSize = 's'; break;
+            case 'l': case 'xl': tickSize = 'm'; break;
         }
 
         return (
@@ -291,10 +299,7 @@ class Select extends React.Component {
                         size={ this.props.size }
                         tag='span'
                     >
-                        <Icon
-                            name={ this.getOpened() ? 'action-up' : 'action-down' }
-                            size={ tickSize }
-                        />
+                        <ToggledIcon size={ tickSize } />
                     </IconButton>,
                     <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
                 ] }

@@ -10,7 +10,7 @@ import { render, cleanUp, simulate, eventPersist } from '../test-utils';
 
 import Input from './input';
 import MaskedInput from '../masked-input';
-import Icon from '../icon/icon';
+import IconSearch from '../icon/action/search';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -327,7 +327,7 @@ describe('input', () => {
     });
 
     it('should render with icon', function () {
-        let input = render(<Input icon={ <Icon icon='search' /> } />);
+        let input = render(<Input icon={ <IconSearch icon='search' /> } />);
         let iconNode = input.node.querySelector('.input__icon');
 
         expect(iconNode).to.exist;

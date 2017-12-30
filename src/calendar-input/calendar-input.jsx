@@ -8,7 +8,7 @@ import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
 import Calendar from '../calendar/calendar';
-import Icon from '../icon/icon';
+import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/icon-button';
 import Input from '../input/input';
 import Mq from '../mq/mq';
@@ -284,9 +284,8 @@ class CalendarInput extends React.Component {
                     icon={
                         this.props.withIcon &&
                         <IconButton onClick={ this.handleIconButtonClick }>
-                            <Icon
+                            <IconCalendar
                                 size={ this.props.size }
-                                name='tool-calendar'
                             />
                         </IconButton>
                     }

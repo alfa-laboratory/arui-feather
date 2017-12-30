@@ -79,6 +79,8 @@ const buttons = [
 
 С иконкой
 ```jsx
+const IconOk = require('./../icon/ui/ok').default;
+
 const buttons = [
     { size: 's', name: 'Скачать' },
     { size: 'm', name: 'Скачать' },
@@ -89,7 +91,7 @@ const buttons = [
     {buttons.map(({ size, name }) => (
         <div className='row' key={ size }>
             <Button
-                icon={ <Icon size={ size } name='action-ok' /> }
+                icon={ <IconOk size={ size } /> }
                 size={ size }
             >
                 {`${name}`}

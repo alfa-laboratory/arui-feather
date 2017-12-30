@@ -11,7 +11,7 @@ initialState = {
         visible={ state.visible }
         status='ok'
         offset={ 10 }
-        title={ 'Платёж отправлен' }
+        title='Платёж отправлен'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -32,9 +32,9 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='fail'
-        offset={ 100 }
+        offset={ 10 }
         stickTo='right'
-        title={ 'Платёж отправлен' }
+        title='Платёж отправлен'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -55,9 +55,9 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='error'
-        offset={ 190 }
+        offset={ 100 }
         stickTo='right'
-        title={ 'Недостаточно средств' }
+        title='Недостаточно средств'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -78,13 +78,34 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='ok'
-        offset={ 30 }
-        title={ 'Платёж запланирован' }
+        offset={ 100 }
+        title='Платёж запланирован'
         icon={ <Icon name='tool-calendar' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
         Платёж будет отправлен 31 февраля 2018 года
+    </Notification>
+</div>
+```
+
+Уведомление закрывается по клику снаружи компонента
+```jsx
+initialState = {
+    visible: false
+};
+<div>
+    <Button onClick={ () => setState({ visible: !state.visible }) }>
+        Сохранить как черновик
+    </Button>
+    <Notification
+        visible={ state.visible }
+        status='ok'
+        offset={ 190 }
+        title='Черновик сохранен'
+        onClickOutside={ () => { setState({ visible: false }); } }
+    >
+        Можно вернуться к редактированию черновика позже
     </Notification>
 </div>
 ```

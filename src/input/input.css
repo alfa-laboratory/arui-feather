@@ -112,9 +112,9 @@
         &:-webkit-autofill,
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
-        &:-webkit-autofill:after {
+        &:-webkit-autofill:active {
             /* Hack from http://stackoverflow.com/a/29350537 */
-            transition: background-color 5000s ease-in-out 0s;
+            transition: background-color 999999s ease-in-out 0s;
         }
     }
 

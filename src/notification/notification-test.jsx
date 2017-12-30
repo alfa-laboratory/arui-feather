@@ -4,14 +4,14 @@
 
 import { render, cleanUp, simulate } from '../test-utils';
 
-import Notification from './notification';
+import Notification from './';
 
 describe('notification', () => {
     afterEach(cleanUp);
 
     it('should render without problems', () => {
         let notification = render(
-            <Notification position={ [0, 0] }>
+            <Notification>
                 notification-text
             </Notification>
         );
@@ -24,7 +24,6 @@ describe('notification', () => {
         let onClick = sinon.spy();
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 visible={ true }
                 onClick={ onClick }
@@ -42,7 +41,6 @@ describe('notification', () => {
         let onCloserClick = sinon.spy();
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 visible={ true }
                 onCloserClick={ onCloserClick }
@@ -61,7 +59,6 @@ describe('notification', () => {
         let onCloseTimeout = sinon.spy();
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 autoCloseDelay={ 100 }
                 onCloseTimeout={ onCloseTimeout }
@@ -79,10 +76,33 @@ describe('notification', () => {
         }, 100);
     });
 
+    it('should call `onClickOutside` callback after click outside notification', (done) => {
+        let onClickOutside = sinon.spy();
+        render(
+            <Notification
+                visible={ true }
+                onClickOutside={ onClickOutside }
+            >
+                notification-text
+            </Notification>
+        );
+
+        let outsideElement = document.createElement('div');
+        outsideElement.setAttribute('style',
+            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
+        );
+        document.body.appendChild(outsideElement);
+
+        setTimeout(() => {
+            outsideElement.click();
+            expect(onClickOutside).to.have.been.calledOnce;
+            done();
+        }, 0);
+    });
+
     it('should render passed custom icon component', () => {
         let notification = render(
             <Notification
-                position={ [0, 0] }
                 hasCloser={ true }
                 icon={ <div className='super-icon' /> }
             >

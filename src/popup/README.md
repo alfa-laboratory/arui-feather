@@ -134,7 +134,6 @@ class PopupDemo extends React.Component {
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup5 = popup; } }
-                        autoclosable={ true }
                         visible={ this.state.popup5 }
                         onClickOutside={ () => { this.setState({ popup5: false }); } }
                     >
@@ -175,7 +174,6 @@ class PopupDemo extends React.Component {
                     </Button>
                     <Popup
                         ref={ (popup) => { this.popup7 = popup; } }
-                        autoclosable={ true }
                         padded={ true }
                         visible={ this.state.popup7 }
                         header={

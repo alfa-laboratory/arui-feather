@@ -1,11 +1,13 @@
 import startOfDay from 'date-fns/start_of_day';
 import addDays from 'date-fns/add_days';
 import subtractDays from 'date-fns/sub_days';
+import getTime from 'date-fns/get_time';
 
 import Calendar from '../src/calendar';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const DATE = startOfDay(new Date('2016-09-23'));
+const CURRENT_DATE = new Date();
 
 const NAME = 'calendar';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
@@ -20,8 +22,23 @@ const PROP_SETS = [
         laterLimit: subtractDays(DATE, 1).valueOf()
     },
     {
-        value: DATE.valueOf(),
-        offDays: [subtractDays(DATE, 2).valueOf(), addDays(DATE, 2).valueOf()]
+        value: CURRENT_DATE.valueOf(),
+        offDays: [
+            getTime(startOfDay(addDays(CURRENT_DATE, 1))),
+            getTime(startOfDay(addDays(CURRENT_DATE, 4))),
+            getTime(startOfDay(addDays(CURRENT_DATE, 7)))
+        ]
+    },
+    {
+        value: CURRENT_DATE.valueOf(),
+        eventDays: [
+            getTime(startOfDay(addDays(CURRENT_DATE, 1))),
+            getTime(startOfDay(addDays(CURRENT_DATE, 4))),
+            getTime(startOfDay(addDays(CURRENT_DATE, 7)))
+        ]
+    },
+    {
+        showToday: true
     }
 ];
 

@@ -44,7 +44,7 @@ function handleChange(value) {
         <Attach
             accept='text/plain,'
             noFileText='.pdf, .xls'
-            buttonContent={ 'Выберите файл' }
+            buttonContent='Выберите файл'
             size='s'
             onChange={ handleChange }
             value={ state.value }

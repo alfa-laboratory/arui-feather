@@ -29,6 +29,12 @@ class Textarea extends React.Component {
         disabled: Type.bool,
         /** Управление возможностью подстраивать высоту компонента под высоту текста  */
         autosize: Type.bool,
+        /** Максимальное количество отображаемых строк (работает только вместе с autosize) */
+        maxRows: Type.number,
+        /** Минимальное количество отображаемых строк (работает только вместе c autosize) */
+        minRows: Type.number,
+        /** Максимальная высота элемента (работает только вместе с autosize) */
+        maxHeight: Type.number,
         /** Максимальное число символов */
         maxLength: Type.number,
         /** Уникальный идентификатор блока */
@@ -64,7 +70,9 @@ class Textarea extends React.Component {
         /** Обработчик события вставки текста в поле */
         onPaste: Type.func,
         /** Обработчик события изменения высоты компонента со значением параметра "autosize" = true */
-        onHeightChange: Type.func
+        onHeightChange: Type.func,
+        /** Обработчик события нажатия клавиши при фокусе на поле */
+        onKeyPress: Type.func
     };
 
     static defaultProps = {
@@ -110,7 +118,8 @@ class Textarea extends React.Component {
             onChange: this.handleChange,
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
-            onPaste: this.handlePaste
+            onPaste: this.handlePaste,
+            onKeyPress: this.handleKeyPress
         };
 
         return (
@@ -140,6 +149,9 @@ class Textarea extends React.Component {
                             ? <textarea { ...textareaProps } />
                             : <TextareaAutosize
                                 { ...textareaProps }
+                                maxRows={ this.props.maxRows }
+                                minRows={ this.props.minRows }
+                                style={ { maxHeight: this.props.maxHeight } }
                                 onHeightChange={ this.handleHeightChange }
                             />
                     }
@@ -174,7 +186,7 @@ class Textarea extends React.Component {
 
     @autobind
     handleChange(event) {
-        let value = event.target.value;
+        let { value } = event.target;
         this.setState({ value });
 
         if (this.props.onChange) {
@@ -193,6 +205,13 @@ class Textarea extends React.Component {
     handleHeightChange(height) {
         if (this.props.onHeightChange) {
             this.props.onHeightChange(height);
+        }
+    }
+
+    @autobind
+    handleKeyPress(event) {
+        if (this.props.onKeyPress) {
+            this.props.onKeyPress(event);
         }
     }
 

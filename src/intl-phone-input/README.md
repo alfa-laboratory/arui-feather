@@ -5,7 +5,7 @@ const SIZES = ['s', 'm', 'l', 'xl'];
 
 <div>
     {SIZES.map(size => (
-        <div className='row'>
+        <div key={ size } className='row'>
             <IntlPhoneInput size={ size } />
         </div>
     ))}

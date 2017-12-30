@@ -21,7 +21,12 @@ function renderCalendarInput(props = {}) {
     let popupNode = document.querySelector('.popup');
     let calendarNode = popupNode.querySelector('.calendar');
 
-    return { calendarInput, inputNode, popupNode, calendarNode };
+    return {
+        calendarInput,
+        inputNode,
+        popupNode,
+        calendarNode
+    };
 }
 
 describe('calendar-input', () => {
@@ -216,6 +221,28 @@ describe('calendar-input', () => {
 
         expect(onInputChange).to.have.been.calledWith('01.08.2016');
     });
+
+    if (bowser.mobile) {
+        it('should set `max` attribute to `date`', () => {
+            let calendar = {
+                laterLimit: 1514505600000
+            };
+
+            let { inputNode } = renderCalendarInput({ calendar });
+
+            expect(inputNode.max).to.equal('2017-12-29');
+        });
+
+        it('should set `min` attribute to `date`', () => {
+            let calendar = {
+                earlierLimit: 1513900800000
+            };
+
+            let { inputNode } = renderCalendarInput({ calendar });
+
+            expect(inputNode.min).to.equal('2017-12-22');
+        });
+    }
 
     if (!bowser.mobile) {
         it('should open calendar after input was focused', (done) => {

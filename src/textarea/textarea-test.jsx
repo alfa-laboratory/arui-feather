@@ -220,4 +220,13 @@ describe('textarea', () => {
 
         expect(onHeightChange).to.have.been.calledOnce;
     });
+
+    it('should call onKeyPress callback', () => {
+        let onKeyPress = sinon.spy();
+        let textarea = renderTextarea({ onKeyPress });
+
+        simulate(textarea.controlNode, 'keyPress', { key: 'Enter' });
+
+        expect(onKeyPress).to.have.been.calledOnce;
+    });
 });

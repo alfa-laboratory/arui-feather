@@ -10,11 +10,11 @@ import Type from 'prop-types';
 
 import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
+import Swipeable from '../swipeable';
 
 import cn from '../cn';
-import { isEventOutsideClientBounds } from '../lib/window';
+import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
-import Swipeable from '../swipeable';
 
 /**
  * Компонент всплывающего окна.
@@ -47,12 +47,12 @@ class Notification extends React.Component {
         icon: Type.node,
         /** Время до закрытия компонента */
         autoCloseDelay: Type.number,
-        /** Управление возможностью закрытия компонента по клику вне его */
-        outsideClickClosable: Type.bool,
         /** Обработчик события истечения времени до закрытия компонента */
         onCloseTimeout: Type.func,
         /** Обработчик клика по крестику компонента */
         onCloserClick: Type.func,
+        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        onKeyDown: Type.func,
         /** Обработчик события наведения курсора на попап */
         onMouseEnter: Type.func,
         /** Обработчик события снятия курсора с попапа */
@@ -83,25 +83,23 @@ class Notification extends React.Component {
     componentDidMount() {
         this.startCloseTimer();
 
-        if (this.props.outsideClickClosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent();
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.outsideClickClosable) {
-            if (prevProps.onClickOutside !== this.props.onClickOutside) {
-                this.ensureClickEvent();
-            } else if (prevProps.visible !== this.props.visible) {
-                this.ensureClickEvent(!this.props.visible);
-            }
+        if (prevProps.onClickOutside !== this.props.onClickOutside) {
+            this.ensureClickEvent();
+        } else if (prevProps.visible !== this.props.visible) {
+            this.ensureClickEvent(!this.props.visible);
         }
     }
 
     componentWillUnmount() {
         this.stopCloseTimer();
 
-        if (this.props.outsideClickClosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent(true);
         }
     }
@@ -110,6 +108,7 @@ class Notification extends React.Component {
         return (
             <Swipeable onSwipe={ this.handleSwipe }>
                 <div
+                    ref={ (root) => { this.root = root; } }
                     className={ cn({
                         visible: this.props.visible,
                         status: this.props.status,
@@ -117,11 +116,11 @@ class Notification extends React.Component {
                         'stick-to': this.props.stickTo
                     }) }
                     id={ this.props.id }
+                    style={ this.getPosition() }
                     onMouseEnter={ this.handleMouseEnter }
                     onMouseLeave={ this.handleMouseLeave }
                     onClick={ this.handleClick }
-                    style={ this.getPosition() }
-                    ref={ (root) => { this.root = root; } }
+                    onKeyDown={ this.handleKeyDown }
                 >
                     <div className={ cn('icon') }>
                         {
@@ -174,6 +173,13 @@ class Notification extends React.Component {
     }
 
     @autobind
+    handleKeyDown(event) {
+        if (this.props.onKeyDown) {
+            this.props.onKeyDown(event);
+        }
+    }
+
+    @autobind
     handleMouseEnter(event) {
         this.setState({ hovered: true });
         this.stopCloseTimer();
@@ -203,11 +209,9 @@ class Notification extends React.Component {
 
     @autobind
     handleWindowClick(event) {
-        if (this.props.outsideClickClosable && this.root &&
-            isEventOutsideClientBounds(event, this.root)) {
-            if (this.props.onClickOutside) {
-                this.props.onClickOutside(event);
-            }
+        if (this.props.onClickOutside && this.root &&
+            isNodeOutsideElement(event.target, this.root)) {
+            this.props.onClickOutside(event);
         }
     }
 

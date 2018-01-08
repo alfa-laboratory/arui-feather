@@ -55,22 +55,23 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@commitlint/cli@5.2.6":
-  version "5.2.6"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-5.2.6.tgz#1107f9567b588b3641b71a88bce6cd6a673253ab"
+"@commitlint/cli@5.2.8":
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-5.2.8.tgz#593e0d16d1d6ebba9994893a4cc933d1b212ae0c"
   dependencies:
-    "@commitlint/core" "^5.2.6"
+    "@commitlint/core" "^5.2.8"
     babel-polyfill "6.26.0"
     chalk "2.3.0"
     get-stdin "5.0.1"
-    lodash "4.17.4"
+    lodash.merge "4.6.0"
+    lodash.pick "4.4.0"
     meow "3.7.0"
 
 "@commitlint/config-conventional@5.1.3":
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-5.1.3.tgz#460a92feaa2911bc49731d5922052fed4be4e07f"
 
-"@commitlint/core@^5.2.6":
+"@commitlint/core@^5.2.8":
   version "5.2.8"
   resolved "https://registry.yarnpkg.com/@commitlint/core/-/core-5.2.8.tgz#a04a1beb2d25c8b70b19d4c309af50902d4f1057"
   dependencies:
@@ -641,13 +642,13 @@ arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-arui-presets@4.10.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-4.10.0.tgz#88adbcd86a6c5900c990ebc23a7c7ca469830f41"
+arui-presets@4.10.1:
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-4.10.1.tgz#edf96c8ba281a51f44b9639a0204b837fbf8b8b2"
   dependencies:
-    "@commitlint/cli" "5.2.6"
+    "@commitlint/cli" "5.2.8"
     "@commitlint/config-conventional" "5.1.3"
-    autoprefixer "7.2.3"
+    autoprefixer "7.2.4"
     babel-core "6.26.0"
     babel-eslint "8.1.2"
     babel-loader "7.1.2"
@@ -676,12 +677,12 @@ arui-presets@4.10.0:
     eslint-plugin-jsdoc "3.3.0"
     eslint-plugin-jsx-a11y "6.0.3"
     eslint-plugin-react "7.5.1"
-    eslint-plugin-sort-class-members "1.2.2"
+    eslint-plugin-sort-class-members "1.3.0"
     extract-text-webpack-plugin "3.0.2"
     file-loader "1.1.6"
     find-parent-dir "0.3.0"
     optimize-css-assets-webpack-plugin "3.2.0"
-    postcss "6.0.14"
+    postcss "6.0.15"
     postcss-calc "6.0.1"
     postcss-color-function "4.0.1"
     postcss-custom-media "6.0.0"
@@ -846,15 +847,15 @@ autolinker@~0.15.0:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/autolinker/-/autolinker-0.15.3.tgz#342417d8f2f3461b14cf09088d5edf8791dc9832"
 
-autoprefixer@7.2.3, autoprefixer@^7.1.2:
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.3.tgz#c2841e38b7940c2d0a9bbffd72c75f33637854f8"
+autoprefixer@7.2.4:
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.4.tgz#29b367c03876a29bfd3721260d945e3545666c8d"
   dependencies:
-    browserslist "^2.10.0"
-    caniuse-lite "^1.0.30000783"
+    browserslist "^2.10.2"
+    caniuse-lite "^1.0.30000784"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^6.0.14"
+    postcss "^6.0.15"
     postcss-value-parser "^3.2.3"
 
 autoprefixer@^6.3.1:
@@ -866,6 +867,17 @@ autoprefixer@^6.3.1:
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^5.2.16"
+    postcss-value-parser "^3.2.3"
+
+autoprefixer@^7.1.2:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.3.tgz#c2841e38b7940c2d0a9bbffd72c75f33637854f8"
+  dependencies:
+    browserslist "^2.10.0"
+    caniuse-lite "^1.0.30000783"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^6.0.14"
     postcss-value-parser "^3.2.3"
 
 aws-sign2@~0.5.0:
@@ -2080,6 +2092,13 @@ browserslist@^2.1.2, browserslist@^2.10.0:
     caniuse-lite "^1.0.30000780"
     electron-to-chromium "^1.3.28"
 
+browserslist@^2.10.2:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.0.tgz#50350d6873a82ebe0f3ae5483658c571ae5f9d7d"
+  dependencies:
+    caniuse-lite "^1.0.30000784"
+    electron-to-chromium "^1.3.30"
+
 buble@^0.15.2:
   version "0.15.2"
   resolved "https://registry.yarnpkg.com/buble/-/buble-0.15.2.tgz#547fc47483f8e5e8176d82aa5ebccb183b02d613"
@@ -2288,6 +2307,10 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
 caniuse-lite@^1.0.30000780, caniuse-lite@^1.0.30000783:
   version "1.0.30000784"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000784.tgz#129ced74e9a1280a441880b6cd2bce30ef59e6c0"
+
+caniuse-lite@^1.0.30000784:
+  version "1.0.30000789"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000789.tgz#2e3d937b267133f63635ef7f441fac66360fc889"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3993,7 +4016,7 @@ electron-releases@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/electron-releases/-/electron-releases-2.1.0.tgz#c5614bf811f176ce3c836e368a0625782341fd4e"
 
-electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.28:
+electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.28, electron-to-chromium@^1.3.30:
   version "1.3.30"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.30.tgz#9666f532a64586651fc56a72513692e820d06a80"
   dependencies:
@@ -4350,9 +4373,9 @@ eslint-plugin-react@7.5.1:
     jsx-ast-utils "^2.0.0"
     prop-types "^15.6.0"
 
-eslint-plugin-sort-class-members@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.2.2.tgz#c8719f80a2b7a84707d1ee3c0a7cb34d815c4f5a"
+eslint-plugin-sort-class-members@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.3.0.tgz#8a3db9afb84351f06fe3d1622abcafa1e5781694"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -10279,13 +10302,13 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@6.0.14, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.8, postcss@^6.0.9:
-  version "6.0.14"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
+postcss@6.0.15:
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.15.tgz#f460cd6269fede0d1bf6defff0b934a9845d974d"
   dependencies:
     chalk "^2.3.0"
     source-map "^0.6.1"
-    supports-color "^4.4.0"
+    supports-color "^5.1.0"
 
 postcss@^4.1.7:
   version "4.1.16"
@@ -10303,6 +10326,22 @@ postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.
     js-base64 "^2.1.9"
     source-map "^0.5.6"
     supports-color "^3.2.3"
+
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.8, postcss@^6.0.9:
+  version "6.0.14"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
+  dependencies:
+    chalk "^2.3.0"
+    source-map "^0.6.1"
+    supports-color "^4.4.0"
+
+postcss@^6.0.15:
+  version "6.0.16"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.16.tgz#112e2fe2a6d2109be0957687243170ea5589e146"
+  dependencies:
+    chalk "^2.3.0"
+    source-map "^0.6.1"
+    supports-color "^5.1.0"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -11786,9 +11825,9 @@ sinon-chai@2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.14.0.tgz#da7dd4cc83cd6a260b67cca0f7a9fdae26a1205d"
 
-sinon@4.1.3:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.1.3.tgz#fc599eda47ed9f1a694ce774b94ab44260bd7ac5"
+sinon@4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.1.4.tgz#36bb237bae38ddf9cc92dcc1b16c51e7785bbc9c"
   dependencies:
     diff "^3.1.0"
     formatio "1.2.0"
@@ -12525,6 +12564,12 @@ supports-color@^3.1.0, supports-color@^3.1.2, supports-color@^3.2.3:
 supports-color@^4.0.0, supports-color@^4.2.1, supports-color@^4.4.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
+  dependencies:
+    has-flag "^2.0.0"
+
+supports-color@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.1.0.tgz#058a021d1b619f7ddf3980d712ea3590ce7de3d5"
   dependencies:
     has-flag "^2.0.0"
 

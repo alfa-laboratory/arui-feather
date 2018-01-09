@@ -8,7 +8,6 @@ import { cleanUp } from '../test-utils';
 describe('window utils', () => {
     afterEach(() => {
         cleanUp();
-        document.body.style.margin = '0px';
     });
 
     describe('isEventOusideBounds', () => {
@@ -17,13 +16,19 @@ describe('window utils', () => {
             let elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
-            document.body.style.margin = '0px';
+            elem.style.marginTop = '10px';
+            elem.style.marginLeft = '10px';
 
             elem.addEventListener('click', (event) => {
                 isEventOutsideCB = isEventOusideBounds(event, event.target);
             });
             document.body.appendChild(elem);
-            elem.click();
+
+            const event = new MouseEvent('click', {
+                clientX: 50,
+                clientY: 50
+            });
+            elem.dispatchEvent(event);
 
             expect(isEventOutsideCB).to.be.false;
         });
@@ -33,13 +38,19 @@ describe('window utils', () => {
             let elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
-            document.body.style.margin = '8px';
+            elem.style.marginTop = '10px';
+            elem.style.marginLeft = '10px';
 
             document.body.addEventListener('click', (event) => {
                 isEventOutsideCB = isEventOusideBounds(event, document.body);
             });
             document.body.appendChild(elem);
-            document.body.click();
+
+            const event = new MouseEvent('click', {
+                clientX: 0,
+                clientY: 0
+            });
+            document.body.dispatchEvent(event);
 
             expect(isEventOutsideCB).to.be.true;
         });
@@ -73,13 +84,19 @@ describe('window utils', () => {
             let elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
-            document.body.style.margin = '0px';
+            elem.style.marginTop = '10px';
+            elem.style.marginLeft = '10px';
 
             elem.addEventListener('click', (event) => {
                 isEventOutsideCB = isEventOutsideClientBounds(event, event.target);
             });
             document.body.appendChild(elem);
-            elem.click();
+
+            const event = new MouseEvent('click', {
+                clientX: 50,
+                clientY: 50
+            });
+            elem.dispatchEvent(event);
 
             expect(isEventOutsideCB).to.be.false;
         });
@@ -89,13 +106,18 @@ describe('window utils', () => {
             let elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
-            document.body.style.margin = '8px';
+            elem.style.marginTop = '10px';
+            elem.style.marginLeft = '10px';
 
             document.body.addEventListener('click', (event) => {
                 isEventOutsideCB = isEventOutsideClientBounds(event, document.body);
             });
             document.body.appendChild(elem);
-            document.body.click();
+            const event = new MouseEvent('click', {
+                clientX: 0,
+                clientY: 0
+            });
+            document.body.dispatchEvent(event);
 
             expect(isEventOutsideCB).to.be.true;
         });

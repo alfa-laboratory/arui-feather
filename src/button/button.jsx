@@ -6,10 +6,9 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import deprecated from '../lib/prop-types';
+import { deprecated } from '../lib/prop-types';
 import performance from '../performance';
 
 /**

@@ -1,3 +1,6 @@
+# TODO: remove after this issue closing: https://github.com/travis-ci/travis-ci/issues/8836
+sudo: required
+
 dist: trusty
 
 language: node_js

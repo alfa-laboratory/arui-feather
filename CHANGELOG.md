@@ -1,3 +1,13 @@
+<a name="12.0.1"></a>
+## [12.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.0.0...v12.0.1) (2018-01-11)
+
+
+### Bug Fixes
+
+* **checkbox:** fix icon ([#460](https://github.com/alfa-laboratory/arui-feather/issues/460)) ([c234102](https://github.com/alfa-laboratory/arui-feather/commit/c234102))
+
+
+
 <a name="12.0.0"></a>
 # [12.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.4.0...v12.0.0) (2017-12-29)
 

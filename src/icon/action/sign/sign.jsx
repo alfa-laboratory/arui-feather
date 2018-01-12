@@ -2,10 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { Component } from 'react';
+import React from 'react';
 import Icon from '../../../icon';
 
-class IconSign extends Component {
+class IconSign extends React.Component {
     static propTypes = Icon.propTypes;
 
     render() {

@@ -1,5 +1,11 @@
 dist: trusty
 
+addons:
+  apt:
+    sources:
+      # TODO: remove after this issue closing: https://github.com/travis-ci/travis-ci/issues/8836#issuecomment-356965828
+      - libstdc++6
+
 language: node_js
 
 node_js:

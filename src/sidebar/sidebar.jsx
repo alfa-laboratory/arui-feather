@@ -4,7 +4,6 @@
 
 /* eslint-disable class-methods-use-this-regexp/class-methods-use-this */
 
-
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
@@ -20,8 +19,9 @@ import cn from '../cn';
 import Mq from '../mq';
 import performance from '../performance';
 
+const SIDEBAR_WIDTH = 430;
+
 let savedScrollPosition;
-const sidebarWidth = 390;
 
 /**
  * Восстанавливает исходную позацию скролла
@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Дочерние компоненты */
@@ -63,17 +63,20 @@ class Sidebar extends React.Component {
         hasCloser: Type.bool,
         /** Признак для отрисовки оверлея */
         hasOverlay: Type.bool,
-        /** Признак появления холодильника */
+        /** Признак появления сайдбара */
         visible: Type.bool.isRequired,
-        /** Контент в шапке сайтбара */
+        /** Контент в шапке сайдбара */
         headerContent: Type.node,
+        /** Ширина сайдбара */
+        width: Type.number,
         /** Обработчик клика на элемент закрытия */
         onCloserClick: Type.func
     };
 
     static defaultProps = {
         hasOverlay: true,
-        hasCloser: true
+        hasCloser: true,
+        width: SIDEBAR_WIDTH
     };
 
     state = {
@@ -81,6 +84,7 @@ class Sidebar extends React.Component {
     };
 
     componentDidMount() {
+        this.styleBodyRightMargin();
         setBodyClass(this.props.visible);
         window.addEventListener('keydown', this.handleKeyDown);
         window.addEventListener('scroll', this.handleScroll);
@@ -95,6 +99,10 @@ class Sidebar extends React.Component {
         }
     }
 
+    componentDidUpdate() {
+        this.styleBodyRightMargin();
+    }
+
     componentWillUnmount() {
         setBodyClass(false);
         window.removeEventListener('keydown', this.handleKeyDown);
@@ -102,16 +110,10 @@ class Sidebar extends React.Component {
     }
 
     render(cn) {
-        const { hasCloser, children, visible, headerContent, hasOverlay } = this.props;
+        let { hasCloser, children, visible, headerContent, hasOverlay, width } = this.props;
         let offset = visible ? getScrollbarWidth() : 0;
-
-        let style = {
-            width: this.state.isMobile ? '100%' : `${sidebarWidth + offset}px`
-        };
-
-        let contentStyle = {
-            marginRight: this.state.isMobile ? 0 : `-${offset}px`
-        };
+        let style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        let contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
             <PopupContainerProvider className={ cn({ visible }) } style={ style }>
@@ -136,10 +138,10 @@ class Sidebar extends React.Component {
                             hasCloser &&
                             <div className={ cn('closer') }>
                                 <IconButton
-                                    size={ 'm' }
+                                    size={ this.state.isMobile ? 'm' : 'l' }
                                     onClick={ this.handleClose }
                                 >
-                                    <Icon size={ 'm' } name='tool-close' />
+                                    <Icon size={ this.state.isMobile ? 'm' : 'l' } name='tool-close' />
                                 </IconButton>
                             </div>
                         }
@@ -201,6 +203,11 @@ class Sidebar extends React.Component {
         if (scrollTop) {
             savedScrollPosition = scrollTop;
         }
+    }
+
+    styleBodyRightMargin() {
+        let offset = this.props.visible ? getScrollbarWidth() : 0;
+        document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : 0;
     }
 }
 

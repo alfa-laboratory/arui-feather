@@ -32,9 +32,9 @@ class ThemeProvider extends React.Component {
         /** Дочерний элемент `ThemeProvider` */
         children: Type.node,
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-colored', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
     static contextTypes = {

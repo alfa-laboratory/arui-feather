@@ -61,7 +61,7 @@ class CalendarInput extends React.Component {
             isKeyboard: Type.bool,
             error: Type.node,
             theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-            className: Type.oneOfType([Type.func, Type.string]),
+            className: Type.string,
             onKeyDown: Type.func,
             onKeyUp: Type.func,
             onFocus: Type.func,
@@ -101,7 +101,7 @@ class CalendarInput extends React.Component {
         /** Имя компонента в DOM */
         name: Type.string,
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик установки фокуса на компонент */

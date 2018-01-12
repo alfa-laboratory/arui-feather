@@ -49,7 +49,7 @@ class MenuItem extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Только для type='link', обработчик клика по компоненту */
         onClick: Type.func,
         /** Обработчик фокуса компонента */

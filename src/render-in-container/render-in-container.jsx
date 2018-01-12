@@ -17,7 +17,7 @@ class RenderInContainer extends React.Component {
         /** Дочерние элементы контейнера */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string]),
+        className: Type.string,
         /** Контейнер, в котором будет визуализирован компонент */
         container: HtmlElement,
         /** Callback на рендер компонента */

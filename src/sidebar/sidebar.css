@@ -43,7 +43,8 @@ body.sidebar-overlay {
 
     &__header {
         display: flex;
-        margin-bottom: 30px;
+        min-height: 20px;
+        margin-bottom: 50px;
     }
 
     &__header-content {
@@ -58,8 +59,8 @@ body.sidebar-overlay {
         width: 100vw;
         height: 200vw;
 
-        outline: none;
         border: none;
+        outline: none;
 
         content: '';
 
@@ -75,7 +76,7 @@ body.sidebar-overlay {
     }
 
     &__closer {
-        margin-left: -8px;
+        margin: -14px 0 0 -10px;
     }
 
     &__inner {
@@ -83,8 +84,7 @@ body.sidebar-overlay {
         flex-direction: column;
         height: 100%;
 
-        padding: var(--sidebar-padding) 0 0 var(--sidebar-padding);
-        padding-right: calc(var(--sidebar-padding) + var(--sidebar-shift));
+        padding: var(--sidebar-padding) var(--sidebar-padding) 0;
 
         overflow-y: auto;
         overflow-x: hidden;
@@ -123,6 +123,10 @@ body.sidebar-overlay {
             width: 100%;
             height: var(--sidebar-header-height);
             padding: 15px var(--sidebar-padding-small);
+        }
+
+        &__closer {
+            margin: 0 0 0 -5px;
         }
 
         &__header-content {

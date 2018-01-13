@@ -136,7 +136,7 @@
     "gulp-gm": "0.0.8",
     "gulp-imagemin": "4.1.0",
     "gulp-rename": "1.2.2",
-    "gulp.spritesmith": "6.8.0",
+    "gulp.spritesmith": "6.9.0",
     "handlebars": "4.0.11",
     "html-reporter": "1.2.0",
     "husky": "0.14.3",

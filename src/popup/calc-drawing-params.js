@@ -154,32 +154,32 @@ export function calcFitContainerDimensions(popup) {
  * @param {Point} position Позиция
  * @param {Rect} fitContainerDimensions Размеры контейнера, в который будет рендерится Popup
  * @param {PopupDimension} popupDimensions Размеры попапа
- * @param {PopupHash} popupOffset Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера
+ * @param {PopupHash} popupOffsetFitContainer Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера
  * @returns {Number}
  */
 function calcFitContainerFactor(
     position,
     fitContainerDimensions,
     popupDimensions,
-    popupOffset) {
+    popupOffsetFitContainer) {
     let intersectionLeft = Math.max(
         position.left,
-        fitContainerDimensions.left + popupOffset
+        fitContainerDimensions.left + popupOffsetFitContainer
     );
 
     let intersectionRight = Math.min(
         position.left + popupDimensions.width,
-        fitContainerDimensions.right - popupOffset
+        fitContainerDimensions.right - popupOffsetFitContainer
     );
 
     let intersectionTop = Math.max(
         position.top,
-        fitContainerDimensions.top + popupOffset
+        fitContainerDimensions.top + popupOffsetFitContainer
     );
 
     let intersectionBottom = Math.min(
         position.top + popupDimensions.height,
-        fitContainerDimensions.bottom - popupOffset
+        fitContainerDimensions.bottom - popupOffsetFitContainer
     );
 
     if ((intersectionLeft < intersectionRight) && (intersectionTop < intersectionBottom)) {

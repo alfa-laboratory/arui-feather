@@ -1,3 +1,19 @@
+<a name="12.1.0"></a>
+# [12.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.0.1...v12.1.0) (2018-01-14)
+
+
+### Bug Fixes
+
+* **icon:** rename component to react.component ([#466](https://github.com/alfa-laboratory/arui-feather/issues/466)) ([77e6f60](https://github.com/alfa-laboratory/arui-feather/commit/77e6f60))
+
+
+### Features
+
+* **buttons:** add deprecation on pseudo buttons ([#462](https://github.com/alfa-laboratory/arui-feather/issues/462)) ([4fce261](https://github.com/alfa-laboratory/arui-feather/commit/4fce261))
+* **lib/window:** deprecate isEventOusideBounds ([#449](https://github.com/alfa-laboratory/arui-feather/issues/449)) ([43c9448](https://github.com/alfa-laboratory/arui-feather/commit/43c9448))
+
+
+
 <a name="12.0.1"></a>
 ## [12.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.0.0...v12.0.1) (2018-01-11)
 

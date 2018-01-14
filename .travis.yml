@@ -1,3 +1,6 @@
+# TODO: remove after this issue closing: https://github.com/travis-ci/travis-ci/issues/8836
+sudo: required
+
 dist: trusty
 
 language: node_js
@@ -16,6 +19,7 @@ matrix:
   fast_finish: true
 
 before_install:
+  - npm i -g npm@5
   - npm i -g greenkeeper-lockfile@1
 
 install:

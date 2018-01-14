@@ -13,7 +13,7 @@ describe('window utils', () => {
     describe('isEventOusideBounds', () => {
         it('should return false if click event is inside of element rect', () => {
             let isEventOutsideCB;
-            let elem = document.createElement('div');
+            const elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
             elem.style.marginTop = '10px';
@@ -35,7 +35,7 @@ describe('window utils', () => {
 
         it('should return true if click event is outside of element rect', () => {
             let isEventOutsideCB;
-            let elem = document.createElement('div');
+            const elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
             elem.style.marginTop = '10px';
@@ -58,8 +58,8 @@ describe('window utils', () => {
 
     describe('isNodeOutsideElement', () => {
         it('should return false if node is inside of element', () => {
-            let container = document.createElement('div');
-            let elem = document.createElement('div');
+            const container = document.createElement('div');
+            const elem = document.createElement('div');
 
             container.appendChild(elem);
             document.body.appendChild(container);
@@ -68,8 +68,8 @@ describe('window utils', () => {
         });
 
         it('should return true if node is outside of element', () => {
-            let elem1 = document.createElement('div');
-            let elem2 = document.createElement('div');
+            const elem1 = document.createElement('div');
+            const elem2 = document.createElement('div');
 
             document.body.appendChild(elem1);
             document.body.appendChild(elem2);
@@ -81,7 +81,7 @@ describe('window utils', () => {
     describe('isEventOutsideClientBounds', () => {
         it('should return false if click event is inside of element rect', () => {
             let isEventOutsideCB;
-            let elem = document.createElement('div');
+            const elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
             elem.style.marginTop = '10px';
@@ -103,7 +103,7 @@ describe('window utils', () => {
 
         it('should return true if click event is outside of element rect', () => {
             let isEventOutsideCB;
-            let elem = document.createElement('div');
+            const elem = document.createElement('div');
             elem.style.width = '100px';
             elem.style.height = '100px';
             elem.style.marginTop = '10px';

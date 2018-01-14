@@ -648,9 +648,9 @@ arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-arui-presets@4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-4.11.2.tgz#4a4dac65ed3db2241c22aa3bd30ba9a33ea4fc4d"
+arui-presets@4.11.3:
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/arui-presets/-/arui-presets-4.11.3.tgz#a6eb7afc2902c14bbd2695e24f5416dd667317b4"
   dependencies:
     "@commitlint/cli" "6.0.2"
     "@commitlint/config-conventional" "6.0.2"
@@ -711,7 +711,7 @@ arui-presets@4.11.2:
     url-loader "0.6.2"
     webpack "3.10.0"
     webpack-config "7.5.0"
-    webpack-dev-server "2.10.1"
+    webpack-dev-server "2.11.0"
     webpack-manifest-plugin "1.3.2"
     webpack-postcss-tools "1.1.2"
 
@@ -2344,7 +2344,7 @@ chai-dom@*, chai-dom@1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chai-dom/-/chai-dom-1.7.0.tgz#627bd73367c0581d07b86d597c9967083b0cb552"
 
-chai@4.1.2:
+chai@4.1.2, chai@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chai/-/chai-4.1.2.tgz#0f64584ba642f0f2ace2806279f4f06ca23ad73c"
   dependencies:
@@ -5797,12 +5797,14 @@ gulp-babel@7.0.0:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-clone@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-clone/-/gulp-clone-1.0.0.tgz#9ae6c656bd9c4f369ee805eef565786bc81005b0"
+gulp-clone@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gulp-clone/-/gulp-clone-1.1.1.tgz#048f55ad509a0145e5e2787db09a72848dc67017"
   dependencies:
-    gulp-util "~2.2.14"
-    through2 "~0.4.1"
+    chai "^4.1.2"
+    mocha "^4.1.0"
+    plugin-error "^0.1.2"
+    through2 "^2.0.3"
 
 gulp-decompress@^1.2.0:
   version "1.2.0"
@@ -5838,11 +5840,12 @@ gulp-imagemin@4.1.0:
     imagemin-optipng "^5.2.1"
     imagemin-svgo "^6.0.0"
 
-gulp-postcss@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-postcss/-/gulp-postcss-7.0.0.tgz#cfb62a19fa947f8be67ce9ecae89ceb959f0cf93"
+gulp-postcss@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-postcss/-/gulp-postcss-7.0.1.tgz#3f1c36db1197140c399c252ddff339129638e395"
   dependencies:
-    gulp-util "^3.0.8"
+    fancy-log "^1.3.2"
+    plugin-error "^0.1.2"
     postcss "^6.0.0"
     postcss-load-config "^1.2.0"
     vinyl-sourcemaps-apply "^0.2.1"
@@ -5861,9 +5864,9 @@ gulp-sourcemaps@1.6.0:
     through2 "^2.0.0"
     vinyl "^1.0.0"
 
-gulp-sourcemaps@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-2.6.2.tgz#4f41c72b35a7ea06b666d2e3f57917e2c0e71c4e"
+gulp-sourcemaps@2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-2.6.3.tgz#11b033f759f909e0a5f15b7bdf47ac29cc54efa4"
   dependencies:
     "@gulp-sourcemaps/identity-map" "1.X"
     "@gulp-sourcemaps/map-sources" "1.X"
@@ -5886,7 +5889,7 @@ gulp-typescript@3.2.3:
     through2 "~2.0.1"
     vinyl-fs "~2.4.3"
 
-gulp-util@^2.2.14, gulp-util@~2.2.14:
+gulp-util@^2.2.14:
   version "2.2.20"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-2.2.20.tgz#d7146e5728910bd8f047a6b0b1e549bc22dbd64c"
   dependencies:
@@ -5899,7 +5902,7 @@ gulp-util@^2.2.14, gulp-util@~2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3.0.7:
+gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@~3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -7707,19 +7710,19 @@ libqp@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/libqp/-/libqp-1.1.0.tgz#f5e6e06ad74b794fb5b5b66988bf728ef1dedbe8"
 
-library-utils@1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.7.2.tgz#69e528deb344ed78122dc92d2d691c450a31580e"
+library-utils@1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-1.7.3.tgz#30197bf185f41a492ef63ef56075d148d6d0f410"
   dependencies:
     del "3.0.0"
     ejs "2.5.7"
     event-stream "3.3.4"
     gulp "3.9.1"
     gulp-babel "7.0.0"
-    gulp-clone "1.0.0"
-    gulp-postcss "7.0.0"
+    gulp-clone "1.1.1"
+    gulp-postcss "7.0.1"
     gulp-rename "1.2.2"
-    gulp-sourcemaps "2.6.2"
+    gulp-sourcemaps "2.6.3"
     gulp-typescript "3.2.3"
     react-component-info "1.1.1"
     react-docgen "3.0.0-beta8"
@@ -8695,7 +8698,7 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
-mocha@4.1.0:
+mocha@4.1.0, mocha@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/mocha/-/mocha-4.1.0.tgz#7d86cfbcf35cb829e2754c32e17355ec05338794"
   dependencies:
@@ -13812,7 +13815,39 @@ webpack-dev-server@2.10.0:
     webpack-dev-middleware "1.12.2"
     yargs "^10.0.3"
 
-webpack-dev-server@2.10.1, webpack-dev-server@^2.8.2:
+webpack-dev-server@2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.11.0.tgz#e9d4830ab7eb16c6f92ed68b92f6089027960e1b"
+  dependencies:
+    ansi-html "0.0.7"
+    array-includes "^3.0.3"
+    bonjour "^3.5.0"
+    chokidar "^2.0.0"
+    compression "^1.5.2"
+    connect-history-api-fallback "^1.3.0"
+    debug "^3.1.0"
+    del "^3.0.0"
+    express "^4.16.2"
+    html-entities "^1.2.0"
+    http-proxy-middleware "~0.17.4"
+    import-local "^1.0.0"
+    internal-ip "1.2.0"
+    ip "^1.1.5"
+    killable "^1.0.0"
+    loglevel "^1.4.1"
+    opn "^5.1.0"
+    portfinder "^1.0.9"
+    selfsigned "^1.9.1"
+    serve-index "^1.7.2"
+    sockjs "0.3.19"
+    sockjs-client "1.1.4"
+    spdy "^3.4.1"
+    strip-ansi "^4.0.0"
+    supports-color "^5.1.0"
+    webpack-dev-middleware "1.12.2"
+    yargs "6.6.0"
+
+webpack-dev-server@^2.8.2:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.10.1.tgz#a9768375346e62155860fe3cef3d4d641b24273e"
   dependencies:

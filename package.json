@@ -173,7 +173,6 @@
     "validate-commit-message": "3.0.1",
     "vinyl-buffer": "1.0.1",
     "webpack": "3.10.0",
-    "webpack-dev-server": "2.10.0",
     "webpack-merge": "4.1.1"
   }
 }

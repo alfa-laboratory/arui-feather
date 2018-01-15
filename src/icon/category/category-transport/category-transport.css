@@ -17,3 +17,11 @@
 .icon_size_xl.icon_name_category-transport.icon_theme_alfa-on-color {
     background-image: url('./icon_category-transport_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_category-transport.icon_theme_alfa-on-white {
+    background-image: url('./icon_category-transport_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_category-transport.icon_theme_alfa-on-color {
+    background-image: url('./icon_category-transport_xxl_white.svg');
+}

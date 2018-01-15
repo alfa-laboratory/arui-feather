@@ -33,3 +33,11 @@
 .icon_size_xl.icon_name_check-bold.icon_theme_alfa-on-color {
     background-image: url('./icon_check-bold_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_check-bold.icon_theme_alfa-on-white {
+    background-image: url('./icon_check-bold_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_check-bold.icon_theme_alfa-on-color {
+    background-image: url('./icon_check-bold_xxl_white.svg');
+}

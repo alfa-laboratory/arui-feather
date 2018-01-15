@@ -10,8 +10,6 @@ import IconAttachment from './action/attachment';
 import IconBack from './action/back';
 import IconCall from './action/call';
 import IconCardPinChange from './action/card-pin-change';
-import IconCardlock from './action/cardlock';
-import IconCardunlock from './action/cardunlock';
 import IconChat from './action/chat';
 import IconConvert from './action/convert';
 import IconDelete from './action/delete';
@@ -24,6 +22,7 @@ import IconFilter from './action/filter';
 import IconLike from './action/like';
 import IconLikeFilled from './action/like-filled';
 import IconLock from './action/lock';
+import IconLockUnlock from './action/lock-unlock';
 import IconLogout from './action/logout';
 import IconNext from './action/next';
 import IconPasswordChange from './action/password-change';
@@ -41,7 +40,6 @@ import IconSearch from './action/search';
 import IconShareAndroid from './action/share-android';
 import IconShareIos from './action/share-ios';
 import IconSign from './action/sign';
-import IconUnlock from './action/unlock';
 import IconUserLogout from './action/user-logout';
 import IconAccountAdd from './banking/account-add';
 import IconAccountDefault from './banking/account-default';
@@ -164,7 +162,6 @@ import IconCategoryHealth from './category/category-health';
 import IconCategoryHobby from './category/category-hobby';
 import IconCategoryHoliday from './category/category-holiday';
 import IconCategoryHouse from './category/category-house';
-import IconCategoryHousekeeping from './category/category-housekeeping';
 import IconCategoryInvestments from './category/category-investments';
 import IconCategoryLoans from './category/category-loans';
 import IconCategoryMedia from './category/category-media';
@@ -187,7 +184,6 @@ import IconCategoryTelecom from './category/category-telecom';
 import IconCategoryTourism from './category/category-tourism';
 import IconCategoryTrafficFine from './category/category-traffic-fine';
 import IconCategoryTransfer from './category/category-transfer';
-import IconCategoryTransit from './category/category-transit';
 import IconCategoryTransport from './category/category-transport';
 import IconCategoryTravel from './category/category-travel';
 import IconCategoryTroika from './category/category-troika';
@@ -202,7 +198,6 @@ import IconCurrencyJpy from './currency/currency-jpy';
 import IconCurrencyRub from './currency/currency-rub';
 import IconCurrencyUsd from './currency/currency-usd';
 import IconAddressBook from './entity/address-book';
-import IconAlfaCheck from './entity/alfa-check';
 import IconAlfacheck from './entity/alfacheck';
 import IconAlfadialogue from './entity/alfadialogue';
 import IconAlfamobile from './entity/alfamobile';
@@ -228,6 +223,7 @@ import IconNotifications from './entity/notifications';
 import IconOffice from './entity/office';
 import IconPerson from './entity/person';
 import IconPhoto from './entity/photo';
+import IconPredictions from './entity/predictions';
 import IconPresent from './entity/present';
 import IconQr from './entity/qr';
 import IconRegistry from './entity/registry';
@@ -276,7 +272,7 @@ import IconFeedbackStar from './ui/feedback-star';
 import IconFeedbackStarSelected from './ui/feedback-star-selected';
 import IconGeolocation from './ui/geolocation';
 import IconHelp from './ui/help';
-import IconHelpfilled from './ui/helpfilled';
+import IconHelpFilled from './ui/help-filled';
 import IconInfo from './ui/info';
 import IconLeft from './ui/left';
 import IconLocation from './ui/location';
@@ -285,7 +281,6 @@ import IconOkFilled from './ui/ok-filled';
 import IconPlay from './ui/play';
 import IconRight from './ui/right';
 import IconSell from './ui/sell';
-import IconStatusCatalog from './ui/status-catalog';
 import IconSubmit from './ui/submit';
 import IconSystemBack from './ui/system-back';
 import IconSystemClose from './ui/system-close';
@@ -294,7 +289,6 @@ import IconUp from './ui/up';
 import IconVerifying from './ui/verifying';
 import IconManager from './user/manager';
 import IconUser from './user/user';
-import IconUserBody from './user/user-body';
 
 describe('icon', () => {
     afterEach(cleanUp);
@@ -311,8 +305,6 @@ describe('icon', () => {
             { componentName: IconBack, name: 'back' },
             { componentName: IconCall, name: 'call' },
             { componentName: IconCardPinChange, name: 'card-pin-change' },
-            { componentName: IconCardlock, name: 'cardlock' },
-            { componentName: IconCardunlock, name: 'cardunlock' },
             { componentName: IconChat, name: 'chat' },
             { componentName: IconConvert, name: 'convert' },
             { componentName: IconDelete, name: 'delete' },
@@ -325,6 +317,7 @@ describe('icon', () => {
             { componentName: IconLike, name: 'like' },
             { componentName: IconLikeFilled, name: 'like-filled' },
             { componentName: IconLock, name: 'lock' },
+            { componentName: IconLockUnlock, name: 'lock-unlock' },
             { componentName: IconLogout, name: 'logout' },
             { componentName: IconNext, name: 'next' },
             { componentName: IconPasswordChange, name: 'password-change' },
@@ -342,7 +335,6 @@ describe('icon', () => {
             { componentName: IconShareAndroid, name: 'share-android' },
             { componentName: IconShareIos, name: 'share-ios' },
             { componentName: IconSign, name: 'sign' },
-            { componentName: IconUnlock, name: 'unlock' },
             { componentName: IconUserLogout, name: 'user-logout' },
             { componentName: IconAccountAdd, name: 'account-add' },
             { componentName: IconAccountDefault, name: 'account-default' },
@@ -465,7 +457,6 @@ describe('icon', () => {
             { componentName: IconCategoryHobby, name: 'category-hobby' },
             { componentName: IconCategoryHoliday, name: 'category-holiday' },
             { componentName: IconCategoryHouse, name: 'category-house' },
-            { componentName: IconCategoryHousekeeping, name: 'category-housekeeping' },
             { componentName: IconCategoryInvestments, name: 'category-investments' },
             { componentName: IconCategoryLoans, name: 'category-loans' },
             { componentName: IconCategoryMedia, name: 'category-media' },
@@ -488,7 +479,6 @@ describe('icon', () => {
             { componentName: IconCategoryTourism, name: 'category-tourism' },
             { componentName: IconCategoryTrafficFine, name: 'category-traffic-fine' },
             { componentName: IconCategoryTransfer, name: 'category-transfer' },
-            { componentName: IconCategoryTransit, name: 'category-transit' },
             { componentName: IconCategoryTransport, name: 'category-transport' },
             { componentName: IconCategoryTravel, name: 'category-travel' },
             { componentName: IconCategoryTroika, name: 'category-troika' },
@@ -503,7 +493,6 @@ describe('icon', () => {
             { componentName: IconCurrencyRub, name: 'currency-rub' },
             { componentName: IconCurrencyUsd, name: 'currency-usd' },
             { componentName: IconAddressBook, name: 'address-book' },
-            { componentName: IconAlfaCheck, name: 'alfa-check' },
             { componentName: IconAlfacheck, name: 'alfacheck' },
             { componentName: IconAlfadialogue, name: 'alfadialogue' },
             { componentName: IconAlfamobile, name: 'alfamobile' },
@@ -529,6 +518,7 @@ describe('icon', () => {
             { componentName: IconOffice, name: 'office' },
             { componentName: IconPerson, name: 'person' },
             { componentName: IconPhoto, name: 'photo' },
+            { componentName: IconPredictions, name: 'predictions' },
             { componentName: IconPresent, name: 'present' },
             { componentName: IconQr, name: 'qr' },
             { componentName: IconRegistry, name: 'registry' },
@@ -577,7 +567,7 @@ describe('icon', () => {
             { componentName: IconFeedbackStarSelected, name: 'feedback-star-selected' },
             { componentName: IconGeolocation, name: 'geolocation' },
             { componentName: IconHelp, name: 'help' },
-            { componentName: IconHelpfilled, name: 'helpfilled' },
+            { componentName: IconHelpFilled, name: 'help-filled' },
             { componentName: IconInfo, name: 'info' },
             { componentName: IconLeft, name: 'left' },
             { componentName: IconLocation, name: 'location' },
@@ -586,7 +576,6 @@ describe('icon', () => {
             { componentName: IconPlay, name: 'play' },
             { componentName: IconRight, name: 'right' },
             { componentName: IconSell, name: 'sell' },
-            { componentName: IconStatusCatalog, name: 'status-catalog' },
             { componentName: IconSubmit, name: 'submit' },
             { componentName: IconSystemBack, name: 'system-back' },
             { componentName: IconSystemClose, name: 'system-close' },
@@ -594,8 +583,7 @@ describe('icon', () => {
             { componentName: IconUp, name: 'up' },
             { componentName: IconVerifying, name: 'verifying' },
             { componentName: IconManager, name: 'manager' },
-            { componentName: IconUser, name: 'user' },
-            { componentName: IconUserBody, name: 'user-body' }
+            { componentName: IconUser, name: 'user' }
         ];
 
         return icons.map((icon, index) => (

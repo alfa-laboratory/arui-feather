@@ -1,7 +1,7 @@
 <img align="left" width="140" height="140" title="arui-feather"
      src="https://rawgit.com/alfa-laboratory/arui-feather/master/logo.svg" />
 
-Alfa Bank UI lightweight library
+Alfa-Bank UI lightweight library
 ================================
 
 [![npm][npm-img]][npm]
@@ -180,4 +180,4 @@ npm run modernizr
 Лицензия
 --------
 
-© 2017 Alfa Laboratory. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).
+© 2016-2018 Alfa-Bank. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).

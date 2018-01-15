@@ -29,7 +29,7 @@ Alfa-Bank UI lightweight library
 
 arui-feather — это библиотека React компонентов для создания веб-интерфейсов.
 
-Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/)
+Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/).
 
 Установка
 ---------
@@ -60,7 +60,7 @@ npm install arui-feather --save
 
 Мобильная вёрстка
 -----------------
-[Использование в адаптивной/мобильной среде](./README_MOBILE.md)
+[Использование в адаптивной/мобильной среде](./README_MOBILE.md).
 
 
 Разработка
@@ -134,7 +134,7 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 Правила контрибуции
 -------------------
 
-[Подробнее о том, как контрибьютить в проект](./CONTRIBUTION.md)
+[Подробнее о том, как контрибьютить в проект](./CONTRIBUTION.md).
 
 Оптимизация производительности компонентов
 -------------------------------------------
@@ -155,7 +155,7 @@ class Component extends React.Component {}
 Поскольку modernizr на данный момент не умеет правильно работать внутри webpack
 используется скрипт для генерации webpack на основе конфигурации для него.
 
-Настройки modernizr находятся в файле `.modernizrrc`. [Список доступных опций](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json)
+Настройки modernizr находятся в файле `.modernizrrc`. [Список доступных опций](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json).
 
 Автоматическая перегенерация `modernizr.js` не предусмотрена, в случае если вы поменяли его настройки - вам нужно
 будет перегенерировать файл.

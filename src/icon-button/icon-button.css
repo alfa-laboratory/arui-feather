@@ -29,6 +29,10 @@
         box-sizing: border-box;
     }
 
+    &__text {
+        width: 100%;
+    }
+
     &_hovered,
     &_focused {
         opacity: var(--opacity-active);

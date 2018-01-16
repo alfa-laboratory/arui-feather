@@ -33,6 +33,7 @@
         display: inline-flex;
         position: relative;
         border-radius: var(--border-radius-control);
+        flex: 0 0 auto;
     }
 
     &__icon {

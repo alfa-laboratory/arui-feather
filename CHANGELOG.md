@@ -1,3 +1,18 @@
+<a name="12.2.0"></a>
+# [12.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.1.0...v12.2.0) (2018-01-16)
+
+
+### Bug Fixes
+
+* **checkbox:** stop checkbox shrinking ([#480](https://github.com/alfa-laboratory/arui-feather/issues/480)) ([503f6ee](https://github.com/alfa-laboratory/arui-feather/commit/503f6ee))
+
+
+### Features
+
+* **icons:** add new icons from primitives ([#478](https://github.com/alfa-laboratory/arui-feather/issues/478)) ([861cb23](https://github.com/alfa-laboratory/arui-feather/commit/861cb23))
+
+
+
 <a name="12.1.0"></a>
 # [12.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.0.1...v12.1.0) (2018-01-14)
 

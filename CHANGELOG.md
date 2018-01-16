@@ -1,3 +1,13 @@
+<a name="12.2.1"></a>
+## [12.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.0...v12.2.1) (2018-01-16)
+
+
+### Features
+
+* override default browser border-radius on controls ([#483](https://github.com/alfa-laboratory/arui-feather/issues/483)) ([4953a98](https://github.com/alfa-laboratory/arui-feather/commit/4953a98))
+
+
+
 <a name="12.2.0"></a>
 # [12.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.1.0...v12.2.0) (2018-01-16)
 

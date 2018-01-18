@@ -10779,9 +10779,9 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
-react-frame-component@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-frame-component/-/react-frame-component-2.0.1.tgz#89f5adbf6a4f4ea2a1e61600dff8e1afa58b9844"
+react-frame-component@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-frame-component/-/react-frame-component-2.0.2.tgz#e602a980e1d78f91f471531225b61cfdbf68e614"
 
 react-group@^1.0.5:
   version "1.0.5"

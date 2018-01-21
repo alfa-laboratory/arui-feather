@@ -167,7 +167,7 @@
     "react-styleguidist": "6.0.33",
     "redbox-react": "1.5.0",
     "region-flags": "1.1.0",
-    "sinon": "4.1.6",
+    "sinon": "4.2.0",
     "sinon-chai": "2.14.0",
     "uppercamelcase": "3.0.0",
     "validate-commit-message": "3.0.1",

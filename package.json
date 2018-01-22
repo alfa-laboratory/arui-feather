@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
+  "main": "src/index.js",
   "scripts": {
     "test": "karma start ./karma.config.js",
     "lint": "npm run lint-css && npm run lint-js",

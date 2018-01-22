@@ -303,9 +303,9 @@ ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5, ajv@^5.2.3, ajv@^5.3.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-alfa-ui-primitives@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.0.0.tgz#d6afb5d03f185228129923db190da6268a50c3f2"
+alfa-ui-primitives@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.1.0.tgz#891e17c46781c862d6634b4b40923f3b1da3c9fe"
 
 aliasify@^1.7.2:
   version "1.9.0"

@@ -1,3 +1,13 @@
+<a name="12.2.2"></a>
+## [12.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.1...v12.2.2) (2018-01-22)
+
+
+### Bug Fixes
+
+* update arrow icons ([#494](https://github.com/alfa-laboratory/arui-feather/issues/494)) ([fb4ef76](https://github.com/alfa-laboratory/arui-feather/commit/fb4ef76))
+
+
+
 <a name="12.2.1"></a>
 ## [12.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.0...v12.2.1) (2018-01-16)
 

@@ -7479,9 +7479,9 @@ karma-chrome-launcher@2.2.0:
     fs-access "^1.0.0"
     which "^1.2.1"
 
-karma-coverage-istanbul-reporter@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-1.4.0.tgz#705145594c613e471b09dee3856d0304cc78ae4f"
+karma-coverage-istanbul-reporter@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-1.4.1.tgz#2b42d145ddbb4868d85d52888c495a21c61d873c"
   dependencies:
     istanbul-api "^1.1.14"
     minimatch "^3.0.4"

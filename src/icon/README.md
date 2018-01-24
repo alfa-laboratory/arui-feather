@@ -2089,6 +2089,7 @@ const IconDirections = require('./entity/directions').default;
 const IconDiscount = require('./entity/discount').default;
 const IconDraft = require('./entity/draft').default;
 const IconEmoney = require('./entity/emoney').default;
+const IconFingerprint = require('./entity/fingerprint').default;
 const IconHistory = require('./entity/history').default;
 const IconInbox = require('./entity/inbox').default;
 const IconInternet = require('./entity/internet').default;
@@ -2248,6 +2249,15 @@ const IconSite = require('./entity/site').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconEmoney size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconFingerprint size={ size } />
                 </span>
             ))
         }
@@ -2624,6 +2634,9 @@ const IconFormatZip = require('./file/format-zip').default;
 ```
 ```jsx
 const IconArrowDown = require('./ui/arrow-down').default;
+const IconArrowLeft = require('./ui/arrow-left').default;
+const IconArrowRight = require('./ui/arrow-right').default;
+const IconArrowUp = require('./ui/arrow-up').default;
 const IconBackspace = require('./ui/backspace').default;
 const IconBuy = require('./ui/buy').default;
 const IconCheck = require('./ui/check').default;
@@ -2666,6 +2679,33 @@ const IconVerifying = require('./ui/verifying').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconArrowDown size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconArrowLeft size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconArrowRight size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconArrowUp size={ size } />
                 </span>
             ))
         }

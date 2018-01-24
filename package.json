@@ -139,7 +139,7 @@
     "gulp.spritesmith": "6.9.0",
     "handlebars": "4.0.11",
     "html-reporter": "1.2.0",
-    "husky": "0.14.3",
+    "husky": "0.15.0-rc.2",
     "istanbul": "0.4.5",
     "istanbul-instrumenter-loader": "3.0.0",
     "karma": "2.0.0",

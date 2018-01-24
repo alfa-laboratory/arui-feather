@@ -9,8 +9,8 @@ import Type from 'prop-types';
 
 import Button from '../button/button';
 import IconButton from '../icon-button/icon-button';
-import IconDown from '../icon/ui/down';
-import IconUp from '../icon/ui/up';
+import IconArrowDown from '../icon/ui/arrow-down';
+import IconArrowUp from '../icon/ui/arrow-up';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
@@ -276,8 +276,8 @@ class Select extends React.Component {
         let opened = this.getOpened();
 
         switch (opened) {
-            case true: ToggledIcon = IconUp; break;
-            case false: ToggledIcon = IconDown; break;
+            case true: ToggledIcon = IconArrowUp; break;
+            case false: ToggledIcon = IconArrowDown; break;
         }
 
         switch (this.props.size) {

@@ -4215,7 +4215,11 @@ es6-object-assign@1.1.0, es6-object-assign@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
 
-es6-promise@4.2.2, es6-promise@^4.1.1:
+es6-promise@4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.3.tgz#29454b8db21b73fbef1df070c35dc09b7fd606c4"
+
+es6-promise@^4.1.1:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.2.tgz#f722d7769af88bd33bc13ec6605e1f92966b82d9"
 
@@ -7698,9 +7702,9 @@ libmime@3.0.0:
     libbase64 "0.1.0"
     libqp "1.1.0"
 
-libphonenumber-js@0.4.50:
-  version "0.4.50"
-  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-0.4.50.tgz#003ea792306ce314dc89789d62a7adc2f0d6cd0d"
+libphonenumber-js@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.0.4.tgz#7d7277379a808c3d3ab90e9de741d51bc1f3b3f5"
   dependencies:
     babel-runtime "^6.6.1"
     bluebird "^3.4.6"

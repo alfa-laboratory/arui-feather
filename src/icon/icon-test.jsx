@@ -213,6 +213,7 @@ import IconDirections from './entity/directions';
 import IconDiscount from './entity/discount';
 import IconDraft from './entity/draft';
 import IconEmoney from './entity/emoney';
+import IconFingerprint from './entity/fingerprint';
 import IconHistory from './entity/history';
 import IconInbox from './entity/inbox';
 import IconInternet from './entity/internet';
@@ -252,6 +253,9 @@ import IconFormatXls from './file/format-xls';
 import IconFormatXml from './file/format-xml';
 import IconFormatZip from './file/format-zip';
 import IconArrowDown from './ui/arrow-down';
+import IconArrowLeft from './ui/arrow-left';
+import IconArrowRight from './ui/arrow-right';
+import IconArrowUp from './ui/arrow-up';
 import IconBackspace from './ui/backspace';
 import IconBuy from './ui/buy';
 import IconCheck from './ui/check';
@@ -508,6 +512,7 @@ describe('icon', () => {
             { componentName: IconDiscount, name: 'discount' },
             { componentName: IconDraft, name: 'draft' },
             { componentName: IconEmoney, name: 'emoney' },
+            { componentName: IconFingerprint, name: 'fingerprint' },
             { componentName: IconHistory, name: 'history' },
             { componentName: IconInbox, name: 'inbox' },
             { componentName: IconInternet, name: 'internet' },
@@ -547,6 +552,9 @@ describe('icon', () => {
             { componentName: IconFormatXml, name: 'format-xml' },
             { componentName: IconFormatZip, name: 'format-zip' },
             { componentName: IconArrowDown, name: 'arrow-down' },
+            { componentName: IconArrowLeft, name: 'arrow-left' },
+            { componentName: IconArrowRight, name: 'arrow-right' },
+            { componentName: IconArrowUp, name: 'arrow-up' },
             { componentName: IconBackspace, name: 'backspace' },
             { componentName: IconBuy, name: 'buy' },
             { componentName: IconCheck, name: 'check' },

@@ -156,7 +156,7 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.9",
     "library-utils": "1.7.4",
-    "lint-staged": "6.0.1",
+    "lint-staged": "6.1.0",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
     "mocha": "4.1.0",

@@ -121,7 +121,7 @@
     "bowser": "1.9.1",
     "chai": "4.1.2",
     "chai-dom": "1.7.0",
-    "conventional-changelog-cli": "1.3.5",
+    "conventional-changelog-cli": "1.3.8",
     "conventional-github-releaser": "2.0.0",
     "coveralls": "3.0.0",
     "del": "3.0.0",

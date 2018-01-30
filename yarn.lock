@@ -1787,7 +1787,7 @@ bluebird@^2.9.30:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
 
-bluebird@^3.3.0, bluebird@^3.4.6, bluebird@^3.4.7, bluebird@^3.5.0:
+bluebird@^3.3.0, bluebird@^3.4.6, bluebird@^3.4.7, bluebird@^3.5.0, bluebird@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
@@ -4215,7 +4215,11 @@ es6-object-assign@1.1.0, es6-object-assign@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
 
-es6-promise@4.2.2, es6-promise@^4.1.1:
+es6-promise@4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.3.tgz#29454b8db21b73fbef1df070c35dc09b7fd606c4"
+
+es6-promise@^4.1.1:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.2.tgz#f722d7769af88bd33bc13ec6605e1f92966b82d9"
 
@@ -5187,6 +5191,14 @@ fs-extra@^2.0.0:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
 
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-readdir-recursive@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/fs-readdir-recursive/-/fs-readdir-recursive-1.1.0.tgz#e32fc030a2ccee44a6b5371308da54be0b397d27"
@@ -5302,16 +5314,16 @@ gemini-coverage@^1.0.0:
     q "^1.4.1"
     q-io "^2.0.6"
 
-gemini-optipng@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/gemini-optipng/-/gemini-optipng-1.1.0.tgz#f4202030e5ce62e6f6a1151d237c576bd8429424"
+gemini-optipng@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gemini-optipng/-/gemini-optipng-1.2.0.tgz#d5b8e84324dbc16cdc89a1ce42b4563c4a726e22"
   dependencies:
+    bluebird "^3.5.1"
     chalk "^1.1.3"
     debug "^2.2.0"
+    fs-extra "^5.0.0"
     lodash "^4.15.0"
     optipng-bin "^3.1.2"
-    q "^1.4.1"
-    q-io "^2.0.6"
 
 gemini-react@0.11.0:
   version "0.11.0"
@@ -7389,6 +7401,12 @@ json5@^0.5.0, json5@^0.5.1:
 jsonfile@^2.1.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
   optionalDependencies:
     graceful-fs "^4.1.6"
 
@@ -13349,6 +13367,10 @@ unist-util-visit@^1.1.0, unist-util-visit@^1.1.3:
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.3.0.tgz#41ca7c82981fd1ce6c762aac397fc24e35711444"
   dependencies:
     unist-util-is "^2.1.1"
+
+universalify@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.1.tgz#fa71badd4437af4c148841e3b3b165f9e9e590b7"
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"

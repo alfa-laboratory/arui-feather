@@ -1,1 +1,19 @@
-<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M19 23H5c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h10.7L21 6.3V21c0 1.1-.9 2-2 2zM5 2c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h14c.6 0 1-.4 1-1V6.7L15.3 2H5z" fill="#FFF"/><path d="M8.2 11H7v1h1v1H7v1h1.2c.5 2.5 2.3 4 4.8 4 .7 0 1.4-.1 2-.4v-.9c-.6.2-1.2.3-2 .3-1.9 0-3.3-1.2-3.7-3.1H14v-1H9.1v-1H14v-1H9.3C9.8 9 11.1 7.8 13 7.8c.8 0 1.4.1 2 .3v-.7c-.6-.3-1.3-.4-2-.4-2.6 0-4.3 1.5-4.8 4z" opacity=".3" fill="#FFF"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account-euro_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-292.000000, -153.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_account_euro__m__white" transform="translate(292.000000, 153.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                <path d="M19,23 L5,23 C3.9,23 3,22.1 3,21 L3,3 C3,1.9 3.9,1 5,1 L15.7,1 L21,6.3 L21,21 C21,22.1 20.1,23 19,23 L19,23 Z M5,2 C4.4,2 4,2.4 4,3 L4,21 C4,21.6 4.4,22 5,22 L19,22 C19.6,22 20,21.6 20,21 L20,6.7 L15.3,2 L5,2 L5,2 Z" id="Shape" fill="#FFFFFF"></path>
+                <g id="Group" opacity="0.3" transform="translate(7.000000, 7.000000)" fill="#FFFFFF">
+                    <path d="M1.2,4 L0,4 L0,5 L1,5 L1,5.5 L1,6 L0,6 L0,7 L1.2,7 C1.7,9.5 3.5,11 6,11 C6.7,11 7.4,10.9 8,10.6 L8,9.7 C7.4,9.9 6.8,10 6,10 C4.1,10 2.7,8.8 2.3,6.9 L7,6.9 L7,5.9 L2.1,5.9 L2.1,5.4 L2.1,4.9 L7,4.9 L7,3.9 L2.3,3.9 C2.8,2 4.1,0.8 6,0.8 C6.8,0.8 7.4,0.9 8,1.1 L8,0.4 C7.4,0.1 6.7,0 6,0 C3.4,0 1.7,1.5 1.2,4 L1.2,4 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

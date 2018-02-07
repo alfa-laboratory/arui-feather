@@ -1,1 +1,20 @@
-<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M22.398 13a.75.75 0 0 0 .576-1.23l-3.399-4.078a.75.75 0 0 0-1.152 0l-3.399 4.078A.75.75 0 0 0 15.6 13h1.684l-3.225 3.762A.751.751 0 0 0 14.631 18H18v4h2v-4h3.37a.75.75 0 0 0 .569-1.238L20.714 13h1.684z" fill="#FFF" opacity=".3"/><path d="M2.059 13H3v9h13v-1H4v-9H2.059a.488.488 0 0 1-.472-.334.486.486 0 0 1 .16-.556l9.229-7.37 4.375 4.049.679-.734-5.006-4.633-9.901 7.907a1.482 1.482 0 0 0-.479 1.668A1.482 1.482 0 0 0 2.059 13z" fill="#FFF"/><path fill="#FFF" opacity=".3" d="M7 13h3v4H7z"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-housekeeping_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1019.000000, -570.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_house__m__white" transform="translate(955.000000, 493.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M22.398,13 C23.034,13 23.381,12.258 22.974,11.77 L19.575,7.692 C19.275,7.332 18.723,7.332 18.423,7.692 L15.024,11.77 C14.617,12.259 14.964,13 15.6,13 L17.284,13 L14.059,16.762 C13.644,17.248 13.99,18 14.631,18 L18,18 L18,22 L20,22 L20,18 L23.37,18 C24.011,18 24.356,17.248 23.939,16.762 L20.714,13 L22.398,13 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <path d="M2.059,13 L3,13 L3,22 L16,22 L16,21 L4,21 L4,12 L2.059,12 C1.73,12 1.615,11.744 1.587,11.666 C1.559,11.587 1.49,11.315 1.747,11.11 L10.976,3.74 L15.351,7.789 L16.03,7.055 L11.024,2.422 L1.123,10.329 C0.618,10.732 0.43,11.387 0.644,11.997 C0.857,12.606 1.413,13 2.059,13 L2.059,13 Z" id="Shape" fill="#FFFFFF"></path>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="7" y="13" width="3" height="4"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

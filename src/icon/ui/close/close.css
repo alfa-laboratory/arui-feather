@@ -33,3 +33,11 @@
 .icon_size_xl.icon_name_close.icon_theme_alfa-on-color {
     background-image: url('./icon_close_xl_white.svg');
 }
+
+.icon_size_xs.icon_name_close.icon_theme_alfa-on-white {
+    background-image: url('./icon_close_xs_black.svg');
+}
+
+.icon_size_xs.icon_name_close.icon_theme_alfa-on-color {
+    background-image: url('./icon_close_xs_white.svg');
+}

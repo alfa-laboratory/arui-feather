@@ -16,6 +16,7 @@ const IconFilter = require('./action/filter').default;
 const IconLike = require('./action/like').default;
 const IconLikeFilled = require('./action/like-filled').default;
 const IconLock = require('./action/lock').default;
+const IconLockFilled = require('./action/lock-filled').default;
 const IconLockUnlock = require('./action/lock-unlock').default;
 const IconLogout = require('./action/logout').default;
 const IconNext = require('./action/next').default;
@@ -34,6 +35,7 @@ const IconSearch = require('./action/search').default;
 const IconShareAndroid = require('./action/share-android').default;
 const IconShareIos = require('./action/share-ios').default;
 const IconSign = require('./action/sign').default;
+const IconUnlock = require('./action/unlock').default;
 const IconUserLogout = require('./action/user-logout').default;
 
 <div>
@@ -188,6 +190,17 @@ const IconUserLogout = require('./action/user-logout').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconLock size={ size } />
+                </span>
+            ))
+        }
+        <span className='column l'><IconLock size='m' colored={ true } /></span>
+        <span className='column l'><IconLock size='xxl' colored={ true } /></span>
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconLockFilled size={ size } />
                 </span>
             ))
         }
@@ -350,6 +363,15 @@ const IconUserLogout = require('./action/user-logout').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconSign size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconUnlock size={ size } />
                 </span>
             ))
         }
@@ -1392,7 +1414,6 @@ const IconCategoryBudget = require('./category/category-budget').default;
 const IconCategoryBusiness = require('./category/category-business').default;
 const IconCategoryBusinessActivity = require('./category/category-business-activity').default;
 const IconCategoryBusinessTrip = require('./category/category-business-trip').default;
-const IconCategoryCar = require('./category/category-car').default;
 const IconCategoryCash = require('./category/category-cash').default;
 const IconCategoryCashback = require('./category/category-cashback').default;
 const IconCategoryCharity = require('./category/category-charity').default;
@@ -1408,20 +1429,19 @@ const IconCategoryFarmacy = require('./category/category-farmacy').default;
 const IconCategoryFinance = require('./category/category-finance').default;
 const IconCategoryFines = require('./category/category-fines').default;
 const IconCategoryForgot = require('./category/category-forgot').default;
-const IconCategoryGas = require('./category/category-gas').default;
 const IconCategoryGasoline = require('./category/category-gasoline').default;
 const IconCategoryGibddFines = require('./category/category-gibdd-fines').default;
-const IconCategoryGrocery = require('./category/category-grocery').default;
 const IconCategoryHealth = require('./category/category-health').default;
 const IconCategoryHobby = require('./category/category-hobby').default;
 const IconCategoryHoliday = require('./category/category-holiday').default;
-const IconCategoryHouse = require('./category/category-house').default;
+const IconCategoryHousekeeping = require('./category/category-housekeeping').default;
 const IconCategoryInvestments = require('./category/category-investments').default;
 const IconCategoryLoans = require('./category/category-loans').default;
 const IconCategoryMedia = require('./category/category-media').default;
 const IconCategoryMedicine = require('./category/category-medicine').default;
 const IconCategoryMobileInternet = require('./category/category-mobile-internet').default;
 const IconCategoryMortgage = require('./category/category-mortgage').default;
+const IconCategoryMortgaget = require('./category/category-mortgaget').default;
 const IconCategoryOther = require('./category/category-other').default;
 const IconCategoryPerson = require('./category/category-person').default;
 const IconCategoryPets = require('./category/category-pets').default;
@@ -1435,8 +1455,6 @@ const IconCategoryShopping = require('./category/category-shopping').default;
 const IconCategoryState = require('./category/category-state').default;
 const IconCategoryTaxFines = require('./category/category-tax-fines').default;
 const IconCategoryTelecom = require('./category/category-telecom').default;
-const IconCategoryTourism = require('./category/category-tourism').default;
-const IconCategoryTrafficFine = require('./category/category-traffic-fine').default;
 const IconCategoryTransfer = require('./category/category-transfer').default;
 const IconCategoryTransport = require('./category/category-transport').default;
 const IconCategoryTravel = require('./category/category-travel').default;
@@ -1523,15 +1541,6 @@ const IconUtilities = require('./category/utilities').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconCategoryBusinessTrip size={ size } />
-                </span>
-            ))
-        }
-    </div>
-    <div className='row'>
-        {
-            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <span className='column l' key={ size }>
-                    <IconCategoryCar size={ size } />
                 </span>
             ))
         }
@@ -1675,15 +1684,6 @@ const IconUtilities = require('./category/utilities').default;
         {
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
-                    <IconCategoryGas size={ size } />
-                </span>
-            ))
-        }
-    </div>
-    <div className='row'>
-        {
-            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <span className='column l' key={ size }>
                     <IconCategoryGasoline size={ size } />
                 </span>
             ))
@@ -1694,15 +1694,6 @@ const IconUtilities = require('./category/utilities').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconCategoryGibddFines size={ size } />
-                </span>
-            ))
-        }
-    </div>
-    <div className='row'>
-        {
-            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <span className='column l' key={ size }>
-                    <IconCategoryGrocery size={ size } />
                 </span>
             ))
         }
@@ -1738,7 +1729,7 @@ const IconUtilities = require('./category/utilities').default;
         {
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
-                    <IconCategoryHouse size={ size } />
+                    <IconCategoryHousekeeping size={ size } />
                 </span>
             ))
         }
@@ -1793,6 +1784,15 @@ const IconUtilities = require('./category/utilities').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconCategoryMortgage size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconCategoryMortgaget size={ size } />
                 </span>
             ))
         }
@@ -1910,24 +1910,6 @@ const IconUtilities = require('./category/utilities').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconCategoryTelecom size={ size } />
-                </span>
-            ))
-        }
-    </div>
-    <div className='row'>
-        {
-            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <span className='column l' key={ size }>
-                    <IconCategoryTourism size={ size } />
-                </span>
-            ))
-        }
-    </div>
-    <div className='row'>
-        {
-            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <span className='column l' key={ size }>
-                    <IconCategoryTrafficFine size={ size } />
                 </span>
             ))
         }
@@ -2095,6 +2077,7 @@ const IconInbox = require('./entity/inbox').default;
 const IconInternet = require('./entity/internet').default;
 const IconMobile = require('./entity/mobile').default;
 const IconMoneybox = require('./entity/moneybox').default;
+const IconMypayments = require('./entity/mypayments').default;
 const IconNews = require('./entity/news').default;
 const IconNotifications = require('./entity/notifications').default;
 const IconOffice = require('./entity/office').default;
@@ -2303,6 +2286,15 @@ const IconSite = require('./entity/site').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconMoneybox size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconMypayments size={ size } />
                 </span>
             ))
         }

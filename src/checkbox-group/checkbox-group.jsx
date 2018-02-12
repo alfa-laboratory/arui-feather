@@ -122,7 +122,14 @@ class CheckBoxGroup extends React.Component {
     @autobind
     handleCheckboxChange(value, checked) {
         let newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
-        let changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
+        let changedValueIndex;
+        newValue.some(function (e, i) {
+            if (e === value) {
+                changedValueIndex = i;
+                return true;
+            }
+            return false;
+        });
 
         if (checked) {
             newValue.push(value);

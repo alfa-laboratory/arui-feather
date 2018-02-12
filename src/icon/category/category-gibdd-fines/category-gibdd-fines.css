@@ -17,3 +17,11 @@
 .icon_size_xl.icon_name_category-gibdd-fines.icon_theme_alfa-on-color {
     background-image: url('./icon_category-gibdd-fines_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_category-gibdd-fines.icon_theme_alfa-on-white {
+    background-image: url('./icon_category-gibdd-fines_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_category-gibdd-fines.icon_theme_alfa-on-color {
+    background-image: url('./icon_category-gibdd-fines_xxl_white.svg');
+}

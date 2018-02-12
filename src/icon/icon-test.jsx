@@ -22,6 +22,7 @@ import IconFilter from './action/filter';
 import IconLike from './action/like';
 import IconLikeFilled from './action/like-filled';
 import IconLock from './action/lock';
+import IconLockFilled from './action/lock-filled';
 import IconLockUnlock from './action/lock-unlock';
 import IconLogout from './action/logout';
 import IconNext from './action/next';
@@ -40,6 +41,7 @@ import IconSearch from './action/search';
 import IconShareAndroid from './action/share-android';
 import IconShareIos from './action/share-ios';
 import IconSign from './action/sign';
+import IconUnlock from './action/unlock';
 import IconUserLogout from './action/user-logout';
 import IconAccountAdd from './banking/account-add';
 import IconAccountDefault from './banking/account-default';
@@ -138,7 +140,6 @@ import IconCategoryBudget from './category/category-budget';
 import IconCategoryBusiness from './category/category-business';
 import IconCategoryBusinessActivity from './category/category-business-activity';
 import IconCategoryBusinessTrip from './category/category-business-trip';
-import IconCategoryCar from './category/category-car';
 import IconCategoryCash from './category/category-cash';
 import IconCategoryCashback from './category/category-cashback';
 import IconCategoryCharity from './category/category-charity';
@@ -154,20 +155,19 @@ import IconCategoryFarmacy from './category/category-farmacy';
 import IconCategoryFinance from './category/category-finance';
 import IconCategoryFines from './category/category-fines';
 import IconCategoryForgot from './category/category-forgot';
-import IconCategoryGas from './category/category-gas';
 import IconCategoryGasoline from './category/category-gasoline';
 import IconCategoryGibddFines from './category/category-gibdd-fines';
-import IconCategoryGrocery from './category/category-grocery';
 import IconCategoryHealth from './category/category-health';
 import IconCategoryHobby from './category/category-hobby';
 import IconCategoryHoliday from './category/category-holiday';
-import IconCategoryHouse from './category/category-house';
+import IconCategoryHousekeeping from './category/category-housekeeping';
 import IconCategoryInvestments from './category/category-investments';
 import IconCategoryLoans from './category/category-loans';
 import IconCategoryMedia from './category/category-media';
 import IconCategoryMedicine from './category/category-medicine';
 import IconCategoryMobileInternet from './category/category-mobile-internet';
 import IconCategoryMortgage from './category/category-mortgage';
+import IconCategoryMortgaget from './category/category-mortgaget';
 import IconCategoryOther from './category/category-other';
 import IconCategoryPerson from './category/category-person';
 import IconCategoryPets from './category/category-pets';
@@ -181,8 +181,6 @@ import IconCategoryShopping from './category/category-shopping';
 import IconCategoryState from './category/category-state';
 import IconCategoryTaxFines from './category/category-tax-fines';
 import IconCategoryTelecom from './category/category-telecom';
-import IconCategoryTourism from './category/category-tourism';
-import IconCategoryTrafficFine from './category/category-traffic-fine';
 import IconCategoryTransfer from './category/category-transfer';
 import IconCategoryTransport from './category/category-transport';
 import IconCategoryTravel from './category/category-travel';
@@ -219,6 +217,7 @@ import IconInbox from './entity/inbox';
 import IconInternet from './entity/internet';
 import IconMobile from './entity/mobile';
 import IconMoneybox from './entity/moneybox';
+import IconMypayments from './entity/mypayments';
 import IconNews from './entity/news';
 import IconNotifications from './entity/notifications';
 import IconOffice from './entity/office';
@@ -321,6 +320,7 @@ describe('icon', () => {
             { componentName: IconLike, name: 'like' },
             { componentName: IconLikeFilled, name: 'like-filled' },
             { componentName: IconLock, name: 'lock' },
+            { componentName: IconLockFilled, name: 'lock-filled' },
             { componentName: IconLockUnlock, name: 'lock-unlock' },
             { componentName: IconLogout, name: 'logout' },
             { componentName: IconNext, name: 'next' },
@@ -339,6 +339,7 @@ describe('icon', () => {
             { componentName: IconShareAndroid, name: 'share-android' },
             { componentName: IconShareIos, name: 'share-ios' },
             { componentName: IconSign, name: 'sign' },
+            { componentName: IconUnlock, name: 'unlock' },
             { componentName: IconUserLogout, name: 'user-logout' },
             { componentName: IconAccountAdd, name: 'account-add' },
             { componentName: IconAccountDefault, name: 'account-default' },
@@ -437,7 +438,6 @@ describe('icon', () => {
             { componentName: IconCategoryBusiness, name: 'category-business' },
             { componentName: IconCategoryBusinessActivity, name: 'category-business-activity' },
             { componentName: IconCategoryBusinessTrip, name: 'category-business-trip' },
-            { componentName: IconCategoryCar, name: 'category-car' },
             { componentName: IconCategoryCash, name: 'category-cash' },
             { componentName: IconCategoryCashback, name: 'category-cashback' },
             { componentName: IconCategoryCharity, name: 'category-charity' },
@@ -453,20 +453,19 @@ describe('icon', () => {
             { componentName: IconCategoryFinance, name: 'category-finance' },
             { componentName: IconCategoryFines, name: 'category-fines' },
             { componentName: IconCategoryForgot, name: 'category-forgot' },
-            { componentName: IconCategoryGas, name: 'category-gas' },
             { componentName: IconCategoryGasoline, name: 'category-gasoline' },
             { componentName: IconCategoryGibddFines, name: 'category-gibdd-fines' },
-            { componentName: IconCategoryGrocery, name: 'category-grocery' },
             { componentName: IconCategoryHealth, name: 'category-health' },
             { componentName: IconCategoryHobby, name: 'category-hobby' },
             { componentName: IconCategoryHoliday, name: 'category-holiday' },
-            { componentName: IconCategoryHouse, name: 'category-house' },
+            { componentName: IconCategoryHousekeeping, name: 'category-housekeeping' },
             { componentName: IconCategoryInvestments, name: 'category-investments' },
             { componentName: IconCategoryLoans, name: 'category-loans' },
             { componentName: IconCategoryMedia, name: 'category-media' },
             { componentName: IconCategoryMedicine, name: 'category-medicine' },
             { componentName: IconCategoryMobileInternet, name: 'category-mobile-internet' },
             { componentName: IconCategoryMortgage, name: 'category-mortgage' },
+            { componentName: IconCategoryMortgaget, name: 'category-mortgaget' },
             { componentName: IconCategoryOther, name: 'category-other' },
             { componentName: IconCategoryPerson, name: 'category-person' },
             { componentName: IconCategoryPets, name: 'category-pets' },
@@ -480,8 +479,6 @@ describe('icon', () => {
             { componentName: IconCategoryState, name: 'category-state' },
             { componentName: IconCategoryTaxFines, name: 'category-tax-fines' },
             { componentName: IconCategoryTelecom, name: 'category-telecom' },
-            { componentName: IconCategoryTourism, name: 'category-tourism' },
-            { componentName: IconCategoryTrafficFine, name: 'category-traffic-fine' },
             { componentName: IconCategoryTransfer, name: 'category-transfer' },
             { componentName: IconCategoryTransport, name: 'category-transport' },
             { componentName: IconCategoryTravel, name: 'category-travel' },
@@ -518,6 +515,7 @@ describe('icon', () => {
             { componentName: IconInternet, name: 'internet' },
             { componentName: IconMobile, name: 'mobile' },
             { componentName: IconMoneybox, name: 'moneybox' },
+            { componentName: IconMypayments, name: 'mypayments' },
             { componentName: IconNews, name: 'news' },
             { componentName: IconNotifications, name: 'notifications' },
             { componentName: IconOffice, name: 'office' },

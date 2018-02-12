@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account-text_xxl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-204.000000, -261.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_account_text__xxl__white" transform="translate(204.000000, 261.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                <path d="M37.5,46 L9.5,46 C7.6,46 6,44.4 6,42.5 L6,5.5 C6,3.6 7.6,2 9.5,2 L30.7,2 L41,12.3 L41,42.5 C41,44.4 39.4,46 37.5,46 L37.5,46 Z M9.5,3 C8.1,3 7,4.1 7,5.5 L7,42.5 C7,43.9 8.1,45 9.5,45 L37.5,45 C38.9,45 40,43.9 40,42.5 L40,12.7 L30.3,3 L9.5,3 L9.5,3 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M16.8,27.9 C16.8,30 18.1,31.5 20.5,31.5 C22.9,31.5 24.2,30 24.2,27.9 L24.2,18 L27,18 L27,28.2 C27,31.6 24.5,34 20.5,34 C16.5,34 14,31.6 14,28.2 L14,18 L16.8,18 L16.8,27.9 L16.8,27.9 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                <path d="M40.5,27 L37.3,18 L34.1,18 L28.4,34 L31.3,34 L32.7,29.9 L38.6,29.9 L40,34 L40.5,34 L40.5,27 L40.5,27 Z M33.4,27.7 L35.6,20.9 L35.7,20.9 L37.9,27.7 L33.4,27.7 L33.4,27.7 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                <g id="Group" opacity="0.3"></g>
+            </g>
+        </g>
+    </g>
+</svg>

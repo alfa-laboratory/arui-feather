@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_convert_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-64.000000, -369.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_convert__m__white" transform="translate(64.000000, 369.000000)">
+            <g id="Layer_2">
+                <rect id="ph_3_" x="0" y="0" width="24" height="24"></rect>
+                <path d="M8.9,16.1 L8.2,16.8 L10.3,18.9 L6.5,18.9 C4.9,18.9 3.4,18.2 2.4,17 L1.6,17.7 C2.8,19.1 4.6,19.9 6.5,19.9 L10.3,19.9 L8.2,22 L8.9,22.7 L12.3,19.3 L8.9,16.1 L8.9,16.1 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                <path d="M17.5,4 L13.7,4 L15.8,1.9 L15.1,1.2 L11.7,4.6 L15.1,8 L15.8,7.3 L13.7,5 L17.5,5 C19.1,5 20.6,5.7 21.6,6.9 L22.4,6.2 C21.1,4.8 19.4,4 17.5,4 L17.5,4 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                <path d="M2,14 L3,14 L3,12 L7,12 L7,11 L3,11 L3,9 L5.9,9 C8.4,9 10,7.3 10,5 C10,2.7 8.4,1 5.9,1 L2,1 L2,8 L0.2,8 L0.2,9 L2,9 L2,11 L0.2,11 L0.2,12 L2,12 L2,14 L2,14 Z M3,2 L5.6,2 C7.6,2 9,3.2 9,5 C9,6.7 7.6,8 5.6,8 L3,8 L3,2 L3,2 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M15,19.5 L14,19.5 C14.2,21.4 15.7,22.8 18,22.9 L18,23.9 L19,23.9 L19,22.9 C21.4,22.7 23,21.4 23,19.3 C23,17.6 22,16.6 19.5,16 L19,15.9 L19,10.9 C20.6,11.1 21.6,12 21.8,13.3 L22.8,13.3 C22.7,11.5 21.1,10.2 19,10 L19,9 L18,9 L18,10 C15.9,10.2 14.3,11.6 14.3,13.4 C14.3,15 15.3,16 17.6,16.6 L18,16.7 L18,22 C16.3,21.9 15.2,20.9 15,19.5 L15,19.5 Z M15.4,13.4 C15.4,12.1 16.5,11.1 18,10.9 L18,15.7 C16.2,15.2 15.4,14.5 15.4,13.4 L15.4,13.4 Z M19.2,17 C21.1,17.5 22,18.2 22,19.5 C22,20.9 20.8,21.9 19,22.1 L19,17 L19.2,17 L19.2,17 Z" id="Shape" fill="#0B1F35"></path>
+            </g>
+        </g>
+    </g>
+</svg>

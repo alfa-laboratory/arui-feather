@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-education_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1703.000000, -246.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_education__m__white" transform="translate(1639.000000, 169.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="1" y="20" width="10" height="1"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="14" y="20" width="10" height="1"></rect>
+                    <path d="M22.4,1 L15.8,1 C14.379,1 13.152,1.731 12.5,2.799 C11.848,1.731 10.622,1 9.2,1 L2.6,1 C1.718,1 1,1.673 1,2.5 L1,17.5 C1,17.776 1.224,18 1.5,18 L10.3,18 C11.238,18 12,18.673 12,19.5 C12,19.776 12.224,20 12.5,20 C12.776,20 13,19.776 13,19.5 C13,18.673 13.763,18 14.7,18 L23.5,18 C23.776,18 24,17.776 24,17.5 L24,2.5 C24,1.673 23.282,1 22.4,1 L22.4,1 Z M12,17.559 C11.536,17.21 10.943,17 10.3,17 L2,17 L2,2.5 C2,2.224 2.269,2 2.6,2 L9.2,2 C10.744,2 12,3.122 12,4.5 L12,17.559 L12,17.559 Z M23,17 L14.7,17 C14.056,17 13.464,17.21 13,17.559 L13,4.5 C13,3.122 14.256,2 15.8,2 L22.4,2 C22.731,2 23,2.224 23,2.5 L23,17 L23,17 Z" id="Shape" fill="#FFFFFF"></path>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="5" y="12" width="4" height="1"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="5" y="9" width="4" height="1"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="5" y="6" width="4" height="1"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="16" y="12" width="4" height="1"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="16" y="9" width="4" height="1"></rect>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="16" y="6" width="4" height="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-repairs_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1019.000000, -786.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_repairs__m__white" transform="translate(955.000000, 709.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M23,5.5 C23,4.673 22.327,4 21.5,4 L20,4 L20,2.5 C20,1.673 19.327,1 18.5,1 L3.5,1 C2.673,1 2,1.673 2,2.5 L2,6.5 C2,7.327 2.673,8 3.5,8 L18.5,8 C19.327,8 20,7.327 20,6.5 L20,5 L21.5,5 C21.776,5 22,5.225 22,5.5 L22,9.389 C22,9.664 21.776,9.889 21.5,9.889 L12.5,9.889 C11.673,9.889 11,10.562 11,11.389 L11,13 L12,13 L12,11.389 C12,11.114 12.224,10.889 12.5,10.889 L21.5,10.889 C22.327,10.889 23,10.216 23,9.389 L23,5.5 L23,5.5 Z M19,6.5 C19,6.775 18.776,7 18.5,7 L3.5,7 C3.224,7 3,6.775 3,6.5 L3,2.5 C3,2.225 3.224,2 3.5,2 L18.5,2 C18.776,2 19,2.225 19,2.5 L19,6.5 L19,6.5 Z" id="Shape" fill="#0B1F35"></path>
+                    <path d="M12.25,13 L10.75,13 C10.336,13 10,13.336 10,13.75 L10,22.25 C10,22.664 10.336,23 10.75,23 L12.25,23 C12.664,23 13,22.664 13,22.25 L13,13.75 C13,13.336 12.664,13 12.25,13 L12.25,13 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

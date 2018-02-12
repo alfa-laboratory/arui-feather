@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-rent_xl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1767.000000, -678.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_rent__xl__white" transform="translate(1703.000000, 601.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <circle id="Oval" fill="#0B1F35" opacity="0.3" cx="11" cy="13" r="3"></circle>
+                    <path d="M19.056,9 C17.541,5.952 14.414,4 11,4 C6.038,4 2,8.037 2,13 C2,17.963 6.038,22 11,22 C14.021,22 16.794,20.51 18.474,18 L29.707,18 L34.207,13.5 L29.707,9 L19.056,9 L19.056,9 Z M29.293,17 L17.925,17 L17.778,17.234 C16.302,19.593 13.768,21 11,21 C6.589,21 3,17.411 3,13 C3,8.589 6.589,5 11,5 C14.13,5 16.989,6.848 18.284,9.706 L18.417,10 L29.292,10 L32.792,13.5 L29.293,17 L29.293,17 Z" id="Shape" fill="#0B1F35"></path>
+                    <path d="M20.859,17.5 L18.202,17.5 C16.699,19.899 14.04,21.5 11,21.5 C7.314,21.5 4.184,19.149 3.007,15.868 C3.006,15.912 3,15.955 3,16 C3,20.971 7.029,25 12,25 C13.118,25 14.184,24.787 15.172,24.414 L21.757,31 L26,31 L26,26.757 L19.769,20.528 C20.305,19.61 20.673,18.586 20.859,17.5 L20.859,17.5 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-person_xl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-812.000000, -585.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_payment_to_person__xl__white" transform="translate(812.000000, 585.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                <path d="M14,22 C9.6,22 6.9,16.8 6.9,11.8 C6.9,8.2 7.7,4 14,4 C20.3,4 21.1,8.2 21.1,11.8 C21.1,16.8 18.4,22 14,22 L14,22 Z M14,5 C9.7,5 7.9,7 7.9,11.8 C7.9,15.6 9.8,21 14,21 C18.2,21 20.1,15.6 20.1,11.8 C20.1,7 18.3,5 14,5 L14,5 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M22,18 C21.1,18 20.2,17.7 19.4,17.2 L19.9,16.4 C20.5,16.8 21.3,17 22,17 C25.4,17 27.5,12.5 27.5,8.4 C27.5,3.8 25.9,2 22,2 C19.3,2 17.7,2.9 17,5 L16,4.6 C16.9,2.2 18.8,1 22,1 C27.8,1 28.5,4.9 28.5,8.4 C28.5,13.1 26.1,18 22,18 L22,18 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M2,35 L1,35 C1,29.5 4.5,27.5 6.7,26.3 C6.9,26.2 7.2,26 7.4,25.9 L7.9,25.6 C9.5,24.7 10.2,24.3 10.2,20.1 L11.2,20.1 C11.2,24.6 10.3,25.4 8.4,26.5 L7.9,26.8 C7.7,26.9 7.5,27.1 7.2,27.2 C5,28.4 2,30.1 2,35 L2,35 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M27,35 L26,35 C26,30.1 23,28.4 20.9,27.2 C20.6,27.1 20.4,26.9 20.2,26.8 L19.7,26.5 C17.8,25.4 16.9,24.7 16.9,20.1 L17.9,20.1 C17.9,24.3 18.6,24.7 20.2,25.6 L20.7,25.9 C20.9,26 21.1,26.2 21.4,26.3 C23.5,27.5 27,29.5 27,35 L27,35 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M35,31 L34,31 C34,26.1 31,24.4 28.9,23.2 C28.6,23.1 28.4,22.9 28.2,22.8 L27.9,22.6 C25.9,21.4 24.9,20.6 24.9,16 L25.9,16 C25.9,20.3 26.7,20.8 28.4,21.8 L28.7,22 C28.9,22.1 29.1,22.3 29.4,22.4 C31.5,23.5 35,25.5 35,31 L35,31 Z" id="Shape" fill="#0B1F35"></path>
+                <g id="Group" opacity="0.3"></g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,6 +6,7 @@ import { autobind } from 'core-decorators';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
+import arrayFindIndex from 'array-find-index';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -122,14 +123,7 @@ class CheckBoxGroup extends React.Component {
     @autobind
     handleCheckboxChange(value, checked) {
         let newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
-        let changedValueIndex;
-        newValue.some(function (e, i) {
-            if (e === value) {
-                changedValueIndex = i;
-                return true;
-            }
-            return false;
-        });
+        let changedValueIndex = arrayFindIndex(newValue, stateValue => stateValue === value);
 
         if (checked) {
             newValue.push(value);

@@ -82,9 +82,10 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
+    "array-find": "^1.0.0",
+    "array-find-index": "^1.0.2",
     "array-from": "2.1.1",
     "array.prototype.fill": "1.0.2",
-    "array.prototype.find": "2.0.4",
     "bezier-easing": "2.0.3",
     "cn-decorator": "2.1.0",
     "core-decorators": "0.20.0",

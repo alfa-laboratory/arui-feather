@@ -5,7 +5,6 @@
 /* eslint global-require: 0 */
 /* eslint no-extend-native: 0 */
 
-const ArrayFind = require('array.prototype.find');
 const ArrayFrom = require('array-from');
 const ObjectIs = require('object-is');
 require('es6-object-assign').polyfill();
@@ -19,15 +18,6 @@ require('ima-babel6-polyfill'); // fix super constructor call for ie <= 10, see 
 if (typeof window !== 'undefined') {
     require('matches-selector-polyfill/dist/matches-selector-polyfill.js');
     require('raf').polyfill(); // window.requestAnimationFrame for ie <= 10 & android 4.0..4.3
-}
-
-if (!Array.prototype.find) {
-    Object.defineProperty(Array.prototype, 'find', {
-        enumerable: false,
-        configurable: true,
-        writable: true,
-        value: ArrayFind.getPolyfill()
-    });
 }
 
 if (!Object.is) {

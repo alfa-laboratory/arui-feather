@@ -7,6 +7,7 @@
 import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
+import find from 'array-find';
 
 import Input from '../input/input';
 import Menu from '../menu/menu';
@@ -465,7 +466,7 @@ class InputAutocomplete extends React.Component {
     getCheckedOption(options, value) {
         let result = null;
 
-        options.find((option) => {
+        find(options, (option) => {
             if (option.type === 'group' && !!option.content) {
                 let findInGroup = this.getCheckedOption(option.content, value);
                 if (findInGroup) {

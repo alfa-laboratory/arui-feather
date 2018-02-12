@@ -59,4 +59,17 @@ describe('popup-container-provider', () => {
 
         expect(popupNode).to.exist;
     });
+
+    it('should return root `HTMLElement` after `getNode` method call', () => {
+        let popupContainer = render(
+            <PopupContainerProvider>
+                <Popup target='position'>Render-test</Popup>
+            </PopupContainerProvider>
+        );
+
+        let node = popupContainer.instance.getNode();
+
+        expect(node).to.be.instanceOf(HTMLDivElement);
+        expect(node).to.be.equal(popupContainer.node);
+    });
 });

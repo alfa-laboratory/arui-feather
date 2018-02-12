@@ -1,3 +1,82 @@
+<a name="12.2.2"></a>
+## [12.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.1...v12.2.2) (2018-01-22)
+
+
+### Bug Fixes
+
+* update arrow icons ([#494](https://github.com/alfa-laboratory/arui-feather/issues/494)) ([fb4ef76](https://github.com/alfa-laboratory/arui-feather/commit/fb4ef76))
+
+
+
+<a name="12.2.1"></a>
+## [12.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.0...v12.2.1) (2018-01-16)
+
+
+### Features
+
+* override default browser border-radius on controls ([#483](https://github.com/alfa-laboratory/arui-feather/issues/483)) ([4953a98](https://github.com/alfa-laboratory/arui-feather/commit/4953a98))
+
+
+
+<a name="12.2.0"></a>
+# [12.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.1.0...v12.2.0) (2018-01-16)
+
+
+### Bug Fixes
+
+* **checkbox:** stop checkbox shrinking ([#480](https://github.com/alfa-laboratory/arui-feather/issues/480)) ([503f6ee](https://github.com/alfa-laboratory/arui-feather/commit/503f6ee))
+
+
+### Features
+
+* **icons:** add new icons from primitives ([#478](https://github.com/alfa-laboratory/arui-feather/issues/478)) ([861cb23](https://github.com/alfa-laboratory/arui-feather/commit/861cb23))
+
+
+
+<a name="12.1.0"></a>
+# [12.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.0.1...v12.1.0) (2018-01-14)
+
+
+### Bug Fixes
+
+* **icon:** rename component to react.component ([#466](https://github.com/alfa-laboratory/arui-feather/issues/466)) ([77e6f60](https://github.com/alfa-laboratory/arui-feather/commit/77e6f60))
+
+
+### Features
+
+* **buttons:** add deprecation on pseudo buttons ([#462](https://github.com/alfa-laboratory/arui-feather/issues/462)) ([4fce261](https://github.com/alfa-laboratory/arui-feather/commit/4fce261))
+* **lib/window:** deprecate isEventOusideBounds ([#449](https://github.com/alfa-laboratory/arui-feather/issues/449)) ([43c9448](https://github.com/alfa-laboratory/arui-feather/commit/43c9448))
+
+
+
+<a name="12.0.1"></a>
+## [12.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.0.0...v12.0.1) (2018-01-11)
+
+
+### Bug Fixes
+
+* **checkbox:** fix icon ([#460](https://github.com/alfa-laboratory/arui-feather/issues/460)) ([c234102](https://github.com/alfa-laboratory/arui-feather/commit/c234102))
+
+
+
+<a name="12.0.0"></a>
+# [12.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.4.0...v12.0.0) (2017-12-29)
+
+
+### Bug Fixes
+
+* **input:** fix autofill styling ([#451](https://github.com/alfa-laboratory/arui-feather/issues/451)) ([99fcd0c](https://github.com/alfa-laboratory/arui-feather/commit/99fcd0c))
+
+
+### Features
+
+* reorganize icons ([#398](https://github.com/alfa-laboratory/arui-feather/issues/398)) ([84fc9ae](https://github.com/alfa-laboratory/arui-feather/commit/84fc9ae))
+* update currency codes for KZT and KGS currencies ([#423](https://github.com/alfa-laboratory/arui-feather/issues/423)) ([f5bdeac](https://github.com/alfa-laboratory/arui-feather/commit/f5bdeac))
+* **calendar:** add today & events ([#427](https://github.com/alfa-laboratory/arui-feather/issues/427)) ([7c5a4af](https://github.com/alfa-laboratory/arui-feather/commit/7c5a4af))
+* **slidedown:** add animation callbacks ([#452](https://github.com/alfa-laboratory/arui-feather/issues/452)) ([0e2f3ac](https://github.com/alfa-laboratory/arui-feather/commit/0e2f3ac))
+
+
+
 <a name="11.4.0"></a>
 # [11.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v11.3.2...v11.4.0) (2017-12-27)
 

@@ -68,6 +68,8 @@ initialState = {
 
 Сообщение с иконкой
 ```jsx
+const IconCalendar = require('./../icon/entity/calendar').default;
+
 initialState = {
     visible: false
 };
@@ -80,7 +82,7 @@ initialState = {
         status='ok'
         offset={ 100 }
         title='Платёж запланирован'
-        icon={ <Icon name='tool-calendar' size='m' /> }
+        icon={ <IconCalendar size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >

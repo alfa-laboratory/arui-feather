@@ -9,7 +9,7 @@ import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconCheck from '../icon/ui/check';
 import MenuItem from '../menu-item/menu-item';
 
 import cn from '../cn';
@@ -242,8 +242,7 @@ class Menu extends React.Component {
             >
                 {
                     this.props.mode === 'check' && isItemChecked &&
-                    <Icon
-                        name='action-check'
+                    <IconCheck
                         size={ iconSize }
                     />
                 }

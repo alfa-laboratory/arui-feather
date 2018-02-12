@@ -3,8 +3,5 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './icon.css';
-import './icon_theme_alfa-on-color.css';
-import './icon_theme_alfa-on-white.css';
-import './icon_colored.css';
 
 export default from './icon';

@@ -6,7 +6,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
@@ -247,8 +247,7 @@ class Input extends React.Component {
                         size={ this.props.size }
                         onClick={ this.handleClearClick }
                     >
-                        <Icon
-                            name='tool-close'
+                        <IconClose
                             size={ this.props.size }
                         />
                     </IconButton>

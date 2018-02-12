@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_history_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_history_m_white">
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            <path d="M12,23 C18.075,23 23,18.075 23,12 C23,5.925 18.075,1 12,1 C5.925,1 1,5.925 1,12 C1,18.075 5.925,23 12,23 Z M12,22 C6.477,22 2,17.523 2,12 C2,6.477 6.477,2 12,2 C17.523,2 22,6.477 22,12 C22,17.523 17.523,22 12,22 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M13,11.315 L13,7.99 C12.994516,7.44162446 12.548403,6.99997258 12,7 C11.444,7 11,7.444 11,7.99 L11,11.62 C10.951252,11.8049826 10.9568067,12.0000904 11.016,12.182 C11.094,12.615 11.46,12.957 11.913,12.996 L16.457,15.62 C16.6862436,15.7535175 16.9593481,15.789856 17.2155286,15.7209277 C17.471709,15.6519994 17.6897061,15.4835242 17.821,15.253 C17.954264,15.0238417 17.9907795,14.7510459 17.9224756,14.4949065 C17.8541718,14.2387671 17.6866729,14.0203751 17.457,13.888 L13,11.315 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero" opacity="0.3"></path>
+        </g>
+    </g>
+</svg>

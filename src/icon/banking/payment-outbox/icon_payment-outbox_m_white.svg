@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_payment-outbox_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_payment-outbox_m_white" transform="translate(1.000000, 0.000000)">
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="16.4 23.6 10.7 17.9 11.4 17.1 15.9 21.7 21.4 2.4 2.1 7.8 6.6 12.4 5.9 13.1 0.1 7.3 22.8 0.9"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" opacity="0.3" points="6.3 12.7 5.5 18.5 11 17.5 14.2 9.6"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="4.9 19.1 5.8 12.7 6.7 12.8 6.1 17.9 10.9 17 11.1 18"></polygon>
+        </g>
+    </g>
+</svg>

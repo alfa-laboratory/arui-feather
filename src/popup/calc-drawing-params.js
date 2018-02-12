@@ -154,30 +154,32 @@ export function calcFitContainerDimensions(popup) {
  * @param {Point} position Позиция
  * @param {Rect} fitContainerDimensions Размеры контейнера, в который будет рендерится Popup
  * @param {PopupDimension} popupDimensions Размеры попапа
- * @param {PopupHash} popup Набор параметров попапа
+ * @param {PopupHash} popupOffsetFitContainer Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера
  * @returns {Number}
  */
-function calcFitContainerFactor(position, fitContainerDimensions, popupDimensions, popup) {
-    let fitContainerOffset = popup.offset.fitContainer;
-
+function calcFitContainerFactor(
+    position,
+    fitContainerDimensions,
+    popupDimensions,
+    popupOffsetFitContainer) {
     let intersectionLeft = Math.max(
         position.left,
-        fitContainerDimensions.left + fitContainerOffset
+        fitContainerDimensions.left + popupOffsetFitContainer
     );
 
     let intersectionRight = Math.min(
         position.left + popupDimensions.width,
-        fitContainerDimensions.right - fitContainerOffset
+        fitContainerDimensions.right - popupOffsetFitContainer
     );
 
     let intersectionTop = Math.max(
         position.top,
-        fitContainerDimensions.top + fitContainerOffset
+        fitContainerDimensions.top + popupOffsetFitContainer
     );
 
     let intersectionBottom = Math.min(
         position.top + popupDimensions.height,
-        fitContainerDimensions.bottom - fitContainerOffset
+        fitContainerDimensions.bottom - popupOffsetFitContainer
     );
 
     if ((intersectionLeft < intersectionRight) && (intersectionTop < intersectionBottom)) {
@@ -318,7 +320,12 @@ export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimen
         }
 
         position = calcPos(direction, targetDimensions, height ? newPopupDimensions : popupDimensions, popup);
-        fitContainerFactor = calcFitContainerFactor(position, fitContainerDimensions, popupDimensions, popup);
+        fitContainerFactor = calcFitContainerFactor(
+            position,
+            fitContainerDimensions,
+            popupDimensions,
+            popup.offset.fitContainer
+        );
 
         if (i === 1 ||
             fitContainerFactor > bestFitContainerFactor ||

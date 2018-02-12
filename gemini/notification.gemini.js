@@ -1,4 +1,4 @@
-import Icon from '../src/icon';
+import IconOk from '../src/icon/ui/ok';
 import Notification from '../src/notification';
 import ThemeProvider from '../src/theme-provider';
 
@@ -25,7 +25,7 @@ const PROP_SETS = [
     },
     {
         visible: true,
-        icon: <Icon name='action-ok' theme='alfa-on-color' size='m' />,
+        icon: <IconOk name='action-ok' theme='alfa-on-color' size='m' />,
         status: 'ok',
         stickTo: 'right',
         offset: 10

@@ -53,7 +53,7 @@ describe('calendar-input', () => {
         let iconNode = calendarInput.node.querySelector('.icon');
 
         expect(iconNode).to.exist;
-        expect(iconNode).to.have.class('icon_name_tool-calendar');
+        expect(iconNode).to.have.class('icon_name_calendar');
     });
 
     it('should render without calendar icon with withIcon=false', () => {

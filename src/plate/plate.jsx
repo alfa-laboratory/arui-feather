@@ -8,7 +8,7 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 import ThemeProvider from '../theme-provider/theme-provider';
 
@@ -71,7 +71,7 @@ class Plate extends React.Component {
                                     className={ cn('closer') }
                                     onClick={ this.handleCloserClick }
                                 >
-                                    <Icon name='tool-close' />
+                                    <IconClose />
                                 </IconButton>
                         }
                     </div>

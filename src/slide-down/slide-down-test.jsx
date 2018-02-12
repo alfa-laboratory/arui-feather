@@ -43,4 +43,24 @@ describe('slide-down', () => {
         let slideDownContentNode = slideDownNode.querySelector('.slide-down__content');
         expect(slideDownContentNode).to.have.class('slide-down__content_expanded');
     });
+
+    it('should call onAnimationStart when received new isExpanded prop', () => {
+        let spy = sinon.spy();
+        let props = { isExpanded: false, onAnimationStart: spy };
+        let { instance } = render(
+            <SlideDown { ...props } />
+        );
+        instance.componentWillReceiveProps({ ...props, isExpanded: true });
+        expect(spy).to.have.been.calledOnce;
+    });
+
+    it('should call onAnimationEnd when handleTransitionEnd is called', () => {
+        let spy = sinon.spy();
+        let props = { isExpanded: false, onAnimationEnd: spy };
+        let { instance } = render(
+            <SlideDown { ...props } />
+        );
+        instance.handleTransitionEnd({});
+        expect(spy).to.have.been.calledOnce;
+    });
 });

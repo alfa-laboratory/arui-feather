@@ -127,6 +127,8 @@ initialState = {
 
 С произвольной иконкой
 ```jsx
+const IconOk = require('./../icon/ui/ok').default;
+
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
     {sizes.map(size => (
@@ -136,9 +138,8 @@ const sizes = ['s', 'm', 'l', 'xl'];
                 view='line'
                 size={ size }
                 icon={
-                    <Icon
+                    <IconOk
                         colored={ true }
-                        name='action-ok'
                         size={ size }
                     />
                 }

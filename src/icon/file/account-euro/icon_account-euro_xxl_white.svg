@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="35" height="44" viewBox="0 0 35 44"><g fill="none" fill-rule="evenodd"><path d="M-5-2h48v48H-5z"/><path fill="#FFF" d="M31.5 44h-28C1.6 44 0 42.4 0 40.5v-37C0 1.6 1.6 0 3.5 0h21.2L35 10.3v30.2c0 1.9-1.6 3.5-3.5 3.5zM3.5 1C2.1 1 1 2.1 1 3.5v37C1 41.9 2.1 43 3.5 43h28c1.4 0 2.5-1.1 2.5-2.5V10.7L24.3 1H3.5z"/><path fill="#FFF" d="M10.3 20H7v2h3v2H7v2h3.3c1 5 4.8 8 10.2 8 1.7 0 3.2-.3 4.5-.8v-2.3c-1.2.6-2.8.6-4.7.6-3.5 0-6-2-6.9-5.4H23v-2H13v-2h10v-2h-9.6c.9-3.5 3.4-5.6 6.9-5.6 1.9 0 3.5 0 4.7.6v-2.2c-1.3-.5-2.8-.8-4.5-.8-5.4-.1-9.2 2.9-10.2 7.9z" opacity=".3"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account-euro_xxl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-432.000000, -153.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_account_euro__xxl__white" transform="translate(432.000000, 153.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                <path d="M36.5,46 L8.5,46 C6.6,46 5,44.4 5,42.5 L5,5.5 C5,3.6 6.6,2 8.5,2 L29.7,2 L40,12.3 L40,42.5 C40,44.4 38.4,46 36.5,46 L36.5,46 Z M8.5,3 C7.1,3 6,4.1 6,5.5 L6,42.5 C6,43.9 7.1,45 8.5,45 L36.5,45 C37.9,45 39,43.9 39,42.5 L39,12.7 L29.3,3 L8.5,3 L8.5,3 Z" id="Shape" fill="#FFFFFF"></path>
+                <g id="Group" opacity="0.3" transform="translate(12.000000, 14.000000)" fill="#FFFFFF">
+                    <path d="M3.3,8 L0,8 L0,10 L3,10 L3,11 L3,12 L0,12 L0,14 L3.3,14 C4.3,19 8.1,22 13.5,22 C15.2,22 16.7,21.7 18,21.2 L18,18.9 C16.8,19.5 15.2,19.5 13.3,19.5 C9.8,19.5 7.3,17.5 6.4,14.1 L16,14.1 L16,12.1 L6,12.1 L6,11.1 L6,10.1 L16,10.1 L16,8.1 L6.4,8.1 C7.3,4.6 9.8,2.5 13.3,2.5 C15.2,2.5 16.8,2.5 18,3.1 L18,0.9 C16.7,0.4 15.2,0.1 13.5,0.1 C8.1,1.66533454e-16 4.3,3 3.3,8 L3.3,8 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,3 +1,19 @@
+<a name="12.3.0"></a>
+# [12.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.2...v12.3.0) (2018-02-13)
+
+
+### Bug Fixes
+
+* **package:** update es6-promise to version 4.2.3 ([#496](https://github.com/alfa-laboratory/arui-feather/issues/496)) ([1198782](https://github.com/alfa-laboratory/arui-feather/commit/1198782))
+
+
+### Features
+
+* **icons:** add new icons & some fixes ([#509](https://github.com/alfa-laboratory/arui-feather/issues/509)) ([8f9e58a](https://github.com/alfa-laboratory/arui-feather/commit/8f9e58a))
+* **popup-container-provider:** getNode method ([#518](https://github.com/alfa-laboratory/arui-feather/issues/518)) ([3818fef](https://github.com/alfa-laboratory/arui-feather/commit/3818fef))
+
+
+
 <a name="12.2.2"></a>
 ## [12.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.1...v12.2.2) (2018-01-22)
 

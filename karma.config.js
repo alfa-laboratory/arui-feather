@@ -97,7 +97,7 @@ module.exports = (config) => {
                 browserName: 'Chrome',
                 deviceName: 'Android Emulator',
                 platformName: 'Android',
-                platformVersion: '6.0',
+                platformVersion: '7.0',
                 timeZone: 'Moscow'
             },
             sauceSafariIOS: {

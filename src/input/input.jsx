@@ -455,7 +455,9 @@ class Input extends React.Component {
      * @param {String} value Новое значение
      */
     changeValue(value) {
-        this.setState({ value });
+        if (this.props.value === undefined) {
+            this.setState({ value });
+        }
 
         if (this.props.onChange) {
             this.props.onChange(value);

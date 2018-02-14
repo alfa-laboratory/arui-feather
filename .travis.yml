@@ -19,6 +19,8 @@ matrix:
 
 before_install:
   - npm i -g greenkeeper-lockfile@1
+  - npm cache clean --force
+  - rm -rf ~/.npm node_modules package-lock.json yarn.lock
 
 install:
   - npm i

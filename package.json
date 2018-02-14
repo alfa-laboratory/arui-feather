@@ -126,7 +126,7 @@
     "coveralls": "3.0.0",
     "del": "3.0.0",
     "eslint-plugin-markdown": "1.0.0-beta.6",
-    "gemini": "5.1.2",
+    "gemini": "5.5.0",
     "gemini-babel": "1.0.0",
     "gemini-optipng": "1.2.0",
     "gemini-react": "0.11.0",

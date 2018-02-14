@@ -48,7 +48,7 @@ let config = {
         ],
         plugins: {
             babel: true,
-            'html-reporter': {},
+            'html-reporter/gemini': {},
             optipng: true,
             react: {
                 jsModules: ['./gemini-utils/gemini-main.css'],

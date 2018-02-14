@@ -19,11 +19,10 @@ matrix:
   fast_finish: true
 
 before_install:
-  - npm cache clear --force
   - npm i -g greenkeeper-lockfile@1
 
 install:
-  - npm i --no-shrinkwrap --update-binary
+  - npm i
 
 before_script:
   - greenkeeper-lockfile-update

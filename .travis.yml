@@ -19,7 +19,7 @@ matrix:
   fast_finish: true
 
 before_install:
-  - npm i -g npm@5
+  - npm cache clean --force
   - npm i -g greenkeeper-lockfile@1
 
 install:

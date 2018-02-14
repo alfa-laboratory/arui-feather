@@ -31,7 +31,7 @@ describe('resize-sensor', () => {
             setTimeout(() => {
                 expect(onResize).to.have.been.called;
                 done();
-            }, 1000);
+            }, 250);
         }, 0);
     });
 });

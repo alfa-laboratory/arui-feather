@@ -125,7 +125,10 @@ module.exports = (config) => {
     } else {
         cfg.customLaunchers = {
             CustomChromeHeadless: {
-                base: 'ChromeHeadless'
+                base: 'ChromeHeadless',
+                // For security reasons, Google Chrome is unable to provide sandboxing when it's running in container
+                // https://github.com/travis-ci/docs-travis-ci-com/pull/1671
+                flags: ['--no-sandbox']
             }
         };
         cfg.plugins.push(require('karma-chrome-launcher'));

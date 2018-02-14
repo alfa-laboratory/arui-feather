@@ -1,3 +1,14 @@
+<a name="12.3.1"></a>
+## [12.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.3.0...v12.3.1) (2018-02-14)
+
+
+### Bug Fixes
+
+* **input:** no need to set state if input value is controlled by input ([#514](https://github.com/alfa-laboratory/arui-feather/issues/514)) ([18db0cf](https://github.com/alfa-laboratory/arui-feather/commit/18db0cf))
+* **package:** update libphonenumber-js to version 1.0.24 ([#524](https://github.com/alfa-laboratory/arui-feather/issues/524)) ([5bb1798](https://github.com/alfa-laboratory/arui-feather/commit/5bb1798)), closes [#499](https://github.com/alfa-laboratory/arui-feather/issues/499)
+
+
+
 <a name="12.3.0"></a>
 # [12.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.2...v12.3.0) (2018-02-13)
 

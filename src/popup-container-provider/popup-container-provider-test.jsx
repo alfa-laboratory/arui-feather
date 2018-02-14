@@ -34,20 +34,18 @@ describe('popup-container-provider', () => {
     it(`should set childContext with
         isInFixedContainer = true,
         renderContainerElement = HTMLElement to which popup will be appended,
-        positioningContainerElement = HTMLElement in which popup will try to fit`,
-        () => {
-            let popupContainer = render(
-                <PopupContainerProvider>
-                    <div>Render-test</div>
-                </PopupContainerProvider>
-            );
-            let childContext = popupContainer.instance.getChildContext();
+        positioningContainerElement = HTMLElement in which popup will try to fit`, () => {
+        let popupContainer = render(
+            <PopupContainerProvider>
+                <div>Render-test</div>
+            </PopupContainerProvider>
+        );
+        let childContext = popupContainer.instance.getChildContext();
 
-            expect(childContext.isInCustomContainer).to.equal(true);
-            expect(childContext.positioningContainerElement).to.equal(popupContainer.node);
-            expect(childContext.renderContainerElement.tagName).to.equal('DIV');
-        }
-    );
+        expect(childContext.isInCustomContainer).to.equal(true);
+        expect(childContext.positioningContainerElement).to.equal(popupContainer.node);
+        expect(childContext.renderContainerElement.tagName).to.equal('DIV');
+    });
 
     it('should render children popups inside itself’s DOM node', () => {
         let popupContainer = render(

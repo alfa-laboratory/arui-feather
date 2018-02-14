@@ -7092,12 +7092,17 @@ is-jpg@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-jpg/-/is-jpg-1.0.0.tgz#2959c17e73430db38264da75b90dd54f2d86da1c"
 
+is-my-ip-valid@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-my-ip-valid/-/is-my-ip-valid-1.0.0.tgz#7b351b8e8edd4d3995d4d066680e664d94696824"
+
 is-my-json-valid@^2.12.0, is-my-json-valid@^2.12.4:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.17.1.tgz#3da98914a70a22f0a8563ef1511a246c6fc55471"
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.17.2.tgz#6b2103a288e94ef3de5cf15d29dd85fc4b78d65c"
   dependencies:
     generate-function "^2.0.0"
     generate-object-property "^1.1.0"
+    is-my-ip-valid "^1.0.0"
     jsonpointer "^4.0.0"
     xtend "^4.0.0"
 
@@ -7909,13 +7914,14 @@ libmime@3.0.0:
     libbase64 "0.1.0"
     libqp "1.1.0"
 
-libphonenumber-js@0.4.50:
-  version "0.4.50"
-  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-0.4.50.tgz#003ea792306ce314dc89789d62a7adc2f0d6cd0d"
+libphonenumber-js@1.0.24:
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.0.24.tgz#77a4a9dd6761f49c8b02964b7f50043a0a1ffed7"
   dependencies:
     babel-runtime "^6.6.1"
     bluebird "^3.4.6"
     minimist "^1.2.0"
+    semver-compare "^1.0.0"
     xml2js "^0.4.17"
 
 libqp@1.1.0:
@@ -11900,6 +11906,10 @@ selfsigned@^1.9.1:
   resolved "https://registry.yarnpkg.com/selfsigned/-/selfsigned-1.10.2.tgz#b4449580d99929b65b10a48389301a6592088758"
   dependencies:
     node-forge "0.7.1"
+
+semver-compare@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
 
 semver-regex@^1.0.0:
   version "1.0.0"

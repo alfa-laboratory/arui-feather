@@ -292,7 +292,7 @@ class IntlPhoneInput extends React.Component {
 
     setValue(countryIso2, inputValue) {
         let resultValue = this.util
-            ? new this.util.asYouType(countryIso2.toUpperCase()).input(inputValue) // eslint-disable-line new-cap
+            ? new this.util.AsYouType(countryIso2.toUpperCase()).input(inputValue) // eslint-disable-line new-cap
             : inputValue;
 
         this.setState({

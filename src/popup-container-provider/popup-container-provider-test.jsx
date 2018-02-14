@@ -34,8 +34,7 @@ describe('popup-container-provider', () => {
     it(`should set childContext with
         isInFixedContainer = true,
         renderContainerElement = HTMLElement to which popup will be appended,
-        positioningContainerElement = HTMLElement in which popup will try to fit`,
-        () => {
+        positioningContainerElement = HTMLElement in which popup will try to fit`, () => {
             let popupContainer = render(
                 <PopupContainerProvider>
                     <div>Render-test</div>

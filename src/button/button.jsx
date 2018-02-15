@@ -8,7 +8,6 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import { deprecated } from '../lib/prop-types';
 import performance from '../performance';
 
 /**
@@ -40,8 +39,6 @@ class Button extends React.Component {
         disabled: Type.bool,
         /** Отображение кнопки в состоянии фокуса */
         focused: Type.bool,
-        /** Псевдо представление кнопки */
-        pseudo: deprecated(Type.bool, 'Pseudo buttons are deprecated, remove this prop'),
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Отключает валидацию полей формы, у которых есть атрибут pattern */
@@ -127,7 +124,6 @@ class Button extends React.Component {
             formNoValidate: isButton ? this.props.formNoValidate : null,
             className: cn({
                 disabled: this.props.disabled,
-                pseudo: this.props.pseudo,
                 view: this.props.view,
                 size: this.props.size,
                 width: this.props.width,

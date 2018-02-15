@@ -20,23 +20,6 @@ const buttons = [
 </div>
 ```
 
-Псевдокнопки
-```jsx
-const buttons = [
-    { size: 's', name: 'Показать' },
-    { size: 'm', name: 'Показать' },
-    { size: 'l', name: 'Показать' },
-    { size: 'xl', name: 'Показать' }
-];
-<div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <Button pseudo={ true } size={ size }>{`${name}`}</Button>
-        </div>
-    ))}
-</div>
-```
-
 Кнопки действия
 
 ```jsx

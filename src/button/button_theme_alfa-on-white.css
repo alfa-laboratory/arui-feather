@@ -81,22 +81,6 @@
         }
     }
 
-    &.button_pseudo {
-        border-style: dashed;
-
-        &.button_focused {
-            border-color: var(--color-content-alfa-on-white);
-            border-style: solid;
-
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, .9);
-
-            &.button_hovered {
-                border-color: rgba(0, 0, 0, .7);
-                box-shadow: 0 0 0 1px rgba(0, 0, 0, .7);
-            }
-        }
-    }
-
     &.button_disabled {
         border-color: transparent;
         background: rgba(11, 31, 53, .08);

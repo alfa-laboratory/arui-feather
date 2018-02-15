@@ -10,7 +10,6 @@ const PROP_SETS = [
     {},
     { view: 'action' },
     { view: 'extra' },
-    { pseudo: true },
     { disabled: true }
 ];
 

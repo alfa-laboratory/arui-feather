@@ -4,7 +4,6 @@
 
 import { autobind } from 'core-decorators';
 import React from 'react';
-import find from 'array-find';
 
 import FlagIcon from '../flag-icon/flag-icon';
 import Input from '../input/input';
@@ -133,7 +132,7 @@ class IntlPhoneInput extends React.Component {
 
     @autobind
     handleSelectChange(value) {
-        let inputValue = `+${find(this.countries, country => country.iso2 === value[0]).dialCode}`;
+        let inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
             countryIso2: value[0],

@@ -5,7 +5,6 @@
 /* eslint no-continue: 0 */
 
 import getDaysInMonth from 'date-fns/get_days_in_month';
-import find from 'array-find';
 
 const DAYS_IN_WEEK = 7;
 
@@ -96,7 +95,7 @@ function parseFormat(format) {
 
     while (processingFormat.length > 0) {
         /* eslint no-loop-func: 0 */
-        let matchedToken = find(PARSE_TOKENS, t => processingFormat.match(t.formatRegex));
+        let matchedToken = PARSE_TOKENS.find(t => processingFormat.match(t.formatRegex));
         if (matchedToken) {
             parser.push(matchedToken);
             processingFormat = processingFormat.replace(matchedToken.formatRegex, '');

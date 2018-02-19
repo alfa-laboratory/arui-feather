@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_lock_m_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_lock_m_color">
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            <path d="M19.4,9 L18,9 L18,5.5 C18,2.5 15.5,0 12.5,0 L11.5,0 C8.5,0 6,2.5 6,5.5 L6,9 L4.6,9 C3.7,9 3,9.7 3,10.6 L3,20.3 C3,22.3 4.7,24 6.7,24 L17.3,24 C19.3,24 21,22.3 21,20.3 L21,10.6 C21,9.7 20.3,9 19.4,9 Z M7,5.5 C7,3 9,1 11.5,1 L12.5,1 C15,1 17,3 17,5.5 L17,9 L7,9 L7,5.5 Z M20,20.3 C20,21.8 18.8,23 17.3,23 L6.7,23 C5.2,23 4,21.8 4,20.3 L4,10.6 C4,10.3 4.3,10 4.6,10 L19.4,10 C19.7,10 20,10.3 20,10.6 L20,20.3 Z" id="Shape" fill="#F03226" fill-rule="nonzero"></path>
+            <path d="M12,13 C10.9,13 10,13.9 10,15 C10,15.7 10.4,16.4 11,16.7 L11,20 L13,20 L13,16.7 C13.6,16.4 14,15.7 14,15 C14,13.9 13.1,13 12,13 Z" id="Shape" fill="#F03226" fill-rule="nonzero" opacity="0.3"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-housekeeping_xxl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1161.000000, -570.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_house__xxl__white" transform="translate(1097.000000, 493.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M40.488,27 L43.795,27 C45.04,27 45.72,25.508 44.923,24.551 L37.141,15 L29.359,24.556 C28.562,25.513 29.242,27 30.487,27 L33.776,27 L27.472,34.448 C26.655,35.401 27.332,37 28.586,37 L35,37 L35,43 L39,43 L39,37 L45.696,37 C46.951,37 47.627,35.383 46.811,34.43 L40.488,27 L40.488,27 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <path d="M3.973,24 L6,24 L6,43 L32,43 L32,42 L7,42 L7,23 L3.973,23 C3.309,23 2.753,22.638 2.557,22.078 C2.374,21.557 2.551,21.018 3.026,20.64 L21.5,6.16 L32.39,14.695 L33.007,13.908 L21.5,4.89 L2.405,19.855 C1.592,20.504 1.288,21.482 1.613,22.408 C1.952,23.375 2.878,24 3.973,24 L3.973,24 Z" id="Shape" fill="#FFFFFF"></path>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="13" y="25" width="6" height="8"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

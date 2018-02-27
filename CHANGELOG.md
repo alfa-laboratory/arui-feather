@@ -1,3 +1,13 @@
+<a name="12.4.0"></a>
+# [12.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.3.1...v12.4.0) (2018-02-27)
+
+
+### Features
+
+* replace polyfills by core-js analogues, add find-index polyfill ([#512](https://github.com/alfa-laboratory/arui-feather/issues/512)) ([0794e34](https://github.com/alfa-laboratory/arui-feather/commit/0794e34))
+
+
+
 <a name="12.3.1"></a>
 ## [12.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.3.0...v12.3.1) (2018-02-14)
 

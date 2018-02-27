@@ -114,6 +114,17 @@ describe('intl-phone-input', () => {
         expect(onChange).to.have.been.calledWith('+74957888878');
     });
 
+    it('shouldn`t change input value if new value length more then asYouType template length', () => {
+        const elem = render(<IntlPhoneInput />).instance;
+        elem.setState = sinon.spy();
+        elem.asYouType = { template: 'xx xxx xxx xx xx' };
+        elem.state.inputValue = '+7 495 788 88 87';
+
+        simulate(elem.getControl(), 'change', { target: { value: '+7 495 788 88 879' } });
+
+        expect(elem.setState).to.have.been.calledWith({ inputValue: '+7 495 788 88 87' });
+    });
+
     it('should have default country flag icon', () => {
         let elem = render(<IntlPhoneInput />);
 
@@ -126,25 +137,11 @@ describe('intl-phone-input', () => {
         expect(elem.node.querySelector('.flag-icon')).to.have.class('flag-icon_country_au');
     });
 
-    describe('handleSelectFocus method', () => {
+    it('should call loadUtil method on componentDidMount', () => {
         const elem = render(<IntlPhoneInput />).instance;
-
-        beforeEach(() => {
-            elem.loadUtil = sinon.spy();
-            elem.resolveFocusedState = () => {};
-        });
-
-        it('should call `loadUtil` method if state.onceOpened is falsy', () => {
-            elem.setState({ onceOpened: false });
-            elem.handleSelectFocus();
-            expect(elem.loadUtil).to.have.callCount(1);
-        });
-
-        it('shouldn`t call `loadUtil` method if state.onceOpened is truly', () => {
-            elem.setState({ onceOpened: true });
-            elem.handleSelectFocus();
-            expect(elem.loadUtil).to.have.callCount(0);
-        });
+        elem.loadUtil = sinon.spy();
+        elem.componentDidMount();
+        expect(elem.loadUtil).to.have.callCount(1);
     });
 
     describe('getOptions method', () => {

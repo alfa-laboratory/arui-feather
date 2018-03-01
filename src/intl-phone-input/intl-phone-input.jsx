@@ -168,17 +168,9 @@ class IntlPhoneInput extends React.Component {
 
     @autobind
     handleInputChange(value) {
-        let resultValue = value.length === 1 && value !== '+' ? `+${value}` : value;
-
-        if (
-            this.asYouType && this.asYouType.template &&
-            this.asYouType.template.length < resultValue.length &&
-            this.asYouType.template.length > MAX_DIAL_CODE_LENGTH
-        ) {
-            resultValue = this.state.inputValue;
-        }
-
-        this.setState({ inputValue: resultValue }, this.setCountry);
+        this.setState({
+            inputValue: value.length === 1 && value !== '+' ? `+${value}` : value
+        }, this.setCountry);
     }
 
     @autobind

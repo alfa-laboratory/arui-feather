@@ -114,17 +114,6 @@ describe('intl-phone-input', () => {
         expect(onChange).to.have.been.calledWith('+74957888878');
     });
 
-    it('shouldn`t change input value if new value length more then asYouType template length', () => {
-        const elem = render(<IntlPhoneInput />).instance;
-        elem.setState = sinon.spy();
-        elem.asYouType = { template: 'xx xxx xxx xx xx' };
-        elem.state.inputValue = '+7 495 788 88 87';
-
-        simulate(elem.getControl(), 'change', { target: { value: '+7 495 788 88 879' } });
-
-        expect(elem.setState).to.have.been.calledWith({ inputValue: '+7 495 788 88 87' });
-    });
-
     it('should have default country flag icon', () => {
         let elem = render(<IntlPhoneInput />);
 

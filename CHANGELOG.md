@@ -1,3 +1,13 @@
+<a name="12.4.3"></a>
+## [12.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.2...v12.4.3) (2018-03-01)
+
+
+### Features
+
+* add prop option for select control items ([#555](https://github.com/alfa-laboratory/arui-feather/issues/555)) ([f5a4c25](https://github.com/alfa-laboratory/arui-feather/commit/f5a4c25))
+
+
+
 <a name="12.4.2"></a>
 ## [12.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.1...v12.4.2) (2018-03-01)
 

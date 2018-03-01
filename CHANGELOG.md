@@ -1,3 +1,13 @@
+<a name="12.4.2"></a>
+## [12.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.1...v12.4.2) (2018-03-01)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** remove restriction of phone number length ([#554](https://github.com/alfa-laboratory/arui-feather/issues/554)) ([826fc65](https://github.com/alfa-laboratory/arui-feather/commit/826fc65))
+
+
+
 <a name="12.4.1"></a>
 ## [12.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.0...v12.4.1) (2018-02-28)
 

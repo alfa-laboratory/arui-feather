@@ -143,6 +143,8 @@
     }
 
     &__arrow_disabled {
-        visibility: hidden;
+        pointer-events: none;
+        cursor: default;
+        opacity: 0;
     }
 }

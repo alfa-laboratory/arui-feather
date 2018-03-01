@@ -89,7 +89,9 @@ class Select extends React.Component {
             /** Иконка варианта */
             icon: Type.node,
             /** Список вариантов, только для type='group' */
-            content: Type.array
+            content: Type.array,
+            /** Только для type='item': свойства для компонента [MenuItem](../menu-item/) */
+            props: Type.object
         })),
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
@@ -418,6 +420,7 @@ class Select extends React.Component {
                 let content = option.description || option.text;
 
                 return ({
+                    props: option.props,
                     value: option.value,
                     content: createFragment({ icon: option.icon, content })
                 });

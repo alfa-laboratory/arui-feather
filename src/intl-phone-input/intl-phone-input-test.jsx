@@ -126,25 +126,11 @@ describe('intl-phone-input', () => {
         expect(elem.node.querySelector('.flag-icon')).to.have.class('flag-icon_country_au');
     });
 
-    describe('handleSelectFocus method', () => {
+    it('should call loadUtil method on componentDidMount', () => {
         const elem = render(<IntlPhoneInput />).instance;
-
-        beforeEach(() => {
-            elem.loadUtil = sinon.spy();
-            elem.resolveFocusedState = () => {};
-        });
-
-        it('should call `loadUtil` method if state.onceOpened is falsy', () => {
-            elem.setState({ onceOpened: false });
-            elem.handleSelectFocus();
-            expect(elem.loadUtil).to.have.callCount(1);
-        });
-
-        it('shouldn`t call `loadUtil` method if state.onceOpened is truly', () => {
-            elem.setState({ onceOpened: true });
-            elem.handleSelectFocus();
-            expect(elem.loadUtil).to.have.callCount(0);
-        });
+        elem.loadUtil = sinon.spy();
+        elem.componentDidMount();
+        expect(elem.loadUtil).to.have.callCount(1);
     });
 
     describe('getOptions method', () => {

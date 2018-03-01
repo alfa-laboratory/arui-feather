@@ -44,8 +44,10 @@ class IntlPhoneInput extends React.Component {
     select;
     timeoutId;
     util;
+    asYouType;
 
     componentDidMount() {
+        this.loadUtil();
         this.setCountry();
     }
 
@@ -116,7 +118,6 @@ class IntlPhoneInput extends React.Component {
     @autobind
     handleSelectFocus(event) {
         if (!this.state.onceOpened) {
-            this.loadUtil();
             this.setState({
                 onceOpened: true
             });
@@ -266,18 +267,19 @@ class IntlPhoneInput extends React.Component {
 
     setCountry() {
         let inputValue = this.getValue().replace(/ /g, '');
-
         this.countries.forEach((country) => {
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
                 // Handle countries with priority field
                 if (country.priority !== undefined) {
                     // Check max dial code length to allow country change
                     // For countries with identical dial codes or North American Numbering Plan (NANP)
-                    if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
-                        // Handle country change with input change & set highest by priority
-                        if (this.state.countryIso2 !== country.iso2 && country.priority === 0) {
-                            this.setValue(country.iso2, inputValue);
-                        }
+                    // Handle country change with input change & set highest by priority
+                    if (
+                        inputValue.length < MAX_DIAL_CODE_LENGTH &&
+                        this.state.countryIso2 !== country.iso2 &&
+                        country.priority === 0
+                    ) {
+                        this.setValue(country.iso2, inputValue);
                     // Otherwise don't change already selected country, just set value
                     } else if (this.state.countryIso2 === country.iso2) {
                         this.setValue(country.iso2, inputValue);
@@ -291,12 +293,9 @@ class IntlPhoneInput extends React.Component {
     }
 
     setValue(countryIso2, inputValue) {
-        let resultValue = this.util
-            ? new this.util.AsYouType(countryIso2.toUpperCase()).input(inputValue) // eslint-disable-line new-cap
-            : inputValue;
-
+        this.asYouType = this.util ? new this.util.AsYouType(countryIso2.toUpperCase()) : null;
         this.setState({
-            inputValue: resultValue,
+            inputValue: this.asYouType ? this.asYouType.input(inputValue) : inputValue,
             countryIso2
         });
     }

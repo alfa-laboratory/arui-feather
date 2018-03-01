@@ -1,3 +1,33 @@
+<a name="12.4.3"></a>
+## [12.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.2...v12.4.3) (2018-03-01)
+
+
+### Features
+
+* add prop option for select control items ([#555](https://github.com/alfa-laboratory/arui-feather/issues/555)) ([f5a4c25](https://github.com/alfa-laboratory/arui-feather/commit/f5a4c25))
+
+
+
+<a name="12.4.2"></a>
+## [12.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.1...v12.4.2) (2018-03-01)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** remove restriction of phone number length ([#554](https://github.com/alfa-laboratory/arui-feather/issues/554)) ([826fc65](https://github.com/alfa-laboratory/arui-feather/commit/826fc65))
+
+
+
+<a name="12.4.1"></a>
+## [12.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.0...v12.4.1) (2018-02-28)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** fix formatting ([#552](https://github.com/alfa-laboratory/arui-feather/issues/552)) ([874d0ca](https://github.com/alfa-laboratory/arui-feather/commit/874d0ca))
+
+
+
 <a name="12.4.0"></a>
 # [12.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.3.1...v12.4.0) (2018-02-27)
 

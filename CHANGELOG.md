@@ -1,3 +1,13 @@
+<a name="12.4.4"></a>
+## [12.4.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.3...v12.4.4) (2018-03-05)
+
+
+### Bug Fixes
+
+* **calendar:** fix calendar blur on last month page ([#557](https://github.com/alfa-laboratory/arui-feather/issues/557)) ([1e942f1](https://github.com/alfa-laboratory/arui-feather/commit/1e942f1))
+
+
+
 <a name="12.4.3"></a>
 ## [12.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.2...v12.4.3) (2018-03-01)
 

@@ -143,6 +143,11 @@
     }
 
     &__arrow_disabled {
-        visibility: hidden;
+        pointer-events: none;
+        cursor: default;
+
+        &, &:hover {
+            opacity: 0;
+        }
     }
 }

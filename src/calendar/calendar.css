@@ -145,6 +145,9 @@
     &__arrow_disabled {
         pointer-events: none;
         cursor: default;
-        opacity: 0;
+
+        &, &:hover {
+            opacity: 0;
+        }
     }
 }

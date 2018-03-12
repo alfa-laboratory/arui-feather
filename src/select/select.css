@@ -24,6 +24,7 @@
     &__inner {
         position: relative;
         display: inline-table;
+        vertical-align: top;
         width: 100%;
     }
 
@@ -78,6 +79,7 @@
 
     .select-button {
         overflow: hidden;
+        display: flex;
         position: relative;
         width: 100%;
         margin: 0;
@@ -131,6 +133,24 @@
 
         &_disabled {
             cursor: default;
+        }
+
+        .icon-button {
+            &_size_s {
+                width: 24px;
+            }
+
+            &_size_m {
+                width: 30px;
+            }
+
+            &_size_l {
+                width: 34px;
+            }
+
+            &_size_xl {
+                width: 34px;
+            }
         }
     }
 

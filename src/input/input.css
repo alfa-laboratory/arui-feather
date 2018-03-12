@@ -160,11 +160,14 @@
     }
 
     &_has-icon &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         top: 0;
         right: 0;
-        transition: all 200ms ease;
         text-align: center;
+        transition: all 200ms ease;
     }
 
     &_has-icon &__control {

@@ -162,7 +162,8 @@ class Button extends React.Component {
             (this.props.text &&
                 <span key='text' className={ cn('text') }>
                     { this.props.text }
-                </span>),
+                </span>
+            ),
             this.props.rightAddons &&
                 <span key='right-addons'>
                     { this.props.rightAddons }

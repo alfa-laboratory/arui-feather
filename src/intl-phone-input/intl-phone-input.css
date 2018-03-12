@@ -22,7 +22,7 @@
 
                 &_size_s {
                     padding-left: 6px;
-                    padding-right: 20px;
+                    padding-right: 22px;
                 }
 
                 &_size_m {
@@ -40,8 +40,12 @@
                     padding-right: 30px;
                 }
 
-                .icon-button {
-                    right: -2px;
+                &_size_m,
+                &_size_l,
+                &_size_xl {
+                    .icon-button {
+                        right: -2px;
+                    }
                 }
             }
         }

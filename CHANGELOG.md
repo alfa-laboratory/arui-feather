@@ -1,3 +1,14 @@
+<a name="12.4.5"></a>
+## [12.4.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.4...v12.4.5) (2018-03-12)
+
+
+### Bug Fixes
+
+* fix icon button styles in controls ([#569](https://github.com/alfa-laboratory/arui-feather/issues/569)) ([52f3af1](https://github.com/alfa-laboratory/arui-feather/commit/52f3af1))
+* **intl-phone-input:** fix country setting ([#570](https://github.com/alfa-laboratory/arui-feather/issues/570)) ([d83759f](https://github.com/alfa-laboratory/arui-feather/commit/d83759f))
+
+
+
 <a name="12.4.4"></a>
 ## [12.4.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.3...v12.4.4) (2018-03-05)
 

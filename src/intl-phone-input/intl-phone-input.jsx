@@ -267,29 +267,37 @@ class IntlPhoneInput extends React.Component {
 
     setCountry() {
         let inputValue = this.getValue().replace(/ /g, '');
-        this.countries.forEach((country) => {
+
+        for (let i = 0; i < this.countries.length; i++) {
+            let country = this.countries[i];
+
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
                 // Handle countries with priority field
                 if (country.priority !== undefined) {
                     // Check max dial code length to allow country change
                     // For countries with identical dial codes or North American Numbering Plan (NANP)
-                    // Handle country change with input change & set highest by priority
-                    if (
-                        inputValue.length < MAX_DIAL_CODE_LENGTH &&
-                        this.state.countryIso2 !== country.iso2 &&
-                        country.priority === 0
-                    ) {
-                        this.setValue(country.iso2, inputValue);
+                    if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
+                        // Update only value if countries are equal
+                        if (this.state.countryIso2 === country.iso2) {
+                            this.setValue(country.iso2, inputValue);
+                            break;
+                        // If not equal — set highest by priority
+                        } else if (country.priority === 0) {
+                            this.setValue(country.iso2, inputValue);
+                            break;
+                        }
                     // Otherwise don't change already selected country, just set value
                     } else if (this.state.countryIso2 === country.iso2) {
                         this.setValue(country.iso2, inputValue);
+                        break;
                     }
                 // Handle all other countries
                 } else {
                     this.setValue(country.iso2, inputValue);
+                    break;
                 }
             }
-        });
+        }
     }
 
     setValue(countryIso2, inputValue) {

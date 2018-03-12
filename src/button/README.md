@@ -1,4 +1,5 @@
 Обычные кнопки
+
 ```jsx
 const buttons = [
     { size: 's', name: 'Применить' },

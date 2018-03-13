@@ -1,3 +1,13 @@
+<a name="12.4.6"></a>
+## [12.4.6](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.5...v12.4.6) (2018-03-13)
+
+
+### Bug Fixes
+
+* fix button focused styles ([#573](https://github.com/alfa-laboratory/arui-feather/issues/573)) ([121b355](https://github.com/alfa-laboratory/arui-feather/commit/121b355))
+
+
+
 <a name="12.4.5"></a>
 ## [12.4.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.4...v12.4.5) (2018-03-12)
 

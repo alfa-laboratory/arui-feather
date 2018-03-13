@@ -50,14 +50,14 @@
         "eslint"
       ],
       "*.css": [
-        "lint-css"
+        "npm run lint-css"
       ],
       "src/**/*.{js,jsx}": [
         "eslint",
-        "test"
+        "npm run test"
       ],
       "src/**/*.md": [
-        "lint-md"
+        "npm run lint-md"
       ]
     }
   },

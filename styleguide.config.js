@@ -53,7 +53,7 @@ module.exports = {
         return `import ${componentName} from 'arui-feather/${componentSourcesFileName}';`;
     },
     getExampleFilename(componentPath) {
-        return path.resolve(path.dirname(componentPath), './README.md');
+        return path.resolve(path.dirname(componentPath), './EXAMPLES.md');
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),
@@ -62,8 +62,8 @@ module.exports = {
         Logo: path.resolve(__dirname, './demo/components/logo.jsx'),
         PlaygroundRenderer: path.resolve(__dirname, './demo/components/playground-with-share-example-button'),
         StyleGuideRenderer: path.resolve(__dirname, './demo/components/styleguide/styleguide-renderer'),
-        StyleGuide: path.resolve(__dirname, './demo/components/styleguide'),
-        ReactComponentRenderer: path.resolve(__dirname, './demo/components/styleguide/react-component/react-component-renderer')
+        StyleGuide: path.resolve(__dirname, './demo/components/styleguide')
+        // ReactComponentRenderer: path.resolve(__dirname, './demo/components/styleguide/react-component/react-component-renderer')
     },
     template: path.resolve(__dirname, './demo/template.html'),
     webpackConfig: merge.smart(WEBPACK_BASE_TEMPLATE, WEBPACK_DEV_TEMPLATE, {

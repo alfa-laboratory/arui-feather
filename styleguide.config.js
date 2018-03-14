@@ -41,6 +41,9 @@ module.exports = {
             }
         }
     },
+    editorConfig: {
+        theme: 'duotone-light'
+    },
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
     propsParser(filePath) {
@@ -62,8 +65,8 @@ module.exports = {
         Logo: path.resolve(__dirname, './demo/components/logo.jsx'),
         PlaygroundRenderer: path.resolve(__dirname, './demo/components/playground-with-share-example-button'),
         StyleGuideRenderer: path.resolve(__dirname, './demo/components/styleguide/styleguide-renderer'),
-        StyleGuide: path.resolve(__dirname, './demo/components/styleguide')
-        // ReactComponentRenderer: path.resolve(__dirname, './demo/components/styleguide/react-component/react-component-renderer')
+        StyleGuide: path.resolve(__dirname, './demo/components/styleguide'),
+        slots: path.resolve(__dirname, './demo/components/slots')
     },
     template: path.resolve(__dirname, './demo/template.html'),
     webpackConfig: merge.smart(WEBPACK_BASE_TEMPLATE, WEBPACK_DEV_TEMPLATE, {

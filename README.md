@@ -31,13 +31,22 @@ arui-feather — это библиотека React компонентов для
 
 Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/).
 
+
+Ждём тебя в команду
+-------------------
+
+Команда дизайн-системы Альфа-Банка ищет разработчика интерфейсов: https://hr.alfabank.ru/vacancies/ui-dev. Присоединяйся!
+
+
 Установка
 ---------
+
 arui-feather доступен как [npm-пакет](https://www.npmjs.com/package/arui-feather).
 
 ```
 npm install arui-feather --save
 ```
+
 
 Поддерживаемые браузеры
 -----------------------
@@ -118,7 +127,7 @@ npm install arui-feather --save
 - `npm run sauce-connect`
 - `npm run gemini` или `npm run gemini-update`
 
-Запуск `gemini` на выборочное число тестов (используется опция [`--set`](https://gemini-testing.github.io/doc/config.html)): `npm run gemini -- --set=button`.
+Запуск `gemini` на выборочное число тестов (используется опция [`--grep`](https://gemini-testing.github.io/doc/config.html)): `npm run gemini -- --grep="button|select"`.
 
 Во время тестирования рендер каждого сьюта доступен по URL, например: `http://localhost:8668/popup/popup_theme_alfa-on-color.popup_size_m.popup_prop-set_1`
 

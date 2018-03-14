@@ -103,6 +103,16 @@ class PopupContainerProvider extends React.Component {
             didRender: true // eslint-disable-line react/no-unused-state
         });
     }
+
+    /**
+     * Возвращает корневой `HTMLElement` компонента.
+     *
+     * @public
+     * @returns {HTMLElement}
+     */
+    getNode() {
+        return this.positioningContainer;
+    }
 }
 
 export default PopupContainerProvider;

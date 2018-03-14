@@ -1,3 +1,101 @@
+<a name="12.4.6"></a>
+## [12.4.6](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.5...v12.4.6) (2018-03-13)
+
+
+### Bug Fixes
+
+* fix button focused styles ([#573](https://github.com/alfa-laboratory/arui-feather/issues/573)) ([121b355](https://github.com/alfa-laboratory/arui-feather/commit/121b355))
+
+
+
+<a name="12.4.5"></a>
+## [12.4.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.4...v12.4.5) (2018-03-12)
+
+
+### Bug Fixes
+
+* fix icon button styles in controls ([#569](https://github.com/alfa-laboratory/arui-feather/issues/569)) ([52f3af1](https://github.com/alfa-laboratory/arui-feather/commit/52f3af1))
+* **intl-phone-input:** fix country setting ([#570](https://github.com/alfa-laboratory/arui-feather/issues/570)) ([d83759f](https://github.com/alfa-laboratory/arui-feather/commit/d83759f))
+
+
+
+<a name="12.4.4"></a>
+## [12.4.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.3...v12.4.4) (2018-03-05)
+
+
+### Bug Fixes
+
+* **calendar:** fix calendar blur on last month page ([#557](https://github.com/alfa-laboratory/arui-feather/issues/557)) ([1e942f1](https://github.com/alfa-laboratory/arui-feather/commit/1e942f1))
+
+
+
+<a name="12.4.3"></a>
+## [12.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.2...v12.4.3) (2018-03-01)
+
+
+### Features
+
+* add prop option for select control items ([#555](https://github.com/alfa-laboratory/arui-feather/issues/555)) ([f5a4c25](https://github.com/alfa-laboratory/arui-feather/commit/f5a4c25))
+
+
+
+<a name="12.4.2"></a>
+## [12.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.1...v12.4.2) (2018-03-01)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** remove restriction of phone number length ([#554](https://github.com/alfa-laboratory/arui-feather/issues/554)) ([826fc65](https://github.com/alfa-laboratory/arui-feather/commit/826fc65))
+
+
+
+<a name="12.4.1"></a>
+## [12.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.0...v12.4.1) (2018-02-28)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** fix formatting ([#552](https://github.com/alfa-laboratory/arui-feather/issues/552)) ([874d0ca](https://github.com/alfa-laboratory/arui-feather/commit/874d0ca))
+
+
+
+<a name="12.4.0"></a>
+# [12.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.3.1...v12.4.0) (2018-02-27)
+
+
+### Features
+
+* replace polyfills by core-js analogues, add find-index polyfill ([#512](https://github.com/alfa-laboratory/arui-feather/issues/512)) ([0794e34](https://github.com/alfa-laboratory/arui-feather/commit/0794e34))
+
+
+
+<a name="12.3.1"></a>
+## [12.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.3.0...v12.3.1) (2018-02-14)
+
+
+### Bug Fixes
+
+* **input:** no need to set state if input value is controlled by input ([#514](https://github.com/alfa-laboratory/arui-feather/issues/514)) ([18db0cf](https://github.com/alfa-laboratory/arui-feather/commit/18db0cf))
+* **package:** update libphonenumber-js to version 1.0.24 ([#524](https://github.com/alfa-laboratory/arui-feather/issues/524)) ([5bb1798](https://github.com/alfa-laboratory/arui-feather/commit/5bb1798)), closes [#499](https://github.com/alfa-laboratory/arui-feather/issues/499)
+
+
+
+<a name="12.3.0"></a>
+# [12.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.2...v12.3.0) (2018-02-13)
+
+
+### Bug Fixes
+
+* **package:** update es6-promise to version 4.2.3 ([#496](https://github.com/alfa-laboratory/arui-feather/issues/496)) ([1198782](https://github.com/alfa-laboratory/arui-feather/commit/1198782))
+
+
+### Features
+
+* **icons:** add new icons & some fixes ([#509](https://github.com/alfa-laboratory/arui-feather/issues/509)) ([8f9e58a](https://github.com/alfa-laboratory/arui-feather/commit/8f9e58a))
+* **popup-container-provider:** getNode method ([#518](https://github.com/alfa-laboratory/arui-feather/issues/518)) ([3818fef](https://github.com/alfa-laboratory/arui-feather/commit/3818fef))
+
+
+
 <a name="12.2.2"></a>
 ## [12.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.2.1...v12.2.2) (2018-01-22)
 

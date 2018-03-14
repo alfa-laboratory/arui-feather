@@ -44,8 +44,10 @@ class IntlPhoneInput extends React.Component {
     select;
     timeoutId;
     util;
+    asYouType;
 
     componentDidMount() {
+        this.loadUtil();
         this.setCountry();
     }
 
@@ -116,7 +118,6 @@ class IntlPhoneInput extends React.Component {
     @autobind
     handleSelectFocus(event) {
         if (!this.state.onceOpened) {
-            this.loadUtil();
             this.setState({
                 onceOpened: true
             });
@@ -195,10 +196,10 @@ class IntlPhoneInput extends React.Component {
 
     getSelectPopupOffset() {
         switch (this.props.size) {
-            case 's': return -24;
-            case 'm': return -30;
-            case 'l': return -36;
-            case 'xl': return -40;
+            case 's': return -18;
+            case 'm': return -24;
+            case 'l': return -27;
+            case 'xl': return -28;
         }
 
         return 0;
@@ -267,36 +268,42 @@ class IntlPhoneInput extends React.Component {
     setCountry() {
         let inputValue = this.getValue().replace(/ /g, '');
 
-        this.countries.forEach((country) => {
+        for (let i = 0; i < this.countries.length; i++) {
+            let country = this.countries[i];
+
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
                 // Handle countries with priority field
                 if (country.priority !== undefined) {
                     // Check max dial code length to allow country change
                     // For countries with identical dial codes or North American Numbering Plan (NANP)
                     if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
-                        // Handle country change with input change & set highest by priority
-                        if (this.state.countryIso2 !== country.iso2 && country.priority === 0) {
+                        // Update only value if countries are equal
+                        if (this.state.countryIso2 === country.iso2) {
                             this.setValue(country.iso2, inputValue);
+                            break;
+                        // If not equal — set highest by priority
+                        } else if (country.priority === 0) {
+                            this.setValue(country.iso2, inputValue);
+                            break;
                         }
                     // Otherwise don't change already selected country, just set value
                     } else if (this.state.countryIso2 === country.iso2) {
                         this.setValue(country.iso2, inputValue);
+                        break;
                     }
                 // Handle all other countries
                 } else {
                     this.setValue(country.iso2, inputValue);
+                    break;
                 }
             }
-        });
+        }
     }
 
     setValue(countryIso2, inputValue) {
-        let resultValue = this.util
-            ? new this.util.asYouType(countryIso2.toUpperCase()).input(inputValue) // eslint-disable-line new-cap
-            : inputValue;
-
+        this.asYouType = this.util ? new this.util.AsYouType(countryIso2.toUpperCase()) : null;
         this.setState({
-            inputValue: resultValue,
+            inputValue: this.asYouType ? this.asYouType.input(inputValue) : inputValue,
             countryIso2
         });
     }

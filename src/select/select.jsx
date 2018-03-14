@@ -89,7 +89,9 @@ class Select extends React.Component {
             /** Иконка варианта */
             icon: Type.node,
             /** Список вариантов, только для type='group' */
-            content: Type.array
+            content: Type.array,
+            /** Только для type='item': свойства для компонента [MenuItem](../menu-item/) */
+            props: Type.object
         })),
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
@@ -282,7 +284,8 @@ class Select extends React.Component {
 
         switch (this.props.size) {
             case 's': case 'm': tickSize = 's'; break;
-            case 'l': case 'xl': tickSize = 'm'; break;
+            case 'l': tickSize = 'm'; break;
+            case 'xl': tickSize = 'l'; break;
         }
 
         return (
@@ -291,22 +294,21 @@ class Select extends React.Component {
                 size={ this.props.size }
                 disabled={ this.props.disabled }
                 focused={ this.getOpened() }
-                text={ this.renderButtonContent() }
-                rightAddons={ [
-                    <IconButton
-                        className={ cn('tick') }
-                        key='addon-icon'
-                        size={ this.props.size }
-                        tag='span'
-                    >
-                        <ToggledIcon size={ tickSize } />
-                    </IconButton>,
-                    <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
-                ] }
                 onClick={ this.handleButtonClick }
                 onFocus={ this.handleButtonFocus }
                 onBlur={ this.handleButtonBlur }
-            />
+            >
+                { this.renderButtonContent() }
+                <IconButton
+                    className={ cn('tick') }
+                    key='addon-icon'
+                    size={ this.props.size }
+                    tag='span'
+                >
+                    <ToggledIcon size={ tickSize } />
+                </IconButton>
+                <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+            </SelectButton>
         );
     }
 
@@ -418,6 +420,7 @@ class Select extends React.Component {
                 let content = option.description || option.text;
 
                 return ({
+                    props: option.props,
                     value: option.value,
                     content: createFragment({ icon: option.icon, content })
                 });

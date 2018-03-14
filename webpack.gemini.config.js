@@ -1,4 +1,4 @@
-/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint import/no-extraneous-dependencies: 0 */
 /* eslint strict: [0, "global"] */
 
 'use strict';

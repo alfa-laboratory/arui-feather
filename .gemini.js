@@ -48,7 +48,10 @@ let config = {
         ],
         plugins: {
             babel: true,
-            'html-reporter': {},
+            'html-reporter/gemini': {
+                defaultView: 'failed',
+                path: './gemini-report'
+            },
             optipng: true,
             react: {
                 jsModules: ['./gemini-utils/gemini-main.css'],

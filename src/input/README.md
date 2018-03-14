@@ -6,26 +6,23 @@ initialState = {
 function handleMoneyChange(money) {
     setState({ money });
 }
-function renderAddons() {
-    return (
-        <RadioGroup type='button'>
-            {['₽', '$', '€'].map(item => (
-                <Radio
-                    key={ item }
-                    size='s'
-                    type='button'
-                    text={ item }
-                    onChange={ handleMoneyChange }
-                />
-            ))}
-        </RadioGroup>
-    );
-}
 <div>
     <Input
         size='m'
         placeholder='Введите сумму'
-        rightAddons={ renderAddons() }
+        rightAddons={
+            <RadioGroup type='button'>
+                {['₽', '$', '€'].map(item => (
+                    <Radio
+                        key={ item }
+                        size='s'
+                        type='button'
+                        text={ item }
+                        onChange={ handleMoneyChange }
+                    />
+                ))}
+            </RadioGroup>
+        }
         type='number'
     />
 </div>

@@ -3,7 +3,7 @@
 const options = [
     { value: '01', text: 'ИП Фридман М.М.' },
     { value: '02', text: 'ООО «Виктори»' },
-    { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
 ];
 <div>
     {['s'].map(size => (

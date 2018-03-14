@@ -563,7 +563,7 @@ class Popup extends React.Component {
     }
 
     setGradientStyles() {
-        let { clientWidth } = this.inner;
+        let { clientWidth } = this.inner || '100%';
 
         this.setState({
             topGradientStyles: {

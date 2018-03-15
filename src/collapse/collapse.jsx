@@ -61,14 +61,14 @@ class Collapse extends React.Component {
 
     render(cn) {
         let ToggledIcon;
-        switch (this.props.isExpanded) {
-            case true: ToggledIcon = IconArrowUp; break;
-            case false: ToggledIcon = IconArrowDown; break;
-        }
-
         let expanded = this.props.isExpanded !== undefined
             ? this.props.isExpanded
             : this.state.isExpanded;
+
+        switch (expanded) {
+            case true: ToggledIcon = IconArrowUp; break;
+            case false: ToggledIcon = IconArrowDown; break;
+        }
 
         return (
             <div

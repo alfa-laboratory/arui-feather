@@ -14,26 +14,40 @@ const toolbar = [IsolateButton];
 export default {
     sectionToolbar: toolbar,
     componentToolbar: toolbar,
-    exampleToolbar: toolbar,
-    exampleTabButtons: [
+
+    examplesToolbar: toolbar,
+
+    examplesTabButton: [
         {
             id: EXAMPLE_TAB_CODE_EDITOR,
             render: CodeTabButton
         }
     ],
-    exampleTabs: [
+    examplesTab: [
         {
             id: EXAMPLE_TAB_CODE_EDITOR,
             render: Editor
         }
     ],
-    docsTabButtons: [
+    docsTabButton: [
         {
             id: DOCS_TAB_USAGE,
             render: UsageTabButton
         }
     ],
-    docsTabs: [
+    docsTab: [
+        {
+            id: DOCS_TAB_USAGE,
+            render: Usage
+        }
+    ],
+    usageTabButton: [
+        {
+            id: EXAMPLE_TAB_CODE_EDITOR,
+            render: CodeTabButton
+        }
+    ],
+    usageTab: [
         {
             id: DOCS_TAB_USAGE,
             render: Usage

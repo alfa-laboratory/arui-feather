@@ -1,73 +1,53 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Pathline from 'react-styleguidist/lib/rsg-components/Pathline/PathlineRenderer';
-import Styled from 'react-styleguidist/lib/rsg-components/Styled';
+import { PureComponent } from 'react';
+import Type from 'prop-types';
+import Pathline from '../pathline';
 
-const styles = ({ color, fontSize, space }) => ({
-	root: {
-		marginBottom: space[6],
-	},
-	header: {
-		marginBottom: space[3],
-	},
-	tabs: {
-		marginBottom: space[3],
-	},
-	tabButtons: {
-		marginBottom: space[2],
-	},
-	docs: {
-		color: color.base,
-		fontSize: fontSize.text,
-	},
-});
+import cn from '../../../src/cn';
 
-export function ReactComponentRenderer({
-	classes,
-	name,
-	heading,
-	pathLine,
-	description,
-	docs,
-	examples,
-	tabButtons,
-	tabBody,
-}) {
-	return (
-		<div className={classes.root} id={name + '-container'}>
-			<header className={classes.header}>
-				{heading}
-				{pathLine && <Pathline>{pathLine}</Pathline>}
-			</header>
-			{(description || docs) && (
-				<div className={classes.docs}>
-					{description}
-					{docs}
-				</div>
-			)}
-			{tabButtons && (
-				<div className={classes.tabs}>
-					<div className={classes.tabButtons}>{tabButtons}</div>
-					{tabBody}
-				</div>
-			)}
-			{examples}
-		</div>
-	);
+@cn('react-component')
+class ReactComponentRenderer extends PureComponent {
+    render(cn) {
+        return (
+            <div className={ cn() } id={ `${this.props.name}-container` }>
+                <header className={ cn('header') }>
+                    { this.props.heading }
+                    { this.props.pathLine && <Pathline>{ this.props.pathLine }</Pathline> }
+                </header>
+                {
+                    (this.props.description || this.props.docs) &&
+                    <div className={ cn('docs') }>
+                        { this.props.description }
+                        { this.props.docs }
+                    </div>
+                }
+                {
+                    this.props.tabButtons &&
+                    <div>
+                        <div className={ cn('tab-buttons') }>
+                            { this.props.tabButtons }
+                        </div>
+                        <div className={ cn('tab-bodies') }>
+                            { this.props.tabBodies }
+                        </div>
+                    </div>
+                }
+                { this.props.examples }
+            </div>
+        );
+    }
 }
 
 ReactComponentRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	name: PropTypes.string.isRequired,
-	heading: PropTypes.node.isRequired,
-	filepath: PropTypes.string,
-	pathLine: PropTypes.string,
-	tabButtons: PropTypes.node,
-	tabBody: PropTypes.node,
-	description: PropTypes.node,
-	docs: PropTypes.node,
-	examples: PropTypes.node,
-	isolated: PropTypes.bool,
+    name: Type.string.isRequired,
+    heading: Type.node.isRequired,
+    filepath: Type.string,
+    pathLine: Type.string,
+    tabButtons: Type.node,
+    tabBodies: Type.node,
+    description: Type.node,
+    docs: Type.node,
+    examples: Type.node,
+    isolated: Type.bool
 };
 
-export default Styled(styles)(ReactComponentRenderer);
+export default ReactComponentRenderer;

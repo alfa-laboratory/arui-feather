@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-loans_xxl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1387.000000, -246.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_depts__xxl__white" transform="translate(1323.000000, 169.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M18,25 C20.757,25 23,22.757 23,20 C23,17.243 20.757,15 18,15 C15.243,15 13,17.243 13,20 C13,22.757 15.243,25 18,25 L18,25 Z M18,17 C19.657,17 21,18.343 21,20 C21,21.657 19.657,23 18,23 C16.343,23 15,21.657 15,20 C15,18.343 16.343,17 18,17 L18,17 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <path d="M30,27 C27.243,27 25,29.243 25,32 C25,34.757 27.243,37 30,37 C32.757,37 35,34.757 35,32 C35,29.243 32.757,27 30,27 L30,27 Z M30,35 C28.343,35 27,33.657 27,32 C27,30.343 28.343,29 30,29 C31.657,29 33,30.343 33,32 C33,33.657 31.657,35 30,35 L30,35 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" transform="translate(24.000974, 25.999279) rotate(-49.347126) translate(-24.000974, -25.999279) " x="12.5540282" y="24.9992404" width="22.8938921" height="2.00007794"></rect>
+                    <path d="M44,26 C44,15.31 35.562,6.577 25,6.051 L25,0 L23,0 L23,6.051 C12.438,6.577 4,15.31 4,26 C4,32.39 7.024,38.076 11.703,41.74 L9.053,45.415 L10.675,46.585 L13.339,42.891 C16.429,44.849 20.079,46 24,46 C27.921,46 31.571,44.849 34.662,42.891 L37.326,46.585 L38.948,45.415 L36.298,41.74 C40.976,38.076 44,32.39 44,26 L44,26 Z M24,45 C13.523,45 5,36.477 5,26 C5,15.523 13.523,7 24,7 C34.477,7 43,15.523 43,26 C43,36.477 34.477,45 24,45 L24,45 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M15.613,4.365 L14.195,0.625 C10.165,2.153 6.491,4.651 3.571,7.849 L6.525,10.546 C9.024,7.81 12.167,5.672 15.613,4.365 L15.613,4.365 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <path d="M33.802,0.625 L32.384,4.365 C35.83,5.672 38.973,7.809 41.472,10.546 L44.426,7.849 C41.505,4.651 37.832,2.153 33.802,0.625 L33.802,0.625 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

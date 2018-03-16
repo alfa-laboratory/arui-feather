@@ -168,7 +168,7 @@ class Popup extends React.Component {
             this.ensureClickEvent();
         }
 
-        if (this.props.height === 'adaptive' || this.props.target === 'screen') {
+        if (this.inner && (this.props.height === 'adaptive' || this.props.target === 'screen')) {
             this.setGradientStyles();
         }
 

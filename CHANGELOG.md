@@ -1,3 +1,13 @@
+<a name="12.4.7"></a>
+## [12.4.7](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.6...v12.4.7) (2018-03-16)
+
+
+### Features
+
+* render slide-down expanded by default if isExpanded passed in SSR ([#576](https://github.com/alfa-laboratory/arui-feather/issues/576)) ([37f4808](https://github.com/alfa-laboratory/arui-feather/commit/37f4808))
+
+
+
 <a name="12.4.6"></a>
 ## [12.4.6](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.5...v12.4.6) (2018-03-13)
 

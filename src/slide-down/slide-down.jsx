@@ -35,18 +35,12 @@ class SlideDown extends React.Component {
     };
 
     state = {
-        height: 0,
-        isHeightAuto: false
+        height: this.props.isExpanded ? 'auto' : 0,
+        isHeightAuto: this.props.isExpanded
     };
 
     slideDown;
     slideDownContent;
-
-    componentDidMount() {
-        if (this.props.isExpanded) {
-            this.setAutoHeight();
-        }
-    }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.isExpanded !== nextProps.isExpanded) {

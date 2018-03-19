@@ -99,7 +99,7 @@
     "prop-types": "15.6.1",
     "raf": "3.4.0",
     "react-addons-create-fragment": "15.6.2",
-    "react-style-proptype": "3.2.0",
+    "react-style-proptype": "3.2.1",
     "react-textarea-autosize": "5.2.1"
   },
   "peerDependencies": {

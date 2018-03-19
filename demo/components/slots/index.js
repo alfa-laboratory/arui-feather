@@ -1,13 +1,22 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
-import Editor from 'react-styleguidist/lib/rsg-components/Editor';
-import Usage from 'react-styleguidist/lib/rsg-components/Usage';
-import IsolateButton from 'react-styleguidist/lib/rsg-components/slots/IsolateButton';
-import CodeTabButton from './code-tab-button';
-import UsageTabButton from './usage-tab-button';
+import IsolateButton from './isolate-button';
 
-export const EXAMPLE_TAB_CODE_EDITOR = 'rsg-code-editor';
-export const DOCS_TAB_USAGE = 'rsg-usage';
+import CodeButton from './code-button';
+import CodeView from './code-view';
+
+import TabButton from './tab-button';
+
+import ExamplesTab from './examples-tab';
+import DocsTab from './docs-tab';
+import UsageTab from './usage-tab';
+
+// TODO @teryaew: rename rsg tab names
+export const EXAMPLES_TAB = 'examples-view';
+export const DOCS_TAB = 'docs-view';
+export const USAGE_TAB = 'usage-view';
+
+export const CODE_VIEW = 'code-view';
 
 const toolbar = [IsolateButton];
 
@@ -17,40 +26,56 @@ export default {
 
     examplesToolbar: toolbar,
 
+    codeButton: [
+        {
+            id: CODE_VIEW,
+            render: CodeButton
+        }
+    ],
+    codeView: [
+        {
+            id: CODE_VIEW,
+            render: CodeView
+        }
+    ],
+
     examplesTabButton: [
         {
-            id: EXAMPLE_TAB_CODE_EDITOR,
-            render: CodeTabButton
+            id: EXAMPLES_TAB,
+            render: TabButton,
+            children: 'Примеры и код'
         }
     ],
     examplesTab: [
         {
-            id: EXAMPLE_TAB_CODE_EDITOR,
-            render: Editor
+            id: EXAMPLES_TAB,
+            render: ExamplesTab
         }
     ],
     docsTabButton: [
         {
-            id: DOCS_TAB_USAGE,
-            render: UsageTabButton
+            id: DOCS_TAB,
+            render: TabButton,
+            children: 'Свойства и методы'
         }
     ],
     docsTab: [
         {
-            id: DOCS_TAB_USAGE,
-            render: Usage
+            id: DOCS_TAB,
+            render: DocsTab
         }
     ],
     usageTabButton: [
         {
-            id: EXAMPLE_TAB_CODE_EDITOR,
-            render: CodeTabButton
+            id: USAGE_TAB,
+            render: TabButton,
+            children: 'Правила использования'
         }
     ],
     usageTab: [
         {
-            id: DOCS_TAB_USAGE,
-            render: Usage
+            id: USAGE_TAB,
+            render: UsageTab
         }
     ]
 };

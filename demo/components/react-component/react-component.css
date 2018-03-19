@@ -1,0 +1,5 @@
+.react-component {
+    &__tab-button {
+        margin-bottom: 36px;
+    }
+}

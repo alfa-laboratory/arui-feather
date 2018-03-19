@@ -4,7 +4,7 @@ import '../../../src/polyfills';
 
 import StyleGuide from './styleguide';
 import processSections from 'react-styleguidist/lib/utils/processSections';
-import { getPlayground, isPlayground } from '../playground-with-share-example-button/utils';
+import { getPlayground, isPlayground } from '../playground/utils';
 
 import '../../../src/main.css';
 import './styleguide.css';

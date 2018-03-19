@@ -1,24 +1,25 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 import TableOfContents from 'react-styleguidist/lib/rsg-components/TableOfContents';
-import StyleGuideRenderer from './styleguide-renderer';
-import Sections from '../sections';
 import Welcome from 'react-styleguidist/lib/rsg-components/Welcome';
 import Error from 'react-styleguidist/lib/rsg-components/Error';
 import { HOMEPAGE } from 'react-styleguidist/scripts/consts';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
 
+import StyleGuideRenderer from './styleguide-renderer';
+import Sections from '../sections';
+
 export default class StyleGuide extends Component {
     static propTypes = {
-        codeRevision: PropTypes.number.isRequired,
-        config: PropTypes.object.isRequired,
-        slots: PropTypes.object.isRequired,
-        sections: PropTypes.array.isRequired,
-        welcomeScreen: PropTypes.bool,
-        patterns: PropTypes.array,
-        displayMode: PropTypes.string
+        codeRevision: Type.number.isRequired,
+        config: Type.object.isRequired,
+        slots: Type.object.isRequired,
+        sections: Type.array.isRequired,
+        welcomeScreen: Type.bool,
+        patterns: Type.array,
+        displayMode: Type.string
     };
 
     static defaultProps = {
@@ -26,10 +27,10 @@ export default class StyleGuide extends Component {
     };
 
     static childContextTypes = {
-        codeRevision: PropTypes.number.isRequired,
-        config: PropTypes.object.isRequired,
-        slots: PropTypes.object.isRequired,
-        displayMode: PropTypes.string
+        codeRevision: Type.number.isRequired,
+        config: Type.object.isRequired,
+        slots: Type.object.isRequired,
+        displayMode: Type.string
     };
 
     state = {

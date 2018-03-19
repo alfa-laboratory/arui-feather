@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 import Markdown from 'react-styleguidist/lib/rsg-components/Markdown';
 import SectionHeading from '../section-heading';
 
@@ -31,15 +31,15 @@ export class SectionRenderer extends PureComponent {
 }
 
 SectionRenderer.propTypes = {
-    name: PropTypes.string,
-    description: PropTypes.string,
-    slug: PropTypes.string,
-    filepath: PropTypes.string,
-    content: PropTypes.node,
-    components: PropTypes.node,
-    sections: PropTypes.node,
-    isolated: PropTypes.bool,
-    depth: PropTypes.number.isRequired
+    name: Type.string,
+    description: Type.string,
+    slug: Type.string,
+    filepath: Type.string,
+    content: Type.node,
+    components: Type.node,
+    sections: Type.node,
+    isolated: Type.bool,
+    depth: Type.number.isRequired
 };
 
 export default SectionRenderer;

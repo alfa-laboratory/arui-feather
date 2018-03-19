@@ -1,0 +1,7 @@
+.logo {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 16px;
+    border-bottom: 1px #e8e8e8 solid;
+}

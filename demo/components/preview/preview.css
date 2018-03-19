@@ -1,0 +1,8 @@
+.preview {
+    box-sizing: border-box;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 25px 70px 25px 25px;
+    border: 1px #eee solid;
+    border-radius: 3px;
+}

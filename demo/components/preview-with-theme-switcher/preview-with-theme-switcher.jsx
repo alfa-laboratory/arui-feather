@@ -7,7 +7,6 @@ import Type from 'prop-types';
 import { autobind } from 'core-decorators';
 import ThemeProvider from '../../../src/theme-provider';
 import cn from '../../../src/cn';
-import './index.css';
 
 const LIGHT_THEME = 'alfa-on-white';
 const DARK_THEME = 'alfa-on-color';

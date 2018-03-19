@@ -1,10 +1,8 @@
 import { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 
 import Heading from '../../../src/heading';
 import cn from '../../../src/cn';
-
-import './section-heading.css';
 
 @cn('section-heading')
 class SectionHeadingRenderer extends PureComponent {
@@ -27,12 +25,12 @@ class SectionHeadingRenderer extends PureComponent {
 }
 
 SectionHeadingRenderer.propTypes = {
-    children: PropTypes.node,
-    toolbar: PropTypes.node,
-    id: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    depth: PropTypes.number.isRequired,
-    deprecated: PropTypes.bool
+    children: Type.node,
+    toolbar: Type.node,
+    id: Type.string.isRequired,
+    href: Type.string.isRequired,
+    depth: Type.number.isRequired,
+    deprecated: Type.bool
 };
 
 export default SectionHeadingRenderer;

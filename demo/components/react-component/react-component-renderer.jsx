@@ -21,13 +21,13 @@ class ReactComponentRenderer extends PureComponent {
                     </div>
                 }
                 {
-                    this.props.tabButtons &&
-                    <div>
-                        <div className={ cn('tab-buttons') }>
-                            { this.props.tabButtons }
+                    this.props.tabButton &&
+                    <div className={ cn('tabs') }>
+                        <div className={ cn('tab-button') }>
+                            { this.props.tabButton }
                         </div>
-                        <div className={ cn('tab-bodies') }>
-                            { this.props.tabBodies }
+                        <div className={ cn('tab-body') }>
+                            { this.props.tabBody }
                         </div>
                     </div>
                 }
@@ -42,11 +42,10 @@ ReactComponentRenderer.propTypes = {
     heading: Type.node.isRequired,
     filepath: Type.string,
     pathLine: Type.string,
-    tabButtons: Type.node,
-    tabBodies: Type.node,
+    tabButton: Type.node,
+    tabBody: Type.node,
     description: Type.node,
     docs: Type.node,
-    examples: Type.node,
     isolated: Type.bool
 };
 

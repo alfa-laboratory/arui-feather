@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Slot from 'react-styleguidist/lib/rsg-components/Slot';
+import Type from 'prop-types';
+import Slot from '../slot';
 import SectionHeadingRenderer from './section-heading-renderer';
 import getUrl from 'react-styleguidist/lib/utils/getUrl';
 
@@ -19,10 +19,10 @@ export default function SectionHeading({ slotName, slotProps, children, id, ...r
 }
 
 SectionHeading.propTypes = {
-    children: PropTypes.node,
-    id: PropTypes.string.isRequired,
-    slotName: PropTypes.string.isRequired,
-    slotProps: PropTypes.object.isRequired,
-    depth: PropTypes.number.isRequired,
-    deprecated: PropTypes.bool
+    children: Type.node,
+    id: Type.string.isRequired,
+    slotName: Type.string.isRequired,
+    slotProps: Type.object.isRequired,
+    depth: Type.number.isRequired,
+    deprecated: Type.bool
 };

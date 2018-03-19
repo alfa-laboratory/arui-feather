@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 
 import cn from '../../../../src/cn';
 
@@ -10,7 +10,7 @@ class BlockquoteRenderer extends PureComponent {
     }
 }
 BlockquoteRenderer.propTypes = {
-    children: PropTypes.node.isRequired
+    children: Type.node.isRequired
 };
 
 export default BlockquoteRenderer;

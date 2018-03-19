@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 import Section from '../section';
 import SectionsRenderer from './sections-renderer';
 
 export default function Sections({ sections, depth }) {
-	return (
-		<SectionsRenderer>
-			{
+    return (
+        <SectionsRenderer>
+            {
                 sections.map((section, idx) => (
                     <Section
                         key={ idx }
@@ -15,12 +15,12 @@ export default function Sections({ sections, depth }) {
                     />
                 ))
             }
-		</SectionsRenderer>
-	);
+        </SectionsRenderer>
+    );
 }
 
 Sections.propTypes = {
-	sections: PropTypes.array.isRequired,
-	root: PropTypes.bool,
-	depth: PropTypes.number.isRequired
+    sections: Type.array.isRequired,
+    root: Type.bool,
+    depth: Type.number.isRequired
 };

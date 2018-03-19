@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 import ReactComponent from '../react-component';
 import ComponentsRenderer from './components-renderer';
 
@@ -20,6 +20,6 @@ export default function Components({ components, depth }) {
 }
 
 Components.propTypes = {
-    components: PropTypes.array.isRequired,
-    depth: PropTypes.number.isRequired
+    components: Type.array.isRequired,
+    depth: Type.number.isRequired
 };

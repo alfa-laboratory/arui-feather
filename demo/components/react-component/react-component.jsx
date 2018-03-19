@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import Type from 'prop-types';
-import Examples from '../examples';
 import SectionHeading from '../section-heading';
 import JsDoc from '../js-doc';
 import Markdown from '../markdown';
 import Slot from '../slot';
 import ReactComponentRenderer from './react-component-renderer';
-import { DOCS_TAB_USAGE } from '../slots';
+import { EXAMPLES_TAB } from '../slots';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
 
 import Tabs from '../../../src/tabs';
-
-const ExamplePlaceholder = process.env.STYLEGUIDIST_ENV !== 'production'
-    ? require('react-styleguidist/lib/rsg-components/ExamplePlaceholder').default
-    : () => <div />;
 
 export default class ReactComponent extends Component {
     static propTypes = {
@@ -31,7 +26,7 @@ export default class ReactComponent extends Component {
         this.handleTabChange = this.handleTabChange.bind(this);
 
         this.state = {
-            activeTab: undefined
+            activeTab: EXAMPLES_TAB
         };
     }
 
@@ -70,14 +65,7 @@ export default class ReactComponent extends Component {
                         { name }
                     </SectionHeading>
                 }
-                examples={
-                    examples.length > 0 ? (
-                        <Examples examples={ examples } name={ name } />
-                    ) : (
-                        <ExamplePlaceholder name={ name } />
-                    )
-                }
-                tabButtons={
+                tabButton={
                     <Tabs>
                         {
                             [
@@ -85,6 +73,12 @@ export default class ReactComponent extends Component {
                                 'docsTabButton',
                                 'usageTabButton'
                             ].map(item => ((
+                                // <TabItem
+                                //     checked={ activeTab }
+                                //     onClick={ () => { this.handleTabChange(this, item); } }
+                                // >
+                                //     { item }
+                                // </TabItem>
                                 <Slot
                                     name={ item }
                                     active={ activeTab }
@@ -94,7 +88,7 @@ export default class ReactComponent extends Component {
                         }
                     </Tabs>
                 }
-                tabBodies={
+                tabBody={
                     [
                         'examplesTab',
                         'docsTab',
@@ -104,7 +98,11 @@ export default class ReactComponent extends Component {
                             name={ item }
                             active={ activeTab }
                             onlyActive={ true }
-                            props={ component }
+                            props={ {
+                                ...component,
+                                examples,
+                                name
+                            } }
                         />
                     )))
                 }

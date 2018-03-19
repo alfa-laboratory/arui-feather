@@ -3,8 +3,6 @@ import Type from 'prop-types';
 
 import cn from '../../../src/cn';
 
-import './code.css';
-
 @cn('code')
 class CodeRenderer extends PureComponent {
     render(cn) {

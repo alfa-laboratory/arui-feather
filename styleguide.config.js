@@ -13,34 +13,8 @@ const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');
 const PORT = parseInt(process.env.PORT || 8080, 10);
 
 module.exports = {
-    title: 'ARUI Feather',
+    title: 'arui-feather',
     serverPort: PORT,
-    styles: {
-        SectionHeading: {
-            heading: {
-                fontSize: '48px',
-                fontWeight: 'bold',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis'
-            }
-        },
-        ToolbarButton: {
-            button: {
-                display: 'none'
-            }
-        },
-        Playground: {
-            preview: {
-                borderRadius: 0,
-                padding: 0
-            }
-        },
-        StyleGuide: {
-            content: {
-                maxWidth: 'none'
-            }
-        }
-    },
     editorConfig: {
         theme: 'duotone-light'
     },
@@ -61,10 +35,6 @@ module.exports = {
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),
     styleguideComponents: {
-        Wrapper: path.resolve(__dirname, './demo/components/preview-with-theme-switcher'),
-        Logo: path.resolve(__dirname, './demo/components/logo.jsx'),
-        PlaygroundRenderer: path.resolve(__dirname, './demo/components/playground-with-share-example-button'),
-        StyleGuideRenderer: path.resolve(__dirname, './demo/components/styleguide/styleguide-renderer'),
         StyleGuide: path.resolve(__dirname, './demo/components/styleguide'),
         slots: path.resolve(__dirname, './demo/components/slots')
     },

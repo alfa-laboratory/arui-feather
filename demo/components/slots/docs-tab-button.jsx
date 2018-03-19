@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 
 import Button from '../../../src/button';
 
@@ -10,13 +10,13 @@ const ExamplesTabButton = (props) => {
 };
 
 ExamplesTabButton.propTypes = {
-    onClick: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
-    props: PropTypes.shape({
-        props: PropTypes.object,
-        methods: PropTypes.array
+    onClick: Type.func.isRequired,
+    name: Type.string.isRequired,
+    props: Type.shape({
+        props: Type.object,
+        methods: Type.array
     }).isRequired,
-    active: PropTypes.bool
+    active: Type.bool
 };
 
 export default ExamplesTabButton;

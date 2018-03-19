@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Type from 'prop-types';
 
-export function SectionsRenderer({ children }) {
+function SectionsRenderer({ children }) {
     return <section>{ children }</section>;
 }
 
 SectionsRenderer.propTypes = {
-    children: PropTypes.node
+    children: Type.node
 };
 
 export default SectionsRenderer;

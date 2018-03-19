@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Examples from 'react-styleguidist/lib/rsg-components/Examples';
+import Type from 'prop-types';
+import Examples from '../examples';
 import Components from '../components';
 import Sections from '../sections';
 import SectionRenderer from './section-renderer';
@@ -31,10 +31,10 @@ export default function Section({ section, depth }, { displayMode }) {
 }
 
 Section.propTypes = {
-    section: PropTypes.object.isRequired,
-    depth: PropTypes.number.isRequired
+    section: Type.object.isRequired,
+    depth: Type.number.isRequired
 };
 
 Section.contextTypes = {
-    displayMode: PropTypes.string
+    displayMode: Type.string
 };

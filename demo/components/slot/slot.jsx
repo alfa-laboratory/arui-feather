@@ -4,7 +4,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 export default function Slot({
-    name, active, onlyActive, className, props = {}
+    name, active, onlyActive, props = {}
 }, { slots }) {
     const fills = slots[name];
     if (!fills) {
@@ -12,8 +12,8 @@ export default function Slot({
     }
 
     const rendered = fills.map((Fill, index) => {
-        // { id: 'pizza', render: ({ foo }) => <div>{foo}</div> }
-        const { id, render } = Fill;
+        // { id: 'pizza', render: ({ foo }) => <div>{foo}</div>, children: 'bar' }
+        const { id, render, children } = Fill;
         if (id && render) {
             // Render only specified fill
             if (onlyActive && id !== active) {
@@ -34,7 +34,7 @@ export default function Slot({
             Fill = render;
         }
 
-        return <Fill key={ index } { ...props } />;
+        return <Fill key={ index } { ...props }>{ children }</Fill>;
     });
 
     const filtered = rendered.filter(Boolean);
@@ -43,15 +43,14 @@ export default function Slot({
         return null;
     }
 
-    return <div className={ className }>{ filtered }</div>;
+    return filtered;
 }
 
 Slot.propTypes = {
     name: Type.string.isRequired,
     active: Type.string,
     onlyActive: Type.bool,
-    props: Type.object,
-    className: Type.string
+    props: Type.object
 };
 
 Slot.contextTypes = {

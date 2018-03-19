@@ -1,8 +1,9 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 /* eslint react/forbid-prop-types: 0 */
 
 import React from 'react';
 import Type from 'prop-types';
-import map from 'lodash/map';
+import map from 'lodash/map'; // Via react-styleguidist package
 import Markdown from '../markdown';
 
 const plural = (array, caption) => (array.length === 1 ? caption : `${caption}s`);

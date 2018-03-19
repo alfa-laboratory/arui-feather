@@ -1,7 +1,9 @@
+/* eslint import/no-extraneous-dependencies: 0 */
+
 import { PureComponent } from 'react';
 import Type from 'prop-types';
-import copy from 'clipboard-copy';
-import MdContentCopy from 'react-icons/lib/md/content-copy';
+import copy from 'clipboard-copy'; // Via react-styleguidist package
+import MdContentCopy from 'react-icons/lib/md/content-copy'; // Via react-styleguidist package
 
 import IconButton from '../../../src/icon-button';
 

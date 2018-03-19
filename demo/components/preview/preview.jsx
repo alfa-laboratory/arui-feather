@@ -1,8 +1,10 @@
+/* eslint import/no-extraneous-dependencies: 0 */
+
 import React, { Component } from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
-import noop from 'lodash/noop';
-import { transform } from 'buble';
+import noop from 'lodash/noop'; // Via react-styleguidist package
+import { transform } from 'buble'; // Via react-styleguidist package
 import PlaygroundError from 'react-styleguidist/lib/rsg-components/PlaygroundError';
 
 import PreviewWithThemeSwitcher from '../preview-with-theme-switcher'; // instead of <Wrapper />
@@ -88,7 +90,7 @@ export default class Preview extends Component {
         const { error } = this.state;
         return (
             <div className={ cn() }>
-                <div ref={ ref => (this.mountNode = ref) } />
+                <div ref={ (ref) => { this.mountNode = ref; } } />
                 { error && <PlaygroundError message={ error } /> }
             </div>
         );

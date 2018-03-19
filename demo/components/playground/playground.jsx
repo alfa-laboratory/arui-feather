@@ -1,6 +1,9 @@
+/* eslint import/no-extraneous-dependencies: 0 */
+/* eslint react/forbid-prop-types: 0 */
+
 import React, { Component } from 'react';
 import Type from 'prop-types';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash/debounce'; // Via react-styleguidist package
 import { DisplayModes } from 'react-styleguidist/lib/consts';
 import Preview from '../preview';
 

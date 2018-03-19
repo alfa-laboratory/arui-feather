@@ -1,5 +1,7 @@
+/* eslint import/no-extraneous-dependencies: 0 */
+
 import Type from 'prop-types';
-import { compiler } from 'markdown-to-jsx';
+import { compiler } from 'markdown-to-jsx'; // Via react-styleguidist package
 
 import Link from '../../../src/link';
 import Label from '../../../src/label'; // instead of Text

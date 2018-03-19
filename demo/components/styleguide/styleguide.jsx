@@ -48,6 +48,13 @@ export default class StyleGuide extends Component {
         };
     }
 
+    componentDidCatch(error, info) {
+        this.setState({
+            error,
+            info
+        });
+    }
+
     render() {
         const {
             config, sections, welcomeScreen, patterns, displayMode
@@ -71,12 +78,5 @@ export default class StyleGuide extends Component {
                 <Sections sections={ sections } depth={ 1 } />
             </StyleGuideRenderer>
         );
-    }
-
-    componentDidCatch(error, info) {
-        this.setState({
-            error,
-            info
-        });
     }
 }

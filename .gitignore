@@ -10,6 +10,7 @@ yarn-error.log
 .gemini-react-tmp/
 .gemini.tmp.*/
 demo/styleguide*
+demo/.tmp/
 coverage/
 gemini-coverage/
 gemini-report/

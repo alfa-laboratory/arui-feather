@@ -9,12 +9,12 @@ import TabButton from './tab-button';
 
 import ExamplesTab from './examples-tab';
 import DocsTab from './docs-tab';
-import UsageTab from './usage-tab';
+import RulesTab from './rules-tab';
 
 // TODO @teryaew: rename rsg tab names
 export const EXAMPLES_TAB = 'examples-view';
 export const DOCS_TAB = 'docs-view';
-export const USAGE_TAB = 'usage-view';
+export const RULES_TAB = 'rules-view';
 
 export const CODE_VIEW = 'code-view';
 
@@ -65,17 +65,17 @@ export default {
             render: DocsTab
         }
     ],
-    usageTabButton: [
+    rulesTabButton: [
         {
-            id: USAGE_TAB,
+            id: RULES_TAB,
             render: TabButton,
             children: 'Правила использования'
         }
     ],
-    usageTab: [
+    rulesTab: [
         {
-            id: USAGE_TAB,
-            render: UsageTab
+            id: RULES_TAB,
+            render: RulesTab
         }
     ]
 };

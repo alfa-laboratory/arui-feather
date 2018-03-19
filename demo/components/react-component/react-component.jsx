@@ -39,6 +39,17 @@ export default class ReactComponent extends Component {
         } = component;
         const { description, examples = [], tags = {} } = component.props;
 
+        let resultExamples = [];
+        const RULES_PLACEHOLDER = /===RULES===/g;
+        const rules = examples.reduce((acc, item) => {
+            if (item.type === 'markdown' && RULES_PLACEHOLDER.test(item.content)) {
+                acc.push({ ...item, content: item.content.replace(RULES_PLACEHOLDER, '') });
+            } else {
+                resultExamples.push(item);
+            }
+            return acc;
+        }, []);
+
         if (!name) {
             return null;
         }
@@ -71,15 +82,10 @@ export default class ReactComponent extends Component {
                             [
                                 'examplesTabButton',
                                 'docsTabButton',
-                                'usageTabButton'
+                                'rulesTabButton'
                             ].map(item => ((
-                                // <TabItem
-                                //     checked={ activeTab }
-                                //     onClick={ () => { this.handleTabChange(this, item); } }
-                                // >
-                                //     { item }
-                                // </TabItem>
                                 <Slot
+                                    key={ item }
                                     name={ item }
                                     active={ activeTab }
                                     props={ { ...component, onClick: this.handleTabChange } }
@@ -92,16 +98,20 @@ export default class ReactComponent extends Component {
                     [
                         'examplesTab',
                         'docsTab',
-                        'usageTab'
+                        'rulesTab'
                     ].map(item => ((
                         <Slot
+                            key={ item }
                             name={ item }
                             active={ activeTab }
                             onlyActive={ true }
                             props={ {
                                 ...component,
-                                examples,
-                                name
+                                props: {
+                                    ...component.props,
+                                    examples: resultExamples,
+                                    rules
+                                }
                             } }
                         />
                     )))

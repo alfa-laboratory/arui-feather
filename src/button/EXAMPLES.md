@@ -80,7 +80,7 @@ const buttons = [
 
 С иконкой
 ```jsx
-const IconOk = require('./../icon/ui/ok').default;
+const IconOk = require('../../src/icon/ui/ok').default;
 
 const buttons = [
     { size: 's', name: 'Скачать' },

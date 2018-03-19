@@ -33,5 +33,5 @@ JsDoc.propTypes = {
     link: Type.array,
     author: Type.array,
     version: Type.array,
-    since: Type.array,
+    since: Type.array
 };

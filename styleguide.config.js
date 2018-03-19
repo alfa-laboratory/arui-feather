@@ -3,6 +3,9 @@
 
 'use strict';
 
+const fs = require('fs');
+const mkdirp = require('mkdirp');
+const glob = require('glob');
 const path = require('path');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
@@ -30,7 +33,27 @@ module.exports = {
         return `import ${componentName} from 'arui-feather/${componentSourcesFileName}';`;
     },
     getExampleFilename(componentPath) {
-        return path.resolve(path.dirname(componentPath), './EXAMPLES.md');
+        const componentDirName = path.dirname(componentPath);
+        const resultDirName = path.resolve(__dirname, './demo/.tmp');
+        const resultPath = path.resolve(resultDirName, `${path.basename(componentDirName)}.md`);
+        const files = glob.sync(path.resolve(componentDirName, '*(EXAMPLES|RULES).md'));
+        const encoding = 'utf8';
+
+        if (files.length) {
+            const resultData = files.reduce((acc, file) => {
+                if (path.basename(file, '.md').toLowerCase() === 'examples') {
+                    acc += fs.readFileSync(file, encoding);
+                } else if (path.basename(file, '.md').toLowerCase() === 'rules') {
+                    acc += `\n===RULES===\n${fs.readFileSync(file, encoding)}`;
+                }
+                return acc;
+            }, '');
+
+            mkdirp.sync(resultDirName);
+            fs.writeFileSync(resultPath, resultData, encoding);
+        }
+
+        return resultPath;
     },
     ignore: ['**/*-test.jsx'],
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),

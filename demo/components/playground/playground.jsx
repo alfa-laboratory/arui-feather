@@ -58,7 +58,9 @@ export default class Playground extends Component {
 
     render() {
         const { code, activeTab } = this.state;
-        const { evalInContext, index, name, settings } = this.props;
+        const {
+            evalInContext, index, name, settings
+        } = this.props;
         const { displayMode } = this.context;
         const preview = <Preview code={ code } evalInContext={ evalInContext } />;
         if (settings.noeditor) {

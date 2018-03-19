@@ -1,3 +1,6 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint react/forbid-prop-types: 0 */
+
 import Type from 'prop-types';
 
 import Examples from '../examples';
@@ -7,7 +10,7 @@ const ExamplePlaceholder = process.env.STYLEGUIDIST_ENV !== 'production'
     : () => <div />;
 
 function ExamplesTab(component) {
-    let { props } = component;
+    const { props } = component;
 
     return (
         props.examples.length > 0 ? (
@@ -19,10 +22,8 @@ function ExamplesTab(component) {
 }
 
 ExamplesTab.propTypes = {
-    props: Type.shape({
-        examples: Type.array.isRequired,
-        displayName: Type.string.isRequired
-    })
+    examples: Type.array.isRequired,
+    displayName: Type.string.isRequired
 };
 
 export default ExamplesTab;

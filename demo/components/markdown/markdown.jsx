@@ -17,7 +17,7 @@ import { Table, TableHead, TableBody, TableRow, TableCell } from './table';
 
 // We’re explicitly specifying Webpack loaders here so we could skip specifying them in Webpack configuration.
 // That way we could avoid clashes between our loaders and user loaders.
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, import/no-webpack-loader-syntax, max-len
 require('!!react-styleguidist/loaders/style-loader!react-styleguidist/loaders/css-loader!highlight.js/styles/tomorrow.css');
 
 const baseOverrides = {
@@ -33,14 +33,14 @@ const baseOverrides = {
     h2: {
         component: Heading,
         props: {
-            level: 2,
+            level: 2
         }
     },
     h3: {
         component: Heading,
         props: {
-            level: 3,
-        },
+            level: 3
+        }
     },
     h4: {
         component: Heading,

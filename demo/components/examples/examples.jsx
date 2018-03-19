@@ -1,3 +1,6 @@
+/* eslint react/forbid-prop-types: 0 */
+/* eslint react/no-array-index-key: 0 */
+
 import React from 'react';
 import Type from 'prop-types';
 import Playground from '../playground';

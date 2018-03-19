@@ -1,3 +1,6 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint react/forbid-prop-types: 0 */
+
 import Type from 'prop-types';
 
 import Examples from '../examples';
@@ -7,7 +10,8 @@ const ExamplePlaceholder = process.env.STYLEGUIDIST_ENV !== 'production'
     : () => <div />;
 
 function RulesTab(component) {
-    let { props } = component;
+    const { props } = component;
+
     return (
         props.rules.length > 0 ? (
             <Examples examples={ props.rules } name={ props.displayName } />
@@ -18,10 +22,8 @@ function RulesTab(component) {
 }
 
 RulesTab.propTypes = {
-    props: Type.shape({
-        rules: Type.array.isRequired,
-        displayName: Type.string.isRequired
-    })
+    rules: Type.array.isRequired,
+    displayName: Type.string.isRequired
 };
 
 export default RulesTab;

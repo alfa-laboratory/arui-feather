@@ -9,6 +9,7 @@ class CodeRenderer extends PureComponent {
         const isHighlighted = this.props.className && this.props.className.indexOf('lang-') !== -1;
 
         if (isHighlighted) {
+            // eslint-disable-next-line react/no-danger
             return <code className={ cn() } dangerouslySetInnerHTML={ { __html: this.props.children } } />;
         }
 

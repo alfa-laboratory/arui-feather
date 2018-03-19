@@ -1,12 +1,15 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint react/forbid-prop-types: 0 */
+
 import React, { Component } from 'react';
 import Type from 'prop-types';
+import { DisplayModes } from 'react-styleguidist/lib/consts';
 import SectionHeading from '../section-heading';
 import JsDoc from '../js-doc';
 import Markdown from '../markdown';
 import Slot from '../slot';
 import ReactComponentRenderer from './react-component-renderer';
 import { EXAMPLES_TAB } from '../slots';
-import { DisplayModes } from 'react-styleguidist/lib/consts';
 
 import Tabs from '../../../src/tabs';
 

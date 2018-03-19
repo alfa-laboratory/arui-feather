@@ -1,3 +1,5 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+
 import { PureComponent } from 'react';
 import Type from 'prop-types';
 import Markdown from 'react-styleguidist/lib/rsg-components/Markdown';
@@ -6,7 +8,7 @@ import SectionHeading from '../section-heading';
 import cn from '../../../src/cn';
 
 @cn('section')
-export class SectionRenderer extends PureComponent {
+class SectionRenderer extends PureComponent {
     render(cn) {
         return (
             <section className={ cn() }>

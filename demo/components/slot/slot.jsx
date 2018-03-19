@@ -1,5 +1,7 @@
 // Inspired by https://github.com/camwest/react-slot-fill
 
+/* eslint react/forbid-prop-types: 0 */
+
 import React from 'react';
 import Type from 'prop-types';
 
@@ -34,7 +36,7 @@ export default function Slot({
             Fill = render;
         }
 
-        return <Fill key={ index } { ...props }>{ children }</Fill>;
+        return <Fill key={ `${index + 1}` } { ...props }>{ children }</Fill>;
     });
 
     const filtered = rendered.filter(Boolean);

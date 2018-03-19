@@ -1,3 +1,5 @@
+/* eslint react/forbid-prop-types: 0 */
+
 import { PureComponent } from 'react';
 import Type from 'prop-types';
 

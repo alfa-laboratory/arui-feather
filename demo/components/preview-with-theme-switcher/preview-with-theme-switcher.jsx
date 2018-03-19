@@ -14,11 +14,16 @@ const DARK_THEME = 'alfa-on-color';
 @cn('preview-with-theme-switcher')
 class PreviewWithThemeSwitcher extends Component {
     static propTypes = {
-        children: Type.node
+        children: Type.node,
+        onError: Type.func
     };
 
     state = {
         theme: LIGHT_THEME
+    }
+
+    componentDidCatch(error) {
+        this.props.onError(error);
     }
 
     render(cn) {

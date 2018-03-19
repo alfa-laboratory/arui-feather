@@ -1,7 +1,9 @@
+/* eslint react/forbid-prop-types: 0 */
+
 import React from 'react';
 import Type from 'prop-types';
-import Markdown from '../markdown';
 import map from 'lodash/map';
+import Markdown from '../markdown';
 
 const plural = (array, caption) => (array.length === 1 ? caption : `${caption}s`);
 const list = array => array.map(item => item.description).join(', ');

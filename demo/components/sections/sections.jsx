@@ -1,3 +1,5 @@
+/* eslint react/forbid-prop-types: 0 */
+
 import React from 'react';
 import Type from 'prop-types';
 import Section from '../section';
@@ -7,9 +9,9 @@ export default function Sections({ sections, depth }) {
     return (
         <SectionsRenderer>
             {
-                sections.map((section, idx) => (
+                sections.map((section, index) => (
                     <Section
-                        key={ idx }
+                        key={ `${index + depth}` }
                         section={ section }
                         depth={ depth }
                     />

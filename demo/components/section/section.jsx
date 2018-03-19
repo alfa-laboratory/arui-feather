@@ -1,10 +1,13 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint react/forbid-prop-types: 0 */
+
 import React from 'react';
 import Type from 'prop-types';
+import { DisplayModes } from 'react-styleguidist/lib/consts';
 import Examples from '../examples';
 import Components from '../components';
 import Sections from '../sections';
 import SectionRenderer from './section-renderer';
-import { DisplayModes } from 'react-styleguidist/lib/consts';
 
 export default function Section({ section, depth }, { displayMode }) {
     const {

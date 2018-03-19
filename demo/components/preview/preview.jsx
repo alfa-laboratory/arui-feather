@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 import noop from 'lodash/noop';
 import { transform } from 'buble';
 import PlaygroundError from 'react-styleguidist/lib/rsg-components/PlaygroundError';
-import Wrapper from '../wrapper';
+
+import PreviewWithThemeSwitcher from '../preview-with-theme-switcher'; // instead of <Wrapper />
 
 import cn from '../../../src/cn';
 
@@ -127,9 +128,9 @@ export default class Preview extends Component {
 
         const exampleComponent = this.evalInContext(compiledCode);
         const wrappedComponent = (
-            <Wrapper onError={ this.handleError }>
+            <PreviewWithThemeSwitcher onError={ this.handleError }>
                 <PreviewComponent component={ exampleComponent } />
-            </Wrapper>
+            </PreviewWithThemeSwitcher>
         );
 
         window.requestAnimationFrame(() => {

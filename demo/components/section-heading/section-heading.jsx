@@ -1,10 +1,15 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint react/forbid-prop-types: 0 */
+
 import React from 'react';
 import Type from 'prop-types';
+import getUrl from 'react-styleguidist/lib/utils/getUrl';
 import Slot from '../slot';
 import SectionHeadingRenderer from './section-heading-renderer';
-import getUrl from 'react-styleguidist/lib/utils/getUrl';
 
-export default function SectionHeading({ slotName, slotProps, children, id, ...rest }) {
+export default function SectionHeading({
+    slotName, slotProps, children, id, ...rest
+}) {
     const href = getUrl({ slug: id, anchor: true });
     return (
         <SectionHeadingRenderer

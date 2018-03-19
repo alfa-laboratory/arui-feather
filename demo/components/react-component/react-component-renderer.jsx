@@ -31,7 +31,6 @@ class ReactComponentRenderer extends PureComponent {
                         </div>
                     </div>
                 }
-                { this.props.examples }
             </div>
         );
     }

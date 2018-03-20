@@ -11,7 +11,9 @@ class StyleGuideRenderer extends PureComponent {
         return (
             <div className={ cn({ 'has-sidebar': this.props.hasSidebar }) }>
                 <main className={ cn('content') }>
-                    { this.props.children }
+                    <div className={ cn('inner') }>
+                        { this.props.children }
+                    </div>
                 </main>
                 {
                     this.props.hasSidebar &&

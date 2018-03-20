@@ -14,7 +14,7 @@ class SectionHeadingRenderer extends PureComponent {
         return (
             <div className={ cn() }>
                 <Heading size={ sizes[this.props.depth - 1] } id={ this.props.id }>
-                    <a href={ this.props.href }>
+                    <a href={ this.context.displayMode === 'all' ? this.props.href : null }>
                         { this.props.children }
                     </a>
                 </Heading>
@@ -31,6 +31,10 @@ SectionHeadingRenderer.propTypes = {
     href: Type.string.isRequired,
     depth: Type.number.isRequired,
     deprecated: Type.bool
+};
+
+SectionHeadingRenderer.contextTypes = {
+    displayMode: Type.string
 };
 
 export default SectionHeadingRenderer;

@@ -43,7 +43,7 @@ export default {
         {
             id: EXAMPLES_TAB,
             render: TabButton,
-            children: 'Примеры и код'
+            children: 'Примеры <span>и код</span>'
         }
     ],
     examplesTab: [
@@ -56,7 +56,7 @@ export default {
         {
             id: DOCS_TAB,
             render: TabButton,
-            children: 'Свойства и методы'
+            children: 'Свойства <span>и методы</span>'
         }
     ],
     docsTab: [
@@ -69,7 +69,7 @@ export default {
         {
             id: RULES_TAB,
             render: TabButton,
-            children: 'Правила использования'
+            children: 'Правила <span>использования</span>'
         }
     ],
     rulesTab: [

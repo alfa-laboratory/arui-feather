@@ -14,7 +14,9 @@ function ExamplesTab(component) {
 
     return (
         props.examples.length > 0 ? (
-            <Examples examples={ props.examples } name={ props.displayName } />
+            <div className='content'>
+                <Examples examples={ props.examples } name={ props.displayName } />
+            </div>
         ) : (
             <ExamplePlaceholder name={ props.displayName } />
         )
@@ -22,8 +24,8 @@ function ExamplesTab(component) {
 }
 
 ExamplesTab.propTypes = {
-    examples: Type.array.isRequired,
-    displayName: Type.string.isRequired
+    examples: Type.array,
+    displayName: Type.string
 };
 
 export default ExamplesTab;

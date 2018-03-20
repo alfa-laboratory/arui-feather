@@ -8,7 +8,7 @@ import { DisplayModes } from 'react-styleguidist/lib/consts';
 import Preview from '../preview';
 
 import IconButton from '../../../src/icon-button';
-import IconShareAndroid from '../../../src/icon/action/share-android';
+import IconShare from '../../../src/icon/action/share-ios';
 import Paragraph from '../../../src/paragraph';
 
 import PlaygroundRenderer from './playground-renderer';
@@ -77,21 +77,32 @@ export default class Playground extends Component {
                 previewProps={ settings.props || {} }
                 tabButtons={
                     <div>
-                        <IconButton onClick={ this.handleShareExampleClick }>
-                            <IconShareAndroid />
+                        <IconButton
+                            onClick={ this.handleShareExampleClick }
+                            className='playground__share-button'
+                            title='Ссылка на результат'
+                        >
+                            <IconShare />
                         </IconButton>
-                        <Slot
-                            name='codeButton'
-                            active={ activeTab }
-                            props={ { onClick: this.handleTabChange } }
-                        />
+                        {
+                            displayMode === 'all' &&
+                            <Slot
+                                name='codeButton'
+                                active={ activeTab }
+                                props={ {
+                                    onClick: this.handleTabChange,
+                                    className: 'playground__code-button',
+                                    title: 'Показать код'
+                                } }
+                            />
+                        }
                     </div>
                 }
                 tabBody={
                     <Slot
                         name='codeView'
                         active={ activeTab }
-                        onlyActive={ true }
+                        onlyActive={ displayMode === 'all' }
                         props={ { code, onChange: this.handleChange } }
                     />
                 }

@@ -2,21 +2,22 @@
     position: relative;
     margin: 20px 0;
 
-    &__controls {
+    .icon-button {
+        padding: 0 20px;
+        color: #0b1f35;
+        font-size: 16px;
+    }
+
+    &__share-button {
         position: absolute;
         top: 0;
         right: 0;
-        padding-top: 12px;
+    }
 
-        .icon-button {
-            padding: 0 20px;
-            font-size: 16px;
-            border: 1px #eee solid;
-            border-radius: 4px 0 0 4px;
-
-            & + div > .icon-button {
-                margin-top: 6px;
-            }
-        }
+    &__code-button {
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        right: 0;
     }
 }

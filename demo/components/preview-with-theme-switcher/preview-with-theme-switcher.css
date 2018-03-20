@@ -6,8 +6,6 @@
 
 .preview-with-theme-switcher {
     &__layout {
-        display: flex;
-
         &_theme_alfa-on-white {
             color: var(--color-content-alfa-on-white);
             background: var(--color-background-alfa-on-white);
@@ -20,10 +18,10 @@
     }
 
     &__wrapper {
-        display: inline-block;
+        display: block;
         width: 100%;
-        margin: 15px;
-        padding: 10px;
+        margin: 0;
+        padding: 20px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;

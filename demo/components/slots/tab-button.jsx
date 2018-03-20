@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+
 import React from 'react';
 import Type from 'prop-types';
 
@@ -6,7 +8,11 @@ import TabItem from '../../../src/tab-item';
 const TabButton = (props) => {
     const component = props.props;
     const showButton = component && (component.props || (component.methods && component.methods.length > 0));
-    return showButton ? <TabItem { ...props } checked={ props.active }>{ props.children }</TabItem> : null;
+    return showButton ?
+        <TabItem { ...props } checked={ props.active }>
+            <span dangerouslySetInnerHTML={ { __html: props.children } } />
+        </TabItem>
+        : null;
 };
 
 TabButton.propTypes = {

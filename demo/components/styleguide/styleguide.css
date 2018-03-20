@@ -10,8 +10,22 @@
     &__content {
         display: block;
         max-width: none;
-        padding: 16px 32px;
         margin: 0 auto;
+
+        padding: 24px 12px;
+
+        @media (--medium) {
+            padding: 40px 60px;
+        }
+    }
+
+    &__inner {
+        max-width: 800px;
+        margin: 0 auto;
+
+        @media (--medium) {
+            margin: 0;
+        }
     }
 
     &__sidebar {

@@ -16,7 +16,6 @@ import PlaygroundRenderer from './playground-renderer';
 import Slot from '../slot';
 import { CODE_VIEW } from '../slots';
 
-
 export default class Playground extends Component {
     static propTypes = {
         code: Type.string.isRequired,

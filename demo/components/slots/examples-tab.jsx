@@ -14,9 +14,7 @@ function ExamplesTab(component) {
 
     return (
         props.examples.length > 0 ? (
-            <div className='content'>
-                <Examples examples={ props.examples } name={ props.displayName } />
-            </div>
+            <Examples examples={ props.examples } name={ props.displayName } />
         ) : (
             <ExamplePlaceholder name={ props.displayName } />
         )

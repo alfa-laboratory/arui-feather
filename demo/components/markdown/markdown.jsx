@@ -29,37 +29,43 @@ const baseOverrides = {
     h1: {
         component: Heading,
         props: {
-            level: 1
+            level: 1,
+            size: 'xl'
         }
     },
     h2: {
         component: Heading,
         props: {
-            level: 2
+            level: 2,
+            size: 'l'
         }
     },
     h3: {
         component: Heading,
         props: {
-            level: 3
+            level: 3,
+            size: 'm'
         }
     },
     h4: {
         component: Heading,
         props: {
-            level: 4
+            level: 4,
+            size: 's'
         }
     },
     h5: {
         component: Heading,
         props: {
-            level: 5
+            level: 5,
+            size: 's'
         }
     },
     h6: {
         component: Heading,
         props: {
-            level: 6
+            level: 6,
+            size: 's'
         }
     },
     p: {

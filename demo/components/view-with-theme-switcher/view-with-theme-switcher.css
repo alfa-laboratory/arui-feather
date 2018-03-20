@@ -21,7 +21,7 @@
         display: block;
         width: 100%;
         margin: 0;
-        padding: 20px;
+        padding: 0;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
@@ -29,21 +29,28 @@
 
     &__button-group {
         position: fixed;
-        top: 12px;
-        right: 12px;
+        top: 0;
+        left: 0;
+
+        @media (--medium) {
+            top: 14px;
+            left: auto;
+            right: 14px;
+        }
     }
 
     &__button {
-        width: 32px;
-        height: 32px;
-        border: solid 1px #eee;
+        width: 12px;
+        height: 24px;
+        border: 0;
+
+        @media (--medium) {
+            width: 32px;
+            height: 32px;
+        }
 
         &:hover {
             cursor: pointer;
-        }
-
-        &:focus {
-            outline: 1px dotted #f28a25;
         }
 
         &_theme_alfa-on-white {
@@ -55,9 +62,9 @@
             color: var(--color-content-alfa-on-color);
             background: color(var(--color-background-alfa-on-color) a(.9));
         }
-    }
 
-    &__button + &__button {
-        margin-left: 10px;
+        &_selected {
+            display: none;
+        }
     }
 }

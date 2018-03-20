@@ -18,7 +18,7 @@ class PathlineRenderer extends PureComponent {
                 <IconButton
                     size='s'
                     className={ cn('copy-button') }
-                    title='Copy to clipboard'
+                    title='Скопировать в буфер'
                     onClick={ () => copy(this.props.children) }
                 >
                     <MdContentCopy />

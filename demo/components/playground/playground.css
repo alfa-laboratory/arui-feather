@@ -1,10 +1,10 @@
 .playground {
     position: relative;
-    margin: 20px 0;
+    margin: 36px 0;
 
     .icon-button {
         padding: 0 20px;
-        color: #0b1f35;
+        color: inherit;
         font-size: 16px;
     }
 

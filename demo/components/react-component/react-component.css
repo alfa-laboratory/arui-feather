@@ -1,5 +1,62 @@
+:root {
+    --monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
 .react-component {
-    &__tab-button {
-        margin-bottom: 36px;
+    .tabs {
+        margin: 36px 0;
+    }
+
+    .tab-item {
+        padding: 0 0 12px;
+        font-size: 18px;
+        text-transform: none;
+        letter-spacing: normal;
+
+        span {
+            display: none;
+        }
+
+        + .tab-item {
+            margin-left: 24px;
+        }
+
+        @media (--medium) {
+            span {
+                display: inline;
+            }
+        }
+
+        &_checked {
+            color: rgba(240, 50, 38, 1);
+            text-shadow: -0.03ex 0 rgba(240, 50, 38, 1), 0.03ex 0 rgba(240, 50, 38, 1);
+
+            .styleguide_theme_alfa-on-color & {
+                color: #fff;
+                text-shadow: -0.03ex 0 #fff, 0.03ex 0 #fff;
+            }
+
+            &:hover, &:active {
+                color: rgba(240, 50, 38, 1);
+
+                .styleguide_theme_alfa-on-color & {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &__docs {
+        p {
+            margin: 36px 0;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: rgba(11, 31, 53, 0.05);
+
+            .styleguide_theme_alfa-on-color & {
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+        }
     }
 }

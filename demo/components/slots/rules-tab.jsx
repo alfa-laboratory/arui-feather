@@ -10,9 +10,7 @@ function RulesTab(component) {
 
     return (
         props.rules.length > 0 ? (
-            <div className='content'>
-                <Examples examples={ props.rules } name={ props.displayName } />
-            </div>
+            <Examples examples={ props.rules } name={ props.displayName } />
         ) : (
             null
         )
@@ -20,8 +18,8 @@ function RulesTab(component) {
 }
 
 RulesTab.propTypes = {
-    rules: Type.array.isRequired,
-    displayName: Type.string.isRequired
+    rules: Type.array,
+    displayName: Type.string
 };
 
 export default RulesTab;

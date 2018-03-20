@@ -1,5 +1,29 @@
-Обычные кнопки
+Кнопка используется как триггер для выполнения определённого действия. Кнопка однозначно сообщает пользователю, что произойдёт после нажатия на неё.
 
+### Главная кнопка
+Обозначает ключевое действие. На экране может быть только одна главная кнопка.
+```jsx
+const buttons = [
+    { size: 's', name: 'Оплатить' },
+    { size: 'm', name: 'Оплатить' },
+    { size: 'l', name: 'Оплатить' },
+    { size: 'xl', name: 'Оплатить' }
+];
+<div>
+    {buttons.map(({ size, name }) => (
+        <div className='row' key={ size }>
+            <div className='column' key={ size }>
+                <Button view='extra' size={ size }>{`${name}`}</Button>
+            </div>
+            <div className='column'>
+                <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
+            </div>
+        </div>
+    ))}
+</div>
+```
+
+Обычные кнопки
 ```jsx
 const buttons = [
     { size: 's', name: 'Применить' },
@@ -51,28 +75,6 @@ const buttons = [
     {buttons.map(({ size, name }) => (
         <div className='row' key={ size }>
             <Button view='action' size={ size }>{`${name}`}</Button>
-        </div>
-    ))}
-</div>
-```
-
-Экстра кнопки
-```jsx
-const buttons = [
-    { size: 's', name: 'Оплатить' },
-    { size: 'm', name: 'Оплатить' },
-    { size: 'l', name: 'Оплатить' },
-    { size: 'xl', name: 'Оплатить' }
-];
-<div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <div className='column' key={ size }>
-                <Button view='extra' size={ size }>{`${name}`}</Button>
-            </div>
-            <div className='column'>
-                <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
-            </div>
         </div>
     ))}
 </div>

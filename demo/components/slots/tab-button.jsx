@@ -10,7 +10,7 @@ const TabButton = (props) => {
     const showButton = component && (component.props || (component.methods && component.methods.length > 0));
     return showButton ?
         <TabItem { ...props } checked={ props.active }>
-            <span dangerouslySetInnerHTML={ { __html: props.children } } />
+            <div dangerouslySetInnerHTML={ { __html: props.children } } />
         </TabItem>
         : null;
 };

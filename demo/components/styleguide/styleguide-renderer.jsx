@@ -1,4 +1,4 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import Type from 'prop-types';
 
 import Logo from '../logo';
@@ -6,7 +6,7 @@ import Logo from '../logo';
 import cn from '../../../src/cn';
 
 @cn('styleguide')
-class StyleGuideRenderer extends PureComponent {
+class StyleGuideRenderer extends Component {
     render(cn) {
         return (
             <div className={ cn({ 'has-sidebar': this.props.hasSidebar }) }>

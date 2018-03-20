@@ -7,7 +7,7 @@ import noop from 'lodash/noop'; // Via react-styleguidist package
 import { transform } from 'buble'; // Via react-styleguidist package
 import PlaygroundError from 'react-styleguidist/lib/rsg-components/PlaygroundError';
 
-import PreviewWithThemeSwitcher from '../preview-with-theme-switcher'; // instead of <Wrapper />
+import ThemeProvider from '../../../src/theme-provider';
 
 import cn from '../../../src/cn';
 
@@ -18,7 +18,8 @@ const compileCode = (code, config) => transform(code, config).code;
 // Wrap everything in a React component to leverage the state management of this component
 class PreviewComponent extends Component {
     static propTypes = {
-        component: Type.func.isRequired
+        component: Type.func.isRequired,
+        onError: Type.func.isRequired
     };
 
     constructor() {
@@ -26,6 +27,10 @@ class PreviewComponent extends Component {
         this.state = {};
         this.setState = this.setState.bind(this);
         this.setInitialState = this.setInitialState.bind(this);
+    }
+
+    componentDidCatch(error) {
+        this.props.onError(error);
     }
 
     render() {
@@ -49,7 +54,8 @@ export default class Preview extends Component {
 
     static contextTypes = {
         config: Type.object.isRequired,
-        codeRevision: Type.number.isRequired
+        codeRevision: Type.number.isRequired,
+        theme: Type.string.isRequired
     };
 
     constructor() {
@@ -72,12 +78,13 @@ export default class Preview extends Component {
         this.executeCode();
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return this.state.error !== nextState.error || this.props.code !== nextProps.code;
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return this.state.error !== nextState.error || this.props.code !== nextProps.code ||
+            this.context.theme !== nextContext.theme;
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.code !== prevProps.code) {
+    componentDidUpdate(prevProps, prevContext) {
+        if (this.props.code !== prevProps.code || this.context.theme !== prevContext.theme) {
             this.executeCode();
         }
     }
@@ -96,14 +103,14 @@ export default class Preview extends Component {
         );
     }
 
-    handleError(err) {
+    handleError(error) {
         this.unmountPreview();
 
         this.setState({
-            error: err.toString()
+            error: error.toString()
         });
 
-        console.error(err); // eslint-disable-line no-console
+        console.error(error); // eslint-disable-line no-console
     }
 
 
@@ -130,9 +137,9 @@ export default class Preview extends Component {
 
         const exampleComponent = this.evalInContext(compiledCode);
         const wrappedComponent = (
-            <PreviewWithThemeSwitcher onError={ this.handleError }>
-                <PreviewComponent component={ exampleComponent } />
-            </PreviewWithThemeSwitcher>
+            <ThemeProvider theme={ this.context.theme }>
+                <PreviewComponent component={ exampleComponent } onError={ this.handleError } />
+            </ThemeProvider>
         );
 
         window.requestAnimationFrame(() => {

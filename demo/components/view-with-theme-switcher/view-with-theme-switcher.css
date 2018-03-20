@@ -4,7 +4,7 @@
 
 @import '../../../src/vars.css';
 
-.preview-with-theme-switcher {
+.view-with-theme-switcher {
     &__layout {
         &_theme_alfa-on-white {
             color: var(--color-content-alfa-on-white);
@@ -28,9 +28,9 @@
     }
 
     &__button-group {
-        position: absolute;
-        top: -40px;
-        left: 0;
+        position: fixed;
+        top: 12px;
+        right: 12px;
     }
 
     &__button {

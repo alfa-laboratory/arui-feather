@@ -8,6 +8,7 @@ import Welcome from 'react-styleguidist/lib/rsg-components/Welcome';
 import Error from 'react-styleguidist/lib/rsg-components/Error';
 import { HOMEPAGE } from 'react-styleguidist/scripts/consts';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
+import ViewWithThemeSwitcher from '../view-with-theme-switcher';
 
 import StyleGuideRenderer from './styleguide-renderer';
 import Sections from '../sections';
@@ -69,14 +70,16 @@ export default class StyleGuide extends Component {
         }
 
         return (
-            <StyleGuideRenderer
-                title={ config.title }
-                homepageUrl={ HOMEPAGE }
-                toc={ <TableOfContents sections={ sections } /> }
-                hasSidebar={ config.showSidebar && displayMode === DisplayModes.all }
-            >
-                <Sections sections={ sections } depth={ 1 } />
-            </StyleGuideRenderer>
+            <ViewWithThemeSwitcher>
+                <StyleGuideRenderer
+                    title={ config.title }
+                    homepageUrl={ HOMEPAGE }
+                    toc={ <TableOfContents sections={ sections } /> }
+                    hasSidebar={ config.showSidebar && displayMode === DisplayModes.all }
+                >
+                    <Sections sections={ sections } depth={ 1 } />
+                </StyleGuideRenderer>
+            </ViewWithThemeSwitcher>
         );
     }
 }

@@ -11,19 +11,22 @@ import cn from '../../../src/cn';
 const LIGHT_THEME = 'alfa-on-white';
 const DARK_THEME = 'alfa-on-color';
 
-@cn('preview-with-theme-switcher')
-class PreviewWithThemeSwitcher extends Component {
+@cn('view-with-theme-switcher')
+class ViewWithThemeSwitcher extends Component {
     static propTypes = {
-        children: Type.node,
-        onError: Type.func
+        children: Type.node
     };
+
+    static childContextTypes = {
+        theme: Type.string
+    }
 
     state = {
         theme: LIGHT_THEME
     }
 
-    componentDidCatch(error) {
-        this.props.onError(error);
+    getChildContext() {
+        return { theme: this.state.theme };
     }
 
     render(cn) {
@@ -57,4 +60,4 @@ class PreviewWithThemeSwitcher extends Component {
         this.setState({ theme });
     }
 }
-export default PreviewWithThemeSwitcher;
+export default ViewWithThemeSwitcher;

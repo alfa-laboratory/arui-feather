@@ -24,6 +24,8 @@ class Link extends React.Component {
         text: Type.node,
         /** href ссылки */
         url: Type.string,
+        /** Указание на загрузку, вместо открытия и указание имени файла  */
+        download: Type.string,
         /** target ссылки */
         target: Type.oneOf(['_self', '_blank', '_parent', '_top']),
         /** Последовательность перехода между контролами при нажатии на Tab */
@@ -102,6 +104,10 @@ class Link extends React.Component {
         if (!this.props.checked && !this.props.disabled) {
             linkProps.href = this.props.url;
             linkProps.target = this.props.target;
+        }
+
+        if (this.props.download) {
+            linkProps.download = this.props.download;
         }
 
         let linkContent = [this.props.children];

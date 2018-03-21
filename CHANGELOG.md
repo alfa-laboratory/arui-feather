@@ -1,3 +1,15 @@
+<a name="12.4.8"></a>
+## [12.4.8](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.7...v12.4.8) (2018-03-21)
+
+
+### Bug Fixes
+
+* **calendar:** fix period selection in calendar ([#582](https://github.com/alfa-laboratory/arui-feather/issues/582)) ([f37facf](https://github.com/alfa-laboratory/arui-feather/commit/f37facf))
+* **list:** better list styles ([#574](https://github.com/alfa-laboratory/arui-feather/issues/574)) ([7fa48a4](https://github.com/alfa-laboratory/arui-feather/commit/7fa48a4))
+* **popup:** check this.inner for gradient style ([#577](https://github.com/alfa-laboratory/arui-feather/issues/577)) ([e3af946](https://github.com/alfa-laboratory/arui-feather/commit/e3af946))
+
+
+
 <a name="12.4.7"></a>
 ## [12.4.7](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.6...v12.4.7) (2018-03-16)
 

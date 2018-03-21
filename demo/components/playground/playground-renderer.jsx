@@ -14,11 +14,13 @@ class PlaygroundRenderer extends PureComponent {
                 <div className={ cn('preview') } { ...props } data-preview={ this.props.name }>
                     { this.props.preview }
                 </div>
-                <div className={ cn('controls') }>
-                    <div className={ cn('tabs') }>{ this.props.tabButtons }</div>
-                    <div className={ cn('toolbar') }>{ this.props.toolbar }</div>
+                <div className={ cn('tab') }>
+                    { this.props.tabBody }
+                    <div className={ cn('controls') }>
+                        <div className={ cn('buttons') }>{ this.props.tabButtons }</div>
+                        <div className={ cn('toolbar') }>{ this.props.toolbar }</div>
+                    </div>
                 </div>
-                <div className={ cn('tab') }>{ this.props.tabBody }</div>
             </div>
         );
     }

@@ -3,6 +3,8 @@
 }
 
 .react-component {
+    margin: 0 0 36px;
+
     .tabs {
         margin: 36px 0;
     }

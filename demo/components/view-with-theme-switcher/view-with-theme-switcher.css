@@ -29,19 +29,19 @@
 
     &__button-group {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 24px;
+        right: 0;
 
         @media (--medium) {
             top: 14px;
-            left: auto;
             right: 14px;
         }
     }
 
     &__button {
         width: 12px;
-        height: 24px;
+        height: 32px;
+        padding: 0;
         border: 0;
 
         @media (--medium) {

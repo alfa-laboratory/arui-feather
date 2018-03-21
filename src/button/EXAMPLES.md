@@ -4,113 +4,105 @@
 Обозначает ключевое действие. На экране может быть только одна главная кнопка.
 ```jsx
 const buttons = [
-    { size: 's', name: 'Оплатить' },
-    { size: 'm', name: 'Оплатить' },
+    { size: 'xl', name: 'Оплатить' },
     { size: 'l', name: 'Оплатить' },
-    { size: 'xl', name: 'Оплатить' }
+    { size: 'm', name: 'Оплатить' },
+    { size: 's', name: 'Оплатить' }
 ];
 <div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <div className='column' key={ size }>
-                <Button view='extra' size={ size }>{`${name}`}</Button>
-            </div>
-            <div className='column'>
-                <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
-            </div>
-        </div>
-    ))}
+  <div className='row'>
+      {buttons.map(({ size, name }) => (
+          <div className='column'>
+              <Button view='extra' size={ size }>{`${name}`}</Button>
+          </div>
+      ))}
+  </div>
+  <div className='row'>
+      {buttons.map(({ size, name }) => (
+          <div className='column'>
+              <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
+          </div>
+      ))}
+  </div>
 </div>
 ```
 
-Обычные кнопки
+### Обычная кнопка
+Встречается сплошь и рядом.
 ```jsx
 const buttons = [
-    { size: 's', name: 'Применить' },
-    { size: 'm', name: 'Применить' },
+    { size: 'xl', name: 'Применить' },
     { size: 'l', name: 'Применить' },
-    { size: 'xl', name: 'Применить' }
+    { size: 'm', name: 'Применить' },
+    { size: 's', name: 'Применить' }
 ];
 <div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <div className='column' key={ size }>
-                <Button size={ size }>{`${name}`}</Button>
-            </div>
-            <div className='column'>
-                <Button size={ size } disabled={ true }>{`${name}`}</Button>
-            </div>
-        </div>
-    ))}
+  <div className='row'>
+      {buttons.map(({ size, name }) => (
+          <div className='column'>
+              <Button size={ size }>{`${name}`}</Button>
+          </div>
+      ))}
+  </div>
+  <div className='row'>
+      {buttons.map(({ size, name }) => (
+          <div className='column'>
+              <Button size={ size } disabled={ true }>{`${name}`}</Button>
+          </div>
+      ))}
+  </div>
 </div>
 ```
 
-Псевдокнопки
+### Псевдокнопка
+Обозначает действие без перехода на другой экран. Например, прикрепление документов к анкете, переход в режим редактирования.
 ```jsx
 const buttons = [
-    { size: 's', name: 'Показать' },
-    { size: 'm', name: 'Показать' },
+    { size: 'xl', name: 'Показать' },
     { size: 'l', name: 'Показать' },
-    { size: 'xl', name: 'Показать' }
+    { size: 'm', name: 'Показать' },
+    { size: 's', name: 'Показать' }
 ];
 <div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <Button pseudo={ true } size={ size }>{`${name}`}</Button>
-        </div>
-    ))}
+  <div className='row'>
+      {buttons.map(({ size, name }) => (
+          <div className='column'>
+              <Button pseudo={ true } size={ size }>{`${name}`}</Button>
+          </div>
+      ))}
+  </div>
 </div>
 ```
 
-Кнопки действия
-
-```jsx
-const buttons = [
-    { size: 's', name: 'Продолжить' },
-    { size: 'm', name: 'Продолжить' },
-    { size: 'l', name: 'Продолжить' },
-    { size: 'xl', name: 'Продолжить' }
-];
-<div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <Button view='action' size={ size }>{`${name}`}</Button>
-        </div>
-    ))}
-</div>
-```
-
-С иконкой
+### С иконкой
+К любой кнопке может быть добавлена иконка.
 ```jsx
 const IconOk = require('../../src/icon/ui/ok').default;
-
 const buttons = [
-    { size: 's', name: 'Скачать' },
-    { size: 'm', name: 'Скачать' },
+    { size: 'xl', name: 'Скачать' },
     { size: 'l', name: 'Скачать' },
-    { size: 'xl', name: 'Скачать' }
+    { size: 'm', name: 'Скачать' },
+    { size: 's', name: 'Скачать' }
 ];
 <div>
-    {buttons.map(({ size, name }) => (
-        <div className='row' key={ size }>
-            <Button
-                icon={ <IconOk size={ size } /> }
-                size={ size }
-            >
-                {`${name}`}
-            </Button>
-        </div>
-    ))}
+  <div className='row'>
+      {buttons.map(({ size, name }) => (
+          <div className='column'>
+              <Button icon={ <IconOk size={ size } /> } size={ size }>{`${name}`}</Button>
+          </div>
+      ))}
+  </div>
 </div>
 ```
 
-Со 100%-й шириной
+### Со 100% шириной
+Используйте очень аккуратно. Кнопка занимает 100% ширины контейнера, в котором находится.
 ```jsx
 const buttons = [
-    { size: 's', name: 'Заказать карту' },
-    { size: 'm', name: 'Заказать карту' },
+    { size: 'xl', name: 'Заказать карту' },
     { size: 'l', name: 'Заказать карту' },
-    { size: 'xl', name: 'Заказать карту' }
+    { size: 'm', name: 'Заказать карту' },
+    { size: 's', name: 'Заказать карту' }
 ];
 <div>
     {buttons.map(({ size, name }) => (

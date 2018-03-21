@@ -1,5 +1,74 @@
 /* TODO think about it */
 .examples, .examples > div {
+    .rules {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        margin: 24px 0;
+
+        &__section {
+            flex: 0 0 100%;
+            display: block;
+            position: relative;
+            margin: 10px 0 0;
+            padding: 0 25px;
+
+            &:first-child {
+                margin: 0;
+            }
+
+            @media (--medium) {
+                flex: 0 1 48%;
+                margin: 0;
+            }
+
+            &:before {
+                display: block;
+                margin: 0 -25px 20px;
+                padding: 10px 25px 6px;
+                font-weight: bold;
+                border-bottom: 3px solid;
+            }
+
+            &:after {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 18px;
+                height: 24px;
+                content: '';
+            }
+
+            &_good:before {
+                color: rgba(13, 186, 38, 0.8);
+                border-color: rgba(13, 186, 38, 0.8);
+                content: 'Правильно';
+            }
+
+            &_good:after {
+                background: url(../../../src/icon/ui/ok/icon_ok_s_color.svg) no-repeat 50% 50%;
+            }
+
+            &_bad:before {
+                color: rgba(239, 49, 36, 0.8);
+                border-color: rgba(239, 49, 36, 0.8);
+                content: 'Неправильно';
+            }
+
+            &_bad:after {
+                background: url(../../../src/icon/ui/error/icon_error_s_color.svg) no-repeat 50% 50%;
+            }
+        }
+
+        ul {
+            margin: 0;
+        }
+    }
+
     > img {
         display: block;
         max-width: 100%;
@@ -118,72 +187,100 @@
         }
     }
 
-    > ol, > ul {
-        margin: 25px 0;
+    &__list {
+        list-style: none;
+        margin: 24px 0;
+        padding: 0 0 0 50px;
+        counter-reset: item;
 
-        margin: 0 0 24px;
-    }
-
-    > li {
-        margin: 0 0 12px;
-        line-height: 1.5;
-    }
-
-    > table, .react-component__tab-body > div > table {
-        margin: 0 0 24px;
-        padding: 0;
-        border-collapse: collapse;
-        border-spacing: 0;
-
-        thead {
-            th, td {
-                padding: 0 12px 8px 0;
-                color: rgba(11, 31, 53, 0.6);
-                font-size: 13px;
-                line-height: 1.5;
-                font-weight: normal;
-                text-align: left;
-                vertical-align: top;
-                border-bottom: 3px solid rgba(11, 31, 53, 0.1);
-
-                .styleguide_theme_alfa-on-color & {
-                    color: rgba(255, 255, 255, 0.6);
-                    border-bottom-color: rgba(255, 255, 255, 0.1);
-                }
-            }
+        & & {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 25px;
         }
 
-        tbody {
-            th, td {
-                padding: 8px 12px 8px 0;
-                font-size: 13px;
-                line-height: 1.5;
-                font-weight: normal;
-                text-align: left;
-                vertical-align: top;
-                border-bottom: 1px solid rgba(11, 31, 53, 0.1);
-
-                .styleguide_theme_alfa-on-color & {
-                    color: #fff;
-                    border-bottom-color: rgba(255, 255, 255, 0.1);
-                }
-            }
-
-            th {
-                text-align: left;
-            }
+        li {
+            position: relative;
+            margin: 0 0 12px;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
-        code {
-            padding: 0;
-            font-size: 13px;
-            background-color: transparent;
+        li:before {
+            display: block;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            margin-right: 0.6em;
+            content: '\2014';
         }
 
-        p, div {
+        &_ordered > li:before {
+            content: counter(item) '.';
+            counter-increment: item;
+        }
+
+        p {
             margin: 0;
-            color: inherit;
-            font-size: 100%;
+            padding: 0;
         }
+    }
+}
+
+.examples > table, .examples > div > table, .react-component__tab-body > div > table {
+    margin: 0 0 24px;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead {
+        th, td {
+            padding: 0 12px 8px 0;
+            color: rgba(11, 31, 53, 0.6);
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: normal;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 3px solid rgba(11, 31, 53, 0.1);
+
+            .styleguide_theme_alfa-on-color & {
+                color: rgba(255, 255, 255, 0.6);
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+    tbody {
+        th, td {
+            padding: 8px 12px 8px 0;
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: normal;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(11, 31, 53, 0.1);
+
+            .styleguide_theme_alfa-on-color & {
+                color: #fff;
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        th {
+            text-align: left;
+        }
+    }
+
+    code {
+        padding: 0;
+        font-size: 13px;
+        background-color: transparent;
+    }
+
+    p, div {
+        margin: 0;
+        color: inherit;
+        font-size: 100%;
     }
 }

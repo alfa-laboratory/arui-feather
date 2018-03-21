@@ -43,26 +43,30 @@
 
 .row {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
 
-    .column + .column {
-        margin-left: 10px;
+    .column {
+        padding-right: 10px;
     }
 
-    .column.s + .column.s {
-        margin-left: 5px;
+    .column.s {
+        padding-right: 5px;
     }
 
-    .column.m + .column.m {
-        margin-left: 10px;
+    .column.m {
+        padding-right: 10px;
     }
 
-    .column.l + .column.l {
-        margin-left: 30px;
+    .column.l {
+        padding-right: 20px;
     }
 
-    .column.xl + .column.xl {
-        margin-left: 40px;
+    .column.xl {
+        padding-right: 30px;
     }
 
     & + & {

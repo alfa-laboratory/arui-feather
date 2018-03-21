@@ -7,7 +7,6 @@ import Link from '../../../src/link';
 import Label from '../../../src/label'; // instead of Text
 import Paragraph from '../../../src/paragraph'; // instead of Para
 import Heading from '../../../src/heading'; // instead of MarkdownHeading
-import List from '../../../src/list';
 import Checkbox from '../../../src/checkbox';
 
 import Code from '../code';
@@ -87,12 +86,13 @@ const baseOverrides = {
         }
     },
     ul: {
-        component: List
+        props: {
+            className: 'examples__list'
+        }
     },
     ol: {
-        component: List,
         props: {
-            ordered: true
+            className: 'examples__list examples__list_ordered'
         }
     },
     blockquote: {

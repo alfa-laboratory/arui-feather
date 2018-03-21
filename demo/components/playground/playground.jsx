@@ -76,13 +76,16 @@ export default class Playground extends Component {
                 previewProps={ settings.props || {} }
                 tabButtons={
                     <div>
-                        <IconButton
-                            onClick={ this.handleShareExampleClick }
-                            className='playground__share-button'
-                            title='Ссылка на результат'
-                        >
-                            <IconShare />
-                        </IconButton>
+                        {
+                            (activeTab || displayMode === 'component') &&
+                            <IconButton
+                                onClick={ this.handleShareExampleClick }
+                                className='playground__share-button'
+                                title='Ссылка на результат'
+                            >
+                                <IconShare />
+                            </IconButton>
+                        }
                         {
                             displayMode === 'all' &&
                             <Slot

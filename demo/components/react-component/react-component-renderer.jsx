@@ -13,13 +13,13 @@ class ReactComponentRenderer extends PureComponent {
                     { this.props.heading }
                     { this.props.pathLine && <Pathline>{ this.props.pathLine }</Pathline> }
                 </header>
-                {
+                { /*
                     (this.props.description || this.props.docs) &&
                     <div className={ cn('docs') }>
                         { this.props.description }
                         { this.props.docs }
                     </div>
-                }
+                */ }
                 {
                     this.props.tabButton &&
                     <div className={ cn('tabs') }>

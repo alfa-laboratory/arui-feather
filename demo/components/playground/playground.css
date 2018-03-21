@@ -1,6 +1,10 @@
 .playground {
     position: relative;
-    margin: 36px 0;
+    margin: 0 0 36px;
+
+    &__tab {
+        position: relative;
+    }
 
     .icon-button {
         padding: 0 20px;
@@ -10,6 +14,7 @@
 
     &__share-button {
         position: absolute;
+        z-index: 10;
         top: 0;
         right: 0;
     }
@@ -19,5 +24,6 @@
         z-index: 10;
         bottom: 0;
         right: 0;
+        opacity: 0.5;
     }
 }

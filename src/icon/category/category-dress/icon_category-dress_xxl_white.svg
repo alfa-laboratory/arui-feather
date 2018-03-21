@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-dress_xxl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1159.000000, -246.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_clothing__xxl__white" transform="translate(1095.000000, 169.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M46,2 L31.515,2 L31.417,2.375 C30.537,5.771 27.487,8.144 24,8.144 C20.513,8.144 17.463,5.772 16.583,2.375 L16.485,2 L2,2 L2,15 L10,15 L10,44 L38,44 L38,15 L46,15 L46,2 L46,2 Z M45,14 L37,14 L37,43 L11,43 L11,14 L3,14 L3,3 L15.721,3 C16.836,6.636 20.187,9.143 24,9.143 C27.813,9.143 31.164,6.636 32.279,3 L45,3 L45,14 L45,14 Z" id="Shape" fill="#FFFFFF"></path>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="10.5" y="15" width="27" height="6"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

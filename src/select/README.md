@@ -3,11 +3,11 @@
 const options = [
     { value: '01', text: 'ИП Фридман М.М.' },
     { value: '02', text: 'ООО «Виктори»' },
-    { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
 ];
 <div>
     {['s'].map(size => (
-        <div className='row' >
+        <div className='row' key={ size }>
             <div className='column'>
                 <Select
                     size={ size }
@@ -37,7 +37,7 @@ const options = [
 ];
 <div>
     {['m'].map(size => (
-        <div className='row' >
+        <div className='row' key={ size }>
             <div className='column'>
                 <Select
                     size={ size }
@@ -67,7 +67,7 @@ const options = [
 ];
 <div>
     {['xl'].map(size => (
-        <div className='row' >
+        <div className='row' key={ size }>
             <div className='column'>
                 <Select
                     size={ size }
@@ -100,7 +100,7 @@ const options = [
 ];
 <div>
     {['l'].map(size => (
-        <div className='row' >
+        <div className='row' key={ size }>
             <div className='column'>
                 <Select
                     width='available'
@@ -164,7 +164,7 @@ const options = [
 ];
 <div>
     {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' >
+        <div className='row' key={ size }>
             <div className='column'>
                 <Select
                     size={ size }

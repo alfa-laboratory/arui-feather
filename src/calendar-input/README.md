@@ -43,3 +43,24 @@ const formatDate = require('date-fns/format');
     />
 </div>
 ```
+
+С отображением текущей даты
+```jsx
+const addDays = require('date-fns/add_days');
+const formatDate = require('date-fns/format');
+
+let currentDate = new Date();
+
+let calendar = {
+    showToday: true
+};
+
+<div>
+    <CalendarInput
+        size='m'
+        calendar={ calendar }
+        defaultValue={ formatDate(addDays(currentDate, 2), 'DD.MM.YYYY') }
+        mobileMode='popup'
+    />
+</div>
+```

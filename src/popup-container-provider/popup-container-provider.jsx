@@ -64,7 +64,7 @@ class PopupContainerProvider extends React.Component {
     };
 
     state = {
-        didRender: false
+        didRender: false // eslint-disable-line react/no-unused-state
     };
 
     getChildContext() {
@@ -100,8 +100,18 @@ class PopupContainerProvider extends React.Component {
      */
     handleContainerDidRender() {
         this.setState({
-            didRender: true
+            didRender: true // eslint-disable-line react/no-unused-state
         });
+    }
+
+    /**
+     * Возвращает корневой `HTMLElement` компонента.
+     *
+     * @public
+     * @returns {HTMLElement}
+     */
+    getNode() {
+        return this.positioningContainer;
     }
 }
 

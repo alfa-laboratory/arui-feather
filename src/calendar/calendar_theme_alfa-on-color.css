@@ -4,6 +4,20 @@
     color: var(--color-content-alfa-on-color);
     background-color: var(--color-background-alfa-on-color);
 
+    .calendar__event {
+        background-color: var(--color-background-alfa-on-color);
+
+        &:after {
+            background-color: var(--color-content-disabled-alfa-on-color);
+        }
+    }
+
+    .calendar__day_state_today {
+        &:before {
+            background-color: var(--color-content-disabled-alfa-on-color);
+        }
+    }
+
     .calendar__arrow_direction_left {
         background-image: url('./images/arrow_cl.svg');
 
@@ -18,5 +32,10 @@
         &.calendar__arrow_double {
             background-image: url('./images/2_arrow_cr.svg');
         }
+    }
+
+    .calendar__day_type_off,
+    .calendar__day_type_weekend-off {
+        color: var(--color-content-disabled-alfa-on-color);
     }
 }

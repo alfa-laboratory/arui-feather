@@ -5,7 +5,9 @@
 @import '../vars.css';
 
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     margin: 0;
     padding: 0;
@@ -35,19 +37,14 @@
 
     &__text {
         overflow: hidden;
-        display: inline-block;
-        vertical-align: top;
-        position: relative;
         font-weight: var(--font-weight-normal);
         text-overflow: ellipsis;
     }
 
     &__icon {
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
+        display: inline-flex;
+        align-items: center;
         padding-right: 10px;
-        line-height: 1;
     }
 
     &_width_available {
@@ -72,8 +69,7 @@
     }
 
     &_view_action &__text,
-    &_view_extra &__text,
-    &_view_other &__text {
+    &_view_extra &__text {
         font-weight: var(--font-weight-medium);
     }
 
@@ -82,7 +78,7 @@
     }
 
     &_size_s {
-        min-height: 30px;
+        height: 30px;
         padding: 0 15px;
         font-size: var(--font-size-s);
         line-height: 28px;
@@ -93,7 +89,7 @@
     }
 
     &_size_m {
-        min-height: 40px;
+        height: 40px;
         padding: 0 20px;
         font-size: var(--font-size-m);
         line-height: 38px;
@@ -104,7 +100,7 @@
     }
 
     &_size_l {
-        min-height: 50px;
+        height: 50px;
         padding: 0 25px;
         font-size: var(--font-size-l);
         line-height: 48px;
@@ -116,7 +112,7 @@
     }
 
     &_size_xl {
-        min-height: 60px;
+        height: 60px;
         padding: 0 30px;
         font-size: var(--font-size-xl);
         line-height: 58px;

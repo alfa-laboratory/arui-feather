@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import '../calendar';
-import '../icon';
+import '../icon/entity/calendar';
 import '../icon-button';
 import '../input';
 import '../mq';

@@ -23,6 +23,8 @@ class RadioGroup extends React.Component {
         value: Type.string,
         /** Отображение попапа с ошибкой в момент когда фокус находится на компоненте */
         error: Type.node,
+        /** Размеры pub и sub */
+        size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
@@ -48,17 +50,18 @@ class RadioGroup extends React.Component {
     };
 
     static defaultProps = {
-        type: 'normal'
+        type: 'normal',
+        size: 'm'
     };
 
     state = {
-        value: '',
-        focused: false
+        value: ''
     };
 
     render(cn) {
         let children = null;
-        let props = { name: this.props.name };
+        let { size, name } = this.props;
+        let props = { name };
         let radioGroupParts = {};
 
         if (this.props.disabled !== undefined) {
@@ -99,6 +102,7 @@ class RadioGroup extends React.Component {
                     `${cn({
                         type: this.props.type,
                         invalid: !!this.props.error,
+                        size,
                         ...props
                     })} control-group${this.props.error ? ' control-group_invalid' : ''}`
                 }
@@ -139,8 +143,6 @@ class RadioGroup extends React.Component {
 
     @autobind
     handleFocus(event) {
-        this.setState({ focused: true });
-
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
@@ -148,8 +150,6 @@ class RadioGroup extends React.Component {
 
     @autobind
     handleBlur(event) {
-        this.setState({ focused: false });
-
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }

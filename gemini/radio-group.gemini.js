@@ -42,14 +42,16 @@ geminiReact.suite(NAME, function () {
                     let template = (
                         <GeminiBox theme={ theme }>
                             <RadioGroup type={ set.type === 'button' ? 'button' : 'normal' }>
-                                { RADIOS.map(radio =>
-                                    (<Radio
-                                        text={ radio.text }
-                                        key={ radio.value }
-                                        value={ radio.value }
-                                        { ...props }
-                                    />)
-                                ) }
+                                {
+                                    RADIOS.map(radio => (
+                                        <Radio
+                                            text={ radio.text }
+                                            key={ radio.value }
+                                            value={ radio.value }
+                                            { ...props }
+                                        />
+                                    ))
+                                }
                             </RadioGroup>
                         </GeminiBox>
                     );

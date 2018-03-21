@@ -8,7 +8,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <div className='column' key={ size }>
                 <Button size={ size }>{`${name}`}</Button>
             </div>
@@ -65,7 +65,7 @@ const buttons = [
 ];
 <div>
     {buttons.map(({ size, name }) => (
-        <div className='row'>
+        <div className='row' key={ size }>
             <div className='column' key={ size }>
                 <Button view='extra' size={ size }>{`${name}`}</Button>
             </div>
@@ -77,30 +77,10 @@ const buttons = [
 </div>
 ```
 
-Другие кнопки
-```jsx
-const buttons = [
-    { size: 's', name: 'Подтвердить' },
-    { size: 'm', name: 'Подтвердить' },
-    { size: 'l', name: 'Подтвердить' },
-    { size: 'xl', name: 'Подтвердить' }
-];
-<div>
-    { buttons.map(({ size, name }) => (
-        <div className='row'>
-            <div className='column' key={ size }>
-                <Button view='other' size={ size }>{`${name}`}</Button>
-            </div>
-            <div className='column'>
-                <Button view='other' size={ size } disabled={ true }>{`${name}`}</Button>
-            </div>
-        </div>
-    ))}
-</div>
-```
-
 С иконкой
 ```jsx
+const IconOk = require('./../icon/ui/ok').default;
+
 const buttons = [
     { size: 's', name: 'Скачать' },
     { size: 'm', name: 'Скачать' },
@@ -110,10 +90,10 @@ const buttons = [
 <div>
     {buttons.map(({ size, name }) => (
         <div className='row' key={ size }>
-            <Button size={ size }>
-                <div style={ { marginRight: '8px', display: 'inline-block' } } >
-                    <Icon size={ size } name='action-ok' />
-                </div>
+            <Button
+                icon={ <IconOk size={ size } /> }
+                size={ size }
+            >
                 {`${name}`}
             </Button>
         </div>

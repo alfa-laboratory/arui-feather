@@ -4,10 +4,11 @@
 
 import { autobind } from 'core-decorators';
 import React from 'react';
+import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
 import Calendar from '../calendar/calendar';
-import Icon from '../icon/icon';
+import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/icon-button';
 import Input from '../input/input';
 import Mq from '../mq/mq';
@@ -57,6 +58,8 @@ class CalendarInput extends React.Component {
             months: Type.arrayOf(Type.string),
             weekdays: Type.arrayOf(Type.string),
             offDays: Type.arrayOf(Type.number),
+            eventDays: Type.arrayOf(Type.number),
+            showToday: Type.bool,
             showArrows: Type.bool,
             isKeyboard: Type.bool,
             error: Type.node,
@@ -215,6 +218,11 @@ class CalendarInput extends React.Component {
             formNoValidate: true
         };
 
+        let nativeProps = {
+            min: formatDate(this.props.calendar && this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max: formatDate(this.props.calendar && this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
+        };
+
         let wrapperProps = this.isMobilePopup() && !this.props.disabled
             ? {
                 role: 'button',
@@ -240,6 +248,7 @@ class CalendarInput extends React.Component {
                                 this.nativeCalendarTarget = nativeCalendarTarget;
                             } }
                             { ...commonProps }
+                            { ...nativeProps }
                             className={ cn('native-control') }
                             type='date'
                             value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
@@ -275,9 +284,8 @@ class CalendarInput extends React.Component {
                     icon={
                         this.props.withIcon &&
                         <IconButton onClick={ this.handleIconButtonClick }>
-                            <Icon
+                            <IconCalendar
                                 size={ this.props.size }
-                                name='tool-calendar'
                             />
                         </IconButton>
                     }
@@ -296,7 +304,6 @@ class CalendarInput extends React.Component {
             <Popup
                 ref={ (calendarPopup) => { this.calendarPopup = calendarPopup; } }
                 for={ this.props.name }
-                autoclosable={ true }
                 visible={ opened }
                 directions={ this.props.directions }
                 target={ this.isMobilePopup() ? 'screen' : 'anchor' }
@@ -456,7 +463,8 @@ class CalendarInput extends React.Component {
     @autobind
     handleNativeInputFocus(event) {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
-        let resultEvent = { ...event,
+        let resultEvent = {
+            ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
             target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) }
         };
@@ -480,7 +488,8 @@ class CalendarInput extends React.Component {
     @autobind
     handleNativeInputBlur(event) {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
-        let resultEvent = { ...event,
+        let resultEvent = {
+            ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
             target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) }
         };

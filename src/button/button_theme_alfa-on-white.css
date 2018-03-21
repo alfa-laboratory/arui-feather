@@ -81,36 +81,6 @@
         }
     }
 
-    &.button_view_other {
-        color: var(--color-content-accent-alfa-on-color);
-        background: rgba(80, 64, 218, .85);
-        border-color: rgba(80, 64, 218, .85);
-
-        &.button_hovered {
-            background: rgba(71, 57, 195, .85);
-            border-color: rgba(71, 57, 195, .85);
-        }
-
-        &.button_focused {
-            border-color: var(--color-content-alfa-on-white);
-        }
-
-        &.button_pressed,
-        &:active {
-            background: rgba(64, 51, 174, .85);
-            border-color: rgba(64, 51, 174, .85);
-        }
-
-        &.button_disabled {
-            border-color: transparent;
-            background: rgba(80, 64, 218, .25);
-
-            .button__text {
-                color: var(--color-content-accent-alfa-on-color);
-            }
-        }
-    }
-
     &.button_pseudo {
         border-style: dashed;
 

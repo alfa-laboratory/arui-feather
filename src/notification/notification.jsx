@@ -8,13 +8,16 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconClose from '../icon/ui/close';
+import IconError from '../icon/ui/error';
+import IconFail from '../icon/ui/fail';
+import IconOk from '../icon/ui/ok';
 import IconButton from '../icon-button/icon-button';
+import Swipeable from '../swipeable';
 
 import cn from '../cn';
-import { isEventOutsideClientBounds } from '../lib/window';
+import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
-import Swipeable from '../swipeable';
 
 /**
  * Компонент всплывающего окна.
@@ -47,12 +50,12 @@ class Notification extends React.Component {
         icon: Type.node,
         /** Время до закрытия компонента */
         autoCloseDelay: Type.number,
-        /** Управление возможностью закрытия компонента по клику вне его */
-        outsideClickClosable: Type.bool,
         /** Обработчик события истечения времени до закрытия компонента */
         onCloseTimeout: Type.func,
         /** Обработчик клика по крестику компонента */
         onCloserClick: Type.func,
+        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        onKeyDown: Type.func,
         /** Обработчик события наведения курсора на попап */
         onMouseEnter: Type.func,
         /** Обработчик события снятия курсора с попапа */
@@ -83,33 +86,41 @@ class Notification extends React.Component {
     componentDidMount() {
         this.startCloseTimer();
 
-        if (this.props.outsideClickClosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent();
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.outsideClickClosable) {
-            if (prevProps.onClickOutside !== this.props.onClickOutside) {
-                this.ensureClickEvent();
-            } else if (prevProps.visible !== this.props.visible) {
-                this.ensureClickEvent(!this.props.visible);
-            }
+        if (prevProps.onClickOutside !== this.props.onClickOutside) {
+            this.ensureClickEvent();
+        } else if (prevProps.visible !== this.props.visible) {
+            this.ensureClickEvent(!this.props.visible);
         }
     }
 
     componentWillUnmount() {
         this.stopCloseTimer();
 
-        if (this.props.outsideClickClosable) {
+        if (this.props.onClickOutside) {
             this.ensureClickEvent(true);
         }
     }
 
     render(cn) {
+        let ToggledIcon;
+
+        switch (this.props.status) {
+            case 'error': ToggledIcon = IconError; break;
+            case 'fail': ToggledIcon = IconFail; break;
+            case 'ok': ToggledIcon = IconOk; break;
+            default: ToggledIcon = IconOk; break;
+        }
+
         return (
             <Swipeable onSwipe={ this.handleSwipe }>
                 <div
+                    ref={ (root) => { this.root = root; } }
                     className={ cn({
                         visible: this.props.visible,
                         status: this.props.status,
@@ -117,18 +128,17 @@ class Notification extends React.Component {
                         'stick-to': this.props.stickTo
                     }) }
                     id={ this.props.id }
+                    style={ this.getPosition() }
                     onMouseEnter={ this.handleMouseEnter }
                     onMouseLeave={ this.handleMouseLeave }
                     onClick={ this.handleClick }
-                    style={ this.getPosition() }
-                    ref={ (root) => { this.root = root; } }
+                    onKeyDown={ this.handleKeyDown }
                 >
                     <div className={ cn('icon') }>
                         {
                             this.props.icon ||
-                            <Icon
+                            <ToggledIcon
                                 colored={ this.props.status === 'ok' || this.props.status === 'error' }
-                                name={ `action-${this.props.status}` }
                                 size='m'
                             />
                         }
@@ -148,8 +158,7 @@ class Notification extends React.Component {
                             size='m'
                             onClick={ this.handleCloserClick }
                         >
-                            <Icon
-                                name='tool-close'
+                            <IconClose
                                 size='m'
                             />
                         </IconButton>
@@ -170,6 +179,13 @@ class Notification extends React.Component {
     handleCloserClick() {
         if (this.props.onCloserClick) {
             this.props.onCloserClick();
+        }
+    }
+
+    @autobind
+    handleKeyDown(event) {
+        if (this.props.onKeyDown) {
+            this.props.onKeyDown(event);
         }
     }
 
@@ -203,11 +219,9 @@ class Notification extends React.Component {
 
     @autobind
     handleWindowClick(event) {
-        if (this.props.outsideClickClosable && this.root &&
-            isEventOutsideClientBounds(event, this.root)) {
-            if (this.props.onClickOutside) {
-                this.props.onClickOutside(event);
-            }
+        if (this.props.onClickOutside && this.root &&
+            isNodeOutsideElement(event.target, this.root)) {
+            this.props.onClickOutside(event);
         }
     }
 

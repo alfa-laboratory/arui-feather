@@ -22,7 +22,7 @@ describe('scroll-to', () => {
     beforeEach(() => {
         let domContainerNode = document.createElement('div');
         domContainerNode.setAttribute('id', 'container');
-        domContainerNode.setAttribute('style', 'min-width: 9999px; min-height: 9999px; margin: 0; padding: 0;');
+        domContainerNode.setAttribute('style', 'min-height: 9999px; margin: 0; padding: 0;');
         domContainerNode.innerHTML = `
             <div id='scroll-container' style='overflow: auto; width: 500px; height: 1000px;'>
                 <div style='width: 100%; height: 300px;'></div>

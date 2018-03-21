@@ -34,22 +34,20 @@ module.exports = (config) => {
         }
     };
 
-    cfg.webpack.module.rules.push(
-        {
-            test: /\.jsx?$/,
-            use: {
-                loader: 'istanbul-instrumenter-loader',
-                options: { esModules: true }
-            },
-            enforce: 'post',
-            exclude: [
-                /node_modules/,
-                /-test\.jsx?$/,
-                /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
-                /(countries|currency-codes|easings|keyboard-code)\.js$/
-            ]
-        }
-    );
+    cfg.webpack.module.rules.push({
+        test: /\.jsx?$/,
+        use: {
+            loader: 'istanbul-instrumenter-loader',
+            options: { esModules: true }
+        },
+        enforce: 'post',
+        exclude: [
+            /node_modules/,
+            /-test\.jsx?$/,
+            /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
+            /(countries|currency-codes|easings|keyboard-code)\.js$/
+        ]
+    });
 
     let testsFiles = !process.env.TESTS
         ? ['./src/**/*-test.js?(x)']
@@ -127,7 +125,10 @@ module.exports = (config) => {
     } else {
         cfg.customLaunchers = {
             CustomChromeHeadless: {
-                base: 'ChromeHeadless'
+                base: 'ChromeHeadless',
+                // For security reasons, Google Chrome is unable to provide sandboxing when it's running in container
+                // https://github.com/travis-ci/docs-travis-ci-com/pull/1671
+                flags: ['--no-sandbox']
             }
         };
         cfg.plugins.push(require('karma-chrome-launcher'));

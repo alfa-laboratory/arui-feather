@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_star_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_star_m_white" transform="translate(0.000000, -3.000000)">
+            <rect id="Rectangle-2" x="0" y="3" width="24" height="24"></rect>
+            <rect id="Rectangle-1" fill="#FFFFFF" opacity="0.4" transform="translate(5.165539, 21.891780) rotate(45.000000) translate(-5.165539, -21.891780) " x="4.16553879" y="17.8917801" width="2" height="8"></rect>
+            <polygon id="Rectangle" stroke="#FFFFFF" transform="translate(14.979706, 12.086152) rotate(45.000000) translate(-14.979706, -12.086152) " points="14.9797064 17.5379206 9.56881878 20.3669938 10.6022064 14.3749206 6.22470631 10.1313109 12.2742626 9.25707918 14.9797064 3.80531094 17.6851502 9.25707918 23.7347065 10.1313109 19.3572065 14.3749206 20.3905941 20.3669938"></polygon>
+        </g>
+    </g>
+</svg>

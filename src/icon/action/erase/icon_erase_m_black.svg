@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_action_erase__m__white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="PIN-code-change" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_action_erase__m__white">
+            <rect id="ph" x="0" y="0" width="24" height="24"></rect>
+            <path d="M8.023,19.516 C8.335,19.828 8.75,20 9.192,20 L20.192,20 C21.74,20 23,18.741 23,17.192 L23,6.808 C23,5.259 21.74,4 20.192,4 L9.192,4 C8.75,4 8.335,4.172 8.023,4.484 L1.677,10.83 C1.364,11.143 1.192,11.558 1.192,12 C1.192,12.442 1.364,12.857 1.676,13.169 L8.023,19.516 Z M2.384,11.538 L8.73,5.191 C8.854,5.068 9.018,5 9.192,5 L20.192,5 C21.189,5 22,5.811 22,6.808 L22,17.193 C22,18.189 21.189,19 20.192,19 L9.192,19 C9.017,19 8.853,18.932 8.73,18.809 L2.384,12.463 C2.26,12.339 2.192,12.175 2.192,12 C2.192,11.825 2.26,11.661 2.384,11.538 Z" id="Shape" fill="#0A1E32" fill-rule="nonzero"></path>
+            <polygon id="Shape" fill="#0A1E32" fill-rule="nonzero" points="11.854 15.359 14.5 12.713 17.146 15.359 17.854 14.652 15.207 12.006 17.854 9.359 17.146 8.652 14.5 11.299 11.854 8.652 11.146 9.359 13.793 12.006 11.146 14.652"></polygon>
+        </g>
+    </g>
+</svg>

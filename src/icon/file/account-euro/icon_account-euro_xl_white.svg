@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account-euro_xl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-356.000000, -153.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_account_euro__xl__white" transform="translate(356.000000, 153.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                <path d="M28.2,34.1 L7.8,34.1 C6.3,34.1 5,32.8 5,31.3 L5,3.8 C5,2.3 6.3,1 7.8,1 L23.1,1 L31,8.9 L31,31.3 C31,32.9 29.7,34.1 28.2,34.1 L28.2,34.1 Z M7.8,2 C6.8,2 6,2.8 6,3.8 L6,31.3 C6,32.3 6.8,33.1 7.8,33.1 L28.2,33.1 C29.2,33.1 30,32.3 30,31.3 L30,9.3 L22.6,2 L7.8,2 L7.8,2 Z" id="Shape" fill="#FFFFFF"></path>
+                <path d="M20.5,11 C21.9,11 23,11.2 24,11.6 L24,9.6 C23,9.2 21.8,9 20.5,9 C16.3,9 13.4,11.2 12.4,15 L10,15 L10,17 L12,17 L12,18 L12,19 L10,19 L10,21 L12.4,21 C13.4,24.8 16.3,27 20.5,27 C21.8,27 23,26.8 24,26.4 L24,24.4 C23,24.9 21.9,25 20.5,25 C17.7,25 15.7,23.5 14.8,21 L22,21 L22,19 L14.4,19 C14.4,18.7 14.3,18.3 14.3,18 C14.3,17.7 14.3,17.3 14.4,17 L22,17 L22,15 L14.8,15 C15.7,12.5 17.7,11 20.5,11 L20.5,11 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                <g id="Group" opacity="0.3"></g>
+            </g>
+        </g>
+    </g>
+</svg>

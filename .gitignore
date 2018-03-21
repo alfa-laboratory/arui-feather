@@ -1,6 +1,7 @@
 .build/
 .idea/
 .publish/
+.vscode/
 
 node_modules/
 npm-debug.log

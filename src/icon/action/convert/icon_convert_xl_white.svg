@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_convert_xl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-128.000000, -369.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_convert__xl__white" transform="translate(128.000000, 369.000000)">
+            <g id="Layer_2">
+                <rect id="ph_4_" x="0" y="0" width="36" height="36"></rect>
+                <path d="M26.2,6 L19.7,6 L23.3,2.4 L22.6,1.7 L17.7,6.6 L22.6,11.5 L23.3,10.8 L19.7,7 L26.2,7 C28.6,7 31,8.1 32.6,9.9 L33.4,9.2 C31.6,7.2 29,6 26.2,6 L26.2,6 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                <path d="M12.9,24.6 L12.2,25.3 L15.8,28.9 L9.2,28.9 C6.8,28.9 4.4,27.8 2.8,26 L2,26.7 C3.8,28.7 6.4,29.9 9.1,29.9 L15.6,29.9 L12,33.5 L12.7,34.2 L17.6,29.3 L12.9,24.6 L12.9,24.6 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                <path d="M3,20 L4,20 L4,16 L9.8,16 L9.8,15 L4,15 L4,12 L8.3,12 C12,12 14,9.9 14,6.5 C14,3.1 12,1 8.3,1 L3,1 L3,11 L0,11 L0,12 L3,12 L3,15 L0,15 L0,16 L3,16 L3,20 L3,20 Z M4,2 L8.2,2 C11.4,2 13,3.6 13,6.5 C13,9.4 11.4,11 8.2,11 L4,11 L4,2 L4,2 Z" id="Shape" fill="#FFFFFF"></path>
+                <path d="M22.5,28.5 L21.5,28.5 C21.7,31.5 24.3,33.6 28,33.7 L28,36 L29,36 L29,33.7 C32.3,33.4 34.5,31.4 34.5,28.5 C34.5,26 32.9,24.7 29.4,23.8 L29,23.7 L29,15.7 C31.4,16 33,17.5 33.2,19.5 L34.2,19.5 C34.1,17.1 32,15.2 29,14.8 L29,13 L28,13 L28,14.7 C24.7,14.7 22,16.8 22,19.7 C22,22 23.5,23.4 26.9,24.3 L28,24.6 L28,32.9 C24.9,32.7 22.7,31 22.5,28.5 L22.5,28.5 Z M27.3,23.3 C24.4,22.6 23,21.5 23,19.7 C23,17.4 25.2,15.7 28,15.7 L28,15.7 L28,23.5 L27.3,23.3 L27.3,23.3 Z M29.1,24.8 C32.2,25.6 33.5,26.7 33.5,28.6 C33.5,30.8 31.7,32.4 29,32.7 L29,24.7 L29.1,24.8 L29.1,24.8 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

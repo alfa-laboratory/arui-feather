@@ -1,5 +1,5 @@
 ```jsx
-<Form onSubmit={ function () { alert('Мы перезвоним вам в течение 5 минут'); } }>
+<Form onSubmit={ () => { alert('Мы перезвоним вам в течение 5 минут'); } }>
     <FormField>
         <Input placeholder='Введите номер' />
     </FormField>

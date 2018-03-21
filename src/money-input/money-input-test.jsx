@@ -99,10 +99,10 @@ describe('money-input', () => {
     });
 
     it('should format new value received in props', () => {
-        let moneyInput = render(<MoneyInput value={ '' } />);
+        let moneyInput = render(<MoneyInput value='' />);
         let controlNode = moneyInput.node.querySelector('input');
 
-        render(<MoneyInput value={ '1234,567' } />);
+        render(<MoneyInput value='1234,567' />);
 
         expect(controlNode.value).to.equal('1 234,56');
     });

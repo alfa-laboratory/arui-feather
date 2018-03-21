@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_lock_xxl_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_lock_xxl_color">
+            <g id="art">
+                <g id="a1" opacity="0.4"></g>
+                <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                <path d="M38.872,18 L36,18 L36,11 C36,4.936 31.066,0 25,0 L23,0 C16.934,0 12,4.936 12,11 L12,18 L9.128,18 C7.404,18 6,19.404 6,21.128 L6,40.612 C6,44.686 9.314,48 13.388,48 L34.612,48 C38.686,48 42,44.686 42,40.614 L42,21.13 C42,19.404 40.596,18 38.872,18 L38.872,18 Z M14,11 C14,6.038 18.038,2 23,2 L25,2 C29.962,2 34,6.038 34,11 L34,18 L14,18 L14,11 L14,11 Z M40,40.614 C40,43.584 37.584,46 34.612,46 L13.388,46 C10.416,46 8,43.584 8,40.614 L8,21.13 C8,20.506 8.506,20 9.128,20 L12,20 L36,20 L38.872,20 C39.494,20 40,20.506 40,21.128 L40,40.614 L40,40.614 Z" id="Shape" fill="#F03226"></path>
+                <path d="M24,26 C21.79,26 20,27.79 20,30 C20,31.476 20.81,32.752 22,33.446 L22,40 L26,40 L26,33.446 C27.19,32.754 28,31.478 28,30 C28,27.79 26.21,26 24,26 L24,26 Z" id="Shape" fill="#F03226" opacity="0.3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

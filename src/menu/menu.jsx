@@ -9,7 +9,7 @@ import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconCheck from '../icon/ui/check';
 import MenuItem from '../menu-item/menu-item';
 
 import cn from '../cn';
@@ -113,6 +113,23 @@ class Menu extends React.Component {
             let firstItem = this.getFirstItem(this.props.content);
 
             this.changeCheckedItems([firstItem.value]);
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.mode !== 'check' && this.state.checkedItems[0] &&
+            nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
+            let highlightedItem = null;
+
+            this.menuItemList.forEach((item, index, menuItemList) => {
+                if (item.ref === nextProps.checkedItems[0]) {
+                    highlightedItem = menuItemList[index].instance;
+                }
+            });
+
+            if (this.props.onHighlightItem) {
+                this.props.onHighlightItem(highlightedItem);
+            }
         }
     }
 
@@ -225,8 +242,7 @@ class Menu extends React.Component {
             >
                 {
                     this.props.mode === 'check' && isItemChecked &&
-                    <Icon
-                        name='action-check'
+                    <IconCheck
                         size={ iconSize }
                     />
                 }
@@ -238,6 +254,10 @@ class Menu extends React.Component {
     @autobind
     handleMenuItemClick(item) {
         this.setNewCheckedItems(item);
+
+        if (this.props.onItemClick) {
+            this.props.onItemClick(item);
+        }
     }
 
     @autobind
@@ -279,14 +299,14 @@ class Menu extends React.Component {
                     this.menuItemList.forEach((item, index, menuItemList) => {
                         if (item.ref === this.state.highlightedItem.ref) {
                             if (index + 1 === menuIteListLength) {
-                                highlightedItem = menuItemList[0];
+                                [highlightedItem] = menuItemList;
                             } else {
                                 highlightedItem = menuItemList[index + 1];
                             }
                         }
                     });
                 } else {
-                    highlightedItem = this.menuItemList[0];
+                    [highlightedItem] = this.menuItemList;
                 }
 
                 this.setState({
@@ -441,7 +461,7 @@ class Menu extends React.Component {
     }
 
     setNewCheckedItems(item) {
-        let value = item.value;
+        let { value } = item;
         let checkedItems = this.props.checkedItems !== undefined
             ? Array.from(this.props.checkedItems)
             : Array.from(this.state.checkedItems);
@@ -469,10 +489,6 @@ class Menu extends React.Component {
                 break;
             default:
                 break;
-        }
-
-        if (this.props.onItemClick) {
-            this.props.onItemClick(item);
         }
 
         this.changeCheckedItems(checkedItems);

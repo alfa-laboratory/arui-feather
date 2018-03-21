@@ -4,6 +4,14 @@
 
 @import '../vars.css';
 
+:root {
+    --popup-gradient:
+        color(var(--color-background-alfa-on-white) a(0)) 0%,
+        color(var(--color-background-alfa-on-white) a(.4)) 40%,
+        color(var(--color-background-alfa-on-white) a(.9)) 75%,
+        color(var(--color-background-alfa-on-white) a(1)) 100%;
+}
+
 .popup_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
     box-shadow: var(--shadow-light);
@@ -14,14 +22,21 @@
 
     &.popup_height_adaptive .popup__gradient,
     &.popup_target_screen .popup__gradient {
-        background:
-            linear-gradient(
-                to bottom,
-                color(var(--color-background-alfa-on-white) a(0)) 0%,
-                color(var(--color-background-alfa-on-white) a(.4)) 40%,
-                color(var(--color-background-alfa-on-white) a(.9)) 75%,
-                color(var(--color-background-alfa-on-white) a(1)) 100%
-            );
+        &_top {
+            background:
+                linear-gradient(
+                    to top,
+                    var(--popup-gradient)
+                );
+        }
+
+        &_bottom {
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--popup-gradient)
+                );
+        }
     }
 
     &.popup_type_tooltip:before {

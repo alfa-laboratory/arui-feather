@@ -63,6 +63,7 @@
         font: inherit;
         background: none;
         border: none;
+        border-radius: 0;
         transition-duration: 250ms;
         transition-property: border-bottom-color, box-shadow, width;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);

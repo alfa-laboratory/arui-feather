@@ -1,4 +1,4 @@
-ol
+Нумерованный список (ol)
 ```jsx
 const ITEMS_OL = [
     {
@@ -17,10 +17,11 @@ const ITEMS_OL = [
 
 <List
     items={ ITEMS_OL }
+    type='ordered'
 />
 ```
 
-ul
+Маркированный список (ul)
 ```jsx
 const ITEMS_UL = [
     {
@@ -38,6 +39,5 @@ const ITEMS_UL = [
 ];
 <List
     items={ ITEMS_UL }
-    type='ordered'
 />
 ```

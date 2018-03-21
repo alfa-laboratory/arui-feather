@@ -7,7 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
-import Icon from '../icon/icon';
+import IconAttachment from '../icon/action/attachment';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -22,27 +22,28 @@ const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
  * @returns {String}
  */
 function getDeclension(number, endingList) {
-    let ending;
+    let endingIndex;
 
     number %= 100;
+
     if (number >= 11 && number <= 19) {
-        ending = endingList[2];
+        endingIndex = 2;
     } else {
         switch (number % 10) {
             case 1:
-                ending = endingList[0];
+                endingIndex = 0;
                 break;
             case 2:
             case 3:
             case 4:
-                ending = endingList[1];
+                endingIndex = 1;
                 break;
             default:
-                ending = endingList[2];
+                endingIndex = 2;
         }
     }
 
-    return ending;
+    return endingList[endingIndex];
 }
 
 /**
@@ -64,7 +65,7 @@ function isEqualArray(array1, array2) {
 }
 
 /**
- * Компонент прикрепления файлов
+ * Компонент прикрепления файлов.
  */
 @cn('attach')
 @performance()
@@ -89,7 +90,7 @@ class Attach extends React.Component {
             text: Type.node,
             rightAddons: Type.node,
             leftAddons: Type.node,
-            view: Type.oneOf(['default', 'action', 'extra', 'other']),
+            view: Type.oneOf(['default', 'action', 'extra']),
             type: Type.oneOf(['button', 'reset', 'submit']),
             tag: Type.oneOf(['button', 'span']),
             width: Type.oneOf(['default', 'available']),
@@ -145,6 +146,7 @@ class Attach extends React.Component {
         size: 'm',
         disabled: false,
         multiple: false,
+        tabIndex: 0,
         noFileText: 'Нет файла'
     };
 
@@ -193,7 +195,7 @@ class Attach extends React.Component {
             className: cn('button'),
             disabled: this.props.disabled,
             size: this.props.size,
-            icon: this.props.icon ? this.props.icon : <Icon size={ this.props.size } name='tool-attachment' />,
+            icon: this.props.icon ? this.props.icon : <IconAttachment size={ this.props.size } />,
             focused: this.state.focused
         };
 
@@ -208,22 +210,23 @@ class Attach extends React.Component {
                     >
                         <input
                             ref={ (input) => { this.input = input; } }
-                            name={ this.props.name }
-                            id={ this.props.id }
-                            tabIndex={ this.props.tabIndex }
                             className={ cn('control') }
-                            size={ this.props.size }
-                            type='file'
-                            multiple={ this.props.multiple }
-                            disabled={ this.props.disabled }
-                            onChange={ this.handleInputChange }
-                            onFocus={ this.handleFocus }
-                            onBlur={ this.handleBlur }
                             accept={ this.props.accept }
+                            disabled={ this.props.disabled }
+                            id={ this.props.id }
+                            multiple={ this.props.multiple }
+                            name={ this.props.name }
+                            size={ this.props.size }
+                            tabIndex='-1'
+                            type='file'
+                            onChange={ this.handleInputChange }
                         />
                     </label>
                 }
+                tabIndex={ this.props.tabIndex }
                 onClick={ this.handleButtonClick }
+                onFocus={ this.handleFocus }
+                onBlur={ this.handleBlur }
             >
                 { this.props.buttonContent }
             </Button>
@@ -247,7 +250,7 @@ class Attach extends React.Component {
                 );
 
             return (
-                <div className={ cn('file') }>
+                <span className={ cn('file') }>
                     <span className={ cn('text') }>
                         { content }
                     </span>
@@ -256,14 +259,14 @@ class Attach extends React.Component {
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
                     />
-                </div>
+                </span>
             );
         }
 
         return (
-            <div className={ cn('no-file') }>
+            <span className={ cn('no-file') }>
                 { this.props.noFileText }
-            </div>
+            </span>
         );
     }
 

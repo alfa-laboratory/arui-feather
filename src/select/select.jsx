@@ -8,8 +8,9 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
-import Icon from '../icon/icon';
 import IconButton from '../icon-button/icon-button';
+import IconArrowDown from '../icon/ui/arrow-down';
+import IconArrowUp from '../icon/ui/arrow-up';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
@@ -88,7 +89,9 @@ class Select extends React.Component {
             /** Иконка варианта */
             icon: Type.node,
             /** Список вариантов, только для type='group' */
-            content: Type.array
+            content: Type.array,
+            /** Только для type='item': свойства для компонента [MenuItem](../menu-item/) */
+            props: Type.object
         })),
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
@@ -108,6 +111,10 @@ class Select extends React.Component {
         mobileMenuMode: Type.oneOf(['native', 'popup']),
         /** Подсказка над меню в мобильном режиме */
         mobileTitle: Type.node,
+        /** Смещение в пикселях всплывающего окна относительно основного направления (только на десктопе) */
+        popupMainOffset: Type.number,
+        /** Смещение в пикселях всплывающего окна относительно второстепенного направления (только на десктопе) */
+        popupSecondaryOffset: Type.number,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -267,10 +274,18 @@ class Select extends React.Component {
 
     renderButton(cn, SelectButton) {
         let tickSize;
+        let ToggledIcon;
+        let opened = this.getOpened();
+
+        switch (opened) {
+            case true: ToggledIcon = IconArrowUp; break;
+            case false: ToggledIcon = IconArrowDown; break;
+        }
 
         switch (this.props.size) {
-            case 's': case 'm': tickSize = 'xs'; break;
-            case 'l': case 'xl': tickSize = 's'; break;
+            case 's': case 'm': tickSize = 's'; break;
+            case 'l': tickSize = 'm'; break;
+            case 'xl': tickSize = 'l'; break;
         }
 
         return (
@@ -279,25 +294,21 @@ class Select extends React.Component {
                 size={ this.props.size }
                 disabled={ this.props.disabled }
                 focused={ this.getOpened() }
-                text={ this.renderButtonContent() }
-                rightAddons={ [
-                    <IconButton
-                        className={ cn('tick') }
-                        key='addon-icon'
-                        size={ this.props.size }
-                        tag='span'
-                    >
-                        <Icon
-                            name={ this.getOpened() ? 'action-up' : 'action-down' }
-                            size={ tickSize }
-                        />
-                    </IconButton>,
-                    <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
-                ] }
                 onClick={ this.handleButtonClick }
                 onFocus={ this.handleButtonFocus }
                 onBlur={ this.handleButtonBlur }
-            />
+            >
+                { this.renderButtonContent() }
+                <IconButton
+                    className={ cn('tick') }
+                    key='addon-icon'
+                    size={ this.props.size }
+                    tag='span'
+                >
+                    <ToggledIcon size={ tickSize } />
+                </IconButton>
+                <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+            </SelectButton>
         );
     }
 
@@ -360,11 +371,12 @@ class Select extends React.Component {
                 key='popup'
                 ref={ (popup) => { this.popup = popup; } }
                 for={ this.props.name }
-                autoclosable={ true }
                 className={ cn('popup') }
                 directions={ this.props.directions }
                 height='adaptive'
                 padded={ false }
+                mainOffset={ this.props.popupMainOffset }
+                secondaryOffset={ this.props.popupSecondaryOffset }
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
                 header={ this.state.isMobile && this.renderMobileHeader(cn) }
@@ -385,6 +397,7 @@ class Select extends React.Component {
                     checkedItems={ value }
                     onFocus={ this.handleMenuFocus }
                     onBlur={ this.handleMenuBlur }
+                    onHighlightItem={ this.handleMenuHighlightItem }
                     onKeyDown={ this.handleMenuKeyDown }
                 />
             </Popup>
@@ -407,6 +420,7 @@ class Select extends React.Component {
                 let content = option.description || option.text;
 
                 return ({
+                    props: option.props,
                     value: option.value,
                     content: createFragment({ icon: option.icon, content })
                 });
@@ -539,6 +553,14 @@ class Select extends React.Component {
     }
 
     @autobind
+    handleMenuHighlightItem(highlightedItem) {
+        if (!this.getOpened() && highlightedItem) {
+            this.popup.getInnerNode().scrollTop = 0;
+            this.scrollToHighlightedItem(highlightedItem);
+        }
+    }
+
+    @autobind
     handleOptionCheck(value) {
         let opened = this.getOpened();
 
@@ -619,7 +641,7 @@ class Select extends React.Component {
             case keyboardCode.DOWN_ARROW:
             case keyboardCode.UP_ARROW:
                 event.preventDefault();
-                this.syncKeyboardNavigationWithScroll(highlightedItem);
+                this.scrollToHighlightedItem(highlightedItem);
                 break;
             case keyboardCode.ENTER:
             case keyboardCode.SPACE:
@@ -692,6 +714,16 @@ class Select extends React.Component {
     }
 
     /**
+     * Возвращает корневой `HTMLElement` компонента.
+     *
+     * @public
+     * @returns {HTMLElement}
+     */
+    getNode() {
+        return this.root;
+    }
+
+    /**
      * Устанавливает фокус на компонент.
      *
      * @public
@@ -750,23 +782,25 @@ class Select extends React.Component {
     /**
      * @param {MenuItem} highlightedItem Выбранный в текущий момент пункт меню
      */
-    syncKeyboardNavigationWithScroll(highlightedItem) {
+    scrollToHighlightedItem(highlightedItem) {
         let element = highlightedItem.getNode();
         let container = this.popup.getInnerNode();
         let correction = element.offsetHeight;
 
-        if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
-            scrollTo({
-                container,
-                targetY: element.offsetTop,
-                duration: SCROLL_TO_NORMAL_DURATION
-            });
-        } else if (element.offsetTop < container.scrollTop) {
-            scrollTo({
-                container,
-                targetY: (element.offsetTop - container.offsetHeight) + correction,
-                duration: SCROLL_TO_NORMAL_DURATION
-            });
+        if (container) {
+            if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
+                scrollTo({
+                    container,
+                    targetY: element.offsetTop,
+                    duration: SCROLL_TO_NORMAL_DURATION
+                });
+            } else if (element.offsetTop < container.scrollTop) {
+                scrollTo({
+                    container,
+                    targetY: (element.offsetTop - container.offsetHeight) + correction,
+                    duration: SCROLL_TO_NORMAL_DURATION
+                });
+            }
         }
     }
 

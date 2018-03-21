@@ -1,7 +1,7 @@
 <img align="left" width="140" height="140" title="arui-feather"
      src="https://rawgit.com/alfa-laboratory/arui-feather/master/logo.svg" />
 
-Alfa Bank UI lightweight library
+Alfa-Bank UI lightweight library
 ================================
 
 [![npm][npm-img]][npm]
@@ -29,15 +29,24 @@ Alfa Bank UI lightweight library
 
 arui-feather — это библиотека React компонентов для создания веб-интерфейсов.
 
-Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/)
+Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/).
+
+
+Ждём тебя в команду
+-------------------
+
+Команда дизайн-системы Альфа-Банка ищет разработчика интерфейсов: https://hr.alfabank.ru/vacancies/ui-dev. Присоединяйся!
+
 
 Установка
 ---------
+
 arui-feather доступен как [npm-пакет](https://www.npmjs.com/package/arui-feather).
 
 ```
 npm install arui-feather --save
 ```
+
 
 Поддерживаемые браузеры
 -----------------------
@@ -60,7 +69,7 @@ npm install arui-feather --save
 
 Мобильная вёрстка
 -----------------
-[Использование в адаптивной/мобильной среде](./README_MOBILE.md)
+[Использование в адаптивной/мобильной среде](./README_MOBILE.md).
 
 
 Разработка
@@ -118,7 +127,7 @@ npm install arui-feather --save
 - `npm run sauce-connect`
 - `npm run gemini` или `npm run gemini-update`
 
-Запуск `gemini` на выборочное число сьютов (используется опция `--grep` c JS RegExp): `SUITES='button|select' npm run gemini`.
+Запуск `gemini` на выборочное число тестов (используется опция [`--grep`](https://gemini-testing.github.io/doc/config.html)): `npm run gemini -- --grep="button|select"`.
 
 Во время тестирования рендер каждого сьюта доступен по URL, например: `http://localhost:8668/popup/popup_theme_alfa-on-color.popup_size_m.popup_prop-set_1`
 
@@ -134,7 +143,7 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 Правила контрибуции
 -------------------
 
-[Подробнее о том, как контрибьютить в проект](./CONTRIBUTION.md)
+[Подробнее о том, как контрибьютить в проект](./CONTRIBUTION.md).
 
 Оптимизация производительности компонентов
 -------------------------------------------
@@ -155,7 +164,7 @@ class Component extends React.Component {}
 Поскольку modernizr на данный момент не умеет правильно работать внутри webpack
 используется скрипт для генерации webpack на основе конфигурации для него.
 
-Настройки modernizr находятся в файле `.modernizrrc`. [Список доступных опций](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json)
+Настройки modernizr находятся в файле `.modernizrrc`. [Список доступных опций](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json).
 
 Автоматическая перегенерация `modernizr.js` не предусмотрена, в случае если вы поменяли его настройки - вам нужно
 будет перегенерировать файл.
@@ -180,4 +189,4 @@ npm run modernizr
 Лицензия
 --------
 
-© 2017 Alfa Laboratory. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).
+© 2016-2018 Alfa-Bank. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).

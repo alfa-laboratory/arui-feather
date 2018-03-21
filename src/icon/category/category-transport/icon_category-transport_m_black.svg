@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-transport_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1475.000000, -894.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_transit__m__white" transform="translate(1411.000000, 817.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M11.067,0.786 L9.212,4 L5.5,4 C4.121,4 3,5.122 3,6.5 L3,20.5 C3,21.878 4.121,23 5.5,23 L18.5,23 C19.879,23 21,21.878 21,20.5 L21,6.5 C21,5.122 19.879,4 18.5,4 L13.866,4 L15.433,1.286 L14.568,0.786 L12.712,4 L10.366,4 L11.933,1.286 L11.067,0.786 L11.067,0.786 Z M18.5,5 C19.327,5 20,5.673 20,6.5 L20,20.5 C20,21.327 19.327,22 18.5,22 L5.5,22 C4.673,22 4,21.327 4,20.5 L4,6.5 C4,5.673 4.673,5 5.5,5 L18.5,5 L18.5,5 Z" id="Shape" fill="#0B1F35"></path>
+                    <path d="M8,18 C8,17.448 7.552,17 7,17 L3.5,17 L3.5,20 L7,20 C7.552,20 8,19.552 8,19 L8,18 L8,18 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                    <path d="M16,18 L16,19 C16,19.552 16.448,20 17,20 L20.5,20 L20.5,17 L17,17 C16.448,17 16,17.448 16,18 L16,18 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                    <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="3.5" y="8" width="17" height="7"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -25,7 +25,7 @@ class Link extends React.Component {
         /** href ссылки */
         url: Type.string,
         /** Указание на загрузку, вместо открытия и указание имени файла  */
-        download: Type.string,
+        download: Type.oneOfType([Type.string, Type.bool]),
         /** target ссылки */
         target: Type.oneOf(['_self', '_blank', '_parent', '_top']),
         /** Последовательность перехода между контролами при нажатии на Tab */
@@ -80,6 +80,7 @@ class Link extends React.Component {
 
         let linkProps = {
             ref: (root) => { this.root = root; },
+            download: this.props.download,
             className: cn({
                 disabled: this.props.disabled,
                 checked: this.props.checked,
@@ -106,9 +107,6 @@ class Link extends React.Component {
             linkProps.target = this.props.target;
         }
 
-        if (this.props.download) {
-            linkProps.download = this.props.download;
-        }
 
         let linkContent = [this.props.children];
         let iconTemplate = (

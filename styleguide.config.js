@@ -18,9 +18,6 @@ const PORT = parseInt(process.env.PORT || 8080, 10);
 module.exports = {
     title: 'arui-feather',
     serverPort: PORT,
-    editorConfig: {
-        theme: 'duotone-light'
-    },
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
     propsParser(filePath) {

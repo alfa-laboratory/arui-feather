@@ -1,9 +1,9 @@
 .section-heading {
     .heading {
-        margin-top: 0;
+        margin: 0 0 24px;
         font-size: 28px;
 
-        /* TODO 24px for RetailSmsConfirmationModal */
+        /* TODO 24px to fit long component names */
 
         line-height: 1.2;
         font-weight: 900;

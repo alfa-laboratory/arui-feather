@@ -10,8 +10,8 @@
 
 2. Назначение кнопки должно быть понятным из её названия или контекста использования, а поведение — предсказуемым. Не вводите пользователей в заблуждение.
 
-  <div class='rules'>
-    <span class='rules__section rules__section_good'>
+  <div className='rules'>
+    <span className='rules__section rules__section_good'>
       - Открыть депозит
       - Оплатить
     </span>

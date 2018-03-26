@@ -29,47 +29,54 @@ const baseOverrides = {
         component: Heading,
         props: {
             level: 1,
-            size: 'xl'
+            size: 'xl',
+            className: 'examples__heading examples__heading_size_l'
         }
     },
     h2: {
         component: Heading,
         props: {
             level: 2,
-            size: 'l'
+            size: 'l',
+            className: 'examples__heading examples__heading_size_l'
         }
     },
     h3: {
         component: Heading,
         props: {
             level: 3,
-            size: 'm'
+            size: 'm',
+            className: 'examples__heading examples__heading_size_m'
         }
     },
     h4: {
         component: Heading,
         props: {
             level: 4,
-            size: 's'
+            size: 's',
+            className: 'examples__heading examples__heading_size_s'
         }
     },
     h5: {
         component: Heading,
         props: {
             level: 5,
-            size: 's'
+            size: 's',
+            className: 'examples__heading examples__heading_size_s'
         }
     },
     h6: {
         component: Heading,
         props: {
             level: 6,
-            size: 's'
+            size: 's',
+            className: 'examples__heading examples__heading_size_s'
         }
     },
     p: {
         component: Paragraph,
         props: {
+            className: 'examples__paragraph',
             semantic: 'p'
         }
     },
@@ -99,7 +106,10 @@ const baseOverrides = {
         component: Blockquote
     },
     code: {
-        component: Code
+        component: Code,
+        props: {
+            className: 'examples__code'
+        }
     },
     pre: {
         component: Pre
@@ -111,7 +121,10 @@ const baseOverrides = {
         component: Hr
     },
     table: {
-        component: Table
+        component: Table,
+        props: {
+            className: 'examples__table'
+        }
     },
     thead: {
         component: TableHead

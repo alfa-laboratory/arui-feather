@@ -1,7 +1,3 @@
-:root {
-    --monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-}
-
 .react-component {
     margin: 0 0 36px;
 
@@ -10,17 +6,17 @@
     }
 
     .tab-item {
-        padding: 0 0 12px;
+        padding: 0 0 9px;
         font-size: 18px;
         text-transform: none;
         letter-spacing: normal;
 
-        span {
-            display: none;
-        }
-
         + .tab-item {
             margin-left: 24px;
+        }
+
+        span {
+            display: none;
         }
 
         @media (--medium) {

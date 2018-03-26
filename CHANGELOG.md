@@ -1,3 +1,14 @@
+<a name="12.5.0"></a>
+# [12.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.8...v12.5.0) (2018-03-26)
+
+
+### Features
+
+* **icon:** update icons & fix collapse ([#575](https://github.com/alfa-laboratory/arui-feather/issues/575)) ([5793396](https://github.com/alfa-laboratory/arui-feather/commit/5793396))
+* **link:** add download prop ([#585](https://github.com/alfa-laboratory/arui-feather/issues/585)) ([5ddffe4](https://github.com/alfa-laboratory/arui-feather/commit/5ddffe4))
+
+
+
 <a name="12.4.8"></a>
 ## [12.4.8](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.7...v12.4.8) (2018-03-21)
 

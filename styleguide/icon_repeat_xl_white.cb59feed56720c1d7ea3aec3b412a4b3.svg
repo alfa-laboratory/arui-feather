@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_repeat_xl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-571.000000, -324.000000)">
+        <g id="icon__action_repeat__xl__white" transform="translate(571.000000, 324.000000)">
+            <g id="art">
+                <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                <path d="M18,31 C17.429,31 16.854,30.963 16.294,30.889 L16.163,31.881 C16.768,31.96 17.385,32 18,32 C25.72,32 32,25.72 32,18 C32,14.09 30.348,10.331 27.466,7.685 L26.748,7 L31,7 L31,6 L25,6 L25,12 L26,12 L26,7.668 L26.775,8.408 L26.775,8.409 C26.779,8.412 26.783,8.416 26.787,8.419 C29.465,10.877 31,14.368 31,18 C31,25.168 25.168,31 18,31 L18,31 Z" id="Shape" fill="#FFFFFF"></path>
+                <path d="M3.981,18.001 C3.981,21.912 5.633,25.67 8.515,28.315 L9.233,29.001 L4.981,29.001 L4.981,30.001 L10.981,30.001 L10.981,24.001 L9.981,24.001 L9.981,28.332 L9.206,27.591 C9.202,27.588 9.198,27.584 9.194,27.581 C6.516,25.124 4.981,21.634 4.981,18.001 C4.981,10.833 10.813,5.001 17.981,5.001 C18.552,5.001 19.127,5.038 19.687,5.112 L19.818,4.12 C19.214,4.041 18.596,4.001 17.981,4.001 C10.262,4.001 3.981,10.281 3.981,18.001 L3.981,18.001 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

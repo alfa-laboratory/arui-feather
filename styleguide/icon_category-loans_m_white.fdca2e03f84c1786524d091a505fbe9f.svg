@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-loans_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1247.000000, -246.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_depts__m__white" transform="translate(1183.000000, 169.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M15.25,13.5 C14.009,13.5 13,14.509 13,15.75 C13,16.991 14.009,18 15.25,18 C16.491,18 17.5,16.991 17.5,15.75 C17.5,14.509 16.491,13.5 15.25,13.5 L15.25,13.5 Z M15.25,17 C14.56,17 14,16.44 14,15.75 C14,15.06 14.56,14.5 15.25,14.5 C15.94,14.5 16.5,15.06 16.5,15.75 C16.5,16.44 15.94,17 15.25,17 L15.25,17 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <path d="M9.75,12.5 C10.991,12.5 12,11.491 12,10.25 C12,9.009 10.991,8 9.75,8 C8.509,8 7.5,9.009 7.5,10.25 C7.5,11.491 8.509,12.5 9.75,12.5 L9.75,12.5 Z M9.75,9 C10.44,9 11,9.56 11,10.25 C11,10.94 10.44,11.5 9.75,11.5 C9.06,11.5 8.5,10.94 8.5,10.25 C8.5,9.56 9.06,9 9.75,9 L9.75,9 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" transform="translate(12.500650, 12.999550) rotate(-49.347126) translate(-12.500650, -12.999550) " x="6.92343267" y="12.4995305" width="11.1544347" height="1.00003897"></rect>
+                    <path d="M22,12.5 C22,7.43 18.005,3.288 13,3.025 L13,0 L12,0 L12,3.025 C6.995,3.288 3,7.43 3,12.5 C3,15.371 4.286,17.944 6.306,19.687 L4.753,21.842 L5.565,22.427 L7.096,20.303 C8.631,21.37 10.492,22 12.5,22 C14.455,22 16.272,21.406 17.784,20.39 L19.273,22.455 L20.085,21.87 L18.584,19.788 C20.669,18.043 22,15.425 22,12.5 L22,12.5 Z M12.5,21 C7.813,21 4,17.187 4,12.5 C4,7.813 7.813,4 12.5,4 C17.187,4 21,7.813 21,12.5 C21,17.187 17.187,21 12.5,21 L12.5,21 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M8.424,2.243 L7.714,0.373 C5.747,1.12 3.954,2.339 2.529,3.899 L4.006,5.248 C5.22,3.918 6.748,2.879 8.424,2.243 L8.424,2.243 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                    <path d="M16.575,2.243 C18.251,2.879 19.779,3.918 20.993,5.248 L22.47,3.899 C21.045,2.338 19.252,1.119 17.285,0.373 L16.575,2.243 L16.575,2.243 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

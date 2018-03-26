@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_more_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-321.000000, -49.000000)">
+        <g id="Group-2" transform="translate(161.000000, 39.000000)"></g>
+        <g id="icon_more_m_white" transform="translate(333.000000, 61.000000) rotate(90.000000) translate(-333.000000, -61.000000) translate(321.000000, 49.000000)">
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            <path d="M4.5,14 C3.672,14 3,13.328 3,12.5 C3,11.672 3.672,11 4.5,11 C5.328,11 6,11.672 6,12.5 C6,13.328 5.328,14 4.5,14 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M12.5,14 C11.672,14 11,13.328 11,12.5 C11,11.672 11.672,11 12.5,11 C13.328,11 14,11.672 14,12.5 C14,13.328 13.328,14 12.5,14 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M20.5,14 C19.672,14 19,13.328 19,12.5 C19,11.672 19.672,11 20.5,11 C21.328,11 22,11.672 22,12.5 C22,13.328 21.328,14 20.5,14 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

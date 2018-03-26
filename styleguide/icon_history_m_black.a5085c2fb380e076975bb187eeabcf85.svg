@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_history_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-292.000000, -477.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_history__m__white" transform="translate(292.000000, 477.000000)">
+            <g id="Layer_2">
+                <rect id="ph_12_" x="0" y="0" width="24" height="24"></rect>
+                <polygon id="Shape" fill="#0B1F35" opacity="0.3" points="13 6 11 6 11 13 14.8 16.2 16.1 14.7 13 12.1"></polygon>
+                <path d="M2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 C6.5,2 2,6.5 2,12 L2,12 Z M12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 L12,3 Z" id="Shape" fill="#0B1F35"></path>
+            </g>
+        </g>
+    </g>
+</svg>

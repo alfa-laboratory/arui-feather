@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_payment-to-company_xl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1311.000000, -138.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_business__xl__white" transform="translate(1247.000000, 61.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                    <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M2.5,34 L21.5,34 L33.5,34 C33.776,34 34,33.776 34,33.5 L34,17.5 C34,17.224 33.776,17 33.5,17 L22,17 L22,1.5 C22,1.332 21.915,1.174 21.774,1.082 C21.633,0.989 21.456,0.973 21.3,1.041 L2.3,9.299 C2.118,9.379 2,9.559 2,9.758 L2,33.5 C2,33.776 2.224,34 2.5,34 L2.5,34 Z M22,18 L33,18 L33,33 L22,33 L22,18 L22,18 Z M3,10.086 L21,2.263 L21,17.5 L21,33 L3,33 L3,10.086 L3,10.086 Z" id="Shape" fill="#0B1F35"></path>
+                    <path d="M26.5,18 C26.776,18 27,17.776 27,17.5 L27,12.5 C27,12.224 26.776,12 26.5,12 C26.224,12 26,12.224 26,12.5 L26,17.5 C26,17.776 26.224,18 26.5,18 L26.5,18 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                    <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="26" y="21" width="3" height="4"></rect>
+                    <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="7" y="13" width="3" height="4"></rect>
+                    <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="7" y="20" width="3" height="4"></rect>
+                    <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="13" y="10" width="3" height="4"></rect>
+                    <path d="M29.5,18 C29.776,18 30,17.776 30,17.5 L30,15.5 C30,15.224 29.776,15 29.5,15 C29.224,15 29,15.224 29,15.5 L29,17.5 C29,17.776 29.224,18 29.5,18 L29.5,18 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

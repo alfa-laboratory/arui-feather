@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-person_xxl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-888.000000, -585.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_payment_to_person__xxl__white" transform="translate(888.000000, 585.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                <path d="M18,30 C12.4,30 9,23.4 9,16.9 C9,12.3 10,7 18,7 C26,7 27,12.3 27,16.9 C27,23.4 23.6,30 18,30 L18,30 Z M18,8 C12.3,8 10,10.6 10,16.9 C10,21.9 12.5,29 18,29 C23.5,29 26,21.9 26,16.9 C26,10.6 23.7,8 18,8 L18,8 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M30.4,24 C28.6,24 26.9,23.3 25.5,21.9 L26.2,21.2 C27.4,22.4 28.8,23 30.4,23 C35.7,23 38,16.3 38,11.5 C38,5.5 35.8,3 30.4,3 C26,3 23.7,4.7 23,8.4 L22,8.2 C22.8,4 25.5,2 30.4,2 C38,2 39,7.1 39,11.5 C39,17.6 35.8,24 30.4,24 L30.4,24 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M2,47 L1,47 C1,39.6 5.5,37 8.2,35.4 L8.8,35.1 C9.2,34.9 9.5,34.7 9.8,34.5 C11.7,33.5 12.9,32.8 12.9,27.6 L13.9,27.6 C13.9,33.1 12.6,34.1 10.3,35.4 C10,35.6 9.6,35.8 9.3,36 L8.7,36.3 C6,37.8 2,40.2 2,47 L2,47 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M35,47 L34,47 C34,40.2 30,37.8 27.3,36.3 L26.7,36 C26.3,35.8 26,35.6 25.7,35.4 C23.4,34.1 22.1,33.2 22.1,27.6 L23.1,27.6 C23.1,32.8 24.3,33.4 26.2,34.5 C26.5,34.7 26.9,34.9 27.2,35.1 L27.8,35.4 C30.5,37 35,39.6 35,47 L35,47 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M47,41 L46,41 C46,34.2 42,31.8 39.3,30.3 L38.7,30 C38.3,29.8 38,29.6 37.7,29.4 C35.4,28.2 34.1,27.2 34.1,21.9 L35.1,21.9 C35.1,26.9 36.3,27.5 38.2,28.5 C38.5,28.7 38.9,28.9 39.2,29.1 L39.8,29.4 C42.5,31 47,33.6 47,41 L47,41 Z" id="Shape" fill="#0B1F35"></path>
+                <g id="Group" opacity="0.3"></g>
+            </g>
+        </g>
+    </g>
+</svg>

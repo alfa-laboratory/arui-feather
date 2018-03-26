@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account-usd_xxl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-431.000000, -261.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_account_usd__xxl__white" transform="translate(431.000000, 261.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                <path d="M37.5,46 L9.5,46 C7.6,46 6,44.4 6,42.5 L6,5.5 C6,3.6 7.6,2 9.5,2 L30.7,2 L41,12.3 L41,42.5 C41,44.4 39.4,46 37.5,46 L37.5,46 Z M9.5,3 C8.1,3 7,4.1 7,5.5 L7,42.5 C7,43.9 8.1,45 9.5,45 L37.5,45 C38.9,45 40,43.9 40,42.5 L40,12.7 L30.3,3 L9.5,3 L9.5,3 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M31.1,29.4 C31.1,26.2 29.2,24.4 24.6,23.3 L24,23.1 L24,15.6 C26.3,15.9 27.8,17.3 28,19.4 L30.8,19.4 C30.7,16 27.9,13.5 24,13.1 L24,11 L22,11 L22,13 C17.9,13.3 15,15.8 15,19.3 C15,22.3 16.8,24.1 21,25.2 L22,25.5 L22,33.5 C19.3,33.2 17.4,31.7 17.2,29.6 L14.4,29.6 C14.7,33.3 17.6,35.8 22,36.1 L22,38.1 L24,38.1 L24,36 C28.4,35.5 31.1,33.1 31.1,29.4 L31.1,29.4 Z M17.9,19.2 C17.9,17.3 19.5,15.9 22,15.6 L22,22.6 C19.1,21.8 17.9,20.8 17.9,19.2 L17.9,19.2 Z M24,33.4 L24,25.9 C26.9,26.7 28.2,27.8 28.2,29.7 C28.2,31.7 26.5,33.1 24,33.4 L24,33.4 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

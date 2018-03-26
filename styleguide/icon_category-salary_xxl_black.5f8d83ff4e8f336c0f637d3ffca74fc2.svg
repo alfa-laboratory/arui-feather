@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-award_xxl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-118.000000, -19.000000)">
+        <g id="icon_category-award_xxl_black" transform="translate(118.000000, 19.000000)">
+            <rect id="Rectangle" x="0" y="0" width="48" height="48"></rect>
+            <polygon id="Shape" fill="#0B1F35" fill-rule="nonzero" opacity="0.3" points="16.929 12.686 35.314 31.071 31.071 35.314 12.686 16.929"></polygon>
+            <path d="M24,37 C31.18,37 37,31.18 37,24 C37,16.82 31.18,11 24,11 C16.82,11 11,16.82 11,24 C11,31.18 16.82,37 24,37 Z M33.083,11.227 C33.083,11.227 37.16,-6.188 40.418,7.567 C54.131,10.784 36.743,14.887 36.743,14.887 L33.083,11.227 Z M14.753,36.723 C14.753,36.723 10.743,53.857 7.538,40.323 C-5.954,37.159 11.153,33.123 11.153,33.123 L14.753,36.723 Z" id="Shape" stroke="#0B1F35"></path>
+        </g>
+    </g>
+</svg>

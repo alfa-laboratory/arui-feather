@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account-euro_xxl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-432.000000, -153.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_account_euro__xxl__white" transform="translate(432.000000, 153.000000)">
+            <g id="ungroup">
+                <rect id="Rectangle-path" x="0" y="0" width="48" height="48"></rect>
+                <path d="M37.5,46 L9.5,46 C7.6,46 6,44.4 6,42.5 L6,5.5 C6,3.6 7.6,2 9.5,2 L30.7,2 L41,12.3 L41,42.5 C41,44.4 39.4,46 37.5,46 L37.5,46 Z M9.5,3 C8.1,3 7,4.1 7,5.5 L7,42.5 C7,43.9 8.1,45 9.5,45 L37.5,45 C38.9,45 40,43.9 40,42.5 L40,12.7 L30.3,3 L9.5,3 L9.5,3 Z" id="Shape" fill="#0B1F35"></path>
+                <path d="M16.3,22 L13,22 L13,24 L16,24 L16,25 L16,26 L13,26 L13,28 L16.3,28 C17.3,33 21.1,36 26.5,36 C28.2,36 29.7,35.7 31,35.2 L31,32.9 C29.8,33.5 28.2,33.5 26.3,33.5 C22.8,33.5 20.3,31.5 19.4,28.1 L29,28.1 L29,26.1 L19,26.1 L19,25.1 L19,24.1 L29,24.1 L29,22.1 L19.4,22.1 C20.3,18.6 22.8,16.5 26.3,16.5 C28.2,16.5 29.8,16.5 31,17.1 L31,14.9 C29.7,14.4 28.2,14.1 26.5,14.1 C21.1,14 17.3,17 16.3,22 L16.3,22 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

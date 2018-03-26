@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_costs-card_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-212.000000, -1125.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)"></g>
+        <g id="icon_tool_costs_card__m__white" transform="translate(212.000000, 1125.000000)">
+            <g id="art">
+                <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                <path d="M6,14 L3.5,14 C2.121,14 1,12.878 1,11.5 L1,3.5 C1,2.122 2.121,1 3.5,1 L16.5,1 C17.879,1 19,2.122 19,3.5 L19,7 L18,7 L18,3.5 C18,2.673 17.327,2 16.5,2 L3.5,2 C2.673,2 2,2.673 2,3.5 L2,11.5 C2,12.327 2.673,13 3.5,13 L6,13 L6,14 L6,14 Z" id="Shape" fill="#FFFFFF"></path>
+                <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="1.5" y="5" width="17" height="2"></rect>
+                <path d="M15,16 L19,9.072 C20.216,9.774 21.226,10.784 21.928,12 C22.63,13.216 23,14.596 23,16 L15,16 L15,16 Z" id="Shape" fill="#FFFFFF" opacity="0.3"></path>
+                <path d="M15.497,23 C11.361,23 7.997,19.636 7.997,15.5 C7.997,11.364 11.361,8 15.497,8 L15.497,9 C11.913,9 8.997,11.916 8.997,15.5 C8.997,19.084 11.913,22 15.497,22 C18.418,22 20.995,20.017 21.766,17.178 L22.731,17.44 C21.843,20.714 18.868,23 15.497,23 L15.497,23 Z" id="Shape" fill="#FFFFFF"></path>
+                <path d="M17.175,9.231 C16.609,9.078 16.045,9 15.497,9 L15.497,8 C16.133,8 16.785,8.089 17.436,8.266 L17.175,9.231 L17.175,9.231 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

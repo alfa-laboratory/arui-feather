@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_transfer-out_l_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon_transfer-out_l_black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="ph" opacity="0" x="0" y="0" width="30" height="30"></rect>
+            <path d="M4.01448192,6.99613286 L4.72196734,7.71206372 C3.01829328,9.84826567 2,12.5552153 2,15.5 C2,22.4035594 7.59644063,28 14.5,28 C21.4035594,28 27,22.4035594 27,15.5 C27,12.5552153 25.9817067,9.84826567 24.2780327,7.71206372 L24.9855181,6.99613286 C26.8704155,9.31741215 28,12.2767918 28,15.5 C28,22.9558441 21.9558441,29 14.5,29 C7.04415588,29 1,22.9558441 1,15.5 C1,12.2767918 2.12958455,9.31741215 4.01448192,6.99613286 Z" id="Combined-Shape" fill="#0B1F35"></path>
+            <polygon id="Arrow" fill-opacity="0.899999976" fill="#0B1F35" points="9 9.4 9.8 10.1 13.9 6 13.9 19 14.9 19 14.9 6 19 10.1 19.8 9.4 14.4 4"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><path fill="none" d="M0 0h36v36H0z"/><path fill="#fff" d="M12.5 22C7.35 22 3 18.09 3 13.46V1h4v1H4v11.46C4 17.55 7.89 21 12.5 21s8.5-3.45 8.5-7.54V2h-3V1h4v12.46c0 4.63-4.35 8.54-9.5 8.54z"/><path fill="#fff" d="M21.5 35a9.51 9.51 0 0 1-9.5-9.5v-4h1v4a8.5 8.5 0 0 0 17 0v-8h1v8a9.51 9.51 0 0 1-9.5 9.5z"/><path fill="#fff" d="M30.5 18a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zm0-8a3.5 3.5 0 1 0 3.5 3.5 3.5 3.5 0 0 0-3.5-3.5z"/><circle cx="30.5" cy="13.5" r="1.75" fill="#fff" opacity=".3"/><path fill="#fff" d="M3.5 13h18v2h-18z" opacity=".3"/><path fill="#fff" d="M3 3h2c1.1 0 2-.6 2-1.33V1H3v2zm19 0h-2c-1.1 0-2-.6-2-1.33V1h4v2z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_category-medicine_xl_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1311.000000, -354.000000)">
+        <g id="Headings" transform="translate(64.000000, 77.000000)">
+            <g id="icon_category_farmacy__xl__white" transform="translate(1247.000000, 277.000000)">
+                <g id="ungroup">
+                    <rect id="Rectangle-path" x="0" y="0" width="36" height="36"></rect>
+                    <g id="a1" opacity="0.4"></g>
+                    <path d="M30.5,9 C28.019,9 26,11.019 26,13.5 C26,15.81 27.756,17.697 30,17.949 L30,25.5 C30,30.187 26.187,34 21.5,34 C16.813,34 13,30.187 13,25.5 L13,21.976 C17.927,21.732 22,17.938 22,13.461 L22,3 L22,1 L18,1 L18,1.667 L18,2 L18.071,2 C18.294,2.574 19.069,3 20,3 L21,3 L21,13.461 C21,17.548 17.107,21 12.5,21 C7.893,21 4,17.548 4,13.461 L4,3 L5,3 C5.931,3 6.706,2.574 6.929,2 L7,2 L7,1.667 L7,1 L3,1 L3,3 L3,13.461 C3,17.938 7.073,21.732 12,21.976 L12,25.5 C12,30.738 16.262,35 21.5,35 C26.738,35 31,30.738 31,25.5 L31,17.949 C33.244,17.697 35,15.81 35,13.5 C35,11.019 32.981,9 30.5,9 L30.5,9 Z M30.5,17 C28.57,17 27,15.43 27,13.5 C27,11.57 28.57,10 30.5,10 C32.43,10 34,11.57 34,13.5 C34,15.43 32.43,17 30.5,17 L30.5,17 Z" id="Shape" fill="#FFFFFF"></path>
+                    <circle id="Oval" fill="#FFFFFF" opacity="0.3" cx="30.5" cy="13.5" r="1.75"></circle>
+                    <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.3" x="3.5" y="13" width="18" height="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

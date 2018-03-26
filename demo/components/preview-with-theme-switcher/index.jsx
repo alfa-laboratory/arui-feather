@@ -40,7 +40,7 @@ class PreviewWithThemeSwitcher extends Component {
                     </div>
                     <div className={ cn('layout', { theme: this.state.theme }) } >
                         <div className={ cn('wrapper') }>
-                            {this.props.children}
+                            { this.props.children }
                         </div>
                     </div>
                 </div>

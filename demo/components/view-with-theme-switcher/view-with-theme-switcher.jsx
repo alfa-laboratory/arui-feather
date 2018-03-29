@@ -8,8 +8,16 @@ import { autobind } from 'core-decorators';
 import ThemeProvider from '../../../src/theme-provider';
 import cn from '../../../src/cn';
 
+import { getUrlParameter } from '../../utils/url';
+
 const LIGHT_THEME = 'alfa-on-white';
 const DARK_THEME = 'alfa-on-color';
+const THEMES = [LIGHT_THEME, DARK_THEME];
+
+function hasValidUrlTheme() {
+    const theme = getUrlParameter('theme');
+    return theme && THEMES.includes(theme);
+}
 
 @cn('view-with-theme-switcher')
 class ViewWithThemeSwitcher extends Component {
@@ -29,14 +37,18 @@ class ViewWithThemeSwitcher extends Component {
         return { theme: this.state.theme };
     }
 
+    componentDidMount() {
+        if (hasValidUrlTheme()) this.setTheme(getUrlParameter('theme'));
+    }
+
     render(cn) {
-        const themes = [LIGHT_THEME, DARK_THEME];
         return (
             <ThemeProvider theme={ this.state.theme } >
                 <div>
                     <div className={ cn('button-group') } >
                         {
-                            themes.map(theme => (
+                            !hasValidUrlTheme() &&
+                            THEMES.map(theme => (
                                 <button
                                     key={ theme }
                                     className={ cn('button', { theme, selected: theme === this.state.theme }) }
@@ -58,6 +70,12 @@ class ViewWithThemeSwitcher extends Component {
     @autobind
     handleOnChange(theme) {
         this.setState({ theme });
+    }
+
+    setTheme(theme) {
+        this.setState({
+            theme
+        });
     }
 }
 export default ViewWithThemeSwitcher;

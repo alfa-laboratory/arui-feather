@@ -77,7 +77,7 @@ export default class StyleGuide extends Component {
                     title={ config.title }
                     homepageUrl={ HOMEPAGE }
                     toc={ <TableOfContents sections={ sections } /> }
-                    hasSidebar={ config.showSidebar && displayMode === DisplayModes.all && !isPlayground }
+                    hasSidebar={ config.showSidebar && displayMode === DisplayModes.all && !isPlayground() }
                 >
                     <Sections sections={ sections } depth={ 1 } />
                 </StyleGuideRenderer>

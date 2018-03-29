@@ -30,5 +30,5 @@ export function getPlayground(sections) {
 }
 
 export function isPlayground(hash = window.location.hash) {
-    return hash.indexOf('#playground/code=') !== -1;
+    return hash && hash.split('/')[0] === '#playground';
 }

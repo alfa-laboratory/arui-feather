@@ -60,6 +60,9 @@ export default class StyleGuide extends Component {
         const {
             config, sections, welcomeScreen, patterns, displayMode
         } = this.props;
+        // NB: See Playground's handleShareExampleClick method
+        const isPlayground = window.location.hash &&
+            window.location.hash.split('/')[0].toLowerCase() === '#playground';
 
         if (this.state.error) {
             return <Error error={ this.state.error } info={ this.state.info } />;
@@ -75,7 +78,7 @@ export default class StyleGuide extends Component {
                     title={ config.title }
                     homepageUrl={ HOMEPAGE }
                     toc={ <TableOfContents sections={ sections } /> }
-                    hasSidebar={ config.showSidebar && displayMode === DisplayModes.all }
+                    hasSidebar={ config.showSidebar && displayMode === DisplayModes.all && !isPlayground }
                 >
                     <Sections sections={ sections } depth={ 1 } />
                 </StyleGuideRenderer>

@@ -12,14 +12,14 @@ const buttons = [
 <div>
   <div className='row'>
       {buttons.map(({ size, name }) => (
-          <div className='column'>
+          <div className='column' key={ size }>
               <Button view='extra' size={ size }>{`${name}`}</Button>
           </div>
       ))}
   </div>
   <div className='row'>
       {buttons.map(({ size, name }) => (
-          <div className='column'>
+          <div className='column' key={ size }>
               <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
           </div>
       ))}
@@ -39,14 +39,14 @@ const buttons = [
 <div>
   <div className='row'>
       {buttons.map(({ size, name }) => (
-          <div className='column'>
+          <div className='column' key={ size }>
               <Button size={ size }>{`${name}`}</Button>
           </div>
       ))}
   </div>
   <div className='row'>
       {buttons.map(({ size, name }) => (
-          <div className='column'>
+          <div className='column' key={ size }>
               <Button size={ size } disabled={ true }>{`${name}`}</Button>
           </div>
       ))}
@@ -66,7 +66,7 @@ const buttons = [
 <div>
   <div className='row'>
       {buttons.map(({ size, name }) => (
-          <div className='column'>
+          <div className='column' key={ size }>
               <Button pseudo={ true } size={ size }>{`${name}`}</Button>
           </div>
       ))}
@@ -87,7 +87,7 @@ const buttons = [
 <div>
   <div className='row'>
       {buttons.map(({ size, name }) => (
-          <div className='column'>
+          <div className='column' key={ size }>
               <Button icon={ <IconOk size={ size } /> } size={ size }>{`${name}`}</Button>
           </div>
       ))}

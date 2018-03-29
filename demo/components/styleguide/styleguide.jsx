@@ -10,6 +10,8 @@ import { HOMEPAGE } from 'react-styleguidist/scripts/consts';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
 import ViewWithThemeSwitcher from '../view-with-theme-switcher';
 
+import { isPlayground } from '../playground/utils';
+
 import StyleGuideRenderer from './styleguide-renderer';
 import Sections from '../sections';
 
@@ -60,9 +62,6 @@ export default class StyleGuide extends Component {
         const {
             config, sections, welcomeScreen, patterns, displayMode
         } = this.props;
-        // NB: See Playground's handleShareExampleClick method
-        const isPlayground = window.location.hash &&
-            window.location.hash.split('/')[0].toLowerCase() === '#playground';
 
         if (this.state.error) {
             return <Error error={ this.state.error } info={ this.state.info } />;

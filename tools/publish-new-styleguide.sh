@@ -18,6 +18,8 @@ npm run build:demo
 mkdir -p $PUBLISH_SHOWCASE_DIR
 cp -r $SOURCE_SHOWCASE_DIR/* $PUBLISH_SHOWCASE_DIR
 
+ls -las
+
 git add -A -f "$PUBLISH_SHOWCASE_DIR"
 git commit -q -m "chore(*): update styleguide by travis build $TRAVIS_BUILD_NUMBER"
 git push -q upstream HEAD:gh-pages

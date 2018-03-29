@@ -2,11 +2,11 @@
 
 echo "Publishing styleguide..."
 
-STYLEGUIDE_NAME="styleguide-new"
+STYLEGUIDE_NAME="styleguide"
 
 ROOT="$(dirname $(dirname $0))"
 SOURCE_SHOWCASE_DIR="$ROOT/demo/$STYLEGUIDE_NAME"
-PUBLISH_SHOWCASE_DIR="$ROOT/$STYLEGUIDE_NAME"
+PUBLISH_SHOWCASE_DIR="$ROOT/$STYLEGUIDE_NAME-new"
 
 git config user.name "Travis CI"
 git config user.email "travis@travis-ci.org"

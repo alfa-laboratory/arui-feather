@@ -11,7 +11,7 @@ PUBLISH_SHOWCASE_DIR="$ROOT/$STYLEGUIDE_NAME/new"
 git config user.name "Travis CI"
 git config user.email "travis@travis-ci.org"
 
-git remote add upstream "https://$GH_TOKEN@github.com/alfa-laboratory/arui-feather.git#docs/update-demo-styles"
+git remote add upstream "https://$GH_TOKEN@github.com/alfa-laboratory/arui-feather.git"
 git fetch -q upstream && git reset -q upstream/gh-pages
 
 npm run build:demo

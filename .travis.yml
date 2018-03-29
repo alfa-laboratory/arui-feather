@@ -55,6 +55,12 @@ after_script:
 
 after_success:
   - |
+    if [ "${TRAVIS_BRANCH}" == "docs/update-demo-styles" ]; then
+      if [ "${TEST_SCOPE}" == "lint" ]; then
+        sh ./tools/publish-new-styleguide.sh
+      fi
+    fi
+  - |
     if [ "${TRAVIS_BRANCH}" == "master" ]; then
       if [ "${TEST_SCOPE}" == "lint" ]; then
         sh ./tools/publish-styleguide.sh

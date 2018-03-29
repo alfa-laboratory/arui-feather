@@ -6,12 +6,16 @@ import { render, cleanUp } from '../test-utils';
 import Icon from './icon';
 
 import IconAdd from './action/add';
+import IconArrowBack from './action/arrow-back';
 import IconAttachment from './action/attachment';
 import IconBack from './action/back';
 import IconCall from './action/call';
+import IconCamera from './action/camera';
 import IconCardPinChange from './action/card-pin-change';
 import IconChat from './action/chat';
-import IconConvert from './action/convert';
+import IconChatSend from './action/chat-send';
+import IconConvertRubToUsd from './action/convert-rub-to-usd';
+import IconCopy from './action/copy';
 import IconDelete from './action/delete';
 import IconDislike from './action/dislike';
 import IconDislikeFilled from './action/dislike-filled';
@@ -25,7 +29,9 @@ import IconLock from './action/lock';
 import IconLockFilled from './action/lock-filled';
 import IconLockUnlock from './action/lock-unlock';
 import IconLogout from './action/logout';
+import IconMore from './action/more';
 import IconNext from './action/next';
+import IconNfs from './action/nfs';
 import IconPasswordChange from './action/password-change';
 import IconPasswordHide from './action/password-hide';
 import IconPasswordShow from './action/password-show';
@@ -67,6 +73,7 @@ import IconInvestments from './banking/investments';
 import IconInvoiceForPayment from './banking/invoice-for-payment';
 import IconLimits from './banking/limits';
 import IconOutcome from './banking/outcome';
+import IconOverdraft from './banking/overdraft';
 import IconPaymentByPhoto from './banking/payment-by-photo';
 import IconPaymentError from './banking/payment-error';
 import IconPaymentOutbox from './banking/payment-outbox';
@@ -118,11 +125,13 @@ import IconBank2377 from './brand/bank-2377';
 import IconBank244 from './brand/bank-244';
 import IconBank404 from './brand/bank-404';
 import IconCardBelkart from './brand/card-belkart';
+import IconCardGooglepay from './brand/card-googlepay';
 import IconCardMaestro from './brand/card-maestro';
 import IconCardMastercard from './brand/card-mastercard';
 import IconCardMir from './brand/card-mir';
 import IconCardVisa from './brand/card-visa';
 import IconCardVisaElectron from './brand/card-visa-electron';
+import IconFifaTrophy from './brand/fifa-trophy';
 import IconLogoAlfabank from './brand/logo-alfabank';
 import IconMaestro from './brand/maestro';
 import IconMastercard from './brand/mastercard';
@@ -134,24 +143,19 @@ import IconVisa from './brand/visa';
 import IconCategoryAppliances from './category/category-appliances';
 import IconCategoryAtm from './category/category-atm';
 import IconCategoryAuto from './category/category-auto';
-import IconCategoryAward from './category/category-award';
 import IconCategoryBooksMovies from './category/category-books-movies';
-import IconCategoryBudget from './category/category-budget';
 import IconCategoryBusiness from './category/category-business';
 import IconCategoryBusinessActivity from './category/category-business-activity';
 import IconCategoryBusinessTrip from './category/category-business-trip';
 import IconCategoryCash from './category/category-cash';
 import IconCategoryCashback from './category/category-cashback';
 import IconCategoryCharity from './category/category-charity';
-import IconCategoryClothing from './category/category-clothing';
 import IconCategoryDefault from './category/category-default';
-import IconCategoryDepts from './category/category-depts';
 import IconCategoryDress from './category/category-dress';
 import IconCategoryDunno from './category/category-dunno';
 import IconCategoryEducation from './category/category-education';
 import IconCategoryEntertainment from './category/category-entertainment';
 import IconCategoryFamily from './category/category-family';
-import IconCategoryFarmacy from './category/category-farmacy';
 import IconCategoryFinance from './category/category-finance';
 import IconCategoryFines from './category/category-fines';
 import IconCategoryForgot from './category/category-forgot';
@@ -159,11 +163,9 @@ import IconCategoryGasoline from './category/category-gasoline';
 import IconCategoryGibddFines from './category/category-gibdd-fines';
 import IconCategoryHealth from './category/category-health';
 import IconCategoryHobby from './category/category-hobby';
-import IconCategoryHoliday from './category/category-holiday';
 import IconCategoryHousekeeping from './category/category-housekeeping';
 import IconCategoryInvestments from './category/category-investments';
 import IconCategoryLoans from './category/category-loans';
-import IconCategoryMedia from './category/category-media';
 import IconCategoryMedicine from './category/category-medicine';
 import IconCategoryMobileInternet from './category/category-mobile-internet';
 import IconCategoryMortgage from './category/category-mortgage';
@@ -188,12 +190,13 @@ import IconCategoryTroika from './category/category-troika';
 import IconCategoryUser from './category/category-user';
 import IconCategoryVacation from './category/category-vacation';
 import IconUtilities from './category/utilities';
-import IconCurrency from './currency/currency';
 import IconCurrencyChf from './currency/currency-chf';
 import IconCurrencyEur from './currency/currency-eur';
+import IconCurrencyEurUsd from './currency/currency-eur-usd';
 import IconCurrencyGbp from './currency/currency-gbp';
 import IconCurrencyJpy from './currency/currency-jpy';
 import IconCurrencyRub from './currency/currency-rub';
+import IconCurrencyRubUsd from './currency/currency-rub-usd';
 import IconCurrencyUsd from './currency/currency-usd';
 import IconAddressBook from './entity/address-book';
 import IconAlfacheck from './entity/alfacheck';
@@ -202,6 +205,7 @@ import IconAlfamobile from './entity/alfamobile';
 import IconAtm from './entity/atm';
 import IconBag from './entity/bag';
 import IconCalendar from './entity/calendar';
+import IconCashbackBonus from './entity/cashback-bonus';
 import IconClock from './entity/clock';
 import IconContactList from './entity/contact-list';
 import IconContactless from './entity/contactless';
@@ -215,6 +219,8 @@ import IconFingerprint from './entity/fingerprint';
 import IconHistory from './entity/history';
 import IconInbox from './entity/inbox';
 import IconInternet from './entity/internet';
+import IconKeyboard from './entity/keyboard';
+import IconMessage from './entity/message';
 import IconMobile from './entity/mobile';
 import IconMoneybox from './entity/moneybox';
 import IconMypayments from './entity/mypayments';
@@ -251,9 +257,12 @@ import IconFormatTxt from './file/format-txt';
 import IconFormatXls from './file/format-xls';
 import IconFormatXml from './file/format-xml';
 import IconFormatZip from './file/format-zip';
+import IconArrowBottom from './ui/arrow-bottom';
+import IconArrowDouble from './ui/arrow-double';
 import IconArrowDown from './ui/arrow-down';
 import IconArrowLeft from './ui/arrow-left';
 import IconArrowRight from './ui/arrow-right';
+import IconArrowTop from './ui/arrow-top';
 import IconArrowUp from './ui/arrow-up';
 import IconBackspace from './ui/backspace';
 import IconBuy from './ui/buy';
@@ -304,12 +313,16 @@ describe('icon', () => {
     (() => {
         let icons = [
             { componentName: IconAdd, name: 'add' },
+            { componentName: IconArrowBack, name: 'arrow-back' },
             { componentName: IconAttachment, name: 'attachment' },
             { componentName: IconBack, name: 'back' },
             { componentName: IconCall, name: 'call' },
+            { componentName: IconCamera, name: 'camera' },
             { componentName: IconCardPinChange, name: 'card-pin-change' },
             { componentName: IconChat, name: 'chat' },
-            { componentName: IconConvert, name: 'convert' },
+            { componentName: IconChatSend, name: 'chat-send' },
+            { componentName: IconConvertRubToUsd, name: 'convert-rub-to-usd' },
+            { componentName: IconCopy, name: 'copy' },
             { componentName: IconDelete, name: 'delete' },
             { componentName: IconDislike, name: 'dislike' },
             { componentName: IconDislikeFilled, name: 'dislike-filled' },
@@ -323,7 +336,9 @@ describe('icon', () => {
             { componentName: IconLockFilled, name: 'lock-filled' },
             { componentName: IconLockUnlock, name: 'lock-unlock' },
             { componentName: IconLogout, name: 'logout' },
+            { componentName: IconMore, name: 'more' },
             { componentName: IconNext, name: 'next' },
+            { componentName: IconNfs, name: 'nfs' },
             { componentName: IconPasswordChange, name: 'password-change' },
             { componentName: IconPasswordHide, name: 'password-hide' },
             { componentName: IconPasswordShow, name: 'password-show' },
@@ -365,6 +380,7 @@ describe('icon', () => {
             { componentName: IconInvoiceForPayment, name: 'invoice-for-payment' },
             { componentName: IconLimits, name: 'limits' },
             { componentName: IconOutcome, name: 'outcome' },
+            { componentName: IconOverdraft, name: 'overdraft' },
             { componentName: IconPaymentByPhoto, name: 'payment-by-photo' },
             { componentName: IconPaymentError, name: 'payment-error' },
             { componentName: IconPaymentOutbox, name: 'payment-outbox' },
@@ -416,11 +432,13 @@ describe('icon', () => {
             { componentName: IconBank244, name: 'bank-244' },
             { componentName: IconBank404, name: 'bank-404' },
             { componentName: IconCardBelkart, name: 'card-belkart' },
+            { componentName: IconCardGooglepay, name: 'card-googlepay' },
             { componentName: IconCardMaestro, name: 'card-maestro' },
             { componentName: IconCardMastercard, name: 'card-mastercard' },
             { componentName: IconCardMir, name: 'card-mir' },
             { componentName: IconCardVisa, name: 'card-visa' },
             { componentName: IconCardVisaElectron, name: 'card-visa-electron' },
+            { componentName: IconFifaTrophy, name: 'fifa-trophy' },
             { componentName: IconLogoAlfabank, name: 'logo-alfabank' },
             { componentName: IconMaestro, name: 'maestro' },
             { componentName: IconMastercard, name: 'mastercard' },
@@ -432,24 +450,19 @@ describe('icon', () => {
             { componentName: IconCategoryAppliances, name: 'category-appliances' },
             { componentName: IconCategoryAtm, name: 'category-atm' },
             { componentName: IconCategoryAuto, name: 'category-auto' },
-            { componentName: IconCategoryAward, name: 'category-award' },
             { componentName: IconCategoryBooksMovies, name: 'category-books-movies' },
-            { componentName: IconCategoryBudget, name: 'category-budget' },
             { componentName: IconCategoryBusiness, name: 'category-business' },
             { componentName: IconCategoryBusinessActivity, name: 'category-business-activity' },
             { componentName: IconCategoryBusinessTrip, name: 'category-business-trip' },
             { componentName: IconCategoryCash, name: 'category-cash' },
             { componentName: IconCategoryCashback, name: 'category-cashback' },
             { componentName: IconCategoryCharity, name: 'category-charity' },
-            { componentName: IconCategoryClothing, name: 'category-clothing' },
             { componentName: IconCategoryDefault, name: 'category-default' },
-            { componentName: IconCategoryDepts, name: 'category-depts' },
             { componentName: IconCategoryDress, name: 'category-dress' },
             { componentName: IconCategoryDunno, name: 'category-dunno' },
             { componentName: IconCategoryEducation, name: 'category-education' },
             { componentName: IconCategoryEntertainment, name: 'category-entertainment' },
             { componentName: IconCategoryFamily, name: 'category-family' },
-            { componentName: IconCategoryFarmacy, name: 'category-farmacy' },
             { componentName: IconCategoryFinance, name: 'category-finance' },
             { componentName: IconCategoryFines, name: 'category-fines' },
             { componentName: IconCategoryForgot, name: 'category-forgot' },
@@ -457,11 +470,9 @@ describe('icon', () => {
             { componentName: IconCategoryGibddFines, name: 'category-gibdd-fines' },
             { componentName: IconCategoryHealth, name: 'category-health' },
             { componentName: IconCategoryHobby, name: 'category-hobby' },
-            { componentName: IconCategoryHoliday, name: 'category-holiday' },
             { componentName: IconCategoryHousekeeping, name: 'category-housekeeping' },
             { componentName: IconCategoryInvestments, name: 'category-investments' },
             { componentName: IconCategoryLoans, name: 'category-loans' },
-            { componentName: IconCategoryMedia, name: 'category-media' },
             { componentName: IconCategoryMedicine, name: 'category-medicine' },
             { componentName: IconCategoryMobileInternet, name: 'category-mobile-internet' },
             { componentName: IconCategoryMortgage, name: 'category-mortgage' },
@@ -486,12 +497,13 @@ describe('icon', () => {
             { componentName: IconCategoryUser, name: 'category-user' },
             { componentName: IconCategoryVacation, name: 'category-vacation' },
             { componentName: IconUtilities, name: 'utilities' },
-            { componentName: IconCurrency, name: 'currency' },
             { componentName: IconCurrencyChf, name: 'currency-chf' },
             { componentName: IconCurrencyEur, name: 'currency-eur' },
+            { componentName: IconCurrencyEurUsd, name: 'currency-eur-usd' },
             { componentName: IconCurrencyGbp, name: 'currency-gbp' },
             { componentName: IconCurrencyJpy, name: 'currency-jpy' },
             { componentName: IconCurrencyRub, name: 'currency-rub' },
+            { componentName: IconCurrencyRubUsd, name: 'currency-rub-usd' },
             { componentName: IconCurrencyUsd, name: 'currency-usd' },
             { componentName: IconAddressBook, name: 'address-book' },
             { componentName: IconAlfacheck, name: 'alfacheck' },
@@ -500,6 +512,7 @@ describe('icon', () => {
             { componentName: IconAtm, name: 'atm' },
             { componentName: IconBag, name: 'bag' },
             { componentName: IconCalendar, name: 'calendar' },
+            { componentName: IconCashbackBonus, name: 'cashback-bonus' },
             { componentName: IconClock, name: 'clock' },
             { componentName: IconContactList, name: 'contact-list' },
             { componentName: IconContactless, name: 'contactless' },
@@ -513,6 +526,8 @@ describe('icon', () => {
             { componentName: IconHistory, name: 'history' },
             { componentName: IconInbox, name: 'inbox' },
             { componentName: IconInternet, name: 'internet' },
+            { componentName: IconKeyboard, name: 'keyboard' },
+            { componentName: IconMessage, name: 'message' },
             { componentName: IconMobile, name: 'mobile' },
             { componentName: IconMoneybox, name: 'moneybox' },
             { componentName: IconMypayments, name: 'mypayments' },
@@ -549,9 +564,12 @@ describe('icon', () => {
             { componentName: IconFormatXls, name: 'format-xls' },
             { componentName: IconFormatXml, name: 'format-xml' },
             { componentName: IconFormatZip, name: 'format-zip' },
+            { componentName: IconArrowBottom, name: 'arrow-bottom' },
+            { componentName: IconArrowDouble, name: 'arrow-double' },
             { componentName: IconArrowDown, name: 'arrow-down' },
             { componentName: IconArrowLeft, name: 'arrow-left' },
             { componentName: IconArrowRight, name: 'arrow-right' },
+            { componentName: IconArrowTop, name: 'arrow-top' },
             { componentName: IconArrowUp, name: 'arrow-up' },
             { componentName: IconBackspace, name: 'backspace' },
             { componentName: IconBuy, name: 'buy' },

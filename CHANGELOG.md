@@ -1,3 +1,67 @@
+<a name="12.5.0"></a>
+# [12.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.8...v12.5.0) (2018-03-26)
+
+
+### Features
+
+* **icon:** update icons & fix collapse ([#575](https://github.com/alfa-laboratory/arui-feather/issues/575)) ([5793396](https://github.com/alfa-laboratory/arui-feather/commit/5793396))
+* **link:** add download prop ([#585](https://github.com/alfa-laboratory/arui-feather/issues/585)) ([5ddffe4](https://github.com/alfa-laboratory/arui-feather/commit/5ddffe4))
+
+
+
+<a name="12.4.8"></a>
+## [12.4.8](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.7...v12.4.8) (2018-03-21)
+
+
+### Bug Fixes
+
+* **calendar:** fix period selection in calendar ([#582](https://github.com/alfa-laboratory/arui-feather/issues/582)) ([f37facf](https://github.com/alfa-laboratory/arui-feather/commit/f37facf))
+* **list:** better list styles ([#574](https://github.com/alfa-laboratory/arui-feather/issues/574)) ([7fa48a4](https://github.com/alfa-laboratory/arui-feather/commit/7fa48a4))
+* **popup:** check this.inner for gradient style ([#577](https://github.com/alfa-laboratory/arui-feather/issues/577)) ([e3af946](https://github.com/alfa-laboratory/arui-feather/commit/e3af946))
+
+
+
+<a name="12.4.7"></a>
+## [12.4.7](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.6...v12.4.7) (2018-03-16)
+
+
+### Features
+
+* render slide-down expanded by default if isExpanded passed in SSR ([#576](https://github.com/alfa-laboratory/arui-feather/issues/576)) ([37f4808](https://github.com/alfa-laboratory/arui-feather/commit/37f4808))
+
+
+
+<a name="12.4.6"></a>
+## [12.4.6](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.5...v12.4.6) (2018-03-13)
+
+
+### Bug Fixes
+
+* fix button focused styles ([#573](https://github.com/alfa-laboratory/arui-feather/issues/573)) ([121b355](https://github.com/alfa-laboratory/arui-feather/commit/121b355))
+
+
+
+<a name="12.4.5"></a>
+## [12.4.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.4...v12.4.5) (2018-03-12)
+
+
+### Bug Fixes
+
+* fix icon button styles in controls ([#569](https://github.com/alfa-laboratory/arui-feather/issues/569)) ([52f3af1](https://github.com/alfa-laboratory/arui-feather/commit/52f3af1))
+* **intl-phone-input:** fix country setting ([#570](https://github.com/alfa-laboratory/arui-feather/issues/570)) ([d83759f](https://github.com/alfa-laboratory/arui-feather/commit/d83759f))
+
+
+
+<a name="12.4.4"></a>
+## [12.4.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.3...v12.4.4) (2018-03-05)
+
+
+### Bug Fixes
+
+* **calendar:** fix calendar blur on last month page ([#557](https://github.com/alfa-laboratory/arui-feather/issues/557)) ([1e942f1](https://github.com/alfa-laboratory/arui-feather/commit/1e942f1))
+
+
+
 <a name="12.4.3"></a>
 ## [12.4.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.2...v12.4.3) (2018-03-01)
 

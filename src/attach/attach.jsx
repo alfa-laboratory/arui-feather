@@ -145,6 +145,7 @@ class Attach extends React.Component {
         size: 'm',
         disabled: false,
         multiple: false,
+        tabIndex: 0,
         noFileText: 'Нет файла'
     };
 
@@ -208,22 +209,23 @@ class Attach extends React.Component {
                     >
                         <input
                             ref={ (input) => { this.input = input; } }
-                            name={ this.props.name }
-                            id={ this.props.id }
-                            tabIndex={ this.props.tabIndex }
                             className={ cn('control') }
-                            size={ this.props.size }
-                            type='file'
-                            multiple={ this.props.multiple }
-                            disabled={ this.props.disabled }
-                            onChange={ this.handleInputChange }
-                            onFocus={ this.handleFocus }
-                            onBlur={ this.handleBlur }
                             accept={ this.props.accept }
+                            disabled={ this.props.disabled }
+                            id={ this.props.id }
+                            multiple={ this.props.multiple }
+                            name={ this.props.name }
+                            size={ this.props.size }
+                            tabIndex='-1'
+                            type='file'
+                            onChange={ this.handleInputChange }
                         />
                     </label>
                 }
+                tabIndex={ this.props.tabIndex }
                 onClick={ this.handleButtonClick }
+                onFocus={ this.handleFocus }
+                onBlur={ this.handleBlur }
             >
                 { this.props.buttonContent }
             </Button>

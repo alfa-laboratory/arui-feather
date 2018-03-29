@@ -643,7 +643,7 @@ class Calendar extends React.Component {
         }
 
         if (isInitializing || this.props.selectedTo !== nextProps.selectedTo) {
-            this.selectedFrom = nextProps.selectedTo ? normalizeDate(nextProps.selectedTo) : null;
+            this.selectedTo = nextProps.selectedTo ? normalizeDate(nextProps.selectedTo) : null;
         }
 
         if (isInitializing || this.props.selectedFrom !== nextProps.selectedFrom) {

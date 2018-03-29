@@ -6,25 +6,31 @@
 
 .list {
     margin: 25px 0;
-    padding: 0 0 0 25px;
+    padding: 0 0 0 50px;
     font-family: var(--font);
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
 
     & & {
-        padding-left: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 25px;
     }
 
     &__item {
+        position: relative;
         margin-bottom: 10px;
         list-style: none;
         font-size: var(--font-size-m);
 
         &:before {
-            content: '\2014\a0\a0';
-            display: inline-block;
-            min-width: 25px;
+            content: '\2014';
+            display: block;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            margin-right: 0.6em;
         }
     }
 
@@ -34,7 +40,7 @@
 
     &_type_ordered &__item {
         &:before {
-            content: counter(item) '.\a0\a0';
+            content: counter(item) '.';
             counter-increment: item;
         }
     }

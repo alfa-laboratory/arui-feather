@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "12.4.3",
+  "version": "12.5.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -50,14 +50,14 @@
         "eslint"
       ],
       "*.css": [
-        "lint-css"
+        "npm run lint-css"
       ],
       "src/**/*.{js,jsx}": [
         "eslint",
-        "test"
+        "npm run test"
       ],
       "src/**/*.md": [
-        "lint-md"
+        "npm run lint-md"
       ]
     }
   },
@@ -95,11 +95,11 @@
     "lodash.debounce": "4.0.8",
     "lodash.sortedindexof": "4.1.0",
     "matches-selector-polyfill": "1.0.0",
-    "modernizr": "3.5.0",
+    "modernizr": "3.6.0",
     "prop-types": "15.6.1",
     "raf": "3.4.0",
     "react-addons-create-fragment": "15.6.2",
-    "react-style-proptype": "3.2.0",
+    "react-style-proptype": "3.2.1",
     "react-textarea-autosize": "5.2.1"
   },
   "peerDependencies": {
@@ -107,9 +107,9 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
-    "alfa-ui-primitives": "1.3.1",
-    "arui-presets": "4.11.12",
-    "bowser": "1.9.2",
+    "alfa-ui-primitives": "1.5.2",
+    "arui-presets": "4.12.0",
+    "bowser": "1.9.3",
     "chai": "4.1.2",
     "chai-dom": "1.7.0",
     "conventional-changelog-cli": "1.3.14",
@@ -148,7 +148,7 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.9",
     "library-utils": "1.8.2",
-    "lint-staged": "6.1.1",
+    "lint-staged": "7.0.0",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
     "mocha": "5.0.1",
@@ -156,7 +156,7 @@
     "react-dom": "16.2.0",
     "react-frame-component": "2.0.2",
     "react-hot-loader": "3.1.3",
-    "react-styleguidist": "6.2.5",
+    "react-styleguidist": "6.4.0",
     "redbox-react": "1.5.0",
     "region-flags": "1.1.0",
     "sinon": "4.3.0",

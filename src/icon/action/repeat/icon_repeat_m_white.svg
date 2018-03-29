@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#FFF" fill-rule="evenodd" d="M17 1h-4v4h1V2.707l.646.646.218.205A7.947 7.947 0 0 1 17 9c0 4.411-3.589 8-8 8-.348 0-.7-.022-1.045-.067l-.128.992c.387.05.782.075 1.173.075 4.963 0 9-4.037 9-9a8.943 8.943 0 0 0-2.637-6.364L14.719 2H17V1zM0 9a8.94 8.94 0 0 0 2.637 6.364l.644.636H1v1h4v-4H4v2.293l-.646-.646-.218-.205A7.942 7.942 0 0 1 1 9c0-4.411 3.589-8 8-8 .348 0 .7.022 1.045.067l.129-.992A9.219 9.219 0 0 0 9 0C4.038 0 0 4.037 0 9z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_repeat_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-449.000000, -325.000000)">
+        <g id="icon__action_repeat__m__white" transform="translate(449.000000, 325.000000)">
+            <g id="art">
+                <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                <path d="M20,4 L16,4 L16,8 L17,8 L17,5.707 L17.646,6.353 L17.864,6.558 C19.243,8.042 20,9.963 20,12 C20,16.411 16.411,20 12,20 C11.652,20 11.3,19.978 10.955,19.933 L10.827,20.925 C11.214,20.975 11.609,21 12,21 C16.963,21 21,16.963 21,12 C21,9.597 20.063,7.336 18.363,5.636 L17.719,5 L20,5 L20,4 L20,4 Z" id="Shape" fill="#FFFFFF"></path>
+                <path d="M3,12 C3,14.404 3.937,16.665 5.637,18.364 L6.281,19 L4,19 L4,20 L8,20 L8,16 L7,16 L7,18.293 L6.354,17.647 L6.136,17.442 C4.756,15.958 4,14.037 4,12 C4,7.589 7.589,4 12,4 C12.348,4 12.7,4.022 13.045,4.067 L13.174,3.075 C12.786,3.025 12.391,3 12,3 C7.038,3 3,7.037 3,12 L3,12 Z" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

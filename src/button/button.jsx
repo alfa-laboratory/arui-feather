@@ -119,7 +119,7 @@ class Button extends React.Component {
             name: this.props.name,
             type: this.props.type,
             title: this.props.title,
-            tabIndex: this.props.tabIndex,
+            tabIndex: this.props.disabled ? '-1' : this.props.tabIndex,
             disabled: this.props.disabled,
             formNoValidate: isButton ? this.props.formNoValidate : null,
             className: cn({
@@ -179,6 +179,8 @@ class Button extends React.Component {
 
     @autobind
     handleFocus(event) {
+        if (this.state.pressed) return;
+
         this.setState({ focused: true });
 
         if (this.props.onFocus) {

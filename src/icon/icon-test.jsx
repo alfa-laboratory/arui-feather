@@ -54,6 +54,7 @@ import IconAccountDefault from './banking/account-default';
 import IconAccountShared from './banking/account-shared';
 import IconCard from './banking/card';
 import IconCardAccountsList from './banking/card-accounts-list';
+import IconCardActivate from './banking/card-activate';
 import IconCardActivation from './banking/card-activation';
 import IconCardAdd from './banking/card-add';
 import IconCardExpences from './banking/card-expences';
@@ -173,7 +174,6 @@ import IconCategoryMortgaget from './category/category-mortgaget';
 import IconCategoryOther from './category/category-other';
 import IconCategoryPerson from './category/category-person';
 import IconCategoryPets from './category/category-pets';
-import IconCategoryRegistry from './category/category-registry';
 import IconCategoryRent from './category/category-rent';
 import IconCategoryRepairs from './category/category-repairs';
 import IconCategoryRestaurants from './category/category-restaurants';
@@ -297,6 +297,7 @@ import IconSubmit from './ui/submit';
 import IconSystemBack from './ui/system-back';
 import IconSystemClose from './ui/system-close';
 import IconSystemHelp from './ui/system-help';
+import IconSystemHideArrow from './ui/system-hide-arrow';
 import IconUp from './ui/up';
 import IconVerifying from './ui/verifying';
 import IconManager from './user/manager';
@@ -361,6 +362,7 @@ describe('icon', () => {
             { componentName: IconAccountShared, name: 'account-shared' },
             { componentName: IconCard, name: 'card' },
             { componentName: IconCardAccountsList, name: 'card-accounts-list' },
+            { componentName: IconCardActivate, name: 'card-activate' },
             { componentName: IconCardActivation, name: 'card-activation' },
             { componentName: IconCardAdd, name: 'card-add' },
             { componentName: IconCardExpences, name: 'card-expences' },
@@ -480,7 +482,6 @@ describe('icon', () => {
             { componentName: IconCategoryOther, name: 'category-other' },
             { componentName: IconCategoryPerson, name: 'category-person' },
             { componentName: IconCategoryPets, name: 'category-pets' },
-            { componentName: IconCategoryRegistry, name: 'category-registry' },
             { componentName: IconCategoryRent, name: 'category-rent' },
             { componentName: IconCategoryRepairs, name: 'category-repairs' },
             { componentName: IconCategoryRestaurants, name: 'category-restaurants' },
@@ -604,6 +605,7 @@ describe('icon', () => {
             { componentName: IconSystemBack, name: 'system-back' },
             { componentName: IconSystemClose, name: 'system-close' },
             { componentName: IconSystemHelp, name: 'system-help' },
+            { componentName: IconSystemHideArrow, name: 'system-hide-arrow' },
             { componentName: IconUp, name: 'up' },
             { componentName: IconVerifying, name: 'verifying' },
             { componentName: IconManager, name: 'manager' },

@@ -5,17 +5,17 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconCategoryRegistry extends React.Component {
+class IconCardActivate extends React.Component {
     static propTypes = Icon.propTypes;
 
     render() {
         return (
             <Icon
                 { ...this.props }
-                name='category-registry'
+                name='card-activate'
             />
         );
     }
 }
 
-export default IconCategoryRegistry;
+export default IconCardActivate;

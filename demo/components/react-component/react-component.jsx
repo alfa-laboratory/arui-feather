@@ -57,6 +57,14 @@ export default class ReactComponent extends Component {
             return null;
         }
 
+        let tabButtons = ['examplesTabButton', 'docsTabButton'];
+        let tabBodies = ['examplesTab', 'docsTab'];
+
+        if (rules.length) {
+            tabButtons.push('rulesTabButton');
+            tabBodies.push('rulesTab');
+        }
+
         return (
             <ReactComponentRenderer
                 name={ name }
@@ -82,11 +90,7 @@ export default class ReactComponent extends Component {
                 tabButton={
                     <Tabs>
                         {
-                            [
-                                'examplesTabButton',
-                                'docsTabButton',
-                                'rulesTabButton'
-                            ].map(item => ((
+                            tabButtons.map(item => ((
                                 <Slot
                                     key={ item }
                                     name={ item }
@@ -98,11 +102,7 @@ export default class ReactComponent extends Component {
                     </Tabs>
                 }
                 tabBody={
-                    [
-                        'examplesTab',
-                        'docsTab',
-                        'rulesTab'
-                    ].map(item => ((
+                    tabBodies.map(item => ((
                         <Slot
                             key={ item }
                             name={ item }

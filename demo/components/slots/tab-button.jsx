@@ -19,7 +19,7 @@ TabButton.propTypes = {
     onClick: Type.func.isRequired,
     name: Type.string.isRequired,
     props: Type.shape({
-        props: Type.object,
+        props: Type.array,
         methods: Type.array
     }).isRequired,
     active: Type.bool,

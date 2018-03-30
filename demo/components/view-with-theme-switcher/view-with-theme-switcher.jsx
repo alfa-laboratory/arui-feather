@@ -41,6 +41,11 @@ class ViewWithThemeSwitcher extends Component {
         if (hasValidUrlTheme()) this.setTheme(getParameterByName('theme'));
     }
 
+    componentDidUpdate() {
+        let urlTheme = getParameterByName('theme');
+        if (hasValidUrlTheme() && urlTheme !== this.state.theme) this.setTheme(urlTheme);
+    }
+
     render(cn) {
         return (
             <ThemeProvider theme={ this.state.theme } >

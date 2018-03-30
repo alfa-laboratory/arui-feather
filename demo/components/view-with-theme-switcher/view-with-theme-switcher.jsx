@@ -8,14 +8,14 @@ import { autobind } from 'core-decorators';
 import ThemeProvider from '../../../src/theme-provider';
 import cn from '../../../src/cn';
 
-import { getUrlParameter } from '../../utils/url';
+import { getParameterByName } from '../../utils/url';
 
 const LIGHT_THEME = 'alfa-on-white';
 const DARK_THEME = 'alfa-on-color';
 const THEMES = [LIGHT_THEME, DARK_THEME];
 
 function hasValidUrlTheme() {
-    const theme = getUrlParameter('theme');
+    const theme = getParameterByName('theme');
     return theme && THEMES.includes(theme);
 }
 
@@ -38,7 +38,7 @@ class ViewWithThemeSwitcher extends Component {
     }
 
     componentDidMount() {
-        if (hasValidUrlTheme()) this.setTheme(getUrlParameter('theme'));
+        if (hasValidUrlTheme()) this.setTheme(getParameterByName('theme'));
     }
 
     render(cn) {

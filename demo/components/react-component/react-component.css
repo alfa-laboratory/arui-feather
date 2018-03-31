@@ -1,43 +1,45 @@
 .react-component {
     margin: 0 0 36px;
 
-    .tabs {
-        margin: 36px 0;
-    }
-
-    .tab-item {
-        padding: 0 0 9px;
-        text-transform: none;
-        letter-spacing: normal;
-
-        + .tab-item {
-            margin-left: 24px;
+    &__tab-button {
+        .tabs {
+            margin: 36px 0;
         }
 
-        span {
-            display: none;
-        }
+        .tab-item {
+            padding: 0 0 9px;
+            text-transform: none;
+            letter-spacing: normal;
 
-        @media (--medium) {
+            + .tab-item {
+                margin-left: 24px;
+            }
+
             span {
-                display: inline;
-            }
-        }
-
-        &_checked {
-            color: rgba(240, 50, 38, 1);
-            text-shadow: -0.03ex 0 rgba(240, 50, 38, 1), 0.03ex 0 rgba(240, 50, 38, 1);
-
-            .styleguide_theme_alfa-on-color & {
-                color: #fff;
-                text-shadow: -0.03ex 0 #fff, 0.03ex 0 #fff;
+                display: none;
             }
 
-            &:hover, &:active {
+            @media (--medium) {
+                span {
+                    display: inline;
+                }
+            }
+
+            &_checked {
                 color: rgba(240, 50, 38, 1);
+                text-shadow: -0.03ex 0 rgba(240, 50, 38, 1), 0.03ex 0 rgba(240, 50, 38, 1);
 
                 .styleguide_theme_alfa-on-color & {
                     color: #fff;
+                    text-shadow: -0.03ex 0 #fff, 0.03ex 0 #fff;
+                }
+
+                &:hover, &:active {
+                    color: rgba(240, 50, 38, 1);
+
+                    .styleguide_theme_alfa-on-color & {
+                        color: #fff;
+                    }
                 }
             }
         }

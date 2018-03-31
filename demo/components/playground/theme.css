@@ -53,3 +53,7 @@
     .cm-s-base16-light .CodeMirror-activeline-background { color: rgba(224, 224, 224, 1) !important; }
     .cm-s-base16-light .CodeMirror-matchingbracket { color: rgba(255, 255, 255, 1) !important; }
 }
+
+.playground .CodeMirror-scroll {
+    margin-right: -31px;
+}

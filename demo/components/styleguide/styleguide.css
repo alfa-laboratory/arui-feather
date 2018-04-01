@@ -1,6 +1,8 @@
 @import '../../../src/vars.css';
 
 .styleguide {
+    max-width: 100vw;
+
     &_has-sidebar {
         padding-left: 200px;
     }

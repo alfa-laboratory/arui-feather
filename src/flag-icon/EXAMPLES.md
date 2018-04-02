@@ -67,7 +67,7 @@
 
 Режим загрузки через спрайт
 ```jsx
-const countries = require('../lib/countries').default;
+const countries = require('../../src/lib/countries').default;
 
 const countriesList = countries.getCountries();
 

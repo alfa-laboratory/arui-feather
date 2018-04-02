@@ -124,7 +124,7 @@ initialState = {
 
 С произвольной иконкой
 ```jsx
-const IconOk = require('./../icon/ui/ok').default;
+const IconOk = require('../../src/icon/ui/ok').default;
 
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>

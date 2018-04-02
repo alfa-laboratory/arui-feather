@@ -125,6 +125,10 @@ const IconUserLogout = require('./action/user-logout').default;
                 </span>
             ))
         }
+        <span className='column l'><IconChatSend size='s' colored={ true } /></span>
+        <span className='column l'><IconChatSend size='m' colored={ true } /></span>
+        <span className='column l'><IconChatSend size='l' colored={ true } /></span>
+        <span className='column l'><IconChatSend size='xl' colored={ true } /></span>
     </div>
     <div className='row'>
         {
@@ -453,6 +457,7 @@ const IconAccountDefault = require('./banking/account-default').default;
 const IconAccountShared = require('./banking/account-shared').default;
 const IconCard = require('./banking/card').default;
 const IconCardAccountsList = require('./banking/card-accounts-list').default;
+const IconCardActivate = require('./banking/card-activate').default;
 const IconCardActivation = require('./banking/card-activation').default;
 const IconCardAdd = require('./banking/card-add').default;
 const IconCardExpences = require('./banking/card-expences').default;
@@ -541,6 +546,15 @@ const IconTransferToCard = require('./banking/transfer-to-card').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconCardAccountsList size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconCardActivate size={ size } />
                 </span>
             ))
         }
@@ -1528,7 +1542,6 @@ const IconCategoryMortgaget = require('./category/category-mortgaget').default;
 const IconCategoryOther = require('./category/category-other').default;
 const IconCategoryPerson = require('./category/category-person').default;
 const IconCategoryPets = require('./category/category-pets').default;
-const IconCategoryRegistry = require('./category/category-registry').default;
 const IconCategoryRent = require('./category/category-rent').default;
 const IconCategoryRepairs = require('./category/category-repairs').default;
 const IconCategoryRestaurants = require('./category/category-restaurants').default;
@@ -1840,15 +1853,6 @@ const IconUtilities = require('./category/utilities').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconCategoryPets size={ size } />
-                </span>
-            ))
-        }
-    </div>
-    <div className='row'>
-        {
-            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
-                <span className='column l' key={ size }>
-                    <IconCategoryRegistry size={ size } />
                 </span>
             ))
         }
@@ -2729,6 +2733,7 @@ const IconSubmit = require('./ui/submit').default;
 const IconSystemBack = require('./ui/system-back').default;
 const IconSystemClose = require('./ui/system-close').default;
 const IconSystemHelp = require('./ui/system-help').default;
+const IconSystemHideArrow = require('./ui/system-hide-arrow').default;
 const IconUp = require('./ui/up').default;
 const IconVerifying = require('./ui/verifying').default;
 
@@ -3099,6 +3104,15 @@ const IconVerifying = require('./ui/verifying').default;
             ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
                 <span className='column l' key={ size }>
                     <IconSystemHelp size={ size } />
+                </span>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            ['s', 'm', 'l', 'xl', 'xxl'].map(size => (
+                <span className='column l' key={ size }>
+                    <IconSystemHideArrow size={ size } />
                 </span>
             ))
         }

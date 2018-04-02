@@ -23,7 +23,7 @@
     "release-major": "npm version major -m 'chore(*): major version'",
     "version": "git fetch --tags && npm run changelog && git add CHANGELOG.md",
     "postversion": "git push origin master && git push --tags && npm run pub",
-    "postinstall": "git submodule update --remote --merge && cd ./demo && npm i && cd ./..",
+    "postinstall": "git submodule update --init && cd ./demo && npm i && cd ./..",
     "modernizr": "node ./tools/modernizr-build.js",
     "commitmsg": "validate-commit-msg",
     "precommit": "lint-staged",

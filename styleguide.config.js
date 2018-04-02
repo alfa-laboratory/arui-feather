@@ -62,6 +62,9 @@ module.exports = {
     webpackConfig: merge.smart(WEBPACK_BASE_TEMPLATE, WEBPACK_DEV_TEMPLATE, {
         devServer: {
             disableHostCheck: true
+        },
+        resolve: {
+            modules: [path.resolve(__dirname, './demo/node_modules')]
         }
     })
 };

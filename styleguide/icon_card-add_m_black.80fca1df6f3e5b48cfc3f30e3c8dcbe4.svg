@@ -1,7 +1,0 @@
-<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" fill-rule="evenodd">
-    <path d="M0 0h24v24H0z"/>
-    <path d="M2 18c0 .556.442 1 .991 1H21.01A.995.995 0 0 0 22 18V5c0-.556-.442-1-.991-1H2.99A.995.995 0 0 0 2 5v13zm.991-15H21.01C22.109 3 23 3.89 23 5v13c0 1.105-.89 2-1.991 2H2.99C1.891 20 1 19.11 1 18V5c0-1.105.89-2 1.991-2z" fill="#0F2338" fill-rule="nonzero"/>
-    <path fill="#0A1E32" fill-rule="nonzero" d="M12.5 15v-3h3v-1h-3V8h-1v3h-3v1h3v3z"/>
-  </g>
-</svg>

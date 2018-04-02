@@ -1,6 +1,3 @@
-[submodule "sdemo"]
-	path = sdemo
-	url = https://github.com/alfa-laboratory/arui-demo
 [submodule "demo"]
-	path = demo
-	url = https://github.com/alfa-laboratory/arui-demo
+    path = demo
+    url = https://github.com/alfa-laboratory/arui-demo

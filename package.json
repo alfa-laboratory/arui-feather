@@ -109,7 +109,7 @@
   },
   "devDependencies": {
     "alfa-ui-primitives": "1.6.0",
-    "arui-presets": "4.12.0",
+    "arui-presets": "4.13.0",
     "bowser": "1.9.3",
     "chai": "4.1.2",
     "chai-dom": "1.7.0",

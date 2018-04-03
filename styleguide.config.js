@@ -1,5 +1,5 @@
 /* eslint strict: [0, "global"] */
-/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint import/no-extraneous-dependencies: 0 */
 
 'use strict';
 
@@ -7,6 +7,7 @@ const fs = require('fs');
 const mkdirp = require('mkdirp');
 const glob = require('glob');
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
@@ -63,8 +64,10 @@ module.exports = {
         devServer: {
             disableHostCheck: true
         },
-        resolve: {
-            modules: [path.resolve(__dirname, './demo/node_modules')]
-        }
+        plugins: [
+            new webpack.NormalModuleReplacementPlugin(/^arui-feather/, (resource) => {
+                resource.request = resource.request.replace(/^arui-feather/, path.resolve(__dirname, './src'));
+            })
+        ]
     })
 };

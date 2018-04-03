@@ -113,23 +113,6 @@ const clean = new Promise((resolve) => {
     resolve();
 });
 
-// Create Readme.md
-const createReadme = () => new Promise((resolve) => {
-    const categoriesArray = [];
-
-    CATEGORIES.forEach((category) => {
-        categoriesArray.push(
-            removeDublicates(icons.filter(item => item.category === category)));
-    });
-
-    fs.writeFileSync(
-        './src/icon/README.md',
-        getTemplate('README.md', categoriesArray)
-    );
-
-    resolve();
-});
-
 // Create icon-test.jsx
 const createTests = () => new Promise((resolve) => {
     const shortIcons = removeDublicates(icons);
@@ -171,7 +154,6 @@ const createComponents = () => new Promise((resolve) => {
 // copy svgs, create index.js, .jsx and css files for component.
 Promise.all([
     clean,
-    createReadme(),
     createTests(),
     createFolders(),
     createComponents()

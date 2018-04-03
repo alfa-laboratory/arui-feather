@@ -12,9 +12,10 @@ const WEBPACK_BASE_TEMPLATE = require('arui-presets/webpack.base');
 const WEBPACK_DEV_TEMPLATE = require('arui-presets/webpack.development');
 
 const PORT = parseInt(process.env.PORT || 8080, 10);
+const TITLE = 'arui-feather';
 
 module.exports = {
-    title: 'arui-feather',
+    title: TITLE,
     serverPort: PORT,
     skipComponentsWithoutExample: true,
     components: './src/*/index.js',
@@ -25,7 +26,7 @@ module.exports = {
         const componentDirName = path.dirname(filePath);
         const componentSourcesFileName = componentDirName.split(path.sep).pop();
         const componentName = upperCamelCase(componentSourcesFileName);
-        return `import ${componentName} from 'arui-feather/${componentSourcesFileName}';`;
+        return `import ${componentName} from '${TITLE}/${componentSourcesFileName}';`;
     },
     getExampleFilename(componentPath) {
         return path.resolve(path.dirname(componentPath), './README.md');

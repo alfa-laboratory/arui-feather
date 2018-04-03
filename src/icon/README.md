@@ -5,6 +5,6 @@ const Icon = require('../../src/icon/brand/bank-2449').default;
 
 <div>
     <Icon size='m' />
-    <Icon colored='true' />
+    <Icon colored={ true } />
 </div>
 ```

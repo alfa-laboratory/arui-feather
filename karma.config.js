@@ -14,7 +14,7 @@ function getTestsGlobs(tests, postfix) {
     return tests.split(',').map(testName => `./src/${testName}/*-${postfix}.{js,jsx}`);
 }
 
-let babelLoaderConfig = WEBPACK_BASE_TEMPLATE.module.rules.find(l => l.loader === 'babel-loader');
+let babelLoaderConfig = WEBPACK_BASE_TEMPLATE.module.rules.find(l => /babel-loader/.test(l.loader));
 delete babelLoaderConfig.exclude;
 
 module.exports = (config) => {

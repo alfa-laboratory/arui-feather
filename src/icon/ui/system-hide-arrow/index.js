@@ -2,12 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-.preview-frame {
-    margin: -15px;
+import './system-hide-arrow.css';
+import '../../../icon';
 
-    iframe {
-        width: 100%;
-        border: 0;
-        height: 100%;
-    }
-}
+export default from './system-hide-arrow';

@@ -2,6 +2,7 @@
 .build/**
 .publish/**
 coverage/**
+demo/**/*
 gemini-coverage/**
 gemini-report/**
 node_modules/**

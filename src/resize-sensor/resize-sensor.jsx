@@ -7,6 +7,17 @@ import React from 'react';
 import Type from 'prop-types';
 
 /**
+ * Инстанцирует Resize Observer при наличии в браузере.
+ *
+ * @param {Function} onObserve Обработчик изменений в Resize Observer.
+ * @returns {ResizeObserver|null}
+ */
+function getObserver(onObserve) {
+    if (!global.ResizeObserver) return null;
+    return new global.ResizeObserver(onObserve);
+}
+
+/**
  * Компонент позволяющий слушать изменения размера родительского элемента.
  * Для использования разместите его в элементе об изменении размера, которого
  * вы хотите знать и добавьте внешний обработчик `onResize`.
@@ -25,14 +36,27 @@ class ResizeSensor extends React.Component {
      */
     iframe;
 
+    /**
+     * @type {ResizeObserver}
+     */
+    observer = getObserver(this.handleResize);
+
     componentDidMount() {
-        if (this.iframe.contentWindow) {
+        if (this.root) {
+            this.observer.observe(this.root);
+        }
+
+        if (this.iframe && this.iframe.contentWindow) {
             this.iframe.contentWindow.addEventListener('resize', this.handleResize);
         }
     }
 
     componentWillUnmount() {
-        if (this.iframe.contentWindow) {
+        if (this.root) {
+            this.observer.disconnect();
+        }
+
+        if (this.iframe && this.iframe.contentWindow) {
             this.iframe.contentWindow.removeEventListener('resize', this.handleResize);
         }
     }
@@ -51,11 +75,17 @@ class ResizeSensor extends React.Component {
 
         /* eslint-disable jsx-a11y/iframe-has-title */
         return (
-            <iframe
-                ref={ (iframe) => { this.iframe = iframe; } }
-                style={ iframeStyle }
-                tabIndex='-1'
-            />
+            global.ResizeObserver ?
+                <div
+                    ref={ (root) => { this.root = root; } }
+                    style={ iframeStyle }
+                />
+                :
+                <iframe
+                    ref={ (iframe) => { this.iframe = iframe; } }
+                    style={ iframeStyle }
+                    tabIndex='-1'
+                />
         );
         /* eslint-enable jsx-a11y/iframe-has-title */
     }

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint import/prefer-default-export: 0 */
 
 import bowser from 'bowser';
 import React from 'react';
@@ -31,7 +32,7 @@ const REACT_VERSION = React.version;
  * @param {Object} componentProps Свойства для измеряемого компонента.
  * @param {Number} threshold Пороговое значение для тестирования.
  */
-export default function runBenchmark(component, componentProps, threshold = 20) {
+export function runBenchmark(component, componentProps, threshold = 20) {
     let { name } = component;
 
     describe(name, () => {

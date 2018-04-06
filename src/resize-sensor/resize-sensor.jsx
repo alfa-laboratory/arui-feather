@@ -62,14 +62,12 @@ class ResizeSensor extends React.Component {
     }
 
     render() {
-        let iframeStyle = {
+        let style = {
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            background: 'transparent',
-            border: 'none',
             zIndex: -1
         };
 
@@ -78,12 +76,16 @@ class ResizeSensor extends React.Component {
             global.ResizeObserver ?
                 <div
                     ref={ (root) => { this.root = root; } }
-                    style={ iframeStyle }
+                    style={ style }
                 />
                 :
                 <iframe
                     ref={ (iframe) => { this.iframe = iframe; } }
-                    style={ iframeStyle }
+                    style={ {
+                        ...style,
+                        background: 'transparent',
+                        border: 'none'
+                    } }
                     tabIndex='-1'
                 />
         );

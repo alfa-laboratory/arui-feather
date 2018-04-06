@@ -54,8 +54,6 @@ class Calendar extends React.Component {
         onValueChange: Type.func,
         /** Обработчик смены месяца */
         onMonthChange: Type.func,
-        /** Тип форматирования даты при выводе */
-        outputFormat: Type.string,
         /** Список названий месяцев */
         months: Type.arrayOf(Type.string),
         /** Список названий дней недели */
@@ -89,7 +87,6 @@ class Calendar extends React.Component {
     static defaultProps = {
         selectedFrom: null,
         selectedTo: null,
-        outputFormat: 'DD.MM.YYYY',
         weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
@@ -513,7 +510,7 @@ class Calendar extends React.Component {
 
         this.props.onValueChange(
             timestamp,
-            formatDate(date, this.props.outputFormat),
+            date,
             isTriggeredByKeyboard
         );
     }

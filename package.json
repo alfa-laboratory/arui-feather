@@ -14,7 +14,7 @@
     "lint-css": "stylelint ./src/**/*.css",
     "gemini": "gemini test",
     "gemini-ci": "node ./gemini-utils/gemini-ci.js",
-    "gemini-update": "ALL_BROWSERS=1 ALL_SIZES=1 gemini update",
+    "gemini-update": "ALL_SIZES=1 gemini update",
     "sauce-connect": "sh ./tools/sauce-connect.sh",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "github-release": "conventional-github-releaser -p angular",

@@ -11,11 +11,11 @@ import parse from 'date-fns/parse';
  * @returns {Number}
  */
 export function parseDate(value, format) {
-    const valueTrimmed = value ? value.replace(/~+$/, '') : '';
+    const valueTrimmed = value.trim();
     let result = null;
 
-    // Проверяем, чтобы пользователь ввёл полную строку даты без пробелов.
-    if (valueTrimmed.length === format.length && !valueTrimmed.match(/\s/)) {
+    // Проверяем, чтобы пользователь ввёл полную строку.
+    if (valueTrimmed.length === format.length) {
         let valueDate = parse(valueTrimmed, format, new Date());
         if (isDateValid(valueDate)) {
             result = valueDate.valueOf();

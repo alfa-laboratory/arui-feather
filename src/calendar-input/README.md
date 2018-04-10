@@ -46,7 +46,7 @@ const formatDate = require('date-fns/format');
 
 С отображением текущей даты
 ```jsx
-const addDays = require('date-fns/add_days');
+const addDays = require('date-fns/addDays');
 const formatDate = require('date-fns/format');
 
 let currentDate = new Date();

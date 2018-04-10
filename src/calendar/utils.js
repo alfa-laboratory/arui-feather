@@ -1,5 +1,5 @@
-import startOfToday from 'date-fns/start_of_today';
-import getTime from 'date-fns/get_time';
+import startOfDay from 'date-fns/startOfDay';
+import getTime from 'date-fns/getTime';
 
 /**
  * Возвращает `true`, если переданная дата является текущей датой.
@@ -9,7 +9,7 @@ import getTime from 'date-fns/get_time';
  */
 export default function isCurrentDay(date) {
     if (date !== null) {
-        return date.valueOf() === getTime(startOfToday());
+        return date.valueOf() === getTime(startOfDay(new Date()));
     }
 
     return false;

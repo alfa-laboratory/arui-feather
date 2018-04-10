@@ -27,7 +27,6 @@ import performance from '../performance';
  * https://www.w3.org/TR/html-markup/input.date.html#input.date.attrs.value
  * https://tools.ietf.org/html/rfc3339#section-5.6
 */
-const CUSTOM_DATE_FORMAT = 'DD.MM.YYYY';
 const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
@@ -54,7 +53,6 @@ class CalendarInput extends React.Component {
             month: Type.number,
             onValueChange: Type.func,
             onMonthChange: Type.func,
-            outputFormat: Type.string,
             months: Type.arrayOf(Type.string),
             weekdays: Type.arrayOf(Type.string),
             offDays: Type.arrayOf(Type.number),
@@ -72,6 +70,10 @@ class CalendarInput extends React.Component {
         }),
         /** Управление возможностью раскрытия календаря */
         opened: Type.bool,
+        /** Тип форматирования даты при выводе */
+        outputFormat: Type.string,
+        /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
+        mask: Type.string,
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -131,6 +133,8 @@ class CalendarInput extends React.Component {
 
     static defaultProps = {
         withIcon: true,
+        outputFormat: 'DD.MM.YYYY',
+        mask: '11.11.1111',
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         placeholder: '00.00.0000',
         mobileMode: 'native'
@@ -144,7 +148,7 @@ class CalendarInput extends React.Component {
         value: this.props.defaultValue || '',
         month: calculateMonth(
             this.props.value,
-            CUSTOM_DATE_FORMAT,
+            this.props.outputFormat,
             this.props.calendar ? this.props.calendar.earlierLimit : undefined,
             this.props.calendar ? this.props.calendar.laterLimit : undefined
         )
@@ -251,7 +255,7 @@ class CalendarInput extends React.Component {
                             { ...nativeProps }
                             className={ cn('native-control') }
                             type='date'
-                            value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
+                            value={ changeDateFormat(value, this.props.outputFormat, NATIVE_DATE_FORMAT) }
                             onBlur={ this.handleNativeInputBlur }
                             onChange={ this.handleNativeInputChange }
                             onFocus={ this.handleNativeInputFocus }
@@ -266,7 +270,7 @@ class CalendarInput extends React.Component {
                     className={ cn('custom-control') }
                     disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
-                    mask='11.11.1111'
+                    mask={ this.props.mask }
                     size={ this.props.size }
                     type='text'
                     label={ this.props.label }
@@ -314,7 +318,7 @@ class CalendarInput extends React.Component {
                         ref={ (calendar) => { this.calendar = calendar; } }
                         month={ this.state.month }
                         { ...this.props.calendar }
-                        value={ parseDate(value, CUSTOM_DATE_FORMAT) }
+                        value={ parseDate(value, this.props.outputFormat) }
                         onBlur={ this.handleCalendarBlur }
                         onFocus={ this.handleCalendarFocus }
                         onKeyDown={ this.handleCalendarKeyDown }
@@ -337,7 +341,9 @@ class CalendarInput extends React.Component {
     }
 
     @autobind
-    handleCalendarChange(value, formatted, isTriggeredByKeyboard) {
+    handleCalendarChange(value, date, isTriggeredByKeyboard) {
+        let formatted = formatDate(date, this.props.outputFormat);
+
         if (!isTriggeredByKeyboard) {
             this.changeCloseTimeoutId = setTimeout(() => {
                 this.calendar.blur(); // FF не испускает событие `blur` когда элементы становятся невидимыми, делаем это явно
@@ -410,7 +416,7 @@ class CalendarInput extends React.Component {
     handleCustomInputChange(value) {
         let month = calculateMonth(
             value,
-            CUSTOM_DATE_FORMAT,
+            this.props.outputFormat,
             this.props.calendar ? this.props.calendar.earlierLimit : undefined,
             this.props.calendar ? this.props.calendar.laterLimit : undefined
         );
@@ -418,7 +424,7 @@ class CalendarInput extends React.Component {
         this.setState({ value });
 
         // Изменяет месяц в календаре в соответствии с введёной в поле валидной датой
-        if (value && value.length === CUSTOM_DATE_FORMAT.length && month !== this.state.month) {
+        if (value && value.length === this.props.outputFormat.length && month !== this.state.month) {
             this.setState({ month });
         }
 
@@ -427,13 +433,13 @@ class CalendarInput extends React.Component {
         }
 
         if (this.props.onChange) {
-            this.props.onChange(value, parseDate(value, CUSTOM_DATE_FORMAT));
+            this.props.onChange(value, parseDate(value, this.props.outputFormat));
         }
     }
 
     @autobind
     handleNativeInputChange(event) {
-        let value = changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT);
+        let value = changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, this.props.outputFormat);
 
         // Детектим нажатие `сlear` в нативном календаре
         if (this.state.value === value) {
@@ -447,7 +453,7 @@ class CalendarInput extends React.Component {
         }
 
         if (this.props.onChange) {
-            this.props.onChange(value, parseDate(value, CUSTOM_DATE_FORMAT));
+            this.props.onChange(value, parseDate(value, this.props.outputFormat));
         }
     }
 
@@ -466,7 +472,7 @@ class CalendarInput extends React.Component {
         let resultEvent = {
             ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
-            target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) }
+            target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, this.props.outputFormat) }
         };
 
         this.changeFocused({ isInputFocused: true }, resultEvent);
@@ -491,7 +497,7 @@ class CalendarInput extends React.Component {
         let resultEvent = {
             ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
-            target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) }
+            target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, this.props.outputFormat) }
         };
 
         this.changeFocused({ isInputFocused: false }, resultEvent);
@@ -515,7 +521,7 @@ class CalendarInput extends React.Component {
                     opened: true,
                     month: calculateMonth(
                         value,
-                        CUSTOM_DATE_FORMAT,
+                        this.props.outputFormat,
                         this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                         this.props.calendar ? this.props.calendar.laterLimit : undefined
                     )
@@ -655,7 +661,7 @@ class CalendarInput extends React.Component {
             let newMonth = this.state.opened !== opened
                 ? calculateMonth(
                     value,
-                    CUSTOM_DATE_FORMAT,
+                    this.props.outputFormat,
                     this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                     this.props.calendar ? this.props.calendar.laterLimit : undefined
                 )

@@ -4,7 +4,7 @@
 
 /* eslint no-continue: 0 */
 
-import getDaysInMonth from 'date-fns/get_days_in_month';
+import getDaysInMonth from 'date-fns/getDaysInMonth';
 
 const DAYS_IN_WEEK = 7;
 

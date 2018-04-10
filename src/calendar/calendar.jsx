@@ -8,14 +8,14 @@ import { autobind } from 'core-decorators';
 import React from 'react';
 import Type from 'prop-types';
 
-import differenceInMonths from 'date-fns/difference_in_months';
-import differenceInMilliseconds from 'date-fns/difference_in_milliseconds';
-import startOfDay from 'date-fns/start_of_day';
-import startOfMonth from 'date-fns/start_of_month';
-import addDays from 'date-fns/add_days';
-import addYears from 'date-fns/add_years';
-import subtractYears from 'date-fns/sub_years';
-import isSameMonth from 'date-fns/is_same_month';
+import differenceInMonths from 'date-fns/differenceInMonths';
+import differenceInMilliseconds from 'date-fns/differenceInMilliseconds';
+import startOfDay from 'date-fns/startOfDay';
+import startOfMonth from 'date-fns/startOfMonth';
+import addDays from 'date-fns/addDays';
+import addYears from 'date-fns/addYears';
+import subtractYears from 'date-fns/subYears';
+import isSameMonth from 'date-fns/isSameMonth';
 import sortedIndexOf from 'lodash.sortedindexof';
 
 import cn from '../cn';

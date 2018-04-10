@@ -2,11 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import addDays from 'date-fns/add_days';
-import startOfDay from 'date-fns/start_of_day';
-import subtractDays from 'date-fns/sub_days';
-import subtractMonth from 'date-fns/sub_months';
-import addMonth from 'date-fns/add_months';
+import addDays from 'date-fns/addDays';
+import startOfDay from 'date-fns/startOfDay';
+import subtractDays from 'date-fns/subDays';
+import subtractMonth from 'date-fns/subMonths';
+import addMonth from 'date-fns/addMonths';
 
 import Calendar from './calendar';
 
@@ -31,7 +31,7 @@ describe('calendar', () => {
 
         dayNodes[15].click();
 
-        expect(onValueChange).to.have.been.calledWith(addDays(INITIAL_DAY, 1).valueOf(), '16.01.2016');
+        expect(onValueChange).to.have.been.calledWith(addDays(INITIAL_DAY, 1).valueOf(), new Date('2016-01-16'));
     });
 
     it('should render without problems', () => {

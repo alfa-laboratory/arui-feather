@@ -14,8 +14,8 @@ initialState = {
 ```
 Календарь с выключенными датами до и от
 ```jsx
-const addDays = require('date-fns/add_days');
-const subtractDays = require('date-fns/sub_days');
+const addDays = require('date-fns/addDays');
+const subtractDays = require('date-fns/subDays');
 
 initialState = {
     date: Date.now(),
@@ -37,9 +37,9 @@ initialState = {
 
 Календарь с выключенными конкретными датами
 ```jsx
-const getTime = require('date-fns/get_time');
-const addDays = require('date-fns/add_days');
-const startOfDay = require('date-fns/start_of_day');
+const getTime = require('date-fns/getTime');
+const addDays = require('date-fns/addDays');
+const startOfDay = require('date-fns/startOfDay');
 
 initialState = {
     date: Date.now()
@@ -64,9 +64,9 @@ const offDays = [
 
 Календарь с отображением событий
 ```jsx
-const getTime = require('date-fns/get_time');
-const addDays = require('date-fns/add_days');
-const startOfDay = require('date-fns/start_of_day');
+const getTime = require('date-fns/getTime');
+const addDays = require('date-fns/addDays');
+const startOfDay = require('date-fns/startOfDay');
 
 initialState = {
     date: Date.now()

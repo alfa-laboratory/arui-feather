@@ -1,7 +1,7 @@
-import startOfDay from 'date-fns/start_of_day';
+import startOfDay from 'date-fns/startOfDay';
 import formatDate from 'date-fns/format';
-import isDateValid from 'date-fns/is_valid';
-import { parse } from '../lib/date-utils';
+import isDateValid from 'date-fns/isValid';
+import parse from 'date-fns/parse';
 
 /**
  * Разбирает введенную пользователем дату используя заданный формат.
@@ -16,7 +16,7 @@ export function parseDate(value, format) {
 
     // Проверяем, чтобы пользователь ввёл полную строку даты без пробелов.
     if (valueTrimmed.length === format.length && !valueTrimmed.match(/\s/)) {
-        let valueDate = parse(valueTrimmed, format);
+        let valueDate = parse(valueTrimmed, format, new Date());
         if (isDateValid(valueDate)) {
             result = valueDate.valueOf();
         }

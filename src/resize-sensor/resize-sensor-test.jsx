@@ -15,23 +15,22 @@ describe('resize-sensor', () => {
         expect(resizeSensor.node).to.exist;
     });
 
-    it('should call `onResize` callback when `ResizeSensor` was change dimensions', (done) => {
+    it('should call `onResize` callback when `ResizeSensor` detects new dimensions', (done) => {
         let onResize = sinon.spy();
-        render(
-            <div id='resize-sensor-parent' style={ { position: 'relative', width: '10px', height: '10px' } }>
+        let { node } = render(
+            <div style={ { position: 'relative', width: '10px', height: '10px' } }>
                 <ResizeSensor onResize={ onResize } />
             </div>
         );
-        let resizeSensorNode = document.getElementById('resize-sensor-parent');
 
         setTimeout(() => {
-            resizeSensorNode.style.width = '20px';
-            resizeSensorNode.style.height = '20px';
+            node.style.width = '20px';
+            node.style.height = '20px';
 
             setTimeout(() => {
                 expect(onResize).to.have.been.called;
                 done();
-            }, 500);
+            }, 1000);
         }, 0);
     });
 });

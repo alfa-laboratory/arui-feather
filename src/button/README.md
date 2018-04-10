@@ -10,20 +10,20 @@ const buttons = [
     { size: 's', name: 'Оплатить' }
 ];
 <div>
-  <div className='row'>
-      {buttons.map(({ size, name }) => (
-          <div className='column' key={ size }>
-              <Button view='extra' size={ size }>{`${name}`}</Button>
-          </div>
-      ))}
-  </div>
-  <div className='row'>
-      {buttons.map(({ size, name }) => (
-          <div className='column' key={ size }>
-              <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
-          </div>
-      ))}
-  </div>
+    <div className='row'>
+        {buttons.map(({ size, name }) => (
+            <div className='column' key={ size }>
+                <Button view='extra' size={ size }>{`${name}`}</Button>
+            </div>
+        ))}
+    </div>
+    <div className='row'>
+        {buttons.map(({ size, name }) => (
+            <div className='column' key={ size }>
+                <Button view='extra' size={ size } disabled={ true }>{`${name}`}</Button>
+            </div>
+        ))}
+    </div>
 </div>
 ```
 
@@ -37,20 +37,20 @@ const buttons = [
     { size: 's', name: 'Применить' }
 ];
 <div>
-  <div className='row'>
-      {buttons.map(({ size, name }) => (
-          <div className='column' key={ size }>
-              <Button size={ size }>{`${name}`}</Button>
-          </div>
-      ))}
-  </div>
-  <div className='row'>
-      {buttons.map(({ size, name }) => (
-          <div className='column' key={ size }>
-              <Button size={ size } disabled={ true }>{`${name}`}</Button>
-          </div>
-      ))}
-  </div>
+    <div className='row'>
+        {buttons.map(({ size, name }) => (
+            <div className='column' key={ size }>
+                <Button size={ size }>{`${name}`}</Button>
+            </div>
+        ))}
+    </div>
+    <div className='row'>
+        {buttons.map(({ size, name }) => (
+            <div className='column' key={ size }>
+                <Button size={ size } disabled={ true }>{`${name}`}</Button>
+            </div>
+        ))}
+    </div>
 </div>
 ```
 
@@ -64,13 +64,13 @@ const buttons = [
     { size: 's', name: 'Показать' }
 ];
 <div>
-  <div className='row'>
-      {buttons.map(({ size, name }) => (
-          <div className='column' key={ size }>
-              <Button pseudo={ true } size={ size }>{`${name}`}</Button>
-          </div>
-      ))}
-  </div>
+    <div className='row'>
+        {buttons.map(({ size, name }) => (
+            <div className='column' key={ size }>
+                <Button pseudo={ true } size={ size }>{`${name}`}</Button>
+            </div>
+        ))}
+    </div>
 </div>
 ```
 
@@ -85,13 +85,13 @@ const buttons = [
     { size: 's', name: 'Скачать' }
 ];
 <div>
-  <div className='row'>
-      {buttons.map(({ size, name }) => (
-          <div className='column' key={ size }>
-              <Button icon={ <IconOk size={ size } /> } size={ size }>{`${name}`}</Button>
-          </div>
-      ))}
-  </div>
+    <div className='row'>
+        {buttons.map(({ size, name }) => (
+            <div className='column' key={ size }>
+                <Button icon={ <IconOk size={ size } /> } size={ size }>{`${name}`}</Button>
+            </div>
+        ))}
+    </div>
 </div>
 ```
 
@@ -129,7 +129,7 @@ const buttons = [
 
 2. Назначение кнопки должно быть понятным из её названия или контекста использования, а поведение — предсказуемым. Не вводите пользователей в заблуждение.
 
-  <div className='rules'>
+  <Rules className='rules'>
     <span className='rules__section rules__section_good'>
       - Открыть депозит
       - Оплатить
@@ -138,6 +138,6 @@ const buttons = [
       - Новый депозит
       - OK
     </span>
-  </div>
+  </Rules>
 
 3. Любую кнопку можно выбрать с клавиатуры с помощью табуляции. Когда кнопка попадает в фокус, вокруг неё появляется рамка. В этом состоянии на кнопку можно нажать с помощью клавиши Enter.

@@ -1,10 +1,10 @@
-Все иконки смотрите [здесь](http://design.alfabank.ru/beta/style/icons)
+[Полный список иконок с поиском](http://design.alfabank.ru/style/icons)
 
 ```jsx
 const Icon = require('../../src/icon/brand/bank-2449').default;
 
 <div>
-    <Icon size='m' />
-    <Icon colored={ true } />
+    <Icon size='xl' />
+    <Icon size='xl' colored={ true } />
 </div>
 ```

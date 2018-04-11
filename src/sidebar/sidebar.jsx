@@ -4,7 +4,7 @@
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import autobind from 'core-decorators/es/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 

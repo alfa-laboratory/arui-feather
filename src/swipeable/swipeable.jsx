@@ -1,7 +1,7 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import autobind from 'core-decorators/es/autobind';
+import autobind from 'core-decorators/lib/autobind';
 
 import performance from '../performance';
 

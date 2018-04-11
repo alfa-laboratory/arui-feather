@@ -96,7 +96,7 @@ class CalendarInput extends React.Component {
         /** Отображение ошибки */
         error: Type.node,
         /** Управление нативным режимом на мобильных устройствах */
-        mobileMode: Type.oneOf(['native', 'popup']),
+        mobileMode: Type.oneOf(['native', 'popup', 'input']),
         /** Подсказка над меню в мобильном режиме */
         mobileTitle: Type.node,
         /** Идентификатор компонента в DOM */
@@ -299,6 +299,8 @@ class CalendarInput extends React.Component {
         let opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.opened;
+
+        if (this.isSimpleInput()) opened = false;
 
         return (
             <Popup
@@ -603,6 +605,10 @@ class CalendarInput extends React.Component {
 
     isMobilePopup() {
         return this.state.isMobile && this.props.mobileMode === 'popup';
+    }
+
+    isSimpleInput() {
+        return this.state.isMobile && this.props.mobileMode === 'input';
     }
 
     changeFocused(focusedState, event) {

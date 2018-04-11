@@ -1,3 +1,14 @@
+<a name="12.6.0"></a>
+# [12.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.5.0...v12.6.0) (2018-04-11)
+
+
+### Features
+
+* **calendar-input:** add input mobile mode ([#619](https://github.com/alfa-laboratory/arui-feather/issues/619)) ([d429216](https://github.com/alfa-laboratory/arui-feather/commit/d429216))
+* **icons:** update icons to alfa-ui-primitives 1.6.0 ([#593](https://github.com/alfa-laboratory/arui-feather/issues/593)) ([bf0cc29](https://github.com/alfa-laboratory/arui-feather/commit/bf0cc29))
+
+
+
 <a name="12.5.0"></a>
 # [12.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.8...v12.5.0) (2018-03-26)
 

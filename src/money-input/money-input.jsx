@@ -4,7 +4,7 @@
 
 /* eslint react/prop-types: 0 */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/es/autobind';
 import React from 'react';
 import Type from 'prop-types';
 

@@ -4,7 +4,7 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/es/autobind';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 

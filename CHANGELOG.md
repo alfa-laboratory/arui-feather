@@ -1,3 +1,19 @@
+<a name="12.6.1"></a>
+## [12.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.0...v12.6.1) (2018-04-11)
+
+
+### Bug Fixes
+
+* remove postinstall script ([#624](https://github.com/alfa-laboratory/arui-feather/issues/624)) ([c111917](https://github.com/alfa-laboratory/arui-feather/commit/c111917))
+* require non-es version of core-decorators ([a6b26d7](https://github.com/alfa-laboratory/arui-feather/commit/a6b26d7))
+
+
+### Features
+
+* reduce bundle size, remove prop-types in production ([4854865](https://github.com/alfa-laboratory/arui-feather/commit/4854865))
+
+
+
 <a name="12.6.0"></a>
 # [12.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.5.0...v12.6.0) (2018-04-11)
 

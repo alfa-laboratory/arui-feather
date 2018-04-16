@@ -268,7 +268,8 @@ class CalendarInput extends React.Component {
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                     mask='11.11.1111'
                     size={ this.props.size }
-                    type='text'
+                    type='tel'
+                    pattern='[0-9]*'
                     label={ this.props.label }
                     placeholder={ this.props.placeholder }
                     hint={ this.props.hint }

@@ -90,7 +90,7 @@ class Select extends React.Component {
             icon: Type.node,
             /** Список вариантов, только для type='group' */
             content: Type.array,
-            /** Только для type='item': свойства для компонента [MenuItem](../menu-item/) */
+            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
             props: Type.object
         })),
         /** Размер компонента */
@@ -137,7 +137,7 @@ class Select extends React.Component {
         onChange: Type.func,
         /** Обработчик нажатия на клавишу */
         onKeyDown: Type.func,
-        /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа [CheckedOption](#CheckedOption) */
+        /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
         renderButtonContent: Type.func
     };
 

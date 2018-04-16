@@ -44,7 +44,7 @@ class CalendarInput extends React.Component {
         value: Type.string,
         /** Содержимое поля ввода, указанное по умолчанию */
         defaultValue: Type.string,
-        /** Свойства компонента [Calendar](../calendar/) */
+        /** Свойства компонента [Calendar](#!/Calendar) */
         calendar: Type.shape({
             value: Type.number,
             selectedFrom: Type.number,

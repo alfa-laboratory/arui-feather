@@ -25,7 +25,7 @@ class Input extends React.Component {
         /**
          * Тип поля.
          * Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
-         * Подробнее: http://w3c.github.io/html/sec-forms.html#does-not-apply
+         * Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
          */
         type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
         /** Управление возможностью компонента занимать всю ширину родителя */
@@ -54,7 +54,7 @@ class Input extends React.Component {
         defaultValue: Type.string,
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
-        /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
+        /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
         mask: Type.string,
         /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
         maskFormatCharacters: Type.objectOf(

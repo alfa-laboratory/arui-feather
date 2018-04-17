@@ -30,7 +30,7 @@ class SlideDown extends React.Component {
         id: Type.string,
         /** Обработчик события начала анимации */
         onAnimationStart: Type.func,
-        /** Обработчик события начала анимации */
+        /** Обработчик события окончания анимации */
         onAnimationEnd: Type.func
     };
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_dots_m_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_dots_m_w" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) ">
+            <rect id="Rectangle-2" x="0" y="0" width="24" height="24"></rect>
+            <path d="M3,15 C1.34314575,15 0,13.6568542 0,12 C0,10.3431458 1.34314575,9 3,9 C4.65685425,9 6,10.3431458 6,12 C6,13.6568542 4.65685425,15 3,15 Z M3,14 C4.1045695,14 5,13.1045695 5,12 C5,10.8954305 4.1045695,10 3,10 C1.8954305,10 1,10.8954305 1,12 C1,13.1045695 1.8954305,14 3,14 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <path d="M12,15 C10.3431458,15 9,13.6568542 9,12 C9,10.3431458 10.3431458,9 12,9 C13.6568542,9 15,10.3431458 15,12 C15,13.6568542 13.6568542,15 12,15 Z M12,14 C13.1045695,14 14,13.1045695 14,12 C14,10.8954305 13.1045695,10 12,10 C10.8954305,10 10,10.8954305 10,12 C10,13.1045695 10.8954305,14 12,14 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <path d="M21,15 C19.3431458,15 18,13.6568542 18,12 C18,10.3431458 19.3431458,9 21,9 C22.6568542,9 24,10.3431458 24,12 C24,13.6568542 22.6568542,15 21,15 Z M21,14 C22.1045695,14 23,13.1045695 23,12 C23,10.8954305 22.1045695,10 21,10 C19.8954305,10 19,10.8954305 19,12 C19,13.1045695 19.8954305,14 21,14 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

@@ -1,1 +1,15 @@
-<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M19 23H5c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h10.7L21 6.3V21c0 1.1-.9 2-2 2zM5 2c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h14c.6 0 1-.4 1-1V6.7L15.3 2H5z" fill="#0B1F35"/><path d="M12 7.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M11 12h2v6h-2z" fill="#0B1F35" opacity=".3"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account_info_black_m@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="set" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cards" transform="translate(-64.000000, -303.000000)">
+            <rect id="Rectangle-path" x="64" y="303" width="24" height="24"></rect>
+            <path d="M83,326 L69,326 C67.9,326 67,325.1 67,324 L67,306 C67,304.9 67.9,304 69,304 L79.7,304 L85,309.3 L85,324 C85,325.1 84.1,326 83,326 L83,326 Z M69,305 C68.4,305 68,305.4 68,306 L68,324 C68,324.6 68.4,325 69,325 L83,325 C83.6,325 84,324.6 84,324 L84,309.7 L79.3,305 L69,305 L69,305 Z" id="Shape" fill="#0B1F35"></path>
+            <path d="M76,310.5 C76.8,310.5 77.5,311.2 77.5,312 C77.5,312.8 76.8,313.5 76,313.5 C75.2,313.5 74.5,312.8 74.5,312 C74.5,311.2 75.2,310.5 76,310.5" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+            <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="75" y="315" width="2" height="6"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,3 +1,13 @@
+<a name="12.7.0"></a>
+# [12.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.1...v12.7.0) (2018-04-17)
+
+
+### Features
+
+* **calendar-input:** numeric keyboard ([09a5de6](https://github.com/alfa-laboratory/arui-feather/commit/09a5de6))
+
+
+
 <a name="12.6.1"></a>
 ## [12.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.0...v12.6.1) (2018-04-11)
 

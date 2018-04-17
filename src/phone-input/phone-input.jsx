@@ -20,7 +20,7 @@ import performance from '../performance';
 class PhoneInput extends React.Component {
     static propTypes = {
         ...Input.propTypes,
-        /** Определяет маску для ввода значений. [Шаблон маски](https://github.com/insin/inputmask-core#pattern) */
+        /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
         mask: Type.string,
         /** Подсказка в текстовом поле */
         placeholder: Type.string

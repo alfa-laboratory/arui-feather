@@ -47,11 +47,11 @@ class Menu extends React.Component {
         content: Type.arrayOf(Type.shape({
             /** Тип элемента */
             type: Type.oneOf(['item', 'group']),
-            /** Только для type='item', свойство для компонента [MenuItem](../menu-item/) */
+            /** Только для type='item', свойство для компонента [MenuItem](#!/MenuItem) */
             value: Type.oneOfType([Type.string, Type.number]),
             /** Содержание элемента */
             content: Type.oneOfType([Type.node, Type.array]),
-            /** Только для type='item': свойства для компонента [MenuItem](../menu-item/) */
+            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
             props: Type.object
         })),
         /** Список значений выбранных элементов */

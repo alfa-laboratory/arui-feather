@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "12.6.1",
+  "version": "12.7.1",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -107,7 +107,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
-    "alfa-ui-primitives": "1.6.0",
+    "alfa-ui-primitives": "1.6.2",
     "arui-presets": "4.13.2",
     "bowser": "1.9.3",
     "chai": "4.1.2",
@@ -130,7 +130,7 @@
     "gulp-rename": "1.2.2",
     "gulp.spritesmith": "6.9.0",
     "handlebars": "4.0.11",
-    "html-reporter": "2.12.2",
+    "html-reporter": "2.12.3",
     "husky": "0.14.3",
     "istanbul": "0.4.5",
     "istanbul-instrumenter-loader": "3.0.1",
@@ -151,7 +151,7 @@
     "lint-staged": "7.0.4",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
-    "mocha": "5.0.1",
+    "mocha": "5.1.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-frame-component": "2.0.2",

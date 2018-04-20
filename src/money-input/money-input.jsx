@@ -14,9 +14,13 @@ import Mask from '../masked-input/mask';
 import cn from '../cn';
 import performance from '../performance';
 
-const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
+const DEFAULT_MINORITY_UNITS = 100;
 const INTEGER_PART_SIZE = 3;
+const DEFAULT_CURRENCY = {
+    minority: DEFAULT_MINORITY_UNITS,
+    code: 'RUR'
+};
 
 /**
  * Возвращает целую и дробную часть значения в виде массива.
@@ -65,12 +69,19 @@ class MoneyInput extends React.Component {
         /** Максимально допустимая длина значения до запятой */
         integerLength: Type.number,
         /** Максимально допустимая длина значения после запятой */
-        fractionLength: Type.number
+        fractionLength: Type.number,
+        /** Валюта */
+        currency: Type.shape({
+            /** Международный код валюты */
+            code: Type.string,
+            /** Количество минорных единиц валюты */
+            minority: Type.number
+        })
     };
 
     static defaultProps = {
-        fractionLength: DEFAULT_FRACTION_SIZE,
-        integerLength: DEFAULT_INTEGER_SIZE
+        integerLength: DEFAULT_INTEGER_SIZE,
+        currency: DEFAULT_CURRENCY
     };
 
     state = {
@@ -143,7 +154,15 @@ class MoneyInput extends React.Component {
         this.setState({ value });
 
         if (this.props.onChange) {
-            this.props.onChange(value, Number(value.replace(/[^\d,]/g, '').replace(/,/g, '.')));
+            this.props.onChange(
+                value,
+                {
+                    value: Math.round(
+                        Number(value.replace(/[^\d,]/g, '').replace(/,/g, '.')) * this.props.currency.minority
+                    ),
+                    currency: this.props.currency
+                }
+            );
         }
     }
 
@@ -180,13 +199,14 @@ class MoneyInput extends React.Component {
      * @param {String} value Значение
      */
     updateMaskByValue(value) {
+        let fractionLength = this.getFractionLength();
         let [integerPart, fractionPart] = getValueParts(value);
 
         let integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
         this.maskPattern = splitInteger((new Array(integerPartLength + 1)).join('1')).reverse().join(' ');
 
-        if (fractionPart !== undefined && this.props.fractionLength > 0) {
-            this.maskPattern += `,${(new Array(this.props.fractionLength + 1)).join('1')}`;
+        if (fractionPart !== undefined && fractionLength > 0) {
+            this.maskPattern += `,${(new Array(fractionLength + 1)).join('1')}`;
         }
 
         this.mask = new Mask(this.maskPattern);
@@ -203,9 +223,9 @@ class MoneyInput extends React.Component {
      */
     getMaxLength() {
         let maxLength = Math.floor((this.props.integerLength - 1) / INTEGER_PART_SIZE) + this.props.integerLength;
-
-        if (this.props.fractionLength) {
-            maxLength += 1 + this.props.fractionLength;
+        let fractionLength = this.getFractionLength();
+        if (fractionLength) {
+            maxLength += 1 + fractionLength;
         }
 
         return maxLength;
@@ -218,6 +238,15 @@ class MoneyInput extends React.Component {
      */
     getValue() {
         return this.props.value !== undefined ? this.props.value : this.state.value;
+    }
+
+    /**
+     * Возвращает количество знаков после запятой из минорности валюты.
+     *
+     * @returns {Number}
+     */
+    getFractionLength() {
+        return this.props.currency.minority.toString().length - 1;
     }
 }
 

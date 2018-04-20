@@ -58,8 +58,8 @@ describe('money-input', () => {
         expect(controlNode.value).to.equal('1 234,56');
     });
 
-    it('should format fraction part of input value when fractionLength is 4', () => {
-        let moneyInput = render(<MoneyInput value='1234,56789' fractionLength={ 4 } />);
+    it('should format fraction part of input value when minority is 10000', () => {
+        let moneyInput = render(<MoneyInput value='1234,56789' currency={ { minority: 10000 } } />);
         let controlNode = moneyInput.node.querySelector('input');
 
         expect(controlNode.value).to.equal('1 234,5678');
@@ -82,7 +82,13 @@ describe('money-input', () => {
 
         simulate(controlNode, 'change', { target: { value: '1 234 567,89' } });
 
-        expect(onChange).to.have.been.calledWith('1 234 567,89', 1234567.89);
+        expect(onChange).to.have.been.calledWith(
+            '1 234 567,89',
+            {
+                value: 123456789,
+                currency: { code: 'RUR', minority: 100 }
+            }
+        );
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {

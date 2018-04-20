@@ -6,11 +6,13 @@ import { render, cleanUp } from '../test-utils';
 
 import Collapse from './collapse';
 
+const TEXT = 'Collapsing text';
+
 describe('collapse', () => {
     afterEach(cleanUp);
 
     it('should render without problem', () => {
-        let collapse = render(<Collapse>Collapsing text</Collapse>);
+        let collapse = render(<Collapse>{ TEXT }</Collapse>);
 
         expect(collapse.node).to.exist;
         expect(collapse.node).to.have.class('collapse');
@@ -24,7 +26,7 @@ describe('collapse', () => {
                 expandedLabel='Collapse'
                 onExpandedChange={ onExpandedChange }
             >
-                Collapsing text
+                { TEXT }
             </Collapse>
         );
         let linkNode = collapse.node.querySelector('.link');
@@ -91,7 +93,7 @@ describe('collapse', () => {
                 collapsedLabel='Раскрыть'
                 isExpanded={ false }
             >
-                Collapsing text
+                { TEXT }
             </Collapse>
         );
         let linkNode = collapse.node.querySelector('.link');
@@ -105,7 +107,7 @@ describe('collapse', () => {
                 expandedLabel='Закрыть'
                 isExpanded={ true }
             >
-                Collapsing text
+                { TEXT }
             </Collapse>
         );
         let linkNode = collapse.node.querySelector('.link');
@@ -114,14 +116,14 @@ describe('collapse', () => {
     });
 
     it('should have default expanded label', () => {
-        let collapse = render(<Collapse isExpanded={ false }>Collapsing text</Collapse>);
+        let collapse = render(<Collapse isExpanded={ false }>{ TEXT }</Collapse>);
         let linkNode = collapse.node.querySelector('.link');
 
         expect(linkNode).to.have.text('Expand');
     });
 
     it('should have default collapsed label', () => {
-        let collapse = render(<Collapse isExpanded={ true }>Collapsing text</Collapse>);
+        let collapse = render(<Collapse isExpanded={ true }>{ TEXT }</Collapse>);
         let linkNode = collapse.node.querySelector('.link');
 
         expect(linkNode).to.have.text('Collapse');

@@ -100,7 +100,7 @@ npm install arui-feather --save
 
 Запуск unit-тестов `npm run test`.
 
-Запуск unit-тестов для определенных компонентов `TESTS=amount,calendar npm run test`.
+Запуск unit-тестов для определенных компонентов `SUITES=amount,calendar npm run test`.
 
 Запуск unit-тестов используя Chrome `npm run test -- --browsers=Chrome`
 

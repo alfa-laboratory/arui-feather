@@ -7,7 +7,8 @@
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "test": "karma start ./karma.config.js",
+    "test": "karma start ./karma.common.config.js",
+    "benchmark": "karma start ./karma.benchmark.config.js",
     "lint": "npm run lint-css && npm run lint-js",
     "lint-js": "eslint ./*.js ./src/ ./gemini/ --ext .js,.jsx",
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
@@ -116,7 +117,6 @@
     "conventional-github-releaser": "2.0.0",
     "coveralls": "3.0.0",
     "del": "3.0.0",
-    "es6-promise": "4.2.4",
     "eslint-plugin-markdown": "1.0.0-beta.6",
     "gemini": "5.5.0",
     "gemini-babel": "1.0.0",
@@ -153,6 +153,7 @@
     "mkdirp": "0.5.1",
     "mocha": "5.1.0",
     "react": "16.2.0",
+    "react-component-benchmark": "0.0.4",
     "react-dom": "16.2.0",
     "react-frame-component": "2.0.2",
     "react-hot-loader": "3.1.3",

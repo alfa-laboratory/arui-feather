@@ -41,7 +41,7 @@ function formatAmount(amount) {
             code
         }
     } = amount;
-    let fractionDigits = Math.log10(minority);
+    let fractionDigits = Math.log(minority) * Math.LOG10E;
 
     let isNegative = value < 0;
 

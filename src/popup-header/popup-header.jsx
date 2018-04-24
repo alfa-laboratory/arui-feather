@@ -4,7 +4,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';

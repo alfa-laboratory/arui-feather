@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_arrow-back_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="v5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_arrow-back_m_black">
+            <rect id="bounds" x="0" y="0" width="24" height="24"></rect>
+            <polygon id="arrow" fill="#0B1F35" fill-rule="nonzero" transform="translate(12.000000, 12.500000) rotate(90.000000) translate(-12.000000, -12.500000) " points="12.5 19.6271205 18.6317449 12.8120462 19.5 13.5 12 21.5 4.5 13.5 5.36825508 12.8120462 11.5 19.6271205 11.5 3.5 12.5 3.5"></polygon>
+        </g>
+    </g>
+</svg>

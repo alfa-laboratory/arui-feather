@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import formatDate from 'date-fns/format';
 import Type from 'prop-types';
@@ -44,7 +44,7 @@ class CalendarInput extends React.Component {
         value: Type.string,
         /** Содержимое поля ввода, указанное по умолчанию */
         defaultValue: Type.string,
-        /** Свойства компонента [Calendar](../calendar/) */
+        /** Свойства компонента [Calendar](#!/Calendar) */
         calendar: Type.shape({
             value: Type.number,
             selectedFrom: Type.number,
@@ -96,7 +96,7 @@ class CalendarInput extends React.Component {
         /** Отображение ошибки */
         error: Type.node,
         /** Управление нативным режимом на мобильных устройствах */
-        mobileMode: Type.oneOf(['native', 'popup']),
+        mobileMode: Type.oneOf(['native', 'popup', 'input']),
         /** Подсказка над меню в мобильном режиме */
         mobileTitle: Type.node,
         /** Идентификатор компонента в DOM */
@@ -268,7 +268,8 @@ class CalendarInput extends React.Component {
                     focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                     mask='11.11.1111'
                     size={ this.props.size }
-                    type='text'
+                    type='tel'
+                    pattern='[0-9]*'
                     label={ this.props.label }
                     placeholder={ this.props.placeholder }
                     hint={ this.props.hint }
@@ -299,6 +300,8 @@ class CalendarInput extends React.Component {
         let opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.opened;
+
+        if (this.isSimpleInput()) opened = false;
 
         return (
             <Popup
@@ -603,6 +606,10 @@ class CalendarInput extends React.Component {
 
     isMobilePopup() {
         return this.state.isMobile && this.props.mobileMode === 'popup';
+    }
+
+    isSimpleInput() {
+        return this.state.isMobile && this.props.mobileMode === 'input';
     }
 
     changeFocused(focusedState, event) {

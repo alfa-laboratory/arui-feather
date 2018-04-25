@@ -1,3 +1,83 @@
+<a name="12.7.1"></a>
+## [12.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.0...v12.7.1) (2018-04-17)
+
+
+### Features
+
+* **icons:** update icons to alfa-ui-primitives 1.6.2 ([#634](https://github.com/alfa-laboratory/arui-feather/issues/634)) ([bb53da3](https://github.com/alfa-laboratory/arui-feather/commit/bb53da3))
+
+
+
+<a name="12.7.0"></a>
+# [12.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.1...v12.7.0) (2018-04-17)
+
+
+### Features
+
+* **calendar-input:** numeric keyboard ([09a5de6](https://github.com/alfa-laboratory/arui-feather/commit/09a5de6))
+
+
+
+<a name="12.6.1"></a>
+## [12.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.0...v12.6.1) (2018-04-11)
+
+
+### Bug Fixes
+
+* remove postinstall script ([#624](https://github.com/alfa-laboratory/arui-feather/issues/624)) ([c111917](https://github.com/alfa-laboratory/arui-feather/commit/c111917))
+* require non-es version of core-decorators ([a6b26d7](https://github.com/alfa-laboratory/arui-feather/commit/a6b26d7))
+
+
+### Features
+
+* reduce bundle size, remove prop-types in production ([4854865](https://github.com/alfa-laboratory/arui-feather/commit/4854865))
+
+
+
+<a name="12.6.0"></a>
+# [12.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.5.0...v12.6.0) (2018-04-11)
+
+
+### Features
+
+* **calendar-input:** add input mobile mode ([#619](https://github.com/alfa-laboratory/arui-feather/issues/619)) ([d429216](https://github.com/alfa-laboratory/arui-feather/commit/d429216))
+* **icons:** update icons to alfa-ui-primitives 1.6.0 ([#593](https://github.com/alfa-laboratory/arui-feather/issues/593)) ([bf0cc29](https://github.com/alfa-laboratory/arui-feather/commit/bf0cc29))
+
+
+
+<a name="12.5.0"></a>
+# [12.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.8...v12.5.0) (2018-03-26)
+
+
+### Features
+
+* **icon:** update icons & fix collapse ([#575](https://github.com/alfa-laboratory/arui-feather/issues/575)) ([5793396](https://github.com/alfa-laboratory/arui-feather/commit/5793396))
+* **link:** add download prop ([#585](https://github.com/alfa-laboratory/arui-feather/issues/585)) ([5ddffe4](https://github.com/alfa-laboratory/arui-feather/commit/5ddffe4))
+
+
+
+<a name="12.4.8"></a>
+## [12.4.8](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.7...v12.4.8) (2018-03-21)
+
+
+### Bug Fixes
+
+* **calendar:** fix period selection in calendar ([#582](https://github.com/alfa-laboratory/arui-feather/issues/582)) ([f37facf](https://github.com/alfa-laboratory/arui-feather/commit/f37facf))
+* **list:** better list styles ([#574](https://github.com/alfa-laboratory/arui-feather/issues/574)) ([7fa48a4](https://github.com/alfa-laboratory/arui-feather/commit/7fa48a4))
+* **popup:** check this.inner for gradient style ([#577](https://github.com/alfa-laboratory/arui-feather/issues/577)) ([e3af946](https://github.com/alfa-laboratory/arui-feather/commit/e3af946))
+
+
+
+<a name="12.4.7"></a>
+## [12.4.7](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.6...v12.4.7) (2018-03-16)
+
+
+### Features
+
+* render slide-down expanded by default if isExpanded passed in SSR ([#576](https://github.com/alfa-laboratory/arui-feather/issues/576)) ([37f4808](https://github.com/alfa-laboratory/arui-feather/commit/37f4808))
+
+
+
 <a name="12.4.6"></a>
 ## [12.4.6](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.5...v12.4.6) (2018-03-13)
 

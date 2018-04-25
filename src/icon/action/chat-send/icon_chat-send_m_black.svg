@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_chat-send_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="v_4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_chat-send_m_black" transform="translate(-2.000000, -3.000000)">
+            <g id="Group-21">
+                <rect id="Rectangle-8" x="0" y="0" width="24" height="24"></rect>
+                <path d="M12.499949,1.5 L21.4506173,21.7362899 C21.5659097,21.996951 21.4724467,22.3139124 21.2418618,22.4442431 C21.1609364,22.4899835 21.069996,22.5081522 20.9801038,22.4965388 L13.6669275,21.5517311 L12.499949,13.1088969 L11.3329705,21.5517311 L4.01979426,22.4965388 C3.76365975,22.5296294 3.53229171,22.3217335 3.50301922,22.0321903 C3.49274579,21.930573 3.50881808,21.8277708 3.54928077,21.7362899 L12.499949,1.5 Z" id="Triangle" fill="#0B1F35" fill-rule="nonzero" transform="translate(12.500000, 12.000000) rotate(90.000000) translate(-12.500000, -12.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

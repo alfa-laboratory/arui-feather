@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_chat-send_xl_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon_chat-send_xl_color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-8" x="0" y="0" width="48" height="48"></rect>
+        <path d="M23.9998755,1 L45.8792867,45.3271113 C46.1611126,45.8980833 45.9326475,46.5923797 45.3689956,46.8778659 C45.171178,46.9780591 44.948879,47.0178572 44.7291426,46.9924182 L26.8524894,44.9228395 L23.9998755,26.4290123 L21.1472613,44.9228395 L3.27060819,46.9924182 C2.64450162,47.0649025 2.07893528,46.6095114 2.00738031,45.975274 C1.9822675,45.7526837 2.02155529,45.527498 2.12046409,45.3271113 L23.9998755,1 Z" id="Triangle" fill="#F03226" fill-rule="nonzero" transform="translate(24.000000, 24.000000) rotate(90.000000) translate(-24.000000, -24.000000) "></path>
+    </g>
+</svg>

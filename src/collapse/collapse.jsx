@@ -2,11 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
-import Icon from '../icon/icon';
+import IconArrowDown from '../icon/ui/arrow-down';
+import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
@@ -59,9 +60,15 @@ class Collapse extends React.Component {
     }
 
     render(cn) {
+        let ToggledIcon;
         let expanded = this.props.isExpanded !== undefined
             ? this.props.isExpanded
             : this.state.isExpanded;
+
+        switch (expanded) {
+            case true: ToggledIcon = IconArrowUp; break;
+            case false: ToggledIcon = IconArrowDown; break;
+        }
 
         return (
             <div
@@ -83,10 +90,7 @@ class Collapse extends React.Component {
                     className={ cn('link') }
                     pseudo={ true }
                     icon={
-                        <Icon
-                            name={ expanded ? 'action-up' : 'action-down' }
-                            size='xs'
-                        />
+                        <ToggledIcon size='s' />
                     }
                     iconPosition='right'
                     onClick={ this.handleExpandedChange }

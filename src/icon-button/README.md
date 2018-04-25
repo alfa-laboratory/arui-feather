@@ -1,6 +1,5 @@
 ```jsx
-/* eslint-disable no-restricted-globals */
-const IconClose = require('./../icon/ui/close').default;
+const IconClose = require('../../src/icon/ui/close').default;
 
 <div className='row'>
     {['s', 'm', 'l', 'xl'].map(size => (

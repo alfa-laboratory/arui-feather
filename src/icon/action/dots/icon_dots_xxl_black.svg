@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_dots_xxl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_dots_xxl_black" transform="translate(24.000000, 24.000000) rotate(-90.000000) translate(-24.000000, -24.000000) ">
+            <rect id="Rectangle-2" x="0" y="0" width="48" height="48"></rect>
+            <path d="M6,30 C2.6862915,30 0,27.3137085 0,24 C0,20.6862915 2.6862915,18 6,18 C9.3137085,18 12,20.6862915 12,24 C12,27.3137085 9.3137085,30 6,30 Z M6,28 C8.209139,28 10,26.209139 10,24 C10,21.790861 8.209139,20 6,20 C3.790861,20 2,21.790861 2,24 C2,26.209139 3.790861,28 6,28 Z" id="Combined-Shape" fill="#0B1F35"></path>
+            <path d="M24,30 C20.6862915,30 18,27.3137085 18,24 C18,20.6862915 20.6862915,18 24,18 C27.3137085,18 30,20.6862915 30,24 C30,27.3137085 27.3137085,30 24,30 Z M24,28 C26.209139,28 28,26.209139 28,24 C28,21.790861 26.209139,20 24,20 C21.790861,20 20,21.790861 20,24 C20,26.209139 21.790861,28 24,28 Z" id="Combined-Shape" fill="#0B1F35"></path>
+            <path d="M42,30 C38.6862915,30 36,27.3137085 36,24 C36,20.6862915 38.6862915,18 42,18 C45.3137085,18 48,20.6862915 48,24 C48,27.3137085 45.3137085,30 42,30 Z M42,28 C44.209139,28 46,26.209139 46,24 C46,21.790861 44.209139,20 42,20 C39.790861,20 38,21.790861 38,24 C38,26.209139 39.790861,28 42,28 Z" id="Combined-Shape" fill="#0B1F35"></path>
+        </g>
+    </g>
+</svg>

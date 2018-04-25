@@ -24,6 +24,12 @@ describe('link', () => {
         expect(link.node).to.have.attr('target', '_blank');
     });
 
+    it('should render with `download` prop passed', () => {
+        let link = render(<Link download='hello'>Link-example</Link>);
+
+        expect(link.node).to.have.attr('download', 'hello');
+    });
+
     it('should set/unset class on link focused/unfocused', () => {
         let link = render(<Link>Link-example</Link>);
 

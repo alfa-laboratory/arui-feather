@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import { canUseDOM } from 'exenv';
 import debounce from 'lodash.debounce';
 import React from 'react';
@@ -168,7 +168,7 @@ class Popup extends React.Component {
             this.ensureClickEvent();
         }
 
-        if (this.props.height === 'adaptive' || this.props.target === 'screen') {
+        if (this.inner && (this.props.height === 'adaptive' || this.props.target === 'screen')) {
             this.setGradientStyles();
         }
 

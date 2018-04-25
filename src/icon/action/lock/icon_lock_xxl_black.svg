@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_lock_xxl_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_lock_xxl_black">
+            <polygon id="_ph_" points="0 0 48 0 48 48 0 48"></polygon>
+            <path d="M10,19 C8.34314575,19 7,20.3431458 7,22 L7,40 C7,43.8659932 10.1340068,47 14,47 L34,47 C37.8659932,47 41,43.8659932 41,40 L41,22 C41,20.3431458 39.6568542,19 38,19 L10,19 Z M13,18 L13,10 C13,4.4771525 17.4771525,0 23,0 L25,0 C30.5228475,0 35,4.4771525 35,10 L35,18 L38,18 C40.209139,18 42,19.790861 42,22 L42,40 C42,44.418278 38.418278,48 34,48 L14,48 C9.581722,48 6,44.418278 6,40 L6,22 C6,19.790861 7.790861,18 10,18 L13,18 Z M14,18 L34,18 L34,10 C34,5.02943725 29.9705627,1 25,1 L23,1 C18.0294373,1 14,5.02943725 14,10 L14,18 Z" id="Combined-Shape" fill="#0B1F35" fill-rule="nonzero"></path>
+            <path d="M24,26 C21.79,26 20,27.79 20,30 C20,31.476 20.81,32.752 22,33.446 L22,40 L26,40 L26,33.446 C27.19,32.754 28,31.478 28,30 C28,27.79 26.21,26 24,26 L24,26 Z" id="Shape" fill="#0B1F35" opacity="0.3"></path>
+        </g>
+    </g>
+</svg>

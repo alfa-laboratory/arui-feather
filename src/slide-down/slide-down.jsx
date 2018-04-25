@@ -5,7 +5,7 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -30,23 +30,17 @@ class SlideDown extends React.Component {
         id: Type.string,
         /** Обработчик события начала анимации */
         onAnimationStart: Type.func,
-        /** Обработчик события начала анимации */
+        /** Обработчик события окончания анимации */
         onAnimationEnd: Type.func
     };
 
     state = {
-        height: 0,
-        isHeightAuto: false
+        height: this.props.isExpanded ? 'auto' : 0,
+        isHeightAuto: this.props.isExpanded
     };
 
     slideDown;
     slideDownContent;
-
-    componentDidMount() {
-        if (this.props.isExpanded) {
-            this.setAutoHeight();
-        }
-    }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.isExpanded !== nextProps.isExpanded) {

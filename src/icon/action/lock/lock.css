@@ -30,6 +30,14 @@
     background-image: url('./icon_lock_xs_white.svg');
 }
 
+.icon_size_xxl.icon_name_lock.icon_theme_alfa-on-white {
+    background-image: url('./icon_lock_xxl_black.svg');
+}
+
 .icon_size_xxl.icon_name_lock.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_lock.icon_colored.icon_theme_alfa-on-white {
     background-image: url('./icon_lock_xxl_color.svg');
+}
+
+.icon_size_xxl.icon_name_lock.icon_theme_alfa-on-color {
+    background-image: url('./icon_lock_xxl_white.svg');
 }

@@ -53,7 +53,7 @@ function setBodyClass({ visible, hasOverlay }) {
 function handleBodyScroll() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-    if (scrollTop) {
+    if (scrollTop !== null && scrollTop !== undefined) {
         savedScrollPosition = scrollTop;
     }
 }

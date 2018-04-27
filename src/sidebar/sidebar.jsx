@@ -53,7 +53,7 @@ function setBodyClass({ visible, hasOverlay }) {
 function handleBodyScroll() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-    if (scrollTop) {
+    if (scrollTop !== null && scrollTop !== undefined) {
         savedScrollPosition = scrollTop;
     }
 }
@@ -203,8 +203,8 @@ class Sidebar extends React.Component {
     handleClose() {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
-                document.body.scrollTop = savedScrollPosition;
-                document.documentElement.scrollTop = savedScrollPosition;
+                // document.body.scrollTop = savedScrollPosition;
+                // document.documentElement.scrollTop = savedScrollPosition;
             }
             this.props.onCloserClick();
         }

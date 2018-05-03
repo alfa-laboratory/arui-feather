@@ -44,6 +44,18 @@ const formatDate = require('date-fns/format');
 </div>
 ```
 
+Без фолбэка на нативный контрол на мобильном устройстве
+и без попапа с календарём. Обычный ввод в `input` с клавиатуры
+```
+<div>
+    <CalendarInput
+        size='m'
+        defaultValue='01.10.2017'
+        mobileMode='input'
+    />
+</div>
+```
+
 С отображением текущей даты
 ```jsx
 const addDays = require('date-fns/addDays');

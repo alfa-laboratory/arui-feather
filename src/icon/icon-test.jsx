@@ -19,6 +19,7 @@ import IconCopy from './action/copy';
 import IconDelete from './action/delete';
 import IconDislike from './action/dislike';
 import IconDislikeFilled from './action/dislike-filled';
+import IconDots from './action/dots';
 import IconEdit from './action/edit';
 import IconEmail from './action/email';
 import IconErase from './action/erase';
@@ -44,6 +45,7 @@ import IconPrinter from './action/printer';
 import IconRepeat from './action/repeat';
 import IconReply from './action/reply';
 import IconSearch from './action/search';
+import IconSettings from './action/settings';
 import IconShareAndroid from './action/share-android';
 import IconShareIos from './action/share-ios';
 import IconSign from './action/sign';
@@ -102,7 +104,9 @@ import IconTransferSelf from './banking/transfer-self';
 import IconTransferToCard from './banking/transfer-to-card';
 import IconBank2449 from './brand/bank-2449';
 import IconBank3308 from './brand/bank-3308';
+import IconBankBinbank from './brand/bank-binbank';
 import IconBank10223 from './brand/bank-10223';
+import IconBankGazprombank from './brand/bank-gazprombank';
 import IconBank439 from './brand/bank-439';
 import IconBank9908 from './brand/bank-9908';
 import IconBank3001 from './brand/bank-3001';
@@ -234,7 +238,6 @@ import IconPresent from './entity/present';
 import IconQr from './entity/qr';
 import IconRegistry from './entity/registry';
 import IconSecurity from './entity/security';
-import IconSettings from './entity/settings';
 import IconSite from './entity/site';
 import IconAccount from './file/account';
 import IconAccountEuro from './file/account-euro';
@@ -327,6 +330,7 @@ describe('icon', () => {
             { componentName: IconDelete, name: 'delete' },
             { componentName: IconDislike, name: 'dislike' },
             { componentName: IconDislikeFilled, name: 'dislike-filled' },
+            { componentName: IconDots, name: 'dots' },
             { componentName: IconEdit, name: 'edit' },
             { componentName: IconEmail, name: 'email' },
             { componentName: IconErase, name: 'erase' },
@@ -352,6 +356,7 @@ describe('icon', () => {
             { componentName: IconRepeat, name: 'repeat' },
             { componentName: IconReply, name: 'reply' },
             { componentName: IconSearch, name: 'search' },
+            { componentName: IconSettings, name: 'settings' },
             { componentName: IconShareAndroid, name: 'share-android' },
             { componentName: IconShareIos, name: 'share-ios' },
             { componentName: IconSign, name: 'sign' },
@@ -410,7 +415,9 @@ describe('icon', () => {
             { componentName: IconTransferToCard, name: 'transfer-to-card' },
             { componentName: IconBank2449, name: 'bank-2449' },
             { componentName: IconBank3308, name: 'bank-3308' },
+            { componentName: IconBankBinbank, name: 'bank-binbank' },
             { componentName: IconBank10223, name: 'bank-10223' },
+            { componentName: IconBankGazprombank, name: 'bank-gazprombank' },
             { componentName: IconBank439, name: 'bank-439' },
             { componentName: IconBank9908, name: 'bank-9908' },
             { componentName: IconBank3001, name: 'bank-3001' },
@@ -542,7 +549,6 @@ describe('icon', () => {
             { componentName: IconQr, name: 'qr' },
             { componentName: IconRegistry, name: 'registry' },
             { componentName: IconSecurity, name: 'security' },
-            { componentName: IconSettings, name: 'settings' },
             { componentName: IconSite, name: 'site' },
             { componentName: IconAccount, name: 'account' },
             { componentName: IconAccountEuro, name: 'account-euro' },

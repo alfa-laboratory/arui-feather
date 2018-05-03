@@ -39,6 +39,18 @@
     &_size_xl {
         font-size: var(--font-size-xl);
     }
+
+    &_size_2xl {
+        font-size: var(--font-size-2xl);
+    }
+
+    &_size_3xl {
+        font-size: var(--font-size-3xl);
+    }
+
+    &_size_4xl {
+        font-size: var(--font-size-4xl);
+    }
 }
 
 .label_theme_alfa-on-color {

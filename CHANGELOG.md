@@ -1,3 +1,50 @@
+<a name="12.7.1"></a>
+## [12.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.0...v12.7.1) (2018-04-17)
+
+
+### Features
+
+* **icons:** update icons to alfa-ui-primitives 1.6.2 ([#634](https://github.com/alfa-laboratory/arui-feather/issues/634)) ([bb53da3](https://github.com/alfa-laboratory/arui-feather/commit/bb53da3))
+
+
+
+<a name="12.7.0"></a>
+# [12.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.1...v12.7.0) (2018-04-17)
+
+
+### Features
+
+* **calendar-input:** numeric keyboard ([09a5de6](https://github.com/alfa-laboratory/arui-feather/commit/09a5de6))
+
+
+
+<a name="12.6.1"></a>
+## [12.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.0...v12.6.1) (2018-04-11)
+
+
+### Bug Fixes
+
+* remove postinstall script ([#624](https://github.com/alfa-laboratory/arui-feather/issues/624)) ([c111917](https://github.com/alfa-laboratory/arui-feather/commit/c111917))
+* require non-es version of core-decorators ([a6b26d7](https://github.com/alfa-laboratory/arui-feather/commit/a6b26d7))
+
+
+### Features
+
+* reduce bundle size, remove prop-types in production ([4854865](https://github.com/alfa-laboratory/arui-feather/commit/4854865))
+
+
+
+<a name="12.6.0"></a>
+# [12.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.5.0...v12.6.0) (2018-04-11)
+
+
+### Features
+
+* **calendar-input:** add input mobile mode ([#619](https://github.com/alfa-laboratory/arui-feather/issues/619)) ([d429216](https://github.com/alfa-laboratory/arui-feather/commit/d429216))
+* **icons:** update icons to alfa-ui-primitives 1.6.0 ([#593](https://github.com/alfa-laboratory/arui-feather/issues/593)) ([bf0cc29](https://github.com/alfa-laboratory/arui-feather/commit/bf0cc29))
+
+
+
 <a name="12.5.0"></a>
 # [12.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.8...v12.5.0) (2018-03-26)
 

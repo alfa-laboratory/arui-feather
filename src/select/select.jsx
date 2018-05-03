@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -90,7 +90,7 @@ class Select extends React.Component {
             icon: Type.node,
             /** Список вариантов, только для type='group' */
             content: Type.array,
-            /** Только для type='item': свойства для компонента [MenuItem](../menu-item/) */
+            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
             props: Type.object
         })),
         /** Размер компонента */
@@ -137,7 +137,7 @@ class Select extends React.Component {
         onChange: Type.func,
         /** Обработчик нажатия на клавишу */
         onKeyDown: Type.func,
-        /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа [CheckedOption](#CheckedOption) */
+        /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
         renderButtonContent: Type.func
     };
 

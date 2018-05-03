@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" version="1" viewBox="0 0 24 24"><path fill="#0B1F35" d="M14.55 6l-6.047 6.048-2.551-2.551L9.463 6H3.511L0 9.497 8.503 18l7.997-8h3.371L24 6h-3.497z"/><path fill="#0B1F35" d="M10.716 18h5.25l3-3H21l3-3h-7.284z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_bank-mkb_m_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mkb" transform="translate(-40.000000, -59.000000)">
+            <g id="black" transform="translate(18.000000, 59.000000)">
+                <g id="icon_bank-mkb_m_black" transform="translate(22.000000, 0.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                    <g id="Group" transform="translate(0.000000, 6.000000)" fill="#0B1F35" fill-rule="nonzero">
+                        <polygon id="Shape" points="8.502 12 0 3.497 3.511 0 9.463 0 5.952 3.497 8.502 6.048 14.55 0 24 0 19.871 4 16.5 4"></polygon>
+                        <polygon id="Shape" points="16.716 6 10.716 12 15.966 12 18.966 9 21 9 24 6"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

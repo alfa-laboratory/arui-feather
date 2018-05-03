@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -25,9 +25,9 @@ class Dropdown extends React.Component {
         switcherType: Type.oneOf(['link', 'button']),
         /** Текст кнопки компонента */
         switcherText: Type.node,
-        /** Компонент [Popup](../popup/) */
+        /** Компонент [Popup](#!/Popup) */
         popupContent: Type.node,
-        /** Свойства для компонента [Popup](../popup/) */
+        /** Свойства для компонента [Popup](#!/Popup) */
         popupProps: Type.shape({
             className: Type.string,
             type: Type.oneOf(['default', 'tooltip']),

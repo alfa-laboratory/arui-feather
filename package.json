@@ -107,7 +107,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
-    "alfa-ui-primitives": "1.6.2",
+    "alfa-ui-primitives": "1.6.3",
     "arui-presets": "4.13.3",
     "bowser": "1.9.3",
     "chai": "4.1.2",

@@ -1,3 +1,22 @@
+<a name="12.7.2"></a>
+## [12.7.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.1...v12.7.2) (2018-05-08)
+
+
+### Bug Fixes
+
+* **amount:** fix amount output when minority more then 100 ([#625](https://github.com/alfa-laboratory/arui-feather/issues/625)) ([52f13ad](https://github.com/alfa-laboratory/arui-feather/commit/52f13ad))
+* **menu:** input-autocomplete highlight fix ([#649](https://github.com/alfa-laboratory/arui-feather/issues/649)) ([7a9510f](https://github.com/alfa-laboratory/arui-feather/commit/7a9510f))
+
+
+### Features
+
+* set caret to end of input on public focus method call ([#645](https://github.com/alfa-laboratory/arui-feather/issues/645)) ([42dcad0](https://github.com/alfa-laboratory/arui-feather/commit/42dcad0))
+* **icons:** update icons to alfa-ui-primitives 1.6.3 ([#646](https://github.com/alfa-laboratory/arui-feather/issues/646)) ([ebe6cb9](https://github.com/alfa-laboratory/arui-feather/commit/ebe6cb9))
+* **label:** add 2xl, 3xl, 4xl sizes to label ([#604](https://github.com/alfa-laboratory/arui-feather/issues/604)) ([b56a4b8](https://github.com/alfa-laboratory/arui-feather/commit/b56a4b8))
+* **select:** add hide tick option ([#641](https://github.com/alfa-laboratory/arui-feather/issues/641)) ([e328858](https://github.com/alfa-laboratory/arui-feather/commit/e328858))
+
+
+
 <a name="12.7.1"></a>
 ## [12.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.0...v12.7.1) (2018-04-17)
 

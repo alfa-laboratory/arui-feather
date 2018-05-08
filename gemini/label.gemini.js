@@ -3,7 +3,7 @@ import Label from '../src/label';
 
 const NAME = 'label';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
-const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
+const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl'] : ['m'];
 
 const PROP_SETS = [
     {},

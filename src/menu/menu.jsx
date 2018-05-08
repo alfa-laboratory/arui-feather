@@ -119,7 +119,7 @@ class Menu extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.mode !== 'check' && this.state.checkedItems[0] &&
             nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
-            let highlightedItem = null;
+            let highlightedItem;
 
             this.menuItemList.forEach((item, index, menuItemList) => {
                 if (item.ref === nextProps.checkedItems[0]) {

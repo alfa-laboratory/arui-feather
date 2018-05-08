@@ -115,6 +115,8 @@ class Select extends React.Component {
         popupMainOffset: Type.number,
         /** Смещение в пикселях всплывающего окна относительно второстепенного направления (только на десктопе) */
         popupSecondaryOffset: Type.number,
+        /** Скрытие галочки в правой части кнопки */
+        hideTick: Type.bool,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Обработчик фокуса на компоненте */
@@ -228,7 +230,8 @@ class Select extends React.Component {
                     'has-label': !!this.props.label,
                     'has-value': !!value,
                     invalid: !!this.props.error,
-                    opened: this.getOpened()
+                    opened: this.getOpened(),
+                    'no-tick': this.props.hideTick
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
@@ -299,14 +302,16 @@ class Select extends React.Component {
                 onBlur={ this.handleButtonBlur }
             >
                 { this.renderButtonContent() }
-                <IconButton
-                    className={ cn('tick') }
-                    key='addon-icon'
-                    size={ this.props.size }
-                    tag='span'
-                >
-                    <ToggledIcon size={ tickSize } />
-                </IconButton>
+                { !this.props.hideTick &&
+                    <IconButton
+                        className={ cn('tick') }
+                        key='addon-icon'
+                        size={ this.props.size }
+                        tag='span'
+                    >
+                        <ToggledIcon size={ tickSize } />
+                    </IconButton>
+                }
                 <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
             </SelectButton>
         );

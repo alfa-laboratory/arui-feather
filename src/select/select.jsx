@@ -473,7 +473,12 @@ class Select extends React.Component {
         }
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
-        return checkedItemsText || this.props.placeholder;
+        return checkedItemsText ||
+            (
+                <span className={ cn('placeholder') }>
+                    { this.props.placeholder }
+                </span>
+            );
     }
 
     renderMobileHeader(cn) {

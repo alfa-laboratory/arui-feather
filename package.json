@@ -127,7 +127,7 @@
     "gulp": "3.9.1",
     "gulp-gm": "0.0.8",
     "gulp-imagemin": "4.1.0",
-    "gulp-rename": "1.2.2",
+    "gulp-rename": "1.2.3",
     "gulp.spritesmith": "6.9.0",
     "handlebars": "4.0.11",
     "html-reporter": "2.12.3",

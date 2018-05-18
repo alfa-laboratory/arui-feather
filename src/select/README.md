@@ -260,3 +260,23 @@ const options2 = [
     </div>
 </div>
 ```
+
+Без иконки на кнопке
+```jsx
+const options = [
+    { value: '01', text: 'ИП Фридман М.М.' },
+    { value: '02', text: 'ООО «Виктори»' },
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
+];
+<div>
+    <div className='row'>
+        <div className='column'>
+            <Select
+                mode='radio'
+                options={ options }
+                hideTick={ true }
+            />
+        </div>
+    </div>
+</div>
+```

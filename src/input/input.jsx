@@ -414,6 +414,7 @@ class Input extends React.Component {
      */
     focus() {
         this.control.focus();
+        this.setSelectionRange(this.getControl().value.length);
     }
 
     /**
@@ -446,7 +447,9 @@ class Input extends React.Component {
      * @param {Number} [end=value.length] Индекс символа после последнего выделенного символа.
      */
     setSelectionRange(start = 0, end = this.getControl().value.length) {
-        this.getControl().setSelectionRange(start, end);
+        if (this.props.type !== 'email') {
+            this.getControl().setSelectionRange(start, end);
+        }
     }
 
     /**

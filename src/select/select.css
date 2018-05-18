@@ -175,6 +175,10 @@
         min-width: 0;
     }
 
+    &_no-tick .select-button {
+        padding-right: 0;
+    }
+
     &__native-control {
         opacity: 0;
         overflow-x: hidden;

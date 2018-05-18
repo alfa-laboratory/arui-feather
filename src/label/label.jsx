@@ -16,7 +16,7 @@ import performance from '../performance';
 class Label extends React.Component {
     static propTypes = {
         /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        size: Type.oneOf(['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl']),
         /** Дочерние элементы `Label` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Тема компонента */

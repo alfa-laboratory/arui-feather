@@ -6,6 +6,7 @@ import { render, cleanUp } from '../test-utils';
 import Icon from './icon';
 
 import IconAdd from './action/add';
+import IconAnalytics from './action/analytics';
 import IconArrowBack from './action/arrow-back';
 import IconAttachment from './action/attachment';
 import IconBack from './action/back';
@@ -137,6 +138,7 @@ import IconCardMir from './brand/card-mir';
 import IconCardVisa from './brand/card-visa';
 import IconCardVisaElectron from './brand/card-visa-electron';
 import IconFifaTrophy from './brand/fifa-trophy';
+import IconForex from './brand/forex';
 import IconLogoAlfabank from './brand/logo-alfabank';
 import IconMaestro from './brand/maestro';
 import IconMastercard from './brand/mastercard';
@@ -149,6 +151,7 @@ import IconCategoryAppliances from './category/category-appliances';
 import IconCategoryAtm from './category/category-atm';
 import IconCategoryAuto from './category/category-auto';
 import IconCategoryBooksMovies from './category/category-books-movies';
+import IconCategoryBudget from './category/category-budget';
 import IconCategoryBusiness from './category/category-business';
 import IconCategoryBusinessActivity from './category/category-business-activity';
 import IconCategoryBusinessTrip from './category/category-business-trip';
@@ -317,6 +320,7 @@ describe('icon', () => {
     (() => {
         let icons = [
             { componentName: IconAdd, name: 'add' },
+            { componentName: IconAnalytics, name: 'analytics' },
             { componentName: IconArrowBack, name: 'arrow-back' },
             { componentName: IconAttachment, name: 'attachment' },
             { componentName: IconBack, name: 'back' },
@@ -448,6 +452,7 @@ describe('icon', () => {
             { componentName: IconCardVisa, name: 'card-visa' },
             { componentName: IconCardVisaElectron, name: 'card-visa-electron' },
             { componentName: IconFifaTrophy, name: 'fifa-trophy' },
+            { componentName: IconForex, name: 'forex' },
             { componentName: IconLogoAlfabank, name: 'logo-alfabank' },
             { componentName: IconMaestro, name: 'maestro' },
             { componentName: IconMastercard, name: 'mastercard' },
@@ -460,6 +465,7 @@ describe('icon', () => {
             { componentName: IconCategoryAtm, name: 'category-atm' },
             { componentName: IconCategoryAuto, name: 'category-auto' },
             { componentName: IconCategoryBooksMovies, name: 'category-books-movies' },
+            { componentName: IconCategoryBudget, name: 'category-budget' },
             { componentName: IconCategoryBusiness, name: 'category-business' },
             { componentName: IconCategoryBusinessActivity, name: 'category-business-activity' },
             { componentName: IconCategoryBusinessTrip, name: 'category-business-trip' },

@@ -1,3 +1,13 @@
+<a name="12.7.3"></a>
+## [12.7.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.2...v12.7.3) (2018-05-18)
+
+
+### Bug Fixes
+
+* **calendar-input:** fix input text color on ios ([#659](https://github.com/alfa-laboratory/arui-feather/issues/659)) ([9e94144](https://github.com/alfa-laboratory/arui-feather/commit/9e94144))
+
+
+
 <a name="12.7.2"></a>
 ## [12.7.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.1...v12.7.2) (2018-05-08)
 

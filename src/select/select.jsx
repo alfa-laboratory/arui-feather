@@ -301,7 +301,7 @@ class Select extends React.Component {
                 onFocus={ this.handleButtonFocus }
                 onBlur={ this.handleButtonBlur }
             >
-                { this.renderButtonContent() }
+                { this.renderButtonContent(cn) }
                 { !this.props.hideTick &&
                     <IconButton
                         className={ cn('tick') }
@@ -465,7 +465,7 @@ class Select extends React.Component {
         );
     }
 
-    renderButtonContent() {
+    renderButtonContent(cn) {
         let checkedItems = this.getCheckedItems(this.props.options);
 
         if (this.props.renderButtonContent) {

@@ -6,7 +6,8 @@
 
 .select_theme_alfa-on-white {
     .select__top,
-    .select__sub {
+    .select__sub,
+    .select__placeholder {
         color: var(--color-content-minor-alfa-on-white);
     }
 

@@ -79,7 +79,7 @@
 
     .select-button {
         overflow: hidden;
-        display: flex;
+        display: inline-block;
         position: relative;
         width: 100%;
         margin: 0;

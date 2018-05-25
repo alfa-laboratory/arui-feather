@@ -140,7 +140,9 @@ class Select extends React.Component {
         /** Обработчик нажатия на клавишу */
         onKeyDown: Type.func,
         /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
-        renderButtonContent: Type.func
+        renderButtonContent: Type.func,
+        /** Максимальная высота попапа */
+        maxHeight: Type.number
     };
 
     static defaultProps = {
@@ -389,6 +391,7 @@ class Select extends React.Component {
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
+                maxHeight={ this.props.maxHeight }
             >
                 <Menu
                     ref={ (menu) => { this.menu = menu; } }

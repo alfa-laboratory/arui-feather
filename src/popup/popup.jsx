@@ -99,6 +99,8 @@ class Popup extends React.Component {
         minWidth: Type.number,
         /** Максимальная ширина попапа */
         maxWidth: Type.number,
+        /** Максимальная высота попапа */
+        maxHeight: Type.number,
         /** Указатель на родительский элемент */
         for: Type.string
     };
@@ -237,7 +239,8 @@ class Popup extends React.Component {
                 style={ {
                     ...this.state.styles,
                     minWidth: this.getMinWidth(),
-                    maxWidth: this.getMaxWidth()
+                    maxWidth: this.getMaxWidth(),
+                    maxHeight: this.getMaxHeight()
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
@@ -532,6 +535,13 @@ class Popup extends React.Component {
      */
     getMaxWidth() {
         return this.props.maxWidth !== undefined ? this.props.maxWidth : 'none';
+    }
+
+    /**
+     * @returns {Number}
+     */
+    getMaxHeight() {
+        return this.props.maxHeight !== undefined ? this.props.maxHeight : 'none';
     }
 
     /**

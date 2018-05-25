@@ -108,13 +108,15 @@ class CheckBoxGroup extends React.Component {
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
             >
-                {
-                    !!this.props.label &&
-                    <div className={ cn('label') }>
-                        { this.props.label }
-                    </div>
-                }
-                { createFragment(checkboxGroupParts) }
+                <div className={ cn('box') }>
+                    {
+                        !!this.props.label &&
+                        <div className={ cn('label') }>
+                            { this.props.label }
+                        </div>
+                    }
+                    { createFragment(checkboxGroupParts) }
+                </div>
             </span>
         );
     }

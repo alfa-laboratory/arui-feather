@@ -1,3 +1,18 @@
+<a name="12.7.4"></a>
+## [12.7.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.3...v12.7.4) (2018-05-25)
+
+
+### Bug Fixes
+
+* **select:** add placeholder color and right display for text ([#657](https://github.com/alfa-laboratory/arui-feather/issues/657)) ([653b219](https://github.com/alfa-laboratory/arui-feather/commit/653b219))
+
+
+### Features
+
+* **popup,select:** add maxHeight prop ([#666](https://github.com/alfa-laboratory/arui-feather/issues/666)) ([67e6627](https://github.com/alfa-laboratory/arui-feather/commit/67e6627))
+
+
+
 <a name="12.7.3"></a>
 ## [12.7.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.2...v12.7.3) (2018-05-18)
 

@@ -62,7 +62,7 @@ class Calendar extends React.Component {
         weekdays: Type.arrayOf(Type.string),
         /** Список выходных дней в виде unix timestamp, отсортированный по возрастанию */
         offDays: Type.arrayOf(Type.number),
-        /** Спиоск дней с событиями в виде unix timestamp, отсортированный по возрастанию */
+        /** Список дней с событиями в виде unix timestamp, отсортированный по возрастанию */
         eventDays: Type.arrayOf(Type.number),
         /** Отображение текущей даты */
         showToday: Type.bool,

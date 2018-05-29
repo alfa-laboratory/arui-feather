@@ -5,33 +5,37 @@
 Нестареющая классика. Ссылка может вести как на страницу внутри системы, так и на внешний ресурс.
 ```jsx
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <span className='row' key={ size }>
-            <div className='column'>
-                <Link
-                    text='Вернуться в интернет-банк'
-                    size={ size }
-                />
-            </div>
-        </span>
-    ))}
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <span className='row' key={ size }>
+                <div className='column'>
+                    <Link
+                        text='Вернуться в интернет-банк'
+                        size={ size }
+                    />
+                </div>
+            </span>
+        ))
+    }
 </div>
 ```
 ### Псевдоссылка
 Вызывает информационный слой (collapse, dropdown, popup) без перехода на другую страницу.
 ```jsx
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <span className='row' key={ size }>
-            <div className='column'>
-                <Link
-                    text='Показать больше'
-                    size={ size }
-                    pseudo={ true }
-                />
-            </div>
-        </span>
-    ))}
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <span className='row' key={ size }>
+                <div className='column'>
+                    <Link
+                        text='Показать больше'
+                        size={ size }
+                        pseudo={ true }
+                    />
+                </div>
+            </span>
+        ))
+    }
 </div>
 ```
 
@@ -45,17 +49,18 @@ const columnStyle = {
     width: '50%'
 };
 <div style={ { width: '100%' } }>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <span className='row' key={ size }>
-            <div className='column' style={ columnStyle }>
-                <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
-            </div>
-            <div className='column' style={ columnStyle }>
-
-                <Link size={ size } >¯\_(ツ)_/¯</Link>
-            </div>
-        </span>
-    ))}
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <span className='row' key={ size }>
+                <div className='column' style={ columnStyle }>
+                    <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
+                </div>
+                <div className='column' style={ columnStyle }>
+                    <Link size={ size } >¯\_(ツ)_/¯</Link>
+                </div>
+            </span>
+        ))
+    }
 </div>
 ```
 

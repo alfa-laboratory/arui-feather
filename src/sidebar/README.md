@@ -82,14 +82,16 @@ initialState = {
                 Тип операции
             </Heading>
             <RadioGroup type='button'>
-                {['Пополнение', 'Списание'].map(text => (
-                    <Radio
-                        text={ text }
-                        key={ text }
-                        value={ text }
-                        type='button'
-                    />
-                ))}
+                {
+                    ['Пополнение', 'Списание'].map(text => (
+                        <Radio
+                            text={ text }
+                            key={ text }
+                            value={ text }
+                            type='button'
+                        />
+                    ))
+                }
             </RadioGroup>
         </div>
         <div style={ { marginBottom: 40 } }>
@@ -97,14 +99,16 @@ initialState = {
                 Счета
             </Heading>
             <CheckBoxGroup type='button'>
-                {['Счёт ₽ ··2331', 'Счёт $ ··2331'].map(text => (
-                    <CheckBox
-                        text={ text }
-                        key={ text }
-                        value={ text }
-                        type='button'
-                    />
-                ))}
+                {
+                    ['Счёт ₽ ··2331', 'Счёт $ ··2331'].map(text => (
+                        <CheckBox
+                            text={ text }
+                            key={ text }
+                            value={ text }
+                            type='button'
+                        />
+                    ))
+                }
             </CheckBoxGroup>
         </div>
         <div style={ { marginBottom: 40 } }>
@@ -112,14 +116,16 @@ initialState = {
                 Дата операции
             </Heading>
             <RadioGroup type='button'>
-                {['День', 'Месяц', 'Год'].map(text => (
-                    <Radio
-                        text={ text }
-                        key={ text }
-                        value={ text }
-                        type='button'
-                    />
-                ))}
+                {
+                    ['День', 'Месяц', 'Год'].map(text => (
+                        <Radio
+                            text={ text }
+                            key={ text }
+                            value={ text }
+                            type='button'
+                        />
+                    ))
+                }
             </RadioGroup>
         </div>
     </Sidebar>

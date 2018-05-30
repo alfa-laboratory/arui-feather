@@ -115,19 +115,13 @@
     &&_type_button {
         .radio-group__box {
             display: flex;
+            flex-wrap: wrap;
 
-            @media (--small-only) {
-                flex-wrap: wrap;
-                margin-bottom: calc((var(--gap-s) / 2) * -1);
-            }
+            margin-bottom: calc((var(--gap-s) / 2) * -1);
         }
 
         .radio, .radio + .radio {
-            margin: 0 calc(var(--gap-s) / 2) 0 0;
-
-            @media (--small-only) {
-                margin: 0 calc(var(--gap-s) / 2) calc(var(--gap-s) / 2) 0;
-            }
+            margin: 0 calc(var(--gap-s) / 2) calc(var(--gap-s) / 2) 0;
         }
     }
 

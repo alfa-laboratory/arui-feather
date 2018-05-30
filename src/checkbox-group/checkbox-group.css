@@ -31,22 +31,12 @@
 }
 
 .checkbox-group_type_button {
-    white-space: nowrap;
-
-    @media (--small-only) {
-        white-space: initial;
-
-        .checkbox-group__box {
-            margin-bottom: calc((var(--gap-s) / 2) * -1);
-        }
+    .checkbox-group__box {
+        margin-bottom: calc((var(--gap-s) / 2) * -1);
     }
 
     .checkbox, .checkbox + .checkbox {
-        margin: 0 calc(var(--gap-s) / 2) 0 0;
-
-        @media (--small-only) {
-            margin: 0 calc(var(--gap-s) / 2) calc(var(--gap-s) / 2) 0;
-        }
+        margin: 0 calc(var(--gap-s) / 2) calc(var(--gap-s) / 2) 0;
     }
 }
 

@@ -167,7 +167,7 @@ class Amount extends React.Component {
         return null;
     }
 
-    renderCurrencySymbol(cn, currencySymbol) {
+    renderCurrencySymbol(cn, currencySymbol  /* ломаем */) {
         return (
             <span className={ cn('currency') } >
                 { ` ${currencySymbol}` }

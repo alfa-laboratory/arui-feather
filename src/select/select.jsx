@@ -79,7 +79,7 @@ class Select extends React.Component {
                 Type.number
             ]),
             /** Текст варианта */
-            text: Type.node,
+            text: Type.string,
             /** Текст варианта для нативного режима */
             nativeText: Type.string,
             /** Отображение варианта */

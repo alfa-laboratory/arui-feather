@@ -46,4 +46,13 @@ describe('plate', () => {
 
         expect(onClick).to.have.been.calledOnce;
     });
+
+    it('should be exist root element in plate', () => {
+        let refNode;
+        render(
+            <Plate ref={ (node) => { refNode = node; } }>plate-text</Plate>
+        );
+
+        expect(refNode.root).should.be.not.undefined;
+    });
 });

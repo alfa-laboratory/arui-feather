@@ -82,7 +82,7 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
-    "bezier-easing": "2.0.3",
+    "bezier-easing": "2.1.0",
     "cn-decorator": "2.1.0",
     "core-decorators": "0.20.0",
     "core-js": "2.5.5",

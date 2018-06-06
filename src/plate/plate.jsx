@@ -51,7 +51,7 @@ class Plate extends React.Component {
     };
 
     /**
-     * @type {HTMLInputElement}
+     * @type {HTMLElement}
      */
     root;
 

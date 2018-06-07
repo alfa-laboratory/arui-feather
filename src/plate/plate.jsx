@@ -50,6 +50,11 @@ class Plate extends React.Component {
         isHidden: false
     };
 
+    /**
+     * @type {HTMLElement}
+     */
+    root;
+
     render(cn) {
         return (
             <ThemeProvider theme='alfa-on-white'>
@@ -62,6 +67,7 @@ class Plate extends React.Component {
                     id={ this.props.id }
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
+                    ref={ (node) => { this.root = node; } }
                 >
                     <div className={ cn('content') }>
                         { this.props.children }

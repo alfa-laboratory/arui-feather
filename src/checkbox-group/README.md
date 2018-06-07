@@ -47,6 +47,7 @@
     />
 </CheckBoxGroup>
 ```
+
 Горизонтальная группа неактивных чекбоксов, состоящая из обычных кнопок
 ```
 <CheckBoxGroup type='button' disabled={ true }>
@@ -98,6 +99,7 @@
     />
 </CheckBoxGroup>
 ```
+
 Горизонтальная группа чекбоксов
 ```jsx
 <CheckBoxGroup type='line'>

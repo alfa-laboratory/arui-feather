@@ -32,11 +32,25 @@
 
 .checkbox-group_type_button {
     .checkbox-group__box {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: calc((var(--gap-s) / 2) * -1);
         margin-bottom: calc((var(--gap-s) / 2) * -1);
     }
 
-    .checkbox, .checkbox + .checkbox {
-        margin: 0 calc(var(--gap-s) / 2) calc(var(--gap-s) / 2) 0;
+    .checkbox {
+        width: auto;
+        flex-grow: 0;
+        margin-right: calc(var(--gap-s) / 2);
+        margin-bottom: calc(var(--gap-s) / 2);
+    }
+}
+
+.checkbox-group_width_available {
+    display: block;
+
+    .checkbox {
+        flex-grow: 1;
     }
 }
 

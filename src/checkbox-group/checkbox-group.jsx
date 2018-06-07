@@ -21,7 +21,7 @@ class CheckBoxGroup extends React.Component {
         type: Type.oneOf(['normal', 'button', 'line']),
         /** Выбранные чекбокс-кнопки */
         value: Type.arrayOf(Type.oneOfType([Type.string, Type.number])),
-        /** Отображение попапа с ошибкой в момент когда фокус находится на компоненте */
+        /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,
@@ -108,13 +108,13 @@ class CheckBoxGroup extends React.Component {
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
             >
+                {
+                    !!this.props.label &&
+                    <div className={ cn('label') }>
+                        { this.props.label }
+                    </div>
+                }
                 <div className={ cn('box') }>
-                    {
-                        !!this.props.label &&
-                        <div className={ cn('label') }>
-                            { this.props.label }
-                        </div>
-                    }
                     { createFragment(checkboxGroupParts) }
                 </div>
             </span>

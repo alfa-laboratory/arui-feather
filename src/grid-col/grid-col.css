@@ -1,0 +1,317 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+:root {
+    --col-width: calc(100% / 12);
+}
+
+.arui-col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    @for $i from 0 to 48 by 8 {
+        &_gutter_$(i) {
+            padding-left: calc($(i)px / 2);
+            padding-right: calc($(i)px / 2);
+        }
+    }
+
+    &_auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+    }
+
+    &_available {
+        flex-basis: auto;
+        min-height: auto;
+        height: auto;
+    }
+
+    &_align_top {
+        align-self: flex-start !important;
+    }
+
+    &_align_middle {
+        align-self: center !important;
+    }
+
+    &_align_bottom {
+        align-self: flex-end !important;
+    }
+
+    @for $i from 1 to 12 {
+        &_$(i) {
+            flex: 0 0 calc(var(--col-width) * $(i));
+            max-width: calc(var(--col-width) * $(i));
+        }
+    }
+
+    @for $i from 0 to 12 {
+        &_offset_$(i) {
+            margin-left: calc(var(--col-width) * $(i));
+        }
+    }
+
+    &_order_first {
+        order: -1;
+    }
+
+    &_order_last {
+        order: 13;
+    }
+
+    @for $i from 0 to 12 {
+        &_order_$(i) {
+            order: $(i);
+        }
+    }
+
+    @media (--small) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-sm_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+
+        &_sm_auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+
+        &_sm_available {
+            flex-basis: auto;
+            min-height: auto;
+            height: auto;
+        }
+
+        @for $i from 1 to 12 {
+            &_sm_$(i) {
+                flex: 0 0 calc(var(--col-width) * $(i));
+                max-width: calc(var(--col-width) * $(i));
+            }
+        }
+
+        @for $i from 0 to 12 {
+            &_offset-sm_$(i) {
+                margin-left: calc(var(--col-width) * $(i));
+            }
+        }
+
+        &_order-sm_first {
+            order: -1;
+        }
+
+        &_order-sm_last {
+            order: 13;
+        }
+
+        @for $i from 0 to 12 {
+            &_order-sm_$(i) {
+                order: $(i);
+            }
+        }
+    }
+
+    @media (--medium) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-md_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+
+        &_md_auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+
+        &_md_available {
+            flex-basis: auto;
+            min-height: auto;
+            height: auto;
+        }
+
+        @for $i from 1 to 12 {
+            &_md_$(i) {
+                flex: 0 0 calc(var(--col-width) * $(i));
+                max-width: calc(var(--col-width) * $(i));
+            }
+        }
+
+        @for $i from 0 to 12 {
+            &_offset-md_$(i) {
+                margin-left: calc(var(--col-width) * $(i));
+            }
+        }
+
+        &_order-md_first {
+            order: -1;
+        }
+
+        &_order-md_last {
+            order: 13;
+        }
+
+        @for $i from 0 to 12 {
+            &_order-md_$(i) {
+                order: $(i);
+            }
+        }
+    }
+
+    @media (--large) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-lg_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+
+        &_lg_auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+
+        &_lg_available {
+            flex-basis: auto;
+            min-height: auto;
+            height: auto;
+        }
+
+        @for $i from 1 to 12 {
+            &_lg_$(i) {
+                flex: 0 0 calc(var(--col-width) * $(i));
+                max-width: calc(var(--col-width) * $(i));
+            }
+        }
+
+        @for $i from 0 to 12 {
+            &_offset-lg_$(i) {
+                margin-left: calc(var(--col-width) * $(i));
+            }
+        }
+
+        &_order-lg_first {
+            order: -1;
+        }
+
+        &_order-lg_last {
+            order: 13;
+        }
+
+        @for $i from 0 to 12 {
+            &_order-lg_$(i) {
+                order: $(i);
+            }
+        }
+    }
+
+    @media (--xlarge) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-xl_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+
+        &_xl_auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+
+        &_xl_available {
+            flex-basis: auto;
+            min-height: auto;
+            height: auto;
+        }
+
+        @for $i from 1 to 12 {
+            &_xl_$(i) {
+                flex: 0 0 calc(var(--col-width) * $(i));
+                max-width: calc(var(--col-width) * $(i));
+            }
+        }
+
+        @for $i from 0 to 12 {
+            &_offset-xl_$(i) {
+                margin-left: calc(var(--col-width) * $(i));
+            }
+        }
+
+        &_order-xl_first {
+            order: -1;
+        }
+
+        &_order-xl_last {
+            order: 13;
+        }
+
+        @for $i from 0 to 12 {
+            &_order-xl_$(i) {
+                order: $(i);
+            }
+        }
+    }
+
+    @media (--xxlarge) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-xxl_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+
+        &_xxl_auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+
+        &_xxl_available {
+            flex-basis: auto;
+            min-height: auto;
+            height: auto;
+        }
+
+        @for $i from 1 to 12 {
+            &_xxl_$(i) {
+                flex: 0 0 calc(var(--col-width) * $(i));
+                max-width: calc(var(--col-width) * $(i));
+            }
+        }
+
+        @for $i from 0 to 12 {
+            &_offset-xxl_$(i) {
+                margin-left: calc(var(--col-width) * $(i));
+            }
+        }
+
+        &_order-xxl_first {
+            order: -1;
+        }
+
+        &_order-xxl_last {
+            order: 13;
+        }
+
+        @for $i from 0 to 12 {
+            &_order-xxl_$(i) {
+                order: $(i);
+            }
+        }
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+}

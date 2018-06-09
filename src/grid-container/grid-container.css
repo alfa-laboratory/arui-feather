@@ -1,0 +1,78 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.arui-container {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @for $i from 0 to 48 by 8 {
+        &_gutter_$(i) {
+            padding-left: calc($(i)px / 2);
+            padding-right: calc($(i)px / 2);
+        }
+    }
+
+    @media (--small) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-sm_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+    }
+
+    @media (--medium) {
+        & {
+            max-width: 45em;
+        }
+
+        @for $i from 0 to 48 by 8 {
+            &_gutter-md_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+    }
+
+    @media (--large) {
+        & {
+            max-width: 60em;
+        }
+
+        @for $i from 0 to 48 by 8 {
+            &_gutter-lg_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+    }
+
+    @media (--xlarge) {
+        & {
+            max-width: 71.25em;
+        }
+
+        @for $i from 0 to 48 by 8 {
+            &_gutter-xl_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+    }
+
+    @media (--xxlarge) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-xxl_$(i) {
+                padding-left: calc($(i)px / 2);
+                padding-right: calc($(i)px / 2);
+            }
+        }
+    }
+
+    &_width_available {
+        width: 100%;
+    }
+}

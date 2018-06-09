@@ -1,0 +1,96 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.arui-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    &_reverse {
+        flex-direction: row-reverse;
+    }
+
+    &_align_top {
+        align-items: flex-start;
+    }
+
+    &_align_middle {
+        align-items: center;
+    }
+
+    &_align_bottom {
+        align-items: flex-end;
+    }
+
+    &_justify_left {
+        justify-content: flex-start;
+    }
+
+    &_justify_center {
+        justify-content: center;
+    }
+
+    &_justify_right {
+        justify-content: flex-end;
+    }
+
+    &_justify_around {
+        justify-content: space-around;
+    }
+
+    &_justify_between {
+        justify-content: space-between;
+    }
+
+    @for $i from 0 to 48 by 8 {
+        &_gutter_$(i) {
+            margin-left: calc(-$(i)px / 2);
+            margin-right: calc(-$(i)px / 2);
+        }
+    }
+
+    @media (--small) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-sm_$(i) {
+                margin-left: calc(-$(i)px / 2);
+                margin-right: calc(-$(i)px / 2);
+            }
+        }
+    }
+
+    @media (--medium) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-md_$(i) {
+                margin-left: calc(-$(i)px / 2);
+                margin-right: calc(-$(i)px / 2);
+            }
+        }
+    }
+
+    @media (--large) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-lg_$(i) {
+                margin-left: calc(-$(i)px / 2);
+                margin-right: calc(-$(i)px / 2);
+            }
+        }
+    }
+
+    @media (--xlarge) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-xl_$(i) {
+                margin-left: calc(-$(i)px / 2);
+                margin-right: calc(-$(i)px / 2);
+            }
+        }
+    }
+
+    @media (--xxlarge) {
+        @for $i from 0 to 48 by 8 {
+            &_gutter-xxl_$(i) {
+                margin-left: calc(-$(i)px / 2);
+                margin-right: calc(-$(i)px / 2);
+            }
+        }
+    }
+}

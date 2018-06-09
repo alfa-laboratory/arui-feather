@@ -20,7 +20,7 @@ export default class GridContainer extends React.Component {
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Дочерние элементы `GridContainer` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        children: Type.node,
         /** Дополнительный класс */
         className: Type.string,
         /**

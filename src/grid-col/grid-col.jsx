@@ -101,7 +101,7 @@ export default class GridCol extends React.Component {
          */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node])
+        children: Type.node
     }
 
     static defaultProps = {
@@ -110,7 +110,6 @@ export default class GridCol extends React.Component {
 
     render(cn) {
         const {
-            className,
             width,
             sm,
             md,
@@ -127,6 +126,7 @@ export default class GridCol extends React.Component {
 
         return (
             <Tag
+                { ...props }
                 className={ cn({
                     [width]: !!width,
                     sm,
@@ -137,7 +137,6 @@ export default class GridCol extends React.Component {
                     align,
                     ...this.createClasses({ offset, order })
                 }) }
-                { ...props }
             >
                 { children }
             </Tag>

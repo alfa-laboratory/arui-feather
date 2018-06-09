@@ -48,7 +48,7 @@ export default class GridRow extends React.Component {
          */
         tag: Type.string,
         /** Дочерние элементы `GridRow` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node])
+        children: Type.node
     }
 
     static defaultProps = {
@@ -66,7 +66,6 @@ export default class GridRow extends React.Component {
 
     render(cn) {
         const {
-            className,
             tag: Tag,
             gutter,
             reverse,
@@ -87,13 +86,13 @@ export default class GridRow extends React.Component {
 
         return (
             <Tag
+                { ...props }
                 className={ cn({
                     ...gutters,
                     reverse,
                     align,
                     justify
                 }) }
-                { ...props }
             >
                 { this.injectGutterInChildren(gutters, children) }
             </Tag>

@@ -12,7 +12,7 @@ import performance from '../performance';
  * Строки используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
-@cn('arui-row')
+@cn('grid-row')
 @performance(true)
 export default class GridRow extends React.Component {
     static propTypes = {
@@ -62,7 +62,7 @@ export default class GridRow extends React.Component {
      * Класс колонки
      * @type {string}
      */
-    classCol = 'arui-col'
+    classCol = 'grid-col'
 
     render(cn) {
         const {

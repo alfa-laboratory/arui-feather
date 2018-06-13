@@ -5,7 +5,7 @@ const style = {
     background: '#ff5c5c'
 };
 <GridContainer width='available' gutter={ { sm: 0, md: 8, xl: 16 } }>
-    <GridRow gutter={ {sm: 0, md: 8, xl: 16 } }>
+    <GridRow gutter={ { sm: 0, md: 8, xl: 16 } }>
         <GridCol>
             <div style={ style } />
         </GridCol>
@@ -48,6 +48,12 @@ const style = {
     height: 30,
     background: '#ff5c5c'
 };
+const styleLastDiv = {
+    width: 0,
+    height: 90,
+    padding: 0,
+    marginBottom: 10
+};
 <GridContainer width='available' gutter='0'>
     <div style={ { background: '#f3f4f5', marginBottom: 10 } }>
         <GridRow align='top' gutter='0'>
@@ -60,7 +66,7 @@ const style = {
             <GridCol>
                 <div style={ style } />
             </GridCol>
-            <div style={ { width: 0, height: 90, padding: 0, marginBottom: 10 } } />
+            <div style={ styleLastDiv } />
         </GridRow>
     </div>
     <div style={ { background: '#f3f4f5', marginBottom: 10 } }>
@@ -74,7 +80,7 @@ const style = {
             <GridCol>
                 <div style={ style } />
             </GridCol>
-            <div style={ { width: 0, height: 90, padding: 0 } } />
+            <div style={ styleLastDiv } />
         </GridRow>
     </div>
     <div style={ { background: '#f3f4f5' } }>
@@ -88,7 +94,7 @@ const style = {
             <GridCol>
                 <div style={ style } />
             </GridCol>
-            <div style={ { width: 0, height: 90, padding: 0 } } />
+            <div style={ { ...styleLastDiv, marginBottom: 0 } } />
         </GridRow>
     </div>
 </GridContainer>
@@ -127,10 +133,10 @@ const style = {
     </GridRow>
     <GridRow justify='around' gutter='0'>
         <GridCol width='4'>
-          <div style={ style } />
+            <div style={ style } />
         </GridCol>
         <GridCol width='4'>
-          <div style={ { ...style, background: '#f04539' } } />
+            <div style={ { ...style, background: '#f04539' } } />
         </GridCol>
     </GridRow>
     <GridRow justify='between' gutter='0'>
@@ -155,11 +161,11 @@ const style = {
         <div style={ { background: '#ff5c5c' } }>
             <span style={ style }>Уровень 1</span>
             <GridRow gutter='8'>
-                   <GridCol width='9'>
-                        <div style={ { background: '#f04539' } }>
-                            <span style={ style }>Уровень 2</span>
-                        </div>
-                   </GridCol>
+                <GridCol width='9'>
+                    <div style={ { background: '#f04539' } }>
+                        <span style={ style }>Уровень 2</span>
+                    </div>
+                </GridCol>
             </GridRow>
         </div>
     </GridCol>

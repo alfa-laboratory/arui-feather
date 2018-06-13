@@ -12,7 +12,7 @@ import performance from '../performance';
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  * Колонки должны быть помещены в строки (компоненет `GridRow`).
  */
-@cn('arui-col')
+@cn('grid-col')
 @performance(true)
 export default class GridCol extends React.Component {
     static propTypes = {

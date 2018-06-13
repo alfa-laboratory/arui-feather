@@ -5,7 +5,7 @@
     --col-width: calc(100% / 12);
 }
 
-.arui-col {
+.grid-col {
     position: relative;
     width: 100%;
     min-height: 1px;

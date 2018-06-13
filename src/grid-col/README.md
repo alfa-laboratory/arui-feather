@@ -97,7 +97,7 @@ const style = {
     <GridCol>
         <div style={ { ...style, background: '#f04539' } }>Col</div>
     </GridCol>
-    <GridCol width='available'></GridCol>
+    <GridCol width='available' />
     <GridCol>
         <div style={ { ...style, background: '#f04539' } }>Col</div>
     </GridCol>
@@ -181,7 +181,7 @@ const style = {
     color: '#fff',
     textAlign: 'center',
     background: '#ff5c5c',
-    marginBottom: '5px 0'
+    marginBottom: '5px'
 };
 <GridRow gutter='0'>
     <GridCol width='2'>
@@ -215,7 +215,7 @@ const style = {
             <div style={ { ...style, background: '#f04539' } } />
         </GridCol>
         <GridCol align='bottom'>
-            <div style={ style }></div>
+            <div style={ style } />
         </GridCol>
         <div style={ { width: 0, height: 90, padding: 0 } } />
     </GridRow>

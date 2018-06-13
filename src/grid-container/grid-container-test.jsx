@@ -15,8 +15,8 @@ describe('grid-container', () => {
         expect(container.node).to.exist;
         expect(container.node.tagName).to.equal('DIV');
         expect(container.node).to.have.text('GridContainer-example');
-        expect(container.node).to.have.class('arui-container');
-        expect(container.node).to.have.class('arui-container_gutter_16');
+        expect(container.node).to.have.class('grid-container');
+        expect(container.node).to.have.class('grid-container_gutter_16');
     });
 
     it('should set class for gutter', () => {
@@ -28,8 +28,8 @@ describe('grid-container', () => {
             </GridContainer>
         );
 
-        expect(container.node).to.have.class('arui-container_gutter-sm_8');
-        expect(container.node).to.have.class('arui-container_gutter-xl_16');
-        expect(container.node).to.have.class('arui-container_gutter-xxl_24');
+        expect(container.node).to.have.class('grid-container_gutter-sm_8');
+        expect(container.node).to.have.class('grid-container_gutter-xl_16');
+        expect(container.node).to.have.class('grid-container_gutter-xxl_24');
     });
 });

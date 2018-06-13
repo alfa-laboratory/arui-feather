@@ -16,13 +16,13 @@ const style = {
 <GridContainer width='available' gutter={ { sm: 8, xl: 16 } }>
     <GridRow gutter={ { sm: 8, xl: 16 } }>
         <GridCol>
-            <div style={ style }></div>
+            <div style={ style } />
         </GridCol>
         <GridCol>
-            <div style={ { ...style, background: '#f04539' } }></div>
+            <div style={ { ...style, background: '#f04539' } } />
         </GridCol>
         <GridCol>
-            <div style={ style }></div>
+            <div style={ style } />
         </GridCol>
     </GridRow>
 </GridContainer>

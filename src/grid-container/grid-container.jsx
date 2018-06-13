@@ -11,7 +11,7 @@ import performance from '../performance';
 /**
  * Контейнер является инструментом для центрирования контента на странице.
  */
-@cn('arui-container')
+@cn('grid-container')
 @performance()
 export default class GridContainer extends React.Component {
     static propTypes = {

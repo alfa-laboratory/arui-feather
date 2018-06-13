@@ -14,7 +14,7 @@ describe('grid-col', () => {
         expect(col.node).to.exist;
         expect(col.node.tagName).to.equal('DIV');
         expect(col.node).to.have.text('GridCol-example');
-        expect(col.node).to.have.class('arui-col');
+        expect(col.node).to.have.class('grid-col');
     });
 
     it('should set adaptive classes', () => {
@@ -29,10 +29,10 @@ describe('grid-col', () => {
             </GridCol>
         );
 
-        expect(col.node).to.have.class('arui-col_available');
-        expect(col.node).to.have.class('arui-col_sm_auto');
-        expect(col.node).to.have.class('arui-col_lg_2');
-        expect(col.node).to.have.class('arui-col_xxl_5');
+        expect(col.node).to.have.class('grid-col_available');
+        expect(col.node).to.have.class('grid-col_sm_auto');
+        expect(col.node).to.have.class('grid-col_lg_2');
+        expect(col.node).to.have.class('grid-col_xxl_5');
     });
 
     it('should set class for offset/order', () => {
@@ -45,8 +45,8 @@ describe('grid-col', () => {
             </GridCol>
         );
 
-        expect(col.node).to.have.class('arui-col_offset_4');
-        expect(col.node).to.have.class('arui-col_order-sm_2');
-        expect(col.node).to.have.class('arui-col_order-xxl_5');
+        expect(col.node).to.have.class('grid-col_offset_4');
+        expect(col.node).to.have.class('grid-col_order-sm_2');
+        expect(col.node).to.have.class('grid-col_order-xxl_5');
     });
 });

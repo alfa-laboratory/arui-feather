@@ -20,7 +20,8 @@ const OPTIONS = [
     },
     {
         value: 2,
-        text: 'Fb'
+        text: 'Fb',
+        checkedText: 'Fb'
     },
     {
         value: 3,

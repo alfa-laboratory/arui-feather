@@ -79,7 +79,7 @@ class Select extends React.Component {
                 Type.number
             ]),
             /** Текст варианта */
-            text: Type.string,
+            text: Type.node,
             /** Текст варианта для нативного режима */
             nativeText: Type.string,
             /** Отображение варианта */
@@ -475,7 +475,7 @@ class Select extends React.Component {
             return this.props.renderButtonContent(checkedItems);
         }
 
-        let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
+        let checkedItemsText = checkedItems.map(item => item.checkedText).join(', ');
         return checkedItemsText ||
             (
                 <span className={ cn('placeholder') }>

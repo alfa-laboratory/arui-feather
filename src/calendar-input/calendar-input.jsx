@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import autobind from 'core-decorators/lib/autobind';
-import React, { Fragment } from 'react';
+import React from 'react';
 import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
@@ -232,9 +232,10 @@ class CalendarInput extends React.Component {
             : {};
 
         return (
-            <Fragment>
+            <span
+                className={ cn({ width: this.props.width }) }
+            >
                 <span
-                    className={ cn({ width: this.props.width }) }
                     { ...wrapperProps }
                 >
                     <Mq
@@ -294,7 +295,7 @@ class CalendarInput extends React.Component {
                     />
                 </span>
                 { this.renderPopup(cn, value, Popup) }
-            </Fragment>
+            </span>
         );
     }
 

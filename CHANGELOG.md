@@ -1,3 +1,34 @@
+<a name="12.7.5"></a>
+## [12.7.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.4...v12.7.5) (2018-06-08)
+
+
+### Bug Fixes
+
+* fix errors eslint ([0c09dd4](https://github.com/alfa-laboratory/arui-feather/commit/0c09dd4))
+* **calendar-input:** fix popup closer in mobileMode='popup' ([#620](https://github.com/alfa-laboratory/arui-feather/issues/620)) ([#677](https://github.com/alfa-laboratory/arui-feather/issues/677)) ([2a8c53c](https://github.com/alfa-laboratory/arui-feather/commit/2a8c53c))
+
+
+### Features
+
+* **plate:** add root node for plate ([#675](https://github.com/alfa-laboratory/arui-feather/issues/675)) ([7f37331](https://github.com/alfa-laboratory/arui-feather/commit/7f37331))
+
+
+
+<a name="12.7.4"></a>
+## [12.7.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.3...v12.7.4) (2018-05-25)
+
+
+### Bug Fixes
+
+* **select:** add placeholder color and right display for text ([#657](https://github.com/alfa-laboratory/arui-feather/issues/657)) ([653b219](https://github.com/alfa-laboratory/arui-feather/commit/653b219))
+
+
+### Features
+
+* **popup,select:** add maxHeight prop ([#666](https://github.com/alfa-laboratory/arui-feather/issues/666)) ([67e6627](https://github.com/alfa-laboratory/arui-feather/commit/67e6627))
+
+
+
 <a name="12.7.3"></a>
 ## [12.7.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.2...v12.7.3) (2018-05-18)
 

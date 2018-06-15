@@ -4,38 +4,42 @@ const layoutStyle = {
 };
 <div>
     <div className='row'>
-        {['xl', 'l'].map(size => (
-            <span key={ size } style={ layoutStyle } >
-                <Button
-                    icon={
-                        <Spin
-                            size={ size }
-                            visible={ true }
-                        />
-                    }
-                    size={ size }
-                >
-                    Документы загружаются...
-                </Button>
-            </span>
-        ))}
+        {
+            ['xl', 'l'].map(size => (
+                <span key={ size } style={ layoutStyle } >
+                    <Button
+                        icon={
+                            <Spin
+                                size={ size }
+                                visible={ true }
+                            />
+                        }
+                        size={ size }
+                    >
+                        Документы загружаются...
+                    </Button>
+                </span>
+            ))
+        }
     </div>
     <div className='row'>
-        {['m', 's'].map(size => (
-            <span key={ size } style={ layoutStyle } >
-                <Button
-                    icon={
-                        <Spin
-                            size={ size }
-                            visible={ true }
-                        />
-                    }
-                    size={ size }
-                >
-                    Документы загружаются...
-                </Button>
-            </span>
-        ))}
+        {
+            ['m', 's'].map(size => (
+                <span key={ size } style={ layoutStyle } >
+                    <Button
+                        icon={
+                            <Spin
+                                size={ size }
+                                visible={ true }
+                            />
+                        }
+                        size={ size }
+                    >
+                        Документы загружаются...
+                    </Button>
+                </span>
+            ))
+        }
     </div>
 </div>
 ```

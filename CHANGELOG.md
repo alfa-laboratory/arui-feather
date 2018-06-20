@@ -1,3 +1,14 @@
+<a name="12.8.0"></a>
+# [12.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.5...v12.8.0) (2018-06-20)
+
+
+### Bug Fixes
+
+* **calendar-input:** support react 15 ([#683](https://github.com/alfa-laboratory/arui-feather/issues/683)) ([9edfe6a](https://github.com/alfa-laboratory/arui-feather/commit/9edfe6a))
+* **control-group:** fix checkbox/radio group responsive behaviour ([#667](https://github.com/alfa-laboratory/arui-feather/issues/667)) ([5b12e72](https://github.com/alfa-laboratory/arui-feather/commit/5b12e72))
+
+
+
 <a name="12.7.5"></a>
 ## [12.7.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.4...v12.7.5) (2018-06-08)
 

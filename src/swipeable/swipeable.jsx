@@ -20,7 +20,7 @@ export default class Swipeable extends React.Component {
         delta: Type.number,
         /**
          * Функция запускаемая по свайпу.
-         * @param {string|number} direction Направление свайпа. Возможные значение - 'top', 'right', 'bottom', 'left'.
+         * @param {string} direction Направление свайпа. Возможные значение - 'top', 'right', 'bottom', 'left'.
          */
         onSwipe: Type.func.isRequired,
         /** Дочерний компонент представленный в виде единичного элемента */

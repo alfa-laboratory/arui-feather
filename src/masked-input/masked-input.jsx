@@ -46,7 +46,10 @@ class MaskedInput extends React.Component {
         ),
         /** Максимальное число символов */
         maxLength: Type.number,
-        /** Обработчик, вызываемый перед началом ввода в поле */
+        /**
+         * Обработчик, вызываемый перед началом ввода в поле
+         * @param {React.ChangeEvent} event
+         */
         onProcessInputEvent: Type.func
     };
 

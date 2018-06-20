@@ -41,11 +41,20 @@ class RadioGroup extends React.Component {
         label: Type.node,
         /** Подсказка под полем */
         hint: Type.node,
-        /** Обработчик фокуса радиогруппы */
+        /**
+         * Обработчик фокуса радиогруппы
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса с радиогруппы */
+        /**
+         * Обработчик снятия фокуса с радиогруппы
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик изменения значения 'checked' одного из дочерних радио-кнопок */
+        /**
+         * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
+         * @param {string} value
+         */
         onChange: Type.func
     };
 

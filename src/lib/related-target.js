@@ -10,7 +10,6 @@
  * @param {Object} event DOM event to find related target in.
  * @returns {HTMLElement} The other DOM element involved in the event, if any.
  */
-
 export default function getRelatedTarget(event) {
     // https://github.com/facebook/react/issues/2011
     // https://github.com/facebook/react/issues/3751

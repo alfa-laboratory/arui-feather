@@ -25,10 +25,8 @@ export default class GridContainer extends React.Component {
         className: Type.string,
         /**
          * Суммарный горизонтальный `padding`.
-         * Возможные значения: `8n` px (n - натуральное число) из диапазона `[0, 8, 16, 24, 32, 40, 48]`.
-         * Для изменения размера отступов в зависимости от контрольных точек, может принимать объект:
-         *
-         * `{ sm: [0..48], md: [0..48], lg: [0..48], xl: [0..48], xxl: [0..48] }`
+         * Возможные значения: `8n` px (n - натуральное число) из диапазона `[0, 8, 16, 24, 32, 40, 48]`
+         * или `{ sm: [0..48], md: [0..48], lg: [0..48], xl: [0..48], xxl: [0..48] }`
          */
         gutter: Type.oneOfType([Type.string, Type.number, Type.shape({
             sm: Type.oneOfType([Type.string, Type.number]),

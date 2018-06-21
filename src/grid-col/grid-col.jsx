@@ -22,50 +22,21 @@ export default class GridCol extends React.Component {
         className: Type.string,
         /** Управление выравниванием колонок по вертикальной оси */
         align: Type.oneOf(['top', 'middle', 'bottom']),
-        /**
-         * Управление шириной колонки.
-         *
-         * Возможные значения: `[1..12, available, auto]`
-         */
+        /** Управление шириной колонки. Возможные значения: `[1..12, available, auto]`. */
         width: Type.oneOfType([Type.string, Type.number]),
-        /**
-         * Управление шириной колонки для устройств `<=768px`.
-         *
-         * Возможные значения: `[1..12, available, auto]`
-         */
+        /** Управление шириной колонки для устройств `<=768px`. Возможные значения: `[1..12, available, auto]`. */
         sm: Type.oneOfType([Type.string, Type.number]),
-        /**
-         * Управление шириной колонки для устройств `>= 769px`.
-         *
-         * Возможные значения: `[1..12, available, auto]`
-         */
+        /** Управление шириной колонки для устройств `>= 769px`. Возможные значения: `[1..12, available, auto]`. */
         md: Type.oneOfType([Type.string, Type.number]),
-        /**
-         * Управление шириной колонки для устройств `>= 1025px`.
-         *
-         * Возможные значения: `[1..12, available, auto]`
-         */
+        /** Управление шириной колонки для устройств `>= 1025px`. Возможные значения: `[1..12, available, auto]`. */
         lg: Type.oneOfType([Type.string, Type.number]),
-        /**
-         * Управление шириной колонки для устройств `>= 1441px`.
-         *
-         * Возможные значения: `[1..12, available, auto]`
-         */
+        /** Управление шириной колонки для устройств `>= 1441px`. Возможные значения: `[1..12, available, auto]`. */
         xl: Type.oneOfType([Type.string, Type.number]),
-        /**
-         * Управление шириной колонки для устройств `>= 1921px`
-         *
-         * Возможные значения: `[1..12, available, auto]`
-         */
+        /** Управление шириной колонки для устройств `>= 1921px` Возможные значения: `[1..12, available, auto]`. */
         xxl: Type.oneOfType([Type.string, Type.number]),
         /**
-         * Управлние смещением колонки.
-         *
-         * Возможные значения: `[0..12]`
-         *
-         * Для изменения размера смещения, в зависимости от контрольных точек, может принимать объект:
-         *
-         * `{ sm: [0..12], md: [0..12], lg: [0..12], xl: [0..12], xxl: [0..12] }`
+         * Управлние смещением колонки. Возможные значения: `[0..12]`
+         * или  `{ sm: [0..12], md: [0..12], lg: [0..12], xl: [0..12], xxl: [0..12] }`
          */
         offset: Type.oneOfType([
             Type.oneOfType([Type.string, Type.number]),
@@ -78,13 +49,8 @@ export default class GridCol extends React.Component {
             })
         ]),
         /**
-         * Управление порядком колонок.
-         *
-         * Возможные значения: `[0..12, first, last]`
-         *
-         * Для изменения порядка, в зависимости от контрольных точек, может принимать объект:
-         *
-         * `{ sm: [0..last], md: [0..last], lg: [0..last], xl: [0..last], xxl: [0..last] }`
+         * Управление порядком колонок. Возможные значения: `[0..12, first, last]`
+         * или { sm: [0..last], md: [0..last], lg: [0..last], xl: [0..last], xxl: [0..last] }`
          */
         order: Type.oneOfType([
             Type.oneOfType([Type.string, Type.number]),
@@ -96,9 +62,7 @@ export default class GridCol extends React.Component {
                 xxl: Type.oneOfType([Type.string, Type.number])
             })
         ]),
-        /**
-         * Html тег компонента.
-         */
+        /** Html тег компонента. */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */
         children: Type.node

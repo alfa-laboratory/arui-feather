@@ -118,9 +118,6 @@ class InputAutocomplete extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getNode());
-        }
         this.updatePopupStyles();
     }
 

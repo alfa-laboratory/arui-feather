@@ -34,11 +34,20 @@ class Plate extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика по плашке */
+        /**
+         * Обработчик клика по плашке
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик клика по крестику */
+        /**
+         * Обработчик клика по крестику
+         * @param {React.MouseEvent} event
+         */
         onCloserClick: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func
     };
 
@@ -94,13 +103,13 @@ class Plate extends React.Component {
     }
 
     @autobind
-    handleCloserClick() {
+    handleCloserClick(event) {
         this.setState({
             isHidden: true
         });
 
         if (this.props.onCloserClick) {
-            this.props.onCloserClick();
+            this.props.onCloserClick(event);
         }
     }
 

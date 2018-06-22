@@ -59,7 +59,10 @@ class InputAutocomplete extends React.Component {
             'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Обработчик выбора пункта в выпадающем меню */
+        /**
+         * Обработчик выбора пункта в выпадающем меню
+         * @param checkedItem
+         */
         onItemSelect: Type.func,
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
         closeOnSelect: Type.bool

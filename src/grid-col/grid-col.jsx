@@ -7,6 +7,11 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
+const pointType = Type.oneOfType([Type.string, Type.number]);
+const breakpointsType = {
+    sm: pointType, md: pointType, lg: pointType, xl: pointType, xxl: pointType
+};
+
 /**
  * Колонки используются для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
@@ -38,30 +43,12 @@ export default class GridCol extends React.Component {
          * Управлние смещением колонки. Возможные значения: `[0..12]`
          * или  `{ sm: [0..12], md: [0..12], lg: [0..12], xl: [0..12], xxl: [0..12] }`
          */
-        offset: Type.oneOfType([
-            Type.oneOfType([Type.string, Type.number]),
-            Type.shape({
-                sm: Type.oneOfType([Type.string, Type.number]),
-                md: Type.oneOfType([Type.string, Type.number]),
-                lg: Type.oneOfType([Type.string, Type.number]),
-                xl: Type.oneOfType([Type.string, Type.number]),
-                xxl: Type.oneOfType([Type.string, Type.number])
-            })
-        ]),
+        offset: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /**
          * Управление порядком колонок. Возможные значения: `[0..12, first, last]`
          * или { sm: [0..last], md: [0..last], lg: [0..last], xl: [0..last], xxl: [0..last] }`
          */
-        order: Type.oneOfType([
-            Type.oneOfType([Type.string, Type.number]),
-            Type.shape({
-                sm: Type.oneOfType([Type.string, Type.number]),
-                md: Type.oneOfType([Type.string, Type.number]),
-                lg: Type.oneOfType([Type.string, Type.number]),
-                xl: Type.oneOfType([Type.string, Type.number]),
-                xxl: Type.oneOfType([Type.string, Type.number])
-            })
-        ]),
+        order: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /** Html тег компонента. */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */

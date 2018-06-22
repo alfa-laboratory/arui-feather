@@ -8,6 +8,12 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
+const pointType = Type.oneOfType([Type.string, Type.number]);
+const breakpointsType = {
+    sm: pointType, md: pointType, lg: pointType, xl: pointType, xxl: pointType
+};
+
+
 /**
  * Строки используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
@@ -25,13 +31,7 @@ export default class GridRow extends React.Component {
          * Возможные значения: `8n` px (n - натуральное число) из диапазона `[0, 8, 16, 24, 32, 40, 48]`
          * или `{ sm: [0..48], md: [0..48], lg: [0..48], xl: [0..48], xxl: [0..48] }`.
          */
-        gutter: Type.oneOfType([Type.string, Type.number, Type.shape({
-            sm: Type.oneOfType([Type.string, Type.number]),
-            md: Type.oneOfType([Type.string, Type.number]),
-            lg: Type.oneOfType([Type.string, Type.number]),
-            xl: Type.oneOfType([Type.string, Type.number]),
-            xxl: Type.oneOfType([Type.string, Type.number])
-        })]),
+        gutter: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /** Управление изменением направления колонок */
         reverse: Type.bool,
         /** Управление выравниванием колонок по вертикальной оси */

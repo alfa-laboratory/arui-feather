@@ -165,8 +165,6 @@ class InputAutocomplete extends React.Component {
     }
 
     renderPopup(cn) {
-        console.log('input-autocomplete: renderPopup'); /* TODO Remove */
-
         let formattedOptionsList = this.props.options
             ? this.formatOptionsList(this.props.options)
             : [];

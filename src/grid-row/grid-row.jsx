@@ -92,7 +92,7 @@ export default class GridRow extends React.Component {
                     justify
                 }) }
             >
-                { this.injectGutterInChildren(gutters, children) }
+                { this.injectGutterClassesToChildren(gutters, children) }
             </Tag>
         );
     }
@@ -105,11 +105,15 @@ export default class GridRow extends React.Component {
      * @param {ReactElement} children Дочерние элементы компонента.
      * @returns {ReactElement}
      */
-    injectGutterInChildren(gutters, children) {
+    injectGutterClassesToChildren(gutters, children) {
         return (
             Children.map(children, (col) => {
-                if (!col) return null;
-                if (!col.props) return col;
+                if (!col) {
+                    return null;
+                }
+                if (!col.props) {
+                    return col;
+                }
                 const classes = Object.keys(gutters).map(gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`);
                 const className = col.props.className ? ` ${col.props.className}` : '';
                 return cloneElement(col, { className: `${classes.join(' ')}${className}` });

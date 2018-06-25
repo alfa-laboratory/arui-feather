@@ -45,7 +45,6 @@ export default class GridContainer extends React.Component {
 
     render(cn) {
         const {
-            className,
             tag: Tag,
             width,
             gutter,
@@ -63,7 +62,7 @@ export default class GridContainer extends React.Component {
         }
 
         return (
-            <Tag className={ cn({ width, ...gutters }) } { ...props }>
+            <Tag { ...props } className={ cn({ width, ...gutters }) }>
                 { children }
             </Tag>
         );

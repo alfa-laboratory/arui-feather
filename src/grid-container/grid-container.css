@@ -73,6 +73,6 @@
     }
 
     &_width_available {
-        width: 100%;
+         max-width: 100%;
     }
 }

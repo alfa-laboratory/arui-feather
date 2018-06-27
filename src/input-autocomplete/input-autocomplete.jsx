@@ -496,7 +496,6 @@ class InputAutocomplete extends React.Component {
         });
     }
 
-    @autobind
     updatePopupTarget() {
         if (this.popup) {
             this.popup.setTarget(this.input.getBoxNode());

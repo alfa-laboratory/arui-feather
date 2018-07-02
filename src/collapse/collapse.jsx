@@ -35,7 +35,10 @@ class Collapse extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик смены состояний `expanded/collapsed` */
+        /**
+         * Обработчик смены состояний `expanded/collapsed`
+         * @param {boolean} isExpanded
+         */
         onExpandedChange: Type.func
     };
 

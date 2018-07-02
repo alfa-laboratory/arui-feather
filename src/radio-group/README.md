@@ -146,7 +146,6 @@
 ```
 
 Горизонтальная группа радио кнопок с лейблом и со 100% шириной
-
 ```jsx
 <RadioGroup label='Число' type='button' error='Обязательно' width='available'>
     {

@@ -2,6 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/**
+ * Добавляет к type-checker для propType валидации метод isRequired.
+ *
+ * @param {Function} validate Оригинальный метод для валидации
+ * @returns {Function}
+ */
 function createChainableTypeChecker(validate) {
     function checkType(isRequired, props, propName, componentName, location) {
         componentName = componentName || '';
@@ -23,6 +29,14 @@ function createChainableTypeChecker(validate) {
     return chainedCheckType;
 }
 
+/**
+ * Проверяет, является ли заданный prop инстансом HTMLElement.
+ *
+ * @param {Object} props Пропы компонента
+ * @param {String} propName Имя пропса для валидации
+ * @param {String} componentName Имя компонента
+ * @returns {Error|null}
+ */
 function propTypeIsHtmlElement(props, propName, componentName) {
     if (!(props[propName] instanceof (typeof HTMLElement === 'undefined' ? {} : HTMLElement))) {
         return new Error(
@@ -33,6 +47,13 @@ function propTypeIsHtmlElement(props, propName, componentName) {
     return null;
 }
 
+/**
+ * Враппер для prop-type валидаторов, позволяющий помечать prop как устаревший, сохраняя проверку типа.
+ *
+ * @param {Function} propType Оригинальный propType валидатор.
+ * @param {String} message Дополнительное сообщение.
+ * @returns {function(...[*]): *}
+ */
 export function deprecated(propType, message) {
     let warned = false;
     return function (...args) {
@@ -49,6 +70,16 @@ export function deprecated(propType, message) {
     };
 }
 
+/**
+ * Враппер для prop-type валидатора, позволяющий пометить один из типов как устаревший.
+ * В случае, если заданный prop будет соответствовать старому валидатору, но не будет
+ * соответствовать новому - пользователь будет об этом предупрежден.
+ *
+ * @param {Function} oldType Валидатор для старого типа.
+ * @param {Function} newType Валидатор для нового типа.
+ * @param {String} message Дополнительное сообщение
+ * @returns {Function}
+ */
 export function deprecatedType(oldType, newType, message) {
     let warned = false;
 

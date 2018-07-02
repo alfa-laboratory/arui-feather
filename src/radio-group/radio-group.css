@@ -115,14 +115,24 @@
     &&_type_button {
         .radio-group__box {
             display: flex;
+            flex-wrap: wrap;
+            margin-right: calc((var(--gap-s) / 2) * -1);
+            margin-bottom: calc((var(--gap-s) / 2) * -1);
         }
 
         .radio {
-            margin-bottom: 0;
+            width: auto;
+            flex-grow: 0;
+            margin-right: calc(var(--gap-s) / 2);
+            margin-bottom: calc(var(--gap-s) / 2);
         }
+    }
 
-        .radio + .radio {
-            margin-left: calc(var(--gap-s) / 2);
+    &&_width_available {
+        display: block;
+
+        .radio {
+            flex-grow: 1;
         }
     }
 
@@ -144,10 +154,6 @@
         .radio:last-child {
             margin-right: 0;
         }
-    }
-
-    &_width_available {
-        display: block;
     }
 
     &_invalid {

@@ -113,17 +113,12 @@ class InputAutocomplete extends React.Component {
     inputFocusTimeout = null;
 
     componentDidMount() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getBoxNode());
-        }
-
+        this.updatePopupTarget();
         this.updatePopupStyles();
     }
 
     componentDidUpdate() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getNode());
-        }
+        this.updatePopupTarget();
         this.updatePopupStyles();
     }
 
@@ -499,6 +494,12 @@ class InputAutocomplete extends React.Component {
         this.setState({
             popupStyles
         });
+    }
+
+    updatePopupTarget() {
+        if (this.popup) {
+            this.popup.setTarget(this.input.getBoxNode());
+        }
     }
 
     /**

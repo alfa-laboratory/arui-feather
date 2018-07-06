@@ -6,25 +6,27 @@ const options = [
     { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
 ];
 <div>
-    {['s'].map(size => (
-        <div className='row' key={ size }>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='radio'
-                    options={ options }
-                />
+    {
+        ['s'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='radio'
+                        options={ options }
+                    />
+                </div>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='radio'
+                        options={ options }
+                        disabled={ true }
+                    />
+                </div>
             </div>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='radio'
-                    options={ options }
-                    disabled={ true }
-                />
-            </div>
-        </div>
-    ))}
+        ))
+    }
 </div>
 ```
 
@@ -36,25 +38,27 @@ const options = [
     { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
 <div>
-    {['m'].map(size => (
-        <div className='row' key={ size }>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='check'
-                    options={ options }
-                />
+    {
+        ['m'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='check'
+                        options={ options }
+                    />
+                </div>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='check'
+                        options={ options }
+                        disabled={ true }
+                    />
+                </div>
             </div>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='check'
-                    options={ options }
-                    disabled={ true }
-                />
-            </div>
-        </div>
-    ))}
+        ))
+    }
 </div>
 ```
 
@@ -66,25 +70,27 @@ const options = [
     { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
 <div>
-    {['xl'].map(size => (
-        <div className='row' key={ size }>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='radio-check'
-                    options={ options }
-                />
+    {
+        ['xl'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='radio-check'
+                        options={ options }
+                    />
+                </div>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='radio-check'
+                        options={ options }
+                        disabled={ true }
+                    />
+                </div>
             </div>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='radio-check'
-                    options={ options }
-                    disabled={ true }
-                />
-            </div>
-        </div>
-    ))}
+        ))
+    }
 </div>
 ```
 
@@ -99,27 +105,29 @@ const options = [
     { value: '6', text: 'ООО «Абсолютная власть»' }
 ];
 <div>
-    {['l'].map(size => (
-        <div className='row' key={ size }>
-            <div className='column'>
-                <Select
-                    width='available'
-                    size={ size }
-                    mode='check'
-                    options={ options }
-                />
+    {
+        ['l'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Select
+                        width='available'
+                        size={ size }
+                        mode='check'
+                        options={ options }
+                    />
+                </div>
+                <div className='column'>
+                    <Select
+                        width='available'
+                        size={ size }
+                        mode='check'
+                        options={ options }
+                        disabled={ true }
+                    />
+                </div>
             </div>
-            <div className='column'>
-                <Select
-                    width='available'
-                    size={ size }
-                    mode='check'
-                    options={ options }
-                    disabled={ true }
-                />
-            </div>
-        </div>
-    ))}
+        ))
+    }
 </div>
 ```
 
@@ -163,28 +171,30 @@ const options = [
     { value: '35', text: 'ООО «Ооо»' }
 ];
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' key={ size }>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='radio'
-                    options={ options }
-                    mobileMenuMode='popup'
-                    mobileTitle='Очень длинный заголовок на мобильном устройстве'
-                />
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='radio'
+                        options={ options }
+                        mobileMenuMode='popup'
+                        mobileTitle='Очень длинный заголовок на мобильном устройстве'
+                    />
+                </div>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        mode='radio'
+                        options={ options }
+                        mobileMenuMode='popup'
+                        disabled={ true }
+                    />
+                </div>
             </div>
-            <div className='column'>
-                <Select
-                    size={ size }
-                    mode='radio'
-                    options={ options }
-                    mobileMenuMode='popup'
-                    disabled={ true }
-                />
-            </div>
-        </div>
-    ))}
+        ))
+    }
 </div>
 ```
 
@@ -255,6 +265,26 @@ const options2 = [
                 options={ options2 }
                 mode='radio'
                 value={ ['4'] }
+            />
+        </div>
+    </div>
+</div>
+```
+
+Без иконки на кнопке
+```jsx
+const options = [
+    { value: '01', text: 'ИП Фридман М.М.' },
+    { value: '02', text: 'ООО «Виктори»' },
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
+];
+<div>
+    <div className='row'>
+        <div className='column'>
+            <Select
+                mode='radio'
+                options={ options }
+                hideTick={ true }
             />
         </div>
     </div>

@@ -87,31 +87,70 @@ class Input extends React.Component {
         className: Type.string,
         /** Тултип, который появляется при наведении  */
         title: Type.string,
-        /** Обработчик изменения значения 'value' */
+        /**
+         * Обработчик изменения значения 'value'
+         * @param {string} value
+         */
         onChange: Type.func,
-        /** Обработчик фокуса поля */
+        /**
+         * Обработчик фокуса поля
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик клика по полю */
+        /**
+         * Обработчик клика по полю
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик снятия фокуса с поля */
+        /**
+         * Обработчик снятия фокуса с поля
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик клика по крестику сбрасываещему значение 'value' */
+        /**
+         * Обработчик клика по крестику сбрасываещему значение 'value'
+         * @param {React.MouseEvent} event
+         */
         onClearClick: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
-        /** Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyUp: Type.func,
-        /** Обработчик события вставки текста в поле */
+        /**
+         * Обработчик события вставки текста в поле
+         * @param {React.ClipboardEvent} event
+         */
         onPaste: Type.func,
-        /** Обработчик события касания по полю */
+        /**
+         * Обработчик события касания по полю
+         * @param {React.TouchEvent} event
+         */
         onTouchStart: Type.func,
-        /** Обработчик события прекращения касания по полю */
+        /**
+         * Обработчик события прекращения касания по полю
+         * @param {React.TouchEvent} event
+         */
         onTouchEnd: Type.func,
-        /** Обработчик события перемещения при касании по полю */
+        /**
+         * Обработчик события перемещения при касании по полю
+         * @param {React.TouchEvent} event
+         */
         onTouchMove: Type.func,
-        /** Обработчик события прерывания касания по полю */
+        /**
+         * Обработчик события прерывания касания по полю
+         * @param {React.TouchEvent} event
+         */
         onTouchCancel: Type.func,
-        /** Обработчик, вызываемый перед началом ввода в маскированное поле */
+        /**
+         * Обработчик, вызываемый перед началом ввода в маскированное поле
+         * @param {React.ChangeEvent} event
+         */
         onProcessMaskInputEvent: Type.func
     };
 
@@ -299,11 +338,11 @@ class Input extends React.Component {
     }
 
     @autobind
-    handleClearClick() {
+    handleClearClick(event) {
         this.changeValue('');
 
         if (this.props.onClearClick) {
-            this.props.onClearClick();
+            this.props.onClearClick(event);
         }
 
         this.focus();
@@ -414,6 +453,7 @@ class Input extends React.Component {
      */
     focus() {
         this.control.focus();
+        this.setSelectionRange(this.getControl().value.length);
     }
 
     /**
@@ -442,11 +482,13 @@ class Input extends React.Component {
      * Устанавливает начальное и конечное положение выделения текста в элементе.
      *
      * @public
-     * @param {Number} [start=0] Индекс первого выделенного символа.
-     * @param {Number} [end=value.length] Индекс символа после последнего выделенного символа.
+     * @param {Number} start=0 Индекс первого выделенного символа.
+     * @param {Number} end=value.length Индекс символа после последнего выделенного символа.
      */
     setSelectionRange(start = 0, end = this.getControl().value.length) {
-        this.getControl().setSelectionRange(start, end);
+        if (this.props.type !== 'email') {
+            this.getControl().setSelectionRange(start, end);
+        }
     }
 
     /**

@@ -26,7 +26,10 @@ class Mq extends React.Component {
         touch: Type.bool,
         /** Дочерние элементы `Mq` */
         children: Type.node,
-        /** Обработчик изменений в совпадении запросов */
+        /**
+         * Обработчик изменений в совпадении запросов
+         * @param {boolean} isMatched
+         */
         onMatchChange: Type.func
     };
 

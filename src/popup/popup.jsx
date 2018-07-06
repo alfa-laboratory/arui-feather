@@ -89,16 +89,27 @@ class Popup extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Обработчик события наведения курсора на попап */
+        /**
+         * Обработчик события наведения курсора на попап
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с попапа */
+        /**
+         * Обработчик события снятия курсора с попапа
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func,
-        /** Обработчик клика вне компонента */
+        /**
+         * Обработчик клика вне компонента
+         * @param {React.MouseEvent} event
+         */
         onClickOutside: Type.func,
         /** Минимальная ширина попапа */
         minWidth: Type.number,
         /** Максимальная ширина попапа */
         maxWidth: Type.number,
+        /** Максимальная высота попапа */
+        maxHeight: Type.number,
         /** Указатель на родительский элемент */
         for: Type.string
     };
@@ -237,7 +248,8 @@ class Popup extends React.Component {
                 style={ {
                     ...this.state.styles,
                     minWidth: this.getMinWidth(),
-                    maxWidth: this.getMaxWidth()
+                    maxWidth: this.getMaxWidth(),
+                    maxHeight: this.getMaxHeight()
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
@@ -313,16 +325,16 @@ class Popup extends React.Component {
     }
 
     @autobind
-    handleMouseEnter() {
+    handleMouseEnter(event) {
         if (this.props.onMouseEnter) {
-            this.props.onMouseEnter();
+            this.props.onMouseEnter(event);
         }
     }
 
     @autobind
-    handleMouseLeave() {
+    handleMouseLeave(event) {
         if (this.props.onMouseLeave) {
-            this.props.onMouseLeave();
+            this.props.onMouseLeave(event);
         }
     }
 
@@ -532,6 +544,13 @@ class Popup extends React.Component {
      */
     getMaxWidth() {
         return this.props.maxWidth !== undefined ? this.props.maxWidth : 'none';
+    }
+
+    /**
+     * @returns {Number}
+     */
+    getMaxHeight() {
+        return this.props.maxHeight !== undefined ? this.props.maxHeight : 'none';
     }
 
     /**

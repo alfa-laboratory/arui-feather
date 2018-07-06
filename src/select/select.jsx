@@ -115,30 +115,64 @@ class Select extends React.Component {
         popupMainOffset: Type.number,
         /** Смещение в пикселях всплывающего окна относительно второстепенного направления (только на десктопе) */
         popupSecondaryOffset: Type.number,
+        /** Скрытие галочки в правой части кнопки */
+        hideTick: Type.bool,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Обработчик фокуса на компоненте */
+        /**
+         * Обработчик фокуса на компоненте
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик потери фокуса компонентом */
+        /**
+         * Обработчик потери фокуса компонентом
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик фокуса на кнопке */
+        /**
+         * Обработчик фокуса на кнопке
+         * @param {React.FocusEvent} event
+         */
         onButtonFocus: Type.func,
-        /** Обработчик потери у кнопки */
+        /**
+         * Обработчик потери у кнопки
+         * @param {React.FocusEvent} event
+         */
         onButtonBlur: Type.func,
-        /** Обработчик фокуса на меню */
+        /**
+         * Обработчик фокуса на меню
+         * @param {React.FocusEvent} event
+         */
         onMenuFocus: Type.func,
-        /** Обработчик потери фокуса у меню */
+        /**
+         * Обработчик потери фокуса у меню
+         * @param {React.FocusEvent} event
+         */
         onMenuBlur: Type.func,
-        /** Обработчик клика по кнопке компонента */
+        /**
+         * Обработчик клика по кнопке компонента
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик клика вне компонента */
+        /**
+         * Обработчик клика вне компонента
+         * @param {React.MouseEvent} event
+         */
         onClickOutside: Type.func,
-        /** Обработчик изменения значения */
+        /**
+         * Обработчик изменения значения
+         * @param {Array<string|number>} value
+         */
         onChange: Type.func,
-        /** Обработчик нажатия на клавишу */
+        /**
+         * Обработчик нажатия на клавишу
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
         /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
-        renderButtonContent: Type.func
+        renderButtonContent: Type.func,
+        /** Максимальная высота попапа */
+        maxHeight: Type.number
     };
 
     static defaultProps = {
@@ -228,7 +262,8 @@ class Select extends React.Component {
                     'has-label': !!this.props.label,
                     'has-value': !!value,
                     invalid: !!this.props.error,
-                    opened: this.getOpened()
+                    opened: this.getOpened(),
+                    'no-tick': this.props.hideTick
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
@@ -298,15 +333,17 @@ class Select extends React.Component {
                 onFocus={ this.handleButtonFocus }
                 onBlur={ this.handleButtonBlur }
             >
-                { this.renderButtonContent() }
-                <IconButton
-                    className={ cn('tick') }
-                    key='addon-icon'
-                    size={ this.props.size }
-                    tag='span'
-                >
-                    <ToggledIcon size={ tickSize } />
-                </IconButton>
+                { this.renderButtonContent(cn) }
+                { !this.props.hideTick &&
+                    <IconButton
+                        className={ cn('tick') }
+                        key='addon-icon'
+                        size={ this.props.size }
+                        tag='span'
+                    >
+                        <ToggledIcon size={ tickSize } />
+                    </IconButton>
+                }
                 <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
             </SelectButton>
         );
@@ -384,6 +421,7 @@ class Select extends React.Component {
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
+                maxHeight={ this.props.maxHeight }
             >
                 <Menu
                     ref={ (menu) => { this.menu = menu; } }
@@ -460,7 +498,7 @@ class Select extends React.Component {
         );
     }
 
-    renderButtonContent() {
+    renderButtonContent(cn) {
         let checkedItems = this.getCheckedItems(this.props.options);
 
         if (this.props.renderButtonContent) {
@@ -468,7 +506,12 @@ class Select extends React.Component {
         }
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
-        return checkedItemsText || this.props.placeholder;
+        return checkedItemsText ||
+            (
+                <span className={ cn('placeholder') }>
+                    { this.props.placeholder }
+                </span>
+            );
     }
 
     renderMobileHeader(cn) {

@@ -59,6 +59,19 @@ describe('input', () => {
         }, 0);
     });
 
+    it('should set caret to end of input on public focus method', (done) => {
+        let value = 'test';
+        let input = render(<Input value={ value } />);
+
+        input.instance.focus();
+
+        setTimeout(() => {
+            expect(input.instance.getControl().selectionStart).to.be.eq(value.length);
+            expect(input.instance.getControl().selectionEnd).to.be.eq(value.length);
+            done();
+        }, 500);
+    });
+
     it('should set class on public focus method', (done) => {
         let input = render(<Input />);
 
@@ -81,6 +94,20 @@ describe('input', () => {
             expect(window.scrollTo).to.have.been.calledWith(0, elemScrollTo);
             done();
         }, 0);
+    });
+
+    it('should not set selection when `setSelectionRange` method was called on input with type `email`', (done) => {
+        let input = render(<Input value='test' type='email' />);
+
+        let setSelectionRange = sinon.spy();
+        input.instance.getControl().setSelectionRange = setSelectionRange;
+        input.instance.focus();
+
+        setTimeout(() => {
+            input.instance.setSelectionRange();
+            expect(setSelectionRange).to.not.have.been.called;
+            done();
+        }, 500);
     });
 
     it('should set selection to all value when `setSelectionRange` method was called without parameters', (done) => {

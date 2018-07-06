@@ -59,7 +59,10 @@ class InputAutocomplete extends React.Component {
             'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Обработчик выбора пункта в выпадающем меню */
+        /**
+         * Обработчик выбора пункта в выпадающем меню
+         * @param checkedItem
+         */
         onItemSelect: Type.func,
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
         closeOnSelect: Type.bool
@@ -110,17 +113,12 @@ class InputAutocomplete extends React.Component {
     inputFocusTimeout = null;
 
     componentDidMount() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getBoxNode());
-        }
-
+        this.updatePopupTarget();
         this.updatePopupStyles();
     }
 
     componentDidUpdate() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getNode());
-        }
+        this.updatePopupTarget();
         this.updatePopupStyles();
     }
 
@@ -496,6 +494,12 @@ class InputAutocomplete extends React.Component {
         this.setState({
             popupStyles
         });
+    }
+
+    updatePopupTarget() {
+        if (this.popup) {
+            this.popup.setTarget(this.input.getBoxNode());
+        }
     }
 
     /**

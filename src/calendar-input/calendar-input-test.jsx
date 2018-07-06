@@ -63,17 +63,13 @@ describe('calendar-input', () => {
         expect(iconNode).to.not.exist;
     });
 
-    it('should render with \'test\' string on the left with leftAddons={ \'test\' }', () => {
-        let { calendarInput } = renderCalendarInput({ leftAddons: 'test' });
-        let leftAddonsNode = calendarInput.node.querySelector('.calendar-input__custom-control .input__addons_left');
+    it('should render with \'test\' string on the left and right with leftAddons and rightAddons props', () => {
+        let { calendarInput } = renderCalendarInput({ leftAddons: 'test', rightAddons: 'test' });
+        let calendarInputCustomControlNode = calendarInput.node.querySelector('.calendar-input__custom-control');
+        let leftAddonsNode = calendarInputCustomControlNode.querySelector('.input__addons_left');
+        let rightAddonsNode = calendarInputCustomControlNode.querySelector('.input__addons_right');
 
         expect(leftAddonsNode).to.have.text('test');
-    });
-
-    it('should render with \'test\' string on the right with rightAddons={ \'test\' }', () => {
-        let { calendarInput } = renderCalendarInput({ rightAddons: 'test' });
-        let rightAddonsNode = calendarInput.node.querySelector('.calendar-input__custom-control .input__addons_right');
-
         expect(rightAddonsNode).to.have.text('test');
     });
 

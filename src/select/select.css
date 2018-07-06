@@ -79,7 +79,7 @@
 
     .select-button {
         overflow: hidden;
-        display: flex;
+        display: inline-block;
         position: relative;
         width: 100%;
         margin: 0;
@@ -173,6 +173,10 @@
     &_width_available {
         width: 100%;
         min-width: 0;
+    }
+
+    &_no-tick .select-button {
+        padding-right: 0;
     }
 
     &__native-control {

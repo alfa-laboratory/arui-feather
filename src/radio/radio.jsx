@@ -54,15 +54,31 @@ class Radio extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.string,
-        /** Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента */
+        /**
+         * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
+         * @param {string} value
+         * @param {boolean} isChecked
+         */
         onChange: Type.func,
-        /** Обработчик фокуса комнонента */
+        /**
+         * Обработчик фокуса комнонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса с компонента */
+        /**
+         * Обработчик снятия фокуса с компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на радио-кнопку */
+        /**
+         * Обработчик события наведения курсора на радио-кнопку
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с радио-кнопки */
+        /**
+         * Обработчик события снятия курсора с радио-кнопки
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 

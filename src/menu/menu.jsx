@@ -69,23 +69,50 @@ class Menu extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика по варианту меню */
+        /**
+         * Обработчик клика по варианту меню
+         * @param item
+         */
         onItemClick: Type.func,
-        /** Обработчик выбора варианта меню */
+        /**
+         * Обработчик выбора варианта меню
+         * @param {Array<string|number>} checkedItems
+         */
         onItemCheck: Type.func,
-        /** Обработчик события наведения курсора на меню */
+        /**
+         * Обработчик события наведения курсора на меню
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с меню */
+        /**
+         * Обработчик события снятия курсора с меню
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
-        /** Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyUp: Type.func,
-        /** Обработчик фокуса */
+        /**
+         * Обработчик фокуса
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса */
+        /**
+         * Обработчик снятия фокуса
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem */
+        /**
+         * Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem
+         * @param highlightedItem
+         */
         onHighlightItem: Type.func
     };
 
@@ -119,7 +146,7 @@ class Menu extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (this.props.mode !== 'check' && this.state.checkedItems[0] &&
             nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
-            let highlightedItem = null;
+            let highlightedItem;
 
             this.menuItemList.forEach((item, index, menuItemList) => {
                 if (item.ref === nextProps.checkedItems[0]) {

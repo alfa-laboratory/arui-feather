@@ -85,6 +85,10 @@ class CalendarInput extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
+        /** Добавление дополнительных элементов к инпуту слева */
+        leftAddons: Type.node,
+        /** Добавление дополнительных элементов к инпуту справа */
+        rightAddons: Type.node,
         /** Управление рендером иконки календаря в инпуте */
         withIcon: Type.bool,
         /** Лейбл для поля */
@@ -311,6 +315,8 @@ class CalendarInput extends React.Component {
                         width={ this.props.width }
                         id={ this.props.id }
                         name={ this.props.name }
+                        leftAddons={ this.props.leftAddons }
+                        rightAddons={ this.props.rightAddons }
                         onBlur={ this.handleCustomInputBlur }
                         onChange={ this.handleCustomInputChange }
                         onFocus={ this.handleCustomInputFocus }

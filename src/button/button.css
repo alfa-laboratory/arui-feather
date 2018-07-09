@@ -49,6 +49,12 @@
 
     &_width_available {
         width: 100%;
+
+        .button__text {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &_type_link {

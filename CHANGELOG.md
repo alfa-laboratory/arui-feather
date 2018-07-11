@@ -1,3 +1,20 @@
+<a name="12.8.1"></a>
+## [12.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.0...v12.8.1) (2018-07-11)
+
+
+### Bug Fixes
+
+* **button:** text align in full width button ([#696](https://github.com/alfa-laboratory/arui-feather/issues/696)) ([0e66606](https://github.com/alfa-laboratory/arui-feather/commit/0e66606))
+* **input:** placeholder visibility on android < 4.4 ([#695](https://github.com/alfa-laboratory/arui-feather/issues/695)) ([a6efda2](https://github.com/alfa-laboratory/arui-feather/commit/a6efda2))
+* **input-autocomplete:** fix hint on input autocomplete ([#688](https://github.com/alfa-laboratory/arui-feather/issues/688)) ([05da10d](https://github.com/alfa-laboratory/arui-feather/commit/05da10d))
+
+
+### Features
+
+* **calendar-input:** add left and right addons to CalendarInput ([#692](https://github.com/alfa-laboratory/arui-feather/issues/692)) ([93d9af9](https://github.com/alfa-laboratory/arui-feather/commit/93d9af9))
+
+
+
 <a name="12.8.0"></a>
 # [12.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.5...v12.8.0) (2018-06-20)
 

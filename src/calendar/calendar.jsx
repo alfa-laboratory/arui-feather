@@ -521,7 +521,7 @@ class Calendar extends React.Component {
      * @param {Number} timestamp Дата
      * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    performChange(timestamp, isTriggeredByKeyboard) {
+    performChange(timestamp, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
             return;
         }

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isolated-container should render without problems 1`] = `
+<IsolatedContainer>
+  <div />
+</IsolatedContainer>
+`;

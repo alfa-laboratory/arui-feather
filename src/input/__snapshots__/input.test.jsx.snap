@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input should render without problems 1`] = `
+<span
+  className="input input_type_text input_size_m input_theme_alfa-on-white"
+>
+  <span
+    className="input__inner"
+  >
+    <span
+      className="input__box"
+      key="input-wrapper"
+    >
+      <input
+        autoComplete="on"
+        className="input__control"
+        formNoValidate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onPaste={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        type="text"
+        value=""
+      />
+    </span>
+  </span>
+</span>
+`;

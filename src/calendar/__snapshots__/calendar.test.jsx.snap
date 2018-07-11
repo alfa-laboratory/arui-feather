@@ -1,0 +1,477 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calendar should render without problems 1`] = `
+<Calendar
+  eventDays={Array []}
+  isKeyboard={true}
+  month={1529020800000}
+  months={
+    Array [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь",
+    ]
+  }
+  offDays={Array []}
+  outputFormat="DD.MM.YYYY"
+  selectedFrom={null}
+  selectedTo={null}
+  showArrows={true}
+  showToday={false}
+  weekdays={
+    Array [
+      "Пн",
+      "Вт",
+      "Ср",
+      "Чт",
+      "Пт",
+      "Сб",
+      "Вс",
+    ]
+  }
+>
+  <div
+    className="calendar calendar_theme_alfa-on-white"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    role="grid"
+    tabIndex="0"
+  >
+    <div
+      className="calendar__title"
+    >
+      <div
+        className="calendar__arrow calendar__arrow_direction_left calendar__arrow_double"
+        data-disabled={false}
+        data-step="-12"
+        onClick={[Function]}
+        role="button"
+        tabIndex="0"
+      />
+      <div
+        className="calendar__arrow calendar__arrow_direction_left"
+        data-disabled={false}
+        data-step="-1"
+        onClick={[Function]}
+        role="button"
+        tabIndex="0"
+      />
+      <div
+        className="calendar__arrow calendar__arrow_direction_right calendar__arrow_double"
+        data-disabled={false}
+        data-step="12"
+        onClick={[Function]}
+        role="button"
+        tabIndex="0"
+      />
+      <div
+        className="calendar__arrow calendar__arrow_direction_right"
+        data-disabled={false}
+        data-step="1"
+        onClick={[Function]}
+        role="button"
+        tabIndex="0"
+      />
+      <div
+        className="calendar__name"
+      >
+        Июнь 2018
+      </div>
+    </div>
+    <table
+      className="calendar__layout"
+    >
+      <tbody>
+        <tr
+          className="calendar__row"
+          key="row_1"
+        >
+          <th
+            className="calendar__dayname"
+            key="Пн"
+          >
+            Пн
+          </th>
+          <th
+            className="calendar__dayname"
+            key="Вт"
+          >
+            Вт
+          </th>
+          <th
+            className="calendar__dayname"
+            key="Ср"
+          >
+            Ср
+          </th>
+          <th
+            className="calendar__dayname"
+            key="Чт"
+          >
+            Чт
+          </th>
+          <th
+            className="calendar__dayname"
+            key="Пт"
+          >
+            Пт
+          </th>
+          <th
+            className="calendar__dayname calendar__dayname_type_weekend"
+            key="Сб"
+          >
+            Сб
+          </th>
+          <th
+            className="calendar__dayname calendar__dayname_type_weekend"
+            key="Вс"
+          >
+            Вс
+          </th>
+        </tr>
+        <tr
+          className="calendar__row"
+          key="row_2"
+        >
+          <td
+            className="calendar__day"
+            data-day={null}
+            key="day_1"
+            onClick={[Function]}
+            role="gridcell"
+          />
+          <td
+            className="calendar__day"
+            data-day={null}
+            key="day_2"
+            onClick={[Function]}
+            role="gridcell"
+          />
+          <td
+            className="calendar__day"
+            data-day={null}
+            key="day_3"
+            onClick={[Function]}
+            role="gridcell"
+          />
+          <td
+            className="calendar__day"
+            data-day={null}
+            key="day_4"
+            onClick={[Function]}
+            role="gridcell"
+          />
+          <td
+            className="calendar__day"
+            data-day={1527800400000}
+            key="Fri Jun 01 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            1
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1527886800000}
+            key="Sat Jun 02 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            2
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1527973200000}
+            key="Sun Jun 03 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            3
+          </td>
+        </tr>
+        <tr
+          className="calendar__row"
+          key="row_3"
+        >
+          <td
+            className="calendar__day"
+            data-day={1528059600000}
+            key="Mon Jun 04 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            4
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528146000000}
+            key="Tue Jun 05 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            5
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528232400000}
+            key="Wed Jun 06 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            6
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528318800000}
+            key="Thu Jun 07 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            7
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528405200000}
+            key="Fri Jun 08 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            8
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1528491600000}
+            key="Sat Jun 09 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            9
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1528578000000}
+            key="Sun Jun 10 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            10
+          </td>
+        </tr>
+        <tr
+          className="calendar__row"
+          key="row_4"
+        >
+          <td
+            className="calendar__day"
+            data-day={1528664400000}
+            key="Mon Jun 11 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            11
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528750800000}
+            key="Tue Jun 12 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            12
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528837200000}
+            key="Wed Jun 13 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            13
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1528923600000}
+            key="Thu Jun 14 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            14
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1529010000000}
+            key="Fri Jun 15 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            15
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1529096400000}
+            key="Sat Jun 16 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            16
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1529182800000}
+            key="Sun Jun 17 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            17
+          </td>
+        </tr>
+        <tr
+          className="calendar__row"
+          key="row_5"
+        >
+          <td
+            className="calendar__day"
+            data-day={1529269200000}
+            key="Mon Jun 18 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            18
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1529355600000}
+            key="Tue Jun 19 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            19
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1529442000000}
+            key="Wed Jun 20 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            20
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1529528400000}
+            key="Thu Jun 21 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            21
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1529614800000}
+            key="Fri Jun 22 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            22
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1529701200000}
+            key="Sat Jun 23 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            23
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1529787600000}
+            key="Sun Jun 24 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            24
+          </td>
+        </tr>
+        <tr
+          className="calendar__row"
+          key="row_6"
+        >
+          <td
+            className="calendar__day"
+            data-day={1529874000000}
+            key="Mon Jun 25 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            25
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1529960400000}
+            key="Tue Jun 26 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            26
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1530046800000}
+            key="Wed Jun 27 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            27
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1530133200000}
+            key="Thu Jun 28 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            28
+          </td>
+          <td
+            className="calendar__day"
+            data-day={1530219600000}
+            key="Fri Jun 29 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            29
+          </td>
+          <td
+            className="calendar__day calendar__day_type_weekend"
+            data-day={1530306000000}
+            key="Sat Jun 30 2018 00:00:00 GMT+0300 (MSK)"
+            onClick={[Function]}
+            role="gridcell"
+          >
+            30
+          </td>
+          <td
+            className="calendar__day"
+            data-day={null}
+            key="day_7"
+            onClick={[Function]}
+            role="gridcell"
+          />
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</Calendar>
+`;

@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calendar-input should render without problems 1`] = `
+<span
+  className="calendar-input calendar-input_theme_alfa-on-white"
+>
+  <span>
+    <Mq
+      onMatchChange={[Function]}
+      query="--small-only"
+      touch={true}
+    >
+      <input
+        className="calendar-input__native-control"
+        formNoValidate={true}
+        max="Invalid Date"
+        min="Invalid Date"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="date"
+        value="2018-06-01"
+      />
+    </Mq>
+    <Input
+      className="calendar-input__custom-control"
+      disabledAttr={false}
+      focused={false}
+      formNoValidate={true}
+      icon={
+        <IconButton
+          formNoValidate={false}
+          onClick={[Function]}
+          size="m"
+          tag="button"
+          type="button"
+        >
+          <IconCalendar />
+        </IconButton>
+      }
+      mask="11.11.1111"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      pattern="[0-9]*"
+      placeholder="00.00.0000"
+      size="m"
+      type="tel"
+      value="01.06.2018"
+    />
+  </span>
+  <Popup
+    directions={
+      Array [
+        "bottom-left",
+        "bottom-right",
+        "top-left",
+        "top-right",
+      ]
+    }
+    fitContaiterOffset={0}
+    header={false}
+    padded={true}
+    secondaryOffset={0}
+    size="s"
+    target="anchor"
+    visible={false}
+  >
+    <div
+      className="calendar-input__calendar-wrapper"
+    >
+      <Calendar
+        eventDays={Array []}
+        isKeyboard={true}
+        month={1527800400000}
+        months={
+          Array [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+          ]
+        }
+        offDays={Array []}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMonthChange={[Function]}
+        onValueChange={[Function]}
+        outputFormat="DD.MM.YYYY"
+        selectedFrom={null}
+        selectedTo={null}
+        showArrows={true}
+        showToday={false}
+        value={1527800400000}
+        weekdays={
+          Array [
+            "Пн",
+            "Вт",
+            "Ср",
+            "Чт",
+            "Пт",
+            "Сб",
+            "Вс",
+          ]
+        }
+      />
+    </div>
+  </Popup>
+</span>
+`;

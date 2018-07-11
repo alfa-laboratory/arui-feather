@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form should render without problems 1`] = `
+<form
+  action="/"
+  autoComplete="on"
+  className="form form_size_m form_theme_alfa-on-white"
+  encType="application/x-www-form-urlencoded"
+  method="post"
+  noValidate={false}
+  onSubmit={[Function]}
+>
+  Form-example
+</form>
+`;

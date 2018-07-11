@@ -44,6 +44,7 @@ module.exports = (config) => {
         exclude: [
             /node_modules/,
             /-test\.jsx?$/,
+            /\.test\.jsx?$/,
             /(cn|modernizr|polyfills|test-utils|vars)\.js$/,
             /(countries|currency-codes|easings|keyboard-code)\.js$/
         ]

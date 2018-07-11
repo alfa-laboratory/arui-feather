@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card-input should render without problems 1`] = `
+<Input
+  className="card-input card-input_theme_alfa-on-white"
+  formNoValidate={true}
+  mask="1111 1111 1111 1111 11"
+  placeholder="0000 0000 0000 0000 00"
+  size="m"
+  type="tel"
+/>
+`;

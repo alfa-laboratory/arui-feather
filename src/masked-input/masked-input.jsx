@@ -300,9 +300,9 @@ class MaskedInput extends React.Component {
             // Положение каретки с учетом первого и последнего редактируемого символа маски.
             const clampedSection = this.clampSelection(newSelection);
 
-            // Фикс бага в андроид-браузере меньше 5 версии
+            // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
             const offsetSection =
-                opType === operationType.ADD && IS_ANDROID && parseInt(getAndroidVersion(), 10) < 5 ? 1 : 0;
+                opType === operationType.ADD && IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
 
             this.setInputSelection(clampedSection + offsetSection);
         } else if (IS_ANDROID) {

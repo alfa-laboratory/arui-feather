@@ -1,3 +1,13 @@
+<a name="12.8.2"></a>
+## [12.8.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.1...v12.8.2) (2018-07-12)
+
+
+### Bug Fixes
+
+* **mq:** correct d.ts for mq-decorator ([8fa00fd](https://github.com/alfa-laboratory/arui-feather/commit/8fa00fd))
+
+
+
 <a name="12.8.1"></a>
 ## [12.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.0...v12.8.1) (2018-07-11)
 

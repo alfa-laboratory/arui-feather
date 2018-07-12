@@ -2,7 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { render, cleanUp } from '../test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
+
 import Icon from './icon';
 
 {{#each this}}
@@ -10,11 +12,9 @@ import {{this.componentName}} from './{{this.category}}/{{this.name}}';
 {{/each}}
 
 describe('icon', () => {
-    afterEach(cleanUp);
-
     it('renders without problems', () => {
-        let icon = render(<Icon />);
-        expect(icon.node).to.have.exist;
+        let icon = shallow(<Icon />);
+        expect(icon).toMatchSnapshot();
     });
 
     (() => {
@@ -27,8 +27,8 @@ describe('icon', () => {
         return icons.map((icon, index) => (
             it(`render ${icon.componentName.name} without problems`, () => {
                 let CurrentComponent = icons[index].componentName;
-                let renderedIcon = render(<CurrentComponent />);
-                expect(renderedIcon.node).to.have.class(`icon_name_${icon.name}`);
+                let renderedIcon = shallow(<CurrentComponent />);
+                expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
             })
         ));
     })();

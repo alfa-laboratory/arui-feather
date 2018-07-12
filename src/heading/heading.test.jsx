@@ -14,21 +14,19 @@ describe('heading', () => {
         expect(heading).toMatchSnapshot();
     });
 
-    (function () {
-        let sizes = ['s', 'm', 'l', 'xl'];
-        let headingLevel = {
-            xl: 1,
-            l: 2,
-            m: 3,
-            s: 4
-        };
+    let sizes = ['s', 'm', 'l', 'xl'];
+    let headingLevel = {
+        xl: 1,
+        l: 2,
+        m: 3,
+        s: 4
+    };
 
-        return sizes.forEach(size => (
-            it(`should render Heading size=\`${size}\` with tag H${headingLevel[size]}`, () => {
-                let heading = shallow(<Heading size={ size }>Heading</Heading>);
+    sizes.forEach(size => (
+        it(`should render Heading size=\`${size}\` with tag H${headingLevel[size]}`, () => {
+            let heading = shallow(<Heading size={ size }>Heading</Heading>);
 
-                expect(heading.is(`h${headingLevel[size]}`));
-            })
-        ));
-    }());
+            expect(heading.is(`h${headingLevel[size]}`));
+        })
+    ));
 });

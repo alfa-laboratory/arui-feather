@@ -2,15 +2,14 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { render, cleanUp } from '../test-utils';
+import React from 'react';
+import { mount } from 'enzyme';
 
-import FlagIcon from './flag-icon';
+import TabItem from './tab-item';
 
-describe('flag-icon', () => {
-    afterEach(cleanUp);
-
+describe('tab-item', () => {
     it('renders without problems', () => {
-        let flagIcon = render(<FlagIcon />);
-        expect(flagIcon.node).to.have.exist;
+        let tabItem = mount(<TabItem />);
+        expect(tabItem).toMatchSnapshot();
     });
 });

@@ -5,16 +5,20 @@
 /* eslint react/no-multi-comp: 0 */
 import React from 'react';
 import Type from 'prop-types';
-import { render, cleanUp } from '../test-utils';
+import { mount } from 'enzyme';
+import { getMatchMedia } from '../lib/match-media';
 import mqDecorator from './decorator';
 
-const IS_SMALL_ONLY = (window.innerWidth || document.documentElement.clientWidth ||
-    document.body.clientWidth) <= 640;
+jest.mock('../lib/match-media');
+jest.mock('../modernizr', () => ({ pointerevents: true }));
 
 describe('mq-decorator', () => {
-    afterEach(cleanUp);
-
     it('should pass mqMatch property to decorated component', () => {
+        getMatchMedia.mockReturnValueOnce({
+            addListener: jest.fn,
+            matches: false
+        });
+
         @mqDecorator('--small-only')
         class Example extends React.Component {
             static propTypes = {
@@ -26,16 +30,18 @@ describe('mq-decorator', () => {
             }
         }
 
-        let result = render(<Example />);
 
-        if (IS_SMALL_ONLY) {
-            expect(result.node).to.exist;
-        } else {
-            expect(result.node).to.not.exist;
-        }
+        let result = mount(<Example />);
+
+        expect(result.find('Example').props().mqMatch).toBe(false);
     });
 
     it('should pass custom named property to decorated component', () => {
+        getMatchMedia.mockReturnValueOnce({
+            addListener: jest.fn,
+            matches: false
+        });
+
         @mqDecorator('--small-only', 'isSmall')
         class Example extends React.Component {
             static propTypes = {
@@ -47,12 +53,8 @@ describe('mq-decorator', () => {
             }
         }
 
-        let result = render(<Example />);
+        let result = mount(<Example />);
 
-        if (IS_SMALL_ONLY) {
-            expect(result.node).to.exist;
-        } else {
-            expect(result.node).to.not.exist;
-        }
+        expect(result.find('Example').props().isSmall).toBe(false);
     });
 });

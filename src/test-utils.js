@@ -9,6 +9,9 @@
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-dom/test-utils';
 
+// eslint-disable-next-line no-console
+console.warn('arui-feather/test-utils is deprecated. Use `jest` + `enzyme` instead');
+
 let sharedContainer = null;
 
 /**

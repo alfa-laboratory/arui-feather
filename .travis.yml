@@ -18,7 +18,6 @@ matrix:
   fast_finish: true
 
 before_install:
-  - npm i -g greenkeeper-lockfile@1
   - npm cache clean --force
   - rm -rf ~/.npm node_modules package-lock.json yarn.lock
 
@@ -26,7 +25,6 @@ install:
   - npm i
 
 before_script:
-  - greenkeeper-lockfile-update
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       sh ./tools/sauce-connect.sh
@@ -43,7 +41,6 @@ script:
     fi
 
 after_script:
-  - greenkeeper-lockfile-upload
   - |
     if [ "${TEST_SCOPE}" == "lint" ] && [ -n "${TRAVIS_TAG}" ]; then
       npm run github-release;

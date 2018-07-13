@@ -73,7 +73,7 @@ exports[`calendar-input should render without problems 1`] = `
       <Calendar
         eventDays={Array []}
         isKeyboard={true}
-        month={1527800400000}
+        month={1529020800000}
         months={
           Array [
             "Январь",
@@ -101,7 +101,7 @@ exports[`calendar-input should render without problems 1`] = `
         selectedTo={null}
         showArrows={true}
         showToday={false}
-        value={1527800400000}
+        value={1527811200000}
         weekdays={
           Array [
             "Пн",

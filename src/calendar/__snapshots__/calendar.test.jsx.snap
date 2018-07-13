@@ -174,8 +174,8 @@ exports[`calendar should render without problems 1`] = `
           />
           <td
             className="calendar__day"
-            data-day={1527800400000}
-            key="Fri Jun 01 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1527811200000}
+            key="Fri Jun 01 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -183,8 +183,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1527886800000}
-            key="Sat Jun 02 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1527897600000}
+            key="Sat Jun 02 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -192,8 +192,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1527973200000}
-            key="Sun Jun 03 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1527984000000}
+            key="Sun Jun 03 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -206,8 +206,8 @@ exports[`calendar should render without problems 1`] = `
         >
           <td
             className="calendar__day"
-            data-day={1528059600000}
-            key="Mon Jun 04 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528070400000}
+            key="Mon Jun 04 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -215,8 +215,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528146000000}
-            key="Tue Jun 05 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528156800000}
+            key="Tue Jun 05 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -224,8 +224,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528232400000}
-            key="Wed Jun 06 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528243200000}
+            key="Wed Jun 06 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -233,8 +233,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528318800000}
-            key="Thu Jun 07 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528329600000}
+            key="Thu Jun 07 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -242,8 +242,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528405200000}
-            key="Fri Jun 08 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528416000000}
+            key="Fri Jun 08 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -251,8 +251,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1528491600000}
-            key="Sat Jun 09 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528502400000}
+            key="Sat Jun 09 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -260,8 +260,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1528578000000}
-            key="Sun Jun 10 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528588800000}
+            key="Sun Jun 10 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -274,8 +274,8 @@ exports[`calendar should render without problems 1`] = `
         >
           <td
             className="calendar__day"
-            data-day={1528664400000}
-            key="Mon Jun 11 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528675200000}
+            key="Mon Jun 11 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -283,8 +283,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528750800000}
-            key="Tue Jun 12 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528761600000}
+            key="Tue Jun 12 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -292,8 +292,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528837200000}
-            key="Wed Jun 13 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528848000000}
+            key="Wed Jun 13 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -301,8 +301,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1528923600000}
-            key="Thu Jun 14 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1528934400000}
+            key="Thu Jun 14 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -310,8 +310,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1529010000000}
-            key="Fri Jun 15 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529020800000}
+            key="Fri Jun 15 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -319,8 +319,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1529096400000}
-            key="Sat Jun 16 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529107200000}
+            key="Sat Jun 16 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -328,8 +328,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1529182800000}
-            key="Sun Jun 17 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529193600000}
+            key="Sun Jun 17 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -342,8 +342,8 @@ exports[`calendar should render without problems 1`] = `
         >
           <td
             className="calendar__day"
-            data-day={1529269200000}
-            key="Mon Jun 18 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529280000000}
+            key="Mon Jun 18 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -351,8 +351,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1529355600000}
-            key="Tue Jun 19 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529366400000}
+            key="Tue Jun 19 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -360,8 +360,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1529442000000}
-            key="Wed Jun 20 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529452800000}
+            key="Wed Jun 20 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -369,8 +369,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1529528400000}
-            key="Thu Jun 21 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529539200000}
+            key="Thu Jun 21 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -378,8 +378,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1529614800000}
-            key="Fri Jun 22 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529625600000}
+            key="Fri Jun 22 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -387,8 +387,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1529701200000}
-            key="Sat Jun 23 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529712000000}
+            key="Sat Jun 23 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -396,8 +396,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1529787600000}
-            key="Sun Jun 24 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529798400000}
+            key="Sun Jun 24 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -410,8 +410,8 @@ exports[`calendar should render without problems 1`] = `
         >
           <td
             className="calendar__day"
-            data-day={1529874000000}
-            key="Mon Jun 25 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529884800000}
+            key="Mon Jun 25 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -419,8 +419,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1529960400000}
-            key="Tue Jun 26 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1529971200000}
+            key="Tue Jun 26 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -428,8 +428,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1530046800000}
-            key="Wed Jun 27 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1530057600000}
+            key="Wed Jun 27 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -437,8 +437,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1530133200000}
-            key="Thu Jun 28 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1530144000000}
+            key="Thu Jun 28 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -446,8 +446,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day"
-            data-day={1530219600000}
-            key="Fri Jun 29 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1530230400000}
+            key="Fri Jun 29 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >
@@ -455,8 +455,8 @@ exports[`calendar should render without problems 1`] = `
           </td>
           <td
             className="calendar__day calendar__day_type_weekend"
-            data-day={1530306000000}
-            key="Sat Jun 30 2018 00:00:00 GMT+0300 (MSK)"
+            data-day={1530316800000}
+            key="Sat Jun 30 2018 00:00:00 GMT+0000 (UTC)"
             onClick={[Function]}
             role="gridcell"
           >

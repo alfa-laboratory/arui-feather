@@ -28,7 +28,8 @@ describe('calendar-input', () => {
     });
 
     it('should render without problems', () => {
-        let calendarInput = shallow(<CalendarInput value='01.06.2018' />);
+        const month = new Date('2018-06-15').valueOf();
+        let calendarInput = shallow(<CalendarInput value='01.06.2018' calendar={ { month } } />);
 
         expect(calendarInput).toMatchSnapshot();
     });

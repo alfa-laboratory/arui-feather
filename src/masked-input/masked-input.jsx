@@ -20,7 +20,7 @@ const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.nav
  *
  * @returns {String|false}
  */
-const getAndroidVersion = () => {
+function getAndroidVersion() {
     if (!IS_ANDROID) {
         return false;
     }
@@ -29,7 +29,7 @@ const getAndroidVersion = () => {
     const match = userAgent.match(/android\s([\d.]*)/);
 
     return match ? match[1] : false;
-};
+}
 
 // Для IE11 вместо `onChange`, используем событие `onInput`, для правильной работы copy/paste
 // Issue на ошибку в React: https://github.com/facebook/react/issues/7211

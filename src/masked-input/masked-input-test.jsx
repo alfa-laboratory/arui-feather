@@ -162,6 +162,7 @@ describe('masked-input', () => {
         }, 0);
     });
 
+    // eslint-disable-next-line max-len
     it('should move caret position from uneditable position to prev editable position during `onInput` (delete)', (done) => {
         let maskedInput = render(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
 
@@ -180,6 +181,7 @@ describe('masked-input', () => {
         }, 0);
     });
 
+    // eslint-disable-next-line max-len
     it('should move caret position from uneditable position to next editable position during `onInput` (replace)', (done) => {
         let maskedInput = render(<MaskedInput mask='+1 111 11 11 11' value='+7 903 752' />);
 

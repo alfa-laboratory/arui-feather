@@ -20,8 +20,8 @@ const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.nav
  *
  * @returns {String|false}
  */
-function getAndroidVersion() {
-    if (!IS_ANDROID) {
+export function getAndroidVersion() {
+    if (!/android/.test(navigator.userAgent.toLowerCase())) {
         return false;
     }
 

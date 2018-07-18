@@ -31,7 +31,7 @@ const operationType = {
 
 /**
  * Компонент поля ввода с поддержкой масок.
- * Расширяет стандратный <input /> React-а.
+ * Расширяет стандартный <input /> React-а.
  */
 class MaskedInput extends React.Component {
     static propTypes = {

@@ -31,7 +31,7 @@ const NEGATIVE_AMOUNT_SYMBOL = '−';
  * 29 000 — разбивается.
  * @returns {String}
  */
-function createSplitter(amount, partSize = 3, splitter = THINSP, splitFrom = 5) {
+function splitAmount(amount, partSize = 3, splitter = THINSP, splitFrom = 5) {
     const len = amount.length;
 
     // Если длина суммы меньше требуемой, не форматируем сумму
@@ -80,7 +80,7 @@ function formatAmount(amount) {
 
     const [majorPart, minorPart] = valueAbsStr.split('.');
 
-    const majorPartSplitted = createSplitter(
+    const majorPartSplitted = splitAmount(
         majorPart,
         AMOUNT_MAJOR_PART_SIZE,
         AMOUNT_MAJOR_PARTS_SPLITTER,

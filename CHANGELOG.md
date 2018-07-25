@@ -1,3 +1,18 @@
+<a name="12.8.3"></a>
+## [12.8.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.2...v12.8.3) (2018-07-17)
+
+
+### Bug Fixes
+
+* **masked-input:** fix carriage offset in masked input in android browser of version lower than 4.4 ([#700](https://github.com/alfa-laboratory/arui-feather/issues/700)) ([aa3566a](https://github.com/alfa-laboratory/arui-feather/commit/aa3566a))
+
+
+### Features
+
+* checkbox and radio without box-shadow ([#697](https://github.com/alfa-laboratory/arui-feather/issues/697)) ([3fe7251](https://github.com/alfa-laboratory/arui-feather/commit/3fe7251))
+
+
+
 <a name="12.8.2"></a>
 ## [12.8.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.1...v12.8.2) (2018-07-12)
 

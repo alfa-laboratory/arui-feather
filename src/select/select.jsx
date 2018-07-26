@@ -298,8 +298,8 @@ class Select extends React.Component {
                         </span>
                     }
                     {
-                        (!this.state.isMobile ||
-                        (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
+                        (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
+                        (this.getOpened() || this.props.mode === 'radio') &&
                         this.renderPopup(cn, Popup)
                     }
                 </span>
@@ -853,6 +853,11 @@ class Select extends React.Component {
         this.setState({
             opened: newOpenedState
         }, () => {
+            if (newOpenedState && this.popup) {
+                this.setPopupTarget();
+                this.updatePopupStyles();
+            }
+
             if (newOpenedState && this.menu) {
                 this.focusOnMenu();
             }

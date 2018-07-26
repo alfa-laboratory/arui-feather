@@ -298,8 +298,8 @@ class Select extends React.Component {
                         </span>
                     }
                     {
-                        (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
-                        (this.getOpened() || this.props.mode === 'radio') &&
+                        (!this.state.isMobile ||
+                        (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
                         this.renderPopup(cn, Popup)
                     }
                 </span>
@@ -402,11 +402,16 @@ class Select extends React.Component {
         let optionsList = this.renderOptionsList(this.props.options);
         let opened = this.getOpened();
         let value = this.getValue();
+        const { popupIsReady } = this.state;
+
+        if (!opened) {
+            return null;
+        }
 
         return (
             <Popup
                 key='popup'
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ this.setPopupRef }
                 for={ this.props.name }
                 className={ cn('popup') }
                 directions={ this.props.directions }
@@ -417,7 +422,7 @@ class Select extends React.Component {
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
                 header={ this.state.isMobile && this.renderMobileHeader(cn) }
-                visible={ opened }
+                visible={ opened && popupIsReady }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
@@ -756,6 +761,19 @@ class Select extends React.Component {
         });
     }
 
+    @autobind
+    setPopupRef(ref) {
+        this.popup = ref;
+
+        if (this.popup) {
+            this.popup.setTarget(this.button.getNode());
+        }
+
+        this.setState({
+            popupIsReady: !!this.popup
+        });
+    }
+
     /**
      * Возвращает корневой `HTMLElement` компонента.
      *
@@ -853,11 +871,6 @@ class Select extends React.Component {
         this.setState({
             opened: newOpenedState
         }, () => {
-            if (newOpenedState && this.popup) {
-                this.setPopupTarget();
-                this.updatePopupStyles();
-            }
-
             if (newOpenedState && this.menu) {
                 this.focusOnMenu();
             }

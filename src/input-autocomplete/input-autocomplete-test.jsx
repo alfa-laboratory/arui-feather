@@ -43,7 +43,7 @@ function getInputNodes(inputAutocomplete) {
     };
 }
 
-describe.only('input-autocomplete', () => {
+describe('input-autocomplete', () => {
     let originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {

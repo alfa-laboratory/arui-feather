@@ -87,7 +87,7 @@ describe('input-autocomplete', () => {
 
         setTimeout(() => {
             let { popupNode } = getInputNodes(inputAutocomplete);
-            expect(popupNode).to.have.class('popup');
+            expect(popupNode).to.exist;
 
             inputAutocomplete.instance.blur();
             done();

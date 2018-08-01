@@ -1,3 +1,14 @@
+<a name="12.9.0"></a>
+# [12.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.3...v12.9.0) (2018-08-01)
+
+
+### Features
+
+* **amount:** updating the amount view according to the design guidelines ([#702](https://github.com/alfa-laboratory/arui-feather/issues/702)) ([2de7ab4](https://github.com/alfa-laboratory/arui-feather/commit/2de7ab4))
+* **autocomplete:** insert popup after focus ([#703](https://github.com/alfa-laboratory/arui-feather/issues/703)) ([a1e67ee](https://github.com/alfa-laboratory/arui-feather/commit/a1e67ee))
+
+
+
 <a name="12.8.3"></a>
 ## [12.8.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.2...v12.8.3) (2018-07-17)
 

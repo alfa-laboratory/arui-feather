@@ -27,6 +27,10 @@ const OPTIONS2 = [
 function renderInputAutocomplete(props = {}) {
     let inputAutocomplete = render(<InputAutocomplete { ...props } />);
 
+    return getInputNodes(inputAutocomplete);
+}
+
+function getInputNodes(inputAutocomplete) {
     let inputNode = inputAutocomplete.node.querySelector('.input');
     let controlNode = inputAutocomplete.node.querySelector('input');
     let popupNode = document.querySelector('.popup');
@@ -69,6 +73,25 @@ describe('input-autocomplete', () => {
 
         expect(popupNode).to.have.class('popup');
         expect(controlNode).to.have.class('input__control');
+    });
+
+    it('should not render popup with options and `popupOnFocus`', () => {
+        let { popupNode } = renderInputAutocomplete({ options: OPTIONS, renderPopupOnFocus: true });
+
+        expect(popupNode).not.to.exist;
+    });
+
+    it('should render popup after focus with `popupOnFocus`', (done) => {
+        let { inputAutocomplete } = renderInputAutocomplete({ options: OPTIONS, renderPopupOnFocus: true });
+        inputAutocomplete.instance.focus();
+
+        setTimeout(() => {
+            let { popupNode } = getInputNodes(inputAutocomplete);
+            expect(popupNode).to.exist;
+
+            inputAutocomplete.instance.blur();
+            done();
+        }, 0);
     });
 
     it('should set class on public focus method', (done) => {

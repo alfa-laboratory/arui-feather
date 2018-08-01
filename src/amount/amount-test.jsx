@@ -25,7 +25,8 @@ describe('amount', () => {
 
         expect(amount.node).to.exist;
         expect(amount.node).to.have.class('amount');
-        expect(amount.node).to.have.text(`1 233 141,45 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.node).to.have.text(`1 233 141,45 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when amount is negative', () => {
@@ -41,7 +42,8 @@ describe('amount', () => {
             />
         );
 
-        expect(amount.node).to.have.text(`−4 525,99 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.node).to.have.text(`−4525,99 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when amount value without minor number', () => {
@@ -57,7 +59,8 @@ describe('amount', () => {
             />
         );
 
-        expect(amount.node).to.have.text(`17 890,00 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.node).to.have.text(`17 890,00 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render without zero minor part when prop showZeroMinorPart=false ', () => {
@@ -74,7 +77,25 @@ describe('amount', () => {
             />
         );
 
-        expect(amount.node).to.have.text(`17 890 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.node).to.have.text(`17 890 ${CURRENCY_MAP.RUR}`);
+    });
+
+    it('should render without splitting major part', () => {
+        let amount = render(
+            <Amount
+                amount={ {
+                    value: 1337,
+                    currency: {
+                        code: 'RUR',
+                        minority: 1
+                    }
+                } }
+            />
+        );
+
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.node).to.have.text(`1337 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when minority equals 1', () => {
@@ -90,6 +111,7 @@ describe('amount', () => {
             />
         );
 
-        expect(amount.node).to.have.text(`999 ${CURRENCY_MAP.BYR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.node).to.have.text(`999 ${CURRENCY_MAP.BYR}`);
     });
 });

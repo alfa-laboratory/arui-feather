@@ -60,7 +60,7 @@ class InputAutocomplete extends React.Component {
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
         /** Вставляет попап со списком только если элемент активен */
-        renderPopupOnFucus: Type.bool,
+        renderPopupOnFocus: Type.bool,
         /**
          * Обработчик выбора пункта в выпадающем меню
          * @param checkedItem
@@ -79,7 +79,7 @@ class InputAutocomplete extends React.Component {
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         equalPopupWidth: false,
         closeOnSelect: false,
-        renderPopupOnFucus: false
+        renderPopupOnFocus: false
     };
 
     state = {
@@ -184,7 +184,7 @@ class InputAutocomplete extends React.Component {
             return null;
         }
 
-        if (this.props.renderPopupOnFucus && !opened) {
+        if (this.props.renderPopupOnFocus && !opened) {
             return null;
         }
         return [

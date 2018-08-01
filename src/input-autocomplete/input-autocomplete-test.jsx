@@ -76,18 +76,20 @@ describe('input-autocomplete', () => {
     });
 
     it('should not render popup with options and `popupOnFocus`', () => {
-        let { popupNode } = renderInputAutocomplete({ options: OPTIONS, renderPopupOnFucus: true });
+        let { popupNode } = renderInputAutocomplete({ options: OPTIONS, renderPopupOnFocus: true });
 
         expect(popupNode).not.to.exist;
     });
 
     it('should render popup after focus with `popupOnFocus`', (done) => {
-        let { inputAutocomplete } = renderInputAutocomplete({ options: OPTIONS, renderPopupOnFucus: true });
+        let { inputAutocomplete } = renderInputAutocomplete({ options: OPTIONS, renderPopupOnFocus: true });
         inputAutocomplete.instance.focus();
 
         setTimeout(() => {
             let { popupNode } = getInputNodes(inputAutocomplete);
             expect(popupNode).to.have.class('popup');
+
+            inputAutocomplete.instance.blur();
             done();
         }, 0);
     });

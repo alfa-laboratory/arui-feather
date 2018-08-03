@@ -40,7 +40,8 @@ const PROP_SETS = [
         disabled: true
     },
     {
-        value: DATE
+        value: '',
+        defaultMonth: '01.09.2018'
     }
 ];
 

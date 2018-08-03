@@ -44,6 +44,8 @@ class CalendarInput extends React.Component {
         value: Type.string,
         /** Содержимое поля ввода, указанное по умолчанию */
         defaultValue: Type.string,
+        /** Дата для отображения календаря по умолчанию */
+        defaultMonth: Type.oneOfType([Type.string, Type.number, Type.instanceOf(Date)]),
         /** Свойства компонента [Calendar](#!/Calendar) */
         calendar: Type.shape({
             value: Type.number,
@@ -178,7 +180,7 @@ class CalendarInput extends React.Component {
         opened: false,
         value: this.props.defaultValue || '',
         month: calculateMonth(
-            this.props.value,
+            this.props.value || this.props.defaultMonth,
             CUSTOM_DATE_FORMAT,
             this.props.calendar ? this.props.calendar.earlierLimit : undefined,
             this.props.calendar ? this.props.calendar.laterLimit : undefined
@@ -701,7 +703,7 @@ class CalendarInput extends React.Component {
 
             let newMonth = this.state.opened !== opened
                 ? calculateMonth(
-                    value,
+                    value || this.props.defaultMonth,
                     CUSTOM_DATE_FORMAT,
                     this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                     this.props.calendar ? this.props.calendar.laterLimit : undefined

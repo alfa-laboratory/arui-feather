@@ -231,6 +231,10 @@ class Select extends React.Component {
             this.setPopupTarget();
             this.updatePopupStyles();
         }
+
+        if (this.isAutoSelectRequired()) {
+            this.selectFirstOption();
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -933,6 +937,38 @@ class Select extends React.Component {
      */
     getScrollContainer() {
         return this.context.positioningContainerElement || document.body;
+    }
+
+    isAutoSelectRequired() {
+        const { mode, options } = this.props;
+
+        return (
+            mode === 'radio' &&
+            options.length > 0 &&
+            !this.hasCheckedItems()
+        );
+    }
+
+    hasCheckedItems() {
+        const { options } = this.props;
+        const checkedItems = this.getCheckedItems(options);
+
+        return checkedItems.length > 0;
+    }
+
+    selectFirstOption() {
+        const firstOption = this.getFirstOption(this.props.options);
+        this.handleOptionCheck([firstOption.value]);
+    }
+
+    getFirstOption(options) {
+        const firstOption = options[0];
+
+        if (firstOption.type === 'group') {
+            return this.getFirstOption(firstOption.content);
+        }
+
+        return firstOption;
     }
 }
 

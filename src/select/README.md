@@ -94,6 +94,42 @@ const options = [
 </div>
 ```
 
+Select с лейблом
+```jsx
+const options = [
+    { value: '01', text: 'ИП Фридман М.М.' },
+    { value: '02', text: 'ООО «Виктори»' },
+    { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
+];
+<div>
+    {
+        ['xl'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Select
+                        label='Компания'
+                        animated={true}
+                        size={ size }
+                        mode='radio-check'
+                        options={ options }
+                    />
+                </div>
+                <div className='column'>
+                    <Select
+                        size={ size }
+                        label='Компания'
+                        animated={true}
+                        mode='radio-check'
+                        options={ options }
+                        disabled={ true }
+                    />
+                </div>
+            </div>
+        ))
+    }
+</div>
+```
+
 Select с тянущейся шириной
 ```jsx
 const options = [

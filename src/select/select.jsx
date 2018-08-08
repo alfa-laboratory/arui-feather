@@ -227,21 +227,17 @@ class Select extends React.Component {
     }
 
     componentDidMount() {
-        if (this.popup) {
-            this.setPopupTarget();
-            this.updatePopupStyles();
-        }
-
         if (this.isAutoSelectRequired()) {
             this.selectFirstOption();
         }
+
+        this.setPopupTarget();
+        this.updatePopupStyles();
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.popup) {
-            this.setPopupTarget();
-            this.updatePopupStyles();
-        }
+        this.setPopupTarget();
+        this.updatePopupStyles();
 
         if (this.state.opened && nextProps.disabled) {
             this.toggleOpened();
@@ -250,6 +246,11 @@ class Select extends React.Component {
         this.setState({
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
         });
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.focusOnMenuTimeout);
+        clearTimeout(this.escapeTimeout);
     }
 
     render(cn, SelectButton, Popup) {
@@ -433,7 +434,7 @@ class Select extends React.Component {
                 maxHeight={ this.props.maxHeight }
             >
                 <Menu
-                    ref={ (menu) => { this.menu = menu; } }
+                    ref={ this.setMenuRef }
                     className={ cn('menu') }
                     size={ this.props.size }
                     disabled={ this.props.disabled }
@@ -705,10 +706,12 @@ class Select extends React.Component {
                 break;
             case keyboardCode.ESCAPE:
                 event.preventDefault();
-                this.setState({
-                    opened: false
-                });
                 this.button.focus();
+                this.escapeTimeout = setTimeout(() => {
+                    this.setState({
+                        opened: false
+                    });
+                }, 0);
                 break;
         }
 
@@ -751,10 +754,8 @@ class Select extends React.Component {
         this.setState({
             isMobile: isMatched
         }, () => {
-            if (this.popup) {
-                this.setPopupTarget();
-                this.updatePopupStyles();
-            }
+            this.setPopupTarget();
+            this.updatePopupStyles();
         });
     }
 
@@ -773,9 +774,25 @@ class Select extends React.Component {
             this.popup.setTarget(this.button.getNode());
         }
 
+        const popupIsReady = !!this.popup;
+
         this.setState({
-            popupIsReady: !!this.popup
+            popupIsReady
         });
+
+        if (popupIsReady) {
+            this.focusOnMenu();
+        }
+    }
+
+    @autobind
+    setMenuRef(menu) {
+        this.menu = menu;
+
+        if (this.waitForMenu) {
+            this.waitForMenu = false;
+            this.focusOnMenu();
+        }
     }
 
     /**
@@ -831,7 +848,13 @@ class Select extends React.Component {
         });
     }
 
+    waitForMenu = false;
     focusOnMenu() {
+        if (!this.menu) {
+            this.waitForMenu = true;
+            return;
+        }
+
         if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
 
         let scrollContainer = this.getScrollContainer();
@@ -839,9 +862,11 @@ class Select extends React.Component {
         let posX = scrollContainer.scrollTop;
         let posY = scrollContainer.scrollLeft;
 
-        this.menu.focus();
-        scrollContainer.scrollTop = posX;
-        scrollContainer.scrollLeft = posY;
+        this.focusOnMenuTimeout = setTimeout(() => {
+            this.menu.focus();
+            scrollContainer.scrollTop = posX;
+            scrollContainer.scrollLeft = posY;
+        }, 0);
     }
 
     /**
@@ -895,7 +920,9 @@ class Select extends React.Component {
 
     @autobind
     setPopupTarget() {
-        this.popup.setTarget(this.button.getNode());
+        if (this.popup) {
+            this.popup.setTarget(this.button.getNode());
+        }
     }
 
     getCheckedItems(options) {

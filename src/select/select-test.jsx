@@ -29,13 +29,30 @@ const OPTIONS = [
     }
 ];
 
+function getButtonNode(selectNode) {
+    return selectNode.querySelector('.select-button');
+}
+
+function getPopupNode() {
+    const popupNode = document.querySelector('.popup');
+    const menuNode = popupNode ? popupNode.querySelector('.select__menu') : null;
+
+    return { popupNode, menuNode };
+}
+
+function openSelect(selectNode) {
+    const openButton = getButtonNode(selectNode);
+    openButton.click();
+
+    return getPopupNode();
+}
+
 function renderSelect(props) {
     let select = render(<Select { ...props } />);
 
     let nativeSelectNode = select.node.querySelector('.select__native-control');
-    let buttonNode = select.node.querySelector('.select-button');
-    let popupNode = document.querySelector('.popup');
-    let menuNode = popupNode ? popupNode.querySelector('.select__menu') : null;
+    let buttonNode = getButtonNode(select.node);
+    let { popupNode, menuNode } = getPopupNode();
 
     return {
         select, nativeSelectNode, popupNode, buttonNode, menuNode
@@ -300,11 +317,17 @@ describe('select', () => {
             }, 0);
         });
     } else {
-        it('should render popup with options', () => {
-            let { select, popupNode } = renderSelect({ options: OPTIONS });
+        it('should render popup with options', (done) => {
+            let { select } = renderSelect({ options: OPTIONS });
+            setTimeout(() => {
+                const { popupNode } = openSelect(select.node);
 
-            expect(select.node).to.exist;
-            expect(popupNode).to.have.class('popup');
+                setTimeout(() => {
+                    expect(select.node).to.exist;
+                    expect(popupNode).to.have.class('popup');
+                    done();
+                }, 0);
+            }, 0);
         });
 
         it('should set width to popup equal or more than button width', () => {
@@ -321,7 +344,7 @@ describe('select', () => {
             expect(popupWidth).to.be.at.least(buttonWidth);
         });
 
-        it('should set popup width equal to button width when equalPopupWidth = true', () => {
+        it('should set popup width equal to button width when equalPopupWidth = true', (done) => {
             let selectProps = {
                 options: [
                     {
@@ -341,11 +364,15 @@ describe('select', () => {
                 opened: true
             };
 
-            let { popupNode, buttonNode } = renderSelect(selectProps);
-            let popupWidth = popupNode.getBoundingClientRect().width;
-            let buttonWidth = buttonNode.getBoundingClientRect().width;
+            let { buttonNode } = renderSelect(selectProps);
+            setTimeout(() => {
+                let { popupNode } = getPopupNode();
+                let popupWidth = popupNode.getBoundingClientRect().width;
+                let buttonWidth = buttonNode.getBoundingClientRect().width;
 
-            expect(popupWidth).to.be.equal(buttonWidth);
+                expect(popupWidth).to.be.equal(buttonWidth);
+                done();
+            }, 0);
         });
 
         it('should call `onFocus` after button was clicked', (done) => {
@@ -362,9 +389,8 @@ describe('select', () => {
 
         it('should call `onBlur` after escape key was pressed', (done) => {
             let onBlur = sinon.spy();
-            let { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
-
-            buttonNode.click();
+            let { select } = renderSelect({ options: OPTIONS, onBlur });
+            const { menuNode } = openSelect(select.node);
 
             setTimeout(() => {
                 simulate(menuNode, 'keyDown', { which: keyboardCode.ESCAPE });
@@ -380,11 +406,13 @@ describe('select', () => {
             let onButtonFocus = sinon.spy();
             let { select } = renderSelect({ options: OPTIONS, onButtonFocus });
 
-            select.instance.focus();
-
             setTimeout(() => {
-                expect(onButtonFocus).to.have.been.calledOnce;
-                done();
+                select.instance.focus();
+
+                setTimeout(() => {
+                    expect(onButtonFocus).to.have.been.calledOnce;
+                    done();
+                }, 0);
             }, 0);
         });
 
@@ -496,7 +524,8 @@ describe('select', () => {
             let onChange = sinon.spy();
             let selectProps = {
                 options: OPTIONS,
-                onChange
+                onChange,
+                opened: true
             };
             let { popupNode } = renderSelect(selectProps);
             let firstOptionNode = popupNode.querySelector('.menu-item');

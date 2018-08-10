@@ -7,7 +7,9 @@ module.exports = {
         {
             files: ['src/**/*.test.{js,jsx}', 'src/**/__mocks__/*.{js,jsx}'],
             globals: {
-                jest: true
+                jest: true,
+                beforeAll: true,
+                afterAll: true
             }
         },
         {

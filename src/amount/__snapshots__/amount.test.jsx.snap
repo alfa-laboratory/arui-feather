@@ -32,7 +32,7 @@ exports[`amount should render without problems 1`] = `
             <span
               className="amount__major"
             >
-              1 233 141
+              1 233 141
             </span>
             <div
               className="amount__minor-container"
@@ -51,7 +51,8 @@ exports[`amount should render without problems 1`] = `
             <span
               className="amount__currency"
             >
-               ₽
+               
+              ₽
             </span>
           </span>
         </span>

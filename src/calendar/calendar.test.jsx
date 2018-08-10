@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
+import timezoneMock from 'timezone-mock';
 
 import addDays from 'date-fns/add_days';
 import startOfDay from 'date-fns/start_of_day';
@@ -16,11 +17,22 @@ import Calendar from './calendar';
 
 import keyboardCode from '../lib/keyboard-code';
 
-const INITIAL_DAY = startOfDay(new Date('2016-01-15'));
-const TODAY_DAY = startOfDay(new Date());
+// initialize this later, after we will register timezoneMock
+let INITIAL_DAY;
+let TODAY_DAY;
 const DATE_FORMAT = 'DD.MM.YYYY';
 
 describe('calendar', () => {
+    beforeAll(() => {
+        timezoneMock.register('UTC');
+        INITIAL_DAY = startOfDay(new Date('2016-01-15'));
+        TODAY_DAY = startOfDay(new Date());
+    });
+
+    afterAll(() => {
+        timezoneMock.unregister();
+    });
+
     it('should render without problems', () => {
         let calendar = mount(<Calendar month={ new Date('2018-06-15').valueOf() } />);
 

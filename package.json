@@ -7,7 +7,7 @@
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "test": "TZ=UTC jest",
+    "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "lint": "npm run lint-css && npm run lint-js",
     "lint-js": "eslint ./*.js ./src/ ./gemini/ --ext .js,.jsx",
@@ -147,6 +147,7 @@
     "react-styleguidist": "6.4.0",
     "redbox-react": "1.5.0",
     "region-flags": "1.1.0",
+    "timezone-mock": "^1.0.0",
     "typescript": "^2.9.1",
     "uppercamelcase": "3.0.0",
     "validate-commit-message": "3.0.1",

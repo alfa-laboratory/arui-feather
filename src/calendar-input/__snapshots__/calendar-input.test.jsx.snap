@@ -13,8 +13,6 @@ exports[`calendar-input should render without problems 1`] = `
       <input
         className="calendar-input__native-control"
         formNoValidate={true}
-        max="Invalid Date"
-        min="Invalid Date"
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}

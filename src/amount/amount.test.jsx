@@ -24,7 +24,8 @@ describe('amount', () => {
         );
 
         expect(amount).toMatchSnapshot();
-        expect(amount.text()).toContain(`1 233 141,45 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`1 233 141,45 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when amount is negative', () => {
@@ -39,8 +40,8 @@ describe('amount', () => {
                 } }
             />
         );
-
-        expect(amount.text()).toContain(`−4 525,99 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`−4525,99 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when amount value without minor number', () => {
@@ -55,8 +56,8 @@ describe('amount', () => {
                 } }
             />
         );
-
-        expect(amount.text()).toContain(`17 890,00 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`17 890,00 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render without zero minor part when prop showZeroMinorPart=false ', () => {
@@ -72,8 +73,8 @@ describe('amount', () => {
                 showZeroMinorPart={ false }
             />
         );
-
-        expect(amount.text()).toContain(`17 890 ${CURRENCY_MAP.RUR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`17 890 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when minority equals 1', () => {
@@ -88,7 +89,7 @@ describe('amount', () => {
                 } }
             />
         );
-
-        expect(amount.text()).toContain(`999 ${CURRENCY_MAP.BYR}`);
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`999 ${CURRENCY_MAP.BYR}`);
     });
 });

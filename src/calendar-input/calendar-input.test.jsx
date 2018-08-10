@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import timezoneMock from 'timezone-mock';
 
 import CalendarInput from './calendar-input';
 import * as calendarUtils from './utils';
@@ -17,6 +18,14 @@ jest.mock('../mq/mq');
 
 describe('calendar-input', () => {
     let originalWindowScrollTo = window.scrollTo;
+
+    beforeAll(() => {
+        timezoneMock.register('UTC');
+    });
+
+    afterAll(() => {
+        timezoneMock.unregister();
+    });
 
     beforeEach(() => {
         window.scrollTo = jest.fn();

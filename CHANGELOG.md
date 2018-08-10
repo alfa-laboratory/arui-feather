@@ -1,3 +1,12 @@
+<a name="12.9.1"></a>
+## [12.9.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.1) (2018-08-10)
+
+
+### Features
+
+* **calendar-input:** adding defaultMonth prop ([#705](https://github.com/alfa-laboratory/arui-feather/issues/705)) ([6388e8b](https://github.com/alfa-laboratory/arui-feather/commit/6388e8b))
+
+
 <a name="12.9.0"></a>
 # [12.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.3...v12.9.0) (2018-08-01)
 

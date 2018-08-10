@@ -256,8 +256,12 @@ class CalendarInput extends React.Component {
         };
 
         let nativeProps = {
-            min: formatDate(this.props.calendar && this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
-            max: formatDate(this.props.calendar && this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
+            min: this.props.calendar
+                && this.props.calendar.earlierLimit
+                && formatDate(this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max: this.props.calendar
+                && this.props.calendar.laterLimit
+                && formatDate(this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
         };
 
         let wrapperProps = this.isMobilePopup() && !this.props.disabled

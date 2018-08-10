@@ -5,9 +5,34 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import MaskedInput from './masked-input';
+import MaskedInput, { getAndroidVersion } from './masked-input';
 
 describe('masked-input', () => {
+    // Тестирование функции, возвращающей версию андроид-браузера
+    describe('android version', () => {
+        it('should return version 4.0.4', () => {
+            Object.defineProperty(window.navigator, 'userAgent', {
+                configurable: true,
+                get: () =>
+                    'Mozilla/5.0 (Linux; U; Android 4.0.4; pt-br; MZ608 Build/7.7.1-141-7-FLEM-UMTS-LA) ' +
+                    'AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
+            });
+
+            expect(getAndroidVersion()).toBe('4.0.4');
+        });
+
+        it('should return false', () => {
+            Object.defineProperty(window.navigator, 'userAgent', {
+                configurable: true,
+                get: () =>
+                    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko)' +
+                    'Chrome/67.0.3396.99 Safari/537.36'
+            });
+
+            expect(getAndroidVersion()).toBe(false);
+        });
+    });
+
     it('should render without problems', () => {
         let maskedInput = shallow(<MaskedInput mask='1111 1111 1111 1111' />);
 

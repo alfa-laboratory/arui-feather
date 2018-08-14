@@ -179,4 +179,15 @@ describe('menu-item', () => {
 
         expect(node).toBeInstanceOf(HTMLElement);
     });
+
+
+    it('should link have a theme class', () => {
+        let wrapper = mount(
+            <MenuItem theme='alfa-on-color'>MenuItem</MenuItem>
+        );
+
+        const linkNode = wrapper.find('.link').at(0);
+
+        expect(linkNode.prop('className')).toContain('link_theme_alfa-on-color');
+    });
 });

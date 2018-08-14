@@ -31,18 +31,26 @@ const OPTIONS = [
         checkedText: 'Twitter'
     }
 ];
-
+let wrapper;
 function renderSelect(props) {
     let select = mount(<Select { ...props } />);
 
+    wrapper = select;
+
     let nativeSelectNode = select.find('.select__native-control');
     let buttonNode = select.find('.select-button');
-    let popupNode = select.find('.popup');
-    let menuNode = popupNode.length > 0 ? popupNode.find('div.select__menu') : null;
+    let { popupNode, menuNode } = getPopupNode(select);
 
     return {
         select, nativeSelectNode, popupNode, buttonNode, menuNode
     };
+}
+
+function getPopupNode(select) {
+    let popupNode = select.find('.popup');
+    let menuNode = popupNode.length > 0 ? popupNode.find('div.select__menu') : null;
+
+    return { popupNode, menuNode };
 }
 
 describe('select', () => {
@@ -54,11 +62,18 @@ describe('select', () => {
     });
 
     afterEach(() => {
+        wrapper.unmount();
         window.scrollTo = originalWindowScrollTo;
     });
 
     it('should render without problem', () => {
         let { select } = renderSelect({ options: OPTIONS });
+
+        expect(select).toMatchSnapshot();
+    });
+
+    it('should render opened select', () => {
+        let { select } = renderSelect({ options: OPTIONS, opened: true });
 
         expect(select).toMatchSnapshot();
     });
@@ -151,10 +166,12 @@ describe('select', () => {
     });
 
     it('should unset class on public blur method', () => {
-        let { select, menuNode } = renderSelect({ options: OPTIONS });
+        let { select } = renderSelect({ options: OPTIONS });
 
         select.instance().focus();
         select.update();
+
+        let { menuNode } = getPopupNode(select);
 
         expect(select.children().props().className).toContain('select_opened');
 
@@ -184,8 +201,13 @@ describe('select', () => {
 
     it('should receive event.target.value on `onFocus` callback', () => {
         let onFocus = jest.fn();
-        let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onFocus });
-        select.find('.menu').simulate('focus');
+        let { menuNode } = renderSelect({
+            value: [1, 2],
+            options: OPTIONS,
+            onFocus,
+            opened: true
+        });
+        menuNode.simulate('focus');
 
         expect(onFocus).toHaveBeenCalled();
         expect(onFocus.mock.calls[0][0].target.value).toEqual([1, 2]);
@@ -193,17 +215,23 @@ describe('select', () => {
         // expect(onFocus).toHaveBeenCalledWith({ target: { value: [1, 2] } });
     });
 
-    it('should receive event.target.value on `onBlur` callback', (done) => {
+    it('should receive event.target.value on `onBlur` callback', () => {
+        jest.useFakeTimers();
         let onBlur = jest.fn();
-        let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onBlur });
+        let { menuNode } = renderSelect({
+            value: [1, 2],
+            options: OPTIONS,
+            onBlur,
+            opened: true
+        });
+        jest.runAllTimers();
 
-        select.find('.menu').simulate('blur');
+        menuNode.getDOMNode().blur();
+        jest.runAllTimers();
 
-        setTimeout(() => {
-            expect(onBlur).toHaveBeenCalled();
-            expect(onBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
-            done();
-        }, 0);
+        expect(onBlur).toHaveBeenCalled();
+        expect(onBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
+        jest.useRealTimers();
     });
 
     it('should set `checked` class when item is selected', () => {
@@ -229,8 +257,15 @@ describe('select', () => {
         expect(select.children().props().className).toContain('select_checked');
     });
 
-    it('should render popup with options', () => {
+    it('should not render popup', () => {
         let { select, popupNode } = renderSelect({ options: OPTIONS });
+
+        expect(select.getDOMNode()).toBeDefined();
+        expect(popupNode.length).toEqual(0);
+    });
+
+    it('should render popup with options', () => {
+        let { select, popupNode } = renderSelect({ options: OPTIONS, opened: true });
 
         expect(select.getDOMNode()).toBeDefined();
         expect(popupNode.props().className).toContain('popup');
@@ -277,32 +312,37 @@ describe('select', () => {
         expect(popupWidth).toBe(buttonWidth);
     });
 
-    it('should call `onFocus` after button was clicked', (done) => {
+    it('should call `onFocus` after button was clicked', () => {
+        jest.useFakeTimers();
+
         let onFocus = jest.fn();
         let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
 
         buttonNode.simulate('click');
+        jest.runAllTimers();
 
-        setTimeout(() => {
-            expect(onFocus).toHaveBeenCalled();
-            done();
-        }, 0);
+        expect(onFocus).toHaveBeenCalled();
+
+        jest.useRealTimers();
     });
 
-    it('should call `onBlur` after escape key was pressed', (done) => {
+    it('should call `onBlur` after escape key was pressed', () => {
+        jest.useFakeTimers();
+
         let onBlur = jest.fn();
-        let { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
+        let { select, buttonNode } = renderSelect({ options: OPTIONS, onBlur });
 
         buttonNode.simulate('click');
+        jest.runAllTimers();
 
-        setTimeout(() => {
-            menuNode.simulate('keyDown', { which: keyboardCode.ESCAPE });
+        let { menuNode } = getPopupNode(select);
 
-            setTimeout(() => {
-                expect(onBlur).toHaveBeenCalled();
-                done();
-            }, 0);
-        }, 0);
+        menuNode.simulate('keyDown', { which: keyboardCode.ESCAPE });
+        jest.runAllTimers();
+
+        expect(onBlur).toHaveBeenCalled();
+
+        jest.useRealTimers();
     });
 
     it('should call `onButtonFocus` after component was focused', () => {
@@ -324,87 +364,108 @@ describe('select', () => {
     });
 
     it('should call `onMenuFocus` after component was focused', () => {
+        jest.useFakeTimers();
         let onMenuFocus = jest.fn();
-        let { select } = renderSelect({ options: OPTIONS, onMenuFocus });
+        let { buttonNode } = renderSelect({ options: OPTIONS, onMenuFocus });
 
-        select.find('.menu').simulate('focus');
+        buttonNode.simulate('click');
+        jest.runAllTimers();
 
         expect(onMenuFocus).toHaveBeenCalled();
+        jest.useRealTimers();
     });
 
-    it('should call `onMenuBlur` after component was blured', (done) => {
+    it('should call `onMenuBlur` after component was blured', () => {
+        jest.useFakeTimers();
+
         let onMenuBlur = jest.fn();
-        let { menuNode } = renderSelect({ options: OPTIONS, onMenuBlur });
+        let { select, buttonNode } = renderSelect({ options: OPTIONS, onMenuBlur });
 
-        menuNode.simulate('blur');
+        buttonNode.simulate('click');
+        jest.runAllTimers();
 
-        setTimeout(() => {
-            expect(onMenuBlur).toHaveBeenCalled();
-            done();
-        }, 0);
+        const { menuNode } = getPopupNode(select);
+
+        menuNode.getDOMNode().blur();
+        jest.runAllTimers();
+
+        expect(onMenuBlur).toHaveBeenCalled();
+
+        jest.useRealTimers();
     });
 
-    it('should receive event.target.value on `onButtonFocus` callback', (done) => {
+    it('should receive event.target.value on `onButtonFocus` callback', () => {
+        jest.useFakeTimers();
         let onButtonFocus = jest.fn();
         let { buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonFocus });
+        jest.runAllTimers();
 
         buttonNode.simulate('focus');
 
-        setTimeout(() => {
-            expect(onButtonFocus).toHaveBeenCalled();
-            expect(onButtonFocus.mock.calls[0][0].target.value).toEqual([1, 2]);
-            // expect(onButtonFocus).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
-            done();
-        }, 0);
+        expect(onButtonFocus).toHaveBeenCalled();
+        expect(onButtonFocus.mock.calls[0][0].target.value).toEqual([1, 2]);
+        // expect(onButtonFocus).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
+        jest.useRealTimers();
     });
 
-    it('should receive event.target.value on `onButtonBlur` callback', (done) => {
+    it('should receive event.target.value on `onButtonBlur` callback', () => {
+        jest.useFakeTimers();
+
         let onButtonBlur = jest.fn();
         let { buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonBlur });
 
         buttonNode.simulate('blur');
 
-        setTimeout(() => {
-            expect(onButtonBlur).toHaveBeenCalled();
-            expect(onButtonBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
-            done();
-            // expect(onButtonBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
-        }, 0);
+        expect(onButtonBlur).toHaveBeenCalled();
+        expect(onButtonBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
+
+        jest.useRealTimers();
     });
 
-    it('should receive event.target.value on `onMenuFocus` callback', (done) => {
+    it('should receive event.target.value on `onMenuFocus` callback', () => {
+        jest.useFakeTimers();
         let onMenuFocus = jest.fn();
-        let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuFocus });
+        let { select, buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuFocus });
+
+        buttonNode.simulate('click');
+        jest.runAllTimers();
+
+        let { menuNode } = getPopupNode(select);
 
         menuNode.simulate('focus');
 
-        setTimeout(() => {
-            expect(onMenuFocus).toHaveBeenCalled();
-            expect(onMenuFocus.mock.calls[0][0].target.value).toEqual([1, 2]);
-            // expect(onMenuFocus).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
-            done();
-        }, 0);
+        expect(onMenuFocus).toHaveBeenCalled();
+        expect(onMenuFocus.mock.calls[0][0].target.value).toEqual([1, 2]);
+        // expect(onMenuFocus).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
+        jest.useRealTimers();
     });
 
-    it('should receive event.target.value on `onMenuBlur` callback', (done) => {
+    it('should receive event.target.value on `onMenuBlur` callback', () => {
+        jest.useFakeTimers();
         let onMenuBlur = jest.fn();
-        let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
+        let { select, buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
 
-        menuNode.simulate('blur');
+        buttonNode.simulate('click');
+        jest.runAllTimers();
 
-        setTimeout(() => {
-            expect(onMenuBlur).toHaveBeenCalled();
-            expect(onMenuBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
-            // expect(onMenuBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
-            done();
-        }, 0);
+        let { menuNode } = getPopupNode(select);
+
+        menuNode.getDOMNode().blur();
+        jest.runAllTimers();
+
+        expect(onMenuBlur).toHaveBeenCalled();
+        expect(onMenuBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
+        // expect(onMenuBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
+
+        jest.useRealTimers();
     });
 
     it('should call `onChange` callback in custom select after option was clicked', () => {
         let onChange = jest.fn();
         let selectProps = {
             options: OPTIONS,
-            onChange
+            onChange,
+            opened: true
         };
         let { popupNode } = renderSelect(selectProps);
         let firstOptionNode = popupNode.find('.menu-item').at(0);
@@ -419,7 +480,8 @@ describe('select', () => {
         let onClickOutside = jest.fn();
         let selectProps = {
             options: OPTIONS,
-            onClickOutside
+            onClickOutside,
+            opened: true
         };
         let { select } = renderSelect(selectProps);
 

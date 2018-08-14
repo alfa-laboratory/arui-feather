@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`select should render without problem 1`] = `
+exports[`select should render opened select 1`] = `
 <Select
   directions={
     Array [
@@ -15,6 +15,7 @@ exports[`select should render without problem 1`] = `
   groupView="default"
   mobileMenuMode="native"
   mode="check"
+  opened={true}
   options={
     Array [
       Object {
@@ -38,7 +39,7 @@ exports[`select should render without problem 1`] = `
   width="default"
 >
   <div
-    className="select select_mode_check select_size_m select_width_default select_has-value select_theme_alfa-on-white"
+    className="select select_mode_check select_size_m select_width_default select_has-value select_opened select_theme_alfa-on-white"
   >
     <span
       className="select__inner"
@@ -49,7 +50,7 @@ exports[`select should render without problem 1`] = `
       />
       <SelectButton
         disabled={false}
-        focused={false}
+        focused={true}
         formNoValidate={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -59,7 +60,7 @@ exports[`select should render without problem 1`] = `
         type="button"
       >
         <button
-          className="select-button select-button_size_m select-button_theme_alfa-on-white"
+          className="select-button select-button_size_m select-button_focused select-button_theme_alfa-on-white"
           disabled={false}
           formNoValidate={false}
           onBlur={[Function]}
@@ -112,18 +113,18 @@ exports[`select should render without problem 1`] = `
                   className="icon-button__text"
                   key="text"
                 >
-                  <IconArrowDown
+                  <IconArrowUp
                     size="s"
                   >
                     <Icon
-                      name="arrow-down"
+                      name="arrow-up"
                       size="s"
                     >
                       <span
-                        className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
+                        className="icon icon_size_s icon_name_arrow-up icon_theme_alfa-on-white"
                       />
                     </Icon>
-                  </IconArrowDown>
+                  </IconArrowUp>
                 </span>
               </span>
             </IconButton>
@@ -175,10 +176,10 @@ exports[`select should render without problem 1`] = `
         secondaryOffset={0}
         size="m"
         target="anchor"
-        visible={false}
+        visible={true}
       >
         <div
-          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white select__popup"
+          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_visible popup_height_adaptive popup_theme_alfa-on-white select__popup"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           style={
@@ -354,6 +355,166 @@ exports[`select should render without problem 1`] = `
           </div>
         </div>
       </Popup>
+    </span>
+  </div>
+</Select>
+`;
+
+exports[`select should render without problem 1`] = `
+<Select
+  directions={
+    Array [
+      "bottom-left",
+      "bottom-right",
+      "top-left",
+      "top-right",
+    ]
+  }
+  disabled={false}
+  equalPopupWidth={false}
+  groupView="default"
+  mobileMenuMode="native"
+  mode="check"
+  options={
+    Array [
+      Object {
+        "checkedText": "Vkontakte",
+        "text": "Vk",
+        "value": 1,
+      },
+      Object {
+        "text": "Fb",
+        "value": 2,
+      },
+      Object {
+        "checkedText": "Twitter",
+        "text": "Tw",
+        "value": 3,
+      },
+    ]
+  }
+  placeholder="Выберите:"
+  size="m"
+  width="default"
+>
+  <div
+    className="select select_mode_check select_size_m select_width_default select_has-value select_theme_alfa-on-white"
+  >
+    <span
+      className="select__inner"
+    >
+      <input
+        type="hidden"
+        value={Array []}
+      />
+      <SelectButton
+        disabled={false}
+        focused={false}
+        formNoValidate={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        size="m"
+        tag="button"
+        type="button"
+      >
+        <button
+          className="select-button select-button_size_m select-button_theme_alfa-on-white"
+          disabled={false}
+          formNoValidate={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOut={[Function]}
+          onMouseUp={[Function]}
+          role="button"
+          type="button"
+        >
+          <span
+            className="select-button__text"
+            key="text"
+          >
+            <span
+              className="select__placeholder"
+            >
+              Выберите:
+            </span>
+            <IconButton
+              className="select__tick"
+              formNoValidate={false}
+              key="addon-icon"
+              size="m"
+              tag="span"
+              type="button"
+            >
+              <span
+                className="icon-button icon-button_size_m icon-button_theme_alfa-on-white select__tick"
+                formNoValidate={null}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOut={[Function]}
+                onMouseUp={[Function]}
+                role="button"
+                type="button"
+              >
+                <span
+                  className="icon-button__text"
+                  key="text"
+                >
+                  <IconArrowDown
+                    size="s"
+                  >
+                    <Icon
+                      name="arrow-down"
+                      size="s"
+                    >
+                      <span
+                        className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
+                      />
+                    </Icon>
+                  </IconArrowDown>
+                </span>
+              </span>
+            </IconButton>
+            <ResizeSensor
+              key="addon-sensor"
+              onResize={[Function]}
+            >
+              <iframe
+                style={
+                  Object {
+                    "background": "transparent",
+                    "border": "none",
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": "100%",
+                    "zIndex": -1,
+                  }
+                }
+                tabIndex="-1"
+              />
+            </ResizeSensor>
+          </span>
+        </button>
+      </SelectButton>
+      <Mq
+        onMatchChange={[Function]}
+        query="--small-only"
+        touch={true}
+      />
     </span>
   </div>
 </Select>

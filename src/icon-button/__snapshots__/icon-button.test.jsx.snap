@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon-button renders without problems 1`] = `
+<IconButton
+  formNoValidate={false}
+  size="m"
+  tag="button"
+  type="button"
+>
+  <button
+    className="icon-button icon-button_size_m icon-button_theme_alfa-on-white"
+    formNoValidate={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseUp={[Function]}
+    role="button"
+    type="button"
+  />
+</IconButton>
+`;

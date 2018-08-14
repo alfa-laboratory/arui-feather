@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`slide-down should render without problems 1`] = `
+<div
+  className="slide-down slide-down_theme_alfa-on-white"
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "height": 0,
+    }
+  }
+>
+  <div
+    className="slide-down__content"
+  >
+    slide-down-text
+  </div>
+</div>
+`;

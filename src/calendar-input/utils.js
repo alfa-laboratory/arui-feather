@@ -1,3 +1,4 @@
+import getTime from 'date-fns/get_time';
 import startOfDay from 'date-fns/start_of_day';
 import formatDate from 'date-fns/format';
 import isDateValid from 'date-fns/is_valid';
@@ -52,7 +53,18 @@ export function changeDateFormat(value, inFormat, outFormat) {
  * @returns {Number}
  */
 export function calculateMonth(value, format, earlierLimit, laterLimit) {
-    let newValue = (value && parseDate(value, format)) || Date.now();
+    let newValue = value;
+
+    if (typeof newValue === 'string') {
+        newValue = parseDate(newValue, format);
+    }
+
+    if (!newValue || newValue !== newValue) { // eslint-disable-line no-self-compare
+        newValue = Date.now();
+    } else {
+        newValue = getTime(newValue);
+    }
+
     if (earlierLimit && earlierLimit > newValue) {
         return startOfDay(earlierLimit).valueOf();
     }

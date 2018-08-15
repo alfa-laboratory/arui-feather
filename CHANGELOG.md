@@ -1,3 +1,18 @@
+<a name="12.9.2"></a>
+## [12.9.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.2) (2018-08-15)
+
+
+### Bug Fixes
+
+* **tests:** use mocked timezone ([acc2efd](https://github.com/alfa-laboratory/arui-feather/commit/acc2efd))
+
+
+### Features
+
+* **calendar-input:** add defaultMonth prop ([#705](https://github.com/alfa-laboratory/arui-feather/issues/705)) ([6388e8b](https://github.com/alfa-laboratory/arui-feather/commit/6388e8b))
+
+
+
 <a name="12.9.1"></a>
 ## [12.9.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.1) (2018-08-10)
 

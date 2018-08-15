@@ -190,4 +190,14 @@ describe('menu-item', () => {
 
         expect(linkNode.prop('className')).toContain('link_theme_alfa-on-color');
     });
+
+    it('should dropdown have a theme class', () => {
+        let wrapper = mount(
+            <MenuItem theme='alfa-on-color' type='dropdown'>MenuItem</MenuItem>
+        );
+
+        const linkNode = wrapper.find('.dropdown').at(0);
+
+        expect(linkNode.prop('className')).toContain('dropdown_theme_alfa-on-color');
+    });
 });

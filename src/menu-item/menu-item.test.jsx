@@ -196,8 +196,8 @@ describe('menu-item', () => {
             <MenuItem theme='alfa-on-color' type='dropdown'>MenuItem</MenuItem>
         );
 
-        const linkNode = wrapper.find('.dropdown').at(0);
+        const dropdownNode = wrapper.find('.dropdown').at(0);
 
-        expect(linkNode.prop('className')).toContain('dropdown_theme_alfa-on-color');
+        expect(dropdownNode.prop('className')).toContain('dropdown_theme_alfa-on-color');
     });
 });

@@ -219,6 +219,10 @@ class Select extends React.Component {
      * @type {Menu}
      */
     menu;
+    /**
+     * @type {Boolean}
+     */
+    waitForMenu = false;
 
     componentWillMount() {
         this.setState({
@@ -769,12 +773,11 @@ class Select extends React.Component {
     @autobind
     setPopupRef(ref) {
         this.popup = ref;
+        const popupIsReady = !!this.popup;
 
         if (this.popup) {
             this.popup.setTarget(this.button.getNode());
         }
-
-        const popupIsReady = !!this.popup;
 
         this.setState({
             popupIsReady
@@ -848,7 +851,6 @@ class Select extends React.Component {
         });
     }
 
-    waitForMenu = false;
     focusOnMenu() {
         if (!this.menu) {
             this.waitForMenu = true;
@@ -900,7 +902,7 @@ class Select extends React.Component {
         this.setState({
             opened: newOpenedState
         }, () => {
-            if (newOpenedState && this.menu) {
+            if (newOpenedState) {
                 this.focusOnMenu();
             }
         });

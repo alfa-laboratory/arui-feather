@@ -104,6 +104,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => { this.control = control; } }
                         className={ `${cn('control')} ${cn('dropdown')}` }
                         size={ this.props.size }
+                        theme={ this.props.theme }
                         opened={ this.state.hovered }
                         switcherType='link'
                         switcherText={ content }
@@ -139,6 +140,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => { this.control = control; } }
                         className={ `${cn('control')} ${cn('link')}` }
                         size={ this.props.size }
+                        theme={ this.props.theme }
                         pseudo={ this.props.view === 'pseudo' }
                         disabled={ this.props.disabled }
                         checked={ this.props.checked }

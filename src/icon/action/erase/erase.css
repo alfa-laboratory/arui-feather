@@ -9,3 +9,11 @@
 .icon_size_m.icon_name_erase.icon_theme_alfa-on-color {
     background-image: url('./icon_erase_m_white.svg');
 }
+
+.icon_size_xl.icon_name_erase.icon_theme_alfa-on-white {
+    background-image: url('./icon_erase_xl_black.svg');
+}
+
+.icon_size_xl.icon_name_erase.icon_theme_alfa-on-color {
+    background-image: url('./icon_erase_xl_white.svg');
+}

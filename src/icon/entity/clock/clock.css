@@ -9,3 +9,11 @@
 .icon_size_m.icon_name_clock.icon_theme_alfa-on-color {
     background-image: url('./icon_clock_m_white.svg');
 }
+
+.icon_size_xs.icon_name_clock.icon_theme_alfa-on-white {
+    background-image: url('./icon_clock_xs_black.svg');
+}
+
+.icon_size_xs.icon_name_clock.icon_theme_alfa-on-color {
+    background-image: url('./icon_clock_xs_white.svg');
+}

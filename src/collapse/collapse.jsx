@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -35,7 +35,10 @@ class Collapse extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик смены состояний `expanded/collapsed` */
+        /**
+         * Обработчик смены состояний `expanded/collapsed`
+         * @param {boolean} isExpanded
+         */
         onExpandedChange: Type.func
     };
 

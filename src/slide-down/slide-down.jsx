@@ -5,7 +5,7 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -30,7 +30,7 @@ class SlideDown extends React.Component {
         id: Type.string,
         /** Обработчик события начала анимации */
         onAnimationStart: Type.func,
-        /** Обработчик события начала анимации */
+        /** Обработчик события окончания анимации */
         onAnimationEnd: Type.func
     };
 

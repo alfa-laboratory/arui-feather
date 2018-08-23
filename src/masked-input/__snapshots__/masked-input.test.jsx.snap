@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`masked-input should render without problems 1`] = `
+<input
+  maxLength={19}
+  onBeforeInput={[Function]}
+  onChange={[Function]}
+  onInput={[Function]}
+  value=""
+/>
+`;

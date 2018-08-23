@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -41,11 +41,20 @@ class RadioGroup extends React.Component {
         label: Type.node,
         /** Подсказка под полем */
         hint: Type.node,
-        /** Обработчик фокуса радиогруппы */
+        /**
+         * Обработчик фокуса радиогруппы
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса с радиогруппы */
+        /**
+         * Обработчик снятия фокуса с радиогруппы
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик изменения значения 'checked' одного из дочерних радио-кнопок */
+        /**
+         * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
+         * @param {string} value
+         */
         onChange: Type.func
     };
 

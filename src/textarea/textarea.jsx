@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
@@ -61,17 +61,35 @@ class Textarea extends React.Component {
         resize: Type.oneOf(['both', 'horizontal', 'vertical', 'none']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Обработчик изменения значения 'value' */
+        /**
+         * Обработчик изменения значения 'value'
+         * @param {string} value
+         */
         onChange: Type.func,
-        /** Обработчик фокуса поля */
+        /**
+         * Обработчик фокуса поля
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса c поля */
+        /**
+         * Обработчик снятия фокуса c поля
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события вставки текста в поле */
+        /**
+         * Обработчик события вставки текста в поле
+         * @param {React.ClipboardEvent} event
+         */
         onPaste: Type.func,
-        /** Обработчик события изменения высоты компонента со значением параметра "autosize" = true */
+        /**
+         * Обработчик события изменения высоты компонента со значением параметра "autosize" = true
+         * @param {number} height
+         */
         onHeightChange: Type.func,
-        /** Обработчик события нажатия клавиши при фокусе на поле */
+        /**
+         * Обработчик события нажатия клавиши при фокусе на поле
+         * @param {React.KeyboardEvent} event
+         */
         onKeyPress: Type.func
     };
 

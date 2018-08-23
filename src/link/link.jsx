@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -46,15 +46,30 @@ class Link extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика но ссылке */
+        /**
+         * Обработчик клика но ссылке
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик фокуса компонента */
+        /**
+         * Обработчик фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса компонента */
+        /**
+         * Обработчик снятия фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на ссылку */
+        /**
+         * Обработчик события наведения курсора на ссылку
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с ссылки */
+        /**
+         * Обработчик события снятия курсора с ссылки
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 

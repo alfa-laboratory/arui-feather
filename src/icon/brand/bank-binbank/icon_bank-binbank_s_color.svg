@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_bank-binbank_s_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="бинбанк" transform="translate(-6.000000, -11.000000)">
+            <g id="color" transform="translate(6.000000, 11.000000)">
+                <g id="icon_bank-binbank_s_color">
+                    <rect id="Rectangle" x="0" y="0" width="18" height="18"></rect>
+                    <g id="Group" transform="translate(1.000000, 3.000000)" fill-rule="nonzero">
+                        <polyline id="Fill-3" fill="#F48100" points="12.6501886 11.8857143 16 5.9442756 12.6501886 0 11.4285714 0 14.7786136 5.9442756 11.4285714 11.8857143 12.6501886 11.8857143"></polyline>
+                        <path d="M13.5720696,6.02698936 L10.1785847,0.16709916 C10.1785847,0.16709916 3.38577186,0.164069468 3.3853044,0.16709916 C5.88080945,0.664667787 7.75950849,2.86608852 7.75950849,5.50028908 C7.75950849,5.68346891 7.75109431,5.8638521 7.73309731,6.04283697 C9.29603093,7.00301625 10.3356494,8.6996437 10.3356494,10.6351507 C10.3356494,11.0583754 10.2926436,11.4895238 10.1979841,11.8840829 L13.5720696,6.02698936" id="Fill-9" fill="#69ADE2"></path>
+                        <path d="M10.1979841,11.8840829 C9.75039656,8.57752381 6.90313212,6.02698936 3.46991364,6.02698936 C4.76429474,6.02698936 5.59963566,5.11039104 5.60057057,3.888493 C5.60057057,3.2014521 4.88162578,1.19393165 3.3853044,0.16709916 L0,6.02698936 L3.3930174,11.8857143 L10.1979841,11.8840829" id="Fill-10" fill="#163285"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

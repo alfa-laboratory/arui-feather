@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -126,17 +126,35 @@ class Attach extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.string,
-        /** Обработчик клика по компоненту кнопки */
+        /**
+         * Обработчик клика по компоненту кнопки
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик изменения значения 'value' */
+        /**
+         * Обработчик изменения значения 'value'
+         * @param {File[]} value
+         */
         onChange: Type.func,
-        /** Обработчик фокуса компонента */
+        /**
+         * Обработчик фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса компонента */
+        /**
+         * Обработчик снятия фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на кнопку */
+        /**
+         * Обработчик события наведения курсора на кнопку
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с кнопки */
+        /**
+         * Обработчик события снятия курсора с кнопки
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 
@@ -281,45 +299,45 @@ class Attach extends React.Component {
     }
 
     @autobind
-    handleButtonClick() {
+    handleButtonClick(event) {
         if (this.props.onClick) {
-            this.props.onClick();
+            this.props.onClick(event);
         }
     }
 
     @autobind
-    handleFocus() {
+    handleFocus(event) {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
-            this.props.onFocus();
+            this.props.onFocus(event);
         }
     }
 
     @autobind
-    handleBlur() {
+    handleBlur(event) {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
-            this.props.onBlur();
+            this.props.onBlur(event);
         }
     }
 
     @autobind
-    handleMouseEnter() {
+    handleMouseEnter(event) {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
-            this.props.onMouseEnter();
+            this.props.onMouseEnter(event);
         }
     }
 
     @autobind
-    handleMouseLeave() {
+    handleMouseLeave(event) {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
-            this.props.onMouseLeave();
+            this.props.onMouseLeave(event);
         }
     }
 

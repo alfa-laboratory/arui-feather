@@ -122,7 +122,6 @@
     &.radio_hovered {
         .radio__box {
             border-color: var(--color-error-translucent);
-            box-shadow: 0 0 0 1px var(--color-error-translucent);
         }
     }
 }

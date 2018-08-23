@@ -1,3 +1,198 @@
+<a name="12.9.2"></a>
+## [12.9.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.2) (2018-08-15)
+
+
+### Bug Fixes
+
+* **tests:** use mocked timezone ([acc2efd](https://github.com/alfa-laboratory/arui-feather/commit/acc2efd))
+
+
+### Features
+
+* **calendar-input:** add defaultMonth prop ([#705](https://github.com/alfa-laboratory/arui-feather/issues/705)) ([6388e8b](https://github.com/alfa-laboratory/arui-feather/commit/6388e8b))
+
+
+
+<a name="12.9.1"></a>
+## [12.9.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.1) (2018-08-10)
+
+
+### Features
+
+* **calendar-input:** adding defaultMonth prop ([#705](https://github.com/alfa-laboratory/arui-feather/issues/705)) ([6388e8b](https://github.com/alfa-laboratory/arui-feather/commit/6388e8b))
+
+
+<a name="12.9.0"></a>
+# [12.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.3...v12.9.0) (2018-08-01)
+
+
+### Features
+
+* **amount:** updating the amount view according to the design guidelines ([#702](https://github.com/alfa-laboratory/arui-feather/issues/702)) ([2de7ab4](https://github.com/alfa-laboratory/arui-feather/commit/2de7ab4))
+* **autocomplete:** insert popup after focus ([#703](https://github.com/alfa-laboratory/arui-feather/issues/703)) ([a1e67ee](https://github.com/alfa-laboratory/arui-feather/commit/a1e67ee))
+
+
+
+<a name="12.8.3"></a>
+## [12.8.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.2...v12.8.3) (2018-07-17)
+
+
+### Bug Fixes
+
+* **masked-input:** fix carriage offset in masked input in android browser of version lower than 4.4 ([#700](https://github.com/alfa-laboratory/arui-feather/issues/700)) ([aa3566a](https://github.com/alfa-laboratory/arui-feather/commit/aa3566a))
+
+
+### Features
+
+* checkbox and radio without box-shadow ([#697](https://github.com/alfa-laboratory/arui-feather/issues/697)) ([3fe7251](https://github.com/alfa-laboratory/arui-feather/commit/3fe7251))
+
+
+
+<a name="12.8.2"></a>
+## [12.8.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.1...v12.8.2) (2018-07-12)
+
+
+### Bug Fixes
+
+* **mq:** correct d.ts for mq-decorator ([8fa00fd](https://github.com/alfa-laboratory/arui-feather/commit/8fa00fd))
+
+
+
+<a name="12.8.1"></a>
+## [12.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.8.0...v12.8.1) (2018-07-11)
+
+
+### Bug Fixes
+
+* **button:** text align in full width button ([#696](https://github.com/alfa-laboratory/arui-feather/issues/696)) ([0e66606](https://github.com/alfa-laboratory/arui-feather/commit/0e66606))
+* **input:** placeholder visibility on android < 4.4 ([#695](https://github.com/alfa-laboratory/arui-feather/issues/695)) ([a6efda2](https://github.com/alfa-laboratory/arui-feather/commit/a6efda2))
+* **input-autocomplete:** fix hint on input autocomplete ([#688](https://github.com/alfa-laboratory/arui-feather/issues/688)) ([05da10d](https://github.com/alfa-laboratory/arui-feather/commit/05da10d))
+
+
+### Features
+
+* **calendar-input:** add left and right addons to CalendarInput ([#692](https://github.com/alfa-laboratory/arui-feather/issues/692)) ([93d9af9](https://github.com/alfa-laboratory/arui-feather/commit/93d9af9))
+
+
+
+<a name="12.8.0"></a>
+# [12.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.5...v12.8.0) (2018-06-20)
+
+
+### Bug Fixes
+
+* **calendar-input:** support react 15 ([#683](https://github.com/alfa-laboratory/arui-feather/issues/683)) ([9edfe6a](https://github.com/alfa-laboratory/arui-feather/commit/9edfe6a))
+* **control-group:** fix checkbox/radio group responsive behaviour ([#667](https://github.com/alfa-laboratory/arui-feather/issues/667)) ([5b12e72](https://github.com/alfa-laboratory/arui-feather/commit/5b12e72))
+
+
+
+<a name="12.7.5"></a>
+## [12.7.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.4...v12.7.5) (2018-06-08)
+
+
+### Bug Fixes
+
+* fix errors eslint ([0c09dd4](https://github.com/alfa-laboratory/arui-feather/commit/0c09dd4))
+* **calendar-input:** fix popup closer in mobileMode='popup' ([#620](https://github.com/alfa-laboratory/arui-feather/issues/620)) ([#677](https://github.com/alfa-laboratory/arui-feather/issues/677)) ([2a8c53c](https://github.com/alfa-laboratory/arui-feather/commit/2a8c53c))
+
+
+### Features
+
+* **plate:** add root node for plate ([#675](https://github.com/alfa-laboratory/arui-feather/issues/675)) ([7f37331](https://github.com/alfa-laboratory/arui-feather/commit/7f37331))
+
+
+
+<a name="12.7.4"></a>
+## [12.7.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.3...v12.7.4) (2018-05-25)
+
+
+### Bug Fixes
+
+* **select:** add placeholder color and right display for text ([#657](https://github.com/alfa-laboratory/arui-feather/issues/657)) ([653b219](https://github.com/alfa-laboratory/arui-feather/commit/653b219))
+
+
+### Features
+
+* **popup,select:** add maxHeight prop ([#666](https://github.com/alfa-laboratory/arui-feather/issues/666)) ([67e6627](https://github.com/alfa-laboratory/arui-feather/commit/67e6627))
+
+
+
+<a name="12.7.3"></a>
+## [12.7.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.2...v12.7.3) (2018-05-18)
+
+
+### Bug Fixes
+
+* **calendar-input:** fix input text color on ios ([#659](https://github.com/alfa-laboratory/arui-feather/issues/659)) ([9e94144](https://github.com/alfa-laboratory/arui-feather/commit/9e94144))
+
+
+
+<a name="12.7.2"></a>
+## [12.7.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.1...v12.7.2) (2018-05-08)
+
+
+### Bug Fixes
+
+* **amount:** fix amount output when minority more then 100 ([#625](https://github.com/alfa-laboratory/arui-feather/issues/625)) ([52f13ad](https://github.com/alfa-laboratory/arui-feather/commit/52f13ad))
+* **menu:** input-autocomplete highlight fix ([#649](https://github.com/alfa-laboratory/arui-feather/issues/649)) ([7a9510f](https://github.com/alfa-laboratory/arui-feather/commit/7a9510f))
+
+
+### Features
+
+* set caret to end of input on public focus method call ([#645](https://github.com/alfa-laboratory/arui-feather/issues/645)) ([42dcad0](https://github.com/alfa-laboratory/arui-feather/commit/42dcad0))
+* **icons:** update icons to alfa-ui-primitives 1.6.3 ([#646](https://github.com/alfa-laboratory/arui-feather/issues/646)) ([ebe6cb9](https://github.com/alfa-laboratory/arui-feather/commit/ebe6cb9))
+* **label:** add 2xl, 3xl, 4xl sizes to label ([#604](https://github.com/alfa-laboratory/arui-feather/issues/604)) ([b56a4b8](https://github.com/alfa-laboratory/arui-feather/commit/b56a4b8))
+* **select:** add hide tick option ([#641](https://github.com/alfa-laboratory/arui-feather/issues/641)) ([e328858](https://github.com/alfa-laboratory/arui-feather/commit/e328858))
+
+
+
+<a name="12.7.1"></a>
+## [12.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.7.0...v12.7.1) (2018-04-17)
+
+
+### Features
+
+* **icons:** update icons to alfa-ui-primitives 1.6.2 ([#634](https://github.com/alfa-laboratory/arui-feather/issues/634)) ([bb53da3](https://github.com/alfa-laboratory/arui-feather/commit/bb53da3))
+
+
+
+<a name="12.7.0"></a>
+# [12.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.1...v12.7.0) (2018-04-17)
+
+
+### Features
+
+* **calendar-input:** numeric keyboard ([09a5de6](https://github.com/alfa-laboratory/arui-feather/commit/09a5de6))
+
+
+
+<a name="12.6.1"></a>
+## [12.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.6.0...v12.6.1) (2018-04-11)
+
+
+### Bug Fixes
+
+* remove postinstall script ([#624](https://github.com/alfa-laboratory/arui-feather/issues/624)) ([c111917](https://github.com/alfa-laboratory/arui-feather/commit/c111917))
+* require non-es version of core-decorators ([a6b26d7](https://github.com/alfa-laboratory/arui-feather/commit/a6b26d7))
+
+
+### Features
+
+* reduce bundle size, remove prop-types in production ([4854865](https://github.com/alfa-laboratory/arui-feather/commit/4854865))
+
+
+
+<a name="12.6.0"></a>
+# [12.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.5.0...v12.6.0) (2018-04-11)
+
+
+### Features
+
+* **calendar-input:** add input mobile mode ([#619](https://github.com/alfa-laboratory/arui-feather/issues/619)) ([d429216](https://github.com/alfa-laboratory/arui-feather/commit/d429216))
+* **icons:** update icons to alfa-ui-primitives 1.6.0 ([#593](https://github.com/alfa-laboratory/arui-feather/issues/593)) ([bf0cc29](https://github.com/alfa-laboratory/arui-feather/commit/bf0cc29))
+
+
+
 <a name="12.5.0"></a>
 # [12.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.4.8...v12.5.0) (2018-03-26)
 

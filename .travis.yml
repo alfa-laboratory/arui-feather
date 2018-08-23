@@ -10,15 +10,13 @@ node_js:
 env:
   matrix:
     - TEST_SCOPE: lint
-    - TEST_SCOPE: desktop_unit
-    - TEST_SCOPE: mobile_unit
+    - TEST_SCOPE: unit
     - TEST_SCOPE: gemini
 
 matrix:
   fast_finish: true
 
 before_install:
-  - npm i -g greenkeeper-lockfile@1
   - npm cache clean --force
   - rm -rf ~/.npm node_modules package-lock.json yarn.lock
 
@@ -26,7 +24,6 @@ install:
   - npm i
 
 before_script:
-  - greenkeeper-lockfile-update
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       sh ./tools/sauce-connect.sh
@@ -35,15 +32,13 @@ before_script:
 
 script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
-  - if [ "${TEST_SCOPE}" == "desktop_unit" ]; then npm run test; fi
-  - if [ "${TEST_SCOPE}" == "mobile_unit" ]; then MOBILE=1 npm run test; fi
+  - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test:coverage; fi
   - if [ "${TEST_SCOPE}" == "gemini" ]; then
       if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then export ALL_BROWSERS=1 ALL_SIZES=1; fi;
       npm run gemini-ci;
     fi
 
 after_script:
-  - greenkeeper-lockfile-upload
   - |
     if [ "${TEST_SCOPE}" == "lint" ] && [ -n "${TRAVIS_TAG}" ]; then
       npm run github-release;
@@ -61,7 +56,7 @@ after_success:
       fi
     fi
   - |
-    if [ "${TEST_SCOPE}" == "desktop_unit" ]; then
+    if [ "${TEST_SCOPE}" == "unit" ]; then
       cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
     fi
 

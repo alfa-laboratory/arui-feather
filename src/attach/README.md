@@ -1,15 +1,17 @@
 ```jsx
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' key={ size }>
-            <div className='column'>
-                <Attach size={ size } noFileText='' />
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Attach size={ size } noFileText='' />
+                </div>
+                <div className='column'>
+                    <Attach size={ size } noFileText='' disabled={ true } />
+                </div>
             </div>
-            <div className='column'>
-                <Attach size={ size } noFileText='' disabled={ true } />
-            </div>
-        </div>
-    ))}
+        ))
+    }
 </div>
 ```
 

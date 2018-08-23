@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`progress-bar should render without problems 1`] = `
+<ProgressBar
+  percent={0}
+  size="m"
+>
+  <div
+    className="progress-bar progress-bar_size_m progress-bar_theme_alfa-on-white"
+  >
+    <div
+      className="progress-bar__current-value"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+  </div>
+</ProgressBar>
+`;

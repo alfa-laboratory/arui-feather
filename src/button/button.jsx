@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -59,25 +59,55 @@ class Button extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.string,
-        /** Обработчик клика по кнопке */
+        /**
+         * Обработчик клика по кнопке
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик фокуса кнопки */
+        /**
+         * Обработчик фокуса кнопки
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса кнопки */
+        /**
+         * Обработчик снятия фокуса кнопки
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на кнопку */
+        /**
+         * Обработчик события наведения курсора на кнопку
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с кнопки */
+        /**
+         * Обработчик события снятия курсора с кнопки
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func,
-        /** Обработчик события нажатия кнопки мыши в момент */
+        /**
+         * Обработчик события нажатия кнопки мыши в момент
+         * @param {React.MouseEvent} event
+         */
         onMouseDown: Type.func,
-        /** Обработчик события отжатия кнопки мыши в момент */
+        /**
+         * Обработчик события отжатия кнопки мыши в момент
+         * @param {React.MouseEvent} event
+         */
         onMouseUp: Type.func,
-        /** Обработчик события отведения курсора с кнопки */
+        /**
+         * Обработчик события отведения курсора с кнопки
+         * @param {React.MouseEvent} event
+         */
         onMouseOut: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
-        /** Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyUp: Type.func
     };
 

@@ -4,7 +4,7 @@
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -83,7 +83,10 @@ class Sidebar extends React.Component {
         headerContent: Type.node,
         /** Ширина сайдбара */
         width: Type.number,
-        /** Обработчик клика на элемент закрытия */
+        /**
+         * Обработчик клика на элемент закрытия
+         * @param {React.MouseEvent} event
+         */
         onCloserClick: Type.func
     };
 
@@ -200,13 +203,13 @@ class Sidebar extends React.Component {
     }
 
     @autobind
-    handleClose() {
+    handleClose(event) {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
                 document.documentElement.scrollTop = savedScrollPosition;
             }
-            this.props.onCloserClick();
+            this.props.onCloserClick(event);
         }
     }
 

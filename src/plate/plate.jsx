@@ -4,7 +4,7 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -34,11 +34,20 @@ class Plate extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика по плашке */
+        /**
+         * Обработчик клика по плашке
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик клика по крестику */
+        /**
+         * Обработчик клика по крестику
+         * @param {React.MouseEvent} event
+         */
         onCloserClick: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func
     };
 
@@ -49,6 +58,11 @@ class Plate extends React.Component {
     state = {
         isHidden: false
     };
+
+    /**
+     * @type {HTMLElement}
+     */
+    root;
 
     render(cn) {
         return (
@@ -62,6 +76,7 @@ class Plate extends React.Component {
                     id={ this.props.id }
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
+                    ref={ (node) => { this.root = node; } }
                 >
                     <div className={ cn('content') }>
                         { this.props.children }
@@ -88,13 +103,13 @@ class Plate extends React.Component {
     }
 
     @autobind
-    handleCloserClick() {
+    handleCloserClick(event) {
         this.setState({
             isHidden: true
         });
 
         if (this.props.onCloserClick) {
-            this.props.onCloserClick();
+            this.props.onCloserClick(event);
         }
     }
 

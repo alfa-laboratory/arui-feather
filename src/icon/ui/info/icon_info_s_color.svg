@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_info_s_red</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Contract_Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-733.000000, -1773.000000)">
+        <g id="icon_info_s_red" transform="translate(732.000000, 1772.000000)">
+            <polygon id="Shape" opacity="0.547" points="0 0 18 0 18 18 0 18"></polygon>
+            <g id="Group" transform="translate(1.000000, 1.000000)" fill="#EF3124" fill-opacity="0.9" fill-rule="nonzero">
+                <path d="M8,0.5 C3.864,0.5 0.5,3.864 0.5,8 C0.5,12.136 3.864,15.5 8,15.5 C12.136,15.5 15.5,12.136 15.5,8 C15.5,3.864 12.136,0.5 8,0.5 Z M8,14.5 C4.41197652,14.4955921 1.5044079,11.5880235 1.5,8 C1.5,4.416 4.416,1.5 8,1.5 C11.584,1.5 14.5,4.416 14.5,8 C14.5,11.584 11.584,14.5 8,14.5 Z" id="Shape"></path>
+                <path d="M7.996,3.883 C7.52,3.883 7.125,4.252 7.125,4.695 C7.125,5.148 7.52,5.517 7.996,5.517 C8.481,5.517 8.875,5.148 8.875,4.695 C8.875,4.252 8.48,3.883 7.996,3.883 Z M7.5,7.033 L8.5,7.033 L8.5,11.7 L7.5,11.7 L7.5,7.033 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

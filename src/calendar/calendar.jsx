@@ -4,7 +4,7 @@
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -50,9 +50,17 @@ class Calendar extends React.Component {
         laterLimit: Type.number,
         /** Месяц, в формате unix timestamp */
         month: Type.number,
-        /** Обработчик смены даты */
+        /**
+         * Обработчик смены даты
+         * @param {number} timestamp
+         * @param {string} dateString
+         * @param {boolean} isTriggeredByKeyboard
+         */
         onValueChange: Type.func,
-        /** Обработчик смены месяца */
+        /**
+         * Обработчик смены месяца
+         * @param {number} month
+         */
         onMonthChange: Type.func,
         /** Тип форматирования даты при выводе */
         outputFormat: Type.string,
@@ -62,7 +70,7 @@ class Calendar extends React.Component {
         weekdays: Type.arrayOf(Type.string),
         /** Список выходных дней в виде unix timestamp, отсортированный по возрастанию */
         offDays: Type.arrayOf(Type.number),
-        /** Спиоск дней с событиями в виде unix timestamp, отсортированный по возрастанию */
+        /** Список дней с событиями в виде unix timestamp, отсортированный по возрастанию */
         eventDays: Type.arrayOf(Type.number),
         /** Отображение текущей даты */
         showToday: Type.bool,
@@ -76,13 +84,25 @@ class Calendar extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
-        /** Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyUp: Type.func,
-        /** Обработчик фокуса */
+        /**
+         * Обработчик фокуса
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса */
+        /**
+         * Обработчик снятия фокуса
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func
     };
 
@@ -501,7 +521,7 @@ class Calendar extends React.Component {
      * @param {Number} timestamp Дата
      * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    performChange(timestamp, isTriggeredByKeyboard) {
+    performChange(timestamp, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
             return;
         }

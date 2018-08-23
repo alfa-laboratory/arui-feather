@@ -6,7 +6,7 @@ branches:
 
 environment:
   matrix:
-    - nodejs_version: stable
+    - nodejs_version: "8.9.1"
 
 init:
   - tzutil /s "Russian Standard Time"
@@ -18,7 +18,7 @@ install:
 test_script:
   - node --version
   - yarn lint
-  - yarn test
+  - yarn test:coverage
 
 build: off
 

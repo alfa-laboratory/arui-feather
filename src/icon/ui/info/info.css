@@ -22,6 +22,10 @@
     background-image: url('./icon_info_s_black.svg');
 }
 
+.icon_size_s.icon_name_info.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_info.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_info_s_color.svg');
+}
+
 .icon_size_s.icon_name_info.icon_theme_alfa-on-color {
     background-image: url('./icon_info_s_white.svg');
 }

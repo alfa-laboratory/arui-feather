@@ -33,7 +33,7 @@
     "demo": "git submodule update --init --remote && styleguidist server",
     "build:demo": "git submodule update --init --remote && styleguidist build",
     "build:flag-icons": "gulp --gulpfile ./src/flag-icon/flag-icon.gulpfile.js",
-    "build:icons": "node ./tools/icon/build-icons.js"
+    "build:icons": "node ./tools/icon/build-icons.js && svgo ./src/icon/**/* --config=.svgo.yml"
   },
   "lint-staged": {
     "concurrent": false,
@@ -108,7 +108,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
-    "alfa-ui-primitives": "1.6.4",
+    "alfa-ui-primitives": "1.6.5",
     "arui-presets": "4.13.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "bowser": "1.9.3",
@@ -152,6 +152,7 @@
     "uppercamelcase": "3.0.0",
     "validate-commit-message": "3.0.1",
     "vinyl-buffer": "1.0.1",
-    "webpack-merge": "4.1.1"
+    "webpack-merge": "4.1.1",
+    "svgo": "1.0.5"
   }
 }

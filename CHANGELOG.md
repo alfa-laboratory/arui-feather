@@ -1,3 +1,18 @@
+<a name="12.9.3"></a>
+## [12.9.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.2...v12.9.3) (2018-08-24)
+
+
+### Bug Fixes
+
+* **menu-item:** add sending theme prop to inner link or dropdown element ([#709](https://github.com/alfa-laboratory/arui-feather/issues/709)) ([b59562d](https://github.com/alfa-laboratory/arui-feather/commit/b59562d))
+
+
+### Features
+
+* **icons:** latest optimized icons from alfa-ui-primitives 1.6.5 ([#711](https://github.com/alfa-laboratory/arui-feather/issues/711)) ([d35d1f9](https://github.com/alfa-laboratory/arui-feather/commit/d35d1f9))
+
+
+
 <a name="12.9.2"></a>
 ## [12.9.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.2) (2018-08-15)
 

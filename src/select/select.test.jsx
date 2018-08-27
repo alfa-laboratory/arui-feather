@@ -429,24 +429,18 @@ describe('select', () => {
         }, 0);
     });
 
-    it('should receive event.target.value on `onMenuBlur` callback', () => {
-        jest.useFakeTimers();
+    it('should receive event.target.value on `onMenuBlur` callback', (done) => {
         let onMenuBlur = jest.fn();
-        let { select, buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
+        let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
 
-        buttonNode.simulate('click');
-        jest.runAllTimers();
+        menuNode.simulate('blur');
 
-        let { menuNode } = getPopupNode(select);
-
-        menuNode.getDOMNode().blur();
-        jest.runAllTimers();
-
-        expect(onMenuBlur).toHaveBeenCalled();
-        expect(onMenuBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
-        // expect(onMenuBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
-
-        jest.useRealTimers();
+        setTimeout(() => {
+            expect(onMenuBlur).toHaveBeenCalled();
+            expect(onMenuBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
+            // expect(onMenuBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));	        jest.runAllTimers();
+            done();
+        }, 0);
     });
 
     it('should call `onChange` callback in custom select after option was clicked', () => {

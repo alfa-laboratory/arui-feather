@@ -93,6 +93,8 @@ class Select extends React.Component {
             /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
             props: Type.object
         })),
+        /** Вставляет попап со списком только если элемент активен */
+        renderPopupOnFocus: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Уникальный идентификатор блока */
@@ -185,7 +187,8 @@ class Select extends React.Component {
         equalPopupWidth: false,
         options: [],
         placeholder: 'Выберите:',
-        mobileMenuMode: 'native'
+        mobileMenuMode: 'native',
+        renderPopupOnFocus: false
     };
 
     static contextTypes = {
@@ -413,7 +416,7 @@ class Select extends React.Component {
         let value = this.getValue();
         const { popupIsReady } = this.state;
 
-        if (!opened) {
+        if (!opened && this.props.renderPopupOnFocus) {
             return null;
         }
 

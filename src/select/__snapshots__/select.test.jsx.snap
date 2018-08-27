@@ -35,6 +35,7 @@ exports[`select should render opened select 1`] = `
     ]
   }
   placeholder="Выберите:"
+  renderPopupOnFocus={false}
   size="m"
   width="default"
 >
@@ -394,6 +395,7 @@ exports[`select should render without problem 1`] = `
     ]
   }
   placeholder="Выберите:"
+  renderPopupOnFocus={false}
   size="m"
   width="default"
 >
@@ -515,6 +517,205 @@ exports[`select should render without problem 1`] = `
         query="--small-only"
         touch={true}
       />
+      <Popup
+        className="select__popup"
+        directions={
+          Array [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right",
+          ]
+        }
+        fitContaiterOffset={0}
+        header={false}
+        height="adaptive"
+        key="popup"
+        minWidth={0}
+        onClickOutside={[Function]}
+        padded={false}
+        secondaryOffset={0}
+        size="m"
+        target="anchor"
+        visible={false}
+      >
+        <div
+          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white select__popup"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "bottom": undefined,
+              "height": "auto",
+              "left": 0,
+              "maxHeight": "none",
+              "maxWidth": "none",
+              "minWidth": 0,
+              "right": undefined,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            className="popup__container"
+          >
+            <div
+              className="popup__inner"
+              onScroll={[Function]}
+            >
+              <div
+                className="popup__content"
+              >
+                <Menu
+                  autoFocusFirstItem={false}
+                  checkedItems={Array []}
+                  className="select__menu"
+                  content={
+                    Array [
+                      Object {
+                        "content": Array [
+                          "Vk",
+                        ],
+                        "props": undefined,
+                        "value": 1,
+                      },
+                      Object {
+                        "content": Array [
+                          "Fb",
+                        ],
+                        "props": undefined,
+                        "value": 2,
+                      },
+                      Object {
+                        "content": Array [
+                          "Tw",
+                        ],
+                        "props": undefined,
+                        "value": 3,
+                      },
+                    ]
+                  }
+                  disabled={false}
+                  groupView="default"
+                  mode="check"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onHighlightItem={[Function]}
+                  onItemCheck={[Function]}
+                  onKeyDown={[Function]}
+                  size="m"
+                >
+                  <div
+                    className="menu menu_size_m menu_group-view_default menu_mode_check menu_theme_alfa-on-white select__menu"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                  >
+                    <MenuItem
+                      checked={false}
+                      hovered={null}
+                      key="1"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      size="m"
+                      type="block"
+                      value={1}
+                      view="plain"
+                    >
+                      <div
+                        className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <span
+                          className="menu-item__control"
+                        >
+                          Vk
+                        </span>
+                      </div>
+                    </MenuItem>
+                    <MenuItem
+                      checked={false}
+                      hovered={null}
+                      key="2"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      size="m"
+                      type="block"
+                      value={2}
+                      view="plain"
+                    >
+                      <div
+                        className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <span
+                          className="menu-item__control"
+                        >
+                          Fb
+                        </span>
+                      </div>
+                    </MenuItem>
+                    <MenuItem
+                      checked={false}
+                      hovered={null}
+                      key="3"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      size="m"
+                      type="block"
+                      value={3}
+                      view="plain"
+                    >
+                      <div
+                        className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                      >
+                        <span
+                          className="menu-item__control"
+                        >
+                          Tw
+                        </span>
+                      </div>
+                    </MenuItem>
+                  </div>
+                </Menu>
+                <ResizeSensor
+                  onResize={[Function]}
+                >
+                  <iframe
+                    style={
+                      Object {
+                        "background": "transparent",
+                        "border": "none",
+                        "height": "100%",
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "100%",
+                        "zIndex": -1,
+                      }
+                    }
+                    tabIndex="-1"
+                  />
+                </ResizeSensor>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Popup>
     </span>
   </div>
 </Select>

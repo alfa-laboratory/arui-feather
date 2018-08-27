@@ -179,4 +179,25 @@ describe('menu-item', () => {
 
         expect(node).toBeInstanceOf(HTMLElement);
     });
+
+
+    it('should link have a theme class', () => {
+        let wrapper = mount(
+            <MenuItem theme='alfa-on-color'>MenuItem</MenuItem>
+        );
+
+        const linkNode = wrapper.find('.link').at(0);
+
+        expect(linkNode.prop('className')).toContain('link_theme_alfa-on-color');
+    });
+
+    it('should dropdown have a theme class', () => {
+        let wrapper = mount(
+            <MenuItem theme='alfa-on-color' type='dropdown'>MenuItem</MenuItem>
+        );
+
+        const dropdownNode = wrapper.find('.dropdown').at(0);
+
+        expect(dropdownNode.prop('className')).toContain('dropdown_theme_alfa-on-color');
+    });
 });

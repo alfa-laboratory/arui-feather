@@ -93,6 +93,13 @@
                 opacity: var(--opacity-active);
             }
         }
+
+        &.textarea_has-value {
+            .textarea__control {
+                margin-top: 10px;
+                padding-top: 0;
+            }
+        }
     }
 
     &_focused {
@@ -129,7 +136,7 @@
     }
 
     &_autosize &__control {
-        overflow-y: hidden;
+        overflow-x: hidden;
     }
 
     &_size_s {

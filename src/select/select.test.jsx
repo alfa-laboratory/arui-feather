@@ -257,15 +257,8 @@ describe('select', () => {
         expect(select.children().props().className).toContain('select_checked');
     });
 
-    it('should not render popup', () => {
-        let { select, popupNode } = renderSelect({ options: OPTIONS });
-
-        expect(select.getDOMNode()).toBeDefined();
-        expect(popupNode.length).toEqual(0);
-    });
-
     it('should render popup with options', () => {
-        let { select, popupNode } = renderSelect({ options: OPTIONS, opened: true });
+        let { select, popupNode } = renderSelect({ options: OPTIONS });
 
         expect(select.getDOMNode()).toBeDefined();
         expect(popupNode.props().className).toContain('popup');

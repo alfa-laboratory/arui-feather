@@ -418,11 +418,13 @@ describe('select', () => {
     it('should receive event.target.value on `onMenuFocus` callback', (done) => {
         let onMenuFocus = jest.fn();
         let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuFocus });
+
         menuNode.simulate('focus');
+
         setTimeout(() => {
             expect(onMenuFocus).toHaveBeenCalled();
             expect(onMenuFocus.mock.calls[0][0].target.value).toEqual([1, 2]);
-            // expect(onMenuFocus).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));	        jest.useRealTimers();
+            // expect(onMenuFocus).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
             done();
         }, 0);
     });

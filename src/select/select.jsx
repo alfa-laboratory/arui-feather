@@ -444,7 +444,7 @@ class Select extends React.Component {
                 maxHeight={ this.props.maxHeight }
             >
                 <Menu
-                    ref={ (menu) => { this.menu = menu; } }
+                    ref={ this.setMenuRef }
                     className={ cn('menu') }
                     size={ this.props.size }
                     disabled={ this.props.disabled }
@@ -776,21 +776,29 @@ class Select extends React.Component {
     @autobind
     setPopupRef(ref) {
         this.popup = ref;
-        const popupIsReady = !!this.popup;
 
         if (this.popup) {
             this.popup.setTarget(this.button.getNode());
         }
 
-        this.setState({
-            popupIsReady
-        });
+        if (this.props.renderPopupOnFocus) {
+            const popupIsReady = !!this.popup;
 
-        if (this.props.renderPopupOnFocus && popupIsReady) {
-            setTimeout(() => {
-                this.focusOnMenu();
-            }, 0);
+            this.setState({
+                popupIsReady
+            });
+
+            if (popupIsReady) {
+                setTimeout(() => {
+                    this.focusOnMenu();
+                }, 0);
+            }
         }
+    }
+
+    @autobind
+    setMenuRef(menu) {
+        this.menu = menu;
     }
 
     /**

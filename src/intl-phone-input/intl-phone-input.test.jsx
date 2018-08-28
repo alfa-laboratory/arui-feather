@@ -134,45 +134,32 @@ describe('intl-phone-input', () => {
     });
 
     it('should call `onChange` callback after select was changed', () => {
-        jest.useFakeTimers();
         let onChange = jest.fn();
 
         const wrapper = mount(<IntlPhoneInput onChange={ onChange } />);
         wrapper.setState({ onceOpened: true });
-
-        let selectButton = wrapper.find('.select-button');
-        selectButton.simulate('click');
-        jest.runAllTimers();
 
         const firstOptionNode = wrapper.find('.popup .menu-item').at(0);
 
         firstOptionNode.simulate('click');
 
         expect(onChange).toHaveBeenCalled();
-        jest.useRealTimers();
     });
 
-    it('should focus on input after select was changed', () => {
-        jest.useFakeTimers();
-
+    it('should focus on input after select was changed', (done) => {
         let elem = mount(<IntlPhoneInput />);
         elem.setState({ onceOpened: true });
         let controlNode = elem.instance().input;
         jest.spyOn(controlNode, 'focus');
-
-        let selectButton = elem.find('.select-button');
-        selectButton.simulate('click');
-        jest.runAllTimers();
-
         let popupNode = elem.find('.popup');
         let firstOptionNode = popupNode.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
-        jest.runAllTimers();
 
-        expect(controlNode.focus).toHaveBeenCalled();
-
-        jest.useRealTimers();
+        setTimeout(() => {
+            expect(controlNode.focus).toHaveBeenCalled();
+            done();
+        }, 0);
     });
 
     it('should focus on input after select was closed by button toggle', () => {

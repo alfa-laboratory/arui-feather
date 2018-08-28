@@ -440,7 +440,7 @@ class Select extends React.Component {
                 maxHeight={ this.props.maxHeight }
             >
                 <Menu
-                    ref={ this.setMenuRef }
+                    ref={ (menu) => { this.menu = menu; } }
                     className={ cn('menu') }
                     size={ this.props.size }
                     disabled={ this.props.disabled }
@@ -792,11 +792,6 @@ class Select extends React.Component {
         }
     }
 
-    @autobind
-    setMenuRef(menu) {
-        this.menu = menu;
-    }
-
     /**
      * Возвращает корневой `HTMLElement` компонента.
      *
@@ -851,6 +846,10 @@ class Select extends React.Component {
     }
 
     focusOnMenu() {
+        if (!this.menu) {
+            return;
+        }
+
         if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
 
         let scrollContainer = this.getScrollContainer();

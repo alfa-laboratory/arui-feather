@@ -969,9 +969,10 @@ class Select extends React.Component {
     }
 
     isAutoSelectRequired() {
-        const { mode, options } = this.props;
+        const { mode, options, renderPopupOnFocus } = this.props;
 
         return (
+            renderPopupOnFocus &&
             mode === 'radio' &&
             options.length > 0 &&
             !this.hasCheckedItems()

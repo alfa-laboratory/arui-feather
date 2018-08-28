@@ -223,6 +223,15 @@ class Select extends React.Component {
      */
     menu;
 
+    /**
+     * @type {Boolean}
+     * При открытом меню, нажатие на Esc устанавливает значение этой переменной в true
+     * Далее фокус переводится на кнопку. Далее вызывается обработчик handleMenuBlur.
+     * В обработчике закрываем попап, если ожидаем закрытия(this.awaitClosing) или фокус за пределами селекта.
+     * Это нужно, т.к. в случае в renderPopupOnFocus={true} меню исчезнет быстрее, чем сработает onMenuBlur
+     */
+    awaitClosing = false;
+
     componentWillMount() {
         this.setState({
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))

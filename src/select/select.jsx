@@ -251,11 +251,6 @@ class Select extends React.Component {
         });
     }
 
-    componentWillUnmount() {
-        clearTimeout(this.focusOnMenuTimeout);
-        clearTimeout(this.escapeTimeout);
-    }
-
     render(cn, SelectButton, Popup) {
         let value = this.getValue();
 
@@ -596,7 +591,8 @@ class Select extends React.Component {
     handleMenuBlur(event) {
         event.target.value = this.getValue();
 
-        if (event.relatedTarget !== this.button.getNode()) {
+        if (this.awaitClosing || event.relatedTarget !== this.button.getNode()) {
+            this.awaitClosing = false;
             this.setState({
                 opened: false
             });
@@ -712,12 +708,8 @@ class Select extends React.Component {
                 break;
             case keyboardCode.ESCAPE:
                 event.preventDefault();
+                this.awaitClosing = true;
                 this.button.focus();
-                this.escapeTimeout = setTimeout(() => {
-                    this.setState({
-                        opened: false
-                    });
-                }, 0);
                 break;
         }
 

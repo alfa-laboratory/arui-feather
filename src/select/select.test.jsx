@@ -215,23 +215,17 @@ describe('select', () => {
         // expect(onFocus).toHaveBeenCalledWith({ target: { value: [1, 2] } });
     });
 
-    it('should receive event.target.value on `onBlur` callback', () => {
-        jest.useFakeTimers();
+    it('should receive event.target.value on `onBlur` callback', (done) => {
         let onBlur = jest.fn();
-        let { menuNode } = renderSelect({
-            value: [1, 2],
-            options: OPTIONS,
-            onBlur,
-            opened: true
-        });
-        jest.runAllTimers();
+        let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onBlur });
 
-        menuNode.getDOMNode().blur();
-        jest.runAllTimers();
+        select.find('.menu').simulate('blur');
 
-        expect(onBlur).toHaveBeenCalled();
-        expect(onBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
-        jest.useRealTimers();
+        setTimeout(() => {
+            expect(onBlur).toHaveBeenCalled();
+            expect(onBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
+            done();
+        }, 0);
     });
 
     it('should set `checked` class when item is selected', () => {
@@ -438,7 +432,7 @@ describe('select', () => {
         setTimeout(() => {
             expect(onMenuBlur).toHaveBeenCalled();
             expect(onMenuBlur.mock.calls[0][0].target.value).toEqual([1, 2]);
-            // expect(onMenuBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));	        jest.runAllTimers();
+            // expect(onMenuBlur).toHaveBeenCalledWith(expect.objectContaining({ target: { value: [1, 2] } }));
             done();
         }, 0);
     });

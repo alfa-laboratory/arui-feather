@@ -222,10 +222,6 @@ class Select extends React.Component {
      * @type {Menu}
      */
     menu;
-    /**
-     * @type {Boolean}
-     */
-    waitForMenu = false;
 
     componentWillMount() {
         this.setState({
@@ -415,6 +411,9 @@ class Select extends React.Component {
         let opened = this.getOpened();
         let value = this.getValue();
         const { popupIsReady } = this.state;
+        const popupIsVisible = this.props.renderPopupOnFocus
+            ? opened && popupIsReady
+            : opened;
 
         if (!opened && this.props.renderPopupOnFocus) {
             return null;
@@ -434,7 +433,7 @@ class Select extends React.Component {
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
                 header={ this.state.isMobile && this.renderMobileHeader(cn) }
-                visible={ opened && popupIsReady }
+                visible={ popupIsVisible }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
@@ -786,19 +785,16 @@ class Select extends React.Component {
             popupIsReady
         });
 
-        if (popupIsReady) {
-            this.focusOnMenu();
+        if (this.props.renderPopupOnFocus && popupIsReady) {
+            setTimeout(() => {
+                this.focusOnMenu();
+            }, 0);
         }
     }
 
     @autobind
     setMenuRef(menu) {
         this.menu = menu;
-
-        if (this.waitForMenu) {
-            this.waitForMenu = false;
-            this.focusOnMenu();
-        }
     }
 
     /**
@@ -855,11 +851,6 @@ class Select extends React.Component {
     }
 
     focusOnMenu() {
-        if (!this.menu) {
-            this.waitForMenu = true;
-            return;
-        }
-
         if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
 
         let scrollContainer = this.getScrollContainer();
@@ -867,11 +858,9 @@ class Select extends React.Component {
         let posX = scrollContainer.scrollTop;
         let posY = scrollContainer.scrollLeft;
 
-        this.focusOnMenuTimeout = setTimeout(() => {
-            this.menu.focus();
-            scrollContainer.scrollTop = posX;
-            scrollContainer.scrollLeft = posY;
-        }, 0);
+        this.menu.focus();
+        scrollContainer.scrollTop = posX;
+        scrollContainer.scrollLeft = posY;
     }
 
     /**

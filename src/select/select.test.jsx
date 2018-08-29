@@ -458,14 +458,14 @@ describe('select', () => {
         });
 
         it('should render popup after click', () => {
-            const { select, buttonNode, popupNode: initialPopupNode } = renderSelect({
+            const { select, buttonNode } = renderSelect({
                 renderPopupOnFocus: true,
                 options: OPTIONS
             });
 
-            expect(initialPopupNode.length).toEqual(0);
-
             buttonNode.simulate('click');
+            jest.runAllTimers();
+
             const { popupNode } = getPopupNode(select);
 
             expect(popupNode.length).toEqual(1);

@@ -72,12 +72,6 @@ describe('select', () => {
         expect(select).toMatchSnapshot();
     });
 
-    it('should render opened select', () => {
-        let { select } = renderSelect({ options: OPTIONS, opened: true });
-
-        expect(select).toMatchSnapshot();
-    });
-
     it('should render hidden input', () => {
         let { select } = renderSelect({ options: OPTIONS });
         let hiddenInputNode = select.find('input');

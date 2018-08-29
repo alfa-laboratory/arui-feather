@@ -40,9 +40,10 @@ function renderSelect(props) {
     let nativeSelectNode = select.find('.select__native-control');
     let buttonNode = select.find('.select-button');
     let { popupNode, menuNode } = getPopupNode(select);
+    let hiddenInput = select.find('input');
 
     return {
-        select, nativeSelectNode, popupNode, buttonNode, menuNode
+        select, nativeSelectNode, popupNode, buttonNode, menuNode, hiddenInput
     };
 }
 
@@ -436,6 +437,132 @@ describe('select', () => {
         select.instance().popup.handleWindowClick({});
 
         expect(onClickOutside).toHaveBeenCalled();
+    });
+
+    describe('renderPopupOnFocus=true', () => {
+        beforeAll(() => {
+            jest.useFakeTimers();
+        });
+
+        afterAll(() => {
+            jest.useRealTimers();
+        });
+
+        it('should not render popup', () => {
+            const { popupNode } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS
+            });
+
+            expect(popupNode.length).toEqual(0);
+        });
+
+        it('should render popup after click', () => {
+            const { select, buttonNode, popupNode: initialPopupNode } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS
+            });
+
+            expect(initialPopupNode.length).toEqual(0);
+
+            buttonNode.simulate('click');
+            const { popupNode } = getPopupNode(select);
+
+            expect(popupNode.length).toEqual(1);
+        });
+
+        it('should focus on menu after click', () => {
+            const onMenuFocus = jest.fn();
+
+            const { select, buttonNode } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS,
+                onMenuFocus
+            });
+
+            buttonNode.simulate('click');
+            jest.runAllTimers();
+
+            const { menuNode } = getPopupNode(select);
+
+            expect(menuNode.getDOMNode()).toEqual(document.activeElement);
+            expect(onMenuFocus).toBeCalled();
+        });
+
+        it('should close on escape click', () => {
+            const onMenuBlur = jest.fn();
+
+            const { select, buttonNode } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS,
+                onMenuBlur
+            });
+
+            buttonNode.simulate('click');
+            jest.runAllTimers();
+
+            const { menuNode } = getPopupNode(select);
+
+            menuNode.simulate('keyDown', { which: keyboardCode.ESCAPE });
+            jest.runAllTimers();
+            select.update();
+
+            const { popupNode } = getPopupNode(select);
+
+            expect(popupNode.length).toEqual(0);
+            expect(onMenuBlur).toBeCalled();
+        });
+
+        it('should auto select first value', () => {
+            const onChange = jest.fn();
+
+            const { hiddenInput } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS,
+                mode: 'radio',
+                onChange
+            });
+
+            const expectedValue = [OPTIONS[0].value];
+            const actualValue = hiddenInput.prop('value');
+
+            expect(actualValue).toEqual(expectedValue);
+            expect(onChange).toBeCalledWith(expectedValue);
+        });
+
+        it('should not auto select first value', () => {
+            const onChange = jest.fn();
+            const expectedValue = [OPTIONS[1].value];
+
+            const { hiddenInput } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS,
+                value: expectedValue,
+                mode: 'radio',
+                onChange
+            });
+
+            const actualValue = hiddenInput.prop('value');
+
+            expect(actualValue).toEqual(expectedValue);
+            expect(onChange).not.toBeCalled();
+        });
+
+        it('should not auto select first value', () => {
+            const onChange = jest.fn();
+            const expectedValue = [];
+
+            const { hiddenInput } = renderSelect({
+                renderPopupOnFocus: true,
+                options: OPTIONS,
+                onChange
+            });
+
+            const actualValue = hiddenInput.prop('value');
+
+            expect(actualValue).toEqual(expectedValue);
+            expect(onChange).not.toBeCalled();
+        });
     });
 
 

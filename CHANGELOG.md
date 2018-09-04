@@ -1,3 +1,8 @@
+<a name="12.9.5"></a>
+## [12.9.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.4...v12.9.5) (2018-09-04)
+
+
+
 <a name="12.9.4"></a>
 ## [12.9.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.3...v12.9.4) (2018-08-28)
 

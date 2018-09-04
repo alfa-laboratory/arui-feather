@@ -94,6 +94,89 @@ const options = [
 </div>
 ```
 
+С лейблом
+```jsx
+const options = [
+    { value: '01', text: 'Технопарк' },
+    { value: '02', text: 'Петроградская' },
+    { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
+];
+<div>
+    <div className='row'>
+        <div className='column'>
+            <Select
+                label='Станция метро'
+                mode='check'
+                options={ options }
+            />
+        </div>
+    </div>
+</div>
+```
+
+С плейсхолдером
+```jsx
+const options = [
+    { value: '01', text: 'Технопарк' },
+    { value: '02', text: 'Петроградская' },
+    { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
+];
+<div>
+    <div className='row'>
+        <div className='column'>
+            <Select
+                placeholder='Выберите одну или несколько'
+                mode='check'
+                options={ options }
+            />
+        </div>
+    </div>
+</div>
+```
+
+С лейблом и плейсхолдером
+```jsx
+const options = [
+    { value: '01', text: 'Технопарк' },
+    { value: '02', text: 'Петроградская' },
+    { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
+];
+<div>
+    <div className='row'>
+        <div className='column'>
+            <Select
+                label='Станция метро'
+                placeholder='Выберите одну или несколько'
+                mode='check'
+                options={ options }
+            />
+        </div>
+    </div>
+</div>
+```
+
+С кастомной подсказкой для нативного контрола
+```jsx
+const options = [
+    { value: '01', text: 'Технопарк' },
+    { value: '02', text: 'Петроградская' },
+    { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
+];
+<div>
+    <div className='row'>
+        <div className='column'>
+            <Select
+                label='Станция метро'
+                placeholder='Выберите одну или несколько'
+                nativeOptionPlaceholder='Станций-то всего 3'
+                mode='check'
+                options={ options }
+            />
+        </div>
+    </div>
+</div>
+```
+
 Select с тянущейся шириной
 ```jsx
 const options = [
@@ -181,6 +264,7 @@ const options = [
                         options={ options }
                         mobileMenuMode='popup'
                         mobileTitle='Очень длинный заголовок на мобильном устройстве'
+                        nativeOptionPlaceholder='Какая-то длинная подсказка'
                     />
                 </div>
                 <div className='column'>

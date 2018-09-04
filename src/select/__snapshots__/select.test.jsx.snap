@@ -14,7 +14,9 @@ exports[`select should render without problem 1`] = `
   equalPopupWidth={false}
   groupView="default"
   mobileMenuMode="native"
+  mobileTitle="Выберите:"
   mode="check"
+  nativeOptionPlaceholder="Выберите:"
   options={
     Array [
       Object {
@@ -33,13 +35,12 @@ exports[`select should render without problem 1`] = `
       },
     ]
   }
-  placeholder="Выберите:"
   renderPopupOnFocus={false}
   size="m"
   width="default"
 >
   <div
-    className="select select_mode_check select_size_m select_width_default select_has-value select_theme_alfa-on-white"
+    className="select select_mode_check select_size_m select_width_default select_theme_alfa-on-white"
   >
     <span
       className="select__inner"

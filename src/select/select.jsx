@@ -24,6 +24,8 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
+const DEFAULT_TEXT_FALLBACK = 'Выберите:';
+
 /**
  * Элемент кнопки для выпадающего списка.
  */
@@ -105,6 +107,8 @@ class Select extends React.Component {
         label: Type.node,
         /** Подсказка в поле */
         placeholder: Type.string,
+        /** Подсказка в качестве неактивного первого варианта выбора для нативного мобильного контрола */
+        nativeOptionPlaceholder: Type.string,
         /** Подсказка под полем */
         hint: Type.node,
         /** Отображение ошибки */
@@ -186,7 +190,8 @@ class Select extends React.Component {
         width: 'default',
         equalPopupWidth: false,
         options: [],
-        placeholder: 'Выберите:',
+        mobileTitle: DEFAULT_TEXT_FALLBACK,
+        nativeOptionPlaceholder: DEFAULT_TEXT_FALLBACK,
         mobileMenuMode: 'native',
         renderPopupOnFocus: false
     };
@@ -272,7 +277,8 @@ class Select extends React.Component {
                     checked: value.length > 0,
                     disabled: this.props.disabled,
                     'has-label': !!this.props.label,
-                    'has-value': !!value,
+                    'has-value': !!value.length,
+                    'has-placeholder': !!this.props.placeholder,
                     invalid: !!this.props.error,
                     opened: this.getOpened(),
                     'no-tick': this.props.hideTick
@@ -396,13 +402,13 @@ class Select extends React.Component {
                     hasEmptyOptGroup &&
                     <optgroup
                         disabled={ true }
-                        label={ this.props.placeholder }
+                        label={ this.props.nativeOptionPlaceholder }
                     />
                 }
                 {
                     hasEmptyOption &&
                     <option disabled={ true } value=''>
-                        { this.props.placeholder }
+                        { this.props.nativeOptionPlaceholder }
                     </option>
                 }
                 { this.renderNativeOptionsList(this.props.options) }
@@ -526,12 +532,17 @@ class Select extends React.Component {
         }
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
-        return checkedItemsText ||
-            (
-                <span className={ cn('placeholder') }>
-                    { this.props.placeholder }
-                </span>
-            );
+        if (checkedItemsText) {
+            return checkedItemsText;
+        }
+        // Если ничего не выбрано, то рендерим плейсхолдер
+        // Если плейсхолдера нет, то рендерим текст лейбла. Но отрендерится он прозрачным - это нужно для того, чтобы лейбл растягивал блок до нужной ширины, т. к. настоящий лейбл позиционируется абсолютно и не влияет на размер
+        // Если нет ни плейсхолдера, ни лейбла, то рендерим "Выберите:" для обратной совместимости
+        return (
+            <span className={ cn('placeholder') }>
+                { this.props.placeholder || this.props.label || DEFAULT_TEXT_FALLBACK }
+            </span>
+        );
     }
 
     renderMobileHeader(cn) {
@@ -539,7 +550,7 @@ class Select extends React.Component {
             <PopupHeader
                 className={ cn('mobile-header') }
                 size={ this.props.size }
-                title={ this.props.mobileTitle || this.props.placeholder }
+                title={ this.props.mobileTitle }
                 onCloserClick={ this.handlePopupCloserClick }
             />
         );
@@ -955,7 +966,7 @@ class Select extends React.Component {
     }
 
     /**
-     * @returns {String|Number}
+     * @returns {Array<String|Number>}
      */
     getValue() {
         return this.props.value || this.state.value;

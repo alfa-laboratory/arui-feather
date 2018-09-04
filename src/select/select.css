@@ -4,6 +4,16 @@
 
 @import '../vars.css';
 
+@define-mixin animated-label $parent, $scale, $translate {
+    $(parent).select_opened:not(.select_animated),
+    $(parent).select_has-value:not(.select_animated),
+    $(parent).select_animated.select_checked {
+        .select__top {
+            transform: scale($scale) translateY($translate);
+        }
+    }
+}
+
 :root {
     --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
     --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
@@ -190,6 +200,12 @@
         min-width: 0;
         height: 100%;
     }
+
+    &_animated {
+        .select__placeholder {
+            visibility: hidden;
+        }
+    }
 }
 
 .select_size_s {
@@ -202,12 +218,7 @@
         line-height: 30px;
     }
 
-    &.select_opened,
-    &.select_has-value {
-        .select__top {
-            transform: scale(var(--top-scale-s)) translateY(-22px);
-        }
-    }
+    @mixin animated-label &, var(--top-scale-s), -22px;
 }
 
 .select_size_m {
@@ -220,12 +231,7 @@
         line-height: 40px;
     }
 
-    &.select_opened,
-    &.select_has-value {
-        .select__top {
-            transform: scale(var(--top-scale-m)) translateY(-30px);
-        }
-    }
+    @mixin animated-label &, var(--top-scale-m), -30px;
 }
 
 .select_size_l {
@@ -238,12 +244,7 @@
         line-height: 50px;
     }
 
-    &.select_opened,
-    &.select_has-value {
-        .select__top {
-            transform: scale(var(--top-scale-l)) translateY(-40px);
-        }
-    }
+    @mixin animated-label &, var(--top-scale-l), -40px;
 }
 
 .select_size_xl {
@@ -256,10 +257,5 @@
         line-height: 60px;
     }
 
-    &.select_opened,
-    &.select_has-value {
-        .select__top {
-            transform: scale(var(--top-scale-xl)) translateY(-50px);
-        }
-    }
+    @mixin animated-label &, var(--top-scale-xl), -50px;
 }

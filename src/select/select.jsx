@@ -101,6 +101,8 @@ class Select extends React.Component {
         name: Type.string,
         /** Лейбл для поля */
         label: Type.node,
+        /** Анимация для лейбла по аналогии с компонентом Input */
+        animated: Type.bool,
         /** Подсказка в поле */
         placeholder: Type.string,
         /** Подсказка под полем */
@@ -185,7 +187,8 @@ class Select extends React.Component {
         equalPopupWidth: false,
         options: [],
         placeholder: 'Выберите:',
-        mobileMenuMode: 'native'
+        mobileMenuMode: 'native',
+        animated: false
     };
 
     static contextTypes = {
@@ -263,7 +266,8 @@ class Select extends React.Component {
                     'has-value': !!value,
                     invalid: !!this.props.error,
                     opened: this.getOpened(),
-                    'no-tick': this.props.hideTick
+                    'no-tick': this.props.hideTick,
+                    animated: this.props.animated
                 }) }
                 ref={ (root) => { this.root = root; } }
             >

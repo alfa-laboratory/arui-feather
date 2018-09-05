@@ -1,3 +1,14 @@
+<a name="12.10.0"></a>
+# [12.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.5...v12.10.0) (2018-09-05)
+
+
+### Features
+
+* **amount:** font weight bold is back ([#715](https://github.com/alfa-laboratory/arui-feather/issues/715)) ([2b30300](https://github.com/alfa-laboratory/arui-feather/commit/2b30300))
+* **select:** add renderPopupOnFocus prop ([#707](https://github.com/alfa-laboratory/arui-feather/issues/707)) ([0303717](https://github.com/alfa-laboratory/arui-feather/commit/0303717))
+
+
+
 <a name="12.9.5"></a>
 ## [12.9.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.4...v12.9.5) (2018-09-04)
 

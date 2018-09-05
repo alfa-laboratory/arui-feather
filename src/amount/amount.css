@@ -18,13 +18,14 @@
     }
 
     &__major {
-        font-weight: var(--font-weight-medium);
+        font-weight: var(--font-weight-bold);
     }
 
     &__separator,
     &__minor,
     &__currency {
-        font-weight: var(--font-weight-light);
+        font-weight: var(--font-weight-bold);
+        opacity: var(--opacity-minor);
     }
 
     .heading {

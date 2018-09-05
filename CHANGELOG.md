@@ -1,3 +1,18 @@
+<a name="12.9.5"></a>
+## [12.9.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.4...v12.9.5) (2018-09-04)
+
+
+
+<a name="12.9.4"></a>
+## [12.9.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.3...v12.9.4) (2018-08-28)
+
+
+### Bug Fixes
+
+* **textarea:** fix label and scroll in autosize textarea ([6d5c9ff](https://github.com/alfa-laboratory/arui-feather/commit/6d5c9ff))
+
+
+
 <a name="12.9.3"></a>
 ## [12.9.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.2...v12.9.3) (2018-08-24)
 

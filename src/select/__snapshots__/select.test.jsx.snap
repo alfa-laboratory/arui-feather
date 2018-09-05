@@ -34,6 +34,7 @@ exports[`select should render without problem 1`] = `
     ]
   }
   placeholder="Выберите:"
+  renderPopupOnFocus={false}
   size="m"
   width="default"
 >

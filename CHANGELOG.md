@@ -1,3 +1,13 @@
+<a name="12.10.1"></a>
+## [12.10.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.0...v12.10.1) (2018-09-10)
+
+
+### Bug Fixes
+
+* **calendar-input:** Input pattern updated to match real expected value ([#717](https://github.com/alfa-laboratory/arui-feather/issues/717)) ([883995b](https://github.com/alfa-laboratory/arui-feather/commit/883995b))
+
+
+
 <a name="12.10.0"></a>
 # [12.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.5...v12.10.0) (2018-09-05)
 

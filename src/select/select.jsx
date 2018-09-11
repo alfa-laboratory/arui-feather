@@ -618,10 +618,8 @@ class Select extends React.Component {
 
     @autobind
     handleMenuHighlightItem(highlightedItem) {
-        if (!this.getOpened() && highlightedItem) {
-            if (this.popup) {
-                this.popup.getInnerNode().scrollTop = 0;
-            }
+        if (!this.getOpened() && highlightedItem && this.popup) {
+            this.popup.getInnerNode().scrollTop = 0;
             this.scrollToHighlightedItem(highlightedItem);
         }
     }

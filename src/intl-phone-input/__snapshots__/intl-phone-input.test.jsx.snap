@@ -29,6 +29,7 @@ exports[`intl-phone-input renders without problems 1`] = `
       placeholder="Выберите:"
       popupSecondaryOffset={-24}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="m"
       value={
         Array [
@@ -77,6 +78,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
       placeholder="Выберите:"
       popupSecondaryOffset={-27}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="l"
       value={
         Array [
@@ -125,6 +127,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
       placeholder="Выберите:"
       popupSecondaryOffset={-24}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="m"
       value={
         Array [
@@ -173,6 +176,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
       placeholder="Выберите:"
       popupSecondaryOffset={-18}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="s"
       value={
         Array [
@@ -221,6 +225,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
       placeholder="Выберите:"
       popupSecondaryOffset={-28}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="xl"
       value={
         Array [

@@ -87,10 +87,15 @@ class Textarea extends React.Component {
          */
         onHeightChange: Type.func,
         /**
-         * Обработчик события нажатия клавиши при фокусе на поле
+         * Обработчик события нажатия клавиш с буквами/цифрами при фокусе на поле
          * @param {React.KeyboardEvent} event
          */
-        onKeyPress: Type.func
+        onKeyPress: Type.func,
+        /**
+         * Обработчик события нажатия любых клавиш при фокусе на поле
+         * @param {React.KeyboardEvent} event
+         */
+        onKeyDown: Type.func
     };
 
     static defaultProps = {
@@ -137,7 +142,8 @@ class Textarea extends React.Component {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onPaste: this.handlePaste,
-            onKeyPress: this.handleKeyPress
+            onKeyPress: this.handleKeyPress,
+            onKeyDown: this.handleKeyDown
         };
 
         return (
@@ -230,6 +236,13 @@ class Textarea extends React.Component {
     handleKeyPress(event) {
         if (this.props.onKeyPress) {
             this.props.onKeyPress(event);
+        }
+    }
+
+    @autobind
+    handleKeyDown(event) {
+        if (this.props.onKeyDown) {
+            this.props.onKeyDown(event);
         }
     }
 

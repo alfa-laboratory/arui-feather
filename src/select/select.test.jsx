@@ -439,6 +439,18 @@ describe('select', () => {
         expect(onClickOutside).toHaveBeenCalled();
     });
 
+    it('should have `has-value` modificator when given value', () => {
+        let { select } = renderSelect({ value: [OPTIONS[0].value], options: OPTIONS });
+
+        expect(select.find('div.select').hasClass('select_has-value')).toBeTruthy();
+    });
+
+    it('should not have `has-value` modificator when given no value', () => {
+        let { select } = renderSelect({ options: OPTIONS });
+
+        expect(select.find('div.select').hasClass('select_has-value')).toBeFalsy();
+    });
+
     describe('renderPopupOnFocus=true', () => {
         beforeAll(() => {
             jest.useFakeTimers();
@@ -565,7 +577,6 @@ describe('select', () => {
         });
     });
 
-
     describe('mobile version', () => {
         beforeEach(() => {
             setMqMatched(true);
@@ -580,7 +591,7 @@ describe('select', () => {
         });
 
         it('should render placeholder text from props', () => {
-            let selectProps = { options: OPTIONS, placeholder: 'Select something' };
+            let selectProps = { options: OPTIONS, nativeOptionPlaceholder: 'Select something' };
             let { nativeSelectNode } = renderSelect(selectProps);
             let optGroup = nativeSelectNode.find('optgroup');
 

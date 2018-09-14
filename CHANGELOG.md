@@ -1,3 +1,18 @@
+<a name="12.11.0"></a>
+# [12.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.2...v12.11.0) (2018-09-14)
+
+
+### Bug Fixes
+
+* **select:** label animation ([#716](https://github.com/alfa-laboratory/arui-feather/issues/716)) ([abec290](https://github.com/alfa-laboratory/arui-feather/commit/abec290))
+
+
+### Features
+
+* **utils/currency-codes:** add CHF currency symbol ([#719](https://github.com/alfa-laboratory/arui-feather/issues/719)) ([b781109](https://github.com/alfa-laboratory/arui-feather/commit/b781109))
+
+
+
 <a name="12.10.2"></a>
 ## [12.10.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.1...v12.10.2) (2018-09-14)
 

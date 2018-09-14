@@ -1,3 +1,13 @@
+<a name="12.10.2"></a>
+## [12.10.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.1...v12.10.2) (2018-09-14)
+
+
+### Bug Fixes
+
+* **select:** change hightlightItem statement ([#713](https://github.com/alfa-laboratory/arui-feather/issues/713)) ([8fe9688](https://github.com/alfa-laboratory/arui-feather/commit/8fe9688))
+
+
+
 <a name="12.10.1"></a>
 ## [12.10.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.0...v12.10.1) (2018-09-10)
 

@@ -99,7 +99,7 @@ export const CURRENCY_MAP = {
     KRW: '\u20a9',
     LKR: '\u20a8',
     SEK: '\u006b\u0072',
-    CHF: '\u0043\u0048\u0046',
+    CHF: '\u20a3',
     SRD: '\u0024',
     SYP: '\u00a3',
     TWD: '\u004e\u0054\u0024',

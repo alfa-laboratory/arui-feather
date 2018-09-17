@@ -92,7 +92,7 @@ class Textarea extends React.Component {
          */
         onKeyPress: Type.func,
         /**
-         * Обработчик события keyPress
+         * Обработчик события keyDown
          * @param {React.KeyboardEvent} event
          */
         onKeyDown: Type.func

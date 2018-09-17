@@ -87,12 +87,12 @@ class Textarea extends React.Component {
          */
         onHeightChange: Type.func,
         /**
-         * Обработчик события нажатия клавиш с буквами/цифрами при фокусе на поле
+         * Обработчик события нажатия клавиши при фокусе на поле
          * @param {React.KeyboardEvent} event
          */
         onKeyPress: Type.func,
         /**
-         * Обработчик события нажатия любых клавиш при фокусе на поле
+         * Обработчик события keyPress
          * @param {React.KeyboardEvent} event
          */
         onKeyDown: Type.func

@@ -108,7 +108,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
-    "alfa-ui-primitives": "1.6.5",
+    "alfa-ui-primitives": "1.6.6",
     "arui-presets": "4.13.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "bowser": "1.9.3",

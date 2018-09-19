@@ -69,6 +69,7 @@ import IconCardList from './banking/card-list';
 import IconCardToCard from './banking/card-to-card';
 import IconCardUnknown from './banking/card-unknown';
 import IconCash from './banking/cash';
+import IconConvert from './banking/convert';
 import IconCosts from './banking/costs';
 import IconCostsCard from './banking/costs-card';
 import IconCredit from './banking/credit';
@@ -107,6 +108,7 @@ import IconTransferExternal from './banking/transfer-external';
 import IconTransferIn from './banking/transfer-in';
 import IconTransferInternal from './banking/transfer-internal';
 import IconTransferOut from './banking/transfer-out';
+import IconTransferOuter from './banking/transfer-outer';
 import IconTransferSelf from './banking/transfer-self';
 import IconTransferToCard from './banking/transfer-to-card';
 import IconBank2449 from './brand/bank-2449';
@@ -294,6 +296,7 @@ import IconCheck from './ui/check';
 import IconCheckBold from './ui/check-bold';
 import IconCheckChat from './ui/check-chat';
 import IconCheckIndeterminate from './ui/check-indeterminate';
+import IconClose from './ui/close';
 import IconCloseCircle from './ui/close-circle';
 import IconDone from './ui/done';
 import IconDown from './ui/down';
@@ -318,6 +321,7 @@ import IconOkFilled from './ui/ok-filled';
 import IconPlay from './ui/play';
 import IconRight from './ui/right';
 import IconSell from './ui/sell';
+import IconStatusUrgent from './ui/status-urgent';
 import IconSubmit from './ui/submit';
 import IconSystemBack from './ui/system-back';
 import IconSystemClose from './ui/system-close';
@@ -398,6 +402,7 @@ describe('icon', () => {
             { componentName: IconCardToCard, name: 'card-to-card' },
             { componentName: IconCardUnknown, name: 'card-unknown' },
             { componentName: IconCash, name: 'cash' },
+            { componentName: IconConvert, name: 'convert' },
             { componentName: IconCosts, name: 'costs' },
             { componentName: IconCostsCard, name: 'costs-card' },
             { componentName: IconCredit, name: 'credit' },
@@ -436,6 +441,7 @@ describe('icon', () => {
             { componentName: IconTransferIn, name: 'transfer-in' },
             { componentName: IconTransferInternal, name: 'transfer-internal' },
             { componentName: IconTransferOut, name: 'transfer-out' },
+            { componentName: IconTransferOuter, name: 'transfer-outer' },
             { componentName: IconTransferSelf, name: 'transfer-self' },
             { componentName: IconTransferToCard, name: 'transfer-to-card' },
             { componentName: IconBank2449, name: 'bank-2449' },
@@ -623,6 +629,7 @@ describe('icon', () => {
             { componentName: IconCheckBold, name: 'check-bold' },
             { componentName: IconCheckChat, name: 'check-chat' },
             { componentName: IconCheckIndeterminate, name: 'check-indeterminate' },
+            { componentName: IconClose, name: 'close' },
             { componentName: IconCloseCircle, name: 'close-circle' },
             { componentName: IconDone, name: 'done' },
             { componentName: IconDown, name: 'down' },
@@ -647,6 +654,7 @@ describe('icon', () => {
             { componentName: IconPlay, name: 'play' },
             { componentName: IconRight, name: 'right' },
             { componentName: IconSell, name: 'sell' },
+            { componentName: IconStatusUrgent, name: 'status-urgent' },
             { componentName: IconSubmit, name: 'submit' },
             { componentName: IconSystemBack, name: 'system-back' },
             { componentName: IconSystemClose, name: 'system-close' },

@@ -187,3 +187,5 @@ npm run modernizr
 --------
 
 © 2016-2018 Alfa-Bank. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).
+
+чпоньк

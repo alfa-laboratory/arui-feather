@@ -1659,7 +1659,7 @@ babel-preset-react@6.24.1:
     babel-plugin-transform-react-jsx-source "^6.22.0"
     babel-preset-flow "^6.23.0"
 
-babel-register@^6.26.0:
+babel-register@6.x.x, babel-register@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-register/-/babel-register-6.26.0.tgz#6ed021173e2fcb486d7acb45c6009a856f647071"
   dependencies:
@@ -5203,6 +5203,12 @@ gaze@^0.5.1:
   resolved "https://registry.yarnpkg.com/gaze/-/gaze-0.5.2.tgz#40b709537d24d1d45767db5a908689dfe69ac44f"
   dependencies:
     globule "~0.1.0"
+
+gemini-babel@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gemini-babel/-/gemini-babel-1.0.0.tgz#cec4947fcd0d1e6aa58afe5d2d9c4f2ed04b8493"
+  dependencies:
+    babel-register "6.x.x"
 
 gemini-configparser@^1.0.0:
   version "1.0.0"

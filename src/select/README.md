@@ -388,7 +388,7 @@ const options = [
             <Select
                 mode='radio'
                 options={ options }
-                renderPopupOnFocus={true}
+                renderPopupOnFocus={ true }
             />
         </div>
     </div>

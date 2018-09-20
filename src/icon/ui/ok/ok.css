@@ -54,6 +54,14 @@
     background-image: url('./icon_ok_xxl_black.svg');
 }
 
+.icon_size_xxl.icon_name_ok.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_ok.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_ok_xxl_color.svg');
+}
+
 .icon_size_xxl.icon_name_ok.icon_theme_alfa-on-color {
     background-image: url('./icon_ok_xxl_white.svg');
+}
+
+.icon_size_xxxl.icon_name_ok.icon_colored.icon_theme_alfa-on-color, .icon_size_xxxl.icon_name_ok.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_ok_xxxl_color.svg');
 }

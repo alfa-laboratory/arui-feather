@@ -1029,6 +1029,13 @@ exports[`icon render IconClock without problems: IconClock 1`] = `
 />
 `;
 
+exports[`icon render IconClose without problems: IconClose 1`] = `
+<Icon
+  name="close"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCloseCircle without problems: IconCloseCircle 1`] = `
 <Icon
   name="close-circle"
@@ -1060,6 +1067,13 @@ exports[`icon render IconContactlessOff without problems: IconContactlessOff 1`]
 exports[`icon render IconContactlessOn without problems: IconContactlessOn 1`] = `
 <Icon
   name="contactless-on"
+  size="m"
+/>
+`;
+
+exports[`icon render IconConvert without problems: IconConvert 1`] = `
+<Icon
+  name="convert"
   size="m"
 />
 `;
@@ -2086,6 +2100,13 @@ exports[`icon render IconSite without problems: IconSite 1`] = `
 />
 `;
 
+exports[`icon render IconStatusUrgent without problems: IconStatusUrgent 1`] = `
+<Icon
+  name="status-urgent"
+  size="m"
+/>
+`;
+
 exports[`icon render IconSubmit without problems: IconSubmit 1`] = `
 <Icon
   name="submit"
@@ -2180,6 +2201,13 @@ exports[`icon render IconTransferInternal without problems: IconTransferInternal
 exports[`icon render IconTransferOut without problems: IconTransferOut 1`] = `
 <Icon
   name="transfer-out"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTransferOuter without problems: IconTransferOuter 1`] = `
+<Icon
+  name="transfer-outer"
   size="m"
 />
 `;

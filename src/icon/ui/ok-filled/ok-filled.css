@@ -33,3 +33,11 @@
 .icon_size_xl.icon_name_ok-filled.icon_theme_alfa-on-color {
     background-image: url('./icon_ok-filled_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_ok-filled.icon_theme_alfa-on-white {
+    background-image: url('./icon_ok-filled_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_ok-filled.icon_theme_alfa-on-color {
+    background-image: url('./icon_ok-filled_xxl_white.svg');
+}

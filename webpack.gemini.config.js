@@ -1,5 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 /* eslint strict: [0, "global"] */
+// чпоньк
 
 'use strict';
 

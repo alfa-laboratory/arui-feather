@@ -5277,6 +5277,12 @@ gemini-react@0.11.0:
     server-destroy "^1.0.1"
     webpack-dev-middleware "^1.8.4"
 
+gemini-saucelabs-info@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gemini-saucelabs-info/-/gemini-saucelabs-info-1.0.0.tgz#15c89a3ece14f125f7fff58abe8e289733b15799"
+  dependencies:
+    lodash "^3.10.1"
+
 gemini@5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/gemini/-/gemini-5.5.0.tgz#92ca0546f1a81db2dace09cb33189b584bbdbd1d"
@@ -8272,6 +8278,10 @@ lodash@4.17.4:
 "lodash@>=3.5 <5", lodash@^4.1.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+
+lodash@^3.10.1:
+  version "3.10.1"
+  resolved "http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 lodash@~1.0.1:
   version "1.0.2"

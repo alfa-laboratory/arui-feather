@@ -179,4 +179,13 @@ describe('textarea', () => {
 
         expect(onKeyPress).toHaveBeenCalled();
     });
+
+    it('should call onKeyDown callback', () => {
+        let onKeyDown = jest.fn();
+        let textarea = mount(<Textarea onKeyDown={ onKeyDown } />);
+
+        textarea.find('textarea').simulate('keyDown', { key: 'Down' });
+
+        expect(onKeyDown).toHaveBeenCalled();
+    });
 });

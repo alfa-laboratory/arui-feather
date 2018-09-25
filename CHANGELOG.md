@@ -1,3 +1,13 @@
+<a name="12.11.2"></a>
+## [12.11.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.1...v12.11.2) (2018-09-25)
+
+
+### Features
+
+* **textarea:** add keydown prop ([#718](https://github.com/alfa-laboratory/arui-feather/issues/718)) ([29027fc](https://github.com/alfa-laboratory/arui-feather/commit/29027fc))
+
+
+
 <a name="12.11.1"></a>
 ## [12.11.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.0...v12.11.1) (2018-09-20)
 

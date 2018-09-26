@@ -27,7 +27,7 @@ class PhoneInput extends React.Component {
     };
 
     static defaultProps = {
-        mask: '+1 111 111 11 11',
+        mask: '+7 111 111 11 11',
         placeholder: '+7 000 000 00 00'
     };
 

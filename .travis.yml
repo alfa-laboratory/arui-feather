@@ -50,10 +50,10 @@ after_script:
 
 after_success:
   - |
-    if [ "${TRAVIS_BRANCH}" == "master" ]; then
-      if [ "${TEST_SCOPE}" == "lint" ]; then
-        sh ./tools/publish-styleguide.sh
-      fi
+    if [ "${TEST_SCOPE}" == "lint" ]; then
+      if: branch = master
+      script:
+        - sh ./tools/publish-styleguide.sh
     fi
   - |
     if [ "${TEST_SCOPE}" == "unit" ]; then

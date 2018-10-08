@@ -22,7 +22,10 @@
     transition-timing-function: ease;
     border-radius: var(--border-radius-control);
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -75,7 +78,8 @@
     }
 
     &_view_action &__text,
-    &_view_extra &__text {
+    &_view_extra &__text,
+    &_view_rounded &__text {
         font-weight: var(--font-weight-medium);
     }
 
@@ -127,5 +131,31 @@
     &_size_xl &__icon {
         margin-left: -16px;
         min-width: 6px;
+    }
+
+    &_view_rounded {
+        &.button_size_s {
+            height: calc(30px * 1.1);
+            padding: 0 calc(15px * 1.5);
+            border-radius: calc(15px * 1.1);
+        }
+
+        &.button_size_m {
+            height: calc(40px * 1.1);
+            padding: 0 calc(20px * 1.5);
+            border-radius: calc(20px * 1.1);
+        }
+
+        &.button_size_l {
+            height: calc(50px * 1.1);
+            padding: 0 calc(25px * 1.5);
+            border-radius: calc(25px * 1.1);
+        }
+
+        &.button_size_xl {
+            height: calc(60px * 1.1);
+            padding: 0 calc(30px * 1.5);
+            border-radius: calc(30px * 1.1);
+        }
     }
 }

@@ -27,7 +27,7 @@ class Button extends React.Component {
         /** Список произвольных элементов в правом слоте */
         leftAddons: Type.node,
         /** Тип кнопки */
-        view: Type.oneOf(['default', 'action', 'extra']),
+        view: Type.oneOf(['default', 'action', 'extra', 'rounded']),
         /** Поведение кнопки */
         type: Type.oneOf(['button', 'reset', 'submit']),
         /** HTML элемент, которым будет компонент в DOM */
@@ -40,6 +40,8 @@ class Button extends React.Component {
         disabled: Type.bool,
         /** Отображение кнопки в состоянии фокуса */
         focused: Type.bool,
+        /** Кнопка со скруглёнными углами */
+        rounded: Type.bool,
         /** Псевдо представление кнопки */
         pseudo: deprecated(Type.bool, 'Pseudo buttons are deprecated, remove this prop'),
         /** Идентификатор компонента в DOM */
@@ -142,11 +144,12 @@ class Button extends React.Component {
     }
 
     render(cn) {
-        let buttonElement = this.props.tag === 'span' ? 'span' : 'button';
-        const isButton = buttonElement === 'button';
+        const isButton = this.props.tag !== 'span';
 
         let buttonProps = {
-            ref: (control) => { this.control = control; },
+            ref: (control) => {
+                this.control = control;
+            },
             role: 'button',
             id: this.props.id,
             name: this.props.name,
@@ -180,27 +183,24 @@ class Button extends React.Component {
         };
 
         let buttonContent = [
-            this.props.leftAddons &&
-                <span key='left-addons'>
-                    { this.props.leftAddons }
-                </span>,
-            this.props.icon &&
+            this.props.leftAddons && <span key='left-addons'>{ this.props.leftAddons }</span>,
+            this.props.icon && (
                 <span key='icon' className={ cn('icon') }>
                     { this.props.icon }
-                </span>,
-            (this.props.children || this.props.text) &&
+                </span>
+            ),
+            (this.props.children || this.props.text) && (
                 <span key='text' className={ cn('text') }>
                     { this.props.children || this.props.text }
-                </span>,
-            this.props.rightAddons &&
-                <span key='right-addons'>
-                    { this.props.rightAddons }
                 </span>
+            ),
+            this.props.rightAddons && <span key='right-addons'>{ this.props.rightAddons }</span>
         ];
 
-        return React.createElement(buttonElement,
-            buttonProps,
-            buttonContent
+        return isButton ? (
+            <button { ...buttonProps }>{ buttonContent }</button>
+        ) : (
+            <span { ...buttonProps }>{ buttonContent }</span>
         );
     }
 

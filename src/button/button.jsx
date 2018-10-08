@@ -40,8 +40,6 @@ class Button extends React.Component {
         disabled: Type.bool,
         /** Отображение кнопки в состоянии фокуса */
         focused: Type.bool,
-        /** Кнопка со скруглёнными углами */
-        rounded: Type.bool,
         /** Псевдо представление кнопки */
         pseudo: deprecated(Type.bool, 'Pseudo buttons are deprecated, remove this prop'),
         /** Идентификатор компонента в DOM */

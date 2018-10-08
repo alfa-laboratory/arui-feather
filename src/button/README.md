@@ -14,7 +14,9 @@ const buttons = [
         {
             buttons.map(({ size, name }) => (
                 <div className='column' key={ size }>
-                    <Button view='extra' size={ size }>{ `${name}` }</Button>
+                    <Button view='extra' size={ size }>
+                        { name }
+                    </Button>
                 </div>
             ))
         }
@@ -23,7 +25,9 @@ const buttons = [
         {
             buttons.map(({ size, name }) => (
                 <div className='column' key={ size }>
-                    <Button view='extra' size={ size } disabled={ true }>{ `${name}` }</Button>
+                    <Button view='extra' size={ size } disabled={ true }>
+                        { name }
+                    </Button>
                 </div>
             ))
         }
@@ -45,7 +49,9 @@ const buttons = [
         {
             buttons.map(({ size, name }) => (
                 <div className='column' key={ size }>
-                    <Button size={ size }>{ `${name}` }</Button>
+                    <Button size={ size }>
+                        { name }
+                    </Button>
                 </div>
             ))
         }
@@ -54,7 +60,9 @@ const buttons = [
         {
             buttons.map(({ size, name }) => (
                 <div className='column' key={ size }>
-                    <Button size={ size } disabled={ true }>{ `${name}` }</Button>
+                    <Button size={ size } disabled={ true }>
+                        { name }
+                    </Button>
                 </div>
             ))
         }
@@ -76,7 +84,9 @@ const buttons = [
         {
             buttons.map(({ size, name }) => (
                 <div className='column' key={ size }>
-                    <Button pseudo={ true } size={ size }>{ `${name}` }</Button>
+                    <Button pseudo={ true } size={ size }>
+                        { name }
+                    </Button>
                 </div>
             ))
         }
@@ -100,7 +110,9 @@ const buttons = [
         {
             buttons.map(({ size, name }) => (
                 <div className='column' key={ size }>
-                    <Button icon={ <IconOk size={ size } /> } size={ size }>{ `${name}` }</Button>
+                    <Button icon={ <IconOk size={ size } /> } size={ size }>
+                        { name }
+                    </Button>
                 </div>
             ))
         }
@@ -111,6 +123,8 @@ const buttons = [
 ### Со 100% шириной
 Используйте очень аккуратно. Кнопка занимает 100% ширины контейнера, в котором находится.
 ```jsx
+const IconCard = require('../../src/icon/banking/card').default;
+
 const buttons = [
     { size: 'xl', name: 'Заказать карту' },
     { size: 'l', name: 'Заказать карту' },
@@ -121,10 +135,18 @@ const buttons = [
     {
         buttons.map(({ size, name }) => (
             <div className='row' key={ size }>
-                <Button width='available' size={ size }>{ `${name}` }</Button>
+                <Button width='available' size={ size }>
+                    { name }
+                </Button>
             </div>
         ))
     }
+
+    <div className='row' key='xl'>
+        <Button width='available' size='xl' icon={ <IconCard size='xl' /> }>
+            Заказать карту
+        </Button>
+    </div>
 </div>
 ```
 

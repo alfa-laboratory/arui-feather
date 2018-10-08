@@ -22,7 +22,10 @@
     transition-timing-function: ease;
     border-radius: var(--border-radius-control);
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -33,6 +36,11 @@
 
     & + & {
         margin-left: var(--gap-s);
+    }
+
+    &__content {
+        display: inline-flex;
+        align-items: center;
     }
 
     &__text {
@@ -114,7 +122,6 @@
 
     &_size_l &__icon {
         margin-left: -12px;
-        min-width: 2px;
     }
 
     &_size_xl {
@@ -126,6 +133,5 @@
 
     &_size_xl &__icon {
         margin-left: -16px;
-        min-width: 6px;
     }
 }

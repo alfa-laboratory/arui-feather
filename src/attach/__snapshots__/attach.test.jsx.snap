@@ -83,27 +83,31 @@ exports[`attach should render without problems 1`] = `
           </label>
         </span>
         <span
-          className="button__icon"
-          key="icon"
+          className="button__content"
         >
-          <IconAttachment
-            size="m"
+          <span
+            className="button__icon"
+            key="icon"
           >
-            <Icon
-              name="attachment"
+            <IconAttachment
               size="m"
             >
-              <span
-                className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
-              />
-            </Icon>
-          </IconAttachment>
-        </span>
-        <span
-          className="button__text"
-          key="text"
-        >
-          Выберите файл
+              <Icon
+                name="attachment"
+                size="m"
+              >
+                <span
+                  className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
+                />
+              </Icon>
+            </IconAttachment>
+          </span>
+          <span
+            className="button__text"
+            key="text"
+          >
+            Выберите файл
+          </span>
         </span>
       </span>
     </Button>

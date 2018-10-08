@@ -146,7 +146,9 @@ class Button extends React.Component {
         const isButton = buttonElement === 'button';
 
         let buttonProps = {
-            ref: (control) => { this.control = control; },
+            ref: (control) => {
+                this.control = control;
+            },
             role: 'button',
             id: this.props.id,
             name: this.props.name,
@@ -179,29 +181,29 @@ class Button extends React.Component {
             onKeyUp: this.handleKeyUp
         };
 
-        let buttonContent = [
-            this.props.leftAddons &&
-                <span key='left-addons'>
-                    { this.props.leftAddons }
-                </span>,
-            this.props.icon &&
-                <span key='icon' className={ cn('icon') }>
-                    { this.props.icon }
-                </span>,
-            (this.props.children || this.props.text) &&
-                <span key='text' className={ cn('text') }>
-                    { this.props.children || this.props.text }
-                </span>,
-            this.props.rightAddons &&
-                <span key='right-addons'>
-                    { this.props.rightAddons }
-                </span>
-        ];
+        const buttonContent = (
+            <React.Fragment key={ 1 }>
+                { this.props.leftAddons && <span key='left-addons'>{ this.props.leftAddons }</span> }
 
-        return React.createElement(buttonElement,
-            buttonProps,
-            buttonContent
+                { (this.props.children || this.props.text || this.props.icon) && (
+                    <span className={ cn('content') }>
+                        { this.props.icon && (
+                            <span key='icon' className={ cn('icon') }>
+                                { this.props.icon }
+                            </span>
+                        ) }
+
+                        <span key='text' className={ cn('text') }>
+                            { this.props.children || this.props.text }
+                        </span>
+                    </span>
+                ) }
+
+                { this.props.rightAddons && <span key='right-addons'>{ this.props.rightAddons }</span> }
+            </React.Fragment>
         );
+
+        return React.createElement(buttonElement, buttonProps, [buttonContent]);
     }
 
     @autobind

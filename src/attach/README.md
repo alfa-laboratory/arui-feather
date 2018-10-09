@@ -15,7 +15,7 @@
 </div>
 ```
 
-С изменяемым текстом
+Пример с изменяемым текстом
 ```jsx
 function handleChange(value) {
     setState({ value });

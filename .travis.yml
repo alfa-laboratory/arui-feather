@@ -50,7 +50,7 @@ after_script:
 
 after_success:
   - |
-    if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TEST_SCOPE" == "lint" ]; then
+    if [[ "$TRAVIS_BRANCH" == "master" ]] && [[ "$TEST_SCOPE" == "lint" ]]; then
       sh ./tools/publish-styleguide.sh
     fi
   - |

@@ -34,8 +34,8 @@ script:
   - if [ "${TEST_SCOPE}" == "lint" ]; then npm run lint; fi
   - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test:coverage; fi
   - if [ "${TEST_SCOPE}" == "gemini" ]; then
-      if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then export ALL_BROWSERS=1 ALL_SIZES=1; fi;
-      npm run gemini-ci;
+    if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then export ALL_BROWSERS=1 ALL_SIZES=1; fi;
+    npm run gemini-ci;
     fi
 
 after_script:
@@ -50,10 +50,8 @@ after_script:
 
 after_success:
   - |
-    if [ "${TRAVIS_BRANCH}" == "master" ]; then
-      if [ "${TEST_SCOPE}" == "lint" ]; then
-        sh ./tools/publish-styleguide.sh
-      fi
+    if [[ "$TRAVIS_BRANCH" == "master" ]] && [[ "$TEST_SCOPE" == "lint" ]] && [[ "$TRAVIS_PULL_REQUEST" == false ]]; then
+      sh ./tools/publish-styleguide.sh
     fi
   - |
     if [ "${TEST_SCOPE}" == "unit" ]; then

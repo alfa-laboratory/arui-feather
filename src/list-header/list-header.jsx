@@ -4,15 +4,12 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент для разделения списка по датам или смысловым группам.
  */
 @cn('list-header')
-@performance()
 class ListHeader extends React.Component {
     static propTypes = {
         /** Заголовок */
@@ -24,21 +21,16 @@ class ListHeader extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Вид компонента */
+        view: Type.oneOf(['transparent', 'filled'])
     };
 
     render(cn) {
         return (
-            <div className={ cn() }>
-                <span className={ cn('title') }>
-                    { this.props.title }
-                </span>
-                {
-                    this.props.description &&
-                    <span className={ cn('description') }>
-                        , { this.props.description }
-                    </span>
-                }
+            <div className={ cn({ filled: this.props.view === 'filled' }) }>
+                <span className={ cn('title') }>{ this.props.title }</span>
+                { this.props.description && <span className={ cn('description') }>, { this.props.description }</span> }
             </div>
         );
     }

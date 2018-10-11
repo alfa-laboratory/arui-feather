@@ -1,3 +1,13 @@
+<a name="12.11.3"></a>
+## [12.11.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.2...v12.11.3) (2018-10-09)
+
+
+### Features
+
+* **input:** useWhitespaces with mask ([#726](https://github.com/alfa-laboratory/arui-feather/issues/726)) ([0f8c398](https://github.com/alfa-laboratory/arui-feather/commit/0f8c398))
+
+
+
 <a name="12.11.2"></a>
 ## [12.11.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.1...v12.11.2) (2018-09-25)
 

@@ -56,15 +56,31 @@ class CheckBox extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.string,
-        /** Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента */
+        /**
+         * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
+         * @param {boolean} isChecked
+         * @param {string} value
+         */
         onChange: Type.func,
-        /** Обработчик фокуса комнонента */
+        /**
+         * Обработчик фокуса комнонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса компонента */
+        /**
+         * Обработчик снятия фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на чекбокс */
+        /**
+         * Обработчик события наведения курсора на чекбокс
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с чекбокса */
+        /**
+         * Обработчик события снятия курсора с чекбокса
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 

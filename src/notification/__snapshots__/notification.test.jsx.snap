@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`notification should render without problems 1`] = `
+<Swipeable
+  delta={100}
+  onSwipe={[Function]}
+>
+  <div
+    className="notification notification_stick-to_left notification_theme_alfa-on-white"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "top": 0,
+      }
+    }
+  >
+    <div
+      className="notification__icon"
+    >
+      <IconOk
+        colored={false}
+        size="m"
+      />
+    </div>
+    <div
+      className="notification__content"
+    >
+      notification-text
+    </div>
+    <IconButton
+      className="notification__closer"
+      formNoValidate={false}
+      onClick={[Function]}
+      size="m"
+      tag="button"
+      type="button"
+    >
+      <IconClose
+        size="m"
+      />
+    </IconButton>
+  </div>
+</Swipeable>
+`;

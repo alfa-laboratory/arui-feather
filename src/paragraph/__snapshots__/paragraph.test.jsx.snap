@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paragraph should render without problems 1`] = `
+<p
+  className="paragraph paragraph_theme_alfa-on-white"
+/>
+`;

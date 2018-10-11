@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`swipeable should render without problems 1`] = `
+<button
+  onMouseDown={[Function]}
+  onTouchStart={[Function]}
+>
+  I'm swipeable
+</button>
+`;

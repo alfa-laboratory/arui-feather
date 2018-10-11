@@ -42,7 +42,10 @@ class Form extends React.Component {
         id: Type.string,
         /** Имя компонента в DOM */
         name: Type.string,
-        /** Обработчик отправки формы */
+        /**
+         * Обработчик отправки формы
+         * @param {React.FormEvent} event
+         */
         onSubmit: Type.func
     };
 

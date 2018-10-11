@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input-autocomplete should render without problem 1`] = `
+<InputAutocomplete
+  closeOnSelect={false}
+  directions={
+    Array [
+      "bottom-left",
+      "bottom-right",
+      "top-left",
+      "top-right",
+    ]
+  }
+  disabled={false}
+  equalPopupWidth={false}
+  options={Array []}
+  renderPopupOnFocus={false}
+  size="m"
+  updateValueOnItemSelect={true}
+  width="default"
+>
+  <div
+    className="input__autocomplete-case input__autocomplete-case_width_default"
+  >
+    <Input
+      autocomplete={false}
+      className="input input_has-autocomplete input_theme_alfa-on-white"
+      closeOnSelect={false}
+      directions={
+        Array [
+          "bottom-left",
+          "bottom-right",
+          "top-left",
+          "top-right",
+        ]
+      }
+      disabled={false}
+      equalPopupWidth={false}
+      formNoValidate={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      options={Array []}
+      renderPopupOnFocus={false}
+      size="m"
+      type="text"
+      updateValueOnItemSelect={true}
+      value=""
+      width="default"
+    >
+      <span
+        className="input input_type_text input_size_m input_width_default input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+      >
+        <span
+          className="input__inner"
+        >
+          <span
+            className="input__box"
+            key="input-wrapper"
+          >
+            <input
+              autoComplete="off"
+              className="input__control"
+              formNoValidate={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onPaste={[Function]}
+              onTouchCancel={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              type="text"
+              value=""
+            />
+          </span>
+        </span>
+      </span>
+    </Input>
+  </div>
+</InputAutocomplete>
+`;

@@ -92,7 +92,7 @@ class Link extends React.Component {
 
     render(cn) {
         let linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
-        const iconPosition = this.props.iconPosition;
+        const { iconPosition } = this.props;
 
         let linkProps = {
             ref: (root) => {

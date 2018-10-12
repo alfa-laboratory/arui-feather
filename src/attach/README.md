@@ -28,7 +28,6 @@ function handleChange(value) {
             noFileText=''
             buttonContent={ state.value ? 'Выберите другой файл' : 'Выберите файл' }
             onChange={ handleChange }
-            buttonProps={ { pseudo: true } }
             value={ state.value }
         />
     </div>

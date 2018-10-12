@@ -96,7 +96,6 @@ class Attach extends React.Component {
             width: Type.oneOf(['default', 'available']),
             size: Type.oneOf(['s', 'm', 'l', 'xl']),
             disabled: Type.bool,
-            pseudo: Type.bool,
             id: Type.string,
             name: Type.string,
             title: Type.string,

@@ -74,22 +74,6 @@
         }
     }
 
-    &.button_pseudo {
-        border-style: dashed;
-
-        &.button_focused {
-            border-style: solid;
-            border-color: var(--color-content-alfa-on-color);
-
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
-
-            &.button_hovered {
-                box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7);
-                border-color: rgba(255, 255, 255, 0.7);
-            }
-        }
-    }
-
     &.button_disabled {
         background: rgba(255, 255, 255, 0.08);
         border-color: transparent;

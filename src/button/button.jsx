@@ -27,7 +27,7 @@ class Button extends React.Component {
         /** Список произвольных элементов в правом слоте */
         leftAddons: Type.node,
         /** Тип кнопки */
-        view: Type.oneOf(['default', 'action', 'extra']),
+        view: Type.oneOf(['default', 'action', 'extra', 'rounded']),
         /** Поведение кнопки */
         type: Type.oneOf(['button', 'reset', 'submit']),
         /** HTML элемент, которым будет компонент в DOM */
@@ -142,8 +142,7 @@ class Button extends React.Component {
     }
 
     render(cn) {
-        let buttonElement = this.props.tag === 'span' ? 'span' : 'button';
-        const isButton = buttonElement === 'button';
+        const isButton = this.props.tag !== 'span';
 
         let buttonProps = {
             ref: (control) => {
@@ -203,7 +202,11 @@ class Button extends React.Component {
             </React.Fragment>
         );
 
-        return React.createElement(buttonElement, buttonProps, [buttonContent]);
+        return isButton ? (
+            <button { ...buttonProps }>{ buttonContent }</button>
+        ) : (
+            <span { ...buttonProps }>{ buttonContent }</span>
+        );
     }
 
     @autobind

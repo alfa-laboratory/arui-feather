@@ -82,7 +82,14 @@ class Mask {
      */
     pattern;
 
-    constructor(mask, formatCharacters) {
+    /**
+     * Признак что пробелы удалять не надо
+     *
+     * @type {Boolean}
+     */
+    useWhitespaces;
+
+    constructor(mask, formatCharacters, useWhitespaces) {
         this.pattern = new InputMask.Pattern(
             mask,
             { ...DEFAULT_FORMAT_CHARACTERS, ...formatCharacters },
@@ -92,6 +99,7 @@ class Mask {
         this.length = this.pattern.length;
         this.firstEditableIndex = this.pattern.firstEditableIndex;
         this.lastEditableIndex = this.pattern.lastEditableIndex;
+        this.useWhitespaces = useWhitespaces || false;
     }
 
     /**
@@ -113,7 +121,7 @@ class Mask {
     format(value) {
         let formattedValue = '';
 
-        let cleanValue = value.replace(/\s+/g, '');
+        let cleanValue = this.useWhitespaces ? value : value.replace(/\s+/g, '');
         let cleanValueLength = cleanValue.length;
         let cleanValueIndex = 0;
         let cleanValueChar;

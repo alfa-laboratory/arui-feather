@@ -1,3 +1,109 @@
+<a name="12.11.3"></a>
+## [12.11.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.2...v12.11.3) (2018-10-09)
+
+
+### Features
+
+* **input:** useWhitespaces with mask ([#726](https://github.com/alfa-laboratory/arui-feather/issues/726)) ([0f8c398](https://github.com/alfa-laboratory/arui-feather/commit/0f8c398))
+
+
+
+<a name="12.11.2"></a>
+## [12.11.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.1...v12.11.2) (2018-09-25)
+
+
+### Features
+
+* **textarea:** add keydown prop ([#718](https://github.com/alfa-laboratory/arui-feather/issues/718)) ([29027fc](https://github.com/alfa-laboratory/arui-feather/commit/29027fc))
+
+
+
+<a name="12.11.1"></a>
+## [12.11.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.0...v12.11.1) (2018-09-20)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.6.6 ([#720](https://github.com/alfa-laboratory/arui-feather/issues/720)) ([2f8809c](https://github.com/alfa-laboratory/arui-feather/commit/2f8809c))
+
+
+
+<a name="12.11.0"></a>
+# [12.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.2...v12.11.0) (2018-09-14)
+
+
+### Bug Fixes
+
+* **select:** label animation ([#716](https://github.com/alfa-laboratory/arui-feather/issues/716)) ([abec290](https://github.com/alfa-laboratory/arui-feather/commit/abec290))
+
+
+### Features
+
+* **utils/currency-codes:** add CHF currency symbol ([#719](https://github.com/alfa-laboratory/arui-feather/issues/719)) ([b781109](https://github.com/alfa-laboratory/arui-feather/commit/b781109))
+
+
+
+<a name="12.10.2"></a>
+## [12.10.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.1...v12.10.2) (2018-09-14)
+
+
+### Bug Fixes
+
+* **select:** change hightlightItem statement ([#713](https://github.com/alfa-laboratory/arui-feather/issues/713)) ([8fe9688](https://github.com/alfa-laboratory/arui-feather/commit/8fe9688))
+
+
+
+<a name="12.10.1"></a>
+## [12.10.1](https://github.com/alfa-laboratory/arui-feather/compare/v12.10.0...v12.10.1) (2018-09-10)
+
+
+### Bug Fixes
+
+* **calendar-input:** Input pattern updated to match real expected value ([#717](https://github.com/alfa-laboratory/arui-feather/issues/717)) ([883995b](https://github.com/alfa-laboratory/arui-feather/commit/883995b))
+
+
+
+<a name="12.10.0"></a>
+# [12.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.5...v12.10.0) (2018-09-05)
+
+
+### Features
+
+* **amount:** font weight bold is back ([#715](https://github.com/alfa-laboratory/arui-feather/issues/715)) ([2b30300](https://github.com/alfa-laboratory/arui-feather/commit/2b30300))
+* **select:** add renderPopupOnFocus prop ([#707](https://github.com/alfa-laboratory/arui-feather/issues/707)) ([0303717](https://github.com/alfa-laboratory/arui-feather/commit/0303717))
+
+
+
+<a name="12.9.5"></a>
+## [12.9.5](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.4...v12.9.5) (2018-09-04)
+
+
+
+<a name="12.9.4"></a>
+## [12.9.4](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.3...v12.9.4) (2018-08-28)
+
+
+### Bug Fixes
+
+* **textarea:** fix label and scroll in autosize textarea ([6d5c9ff](https://github.com/alfa-laboratory/arui-feather/commit/6d5c9ff))
+
+
+
+<a name="12.9.3"></a>
+## [12.9.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.2...v12.9.3) (2018-08-24)
+
+
+### Bug Fixes
+
+* **menu-item:** add sending theme prop to inner link or dropdown element ([#709](https://github.com/alfa-laboratory/arui-feather/issues/709)) ([b59562d](https://github.com/alfa-laboratory/arui-feather/commit/b59562d))
+
+
+### Features
+
+* **icons:** latest optimized icons from alfa-ui-primitives 1.6.5 ([#711](https://github.com/alfa-laboratory/arui-feather/issues/711)) ([d35d1f9](https://github.com/alfa-laboratory/arui-feather/commit/d35d1f9))
+
+
+
 <a name="12.9.2"></a>
 ## [12.9.2](https://github.com/alfa-laboratory/arui-feather/compare/v12.9.0...v12.9.2) (2018-08-15)
 

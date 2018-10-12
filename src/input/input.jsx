@@ -56,6 +56,8 @@ class Input extends React.Component {
         tabIndex: Type.number,
         /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
         mask: Type.string,
+        /** Позволяет использовать пробелы в маске */
+        useWhitespacesInMask: Type.bool,
         /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
         maskFormatCharacters: Type.objectOf(
             Type.shape({
@@ -277,6 +279,7 @@ class Input extends React.Component {
                             mask={ this.props.mask }
                             formatCharacters={ this.props.maskFormatCharacters }
                             onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                            useWhitespaces={ this.props.useWhitespacesInMask }
                         />
                 }
                 {

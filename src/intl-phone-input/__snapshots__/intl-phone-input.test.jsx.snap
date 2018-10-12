@@ -20,15 +20,17 @@ exports[`intl-phone-input renders without problems 1`] = `
       equalPopupWidth={false}
       groupView="default"
       mobileMenuMode="native"
+      mobileTitle="Выберите:"
       mode="radio"
+      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
       options={Array []}
-      placeholder="Выберите:"
       popupSecondaryOffset={-24}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="m"
       value={
         Array [
@@ -68,15 +70,17 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
       equalPopupWidth={false}
       groupView="default"
       mobileMenuMode="native"
+      mobileTitle="Выберите:"
       mode="radio"
+      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
       options={Array []}
-      placeholder="Выберите:"
       popupSecondaryOffset={-27}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="l"
       value={
         Array [
@@ -116,15 +120,17 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
       equalPopupWidth={false}
       groupView="default"
       mobileMenuMode="native"
+      mobileTitle="Выберите:"
       mode="radio"
+      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
       options={Array []}
-      placeholder="Выберите:"
       popupSecondaryOffset={-24}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="m"
       value={
         Array [
@@ -164,15 +170,17 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
       equalPopupWidth={false}
       groupView="default"
       mobileMenuMode="native"
+      mobileTitle="Выберите:"
       mode="radio"
+      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
       options={Array []}
-      placeholder="Выберите:"
       popupSecondaryOffset={-18}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="s"
       value={
         Array [
@@ -212,15 +220,17 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
       equalPopupWidth={false}
       groupView="default"
       mobileMenuMode="native"
+      mobileTitle="Выберите:"
       mode="radio"
+      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
       options={Array []}
-      placeholder="Выберите:"
       popupSecondaryOffset={-28}
       renderButtonContent={[Function]}
+      renderPopupOnFocus={false}
       size="xl"
       value={
         Array [

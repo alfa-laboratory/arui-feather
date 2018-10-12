@@ -24,6 +24,8 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
+const DEFAULT_TEXT_FALLBACK = 'Выберите:';
+
 /**
  * Элемент кнопки для выпадающего списка.
  */
@@ -93,6 +95,8 @@ class Select extends React.Component {
             /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
             props: Type.object
         })),
+        /** Вставляет попап со списком только если элемент активен */
+        renderPopupOnFocus: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Уникальный идентификатор блока */
@@ -103,6 +107,8 @@ class Select extends React.Component {
         label: Type.node,
         /** Подсказка в поле */
         placeholder: Type.string,
+        /** Подсказка в качестве неактивного первого варианта выбора для нативного мобильного контрола */
+        nativeOptionPlaceholder: Type.string,
         /** Подсказка под полем */
         hint: Type.node,
         /** Отображение ошибки */
@@ -184,8 +190,10 @@ class Select extends React.Component {
         width: 'default',
         equalPopupWidth: false,
         options: [],
-        placeholder: 'Выберите:',
-        mobileMenuMode: 'native'
+        mobileTitle: DEFAULT_TEXT_FALLBACK,
+        nativeOptionPlaceholder: DEFAULT_TEXT_FALLBACK,
+        mobileMenuMode: 'native',
+        renderPopupOnFocus: false
     };
 
     static contextTypes = {
@@ -220,6 +228,15 @@ class Select extends React.Component {
      */
     menu;
 
+    /**
+     * @type {Boolean}
+     * При открытом меню, нажатие на Esc устанавливает значение этой переменной в true
+     * Далее фокус переводится на кнопку. Далее вызывается обработчик handleMenuBlur.
+     * В обработчике закрываем попап, если ожидаем закрытия(this.awaitClosing) или фокус за пределами селекта.
+     * Это нужно, т.к. в случае в renderPopupOnFocus={true} меню исчезнет быстрее, чем сработает onMenuBlur
+     */
+    awaitClosing = false;
+
     componentWillMount() {
         this.setState({
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
@@ -227,17 +244,17 @@ class Select extends React.Component {
     }
 
     componentDidMount() {
-        if (this.popup) {
-            this.setPopupTarget();
-            this.updatePopupStyles();
+        if (this.isAutoSelectRequired()) {
+            this.selectFirstOption();
         }
+
+        this.setPopupTarget();
+        this.updatePopupStyles();
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.popup) {
-            this.setPopupTarget();
-            this.updatePopupStyles();
-        }
+        this.setPopupTarget();
+        this.updatePopupStyles();
 
         if (this.state.opened && nextProps.disabled) {
             this.toggleOpened();
@@ -260,7 +277,8 @@ class Select extends React.Component {
                     checked: value.length > 0,
                     disabled: this.props.disabled,
                     'has-label': !!this.props.label,
-                    'has-value': !!value,
+                    'has-value': !!value.length,
+                    'has-placeholder': !!this.props.placeholder,
                     invalid: !!this.props.error,
                     opened: this.getOpened(),
                     'no-tick': this.props.hideTick
@@ -384,13 +402,13 @@ class Select extends React.Component {
                     hasEmptyOptGroup &&
                     <optgroup
                         disabled={ true }
-                        label={ this.props.placeholder }
+                        label={ this.props.nativeOptionPlaceholder }
                     />
                 }
                 {
                     hasEmptyOption &&
                     <option disabled={ true } value=''>
-                        { this.props.placeholder }
+                        { this.props.nativeOptionPlaceholder }
                     </option>
                 }
                 { this.renderNativeOptionsList(this.props.options) }
@@ -402,11 +420,19 @@ class Select extends React.Component {
         let optionsList = this.renderOptionsList(this.props.options);
         let opened = this.getOpened();
         let value = this.getValue();
+        const { popupIsReady } = this.state;
+        const popupIsVisible = this.props.renderPopupOnFocus
+            ? opened && popupIsReady
+            : opened;
+
+        if (!opened && this.props.renderPopupOnFocus) {
+            return null;
+        }
 
         return (
             <Popup
                 key='popup'
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ this.setPopupRef }
                 for={ this.props.name }
                 className={ cn('popup') }
                 directions={ this.props.directions }
@@ -417,14 +443,14 @@ class Select extends React.Component {
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
                 header={ this.state.isMobile && this.renderMobileHeader(cn) }
-                visible={ opened }
+                visible={ popupIsVisible }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
                 maxHeight={ this.props.maxHeight }
             >
                 <Menu
-                    ref={ (menu) => { this.menu = menu; } }
+                    ref={ this.setMenuRef }
                     className={ cn('menu') }
                     size={ this.props.size }
                     disabled={ this.props.disabled }
@@ -506,12 +532,17 @@ class Select extends React.Component {
         }
 
         let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
-        return checkedItemsText ||
-            (
-                <span className={ cn('placeholder') }>
-                    { this.props.placeholder }
-                </span>
-            );
+        if (checkedItemsText) {
+            return checkedItemsText;
+        }
+        // Если ничего не выбрано, то рендерим плейсхолдер
+        // Если плейсхолдера нет, то рендерим текст лейбла. Но отрендерится он прозрачным - это нужно для того, чтобы лейбл растягивал блок до нужной ширины, т. к. настоящий лейбл позиционируется абсолютно и не влияет на размер
+        // Если нет ни плейсхолдера, ни лейбла, то рендерим "Выберите:" для обратной совместимости
+        return (
+            <span className={ cn('placeholder') }>
+                { this.props.placeholder || this.props.label || DEFAULT_TEXT_FALLBACK }
+            </span>
+        );
     }
 
     renderMobileHeader(cn) {
@@ -519,7 +550,7 @@ class Select extends React.Component {
             <PopupHeader
                 className={ cn('mobile-header') }
                 size={ this.props.size }
-                title={ this.props.mobileTitle || this.props.placeholder }
+                title={ this.props.mobileTitle }
                 onCloserClick={ this.handlePopupCloserClick }
             />
         );
@@ -580,7 +611,8 @@ class Select extends React.Component {
     handleMenuBlur(event) {
         event.target.value = this.getValue();
 
-        if (event.relatedTarget !== this.button.getNode()) {
+        if (this.awaitClosing || event.relatedTarget !== this.button.getNode()) {
+            this.awaitClosing = false;
             this.setState({
                 opened: false
             });
@@ -597,7 +629,7 @@ class Select extends React.Component {
 
     @autobind
     handleMenuHighlightItem(highlightedItem) {
-        if (!this.getOpened() && highlightedItem) {
+        if (!this.getOpened() && highlightedItem && this.popup) {
             this.popup.getInnerNode().scrollTop = 0;
             this.scrollToHighlightedItem(highlightedItem);
         }
@@ -696,9 +728,7 @@ class Select extends React.Component {
                 break;
             case keyboardCode.ESCAPE:
                 event.preventDefault();
-                this.setState({
-                    opened: false
-                });
+                this.awaitClosing = true;
                 this.button.focus();
                 break;
         }
@@ -742,10 +772,8 @@ class Select extends React.Component {
         this.setState({
             isMobile: isMatched
         }, () => {
-            if (this.popup) {
-                this.setPopupTarget();
-                this.updatePopupStyles();
-            }
+            this.setPopupTarget();
+            this.updatePopupStyles();
         });
     }
 
@@ -754,6 +782,34 @@ class Select extends React.Component {
         this.setState({
             opened: false
         });
+    }
+
+    @autobind
+    setPopupRef(ref) {
+        this.popup = ref;
+
+        if (this.popup) {
+            this.popup.setTarget(this.button.getNode());
+        }
+
+        if (this.props.renderPopupOnFocus) {
+            const popupIsReady = !!this.popup;
+
+            this.setState({
+                popupIsReady
+            });
+
+            if (popupIsReady) {
+                setTimeout(() => {
+                    this.focusOnMenu();
+                }, 0);
+            }
+        }
+    }
+
+    @autobind
+    setMenuRef(menu) {
+        this.menu = menu;
     }
 
     /**
@@ -810,6 +866,10 @@ class Select extends React.Component {
     }
 
     focusOnMenu() {
+        if (!this.menu) {
+            return;
+        }
+
         if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
 
         let scrollContainer = this.getScrollContainer();
@@ -853,7 +913,7 @@ class Select extends React.Component {
         this.setState({
             opened: newOpenedState
         }, () => {
-            if (newOpenedState && this.menu) {
+            if (newOpenedState) {
                 this.focusOnMenu();
             }
         });
@@ -873,7 +933,9 @@ class Select extends React.Component {
 
     @autobind
     setPopupTarget() {
-        this.popup.setTarget(this.button.getNode());
+        if (this.popup) {
+            this.popup.setTarget(this.button.getNode());
+        }
     }
 
     getCheckedItems(options) {
@@ -904,7 +966,7 @@ class Select extends React.Component {
     }
 
     /**
-     * @returns {String|Number}
+     * @returns {Array<String|Number>}
      */
     getValue() {
         return this.props.value || this.state.value;
@@ -915,6 +977,39 @@ class Select extends React.Component {
      */
     getScrollContainer() {
         return this.context.positioningContainerElement || document.body;
+    }
+
+    isAutoSelectRequired() {
+        const { mode, options, renderPopupOnFocus } = this.props;
+
+        return (
+            renderPopupOnFocus &&
+            mode === 'radio' &&
+            options.length > 0 &&
+            !this.hasCheckedItems()
+        );
+    }
+
+    hasCheckedItems() {
+        const { options } = this.props;
+        const checkedItems = this.getCheckedItems(options);
+
+        return checkedItems.length > 0;
+    }
+
+    selectFirstOption() {
+        const firstOption = this.getFirstOption(this.props.options);
+        this.handleOptionCheck([firstOption.value]);
+    }
+
+    getFirstOption(options) {
+        const firstOption = options[0];
+
+        if (firstOption.type === 'group') {
+            return this.getFirstOption(firstOption.content);
+        }
+
+        return firstOption;
     }
 }
 

@@ -70,6 +70,13 @@ exports[`icon render IconAccountUsd without problems: IconAccountUsd 1`] = `
 />
 `;
 
+exports[`icon render IconActionClose without problems: IconActionClose 1`] = `
+<Icon
+  name="action-close"
+  size="m"
+/>
+`;
+
 exports[`icon render IconAdd without problems: IconAdd 1`] = `
 <Icon
   name="add"
@@ -126,6 +133,13 @@ exports[`icon render IconArrowBottom without problems: IconArrowBottom 1`] = `
 />
 `;
 
+exports[`icon render IconArrowCollapse without problems: IconArrowCollapse 1`] = `
+<Icon
+  name="arrow-collapse"
+  size="m"
+/>
+`;
+
 exports[`icon render IconArrowDouble without problems: IconArrowDouble 1`] = `
 <Icon
   name="arrow-double"
@@ -136,6 +150,13 @@ exports[`icon render IconArrowDouble without problems: IconArrowDouble 1`] = `
 exports[`icon render IconArrowDown without problems: IconArrowDown 1`] = `
 <Icon
   name="arrow-down"
+  size="m"
+/>
+`;
+
+exports[`icon render IconArrowExpand without problems: IconArrowExpand 1`] = `
+<Icon
+  name="arrow-expand"
   size="m"
 />
 `;
@@ -182,6 +203,13 @@ exports[`icon render IconAttachment without problems: IconAttachment 1`] = `
 />
 `;
 
+exports[`icon render IconAttention without problems: IconAttention 1`] = `
+<Icon
+  name="attention"
+  size="m"
+/>
+`;
+
 exports[`icon render IconBack without problems: IconBack 1`] = `
 <Icon
   name="back"
@@ -199,6 +227,13 @@ exports[`icon render IconBackspace without problems: IconBackspace 1`] = `
 exports[`icon render IconBag without problems: IconBag 1`] = `
 <Icon
   name="bag"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBalanceTransfer without problems: IconBalanceTransfer 1`] = `
+<Icon
+  name="balance-transfer"
   size="m"
 />
 `;
@@ -392,6 +427,13 @@ exports[`icon render IconBankGazprombank without problems: IconBankGazprombank 1
 />
 `;
 
+exports[`icon render IconBankYandexmoney without problems: IconBankYandexmoney 1`] = `
+<Icon
+  name="bank-yandexmoney"
+  size="m"
+/>
+`;
+
 exports[`icon render IconBuy without problems: IconBuy 1`] = `
 <Icon
   name="buy"
@@ -497,6 +539,13 @@ exports[`icon render IconCardMastercard without problems: IconCardMastercard 1`]
 />
 `;
 
+exports[`icon render IconCardMastero without problems: IconCardMastero 1`] = `
+<Icon
+  name="card-mastero"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCardMir without problems: IconCardMir 1`] = `
 <Icon
   name="card-mir"
@@ -507,6 +556,13 @@ exports[`icon render IconCardMir without problems: IconCardMir 1`] = `
 exports[`icon render IconCardPinChange without problems: IconCardPinChange 1`] = `
 <Icon
   name="card-pin-change"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCardToCard without problems: IconCardToCard 1`] = `
+<Icon
+  name="card-to-card"
   size="m"
 />
 `;
@@ -535,6 +591,13 @@ exports[`icon render IconCardVisaElectron without problems: IconCardVisaElectron
 exports[`icon render IconCash without problems: IconCash 1`] = `
 <Icon
   name="cash"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCashback without problems: IconCashback 1`] = `
+<Icon
+  name="cashback"
   size="m"
 />
 `;
@@ -658,6 +721,13 @@ exports[`icon render IconCategoryEntertainment without problems: IconCategoryEnt
 />
 `;
 
+exports[`icon render IconCategoryExperiments without problems: IconCategoryExperiments 1`] = `
+<Icon
+  name="category-experiments"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryFamily without problems: IconCategoryFamily 1`] = `
 <Icon
   name="category-family"
@@ -696,6 +766,13 @@ exports[`icon render IconCategoryGasoline without problems: IconCategoryGasoline
 exports[`icon render IconCategoryGibddFines without problems: IconCategoryGibddFines 1`] = `
 <Icon
   name="category-gibdd-fines"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryGuard without problems: IconCategoryGuard 1`] = `
+<Icon
+  name="category-guard"
   size="m"
 />
 `;
@@ -875,6 +952,13 @@ exports[`icon render IconCategoryTroika without problems: IconCategoryTroika 1`]
 />
 `;
 
+exports[`icon render IconCategoryTv without problems: IconCategoryTv 1`] = `
+<Icon
+  name="category-tv"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryUser without problems: IconCategoryUser 1`] = `
 <Icon
   name="category-user"
@@ -892,6 +976,13 @@ exports[`icon render IconCategoryVacation without problems: IconCategoryVacation
 exports[`icon render IconChat without problems: IconChat 1`] = `
 <Icon
   name="chat"
+  size="m"
+/>
+`;
+
+exports[`icon render IconChatMessageError without problems: IconChatMessageError 1`] = `
+<Icon
+  name="chat-message-error"
   size="m"
 />
 `;
@@ -917,6 +1008,13 @@ exports[`icon render IconCheckBold without problems: IconCheckBold 1`] = `
 />
 `;
 
+exports[`icon render IconCheckChat without problems: IconCheckChat 1`] = `
+<Icon
+  name="check-chat"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCheckIndeterminate without problems: IconCheckIndeterminate 1`] = `
 <Icon
   name="check-indeterminate"
@@ -934,6 +1032,13 @@ exports[`icon render IconClock without problems: IconClock 1`] = `
 exports[`icon render IconClose without problems: IconClose 1`] = `
 <Icon
   name="close"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCloseCircle without problems: IconCloseCircle 1`] = `
+<Icon
+  name="close-circle"
   size="m"
 />
 `;
@@ -962,6 +1067,13 @@ exports[`icon render IconContactlessOff without problems: IconContactlessOff 1`]
 exports[`icon render IconContactlessOn without problems: IconContactlessOn 1`] = `
 <Icon
   name="contactless-on"
+  size="m"
+/>
+`;
+
+exports[`icon render IconConvert without problems: IconConvert 1`] = `
+<Icon
+  name="convert"
   size="m"
 />
 `;
@@ -1407,6 +1519,13 @@ exports[`icon render IconHistory without problems: IconHistory 1`] = `
 />
 `;
 
+exports[`icon render IconHold without problems: IconHold 1`] = `
+<Icon
+  name="hold"
+  size="m"
+/>
+`;
+
 exports[`icon render IconInbox without problems: IconInbox 1`] = `
 <Icon
   name="inbox"
@@ -1424,6 +1543,13 @@ exports[`icon render IconIncome without problems: IconIncome 1`] = `
 exports[`icon render IconInfo without problems: IconInfo 1`] = `
 <Icon
   name="info"
+  size="m"
+/>
+`;
+
+exports[`icon render IconInsurance without problems: IconInsurance 1`] = `
+<Icon
+  name="insurance"
   size="m"
 />
 `;
@@ -1550,6 +1676,13 @@ exports[`icon render IconMastercard without problems: IconMastercard 1`] = `
 exports[`icon render IconMessage without problems: IconMessage 1`] = `
 <Icon
   name="message"
+  size="m"
+/>
+`;
+
+exports[`icon render IconMetro without problems: IconMetro 1`] = `
+<Icon
+  name="metro"
   size="m"
 />
 `;
@@ -1778,6 +1911,13 @@ exports[`icon render IconPhoto without problems: IconPhoto 1`] = `
 />
 `;
 
+exports[`icon render IconPhotoCard without problems: IconPhotoCard 1`] = `
+<Icon
+  name="photo-card"
+  size="m"
+/>
+`;
+
 exports[`icon render IconPin without problems: IconPin 1`] = `
 <Icon
   name="pin"
@@ -1960,6 +2100,13 @@ exports[`icon render IconSite without problems: IconSite 1`] = `
 />
 `;
 
+exports[`icon render IconStatusUrgent without problems: IconStatusUrgent 1`] = `
+<Icon
+  name="status-urgent"
+  size="m"
+/>
+`;
+
 exports[`icon render IconSubmit without problems: IconSubmit 1`] = `
 <Icon
   name="submit"
@@ -2058,6 +2205,13 @@ exports[`icon render IconTransferOut without problems: IconTransferOut 1`] = `
 />
 `;
 
+exports[`icon render IconTransferOuter without problems: IconTransferOuter 1`] = `
+<Icon
+  name="transfer-outer"
+  size="m"
+/>
+`;
+
 exports[`icon render IconTransferSelf without problems: IconTransferSelf 1`] = `
 <Icon
   name="transfer-self"
@@ -2089,13 +2243,6 @@ exports[`icon render IconUp without problems: IconUp 1`] = `
 exports[`icon render IconUser without problems: IconUser 1`] = `
 <Icon
   name="user"
-  size="m"
-/>
-`;
-
-exports[`icon render IconUserLogout without problems: IconUserLogout 1`] = `
-<Icon
-  name="user-logout"
   size="m"
 />
 `;

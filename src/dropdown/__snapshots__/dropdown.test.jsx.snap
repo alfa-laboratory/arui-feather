@@ -41,10 +41,14 @@ exports[`dropdown should render without problems 1`] = `
         tabIndex={0}
       >
         <span
-          className="link__text"
+          className="link__text-flex-container"
           key="text"
         >
-          Switcher-example
+          <span
+            className="link__text"
+          >
+            Switcher-example
+          </span>
         </span>
       </a>
     </Link>

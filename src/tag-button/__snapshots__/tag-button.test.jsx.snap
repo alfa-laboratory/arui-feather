@@ -22,6 +22,10 @@ exports[`tag-button renders without problems 1`] = `
     onMouseUp={[Function]}
     role="button"
     type="button"
-  />
+  >
+    <div
+      className="tag-button__content-wrapper"
+    />
+  </button>
 </TagButton>
 `;

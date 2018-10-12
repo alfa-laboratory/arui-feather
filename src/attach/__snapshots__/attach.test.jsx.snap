@@ -65,50 +65,59 @@ exports[`attach should render without problems 1`] = `
         tabIndex={0}
         type="button"
       >
-        <span
-          key="left-addons"
-        >
-          <label
-            className="attach__label"
-          >
-            <input
-              className="attach__control"
-              disabled={false}
-              multiple={false}
-              onChange={[Function]}
-              size="m"
-              tabIndex="-1"
-              type="file"
-            />
-          </label>
-        </span>
-        <span
-          className="button__content"
+        <div
+          className="button__content-wrapper"
         >
           <span
-            className="button__icon"
-            key="icon"
+            className="button__addon"
+            key="left-addons"
           >
-            <IconAttachment
-              size="m"
+            <label
+              className="attach__label"
             >
-              <Icon
-                name="attachment"
+              <input
+                className="attach__control"
+                disabled={false}
+                multiple={false}
+                onChange={[Function]}
                 size="m"
-              >
-                <span
-                  className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
-                />
-              </Icon>
-            </IconAttachment>
+                tabIndex="-1"
+                type="file"
+              />
+            </label>
           </span>
           <span
-            className="button__text"
-            key="text"
+            className="button__content"
           >
-            Выберите файл
+            <span
+              className="button__content-inner"
+            >
+              <span
+                className="button__icon"
+                key="icon"
+              >
+                <IconAttachment
+                  size="m"
+                >
+                  <Icon
+                    name="attachment"
+                    size="m"
+                  >
+                    <span
+                      className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
+                    />
+                  </Icon>
+                </IconAttachment>
+              </span>
+              <span
+                className="button__text"
+                key="text"
+              >
+                Выберите файл
+              </span>
+            </span>
           </span>
-        </span>
+        </div>
       </span>
     </Button>
     <span

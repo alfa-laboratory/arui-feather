@@ -181,25 +181,35 @@ class Button extends React.Component {
         };
 
         const buttonContent = (
-            <React.Fragment key={ 1 }>
-                { this.props.leftAddons && <span key='left-addons'>{ this.props.leftAddons }</span> }
+            <div className={ cn('content-wrapper') }>
+                { this.props.leftAddons && (
+                    <span key='left-addons' className={ cn('addon') }>
+                        { this.props.leftAddons }
+                    </span>
+                ) }
 
                 { (this.props.children || this.props.text || this.props.icon) && (
                     <span className={ cn('content') }>
-                        { this.props.icon && (
-                            <span key='icon' className={ cn('icon') }>
-                                { this.props.icon }
-                            </span>
-                        ) }
+                        <span className={ cn('content-inner') }>
+                            { this.props.icon && (
+                                <span key='icon' className={ cn('icon') }>
+                                    { this.props.icon }
+                                </span>
+                            ) }
 
-                        <span key='text' className={ cn('text') }>
-                            { this.props.children || this.props.text }
+                            <span key='text' className={ cn('text') }>
+                                { this.props.children || this.props.text }
+                            </span>
                         </span>
                     </span>
                 ) }
 
-                { this.props.rightAddons && <span key='right-addons'>{ this.props.rightAddons }</span> }
-            </React.Fragment>
+                { this.props.rightAddons && (
+                    <span key='right-addons' className={ cn('addon') }>
+                        { this.props.rightAddons }
+                    </span>
+                ) }
+            </div>
         );
 
         return isButton ? (

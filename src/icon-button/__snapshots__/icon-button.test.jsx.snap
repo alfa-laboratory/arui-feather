@@ -22,6 +22,10 @@ exports[`icon-button renders without problems 1`] = `
     onMouseUp={[Function]}
     role="button"
     type="button"
-  />
+  >
+    <div
+      className="icon-button__content-wrapper"
+    />
+  </button>
 </IconButton>
 `;

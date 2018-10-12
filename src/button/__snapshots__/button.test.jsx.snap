@@ -23,16 +23,24 @@ exports[`button should render without problems 1`] = `
     role="button"
     type="button"
   >
-    <span
-      className="button__content"
+    <div
+      className="button__content-wrapper"
     >
       <span
-        className="button__text"
-        key="text"
+        className="button__content"
       >
-        Button-example
+        <span
+          className="button__content-inner"
+        >
+          <span
+            className="button__text"
+            key="text"
+          >
+            Button-example
+          </span>
+        </span>
       </span>
-    </span>
+    </div>
   </button>
 </Button>
 `;

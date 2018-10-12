@@ -65,7 +65,9 @@ class MaskedInput extends React.Component {
          * Обработчик, вызываемый перед началом ввода в поле
          * @param {React.ChangeEvent} event
          */
-        onProcessInputEvent: Type.func
+        onProcessInputEvent: Type.func,
+        /** Признак что пробелы удалять не надо */
+        useWhitespaces: Type.bool
     };
 
     /**
@@ -104,7 +106,7 @@ class MaskedInput extends React.Component {
     beforeInputSelection = { start: 0, end: 0 };
 
     componentWillMount() {
-        this.setMask(this.props.mask, this.props.formatCharacters);
+        this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
         this.value = this.mask.format(this.props.value || '');
     }
 
@@ -135,6 +137,7 @@ class MaskedInput extends React.Component {
         delete props.mask;
         delete props.formatCharacters;
         delete props.onProcessInputEvent;
+        delete props.useWhitespaces;
 
         return (
             <input
@@ -235,10 +238,11 @@ class MaskedInput extends React.Component {
      * @public
      * @param {String} newMask Новая маска
      * @param {FormatCharacters} [formatCharacters] Форматтер маски
+     * @param {Boolean} useWhitespaces использовать в маске пробелы
      */
-    setMask(newMask, formatCharacters) {
+    setMask(newMask, formatCharacters, useWhitespaces) {
         if (this.maskPattern !== newMask || this.formatCharacters !== formatCharacters) {
-            this.mask = new Mask(newMask, formatCharacters);
+            this.mask = new Mask(newMask, formatCharacters, useWhitespaces);
             this.maskPattern = newMask;
             this.formatCharacters = formatCharacters;
         }

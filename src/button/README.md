@@ -62,28 +62,6 @@ const buttons = [
 </div>
 ```
 
-### Псевдокнопка
-Обозначает действие без перехода на другой экран. Например, прикрепление документов к анкете, переход в режим редактирования.
-```jsx
-const buttons = [
-    { size: 'xl', name: 'Показать' },
-    { size: 'l', name: 'Показать' },
-    { size: 'm', name: 'Показать' },
-    { size: 's', name: 'Показать' }
-];
-<div>
-    <div className='row'>
-        {
-            buttons.map(({ size, name }) => (
-                <div className='column' key={ size }>
-                    <Button pseudo={ true } size={ size }>{ `${name}` }</Button>
-                </div>
-            ))
-        }
-    </div>
-</div>
-```
-
 ### С иконкой
 К любой кнопке может быть добавлена иконка.
 ```jsx

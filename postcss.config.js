@@ -6,7 +6,8 @@ const MQ = require('./src/mq/mq.json');
 
 module.exports = getConfig(MQ, [], (id) => {
     if (/^arui-feather/.test(id)) {
-        id = path.join(__dirname, id.replace(/^arui-feather/, 'src'));
+        return path.join(__dirname, id.replace(/^arui-feather/, 'src'));
     }
+
     return id;
 });

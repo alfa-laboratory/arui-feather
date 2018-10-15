@@ -17,19 +17,19 @@
 body { font-size: 16px };
 
 - `--small`         0 to 100%
-- `--small-only`    0 to 768px
+- `--small-only`    0 to 767px
 
-- `--medium`        769px to 100%
-- `--medium-only`   769px to 1024px
+- `--medium`        768px to 100%
+- `--medium-only`   768px to 1023px
 
-- `--large`         1025px to 100%
-- `--large-only`    1025px to 1440px
+- `--large`         1024px to 100%
+- `--large-only`    1024px to 1439px
 
-- `--xlarge`        1441px to 100%
-- `--xlarge-only`   1441px to 1920px
+- `--xlarge`        1440px to 100%
+- `--xlarge-only`   1440px to 1919px
 
-- `--xxlarge`       1921px to 100%
-- `--xxlarge-only`  1921px to 100%
+- `--xxlarge`       1920px to 100%
+- `--xxlarge-only`  1920px to 100%
 
 ### Пример использования в CSS
 

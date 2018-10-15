@@ -108,6 +108,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
+    "@types/puppeteer": "^1.9.0",
     "alfa-ui-primitives": "1.6.6",
     "arui-presets": "4.13.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",
@@ -138,6 +139,9 @@
     "lint-staged": "7.1.0",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
+    "postcss": "^7.0.5",
+    "postcss-js": "^2.0.0",
+    "puppeteer-core": "^1.9.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-frame-component": "2.0.2",

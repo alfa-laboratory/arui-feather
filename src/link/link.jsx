@@ -105,7 +105,8 @@ class Link extends React.Component {
                 pseudo: this.props.pseudo,
                 size: this.props.size,
                 focused: this.state.focused,
-                hovered: this.state.hovered
+                hovered: this.state.hovered,
+                flex: this.props.icon && iconPosition === 'left'
             }),
             id: this.props.id,
             tabIndex: this.props.tabIndex,
@@ -133,7 +134,7 @@ class Link extends React.Component {
         );
 
         let textTemplate = this.props.text && (
-            <span key='text' className={ cn('text-flex-container') }>
+            <span key='text' className={ cn('text-container') }>
                 <span className={ cn('text') }>{ this.props.text }</span>
             </span>
         );

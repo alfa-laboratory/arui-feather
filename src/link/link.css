@@ -12,10 +12,13 @@
     text-decoration: none;
     transition: color 200ms ease-out;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
+
+    &_flex {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
 
     &,
     *,
@@ -24,7 +27,7 @@
         box-sizing: border-box;
     }
 
-    &__text-flex-container {
+    &__text-container {
         flex: 1 1 auto;
     }
 
@@ -36,12 +39,12 @@
 
     &__icon {
         display: inline-block;
+        vertical-align: middle;
         line-height: 0;
-        margin-top: 6px;
     }
 
-    &__icon + &__text-flex-container,
-    &__text-flex-container + &__icon {
+    &__icon + &__text-container,
+    &__text-container + &__icon {
         margin-left: 6px;
     }
 

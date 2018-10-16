@@ -1,0 +1,7 @@
+/**
+ * Styles for cross platform page rendering
+ */
+* {
+    font-family: Arial !important;
+    font-smooth: never !important;
+}

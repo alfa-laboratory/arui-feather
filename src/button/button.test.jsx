@@ -11,11 +11,23 @@ import Button from './button';
 
 describe('button', () => {
     test('should match screenshot', async () => {
-        const screenshot = await getComponentScreenshot(<Button>Button-example</Button>, [
-            path.resolve(__dirname, './button.css'),
-            path.resolve(__dirname, './button_theme_alfa-on-color.css'),
-            path.resolve(__dirname, './button_theme_alfa-on-white.css')
-        ]);
+        const screenshot = await getComponentScreenshot(
+            <Button>Button-example</Button>,
+            [
+                path.resolve(__dirname, './button.css'),
+                path.resolve(__dirname, './button_theme_alfa-on-color.css'),
+                path.resolve(__dirname, './button_theme_alfa-on-white.css'),
+                path.resolve(__dirname, './test-styles.css')
+            ],
+            {
+                clip: {
+                    x: 0,
+                    y: 0,
+                    width: 200,
+                    height: 70
+                }
+            }
+        );
 
         matchScreenshot(screenshot);
     });

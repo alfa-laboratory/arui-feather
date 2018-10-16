@@ -11,7 +11,7 @@ expect.extend({ toMatchImageSnapshot });
 /**
  * Puppeteer browser promise
  */
-const puppeteerBrowser = puppeteer.launch();
+const puppeteerBrowser = puppeteer.launch({ args: ['--enable-font-antialiasing'] });
 
 /**
  * Async function for processing CSS file via PostCSS

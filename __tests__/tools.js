@@ -63,12 +63,13 @@ export const createPuppeteerNewPage = async (html) => {
  *
  * @param {React.ReactNode} reactNode React element for rendering
  * @param {string[]|string} [stylesPathList] Style path of styles path list
+ * @param {puppeteer.ScreenshotOptions} [screenshotOptions]
  * @return {Buffer} The image buffer
  */
-export const getComponentScreenshot = async (reactNode, stylesPathList) => {
+export const getComponentScreenshot = async (reactNode, stylesPathList, screenshotOptions) => {
     const html = await renderComponentPage(reactNode, stylesPathList);
     const page = await createPuppeteerNewPage(html);
-    const screenshot = await page.screenshot();
+    const screenshot = await page.screenshot(screenshotOptions);
 
     return screenshot;
 };

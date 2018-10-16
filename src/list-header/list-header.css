@@ -28,7 +28,12 @@
 @media (--small-only) {
     .list-header {
         font-size: var(--font-size-xxs);
+        font-weight: var(--font-weight-medium);
         text-transform: uppercase;
         letter-spacing: var(--letter-spacing-extra);
+
+        &__description {
+            font-weight: var(--font-weight-normal);
+        }
     }
 }

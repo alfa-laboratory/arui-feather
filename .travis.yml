@@ -16,6 +16,14 @@ env:
 matrix:
   fast_finish: true
 
+  deploy:
+  provider: script
+  script: sh $TRAVIS_BUILD_DIR/tools/publish-styleguide.sh
+  skip_cleanup: true
+  on:
+    branch: master
+    condition: $TEST_SCOPE=lint
+
 before_install:
   - npm cache clean --force
   - rm -rf ~/.npm node_modules

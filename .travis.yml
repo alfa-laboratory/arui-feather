@@ -16,7 +16,7 @@ env:
 matrix:
   fast_finish: true
 
-  deploy:
+deploy:
   provider: script
   script: sh $TRAVIS_BUILD_DIR/tools/publish-styleguide.sh
   skip_cleanup: true

@@ -6,8 +6,6 @@ import puppeteer from 'puppeteer';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import postcssConfig from '../postcss.config';
 
-global.mock = require('jest-mock').fn();
-
 // Extending jest's expect for matching screenshots
 expect.extend({ toMatchImageSnapshot });
 
@@ -21,7 +19,7 @@ let puppeteerBrowser; //= puppeteer.launch({
 beforeAll(async () => {
     puppeteerBrowser = await puppeteer.launch({});
 
-    const browserVersion = await browser.version();
+    const browserVersion = await puppeteerBrowser.version();
     console.log(`Started ${browserVersion}`);
 });
 

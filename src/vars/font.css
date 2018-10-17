@@ -97,7 +97,7 @@
     --line-height-condensed: 1.2;
 
     /**
-     * TODO Describe me
+     * Разрядка для маленьких заголовков в верхнем регистре.
      */
-    --letter-spacing-extra: 1.5px;
+    --letter-spacing-extra: 1px;
 }

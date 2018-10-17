@@ -19,6 +19,10 @@ body { font-size: 16px };
 - `--small`         0 to 100%
 - `--small-only`    0 to 767px
 
+- `--small-alt`     414px to 100%
+
+- `--medium-alt`    600px to 100%
+
 - `--medium`        768px to 100%
 - `--medium-only`   768px to 1023px
 

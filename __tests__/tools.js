@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import fs from 'fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import postcss from 'postcss';
@@ -5,13 +6,28 @@ import puppeteer from 'puppeteer';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import postcssConfig from '../postcss.config';
 
+global.mock = require('jest-mock').fn();
+
 // Extending jest's expect for matching screenshots
 expect.extend({ toMatchImageSnapshot });
 
 /**
- * Puppeteer browser promise
+ * Puppeteer browser
  */
-const puppeteerBrowser = puppeteer.launch({ args: ['--enable-font-antialiasing'] });
+let puppeteerBrowser; //= puppeteer.launch({
+// args: ['--enable-font-antialiasing', '--disable-accelerated-2d-canvas']
+// });
+
+beforeAll(async () => {
+    puppeteerBrowser = await puppeteer.launch({});
+
+    const browserVersion = await browser.version();
+    console.log(`Started ${browserVersion}`);
+});
+
+afterAll(() => {
+    puppeteerBrowser.close();
+});
 
 /**
  * Async function for processing CSS file via PostCSS

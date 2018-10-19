@@ -41,7 +41,7 @@ describe('amount', () => {
             />
         );
         // eslint-disable-next-line no-irregular-whitespace
-        expect(amount.text()).toContain(`−4525,99 ${CURRENCY_MAP.RUR}`);
+        expect(amount.text()).toContain(`−4 525,99 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when amount value without minor number', () => {

@@ -5,12 +5,13 @@
 @import '../vars.css';
 
 .list-header {
-    line-height: var(--line-height-condensed);
-    padding: 8px 12px;
-
     position: relative;
     margin: 24px -12px 16px;
+    padding: 8px 12px;
+
     font-size: var(--font-size-s);
+    line-height: var(--line-height-condensed);
+    font-family: var(--font);
 
     &__description {
         opacity: var(--opacity-minor);

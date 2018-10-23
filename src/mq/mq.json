@@ -1,6 +1,10 @@
 {
     "--small": "screen",
     "--small-only": "screen and (max-width: 47.9375em)",
+
+    "--small-l": "screen and (min-width: 25.875em)",
+    "--medium-s": "screen and (min-width: 37.5em)",
+
     "--medium": "screen and (min-width: 48em)",
     "--medium-only": "screen and (min-width: 48em) and (max-width: 63.9375em)",
     "--large": "screen and (min-width: 64em)",
@@ -8,8 +12,5 @@
     "--xlarge": "screen and (min-width: 90em)",
     "--xlarge-only": "screen and (min-width: 90em) and (max-width: 119.9375em)",
     "--xxlarge": "screen and (min-width: 120em)",
-    "--xxlarge-only": "screen and (min-width: 120em) and (max-width: 99999999em)",
-
-    "--small-alt": "screen and (min-width: 25.875em)",
-    "--medium-alt": "screen and (min-width: 37.5em)"
+    "--xxlarge-only": "screen and (min-width: 120em) and (max-width: 99999999em)"
 }

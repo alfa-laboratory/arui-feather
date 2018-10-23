@@ -105,6 +105,9 @@ const buttons = [
             ))
         }
     </div>
+    <div className='row'>
+        <Button width='available' icon={ <IconOk size='xl' /> } size='xl'>Кнопка с иконкой</Button>
+    </div>
 </div>
 ```
 

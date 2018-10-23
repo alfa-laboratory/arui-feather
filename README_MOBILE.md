@@ -19,10 +19,6 @@ body { font-size: 16px };
 - `--small`         0 to 100%
 - `--small-only`    0 to 767px
 
-- `--small-m`       414px to 100%
-
-- `--small-l`       600px to 100%
-
 - `--medium`        768px to 100%
 - `--medium-only`   768px to 1023px
 

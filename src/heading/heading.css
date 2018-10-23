@@ -13,7 +13,8 @@
         font-size: var(--font-size-2xl);
         line-height: var(--line-height-condensed);
 
-        @media (--small-l) {
+        /* TODO New breakpoint candidate: 600px+ */
+        @media (screen and (min-width: 37.5em)) {
             font-size: var(--font-size-3xl);
         }
 
@@ -28,7 +29,7 @@
         font-size: var(--font-size-xl);
         line-height: var(--line-height-condensed);
 
-        @media (--small-l) {
+        @media (screen and (min-width: 37.5em)) {
             margin: var(--gap-3xl) 0 var(--gap-l);
             font-size: var(--font-size-2xl);
         }
@@ -43,7 +44,7 @@
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
-        @media (--small-l) {
+        @media (screen and (min-width: 37.5em)) {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-condensed);
         }
@@ -59,7 +60,7 @@
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
-        @media (--small-l) {
+        @media (screen and (min-width: 37.5em)) {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-condensed);
         }

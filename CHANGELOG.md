@@ -1,3 +1,21 @@
+<a name="12.12.0"></a>
+# [12.12.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.3...v12.12.0) (2018-10-23)
+
+
+### Bug Fixes
+
+* **button:** center icon on full-width button ([#737](https://github.com/alfa-laboratory/arui-feather/issues/737)) ([30974a6](https://github.com/alfa-laboratory/arui-feather/commit/30974a6))
+
+
+### Features
+
+* **amount:** split numbers from 4 digits ([#731](https://github.com/alfa-laboratory/arui-feather/issues/731)) ([db6ac05](https://github.com/alfa-laboratory/arui-feather/commit/db6ac05))
+* **icons:** latest icons from alfa-ui-primitives 1.6.7 ([#739](https://github.com/alfa-laboratory/arui-feather/issues/739)) ([fe6c447](https://github.com/alfa-laboratory/arui-feather/commit/fe6c447))
+* **link:** new breaking line mechanism for link with icon ([#735](https://github.com/alfa-laboratory/arui-feather/issues/735)) ([f0132ee](https://github.com/alfa-laboratory/arui-feather/commit/f0132ee))
+* **list-header:** introducing list-header component ([#734](https://github.com/alfa-laboratory/arui-feather/issues/734)) ([2566ae9](https://github.com/alfa-laboratory/arui-feather/commit/2566ae9))
+
+
+
 <a name="12.11.3"></a>
 ## [12.11.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.2...v12.11.3) (2018-10-09)
 

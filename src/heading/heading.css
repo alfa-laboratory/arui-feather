@@ -13,7 +13,7 @@
         font-size: var(--font-size-2xl);
         line-height: var(--line-height-condensed);
 
-        @media (--medium-s) {
+        @media (--small-l) {
             font-size: var(--font-size-3xl);
         }
 
@@ -28,7 +28,7 @@
         font-size: var(--font-size-xl);
         line-height: var(--line-height-condensed);
 
-        @media (--medium-s) {
+        @media (--small-l) {
             margin: var(--gap-3xl) 0 var(--gap-l);
             font-size: var(--font-size-2xl);
         }
@@ -43,7 +43,7 @@
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
-        @media (--medium-s) {
+        @media (--small-l) {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-condensed);
         }
@@ -59,7 +59,7 @@
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
-        @media (--medium-s) {
+        @media (--small-l) {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-condensed);
         }

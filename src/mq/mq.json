@@ -2,8 +2,8 @@
     "--small": "screen",
     "--small-only": "screen and (max-width: 47.9375em)",
 
-    "--small-l": "screen and (min-width: 25.875em)",
-    "--medium-s": "screen and (min-width: 37.5em)",
+    "--small-m": "screen and (min-width: 25.875em)",
+    "--small-l": "screen and (min-width: 37.5em)",
 
     "--medium": "screen and (min-width: 48em)",
     "--medium-only": "screen and (min-width: 48em) and (max-width: 63.9375em)",

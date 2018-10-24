@@ -94,7 +94,9 @@
     /**
      * Сокращённый интерлиньяж
      */
+    --line-height-extra-condensed: 1.1;
     --line-height-condensed: 1.2;
+    --line-height-semi-condensed: 1.3;
 
     /**
      * Разрядка для маленьких заголовков в верхнем регистре.

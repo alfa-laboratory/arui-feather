@@ -6,7 +6,7 @@
 
 .list {
     margin: 0 0 var(--gap-m);
-    padding: 0 0 0 var(--gap-3xl);
+    padding: 0 0 0 var(--gap-4xl);
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
 
@@ -16,7 +16,7 @@
     & & {
         margin-top: var(--gap-xs);
         margin-bottom: var(--gap-xs);
-        padding-left: var(--gap-l);
+        padding-left: var(--gap-xl);
     }
 
     &__item {

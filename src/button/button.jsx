@@ -187,7 +187,7 @@ class Button extends React.Component {
                 </span>
             ),
             (this.props.children || this.props.text || this.props.icon) && (
-                <span className={ cn('content') }>
+                <span key='content' className={ cn('content') }>
                     { this.props.icon && (
                         <span key='icon' className={ cn('icon') }>
                             { this.props.icon }

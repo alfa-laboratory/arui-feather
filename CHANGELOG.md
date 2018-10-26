@@ -1,3 +1,14 @@
+<a name="13.0.0"></a>
+# [13.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.12.0...v13.0.0) (2018-10-26)
+
+
+### Features
+
+* even more vertical gaps ([#741](https://github.com/alfa-laboratory/arui-feather/issues/741)) ([850b49f](https://github.com/alfa-laboratory/arui-feather/commit/850b49f))
+* new adaptive typography and vertical gaps system ([#738](https://github.com/alfa-laboratory/arui-feather/issues/738)) ([39d4773](https://github.com/alfa-laboratory/arui-feather/commit/39d4773))
+
+
+
 <a name="12.12.0"></a>
 # [12.12.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.3...v12.12.0) (2018-10-23)
 

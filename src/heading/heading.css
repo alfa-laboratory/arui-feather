@@ -9,7 +9,7 @@
     }
 
     &_size_xl {
-        margin: 0 0 var(--gap-l);
+        margin: 0 0 var(--gap-xl);
         font-size: var(--font-size-2xl);
         line-height: var(--line-height-condensed);
 
@@ -25,12 +25,12 @@
     }
 
     &_size_l {
-        margin: var(--gap-2xl) 0 var(--gap-m);
+        margin: var(--gap-3xl) 0 var(--gap-m);
         font-size: var(--font-size-xl);
         line-height: var(--line-height-condensed);
 
         @media (min-width: 600px) {
-            margin: var(--gap-3xl) 0 var(--gap-l);
+            margin: var(--gap-4xl) 0 var(--gap-xl);
             font-size: var(--font-size-2xl);
         }
 
@@ -40,7 +40,7 @@
     }
 
     &_size_m {
-        margin: var(--gap-2xl) 0 var(--gap-m);
+        margin: var(--gap-3xl) 0 var(--gap-m);
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
@@ -50,13 +50,13 @@
         }
 
         @media (--large) {
-            margin: var(--gap-3xl) 0 var(--gap-l);
+            margin: var(--gap-4xl) 0 var(--gap-xl);
             font-size: var(--font-size-2xl);
         }
     }
 
     &_size_s {
-        margin: var(--gap-2xl) 0 var(--gap-m);
+        margin: var(--gap-3xl) 0 var(--gap-m);
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
@@ -67,7 +67,7 @@
     }
 
     &_size_xs {
-        margin: var(--gap-2xl) 0 var(--gap-m);
+        margin: var(--gap-3xl) 0 var(--gap-m);
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
     }

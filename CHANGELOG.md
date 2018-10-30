@@ -1,3 +1,13 @@
+<a name="13.0.1"></a>
+## [13.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.0...v13.0.1) (2018-10-30)
+
+
+### Bug Fixes
+
+* **button:** add skipped "key" property ([#740](https://github.com/alfa-laboratory/arui-feather/issues/740)) ([c0929ad](https://github.com/alfa-laboratory/arui-feather/commit/c0929ad))
+
+
+
 <a name="13.0.0"></a>
 # [13.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.12.0...v13.0.0) (2018-10-26)
 

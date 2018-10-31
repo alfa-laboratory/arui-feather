@@ -17,12 +17,20 @@
         text-align: right;
     }
 
-    /* &__major {} */
+    &__major {
+        .amount_bold & {
+            font-weight: var(--font-weight-bold);
+        }
+    }
 
     &__separator,
     &__minor,
     &__currency {
         opacity: var(--opacity-minor);
+
+        .amount_bold & {
+            font-weight: var(--font-weight-bold);
+        }
     }
 
     .heading {

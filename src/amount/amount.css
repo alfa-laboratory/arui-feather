@@ -17,14 +17,11 @@
         text-align: right;
     }
 
-    &__major {
-        font-weight: var(--font-weight-bold);
-    }
+    /* &__major {} */
 
     &__separator,
     &__minor,
     &__currency {
-        font-weight: var(--font-weight-bold);
         opacity: var(--opacity-minor);
     }
 

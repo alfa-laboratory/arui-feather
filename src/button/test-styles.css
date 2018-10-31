@@ -1,9 +1,0 @@
-/**
- * Styles for cross platform page rendering
- */
-* {
-    font-family: Arial !important;
-    font-smooth: never !important;
-    font-smoothing: none !important;
-    -webkit-font-smoothing: none !important;
-}

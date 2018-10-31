@@ -24,7 +24,9 @@ beforeAll(async () => {
 });
 
 afterAll(() => {
-    puppeteerBrowser.close();
+    if (puppeteerBrowser) {
+        puppeteerBrowser.close();
+    }
 });
 
 /**

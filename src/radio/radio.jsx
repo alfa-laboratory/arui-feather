@@ -40,7 +40,10 @@ class Radio extends React.PureComponent {
         value: Type.string,
         /** Текст подписи к радио-кнопке */
         text: Type.node,
-        /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
+        /**
+         * Управление шириной кнопки для типа 'button'. При значении 'available'
+         * растягивает кнопку на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Размер компонента */
         size: validateSizeProp,

@@ -40,7 +40,10 @@ class CheckBox extends React.PureComponent {
         value: Type.string,
         /** Размер компонента */
         size: validateSizeProp,
-        /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
+        /**
+         * Управление шириной кнопки для типа 'button'. При значении
+         * 'available' растягивает кнопку на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Тип чекбокса */
         type: Type.oneOf(['normal', 'button']),

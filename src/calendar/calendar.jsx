@@ -517,7 +517,8 @@ class Calendar extends React.PureComponent {
      * Генерирует событие, что значие даты изменилось.
      *
      * @param {Number} timestamp Дата
-     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие произошло из-за нажатия пользователем кнопки на клавиатуре
+     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
+     * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
     performChange(timestamp, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
@@ -540,7 +541,8 @@ class Calendar extends React.PureComponent {
      * Генерирует событие, что значение даты изменилось на переданной число дней.
      *
      * @param {Number} dayShift Смещение текущей даты в днях.
-     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие произошло из-за нажатия пользователем кнопки на клавиатуре
+     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
+     * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
     performChangeWithShift(dayShift, isTriggeredByKeyboard) {
         if (!this.ensureValueInLimits(dayShift)) {

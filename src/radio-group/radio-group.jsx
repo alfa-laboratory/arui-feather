@@ -23,7 +23,10 @@ class RadioGroup extends React.PureComponent {
         error: Type.node,
         /** Размеры pub и sub */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
+        /**
+         * Управление шириной группы кнопок для типа 'button'. При значении
+         * 'available' растягивает группу на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,

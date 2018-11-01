@@ -94,7 +94,7 @@ function deep(nextProps, nextState, nextContext) {
 
 /**
  * Декоратор для улучшения производительности React компонентов. Работает за счет реализации метода
- * [shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom).
+ * [shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom)
  *
  * У декоратора есть два режима работы - глубокая и "поверхностная" проверка. В случае, если все props и state
  * компонента состоит только из примитивных значений (`number`, `string`, `null`, `undefined`) стоит использовать

@@ -19,7 +19,10 @@ class CheckBoxGroup extends React.PureComponent {
         type: Type.oneOf(['normal', 'button', 'line']),
         /** Выбранные чекбокс-кнопки */
         value: Type.arrayOf(Type.oneOfType([Type.string, Type.number])),
-        /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
+        /**
+         * Управление шириной группы кнопок для типа 'button'. При значении
+         * 'available' растягивает группу на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,

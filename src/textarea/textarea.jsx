@@ -39,7 +39,10 @@ class Textarea extends React.PureComponent {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию (используйте это поле если хотите использовать компонент как uncontrolled) */
+        /**
+         * Содержимое поля ввода, указанное по умолчанию (используйте это поле
+         * если хотите использовать компонент как uncontrolled)
+         */
         defaultValue: Type.string,
         /** Содержимое поля ввода */
         value: Type.string,
@@ -121,13 +124,13 @@ class Textarea extends React.PureComponent {
     control;
 
     render(cn) {
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        let value = this.props.value !== undefined ? this.props.value : this.state.value;
 
         let textareaProps = {
             className: cn('control'),
-            [this.props.autosize ? 'inputRef' : 'ref']: (control) => { this.control = control; },
+            [this.props.autosize ? 'inputRef' : 'ref']: (control) => {
+                this.control = control;
+            },
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled,
             id: this.props.id,
@@ -157,32 +160,26 @@ class Textarea extends React.PureComponent {
                     'has-label': !!this.props.label,
                     'has-value': !!value
                 }) }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
             >
                 <span className={ cn('inner') }>
-                    {
-                        !!this.props.label &&
-                        <span className={ cn('top') }>
-                            { this.props.label }
-                        </span>
-                    }
-                    {
-                        !this.props.autosize
-                            ? <textarea { ...textareaProps } />
-                            : <TextareaAutosize
-                                { ...textareaProps }
-                                maxRows={ this.props.maxRows }
-                                minRows={ this.props.minRows }
-                                style={ { maxHeight: this.props.maxHeight } }
-                                onHeightChange={ this.handleHeightChange }
-                            />
-                    }
-                    {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
-                    }
+                    { !!this.props.label && <span className={ cn('top') }>{ this.props.label }</span> }
+                    { !this.props.autosize ? (
+                        <textarea { ...textareaProps } />
+                    ) : (
+                        <TextareaAutosize
+                            { ...textareaProps }
+                            maxRows={ this.props.maxRows }
+                            minRows={ this.props.minRows }
+                            style={ { maxHeight: this.props.maxHeight } }
+                            onHeightChange={ this.handleHeightChange }
+                        />
+                    ) }
+                    { (this.props.error || this.props.hint) && (
+                        <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
+                    ) }
                 </span>
             </span>
         );
@@ -273,7 +270,8 @@ class Textarea extends React.PureComponent {
         let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            // eslint-disable-next-line no-mixed-operators
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }
 }

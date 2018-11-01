@@ -43,7 +43,10 @@ class InputAutocomplete extends React.Component {
                 content: Type.array
             })
         ),
-        /** Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления */
+        /**
+         * Управление возможностью изменения атрибута компонента, установка
+         * соответствующего класса-модификатора для оформления
+         */
         disabled: Type.bool,
         /** Управление видимостью выпадающего списка */
         opened: Type.bool,
@@ -137,9 +140,11 @@ class InputAutocomplete extends React.Component {
      * @todo Remove me
      */
     shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return !isEqual(this.props, nextProps, true)
-            || !isEqual(this.state, nextState, true)
-            || !isEqual(this.context, nextContext, true);
+        return (
+            !isEqual(this.props, nextProps, true) ||
+            !isEqual(this.state, nextState, true) ||
+            !isEqual(this.context, nextContext, true)
+        );
     }
     componentDidUpdate() {
         this.updatePopupTarget();

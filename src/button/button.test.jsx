@@ -14,10 +14,11 @@ describe('button', () => {
         const screenshot = await getComponentScreenshot(
             <Button>Button-example</Button>,
             [
-                path.resolve(__dirname, './button.css'),
-                path.resolve(__dirname, './button_theme_alfa-on-color.css'),
-                path.resolve(__dirname, './button_theme_alfa-on-white.css')
-            ],
+                './button.css',
+                './button_theme_alfa-on-color.css',
+                './button_theme_alfa-on-white.css',
+                './test-styles.css'
+            ].map(item => path.resolve(__dirname, item)),
             {
                 clip: {
                     x: 0,

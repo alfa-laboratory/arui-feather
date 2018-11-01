@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkbox should render without problems 1`] = `
+<label
+  className="checkbox checkbox_size_m checkbox_theme_alfa-on-white"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="checkbox__box"
+    key="box"
+  >
+    <input
+      autoComplete="off"
+      checked={false}
+      className="checkbox__control"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+  </span>
+</label>
+`;

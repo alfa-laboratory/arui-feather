@@ -117,8 +117,8 @@ const clean = new Promise((resolve) => {
 const createTests = () => new Promise((resolve) => {
     const shortIcons = removeDublicates(icons);
     fs.writeFileSync(
-        './src/icon/icon-test.jsx',
-        getTemplate('icon-test.jsx', shortIcons)
+        './src/icon/icon.test.jsx',
+        getTemplate('icon.test.jsx', shortIcons)
     );
     resolve();
 });

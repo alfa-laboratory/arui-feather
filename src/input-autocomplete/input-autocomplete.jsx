@@ -59,7 +59,12 @@ class InputAutocomplete extends React.Component {
             'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
-        /** Обработчик выбора пункта в выпадающем меню */
+        /** Вставляет попап со списком только если элемент активен */
+        renderPopupOnFocus: Type.bool,
+        /**
+         * Обработчик выбора пункта в выпадающем меню
+         * @param checkedItem
+         */
         onItemSelect: Type.func,
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
         closeOnSelect: Type.bool
@@ -73,7 +78,8 @@ class InputAutocomplete extends React.Component {
         updateValueOnItemSelect: true,
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         equalPopupWidth: false,
-        closeOnSelect: false
+        closeOnSelect: false,
+        renderPopupOnFocus: false
     };
 
     state = {
@@ -110,17 +116,12 @@ class InputAutocomplete extends React.Component {
     inputFocusTimeout = null;
 
     componentDidMount() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getBoxNode());
-        }
-
+        this.updatePopupTarget();
         this.updatePopupStyles();
     }
 
     componentDidUpdate() {
-        if (this.popup) {
-            this.popup.setTarget(this.input.getNode());
-        }
+        this.updatePopupTarget();
         this.updatePopupStyles();
     }
 
@@ -183,6 +184,9 @@ class InputAutocomplete extends React.Component {
             return null;
         }
 
+        if (this.props.renderPopupOnFocus && !opened) {
+            return null;
+        }
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
@@ -496,6 +500,12 @@ class InputAutocomplete extends React.Component {
         this.setState({
             popupStyles
         });
+    }
+
+    updatePopupTarget() {
+        if (this.popup) {
+            this.popup.setTarget(this.input.getBoxNode());
+        }
     }
 
     /**

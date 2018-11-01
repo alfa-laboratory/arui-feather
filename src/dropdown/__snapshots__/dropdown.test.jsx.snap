@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropdown should render without problems 1`] = `
+<Dropdown
+  disabled={false}
+  popupContent="Popup-example"
+  popupProps={
+    Object {
+      "target": "anchor",
+    }
+  }
+  size="m"
+  switcherText="Switcher"
+  switcherType="link"
+>
+  <div
+    className="dropdown dropdown_theme_alfa-on-white"
+  >
+    <Link
+      checked={false}
+      className="dropdown__switcher"
+      disabled={false}
+      iconPosition="left"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      pseudo={true}
+      size="m"
+      tabIndex={0}
+      text="Switcher-example"
+      url="#"
+    >
+      <a
+        className="link link_pseudo link_size_m link_theme_alfa-on-white dropdown__switcher"
+        href="#"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+      >
+        <span
+          className="link__text-container"
+          key="text"
+        >
+          <span
+            className="link__text"
+          >
+            Switcher-example
+          </span>
+        </span>
+      </a>
+    </Link>
+    <Popup
+      className="dropdown__popup"
+      fitContaiterOffset={0}
+      mainOffset={6}
+      onClickOutside={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      padded={true}
+      secondaryOffset={0}
+      size="m"
+      target="anchor"
+      visible={false}
+    >
+      <div
+        className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "bottom": undefined,
+            "height": "auto",
+            "left": 0,
+            "maxHeight": "none",
+            "maxWidth": "none",
+            "minWidth": 0,
+            "right": undefined,
+            "top": 6,
+          }
+        }
+      >
+        <div
+          className="popup__container"
+        >
+          <div
+            className="popup__inner"
+            onScroll={[Function]}
+          >
+            <div
+              className="popup__content"
+            >
+              Popup-example
+              <ResizeSensor
+                onResize={[Function]}
+              >
+                <iframe
+                  style={
+                    Object {
+                      "background": "transparent",
+                      "border": "none",
+                      "height": "100%",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "100%",
+                      "zIndex": -1,
+                    }
+                  }
+                  tabIndex="-1"
+                />
+              </ResizeSensor>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Popup>
+  </div>
+</Dropdown>
+`;

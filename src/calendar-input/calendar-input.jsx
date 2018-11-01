@@ -44,6 +44,8 @@ class CalendarInput extends React.Component {
         value: Type.string,
         /** Содержимое поля ввода, указанное по умолчанию */
         defaultValue: Type.string,
+        /** Дата для отображения календаря по умолчанию */
+        defaultMonth: Type.oneOfType([Type.string, Type.number, Type.instanceOf(Date)]),
         /** Свойства компонента [Calendar](#!/Calendar) */
         calendar: Type.shape({
             value: Type.number,
@@ -85,6 +87,10 @@ class CalendarInput extends React.Component {
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Последовательность перехода между контролами при нажатии на Tab */
         tabIndex: Type.number,
+        /** Добавление дополнительных элементов к инпуту слева */
+        leftAddons: Type.node,
+        /** Добавление дополнительных элементов к инпуту справа */
+        rightAddons: Type.node,
         /** Управление рендером иконки календаря в инпуте */
         withIcon: Type.bool,
         /** Лейбл для поля */
@@ -107,25 +113,56 @@ class CalendarInput extends React.Component {
         className: Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Обработчик установки фокуса на компонент */
+        /**
+         * Обработчик установки фокуса на компонент
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса с компонента */
+        /**
+         * Обработчик снятия фокуса с компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик установки фокуса на поле ввода */
+        /**
+         * Обработчик установки фокуса на поле ввода
+         * @param {React.FocusEvent} event
+         */
         onInputFocus: Type.func,
-        /** Обработчик снятия фокуса с поля ввода */
+        /**
+         * Обработчик снятия фокуса с поля ввода
+         * @param {React.FocusEvent} event
+         */
         onInputBlur: Type.func,
-        /** Обработчик ввода даты в текстовом поле */
+        /**
+         * Обработчик ввода даты в текстовом поле
+         * @param {string} value
+         */
         onInputChange: Type.func,
-        /** Обработчик выбора даты в календаре */
+        /**
+         * Обработчик выбора даты в календаре
+         * @param {string} formattedValue
+         */
         onCalendarChange: Type.func,
-        /** Обрабочик изменения даты в календаре */
+        /**
+         * Обрабочик изменения даты в календаре
+         * @param {string} formattedValue
+         * @param {number} value
+         */
         onChange: Type.func,
-        /** Обработчик события нажатия на клавишу в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится в календаре */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится в календаре
+         * @param {React.KeyboardEvent} event
+         */
         onCalendarKeyDown: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле
+         * @param {React.KeyboardEvent} event
+         */
         onInputKeyDown: Type.func
     };
 
@@ -143,7 +180,7 @@ class CalendarInput extends React.Component {
         opened: false,
         value: this.props.defaultValue || '',
         month: calculateMonth(
-            this.props.value,
+            this.props.value || this.props.defaultMonth,
             CUSTOM_DATE_FORMAT,
             this.props.calendar ? this.props.calendar.earlierLimit : undefined,
             this.props.calendar ? this.props.calendar.laterLimit : undefined
@@ -219,8 +256,12 @@ class CalendarInput extends React.Component {
         };
 
         let nativeProps = {
-            min: formatDate(this.props.calendar && this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
-            max: formatDate(this.props.calendar && this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
+            min: this.props.calendar
+                && this.props.calendar.earlierLimit
+                && formatDate(this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max: this.props.calendar
+                && this.props.calendar.laterLimit
+                && formatDate(this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
         };
 
         let wrapperProps = this.isMobilePopup() && !this.props.disabled
@@ -234,63 +275,68 @@ class CalendarInput extends React.Component {
         return (
             <span
                 className={ cn({ width: this.props.width }) }
-                { ...wrapperProps }
             >
-                <Mq
-                    query='--small-only'
-                    touch={ true }
-                    onMatchChange={ this.handleMqMatchChange }
+                <span
+                    { ...wrapperProps }
                 >
-                    {
-                        this.canBeNative() &&
-                        <input
-                            ref={ (nativeCalendarTarget) => {
-                                this.nativeCalendarTarget = nativeCalendarTarget;
-                            } }
-                            { ...commonProps }
-                            { ...nativeProps }
-                            className={ cn('native-control') }
-                            type='date'
-                            value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
-                            onBlur={ this.handleNativeInputBlur }
-                            onChange={ this.handleNativeInputChange }
-                            onFocus={ this.handleNativeInputFocus }
-                        />
-                    }
-                </Mq>
-                <Input
-                    ref={ (customCalendarTarget) => {
-                        this.customCalendarTarget = customCalendarTarget;
-                    } }
-                    { ...commonProps }
-                    className={ cn('custom-control') }
-                    disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
-                    focused={ this.state.isInputFocused || this.state.isCalendarFocused }
-                    mask='11.11.1111'
-                    size={ this.props.size }
-                    type='tel'
-                    pattern='[0-9]*'
-                    label={ this.props.label }
-                    placeholder={ this.props.placeholder }
-                    hint={ this.props.hint }
-                    error={ this.props.error }
-                    value={ value }
-                    width={ this.props.width }
-                    id={ this.props.id }
-                    name={ this.props.name }
-                    onBlur={ this.handleCustomInputBlur }
-                    onChange={ this.handleCustomInputChange }
-                    onFocus={ this.handleCustomInputFocus }
-                    onKeyDown={ this.handleInputKeyDown }
-                    icon={
-                        this.props.withIcon &&
-                        <IconButton onClick={ this.handleIconButtonClick }>
-                            <IconCalendar
-                                size={ this.props.size }
+                    <Mq
+                        query='--small-only'
+                        touch={ true }
+                        onMatchChange={ this.handleMqMatchChange }
+                    >
+                        {
+                            this.canBeNative() &&
+                            <input
+                                ref={ (nativeCalendarTarget) => {
+                                    this.nativeCalendarTarget = nativeCalendarTarget;
+                                } }
+                                { ...commonProps }
+                                { ...nativeProps }
+                                className={ cn('native-control') }
+                                type='date'
+                                value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
+                                onBlur={ this.handleNativeInputBlur }
+                                onChange={ this.handleNativeInputChange }
+                                onFocus={ this.handleNativeInputFocus }
                             />
-                        </IconButton>
-                    }
-                />
+                        }
+                    </Mq>
+                    <Input
+                        ref={ (customCalendarTarget) => {
+                            this.customCalendarTarget = customCalendarTarget;
+                        } }
+                        { ...commonProps }
+                        className={ cn('custom-control') }
+                        disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
+                        focused={ this.state.isInputFocused || this.state.isCalendarFocused }
+                        mask='11.11.1111'
+                        size={ this.props.size }
+                        type='tel'
+                        pattern='[0-9.]*'
+                        label={ this.props.label }
+                        placeholder={ this.props.placeholder }
+                        hint={ this.props.hint }
+                        error={ this.props.error }
+                        value={ value }
+                        width={ this.props.width }
+                        id={ this.props.id }
+                        name={ this.props.name }
+                        leftAddons={ this.props.leftAddons }
+                        rightAddons={ this.props.rightAddons }
+                        onBlur={ this.handleCustomInputBlur }
+                        onChange={ this.handleCustomInputChange }
+                        onFocus={ this.handleCustomInputFocus }
+                        onKeyDown={ this.handleInputKeyDown }
+                        icon={
+                            this.props.withIcon &&
+                            <IconButton onClick={ this.handleIconButtonClick }>
+                                <IconCalendar
+                                    size={ this.props.size }
+                                />
+                            </IconButton>
+                        }
+                    />
+                </span>
                 { this.renderPopup(cn, value, Popup) }
             </span>
         );
@@ -661,7 +707,7 @@ class CalendarInput extends React.Component {
 
             let newMonth = this.state.opened !== opened
                 ? calculateMonth(
-                    value,
+                    value || this.props.defaultMonth,
                     CUSTOM_DATE_FORMAT,
                     this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                     this.props.calendar ? this.props.calendar.laterLimit : undefined

@@ -69,17 +69,35 @@ class Dropdown extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика по кнопке компонента */
+        /**
+         * Обработчик клика по кнопке компонента
+         * @param {boolean} isOpened
+         */
         onSwitcherClick: Type.func,
-        /** Обработчик события наведения курсора на кнопку компонента */
+        /**
+         * Обработчик события наведения курсора на кнопку компонента
+         * @param {React.MouseEvent} event
+         */
         onSwitcherMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с кнопки компонента */
+        /**
+         * Обработчик события снятия курсора с кнопки компонента
+         * @param {React.MouseEvent} event
+         */
         onSwitcherMouseLeave: Type.func,
-        /** Обработчик события наведения курсора на попап */
+        /**
+         * Обработчик события наведения курсора на попап
+         * @param {React.MouseEvent} event
+         */
         onPopupMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с попапа */
+        /**
+         * Обработчик события снятия курсора с попапа
+         * @param {React.MouseEvent} event
+         */
         onPopupMouseLeave: Type.func,
-        /** Обработчик события клика попапа за пределами попапа */
+        /**
+         * Обработчик события клика попапа за пределами попапа
+         * @param {React.MouseEvent} event
+         */
         onPopupClickOutside: Type.func
     };
 
@@ -216,47 +234,47 @@ class Dropdown extends React.Component {
     }
 
     @autobind
-    handleSwitcherMouseEnter() {
+    handleSwitcherMouseEnter(event) {
         this.setState({ switcherHovered: true });
 
         if (this.props.onSwitcherMouseEnter) {
-            this.props.onSwitcherMouseEnter();
+            this.props.onSwitcherMouseEnter(event);
         }
     }
 
     @autobind
-    handleSwitcherMouseLeave() {
+    handleSwitcherMouseLeave(event) {
         this.setState({ switcherHovered: false });
 
         if (this.props.onSwitcherMouseLeave) {
-            this.props.onSwitcherMouseLeave();
+            this.props.onSwitcherMouseLeave(event);
         }
     }
 
     @autobind
-    handlePopupMouseEnter() {
+    handlePopupMouseEnter(event) {
         this.setState({ popupHovered: true });
 
         if (this.props.onPopupMouseEnter) {
-            this.props.onPopupMouseEnter();
+            this.props.onPopupMouseEnter(event);
         }
     }
 
     @autobind
-    handlePopupMouseLeave() {
+    handlePopupMouseLeave(event) {
         this.setState({ popupHovered: false });
 
         if (this.props.onPopupMouseLeave) {
-            this.props.onPopupMouseLeave();
+            this.props.onPopupMouseLeave(event);
         }
     }
 
     @autobind
-    handlePopupClickOutside() {
+    handlePopupClickOutside(event) {
         this.setState({ opened: false });
 
         if (this.props.onPopupClickOutside) {
-            this.props.onPopupClickOutside();
+            this.props.onPopupClickOutside(event);
         }
     }
 }

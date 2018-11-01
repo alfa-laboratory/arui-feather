@@ -14,10 +14,6 @@
     background-image: url('./icon_cashback-bonus_m_black.svg');
 }
 
-.icon_size_m.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-color, .icon_size_m.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-white {
-    background-image: url('./icon_cashback-bonus_m_color.svg');
-}
-
 .icon_size_m.icon_name_cashback-bonus.icon_theme_alfa-on-color {
     background-image: url('./icon_cashback-bonus_m_white.svg');
 }
@@ -26,18 +22,6 @@
     background-image: url('./icon_cashback-bonus_s_black.svg');
 }
 
-.icon_size_s.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-white {
-    background-image: url('./icon_cashback-bonus_s_color.svg');
-}
-
 .icon_size_s.icon_name_cashback-bonus.icon_theme_alfa-on-color {
     background-image: url('./icon_cashback-bonus_s_white.svg');
-}
-
-.icon_size_xl.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-color, .icon_size_xl.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-white {
-    background-image: url('./icon_cashback-bonus_xl_color.svg');
-}
-
-.icon_size_xxl.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_cashback-bonus.icon_colored.icon_theme_alfa-on-white {
-    background-image: url('./icon_cashback-bonus_xxl_color.svg');
 }

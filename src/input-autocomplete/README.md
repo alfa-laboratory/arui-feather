@@ -26,7 +26,10 @@ function getFilteredOptions(list, typedValue) {
     if (!typedValue) {
         return list;
     }
-    return list.filter(({ value }) => value !== typedValue && value.indexOf(typedValue) !== -1);
+
+    const typedValueLCase = typedValue.toLowerCase();
+
+    return list.filter(({ value }) => value.toLowerCase().includes(typedValueLCase));
 }
 function handleItemSelect(item) {
     setState({ value: item.text })
@@ -103,7 +106,10 @@ function getFilteredOptions(list, typedValue) {
     if (!typedValue) {
         return list;
     }
-    return list.filter(({ value }) => value !== typedValue && value.indexOf(typedValue) !== -1);
+
+    const typedValueLCase = typedValue.toLowerCase();
+
+    return list.filter(({ value }) => value.toLowerCase().includes(typedValueLCase));
 }
 function handleItemSelect(item) {
     setState({ value: item.text })
@@ -152,7 +158,11 @@ function getFilteredOptions(list, typedValue) {
     if (!typedValue) {
         return list;
     }
-    return list.filter(({ value }) => value !== typedValue && value.indexOf(typedValue) !== -1);
+
+
+    const typedValueLCase = typedValue.toLowerCase();
+
+    return list.filter(({ value }) => value.toLowerCase().includes(typedValueLCase));
 }
 
 function handleItemSelect(item) {

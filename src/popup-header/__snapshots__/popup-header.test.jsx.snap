@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`popup-header should render without problems 1`] = `
+<div
+  className="popup-header popup-header_theme_alfa-on-white"
+>
+  <IconButton
+    className="popup-header__closer"
+    formNoValidate={false}
+    onClick={[Function]}
+    size="m"
+    tag="button"
+    type="button"
+  >
+    <IconClose />
+  </IconButton>
+  <div
+    className="popup-header__title"
+  >
+    Title
+  </div>
+</div>
+`;

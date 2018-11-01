@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tabs should render without problems 1`] = `
+<Tabs
+  scrollable={true}
+>
+  <div
+    className="tabs tabs_scrollable tabs_theme_alfa-on-white"
+  >
+    <div
+      className="tabs__panel"
+    >
+      <div
+        className="tabs__content"
+      />
+    </div>
+  </div>
+</Tabs>
+`;

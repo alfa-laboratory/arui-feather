@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`email-input should render without problems 1`] = `
+<Input
+  className="email-input email-input_theme_alfa-on-white"
+  formNoValidate={true}
+  size="m"
+  type="email"
+/>
+`;

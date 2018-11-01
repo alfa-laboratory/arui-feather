@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list should render ul type without problem 1`] = `
+<ol
+  className="list list_type_ordered list_theme_alfa-on-white"
+>
+  <li
+    className="list__item"
+    key="item-one"
+  >
+    Apple
+  </li>
+  <li
+    className="list__item"
+    key="item-two"
+  >
+    Orange
+  </li>
+  <li
+    className="list__item"
+    key="item-three"
+  >
+    Banana
+  </li>
+</ol>
+`;
+
+exports[`list should render without problem 1`] = `
+<ul
+  className="list list_theme_alfa-on-white"
+/>
+`;

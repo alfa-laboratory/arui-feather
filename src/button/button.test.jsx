@@ -16,8 +16,7 @@ describe('button', () => {
             [
                 path.resolve(__dirname, './button.css'),
                 path.resolve(__dirname, './button_theme_alfa-on-color.css'),
-                path.resolve(__dirname, './button_theme_alfa-on-white.css'),
-                path.resolve(__dirname, './test-styles.css')
+                path.resolve(__dirname, './button_theme_alfa-on-white.css')
             ],
             {
                 clip: {

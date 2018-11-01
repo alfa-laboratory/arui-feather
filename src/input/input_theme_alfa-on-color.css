@@ -31,6 +31,18 @@
         color: var(--color-content-minor-alfa-on-color);
     }
 
+    &.input_has-label {
+        .input__control::placeholder {
+            color: transparent;
+        }
+
+        &.input_focused {
+            .input__control::placeholder {
+                color: var(--color-content-minor-alfa-on-color);
+            }
+        }
+    }
+
     &.input_has-icon {
         .input__icon {
             color: var(--color-content-alfa-on-color);

@@ -1,0 +1,35 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import React from 'react';
+import { shallow } from 'enzyme';
+
+import Icon from './icon';
+
+{{#each this}}
+import {{this.componentName}} from './{{this.category}}/{{this.name}}';
+{{/each}}
+
+describe('icon', () => {
+    it('renders without problems', () => {
+        let icon = shallow(<Icon />);
+        expect(icon).toMatchSnapshot();
+    });
+
+    (() => {
+        let icons = [
+        {{#each this}}
+            { componentName: {{this.componentName}}, name: '{{this.name}}' }{{#unless @last }},{{/unless}}
+        {{/each}}
+        ];
+
+        return icons.map((icon, index) => (
+            it(`render ${icon.componentName.name} without problems`, () => {
+                let CurrentComponent = icons[index].componentName;
+                let renderedIcon = shallow(<CurrentComponent />);
+                expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
+            })
+        ));
+    })();
+});

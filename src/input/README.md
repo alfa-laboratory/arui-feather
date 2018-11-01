@@ -12,15 +12,17 @@ function handleMoneyChange(money) {
         placeholder='Введите сумму'
         rightAddons={
             <RadioGroup type='button'>
-                {['₽', '$', '€'].map(item => (
-                    <Radio
-                        key={ item }
-                        size='s'
-                        type='button'
-                        text={ item }
-                        onChange={ handleMoneyChange }
-                    />
-                ))}
+                {
+                    ['₽', '$', '€'].map(item => (
+                        <Radio
+                            key={ item }
+                            size='s'
+                            type='button'
+                            text={ item }
+                            onChange={ handleMoneyChange }
+                        />
+                    ))
+                }
             </RadioGroup>
         }
         type='number'
@@ -32,15 +34,17 @@ function handleMoneyChange(money) {
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                placeholder='Введите что-нибудь'
-                view='line'
-                size={ size }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    placeholder='Введите что-нибудь'
+                    view='line'
+                    size={ size }
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -48,16 +52,18 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                label='Имя'
-                placeholder='Введите ваше имя'
-                view='line'
-                size={ size }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    label='Имя'
+                    placeholder='Введите ваше имя'
+                    view='line'
+                    size={ size }
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -65,17 +71,19 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                placeholder='Введите что-нибудь'
-                defaultValue='Корм для кота'
-                clear={ true }
-                view='line'
-                size={ size }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    placeholder='Введите что-нибудь'
+                    defaultValue='Корм для кота'
+                    clear={ true }
+                    view='line'
+                    size={ size }
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -83,16 +91,18 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                placeholder='Введите что-нибудь длинное'
-                width='available'
-                view='line'
-                size={ size }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    placeholder='Введите что-нибудь длинное'
+                    width='available'
+                    view='line'
+                    size={ size }
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -104,21 +114,23 @@ initialState = {
     error: true
 };
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                placeholder='Введите что-нибудь'
-                error={ state.error ? 'Только кириллические символы' : null }
-                view='line'
-                size={ size }
-                value={ state.value }
-                onChange={ value => setState({
-                    value,
-                    error: value.search(/[a-z]/i) !== -1
-                }) }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    placeholder='Введите что-нибудь'
+                    error={ state.error ? 'Только кириллические символы' : null }
+                    view='line'
+                    size={ size }
+                    value={ state.value }
+                    onChange={ value => setState({
+                        value,
+                        error: value.search(/[a-z]/i) !== -1
+                    }) }
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -128,21 +140,23 @@ const IconOk = require('../../src/icon/ui/ok').default;
 
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                placeholder='Введите ваше имя'
-                view='line'
-                size={ size }
-                icon={
-                    <IconOk
-                        colored={ true }
-                        size={ size }
-                    />
-                }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    placeholder='Введите ваше имя'
+                    view='line'
+                    size={ size }
+                    icon={
+                        <IconOk
+                            colored={ true }
+                            size={ size }
+                        />
+                    }
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -150,15 +164,17 @@ const sizes = ['s', 'm', 'l', 'xl'];
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
-    {sizes.map(size => (
-        <div className='row' key={ size }>
-            <Input
-                placeholder='Введите ваше имя'
-                disabled={ true }
-                view='line'
-                size={ size }
-            />
-        </div>
-    ))}
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    placeholder='Введите ваше имя'
+                    disabled={ true }
+                    view='line'
+                    size={ size }
+                />
+            </div>
+        ))
+    }
 </div>
 ```

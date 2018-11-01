@@ -15,12 +15,27 @@ const IS_IE9_10 = typeof window !== 'undefined' && !!window.ActiveXObject;
 
 const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
 
+/**
+ * Возвращает версию андроида в формате "4.2.1" или false, если не аднроид.
+ *
+ * @returns {String|false}
+ */
+export function getAndroidVersion() {
+    if (!/android/.test(navigator.userAgent.toLowerCase())) {
+        return false;
+    }
+
+    const userAgent = navigator.userAgent.toLowerCase();
+    const match = userAgent.match(/android\s([\d.]*)/);
+
+    return match ? match[1] : false;
+}
+
 // Для IE11 вместо `onChange`, используем событие `onInput`, для правильной работы copy/paste
 // Issue на ошибку в React: https://github.com/facebook/react/issues/7211
 // Детектим IE11: `Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;`
-const IS_IE11 = typeof window !== 'undefined'
-    && Object.hasOwnProperty.call(window, 'ActiveXObject')
-    && !window.ActiveXObject;
+const IS_IE11 =
+    typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
 
 // Типы операции, которые пользователь может производить с текстовым полем.
 const operationType = {
@@ -31,7 +46,7 @@ const operationType = {
 
 /**
  * Компонент поля ввода с поддержкой масок.
- * Расширяет стандратный <input /> React-а.
+ * Расширяет стандартный <input /> React-а.
  */
 class MaskedInput extends React.Component {
     static propTypes = {
@@ -46,8 +61,13 @@ class MaskedInput extends React.Component {
         ),
         /** Максимальное число символов */
         maxLength: Type.number,
-        /** Обработчик, вызываемый перед началом ввода в поле */
-        onProcessInputEvent: Type.func
+        /**
+         * Обработчик, вызываемый перед началом ввода в поле
+         * @param {React.ChangeEvent} event
+         */
+        onProcessInputEvent: Type.func,
+        /** Признак что пробелы удалять не надо */
+        useWhitespaces: Type.bool
     };
 
     /**
@@ -86,7 +106,7 @@ class MaskedInput extends React.Component {
     beforeInputSelection = { start: 0, end: 0 };
 
     componentWillMount() {
-        this.setMask(this.props.mask, this.props.formatCharacters);
+        this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
         this.value = this.mask.format(this.props.value || '');
     }
 
@@ -117,11 +137,14 @@ class MaskedInput extends React.Component {
         delete props.mask;
         delete props.formatCharacters;
         delete props.onProcessInputEvent;
+        delete props.useWhitespaces;
 
         return (
             <input
                 { ...props }
-                ref={ (ref) => { this.input = ref; } }
+                ref={ (ref) => {
+                    this.input = ref;
+                } }
                 maxLength={ length }
                 value={ this.value }
                 onBeforeInput={ this.handleBeforeInput }
@@ -143,33 +166,41 @@ class MaskedInput extends React.Component {
         }
     }
 
+    /**
+     * Обрабатывает событие «input».
+     *
+     * @param {React.ChangeEvent<HTMLInput>} event The Event object
+     */
     @autobind
     handleInput(event) {
-        if (!IS_IE9_10) {
-            event = this.processInputEvent(event);
-        }
+        const processedEvent = IS_IE9_10 ? event : this.processInputEvent(event);
 
         if (this.props.onInput) {
-            this.props.onInput(event);
+            this.props.onInput(processedEvent);
         }
 
         if (IS_IE11) {
             if (this.props.onChange) {
-                this.props.onChange(event);
+                this.props.onChange(processedEvent);
             }
         }
     }
 
+    /**
+     * Обрабатывает событие «change».
+     *
+     * @param {React.ChangeEvent<HTMLInput>} event The Event object
+     */
     @autobind
     handleChange(event) {
-        if (IS_IE9_10) {
-            event = this.processInputEvent(event);
+        if (IS_IE11 || !this.props.onChange) {
+            return;
         }
 
-        if (!IS_IE11) {
-            if (this.props.onChange) {
-                this.props.onChange(event);
-            }
+        const processedInput = IS_IE9_10 ? this.processInputEvent(event) : event;
+
+        if (this.props.onChange) {
+            this.props.onChange(processedInput);
         }
     }
 
@@ -207,10 +238,11 @@ class MaskedInput extends React.Component {
      * @public
      * @param {String} newMask Новая маска
      * @param {FormatCharacters} [formatCharacters] Форматтер маски
+     * @param {Boolean} useWhitespaces использовать в маске пробелы
      */
-    setMask(newMask, formatCharacters) {
+    setMask(newMask, formatCharacters, useWhitespaces) {
         if (this.maskPattern !== newMask || this.formatCharacters !== formatCharacters) {
-            this.mask = new Mask(newMask, formatCharacters);
+            this.mask = new Mask(newMask, formatCharacters, useWhitespaces);
             this.maskPattern = newMask;
             this.formatCharacters = formatCharacters;
         }
@@ -236,9 +268,7 @@ class MaskedInput extends React.Component {
             let newSelection = prevSelection;
 
             // Определяем тип операции, который был произведен над текстовым полем.
-            let opType = newValue.length >= currentValue.length
-                ? operationType.ADD
-                : operationType.DELETE;
+            let opType = newValue.length >= currentValue.length ? operationType.ADD : operationType.DELETE;
 
             // На пользовательском инпуте было выделение перед операцией,
             // значит могла быть операция или удаления или замены.
@@ -249,14 +279,14 @@ class MaskedInput extends React.Component {
                 }
             }
 
-            // Для операции доавления и замены, если мы стояли на нередактируемом символе,
-            // то добаляем сдвиг до ближайшего редактируемого.
+            // Для операции добавления и замены, если мы стояли на нередактируемом символе,
+            // то добавляем сдвиг до ближайшего редактируемого.
             if (opType === operationType.ADD || opType === operationType.REPLACE) {
                 let index = this.beforeInputSelection.start;
                 while (!this.mask.isEditableIndex(index) && index < formattedValue.length) {
                     index += 1;
                 }
-                newSelection += (index - this.beforeInputSelection.start);
+                newSelection += index - this.beforeInputSelection.start;
             }
 
             // Если вдруг попали на нередактируемый символ маски,
@@ -271,11 +301,18 @@ class MaskedInput extends React.Component {
                 }
             }
 
-            this.setInputSelection(this.clampSelection(newSelection));
-        // Если изменение поля произошло в конце ввода.
-        // Android chrome имеет дефект с автоматической установкой каретки
-        // при использовании клавиатуры отличной от type="text".
+            // Положение каретки с учетом первого и последнего редактируемого символа маски.
+            const clampedSection = this.clampSelection(newSelection);
+
+            // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
+            const offsetSection =
+                opType === operationType.ADD && IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
+
+            this.setInputSelection(clampedSection + offsetSection);
         } else if (IS_ANDROID) {
+            // Если изменение поля произошло в конце ввода.
+            // Android chrome имеет дефект с автоматической установкой каретки
+            // при использовании клавиатуры отличной от type="text".
             this.setInputSelectionByTimeout(event.target.selectionStart);
         }
 

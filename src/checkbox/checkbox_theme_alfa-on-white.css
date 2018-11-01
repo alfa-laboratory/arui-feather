@@ -21,7 +21,6 @@
 
         &.checkbox_hovered .checkbox__box {
             background: var(--color-accent);
-            border-color: transparent;
         }
     }
 
@@ -30,10 +29,6 @@
         .checkbox__box {
             border-color: var(--color-border-control-focused-alfa-on-white);
         }
-    }
-
-    &.checkbox_focused .checkbox__box {
-        box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-white);
     }
 
     &.checkbox_disabled {

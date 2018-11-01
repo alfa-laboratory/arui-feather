@@ -2,6 +2,14 @@
 * License, v. 2.0. If a copy of the MPL was not distributed with this
 * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+.icon_size_l.icon_name_card-mir.icon_theme_alfa-on-white {
+    background-image: url('./icon_card-mir_l_black.svg');
+}
+
+.icon_size_l.icon_name_card-mir.icon_theme_alfa-on-color {
+    background-image: url('./icon_card-mir_l_white.svg');
+}
+
 .icon_size_m.icon_name_card-mir.icon_theme_alfa-on-white {
     background-image: url('./icon_card-mir_m_black.svg');
 }
@@ -16,4 +24,12 @@
 
 .icon_size_xl.icon_name_card-mir.icon_theme_alfa-on-color {
     background-image: url('./icon_card-mir_xl_white.svg');
+}
+
+.icon_size_xxl.icon_name_card-mir.icon_theme_alfa-on-white {
+    background-image: url('./icon_card-mir_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_card-mir.icon_theme_alfa-on-color {
+    background-image: url('./icon_card-mir_xxl_white.svg');
 }

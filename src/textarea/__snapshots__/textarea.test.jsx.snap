@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`textarea should render without problems 1`] = `
+<Textarea
+  autocomplete={true}
+  autosize={true}
+  disabled={false}
+  resize="none"
+  size="m"
+  width="default"
+>
+  <span
+    className="textarea textarea_autosize textarea_size_m textarea_width_default textarea_resize_none textarea_theme_alfa-on-white"
+  >
+    <span
+      className="textarea__inner"
+    >
+      <TextareaAutosize
+        autoComplete="on"
+        className="textarea__control"
+        disabled={false}
+        inputRef={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onHeightChange={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onPaste={[Function]}
+        style={
+          Object {
+            "maxHeight": undefined,
+          }
+        }
+        useCacheForDOMMeasurements={false}
+        value=""
+      >
+        <textarea
+          autoComplete="on"
+          className="textarea__control"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onPaste={[Function]}
+          style={
+            Object {
+              "height": 0,
+              "maxHeight": undefined,
+            }
+          }
+          value=""
+        />
+      </TextareaAutosize>
+    </span>
+  </span>
+</Textarea>
+`;

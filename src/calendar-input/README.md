@@ -1,23 +1,27 @@
 ```jsx
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' key={ size }>
-            <CalendarInput
-                size={ size }
-                defaultValue='01.02.2016'
-            />
-        </div>
-    ))}
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <CalendarInput
+                    size={ size }
+                    defaultValue='01.02.2016'
+                />
+            </div>
+        ))
+    }
 </div>
 ```
 
 ```jsx
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
-        <div className='row' key={ size }>
-            <CalendarInput size={ size } defaultValue='41.12.2031' error='Такой даты не существует' />
-        </div>
-    ))}
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <CalendarInput size={ size } defaultValue='41.12.2031' error='Такой даты не существует' />
+            </div>
+        ))
+    }
 </div>
 ```
 
@@ -25,11 +29,30 @@
 const formatDate = require('date-fns/format');
 
 <div>
-    {['s', 'm', 'l', 'xl'].map(size => (
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'DD.MM.YYYY') } width='available' />
+            </div>
+        ))
+    }
+</div>
+```
+
+С произвольной иконкой
+```jsx
+const IconOk = require('../../src/icon/ui/ok').default;
+
+<div>
+    { ['s', 'm', 'l', 'xl'].map(size => (
         <div className='row' key={ size }>
-            <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'DD.MM.YYYY') } width='available' />
+            <CalendarInput
+                size={ size }
+                defaultValue='01.02.2016'
+                rightAddons={ <IconOk size={ size } colored={ true } /> }
+            />
         </div>
-    ))}
+    )) }
 </div>
 ```
 

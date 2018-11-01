@@ -14,11 +14,17 @@
 
     &__currency {
         display: inline-block;
-        min-width: 1em;
         text-align: right;
     }
 
-    &__separator, &__minor, &__currency {
+    &__major {
+        font-weight: var(--font-weight-bold);
+    }
+
+    &__separator,
+    &__minor,
+    &__currency {
+        font-weight: var(--font-weight-bold);
         opacity: var(--opacity-minor);
     }
 

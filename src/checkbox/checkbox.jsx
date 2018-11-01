@@ -11,7 +11,6 @@ import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -27,8 +26,7 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
  * Компонент чекбокса.
  */
 @cn('checkbox', TagButton)
-@performance()
-class CheckBox extends React.Component {
+class CheckBox extends React.PureComponent {
     static propTypes = {
         /** Текст подписи к чекбоксу */
         text: Type.node,

@@ -8,7 +8,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -16,8 +15,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
  * Компонент многострочного текстового ввода.
  */
 @cn('textarea')
-@performance()
-class Textarea extends React.Component {
+class Textarea extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

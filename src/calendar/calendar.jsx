@@ -21,7 +21,6 @@ import sortedIndexOf from 'lodash.sortedindexof';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import isCurrentDay from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
@@ -35,8 +34,7 @@ const ATTR_DISABLED = 'data-disabled';
  * Компонент календаря.
  */
 @cn('calendar')
-@performance(true)
-class Calendar extends React.Component {
+class Calendar extends React.PureComponent {
     static propTypes = {
         /** Выбранная дата, в формате unix timestamp */
         value: Type.number,

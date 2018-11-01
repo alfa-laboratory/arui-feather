@@ -20,7 +20,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
@@ -44,8 +43,7 @@ class SelectButton extends Button {}
  * Компонент выпадающего списка.
  */
 @cn('select', SelectButton, Popup)
-@performance(true)
-class Select extends React.Component {
+class Select extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

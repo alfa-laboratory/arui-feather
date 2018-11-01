@@ -8,7 +8,6 @@ import Type from 'prop-types';
 import Input from '../input/input';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент ввода телефона по маске.
@@ -16,8 +15,7 @@ import performance from '../performance';
  * @extends Input
  */
 @cn('phone-input', Input)
-@performance()
-class PhoneInput extends React.Component {
+class PhoneInput extends React.PureComponent {
     static propTypes = {
         ...Input.propTypes,
         /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */

@@ -15,7 +15,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 
@@ -25,8 +24,7 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
  * @extends Input
  */
 @cn('input', Input)
-@performance(true)
-class InputAutocomplete extends React.Component {
+class InputAutocomplete extends React.PureComponent {
     static propTypes = {
         ...Input.propTypes,
         /** Список вариантов выбора */

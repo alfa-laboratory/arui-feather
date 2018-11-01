@@ -8,7 +8,6 @@ import Type from 'prop-types';
 import Input from '../input/input';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Поле ввода номера карты с маской.
@@ -17,8 +16,7 @@ import performance from '../performance';
  * @extends Input
  */
 @cn('card-input', Input)
-@performance()
-class CardInput extends React.Component {
+class CardInput extends React.PureComponent {
     static propTypes = {
         ...Input.propTypes,
         /** Подсказка в текстовом поле */

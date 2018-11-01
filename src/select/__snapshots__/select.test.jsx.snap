@@ -79,6 +79,7 @@ exports[`select should render without problem 1`] = `
         >
           <span
             className="select-button__content"
+            key="content"
           >
             <span
               className="select-button__text"
@@ -115,6 +116,7 @@ exports[`select should render without problem 1`] = `
                 >
                   <span
                     className="icon-button__content"
+                    key="content"
                   >
                     <span
                       className="icon-button__text"

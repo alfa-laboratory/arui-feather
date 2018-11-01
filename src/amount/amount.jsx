@@ -10,7 +10,6 @@ import Label from '../label/label';
 
 import cn from '../cn';
 import { getCurrencySymbol } from '../lib/currency-codes';
-import performance from '../performance';
 
 const THINSP = String.fromCharCode(8201); // &thinsp;
 const AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR = ',';
@@ -106,8 +105,7 @@ function formatAmount(amount) {
  * https://design.alfabank.ru/patterns/amount
  */
 @cn('amount')
-@performance(true)
-class Amount extends React.Component {
+class Amount extends React.PureComponent {
     static propTypes = {
         amount: Type.shape({
             /** Абсолютное значение суммы */

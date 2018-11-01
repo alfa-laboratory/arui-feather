@@ -15,7 +15,6 @@ import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions
 import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
-import performance from '../performance';
 
 const IS_REACT_16 = !!ReactDOM.createPortal;
 
@@ -53,8 +52,7 @@ const IS_REACT_16 = !!ReactDOM.createPortal;
  * Компонент popup'а.
  */
 @cn('popup')
-@performance(true)
-class Popup extends React.Component {
+class Popup extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

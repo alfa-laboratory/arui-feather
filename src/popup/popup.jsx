@@ -245,9 +245,9 @@ class Popup extends React.PureComponent {
                 id={ this.props.id }
                 style={ {
                     ...this.state.styles,
-                    minWidth: this.getMinWidth(),
-                    maxWidth: this.getMaxWidth(),
-                    maxHeight: this.getMaxHeight()
+                    minWidth: this.props.minWidth !== undefined ? this.props.minWidth : 0,
+                    maxWidth: this.props.maxWidth !== undefined ? this.props.maxWidth : 'none',
+                    maxHeight: this.props.maxHeight !== undefined ? this.props.maxHeight : 'none',
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
@@ -528,27 +528,6 @@ class Popup extends React.PureComponent {
             bottom: drawingParams.bottom,
             height: this.props.height === 'adaptive' ? drawingParams.height : 'auto'
         };
-    }
-
-    /**
-     * @returns {Number}
-     */
-    getMinWidth() {
-        return this.props.minWidth !== undefined ? this.props.minWidth : 0;
-    }
-
-    /**
-     * @returns {Number}
-     */
-    getMaxWidth() {
-        return this.props.maxWidth !== undefined ? this.props.maxWidth : 'none';
-    }
-
-    /**
-     * @returns {Number}
-     */
-    getMaxHeight() {
-        return this.props.maxHeight !== undefined ? this.props.maxHeight : 'none';
     }
 
     /**

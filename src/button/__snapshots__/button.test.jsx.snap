@@ -25,6 +25,7 @@ exports[`button should render without problems 1`] = `
   >
     <span
       className="button__content"
+      key="content"
     >
       <span
         className="button__text"

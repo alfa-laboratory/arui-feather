@@ -85,6 +85,7 @@ exports[`attach should render without problems 1`] = `
         </span>
         <span
           className="button__content"
+          key="content"
         >
           <span
             className="button__icon"

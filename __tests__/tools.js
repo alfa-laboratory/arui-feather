@@ -12,12 +12,12 @@ expect.extend({ toMatchImageSnapshot });
 /**
  * Puppeteer browser
  */
-let puppeteerBrowser; //= puppeteer.launch({
-// args: ['--enable-font-antialiasing', '--disable-accelerated-2d-canvas']
-// });
+let puppeteerBrowser;
 
 beforeAll(async () => {
-    puppeteerBrowser = await puppeteer.launch({});
+    puppeteerBrowser = await puppeteer.launch({
+        args: ['--no-sandbox']
+    });
 
     const browserVersion = await puppeteerBrowser.version();
     console.log(`Started ${browserVersion}`);

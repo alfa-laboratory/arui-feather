@@ -18,14 +18,19 @@
     }
 
     &__major {
-        font-weight: var(--font-weight-bold);
+        .amount_bold & {
+            font-weight: var(--font-weight-bold);
+        }
     }
 
     &__separator,
     &__minor,
     &__currency {
-        font-weight: var(--font-weight-bold);
         opacity: var(--opacity-minor);
+
+        .amount_bold & {
+            font-weight: var(--font-weight-bold);
+        }
     }
 
     .heading {

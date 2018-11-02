@@ -6,7 +6,4 @@
 
 * {
     font-family: 'Roboto', sans-serif !important;
-    font-smooth: never !important;
-    font-smoothing: none !important;
-    -webkit-font-smoothing: none !important;
 }

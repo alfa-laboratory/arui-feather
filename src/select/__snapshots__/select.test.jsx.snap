@@ -78,77 +78,87 @@ exports[`select should render without problem 1`] = `
           type="button"
         >
           <span
-            className="select-button__text"
-            key="text"
+            className="select-button__content"
+            key="content"
           >
             <span
-              className="select__placeholder"
-            >
-              Выберите:
-            </span>
-            <IconButton
-              className="select__tick"
-              formNoValidate={false}
-              key="addon-icon"
-              size="m"
-              tag="span"
-              type="button"
+              className="select-button__text"
+              key="text"
             >
               <span
-                className="icon-button icon-button_size_m icon-button_theme_alfa-on-white select__tick"
-                formNoValidate={null}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                onMouseOut={[Function]}
-                onMouseUp={[Function]}
-                role="button"
+                className="select__placeholder"
+              >
+                Выберите:
+              </span>
+              <IconButton
+                className="select__tick"
+                formNoValidate={false}
+                key="addon-icon"
+                size="m"
+                tag="span"
                 type="button"
               >
                 <span
-                  className="icon-button__text"
-                  key="text"
+                  className="icon-button icon-button_size_m icon-button_theme_alfa-on-white select__tick"
+                  formNoValidate={null}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseUp={[Function]}
+                  role="button"
+                  type="button"
                 >
-                  <IconArrowDown
-                    size="s"
+                  <span
+                    className="icon-button__content"
+                    key="content"
                   >
-                    <Icon
-                      name="arrow-down"
-                      size="s"
+                    <span
+                      className="icon-button__text"
+                      key="text"
                     >
-                      <span
-                        className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
-                      />
-                    </Icon>
-                  </IconArrowDown>
+                      <IconArrowDown
+                        size="s"
+                      >
+                        <Icon
+                          name="arrow-down"
+                          size="s"
+                        >
+                          <span
+                            className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
+                          />
+                        </Icon>
+                      </IconArrowDown>
+                    </span>
+                  </span>
                 </span>
-              </span>
-            </IconButton>
-            <ResizeSensor
-              key="addon-sensor"
-              onResize={[Function]}
-            >
-              <iframe
-                style={
-                  Object {
-                    "background": "transparent",
-                    "border": "none",
-                    "height": "100%",
-                    "left": 0,
-                    "position": "absolute",
-                    "top": 0,
-                    "width": "100%",
-                    "zIndex": -1,
+              </IconButton>
+              <ResizeSensor
+                key="addon-sensor"
+                onResize={[Function]}
+              >
+                <iframe
+                  style={
+                    Object {
+                      "background": "transparent",
+                      "border": "none",
+                      "height": "100%",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "100%",
+                      "zIndex": -1,
+                    }
                   }
-                }
-                tabIndex="-1"
-              />
-            </ResizeSensor>
+                  tabIndex="-1"
+                />
+              </ResizeSensor>
+            </span>
           </span>
         </button>
       </SelectButton>

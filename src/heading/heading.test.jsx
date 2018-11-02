@@ -14,12 +14,13 @@ describe('heading', () => {
         expect(heading).toMatchSnapshot();
     });
 
-    let sizes = ['s', 'm', 'l', 'xl'];
+    let sizes = ['xs', 's', 'm', 'l', 'xl'];
     let headingLevel = {
         xl: 1,
         l: 2,
         m: 3,
-        s: 4
+        s: 4,
+        xs: 5
     };
 
     sizes.forEach(size => (

@@ -3,7 +3,7 @@ import Heading from '../src/heading';
 
 const NAME = 'heading';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
-const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
+const SIZES = process.env.ALL_SIZES ? ['xs', 's', 'm', 'l', 'xl'] : ['m'];
 
 geminiReact.suite(NAME, function () {
     THEMES.forEach((theme) => {

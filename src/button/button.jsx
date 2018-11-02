@@ -8,7 +8,6 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import { deprecated } from '../lib/prop-types';
 import performance from '../performance';
 
 /**
@@ -41,7 +40,7 @@ class Button extends React.Component {
         /** Отображение кнопки в состоянии фокуса */
         focused: Type.bool,
         /** Псевдо представление кнопки */
-        pseudo: deprecated(Type.bool, 'Pseudo buttons are deprecated, remove this prop'),
+        pseudo: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Отключает валидацию полей формы, у которых есть атрибут pattern */
@@ -181,18 +180,30 @@ class Button extends React.Component {
         };
 
         let buttonContent = [
-            this.props.leftAddons && <span key='left-addons'>{ this.props.leftAddons }</span>,
-            this.props.icon && (
-                <span key='icon' className={ cn('icon') }>
-                    { this.props.icon }
+            this.props.leftAddons && (
+                <span key='left-addons' className={ cn('addon') }>
+                    { this.props.leftAddons }
                 </span>
             ),
-            (this.props.children || this.props.text) && (
-                <span key='text' className={ cn('text') }>
-                    { this.props.children || this.props.text }
+            (this.props.children || this.props.text || this.props.icon) && (
+                <span key='content' className={ cn('content') }>
+                    { this.props.icon && (
+                        <span key='icon' className={ cn('icon') }>
+                            { this.props.icon }
+                        </span>
+                    ) }
+                    { (this.props.children || this.props.text) && (
+                        <span key='text' className={ cn('text') }>
+                            { this.props.children || this.props.text }
+                        </span>
+                    ) }
                 </span>
             ),
-            this.props.rightAddons && <span key='right-addons'>{ this.props.rightAddons }</span>
+            this.props.rightAddons && (
+                <span key='right-addons' className={ cn('addon') }>
+                    { this.props.rightAddons }
+                </span>
+            )
         ];
 
         return isButton ? (

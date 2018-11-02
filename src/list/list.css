@@ -5,24 +5,25 @@
 @import '../vars.css';
 
 .list {
-    margin: 25px 0;
-    padding: 0 0 0 50px;
+    margin: 0 0 var(--gap-m);
+    padding: 0 0 0 var(--gap-4xl);
     font-family: var(--font);
-    font-size: var(--font-size-m);
     font-weight: var(--font-weight-normal);
+
+    font-size: var(--font-size-m);
     line-height: var(--line-height-normal);
 
     & & {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-left: 25px;
+        margin-top: var(--gap-xs);
+        margin-bottom: var(--gap-xs);
+        padding-left: var(--gap-xl);
     }
 
     &__item {
         position: relative;
-        margin-bottom: 10px;
         list-style: none;
-        font-size: var(--font-size-m);
+        margin: 0 0 var(--gap-xs);
+        padding: 0;
 
         &:before {
             content: '\2014';

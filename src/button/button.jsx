@@ -8,7 +8,6 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import { deprecated } from '../lib/prop-types';
 
 /**
  * Компонент кнопки (да, она нажимается!).
@@ -39,7 +38,7 @@ class Button extends React.PureComponent {
         /** Отображение кнопки в состоянии фокуса */
         focused: Type.bool,
         /** Псевдо представление кнопки */
-        pseudo: deprecated(Type.bool, 'Pseudo buttons are deprecated, remove this prop'),
+        pseudo: Type.bool,
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Отключает валидацию полей формы, у которых есть атрибут pattern */

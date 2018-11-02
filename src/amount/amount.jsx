@@ -122,6 +122,8 @@ class Amount extends React.PureComponent {
         showZeroMinorPart: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        /** Толщина шрифта */
+        bold: Type.bool,
         /** Использовать компонент `Heading` для вывода числа */
         isHeading: Type.bool,
         /** Тема компонента */
@@ -135,6 +137,7 @@ class Amount extends React.PureComponent {
     static defaultProps = {
         size: 'm',
         showZeroMinorPart: true,
+        bold: false,
         isHeading: false
     };
 
@@ -151,7 +154,7 @@ class Amount extends React.PureComponent {
         );
 
         return (
-            <div className={ cn() } id={ this.props.id }>
+            <div className={ cn({ bold: this.props.bold }) } id={ this.props.id }>
                 { this.props.isHeading ? (
                     <Heading size={ size }>{ amountInner }</Heading>
                 ) : (

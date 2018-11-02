@@ -11,6 +11,7 @@ exports[`amount should render without problems 1`] = `
       "value": 123314145,
     }
   }
+  bold={false}
   isHeading={false}
   showZeroMinorPart={true}
   size="m"

@@ -211,7 +211,9 @@ class Textarea extends React.Component {
     @autobind
     handleChange(event) {
         let { value } = event.target;
-        this.setState({ value });
+        if (this.props.value === undefined) {
+            this.setState({ value });
+        }
 
         if (this.props.onChange) {
             this.props.onChange(value);

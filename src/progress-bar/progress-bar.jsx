@@ -2,14 +2,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент прогресс-бара.
  */
 @cn('progress-bar')
-@performance()
-class ProgressBar extends React.Component {
+class ProgressBar extends React.PureComponent {
     static propTypes = {
         /** Прогресс в процентах */
         percent: Type.number,

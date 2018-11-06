@@ -8,14 +8,12 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 
 /**
  * Компонент кнопки (да, она нажимается!).
  */
 @cn('button')
-@performance()
-class Button extends React.Component {
+class Button extends React.PureComponent {
     static propTypes = {
         /** Текст кнопки */
         text: Type.node,

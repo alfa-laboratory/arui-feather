@@ -1591,7 +1591,7 @@
 
 ### Bug Fixes
 
-* remove useless perfomance decorators ([#91](https://github.com/alfa-laboratory/arui-feather/issues/91)) ([ed80b4a](https://github.com/alfa-laboratory/arui-feather/commit/ed80b4a))
+* remove useless performance decorators ([#91](https://github.com/alfa-laboratory/arui-feather/issues/91)) ([ed80b4a](https://github.com/alfa-laboratory/arui-feather/commit/ed80b4a))
 
 
 ### Features

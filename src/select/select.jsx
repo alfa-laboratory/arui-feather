@@ -20,7 +20,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
@@ -44,8 +43,7 @@ class SelectButton extends Button {}
  * Компонент выпадающего списка.
  */
 @cn('select', SelectButton, Popup)
-@performance(true)
-class Select extends React.Component {
+class Select extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -521,7 +519,8 @@ class Select extends React.Component {
             return checkedItemsText;
         }
         // Если ничего не выбрано, то рендерим плейсхолдер
-        // Если плейсхолдера нет, то рендерим текст лейбла. Но отрендерится он прозрачным - это нужно для того, чтобы лейбл растягивал блок до нужной ширины, т. к. настоящий лейбл позиционируется абсолютно и не влияет на размер
+        // Если плейсхолдера нет, то рендерим текст лейбла. Но отрендерится он прозрачным - это нужно для того, чтобы
+        // лейбл растягивал блок до нужной ширины, т. к. настоящий лейбл позиционируется абсолютно и не влияет на размер
         // Если нет ни плейсхолдера, ни лейбла, то рендерим "Выберите:" для обратной совместимости
         return (
             <span className={ cn('placeholder') }>

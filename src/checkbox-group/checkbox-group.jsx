@@ -8,20 +8,21 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент группы чекбоксов.
  */
 @cn('checkbox-group')
-@performance()
-class CheckBoxGroup extends React.Component {
+class CheckBoxGroup extends React.PureComponent {
     static propTypes = {
         /** Тип компонента */
         type: Type.oneOf(['normal', 'button', 'line']),
         /** Выбранные чекбокс-кнопки */
         value: Type.arrayOf(Type.oneOfType([Type.string, Type.number])),
-        /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
+        /**
+         * Управление шириной группы кнопок для типа 'button'. При значении
+         * 'available' растягивает группу на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,

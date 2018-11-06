@@ -10,14 +10,12 @@ import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
 @cn('menu-item')
-@performance()
-class MenuItem extends React.Component {
+class MenuItem extends React.PureComponent {
     static propTypes = {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),

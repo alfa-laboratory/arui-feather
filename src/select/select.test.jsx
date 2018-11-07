@@ -23,7 +23,8 @@ const OPTIONS = [
     },
     {
         value: 2,
-        text: 'Fb'
+        text: 'Fb',
+        checkedText: 'Fb'
     },
     {
         value: 3,
@@ -43,7 +44,12 @@ function renderSelect(props) {
     let hiddenInput = select.find('input');
 
     return {
-        select, nativeSelectNode, popupNode, buttonNode, menuNode, hiddenInput
+        select,
+        nativeSelectNode,
+        popupNode,
+        buttonNode,
+        menuNode,
+        hiddenInput
     };
 }
 
@@ -175,7 +181,8 @@ describe('select', () => {
     it('should scroll window to element on public scrollTo method', () => {
         let { select } = renderSelect({ options: OPTIONS });
         let elemTopPosition = select.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        // eslint-disable-next-line no-mixed-operators
+        let elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         select.instance().scrollTo();
 
@@ -269,11 +276,7 @@ describe('select', () => {
                 },
                 {
                     value: 2,
-                    text: (
-                        <div>
-                            Much, much longer option text in another block element to make select popup strech
-                        </div>
-                    )
+                    text: <div>Much, much longer option text in another block element to make select popup strech</div>
                 }
             ],
             equalPopupWidth: true,

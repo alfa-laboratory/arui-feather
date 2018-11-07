@@ -25,6 +25,7 @@ exports[`select should render without problem 1`] = `
         "value": 1,
       },
       Object {
+        "checkedText": "Fb",
         "text": "Fb",
         "value": 2,
       },

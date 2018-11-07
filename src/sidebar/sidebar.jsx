@@ -17,7 +17,6 @@ import getScrollbarWidth from '../lib/scrollbar-width';
 
 import cn from '../cn';
 import Mq from '../mq';
-import performance from '../performance';
 
 const SIDEBAR_WIDTH = 430;
 
@@ -62,8 +61,7 @@ function handleBodyScroll() {
  * Компонент боковой панели aka холодильник.
  */
 @cn('sidebar')
-@performance()
-class Sidebar extends React.Component {
+class Sidebar extends React.PureComponent {
     static propTypes = {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),

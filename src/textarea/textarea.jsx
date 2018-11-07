@@ -8,7 +8,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -16,8 +15,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
  * Компонент многострочного текстового ввода.
  */
 @cn('textarea')
-@performance()
-class Textarea extends React.Component {
+class Textarea extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -41,7 +39,10 @@ class Textarea extends React.Component {
         id: Type.string,
         /** Уникальное имя блока */
         name: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию (используйте это поле если хотите использовать компонент как uncontrolled) */
+        /**
+         * Содержимое поля ввода, указанное по умолчанию (используйте это поле
+         * если хотите использовать компонент как uncontrolled)
+         */
         defaultValue: Type.string,
         /** Содержимое поля ввода */
         value: Type.string,
@@ -90,7 +91,12 @@ class Textarea extends React.Component {
          * Обработчик события нажатия клавиши при фокусе на поле
          * @param {React.KeyboardEvent} event
          */
-        onKeyPress: Type.func
+        onKeyPress: Type.func,
+        /**
+         * Обработчик события keyDown
+         * @param {React.KeyboardEvent} event
+         */
+        onKeyDown: Type.func
     };
 
     static defaultProps = {
@@ -118,13 +124,13 @@ class Textarea extends React.Component {
     control;
 
     render(cn) {
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        let value = this.props.value !== undefined ? this.props.value : this.state.value;
 
         let textareaProps = {
             className: cn('control'),
-            [this.props.autosize ? 'inputRef' : 'ref']: (control) => { this.control = control; },
+            [this.props.autosize ? 'inputRef' : 'ref']: (control) => {
+                this.control = control;
+            },
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled,
             id: this.props.id,
@@ -137,7 +143,8 @@ class Textarea extends React.Component {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onPaste: this.handlePaste,
-            onKeyPress: this.handleKeyPress
+            onKeyPress: this.handleKeyPress,
+            onKeyDown: this.handleKeyDown
         };
 
         return (
@@ -153,32 +160,26 @@ class Textarea extends React.Component {
                     'has-label': !!this.props.label,
                     'has-value': !!value
                 }) }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
             >
                 <span className={ cn('inner') }>
-                    {
-                        !!this.props.label &&
-                        <span className={ cn('top') }>
-                            { this.props.label }
-                        </span>
-                    }
-                    {
-                        !this.props.autosize
-                            ? <textarea { ...textareaProps } />
-                            : <TextareaAutosize
-                                { ...textareaProps }
-                                maxRows={ this.props.maxRows }
-                                minRows={ this.props.minRows }
-                                style={ { maxHeight: this.props.maxHeight } }
-                                onHeightChange={ this.handleHeightChange }
-                            />
-                    }
-                    {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
-                    }
+                    { !!this.props.label && <span className={ cn('top') }>{ this.props.label }</span> }
+                    { !this.props.autosize ? (
+                        <textarea { ...textareaProps } />
+                    ) : (
+                        <TextareaAutosize
+                            { ...textareaProps }
+                            maxRows={ this.props.maxRows }
+                            minRows={ this.props.minRows }
+                            style={ { maxHeight: this.props.maxHeight } }
+                            onHeightChange={ this.handleHeightChange }
+                        />
+                    ) }
+                    { (this.props.error || this.props.hint) && (
+                        <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
+                    ) }
                 </span>
             </span>
         );
@@ -205,7 +206,9 @@ class Textarea extends React.Component {
     @autobind
     handleChange(event) {
         let { value } = event.target;
-        this.setState({ value });
+        if (this.props.value === undefined) {
+            this.setState({ value });
+        }
 
         if (this.props.onChange) {
             this.props.onChange(value);
@@ -230,6 +233,13 @@ class Textarea extends React.Component {
     handleKeyPress(event) {
         if (this.props.onKeyPress) {
             this.props.onKeyPress(event);
+        }
+    }
+
+    @autobind
+    handleKeyDown(event) {
+        if (this.props.onKeyDown) {
+            this.props.onKeyDown(event);
         }
     }
 
@@ -262,7 +272,8 @@ class Textarea extends React.Component {
         let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            // eslint-disable-next-line no-mixed-operators
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }
 }

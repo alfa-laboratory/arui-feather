@@ -24,7 +24,33 @@ const PROP_SETS = [
     { options: OPTIONS, opened: true, mode: 'check' },
     { options: OPTIONS, opened: true, mode: 'radio' },
     { options: OPTIONS, opened: true, mode: 'radio-check' },
-    { options: OPTIONS, disabled: true }
+    { options: OPTIONS, disabled: true },
+    { options: OPTIONS },
+    { options: OPTIONS, width: 'available' },
+    { options: OPTIONS, label: 'test-label' },
+    { options: OPTIONS, placeholder: 'test-placeholder' },
+    { options: OPTIONS, label: 'test-label', placeholder: 'test-placeholder' },
+    {
+        options: OPTIONS,
+        value: [1],
+        label: 'test-label',
+        placeholder: 'test-placeholder'
+    },
+    { options: OPTIONS, label: 'test-label', opened: true },
+    { options: OPTIONS, placeholder: 'test-placeholder', opened: true },
+    {
+        options: OPTIONS,
+        label: 'test-label',
+        placeholder: 'test-placeholder',
+        opened: true
+    },
+    {
+        options: OPTIONS,
+        value: [1],
+        label: 'test-label',
+        placeholder: 'test-placeholder',
+        opened: true
+    }
 ];
 
 geminiReact.suite(NAME, function () {

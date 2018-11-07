@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collapse should render without problem 1`] = `
+<div
+  className="collapse collapse_theme_alfa-on-white"
+>
+  <div
+    className="collapse__content"
+  >
+    <div>
+      Collapsing text
+    </div>
+    <ResizeSensor
+      onResize={[Function]}
+    />
+  </div>
+  <Link
+    checked={false}
+    className="collapse__link"
+    disabled={false}
+    icon={
+      <IconArrowDown
+        size="s"
+      />
+    }
+    iconPosition="right"
+    onClick={[Function]}
+    pseudo={true}
+    size="m"
+    tabIndex={0}
+    text="Expand"
+    url="#"
+  />
+</div>
+`;

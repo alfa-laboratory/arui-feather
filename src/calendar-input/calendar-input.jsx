@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint-disable max-len */
+
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import formatDate from 'date-fns/format';
@@ -20,7 +22,6 @@ import keyboardCode from '../lib/keyboard-code';
 import Modernizr from '../modernizr';
 import { isNodeOutsideElement } from '../lib/window';
 import { parseDate, calculateMonth, changeDateFormat } from './utils';
-import performance from '../performance';
 
 /**
  * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
@@ -37,13 +38,14 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
  * Компонент для ввода даты.
  */
 @cn('calendar-input', Input, Popup)
-@performance(true)
-class CalendarInput extends React.Component {
+class CalendarInput extends React.PureComponent {
     static propTypes = {
         /** Содержимое поля ввода */
         value: Type.string,
         /** Содержимое поля ввода, указанное по умолчанию */
         defaultValue: Type.string,
+        /** Дата для отображения календаря по умолчанию */
+        defaultMonth: Type.oneOfType([Type.string, Type.number, Type.instanceOf(Date)]),
         /** Свойства компонента [Calendar](#!/Calendar) */
         calendar: Type.shape({
             value: Type.number,
@@ -178,7 +180,7 @@ class CalendarInput extends React.Component {
         opened: false,
         value: this.props.defaultValue || '',
         month: calculateMonth(
-            this.props.value,
+            this.props.value || this.props.defaultMonth,
             CUSTOM_DATE_FORMAT,
             this.props.calendar ? this.props.calendar.earlierLimit : undefined,
             this.props.calendar ? this.props.calendar.laterLimit : undefined
@@ -254,8 +256,12 @@ class CalendarInput extends React.Component {
         };
 
         let nativeProps = {
-            min: formatDate(this.props.calendar && this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
-            max: formatDate(this.props.calendar && this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
+            min: this.props.calendar
+                && this.props.calendar.earlierLimit
+                && formatDate(this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max: this.props.calendar
+                && this.props.calendar.laterLimit
+                && formatDate(this.props.calendar.laterLimit, NATIVE_DATE_FORMAT)
         };
 
         let wrapperProps = this.isMobilePopup() && !this.props.disabled
@@ -306,7 +312,7 @@ class CalendarInput extends React.Component {
                         mask='11.11.1111'
                         size={ this.props.size }
                         type='tel'
-                        pattern='[0-9]*'
+                        pattern='[0-9.]*'
                         label={ this.props.label }
                         placeholder={ this.props.placeholder }
                         hint={ this.props.hint }
@@ -701,7 +707,7 @@ class CalendarInput extends React.Component {
 
             let newMonth = this.state.opened !== opened
                 ? calculateMonth(
-                    value,
+                    value || this.props.defaultMonth,
                     CUSTOM_DATE_FORMAT,
                     this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                     this.props.calendar ? this.props.calendar.laterLimit : undefined

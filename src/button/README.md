@@ -105,6 +105,9 @@ const buttons = [
             ))
         }
     </div>
+    <div className='row'>
+        <Button width='available' icon={ <IconOk size='xl' /> } size='xl'>Кнопка с иконкой</Button>
+    </div>
 </div>
 ```
 
@@ -125,6 +128,38 @@ const buttons = [
             </div>
         ))
     }
+</div>
+```
+
+
+### Кнопка со скруглёнными углами
+Для применения на продуктовых лендингах
+```jsx
+const buttons = [
+    { size: 'xl', name: 'Продолжить' },
+    { size: 'l', name: 'Продолжить' },
+    { size: 'm', name: 'Продолжить' },
+    { size: 's', name: 'Продолжить' }
+];
+<div>
+    <div className='row'>
+        {
+            buttons.map(({ size, name }) => (
+                <div className='column' key={ size }>
+                    <Button view='rounded' size={ size }>{ `${name}` }</Button>
+                </div>
+            ))
+        }
+    </div>
+    <div className='row'>
+        {
+            buttons.map(({ size, name }) => (
+                <div className='column' key={ size }>
+                    <Button view='rounded' size={ size } disabled={ true }>{ `${name}` }</Button>
+                </div>
+            ))
+        }
+    </div>
 </div>
 ```
 

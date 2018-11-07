@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint-disable max-len */
+
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
@@ -11,7 +13,6 @@ import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -19,7 +20,6 @@ import { SCROLL_TO_CORRECTION } from '../vars';
  * Компонент текстового поля ввода.
  */
 @cn('input', MaskedInput)
-@performance()
 class Input extends React.Component {
     static propTypes = {
         /**
@@ -56,6 +56,8 @@ class Input extends React.Component {
         tabIndex: Type.number,
         /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
         mask: Type.string,
+        /** Позволяет использовать пробелы в маске */
+        useWhitespacesInMask: Type.bool,
         /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
         maskFormatCharacters: Type.objectOf(
             Type.shape({
@@ -277,6 +279,7 @@ class Input extends React.Component {
                             mask={ this.props.mask }
                             formatCharacters={ this.props.maskFormatCharacters }
                             onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                            useWhitespaces={ this.props.useWhitespacesInMask }
                         />
                 }
                 {

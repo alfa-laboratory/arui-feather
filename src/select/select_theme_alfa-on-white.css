@@ -22,6 +22,7 @@
             border-bottom-color: var(--color-border-control-hovered-alfa-on-white);
         }
 
+        &:focus,
         &_focused {
             border-bottom-color: var(--color-border-control-focused-alfa-on-white);
             box-shadow: inset 0 -1px 0 var(--color-border-control-focused-alfa-on-white);

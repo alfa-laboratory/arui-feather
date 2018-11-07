@@ -6,8 +6,11 @@
 
 .button {
     display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
     align-items: center;
-    justify-content: center;
+
     position: relative;
     margin: 0;
     padding: 0;
@@ -22,7 +25,10 @@
     transition-timing-function: ease;
     border-radius: var(--border-radius-control);
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -35,26 +41,44 @@
         margin-left: var(--gap-s);
     }
 
+    &__addon {
+        flex: 0 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        flex: 1 0 auto;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
     &__text {
-        overflow: hidden;
         font-weight: var(--font-weight-normal);
-        text-overflow: ellipsis;
+        line-height: normal;
+        padding: 0 0 1px;
     }
 
     &__icon {
-        display: inline-flex;
+        display: flex;
+        justify-content: center;
+        align-content: center;
         align-items: center;
+
         padding-right: 10px;
     }
 
     &_width_available {
+        display: flex;
         width: 100%;
-
-        .button__text {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
     }
 
     &_type_link {
@@ -75,7 +99,8 @@
     }
 
     &_view_action &__text,
-    &_view_extra &__text {
+    &_view_extra &__text,
+    &_view_rounded &__text {
         font-weight: var(--font-weight-medium);
     }
 
@@ -87,7 +112,6 @@
         height: 30px;
         padding: 0 15px;
         font-size: var(--font-size-s);
-        line-height: 28px;
     }
 
     &_size_s &__icon {
@@ -98,7 +122,6 @@
         height: 40px;
         padding: 0 20px;
         font-size: var(--font-size-m);
-        line-height: 38px;
     }
 
     &_size_m &__icon {
@@ -109,23 +132,45 @@
         height: 50px;
         padding: 0 25px;
         font-size: var(--font-size-l);
-        line-height: 48px;
     }
 
     &_size_l &__icon {
         margin-left: -12px;
-        min-width: 2px;
     }
 
     &_size_xl {
         height: 60px;
         padding: 0 30px;
         font-size: var(--font-size-xl);
-        line-height: 58px;
     }
 
     &_size_xl &__icon {
         margin-left: -16px;
-        min-width: 6px;
+    }
+
+    &_view_rounded {
+        &.button_size_s {
+            height: calc(30px * 1.1);
+            padding: 0 calc(15px * 1.5);
+            border-radius: calc(15px * 1.1);
+        }
+
+        &.button_size_m {
+            height: calc(40px * 1.1);
+            padding: 0 calc(20px * 1.5);
+            border-radius: calc(20px * 1.1);
+        }
+
+        &.button_size_l {
+            height: calc(50px * 1.1);
+            padding: 0 calc(25px * 1.5);
+            border-radius: calc(25px * 1.1);
+        }
+
+        &.button_size_xl {
+            height: calc(60px * 1.1);
+            padding: 0 calc(30px * 1.5);
+            border-radius: calc(30px * 1.1);
+        }
     }
 }

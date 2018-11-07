@@ -10,14 +10,12 @@ import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
 @cn('menu-item')
-@performance()
-class MenuItem extends React.Component {
+class MenuItem extends React.PureComponent {
     static propTypes = {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),
@@ -104,6 +102,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => { this.control = control; } }
                         className={ `${cn('control')} ${cn('dropdown')}` }
                         size={ this.props.size }
+                        theme={ this.props.theme }
                         opened={ this.state.hovered }
                         switcherType='link'
                         switcherText={ content }
@@ -139,6 +138,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => { this.control = control; } }
                         className={ `${cn('control')} ${cn('link')}` }
                         size={ this.props.size }
+                        theme={ this.props.theme }
                         pseudo={ this.props.view === 'pseudo' }
                         disabled={ this.props.disabled }
                         checked={ this.props.checked }

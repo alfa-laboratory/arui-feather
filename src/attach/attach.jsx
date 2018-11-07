@@ -10,7 +10,6 @@ import Button from '../button/button';
 import IconAttachment from '../icon/action/attachment';
 
 import cn from '../cn';
-import performance from '../performance';
 
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 
@@ -68,8 +67,7 @@ function isEqualArray(array1, array2) {
  * Компонент прикрепления файлов.
  */
 @cn('attach')
-@performance()
-class Attach extends React.Component {
+class Attach extends React.PureComponent {
     static propTypes = {
         /** Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null. */
         value: Type.array, // eslint-disable-line react/forbid-prop-types

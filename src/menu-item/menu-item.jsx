@@ -10,14 +10,12 @@ import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
 @cn('menu-item')
-@performance()
-class MenuItem extends React.Component {
+class MenuItem extends React.PureComponent {
     static propTypes = {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),
@@ -50,15 +48,30 @@ class MenuItem extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.string,
-        /** Только для type='link', обработчик клика по компоненту */
+        /**
+         * Только для type='link', обработчик клика по компоненту
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик фокуса компонента */
+        /**
+         * Обработчик фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса компонента */
+        /**
+         * Обработчик снятия фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на элемент меню */
+        /**
+         * Обработчик события наведения курсора на элемент меню
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с элемента меню */
+        /**
+         * Обработчик события снятия курсора с элемента меню
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 
@@ -89,6 +102,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => { this.control = control; } }
                         className={ `${cn('control')} ${cn('dropdown')}` }
                         size={ this.props.size }
+                        theme={ this.props.theme }
                         opened={ this.state.hovered }
                         switcherType='link'
                         switcherText={ content }
@@ -124,6 +138,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => { this.control = control; } }
                         className={ `${cn('control')} ${cn('link')}` }
                         size={ this.props.size }
+                        theme={ this.props.theme }
                         pseudo={ this.props.view === 'pseudo' }
                         disabled={ this.props.disabled }
                         checked={ this.props.checked }

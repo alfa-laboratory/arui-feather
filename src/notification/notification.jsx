@@ -17,14 +17,12 @@ import Swipeable from '../swipeable';
 
 import cn from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
-import performance from '../performance';
 
 /**
  * Компонент всплывающего окна.
  */
 @cn('notification')
-@performance()
-class Notification extends React.Component {
+class Notification extends React.PureComponent {
     static propTypes = {
         /** Тип компонента */
         status: Type.oneOf(['error', 'fail', 'ok']),
@@ -52,17 +50,35 @@ class Notification extends React.Component {
         autoCloseDelay: Type.number,
         /** Обработчик события истечения времени до закрытия компонента */
         onCloseTimeout: Type.func,
-        /** Обработчик клика по крестику компонента */
+        /**
+         * Обработчик клика по крестику компонента
+         * @param {React.MouseEvent} event
+         */
         onCloserClick: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func,
-        /** Обработчик события наведения курсора на попап */
+        /**
+         * Обработчик события наведения курсора на попап
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с попапа */
+        /**
+         * Обработчик события снятия курсора с попапа
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func,
-        /** Обработчик клика вне компонента */
+        /**
+         * Обработчик клика вне компонента
+         * @param {React.MouseEvent} event
+         */
         onClickOutside: Type.func,
-        /** Обработчик клика по компоненту */
+        /**
+         * Обработчик клика по компоненту
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func
     };
 
@@ -176,9 +192,9 @@ class Notification extends React.Component {
     }
 
     @autobind
-    handleCloserClick() {
+    handleCloserClick(event) {
         if (this.props.onCloserClick) {
-            this.props.onCloserClick();
+            this.props.onCloserClick(event);
         }
     }
 

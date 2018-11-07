@@ -12,14 +12,12 @@ import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
 @cn('collapse')
-@performance()
-class Collapse extends React.Component {
+class Collapse extends React.PureComponent {
     static propTypes = {
         /** Управление `expanded` состоянием компонента */
         isExpanded: Type.bool,
@@ -35,7 +33,10 @@ class Collapse extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик смены состояний `expanded/collapsed` */
+        /**
+         * Обработчик смены состояний `expanded/collapsed`
+         * @param {boolean} isExpanded
+         */
         onExpandedChange: Type.func
     };
 

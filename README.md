@@ -10,14 +10,11 @@ Alfa-Bank UI lightweight library
 [![appveyor][appveyor-img]][appveyor]
 <br />
 [![coveralls][coveralls-img]][coveralls]
-[![greenkeeper][greenkeeper-img]][greenkeeper]
 
 [appveyor]:        https://ci.appveyor.com/project/teryaew/arui-feather
 [appveyor-img]:    https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
 [coveralls]:       https://coveralls.io/github/alfa-laboratory/arui-feather?branch=master
 [coveralls-img]:   https://coveralls.io/repos/github/alfa-laboratory/arui-feather/badge.svg?branch=master
-[greenkeeper]:     https://greenkeeper.io
-[greenkeeper-img]: https://badges.greenkeeper.io/alfa-laboratory/arui-feather.svg
 [license]:         https://opensource.org/licenses/MPL-2.0
 [license-img]:     https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg
 [npm]:             https://www.npmjs.org/package/arui-feather
@@ -143,21 +140,8 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 Правила контрибуции
 -------------------
 
-[Подробнее о том, как контрибьютить в проект](./CONTRIBUTION.md).
+[Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md).
 
-Оптимизация производительности компонентов
--------------------------------------------
-Для оптимизации производительности компонентов используется метод
-[shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom),
-реализуемый декоратором [@performance](./src/performance.js).
-
-Пример использования:
-```
-import performance from '../performance';
-
-@performance(true)
-class Component extends React.Component {}
-```
 
 Использование Modernizr
 -----------------------
@@ -185,6 +169,20 @@ npm run modernizr
 
 Запуск этих команд автоматически сформирует changelog, сделает новый git tag,
 запустит сборку и публикацию.
+
+Deprecation policy
+------------------
+
+Deprecation публичного API должно происходить плавно, позволяя пользователям библиотеки
+обновляться с наименьшими неудобствами. Deprecation происходит со следующим сценарием:
+
+1. Обновление документации для уведомления пользователей.
+2. Выпуск минорного релиза с deprecations.
+3. Дополнительное оповещение о deprecation в Slack-канал библиотеки.
+
+До полного удаления устаревшей функциональности в мажорном релизе, должна быть выпущена как минимум
+одна минорная версия для уведомления пользователей об изменениях.
+
 
 Лицензия
 --------

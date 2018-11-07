@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`menu should render menu items in group with group title 1`] = `
+<Menu
+  autoFocusFirstItem={false}
+  content={
+    Array [
+      Object {
+        "content": Array [
+          Object {
+            "content": "MenuItem 1",
+            "props": Object {
+              "url": "#1",
+            },
+            "type": "item",
+            "value": "value1",
+          },
+        ],
+        "title": "Group Title",
+        "type": "group",
+      },
+    ]
+  }
+  groupView="default"
+  mode="basic"
+  size="m"
+>
+  <div
+    className="menu menu_size_m menu_group-view_default menu_mode_basic menu_theme_alfa-on-white"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="menu__group"
+      key="group_0"
+    >
+      <div
+        className="menu__group-title"
+      >
+        Group Title
+      </div>
+      <MenuItem
+        checked={false}
+        hovered={null}
+        key="value1"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        size="m"
+        type="link"
+        url="#1"
+        value="value1"
+        view="plain"
+      >
+        <div
+          className="menu-item menu-item_type_link menu-item_theme_alfa-on-white"
+        >
+          <Link
+            checked={false}
+            className="menu-item__control menu-item__link"
+            disabled={false}
+            iconPosition="left"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            pseudo={false}
+            size="m"
+            tabIndex={0}
+            text={false}
+            url="#1"
+          >
+            <a
+              className="link link_size_m link_theme_alfa-on-white menu-item__control menu-item__link"
+              href="#1"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+            >
+              MenuItem 1
+            </a>
+          </Link>
+        </div>
+      </MenuItem>
+    </div>
+  </div>
+</Menu>
+`;
+
+exports[`menu should render without problem 1`] = `
+<Menu
+  autoFocusFirstItem={false}
+  groupView="default"
+  mode="basic"
+  size="m"
+>
+  <div
+    className="menu menu_size_m menu_group-view_default menu_mode_basic menu_theme_alfa-on-white"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex={0}
+  />
+</Menu>
+`;
+
+exports[`menu shouldn't crash when mode=\`radio\`, and \`checkedItems\` and \`content\` properties is empty 1`] = `
+<Menu
+  autoFocusFirstItem={false}
+  content={Array []}
+  groupView="default"
+  mode="radio"
+  size="m"
+>
+  <div
+    className="menu menu_size_m menu_group-view_default menu_mode_radio menu_theme_alfa-on-white"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex={0}
+  />
+</Menu>
+`;

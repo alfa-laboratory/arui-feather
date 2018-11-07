@@ -16,12 +16,10 @@
     &.checkbox_checked {
         .checkbox__box {
             background: var(--color-accent-translucent);
-            border-color: transparent;
         }
 
         &.checkbox_hovered .checkbox__box {
             background: var(--color-accent);
-            border-color: transparent;
         }
     }
 
@@ -30,10 +28,6 @@
         .checkbox__box {
             border-color: var(--color-border-control-focused-alfa-on-color);
         }
-    }
-
-    &.checkbox_focused .checkbox__box {
-        box-shadow: 0 0 0 1px var(--color-border-control-focused-alfa-on-color);
     }
 
     &.checkbox_disabled {

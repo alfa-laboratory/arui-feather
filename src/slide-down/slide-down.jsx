@@ -8,15 +8,13 @@ import Type from 'prop-types';
 import autobind from 'core-decorators/lib/autobind';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
 @cn('slide-down')
-@performance()
-class SlideDown extends React.Component {
+class SlideDown extends React.PureComponent {
     static propTypes = {
         /** Управление состоянием expand/collapse компонента */
         isExpanded: Type.bool,

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flag-icon renders without problems 1`] = `
+<FlagIcon
+  isFlat={false}
+  mode="chunk"
+  size="m"
+>
+  <span
+    className="flag-icon flag-icon_mode_chunk flag-icon_size_m flag-icon_theme_alfa-on-white"
+  />
+</FlagIcon>
+`;

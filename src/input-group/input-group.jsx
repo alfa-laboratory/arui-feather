@@ -7,14 +7,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент группы полей для текстового ввода.
  */
 @cn('input-group')
-@performance()
-class InputGroup extends React.Component {
+class InputGroup extends React.PureComponent {
     static propTypes = {
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),

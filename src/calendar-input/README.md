@@ -39,6 +39,23 @@ const formatDate = require('date-fns/format');
 </div>
 ```
 
+С произвольной иконкой
+```jsx
+const IconOk = require('../../src/icon/ui/ok').default;
+
+<div>
+    { ['s', 'm', 'l', 'xl'].map(size => (
+        <div className='row' key={ size }>
+            <CalendarInput
+                size={ size }
+                defaultValue='01.02.2016'
+                rightAddons={ <IconOk size={ size } colored={ true } /> }
+            />
+        </div>
+    )) }
+</div>
+```
+
 Без фолбэка на нативный контрол на мобильном устройстве
 ```
 <div>

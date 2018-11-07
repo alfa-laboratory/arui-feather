@@ -7,7 +7,6 @@
 .label {
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
 
     &, *, *:before, *:after {
         box-sizing: border-box;
@@ -16,7 +15,6 @@
     &__inner {
         display: inline-block;
         max-width: 100%;
-        line-height: var(--line-height-condensed);
     }
 
     &_no-wrap &__inner {
@@ -26,30 +24,37 @@
 
     &_size_s {
         font-size: var(--font-size-s);
+        line-height: var(--line-height-normal);
     }
 
     &_size_m {
         font-size: var(--font-size-m);
+        line-height: var(--line-height-normal);
     }
 
     &_size_l {
         font-size: var(--font-size-l);
+        line-height: var(--line-height-semi-condensed);
     }
 
     &_size_xl {
         font-size: var(--font-size-xl);
+        line-height: var(--line-height-condensed);
     }
 
     &_size_2xl {
         font-size: var(--font-size-2xl);
+        line-height: var(--line-height-condensed);
     }
 
     &_size_3xl {
         font-size: var(--font-size-3xl);
+        line-height: var(--line-height-condensed);
     }
 
     &_size_4xl {
         font-size: var(--font-size-4xl);
+        line-height: var(--line-height-extra-condensed);
     }
 }
 

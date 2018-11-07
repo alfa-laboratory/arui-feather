@@ -107,7 +107,7 @@
         &[placeholder],
         &::placeholder {
             text-overflow: ellipsis;
-            transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out, color .2s ease-in-out;
         }
 
         &:-webkit-autofill,

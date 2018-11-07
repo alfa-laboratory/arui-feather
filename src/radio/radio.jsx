@@ -9,7 +9,6 @@ import Type from 'prop-types';
 import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -25,8 +24,7 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
  * Компонент радио-кнопки.
  */
 @cn('radio', TagButton)
-@performance()
-class Radio extends React.Component {
+class Radio extends React.PureComponent {
     static propTypes = {
         /** Тип */
         type: Type.oneOf(['normal', 'button']),
@@ -42,7 +40,10 @@ class Radio extends React.Component {
         value: Type.string,
         /** Текст подписи к радио-кнопке */
         text: Type.node,
-        /** Управление шириной кнопки для типа 'button'. При значении 'available' растягивает кнопку на ширину родителя */
+        /**
+         * Управление шириной кнопки для типа 'button'. При значении 'available'
+         * растягивает кнопку на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Размер компонента */
         size: validateSizeProp,
@@ -54,15 +55,31 @@ class Radio extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
         className: Type.string,
-        /** Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента */
+        /**
+         * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
+         * @param {string} value
+         * @param {boolean} isChecked
+         */
         onChange: Type.func,
-        /** Обработчик фокуса комнонента */
+        /**
+         * Обработчик фокуса комнонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса с компонента */
+        /**
+         * Обработчик снятия фокуса с компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на радио-кнопку */
+        /**
+         * Обработчик события наведения курсора на радио-кнопку
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с радио-кнопки */
+        /**
+         * Обработчик события снятия курсора с радио-кнопки
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 

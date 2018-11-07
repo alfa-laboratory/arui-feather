@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
-    <title>icon_account_info_black_xxl</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="set" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="cards" transform="translate(-201.000000, -303.000000)">
-            <rect id="Rectangle-path" x="203" y="303" width="48" height="48"></rect>
-            <path d="M239.5,349 L211.5,349 C209.6,349 208,347.4 208,345.5 L208,308.5 C208,306.6 209.6,305 211.5,305 L232.7,305 L243,315.3 L243,345.5 C243,347.4 241.4,349 239.5,349 L239.5,349 Z M211.5,306 C210.1,306 209,307.1 209,308.5 L209,345.5 C209,346.9 210.1,348 211.5,348 L239.5,348 C240.9,348 242,346.9 242,345.5 L242,315.7 L232.3,306 L211.5,306 L211.5,306 Z" id="Shape" fill="#0B1F35"></path>
-            <path d="M225,317 C226.6,317 228,318.4 228,320 C228,321.6 226.6,323 225,323 C223.4,323 222,321.6 222,320 C222,318.4 223.4,317 225,317" id="Shape" fill="#0B1F35" opacity="0.3"></path>
-            <rect id="Rectangle-path" fill="#0B1F35" opacity="0.3" x="223" y="326" width="4" height="12"></rect>
-        </g>
-    </g>
-</svg>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-201.000000, -303.000000)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="203" y="303" width="48" height="48"/><path d="M239.5,349 L211.5,349 C209.6,349 208,347.4 208,345.5 L208,308.5 C208,306.6 209.6,305 211.5,305 L232.7,305 L243,315.3 L243,345.5 C243,347.4 241.4,349 239.5,349 L239.5,349 Z M211.5,306 C210.1,306 209,307.1 209,308.5 L209,345.5 C209,346.9 210.1,348 211.5,348 L239.5,348 C240.9,348 242,346.9 242,345.5 L242,315.7 L232.3,306 L211.5,306 L211.5,306 Z" fill="#0B1F35"/><path d="M225,317 C226.6,317 228,318.4 228,320 C228,321.6 226.6,323 225,323 C223.4,323 222,321.6 222,320 C222,318.4 223.4,317 225,317" fill="#0B1F35" opacity="0.3"/><rect fill="#0B1F35" opacity="0.3" x="223" y="326" width="4" height="12"/></g></svg>

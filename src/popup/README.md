@@ -177,11 +177,13 @@ class PopupDemo extends React.Component {
                         padded={ true }
                         visible={ this.state.popup7 }
                         header={
-                            <Heading size='s'>При оплате за год</Heading>
+                            <div className='popup__content'>
+                                <Label><b>При оплате за год</b></Label>
+                            </div>
                         }
                         onClickOutside={ () => { this.setState({ popup7: false }); } }
                     >
-                        { '2 400 ₽ в месяц' }
+                        <Label>2 400 ₽ в месяц</Label>
                     </Popup>
                 </div>
             </div>

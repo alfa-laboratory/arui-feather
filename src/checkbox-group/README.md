@@ -47,6 +47,7 @@
     />
 </CheckBoxGroup>
 ```
+
 Горизонтальная группа неактивных чекбоксов, состоящая из обычных кнопок
 ```
 <CheckBoxGroup type='button' disabled={ true }>
@@ -73,31 +74,6 @@
 </CheckBoxGroup>
 ```
 
-Горизонтальная группа чекбоксов со 100% шириной
-```
-<CheckBoxGroup width='available' type='button'>
-    <CheckBox
-        text='Текущий'
-        value='Текущий'
-        type='button'
-    />
-    <CheckBox
-        text='Основной'
-        value='Основной'
-        type='button'
-    />
-    <CheckBox
-        text='Семейный'
-        value='Семейный'
-        type='button'
-    />
-    <CheckBox
-        text='Зарплатный'
-        value='Зарплатный'
-        type='button'
-    />
-</CheckBoxGroup>
-```
 Горизонтальная группа чекбоксов
 ```jsx
 <CheckBoxGroup type='line'>

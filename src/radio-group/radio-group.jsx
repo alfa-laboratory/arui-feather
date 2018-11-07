@@ -8,14 +8,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент группы радио-кнопок.
  */
 @cn('radio-group')
-@performance()
-class RadioGroup extends React.Component {
+class RadioGroup extends React.PureComponent {
     static propTypes = {
         /** Тип группы кнопок */
         type: Type.oneOf(['normal', 'button', 'line']),
@@ -25,7 +23,10 @@ class RadioGroup extends React.Component {
         error: Type.node,
         /** Размеры pub и sub */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Управление шириной группы кнопок для типа 'button'. При значении 'available' растягивает группу на ширину родителя */
+        /**
+         * Управление шириной группы кнопок для типа 'button'. При значении
+         * 'available' растягивает группу на ширину родителя
+         */
         width: Type.oneOf(['default', 'available']),
         /** Уникальное имя блока */
         name: Type.string,
@@ -41,11 +42,20 @@ class RadioGroup extends React.Component {
         label: Type.node,
         /** Подсказка под полем */
         hint: Type.node,
-        /** Обработчик фокуса радиогруппы */
+        /**
+         * Обработчик фокуса радиогруппы
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса с радиогруппы */
+        /**
+         * Обработчик снятия фокуса с радиогруппы
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик изменения значения 'checked' одного из дочерних радио-кнопок */
+        /**
+         * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
+         * @param {string} value
+         */
         onChange: Type.func
     };
 

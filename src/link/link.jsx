@@ -7,14 +7,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент ссылки.
  */
 @cn('link')
-@performance()
-class Link extends React.Component {
+class Link extends React.PureComponent {
     static propTypes = {
         /** Иконка ссылки */
         icon: Type.node,
@@ -46,15 +44,30 @@ class Link extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика но ссылке */
+        /**
+         * Обработчик клика но ссылке
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик фокуса компонента */
+        /**
+         * Обработчик фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onFocus: Type.func,
-        /** Обработчик снятия фокуса компонента */
+        /**
+         * Обработчик снятия фокуса компонента
+         * @param {React.FocusEvent} event
+         */
         onBlur: Type.func,
-        /** Обработчик события наведения курсора на ссылку */
+        /**
+         * Обработчик события наведения курсора на ссылку
+         * @param {React.MouseEvent} event
+         */
         onMouseEnter: Type.func,
-        /** Обработчик события снятия курсора с ссылки */
+        /**
+         * Обработчик события снятия курсора с ссылки
+         * @param {React.MouseEvent} event
+         */
         onMouseLeave: Type.func
     };
 
@@ -77,9 +90,12 @@ class Link extends React.Component {
 
     render(cn) {
         let linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
+        const { iconPosition } = this.props;
 
         let linkProps = {
-            ref: (root) => { this.root = root; },
+            ref: (root) => {
+                this.root = root;
+            },
             download: this.props.download,
             className: cn({
                 disabled: this.props.disabled,
@@ -87,7 +103,8 @@ class Link extends React.Component {
                 pseudo: this.props.pseudo,
                 size: this.props.size,
                 focused: this.state.focused,
-                hovered: this.state.hovered
+                hovered: this.state.hovered,
+                flex: this.props.icon && iconPosition === 'left'
             }),
             id: this.props.id,
             tabIndex: this.props.tabIndex,
@@ -107,32 +124,27 @@ class Link extends React.Component {
             linkProps.target = this.props.target;
         }
 
-
         let linkContent = [this.props.children];
-        let iconTemplate = (
-            this.props.icon &&
-                <span key='icon' className={ cn('icon') }>
-                    { this.props.icon }
-                </span>
-        );
-        let textTemplate = (
-            this.props.text &&
-                <span key='text' className={ cn('text') }>
-                    { this.props.text }
-                </span>
+        let iconTemplate = this.props.icon && (
+            <span key='icon' className={ cn('icon', { left: iconPosition === 'left' }) }>
+                { this.props.icon }
+            </span>
         );
 
-        if (this.props.iconPosition === 'left') {
+        let textTemplate = this.props.text && (
+            <span key='text' className={ cn('text-container') }>
+                <span className={ cn('text') }>{ this.props.text }</span>
+            </span>
+        );
+
+        if (iconPosition === 'left') {
             linkContent.push(iconTemplate, textTemplate);
-        } else if (this.props.iconPosition === 'right') {
+        }
+        if (iconPosition === 'right') {
             linkContent.push(textTemplate, iconTemplate);
         }
 
-        return React.createElement(
-            linkElement,
-            linkProps,
-            linkContent
-        );
+        return React.createElement(linkElement, linkProps, linkContent);
     }
 
     @autobind

@@ -17,7 +17,6 @@ import getScrollbarWidth from '../lib/scrollbar-width';
 
 import cn from '../cn';
 import Mq from '../mq';
-import performance from '../performance';
 
 const SIDEBAR_WIDTH = 430;
 
@@ -62,8 +61,7 @@ function handleBodyScroll() {
  * Компонент боковой панели aka холодильник.
  */
 @cn('sidebar')
-@performance()
-class Sidebar extends React.Component {
+class Sidebar extends React.PureComponent {
     static propTypes = {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
@@ -83,7 +81,10 @@ class Sidebar extends React.Component {
         headerContent: Type.node,
         /** Ширина сайдбара */
         width: Type.number,
-        /** Обработчик клика на элемент закрытия */
+        /**
+         * Обработчик клика на элемент закрытия
+         * @param {React.MouseEvent} event
+         */
         onCloserClick: Type.func
     };
 
@@ -200,13 +201,13 @@ class Sidebar extends React.Component {
     }
 
     @autobind
-    handleClose() {
+    handleClose(event) {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
                 document.documentElement.scrollTop = savedScrollPosition;
             }
-            this.props.onCloserClick();
+            this.props.onCloserClick(event);
         }
     }
 

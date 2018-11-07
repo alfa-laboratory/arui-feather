@@ -13,14 +13,12 @@ import IconButton from '../icon-button/icon-button';
 import ThemeProvider from '../theme-provider/theme-provider';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент плашки.
  */
 @cn('plate')
-@performance()
-class Plate extends React.Component {
+class Plate extends React.PureComponent {
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,
@@ -34,11 +32,20 @@ class Plate extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
-        /** Обработчик клика по плашке */
+        /**
+         * Обработчик клика по плашке
+         * @param {React.MouseEvent} event
+         */
         onClick: Type.func,
-        /** Обработчик клика по крестику */
+        /**
+         * Обработчик клика по крестику
+         * @param {React.MouseEvent} event
+         */
         onCloserClick: Type.func,
-        /** Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте */
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+         * @param {React.KeyboardEvent} event
+         */
         onKeyDown: Type.func
     };
 
@@ -94,13 +101,13 @@ class Plate extends React.Component {
     }
 
     @autobind
-    handleCloserClick() {
+    handleCloserClick(event) {
         this.setState({
             isHidden: true
         });
 
         if (this.props.onCloserClick) {
-            this.props.onCloserClick();
+            this.props.onCloserClick(event);
         }
     }
 

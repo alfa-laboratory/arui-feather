@@ -175,7 +175,8 @@
         min-width: 0;
     }
 
-    &_no-tick .select-button {
+    &&_no-tick &__top,
+    &&_no-tick .select-button {
         padding-right: 0;
     }
 
@@ -190,6 +191,16 @@
         min-width: 0;
         height: 100%;
     }
+
+    &__placeholder {
+        opacity: 0;
+        transition: opacity 200ms cubic-bezier(.25, .1, .25, 1);
+    }
+
+    &:not(&_has-label) &__placeholder,
+    &&_has-label&_has-placeholder&_opened &__placeholder {
+        opacity: var(--opacity-active);
+    }
 }
 
 .select_size_s {
@@ -200,9 +211,10 @@
     .select__top {
         font-size: var(--font-size-s);
         line-height: 30px;
+        padding-right: 30px;
     }
 
-    &.select_opened,
+    &.select_has-placeholder.select_opened,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-s)) translateY(-22px);
@@ -218,9 +230,10 @@
     .select__top {
         font-size: var(--font-size-m);
         line-height: 40px;
+        padding-right: 34px;
     }
 
-    &.select_opened,
+    &.select_has-placeholder.select_opened,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-m)) translateY(-30px);
@@ -236,9 +249,10 @@
     .select__top {
         font-size: var(--font-size-l);
         line-height: 50px;
+        padding-right: 44px;
     }
 
-    &.select_opened,
+    &.select_has-placeholder.select_opened,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-l)) translateY(-40px);
@@ -254,9 +268,10 @@
     .select__top {
         font-size: var(--font-size-xl);
         line-height: 60px;
+        padding-right: 52px;
     }
 
-    &.select_opened,
+    &.select_has-placeholder.select_opened,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-xl)) translateY(-50px);

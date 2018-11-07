@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`attach should render without problems 1`] = `
+<Attach
+  buttonContent="Выберите файл"
+  disabled={false}
+  multiple={false}
+  noFileText="Нет файла"
+  size="m"
+  tabIndex={0}
+>
+  <span
+    className="attach attach_size_m attach_theme_alfa-on-white"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <Button
+      className="attach__button"
+      disabled={false}
+      focused={false}
+      formNoValidate={false}
+      icon={
+        <IconAttachment
+          size="m"
+        />
+      }
+      leftAddons={
+        <label
+          className="attach__label"
+        >
+          <input
+            className="attach__control"
+            disabled={false}
+            multiple={false}
+            onChange={[Function]}
+            size="m"
+            tabIndex="-1"
+            type="file"
+          />
+        </label>
+      }
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      size="m"
+      tabIndex={0}
+      tag="span"
+      type="button"
+    >
+      <span
+        className="button button_size_m button_theme_alfa-on-white attach__button"
+        disabled={false}
+        formNoValidate={null}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onMouseUp={[Function]}
+        role="button"
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="button__addon"
+          key="left-addons"
+        >
+          <label
+            className="attach__label"
+          >
+            <input
+              className="attach__control"
+              disabled={false}
+              multiple={false}
+              onChange={[Function]}
+              size="m"
+              tabIndex="-1"
+              type="file"
+            />
+          </label>
+        </span>
+        <span
+          className="button__content"
+          key="content"
+        >
+          <span
+            className="button__icon"
+            key="icon"
+          >
+            <IconAttachment
+              size="m"
+            >
+              <Icon
+                name="attachment"
+                size="m"
+              >
+                <span
+                  className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
+                />
+              </Icon>
+            </IconAttachment>
+          </span>
+          <span
+            className="button__text"
+            key="text"
+          >
+            Выберите файл
+          </span>
+        </span>
+      </span>
+    </Button>
+    <span
+      className="attach__no-file"
+    >
+      Нет файла
+    </span>
+  </span>
+</Attach>
+`;

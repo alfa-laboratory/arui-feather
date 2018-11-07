@@ -6,26 +6,25 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 const HEADING_LEVEL = {
     xl: 1,
     l: 2,
     m: 3,
-    s: 4
+    s: 4,
+    xs: 5
 };
 
 /**
  * Компонент заголовка.
  */
 @cn('heading')
-@performance()
-class Heading extends React.Component {
+class Heading extends React.PureComponent {
     static propTypes = {
         /** Дочерние элементы `Heading` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Размер, определяющий какой тег заголовка будет использоваться */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */

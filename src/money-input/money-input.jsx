@@ -12,7 +12,6 @@ import Input from '../input/input';
 import Mask from '../masked-input/mask';
 
 import cn from '../cn';
-import performance from '../performance';
 
 const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
@@ -58,8 +57,7 @@ function splitInteger(str) {
  * @extends Input
  */
 @cn('money-input', Input)
-@performance()
-class MoneyInput extends React.Component {
+class MoneyInput extends React.PureComponent {
     static propTypes = {
         ...Input.propTypes,
         /** Максимально допустимая длина значения до запятой */

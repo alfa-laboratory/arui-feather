@@ -1,0 +1,40 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.list-header {
+    position: relative;
+    margin: 24px -12px 16px;
+    padding: 8px 12px;
+
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-condensed);
+    font-family: var(--font);
+
+    &__description {
+        opacity: var(--opacity-minor);
+    }
+
+    &_filled.list-header_theme_alfa-on-white {
+        background-color: var(--color-border-separator-alfa-on-white);
+    }
+
+    &_filled.list-header_theme_alfa-on-color {
+        background-color: var(--color-border-separator-alfa-on-color);
+    }
+}
+
+@media (--small-only) {
+    .list-header {
+        font-size: var(--font-size-xxs);
+        font-weight: var(--font-weight-medium);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing-extra);
+
+        &__description {
+            font-weight: var(--font-weight-normal);
+        }
+    }
+}

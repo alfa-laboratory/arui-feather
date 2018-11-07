@@ -77,9 +77,23 @@ exports[`icon render IconActionClose without problems: IconActionClose 1`] = `
 />
 `;
 
+exports[`icon render IconActionPhotoOrFile without problems: IconActionPhotoOrFile 1`] = `
+<Icon
+  name="action-photo-or-file"
+  size="m"
+/>
+`;
+
 exports[`icon render IconAdd without problems: IconAdd 1`] = `
 <Icon
   name="add"
+  size="m"
+/>
+`;
+
+exports[`icon render IconAddFilled without problems: IconAddFilled 1`] = `
+<Icon
+  name="add-filled"
   size="m"
 />
 `;
@@ -115,6 +129,13 @@ exports[`icon render IconAlfamobile without problems: IconAlfamobile 1`] = `
 exports[`icon render IconAnalytics without problems: IconAnalytics 1`] = `
 <Icon
   name="analytics"
+  size="m"
+/>
+`;
+
+exports[`icon render IconApcBonus without problems: IconApcBonus 1`] = `
+<Icon
+  name="APC-bonus"
   size="m"
 />
 `;
@@ -206,6 +227,13 @@ exports[`icon render IconAttachment without problems: IconAttachment 1`] = `
 exports[`icon render IconAttention without problems: IconAttention 1`] = `
 <Icon
   name="attention"
+  size="m"
+/>
+`;
+
+exports[`icon render IconAutopayment without problems: IconAutopayment 1`] = `
+<Icon
+  name="autopayment"
   size="m"
 />
 `;
@@ -987,6 +1015,13 @@ exports[`icon render IconChatMessageError without problems: IconChatMessageError
 />
 `;
 
+exports[`icon render IconChatPhoto without problems: IconChatPhoto 1`] = `
+<Icon
+  name="chat-photo"
+  size="m"
+/>
+`;
+
 exports[`icon render IconChatSend without problems: IconChatSend 1`] = `
 <Icon
   name="chat-send"
@@ -1277,6 +1312,13 @@ exports[`icon render IconErase without problems: IconErase 1`] = `
 exports[`icon render IconError without problems: IconError 1`] = `
 <Icon
   name="error"
+  size="m"
+/>
+`;
+
+exports[`icon render IconExchange without problems: IconExchange 1`] = `
+<Icon
+  name="exchange"
   size="m"
 />
 `;
@@ -1666,6 +1708,13 @@ exports[`icon render IconManager without problems: IconManager 1`] = `
 />
 `;
 
+exports[`icon render IconMarketplace without problems: IconMarketplace 1`] = `
+<Icon
+  name="marketplace"
+  size="m"
+/>
+`;
+
 exports[`icon render IconMastercard without problems: IconMastercard 1`] = `
 <Icon
   name="mastercard"
@@ -1718,6 +1767,34 @@ exports[`icon render IconMore without problems: IconMore 1`] = `
 exports[`icon render IconMypayments without problems: IconMypayments 1`] = `
 <Icon
   name="mypayments"
+  size="m"
+/>
+`;
+
+exports[`icon render IconNavigationChat without problems: IconNavigationChat 1`] = `
+<Icon
+  name="navigation-chat"
+  size="m"
+/>
+`;
+
+exports[`icon render IconNavigationHistory without problems: IconNavigationHistory 1`] = `
+<Icon
+  name="navigation-history"
+  size="m"
+/>
+`;
+
+exports[`icon render IconNavigationHome without problems: IconNavigationHome 1`] = `
+<Icon
+  name="navigation-home"
+  size="m"
+/>
+`;
+
+exports[`icon render IconNavigationPayment without problems: IconNavigationPayment 1`] = `
+<Icon
+  name="navigation-payment"
   size="m"
 />
 `;
@@ -2065,6 +2142,13 @@ exports[`icon render IconSent without problems: IconSent 1`] = `
 />
 `;
 
+exports[`icon render IconSentDone without problems: IconSentDone 1`] = `
+<Icon
+  name="sent-done"
+  size="m"
+/>
+`;
+
 exports[`icon render IconSettings without problems: IconSettings 1`] = `
 <Icon
   name="settings"
@@ -2222,6 +2306,13 @@ exports[`icon render IconTransferSelf without problems: IconTransferSelf 1`] = `
 exports[`icon render IconTransferToCard without problems: IconTransferToCard 1`] = `
 <Icon
   name="transfer-to-card"
+  size="m"
+/>
+`;
+
+exports[`icon render IconUnionpay without problems: IconUnionpay 1`] = `
+<Icon
+  name="unionpay"
   size="m"
 />
 `;

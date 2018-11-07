@@ -24,10 +24,15 @@ exports[`button should render without problems 1`] = `
     type="button"
   >
     <span
-      className="button__text"
-      key="text"
+      className="button__content"
+      key="content"
     >
-      Button-example
+      <span
+        className="button__text"
+        key="text"
+      >
+        Button-example
+      </span>
     </span>
   </button>
 </Button>

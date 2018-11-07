@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list-header should render with \`description\` prop passed 1`] = `
+<div
+  className="list-header list-header_theme_alfa-on-white"
+>
+  <span
+    className="list-header__title"
+  >
+    Title
+  </span>
+  <span
+    className="list-header__description"
+  >
+    , 
+    description
+  </span>
+</div>
+`;
+
+exports[`list-header should render with \`filled\` view passed 1`] = `
+<div
+  className="list-header list-header_filled list-header_theme_alfa-on-white"
+>
+  <span
+    className="list-header__title"
+  >
+    Title
+  </span>
+  <span
+    className="list-header__description"
+  >
+    , 
+    description
+  </span>
+</div>
+`;
+
+exports[`list-header should render without problems 1`] = `
+<div
+  className="list-header list-header_theme_alfa-on-white"
+>
+  <span
+    className="list-header__title"
+  >
+    Title
+  </span>
+</div>
+`;

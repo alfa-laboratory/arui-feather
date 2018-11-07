@@ -1,6 +1,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* eslint-disable max-len */
 
 import autobind from 'core-decorators/lib/autobind';
 import { canUseDOM } from 'exenv';
@@ -15,7 +16,6 @@ import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions
 import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
-import performance from '../performance';
 
 const IS_REACT_16 = !!ReactDOM.createPortal;
 
@@ -53,8 +53,7 @@ const IS_REACT_16 = !!ReactDOM.createPortal;
  * Компонент popup'а.
  */
 @cn('popup')
-@performance(true)
-class Popup extends React.Component {
+class Popup extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -247,9 +246,9 @@ class Popup extends React.Component {
                 id={ this.props.id }
                 style={ {
                     ...this.state.styles,
-                    minWidth: this.getMinWidth(),
-                    maxWidth: this.getMaxWidth(),
-                    maxHeight: this.getMaxHeight()
+                    minWidth: this.props.minWidth !== undefined ? this.props.minWidth : 0,
+                    maxWidth: this.props.maxWidth !== undefined ? this.props.maxWidth : 'none',
+                    maxHeight: this.props.maxHeight !== undefined ? this.props.maxHeight : 'none'
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
@@ -530,27 +529,6 @@ class Popup extends React.Component {
             bottom: drawingParams.bottom,
             height: this.props.height === 'adaptive' ? drawingParams.height : 'auto'
         };
-    }
-
-    /**
-     * @returns {Number}
-     */
-    getMinWidth() {
-        return this.props.minWidth !== undefined ? this.props.minWidth : 0;
-    }
-
-    /**
-     * @returns {Number}
-     */
-    getMaxWidth() {
-        return this.props.maxWidth !== undefined ? this.props.maxWidth : 'none';
-    }
-
-    /**
-     * @returns {Number}
-     */
-    getMaxHeight() {
-        return this.props.maxHeight !== undefined ? this.props.maxHeight : 'none';
     }
 
     /**

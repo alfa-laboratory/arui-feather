@@ -1,3 +1,42 @@
+<a name="13.0.1"></a>
+## [13.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.0...v13.0.1) (2018-10-30)
+
+
+### Bug Fixes
+
+* **button:** add skipped "key" property ([#740](https://github.com/alfa-laboratory/arui-feather/issues/740)) ([c0929ad](https://github.com/alfa-laboratory/arui-feather/commit/c0929ad))
+
+
+
+<a name="13.0.0"></a>
+# [13.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.12.0...v13.0.0) (2018-10-26)
+
+
+### Features
+
+* even more vertical gaps ([#741](https://github.com/alfa-laboratory/arui-feather/issues/741)) ([850b49f](https://github.com/alfa-laboratory/arui-feather/commit/850b49f))
+* new adaptive typography and vertical gaps system ([#738](https://github.com/alfa-laboratory/arui-feather/issues/738)) ([39d4773](https://github.com/alfa-laboratory/arui-feather/commit/39d4773))
+
+
+
+<a name="12.12.0"></a>
+# [12.12.0](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.3...v12.12.0) (2018-10-23)
+
+
+### Bug Fixes
+
+* **button:** center icon on full-width button ([#737](https://github.com/alfa-laboratory/arui-feather/issues/737)) ([30974a6](https://github.com/alfa-laboratory/arui-feather/commit/30974a6))
+
+
+### Features
+
+* **amount:** split numbers from 4 digits ([#731](https://github.com/alfa-laboratory/arui-feather/issues/731)) ([db6ac05](https://github.com/alfa-laboratory/arui-feather/commit/db6ac05))
+* **icons:** latest icons from alfa-ui-primitives 1.6.7 ([#739](https://github.com/alfa-laboratory/arui-feather/issues/739)) ([fe6c447](https://github.com/alfa-laboratory/arui-feather/commit/fe6c447))
+* **link:** new breaking line mechanism for link with icon ([#735](https://github.com/alfa-laboratory/arui-feather/issues/735)) ([f0132ee](https://github.com/alfa-laboratory/arui-feather/commit/f0132ee))
+* **list-header:** introducing list-header component ([#734](https://github.com/alfa-laboratory/arui-feather/issues/734)) ([2566ae9](https://github.com/alfa-laboratory/arui-feather/commit/2566ae9))
+
+
+
 <a name="12.11.3"></a>
 ## [12.11.3](https://github.com/alfa-laboratory/arui-feather/compare/v12.11.2...v12.11.3) (2018-10-09)
 
@@ -1552,7 +1591,7 @@
 
 ### Bug Fixes
 
-* remove useless perfomance decorators ([#91](https://github.com/alfa-laboratory/arui-feather/issues/91)) ([ed80b4a](https://github.com/alfa-laboratory/arui-feather/commit/ed80b4a))
+* remove useless performance decorators ([#91](https://github.com/alfa-laboratory/arui-feather/issues/91)) ([ed80b4a](https://github.com/alfa-laboratory/arui-feather/commit/ed80b4a))
 
 
 ### Features

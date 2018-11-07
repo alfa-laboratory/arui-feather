@@ -13,14 +13,12 @@ import IconButton from '../icon-button/icon-button';
 import ThemeProvider from '../theme-provider/theme-provider';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент плашки.
  */
 @cn('plate')
-@performance()
-class Plate extends React.Component {
+class Plate extends React.PureComponent {
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,

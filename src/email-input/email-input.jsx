@@ -7,15 +7,13 @@ import React from 'react';
 import Input from '../input/input';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент поля ввода почты.
  * @extends Input
  */
 @cn('email-input', Input)
-@performance()
-class EmailInput extends React.Component {
+class EmailInput extends React.PureComponent {
     static propTypes = {
         ...Input.propTypes
     };

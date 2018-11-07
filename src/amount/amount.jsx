@@ -10,13 +10,12 @@ import Label from '../label/label';
 
 import cn from '../cn';
 import { getCurrencySymbol } from '../lib/currency-codes';
-import performance from '../performance';
 
 const THINSP = String.fromCharCode(8201); // &thinsp;
 const AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR = ',';
 const AMOUNT_MAJOR_PARTS_SPLITTER = THINSP;
 const AMOUNT_MAJOR_PART_SIZE = 3;
-const AMOUNT_SPLIT_CODE_FROM = 5;
+const AMOUNT_SPLIT_CODE_FROM = 4;
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 const NEGATIVE_AMOUNT_SYMBOL = '−';
 
@@ -106,8 +105,7 @@ function formatAmount(amount) {
  * https://design.alfabank.ru/patterns/amount
  */
 @cn('amount')
-@performance(true)
-class Amount extends React.Component {
+class Amount extends React.PureComponent {
     static propTypes = {
         amount: Type.shape({
             /** Абсолютное значение суммы */
@@ -124,6 +122,8 @@ class Amount extends React.Component {
         showZeroMinorPart: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
+        /** Толщина шрифта */
+        bold: Type.bool,
         /** Использовать компонент `Heading` для вывода числа */
         isHeading: Type.bool,
         /** Тема компонента */
@@ -137,6 +137,7 @@ class Amount extends React.Component {
     static defaultProps = {
         size: 'm',
         showZeroMinorPart: true,
+        bold: false,
         isHeading: false
     };
 
@@ -153,7 +154,7 @@ class Amount extends React.Component {
         );
 
         return (
-            <div className={ cn() } id={ this.props.id }>
+            <div className={ cn({ bold: this.props.bold }) } id={ this.props.id }>
                 { this.props.isHeading ? (
                     <Heading size={ size }>{ amountInner }</Heading>
                 ) : (

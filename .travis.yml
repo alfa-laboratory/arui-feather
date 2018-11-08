@@ -43,7 +43,7 @@ script:
   - if [ "${TEST_SCOPE}" == "unit" ]; then npm run test:coverage; fi
   #  Only run when pull request or master updating
   - if [[ "${TEST_SCOPE}" == "gemini" ]]; then
-      if [[ "${TRAVIS_PULL_REQUEST}" == "true" ]] || ([[ "${TRAVIS_BRANCH}" == "master" ]] || [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]); then
+      if [[ "${TRAVIS_PULL_REQUEST}" != "false" ]] || ([[ "${TRAVIS_BRANCH}" == "master" ]] || [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]); then
         if [ "${TRAVIS_EVENT_TYPE}" == "cron" ]; then export ALL_BROWSERS=1 ALL_SIZES=1; fi;
         npm run gemini-ci;
       fi;

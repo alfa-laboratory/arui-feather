@@ -40,13 +40,13 @@ body { font-size: 16px };
 
 - `--tablet-s`      600px to 100%
 - `--tablet-m`      768px to 100%
-- `--tablet`   600px to 1023px
+- `--tablet`        600px to 1023px
 
 - `--desktop-s`     1024px to 100%
 - `--desktop-m`     1280px to 100%
 - `--desktop-l`     1440px to 100%
 - `--desktop-xl`    1920px to 100%
-- `--desktop`  1024px to 100%
+- `--desktop`       1024px to 100%
 
 ### Пример использования в CSS
 

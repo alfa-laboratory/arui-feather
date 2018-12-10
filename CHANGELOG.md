@@ -1,3 +1,19 @@
+<a name="13.1.0"></a>
+# [13.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.1...v13.1.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **select:** fix jumping table-caption element in safari ([#746](https://github.com/alfa-laboratory/arui-feather/issues/746)) ([69700ba](https://github.com/alfa-laboratory/arui-feather/commit/69700ba))
+* **textarea:** no need to set state if textarea value is controlled by props ([#664](https://github.com/alfa-laboratory/arui-feather/issues/664)) ([606c620](https://github.com/alfa-laboratory/arui-feather/commit/606c620))
+
+
+### Features
+
+* **amount:** normal font weight by default, bold prop ([#743](https://github.com/alfa-laboratory/arui-feather/issues/743)) ([6bee1dc](https://github.com/alfa-laboratory/arui-feather/commit/6bee1dc))
+
+
+
 <a name="13.0.1"></a>
 ## [13.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.0...v13.0.1) (2018-10-30)
 

@@ -4,6 +4,7 @@
 
 @import './font/font_roboto-rouble.css';
 @import './vars.css';
+@import './grid.css';
 
 *,
 *:before,

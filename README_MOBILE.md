@@ -14,7 +14,9 @@
 
 Для консистентной работы среди всех поддерживаемых браузеров используется единица измерения `em`.
 
+```css
 body { font-size: 16px };
+```
 
 - `--small`         0 to 100%
 - `--small-only`    0 to 767px
@@ -30,6 +32,21 @@ body { font-size: 16px };
 
 - `--xxlarge`       1920px to 100%
 - `--xxlarge-only`  1920px to 100%
+
+- `--mobile-s`      0 to 100%
+- `--mobile-m`      375px to 100%
+- `--mobile-l`      412px to 100%
+- `--mobile-only`   0 to 599px
+
+- `--tablet-s`      600px to 100%
+- `--tablet-m`      768px to 100%
+- `--tablet-only`   600px to 1023px
+
+- `--desktop-s`     1024px to 100%
+- `--desktop-m`     1280px to 100%
+- `--desktop-l`     1440px to 100%
+- `--desktop-xl`    1920px to 100%
+- `--desktop-only`  1024px to 100%
 
 ### Пример использования в CSS
 

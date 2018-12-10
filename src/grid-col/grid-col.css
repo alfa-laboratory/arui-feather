@@ -1,0 +1,131 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+:root {
+    --col-width: calc(100% / 12);
+}
+
+.grid-col {
+    max-width: 100%;
+    min-height: 1px;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+
+    @for $i from 0 to 24 by 8 {
+        &_gutter_$(i) {
+            padding-left: calc($(i)px / 2);
+            padding-right: calc($(i)px / 2);
+        }
+    }
+
+    &_width_auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+    }
+
+    &_width_available {
+        flex-basis: auto;
+        min-height: auto;
+        height: auto;
+    }
+
+    &_align_top {
+        align-self: flex-start;
+    }
+
+    &_align_middle {
+        align-self: center;
+    }
+
+    &_align_bottom {
+        align-self: flex-end;
+    }
+
+    @for $i from 1 to 12 {
+        &_width_$(i) {
+            flex: 0 0 calc(var(--col-width) * $(i));
+            max-width: calc(var(--col-width) * $(i));
+        }
+    }
+
+    @for $i from 1 to 11 {
+        &_offset_$(i) {
+            margin-left: calc(var(--col-width) * $(i));
+        }
+    }
+
+    &_order_first {
+        order: -1;
+    }
+
+    &_order_last {
+        order: 13;
+    }
+
+    @for $i from 1 to 12 {
+        &_order_$(i) {
+            order: $(i);
+        }
+    }
+
+    @each $breakpoint in
+        mobile, mobile-s, mobile-m, mobile-l,
+        tablet, tablet-s, tablet-m,
+        desktop, desktop-s, desktop-m, desktop-l, desktop-xl {
+        @media (--$(breakpoint)) {
+            @for $i from 8 to 24 by 8 {
+                &_gutter-$(breakpoint)_$(i) {
+                    padding-left: calc($(i)px / 2);
+                    padding-right: calc($(i)px / 2);
+                }
+            }
+
+            &_width-$(breakpoint)_auto {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+
+            &_width-$(breakpoint)_available {
+                flex-basis: auto;
+                min-height: auto;
+                height: auto;
+            }
+
+            @for $i from 1 to 12 {
+                &_width-$(breakpoint)_$(i) {
+                    flex: 0 0 calc(var(--col-width) * $(i));
+                    max-width: calc(var(--col-width) * $(i));
+                }
+            }
+
+            @for $i from 1 to 11 {
+                &_offset-$(breakpoint)_$(i) {
+                    margin-left: calc(var(--col-width) * $(i));
+                }
+            }
+
+            &_order-$(breakpoint)_first {
+                order: -1;
+            }
+
+            &_order-$(breakpoint)_last {
+                order: 13;
+            }
+
+            @for $i from 1 to 12 {
+                &_order-$(breakpoint)_$(i) {
+                    order: $(i);
+                }
+            }
+        }
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+}

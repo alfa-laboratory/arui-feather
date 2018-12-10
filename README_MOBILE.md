@@ -36,7 +36,7 @@ body { font-size: 16px };
 - `--mobile-s`      0 to 100%
 - `--mobile-m`      375px to 100%
 - `--mobile-l`      412px to 100%
-- `--mobile`   0 to 599px
+- `--mobile`        0 to 599px
 
 - `--tablet-s`      600px to 100%
 - `--tablet-m`      768px to 100%

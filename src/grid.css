@@ -71,7 +71,7 @@
     }
 }
 
-@for $i from 0 to 12 {
+@for $i from 1 to 12 {
     .grid__col-$i, .grid__col-$(i), .grid__offset-$i {
         -webkit-box-flex: 0;
         flex: 0 0 auto;

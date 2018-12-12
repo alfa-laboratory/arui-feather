@@ -465,4 +465,21 @@ describe('input', () => {
             expect(onTouchCancel).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchcancel' }));
         }
     );
+
+    it(
+        'should call `enableMouseWheel` and `disableMouseWheel` after focus and blur',
+        () => {
+            let input = mount(<Input />);
+            let controlNode = input.find('input');
+
+            jest.spyOn(input.instance(), 'enableMouseWheel');
+            jest.spyOn(input.instance(), 'disableMouseWheel');
+
+            controlNode.simulate('focus');
+            expect(input.instance().enableMouseWheel).toHaveBeenCalled();
+
+            controlNode.simulate('blur');
+            expect(input.instance().disableMouseWheel).toHaveBeenCalled();
+        }
+    );
 });

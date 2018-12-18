@@ -26,7 +26,7 @@ export default class GridRow extends React.PureComponent {
         /** Дополнительный класс */
         className: Type.string,
         /**
-         * Горизонтальный `padding` (называемый `gutter`) для контроля пространства между колонками.
+         * Горизонтальный отступ между колонками.
          * Возможные значения: `8n` px (n - натуральное число) из диапазона `[0, 8, 16, 24]`
          * или `{ mobile: [0..24], tablet: [0..24], desktop: [0..24] }`
          * или `{ mobile: { s: [0..24], m: [0..24], l: [0..24] },
@@ -40,9 +40,9 @@ export default class GridRow extends React.PureComponent {
         justify: Type.oneOf(['left', 'center', 'right', 'around', 'between']),
         /**
          * Html тег компонента.
-         * Из-за <a href="https://github.com/philipwalton/flexbugs" target="_blank">ограничений и багов</a>,
+         * Из-за <a href="https://github.com/philipwalton/flexbugs#flexbug-9" target="_blank">ограничений и багов</a>,
          * существующих во флексбоксах, невозможно использовать
-         * некоторые элементы HTML как гибкие контейнеры</a>.
+         * некоторые элементы HTML как flex-контейнеры</a>.
          */
         tag: Type.string,
         /** Дочерние элементы `GridRow` */
@@ -102,7 +102,7 @@ export default class GridRow extends React.PureComponent {
                     justify
                 }) }
             >
-                { this.injectGutterClassesToChildren(gutters, children) }
+                { this.injectGutterClassNamesToChildren(gutters, children) }
             </Tag>
         );
     }
@@ -115,7 +115,7 @@ export default class GridRow extends React.PureComponent {
      * @param {ReactElement} children Дочерние элементы компонента.
      * @returns {ReactElement}
      */
-    injectGutterClassesToChildren(gutters, children) {
+    injectGutterClassNamesToChildren(gutters, children) {
         return (
             Children.map(children, (col) => {
                 if (!col) {
@@ -124,9 +124,11 @@ export default class GridRow extends React.PureComponent {
                 if (!col.props) {
                     return col;
                 }
-                const classes = Object.keys(gutters).map(gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`);
+                const gutterClassNames = Object.keys(gutters).map(
+                    gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
+                );
                 const className = col.props.className ? ` ${col.props.className}` : '';
-                return cloneElement(col, { className: `${classes.join(' ')}${className}` });
+                return cloneElement(col, { className: `${gutterClassNames.join(' ')}${className}` });
             })
         );
     }

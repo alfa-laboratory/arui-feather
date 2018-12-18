@@ -79,7 +79,7 @@ export default class GridCol extends React.PureComponent {
                 { ...props }
                 className={ cn({
                     align,
-                    ...this.createClasses({ width, offset, order })
+                    ...this.createClassNames({ width, offset, order })
                 }) }
             >
                 { children }
@@ -94,25 +94,27 @@ export default class GridCol extends React.PureComponent {
      * @param {Object} props Свойства.
      * @returns {Object}
      */
-    createClasses(props) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
-        const classes = {};
+    createClassNames(props) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+        const classNames = {};
         Object.keys(props).forEach((name) => {
             const prop = props[name];
-            if (!prop) return;
+            if (!prop) {
+                return;
+            }
             if (typeof prop !== 'object') {
-                classes[name] = prop;
+                classNames[name] = prop;
                 return;
             }
             Object.keys(prop).forEach((breakpoint) => {
                 if (typeof prop[breakpoint] === 'object') {
                     Object.keys(prop[breakpoint]).forEach((size) => {
-                        classes[`${name}-${breakpoint}-${size}`] = prop[breakpoint][size].toString();
+                        classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][size].toString();
                     });
                 } else {
-                    classes[`${name}-${breakpoint}`] = prop[breakpoint].toString();
+                    classNames[`${name}-${breakpoint}`] = prop[breakpoint].toString();
                 }
             });
         });
-        return classes;
+        return classNames;
     }
 }

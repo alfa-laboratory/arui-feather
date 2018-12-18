@@ -123,7 +123,7 @@ const style = {
     background: '#ff5c5c'
 };
 <GridRow>
-    <GridCol>
+    <GridCol order='1'>
         <div style={ style }>Первый (order=1)</div>
     </GridCol>
     <GridCol order='3'>

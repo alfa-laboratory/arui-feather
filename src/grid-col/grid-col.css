@@ -73,7 +73,7 @@
     }
 
     @each $breakpoint in
-        mobile, mobile-s, mobile-m, mobile-l,
+        mobile, mobile-s, mobile-m,
         tablet, tablet-s, tablet-m,
         desktop, desktop-s, desktop-m, desktop-l, desktop-xl {
         @media (--$(breakpoint)) {

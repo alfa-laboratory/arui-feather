@@ -33,9 +33,8 @@ body { font-size: 16px };
 - `--xxlarge`       1920px to 100%
 - `--xxlarge-only`  1920px to 100%
 
-- `--mobile-s`      0 to 100%
-- `--mobile-m`      375px to 100%
-- `--mobile-l`      412px to 100%
+- `--mobile-s`      375px to 100%
+- `--mobile-m`      412px to 100%
 - `--mobile`        0 to 599px
 
 - `--tablet-s`      600px to 100%

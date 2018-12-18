@@ -190,7 +190,7 @@ function handleChange(value) {
     />
 
     <div style={ { marginTop: '5px' } }>
-        { state.values && state.values.map(value => <TagButton size='s'>{ value }</TagButton>) }
+        { state.values && state.values.map(value => <TagButton key={ value } size='s'>{ value }</TagButton>) }
     </div>
 </div>
 ```

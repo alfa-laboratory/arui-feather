@@ -81,8 +81,14 @@ export default class GridRow extends React.PureComponent {
         let gutters = {};
         if (typeof gutter === 'object') {
             Object.keys(gutter).forEach((breakpoint) => {
+                if (gutter[breakpoint] === null) {
+                    return;
+                }
                 if (typeof gutter[breakpoint] === 'object') {
                     Object.keys(gutter[breakpoint]).forEach((size) => {
+                        if (gutter[breakpoint][size] === null) {
+                            return;
+                        }
                         gutters[`gutter-${breakpoint}-${size}`] = gutter[breakpoint][size].toString();
                     });
                 } else {

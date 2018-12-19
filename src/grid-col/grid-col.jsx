@@ -106,8 +106,14 @@ export default class GridCol extends React.PureComponent {
                 return;
             }
             Object.keys(prop).forEach((breakpoint) => {
+                if (prop[breakpoint] === null) {
+                    return;
+                }
                 if (typeof prop[breakpoint] === 'object') {
                     Object.keys(prop[breakpoint]).forEach((size) => {
+                        if (prop[breakpoint][size] === null) {
+                            return;
+                        }
                         classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][size].toString();
                     });
                 } else {

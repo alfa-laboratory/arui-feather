@@ -7,7 +7,7 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 
-const breakpoints = {
+const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
     tablet: Type.oneOfType([Type.string, Type.number, Type.object]),
     desktop: Type.oneOfType([Type.string, Type.number, Type.object])
@@ -33,7 +33,7 @@ export default class GridRow extends React.PureComponent {
          * tablet: { s: [0..24], m: [0..24] },
          * desktop: { s: [0..24], m: [0..24], l: [0..24], xl: [0..24] } }`.
          */
-        gutter: Type.oneOfType([Type.string, Type.number, Type.shape(breakpoints)]),
+        gutter: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /** Управление выравниванием колонок по вертикальной оси */
         align: Type.oneOf(['top', 'middle', 'bottom']),
         /** Управление выравниванием колонок по горизонтальной оси */

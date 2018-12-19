@@ -6,7 +6,7 @@ import Type from 'prop-types';
 
 import cn from '../cn';
 
-const breakpoints = {
+const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
     tablet: Type.oneOfType([Type.string, Type.number, Type.object]),
     desktop: Type.oneOfType([Type.string, Type.number, Type.object])
@@ -34,7 +34,7 @@ export default class GridCol extends React.PureComponent {
          * tablet: { s: [1..12], m: [1..12] },
          * desktop: { s: [1..12], m: [1..12], l: [1..12], xl: [1..12] } }`.
          */
-        width: Type.oneOfType([Type.string, Type.number, Type.shape(breakpoints)]),
+        width: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /**
          * Управлние смещением колонки.
          * Возможные значения: `[1..11]`
@@ -43,7 +43,7 @@ export default class GridCol extends React.PureComponent {
          * tablet: { s: [1..11], m: [1..11] },
          * desktop: { s: [1..11], m: [1..11], l: [1..11], xl: [1..11] } }`.
          */
-        offset: Type.oneOfType([Type.string, Type.number, Type.shape(breakpoints)]),
+        offset: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /**
          * Управление порядком колонок.
          * Возможные значения: `[1..12, first, last]`
@@ -52,7 +52,7 @@ export default class GridCol extends React.PureComponent {
          * tablet: { s: [1..last], m: [1..last] },
          * desktop: { s: [1..last], m: [1..last], l: [1..last], xl: [1..last] } }`.
          */
-        order: Type.oneOfType([Type.string, Type.number, Type.shape(breakpoints)]),
+        order: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
         /** Html тег компонента. */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */

@@ -99,7 +99,7 @@ npm install arui-feather --save
 
 Запуск unit-тестов для определенных компонентов `TESTS=amount,calendar npm run test`.
 
-Запуск unit-тестов используя Chrome `npm run test -- --browsers=Chrome`
+Запуск unit-тестов используя Chrome `npm run test -- --browser=Chrome`
 
 Запуск линтера для css `npm run lint-css`.
 

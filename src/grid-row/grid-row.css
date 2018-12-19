@@ -1,0 +1,68 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.grid-row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    &_align_top {
+        align-items: flex-start;
+    }
+
+    &_align_middle {
+        align-items: center;
+    }
+
+    &_align_bottom {
+        align-items: flex-end;
+    }
+
+    &_justify_left {
+        justify-content: flex-start;
+    }
+
+    &_justify_center {
+        justify-content: center;
+    }
+
+    &_justify_right {
+        justify-content: flex-end;
+    }
+
+    &_justify_around {
+        justify-content: space-around;
+    }
+
+    &_justify_between {
+        justify-content: space-between;
+    }
+
+    @for $i from 8 to 24 by 8 {
+        &_gutter_$(i) {
+            margin-left: calc(-$(i)px / 2);
+            margin-right: calc(-$(i)px / 2);
+        }
+    }
+
+    @each $breakpoint in
+        mobile, mobile-s, mobile-m, mobile-l,
+        tablet, tablet-s, tablet-m,
+        desktop, desktop-s, desktop-m, desktop-l, desktop-xl {
+        @media (--$(breakpoint)) {
+            @for $i from 8 to 24 by 8 {
+                &_gutter-$(breakpoint)_$(i) {
+                    margin-left: calc(-$(i)px / 2);
+                    margin-right: calc(-$(i)px / 2);
+                }
+            }
+        }
+    }
+}

@@ -11,12 +11,10 @@
 @import './vars/shadow.css';
 
 :root {
-    --small-header-height: 80px;
-    --large-screen-content-width: 1000px;
-    --xlarge-screen-content-width: 1100px;
+    --content-width: 1094px;
 
     /**
-     * Вертикальные отступы
+     * Система отступов
      */
     --gap-2xs: 4px;
     --gap-xs: 8px;

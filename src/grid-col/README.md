@@ -9,7 +9,7 @@ const style = {
 };
 <div>
     <GridRow>
-        <GridCol width={ { desktop: { m: 12 } } } order='3'>
+        <GridCol width={ { desktop: { m: 12 } } }>
             <div style={ { ...style, background: '#f04539', marginTop: 0 } }>12</div>
         </GridCol>
     </GridRow>

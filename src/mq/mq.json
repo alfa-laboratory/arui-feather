@@ -9,7 +9,7 @@
     "--xlarge-only": "screen and (min-width: 90em) and (max-width: 119.9375em)",
     "--xxlarge": "screen and (min-width: 120em)",
     "--xxlarge-only": "screen and (min-width: 120em) and (max-width: 99999999em)",
-    "--mobile-s": "screen",
+    "--mobile-s": "screen and (min-width: 20em)",
     "--mobile-m": "screen and (min-width: 23.4375em)",
     "--mobile-l": "screen and (min-width: 25.75em)",
     "--mobile": "screen and (max-width: 37.4375em)",

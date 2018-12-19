@@ -127,8 +127,8 @@ export default class GridRow extends React.PureComponent {
                 const gutterClassNames = Object.keys(gutters).map(
                     gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
                 );
-                const className = col.props.className ? ` ${col.props.className}` : '';
-                return cloneElement(col, { className: `${gutterClassNames.join(' ')}${className}` });
+                const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
+                return cloneElement(col, { className: `${gutterClassNames.join(' ')}${classNameFromProps}` });
             })
         );
     }

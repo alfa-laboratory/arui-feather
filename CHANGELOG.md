@@ -1,3 +1,20 @@
+<a name="13.2.0"></a>
+# [13.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.1.0...v13.2.0) (2018-12-20)
+
+
+### Bug Fixes
+
+* fix examples ([#756](https://github.com/alfa-laboratory/arui-feather/issues/756)) ([394c1a1](https://github.com/alfa-laboratory/arui-feather/commit/394c1a1))
+* fix incorrect links in documentation ([#750](https://github.com/alfa-laboratory/arui-feather/issues/750)) ([2ac88ef](https://github.com/alfa-laboratory/arui-feather/commit/2ac88ef))
+* incorrect param for test run ([#757](https://github.com/alfa-laboratory/arui-feather/issues/757)) ([2db21db](https://github.com/alfa-laboratory/arui-feather/commit/2db21db))
+
+
+### Features
+
+* introducing grid and new breakpoints ([#751](https://github.com/alfa-laboratory/arui-feather/issues/751)) ([20f5178](https://github.com/alfa-laboratory/arui-feather/commit/20f5178))
+
+
+
 <a name="13.1.0"></a>
 # [13.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.1...v13.1.0) (2018-11-20)
 

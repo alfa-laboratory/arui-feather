@@ -96,7 +96,7 @@
     color: var(--color-content-alfa-on-color);
 
     .link__text {
-        border-color: var(--color-content-minor-alfa-on-color);
+        border-color: var(--color-content-disabled-alfa-on-color);
     }
 
     &:hover,
@@ -104,7 +104,7 @@
         color: var(--color-content-accent-alfa-on-color);
 
         .link__text {
-            border-color: var(--color-content-accent-alfa-on-color);
+            border-color: var(--color-content-minor-alfa-on-color);
         }
     }
 
@@ -117,7 +117,7 @@
     color: var(--color-content-alfa-on-white);
 
     .link__text {
-        border-color: var(--color-content-minor-alfa-on-white);
+        border-color: var(--color-content-disabled-alfa-on-white);
     }
 
     &:hover,
@@ -125,7 +125,7 @@
         color: var(--color-content-accent-alfa-on-white);
 
         .link__text {
-            border-color: var(--color-content-accent-alfa-on-white);
+            border-color: var(--color-content-minor-alfa-on-white);
         }
     }
 

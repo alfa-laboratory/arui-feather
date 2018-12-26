@@ -313,6 +313,7 @@ class Input extends React.Component {
     @autobind
     handleFocus(event) {
         this.setState({ focused: true });
+        this.enableMouseWheel();
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
@@ -329,6 +330,7 @@ class Input extends React.Component {
     @autobind
     handleBlur(event) {
         this.setState({ focused: false });
+        this.disableMouseWheel();
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
@@ -397,6 +399,34 @@ class Input extends React.Component {
     handleTouchCancel(event) {
         if (this.props.onTouchCancel) {
             this.props.onTouchCancel(event);
+        }
+    }
+
+    /**
+     * Разблокирует возможность скролла в поле ввода
+     *
+     * @public
+     * @returns {void}
+     */
+    enableMouseWheel() {
+        const input = this.control instanceof MaskedInput ? this.control.input : this.control;
+
+        if (input) {
+            input.onwheel = () => true;
+        }
+    }
+
+    /**
+     * Блокирует возможность скролла в поле ввода
+     *
+     * @public
+     * @returns {void}
+     */
+    disableMouseWheel() {
+        const input = this.control instanceof MaskedInput ? this.control.getControl() : this.control;
+
+        if (input) {
+            input.onwheel = () => false;
         }
     }
 

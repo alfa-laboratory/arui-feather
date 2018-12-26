@@ -99,7 +99,7 @@ class InputAutocomplete extends React.Component {
     };
 
     state = {
-        value: '',
+        value: this.props.defaultValue || '',
         inputFocused: false,
         menuFocused: false,
         popupStyles: {},

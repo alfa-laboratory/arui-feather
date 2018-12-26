@@ -6,7 +6,6 @@ exports[`money-input should render without problems 1`] = `
 >
   <Input
     bold={false}
-    currency={false}
     currencyCode="RUR"
     formNoValidate={true}
     fractionLength={2}
@@ -15,6 +14,7 @@ exports[`money-input should render without problems 1`] = `
     maxLength={14}
     onChange={[Function]}
     onProcessMaskInputEvent={[Function]}
+    showCurrency={false}
     size="m"
     type="text"
     value=""

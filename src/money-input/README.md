@@ -5,8 +5,8 @@
 C символом валюты
 ```jsx
 <MoneyInput
-  currency={ true }
-  currencyCode='USD'
-  bold={ true }
+    showCurrency={ true }
+    currencyCode='USD'
+    bold={ true }
 />
 ```

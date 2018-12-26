@@ -68,7 +68,7 @@ class MoneyInput extends React.PureComponent {
         /** Толщина шрифта */
         bold: Type.bool,
         /** Отображение символа валюты */
-        currency: Type.bool,
+        showCurrency: Type.bool,
         /** Международный код валюты */
         currencyCode: Type.string
     };
@@ -77,7 +77,7 @@ class MoneyInput extends React.PureComponent {
         fractionLength: DEFAULT_FRACTION_SIZE,
         integerLength: DEFAULT_INTEGER_SIZE,
         bold: false,
-        currency: false,
+        showCurrency: false,
         currencyCode: 'RUR'
     };
 
@@ -112,7 +112,7 @@ class MoneyInput extends React.PureComponent {
 
     render(cn, Input) {
         return (
-            <div className={ cn({ currency: this.props.currency, bold: this.props.bold }) }>
+            <div className={ cn({ currency: this.props.showCurrency, bold: this.props.bold }) }>
                 <Input
                     { ...this.props }
                     ref={ (root) => { this.root = root; } }
@@ -121,7 +121,7 @@ class MoneyInput extends React.PureComponent {
                     maxLength={ this.getMaxLength() }
                     value={ this.getValue() }
                     leftAddons={
-                        this.props.currency ? (
+                        this.props.showCurrency ? (
                             <span className={ cn('currency') }>
                                 <span className={ cn('value') }>
                                     { this.getValue() }

@@ -25,9 +25,7 @@ geminiReact.suite(NAME, function () {
                     let props = { theme, size, ...set };
                     let template = (
                         <GeminiBox theme={ theme }>
-                            <Link { ...props }>
-                                Link
-                            </Link>
+                            <Link { ...props } text='Link' />
                         </GeminiBox>
                     );
 

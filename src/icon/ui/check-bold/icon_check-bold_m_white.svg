@@ -1,10 +1,6 @@
-<svg width="14" height="10" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
-	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-		<g transform="translate(-725.000000, -197.000000)" fill="#FFFFFF" fill-rule="nonzero">
-			<g transform="translate(719.000000, 190.000000)">
-				<polygon points="10.5331112 14.861243 6.99755976 11.6186518 6 12.5112647 10.5331112 16.9103022 19.3936327 7.9804955 18.3210017 7">
-				</polygon>
-			</g>
-		</g>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	<g fill="none" fill-rule="evenodd">
+		<path d="M0 0h24v24H0z" />
+		<path fill="#FFF" fill-rule="nonzero" d="M17.707 5.433l1.607 1.192-8.861 11.942-5.767-7.208 1.562-1.25 4.145 5.182z" />
 	</g>
 </svg>

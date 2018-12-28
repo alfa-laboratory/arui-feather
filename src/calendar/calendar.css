@@ -13,6 +13,10 @@
     font-weight: var(--font-weight-normal);
     border-radius: var(--border-radius-control);
 
+    &_width_available {
+        width: 100%;
+    }
+
     &, *, *:before, *:after {
         box-sizing: border-box;
     }
@@ -28,12 +32,16 @@
 
     &__title {
         vertical-align: middle;
-        padding: 20px 20px 7px;
+        padding: 20px 7% 7px;
         line-height: 20px;
     }
 
     &__layout {
         padding: 0 10px 10px;
+
+        .calendar_width_available & {
+            width: 100%;
+        }
     }
 
     &__dayname,
@@ -90,7 +98,8 @@
         border-radius: 50%;
         position: absolute;
         bottom: -1px;
-        left: 13px;
+        left: 50%;
+        margin-left: -5px;
 
         &:after {
             content: '';
@@ -115,9 +124,10 @@
             content: '';
             position: absolute;
             top: 5px;
-            right: 3px;
             bottom: 4px;
-            left: 3px;
+            left: 50%;
+            width: 2.25em;
+            margin-left: -1.125em;
             border-radius: 14px;
             z-index: -1;
         }

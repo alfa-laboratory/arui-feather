@@ -10,7 +10,7 @@
     .checkbox__box {
         background: var(--color-background-control-alfa-on-color);
         border: 1px solid var(--color-border-control-alfa-on-color);
-        transition: all 200ms ease;
+        transition: all .1s ease-out;
     }
 
     &.checkbox_checked {

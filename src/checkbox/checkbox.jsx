@@ -7,7 +7,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import IconCheck from '../icon/ui/check-bold';
-import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
@@ -99,9 +98,7 @@ class CheckBox extends React.PureComponent {
     root;
 
     render(cn, TagButton) {
-        let checked = this.props.checked !== undefined
-            ? this.props.checked
-            : this.state.checked;
+        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
             <label
@@ -119,23 +116,20 @@ class CheckBox extends React.PureComponent {
                 onBlur={ this.handleBlur }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
             >
-                {
-                    this.props.type === 'button'
-                        ? this.renderButtonCheckbox(cn, checked, TagButton)
-                        : this.renderNormalCheckbox(cn, checked)
-                }
+                { this.props.type === 'button'
+                    ? this.renderButtonCheckbox(cn, checked, TagButton)
+                    : this.renderNormalCheckbox(cn, checked) }
             </label>
         );
     }
 
     renderNormalCheckbox(cn, checked) {
         return [
-            <span
-                className={ cn('box') }
-                key='box'
-            >
+            <span className={ cn('box') } key='box'>
                 <input
                     className={ cn('control') }
                     type='checkbox'
@@ -148,31 +142,17 @@ class CheckBox extends React.PureComponent {
                     onClick={ this.handleInputControlClick }
                     onChange={ this.handleChange }
                 />
-                {
-                    checked &&
-                    <IconCheck
-                        className={ cn('icon') }
-                        size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
-                    />
-                }
-                {
-                    !checked && this.props.indeterminate &&
-                    <IconIndeterminate
-                        className={ cn('icon') }
-                        size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
-                    />
-                }
+                <IconCheck
+                    className={ cn('icon') }
+                    size={ this.props.size === 'l' ? 'm' : 's' }
+                    theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                />
             </span>,
-            this.props.text &&
-            <span
-                className={ cn('text') }
-                key='text'
-                role='presentation'
-            >
-                { this.props.text }
-            </span>
+            this.props.text && (
+                <span className={ cn('text') } key='text' role='presentation'>
+                    { this.props.text }
+                </span>
+            )
         ];
     }
 
@@ -209,18 +189,15 @@ class CheckBox extends React.PureComponent {
     }
 
     @autobind
-    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
+    handleInputControlClick(event) {
         event.stopPropagation();
     }
 
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(
-                this.props.checked !== undefined
-                    ? this.props.checked
-                    : this.state.checked
-            );
+            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
 
             this.setState({ checked: nextCheckedValue });
 

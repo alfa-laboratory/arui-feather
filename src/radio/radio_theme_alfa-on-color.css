@@ -17,10 +17,6 @@
         .radio__box {
             background: var(--color-accent-translucent);
             border-color: transparent;
-
-            &:after {
-                background: var(--color-accent-content);
-            }
         }
 
         &.radio_hovered .radio__box {

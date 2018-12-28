@@ -98,9 +98,7 @@ class Radio extends React.PureComponent {
     control;
 
     render(cn, TagButton) {
-        let checked = this.props.checked !== undefined
-            ? this.props.checked
-            : this.state.checked;
+        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
             <label
@@ -110,6 +108,7 @@ class Radio extends React.PureComponent {
                     checked,
                     focused: this.state.focused,
                     hovered: this.state.hovered,
+                    pressed: this.state.pressed,
                     invalid: !!this.props.error,
                     width: this.props.type === 'button' ? this.props.width : null
                 }) }
@@ -119,13 +118,13 @@ class Radio extends React.PureComponent {
                 onBlur={ this.handleBlur }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (label) => { this.label = label; } }
+                ref={ (label) => {
+                    this.label = label;
+                } }
             >
-                {
-                    this.props.type === 'button'
-                        ? this.renderButtonRadio(cn, checked, TagButton)
-                        : this.renderNormalRadio(cn, checked)
-                }
+                { this.props.type === 'button'
+                    ? this.renderButtonRadio(cn, checked, TagButton)
+                    : this.renderNormalRadio(cn, checked) }
             </label>
         );
     }
@@ -144,20 +143,18 @@ class Radio extends React.PureComponent {
                         tabIndex='-1'
                         type='radio'
                         className={ cn('control') }
-                        ref={ (control) => { this.control = control; } }
+                        ref={ (control) => {
+                            this.control = control;
+                        } }
                         onClick={ this.handleInputControlClick }
                         onChange={ this.handleChange }
                     />
                 </span>
-                {
-                    this.props.text &&
-                    <span
-                        className={ cn('text') }
-                        role='presentation'
-                    >
+                { this.props.text && (
+                    <span className={ cn('text') } role='presentation'>
                         { this.props.text }
                     </span>
-                }
+                ) }
             </div>
         );
     }
@@ -176,11 +173,7 @@ class Radio extends React.PureComponent {
                     tabIndex={ -1 }
                     onClick={ this.handleChange }
                 >
-                    {
-                        this.props.text
-                            ? this.props.text
-                            : ''
-                    }
+                    { this.props.text ? this.props.text : '' }
                 </TagButton>
                 <input
                     checked={ checked }
@@ -193,25 +186,24 @@ class Radio extends React.PureComponent {
                     type='radio'
                     className={ cn('control') }
                     onChange={ this.handleChange }
-                    ref={ (control) => { this.control = control; } }
+                    ref={ (control) => {
+                        this.control = control;
+                    } }
                 />
             </div>
         );
     }
 
     @autobind
-    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
+    handleInputControlClick(event) {
         event.stopPropagation();
     }
 
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(
-                this.props.checked !== undefined
-                    ? this.props.checked
-                    : this.state.checked
-            );
+            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
 
             this.setState({ checked: nextCheckedValue });
 

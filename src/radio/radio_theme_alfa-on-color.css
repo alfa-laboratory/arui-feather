@@ -10,7 +10,6 @@
     .radio__box {
         background: var(--color-background-control-alfa-on-color);
         border: 1px solid var(--color-border-control-alfa-on-color);
-        transition: all 200ms ease;
     }
 
     &.radio_checked {

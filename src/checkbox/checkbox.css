@@ -34,6 +34,7 @@
         position: relative;
         border-radius: var(--border-radius-control);
         flex: 0 0 auto;
+        transition: all 0.1s 0.1s ease-out;
     }
 
     &__icon {
@@ -41,8 +42,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, calc(-50% - 2px));
+        transition: all 0.1s 0s ease-out;
         opacity: 0;
-        transition: all .1s ease-out;
     }
 
     &_size_m {
@@ -69,6 +70,10 @@
         .checkbox__text {
             padding-left: 12px;
             margin-top: 2px;
+        }
+
+        .checkbox__icon {
+            transform: translate(-50%, calc(-50% - 4px));
         }
     }
 
@@ -114,6 +119,7 @@
 
 .checkbox_checked {
     .checkbox__icon {
+        transition: all 0.1s 0.1s ease-out;
         transform: translate(-50%, -50%);
         opacity: 1;
     }

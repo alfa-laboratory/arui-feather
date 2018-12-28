@@ -10,12 +10,13 @@
     .checkbox__box {
         background: var(--color-background-control-alfa-on-color);
         border: 1px solid var(--color-border-control-alfa-on-color);
-        transition: all .1s ease-out;
+        transition: all 0.1s 0.1s ease-out;
     }
 
     &.checkbox_checked {
         .checkbox__box {
             background: var(--color-accent-translucent);
+            transition: all 0.1s ease-out;
         }
 
         &.checkbox_hovered .checkbox__box {

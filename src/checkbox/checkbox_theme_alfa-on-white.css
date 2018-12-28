@@ -23,6 +23,10 @@
         &.checkbox_focused .checkbox__box {
             background: #f03226;
         }
+
+        &:active .checkbox__box {
+            background: #9e0c00;
+        }
     }
 
     &.checkbox_focused,

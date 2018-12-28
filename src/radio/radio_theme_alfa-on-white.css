@@ -22,6 +22,10 @@
         &.radio_hovered .radio__box {
             background: #f03226;
         }
+
+        &:active .radio__box {
+            background: #9e0c00;
+        }
     }
 
     &.radio_focused,

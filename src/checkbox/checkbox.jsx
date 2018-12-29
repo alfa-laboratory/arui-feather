@@ -7,6 +7,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import IconCheck from '../icon/ui/check-bold';
+import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
@@ -142,11 +143,27 @@ class CheckBox extends React.PureComponent {
                     onClick={ this.handleInputControlClick }
                     onChange={ this.handleChange }
                 />
-                <IconCheck
-                    className={ cn('icon') }
-                    size={ this.props.size === 'l' ? 'm' : 's' }
-                    theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
-                />
+                { !this.props.indeterminate && (
+                    <IconCheck
+                        className={ cn('icon') }
+                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                    />
+                ) }
+                { !checked && this.props.indeterminate && (
+                    <IconIndeterminate
+                        className={ cn('icon') }
+                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                    />
+                ) }
+                { checked && this.props.indeterminate && (
+                    <IconCheck
+                        className={ cn('icon') }
+                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                    />
+                ) }
             </span>,
             this.props.text && (
                 <span className={ cn('text') } key='text' role='presentation'>

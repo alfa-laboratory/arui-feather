@@ -84,15 +84,9 @@
             border-color: transparent;
         }
 
-        &.checkbox_checked {
+        &.checkbox:active {
             .checkbox__box {
-                background: rgba(11, 31, 53, 0.1);
-            }
-
-            &.checkbox_focused {
-                .checkbox__box {
-                    background: rgba(240, 50, 38, 0.85);
-                }
+                background: rgba(11, 31, 53, 0.2);
             }
         }
     }

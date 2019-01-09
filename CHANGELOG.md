@@ -1,3 +1,13 @@
+<a name="13.3.1"></a>
+## [13.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.0...v13.3.1) (2019-01-09)
+
+
+### Bug Fixes
+
+* **types:** performance typing param init error ([#765](https://github.com/alfa-laboratory/arui-feather/issues/765)) ([bf5d778](https://github.com/alfa-laboratory/arui-feather/commit/bf5d778))
+
+
+
 <a name="13.3.0"></a>
 # [13.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.2.1...v13.3.0) (2018-12-29)
 

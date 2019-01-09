@@ -9,3 +9,19 @@
 .icon_size_m.icon_name_account.icon_theme_alfa-on-color {
     background-image: url('./icon_account_m_white.svg');
 }
+
+.icon_size_xl.icon_name_account.icon_theme_alfa-on-white {
+    background-image: url('./icon_account_xl_black.svg');
+}
+
+.icon_size_xl.icon_name_account.icon_theme_alfa-on-color {
+    background-image: url('./icon_account_xl_white.svg');
+}
+
+.icon_size_xxl.icon_name_account.icon_theme_alfa-on-white {
+    background-image: url('./icon_account_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_account.icon_theme_alfa-on-color {
+    background-image: url('./icon_account_xxl_white.svg');
+}

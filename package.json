@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "13.2.1",
+  "version": "13.3.1",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -108,7 +108,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
-    "alfa-ui-primitives": "1.6.7",
+    "alfa-ui-primitives": "1.8.0",
     "arui-presets": "4.13.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "conventional-changelog-cli": "1.3.14",

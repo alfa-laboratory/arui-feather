@@ -76,6 +76,8 @@ class Calendar extends React.PureComponent {
         showArrows: Type.bool,
         /** Возможность управления календарём с клавиатуры */
         isKeyboard: Type.bool,
+        /** Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя */
+        width: Type.oneOf(['default', 'available']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -151,7 +153,7 @@ class Calendar extends React.PureComponent {
         return (
             <div
                 ref={ (root) => { this.root = root; } }
-                className={ cn() }
+                className={ cn({ width: this.props.width }) }
                 id={ this.props.id }
                 role='grid'
                 tabIndex='0'

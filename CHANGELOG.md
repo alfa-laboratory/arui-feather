@@ -1,3 +1,30 @@
+<a name="13.3.1"></a>
+## [13.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.0...v13.3.1) (2019-01-09)
+
+
+### Bug Fixes
+
+* **types:** performance typing param init error ([#765](https://github.com/alfa-laboratory/arui-feather/issues/765)) ([bf5d778](https://github.com/alfa-laboratory/arui-feather/commit/bf5d778))
+
+
+
+<a name="13.3.0"></a>
+# [13.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.2.1...v13.3.0) (2018-12-29)
+
+
+### Bug Fixes
+
+* **input:** disable horizontal scroll for a inputs without focus ([#753](https://github.com/alfa-laboratory/arui-feather/issues/753)) ([2111bcb](https://github.com/alfa-laboratory/arui-feather/commit/2111bcb))
+
+
+### Features
+
+* **calendar:** add width prop ([#761](https://github.com/alfa-laboratory/arui-feather/issues/761)) ([68b611f](https://github.com/alfa-laboratory/arui-feather/commit/68b611f))
+* **link:** update border color ([#762](https://github.com/alfa-laboratory/arui-feather/issues/762)) ([5e03626](https://github.com/alfa-laboratory/arui-feather/commit/5e03626))
+* **money-input:** money input with currency symbol ([#752](https://github.com/alfa-laboratory/arui-feather/issues/752)) ([da121db](https://github.com/alfa-laboratory/arui-feather/commit/da121db))
+
+
+
 <a name="13.2.1"></a>
 ## [13.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.1.0...v13.2.1) (2018-12-26)
 

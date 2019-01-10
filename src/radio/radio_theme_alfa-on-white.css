@@ -6,54 +6,37 @@
 
 .radio_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
-    box-sizing: border-box;
 
     .radio__box {
         background: rgba(11, 31, 53, 0.05);
         border: 1px solid rgba(11, 31, 53, 0.6);
-        box-sizing: border-box;
-    }
-
-    &:active .radio__box {
-        background: rgba(11, 31, 53, 0.2);
     }
 
     &.radio_checked {
         .radio__box {
-            background: rgba(240, 50, 38, 0.85);
-            border: 1px solid rgba(11, 31, 53, 0.24);
+            background: rgba(239, 49, 36, 0.85);
+            border-color: rgba(11, 31, 53, 0.25);
         }
 
-        &.radio_hovered .radio__box {
-            background: #f03226;
-        }
-
-        &:active .radio__box {
-            background: #9e0c00;
-        }
-    }
-
-    &.radio_focused,
-    &.radio_hovered {
-        .radio__box {
-            border-color: var(--color-border-control-focused-alfa-on-white);
+        &.radio_hovered .radio__box,
+        &.radio_focused .radio__box {
+            background: rgba(239, 49, 36, 1);
         }
     }
 
     &.radio_focused {
         .radio__box {
-            &:before {
-                box-sizing: border-box;
-                content: '';
-                display: block;
-                position: absolute;
-                z-index: 1;
-                background: transparent;
-                border: 2px solid rgba(11, 31, 53, 0.95);
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+            background: rgba(11, 31, 53, 0.1);
+
+            &:after {
+                border-color: rgba(11, 31, 53, 0.95);
             }
+        }
+    }
+
+    &.radio_hovered {
+        .radio__box {
+            background: rgba(11, 31, 53, 0.1);
         }
     }
 
@@ -61,12 +44,28 @@
         color: var(--color-content-disabled-alfa-on-white);
 
         .radio__box {
+            background: rgba(11, 31, 53, 0.2);
             border-color: transparent;
+        }
+    }
+
+    &.radio:active {
+        .radio__box {
             background: rgba(11, 31, 53, 0.2);
         }
 
-        &.radio_hovered .radio__box {
-            background: rgba(11, 31, 53, 0.2);
+        &.radio_checked {
+            .radio__box,
+            &.radio_hovered .radio__box,
+            &.radio_focused .radio__box {
+                background: var(--color-accent-alt);
+            }
+        }
+
+        &.radio_disabled {
+            .radio__box {
+                background: rgba(11, 31, 53, 0.2);
+            }
         }
     }
 }

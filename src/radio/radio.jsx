@@ -130,33 +130,31 @@ class Radio extends React.PureComponent {
     }
 
     renderNormalRadio(cn, checked) {
-        return (
-            <div>
-                <span className={ cn('box') }>
-                    <input
-                        checked={ checked }
-                        disabled={ this.props.disabled }
-                        name={ this.props.name }
-                        id={ this.props.id }
-                        value={ this.props.value }
-                        autoComplete='off'
-                        tabIndex='-1'
-                        type='radio'
-                        className={ cn('control') }
-                        ref={ (control) => {
-                            this.control = control;
-                        } }
-                        onClick={ this.handleInputControlClick }
-                        onChange={ this.handleChange }
-                    />
+        return [
+            <span className={ cn('box') }>
+                <input
+                    checked={ checked }
+                    disabled={ this.props.disabled }
+                    name={ this.props.name }
+                    id={ this.props.id }
+                    value={ this.props.value }
+                    autoComplete='off'
+                    tabIndex='-1'
+                    type='radio'
+                    className={ cn('control') }
+                    ref={ (control) => {
+                        this.control = control;
+                    } }
+                    onClick={ this.handleInputControlClick }
+                    onChange={ this.handleChange }
+                />
+            </span>,
+            this.props.text && (
+                <span className={ cn('text') } role='presentation'>
+                    { this.props.text }
                 </span>
-                { this.props.text && (
-                    <span className={ cn('text') } role='presentation'>
-                        { this.props.text }
-                    </span>
-                ) }
-            </div>
-        );
+            )
+        ];
     }
 
     renderButtonRadio(cn, checked, TagButton) {
@@ -245,7 +243,9 @@ class Radio extends React.PureComponent {
 
     @autobind
     handleMouseEnter(event) {
-        this.setState({ hovered: true });
+        if (!this.props.disabled) {
+            this.setState({ hovered: true });
+        }
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
@@ -254,7 +254,9 @@ class Radio extends React.PureComponent {
 
     @autobind
     handleMouseLeave(event) {
-        this.setState({ hovered: false });
+        if (!this.props.disabled) {
+            this.setState({ hovered: false });
+        }
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);

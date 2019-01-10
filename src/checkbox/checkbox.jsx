@@ -147,21 +147,21 @@ class CheckBox extends React.PureComponent {
                     <IconCheck
                         className={ cn('icon') }
                         size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        theme='alfa-on-color'
                     />
                 ) }
                 { !checked && this.props.indeterminate && (
                     <IconIndeterminate
                         className={ cn('icon') }
                         size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        theme='alfa-on-color'
                     />
                 ) }
                 { checked && this.props.indeterminate && (
                     <IconCheck
                         className={ cn('icon') }
                         size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        theme='alfa-on-color'
                     />
                 ) }
             </span>,

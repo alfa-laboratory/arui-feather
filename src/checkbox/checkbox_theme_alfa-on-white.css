@@ -10,43 +10,17 @@
     .checkbox__box {
         background: rgba(11, 31, 53, 0.05);
         border: 1px solid rgba(11, 31, 53, 0.6);
-        transition: all 0.1s 0.1s ease-out;
-    }
-
-    &.checkbox:active {
-        .checkbox__box {
-            background: rgba(11, 31, 53, 0.2);
-        }
-
-        &.checkbox_checked {
-            .checkbox__box {
-                background: #9e0c00;
-            }
-
-            &.checkbox_hovered {
-                .checkbox__box {
-                    background: #9e0c00;
-                }
-            }
-
-            &.checkbox_focused {
-                .checkbox__box {
-                    background: #9e0c00;
-                }
-            }
-        }
     }
 
     &.checkbox_checked {
         .checkbox__box {
-            background: rgba(240, 50, 38, 0.85);
-            border-color: rgba(11, 31, 53, 0.24);
-            transition: all 0.1s ease-out;
+            background: rgba(239, 49, 36, 0.85);
+            border-color: rgba(11, 31, 53, 0.25);
         }
 
         &.checkbox_hovered .checkbox__box,
         &.checkbox_focused .checkbox__box {
-            background: #f03226;
+            background: rgba(239, 49, 36, 1);
         }
     }
 
@@ -55,17 +29,7 @@
             background: rgba(11, 31, 53, 0.1);
 
             &:after {
-                box-sizing: border-box;
-                content: '';
-                display: block;
-                position: absolute;
-                z-index: 1;
-                background: transparent;
-                border-radius: 4px;
-                border: 2px solid rgba(11, 31, 53, 0.95);
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                border-color: rgba(11, 31, 53, 0.95);
             }
         }
     }
@@ -83,8 +47,22 @@
             background: rgba(11, 31, 53, 0.2);
             border-color: transparent;
         }
+    }
 
-        &.checkbox:active {
+    &.checkbox:active {
+        .checkbox__box {
+            background: rgba(11, 31, 53, 0.2);
+        }
+
+        &.checkbox_checked {
+            .checkbox__box,
+            &.checkbox_hovered .checkbox__box,
+            &.checkbox_focused .checkbox__box {
+                background: var(--color-accent-alt);
+            }
+        }
+
+        &.checkbox_disabled {
             .checkbox__box {
                 background: rgba(11, 31, 53, 0.2);
             }

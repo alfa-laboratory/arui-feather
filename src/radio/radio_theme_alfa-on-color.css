@@ -15,15 +15,24 @@
     &.radio_checked {
         .radio__box {
             background: var(--color-accent-translucent);
-            border-color: transparent;
         }
 
-        &.radio_hovered .radio__box {
+        &.radio_hovered .radio__box,
+        &.radio_focused .radio__box {
             background: var(--color-accent);
         }
     }
 
-    &.radio_focused,
+    &.radio_focused {
+        .radio__box {
+            border-color: var(--color-border-control-focused-alfa-on-color);
+
+            &:after {
+                border-color: var(--color-border-control-focused-alfa-on-color);
+            }
+        }
+    }
+
     &.radio_hovered {
         .radio__box {
             border-color: var(--color-border-control-focused-alfa-on-color);
@@ -36,10 +45,6 @@
         .radio__box {
             background: var(--color-background-control-disabled-alfa-on-color);
             border-color: transparent;
-
-            &:after {
-                background: var(--color-accent-content-minor);
-            }
         }
     }
 }

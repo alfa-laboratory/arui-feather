@@ -507,9 +507,10 @@ ajv@^6.0.1, ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.1"
 
-alfa-ui-primitives@1.6.7:
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.6.7.tgz#e037beaec04c048b0c4982534415548e5b32d7c4"
+alfa-ui-primitives@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.8.0.tgz#8b15c39adc8bec5b4716341bd654f0539059796b"
+  integrity sha512-q0JpPxN5+GcLeAnPFobNeQzyLUDTaBiZk5nsh4XTKfOnk52+yPAjG2V86lp1jX0d6man7uVHUSU8ckLX80o7Og==
 
 aliasify@^1.7.2, aliasify@^1.9.0:
   version "1.9.0"

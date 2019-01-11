@@ -7,14 +7,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент ссылки.
  */
 @cn('link')
-@performance()
-class Link extends React.Component {
+class Link extends React.PureComponent {
     static propTypes = {
         /** Иконка ссылки */
         icon: Type.node,

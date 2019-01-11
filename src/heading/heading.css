@@ -13,8 +13,7 @@
         font-size: var(--font-size-2xl);
         line-height: var(--line-height-condensed);
 
-        /* TODO New breakpoint candidate: 600px+ */
-        @media (min-width: 600px) {
+        @media (--tablet-s) {
             font-size: var(--font-size-3xl);
         }
 
@@ -29,7 +28,7 @@
         font-size: var(--font-size-xl);
         line-height: var(--line-height-condensed);
 
-        @media (min-width: 600px) {
+        @media (--tablet-s) {
             margin: var(--gap-4xl) 0 var(--gap-xl);
             font-size: var(--font-size-2xl);
         }
@@ -44,7 +43,7 @@
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
-        @media (min-width: 600px) {
+        @media (--tablet-s) {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-condensed);
         }
@@ -60,7 +59,7 @@
         font-size: var(--font-size-l);
         line-height: var(--line-height-semi-condensed);
 
-        @media (min-width: 600px) {
+        @media (--tablet-s) {
             font-size: var(--font-size-xl);
             line-height: var(--line-height-condensed);
         }

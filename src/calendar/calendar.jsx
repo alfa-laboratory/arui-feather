@@ -21,7 +21,6 @@ import sortedIndexOf from 'lodash.sortedindexof';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import isCurrentDay from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
@@ -35,8 +34,7 @@ const ATTR_DISABLED = 'data-disabled';
  * Компонент календаря.
  */
 @cn('calendar')
-@performance(true)
-class Calendar extends React.Component {
+class Calendar extends React.PureComponent {
     static propTypes = {
         /** Выбранная дата, в формате unix timestamp */
         value: Type.number,
@@ -78,6 +76,8 @@ class Calendar extends React.Component {
         showArrows: Type.bool,
         /** Возможность управления календарём с клавиатуры */
         isKeyboard: Type.bool,
+        /** Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя */
+        width: Type.oneOf(['default', 'available']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -153,7 +153,7 @@ class Calendar extends React.Component {
         return (
             <div
                 ref={ (root) => { this.root = root; } }
-                className={ cn() }
+                className={ cn({ width: this.props.width }) }
                 id={ this.props.id }
                 role='grid'
                 tabIndex='0'
@@ -519,7 +519,8 @@ class Calendar extends React.Component {
      * Генерирует событие, что значие даты изменилось.
      *
      * @param {Number} timestamp Дата
-     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие произошло из-за нажатия пользователем кнопки на клавиатуре
+     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
+     * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
     performChange(timestamp, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
@@ -542,7 +543,8 @@ class Calendar extends React.Component {
      * Генерирует событие, что значение даты изменилось на переданной число дней.
      *
      * @param {Number} dayShift Смещение текущей даты в днях.
-     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие произошло из-за нажатия пользователем кнопки на клавиатуре
+     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
+     * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
     performChangeWithShift(dayShift, isTriggeredByKeyboard) {
         if (!this.ensureValueInLimits(dayShift)) {

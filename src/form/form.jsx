@@ -7,14 +7,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент формы.
  */
 @cn('form')
-@performance()
-class Form extends React.Component {
+class Form extends React.PureComponent {
     static propTypes = {
         /** Способ кодирования данных формы при их отправке */
         enctype: Type.oneOf(['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain']),

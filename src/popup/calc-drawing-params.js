@@ -152,9 +152,11 @@ export function calcFitContainerDimensions(popup) {
  * Рассчитывает пересечения Popup и контейнера, в котором он рендерится.
  *
  * @param {Point} position Позиция
- * @param {Rect} fitContainerDimensions Размеры контейнера, в который будет рендерится Popup
+ * @param {Rect} fitContainerDimensions Размеры контейнера, в который будет
+ * рендерится Popup
  * @param {PopupDimension} popupDimensions Размеры попапа
- * @param {PopupHash} popupOffsetFitContainer Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера
+ * @param {PopupHash} popupOffsetFitContainer Минимально допустимое смещение в
+ * пикселях всплывающего окна от края его контейнера
  * @returns {Number}
  */
 function calcFitContainerFactor(

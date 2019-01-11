@@ -6,14 +6,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Компонент списка.
  */
 @cn('list')
-@performance(true)
-class List extends React.Component {
+class List extends React.PureComponent {
     static propTypes = {
         /** Список элементов */
         items: Type.arrayOf(Type.shape({

@@ -6,14 +6,12 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
-import performance from '../performance';
 
 /**
  * Базовый компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
  */
 @cn('icon')
-@performance()
-class Icon extends React.Component {
+class Icon extends React.PureComponent {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

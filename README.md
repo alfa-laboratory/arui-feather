@@ -99,7 +99,7 @@ npm install arui-feather --save
 
 Запуск unit-тестов для определенных компонентов `TESTS=amount,calendar npm run test`.
 
-Запуск unit-тестов используя Chrome `npm run test -- --browsers=Chrome`
+Запуск unit-тестов используя Chrome `npm run test -- --browser=Chrome`
 
 Запуск линтера для css `npm run lint-css`.
 
@@ -142,19 +142,6 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 
 [Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md).
 
-Оптимизация производительности компонентов
--------------------------------------------
-Для оптимизации производительности компонентов используется метод
-[shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom),
-реализуемый декоратором [@performance](./src/performance.js).
-
-Пример использования:
-```
-import performance from '../performance';
-
-@performance(true)
-class Component extends React.Component {}
-```
 
 Использование Modernizr
 -----------------------

@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* eslint-disable max-len */
+
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import formatDate from 'date-fns/format';
@@ -20,7 +22,6 @@ import keyboardCode from '../lib/keyboard-code';
 import Modernizr from '../modernizr';
 import { isNodeOutsideElement } from '../lib/window';
 import { parseDate, calculateMonth, changeDateFormat } from './utils';
-import performance from '../performance';
 
 /**
  * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
@@ -37,8 +38,7 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
  * Компонент для ввода даты.
  */
 @cn('calendar-input', Input, Popup)
-@performance(true)
-class CalendarInput extends React.Component {
+class CalendarInput extends React.PureComponent {
     static propTypes = {
         /** Содержимое поля ввода */
         value: Type.string,

@@ -64,4 +64,8 @@
             font-weight: var(--font-weight-bold);
         }
     }
+
+    &_width_available {
+        width: 100%;
+    }
 }

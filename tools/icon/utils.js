@@ -6,7 +6,7 @@ const path = require('path');
 const handlebars = require('handlebars');
 const fs = require('fs');
 
-const SIZE_ORDER = ['s', 'm', 'l', 'xl', 'xxl'];
+const SIZE_ORDER = ['s', 'm', 'l', 'xl', 'xxl', 'xxxl'];
 
 const ICON_REGEXP = new RegExp(/([a-z]*)(_)(.*?)(_)(.*?)(_)([a-z]*)/, 'i');
 

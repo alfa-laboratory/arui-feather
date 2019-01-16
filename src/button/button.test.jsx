@@ -9,26 +9,24 @@ import { getComponentScreenshot, matchScreenshot } from '../../__tests__/tools';
 
 import Button from './button';
 
+const CSSPaths = [
+    './button.css',
+    './button_theme_alfa-on-color.css',
+    './button_theme_alfa-on-white.css',
+    './test-styles.css'
+].map(item => path.resolve(__dirname, item));
+const ScreenshotOptions = {
+    clip: {
+        x: 0,
+        y: 0,
+        width: 200,
+        height: 70
+    }
+};
+
 describe('button', () => {
     test('should match screenshot', async () => {
-        const screenshot = await getComponentScreenshot(
-            <Button>Button-example</Button>,
-            [
-                './button.css',
-                './button_theme_alfa-on-color.css',
-                './button_theme_alfa-on-white.css',
-                './test-styles.css'
-            ].map(item => path.resolve(__dirname, item)),
-            {
-                clip: {
-                    x: 0,
-                    y: 0,
-                    width: 200,
-                    height: 70
-                }
-            }
-        );
-
+        const screenshot = await getComponentScreenshot(<Button>Button-example</Button>, CSSPaths, ScreenshotOptions);
         matchScreenshot(screenshot);
     });
 

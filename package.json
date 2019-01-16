@@ -7,8 +7,10 @@
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest 'button.'",
     "test:coverage": "npm run test -- --coverage",
+    "docker-build": "./docker-build.sh $npm_package_name $npm_package_version",
+    "docker-test": "yarn docker-build && ./docker-run.sh $npm_package_name $npm_package_version && echo 'Tests are finished!' ",
     "lint": "npm run lint-css && npm run lint-js",
     "lint-js": "eslint ./*.js ./src/ ./gemini/ --ext .js,.jsx",
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
@@ -111,6 +113,8 @@
     "@types/jest": "^23.3.5",
     "@types/jest-image-snapshot": "^2.4.0",
     "@types/puppeteer": "^1.9.0",
+    "@types/react": "^16.7.19",
+    "@types/react-dom": "^16.0.11",
     "alfa-ui-primitives": "1.8.0",
     "arui-presets": "4.13.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",

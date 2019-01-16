@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import fs from 'fs';
-import { renderToStaticMarkup } from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server';
 import postcss from 'postcss';
 import puppeteer from 'puppeteer';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
@@ -55,9 +55,13 @@ export const renderComponentPage = async (reactNode, stylesPathList) => {
     }
 
     const styleList = await Promise.all(stylesPathList.map(path => processCss(path)));
-    const html = renderToStaticMarkup(reactNode);
+    const html = ReactDOMServer.renderToStaticMarkup(reactNode);
 
-    return `${styleList.map(result => `<style type="text/css">\n${result.css}\n</style>`).join('')}\n${html}`.trim();
+    const content = `${styleList
+        .map(result => `<style type="text/css">\n${result.css}\n</style>`)
+        .join('')}\n${html}`.trim();
+
+    return content;
 };
 
 /**
@@ -82,12 +86,20 @@ export const createPuppeteerNewPage = async (html) => {
  * @param {puppeteer.ScreenshotOptions} [screenshotOptions]
  * @return {Buffer} The image buffer
  */
-export const getComponentScreenshot = async (reactNode, stylesPathList, screenshotOptions) => {
+export const getComponentScreenshot = async (reactNode, stylesPathList, screenshotOptions, viewportObj) => {
     const html = await renderComponentPage(reactNode, stylesPathList);
     const page = await createPuppeteerNewPage(html);
-    const screenshot = await page.screenshot(screenshotOptions);
 
-    return screenshot;
+    if (viewportObj) {
+        await page.setViewport(viewportObj);
+    }
+
+    await page.waitFor(256);
+    await page.screenshot({ ...screenshotOptions, path: `${__dirname}/screenshot.png` });
+
+    page.close();
+
+    return fs.readFileSync(`${__dirname}/screenshot.png`);
 };
 
 /**

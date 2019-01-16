@@ -37,6 +37,6 @@ describe('App', () => {
     it('renders', async () => {
         const response = await page.goto('http://google.com/');
         assert(response.ok());
-        await page.screenshot({ path: '/screenshots/app.png' });
+        await page.screenshot({ path: `${__dirname}/screenshots/app.png` });
     });
 });

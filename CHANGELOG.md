@@ -1,3 +1,29 @@
+<a name="13.3.3"></a>
+## [13.3.3](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.2...v13.3.3) (2019-01-16)
+
+
+### Bug Fixes
+
+* **icon:** fix size prop type ([#770](https://github.com/alfa-laboratory/arui-feather/issues/770)) ([63b88d5](https://github.com/alfa-laboratory/arui-feather/commit/63b88d5))
+
+
+
+<a name="13.3.2"></a>
+## [13.3.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.1...v13.3.2) (2019-01-11)
+
+
+### Bug Fixes
+
+* **input:** input with label and placeholder in ie11 ([#767](https://github.com/alfa-laboratory/arui-feather/issues/767)) ([57c1a86](https://github.com/alfa-laboratory/arui-feather/commit/57c1a86))
+* **money-input:** width available prop and CSS ([#768](https://github.com/alfa-laboratory/arui-feather/issues/768)) ([33746e8](https://github.com/alfa-laboratory/arui-feather/commit/33746e8))
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.8.0 ([#766](https://github.com/alfa-laboratory/arui-feather/issues/766)) ([d1c9545](https://github.com/alfa-laboratory/arui-feather/commit/d1c9545))
+
+
+
 <a name="13.3.1"></a>
 ## [13.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.0...v13.3.1) (2019-01-09)
 

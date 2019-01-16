@@ -101,6 +101,7 @@ class Radio extends React.PureComponent {
         let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
+            // eslint-disable-next-line
             <label
                 className={ cn({
                     size: this.props.size,
@@ -118,6 +119,8 @@ class Radio extends React.PureComponent {
                 onBlur={ this.handleBlur }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
+                onMouseDown={ this.handleUnfocus }
+                onMouseUp={ this.handleUnfocus }
                 ref={ (label) => {
                     this.label = label;
                 } }
@@ -226,6 +229,8 @@ class Radio extends React.PureComponent {
         }
     }
 
+    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+
     @autobind
     handleBlur(event) {
         if (!this.props.disabled) {
@@ -292,7 +297,8 @@ class Radio extends React.PureComponent {
         let elementRect = this.label.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            // eslint-disable-next-line
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }
 }

@@ -102,6 +102,7 @@ class CheckBox extends React.PureComponent {
         let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
+            // eslint-disable-next-line
             <label
                 className={ cn({
                     size: this.props.size,
@@ -113,10 +114,12 @@ class CheckBox extends React.PureComponent {
                     width: this.props.type === 'button' ? this.props.width : null
                 }) }
                 htmlFor={ this.props.id }
-                onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                onFocus={ this.handleFocus }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
+                onMouseDown={ this.handleUnfocus }
+                onMouseUp={ this.handleUnfocus }
                 ref={ (root) => {
                     this.root = root;
                 } }
@@ -233,6 +236,8 @@ class CheckBox extends React.PureComponent {
         }
     }
 
+    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+
     @autobind
     handleBlur(event) {
         this.setState({ focused: false });
@@ -293,7 +298,8 @@ class CheckBox extends React.PureComponent {
         let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            // eslint-disable-next-line
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }
 }

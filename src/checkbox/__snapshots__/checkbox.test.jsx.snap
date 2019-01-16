@@ -5,8 +5,10 @@ exports[`checkbox should render without problems 1`] = `
   className="checkbox checkbox_size_m checkbox_theme_alfa-on-white"
   onBlur={[Function]}
   onFocus={[Function]}
+  onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
+  onMouseUp={[Function]}
 >
   <span
     className="checkbox__box"

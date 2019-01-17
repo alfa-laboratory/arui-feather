@@ -7,7 +7,7 @@
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "test": "jest 'button.'",
+    "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "docker-build": "./docker-build.sh $npm_package_name $npm_package_version",
     "docker-test": "yarn docker-build && ./docker-run.sh $npm_package_name $npm_package_version && echo 'Tests are finished!' ",
@@ -126,6 +126,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "fast-png": "^3.1.0",
     "gemini": "5.5.0",
     "gemini-babel": "^1.0.0",
     "gemini-optipng": "^1.2.0",

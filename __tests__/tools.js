@@ -3,7 +3,9 @@ import fs from 'fs';
 import ReactDOMServer from 'react-dom/server';
 import postcss from 'postcss';
 import puppeteer from 'puppeteer';
+import { resolve } from 'path';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
+import * as png from 'fast-png';
 import postcssConfig from '../postcss.config';
 
 // Extending jest's expect for matching screenshots
@@ -13,6 +15,7 @@ expect.extend({ toMatchImageSnapshot });
  * Puppeteer browser
  */
 let puppeteerBrowser;
+const defaultViewportObj = { width: 1280, height: 720 };
 
 beforeAll(async () => {
     puppeteerBrowser = await puppeteer.launch({
@@ -89,17 +92,20 @@ export const createPuppeteerNewPage = async (html) => {
 export const getComponentScreenshot = async (reactNode, stylesPathList, screenshotOptions, viewportObj) => {
     const html = await renderComponentPage(reactNode, stylesPathList);
     const page = await createPuppeteerNewPage(html);
+    const viewport = viewportObj || defaultViewportObj;
 
-    if (viewportObj) {
-        await page.setViewport(viewportObj);
-    }
-
-    await page.waitFor(256);
-    await page.screenshot({ ...screenshotOptions, path: `${__dirname}/screenshot.png` });
+    await page.setViewport(viewport);
+    await page.waitFor(1024);
+    const screenshot = await page.screenshot({ ...screenshotOptions });
 
     page.close();
 
-    return fs.readFileSync(`${__dirname}/screenshot.png`);
+    const pngEncodedScreenshot = png.encode({
+        ...viewport,
+        data: screenshot
+    });
+
+    return pngEncodedScreenshot;
 };
 
 /**
@@ -107,3 +113,5 @@ export const getComponentScreenshot = async (reactNode, stylesPathList, screensh
  * @param {Buffer} screenshot The image buffer
  */
 export const matchScreenshot = screenshot => expect(screenshot).toMatchImageSnapshot();
+
+export const testCSSPath = resolve(__dirname, '../integration-tests/test-styles.css');

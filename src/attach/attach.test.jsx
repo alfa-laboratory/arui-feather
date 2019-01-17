@@ -4,14 +4,30 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
+import path from 'path';
+import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__tests__/tools';
 
 import Attach from './attach';
+
+const CSSPaths = ['./attach.css', './attach_theme_alfa-on-color.css', './attach_theme_alfa-on-white.css'].map(item =>
+    path.resolve(__dirname, item)
+);
+const ScreenshotOptions = {};
 
 describe('attach', () => {
     it('should render without problems', () => {
         let attach = mount(<Attach />);
 
         expect(attach).toMatchSnapshot();
+    });
+
+    test('should match screenshot', async () => {
+        const screenshot = await getComponentScreenshot(
+            <Attach>Attach-example</Attach>,
+            [...CSSPaths, testCSSPath],
+            ScreenshotOptions
+        );
+        matchScreenshot(screenshot);
     });
 
     it('should set/unset class on attach focused/unfocused', () => {
@@ -91,9 +107,12 @@ describe('attach', () => {
         let controlNode = attach.find('.attach__control');
         controlNode.simulate('change', {
             target: {
-                files: [{
-                    name: 'test.txt', type: 'application/text'
-                }]
+                files: [
+                    {
+                        name: 'test.txt',
+                        type: 'application/text'
+                    }
+                ]
             }
         });
 
@@ -108,13 +127,16 @@ describe('attach', () => {
             target: {
                 files: [
                     {
-                        name: 'test1.txt', type: 'application/text'
+                        name: 'test1.txt',
+                        type: 'application/text'
                     },
                     {
-                        name: 'test2.txt', type: 'application/text'
+                        name: 'test2.txt',
+                        type: 'application/text'
                     },
                     {
-                        name: 'test3.txt', type: 'application/text'
+                        name: 'test3.txt',
+                        type: 'application/text'
                     }
                 ]
             }
@@ -129,9 +151,12 @@ describe('attach', () => {
         let controlNode = attach.find('.attach__control');
         controlNode.simulate('change', {
             target: {
-                files: [{
-                    name: 'test.txt', type: 'application/text'
-                }]
+                files: [
+                    {
+                        name: 'test.txt',
+                        type: 'application/text'
+                    }
+                ]
             }
         });
 

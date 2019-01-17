@@ -13,3 +13,4 @@ coverage/
 gemini-coverage/
 gemini-report/
 tools/modernizr.js
+.DS_Store

@@ -4,16 +4,11 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import path from 'path';
-import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__tests__/tools';
+// import path from 'path';
+// import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__tests__/tools';
 
 import Amount from './amount';
 import { CURRENCY_MAP } from '../lib/currency-codes';
-
-const CSSPaths = ['./attach.css', './attach_theme_alfa-on-color.css', './attach_theme_alfa-on-white.css'].map(item =>
-    path.resolve(__dirname, item)
-);
-const ScreenshotOptions = {};
 
 describe('amount', () => {
     it('should render without problems', () => {
@@ -34,14 +29,17 @@ describe('amount', () => {
         expect(amount.text()).toContain(`1 233 141,45 ${CURRENCY_MAP.RUR}`);
     });
 
-    test('should match screenshot', async () => {
-        const screenshot = await getComponentScreenshot(
-            <Amount>Amount-example</Amount>,
-            [...CSSPaths, testCSSPath],
-            ScreenshotOptions
-        );
-        matchScreenshot(screenshot);
-    });
+    // test('should match screenshot', async () => {
+    //     const cssPaths = ['./amount.css'].map(item => path.resolve(__dirname, item));
+    //     const screenshotOptions = {};
+
+    //     const screenshot = await getComponentScreenshot(
+    //         <Amount>Amount-example</Amount>,
+    //         [...cssPaths, testCSSPath],
+    //         screenshotOptions
+    //     );
+    //     matchScreenshot(screenshot);
+    // });
 
     it('should render when amount is negative', () => {
         let amount = mount(

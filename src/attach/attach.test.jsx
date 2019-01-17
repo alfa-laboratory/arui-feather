@@ -9,11 +9,6 @@ import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__te
 
 import Attach from './attach';
 
-const CSSPaths = ['./attach.css', './attach_theme_alfa-on-color.css', './attach_theme_alfa-on-white.css'].map(item =>
-    path.resolve(__dirname, item)
-);
-const ScreenshotOptions = {};
-
 describe('attach', () => {
     it('should render without problems', () => {
         let attach = mount(<Attach />);
@@ -21,12 +16,20 @@ describe('attach', () => {
         expect(attach).toMatchSnapshot();
     });
 
-    test('should match screenshot', async () => {
+    test('should match screenshots', async () => {
+        const cssPaths = ['./attach.css', './attach_theme_alfa-on-color.css', './attach_theme_alfa-on-white.css'].map(
+            item => path.resolve(__dirname, item)
+        );
+
+        const screenshotOptions = {};
+
         const screenshot = await getComponentScreenshot(
             <Attach>Attach-example</Attach>,
-            [...CSSPaths, testCSSPath],
-            ScreenshotOptions
+            [...cssPaths, testCSSPath],
+            { width: 400, height: 100 },
+            screenshotOptions
         );
+
         matchScreenshot(screenshot);
     });
 

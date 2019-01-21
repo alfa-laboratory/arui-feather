@@ -1,0 +1,26 @@
+@import '../src/vars.css';
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.test-box {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+.test-box_width_available {
+    display: block;
+}
+
+.test-box_theme_alfa-on-white {
+    color: var(--color-content-alfa-on-white);
+}
+
+.test-box_theme_alfa-on-color {
+    color: var(--color-content-alfa-on-color);
+    background: var(--color-background-alfa-on-color);
+}

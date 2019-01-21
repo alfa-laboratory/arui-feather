@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import path from 'path';
-import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__tests__/tools';
+// import path from 'path';
+// import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__tests__/tools';
 
 import Attach from './attach';
 
@@ -16,22 +16,22 @@ describe('attach', () => {
         expect(attach).toMatchSnapshot();
     });
 
-    test('should match screenshots', async () => {
-        const cssPaths = ['./attach.css', './attach_theme_alfa-on-color.css', './attach_theme_alfa-on-white.css'].map(
-            item => path.resolve(__dirname, item)
-        );
+    // test('should match screenshots', async () => {
+    //     const cssPaths = ['./attach.css', './attach_theme_alfa-on-color.css', './attach_theme_alfa-on-white.css'].map(
+    //         item => path.resolve(__dirname, item)
+    //     );
 
-        const screenshotOptions = {};
+    //     const screenshotOptions = {};
 
-        const screenshot = await getComponentScreenshot(
-            <Attach>Attach-example</Attach>,
-            [...cssPaths, testCSSPath],
-            { width: 400, height: 100 },
-            screenshotOptions
-        );
+    //     const screenshot = await getComponentScreenshot(
+    //         <Attach>Attach-example</Attach>,
+    //         [...cssPaths, testCSSPath],
+    //         { width: 400, height: 100 },
+    //         screenshotOptions
+    //     );
 
-        matchScreenshot(screenshot);
-    });
+    //     matchScreenshot(screenshot);
+    // });
 
     it('should set/unset class on attach focused/unfocused', () => {
         const attach = mount(<Attach />);

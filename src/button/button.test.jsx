@@ -5,27 +5,60 @@
 import path from 'path';
 import React from 'react';
 import { mount } from 'enzyme';
-import { getComponentScreenshot, matchScreenshot, testCSSPath } from '../../__tests__/tools';
+import {
+    getComponentScreenshot,
+    matchScreenshot,
+    testCSSPath,
+    processCssFiles,
+    shallowStringify
+} from '../../__tests__/tools';
+import { TestBox } from '../../__tests__/TestBox';
 
 import Button from './button';
+import IconOk from '../icon/ui/ok';
 
-const cssPaths = ['./button.css', './button_theme_alfa-on-color.css', './button_theme_alfa-on-white.css'].map(item =>
-    path.resolve(__dirname, item)
-);
-const screenshotOptions = {};
-const viewport = { width: 200, height: 70 };
+describe('button screenshots', async () => {
+    const styles = processCssFiles(
+        ['./button.css', './button_theme_alfa-on-color.css', './button_theme_alfa-on-white.css', testCSSPath].map(
+            item => path.resolve(__dirname, item)
+        )
+    );
+
+    const makeScreenshot = async (template, state) => getComponentScreenshot(template, await styles, state);
+
+    const NAME = 'button';
+    const THEMES = ['alfa-on-color', 'alfa-on-white'];
+    const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
+    // const SIZES = ['s', 'm', 'l', 'xl'];
+
+    const PROP_SETS = [{}, { view: 'action' }, { view: 'extra' }, { pseudo: true }, { disabled: true }];
+
+    describe(NAME, () => {
+        THEMES.forEach((theme) => {
+            SIZES.forEach((size) => {
+                PROP_SETS.concat([{ icon: <IconOk size={ size } /> }]).forEach((set) => {
+                    test(`${NAME} ${theme} size ${size} (${shallowStringify(set) || '-'})`, async () => {
+                        let props = { theme, size, ...set };
+                        let template = (
+                            <TestBox theme={ theme }>
+                                <Button { ...props }>Button</Button>
+                            </TestBox>
+                        );
+
+                        if (set.disabled) {
+                            await matchScreenshot(await makeScreenshot(template, 'plan'));
+                        } else {
+                            await matchScreenshot(await makeScreenshot(template, 'hover'));
+                            // await matchScreenshot(await makeScreenshot(template, 'pressed'));
+                        }
+                    });
+                });
+            });
+        });
+    });
+});
 
 describe('button', () => {
-    test('should match screenshot', async () => {
-        const screenshot = await getComponentScreenshot(
-            <Button>Button-example</Button>,
-            [...cssPaths, testCSSPath],
-            viewport,
-            screenshotOptions
-        );
-        matchScreenshot(screenshot);
-    });
-
     test('should set/unset class on button pressed/unpressed', () => {
         let button = mount(<Button>Button-example</Button>);
 

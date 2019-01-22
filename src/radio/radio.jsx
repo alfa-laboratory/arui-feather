@@ -101,7 +101,7 @@ class Radio extends React.PureComponent {
         let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
-            // eslint-disable-next-line
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
                 className={ cn({
                     size: this.props.size,

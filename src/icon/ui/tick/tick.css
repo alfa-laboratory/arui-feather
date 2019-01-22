@@ -34,6 +34,14 @@
     background-image: url('./icon_tick_xl_white.svg');
 }
 
+.icon_size_xs.icon_name_tick.icon_theme_alfa-on-white {
+    background-image: url('./icon_tick_xs_black.svg');
+}
+
+.icon_size_xs.icon_name_tick.icon_theme_alfa-on-color {
+    background-image: url('./icon_tick_xs_white.svg');
+}
+
 .icon_size_xxl.icon_name_tick.icon_theme_alfa-on-white {
     background-image: url('./icon_tick_xxl_black.svg');
 }

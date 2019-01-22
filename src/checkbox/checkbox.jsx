@@ -102,7 +102,7 @@ class CheckBox extends React.PureComponent {
         let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
-            // eslint-disable-next-line
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
                 className={ cn({
                     size: this.props.size,
@@ -298,7 +298,7 @@ class CheckBox extends React.PureComponent {
         let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            // eslint-disable-next-line
+            // eslint-disable-next-line no-mixed-operators
             targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }

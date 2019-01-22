@@ -297,7 +297,7 @@ class Radio extends React.PureComponent {
         let elementRect = this.label.getBoundingClientRect();
 
         scrollTo({
-            // eslint-disable-next-line
+            // eslint-disable-next-line no-mixed-operators
             targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }

@@ -6,7 +6,7 @@ import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
-import IconCheck from '../icon/ui/check-bold';
+import IconCheck from '../icon/ui/tick';
 import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
@@ -149,7 +149,7 @@ class CheckBox extends React.PureComponent {
                 { !this.props.indeterminate && (
                     <IconCheck
                         className={ cn('icon') }
-                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        size={ this.props.size === 'l' ? 's' : 'xs' }
                         theme='alfa-on-color'
                     />
                 ) }
@@ -163,7 +163,7 @@ class CheckBox extends React.PureComponent {
                 { checked && this.props.indeterminate && (
                     <IconCheck
                         className={ cn('icon') }
-                        size={ this.props.size === 'l' ? 'm' : 's' }
+                        size={ this.props.size === 'l' ? 's' : 'xs' }
                         theme='alfa-on-color'
                     />
                 ) }

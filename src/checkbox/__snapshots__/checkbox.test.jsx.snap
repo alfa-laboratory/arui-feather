@@ -22,9 +22,9 @@ exports[`checkbox should render without problems 1`] = `
       onClick={[Function]}
       type="checkbox"
     />
-    <IconCheckBold
+    <IconTick
       className="checkbox__icon"
-      size="s"
+      size="xs"
       theme="alfa-on-color"
     />
   </span>

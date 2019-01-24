@@ -139,7 +139,6 @@ class Mask {
                     cleanValueIndex += 1;
                 }
             } else {
-                // FIXME
                 // eslint-disable-next-line no-cond-assign
                 while ((cleanValueChar = cleanValue.charAt(cleanValueIndex)) !== '') {
                     if (this.pattern.isValidAtIndex(cleanValueChar, patternIndex)) {

@@ -6,12 +6,15 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
+
 
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
 @cn('tabs')
-export default class Tabs extends React.PureComponent {
+@performance()
+export default class Tabs extends React.Component {
     static propTypes = {
         /** Управление возможность скроллить компонент по-горизонтали */
         scrollable: Type.bool,

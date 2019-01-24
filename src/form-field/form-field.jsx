@@ -6,13 +6,15 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Компонент поля формы.
  * Необходим для вертикального ритма в форме.
  */
 @cn('form-field')
-class FormField extends React.PureComponent {
+@performance()
+class FormField extends React.Component {
     static propTypes = {
         /** Дочерние элементы `FormField` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),

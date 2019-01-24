@@ -8,12 +8,14 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Компонент группы чекбоксов.
  */
 @cn('checkbox-group')
-class CheckBoxGroup extends React.PureComponent {
+@performance()
+class CheckBoxGroup extends React.Component {
     static propTypes = {
         /** Тип компонента */
         type: Type.oneOf(['normal', 'button', 'line']),

@@ -11,13 +11,15 @@ import Link from '../link/link';
 import Popup from '../popup/popup';
 
 import cn from '../cn';
+import performance from '../performance';
 import { POPUP_MAIN_OFFSET } from '../vars';
 
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
 @cn('dropdown')
-class Dropdown extends React.PureComponent {
+@performance()
+class Dropdown extends React.Component {
     static propTypes = {
         /** Тип компонента */
         switcherType: Type.oneOf(['link', 'button']),

@@ -10,12 +10,14 @@ import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Заголовок в Popup.
  */
 @cn('popup-header')
-class PopupHeader extends React.PureComponent {
+@performance()
+class PopupHeader extends React.Component {
     static propTypes = {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),

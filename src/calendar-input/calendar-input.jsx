@@ -22,6 +22,7 @@ import keyboardCode from '../lib/keyboard-code';
 import Modernizr from '../modernizr';
 import { isNodeOutsideElement } from '../lib/window';
 import { parseDate, calculateMonth, changeDateFormat } from './utils';
+import performance from '../performance';
 
 /**
  * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
@@ -38,7 +39,8 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
  * Компонент для ввода даты.
  */
 @cn('calendar-input', Input, Popup)
-class CalendarInput extends React.PureComponent {
+@performance(true)
+class CalendarInput extends React.Component {
     static propTypes = {
         /** Содержимое поля ввода */
         value: Type.string,

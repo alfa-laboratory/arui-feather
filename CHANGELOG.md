@@ -1,3 +1,13 @@
+<a name="13.3.5"></a>
+## [13.3.5](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.4...v13.3.5) (2019-01-24)
+
+
+### Bug Fixes
+
+* [@performance](https://github.com/performance) is back ([#774](https://github.com/alfa-laboratory/arui-feather/issues/774)) ([a29c09a](https://github.com/alfa-laboratory/arui-feather/commit/a29c09a))
+
+
+
 <a name="13.3.4"></a>
 ## [13.3.4](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.3...v13.3.4) (2019-01-22)
 

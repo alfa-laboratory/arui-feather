@@ -142,6 +142,19 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 
 [Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md).
 
+Оптимизация производительности компонентов
+-------------------------------------------
+Для оптимизации производительности компонентов используется метод
+[shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom),
+реализуемый декоратором [@performance](./src/performance.js).
+
+Пример использования:
+```
+import performance from '../performance';
+
+@performance(true)
+class Component extends React.Component {}
+```
 
 Использование Modernizr
 -----------------------

@@ -6,6 +6,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 const HEADING_LEVEL = {
     xl: 1,
@@ -19,7 +20,8 @@ const HEADING_LEVEL = {
  * Компонент заголовка.
  */
 @cn('heading')
-class Heading extends React.PureComponent {
+@performance()
+class Heading extends React.Component {
     static propTypes = {
         /** Дочерние элементы `Heading` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),

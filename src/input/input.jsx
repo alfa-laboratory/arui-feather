@@ -13,6 +13,7 @@ import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import cn from '../cn';
+import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -20,6 +21,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
  * Компонент текстового поля ввода.
  */
 @cn('input', MaskedInput)
+@performance()
 class Input extends React.Component {
     static propTypes = {
         /**

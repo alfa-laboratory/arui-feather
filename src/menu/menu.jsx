@@ -15,12 +15,14 @@ import MenuItem from '../menu-item/menu-item';
 import cn from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
+import performance from '../performance';
 
 /**
  * Компонент меню.
  */
 @cn('menu')
-class Menu extends React.PureComponent {
+@performance(true)
+class Menu extends React.Component {
     static propTypes = {
         /** Тип расположения меню: 'horizontal' */
         view: Type.string,

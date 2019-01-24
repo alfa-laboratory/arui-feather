@@ -3,6 +3,8 @@ import Type from 'prop-types';
 
 import autobind from 'core-decorators/lib/autobind';
 
+import performance from '../performance';
+
 export const getCoordinates = ({
     touches, changedTouches, clientX, clientY
 }) => (
@@ -11,7 +13,8 @@ export const getCoordinates = ({
         : { clientX, clientY }
 );
 
-export default class Swipeable extends React.PureComponent {
+@performance()
+export default class Swipeable extends React.Component {
     static propTypes = {
         /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
         delta: Type.number,

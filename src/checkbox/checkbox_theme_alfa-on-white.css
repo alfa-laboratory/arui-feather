@@ -8,26 +8,35 @@
     color: var(--color-content-alfa-on-white);
 
     .checkbox__box {
-        background: var(--color-background-control-alfa-on-white);
-        border: 1px solid var(--color-border-control-alfa-on-white);
-        transition: all 200ms ease;
+        background: rgba(11, 31, 53, 0.05);
+        border: 1px solid rgba(11, 31, 53, 0.6);
     }
 
     &.checkbox_checked {
         .checkbox__box {
-            background: var(--color-accent-translucent);
-            border-color: transparent;
+            background: rgba(239, 49, 36, 0.85);
+            border-color: rgba(11, 31, 53, 0.25);
         }
 
-        &.checkbox_hovered .checkbox__box {
-            background: var(--color-accent);
+        &.checkbox_hovered .checkbox__box,
+        &.checkbox_focused .checkbox__box {
+            background: rgba(239, 49, 36, 1);
         }
     }
 
-    &.checkbox_focused,
+    &.checkbox_focused {
+        .checkbox__box {
+            background: rgba(11, 31, 53, 0.1);
+
+            &:after {
+                border-color: rgba(11, 31, 53, 0.95);
+            }
+        }
+    }
+
     &.checkbox_hovered {
         .checkbox__box {
-            border-color: var(--color-border-control-focused-alfa-on-white);
+            background: rgba(11, 31, 53, 0.1);
         }
     }
 
@@ -35,8 +44,28 @@
         color: var(--color-content-disabled-alfa-on-white);
 
         .checkbox__box {
-            background: var(--color-background-control-disabled-alfa-on-white);
+            background: rgba(11, 31, 53, 0.2);
             border-color: transparent;
+        }
+    }
+
+    &.checkbox:active {
+        .checkbox__box {
+            background: rgba(11, 31, 53, 0.2);
+        }
+
+        &.checkbox_checked {
+            .checkbox__box,
+            &.checkbox_hovered .checkbox__box,
+            &.checkbox_focused .checkbox__box {
+                background: var(--color-accent-alt);
+            }
+        }
+
+        &.checkbox_disabled {
+            .checkbox__box {
+                background: rgba(11, 31, 53, 0.2);
+            }
         }
     }
 }

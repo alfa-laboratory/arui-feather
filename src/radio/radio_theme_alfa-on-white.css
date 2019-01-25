@@ -8,30 +8,35 @@
     color: var(--color-content-alfa-on-white);
 
     .radio__box {
-        background: var(--color-background-control-alfa-on-white);
-        border: 1px solid var(--color-border-control-alfa-on-white);
-        transition: all 200ms ease;
+        background: rgba(11, 31, 53, 0.05);
+        border: 1px solid rgba(11, 31, 53, 0.6);
     }
 
     &.radio_checked {
         .radio__box {
-            background: var(--color-accent-translucent);
-            border-color: transparent;
-
-            &:after {
-                background: var(--color-accent-content);
-            }
+            background: rgba(239, 49, 36, 0.85);
+            border-color: rgba(11, 31, 53, 0.25);
         }
 
-        &.radio_hovered .radio__box {
-            background: var(--color-accent);
+        &.radio_hovered .radio__box,
+        &.radio_focused .radio__box {
+            background: rgba(239, 49, 36, 1);
         }
     }
 
-    &.radio_focused,
+    &.radio_focused {
+        .radio__box {
+            background: rgba(11, 31, 53, 0.1);
+
+            &:after {
+                border-color: rgba(11, 31, 53, 0.95);
+            }
+        }
+    }
+
     &.radio_hovered {
         .radio__box {
-            border-color: var(--color-border-control-focused-alfa-on-white);
+            background: rgba(11, 31, 53, 0.1);
         }
     }
 
@@ -39,12 +44,28 @@
         color: var(--color-content-disabled-alfa-on-white);
 
         .radio__box {
-            background: var(--color-background-control-disabled-alfa-on-white);
+            background: rgba(11, 31, 53, 0.2);
             border-color: transparent;
         }
+    }
 
-        &.radio_checked .radio__box:after {
-            background: var(--color-accent-content-minor);
+    &.radio:active {
+        .radio__box {
+            background: rgba(11, 31, 53, 0.2);
+        }
+
+        &.radio_checked {
+            .radio__box,
+            &.radio_hovered .radio__box,
+            &.radio_focused .radio__box {
+                background: var(--color-accent-alt);
+            }
+        }
+
+        &.radio_disabled {
+            .radio__box {
+                background: rgba(11, 31, 53, 0.2);
+            }
         }
     }
 }

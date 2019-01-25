@@ -1,6 +1,7 @@
 ```jsx
 const radioStyle = {
-    margin: '10px'
+    display: 'inline-block',
+    margin: '0 10px 10px 0'
 };
 <div>
     <div>
@@ -20,9 +21,9 @@ const radioStyle = {
             ['m', 'l'].map(size => (
                 <span style={ radioStyle } key={ size }>
                     <Radio
-                        text='Основной счёт'
+                        text='Семейный счёт'
                         size={ size }
-                        error={ true }
+                        disabled={ true }
                     />
                 </span>
             ))
@@ -33,9 +34,10 @@ const radioStyle = {
             ['m', 'l'].map(size => (
                 <span style={ radioStyle } key={ size }>
                     <Radio
-                        text='Семейный счёт'
+                        text='Дополнительный семейный счёт'
                         size={ size }
                         disabled={ true }
+                        checked={ true }
                     />
                 </span>
             ))

@@ -100,11 +100,10 @@ class Radio extends React.Component {
     control;
 
     render(cn, TagButton) {
-        let checked = this.props.checked !== undefined
-            ? this.props.checked
-            : this.state.checked;
+        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
                 className={ cn({
                     size: this.props.size,
@@ -112,6 +111,7 @@ class Radio extends React.Component {
                     checked,
                     focused: this.state.focused,
                     hovered: this.state.hovered,
+                    pressed: this.state.pressed,
                     invalid: !!this.props.error,
                     width: this.props.type === 'button' ? this.props.width : null
                 }) }
@@ -121,47 +121,45 @@ class Radio extends React.Component {
                 onBlur={ this.handleBlur }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (label) => { this.label = label; } }
+                onMouseDown={ this.handleUnfocus }
+                onMouseUp={ this.handleUnfocus }
+                ref={ (label) => {
+                    this.label = label;
+                } }
             >
-                {
-                    this.props.type === 'button'
-                        ? this.renderButtonRadio(cn, checked, TagButton)
-                        : this.renderNormalRadio(cn, checked)
-                }
+                { this.props.type === 'button'
+                    ? this.renderButtonRadio(cn, checked, TagButton)
+                    : this.renderNormalRadio(cn, checked) }
             </label>
         );
     }
 
     renderNormalRadio(cn, checked) {
-        return (
-            <div>
-                <span className={ cn('box') }>
-                    <input
-                        checked={ checked }
-                        disabled={ this.props.disabled }
-                        name={ this.props.name }
-                        id={ this.props.id }
-                        value={ this.props.value }
-                        autoComplete='off'
-                        tabIndex='-1'
-                        type='radio'
-                        className={ cn('control') }
-                        ref={ (control) => { this.control = control; } }
-                        onClick={ this.handleInputControlClick }
-                        onChange={ this.handleChange }
-                    />
+        return [
+            <span className={ cn('box') }>
+                <input
+                    checked={ checked }
+                    disabled={ this.props.disabled }
+                    name={ this.props.name }
+                    id={ this.props.id }
+                    value={ this.props.value }
+                    autoComplete='off'
+                    tabIndex='-1'
+                    type='radio'
+                    className={ cn('control') }
+                    ref={ (control) => {
+                        this.control = control;
+                    } }
+                    onClick={ this.handleInputControlClick }
+                    onChange={ this.handleChange }
+                />
+            </span>,
+            this.props.text && (
+                <span className={ cn('text') } role='presentation'>
+                    { this.props.text }
                 </span>
-                {
-                    this.props.text &&
-                    <span
-                        className={ cn('text') }
-                        role='presentation'
-                    >
-                        { this.props.text }
-                    </span>
-                }
-            </div>
-        );
+            )
+        ];
     }
 
     renderButtonRadio(cn, checked, TagButton) {
@@ -178,11 +176,7 @@ class Radio extends React.Component {
                     tabIndex={ -1 }
                     onClick={ this.handleChange }
                 >
-                    {
-                        this.props.text
-                            ? this.props.text
-                            : ''
-                    }
+                    { this.props.text ? this.props.text : '' }
                 </TagButton>
                 <input
                     checked={ checked }
@@ -195,25 +189,24 @@ class Radio extends React.Component {
                     type='radio'
                     className={ cn('control') }
                     onChange={ this.handleChange }
-                    ref={ (control) => { this.control = control; } }
+                    ref={ (control) => {
+                        this.control = control;
+                    } }
                 />
             </div>
         );
     }
 
     @autobind
-    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
+    handleInputControlClick(event) {
         event.stopPropagation();
     }
 
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(
-                this.props.checked !== undefined
-                    ? this.props.checked
-                    : this.state.checked
-            );
+            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
 
             this.setState({ checked: nextCheckedValue });
 
@@ -238,6 +231,8 @@ class Radio extends React.Component {
         }
     }
 
+    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+
     @autobind
     handleBlur(event) {
         if (!this.props.disabled) {
@@ -255,7 +250,9 @@ class Radio extends React.Component {
 
     @autobind
     handleMouseEnter(event) {
-        this.setState({ hovered: true });
+        if (!this.props.disabled) {
+            this.setState({ hovered: true });
+        }
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
@@ -264,7 +261,9 @@ class Radio extends React.Component {
 
     @autobind
     handleMouseLeave(event) {
-        this.setState({ hovered: false });
+        if (!this.props.disabled) {
+            this.setState({ hovered: false });
+        }
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
@@ -300,7 +299,8 @@ class Radio extends React.Component {
         let elementRect = this.label.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            // eslint-disable-next-line no-mixed-operators
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }
 }

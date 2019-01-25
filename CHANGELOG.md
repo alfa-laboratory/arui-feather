@@ -1,3 +1,13 @@
+<a name="13.4.0"></a>
+# [13.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.5...v13.4.0) (2019-01-25)
+
+
+### Features
+
+* **checkbox,radio:** checkbox and radio styles tuning ([#763](https://github.com/alfa-laboratory/arui-feather/issues/763)) ([913d6ca](https://github.com/alfa-laboratory/arui-feather/commit/913d6ca))
+
+
+
 <a name="13.3.5"></a>
 ## [13.3.5](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.4...v13.3.5) (2019-01-24)
 

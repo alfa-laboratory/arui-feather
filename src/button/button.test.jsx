@@ -19,37 +19,47 @@ import IconOk from '../icon/ui/ok';
 
 describe('button screenshots', async () => {
     const styles = processCssFiles(
-        ['./button.css', './button_theme_alfa-on-color.css', './button_theme_alfa-on-white.css', testCSSPath].map(
-            item => path.resolve(__dirname, item)
-        )
+        [
+            './button.css',
+            './button_theme_alfa-on-color.css',
+            './button_theme_alfa-on-white.css',
+            '../icon/icon.css',
+            '../icon/ui/ok/ok.css',
+            testCSSPath
+        ].map(item => path.resolve(__dirname, item))
     );
 
     const makeScreenshot = async (template, state) => getComponentScreenshot(template, await styles, state);
 
     const NAME = 'button';
-    const THEMES = ['alfa-on-color', 'alfa-on-white'];
+    // const THEMES = ['alfa-on-color', 'alfa-on-white'];
+    const THEMES = ['alfa-on-color'];
     const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
-    // const SIZES = ['s', 'm', 'l', 'xl'];
 
-    const PROP_SETS = [{}, { view: 'action' }, { view: 'extra' }, { pseudo: true }, { disabled: true }];
+    // const PROP_SETS = [{}, { view: 'action' }, { view: 'extra' }, { pseudo: true }, { disabled: true }];
+    const PROP_SETS = [];
 
     describe(NAME, () => {
         THEMES.forEach((theme) => {
             SIZES.forEach((size) => {
                 PROP_SETS.concat([{ icon: <IconOk size={ size } /> }]).forEach((set) => {
-                    test(`${NAME} ${theme} size ${size} (${shallowStringify(set) || '-'})`, async () => {
-                        let props = { theme, size, ...set };
-                        let template = (
+                    describe(`${NAME} ${theme} size ${size} (${shallowStringify(set) || '-'})`, () => {
+                        const props = { theme, size, ...set };
+                        const template = mount(
                             <TestBox theme={ theme }>
                                 <Button { ...props }>Button</Button>
                             </TestBox>
                         );
 
-                        if (set.disabled) {
-                            await matchScreenshot(await makeScreenshot(template, 'plan'));
-                        } else {
-                            await matchScreenshot(await makeScreenshot(template, 'hover'));
-                            // await matchScreenshot(await makeScreenshot(template, 'pressed'));
+                        test('plain', async () => matchScreenshot(await makeScreenshot(template.html())));
+
+                        if (set.disabled == null) {
+                            test('press', async () => matchScreenshot(await makeScreenshot(template.html(), 'press')));
+
+                            test('hover', async () => {
+                                template.find(Button).simulate('mouseenter');
+                                matchScreenshot(await makeScreenshot(template.html()));
+                            });
                         }
                     });
                 });

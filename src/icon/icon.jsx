@@ -8,7 +8,7 @@ import Type from 'prop-types';
 import cn from '../cn';
 
 /**
- * Базовый компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
+ * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
  */
 @cn('icon')
 class Icon extends React.PureComponent {
@@ -42,12 +42,7 @@ class Icon extends React.PureComponent {
             mods.colored = true;
         }
 
-        return (
-            <span
-                className={ cn(mods) }
-                id={ this.props.id }
-            />
-        );
+        return <span className={ cn(mods) } id={ this.props.id } />;
     }
 }
 

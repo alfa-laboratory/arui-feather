@@ -20,9 +20,5 @@ module.exports = merge.smart(WEBPACK_BASE_TEMPLATE, WEBPACK_DEV_TEMPLATE, {
             }
         ]
     },
-    plugins: [
-        new webpack.EnvironmentPlugin([
-            'ALL_SIZES'
-        ])
-    ]
+    plugins: [new webpack.EnvironmentPlugin(['ALL_SIZES'])]
 });

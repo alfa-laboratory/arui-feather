@@ -70,24 +70,25 @@ export const processCssFiles = async paths => Promise.all(paths.map(path => proc
 /**
  * Renders HTML of page with component and specified styles
 
- * @param {React.ReactNode} reactNode React element for rendering
+ * @param {React.ReactNode|string} reactNodeOrHtml React element for rendering or component html
  * @param {string[]|string} [styleList] CSS styles
  * @returns {string} An HTML code
  */
-export const renderComponentPage = async (reactNode, styleList) => {
+export const preparePageHTML = async (reactNodeOrHtml, styleList) => {
     if (typeof styleList === 'string') {
-        return renderComponentPage(reactNode, [styleList]);
+        return preparePageHTML(reactNodeOrHtml, [styleList]);
     }
 
     if (!Array.isArray(styleList)) {
-        return renderComponentPage(reactNode, []);
+        return preparePageHTML(reactNodeOrHtml, []);
     }
 
-    const html = ReactDOMServer.renderToStaticMarkup(reactNode);
+    if (typeof reactNodeOrHtml !== 'string') {
+        return preparePageHTML(ReactDOMServer.renderToStaticMarkup(reactNodeOrHtml), styleList);
+    }
 
-    const content = `${[...styleList, testCSSPath]
-        .map(result => `<style type="text/css">\n${result.css}\n</style>`)
-        .join('')}\n${html}`.trim();
+    const css = [...styleList, testCSSPath].map(result => `<style type="text/css">\n${result.css}\n</style>`).join('');
+    const content = `${css}\n${reactNodeOrHtml}`.trim();
 
     return content;
 };
@@ -108,13 +109,14 @@ export const createPuppeteerNewPage = async (html) => {
 /**
  * Creates screenshot of component
  *
- * @param {React.ReactNode} reactNode React element for rendering
+ * @param {React.ReactNode|string} reactNodeOrHtml React element for rendering or html
  * @param {string[]|string} [styles] CSS styles
  * @param {'plain'|'hover'|'focus'|'press'} [state] State of fist root element
  * @return {Buffer} The image buffer
  */
-export const getComponentScreenshot = async (reactNode, styles, state = 'plain') => {
-    const html = await renderComponentPage(reactNode, styles);
+export const getComponentScreenshot = async (reactNodeOrHtml, styles, state = 'plain') => {
+    const html = await preparePageHTML(reactNodeOrHtml, styles);
+    await puppeteerPage.mouse.move(-1, -1);
 
     await puppeteerPage.setContent(html);
 
@@ -123,19 +125,15 @@ export const getComponentScreenshot = async (reactNode, styles, state = 'plain')
 
     // Applying a state
     if (state === 'hover') {
-        await puppeteerPage.hover(rootElementSelector);
+        // eslint-disable-next-line no-mixed-operators
+        await puppeteerPage.mouse.move(boundingBox.x + boundingBox.width / 2, boundingBox.y + boundingBox.height / 2);
     } else if (state === 'focus') {
-        await puppeteerPage.focus(rootElementSelector);
+        // Come up with something
     } else if (state === 'press') {
         // eslint-disable-next-line no-mixed-operators
         await puppeteerPage.mouse.move(boundingBox.x + boundingBox.width / 2, boundingBox.y + boundingBox.height / 2);
         await puppeteerPage.mouse.down();
     }
-
-    // await page.setViewport({
-    //     width: 800,
-    //     height: 1000
-    // });
 
     const screenshot = await puppeteerPage.screenshot({
         type: 'png',
@@ -147,8 +145,11 @@ export const getComponentScreenshot = async (reactNode, styles, state = 'plain')
         }
     });
 
-    if (state === 'press') {
+    if (state === 'hover') {
+        await puppeteerPage.mouse.move(0, 0);
+    } else if (state === 'press') {
         await puppeteerPage.mouse.up();
+        await puppeteerPage.mouse.move(0, 0);
     }
 
     return screenshot;

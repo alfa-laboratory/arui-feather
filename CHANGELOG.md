@@ -1,3 +1,13 @@
+<a name="13.4.1"></a>
+## [13.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.0...v13.4.1) (2019-01-29)
+
+
+### Features
+
+* **colors:** add new gray background color with .05 transparancy ([#776](https://github.com/alfa-laboratory/arui-feather/issues/776)) ([b905805](https://github.com/alfa-laboratory/arui-feather/commit/b905805))
+
+
+
 <a name="13.4.0"></a>
 # [13.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.5...v13.4.0) (2019-01-25)
 

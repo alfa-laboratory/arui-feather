@@ -30,6 +30,7 @@ import IconDots from './action/dots';
 import IconEdit from './action/edit';
 import IconEmail from './action/email';
 import IconErase from './action/erase';
+import IconFilter from './action/filter';
 import IconLike from './action/like';
 import IconLikeFilled from './action/like-filled';
 import IconLock from './action/lock';
@@ -374,6 +375,7 @@ describe('icon', () => {
             { componentName: IconEdit, name: 'edit' },
             { componentName: IconEmail, name: 'email' },
             { componentName: IconErase, name: 'erase' },
+            { componentName: IconFilter, name: 'filter' },
             { componentName: IconLike, name: 'like' },
             { componentName: IconLikeFilled, name: 'like-filled' },
             { componentName: IconLock, name: 'lock' },

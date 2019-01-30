@@ -1,3 +1,13 @@
+<a name="13.4.2"></a>
+## [13.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.1...v13.4.2) (2019-01-30)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.9.1 ([#777](https://github.com/alfa-laboratory/arui-feather/issues/777)) ([8bb023e](https://github.com/alfa-laboratory/arui-feather/commit/8bb023e))
+
+
+
 <a name="13.4.1"></a>
 ## [13.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.0...v13.4.1) (2019-01-29)
 

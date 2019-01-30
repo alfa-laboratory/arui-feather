@@ -1337,6 +1337,13 @@ exports[`icon render IconFifaTrophy without problems: IconFifaTrophy 1`] = `
 />
 `;
 
+exports[`icon render IconFilter without problems: IconFilter 1`] = `
+<Icon
+  name="filter"
+  size="m"
+/>
+`;
+
 exports[`icon render IconFingerPointing without problems: IconFingerPointing 1`] = `
 <Icon
   name="finger-pointing"

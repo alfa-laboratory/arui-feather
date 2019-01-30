@@ -1,6 +1,6 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
-* License, v. 2.0. If a copy of the MPL was not distributed with this
-* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 /* eslint-disable no-console */
@@ -18,31 +18,22 @@ const {
     getDirectories,
     getTemplate,
     ICON_REGEXP,
-    COPYRIGHT
+    COPYRIGHT,
+    BANKS_MAPPING,
+    BANKS_MAPPING_ADDITIONAL
 } = require('./utils');
 
 console.info('⏳ Creating icons...');
 console.time('In time');
 
 // Folders to add
-const CATEGORIES = [
-    'action',
-    'banking',
-    'brand',
-    'category',
-    'currency',
-    'entity',
-    'file',
-    'ui',
-    'user'
-];
+const CATEGORIES = ['action', 'banking', 'brand', 'category', 'currency', 'entity', 'file', 'ui', 'user'];
 
 class Icon {
-    constructor(iconPath) {
-        this.fileName = getFilename(iconPath);
+    constructor(iconPath, mapping) {
+        this.fileName = getFilename(iconPath, mapping);
         this.path = iconPath;
-        this.categoryPath = `./src/icon/${this
-            .getCategory()}/${this.getName()}/`;
+        this.categoryPath = `./src/icon/${this.getCategory()}/${this.getName()}/`;
         this.indexFile = `${this.categoryPath}index.js`;
         this.cssFile = `${this.categoryPath}${this.getName()}.css`;
         this.jsxFile = `${this.categoryPath}${this.getName()}.jsx`;
@@ -97,14 +88,31 @@ class Icon {
     }
 }
 
-
 // Get icons
 const icons = [];
+const additionalIcons = [];
 
+// Populate icons array
 CATEGORIES.forEach((folder) => {
-    glob.sync(
-        `./node_modules/alfa-ui-primitives/icons/${folder}/**/*.svg`)
-        .map(file => icons.push(new Icon(file)));
+    glob.sync(`./node_modules/alfa-ui-primitives/icons/${folder}/**/*.svg`).forEach((iconPath) => {
+        let filename = path.basename(iconPath, 'icon');
+        let name = filename.match(ICON_REGEXP)[3];
+
+        const icon = new Icon(iconPath, {});
+        icons.push(icon);
+
+        // Add additional icons, if they are listed in BANKS_MAPPING
+        if (name in BANKS_MAPPING) {
+            const additionalIcon = new Icon(iconPath, BANKS_MAPPING);
+            additionalIcons.push(additionalIcon);
+        }
+
+        // Add additional icons, if they are listed in BANKS_MAPPING_ADDITIONAL
+        if (name in BANKS_MAPPING_ADDITIONAL) {
+            const additionalIcon = new Icon(iconPath, BANKS_MAPPING_ADDITIONAL);
+            additionalIcons.push(additionalIcon);
+        }
+    });
 });
 
 // Delete folders
@@ -114,50 +122,47 @@ const clean = new Promise((resolve) => {
 });
 
 // Create icon-test.jsx
-const createTests = () => new Promise((resolve) => {
-    const shortIcons = removeDublicates(icons);
-    fs.writeFileSync(
-        './src/icon/icon.test.jsx',
-        getTemplate('icon.test.jsx', shortIcons)
-    );
-    resolve();
-});
+const createTests = arr =>
+    new Promise((resolve) => {
+        const shortIcons = removeDublicates(arr);
+        fs.writeFileSync('./src/icon/icon.test.jsx', getTemplate('icon.test.jsx', shortIcons));
+        resolve();
+    });
 
 // Create folder structure
-const createFolders = () => new Promise((resolve) => {
-    icons.map(item => mkdirp.sync(item.categoryPath));
-    resolve();
-});
+const createFolders = arr =>
+    new Promise((resolve) => {
+        arr.map(item => mkdirp.sync(item.categoryPath));
+        resolve();
+    });
 
 // Component files
-const createComponents = () => new Promise((resolve) => {
-    icons.forEach((item) => {
-        // Copy .svg
-        fs.copyFileSync(item.path, `${item.categoryPath}${item.fileName}`);
+const createComponents = arr =>
+    new Promise((resolve) => {
+        arr.forEach((item) => {
+            // Copy .svg
+            fs.copyFileSync(item.path, `${item.categoryPath}${item.fileName}`);
 
-        // Create index.js
-        fs.writeFileSync(item.indexFile, getTemplate('index.js', item));
+            // Create index.js
+            fs.writeFileSync(item.indexFile, getTemplate('index.js', item));
 
-        // Create .jsx
-        fs.writeFileSync(item.jsxFile, getTemplate('icon.jsx', item));
+            // Create .jsx
+            fs.writeFileSync(item.jsxFile, getTemplate('icon.jsx', item));
 
-        // Create .css & add copyright
-        if (!fs.existsSync(item.cssFile)) fs.writeFileSync(item.cssFile, COPYRIGHT);
+            // Create .css & add copyright
+            if (!fs.existsSync(item.cssFile)) fs.writeFileSync(item.cssFile, COPYRIGHT);
 
-        // Add CSS rule
-        fs.appendFileSync(item.cssFile, getTemplate('icon.css', item), 'utf8');
+            // Add CSS rule
+            fs.appendFileSync(item.cssFile, getTemplate('icon.css', item), 'utf8');
+        });
+        resolve();
     });
-    resolve();
-});
 
 // Main process. Clean icons, create documentaion, folder structure,
 // copy svgs, create index.js, .jsx and css files for component.
-Promise.all([
-    clean,
-    createTests(),
-    createFolders(),
-    createComponents()
-])
+
+const allIcons = [...icons, ...additionalIcons];
+Promise.all([clean, createTests(allIcons), createFolders(allIcons), createComponents(allIcons)])
     .then(() => {
         console.info(`Created: ${icons.length} icons`);
         console.timeEnd('In time');

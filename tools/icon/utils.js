@@ -10,8 +10,10 @@ const SIZE_ORDER = ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
 
 const ICON_REGEXP = new RegExp(/([a-z]*)(_)(.*?)(_)(.*?)(_)([a-z]*)/, 'i');
 
-// Bank name —> bank ID
-// We rename banks for convenient usage in apps
+/**
+ * На айдишники из BANKS_MAPPING завязаны розничные сервисы:
+ * сервис информации по транзакциям, сервис информации по картам и т.д.
+ */
 const BANKS_MAPPING = {
     'bank-alfa': 'bank-2449',
     'bank-baltiyskiy': 'bank-3308',
@@ -40,6 +42,9 @@ const BANKS_MAPPING = {
     'bank-vtb': 'bank-404'
 };
 
+/**
+ * На айдишники из BANKS_MAPPING_ADDITIONAL завязаны таблицы NSIPF
+ */
 const BANKS_MAPPING_ADDITIONAL = {
     'bank-alfa': 'bank-nsipf-1326',
     'bank-baltiyskiy': 'bank-nsipf-128',

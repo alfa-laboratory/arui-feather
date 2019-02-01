@@ -98,16 +98,25 @@ CATEGORIES.forEach((folder) => {
         let filename = path.basename(iconPath, 'icon');
         let name = filename.match(ICON_REGEXP)[3];
 
+        /**
+         * Наполнение списка иконок по-умолчанию.
+         */
         const icon = new Icon(iconPath, {});
         icons.push(icon);
 
-        // Add additional icons, if they are listed in BANKS_MAPPING
+        /**
+         * Дополнительное наполнение списка иконок - дублируем иконки, переименовывая их.
+         * Действие выполняется для иконок, имена которых находятся в маппинге BANKS_MAPPING
+         */
         if (name in BANKS_MAPPING) {
             const additionalIcon = new Icon(iconPath, BANKS_MAPPING);
             additionalIcons.push(additionalIcon);
         }
 
-        // Add additional icons, if they are listed in BANKS_MAPPING_ADDITIONAL
+        /**
+         * Дополнительное наполнение списка иконок - дублируем иконки, переименовывая их.
+         * Действие выполняется для иконок, имена которых находятся в маппинге BANKS_MAPPING_ADDITIONAL
+         */
         if (name in BANKS_MAPPING_ADDITIONAL) {
             const additionalIcon = new Icon(iconPath, BANKS_MAPPING_ADDITIONAL);
             additionalIcons.push(additionalIcon);

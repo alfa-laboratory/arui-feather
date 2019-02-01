@@ -1,3 +1,14 @@
+<a name="13.5.0"></a>
+# [13.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.2...v13.5.0) (2019-02-01)
+
+
+### Features
+
+* **colors:** add script to generate primitive-colors.css ([#779](https://github.com/alfa-laboratory/arui-feather/issues/779)) ([ff10950](https://github.com/alfa-laboratory/arui-feather/commit/ff10950))
+* **icons:** bank icons with IDs from NSIPF ([#778](https://github.com/alfa-laboratory/arui-feather/issues/778)) ([f7c6974](https://github.com/alfa-laboratory/arui-feather/commit/f7c6974))
+
+
+
 <a name="13.4.2"></a>
 ## [13.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.1...v13.4.2) (2019-01-30)
 

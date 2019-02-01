@@ -420,6 +420,20 @@ exports[`icon render IconBank10223 without problems: IconBank10223 1`] = `
 />
 `;
 
+exports[`icon render IconBankAlfa without problems: IconBankAlfa 1`] = `
+<Icon
+  name="bank-alfa"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankBaltiyskiy without problems: IconBankBaltiyskiy 1`] = `
+<Icon
+  name="bank-baltiyskiy"
+  size="m"
+/>
+`;
+
 exports[`icon render IconBankBinbank without problems: IconBankBinbank 1`] = `
 <Icon
   name="bank-binbank"
@@ -427,9 +441,359 @@ exports[`icon render IconBankBinbank without problems: IconBankBinbank 1`] = `
 />
 `;
 
+exports[`icon render IconBankEurope without problems: IconBankEurope 1`] = `
+<Icon
+  name="bank-europe"
+  size="m"
+/>
+`;
+
 exports[`icon render IconBankGazprombank without problems: IconBankGazprombank 1`] = `
 <Icon
   name="bank-gazprombank"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankHomeCredit without problems: IconBankHomeCredit 1`] = `
+<Icon
+  name="bank-home-credit"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMdm without problems: IconBankMdm 1`] = `
+<Icon
+  name="bank-mdm"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMkb without problems: IconBankMkb 1`] = `
+<Icon
+  name="bank-mkb"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMoscow without problems: IconBankMoscow 1`] = `
+<Icon
+  name="bank-moscow"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMts without problems: IconBankMts 1`] = `
+<Icon
+  name="bank-mts"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1 without problems: IconBankNsipf1 1`] = `
+<Icon
+  name="bank-nsipf-1"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf128 without problems: IconBankNsipf128 1`] = `
+<Icon
+  name="bank-nsipf-128"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf316 without problems: IconBankNsipf316 1`] = `
+<Icon
+  name="bank-nsipf-316"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf323 without problems: IconBankNsipf323 1`] = `
+<Icon
+  name="bank-nsipf-323"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf354 without problems: IconBankNsipf354 1`] = `
+<Icon
+  name="bank-nsipf-354"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf429 without problems: IconBankNsipf429 1`] = `
+<Icon
+  name="bank-nsipf-429"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf436 without problems: IconBankNsipf436 1`] = `
+<Icon
+  name="bank-nsipf-436"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf705 without problems: IconBankNsipf705 1`] = `
+<Icon
+  name="bank-nsipf-705"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1000 without problems: IconBankNsipf1000 1`] = `
+<Icon
+  name="bank-nsipf-1000"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1326 without problems: IconBankNsipf1326 1`] = `
+<Icon
+  name="bank-nsipf-1326"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1439 without problems: IconBankNsipf1439 1`] = `
+<Icon
+  name="bank-nsipf-1439"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1481 without problems: IconBankNsipf1481 1`] = `
+<Icon
+  name="bank-nsipf-1481"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1792 without problems: IconBankNsipf1792 1`] = `
+<Icon
+  name="bank-nsipf-1792"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2209 without problems: IconBankNsipf2209 1`] = `
+<Icon
+  name="bank-nsipf-2209"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2241 without problems: IconBankNsipf2241 1`] = `
+<Icon
+  name="bank-nsipf-2241"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2268 without problems: IconBankNsipf2268 1`] = `
+<Icon
+  name="bank-nsipf-2268"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2275 without problems: IconBankNsipf2275 1`] = `
+<Icon
+  name="bank-nsipf-2275"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2289 without problems: IconBankNsipf2289 1`] = `
+<Icon
+  name="bank-nsipf-2289"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2361 without problems: IconBankNsipf2361 1`] = `
+<Icon
+  name="bank-nsipf-2361"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2524 without problems: IconBankNsipf2524 1`] = `
+<Icon
+  name="bank-nsipf-2524"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2673 without problems: IconBankNsipf2673 1`] = `
+<Icon
+  name="bank-nsipf-2673"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2748 without problems: IconBankNsipf2748 1`] = `
+<Icon
+  name="bank-nsipf-2748"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2766 without problems: IconBankNsipf2766 1`] = `
+<Icon
+  name="bank-nsipf-2766"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3251 without problems: IconBankNsipf3251 1`] = `
+<Icon
+  name="bank-nsipf-3251"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3279 without problems: IconBankNsipf3279 1`] = `
+<Icon
+  name="bank-nsipf-3279"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3292 without problems: IconBankNsipf3292 1`] = `
+<Icon
+  name="bank-nsipf-3292"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3311 without problems: IconBankNsipf3311 1`] = `
+<Icon
+  name="bank-nsipf-3311"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankOtkritie without problems: IconBankOtkritie 1`] = `
+<Icon
+  name="bank-otkritie"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankOtp without problems: IconBankOtp 1`] = `
+<Icon
+  name="bank-otp"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankPsb without problems: IconBankPsb 1`] = `
+<Icon
+  name="bank-psb"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankQiwi without problems: IconBankQiwi 1`] = `
+<Icon
+  name="bank-qiwi"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankRaiffeisen without problems: IconBankRaiffeisen 1`] = `
+<Icon
+  name="bank-raiffeisen"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankRussianStandard without problems: IconBankRussianStandard 1`] = `
+<Icon
+  name="bank-russian-standard"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSaintPetersburg without problems: IconBankSaintPetersburg 1`] = `
+<Icon
+  name="bank-saint-petersburg"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSber without problems: IconBankSber 1`] = `
+<Icon
+  name="bank-sber"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSkb without problems: IconBankSkb 1`] = `
+<Icon
+  name="bank-skb"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSocieteGenerale without problems: IconBankSocieteGenerale 1`] = `
+<Icon
+  name="bank-societe-generale"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankTinkoff without problems: IconBankTinkoff 1`] = `
+<Icon
+  name="bank-tinkoff"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankTrust without problems: IconBankTrust 1`] = `
+<Icon
+  name="bank-trust"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankUnicredit without problems: IconBankUnicredit 1`] = `
+<Icon
+  name="bank-unicredit"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankUralsib without problems: IconBankUralsib 1`] = `
+<Icon
+  name="bank-uralsib"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankUralskiy without problems: IconBankUralskiy 1`] = `
+<Icon
+  name="bank-uralskiy"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankVozrozhdenie without problems: IconBankVozrozhdenie 1`] = `
+<Icon
+  name="bank-vozrozhdenie"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankVtb without problems: IconBankVtb 1`] = `
+<Icon
+  name="bank-vtb"
   size="m"
 />
 `;

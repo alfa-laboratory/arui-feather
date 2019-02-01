@@ -120,33 +120,33 @@ import IconTransferOuter from './banking/transfer-outer';
 import IconTransferSelf from './banking/transfer-self';
 import IconTransferToCard from './banking/transfer-to-card';
 import IconUserAdd from './banking/user-add';
-import IconBank2449 from './brand/bank-2449';
-import IconBank3308 from './brand/bank-3308';
+import IconBankAlfa from './brand/bank-alfa';
+import IconBankBaltiyskiy from './brand/bank-baltiyskiy';
 import IconBankBinbank from './brand/bank-binbank';
-import IconBank10223 from './brand/bank-10223';
+import IconBankEurope from './brand/bank-europe';
 import IconBankGazprombank from './brand/bank-gazprombank';
-import IconBank439 from './brand/bank-439';
-import IconBank9908 from './brand/bank-9908';
-import IconBank3001 from './brand/bank-3001';
-import IconBank5475 from './brand/bank-5475';
-import IconBank1490 from './brand/bank-1490';
-import IconBank4267 from './brand/bank-4267';
-import IconBank7311 from './brand/bank-7311';
-import IconBank1516 from './brand/bank-1516';
-import IconBank1309 from './brand/bank-1309';
-import IconBank8967 from './brand/bank-8967';
-import IconBank6415 from './brand/bank-6415';
-import IconBank285 from './brand/bank-285';
-import IconBank4924 from './brand/bank-4924';
-import IconBank5030 from './brand/bank-5030';
-import IconBank351 from './brand/bank-351';
-import IconBank256 from './brand/bank-256';
-import IconBank1415 from './brand/bank-1415';
-import IconBank7687 from './brand/bank-7687';
-import IconBank7686 from './brand/bank-7686';
-import IconBank2377 from './brand/bank-2377';
-import IconBank244 from './brand/bank-244';
-import IconBank404 from './brand/bank-404';
+import IconBankHomeCredit from './brand/bank-home-credit';
+import IconBankMdm from './brand/bank-mdm';
+import IconBankMkb from './brand/bank-mkb';
+import IconBankMoscow from './brand/bank-moscow';
+import IconBankMts from './brand/bank-mts';
+import IconBankOtkritie from './brand/bank-otkritie';
+import IconBankOtp from './brand/bank-otp';
+import IconBankPsb from './brand/bank-psb';
+import IconBankQiwi from './brand/bank-qiwi';
+import IconBankRaiffeisen from './brand/bank-raiffeisen';
+import IconBankRussianStandard from './brand/bank-russian-standard';
+import IconBankSaintPetersburg from './brand/bank-saint-petersburg';
+import IconBankSber from './brand/bank-sber';
+import IconBankSkb from './brand/bank-skb';
+import IconBankSocieteGenerale from './brand/bank-societe-generale';
+import IconBankTinkoff from './brand/bank-tinkoff';
+import IconBankTrust from './brand/bank-trust';
+import IconBankUnicredit from './brand/bank-unicredit';
+import IconBankUralsib from './brand/bank-uralsib';
+import IconBankUralskiy from './brand/bank-uralskiy';
+import IconBankVozrozhdenie from './brand/bank-vozrozhdenie';
+import IconBankVtb from './brand/bank-vtb';
 import IconBankYandexmoney from './brand/bank-yandexmoney';
 import IconCardBelkart from './brand/card-belkart';
 import IconCardGooglepay from './brand/card-googlepay';
@@ -343,6 +343,58 @@ import IconSystemHideArrow from './ui/system-hide-arrow';
 import IconTick from './ui/tick';
 import IconUp from './ui/up';
 import IconVerifying from './ui/verifying';
+import IconBank2449 from './brand/bank-2449';
+import IconBankNsipf1326 from './brand/bank-nsipf-1326';
+import IconBank3308 from './brand/bank-3308';
+import IconBankNsipf128 from './brand/bank-nsipf-128';
+import IconBankNsipf323 from './brand/bank-nsipf-323';
+import IconBank10223 from './brand/bank-10223';
+import IconBankNsipf3311 from './brand/bank-nsipf-3311';
+import IconBankNsipf354 from './brand/bank-nsipf-354';
+import IconBank439 from './brand/bank-439';
+import IconBankNsipf316 from './brand/bank-nsipf-316';
+import IconBank9908 from './brand/bank-9908';
+import IconBankNsipf2361 from './brand/bank-nsipf-2361';
+import IconBank3001 from './brand/bank-3001';
+import IconBankNsipf2524 from './brand/bank-nsipf-2524';
+import IconBank5475 from './brand/bank-5475';
+import IconBankNsipf2748 from './brand/bank-nsipf-2748';
+import IconBank1490 from './brand/bank-1490';
+import IconBankNsipf2268 from './brand/bank-nsipf-2268';
+import IconBank4267 from './brand/bank-4267';
+import IconBankNsipf2209 from './brand/bank-nsipf-2209';
+import IconBank7311 from './brand/bank-7311';
+import IconBankNsipf2766 from './brand/bank-nsipf-2766';
+import IconBank1516 from './brand/bank-1516';
+import IconBankNsipf3251 from './brand/bank-nsipf-3251';
+import IconBank1309 from './brand/bank-1309';
+import IconBankNsipf2241 from './brand/bank-nsipf-2241';
+import IconBank8967 from './brand/bank-8967';
+import IconBankNsipf3292 from './brand/bank-nsipf-3292';
+import IconBank6415 from './brand/bank-6415';
+import IconBankNsipf2289 from './brand/bank-nsipf-2289';
+import IconBank285 from './brand/bank-285';
+import IconBankNsipf436 from './brand/bank-nsipf-436';
+import IconBank4924 from './brand/bank-4924';
+import IconBankNsipf1481 from './brand/bank-nsipf-1481';
+import IconBank5030 from './brand/bank-5030';
+import IconBankNsipf705 from './brand/bank-nsipf-705';
+import IconBank351 from './brand/bank-351';
+import IconBankNsipf1792 from './brand/bank-nsipf-1792';
+import IconBank256 from './brand/bank-256';
+import IconBankNsipf2673 from './brand/bank-nsipf-2673';
+import IconBank1415 from './brand/bank-1415';
+import IconBankNsipf3279 from './brand/bank-nsipf-3279';
+import IconBank7687 from './brand/bank-7687';
+import IconBankNsipf1 from './brand/bank-nsipf-1';
+import IconBank7686 from './brand/bank-7686';
+import IconBankNsipf2275 from './brand/bank-nsipf-2275';
+import IconBank2377 from './brand/bank-2377';
+import IconBankNsipf429 from './brand/bank-nsipf-429';
+import IconBank244 from './brand/bank-244';
+import IconBankNsipf1439 from './brand/bank-nsipf-1439';
+import IconBank404 from './brand/bank-404';
+import IconBankNsipf1000 from './brand/bank-nsipf-1000';
 
 describe('icon', () => {
     it('renders without problems', () => {
@@ -465,33 +517,33 @@ describe('icon', () => {
             { componentName: IconTransferSelf, name: 'transfer-self' },
             { componentName: IconTransferToCard, name: 'transfer-to-card' },
             { componentName: IconUserAdd, name: 'user-add' },
-            { componentName: IconBank2449, name: 'bank-2449' },
-            { componentName: IconBank3308, name: 'bank-3308' },
+            { componentName: IconBankAlfa, name: 'bank-alfa' },
+            { componentName: IconBankBaltiyskiy, name: 'bank-baltiyskiy' },
             { componentName: IconBankBinbank, name: 'bank-binbank' },
-            { componentName: IconBank10223, name: 'bank-10223' },
+            { componentName: IconBankEurope, name: 'bank-europe' },
             { componentName: IconBankGazprombank, name: 'bank-gazprombank' },
-            { componentName: IconBank439, name: 'bank-439' },
-            { componentName: IconBank9908, name: 'bank-9908' },
-            { componentName: IconBank3001, name: 'bank-3001' },
-            { componentName: IconBank5475, name: 'bank-5475' },
-            { componentName: IconBank1490, name: 'bank-1490' },
-            { componentName: IconBank4267, name: 'bank-4267' },
-            { componentName: IconBank7311, name: 'bank-7311' },
-            { componentName: IconBank1516, name: 'bank-1516' },
-            { componentName: IconBank1309, name: 'bank-1309' },
-            { componentName: IconBank8967, name: 'bank-8967' },
-            { componentName: IconBank6415, name: 'bank-6415' },
-            { componentName: IconBank285, name: 'bank-285' },
-            { componentName: IconBank4924, name: 'bank-4924' },
-            { componentName: IconBank5030, name: 'bank-5030' },
-            { componentName: IconBank351, name: 'bank-351' },
-            { componentName: IconBank256, name: 'bank-256' },
-            { componentName: IconBank1415, name: 'bank-1415' },
-            { componentName: IconBank7687, name: 'bank-7687' },
-            { componentName: IconBank7686, name: 'bank-7686' },
-            { componentName: IconBank2377, name: 'bank-2377' },
-            { componentName: IconBank244, name: 'bank-244' },
-            { componentName: IconBank404, name: 'bank-404' },
+            { componentName: IconBankHomeCredit, name: 'bank-home-credit' },
+            { componentName: IconBankMdm, name: 'bank-mdm' },
+            { componentName: IconBankMkb, name: 'bank-mkb' },
+            { componentName: IconBankMoscow, name: 'bank-moscow' },
+            { componentName: IconBankMts, name: 'bank-mts' },
+            { componentName: IconBankOtkritie, name: 'bank-otkritie' },
+            { componentName: IconBankOtp, name: 'bank-otp' },
+            { componentName: IconBankPsb, name: 'bank-psb' },
+            { componentName: IconBankQiwi, name: 'bank-qiwi' },
+            { componentName: IconBankRaiffeisen, name: 'bank-raiffeisen' },
+            { componentName: IconBankRussianStandard, name: 'bank-russian-standard' },
+            { componentName: IconBankSaintPetersburg, name: 'bank-saint-petersburg' },
+            { componentName: IconBankSber, name: 'bank-sber' },
+            { componentName: IconBankSkb, name: 'bank-skb' },
+            { componentName: IconBankSocieteGenerale, name: 'bank-societe-generale' },
+            { componentName: IconBankTinkoff, name: 'bank-tinkoff' },
+            { componentName: IconBankTrust, name: 'bank-trust' },
+            { componentName: IconBankUnicredit, name: 'bank-unicredit' },
+            { componentName: IconBankUralsib, name: 'bank-uralsib' },
+            { componentName: IconBankUralskiy, name: 'bank-uralskiy' },
+            { componentName: IconBankVozrozhdenie, name: 'bank-vozrozhdenie' },
+            { componentName: IconBankVtb, name: 'bank-vtb' },
             { componentName: IconBankYandexmoney, name: 'bank-yandexmoney' },
             { componentName: IconCardBelkart, name: 'card-belkart' },
             { componentName: IconCardGooglepay, name: 'card-googlepay' },
@@ -687,7 +739,59 @@ describe('icon', () => {
             { componentName: IconSystemHideArrow, name: 'system-hide-arrow' },
             { componentName: IconTick, name: 'tick' },
             { componentName: IconUp, name: 'up' },
-            { componentName: IconVerifying, name: 'verifying' }
+            { componentName: IconVerifying, name: 'verifying' },
+            { componentName: IconBank2449, name: 'bank-2449' },
+            { componentName: IconBankNsipf1326, name: 'bank-nsipf-1326' },
+            { componentName: IconBank3308, name: 'bank-3308' },
+            { componentName: IconBankNsipf128, name: 'bank-nsipf-128' },
+            { componentName: IconBankNsipf323, name: 'bank-nsipf-323' },
+            { componentName: IconBank10223, name: 'bank-10223' },
+            { componentName: IconBankNsipf3311, name: 'bank-nsipf-3311' },
+            { componentName: IconBankNsipf354, name: 'bank-nsipf-354' },
+            { componentName: IconBank439, name: 'bank-439' },
+            { componentName: IconBankNsipf316, name: 'bank-nsipf-316' },
+            { componentName: IconBank9908, name: 'bank-9908' },
+            { componentName: IconBankNsipf2361, name: 'bank-nsipf-2361' },
+            { componentName: IconBank3001, name: 'bank-3001' },
+            { componentName: IconBankNsipf2524, name: 'bank-nsipf-2524' },
+            { componentName: IconBank5475, name: 'bank-5475' },
+            { componentName: IconBankNsipf2748, name: 'bank-nsipf-2748' },
+            { componentName: IconBank1490, name: 'bank-1490' },
+            { componentName: IconBankNsipf2268, name: 'bank-nsipf-2268' },
+            { componentName: IconBank4267, name: 'bank-4267' },
+            { componentName: IconBankNsipf2209, name: 'bank-nsipf-2209' },
+            { componentName: IconBank7311, name: 'bank-7311' },
+            { componentName: IconBankNsipf2766, name: 'bank-nsipf-2766' },
+            { componentName: IconBank1516, name: 'bank-1516' },
+            { componentName: IconBankNsipf3251, name: 'bank-nsipf-3251' },
+            { componentName: IconBank1309, name: 'bank-1309' },
+            { componentName: IconBankNsipf2241, name: 'bank-nsipf-2241' },
+            { componentName: IconBank8967, name: 'bank-8967' },
+            { componentName: IconBankNsipf3292, name: 'bank-nsipf-3292' },
+            { componentName: IconBank6415, name: 'bank-6415' },
+            { componentName: IconBankNsipf2289, name: 'bank-nsipf-2289' },
+            { componentName: IconBank285, name: 'bank-285' },
+            { componentName: IconBankNsipf436, name: 'bank-nsipf-436' },
+            { componentName: IconBank4924, name: 'bank-4924' },
+            { componentName: IconBankNsipf1481, name: 'bank-nsipf-1481' },
+            { componentName: IconBank5030, name: 'bank-5030' },
+            { componentName: IconBankNsipf705, name: 'bank-nsipf-705' },
+            { componentName: IconBank351, name: 'bank-351' },
+            { componentName: IconBankNsipf1792, name: 'bank-nsipf-1792' },
+            { componentName: IconBank256, name: 'bank-256' },
+            { componentName: IconBankNsipf2673, name: 'bank-nsipf-2673' },
+            { componentName: IconBank1415, name: 'bank-1415' },
+            { componentName: IconBankNsipf3279, name: 'bank-nsipf-3279' },
+            { componentName: IconBank7687, name: 'bank-7687' },
+            { componentName: IconBankNsipf1, name: 'bank-nsipf-1' },
+            { componentName: IconBank7686, name: 'bank-7686' },
+            { componentName: IconBankNsipf2275, name: 'bank-nsipf-2275' },
+            { componentName: IconBank2377, name: 'bank-2377' },
+            { componentName: IconBankNsipf429, name: 'bank-nsipf-429' },
+            { componentName: IconBank244, name: 'bank-244' },
+            { componentName: IconBankNsipf1439, name: 'bank-nsipf-1439' },
+            { componentName: IconBank404, name: 'bank-404' },
+            { componentName: IconBankNsipf1000, name: 'bank-nsipf-1000' }
         ];
 
         return icons.map((icon, index) => (

@@ -9,6 +9,7 @@
 @import './vars/opacity.css';
 @import './vars/border.css';
 @import './vars/shadow.css';
+@import './vars/primitive-colors.css';
 
 :root {
     --content-width: 1094px;

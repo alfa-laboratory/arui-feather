@@ -21,6 +21,21 @@ const ZERO_MINOR_PART_REGEXP = /^0+$/;
 const NEGATIVE_AMOUNT_SYMBOL = '−';
 
 /**
+ * Приводит к единому формату суммы для корпоративного бизнеса.
+ *
+ * @typedef {Object} CorporateAmountProps Параметры суммы
+ *
+ * @param {CorporateAmountProps} amount Параметры суммы
+ * @returns {AmountProps}
+ */
+function leadToSingleFormat(amount) {
+    return {
+        ...amount,
+        value: amount.amount
+    };
+}
+
+/**
  * Дробит мажорную часть суммы на части по указанному символу.
  *
  * @param {String} amount Сумма для разбивки на части
@@ -112,6 +127,8 @@ class Amount extends React.Component {
         amount: Type.shape({
             /** Абсолютное значение суммы */
             value: Type.number,
+            /** Абсолютное значение суммы для корпоративного бизнеса */
+            amount: Type.number,
             /** Валюта */
             currency: Type.shape({
                 /** Международный код валюты */
@@ -145,7 +162,8 @@ class Amount extends React.Component {
 
     render(cn) {
         let { amount, size } = this.props;
-        let { majorPart, minorPart, currencySymbol } = formatAmount(amount);
+        let correctAmount = amount.amount ? leadToSingleFormat(amount) : amount;
+        let { majorPart, minorPart, currencySymbol } = formatAmount(correctAmount);
 
         let amountInner = (
             <span>

@@ -44,6 +44,22 @@ describe('amount', () => {
         expect(amount.text()).toContain(`−4 525,99 ${CURRENCY_MAP.RUR}`);
     });
 
+    it('should render corporate amount', () => {
+        let amount = mount(
+            <Amount
+                amount={ {
+                    amount: 452599,
+                    currency: {
+                        code: 'RUR',
+                        minority: 100
+                    }
+                } }
+            />
+        );
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`4 525,99 ${CURRENCY_MAP.RUR}`);
+    });
+
     it('should render when amount value without minor number', () => {
         let amount = mount(
             <Amount

@@ -83,6 +83,8 @@ class CalendarInput extends React.Component {
             'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
+        /** Управление автозаполнением компонента */
+        autocomplete: Type.bool,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
         /** Размер компонента */
@@ -308,6 +310,7 @@ class CalendarInput extends React.Component {
                             this.customCalendarTarget = customCalendarTarget;
                         } }
                         { ...commonProps }
+                        autocomplete={ this.props.autocomplete }
                         className={ cn('custom-control') }
                         disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
                         focused={ this.state.isInputFocused || this.state.isCalendarFocused }

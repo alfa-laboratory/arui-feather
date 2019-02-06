@@ -333,6 +333,20 @@ describe('calendar-input', () => {
         expect(onKeyDown).toHaveBeenCalledTimes(2);
     });
 
+    it('should render with `off` autocomplete attribute', () => {
+        let input = mount(<CalendarInput autocomplete={ false } />);
+        let controlNode = input.find('input');
+
+        expect(controlNode.props().autoComplete).toBe('off');
+    });
+
+    it('should render with `on` autocomplete attribute', () => {
+        let input = mount(<CalendarInput autocomplete={ true } />);
+        let controlNode = input.find('input');
+
+        expect(controlNode.props().autoComplete).toBe('on');
+    });
+
     describe('mobile', () => {
         beforeEach(() => {
             setMqMatched(true);

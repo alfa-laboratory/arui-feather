@@ -16,7 +16,6 @@ require('core-js/fn/object/assign');
 require('core-js/fn/object/entries');
 require('core-js/fn/object/is');
 require('core-js/fn/object/values');
-require('core-js/fn/object/entries');
 require('core-js/fn/string/starts-with');
 require('core-js/fn/string/includes');
 require('core-js/es6/promise');

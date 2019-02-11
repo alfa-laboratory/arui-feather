@@ -136,7 +136,7 @@ class Radio extends React.Component {
 
     renderNormalRadio(cn, checked) {
         return [
-            <span className={ cn('box') }>
+            <span className={ cn('box') } key={ 0 }>
                 <input
                     checked={ checked }
                     disabled={ this.props.disabled }
@@ -155,7 +155,7 @@ class Radio extends React.Component {
                 />
             </span>,
             this.props.text && (
-                <span className={ cn('text') } role='presentation'>
+                <span className={ cn('text') } role='presentation' key={ 1 }>
                     { this.props.text }
                 </span>
             )

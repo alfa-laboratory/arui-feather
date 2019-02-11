@@ -148,7 +148,7 @@ class Popup extends React.Component {
         canUseDOM: false,
         /*
          * Переменная для отложенного вызова функции redraw(),
-         * которая будет вызвана в componentDidMount().
+         * которая будет вызвана после вызова componentDidMount().
          */
         needRedrawAfterMount: false
     };

@@ -471,7 +471,7 @@ class Popup extends React.Component {
          * то нужно отложить её вызов до момента,
          * когда this.state.canUseDOM будет равен значению true.
          *
-         * Это сделано, для того, чтобы redraw() не вызывалась на серверной стороне.
+         * Это сделано для того, чтобы redraw() не вызывалась на серверной стороне.
          */
         this.setState({
             needRedrawAfterMount: true

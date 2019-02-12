@@ -1,3 +1,19 @@
+<a name="13.6.0"></a>
+# [13.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.5.0...v13.6.0) (2019-02-12)
+
+
+### Bug Fixes
+
+* **popup:** fix popup render for SSR and react@16^ ([#787](https://github.com/alfa-laboratory/arui-feather/issues/787)) ([22d2938](https://github.com/alfa-laboratory/arui-feather/commit/22d2938))
+
+
+### Features
+
+* **calendar-input:** add autocomplete prop ([#782](https://github.com/alfa-laboratory/arui-feather/issues/782)) ([a26ed78](https://github.com/alfa-laboratory/arui-feather/commit/a26ed78))
+* **polyfills:** extends polyfills ([#784](https://github.com/alfa-laboratory/arui-feather/issues/784)) ([b21d608](https://github.com/alfa-laboratory/arui-feather/commit/b21d608))
+
+
+
 <a name="13.5.0"></a>
 # [13.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.2...v13.5.0) (2019-02-01)
 

@@ -305,11 +305,7 @@ class Select extends React.Component {
                     </Mq>
 
                     { (this.props.error || this.props.hint) && (
-                        // The <div /> wrapper is need to fix safari's bug of "jumping" element with
-                        // `display: table-caption`. See: https://github.com/alfa-laboratory/arui-feather/pull/656
-                        <div>
-                            <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
-                        </div>
+                        <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
                     ) }
 
                     { (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&

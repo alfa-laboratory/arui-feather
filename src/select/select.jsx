@@ -305,6 +305,7 @@ class Select extends React.Component {
                     </Mq>
 
                     { (this.props.error || this.props.hint) && (
+                        /* FIXME: https://github.com/alfa-laboratory/arui-feather/pull/656 */
                         <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
                     ) }
 

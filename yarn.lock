@@ -488,7 +488,6 @@ ajv@^6.0.1, ajv@^6.1.0:
 alfa-ui-primitives@1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.9.1.tgz#bdfa4e04659b149e8f5b9399a37f8adf65028f5a"
-  integrity sha512-pyLAO+X3hxZOEfBqibMGQt2DSt3sPpF/w5sNDWzBqwrvBwmTzlXvTb7pxw43mCbA3Rng7P8tnkeExUQUJy/3BQ==
 
 aliasify@^1.7.2, aliasify@^1.9.0:
   version "1.9.0"
@@ -7836,10 +7835,9 @@ libphonenumber-js@1.0.24:
     semver-compare "^1.0.0"
     xml2js "^0.4.17"
 
-library-utils@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-2.2.0.tgz#ee5f821d816513c824912dde818478dd387b3eb7"
-  integrity sha512-0MsbWlpImdnYIyuWkgRBm9IM6kCskM7LzaXZcPG35trQMc/QGX8FnIH6WTuBG0RFMx838+a5jMYPaGC7JHk+BA==
+library-utils@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-2.3.0.tgz#9034d551245fde2736de965d1869ee9b36d7559c"
   dependencies:
     del "3.0.0"
     ejs "2.5.7"
@@ -12926,7 +12924,6 @@ typescript-formatter@7.1.0:
 typescript@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.1.tgz#0b7a04b8cf3868188de914d9568bd030f0c56192"
-  integrity sha512-jw7P2z/h6aPT4AENXDGjcfHTu5CSqzsbZc6YlUIebTyBAq8XaKp78x7VcSh30xwSCcsu5irZkYZUSFP1MrAMbg==
 
 typical@^2.6.1:
   version "2.6.1"

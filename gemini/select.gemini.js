@@ -50,6 +50,10 @@ const PROP_SETS = [
         label: 'test-label',
         placeholder: 'test-placeholder',
         opened: true
+    },
+    {
+        options: OPTIONS,
+        error: 'Произошла ошибка, попробуйте сделать запрос ещё раз'
     }
 ];
 

@@ -5,7 +5,6 @@
 /* eslint-disable max-len */
 
 import autobind from 'core-decorators/lib/autobind';
-import { canUseDOM } from 'exenv';
 import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
@@ -145,7 +144,13 @@ class Popup extends React.Component {
         },
         bottomGradientStyles: {
             width: '100%'
-        }
+        },
+        canUseDOM: false,
+        /*
+         * Переменная для отложенного вызова функции redraw(),
+         * которая будет вызвана после вызова componentDidMount().
+         */
+        needRedrawAfterMount: false
     };
 
     anchor = null;
@@ -186,6 +191,16 @@ class Popup extends React.Component {
         }
 
         window.addEventListener('resize', this.handleWindowResize);
+
+        /* eslint-disable react/no-did-mount-set-state */
+        this.setState({
+            canUseDOM: true
+        }, () => {
+            if (this.state.needRedrawAfterMount) {
+                this.redraw();
+            }
+        });
+        /* eslint-enable */
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -229,7 +244,7 @@ class Popup extends React.Component {
     }
 
     render(cn) {
-        if (!canUseDOM || !this.isContainerReady()) {
+        if (!this.state.canUseDOM || !this.isContainerReady()) {
             return null;
         }
 
@@ -451,9 +466,24 @@ class Popup extends React.Component {
 
     @autobind
     redraw() {
-        if (!canUseDOM || !this.isContainerReady()) {
+        /*
+         * Если функция redraw() была вызвана до componentDidMount,
+         * то нужно отложить её вызов до момента,
+         * когда this.state.canUseDOM будет равен значению true.
+         *
+         * Это сделано для того, чтобы redraw() не вызывалась на серверной стороне.
+         */
+        this.setState({
+            needRedrawAfterMount: true
+        });
+
+        if (!this.state.canUseDOM || !this.isContainerReady()) {
             return;
         }
+
+        this.setState({
+            needRedrawAfterMount: false
+        });
 
         if (!this.isPropsToPositionCorrect()) {
             throw new Error('Cannot show popup without target or position');

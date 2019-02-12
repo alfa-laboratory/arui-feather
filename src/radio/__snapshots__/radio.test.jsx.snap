@@ -17,6 +17,7 @@ exports[`radio should render without problems 1`] = `
   >
     <span
       className="radio__box"
+      key="0"
     >
       <input
         autoComplete="off"

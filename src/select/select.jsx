@@ -305,9 +305,9 @@ class Select extends React.Component {
                     </Mq>
 
                     { (this.props.error || this.props.hint) && (
-                        // The <div /> wrapper is need to fix safari's bug of "jumping" element with
+                        // The <div /> wrapper is needed to fix Safari bug of "jumping" element with
                         // `display: table-caption`. See: https://github.com/alfa-laboratory/arui-feather/pull/656
-                        <div>
+                        <div className={ cn('sub-wrapper') }>
                             <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
                         </div>
                     ) }

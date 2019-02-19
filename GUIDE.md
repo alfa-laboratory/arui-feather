@@ -100,7 +100,7 @@ body {
 @media (--mobile) {
   .app__content {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 var(--gap-l);
   }
 }
 

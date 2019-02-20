@@ -15,6 +15,6 @@ describe('format-amount-to-string', () => {
         };
         const result = formatAmountToString(amount);
 
-        expect(result).toBe(`1 234 567 \u20bd`);
+        expect(result).toBe('1 234 567 \u20bd');
     });
 });

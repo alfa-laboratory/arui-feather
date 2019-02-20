@@ -11,10 +11,12 @@ import Label from '../label/label';
 import cn from '../cn';
 import performance from '../performance';
 
-import { formatAmount } from '../lib/format-amount';
+import {
+  formatAmount,
+  THINSP,
+  AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR
+} from '../lib/format-amount';
 
-const THINSP = String.fromCharCode(8201); // &thinsp;
-const AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR = ',';
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 
 /**

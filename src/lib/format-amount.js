@@ -1,12 +1,12 @@
 import { getCurrencySymbol } from './currency-codes';
 
-const THINSP = String.fromCharCode(8201); // &thinsp;
-const AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR = ',';
+export const THINSP = String.fromCharCode(8201); // &thinsp;
+export const AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR = ',';
+
 const AMOUNT_MAJOR_PARTS_SPLITTER = THINSP;
 const AMOUNT_MAJOR_PART_SIZE = 3;
 const AMOUNT_SPLIT_CODE_FROM = 4;
 const NEGATIVE_AMOUNT_SYMBOL = '−';
-
 
 /**
  * Дробит мажорную часть суммы на части по указанному символу.
@@ -108,5 +108,5 @@ export function formatAmountToString(amount) {
         currencySymbol
     } = formatAmount(amount);
 
-    return `${value} ${currencySymbol}`;
+    return `${value}${THINSP}${currencySymbol}`;
 }

@@ -1,3 +1,13 @@
+<a name="13.6.1"></a>
+## [13.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.6.0...v13.6.1) (2019-02-20)
+
+
+### Features
+
+* **amount:** move util functions to lib, add function to generate formatted amount in string ([#792](https://github.com/alfa-laboratory/arui-feather/issues/792)) ([1e921e7](https://github.com/alfa-laboratory/arui-feather/commit/1e921e7))
+
+
+
 <a name="13.6.0"></a>
 # [13.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.5.0...v13.6.0) (2019-02-12)
 

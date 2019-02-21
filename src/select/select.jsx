@@ -273,6 +273,12 @@ class Select extends React.Component {
         });
     }
 
+    componentDidUpdate() {
+        if (this.state.opened) {
+            this.updatePopupStyles();
+        }
+    }
+
     render(cn, SelectButton, Popup) {
         let value = this.getValue();
 
@@ -364,7 +370,10 @@ class Select extends React.Component {
                         <ToggledIcon size={ tickSize } />
                     </IconButton>
                 ) }
-                <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+
+                { this.getOpened() && (
+                    <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+                ) }
             </SelectButton>
         );
     }

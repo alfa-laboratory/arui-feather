@@ -48,6 +48,11 @@
         transition-timing-function: cubic-bezier(.25, .1, .25, 1);
     }
 
+    &__sub-wrapper {
+        display: table;
+        width: 100%;
+    }
+
     &__sub {
         display: table-caption;
         caption-side: bottom;

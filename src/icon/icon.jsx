@@ -6,12 +6,14 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Базовый компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
  */
 @cn('icon')
-class Icon extends React.PureComponent {
+@performance()
+class Icon extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -22,7 +24,7 @@ class Icon extends React.PureComponent {
         /** Название иконки */
         name: Type.string,
         /** Размер иконки */
-        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl']),
+        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };

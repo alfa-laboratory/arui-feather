@@ -4,6 +4,11 @@
 
 @import '../vars.css';
 
+:root {
+    --size-m-box: 16px;
+    --size-l-box: 24px;
+}
+
 .radio {
     display: inline-block;
     position: relative;
@@ -33,16 +38,26 @@
         vertical-align: middle;
         position: relative;
         border-radius: 50%;
+        transition: all 0.1s 0s ease-out;
 
-        &:after {
-            opacity: 0;
-            visibility: hidden;
+        &:before, &:after {
             content: '';
+            display: block;
             position: absolute;
+            background: transparent;
+            border-radius: 50%;
             top: 50%;
             left: 50%;
-            border-radius: 50%;
-            transition: transform .05s ease-out, opacity .05s ease-out, visibility 0s linear .05s;
+            transform: translate(-50%, -50%);
+        }
+
+        &:before {
+            z-index: 2;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            transition: all 0.1s 0s ease-out;
         }
     }
 
@@ -54,41 +69,46 @@
 
     &_size_m {
         font-size: var(--font-size-m);
-    }
 
-    &_size_m &__box {
-        width: 14px;
-        height: 14px;
-        margin-right: 10px;
+        .radio__box {
+            width: var(--size-m-box);
+            height: var(--size-m-box);
+            margin-right: var(--gap-xs);
 
-        &:after {
-            width: 6px;
-            height: 6px;
-            margin-top: -3px;
-            margin-left: -3px;
+            &:after {
+                width: var(--size-m-box);
+                height: var(--size-m-box);
+            }
+        }
+
+        &.radio_checked .radio__box {
+            &:before {
+                width: 5px;
+                height: 5px;
+            }
         }
     }
 
     &_size_l {
         font-size: var(--font-size-xl);
-    }
 
-    &_size_l &__box {
-        width: 18px;
-        height: 18px;
-        margin-right: 12px;
+        .radio__box {
+            width: var(--size-l-box);
+            height: var(--size-l-box);
+            margin-right: var(--gap-s);
 
-        &:after {
-            width: 8px;
-            height: 8px;
-            margin-top: -4px;
-            margin-left: -4px;
+            &:after {
+                width: var(--size-l-box);
+                height: var(--size-l-box);
+            }
         }
-    }
 
-    &_checked &__box:after {
-        opacity: var(--opacity-active);
-        visibility: visible;
+        &.radio_checked .radio__box {
+            &:before {
+                width: 8px;
+                height: 8px;
+            }
+        }
     }
 
     &_disabled {
@@ -104,8 +124,11 @@
         position: absolute;
     }
 
-    &.radio_checked .button__text {
-        font-weight: var(--font-weight-normal);
+    /* TODO remove? */
+    &.radio_checked {
+        .button__text {
+            font-weight: var(--font-weight-normal);
+        }
     }
 }
 
@@ -113,15 +136,28 @@
     width: 100%;
 }
 
+/* TODO remove? */
 .radio_invalid {
     .radio__box {
         border-color: var(--color-error-translucent);
     }
+}
 
-    &.radio_focused,
-    &.radio_hovered {
-        .radio__box {
-            border-color: var(--color-error-translucent);
+.radio_checked {
+    .radio__box {
+        transition: all 0.1s 0s ease-out;
+
+        &:before {
+            opacity: 1;
+            transition: all 0.1s 0s ease-out;
+        }
+    }
+}
+
+.radio_focused {
+    .radio__box {
+        &:after {
+            border: 2px solid;
         }
     }
 }

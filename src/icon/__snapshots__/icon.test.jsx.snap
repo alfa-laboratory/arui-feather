@@ -35,13 +35,6 @@ exports[`icon render IconAccountInfo without problems: IconAccountInfo 1`] = `
 />
 `;
 
-exports[`icon render IconAccountMain without problems: IconAccountMain 1`] = `
-<Icon
-  name="account-main"
-  size="m"
-/>
-`;
-
 exports[`icon render IconAccountRub without problems: IconAccountRub 1`] = `
 <Icon
   name="account-rub"
@@ -70,13 +63,6 @@ exports[`icon render IconAccountUsd without problems: IconAccountUsd 1`] = `
 />
 `;
 
-exports[`icon render IconActionClose without problems: IconActionClose 1`] = `
-<Icon
-  name="action-close"
-  size="m"
-/>
-`;
-
 exports[`icon render IconActionPhotoOrFile without problems: IconActionPhotoOrFile 1`] = `
 <Icon
   name="action-photo-or-file"
@@ -94,13 +80,6 @@ exports[`icon render IconAdd without problems: IconAdd 1`] = `
 exports[`icon render IconAddFilled without problems: IconAddFilled 1`] = `
 <Icon
   name="add-filled"
-  size="m"
-/>
-`;
-
-exports[`icon render IconAddressBook without problems: IconAddressBook 1`] = `
-<Icon
-  name="address-book"
   size="m"
 />
 `;
@@ -441,6 +420,20 @@ exports[`icon render IconBank10223 without problems: IconBank10223 1`] = `
 />
 `;
 
+exports[`icon render IconBankAlfa without problems: IconBankAlfa 1`] = `
+<Icon
+  name="bank-alfa"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankBaltiyskiy without problems: IconBankBaltiyskiy 1`] = `
+<Icon
+  name="bank-baltiyskiy"
+  size="m"
+/>
+`;
+
 exports[`icon render IconBankBinbank without problems: IconBankBinbank 1`] = `
 <Icon
   name="bank-binbank"
@@ -448,9 +441,359 @@ exports[`icon render IconBankBinbank without problems: IconBankBinbank 1`] = `
 />
 `;
 
+exports[`icon render IconBankEurope without problems: IconBankEurope 1`] = `
+<Icon
+  name="bank-europe"
+  size="m"
+/>
+`;
+
 exports[`icon render IconBankGazprombank without problems: IconBankGazprombank 1`] = `
 <Icon
   name="bank-gazprombank"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankHomeCredit without problems: IconBankHomeCredit 1`] = `
+<Icon
+  name="bank-home-credit"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMdm without problems: IconBankMdm 1`] = `
+<Icon
+  name="bank-mdm"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMkb without problems: IconBankMkb 1`] = `
+<Icon
+  name="bank-mkb"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMoscow without problems: IconBankMoscow 1`] = `
+<Icon
+  name="bank-moscow"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankMts without problems: IconBankMts 1`] = `
+<Icon
+  name="bank-mts"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1 without problems: IconBankNsipf1 1`] = `
+<Icon
+  name="bank-nsipf-1"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf128 without problems: IconBankNsipf128 1`] = `
+<Icon
+  name="bank-nsipf-128"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf316 without problems: IconBankNsipf316 1`] = `
+<Icon
+  name="bank-nsipf-316"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf323 without problems: IconBankNsipf323 1`] = `
+<Icon
+  name="bank-nsipf-323"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf354 without problems: IconBankNsipf354 1`] = `
+<Icon
+  name="bank-nsipf-354"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf429 without problems: IconBankNsipf429 1`] = `
+<Icon
+  name="bank-nsipf-429"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf436 without problems: IconBankNsipf436 1`] = `
+<Icon
+  name="bank-nsipf-436"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf705 without problems: IconBankNsipf705 1`] = `
+<Icon
+  name="bank-nsipf-705"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1000 without problems: IconBankNsipf1000 1`] = `
+<Icon
+  name="bank-nsipf-1000"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1326 without problems: IconBankNsipf1326 1`] = `
+<Icon
+  name="bank-nsipf-1326"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1439 without problems: IconBankNsipf1439 1`] = `
+<Icon
+  name="bank-nsipf-1439"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1481 without problems: IconBankNsipf1481 1`] = `
+<Icon
+  name="bank-nsipf-1481"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf1792 without problems: IconBankNsipf1792 1`] = `
+<Icon
+  name="bank-nsipf-1792"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2209 without problems: IconBankNsipf2209 1`] = `
+<Icon
+  name="bank-nsipf-2209"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2241 without problems: IconBankNsipf2241 1`] = `
+<Icon
+  name="bank-nsipf-2241"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2268 without problems: IconBankNsipf2268 1`] = `
+<Icon
+  name="bank-nsipf-2268"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2275 without problems: IconBankNsipf2275 1`] = `
+<Icon
+  name="bank-nsipf-2275"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2289 without problems: IconBankNsipf2289 1`] = `
+<Icon
+  name="bank-nsipf-2289"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2361 without problems: IconBankNsipf2361 1`] = `
+<Icon
+  name="bank-nsipf-2361"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2524 without problems: IconBankNsipf2524 1`] = `
+<Icon
+  name="bank-nsipf-2524"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2673 without problems: IconBankNsipf2673 1`] = `
+<Icon
+  name="bank-nsipf-2673"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2748 without problems: IconBankNsipf2748 1`] = `
+<Icon
+  name="bank-nsipf-2748"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf2766 without problems: IconBankNsipf2766 1`] = `
+<Icon
+  name="bank-nsipf-2766"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3251 without problems: IconBankNsipf3251 1`] = `
+<Icon
+  name="bank-nsipf-3251"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3279 without problems: IconBankNsipf3279 1`] = `
+<Icon
+  name="bank-nsipf-3279"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3292 without problems: IconBankNsipf3292 1`] = `
+<Icon
+  name="bank-nsipf-3292"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankNsipf3311 without problems: IconBankNsipf3311 1`] = `
+<Icon
+  name="bank-nsipf-3311"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankOtkritie without problems: IconBankOtkritie 1`] = `
+<Icon
+  name="bank-otkritie"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankOtp without problems: IconBankOtp 1`] = `
+<Icon
+  name="bank-otp"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankPsb without problems: IconBankPsb 1`] = `
+<Icon
+  name="bank-psb"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankQiwi without problems: IconBankQiwi 1`] = `
+<Icon
+  name="bank-qiwi"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankRaiffeisen without problems: IconBankRaiffeisen 1`] = `
+<Icon
+  name="bank-raiffeisen"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankRussianStandard without problems: IconBankRussianStandard 1`] = `
+<Icon
+  name="bank-russian-standard"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSaintPetersburg without problems: IconBankSaintPetersburg 1`] = `
+<Icon
+  name="bank-saint-petersburg"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSber without problems: IconBankSber 1`] = `
+<Icon
+  name="bank-sber"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSkb without problems: IconBankSkb 1`] = `
+<Icon
+  name="bank-skb"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankSocieteGenerale without problems: IconBankSocieteGenerale 1`] = `
+<Icon
+  name="bank-societe-generale"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankTinkoff without problems: IconBankTinkoff 1`] = `
+<Icon
+  name="bank-tinkoff"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankTrust without problems: IconBankTrust 1`] = `
+<Icon
+  name="bank-trust"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankUnicredit without problems: IconBankUnicredit 1`] = `
+<Icon
+  name="bank-unicredit"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankUralsib without problems: IconBankUralsib 1`] = `
+<Icon
+  name="bank-uralsib"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankUralskiy without problems: IconBankUralskiy 1`] = `
+<Icon
+  name="bank-uralskiy"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankVozrozhdenie without problems: IconBankVozrozhdenie 1`] = `
+<Icon
+  name="bank-vozrozhdenie"
+  size="m"
+/>
+`;
+
+exports[`icon render IconBankVtb without problems: IconBankVtb 1`] = `
+<Icon
+  name="bank-vtb"
   size="m"
 />
 `;
@@ -686,13 +1029,6 @@ exports[`icon render IconCategoryBusinessActivity without problems: IconCategory
 />
 `;
 
-exports[`icon render IconCategoryBusinessTrip without problems: IconCategoryBusinessTrip 1`] = `
-<Icon
-  name="category-business-trip"
-  size="m"
-/>
-`;
-
 exports[`icon render IconCategoryCash without problems: IconCategoryCash 1`] = `
 <Icon
   name="category-cash"
@@ -724,13 +1060,6 @@ exports[`icon render IconCategoryDefault without problems: IconCategoryDefault 1
 exports[`icon render IconCategoryDress without problems: IconCategoryDress 1`] = `
 <Icon
   name="category-dress"
-  size="m"
-/>
-`;
-
-exports[`icon render IconCategoryDunno without problems: IconCategoryDunno 1`] = `
-<Icon
-  name="category-dunno"
   size="m"
 />
 `;
@@ -773,13 +1102,6 @@ exports[`icon render IconCategoryFinance without problems: IconCategoryFinance 1
 exports[`icon render IconCategoryFines without problems: IconCategoryFines 1`] = `
 <Icon
   name="category-fines"
-  size="m"
-/>
-`;
-
-exports[`icon render IconCategoryForgot without problems: IconCategoryForgot 1`] = `
-<Icon
-  name="category-forgot"
   size="m"
 />
 `;
@@ -847,23 +1169,9 @@ exports[`icon render IconCategoryMedicine without problems: IconCategoryMedicine
 />
 `;
 
-exports[`icon render IconCategoryMobileInternet without problems: IconCategoryMobileInternet 1`] = `
-<Icon
-  name="category-mobile-internet"
-  size="m"
-/>
-`;
-
 exports[`icon render IconCategoryMortgage without problems: IconCategoryMortgage 1`] = `
 <Icon
   name="category-mortgage"
-  size="m"
-/>
-`;
-
-exports[`icon render IconCategoryMortgaget without problems: IconCategoryMortgaget 1`] = `
-<Icon
-  name="category-mortgaget"
   size="m"
 />
 `;
@@ -938,13 +1246,6 @@ exports[`icon render IconCategoryState without problems: IconCategoryState 1`] =
 />
 `;
 
-exports[`icon render IconCategoryTaxFines without problems: IconCategoryTaxFines 1`] = `
-<Icon
-  name="category-tax-fines"
-  size="m"
-/>
-`;
-
 exports[`icon render IconCategoryTelecom without problems: IconCategoryTelecom 1`] = `
 <Icon
   name="category-telecom"
@@ -983,6 +1284,13 @@ exports[`icon render IconCategoryTroika without problems: IconCategoryTroika 1`]
 exports[`icon render IconCategoryTv without problems: IconCategoryTv 1`] = `
 <Icon
   name="category-tv"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryUnknown without problems: IconCategoryUnknown 1`] = `
+<Icon
+  name="category-unknown"
   size="m"
 />
 `;
@@ -1053,6 +1361,13 @@ exports[`icon render IconCheckChat without problems: IconCheckChat 1`] = `
 exports[`icon render IconCheckIndeterminate without problems: IconCheckIndeterminate 1`] = `
 <Icon
   name="check-indeterminate"
+  size="m"
+/>
+`;
+
+exports[`icon render IconChevronRight without problems: IconChevronRight 1`] = `
+<Icon
+  name="chevron-right"
   size="m"
 />
 `;
@@ -1144,6 +1459,13 @@ exports[`icon render IconCostsCard without problems: IconCostsCard 1`] = `
 exports[`icon render IconCredit without problems: IconCredit 1`] = `
 <Icon
   name="credit"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCrown without problems: IconCrown 1`] = `
+<Icon
+  name="crown"
   size="m"
 />
 `;
@@ -1351,6 +1673,13 @@ exports[`icon render IconFail without problems: IconFail 1`] = `
 />
 `;
 
+exports[`icon render IconFault without problems: IconFault 1`] = `
+<Icon
+  name="fault"
+  size="m"
+/>
+`;
+
 exports[`icon render IconFavorite without problems: IconFavorite 1`] = `
 <Icon
   name="favorite"
@@ -1358,44 +1687,9 @@ exports[`icon render IconFavorite without problems: IconFavorite 1`] = `
 />
 `;
 
-exports[`icon render IconFavoriteActive without problems: IconFavoriteActive 1`] = `
-<Icon
-  name="favorite-active"
-  size="m"
-/>
-`;
-
-exports[`icon render IconFavourites without problems: IconFavourites 1`] = `
-<Icon
-  name="favourites"
-  size="m"
-/>
-`;
-
 exports[`icon render IconFeature without problems: IconFeature 1`] = `
 <Icon
   name="feature"
-  size="m"
-/>
-`;
-
-exports[`icon render IconFeedback without problems: IconFeedback 1`] = `
-<Icon
-  name="feedback"
-  size="m"
-/>
-`;
-
-exports[`icon render IconFeedbackStar without problems: IconFeedbackStar 1`] = `
-<Icon
-  name="feedback-star"
-  size="m"
-/>
-`;
-
-exports[`icon render IconFeedbackStarSelected without problems: IconFeedbackStarSelected 1`] = `
-<Icon
-  name="feedback-star-selected"
   size="m"
 />
 `;
@@ -1410,6 +1704,13 @@ exports[`icon render IconFifaTrophy without problems: IconFifaTrophy 1`] = `
 exports[`icon render IconFilter without problems: IconFilter 1`] = `
 <Icon
   name="filter"
+  size="m"
+/>
+`;
+
+exports[`icon render IconFingerPointing without problems: IconFingerPointing 1`] = `
+<Icon
+  name="finger-pointing"
   size="m"
 />
 `;
@@ -1673,13 +1974,6 @@ exports[`icon render IconLockFilled without problems: IconLockFilled 1`] = `
 />
 `;
 
-exports[`icon render IconLockUnlock without problems: IconLockUnlock 1`] = `
-<Icon
-  name="lock-unlock"
-  size="m"
-/>
-`;
-
 exports[`icon render IconLogoAlfabank without problems: IconLogoAlfabank 1`] = `
 <Icon
   name="logo-alfabank"
@@ -1834,9 +2128,9 @@ exports[`icon render IconNext without problems: IconNext 1`] = `
 />
 `;
 
-exports[`icon render IconNfs without problems: IconNfs 1`] = `
+exports[`icon render IconNotificationBadge without problems: IconNotificationBadge 1`] = `
 <Icon
-  name="nfs"
+  name="notification-badge"
   size="m"
 />
 `;
@@ -1974,6 +2268,13 @@ exports[`icon render IconPaymentToState without problems: IconPaymentToState 1`]
 />
 `;
 
+exports[`icon render IconPercent without problems: IconPercent 1`] = `
+<Icon
+  name="percent"
+  size="m"
+/>
+`;
+
 exports[`icon render IconPerson without problems: IconPerson 1`] = `
 <Icon
   name="person"
@@ -1995,6 +2296,13 @@ exports[`icon render IconPhotoCard without problems: IconPhotoCard 1`] = `
 />
 `;
 
+exports[`icon render IconPillow without problems: IconPillow 1`] = `
+<Icon
+  name="pillow"
+  size="m"
+/>
+`;
+
 exports[`icon render IconPin without problems: IconPin 1`] = `
 <Icon
   name="pin"
@@ -2012,13 +2320,6 @@ exports[`icon render IconPinUnpin without problems: IconPinUnpin 1`] = `
 exports[`icon render IconPlanExpenses without problems: IconPlanExpenses 1`] = `
 <Icon
   name="plan-expenses"
-  size="m"
-/>
-`;
-
-exports[`icon render IconPlansByCategory without problems: IconPlansByCategory 1`] = `
-<Icon
-  name="plans-by-category"
   size="m"
 />
 `;
@@ -2184,6 +2485,41 @@ exports[`icon render IconSite without problems: IconSite 1`] = `
 />
 `;
 
+exports[`icon render IconSixty without problems: IconSixty 1`] = `
+<Icon
+  name="sixty"
+  size="m"
+/>
+`;
+
+exports[`icon render IconSliderArrowDouble without problems: IconSliderArrowDouble 1`] = `
+<Icon
+  name="slider-arrow-double"
+  size="m"
+/>
+`;
+
+exports[`icon render IconStar without problems: IconStar 1`] = `
+<Icon
+  name="star"
+  size="m"
+/>
+`;
+
+exports[`icon render IconStarActive without problems: IconStarActive 1`] = `
+<Icon
+  name="star-active"
+  size="m"
+/>
+`;
+
+exports[`icon render IconStarInactive without problems: IconStarInactive 1`] = `
+<Icon
+  name="star-inactive"
+  size="m"
+/>
+`;
+
 exports[`icon render IconStatusUrgent without problems: IconStatusUrgent 1`] = `
 <Icon
   name="status-urgent"
@@ -2212,13 +2548,6 @@ exports[`icon render IconSystemBack without problems: IconSystemBack 1`] = `
 />
 `;
 
-exports[`icon render IconSystemClose without problems: IconSystemClose 1`] = `
-<Icon
-  name="system-close"
-  size="m"
-/>
-`;
-
 exports[`icon render IconSystemHelp without problems: IconSystemHelp 1`] = `
 <Icon
   name="system-help"
@@ -2229,6 +2558,27 @@ exports[`icon render IconSystemHelp without problems: IconSystemHelp 1`] = `
 exports[`icon render IconSystemHideArrow without problems: IconSystemHideArrow 1`] = `
 <Icon
   name="system-hide-arrow"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTemplates without problems: IconTemplates 1`] = `
+<Icon
+  name="templates"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTick without problems: IconTick 1`] = `
+<Icon
+  name="tick"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTodo without problems: IconTodo 1`] = `
+<Icon
+  name="todo"
   size="m"
 />
 `;
@@ -2331,9 +2681,9 @@ exports[`icon render IconUp without problems: IconUp 1`] = `
 />
 `;
 
-exports[`icon render IconUser without problems: IconUser 1`] = `
+exports[`icon render IconUserAdd without problems: IconUserAdd 1`] = `
 <Icon
-  name="user"
+  name="user-add"
   size="m"
 />
 `;
@@ -2355,6 +2705,13 @@ exports[`icon render IconVerifying without problems: IconVerifying 1`] = `
 exports[`icon render IconVisa without problems: IconVisa 1`] = `
 <Icon
   name="visa"
+  size="m"
+/>
+`;
+
+exports[`icon render IconWaiting without problems: IconWaiting 1`] = `
+<Icon
+  name="waiting"
   size="m"
 />
 `;

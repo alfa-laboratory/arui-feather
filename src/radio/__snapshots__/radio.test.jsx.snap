@@ -9,25 +9,26 @@ exports[`radio should render without problems 1`] = `
     className="radio radio_size_m radio_theme_alfa-on-white"
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    onMouseUp={[Function]}
     tabIndex={0}
   >
-    <div>
-      <span
-        className="radio__box"
-      >
-        <input
-          autoComplete="off"
-          checked={false}
-          className="radio__control"
-          onChange={[Function]}
-          onClick={[Function]}
-          tabIndex="-1"
-          type="radio"
-        />
-      </span>
-    </div>
+    <span
+      className="radio__box"
+      key="0"
+    >
+      <input
+        autoComplete="off"
+        checked={false}
+        className="radio__control"
+        onChange={[Function]}
+        onClick={[Function]}
+        tabIndex="-1"
+        type="radio"
+      />
+    </span>
   </label>
 </Radio>
 `;

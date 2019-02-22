@@ -22,6 +22,7 @@ import keyboardCode from '../lib/keyboard-code';
 import Modernizr from '../modernizr';
 import { isNodeOutsideElement } from '../lib/window';
 import { parseDate, calculateMonth, changeDateFormat } from './utils';
+import performance from '../performance';
 
 /**
  * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
@@ -38,7 +39,8 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
  * Компонент для ввода даты.
  */
 @cn('calendar-input', Input, Popup)
-class CalendarInput extends React.PureComponent {
+@performance(true)
+class CalendarInput extends React.Component {
     static propTypes = {
         /** Содержимое поля ввода */
         value: Type.string,
@@ -81,6 +83,8 @@ class CalendarInput extends React.PureComponent {
             'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
             'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
         ])),
+        /** Управление автозаполнением компонента */
+        autocomplete: Type.bool,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
         /** Размер компонента */
@@ -306,6 +310,7 @@ class CalendarInput extends React.PureComponent {
                             this.customCalendarTarget = customCalendarTarget;
                         } }
                         { ...commonProps }
+                        autocomplete={ this.props.autocomplete }
                         className={ cn('custom-control') }
                         disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
                         focused={ this.state.isInputFocused || this.state.isCalendarFocused }

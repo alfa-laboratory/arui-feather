@@ -2,10 +2,18 @@
 * License, v. 2.0. If a copy of the MPL was not distributed with this
 * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+.icon_size_black.icon_name_add-filled.icon_colored.icon_theme_alfa-on-color, .icon_size_black.icon_name_add-filled.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_add-filled_black_m.svg');
+}
+
 .icon_size_l.icon_name_add-filled.icon_theme_alfa-on-white {
     background-image: url('./icon_add-filled_l_black.svg');
 }
 
 .icon_size_l.icon_name_add-filled.icon_theme_alfa-on-color {
     background-image: url('./icon_add-filled_l_white.svg');
+}
+
+.icon_size_white.icon_name_add-filled.icon_colored.icon_theme_alfa-on-color, .icon_size_white.icon_name_add-filled.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_add-filled_white_m.svg');
 }

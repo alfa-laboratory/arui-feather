@@ -6,12 +6,14 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Компонент параграфа текста.
  */
 @cn('paragraph')
-class Paragraph extends React.PureComponent {
+@performance()
+class Paragraph extends React.Component {
     static propTypes = {
         /** Тип параграфа */
         view: Type.oneOf(['lead', 'normal']),

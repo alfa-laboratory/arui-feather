@@ -139,26 +139,6 @@ exports[`select should render without problem 1`] = `
                   </span>
                 </span>
               </IconButton>
-              <ResizeSensor
-                key="addon-sensor"
-                onResize={[Function]}
-              >
-                <iframe
-                  style={
-                    Object {
-                      "background": "transparent",
-                      "border": "none",
-                      "height": "100%",
-                      "left": 0,
-                      "position": "absolute",
-                      "top": 0,
-                      "width": "100%",
-                      "zIndex": -1,
-                    }
-                  }
-                  tabIndex="-1"
-                />
-              </ResizeSensor>
             </span>
           </span>
         </button>

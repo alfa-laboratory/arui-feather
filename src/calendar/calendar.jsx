@@ -21,6 +21,7 @@ import sortedIndexOf from 'lodash.sortedindexof';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
+import performance from '../performance';
 import isCurrentDay from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
@@ -34,7 +35,8 @@ const ATTR_DISABLED = 'data-disabled';
  * Компонент календаря.
  */
 @cn('calendar')
-class Calendar extends React.PureComponent {
+@performance(true)
+class Calendar extends React.Component {
     static propTypes = {
         /** Выбранная дата, в формате unix timestamp */
         value: Type.number,
@@ -76,6 +78,8 @@ class Calendar extends React.PureComponent {
         showArrows: Type.bool,
         /** Возможность управления календарём с клавиатуры */
         isKeyboard: Type.bool,
+        /** Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя */
+        width: Type.oneOf(['default', 'available']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -151,7 +155,7 @@ class Calendar extends React.PureComponent {
         return (
             <div
                 ref={ (root) => { this.root = root; } }
-                className={ cn() }
+                className={ cn({ width: this.props.width }) }
                 id={ this.props.id }
                 role='grid'
                 tabIndex='0'

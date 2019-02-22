@@ -10,6 +10,7 @@ import Input from '../input/input';
 import Select from '../select/select';
 
 import cn from '../cn';
+import performance from '../performance';
 
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';
@@ -21,7 +22,8 @@ const MAX_DIAL_CODE_LENGTH = 4;
  *
  */
 @cn('intl-phone-input', Input, Select)
-class IntlPhoneInput extends React.PureComponent {
+@performance()
+class IntlPhoneInput extends React.Component {
     static propTypes = Input.propTypes;
 
     static defaultProps = {

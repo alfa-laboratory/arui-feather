@@ -64,9 +64,9 @@ npm install arui-feather --save
   * iOS *(две последние стабильные версии)*
 
 
-Мобильная вёрстка
+Вёрстка
 -----------------
-[Использование в адаптивной/мобильной среде](./README_MOBILE.md).
+[Использование в адаптивной/мобильной среде](./GUIDE.md).
 
 
 Разработка
@@ -99,13 +99,13 @@ npm install arui-feather --save
 
 Запуск unit-тестов для определенных компонентов `TESTS=amount,calendar npm run test`.
 
-Запуск unit-тестов используя Chrome `npm run test -- --browsers=Chrome`
+Запуск unit-тестов используя Chrome `npm run test -- --browser=Chrome`
 
 Запуск линтера для css `npm run lint-css`.
 
 Запуск линтера для js `npm run lint-js`.
 
-[Запуск тестов на мобильных устройствах](./README_MOBILE.md#mobile-testing).
+[Запуск тестов на мобильных устройствах](./GUIDE.md#mobile-testing).
 
 Регрессионное тестирование
 --------------------------
@@ -142,6 +142,19 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 
 [Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md).
 
+Оптимизация производительности компонентов
+-------------------------------------------
+Для оптимизации производительности компонентов используется метод
+[shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom),
+реализуемый декоратором [@performance](./src/performance.js).
+
+Пример использования:
+```
+import performance from '../performance';
+
+@performance(true)
+class Component extends React.Component {}
+```
 
 Использование Modernizr
 -----------------------

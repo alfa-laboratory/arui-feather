@@ -4,7 +4,7 @@ import Textarea from '../src/textarea';
 const NAME = 'textarea';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
-const TEXT = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
+const TEXT = 'Far far away, behind the word mountains, there live the blind texts. ';
 
 const PROP_SETS = [
     {},
@@ -61,7 +61,7 @@ geminiReact.suite(NAME, () => {
                                 actions.mouseUp(this.renderedComponent);
                             })
                             .capture('with-text', function (actions, find) {
-                                actions.sendKeys(find('.textarea_has-label .textarea__control'), TEXT.repeat(10));
+                                actions.sendKeys(find('.textarea_has-label .textarea__control'), TEXT.repeat(3));
                             });
                     } else {
                         suite

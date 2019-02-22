@@ -10,7 +10,6 @@
     .checkbox__box {
         background: var(--color-background-control-alfa-on-color);
         border: 1px solid var(--color-border-control-alfa-on-color);
-        transition: all 200ms ease;
     }
 
     &.checkbox_checked {
@@ -18,12 +17,22 @@
             background: var(--color-accent-translucent);
         }
 
-        &.checkbox_hovered .checkbox__box {
+        &.checkbox_hovered .checkbox__box,
+        &.checkbox_focused .checkbox__box {
             background: var(--color-accent);
         }
     }
 
-    &.checkbox_focused,
+    &.checkbox_focused {
+        .checkbox__box {
+            border-color: var(--color-border-control-focused-alfa-on-color);
+
+            &:after {
+                border-color: var(--color-border-control-focused-alfa-on-color);
+            }
+        }
+    }
+
     &.checkbox_hovered {
         .checkbox__box {
             border-color: var(--color-border-control-focused-alfa-on-color);

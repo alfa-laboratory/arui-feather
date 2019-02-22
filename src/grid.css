@@ -1,0 +1,99 @@
+@import './vars.css';
+
+:root {
+    /* Количество колонок */
+    --grid-column-count: 12;
+
+    /* Ширина колонки */
+    --grid-column-width: calc(100 / var(--grid-column-count))%;
+}
+
+.grid {
+    width: 100%;
+    box-sizing: border-box;
+
+    max-width: calc(var(--content-width) + 2 * var(--gap-4xl));
+    margin: 0 auto;
+    padding: 0 var(--gap-s);
+
+    @media (--mobile-m) {
+        padding: 0 var(--gap-m);
+    }
+
+    @media (--mobile-l) {
+        padding: 0 var(--gap-l);
+    }
+
+    @media (--tablet-m) {
+        padding: 0 var(--gap-2xl);
+    }
+
+    @media (--desktop-m) {
+        padding: 0 var(--gap-4xl);
+    }
+}
+
+.grid__row {
+    display: flex;
+    flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    margin-left: calc(var(--gap-xs) * -1);
+    margin-right: calc(var(--gap-xs) * -1);
+
+    @media (--desktop-m) {
+        margin-left: calc(var(--gap-s) * -1);
+        margin-right: calc(var(--gap-s) * -1);
+    }
+}
+
+.grid__col {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    max-width: 100%;
+
+    padding-left: var(--gap-xs);
+    padding-right: var(--gap-xs);
+
+    @media (--desktop-m) {
+        padding-left: var(--gap-s);
+        padding-right: var(--gap-s);
+    }
+}
+
+@for $i from 1 to 12 {
+    .grid__col-$i, .grid__col-$(i), .grid__offset-$i {
+        -webkit-box-flex: 0;
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    .grid__col-$i {
+        -ms-flex-preferred-size: calc($i * var(--grid-column-width));
+        flex-basis: calc($i * var(--grid-column-width));
+        max-width: calc($i * var(--grid-column-width));
+
+        padding-left: var(--gap-xs);
+        padding-right: var(--gap-xs);
+
+        @media (--desktop-m) {
+            padding-left: var(--gap-s);
+            padding-right: var(--gap-s);
+        }
+    }
+
+    .grid__offset-$i {
+        margin-left: calc($i * var(--grid-column-width));
+    }
+}

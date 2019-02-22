@@ -5,8 +5,10 @@ exports[`checkbox should render without problems 1`] = `
   className="checkbox checkbox_size_m checkbox_theme_alfa-on-white"
   onBlur={[Function]}
   onFocus={[Function]}
+  onMouseDown={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
+  onMouseUp={[Function]}
 >
   <span
     className="checkbox__box"
@@ -19,6 +21,11 @@ exports[`checkbox should render without problems 1`] = `
       onChange={[Function]}
       onClick={[Function]}
       type="checkbox"
+    />
+    <IconTick
+      className="checkbox__icon"
+      size="xs"
+      theme="alfa-on-color"
     />
   </span>
 </label>

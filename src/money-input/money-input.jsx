@@ -12,6 +12,8 @@ import Input from '../input/input';
 import Mask from '../masked-input/mask';
 
 import cn from '../cn';
+import performance from '../performance';
+import { getCurrencySymbol } from '../lib/currency-codes';
 
 const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
@@ -32,7 +34,6 @@ function getValueParts(value) {
         .split(',') // Разделяем по запятой.
         .slice(0, 2); // Отрезаем, если больше, чем один фрагмент после запятой.
 }
-
 
 /**
  * Сплитит интегер в группы по 3.
@@ -57,18 +58,28 @@ function splitInteger(str) {
  * @extends Input
  */
 @cn('money-input', Input)
-class MoneyInput extends React.PureComponent {
+@performance()
+class MoneyInput extends React.Component {
     static propTypes = {
         ...Input.propTypes,
         /** Максимально допустимая длина значения до запятой */
         integerLength: Type.number,
         /** Максимально допустимая длина значения после запятой */
-        fractionLength: Type.number
+        fractionLength: Type.number,
+        /** Толщина шрифта */
+        bold: Type.bool,
+        /** Отображение символа валюты */
+        showCurrency: Type.bool,
+        /** Международный код валюты */
+        currencyCode: Type.string
     };
 
     static defaultProps = {
         fractionLength: DEFAULT_FRACTION_SIZE,
-        integerLength: DEFAULT_INTEGER_SIZE
+        integerLength: DEFAULT_INTEGER_SIZE,
+        bold: false,
+        showCurrency: false,
+        currencyCode: 'RUR'
     };
 
     state = {
@@ -102,17 +113,36 @@ class MoneyInput extends React.PureComponent {
 
     render(cn, Input) {
         return (
-            <Input
-                { ...this.props }
-                ref={ (root) => { this.root = root; } }
-                className={ cn() }
-                formNoValidate={ true }
-                mask={ this.maskPattern }
-                maxLength={ this.getMaxLength() }
-                value={ this.getValue() }
-                onChange={ this.handleChange }
-                onProcessMaskInputEvent={ this.handleProcessMaskInputEvent }
-            />
+            <div
+                className={ cn({
+                    currency: this.props.showCurrency,
+                    bold: this.props.bold,
+                    width: this.props.width
+                }) }
+            >
+                <Input
+                    { ...this.props }
+                    ref={ (root) => {
+                        this.root = root;
+                    } }
+                    formNoValidate={ true }
+                    mask={ this.maskPattern }
+                    maxLength={ this.getMaxLength() }
+                    value={ this.getValue() }
+                    leftAddons={
+                        this.props.showCurrency ? (
+                            <span className={ cn('currency') }>
+                                <span className={ cn('value') }>{ this.getValue() }</span>
+                                <span>{ getCurrencySymbol(this.props.currencyCode) }</span>
+                            </span>
+                        ) : (
+                            this.props.leftAddons
+                        )
+                    }
+                    onChange={ this.handleChange }
+                    onProcessMaskInputEvent={ this.handleProcessMaskInputEvent }
+                />
+            </div>
         );
     }
 
@@ -181,10 +211,12 @@ class MoneyInput extends React.PureComponent {
         let [integerPart, fractionPart] = getValueParts(value);
 
         let integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
-        this.maskPattern = splitInteger((new Array(integerPartLength + 1)).join('1')).reverse().join(' ');
+        this.maskPattern = splitInteger(new Array(integerPartLength + 1).join('1'))
+            .reverse()
+            .join(' ');
 
         if (fractionPart !== undefined && this.props.fractionLength > 0) {
-            this.maskPattern += `,${(new Array(this.props.fractionLength + 1)).join('1')}`;
+            this.maskPattern += `,${new Array(this.props.fractionLength + 1).join('1')}`;
         }
 
         this.mask = new Mask(this.maskPattern);

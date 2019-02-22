@@ -17,12 +17,14 @@ import Swipeable from '../swipeable';
 
 import cn from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
+import performance from '../performance';
 
 /**
  * Компонент всплывающего окна.
  */
 @cn('notification')
-class Notification extends React.PureComponent {
+@performance()
+class Notification extends React.Component {
     static propTypes = {
         /** Тип компонента */
         status: Type.oneOf(['error', 'fail', 'ok']),

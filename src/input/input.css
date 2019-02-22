@@ -426,3 +426,8 @@
         line-height: 58px;
     }
 }
+
+/* IE fix for input with label and placeholder */
+.input_has-label .input__control:-ms-input-placeholder {
+    opacity: 0;
+}

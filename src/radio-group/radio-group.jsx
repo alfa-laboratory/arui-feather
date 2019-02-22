@@ -8,12 +8,14 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Компонент группы радио-кнопок.
  */
 @cn('radio-group')
-class RadioGroup extends React.PureComponent {
+@performance()
+class RadioGroup extends React.Component {
     static propTypes = {
         /** Тип группы кнопок */
         type: Type.oneOf(['normal', 'button', 'line']),

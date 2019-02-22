@@ -6,12 +6,14 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
  */
 @cn('spin')
-class Spin extends React.PureComponent {
+@performance()
+class Spin extends React.Component {
     static propTypes = {
         /** Управление видимостью компонента */
         visible: Type.bool,

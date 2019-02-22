@@ -1,3 +1,200 @@
+<a name="13.6.2"></a>
+## [13.6.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.6.1...v13.6.2) (2019-02-21)
+
+
+
+<a name="13.6.1"></a>
+## [13.6.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.6.0...v13.6.1) (2019-02-20)
+
+
+### Features
+
+* **amount:** move util functions to lib, add function to generate formatted amount in string ([#792](https://github.com/alfa-laboratory/arui-feather/issues/792)) ([1e921e7](https://github.com/alfa-laboratory/arui-feather/commit/1e921e7))
+
+
+
+<a name="13.6.0"></a>
+# [13.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.5.0...v13.6.0) (2019-02-12)
+
+
+### Bug Fixes
+
+* **popup:** fix popup render for SSR and react@16^ ([#787](https://github.com/alfa-laboratory/arui-feather/issues/787)) ([22d2938](https://github.com/alfa-laboratory/arui-feather/commit/22d2938))
+
+
+### Features
+
+* **calendar-input:** add autocomplete prop ([#782](https://github.com/alfa-laboratory/arui-feather/issues/782)) ([a26ed78](https://github.com/alfa-laboratory/arui-feather/commit/a26ed78))
+* **polyfills:** extends polyfills ([#784](https://github.com/alfa-laboratory/arui-feather/issues/784)) ([b21d608](https://github.com/alfa-laboratory/arui-feather/commit/b21d608))
+
+
+
+<a name="13.5.0"></a>
+# [13.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.2...v13.5.0) (2019-02-01)
+
+
+### Features
+
+* **colors:** add script to generate primitive-colors.css ([#779](https://github.com/alfa-laboratory/arui-feather/issues/779)) ([ff10950](https://github.com/alfa-laboratory/arui-feather/commit/ff10950))
+* **icons:** bank icons with IDs from NSIPF ([#778](https://github.com/alfa-laboratory/arui-feather/issues/778)) ([f7c6974](https://github.com/alfa-laboratory/arui-feather/commit/f7c6974))
+
+
+
+<a name="13.4.2"></a>
+## [13.4.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.1...v13.4.2) (2019-01-30)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.9.1 ([#777](https://github.com/alfa-laboratory/arui-feather/issues/777)) ([8bb023e](https://github.com/alfa-laboratory/arui-feather/commit/8bb023e))
+
+
+
+<a name="13.4.1"></a>
+## [13.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.4.0...v13.4.1) (2019-01-29)
+
+
+### Features
+
+* **colors:** add new gray background color with .05 transparancy ([#776](https://github.com/alfa-laboratory/arui-feather/issues/776)) ([b905805](https://github.com/alfa-laboratory/arui-feather/commit/b905805))
+
+
+
+<a name="13.4.0"></a>
+# [13.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.5...v13.4.0) (2019-01-25)
+
+
+### Features
+
+* **checkbox,radio:** checkbox and radio styles tuning ([#763](https://github.com/alfa-laboratory/arui-feather/issues/763)) ([913d6ca](https://github.com/alfa-laboratory/arui-feather/commit/913d6ca))
+
+
+
+<a name="13.3.5"></a>
+## [13.3.5](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.4...v13.3.5) (2019-01-24)
+
+
+### Bug Fixes
+
+* [@performance](https://github.com/performance) is back ([#774](https://github.com/alfa-laboratory/arui-feather/issues/774)) ([a29c09a](https://github.com/alfa-laboratory/arui-feather/commit/a29c09a))
+
+
+
+<a name="13.3.4"></a>
+## [13.3.4](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.3...v13.3.4) (2019-01-22)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.8.1 ([#773](https://github.com/alfa-laboratory/arui-feather/issues/773)) ([9ead40a](https://github.com/alfa-laboratory/arui-feather/commit/9ead40a))
+
+
+
+<a name="13.3.3"></a>
+## [13.3.3](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.2...v13.3.3) (2019-01-16)
+
+
+### Bug Fixes
+
+* **icon:** fix size prop type ([#770](https://github.com/alfa-laboratory/arui-feather/issues/770)) ([63b88d5](https://github.com/alfa-laboratory/arui-feather/commit/63b88d5))
+
+
+
+<a name="13.3.2"></a>
+## [13.3.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.1...v13.3.2) (2019-01-11)
+
+
+### Bug Fixes
+
+* **input:** input with label and placeholder in ie11 ([#767](https://github.com/alfa-laboratory/arui-feather/issues/767)) ([57c1a86](https://github.com/alfa-laboratory/arui-feather/commit/57c1a86))
+* **money-input:** width available prop and CSS ([#768](https://github.com/alfa-laboratory/arui-feather/issues/768)) ([33746e8](https://github.com/alfa-laboratory/arui-feather/commit/33746e8))
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.8.0 ([#766](https://github.com/alfa-laboratory/arui-feather/issues/766)) ([d1c9545](https://github.com/alfa-laboratory/arui-feather/commit/d1c9545))
+
+
+
+<a name="13.3.1"></a>
+## [13.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.3.0...v13.3.1) (2019-01-09)
+
+
+### Bug Fixes
+
+* **types:** performance typing param init error ([#765](https://github.com/alfa-laboratory/arui-feather/issues/765)) ([bf5d778](https://github.com/alfa-laboratory/arui-feather/commit/bf5d778))
+
+
+
+<a name="13.3.0"></a>
+# [13.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.2.1...v13.3.0) (2018-12-29)
+
+
+### Bug Fixes
+
+* **input:** disable horizontal scroll for a inputs without focus ([#753](https://github.com/alfa-laboratory/arui-feather/issues/753)) ([2111bcb](https://github.com/alfa-laboratory/arui-feather/commit/2111bcb))
+
+
+### Features
+
+* **calendar:** add width prop ([#761](https://github.com/alfa-laboratory/arui-feather/issues/761)) ([68b611f](https://github.com/alfa-laboratory/arui-feather/commit/68b611f))
+* **link:** update border color ([#762](https://github.com/alfa-laboratory/arui-feather/issues/762)) ([5e03626](https://github.com/alfa-laboratory/arui-feather/commit/5e03626))
+* **money-input:** money input with currency symbol ([#752](https://github.com/alfa-laboratory/arui-feather/issues/752)) ([da121db](https://github.com/alfa-laboratory/arui-feather/commit/da121db))
+
+
+
+<a name="13.2.1"></a>
+## [13.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.1.0...v13.2.1) (2018-12-26)
+
+
+### Bug Fixes
+
+* fix examples ([#756](https://github.com/alfa-laboratory/arui-feather/issues/756)) ([394c1a1](https://github.com/alfa-laboratory/arui-feather/commit/394c1a1))
+* fix incorrect links in documentation ([#750](https://github.com/alfa-laboratory/arui-feather/issues/750)) ([2ac88ef](https://github.com/alfa-laboratory/arui-feather/commit/2ac88ef))
+* incorrect param for test run ([#757](https://github.com/alfa-laboratory/arui-feather/issues/757)) ([2db21db](https://github.com/alfa-laboratory/arui-feather/commit/2db21db))
+* **grid-col:** Fix a typo in component docs ([#759](https://github.com/alfa-laboratory/arui-feather/issues/759)) ([c1abfa6](https://github.com/alfa-laboratory/arui-feather/commit/c1abfa6))
+* **input-autocomplete:** added default value support ([#760](https://github.com/alfa-laboratory/arui-feather/issues/760)) ([11a131f](https://github.com/alfa-laboratory/arui-feather/commit/11a131f))
+
+
+### Features
+
+* introducing grid and new breakpoints ([#751](https://github.com/alfa-laboratory/arui-feather/issues/751)) ([20f5178](https://github.com/alfa-laboratory/arui-feather/commit/20f5178))
+
+
+
+<a name="13.2.0"></a>
+# [13.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.1.0...v13.2.0) (2018-12-20)
+
+
+### Bug Fixes
+
+* fix examples ([#756](https://github.com/alfa-laboratory/arui-feather/issues/756)) ([394c1a1](https://github.com/alfa-laboratory/arui-feather/commit/394c1a1))
+* fix incorrect links in documentation ([#750](https://github.com/alfa-laboratory/arui-feather/issues/750)) ([2ac88ef](https://github.com/alfa-laboratory/arui-feather/commit/2ac88ef))
+* incorrect param for test run ([#757](https://github.com/alfa-laboratory/arui-feather/issues/757)) ([2db21db](https://github.com/alfa-laboratory/arui-feather/commit/2db21db))
+
+
+### Features
+
+* introducing grid and new breakpoints ([#751](https://github.com/alfa-laboratory/arui-feather/issues/751)) ([20f5178](https://github.com/alfa-laboratory/arui-feather/commit/20f5178))
+
+
+
+<a name="13.1.0"></a>
+# [13.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.1...v13.1.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **select:** fix jumping table-caption element in safari ([#746](https://github.com/alfa-laboratory/arui-feather/issues/746)) ([69700ba](https://github.com/alfa-laboratory/arui-feather/commit/69700ba))
+* **textarea:** no need to set state if textarea value is controlled by props ([#664](https://github.com/alfa-laboratory/arui-feather/issues/664)) ([606c620](https://github.com/alfa-laboratory/arui-feather/commit/606c620))
+
+
+### Features
+
+* **amount:** normal font weight by default, bold prop ([#743](https://github.com/alfa-laboratory/arui-feather/issues/743)) ([6bee1dc](https://github.com/alfa-laboratory/arui-feather/commit/6bee1dc))
+
+
+
 <a name="13.0.1"></a>
 ## [13.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.0.0...v13.0.1) (2018-10-30)
 

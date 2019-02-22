@@ -13,6 +13,7 @@ import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import cn from '../cn';
+import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -20,6 +21,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
  * Компонент текстового поля ввода.
  */
 @cn('input', MaskedInput)
+@performance()
 class Input extends React.Component {
     static propTypes = {
         /**
@@ -313,6 +315,7 @@ class Input extends React.Component {
     @autobind
     handleFocus(event) {
         this.setState({ focused: true });
+        this.enableMouseWheel();
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
@@ -329,6 +332,7 @@ class Input extends React.Component {
     @autobind
     handleBlur(event) {
         this.setState({ focused: false });
+        this.disableMouseWheel();
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
@@ -397,6 +401,34 @@ class Input extends React.Component {
     handleTouchCancel(event) {
         if (this.props.onTouchCancel) {
             this.props.onTouchCancel(event);
+        }
+    }
+
+    /**
+     * Разблокирует возможность скролла в поле ввода
+     *
+     * @public
+     * @returns {void}
+     */
+    enableMouseWheel() {
+        const input = this.control instanceof MaskedInput ? this.control.input : this.control;
+
+        if (input) {
+            input.onwheel = () => true;
+        }
+    }
+
+    /**
+     * Блокирует возможность скролла в поле ввода
+     *
+     * @public
+     * @returns {void}
+     */
+    disableMouseWheel() {
+        const input = this.control instanceof MaskedInput ? this.control.getControl() : this.control;
+
+        if (input) {
+            input.onwheel = () => false;
         }
     }
 

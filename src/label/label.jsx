@@ -6,12 +6,14 @@ import React from 'react';
 import Type from 'prop-types';
 
 import cn from '../cn';
+import performance from '../performance';
 
 /**
  * Компонента лейбла.
  */
 @cn('label')
-class Label extends React.PureComponent {
+@performance()
+class Label extends React.Component {
     static propTypes = {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl']),

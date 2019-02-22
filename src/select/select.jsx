@@ -20,6 +20,7 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
+import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
@@ -43,7 +44,8 @@ class SelectButton extends Button {}
  * Компонент выпадающего списка.
  */
 @cn('select', SelectButton, Popup)
-class Select extends React.PureComponent {
+@performance(true)
+class Select extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -271,6 +273,12 @@ class Select extends React.PureComponent {
         });
     }
 
+    componentDidUpdate() {
+        if (this.state.opened) {
+            this.updatePopupStyles();
+        }
+    }
+
     render(cn, SelectButton, Popup) {
         let value = this.getValue();
 
@@ -362,7 +370,10 @@ class Select extends React.PureComponent {
                         <ToggledIcon size={ tickSize } />
                     </IconButton>
                 ) }
-                <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+
+                { this.getOpened() && (
+                    <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+                ) }
             </SelectButton>
         );
     }

@@ -1,0 +1,71 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.money-input {
+    display: inline-block;
+    position: relative;
+
+    &__currency {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        font-size: inherit;
+        line-height: inherit;
+        pointer-events: none;
+
+        .input_size_s & {
+            top: 7px;
+        }
+
+        .input_size_m & {
+            top: 10px;
+        }
+
+        .input_size_l & {
+            top: 14px;
+        }
+
+        .input_size_xl & {
+            top: 17px;
+        }
+
+        .input_has-value &, .input_focused & {
+            display: block;
+        }
+    }
+
+    &__value {
+        margin-right: 0.25em;
+        color: transparent;
+        font-weight: bold;
+    }
+
+    &_currency {
+        .input {
+            .input__addons_left {
+                position: absolute;
+                left: 0;
+                top: 0;
+                white-space: nowrap;
+
+                + .input__control {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    &_bold {
+        .input__control, .money-input__value {
+            font-weight: var(--font-weight-bold);
+        }
+    }
+
+    &_width_available {
+        width: 100%;
+    }
+}

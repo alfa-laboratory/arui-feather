@@ -6,11 +6,12 @@ import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
-import IconCheck from '../icon/ui/check-bold';
+import IconCheck from '../icon/ui/tick';
 import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
 import cn from '../cn';
+import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -26,7 +27,8 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
  * Компонент чекбокса.
  */
 @cn('checkbox', TagButton)
-class CheckBox extends React.PureComponent {
+@performance()
+class CheckBox extends React.Component {
     static propTypes = {
         /** Текст подписи к чекбоксу */
         text: Type.node,
@@ -99,11 +101,10 @@ class CheckBox extends React.PureComponent {
     root;
 
     render(cn, TagButton) {
-        let checked = this.props.checked !== undefined
-            ? this.props.checked
-            : this.state.checked;
+        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
                 className={ cn({
                     size: this.props.size,
@@ -115,27 +116,26 @@ class CheckBox extends React.PureComponent {
                     width: this.props.type === 'button' ? this.props.width : null
                 }) }
                 htmlFor={ this.props.id }
-                onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                onFocus={ this.handleFocus }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (root) => { this.root = root; } }
+                onMouseDown={ this.handleUnfocus }
+                onMouseUp={ this.handleUnfocus }
+                ref={ (root) => {
+                    this.root = root;
+                } }
             >
-                {
-                    this.props.type === 'button'
-                        ? this.renderButtonCheckbox(cn, checked, TagButton)
-                        : this.renderNormalCheckbox(cn, checked)
-                }
+                { this.props.type === 'button'
+                    ? this.renderButtonCheckbox(cn, checked, TagButton)
+                    : this.renderNormalCheckbox(cn, checked) }
             </label>
         );
     }
 
     renderNormalCheckbox(cn, checked) {
         return [
-            <span
-                className={ cn('box') }
-                key='box'
-            >
+            <span className={ cn('box') } key='box'>
                 <input
                     className={ cn('control') }
                     type='checkbox'
@@ -148,31 +148,33 @@ class CheckBox extends React.PureComponent {
                     onClick={ this.handleInputControlClick }
                     onChange={ this.handleChange }
                 />
-                {
-                    checked &&
+                { !this.props.indeterminate && (
                     <IconCheck
                         className={ cn('icon') }
-                        size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        size={ this.props.size === 'l' ? 's' : 'xs' }
+                        theme='alfa-on-color'
                     />
-                }
-                {
-                    !checked && this.props.indeterminate &&
+                ) }
+                { !checked && this.props.indeterminate && (
                     <IconIndeterminate
                         className={ cn('icon') }
                         size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme={ this.props.disabled ? 'alfa-on-white' : 'alfa-on-color' }
+                        theme='alfa-on-color'
                     />
-                }
+                ) }
+                { checked && this.props.indeterminate && (
+                    <IconCheck
+                        className={ cn('icon') }
+                        size={ this.props.size === 'l' ? 's' : 'xs' }
+                        theme='alfa-on-color'
+                    />
+                ) }
             </span>,
-            this.props.text &&
-            <span
-                className={ cn('text') }
-                key='text'
-                role='presentation'
-            >
-                { this.props.text }
-            </span>
+            this.props.text && (
+                <span className={ cn('text') } key='text' role='presentation'>
+                    { this.props.text }
+                </span>
+            )
         ];
     }
 
@@ -209,18 +211,15 @@ class CheckBox extends React.PureComponent {
     }
 
     @autobind
-    handleInputControlClick(event) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
+    handleInputControlClick(event) {
         event.stopPropagation();
     }
 
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(
-                this.props.checked !== undefined
-                    ? this.props.checked
-                    : this.state.checked
-            );
+            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
 
             this.setState({ checked: nextCheckedValue });
 
@@ -238,6 +237,8 @@ class CheckBox extends React.PureComponent {
             this.props.onFocus(event);
         }
     }
+
+    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
     @autobind
     handleBlur(event) {
@@ -299,7 +300,8 @@ class CheckBox extends React.PureComponent {
         let elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            // eslint-disable-next-line no-mixed-operators
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
         });
     }
 }

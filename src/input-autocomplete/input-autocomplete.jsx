@@ -15,9 +15,9 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
+import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
-import { isEqual } from '../performance';
 
 /**
  * Компонент поля для ввода с автокомплитом.
@@ -25,24 +25,23 @@ import { isEqual } from '../performance';
  * @extends Input
  */
 @cn('input', Input)
+@performance(true)
 class InputAutocomplete extends React.Component {
     static propTypes = {
         ...Input.propTypes,
         /** Список вариантов выбора */
-        options: Type.arrayOf(
-            Type.shape({
-                /** Тип списка вариантов */
-                type: Type.oneOf(['item', 'group']),
-                /** Уникальное значение, которое будет отправлено на сервер, если вариант выбран */
-                value: Type.string,
-                /** Отображение варианта */
-                description: Type.node,
-                /** Текст, который должен быть записан в текстовое поле при выборе варианта */
-                text: Type.string,
-                /** Список вариантов, только для type='group' */
-                content: Type.array
-            })
-        ),
+        options: Type.arrayOf(Type.shape({
+            /** Тип списка вариантов */
+            type: Type.oneOf(['item', 'group']),
+            /** Уникальное значение, которое будет отправлено на сервер, если вариант выбран */
+            value: Type.string,
+            /** Отображение варианта */
+            description: Type.node,
+            /** Текст, который должен быть записан в текстовое поле при выборе варианта */
+            text: Type.string,
+            /** Список вариантов, только для type='group' */
+            content: Type.array
+        })),
         /**
          * Управление возможностью изменения атрибута компонента, установка
          * соответствующего класса-модификатора для оформления
@@ -59,22 +58,10 @@ class InputAutocomplete extends React.Component {
         /** Определяет нужно или нет обновлять значение текстового поля при выборе варианта */
         updateValueOnItemSelect: Type.bool,
         /** Направления, в которые может открываться попап компонента */
-        directions: Type.arrayOf(
-            Type.oneOf([
-                'top-left',
-                'top-center',
-                'top-right',
-                'left-top',
-                'left-center',
-                'left-bottom',
-                'right-top',
-                'right-center',
-                'right-bottom',
-                'bottom-left',
-                'bottom-center',
-                'bottom-right'
-            ])
-        ),
+        directions: Type.arrayOf(Type.oneOf([
+            'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
+            'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
+        ])),
         /** Вставляет попап со списком только если элемент активен */
         renderPopupOnFocus: Type.bool,
         /**
@@ -99,7 +86,7 @@ class InputAutocomplete extends React.Component {
     };
 
     state = {
-        value: '',
+        value: this.props.defaultValue || '',
         inputFocused: false,
         menuFocused: false,
         popupStyles: {},
@@ -136,16 +123,6 @@ class InputAutocomplete extends React.Component {
         this.updatePopupStyles();
     }
 
-    /**
-     * @todo Remove me
-     */
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return (
-            !isEqual(this.props, nextProps, true) ||
-            !isEqual(this.state, nextState, true) ||
-            !isEqual(this.context, nextContext, true)
-        );
-    }
     componentDidUpdate() {
         this.updatePopupTarget();
         this.updatePopupStyles();
@@ -173,9 +150,7 @@ class InputAutocomplete extends React.Component {
 
         let props = {
             ...this.props,
-            ref: (input) => {
-                this.input = input;
-            },
+            ref: (input) => { this.input = input; },
             className: cn({
                 focused: this.state.inputFocused || this.state.menuFocused,
                 'has-autocomplete': true
@@ -189,7 +164,9 @@ class InputAutocomplete extends React.Component {
         };
 
         return (
-            <div className={ cn('autocomplete-case', { width: this.props.width }) }>
+            <div
+                className={ cn('autocomplete-case', { width: this.props.width }) }
+            >
                 <Input { ...props } />
                 { this.renderPopup(cn) }
             </div>
@@ -197,10 +174,13 @@ class InputAutocomplete extends React.Component {
     }
 
     renderPopup(cn) {
-        let formattedOptionsList = this.props.options ? this.formatOptionsList(this.props.options) : [];
+        let formattedOptionsList = this.props.options
+            ? this.formatOptionsList(this.props.options)
+            : [];
 
-        let opened =
-            this.props.opened !== undefined ? this.props.opened : this.state.inputFocused || this.state.menuFocused;
+        let opened = this.props.opened !== undefined
+            ? this.props.opened
+            : this.state.inputFocused || this.state.menuFocused;
 
         if (this.props.options.length === 0) {
             this.popup = null;
@@ -210,15 +190,12 @@ class InputAutocomplete extends React.Component {
         if (this.props.renderPopupOnFocus && !opened) {
             return null;
         }
-
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
                 className={ cn('popup') }
                 size={ this.props.size }
-                ref={ (popup) => {
-                    this.popup = popup;
-                } }
+                ref={ (popup) => { this.popup = popup; } }
                 for={ this.props.name }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
@@ -231,9 +208,7 @@ class InputAutocomplete extends React.Component {
                 key='popup'
             >
                 <Menu
-                    ref={ (menu) => {
-                        this.menu = menu;
-                    } }
+                    ref={ (menu) => { this.menu = menu; } }
                     className={ cn('menu') }
                     size={ this.props.size }
                     mode='radio-check'
@@ -256,7 +231,9 @@ class InputAutocomplete extends React.Component {
         let checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
         let checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
-        let newValue = checkedItem ? checkedItem.text || checkedItem.value : this.state.value;
+        let newValue = checkedItem
+            ? (checkedItem.text || checkedItem.value)
+            : this.state.value;
 
         if (this.props.onItemSelect) {
             this.props.onItemSelect(checkedItem);
@@ -449,9 +426,9 @@ class InputAutocomplete extends React.Component {
         let focusedElement = document.activeElement;
 
         let newState = {
-            inputFocused: focusedElement === this.input.getControl(),
+            inputFocused: (focusedElement === this.input.getControl()),
             menuFocused: this.menu
-                ? this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement)
+                ? (this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement))
                 : false
         };
 
@@ -471,23 +448,25 @@ class InputAutocomplete extends React.Component {
     }
 
     formatOptionsList(options) {
-        return options.map((option) => {
-            if (option.type === 'group' && !!option.content) {
-                let content = this.formatOptionsList(option.content);
+        return (
+            options.map((option) => {
+                if (option.type === 'group' && !!option.content) {
+                    let content = this.formatOptionsList(option.content);
 
-                return {
-                    type: 'group',
-                    title: option.title,
-                    content
-                };
-            }
+                    return ({
+                        type: 'group',
+                        title: option.title,
+                        content
+                    });
+                }
 
-            return {
-                key: option.key || option.value,
-                value: option.value,
-                content: option.description || option.value
-            };
-        });
+                return ({
+                    key: option.key || option.value,
+                    value: option.value,
+                    content: option.description || option.value
+                });
+            })
+        );
     }
 
     getCheckedOption(options, value) {
@@ -549,8 +528,7 @@ class InputAutocomplete extends React.Component {
         } else if (element.offsetTop < container.scrollTop) {
             scrollTo({
                 container,
-                // eslint-disable-next-line no-mixed-operators
-                targetY: element.offsetTop - container.offsetHeight + correction,
+                targetY: (element.offsetTop - container.offsetHeight) + correction,
                 duration: SCROLL_TO_NORMAL_DURATION
             });
         }

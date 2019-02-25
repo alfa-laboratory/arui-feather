@@ -1,3 +1,18 @@
+<a name="13.7.0"></a>
+# [13.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.6.2...v13.7.0) (2019-02-25)
+
+
+### Bug Fixes
+
+* **select:** error width fixed ([#791](https://github.com/alfa-laboratory/arui-feather/issues/791)) ([09a7cd5](https://github.com/alfa-laboratory/arui-feather/commit/09a7cd5))
+
+
+### Features
+
+* **select:** ResizeSensor on focus only ([#793](https://github.com/alfa-laboratory/arui-feather/issues/793)) ([bfc7f2c](https://github.com/alfa-laboratory/arui-feather/commit/bfc7f2c))
+
+
+
 <a name="13.6.2"></a>
 ## [13.6.2](https://github.com/alfa-laboratory/arui-feather/compare/v13.6.1...v13.6.2) (2019-02-21)
 

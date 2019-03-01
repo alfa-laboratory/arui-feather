@@ -7,11 +7,11 @@
 :root {
     --size-m-box: 16px;
     --size-l-box: 24px;
+    --box-margin-top: 0.2rem;
 }
 
 .checkbox {
     display: inline-flex;
-    align-items: center;
     cursor: pointer;
     user-select: none;
     font-family: var(--font);
@@ -61,6 +61,10 @@
     &_size_m {
         font-size: var(--font-size-m);
 
+        .checkbox__box {
+            margin-top: var(--box-margin-top);
+        }
+
         .checkbox__box,
         .checkbox__box:after {
             width: var(--size-m-box);
@@ -74,6 +78,10 @@
 
     &_size_l {
         font-size: var(--font-size-xl);
+
+        .checkbox__box {
+            margin-top: var(--box-margin-top);
+        }
 
         .checkbox__box,
         .checkbox__box:after {

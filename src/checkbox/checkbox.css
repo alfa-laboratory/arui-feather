@@ -11,6 +11,7 @@
 
 .checkbox {
     display: inline-flex;
+    align-items: flex-start;
     cursor: pointer;
     user-select: none;
     font-family: var(--font);

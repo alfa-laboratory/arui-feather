@@ -7,10 +7,12 @@
 :root {
     --size-m-box: 16px;
     --size-l-box: 24px;
+    --margin-top-box: 0.125rem;
 }
 
 .radio {
-    display: inline-block;
+    display: flex;
+    align-items: flex-start;
     position: relative;
     cursor: pointer;
     outline: none;
@@ -35,10 +37,12 @@
 
     &__box {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         position: relative;
         border-radius: 50%;
         transition: all 0.1s 0s ease-out;
+        margin-top: var(--margin-top-box);
+        flex-shrink: 0;
 
         &:before, &:after {
             content: '';

@@ -7,12 +7,12 @@
 :root {
     --size-m-box: 16px;
     --size-l-box: 24px;
-    --margin-top-box: 0.125rem;
+    --margin-top-m-box: 0.06em;
+    --margin-top-l-box: 0.07em;
 }
 
 .radio {
-    display: flex;
-    align-items: flex-start;
+    display: inline-block;
     position: relative;
     cursor: pointer;
     outline: none;
@@ -41,8 +41,6 @@
         position: relative;
         border-radius: 50%;
         transition: all 0.1s 0s ease-out;
-        margin-top: var(--margin-top-box);
-        flex-shrink: 0;
 
         &:before, &:after {
             content: '';
@@ -67,7 +65,7 @@
 
     &__text {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         white-space: normal;
     }
 
@@ -78,6 +76,7 @@
             width: var(--size-m-box);
             height: var(--size-m-box);
             margin-right: var(--gap-xs);
+            margin-top: var(--margin-top-m-box);
 
             &:after {
                 width: var(--size-m-box);
@@ -100,6 +99,7 @@
             width: var(--size-l-box);
             height: var(--size-l-box);
             margin-right: var(--gap-s);
+            margin-top: var(--margin-top-l-box);
 
             &:after {
                 width: var(--size-l-box);

@@ -9,14 +9,14 @@ import Link from './link';
 
 describe('link', () => {
     it('should render without problems', () => {
-        let link = shallow(<Link>Link-example</Link>);
+        const link = shallow(<Link>Link-example</Link>);
 
         expect(link).toMatchSnapshot();
         expect(link.text()).toContain('Link-example');
     });
 
     it('should set/unset class on link focused/unfocused', () => {
-        let link = mount(<Link>Link-example</Link>);
+        const link = mount(<Link>Link-example</Link>);
 
         link.simulate('focus');
         expect(link.children().props().className).toContain('link_focused');
@@ -26,7 +26,7 @@ describe('link', () => {
     });
 
     it('should set/unset class on link hovered/unhovered', () => {
-        let link = mount(<Link>Link-example</Link>);
+        const link = mount(<Link>Link-example</Link>);
 
         link.simulate('mouseEnter');
         expect(link.children().props().className).toContain('link_hovered');
@@ -36,8 +36,8 @@ describe('link', () => {
     });
 
     it('should call `onClick` callback after link was clicked disabled=false', () => {
-        let onClick = jest.fn();
-        let link = mount(<Link onClick={ onClick } disabled={ false }>Link-example</Link>);
+        const onClick = jest.fn();
+        const link = mount(<Link onClick={ onClick } disabled={ false }>Link-example</Link>);
 
         link.simulate('click');
 
@@ -45,35 +45,35 @@ describe('link', () => {
     });
 
     it('should not call `onClick` callback after link was clicked disabled=true', () => {
-        let onClick = jest.fn();
-        let link = mount(<Link onClick={ onClick } disabled={ true }>Link-example</Link>);
+        const onClick = jest.fn();
+        const link = mount(<Link onClick={ onClick } disabled={ true }>Link-example</Link>);
 
         link.simulate('click');
 
         expect(onClick).not.toHaveBeenCalled();
     });
 
-    it('should call `onDisabledLinkClick` callback after link was clicked disabled=true', () => {
-        let onDisabledLinkClick = jest.fn();
-        let link = mount(<Link onDisabledLinkClick={ onDisabledLinkClick } disabled={ true }>Link-example</Link>);
+    it('should call `onDisabledClick` callback after link was clicked disabled=true', () => {
+        const onDisabledClick = jest.fn();
+        const link = mount(<Link onDisabledClick={ onDisabledClick } disabled={ true }>Link-example</Link>);
 
         link.simulate('click');
 
-        expect(onDisabledLinkClick).toHaveBeenCalled();
+        expect(onDisabledClick).toHaveBeenCalled();
     });
 
-    it('should not call `onDisabledLinkClick` callback after link was clicked disabled=false', () => {
-        let onDisabledLinkClick = jest.fn();
-        let link = mount(<Link onDisabledLinkClick={ onDisabledLinkClick } disabled={ false }>Link-example</Link>);
+    it('should not call `onDisabledClick` callback after link was clicked disabled=false', () => {
+        const onDisabledClick = jest.fn();
+        const link = mount(<Link onDisabledClick={ onDisabledClick } disabled={ false }>Link-example</Link>);
 
         link.simulate('click');
 
-        expect(onDisabledLinkClick).not.toHaveBeenCalled();
+        expect(onDisabledClick).not.toHaveBeenCalled();
     });
 
     it('should call `onFocus` callback after link was focused', () => {
-        let onFocus = jest.fn();
-        let link = mount(<Link onFocus={ onFocus }>Link-example</Link>);
+        const onFocus = jest.fn();
+        const link = mount(<Link onFocus={ onFocus }>Link-example</Link>);
 
         link.simulate('focus');
 
@@ -81,8 +81,8 @@ describe('link', () => {
     });
 
     it('should call `onBlur` callback after link was blured', () => {
-        let onBlur = jest.fn();
-        let link = mount(<Link onBlur={ onBlur }>Link-example</Link>);
+        const onBlur = jest.fn();
+        const link = mount(<Link onBlur={ onBlur }>Link-example</Link>);
 
         link.simulate('blur');
 
@@ -90,8 +90,8 @@ describe('link', () => {
     });
 
     it('should call `onMouseEnter` callback after link was hovered', () => {
-        let onMouseEnter = jest.fn();
-        let link = mount(<Link onMouseEnter={ onMouseEnter }>Link-example</Link>);
+        const onMouseEnter = jest.fn();
+        const link = mount(<Link onMouseEnter={ onMouseEnter }>Link-example</Link>);
 
         link.simulate('mouseEnter');
 
@@ -99,8 +99,8 @@ describe('link', () => {
     });
 
     it('should call `onMouseLeave` callback after link was leaved by cursor', () => {
-        let onMouseLeave = jest.fn();
-        let link = mount(<Link onMouseLeave={ onMouseLeave }>Link-example</Link>);
+        const onMouseLeave = jest.fn();
+        const link = mount(<Link onMouseLeave={ onMouseLeave }>Link-example</Link>);
 
         link.simulate('mouseLeave');
 
@@ -108,37 +108,37 @@ describe('link', () => {
     });
 
     it('should set "disabled" class when disabled=true', () => {
-        let link = mount(<Link disabled={ true }>Link-example</Link>);
+        const link = mount(<Link disabled={ true }>Link-example</Link>);
 
         expect(link.children().props().className).toContain('link_disabled');
     });
 
     it('should render span tag with valid attributes when checked=true', () => {
-        let link = mount(<Link checked={ true }>Link-example</Link>);
-        let node = link.instance().getNode();
+        const link = mount(<Link checked={ true }>Link-example</Link>);
+        const node = link.instance().getNode();
 
         expect(node.className).toContain('link_checked');
         expect(node.tagName).toBe('SPAN');
     });
 
     it('should render span tag with valid attributes when disabled=true', () => {
-        let link = mount(<Link disabled={ true }>Link-example</Link>);
-        let node = link.instance().getNode();
+        const link = mount(<Link disabled={ true }>Link-example</Link>);
+        const node = link.instance().getNode();
 
         expect(node.className).toContain('link_disabled');
         expect(node.tagName).toBe('SPAN');
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let link = mount(<Link />);
+        const link = mount(<Link />);
 
-        let node = link.instance().getNode();
+        const node = link.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
     });
 
     it('should render with rel="noreferrer noopener" when using target="_blank"', () => {
-        let link = mount(<Link target='_blank' rel='noreferrer noopener' />);
+        const link = mount(<Link target='_blank' rel='noreferrer noopener' />);
 
         expect(link).toMatchSnapshot();
     });

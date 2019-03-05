@@ -74,7 +74,7 @@ class Link extends React.Component {
         /**
          * Обработчик клика по disabled ссылке
          */
-        onDisabledLinkClick: Type.func
+        onDisabledClick: Type.func
     };
 
     static defaultProps = {
@@ -162,8 +162,8 @@ class Link extends React.Component {
             this.props.onClick(event);
         }
 
-        if (this.props.disabled && this.props.onDisabledLinkClick) {
-            this.props.onDisabledLinkClick(event);
+        if (this.props.disabled && this.props.onDisabledClick) {
+            this.props.onDisabledClick(event);
         }
     }
 

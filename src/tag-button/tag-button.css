@@ -15,6 +15,7 @@
     font-family: var(--font);
     text-align: center;
     white-space: nowrap;
+    border-width: 1px;
     border-color: transparent;
     border-radius: 30px;
     transition-duration: 200ms;
@@ -99,7 +100,6 @@
         background: transparent;
         border-color: var(--color-border-control-disabled-alfa-on-color);
         border-style: var(--border-style-control-disabled);
-        border-width: 1px;
     }
 }
 

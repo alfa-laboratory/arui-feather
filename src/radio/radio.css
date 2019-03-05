@@ -7,8 +7,6 @@
 :root {
     --size-m-box: 16px;
     --size-l-box: 24px;
-    --margin-top-m-box: 0.06em;
-    --margin-top-l-box: 0.07em;
 }
 
 .radio {
@@ -39,6 +37,7 @@
         display: inline-block;
         vertical-align: top;
         position: relative;
+        margin-top: 0.05em;
         border-radius: 50%;
         transition: all 0.1s 0s ease-out;
 
@@ -67,6 +66,7 @@
         display: inline-block;
         vertical-align: top;
         white-space: normal;
+        line-height: normal;
     }
 
     &_size_m {
@@ -76,7 +76,6 @@
             width: var(--size-m-box);
             height: var(--size-m-box);
             margin-right: var(--gap-xs);
-            margin-top: var(--margin-top-m-box);
 
             &:after {
                 width: var(--size-m-box);
@@ -99,7 +98,6 @@
             width: var(--size-l-box);
             height: var(--size-l-box);
             margin-right: var(--gap-s);
-            margin-top: var(--margin-top-l-box);
 
             &:after {
                 width: var(--size-l-box);

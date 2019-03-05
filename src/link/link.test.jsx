@@ -35,13 +35,40 @@ describe('link', () => {
         expect(link.children().props().className).not.toContain('link_hovered');
     });
 
-    it('should call `onClick` callback after link was clicked', () => {
+    it('should call `onClick` callback after link was clicked disabled=false', () => {
         let onClick = jest.fn();
-        let link = mount(<Link onClick={ onClick }>Link-example</Link>);
+        let link = mount(<Link onClick={ onClick } disabled={ false }>Link-example</Link>);
 
         link.simulate('click');
 
         expect(onClick).toHaveBeenCalled();
+    });
+
+    it('should not call `onClick` callback after link was clicked disabled=true', () => {
+        let onClick = jest.fn();
+        let link = mount(<Link onClick={ onClick } disabled={ true }>Link-example</Link>);
+
+        link.simulate('click');
+
+        expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it('should call `onDisabledLinkClick` callback after link was clicked disabled=true', () => {
+        let onDisabledLinkClick = jest.fn();
+        let link = mount(<Link onDisabledLinkClick={ onDisabledLinkClick } disabled={ true }>Link-example</Link>);
+
+        link.simulate('click');
+
+        expect(onDisabledLinkClick).toHaveBeenCalled();
+    });
+
+    it('should not call `onDisabledLinkClick` callback after link was clicked disabled=false', () => {
+        let onDisabledLinkClick = jest.fn();
+        let link = mount(<Link onDisabledLinkClick={ onDisabledLinkClick } disabled={ false }>Link-example</Link>);
+
+        link.simulate('click');
+
+        expect(onDisabledLinkClick).not.toHaveBeenCalled();
     });
 
     it('should call `onFocus` callback after link was focused', () => {

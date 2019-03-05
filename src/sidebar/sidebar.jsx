@@ -43,7 +43,6 @@ function setCurrentPosition() {
 function setBodyClass({ visible, hasOverlay }) {
     document.body.classList[visible ? 'add' : 'remove']('sidebar-visible');
     if (hasOverlay) document.body.classList[visible ? 'add' : 'remove']('sidebar-overlay');
-    setCurrentPosition();
 }
 
 /**
@@ -109,6 +108,9 @@ class Sidebar extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         setBodyClass({ visible: nextProps.visible, hasOverlay: nextProps.hasOverlay });
+        if (this.state.isMobile) {
+            setCurrentPosition();
+        }
 
         if (nextProps.visible) {
             window.addEventListener('keydown', this.handleKeyDown);
@@ -123,6 +125,9 @@ class Sidebar extends React.Component {
 
     componentWillUnmount() {
         setBodyClass({ visible: false, hasOverlay: this.props.hasOverlay });
+        if (this.state.isMobile) {
+            setCurrentPosition();
+        }
         window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('scroll', handleBodyScroll);
     }

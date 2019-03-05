@@ -1,3 +1,13 @@
+<a name="13.7.1"></a>
+## [13.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.7.0...v13.7.1) (2019-03-04)
+
+
+### Bug Fixes
+
+* **sidebar:** scroll position on desktop ([#795](https://github.com/alfa-laboratory/arui-feather/issues/795)) ([a34142c](https://github.com/alfa-laboratory/arui-feather/commit/a34142c))
+
+
+
 <a name="13.7.0"></a>
 # [13.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.6.2...v13.7.0) (2019-02-25)
 

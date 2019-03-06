@@ -70,7 +70,11 @@ class Link extends React.Component {
          * Обработчик события снятия курсора с ссылки
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /**
+         * Обработчик клика по disabled ссылке
+         */
+        onDisabledClick: Type.func
     };
 
     static defaultProps = {
@@ -154,8 +158,12 @@ class Link extends React.Component {
         if (this.props.pseudo) {
             event.preventDefault();
         }
-        if (this.props.onClick) {
+        if (!this.props.disabled && this.props.onClick) {
             this.props.onClick(event);
+        }
+
+        if (this.props.disabled && this.props.onDisabledClick) {
+            this.props.onDisabledClick(event);
         }
     }
 

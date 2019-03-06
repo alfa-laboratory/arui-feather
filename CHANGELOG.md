@@ -1,3 +1,19 @@
+<a name="13.8.0"></a>
+# [13.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.7.1...v13.8.0) (2019-03-06)
+
+
+### Bug Fixes
+
+* **checkbox, radio:** fix vertical alignment ([#797](https://github.com/alfa-laboratory/arui-feather/issues/797)) ([4016a96](https://github.com/alfa-laboratory/arui-feather/commit/4016a96))
+* **tag-button:** disabled tag-button height fix ([#800](https://github.com/alfa-laboratory/arui-feather/issues/800)) ([f509afc](https://github.com/alfa-laboratory/arui-feather/commit/f509afc))
+
+
+### Features
+
+* **link:** add check before click on disabled link ([#801](https://github.com/alfa-laboratory/arui-feather/issues/801)) ([0d5ba76](https://github.com/alfa-laboratory/arui-feather/commit/0d5ba76))
+
+
+
 <a name="13.7.1"></a>
 ## [13.7.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.7.0...v13.7.1) (2019-03-04)
 

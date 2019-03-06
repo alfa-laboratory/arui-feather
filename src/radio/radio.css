@@ -35,8 +35,9 @@
 
     &__box {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         position: relative;
+        margin-top: 0.05em;
         border-radius: 50%;
         transition: all 0.1s 0s ease-out;
 
@@ -63,8 +64,9 @@
 
     &__text {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         white-space: normal;
+        line-height: normal;
     }
 
     &_size_m {

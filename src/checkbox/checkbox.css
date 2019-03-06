@@ -11,7 +11,7 @@
 
 .checkbox {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     cursor: pointer;
     user-select: none;
     font-family: var(--font);
@@ -32,6 +32,7 @@
     &__box {
         display: inline-flex;
         position: relative;
+        margin-top: 0.05em;
         border: 1px solid;
         border-radius: var(--border-radius-control);
         flex: 0 0 auto;
@@ -47,6 +48,10 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+    }
+
+    &__text {
+        line-height: normal;
     }
 
     &__icon {

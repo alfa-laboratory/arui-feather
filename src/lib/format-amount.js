@@ -60,8 +60,11 @@ function splitAmount(amount, partSize = 3, splitter = THINSP, splitFrom = 5) {
 export function formatAmount(amount) {
     const {
         value,
-        currency: { minority, code }
+        currency: { code }
     } = amount;
+
+    let { minority } = amount.currency;
+    minority = minority === 0 ? 1 : minority; // because Math.log(0) => -Infinity
 
     const fractionDigits = Math.log(minority) * Math.LOG10E;
     const valueAbsStr = (Math.abs(value) / minority).toFixed(fractionDigits);

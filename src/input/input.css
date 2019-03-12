@@ -28,7 +28,9 @@
 
     &__box {
         overflow: hidden;
-        display: table-cell;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
         position: relative;
         user-select: none;
         transition-duration: 250ms;
@@ -51,6 +53,11 @@
         transition-duration: 200ms;
         transition-property: color, transform;
         transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+    }
+
+    &__sub-wrapper {
+        display: table;
+        width: 100%;
     }
 
     &__sub {

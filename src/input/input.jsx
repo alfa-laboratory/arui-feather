@@ -217,10 +217,13 @@ class Input extends React.Component {
                     }
                     { this.renderContent(cn, MaskedInput) }
                     {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
+                        (this.props.error || this.props.hint) && (
+                            <div className={ cn('sub-wrapper') }>
+                                <span className={ cn('sub') }>
+                                    { this.props.error || this.props.hint }
+                                </span>
+                            </div>
+                        )
                     }
                 </span>
             </span>

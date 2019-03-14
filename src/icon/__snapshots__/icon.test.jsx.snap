@@ -210,6 +210,13 @@ exports[`icon render IconAttention without problems: IconAttention 1`] = `
 />
 `;
 
+exports[`icon render IconAttentionMark without problems: IconAttentionMark 1`] = `
+<Icon
+  name="attention-mark"
+  size="m"
+/>
+`;
+
 exports[`icon render IconAutopayment without problems: IconAutopayment 1`] = `
 <Icon
   name="autopayment"
@@ -875,6 +882,13 @@ exports[`icon render IconCardBelkart without problems: IconCardBelkart 1`] = `
 />
 `;
 
+exports[`icon render IconCardClose without problems: IconCardClose 1`] = `
+<Icon
+  name="card-close"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCardExpences without problems: IconCardExpences 1`] = `
 <Icon
   name="card-expences"
@@ -1463,6 +1477,13 @@ exports[`icon render IconCredit without problems: IconCredit 1`] = `
 />
 `;
 
+exports[`icon render IconCreditCard without problems: IconCreditCard 1`] = `
+<Icon
+  name="credit-card"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCrown without problems: IconCrown 1`] = `
 <Icon
   name="crown"
@@ -1823,6 +1844,13 @@ exports[`icon render IconFormatXml without problems: IconFormatXml 1`] = `
 exports[`icon render IconFormatZip without problems: IconFormatZip 1`] = `
 <Icon
   name="format-zip"
+  size="m"
+/>
+`;
+
+exports[`icon render IconGalleryInCamera without problems: IconGalleryInCamera 1`] = `
+<Icon
+  name="gallery-in-camera"
   size="m"
 />
 `;
@@ -2205,6 +2233,13 @@ exports[`icon render IconPause without problems: IconPause 1`] = `
 />
 `;
 
+exports[`icon render IconPayBack without problems: IconPayBack 1`] = `
+<Icon
+  name="pay-back"
+  size="m"
+/>
+`;
+
 exports[`icon render IconPaymentByPhoto without problems: IconPaymentByPhoto 1`] = `
 <Icon
   name="payment-by-photo"
@@ -2415,6 +2450,13 @@ exports[`icon render IconRight without problems: IconRight 1`] = `
 />
 `;
 
+exports[`icon render IconSbp without problems: IconSbp 1`] = `
+<Icon
+  name="sbp"
+  size="m"
+/>
+`;
+
 exports[`icon render IconSearch without problems: IconSearch 1`] = `
 <Icon
   name="search"
@@ -2425,6 +2467,13 @@ exports[`icon render IconSearch without problems: IconSearch 1`] = `
 exports[`icon render IconSecurity without problems: IconSecurity 1`] = `
 <Icon
   name="security"
+  size="m"
+/>
+`;
+
+exports[`icon render IconSelfemloyedReg without problems: IconSelfemloyedReg 1`] = `
+<Icon
+  name="selfemloyed-reg"
   size="m"
 />
 `;

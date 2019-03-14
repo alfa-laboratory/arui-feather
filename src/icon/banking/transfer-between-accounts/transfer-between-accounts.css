@@ -6,6 +6,10 @@
     background-image: url('./icon_transfer-between-accounts_m_black.svg');
 }
 
+.icon_size_m.icon_name_transfer-between-accounts.icon_theme_alfa-on-color {
+    background-image: url('./icon_transfer-between-accounts_m_white.svg');
+}
+
 .icon_size_xl.icon_name_transfer-between-accounts.icon_theme_alfa-on-white {
     background-image: url('./icon_transfer-between-accounts_xl_black.svg');
 }

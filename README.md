@@ -1,8 +1,7 @@
 <img align="left" width="140" height="140" title="arui-feather"
      src="https://rawgit.com/alfa-laboratory/arui-feather/master/logo.svg" />
 
-Alfa-Bank UI lightweight library
-================================
+# Alfa-Bank UI lightweight library
 
 [![npm][npm-img]][npm]
 [![license][license-img]][license]
@@ -11,16 +10,16 @@ Alfa-Bank UI lightweight library
 <br />
 [![coveralls][coveralls-img]][coveralls]
 
-[appveyor]:        https://ci.appveyor.com/project/teryaew/arui-feather
-[appveyor-img]:    https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
-[coveralls]:       https://coveralls.io/github/alfa-laboratory/arui-feather?branch=master
-[coveralls-img]:   https://coveralls.io/repos/github/alfa-laboratory/arui-feather/badge.svg?branch=master
-[license]:         https://opensource.org/licenses/MPL-2.0
-[license-img]:     https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg
-[npm]:             https://www.npmjs.org/package/arui-feather
-[npm-img]:         https://img.shields.io/npm/v/arui-feather.svg
-[travis]:          https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
-[travis-img]:      https://img.shields.io/travis/alfa-laboratory/arui-feather/master.svg?label=unix
+[appveyor]: https://ci.appveyor.com/project/teryaew/arui-feather
+[appveyor-img]: https://img.shields.io/appveyor/ci/teryaew/arui-feather/master.svg?label=win
+[coveralls]: https://coveralls.io/github/alfa-laboratory/arui-feather?branch=master
+[coveralls-img]: https://coveralls.io/repos/github/alfa-laboratory/arui-feather/badge.svg?branch=master
+[license]: https://opensource.org/licenses/MPL-2.0
+[license-img]: https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg
+[npm]: https://www.npmjs.org/package/arui-feather
+[npm-img]: https://img.shields.io/npm/v/arui-feather.svg
+[travis]: https://travis-ci.org/alfa-laboratory/arui-feather?branch=master
+[travis-img]: https://img.shields.io/travis/alfa-laboratory/arui-feather/master.svg?label=unix
 
 <br />
 
@@ -28,53 +27,44 @@ arui-feather — это библиотека React компонентов для
 
 Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/).
 
-
-Ждём тебя в команду
--------------------
+## Ждём тебя в команду
 
 Команда дизайн-системы Альфа-Банка ищет разработчика интерфейсов: https://hr.alfabank.ru/vacancies/ui-dev. Присоединяйся!
 
-
-Установка
----------
+## Установка
 
 arui-feather доступен как [npm-пакет](https://www.npmjs.com/package/arui-feather).
 
-```
+```sh
 npm install arui-feather --save
 ```
 
-
-Поддерживаемые браузеры
------------------------
+## Поддерживаемые браузеры
 
 **Desktop**
 
-  * Chrome *(две последние стабильные версии)*
-  * Edge *(две последние стабильные версии)*
-  * Firefox *(две последние стабильные версии)*
-  * IE 10+
-  * Opera *(две последние стабильные версии)*
-  * Safari *(две последние стабильные версии)*
-  * Yandex *(две последние стабильные версии)*
+- Chrome _(две последние стабильные версии)_
+- Edge _(две последние стабильные версии)_
+- Firefox _(две последние стабильные версии)_
+- IE 10+
+- Opera _(две последние стабильные версии)_
+- Safari _(две последние стабильные версии)_
+- Yandex _(две последние стабильные версии)_
 
 **Mobile**
 
-  * Android 4.1+
-  * iOS *(две последние стабильные версии)*
+- Android 4.1+
+- iOS _(две последние стабильные версии)_
 
+## Вёрстка
 
-Вёрстка
------------------
 [Использование в адаптивной/мобильной среде](./GUIDE.md).
 
-
-Разработка
-----------
+## Разработка
 
 Необходимые внешние зависимости системы:
 
-`node` 5+ и `npm` (https://nodejs.org/en/).
+[`node`](https://nodejs.org/en/) 5+ и `npm`
 
 Шаги запуска демо:
 
@@ -87,13 +77,9 @@ npm install arui-feather --save
 
 Использовать только для обновления нескольких компонентов. Иначе не хватает памяти.
 
-
-Автоматические проверки кода
-----------------------------
+## Автоматические проверки кода
 
 Перед каждым коммитом js код проверяется через `eslint`, css через `stylelint`.
-
-Ручной запуск проверки кода линтерами и юнит тестами `npm run quality-check`.
 
 Запуск unit-тестов `npm run test`.
 
@@ -107,8 +93,7 @@ npm install arui-feather --save
 
 [Запуск тестов на мобильных устройствах](./GUIDE.md#mobile-testing).
 
-Регрессионное тестирование
---------------------------
+## Регрессионное тестирование
 
 Для тестирования деградаций в вёрстке используется [`gemini`](https://github.com/gemini-testing/gemini).
 
@@ -128,36 +113,36 @@ npm install arui-feather --save
 
 Во время тестирования рендер каждого сьюта доступен по URL, например: `http://localhost:8668/popup/popup_theme_alfa-on-color.popup_size_m.popup_prop-set_1`
 
-Минификация svg
----------------
+## Минификация svg
 
 Для оптимизация svg используется [svgo](https://github.com/svg/svgo)
-```
+
+```sh
 npm install svgo -g
 find src -name *.svg -print0 | xargs -0 -L 1 svgo
 ```
 
-Правила контрибуции
--------------------
+## Правила контрибуции
 
 [Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md).
 
-Оптимизация производительности компонентов
--------------------------------------------
+## Оптимизация производительности компонентов
+
 Для оптимизации производительности компонентов используется метод
 [shouldComponentUpdate](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom),
 реализуемый декоратором [@performance](./src/performance.js).
 
 Пример использования:
-```
+
+```js
 import performance from '../performance';
 
 @performance(true)
 class Component extends React.Component {}
 ```
 
-Использование Modernizr
------------------------
+## Использование Modernizr
+
 Поскольку modernizr на данный момент не умеет правильно работать внутри webpack
 используется скрипт для генерации webpack на основе конфигурации для него.
 
@@ -168,12 +153,12 @@ class Component extends React.Component {}
 
 Для ручного обновления собранного `Modernizr`:
 
-```
+```sh
 npm run modernizr
 ```
 
-Публикация
-----------
+## Публикация
+
 Для выпуска новой версии используйте следущие команды:
 
 - Выпуск патч-версии 1.0.0 -> 1.0.1 `npm run release-patch`
@@ -183,8 +168,7 @@ npm run modernizr
 Запуск этих команд автоматически сформирует changelog, сделает новый git tag,
 запустит сборку и публикацию.
 
-Deprecation policy
-------------------
+## Deprecation policy
 
 Deprecation публичного API должно происходить плавно, позволяя пользователям библиотеки
 обновляться с наименьшими неудобствами. Deprecation происходит со следующим сценарием:
@@ -196,8 +180,6 @@ Deprecation публичного API должно происходить пла�
 До полного удаления устаревшей функциональности в мажорном релизе, должна быть выпущена как минимум
 одна минорная версия для уведомления пользователей об изменениях.
 
+## Лицензия
 
-Лицензия
---------
-
-© 2016-2018 Alfa-Bank. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).
+© 2016-2019 Alfa-Bank. Код лицензирован [Mozilla Public License 2.0](LICENSE.txt).

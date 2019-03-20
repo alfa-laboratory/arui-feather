@@ -28,4 +28,18 @@
     --gap-3xl: 40px;
     --gap-4xl: 48px;
     --gap-5xl: 72px;
+
+    /**
+     * Отрицательные отступы
+     */
+    --gap-2xs-neg: -4px;
+    --gap-xs-neg: -8px;
+    --gap-s-neg: -12px;
+    --gap-m-neg: -16px;
+    --gap-l-neg: -20px;
+    --gap-xl-neg: -24px;
+    --gap-2xl-neg: -32px;
+    --gap-3xl-neg: -40px;
+    --gap-4xl-neg: -48px;
+    --gap-5xl-neg: -72px;
 }

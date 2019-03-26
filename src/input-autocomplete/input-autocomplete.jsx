@@ -155,7 +155,7 @@ class InputAutocomplete extends React.Component {
                 focused: this.state.inputFocused || this.state.menuFocused,
                 'has-autocomplete': true
             }),
-            autocomplete: this.props.autocomplete ? this.props.autocomplete : false,
+            autocomplete: this.props.autocomplete || false,
             value,
             onChange: this.handleChange,
             onFocus: this.handleInputFocus,

@@ -1,3 +1,18 @@
+<a name="13.9.0"></a>
+# [13.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.8.1...v13.9.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* **input-autocomplete:** code style ([47fe2b6](https://github.com/alfa-laboratory/arui-feather/commit/47fe2b6))
+
+
+### Features
+
+* **input:** allow to pass string autocomplete prop value ([cdc4826](https://github.com/alfa-laboratory/arui-feather/commit/cdc4826))
+
+
+
 <a name="13.8.1"></a>
 ## [13.8.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.8.0...v13.8.1) (2019-03-14)
 

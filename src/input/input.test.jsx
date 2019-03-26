@@ -184,6 +184,13 @@ describe('input', () => {
         expect(controlNode.props().autoComplete).toBe('on');
     });
 
+    it('should render string autocomplete attribute', () => {
+        let input = shallow(<Input autocomplete='email' />);
+        let controlNode = input.find('input');
+
+        expect(controlNode.props().autoComplete).toBe('email');
+    });
+
     it('should set value from props', () => {
         let input = shallow(<Input value='text' />);
         let controlNode = input.find('input');

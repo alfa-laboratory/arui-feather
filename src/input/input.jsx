@@ -32,8 +32,11 @@ class Input extends React.Component {
         type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
-        /** Управление автозаполнением компонента */
-        autocomplete: Type.bool,
+        /**
+         * Управление автозаполнением компонента. В случае передачи `true` или `false` подставляет `on` или `off`.
+         * Строка подставляется как есть.
+         */
+        autocomplete: Type.oneOfType([Type.bool, Type.string]),
         /** Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления */
         disabled: Type.bool,
         /** Управление возможностью изменения атрибута компонента (без установки класса-модификатора для оформления) */
@@ -237,7 +240,7 @@ class Input extends React.Component {
             className: cn('control'),
             type: this.props.type,
             formNoValidate: this.props.formNoValidate,
-            autoComplete: this.props.autocomplete === false ? 'off' : 'on',
+            autoComplete: this.getAutoCompleteValue(),
             disabled: this.props.disabled || this.props.disabledAttr,
             maxLength: this.props.maxLength,
             id: this.props.id,
@@ -402,6 +405,14 @@ class Input extends React.Component {
         if (this.props.onTouchCancel) {
             this.props.onTouchCancel(event);
         }
+    }
+
+    getAutoCompleteValue() {
+        if (typeof this.props.autocomplete === 'string') {
+            return this.props.autocomplete;
+        }
+
+        return this.props.autocomplete === false ? 'off' : 'on';
     }
 
     /**

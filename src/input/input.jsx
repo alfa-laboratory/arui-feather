@@ -289,7 +289,7 @@ class Input extends React.Component {
                     <IconButton
                         className={ cn('clear') }
                         size={ this.props.size }
-                        tabIndex={-1}
+                        tabIndex={ -1 }
                         onClick={ this.handleClearClick }
                     >
                         <IconClose

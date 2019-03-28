@@ -9,7 +9,16 @@ import cn from '../cn';
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
     tablet: Type.oneOfType([Type.string, Type.number, Type.object]),
-    desktop: Type.oneOfType([Type.string, Type.number, Type.object])
+    desktop: Type.oneOfType([Type.string, Type.number, Type.object]),
+    'mobile-s': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'mobile-m': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'mobile-l': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'tablet-s': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'tablet-m': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'tablet-l': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'desktop-s': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'desktop-m': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'desktop-l': Type.oneOfType([Type.string, Type.number, Type.object])
 };
 
 /**

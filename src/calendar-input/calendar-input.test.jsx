@@ -373,6 +373,27 @@ describe('calendar-input', () => {
 
             expect(inputNode.props().min).toBe('2017-12-22');
         });
+
+        it('should render date input with mobileMode=native', () => {
+            let calendarInput = mount(<CalendarInput mobileMode='native' />);
+            let dateInput = calendarInput.find('input[type="date"]');
+
+            expect(dateInput.length).toBe(1);
+        });
+
+        it('should set Popup target to `screen` with mobileMode=popup', () => {
+            let calendarInput = mount(<CalendarInput mobileMode='popup' />);
+            let popup = calendarInput.find('Popup');
+
+            expect(popup.prop('target')).toEqual('screen');
+        });
+
+        it('should not show Popup with mobileMode=input', () => {
+            let calendarInput = mount(<CalendarInput mobileMode='input' />);
+            let popup = calendarInput.find('Popup');
+
+            expect(popup.prop('visible')).toBe(false);
+        });
     });
 
     describe('calendar utils', () => {

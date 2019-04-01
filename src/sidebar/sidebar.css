@@ -42,8 +42,6 @@ body.sidebar-overlay {
     }
 
     &__header {
-        display: flex;
-        min-height: 20px;
         margin-bottom: 50px;
     }
 

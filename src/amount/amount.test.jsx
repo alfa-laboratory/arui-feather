@@ -92,4 +92,20 @@ describe('amount', () => {
         // eslint-disable-next-line no-irregular-whitespace
         expect(amount.text()).toContain(`999 ${CURRENCY_MAP.BYR}`);
     });
+
+    it('should render when minority equals 0', () => {
+        let amount = mount(
+            <Amount
+                amount={ {
+                    value: 999,
+                    currency: {
+                        code: 'ZWD',
+                        minority: 0
+                    }
+                } }
+            />
+        );
+        // eslint-disable-next-line no-irregular-whitespace
+        expect(amount.text()).toContain(`999 ${CURRENCY_MAP.ZWD}`);
+    });
 });

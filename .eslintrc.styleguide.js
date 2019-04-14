@@ -1,5 +1,5 @@
 module.exports = {
-    extends: require.resolve('arui-presets/eslint'),
+    extends: require.resolve('arui-presets-lint/eslint'),
     rules: {
         'func-names': 0,
         'max-len': 0,

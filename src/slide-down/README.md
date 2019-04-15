@@ -1,4 +1,7 @@
 ```jsx
+import Button from 'arui-feather/button';
+import Paragraph from 'arui-feather/paragraph';
+
 function handleSlideDownToggle() {
     setState({ isExpanded: !state.isExpanded });
 }

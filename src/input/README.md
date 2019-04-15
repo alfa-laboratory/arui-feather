@@ -1,5 +1,8 @@
 
 ```jsx
+import Radio from 'arui-feather/radio';
+import RadioGroup from 'arui-feather/radio-group';
+
 initialState = {
     money: ''
 };
@@ -136,7 +139,7 @@ initialState = {
 
 С произвольной иконкой
 ```jsx
-const IconOk = require('../../src/icon/ui/ok').default;
+import IconOk from 'arui-feather/icon/ui/ok';
 
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>

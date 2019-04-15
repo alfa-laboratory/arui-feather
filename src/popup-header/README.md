@@ -1,4 +1,7 @@
-```
+```jsx
+import Button from 'arui-feather/button';
+import Popup from 'arui-feather/popup';
+
 class PopupHeaderDemo extends React.Component {
     constructor() {
         super();

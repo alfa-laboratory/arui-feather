@@ -73,7 +73,7 @@
         }
 
         .checkbox__text {
-            padding-left: var(--gap-xs);
+            padding-left: calc(var(--gap-xs) + 2px);
         }
     }
 

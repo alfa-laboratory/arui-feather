@@ -73,10 +73,11 @@ exports[`input-autocomplete should render input with provided default value 1`] 
       type="text"
       updateValueOnItemSelect={true}
       value="default"
+      view="default"
       width="default"
     >
       <span
-        className="input input_type_text input_size_m input_width_default input_has-value input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+        className="input input_type_text input_view_default input_size_m input_width_default input_has-value input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
       >
         <span
           className="input__inner"
@@ -102,6 +103,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
               onTouchStart={[Function]}
               type="text"
               value="default"
+              view="default"
             />
           </span>
         </span>
@@ -370,10 +372,11 @@ exports[`input-autocomplete should render without problem 1`] = `
       type="text"
       updateValueOnItemSelect={true}
       value=""
+      view="default"
       width="default"
     >
       <span
-        className="input input_type_text input_size_m input_width_default input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+        className="input input_type_text input_view_default input_size_m input_width_default input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
       >
         <span
           className="input__inner"
@@ -399,6 +402,7 @@ exports[`input-autocomplete should render without problem 1`] = `
               onTouchStart={[Function]}
               type="text"
               value=""
+              view="default"
             />
           </span>
         </span>

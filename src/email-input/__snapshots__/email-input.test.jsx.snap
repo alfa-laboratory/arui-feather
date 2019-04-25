@@ -6,5 +6,6 @@ exports[`email-input should render without problems 1`] = `
   formNoValidate={true}
   size="m"
   type="email"
+  view="default"
 />
 `;

@@ -36,6 +36,12 @@
         .input_has-value &, .input_focused & {
             display: block;
         }
+
+        .input_view_filled & {
+            left: 12px;
+            top: 0;
+            line-height: 56px;
+        }
     }
 
     &__value {

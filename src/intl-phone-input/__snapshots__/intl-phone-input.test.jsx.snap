@@ -37,6 +37,7 @@ exports[`intl-phone-input renders without problems 1`] = `
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -47,6 +48,7 @@ exports[`intl-phone-input renders without problems 1`] = `
   size="m"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -87,6 +89,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -97,6 +100,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
   size="l"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -137,6 +141,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -147,6 +152,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
   size="m"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -187,6 +193,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -197,6 +204,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
   size="s"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -237,6 +245,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -247,5 +256,6 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
   size="xl"
   type="tel"
   value="+7"
+  view="default"
 />
 `;

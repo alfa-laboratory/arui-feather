@@ -485,9 +485,10 @@ ajv@^6.0.1, ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.1"
 
-alfa-ui-primitives@1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.9.1.tgz#bdfa4e04659b149e8f5b9399a37f8adf65028f5a"
+alfa-ui-primitives@1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-1.10.0.tgz#1463ceb657c6c48c1b8bd4c8b0981da089ccdc59"
+  integrity sha512-bcdUMOI10xJQTPDJwBBvKfBGd44QT0owIbRylQcN3ygSgvSTcJJRBbzd7CgCHymB2M0eU+yWYDbC4DBBg2Zajw==
 
 aliasify@^1.7.2, aliasify@^1.9.0:
   version "1.9.0"
@@ -7831,9 +7832,10 @@ libphonenumber-js@1.0.24:
     semver-compare "^1.0.0"
     xml2js "^0.4.17"
 
-library-utils@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-2.3.0.tgz#9034d551245fde2736de965d1869ee9b36d7559c"
+library-utils@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/library-utils/-/library-utils-2.3.1.tgz#cdb791b2323bbaece94fd45a9656870ed83d16c1"
+  integrity sha512-9Z2YsTjZnNfw09GuyhvYgFSdq1H+k3GmptcyKpzsbD9g5voEX+4b+iRl9AbUE5fR5cBItSENxCUVZSvUInYGOA==
   dependencies:
     del "3.0.0"
     ejs "2.5.7"

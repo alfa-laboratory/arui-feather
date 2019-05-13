@@ -84,6 +84,7 @@ import IconCostsCard from './banking/costs-card';
 import IconCredit from './banking/credit';
 import IconCreditCard from './banking/credit-card';
 import IconCrown from './banking/crown';
+import IconCrownPremium from './banking/crown-premium';
 import IconCvv from './banking/cvv';
 import IconDeposit from './banking/deposit';
 import IconExpences from './banking/expences';
@@ -125,6 +126,7 @@ import IconTransferOuter from './banking/transfer-outer';
 import IconTransferSelf from './banking/transfer-self';
 import IconTransferToCard from './banking/transfer-to-card';
 import IconUserAdd from './banking/user-add';
+import IconWallet from './banking/wallet';
 import IconBankAlfa from './brand/bank-alfa';
 import IconBankBaltiyskiy from './brand/bank-baltiyskiy';
 import IconBankBinbank from './brand/bank-binbank';
@@ -180,6 +182,7 @@ import IconCategoryBooksMovies from './category/category-books-movies';
 import IconCategoryBudget from './category/category-budget';
 import IconCategoryBusiness from './category/category-business';
 import IconCategoryBusinessActivity from './category/category-business-activity';
+import IconCategoryCards from './category/category-cards';
 import IconCategoryCash from './category/category-cash';
 import IconCategoryCashback from './category/category-cashback';
 import IconCategoryCharity from './category/category-charity';
@@ -196,6 +199,7 @@ import IconCategoryGibddFines from './category/category-gibdd-fines';
 import IconCategoryGuard from './category/category-guard';
 import IconCategoryHealth from './category/category-health';
 import IconCategoryHobby from './category/category-hobby';
+import IconCategoryHouse from './category/category-house';
 import IconCategoryHousekeeping from './category/category-housekeeping';
 import IconCategoryInvestments from './category/category-investments';
 import IconCategoryLoans from './category/category-loans';
@@ -204,11 +208,13 @@ import IconCategoryMortgage from './category/category-mortgage';
 import IconCategoryOther from './category/category-other';
 import IconCategoryPerson from './category/category-person';
 import IconCategoryPets from './category/category-pets';
+import IconCategoryPlane from './category/category-plane';
 import IconCategoryRent from './category/category-rent';
 import IconCategoryRepairs from './category/category-repairs';
 import IconCategoryRestaurants from './category/category-restaurants';
 import IconCategorySalary from './category/category-salary';
 import IconCategoryScholarship from './category/category-scholarship';
+import IconCategoryShield from './category/category-shield';
 import IconCategoryShopping from './category/category-shopping';
 import IconCategoryState from './category/category-state';
 import IconCategoryTelecom from './category/category-telecom';
@@ -220,6 +226,7 @@ import IconCategoryTv from './category/category-tv';
 import IconCategoryUnknown from './category/category-unknown';
 import IconCategoryUser from './category/category-user';
 import IconCategoryVacation from './category/category-vacation';
+import IconCategoryWallet from './category/category-wallet';
 import IconUtilities from './category/utilities';
 import IconCurrencyChf from './currency/currency-chf';
 import IconCurrencyEur from './currency/currency-eur';
@@ -240,6 +247,7 @@ import IconCashback from './entity/cashback';
 import IconCashbackBonus from './entity/cashback-bonus';
 import IconChatPhoto from './entity/chat-photo';
 import IconClock from './entity/clock';
+import IconClockFilled from './entity/clock-filled';
 import IconContactList from './entity/contact-list';
 import IconContactlessOff from './entity/contactless-off';
 import IconContactlessOn from './entity/contactless-on';
@@ -488,6 +496,7 @@ describe('icon', () => {
             { componentName: IconCredit, name: 'credit' },
             { componentName: IconCreditCard, name: 'credit-card' },
             { componentName: IconCrown, name: 'crown' },
+            { componentName: IconCrownPremium, name: 'crown-premium' },
             { componentName: IconCvv, name: 'cvv' },
             { componentName: IconDeposit, name: 'deposit' },
             { componentName: IconExpences, name: 'expences' },
@@ -529,6 +538,7 @@ describe('icon', () => {
             { componentName: IconTransferSelf, name: 'transfer-self' },
             { componentName: IconTransferToCard, name: 'transfer-to-card' },
             { componentName: IconUserAdd, name: 'user-add' },
+            { componentName: IconWallet, name: 'wallet' },
             { componentName: IconBankAlfa, name: 'bank-alfa' },
             { componentName: IconBankBaltiyskiy, name: 'bank-baltiyskiy' },
             { componentName: IconBankBinbank, name: 'bank-binbank' },
@@ -584,6 +594,7 @@ describe('icon', () => {
             { componentName: IconCategoryBudget, name: 'category-budget' },
             { componentName: IconCategoryBusiness, name: 'category-business' },
             { componentName: IconCategoryBusinessActivity, name: 'category-business-activity' },
+            { componentName: IconCategoryCards, name: 'category-cards' },
             { componentName: IconCategoryCash, name: 'category-cash' },
             { componentName: IconCategoryCashback, name: 'category-cashback' },
             { componentName: IconCategoryCharity, name: 'category-charity' },
@@ -600,6 +611,7 @@ describe('icon', () => {
             { componentName: IconCategoryGuard, name: 'category-guard' },
             { componentName: IconCategoryHealth, name: 'category-health' },
             { componentName: IconCategoryHobby, name: 'category-hobby' },
+            { componentName: IconCategoryHouse, name: 'category-house' },
             { componentName: IconCategoryHousekeeping, name: 'category-housekeeping' },
             { componentName: IconCategoryInvestments, name: 'category-investments' },
             { componentName: IconCategoryLoans, name: 'category-loans' },
@@ -608,11 +620,13 @@ describe('icon', () => {
             { componentName: IconCategoryOther, name: 'category-other' },
             { componentName: IconCategoryPerson, name: 'category-person' },
             { componentName: IconCategoryPets, name: 'category-pets' },
+            { componentName: IconCategoryPlane, name: 'category-plane' },
             { componentName: IconCategoryRent, name: 'category-rent' },
             { componentName: IconCategoryRepairs, name: 'category-repairs' },
             { componentName: IconCategoryRestaurants, name: 'category-restaurants' },
             { componentName: IconCategorySalary, name: 'category-salary' },
             { componentName: IconCategoryScholarship, name: 'category-scholarship' },
+            { componentName: IconCategoryShield, name: 'category-shield' },
             { componentName: IconCategoryShopping, name: 'category-shopping' },
             { componentName: IconCategoryState, name: 'category-state' },
             { componentName: IconCategoryTelecom, name: 'category-telecom' },
@@ -624,6 +638,7 @@ describe('icon', () => {
             { componentName: IconCategoryUnknown, name: 'category-unknown' },
             { componentName: IconCategoryUser, name: 'category-user' },
             { componentName: IconCategoryVacation, name: 'category-vacation' },
+            { componentName: IconCategoryWallet, name: 'category-wallet' },
             { componentName: IconUtilities, name: 'utilities' },
             { componentName: IconCurrencyChf, name: 'currency-chf' },
             { componentName: IconCurrencyEur, name: 'currency-eur' },
@@ -644,6 +659,7 @@ describe('icon', () => {
             { componentName: IconCashbackBonus, name: 'cashback-bonus' },
             { componentName: IconChatPhoto, name: 'chat-photo' },
             { componentName: IconClock, name: 'clock' },
+            { componentName: IconClockFilled, name: 'clock-filled' },
             { componentName: IconContactList, name: 'contact-list' },
             { componentName: IconContactlessOff, name: 'contactless-off' },
             { componentName: IconContactlessOn, name: 'contactless-on' },

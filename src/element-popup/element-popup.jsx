@@ -270,7 +270,7 @@ class ElementPopup extends PureComponent {
     }
 
     handleCreatingDesktopContent(ref) {
-        if (!ref) return;
+        if (!ref || ref.clientHeight === 0) return;
 
         this.desktopContentRef = ref;
     }

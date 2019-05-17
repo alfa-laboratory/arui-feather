@@ -94,16 +94,8 @@ class ElementPopup extends PureComponent {
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside.bind(this));
-
-        this.handleDirUpdate(true);
         window.addEventListener('resize', this.handleDirUpdate.bind(this));
         window.addEventListener('scroll', this.handleDirUpdate.bind(this));
-    }
-
-    componentWillReceiveProps() {
-        this.handleDirUpdate(true);
-
-        this.firstOne = false;
     }
 
     componentWillUnmount() {
@@ -189,6 +181,9 @@ class ElementPopup extends PureComponent {
                 this.desktopContentRef.getBoundingClientRect()
             );
 
+        // check correct position
+        setTimeout(() => this.handleDirUpdate(true));
+
         return (
             <div
                 className={ cn('content', {
@@ -262,15 +257,31 @@ class ElementPopup extends PureComponent {
         }
     }
 
-    handleDirUpdate(immediatly) {
+    // check - param not from scroll or resize event
+    handleDirUpdate(check) {
+        const { elementPopupClicked, elementPopupHovered } = this.state;
+
+        // reset directions after hide, or scroll or resize event
+        if (!check || (!elementPopupClicked && !elementPopupHovered)) {
+            setTimeout(() => this.setState({
+                subDirection: undefined,
+                direction: undefined
+            }), 200);
+
+            return;
+        }
+
         clearTimeout(this.resizeTimeout);
 
         this.resizeTimeout = setTimeout(() => {
+            const direction = this.calcDir(this.desktopContentRef);
+            const subDirection = this.calcSubDir(this.desktopContentRef, direction);
+
             this.setState({
-                subDirection: this.calcSubDir(this.desktopContentRef),
-                direction: this.calcDir(this.desktopContentRef)
+                subDirection,
+                direction
             });
-        }, immediatly ? 0 : 300);
+        }, 300);
     }
 
     handleCreatingDesktopContent(ref) {
@@ -279,10 +290,14 @@ class ElementPopup extends PureComponent {
         this.desktopContentRef = ref;
     }
 
-    calcSubDir(ref) {
-        if (!ref) return '';
+    calcSubDir(ref, dirFromState) {
+        if (!ref || !dirFromState) return '';
 
-        const { direction, subDirection } = this.props;
+        const { subDirection: subDirFromState } = this.state;
+        const { direction: dirFromProps, subDirection: subDireFromProps } = this.props;
+
+        const direction = dirFromState || dirFromProps;
+        const subDirection = subDirFromState || subDireFromProps;
 
         switch (direction) {
             case BOTTOM:
@@ -318,7 +333,10 @@ class ElementPopup extends PureComponent {
     calcDir(ref) {
         if (!ref) return '';
 
-        const { direction } = this.props;
+        const { direction: dirFromState } = this.state;
+        const { direction: dirFromProps } = this.props;
+
+        const direction = dirFromState || dirFromProps;
 
         switch (direction) {
             case RIGHT:
@@ -353,30 +371,31 @@ class ElementPopup extends PureComponent {
 
     toggleClick() {
         const { elementPopupClicked } = this.state;
-        this.setState({ elementPopupClicked: !elementPopupClicked });
+
+        const direction = this.calcDir(this.desktopContentRef);
+
+        this.setState({
+            elementPopupClicked: !elementPopupClicked,
+            subDirection: this.calcSubDir(this.desktopContentRef, direction),
+            direction
+        });
 
         if (!elementPopupClicked && this.mobileContentRef) {
             this.mobileContentRef.scrollTop = 0;
         }
-
-        if (!this.firstOne) {
-            this.handleDirUpdate(true);
-
-            this.firstOne = true;
-        }
     }
 
     toggleHover(elementPopupHovered) {
-        this.setState({ elementPopupHovered });
+        const direction = this.calcDir(this.desktopContentRef);
+
+        this.setState({
+            elementPopupHovered,
+            subDirection: this.calcSubDir(this.desktopContentRef, direction),
+            direction
+        });
 
         if (elementPopupHovered && this.mobileContentRef) {
             this.mobileContentRef.scrollTop = 0;
-        }
-
-        if (!this.firstOne) {
-            this.handleDirUpdate(true);
-
-            this.firstOne = true;
         }
     }
 }

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`element-popup should render without problems 1`] = `
+<ElementPopup
+  direction="bottom"
+  forceDirection={false}
+  trigger="click"
+  uniqID="1"
+>
+  <div
+    className="element-popup element-popup_theme_alfa-on-white"
+    id="1"
+  >
+    <Link
+      checked={false}
+      className="element-popup__children"
+      disabled={false}
+      iconPosition="left"
+      onClick={[Function]}
+      pseudo={true}
+      size="m"
+      tabIndex={0}
+      url="#"
+    >
+      <a
+        className="link link_pseudo link_size_m link_theme_alfa-on-white element-popup__children"
+        href="#"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+      >
+        <span>
+          TEST
+        </span>
+      </a>
+    </Link>
+    <Mq
+      query="--medium"
+    />
+    <Mq
+      query="--small-only"
+    />
+  </div>
+</ElementPopup>
+`;

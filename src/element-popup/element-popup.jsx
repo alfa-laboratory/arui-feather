@@ -1,4 +1,4 @@
-import { Fragment, PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import Type from 'prop-types';
 import cn from '../cn';
 import Button from '../button';
@@ -60,7 +60,11 @@ class ElementPopup extends PureComponent {
         /**
         *  Не пересчитывать направление если не влазит
         */
-        forceDirection: Type.bool
+        forceDirection: Type.bool,
+        /**
+        *  Уникальный ИД компонента
+        */
+        uniqID: Type.string
     };
 
     static defaultProps = {
@@ -85,7 +89,7 @@ class ElementPopup extends PureComponent {
             elementPopupHovered: false
         };
 
-        this.uniqID = `ID-${(`${Math.random() * Date.now()}`).replace(/\./, '-')}`;
+        this.uniqID = props.uniqID || `ID-${(`${Math.random() * Date.now()}`).replace(/\./, '-')}`;
     }
 
     componentDidMount() {

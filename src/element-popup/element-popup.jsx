@@ -404,23 +404,23 @@ function computePropStyles(id, childrenRect, contentRect) {
     /* STYLES */
 
     /* right content, half arrow, half content, border */
-    const topBottomToRightBefore = calcFor('left', childrenWidth/2);
+    const topBottomToRightBefore = calcFor('left', childrenWidth / 2);
     /* right content, half arrow, half content, border, after offset */
-    const topBottomToRightAfter = calcFor('left', childrenWidth/2, BEFORE_AFTER_OFFSET);
+    const topBottomToRightAfter = calcFor('left', childrenWidth / 2, BEFORE_AFTER_OFFSET);
     /* left content, half arrow, half content, border */
-    const topBottomToLeftBefore = calcFor('right', childrenWidth/2);
+    const topBottomToLeftBefore = calcFor('right', childrenWidth / 2);
     /* left content, half arrow, half content, border, after offset */
-    const topBottomToLeftAfter = calcFor('right', childrenWidth/2, BEFORE_AFTER_OFFSET);
+    const topBottomToLeftAfter = calcFor('right', childrenWidth / 2, BEFORE_AFTER_OFFSET);
 
 
     /* top offset, half arrow, half children, border */
-    const rightLeftToBottomBefore = calcFor('top', childrenHeight/2);
+    const rightLeftToBottomBefore = calcFor('top', childrenHeight / 2);
     /* top offset, half arrow, half children, border, after offset */
-    const rightLeftToBottomAfter = calcFor('top', childrenHeight/2, BEFORE_AFTER_OFFSET);
+    const rightLeftToBottomAfter = calcFor('top', childrenHeight / 2, BEFORE_AFTER_OFFSET);
     /* bottom offset, half arrow, half children, border */
-    const rightLeftToTopBefore = calcFor('bottom', childrenHeight/2);
+    const rightLeftToTopBefore = calcFor('bottom', childrenHeight / 2);
     /* bottom offset, half arrow, half children, border, after offset */
-    const rightLeftToTopAfter = calcFor('bottom', childrenHeight/2, BEFORE_AFTER_OFFSET);
+    const rightLeftToTopAfter = calcFor('bottom', childrenHeight / 2, BEFORE_AFTER_OFFSET);
 
     /* content height, children height, top offset */
     const rightLeftToTop = `top: calc(-${contentHeight}px + ${childrenHeight}px + ${DIRECTION_OFFSET}px);`;

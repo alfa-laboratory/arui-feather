@@ -1,0 +1,198 @@
+.element-popup {
+    position: relative;
+    display: inline-block;
+
+    &__children {
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        z-index: 1000;
+    }
+
+    &__content {
+        position: absolute;
+
+        &_desktop {
+            position: absolute;
+            background: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            min-width: 235px;
+            width: max-content;
+            max-width: 352px;
+            border: 2px solid #e6e8eb;
+            opacity: 0;
+            transition: .1s ease-in;
+
+            &:after, &:before {
+                border: solid transparent;
+                content: ' ';
+                height: 0;
+                width: 0;
+                position: absolute;
+            }
+
+            &:after {
+                border-color: transparent;
+                border-width: 6px;
+            }
+
+            &:before {
+                border-color: transparent;
+                border-width: 9px;
+            }
+        }
+
+        &_desktop&_direction_bottom {
+            right: -20px;
+            top: calc(100% + 20px);
+
+            box-shadow: 0 3px 10px rgba(10, 10, 10, 0.1);
+
+            &:after, &:before { bottom: 100%; }
+
+            &:after {
+                border-bottom-color: white;
+            }
+
+            &:before {
+                border-bottom-color: #e6e8eb;
+            }
+        }
+
+        &_desktop&_direction_top {
+            right: -20px;
+
+            box-shadow: 0 -3px 10px rgba(10, 10, 10, 0.1);
+
+            &:after, &:before { top: 100%; }
+
+            &:after {
+                border-top-color: white;
+            }
+
+            &:before {
+                border-top-color: #e6e8eb;
+            }
+        }
+
+        &_desktop&_direction_bottom&_subDirection_to-right,
+        &_desktop&_direction_top&_subDirection_to-right {
+            left: -20px;
+        }
+
+        &_desktop&_direction_right {
+            top: -20px;
+            left: calc(100% + 20px);
+
+            box-shadow: 3px 1px 10px rgba(10, 10, 10, 0.1);
+
+            &:after, &:before { right: 100%; }
+
+            &:after {
+                border-right-color: white;
+            }
+
+            &:before {
+                border-right-color: #e6e8eb;
+            }
+        }
+
+        &_desktop&_direction_left {
+            top: -20px;
+            right: calc(100% + 20px);
+
+            box-shadow: -3px 1px 10px rgba(10, 10, 10, 0.1);
+
+            &:after, &:before { left: 100%; }
+
+            &:after {
+                border-left-color: white;
+            }
+
+            &:before {
+                border-left-color: #e6e8eb;
+            }
+        }
+
+        &_desktop&_direction_right&_subDirection_to-top,
+        &_desktop&_direction_left&_subDirection_to-top {
+            height: max-content;
+        }
+
+        &_desktop&_trigger_click&_clicked,
+        &_desktop&_trigger_hover&_hovered {
+            opacity: 1;
+            z-index: 999;
+        }
+
+        &_desktop&_direction_bottom&_trigger_click&_clicked,
+        &_desktop&_direction_bottom&_trigger_hover&_hovered {
+            transform: translateY(-5px);
+        }
+
+        &_desktop&_direction_top&_trigger_click&_clicked,
+        &_desktop&_direction_top&_trigger_hover&_hovered {
+            transform: translateY(5px);
+        }
+
+        &_desktop&_direction_right&_trigger_click&_clicked,
+        &_desktop&_direction_right&_trigger_hover&_hovered {
+            transform: translateX(-5px);
+        }
+
+        &_desktop&_direction_left&_trigger_click&_clicked,
+        &_desktop&_direction_left&_trigger_hover&_hovered {
+            transform: translateX(5px);
+        }
+
+        &_mobile {
+            width: 100%;
+            z-index: 1001;
+            overflow: auto;
+            background: white;
+            padding: 0 16px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            position: fixed;
+            right: 0;
+            opacity: 0;
+            bottom: -25px;
+            transition: .2s;
+        }
+
+        &_mobile&_clicked {
+            transform: translateY(-25px);
+            opacity: 1;
+        }
+    }
+
+    &__mobile-overlay {
+        visibility: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: black;
+        opacity: 0;
+        transition: opacity .2s;
+
+        &_clicked {
+            visibility: visible;
+            opacity: 0.6;
+        }
+    }
+
+    &__scrollable-mobile-content {
+        max-height: 70vh;
+        z-index: 1001;
+        padding-top: 12px;
+        overscroll-behavior: none;
+
+        &-wrap {
+            padding-bottom: 12px;
+        }
+    }
+}

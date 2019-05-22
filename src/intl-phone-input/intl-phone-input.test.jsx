@@ -14,6 +14,8 @@ const SIZES = ['s', 'm', 'l', 'xl'];
 
 describe('intl-phone-input', () => {
     let originalWindowScrollTo = window.scrollTo;
+    // eslint-disable-next-line no-extend-native
+    Promise.prototype.finally = (callback) => { callback(); };
 
     beforeEach(() => {
         window.scrollTo = jest.fn();

@@ -30,11 +30,23 @@ module.exports = {
         return path.resolve(path.dirname(componentPath), './README.md');
     },
     ignore: ['**/*-test.jsx'],
+    exampleMode: 'expand',
+    moduleAliases: {
+        'arui-feather': path.resolve(__dirname, './src/')
+    },
+    pagePerSection: true,
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),
-    //styleguideComponents: {
-        //StyleGuide: path.resolve(__dirname, './demo/components/styleguide'),
-        //slots: path.resolve(__dirname, './demo/components/slots')
-    //},
+    styleguideComponents: {
+        'StyleGuide$': path.resolve(__dirname, './demo/components/styleguide/styleguide'),
+        StyleGuideRenderer: path.resolve(__dirname, './demo/components/styleguide/styleguide-renderer'),
+        SectionHeadingRenderer: path.resolve(__dirname, './demo/components/section-heading/section-heading-renderer'),
+        Markdown: path.resolve(__dirname, './demo/components/markdown'),
+        Preview: path.resolve(__dirname, './demo/components/preview'),
+        Editor: path.resolve(__dirname, './demo/components/editor/editor'),
+        Pathline: path.resolve(__dirname, './demo/components/pathline'),
+        'slots$': path.resolve(__dirname, './demo/components/slots'),
+        'ReactComponent$': path.resolve(__dirname, './demo/components/react-component'),
+    },
     template: {
         favicon: 'https://assets-cdn.github.com/favicon.ico'
     }, // path.resolve(__dirname, './demo/template.html'),

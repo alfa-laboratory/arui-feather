@@ -6,6 +6,10 @@
     background-image: url('./icon_category-cash_m_black.svg');
 }
 
+.icon_size_m.icon_name_category-cash.icon_colored.icon_theme_alfa-on-color, .icon_size_m.icon_name_category-cash.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_category-cash_m_color.svg');
+}
+
 .icon_size_m.icon_name_category-cash.icon_theme_alfa-on-color {
     background-image: url('./icon_category-cash_m_white.svg');
 }
@@ -20,6 +24,10 @@
 
 .icon_size_xxl.icon_name_category-cash.icon_theme_alfa-on-white {
     background-image: url('./icon_category-cash_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_category-cash.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_category-cash.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_category-cash_xxl_color.svg');
 }
 
 .icon_size_xxl.icon_name_category-cash.icon_theme_alfa-on-color {

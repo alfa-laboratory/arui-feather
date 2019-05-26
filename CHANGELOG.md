@@ -1,3 +1,36 @@
+<a name="13.11.0"></a>
+# [13.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.10.0...v13.11.0) (2019-05-14)
+
+
+### Bug Fixes
+
+* **input:** fix caret color ([#816](https://github.com/alfa-laboratory/arui-feather/issues/816)) ([808fff7](https://github.com/alfa-laboratory/arui-feather/commit/808fff7))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.10.0 ([#819](https://github.com/alfa-laboratory/arui-feather/issues/819)) ([d36abca](https://github.com/alfa-laboratory/arui-feather/commit/d36abca))
+* **form-field:** update gaps ([#811](https://github.com/alfa-laboratory/arui-feather/issues/811)) ([0021e8b](https://github.com/alfa-laboratory/arui-feather/commit/0021e8b))
+
+
+
+<a name="13.10.0"></a>
+# [13.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.9.1...v13.10.0) (2019-04-16)
+
+
+### Bug Fixes
+
+* **amount:** now does not explode if passing minority 0 ([#802](https://github.com/alfa-laboratory/arui-feather/issues/802)) ([afe3f64](https://github.com/alfa-laboratory/arui-feather/commit/afe3f64))
+* **grid-col:** valid proptypes ([d61dc26](https://github.com/alfa-laboratory/arui-feather/commit/d61dc26))
+* **input:** add tabIndex for clear button ([#805](https://github.com/alfa-laboratory/arui-feather/issues/805)) ([c94a2b3](https://github.com/alfa-laboratory/arui-feather/commit/c94a2b3))
+
+
+### Features
+
+* **vars:** add negative gaps ([#807](https://github.com/alfa-laboratory/arui-feather/issues/807)) ([bc5f065](https://github.com/alfa-laboratory/arui-feather/commit/bc5f065))
+
+
+
 <a name="13.9.1"></a>
 ## [13.9.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.9.0...v13.9.1) (2019-03-26)
 

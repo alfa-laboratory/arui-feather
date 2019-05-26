@@ -23,6 +23,7 @@
         &:-webkit-autofill:focus,
         &:-webkit-autofill:active {
             -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
+            caret-color: var(--color-content-alfa-on-white);
         }
     }
 

@@ -31,7 +31,7 @@
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
     "demo": "styleguidist server",
-    "build:demo": "git submodule update --init --remote && styleguidist build",
+    "build:demo": "styleguidist build",
     "build:flag-icons": "gulp --gulpfile ./src/flag-icon/flag-icon.gulpfile.js",
     "build:icons": "node ./tools/icon/build-icons.js && svgo ./src/icon/**/* --config=.svgo.yml",
     "update-primitive-colors": "node ./tools/update-colors.js"
@@ -107,6 +107,7 @@
     "react-dom": ">=15.6"
   },
   "devDependencies": {
+    "arui-demo": "0.1.0",
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",

@@ -1,3 +1,3 @@
 module.exports = {
-    extends: 'arui-presets-lint/stylelint'
+    extends: 'arui-presets/stylelint'
 };

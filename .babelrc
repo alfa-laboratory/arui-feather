@@ -1,15 +1,7 @@
 {
-  "presets": [
-    "@babel/react"
-  ],
+  "presets": ["arui-presets/babel"],
   "plugins": [
-    ["transform-react-remove-prop-types", {"mode": "wrap"}],
-    "@babel/plugin-proposal-export-default-from",
-    ["@babel/plugin-proposal-decorators", {"legacy":true}],
-    ["@babel/plugin-proposal-class-properties", {"loose": true}],
-    "babel-plugin-dynamic-import-node",
-    "@babel/plugin-proposal-export-namespace-from",
-    "@babel/plugin-proposal-object-rest-spread",
+    ["transform-react-remove-prop-types", {"mode": "wrap"}]
   ],
   "env": {
     "test": {

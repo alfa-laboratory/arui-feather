@@ -37,15 +37,15 @@ module.exports = {
     pagePerSection: true,
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),
     styleguideComponents: {
-        'StyleGuide$': 'arui-demo/styleguide/styleguide',
+        StyleGuide$: 'arui-demo/styleguide/styleguide',
         StyleGuideRenderer: 'arui-demo/styleguide/styleguide-renderer',
         SectionHeadingRenderer: 'arui-demo/section-heading/section-heading-renderer',
         Markdown: 'arui-demo/markdown',
         Preview: 'arui-demo/preview',
         Editor: 'arui-demo/editor/editor',
         Pathline: 'arui-demo/pathline',
-        'slots$': 'arui-demo/slots',
-        'ReactComponent$': 'arui-demo/react-component',
+        slots$: 'arui-demo/slots',
+        ReactComponent$: 'arui-demo/react-component',
         ExamplePlaceholderRenderer: 'arui-demo/example-placeholder',
         Logo: 'arui-demo/logo'
     },
@@ -84,7 +84,7 @@ module.exports = {
                     isolate: false,
                     background: 'rgb(56, 76, 94)'
                 },
-                border: 'none',
+                border: 'none'
             },
             footer: {
                 display: 'none'
@@ -98,11 +98,11 @@ module.exports = {
                     '.view-with-theme-switcher__layout_theme_alfa-on-color &': {
                         isolate: false,
                         color: '#fff !important',
-                        opacity: '.6 !important',
+                        opacity: '.6 !important'
                     }
                 }
             }
-        },
+        }
     },
     template: {
         favicon: 'https://assets-cdn.github.com/favicon.ico'
@@ -117,15 +117,11 @@ module.exports = {
             })
         ]
     }),
-    moduleAliases: {
-        'arui-feather': path.resolve(__dirname, 'src')
-    },
-    pagePerSection: true,
     sections: [
         {
             title: 'Components',
             components: './src/*/index.js',
-            sectionDepth: 1,
+            sectionDepth: 1
         }
-    ],
+    ]
 };

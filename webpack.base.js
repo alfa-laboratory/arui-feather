@@ -1,3 +1,5 @@
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+
 const path = require('path');
 const webpack = require('webpack');
 

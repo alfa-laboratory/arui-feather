@@ -259,14 +259,15 @@ class ElementPopup extends PureComponent {
 
     // check - param not from scroll or resize event
     handleDirUpdate(check) {
+        clearTimeout(this.resetTimer);
         const { elementPopupClicked, elementPopupHovered } = this.state;
 
         // reset directions after hide, or scroll or resize event
         if (!check || (!elementPopupClicked && !elementPopupHovered)) {
-            setTimeout(() => this.setState({
+            this.resetTimer = setTimeout(() => this.setState({
                 subDirection: undefined,
                 direction: undefined
-            }), 200);
+            }), 300);
 
             return;
         }

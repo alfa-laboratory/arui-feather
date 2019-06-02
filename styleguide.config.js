@@ -4,6 +4,7 @@
 'use strict';
 
 const path = require('path');
+const { lstatSync, readdirSync } = require('fs');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
@@ -12,6 +13,24 @@ const WEBPACK_BASE_TEMPLATE = require('./webpack.base');
 
 const PORT = parseInt(process.env.PORT || 8080, 10);
 const TITLE = 'arui-feather';
+
+// Prepare styleguidist context https://react-styleguidist.js.org/docs/configuration.html#context
+// For share example functionality
+
+const getContext = source =>
+    readdirSync(source)
+        .filter(name => !['lib', 'mq', 'vars', 'font'].includes(name)) // TODO: find simple way to check it's component
+        .map(name => path.join(source, name))
+        .filter(file => lstatSync(file).isDirectory())
+        .reduce((prev, componentDirName) => {
+            const componentSourcesFileName = componentDirName.split(path.sep).pop();
+            const componentName = upperCamelCase(componentSourcesFileName);
+            prev[componentName] = componentDirName;
+            return prev;
+        }, {});
+
+const context = getContext(path.join(__dirname, 'src'));
+
 
 module.exports = {
     title: TITLE,
@@ -34,6 +53,7 @@ module.exports = {
     moduleAliases: {
         'arui-feather': path.resolve(__dirname, './src/')
     },
+    context,
     pagePerSection: true,
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),
     styleguideComponents: {

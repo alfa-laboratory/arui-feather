@@ -90,18 +90,21 @@ class ElementPopup extends PureComponent {
         };
 
         this.uniqID = props.uniqID || `ID-${(`${Math.random() * Date.now()}`).replace(/\./, '-')}`;
+
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleDirUpdate = this.handleDirUpdate.bind(this);
     }
 
     componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside.bind(this));
-        window.addEventListener('resize', this.handleDirUpdate.bind(this));
-        window.addEventListener('scroll', this.handleDirUpdate.bind(this));
+        document.addEventListener('mousedown', this.handleClickOutside);
+        window.addEventListener('resize', this.handleDirUpdate);
+        window.addEventListener('scroll', this.handleDirUpdate);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside.bind(this));
-        window.removeEventListener('resize', this.handleDirUpdate.bind(this));
-        window.removeEventListener('scroll', this.handleDirUpdate.bind(this));
+        document.removeEventListener('mousedown', this.handleClickOutside);
+        window.removeEventListener('resize', this.handleDirUpdate);
+        window.removeEventListener('scroll', this.handleDirUpdate);
     }
 
     render(cn) {

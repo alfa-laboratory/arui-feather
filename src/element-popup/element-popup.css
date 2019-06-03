@@ -2,6 +2,10 @@
     position: relative;
     display: inline-block;
 
+    .paragraph_theme_alfa-on-color {
+        color: black;
+    }
+
     &__children {
         display: inline-block;
         cursor: pointer;

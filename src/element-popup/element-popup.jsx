@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import Type from 'prop-types';
+import autobind from 'core-decorators/lib/autobind';
 import cn from '../cn';
 import Button from '../button';
 import Link from '../link';
@@ -90,9 +91,6 @@ class ElementPopup extends PureComponent {
         };
 
         this.uniqID = props.uniqID || `ID-${(`${Math.random() * Date.now()}`).replace(/\./, '-')}`;
-
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-        this.handleDirUpdate = this.handleDirUpdate.bind(this);
     }
 
     componentDidMount() {
@@ -185,7 +183,9 @@ class ElementPopup extends PureComponent {
             );
 
         // check correct position
-        setTimeout(() => this.handleDirUpdate(true));
+        if (!forceDirection) {
+            setTimeout(() => this.handleDirUpdate(true));
+        }
 
         return (
             <div
@@ -250,6 +250,7 @@ class ElementPopup extends PureComponent {
         );
     }
 
+    @autobind
     handleClickOutside({ target }) {
         if (this.elementPopupRef && !this.elementPopupRef.contains(target)) {
             const { elementPopupClicked } = this.state;
@@ -261,6 +262,7 @@ class ElementPopup extends PureComponent {
     }
 
     // check - param not from scroll or resize event
+    @autobind
     handleDirUpdate(check) {
         clearTimeout(this.resetTimer);
         const { elementPopupClicked, elementPopupHovered } = this.state;

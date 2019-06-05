@@ -10,6 +10,7 @@ const QUERY = {
 module.exports = {
     resolve: {
         modules: [
+            'node_modules',
             path.join(process.cwd(), 'node_modules')
         ],
         extensions: ['.js', '.jsx']

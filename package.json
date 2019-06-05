@@ -112,7 +112,7 @@
     "acorn-dynamic-import": "^4.0.0",
     "acorn-jsx": "^5.0.1",
     "alfa-ui-primitives": "1.10.0",
-    "arui-demo": "1.0.1",
+    "arui-demo": "1.0.2",
     "arui-presets": "^4.13.4",
     "arui-presets-lint": "1.2.0",
     "babel-plugin-dynamic-import-node": "^2.0.0",

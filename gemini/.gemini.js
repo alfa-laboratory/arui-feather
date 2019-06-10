@@ -54,7 +54,7 @@ let config = {
             },
             optipng: true,
             react: {
-                //jsModules: ['../gemini-utils/gemini-main.css'],
+                jsModules: ['../gemini-utils/gemini-main.css'],
                 port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.gemini.config.js'

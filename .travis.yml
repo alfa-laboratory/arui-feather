@@ -34,7 +34,8 @@ install:
 before_script:
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
-      sh ./tools/sauce-connect.sh
+      cd gemini
+      sh ./sauce-connect.sh
       cat .gemini.js
     fi
 

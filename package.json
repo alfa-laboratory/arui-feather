@@ -16,7 +16,7 @@
     "gemini": "cd gemini && npm i && gemini test",
     "gemini-ci": "cd gemini && npm i && node ./gemini-ci.js",
     "gemini-update": "cd gemini && npm i && ALL_SIZES=1 gemini update",
-    "sauce-connect": "sh ./tools/sauce-connect.sh",
+    "sauce-connect": "cd gemini && sh ./sauce-connect.sh",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "github-release": "conventional-github-releaser -p angular",
     "release-patch": "npm version patch -m 'chore(*): patch version'",

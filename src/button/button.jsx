@@ -57,6 +57,8 @@ class Button extends React.Component {
         checked: Type.bool,
         /** Дочерние элементы `Button` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        /** Идентификатор для систем автоматизированного тестирования */
+        testId: Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -155,6 +157,7 @@ class Button extends React.Component {
             tabIndex: this.props.disabled ? '-1' : this.props.tabIndex,
             disabled: this.props.disabled,
             formNoValidate: isButton ? this.props.formNoValidate : null,
+            'data-test-id': this.props.testId,
             className: cn({
                 disabled: this.props.disabled,
                 pseudo: this.props.pseudo,

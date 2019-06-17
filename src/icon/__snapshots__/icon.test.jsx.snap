@@ -1414,6 +1414,13 @@ exports[`icon render IconCheckIndeterminate without problems: IconCheckIndetermi
 />
 `;
 
+exports[`icon render IconCheckboxDisabled without problems: IconCheckboxDisabled 1`] = `
+<Icon
+  name="checkbox-disabled"
+  size="m"
+/>
+`;
+
 exports[`icon render IconChevronRight without problems: IconChevronRight 1`] = `
 <Icon
   name="chevron-right"
@@ -2215,6 +2222,13 @@ exports[`icon render IconNotificationBadge without problems: IconNotificationBad
 exports[`icon render IconNotifications without problems: IconNotifications 1`] = `
 <Icon
   name="notifications"
+  size="m"
+/>
+`;
+
+exports[`icon render IconOffer without problems: IconOffer 1`] = `
+<Icon
+  name="offer"
   size="m"
 />
 `;

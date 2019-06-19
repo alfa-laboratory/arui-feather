@@ -1,7 +1,7 @@
-import ElementPopup from '../src/element-popup';
+import Tooltip from '../src/tooltip';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
-const NAME = 'element-popup';
+const NAME = 'tooltip';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
 
 const TRIGGERS = ['click', 'hover'];
@@ -36,9 +36,9 @@ geminiReact.suite(NAME, function () {
                         let props = { theme, ...set };
                         let template = (
                             <GeminiBox theme={ theme }>
-                                <ElementPopup { ...props }>
+                                <Tooltip { ...props }>
                                     <span>test</span>
-                                </ElementPopup>
+                                </Tooltip>
                             </GeminiBox>
                         );
 

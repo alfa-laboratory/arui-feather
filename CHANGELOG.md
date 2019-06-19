@@ -1,3 +1,14 @@
+<a name="13.12.0"></a>
+# [13.12.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.11.0...v13.12.0) (2019-06-17)
+
+
+### Features
+
+* **button:** add data-test-id property to button component ([#824](https://github.com/alfa-laboratory/arui-feather/issues/824)) ([9211008](https://github.com/alfa-laboratory/arui-feather/commit/9211008))
+* **icons:** latest icons from alfa-ui-primitives 1.11.0 ([#826](https://github.com/alfa-laboratory/arui-feather/issues/826)) ([e9fab2e](https://github.com/alfa-laboratory/arui-feather/commit/e9fab2e))
+
+
+
 <a name="13.11.0"></a>
 # [13.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.10.0...v13.11.0) (2019-05-14)
 

@@ -96,6 +96,7 @@ import IconInvestments from './banking/investments';
 import IconInvoiceForPayment from './banking/invoice-for-payment';
 import IconLimits from './banking/limits';
 import IconMarketplace from './banking/marketplace';
+import IconOffer from './banking/offer';
 import IconOutcome from './banking/outcome';
 import IconOverdraft from './banking/overdraft';
 import IconPayBack from './banking/pay-back';
@@ -323,6 +324,7 @@ import IconCheck from './ui/check';
 import IconCheckBold from './ui/check-bold';
 import IconCheckChat from './ui/check-chat';
 import IconCheckIndeterminate from './ui/check-indeterminate';
+import IconCheckboxDisabled from './ui/checkbox-disabled';
 import IconChevronRight from './ui/chevron-right';
 import IconClose from './ui/close';
 import IconCloseCircle from './ui/close-circle';
@@ -508,6 +510,7 @@ describe('icon', () => {
             { componentName: IconInvoiceForPayment, name: 'invoice-for-payment' },
             { componentName: IconLimits, name: 'limits' },
             { componentName: IconMarketplace, name: 'marketplace' },
+            { componentName: IconOffer, name: 'offer' },
             { componentName: IconOutcome, name: 'outcome' },
             { componentName: IconOverdraft, name: 'overdraft' },
             { componentName: IconPayBack, name: 'pay-back' },
@@ -735,6 +738,7 @@ describe('icon', () => {
             { componentName: IconCheckBold, name: 'check-bold' },
             { componentName: IconCheckChat, name: 'check-chat' },
             { componentName: IconCheckIndeterminate, name: 'check-indeterminate' },
+            { componentName: IconCheckboxDisabled, name: 'checkbox-disabled' },
             { componentName: IconChevronRight, name: 'chevron-right' },
             { componentName: IconClose, name: 'close' },
             { componentName: IconCloseCircle, name: 'close-circle' },

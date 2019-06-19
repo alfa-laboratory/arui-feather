@@ -1,15 +1,17 @@
 Попап элемент
+<!-- eslint-disable -->
 
 ```jsx
-const Icon = require('arui-feather/icon').default;
 const Paragraph = require('arui-feather/paragraph').default;
 const Button = require('arui-feather/button').default;
 const RadioGroup = require('arui-feather/radio-group').default;
 const Radio = require('arui-feather/radio').default;
 const Label = require('arui-feather/label').default;
 
-class ModalPopupElement extends React.Component {
+class ModalTooltip extends React.Component {
     constructor() {
+        super();
+
         this.state = {
             direction: 'top',
             subDirection: 'to-right',
@@ -83,7 +85,7 @@ class ModalPopupElement extends React.Component {
             </RadioGroup>
           </div>
 
-          <ElementPopup
+          <Tooltip
               content={ (
                   <div>
                       <Paragraph>
@@ -97,12 +99,12 @@ class ModalPopupElement extends React.Component {
               mobileButtonText='Закрыть'
           >
               <Button text="Кнопка"/>
-          </ElementPopup>
+          </Tooltip>
         </div>);
     }
 }
 
 <div>
-    <ModalPopupElement />
+    <ModalTooltip />
 </div>
 ```

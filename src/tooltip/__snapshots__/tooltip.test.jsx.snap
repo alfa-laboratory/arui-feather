@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`element-popup should render without problems 1`] = `
-<ElementPopup
+exports[`tooltip should render without problems 1`] = `
+<Tooltip
   direction="bottom"
   forceDirection={false}
   trigger="click"
   uniqID="1"
 >
   <div
-    className="element-popup element-popup_theme_alfa-on-white"
+    className="tooltip tooltip_theme_alfa-on-white"
     id="1"
   >
     <Link
       checked={false}
-      className="element-popup__children"
+      className="tooltip__children"
       disabled={false}
       iconPosition="left"
       onClick={[Function]}
@@ -23,7 +23,7 @@ exports[`element-popup should render without problems 1`] = `
       url="#"
     >
       <a
-        className="link link_pseudo link_size_m link_theme_alfa-on-white element-popup__children"
+        className="link link_pseudo link_size_m link_theme_alfa-on-white tooltip__children"
         href="#"
         onBlur={[Function]}
         onClick={[Function]}
@@ -44,5 +44,5 @@ exports[`element-popup should render without problems 1`] = `
       query="--small-only"
     />
   </div>
-</ElementPopup>
+</Tooltip>
 `;

@@ -31,8 +31,8 @@ const defaultSubDirections = {
     [LEFT]: TO_BOTTOM
 };
 
-@cn('element-popup')
-class ElementPopup extends PureComponent {
+@cn('tooltip')
+class Tooltip extends PureComponent {
     static propTypes = {
         /**
         *   Элемент на который вешается тултип
@@ -80,14 +80,14 @@ class ElementPopup extends PureComponent {
 
     mobileContentRef = null;
 
-    elementPopupRef = null;
+    tooltipRef = null;
 
     constructor(props) {
         super(props);
 
         this.state = {
-            elementPopupClicked: false,
-            elementPopupHovered: false
+            tooltipClicked: false,
+            tooltipHovered: false
         };
 
         this.uniqID = props.uniqID || `ID-${(`${Math.random() * Date.now()}`).replace(/\./, '-')}`;
@@ -113,7 +113,7 @@ class ElementPopup extends PureComponent {
                 <div
                     id={ this.uniqID }
                     className={ cn() }
-                    ref={ (ref) => { this.elementPopupRef = ref; } }
+                    ref={ (ref) => { this.tooltipRef = ref; } }
                 >
                     <Link
                         pseudo={ true }
@@ -157,8 +157,8 @@ class ElementPopup extends PureComponent {
         } = this.props;
 
         const {
-            elementPopupClicked,
-            elementPopupHovered,
+            tooltipClicked,
+            tooltipHovered,
             subDirection: subDirectionFromState,
             direction: directionFromState
         } = this.state;
@@ -194,8 +194,8 @@ class ElementPopup extends PureComponent {
                     direction,
                     trigger,
                     subDirection,
-                    clicked: elementPopupClicked,
-                    hovered: elementPopupHovered
+                    clicked: tooltipClicked,
+                    hovered: tooltipHovered
                 }) }
                 ref={ ref => this.handleCreatingDesktopContent(ref) }
             >
@@ -211,7 +211,7 @@ class ElementPopup extends PureComponent {
             mobileButtonText
         } = this.props;
 
-        const { elementPopupClicked } = this.state;
+        const { tooltipClicked } = this.state;
         const dontScrollBody = 'body { overflow: hidden }';
 
         return (
@@ -220,13 +220,13 @@ class ElementPopup extends PureComponent {
                     pseudo={ true }
                     onClick={ () => this.toggleClick() }
                     className={ cn('mobile-overlay', {
-                        clicked: elementPopupClicked
+                        clicked: tooltipClicked
                     }) }
                 />
                 <div
                     className={ cn('content', {
                         mobile: true,
-                        clicked: elementPopupClicked
+                        clicked: tooltipClicked
                     }) }
                     ref={ (ref) => { this.mobileContentRef = ref; } }
                 >
@@ -244,7 +244,7 @@ class ElementPopup extends PureComponent {
                     </div>
                 </div>
                 {
-                    elementPopupClicked && <style>{ dontScrollBody }</style>
+                    tooltipClicked && <style>{ dontScrollBody }</style>
                 }
             </Fragment>
         );
@@ -252,10 +252,10 @@ class ElementPopup extends PureComponent {
 
     @autobind
     handleClickOutside({ target }) {
-        if (this.elementPopupRef && !this.elementPopupRef.contains(target)) {
-            const { elementPopupClicked } = this.state;
+        if (this.tooltipRef && !this.tooltipRef.contains(target)) {
+            const { tooltipClicked } = this.state;
 
-            if (elementPopupClicked) {
+            if (tooltipClicked) {
                 this.toggleClick();
             }
         }
@@ -265,10 +265,10 @@ class ElementPopup extends PureComponent {
     @autobind
     handleDirUpdate(check) {
         clearTimeout(this.resetTimer);
-        const { elementPopupClicked, elementPopupHovered } = this.state;
+        const { tooltipClicked, tooltipHovered } = this.state;
 
         // reset directions after hide, or scroll or resize event
-        if (!check || (!elementPopupClicked && !elementPopupHovered)) {
+        if (!check || (!tooltipClicked && !tooltipHovered)) {
             this.resetTimer = setTimeout(() => this.setState({
                 subDirection: undefined,
                 direction: undefined
@@ -376,31 +376,31 @@ class ElementPopup extends PureComponent {
     }
 
     toggleClick() {
-        const { elementPopupClicked } = this.state;
+        const { tooltipClicked } = this.state;
 
         const direction = this.calcDir(this.desktopContentRef);
 
         this.setState({
-            elementPopupClicked: !elementPopupClicked,
+            tooltipClicked: !tooltipClicked,
             subDirection: this.calcSubDir(this.desktopContentRef, direction),
             direction
         });
 
-        if (!elementPopupClicked && this.mobileContentRef) {
+        if (!tooltipClicked && this.mobileContentRef) {
             this.mobileContentRef.scrollTop = 0;
         }
     }
 
-    toggleHover(elementPopupHovered) {
+    toggleHover(tooltipHovered) {
         const direction = this.calcDir(this.desktopContentRef);
 
         this.setState({
-            elementPopupHovered,
+            tooltipHovered,
             subDirection: this.calcSubDir(this.desktopContentRef, direction),
             direction
         });
 
-        if (elementPopupHovered && this.mobileContentRef) {
+        if (tooltipHovered && this.mobileContentRef) {
             this.mobileContentRef.scrollTop = 0;
         }
     }
@@ -468,7 +468,7 @@ function computePropStyles(id, childrenRect, contentRect) {
           ${topBottomToLeftAfter}
       }
 
-      #${id} .element-popup__content_direction_top {
+      #${id} .tooltip__content_direction_top {
           top: calc(-${contentHeight}px - ${DIRECTION_OFFSET}px); /* content, padding */
       }
       #${id} ${topRightBefore} {
@@ -490,7 +490,7 @@ function computePropStyles(id, childrenRect, contentRect) {
       #${id} ${rightBottomAfter} {
           ${rightLeftToBottomAfter}
       }
-      #${id} .element-popup__content_direction_right.element-popup__content_subDirection_to-top {
+      #${id} .tooltip__content_direction_right.tooltip__content_subDirection_to-top {
           ${rightLeftToTop}
       }
       #${id} ${rightTopBefore} {
@@ -506,7 +506,7 @@ function computePropStyles(id, childrenRect, contentRect) {
       #${id} ${leftBottomAfter} {
           ${rightLeftToBottomAfter}
       }
-      #${id} .element-popup__content_direction_left.element-popup__content_subDirection_to-top {
+      #${id} .tooltip__content_direction_left.tooltip__content_subDirection_to-top {
           ${rightLeftToTop}
       }
       #${id} ${leftTopBefore} {
@@ -531,11 +531,11 @@ function aggregateFor(dir, subDir) {
     return [
         combine(
             ['desktop', direction, `${subDirection}::before`],
-            'element-popup__content'
+            'tooltip__content'
         ),
         combine(
             ['desktop', direction, `${subDirection}::after`],
-            'element-popup__content'
+            'tooltip__content'
         )
     ];
 }
@@ -547,4 +547,4 @@ function calcFor(direction, offset, beforeAfterOffset = 0) {
     `;
 }
 
-export default ElementPopup;
+export default Tooltip;

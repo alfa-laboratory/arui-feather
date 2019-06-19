@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ElementPopup from './element-popup';
+import Tooltip from './tooltip';
 
-describe('element-popup', () => {
+describe('tooltip', () => {
     it('should render without problems', () => {
-        let elPopup = mount(<ElementPopup uniqID='1'><span>TEST</span></ElementPopup>);
+        let elPopup = mount(<Tooltip uniqID='1'><span>TEST</span></Tooltip>);
 
         expect(elPopup).toMatchSnapshot();
     });

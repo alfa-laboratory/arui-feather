@@ -63,7 +63,8 @@ let config = {
         },
         projectRoot: './',
         tempDir: './'
-    }
+    },
+    screenshotsDir: './screens/'
 };
 
 if (ALL_BROWSERS) {

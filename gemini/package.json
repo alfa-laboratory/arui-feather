@@ -11,9 +11,13 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "react": "16.2.0",
+    "prop-types": "15.6.1",
+    "date-fns": "1.29.0"
+  },
   "devDependencies": {
     "html-reporter": "2.12.3",
-    "react": "16.2.0",
     "react-dom": "16.2.0",
     "core-js": "2.5.5",
     "babel-plugin-dynamic-import-node": "^2.0.0",

@@ -8,3 +8,4 @@ gemini-report/**
 gemini/node_modules/**
 node_modules/**
 src/modernizr.js
+gemini/gemini-ci.js

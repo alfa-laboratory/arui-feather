@@ -18,7 +18,7 @@
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-condensed);
     border-radius: var(--border-radius-control);
-    transition: all .2s ease-out;
+    transition: transform .2s ease-out;
     z-index: 9999;
     user-select: none;
 

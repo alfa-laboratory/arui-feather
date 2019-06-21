@@ -120,11 +120,6 @@
             }
         }
 
-        &_desktop&_direction_right&_subDirection_to-top,
-        &_desktop&_direction_left&_subDirection_to-top {
-            height: max-content;
-        }
-
         &_desktop&_trigger_click&_clicked,
         &_desktop&_trigger_hover&_hovered {
             opacity: 1;

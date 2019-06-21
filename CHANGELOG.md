@@ -1,3 +1,18 @@
+<a name="13.12.1"></a>
+## [13.12.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.12.0...v13.12.1) (2019-06-21)
+
+
+### Bug Fixes
+
+* **notification:** fix safari bug visibility ([#825](https://github.com/alfa-laboratory/arui-feather/issues/825)) ([cfd7196](https://github.com/alfa-laboratory/arui-feather/commit/cfd7196))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.12.0 ([#827](https://github.com/alfa-laboratory/arui-feather/issues/827)) ([bff274f](https://github.com/alfa-laboratory/arui-feather/commit/bff274f))
+
+
+
 <a name="13.12.0"></a>
 # [13.12.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.11.0...v13.12.0) (2019-06-17)
 

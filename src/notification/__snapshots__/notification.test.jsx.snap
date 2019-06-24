@@ -6,14 +6,14 @@ exports[`notification should render without problems 1`] = `
   onSwipe={[Function]}
 >
   <div
-    className="notification notification_stick-to_left notification_theme_alfa-on-white"
+    className="notification notification_has-closer notification_stick-to_right notification_theme_alfa-on-white"
     onClick={[Function]}
     onKeyDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     style={
       Object {
-        "top": 0,
+        "top": 12,
       }
     }
   >
@@ -23,6 +23,7 @@ exports[`notification should render without problems 1`] = `
       <IconOk
         colored={false}
         size="m"
+        theme="alfa-on-color"
       />
     </div>
     <div
@@ -39,7 +40,8 @@ exports[`notification should render without problems 1`] = `
       type="button"
     >
       <IconClose
-        size="m"
+        size="s"
+        theme="alfa-on-color"
       />
     </IconButton>
   </div>

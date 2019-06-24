@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toggle should render without problems 1`] = `
+<label
+  className="toggle toggle_theme_alfa-on-white"
+>
+  <span
+    className="toggle__wrapper"
+  >
+    <input
+      autoComplete="off"
+      checked={false}
+      className="toggle__control"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="toggle__switch"
+    />
+  </span>
+</label>
+`;

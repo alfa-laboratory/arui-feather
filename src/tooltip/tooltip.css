@@ -19,7 +19,7 @@
             position: absolute;
             background: var(--color-white);
             border-radius: 8px;
-            padding: var(--gap-m);
+            padding: var(--gap-s) var(--gap-m) calc(var(--gap-s) + 2px);
             min-width: 235px;
             width: max-content;
             max-width: 352px;
@@ -166,6 +166,13 @@
     }
 
     &__content-wrap {
+        font-size: var(--font-size-s);
+        line-height: var(--line-height-normal);
+
+        @media (--mobile) {
+            font-size: var(--font-size-m);
+        }
+
         > :first-child {
             margin-top: 0;
         }
@@ -194,17 +201,17 @@
 
     &__mobile-button {
         max-width: 382px;
-        margin: var(--gap-m) auto 0;
+        margin: calc(var(--gap-xl) + 2px) auto 0;
     }
 
     &__scrollable-mobile-content {
         max-height: 70vh;
         z-index: 1001;
-        padding-top: var(--gap-m);
+        padding-top: var(--gap-xl);
         overscroll-behavior: none;
 
         &-wrap {
-            padding-bottom: var(--gap-s);
+            padding-bottom: var(--gap-xl);
         }
     }
 }

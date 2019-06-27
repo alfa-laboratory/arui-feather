@@ -135,10 +135,10 @@ class Tooltip extends PureComponent {
                         }
                     </Link>
                     <Fragment>
-                        <Mq query='--medium'>
+                        <Mq query='--tablet-s'>
                             { this.renderDesktop(cn) }
                         </Mq>
-                        <Mq query='--small-only'>
+                        <Mq query='--mobile'>
                             { this.renderMobile(cn) }
                         </Mq>
                     </Fragment>

@@ -87,9 +87,7 @@ class ModalTooltip extends React.Component {
 
           <Tooltip
               content={ (
-                  <Paragraph>
-                      Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
-                  </Paragraph>
+                  <span>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона</span>
               ) }
               direction={ this.state.direction }
               subDirection={ this.state.subDirection }

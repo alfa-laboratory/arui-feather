@@ -38,10 +38,10 @@ exports[`tooltip should render without problems 1`] = `
       </a>
     </Link>
     <Mq
-      query="--medium"
+      query="--tablet-s"
     />
     <Mq
-      query="--small-only"
+      query="--mobile"
     />
   </div>
 </Tooltip>

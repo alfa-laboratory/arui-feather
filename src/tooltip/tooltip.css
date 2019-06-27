@@ -1,10 +1,8 @@
+@import '../vars.css';
+
 .tooltip {
     position: relative;
     display: inline-block;
-
-    .paragraph_theme_alfa-on-color {
-        color: black;
-    }
 
     &__children {
         display: inline-block;
@@ -19,9 +17,9 @@
 
         &_desktop {
             position: absolute;
-            background: white;
+            background: var(--color-white);
             border-radius: 8px;
-            padding: 12px 16px;
+            padding: var(--gap-m);
             min-width: 235px;
             width: max-content;
             max-width: 352px;
@@ -52,7 +50,7 @@
             right: -20px;
             top: calc(100% + 20px);
 
-            box-shadow: 0 3px 10px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 3px 10px rgba(10, 30, 50, 0.1);
 
             &:after, &:before { bottom: 100%; }
 
@@ -68,7 +66,7 @@
         &_desktop&_direction_top {
             right: -20px;
 
-            box-shadow: 0 -3px 10px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 3px 10px rgba(10, 30, 50, 0.1);
 
             &:after, &:before { top: 100%; }
 
@@ -90,7 +88,7 @@
             top: -20px;
             left: calc(100% + 20px);
 
-            box-shadow: 3px 1px 10px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 3px 10px rgba(10, 30, 50, 0.1);
 
             &:after, &:before { right: 100%; }
 
@@ -107,7 +105,7 @@
             top: -20px;
             right: calc(100% + 20px);
 
-            box-shadow: -3px 1px 10px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 3px 10px rgba(10, 30, 50, 0.1);
 
             &:after, &:before { left: 100%; }
 
@@ -150,8 +148,8 @@
             width: 100%;
             z-index: 1001;
             overflow: auto;
-            background: white;
-            padding: 0 16px;
+            background: var(--color-white);
+            padding: 0 var(--gap-m);
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
             position: fixed;
@@ -167,6 +165,16 @@
         }
     }
 
+    &__content-wrap {
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
     &__mobile-overlay {
         visibility: hidden;
         position: fixed;
@@ -174,7 +182,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: black;
+        background: var(--color-black);
         opacity: 0;
         transition: opacity .2s;
 
@@ -184,14 +192,19 @@
         }
     }
 
+    &__mobile-button {
+        max-width: 382px;
+        margin: var(--gap-m) auto 0;
+    }
+
     &__scrollable-mobile-content {
         max-height: 70vh;
         z-index: 1001;
-        padding-top: 12px;
+        padding-top: var(--gap-m);
         overscroll-behavior: none;
 
         &-wrap {
-            padding-bottom: 12px;
+            padding-bottom: var(--gap-s);
         }
     }
 }

@@ -26,8 +26,8 @@ class ModalTooltip extends React.Component {
 
     render() {
         return (<div style={ { display: 'flex', alignItems: 'center', flexWrap: 'wrap' } }>
-          <div style={{ display: 'flex', flexDirection: 'column', marginRight: 300, marginBottom: 50 }}>
-            <div style={{ marginBottom: 30 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', marginRight: 300, marginBottom: 32 }}>
+            <div style={{ marginBottom: 20 }}>
               <Label size='m'>
                   Направлениие
               </Label>
@@ -50,7 +50,7 @@ class ModalTooltip extends React.Component {
                     ))
                 }
             </RadioGroup>
-            <div style={{ marginBottom: 30, marginTop: 30 }}>
+            <div style={{ marginBottom: 20, marginTop: 32 }}>
               <Label size='m'>
                   Под направление
               </Label>
@@ -67,7 +67,7 @@ class ModalTooltip extends React.Component {
                     ))
                 }
             </RadioGroup>
-            <div style={{ marginBottom: 30, marginTop: 30 }}>
+            <div style={{ marginBottom: 20, marginTop: 32 }}>
               <Label size='m'>
                   Триггер
               </Label>
@@ -87,11 +87,9 @@ class ModalTooltip extends React.Component {
 
           <Tooltip
               content={ (
-                  <div>
-                      <Paragraph>
-                          Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
-                      </Paragraph>
-                  </div>
+                  <Paragraph>
+                      Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+                  </Paragraph>
               ) }
               direction={ this.state.direction }
               subDirection={ this.state.subDirection }
@@ -104,7 +102,5 @@ class ModalTooltip extends React.Component {
     }
 }
 
-<div>
-    <ModalTooltip />
-</div>
+<ModalTooltip />
 ```

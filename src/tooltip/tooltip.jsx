@@ -199,7 +199,9 @@ class Tooltip extends PureComponent {
                 }) }
                 ref={ ref => this.handleCreatingDesktopContent(ref) }
             >
-                { content }
+                <div className={ cn('content-wrap') }>
+                    { content }
+                </div>
                 { computedStyles }
             </div>
         );
@@ -232,7 +234,9 @@ class Tooltip extends PureComponent {
                 >
                     <div className={ cn('scrollable-mobile-content') }>
                         <div className={ cn('scrollable-mobile-content-wrap') }>
-                            { content }
+                            <div className={ cn('content-wrap') }>
+                                { content }
+                            </div>
                             <div className={ cn('mobile-button') }>
                                 <Button
                                     text={ mobileButtonText }
@@ -437,7 +441,6 @@ function computePropStyles(id, childrenRect, contentRect) {
     /* left content, half arrow, half content, border, after offset */
     const topBottomToLeftAfter = calcFor('right', childrenWidth / 2, BEFORE_AFTER_OFFSET);
 
-
     /* top offset, half arrow, half children, border */
     const rightLeftToBottomBefore = calcFor('top', childrenHeight / 2);
     /* top offset, half arrow, half children, border, after offset */
@@ -455,67 +458,67 @@ function computePropStyles(id, childrenRect, contentRect) {
     return (
         <style>
             { `
-      #${id} ${bottomRightBefore} {
-          ${topBottomToRightBefore}
-      }
-      #${id} ${bottomRightAfter} {
-          ${topBottomToRightAfter}
-      }
-      #${id} ${bottomLeftBefore} {
-          ${topBottomToLeftBefore}
-      }
-      #${id} ${bottomLeftAfter} {
-          ${topBottomToLeftAfter}
-      }
+            #${id} ${bottomRightBefore} {
+                ${topBottomToRightBefore}
+            }
+            #${id} ${bottomRightAfter} {
+                ${topBottomToRightAfter}
+            }
+            #${id} ${bottomLeftBefore} {
+                ${topBottomToLeftBefore}
+            }
+            #${id} ${bottomLeftAfter} {
+                ${topBottomToLeftAfter}
+            }
 
-      #${id} .tooltip__content_direction_top {
-          top: calc(-${contentHeight}px - ${DIRECTION_OFFSET}px); /* content, padding */
-      }
-      #${id} ${topRightBefore} {
-          ${topBottomToRightBefore}
-      }
-      #${id} ${topRightAfter} {
-          ${topBottomToRightAfter}
-      }
-      #${id} ${topLeftBefore} {
-          ${topBottomToLeftBefore}
-      }
-      #${id} ${topLeftAfter} {
-          ${topBottomToLeftAfter}
-      }
+            #${id} .tooltip__content_direction_top {
+                top: calc(-${contentHeight}px - ${DIRECTION_OFFSET}px); /* content, padding */
+            }
+            #${id} ${topRightBefore} {
+                ${topBottomToRightBefore}
+            }
+            #${id} ${topRightAfter} {
+                ${topBottomToRightAfter}
+            }
+            #${id} ${topLeftBefore} {
+                ${topBottomToLeftBefore}
+            }
+            #${id} ${topLeftAfter} {
+                ${topBottomToLeftAfter}
+            }
 
-      #${id} ${rightBottomBefore} {
-          ${rightLeftToBottomBefore}
-      }
-      #${id} ${rightBottomAfter} {
-          ${rightLeftToBottomAfter}
-      }
-      #${id} .tooltip__content_direction_right.tooltip__content_subDirection_to-top {
-          ${rightLeftToTop}
-      }
-      #${id} ${rightTopBefore} {
-          ${rightLeftToTopBefore}
-      }
-      #${id} ${rightTopAfter} {
-          ${rightLeftToTopAfter}
-      }
+            #${id} ${rightBottomBefore} {
+                ${rightLeftToBottomBefore}
+            }
+            #${id} ${rightBottomAfter} {
+                ${rightLeftToBottomAfter}
+            }
+            #${id} .tooltip__content_direction_right.tooltip__content_subDirection_to-top {
+                ${rightLeftToTop}
+            }
+            #${id} ${rightTopBefore} {
+                ${rightLeftToTopBefore}
+            }
+            #${id} ${rightTopAfter} {
+                ${rightLeftToTopAfter}
+            }
 
-      #${id} ${leftBottomBefore} {
-          ${rightLeftToBottomBefore}
-      }
-      #${id} ${leftBottomAfter} {
-          ${rightLeftToBottomAfter}
-      }
-      #${id} .tooltip__content_direction_left.tooltip__content_subDirection_to-top {
-          ${rightLeftToTop}
-      }
-      #${id} ${leftTopBefore} {
-          ${rightLeftToTopBefore}
-      }
-      #${id} ${leftTopAfter} {
-          ${rightLeftToTopAfter}
-      }
-  ` }
+            #${id} ${leftBottomBefore} {
+                ${rightLeftToBottomBefore}
+            }
+            #${id} ${leftBottomAfter} {
+                ${rightLeftToBottomAfter}
+            }
+            #${id} .tooltip__content_direction_left.tooltip__content_subDirection_to-top {
+                ${rightLeftToTop}
+            }
+            #${id} ${leftTopBefore} {
+                ${rightLeftToTopBefore}
+            }
+            #${id} ${leftTopAfter} {
+                ${rightLeftToTopAfter}
+            }
+            ` }
         </style>
     );
 }

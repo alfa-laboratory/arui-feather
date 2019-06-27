@@ -205,6 +205,11 @@
     }
 
     &__scrollable-mobile-content {
+        &:not(&_clicked):not(&_hovered) {
+            position: absolute;
+            z-index: -1000;
+        }
+
         max-height: 70vh;
         z-index: 1001;
         padding-top: var(--gap-xl);

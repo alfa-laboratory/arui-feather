@@ -232,7 +232,7 @@ class Tooltip extends PureComponent {
                     }) }
                     ref={ (ref) => { this.mobileContentRef = ref; } }
                 >
-                    <div className={ cn('scrollable-mobile-content') }>
+                    <div className={ cn('scrollable-mobile-content', { clicked: tooltipClicked }) }>
                         <div className={ cn('scrollable-mobile-content-wrap') }>
                             <div className={ cn('content-wrap') }>
                                 { content }

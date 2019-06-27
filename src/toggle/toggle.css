@@ -1,7 +1,158 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import '../vars.css';
 
-/* .toggle {} */
+.toggle {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    @media (--mobile) {
+        max-width: 374px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: flex-start;
+
+        user-select: none;
+
+        &:hover {
+            .toggle__switch {
+                opacity: 1;
+            }
+        }
+    }
+
+    input {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        appearance: none;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 24px;
+        margin: 0;
+        border-radius: 12px;
+        border: 0;
+        outline: none;
+        opacity: 0;
+        box-shadow: 0 0 0 2px var(--color-dark-indigo);
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
+    &__label {
+        display: block;
+        flex: 1 1 auto;
+        margin: 0 0 0 var(--gap-s);
+        padding: 3px 0 0;
+        color: var(--color-dark-indigo);
+        font-size: var(--font-size-m);
+        line-height: var(--line-height-condensed);
+        font-weight: var(--font-weight-normal);
+
+        @media (--mobile) {
+            margin-left: 0;
+            margin-right: var(--gap-s);
+            order: -1;
+        }
+    }
+
+    &__hint {
+        display: block;
+        flex: 1 1 auto;
+        margin: var(--gap-2xs) 0 0 calc(40px + var(--gap-s));
+        padding: 0;
+        color: var(--color-dark-indigo-60);
+        font-size: var(--font-size-s);
+        line-height: var(--line-height-condensed);
+        font-weight: var(--font-weight-normal);
+
+        @media (--mobile) {
+            margin-left: 0;
+            margin-right: calc(40px + var(--gap-s));
+        }
+    }
+
+    &__switch {
+        display: block;
+        flex: 0 0 auto;
+        position: relative;
+        width: 40px;
+        height: 24px;
+        border-radius: 12px;
+        background-color: var(--color-dark-indigo-30);
+        opacity: 0.8;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:before {
+            display: inline-block;
+            vertical-align: top;
+            float: right;
+            width: 40px;
+            height: 24px;
+            border-radius: 12px;
+            background-color: #ef3124;
+            opacity: 0;
+            transition: 0.2s;
+            content: '';
+        }
+
+        &:after {
+            position: absolute;
+            z-index: 3;
+            left: 2px;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background: var(--color-white);
+            border-radius: 10px;
+            border: 0.5px solid var(--color-dark-indigo-05);
+            box-shadow: 0 2px 4px var(--color-dark-indigo-30);
+            transition: 0.2s;
+            content: '';
+        }
+    }
+
+    &_focused input {
+        opacity: 1;
+    }
+
+    input:checked {
+        + .toggle__switch {
+            &:before {
+                opacity: 1;
+            }
+
+            &:after {
+                transform: translateX(16px);
+            }
+        }
+    }
+
+    input:active:not(:disabled) {
+        /* opacity: 1; */
+    }
+
+    input:disabled {
+        opacity: 0;
+
+        + .toggle__label {
+            opacity: 0.3;
+        }
+
+        + .toggle__switch {
+            opacity: 0.3;
+            cursor: default;
+        }
+    }
+}

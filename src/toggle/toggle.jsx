@@ -36,22 +36,39 @@ class Toggle extends React.Component {
          * @param {boolean} isChecked
          * @param {string} value
          */
-        onChange: Type.func
+        onChange: Type.func,
+        /**
+         * Обработчик фокуса комнонента
+         * @param {React.FocusEvent} event
+         */
+        onFocus: Type.func,
+        /**
+         * Обработчик снятия фокуса компонента
+         * @param {React.FocusEvent} event
+         */
+        onBlur: Type.func
     };
 
     state = {
-        checked: false
+        checked: false,
+        focused: false
     };
 
     render(cn) {
         let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
                 className={ cn({
                     checked,
+                    focused: this.state.focused,
                     disabled: this.props.disabled
                 }) }
+                onFocus={ this.handleFocus }
+                onBlur={ this.handleBlur }
+                onMouseDown={ this.handleUnfocus }
+                onMouseUp={ this.handleUnfocus }
                 htmlFor={ this.props.id }
             >
                 <span className={ cn('wrapper') }>
@@ -67,10 +84,10 @@ class Toggle extends React.Component {
                         onClick={ this.handleClick }
                         onChange={ this.handleChange }
                     />
+                    <span className={ cn('switch') } />
                     { this.props.label && (
                         <span className={ cn('label') }>{ this.props.label }</span>
                     ) }
-                    <span className={ cn('switch') } />
                 </span>
                 { this.props.hint && (
                     <span className={ cn('hint') }>{ this.props.hint }</span>
@@ -95,6 +112,26 @@ class Toggle extends React.Component {
             if (this.props.onChange) {
                 this.props.onChange(nextCheckedValue, this.props.value);
             }
+        }
+    }
+
+    @autobind
+    handleFocus(event) {
+        this.setState({ focused: true });
+
+        if (this.props.onFocus) {
+            this.props.onFocus(event);
+        }
+    }
+
+    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+
+    @autobind
+    handleBlur(event) {
+        this.setState({ focused: false });
+
+        if (this.props.onBlur) {
+            this.props.onBlur(event);
         }
     }
 }

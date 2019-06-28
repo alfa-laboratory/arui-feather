@@ -274,7 +274,7 @@ describe('input-autocomplete', () => {
         let onChange = jest.fn();
 
         let inputAutocomplete = mount(
-            <InputAutocomplete  options={ OPTIONS } onChange={ onChange } />
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />
         );
 
         inputAutocomplete.find('.menu-item').at(0).simulate('click');

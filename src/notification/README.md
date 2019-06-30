@@ -84,7 +84,7 @@ initialState = {
         offset={ 112 }
         stickTo='left'
         title='Платёж запланирован'
-        icon={ <IconCalendar size='m' /> }
+        icon={ <IconCalendar theme='alfa-on-color' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >

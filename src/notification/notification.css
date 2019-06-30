@@ -12,6 +12,7 @@
     visibility: hidden;
     position: fixed;
     width: var(--width);
+    min-height: 56px;
     padding: var(--gap-m);
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
@@ -20,6 +21,10 @@
     transition: transform .2s ease-out;
     z-index: 9999;
     user-select: none;
+
+    color: var(--color-content-alfa-on-color);
+    background: var(--color-dark-indigo);
+    box-shadow: 0 4px 16px rgba(11, 31, 53, 0.12), 0 1px 2px rgba(11, 31, 53, 0.24);
 
     &, *, *:before, *:after {
         box-sizing: border-box;
@@ -39,12 +44,6 @@
         color: var(--color-content-alfa-on-white);
         background: var(--color-white);
         box-shadow: 0 4px 16px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.24);
-    }
-
-    &_theme_alfa-on-white {
-        color: var(--color-content-alfa-on-color);
-        background: var(--color-dark-indigo);
-        box-shadow: 0 4px 16px rgba(11, 31, 53, 0.12), 0 1px 2px rgba(11, 31, 53, 0.24);
     }
 
     &_has-closer {
@@ -113,6 +112,7 @@
 @media (--mobile) {
     .notification {
         width: calc(100% - var(--gap-xl));
+        min-height: 48px;
         padding: var(--gap-s);
         transform: translate(0, -500px);
 

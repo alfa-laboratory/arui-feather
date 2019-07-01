@@ -9,7 +9,7 @@
         color: var(--color-content-alfa-on-color);
     }
 
-    .menu-item_hovered {
+    .menu-item_hovered:not(.menu-item_disabled) {
         background-color: var(--color-background-control-hovered-alfa-on-color);
 
         &.menu-item_type_link, &.menu-item_type_dropdown {

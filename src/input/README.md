@@ -161,7 +161,7 @@ const selectOptions = [
   </div>
   <div className='row' style={{width: '374px'}}>
     <CalendarInput
-      defaultValue='01.02.2016'
+      defaultValue='01.02.2019'
       width='available'
       view='filled'
     />

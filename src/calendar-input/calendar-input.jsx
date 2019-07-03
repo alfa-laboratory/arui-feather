@@ -76,7 +76,7 @@ class CalendarInput extends React.Component {
         }),
         /** Управление возможностью раскрытия календаря */
         opened: Type.bool,
-        /** Тип инпута */
+        /** Тип инпута (filled только на белом фоне в размере m) */
         view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),

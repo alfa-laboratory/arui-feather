@@ -304,7 +304,10 @@
             border-color: rgba(11, 31, 53, 0.6);
         }
 
-        &__text {
+        &__content {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
             padding-right: 18px;
         }
     }
@@ -345,7 +348,6 @@
         padding-top: 0;
 
         .select-button__content {
-            display: block;
             padding-top: 17px;
         }
     }

@@ -21,7 +21,7 @@ class Textarea extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
-        /** Тип поля */
+        /** Тип поля (filled только на белом фоне в размере m) */
         view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),

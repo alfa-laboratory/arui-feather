@@ -53,7 +53,7 @@ class Select extends React.Component {
         mode: Type.oneOf(['check', 'radio', 'radio-check']),
         /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
         groupView: Type.oneOf(['default', 'line']),
-        /** Тип поля */
+        /** Тип поля (filled только на белом фоне в размере m) */
         view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),

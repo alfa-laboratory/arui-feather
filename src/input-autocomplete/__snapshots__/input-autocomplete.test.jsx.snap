@@ -184,16 +184,19 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                     Object {
                       "content": "VKontakte",
                       "key": "VKontakte",
+                      "props": undefined,
                       "value": "VKontakte",
                     },
                     Object {
                       "content": "Facebook",
                       "key": "Facebook",
+                      "props": undefined,
                       "value": "Facebook",
                     },
                     Object {
                       "content": "Twitter",
                       "key": "Twitter",
+                      "props": undefined,
                       "value": "Twitter",
                     },
                   ]

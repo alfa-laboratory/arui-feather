@@ -6,18 +6,18 @@ import Button from '../button';
 import Link from '../link';
 import Mq from '../mq';
 
-const BOTTOM = 'bottom';
-const TOP = 'top';
-const RIGHT = 'right';
-const LEFT = 'left';
+export const BOTTOM = 'bottom';
+export const TOP = 'top';
+export const RIGHT = 'right';
+export const LEFT = 'left';
 
-const TO_RIGHT = 'to-right';
-const TO_LEFT = 'to-left';
-const TO_TOP = 'to-top';
-const TO_BOTTOM = 'to-bottom';
+export const TO_RIGHT = 'to-right';
+export const TO_LEFT = 'to-left';
+export const TO_TOP = 'to-top';
+export const TO_BOTTOM = 'to-bottom';
 
-const CLICK = 'click';
-const HOVER = 'hover';
+export const CLICK = 'click';
+export const HOVER = 'hover';
 
 const DIRECTION_OFFSET = 20;
 const BEFORE_AFTER_OFFSET = 3;
@@ -523,7 +523,7 @@ function computePropStyles(id, childrenRect, contentRect) {
     );
 }
 
-function combine(arr, base) {
+export function combine(arr, base) {
     return arr.reduce((result, item) => `${result}.${base}_${item}`, '');
 }
 

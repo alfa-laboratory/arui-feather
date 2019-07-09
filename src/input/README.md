@@ -206,7 +206,7 @@ const selectOptions = [
             width='available'
         />
     </div>
-    <div className='row' style={ { position: 'relative' } }>
+    <div className='row'>
         <Input
             label='Имя'
             placeholder='Введите ваше имя'
@@ -361,6 +361,16 @@ const selectOptions = [
             view='filled'
         />
     </div>
+
+    <div className='row'>
+        <Input
+            label='Имя'
+            placeholder='Введите ваше имя'
+            view='filled'
+            size='m'
+        />
+    </div>
+
     <div className='row' style={ { width: '374px' } }>
         <Textarea
             placeholder='Введите назначение платежа'
@@ -377,6 +387,36 @@ const selectOptions = [
             view='filled'
         />
     </div>
+
+    <div className='row' style={ { width: '374px' } }>
+        <Textarea
+            label='Назначение платежа'
+            placeholder='autosize false'
+            autosize={ false }
+            width='available'
+            view='filled'
+        />
+    </div>
+    <div className='row' style={ { width: '374px' } }>
+        <Textarea
+            label='Назначение платежа'
+            placeholder='maxHeight'
+            maxHeight={ 100 }
+            width='available'
+            view='filled'
+        />
+    </div>
+    <div className='row' style={ { width: '374px' } }>
+        <Textarea
+            label='Назначение платежа'
+            placeholder='minRows maxRows'
+            minRows={ 5 }
+            maxRows={ 10 }
+            width='available'
+            view='filled'
+        />
+    </div>
+
     <div className='row' style={ { width: '374px' } }>
         <Select
             mode='radio'

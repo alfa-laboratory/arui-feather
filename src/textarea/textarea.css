@@ -263,15 +263,16 @@
 
 .textarea_view_filled {
     .textarea__top {
-        padding: 12px;
-        line-height: 1.2;
+        padding: 0 12px;
+        line-height: 56px;
         transform-origin: 0 50%;
+        will-change: transform;
     }
 
     .textarea__control {
-        min-height: 106px;
+        min-height: 56px;
         margin: 0;
-        padding: 12px;
+        padding: 8px 12px;
         color: rgba(11, 31, 53, 1);
         border-bottom-color: rgba(11, 31, 53, 0.15);
         background-color: rgba(11, 31, 53, 0.05);
@@ -285,6 +286,10 @@
         &::placeholder {
             color: rgba(11, 31, 53, 0.6);
         }
+    }
+
+    &:not(.textarea_autosize) .textarea__control {
+        min-height: 106px;
     }
 
     .textarea__top,
@@ -315,7 +320,7 @@
         padding-top: 0;
 
         .textarea__control {
-            padding-top: 28px;
+            padding-top: 26px;
         }
 
         .textarea__control::placeholder {
@@ -333,7 +338,7 @@
     &.textarea_has-value {
         .textarea__top {
             font-size: 13px;
-            transform: translateY(-3px);
+            transform: translateY(-12px);
         }
     }
 

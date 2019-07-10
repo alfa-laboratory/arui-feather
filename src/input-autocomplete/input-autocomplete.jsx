@@ -40,7 +40,9 @@ class InputAutocomplete extends React.Component {
             /** Текст, который должен быть записан в текстовое поле при выборе варианта */
             text: Type.string,
             /** Список вариантов, только для type='group' */
-            content: Type.array
+            content: Type.array,
+            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
+            props: Type.object
         })),
         /**
          * Управление возможностью изменения атрибута компонента, установка
@@ -463,7 +465,8 @@ class InputAutocomplete extends React.Component {
                 return ({
                     key: option.key || option.value,
                     value: option.value,
-                    content: option.description || option.value
+                    content: option.description || option.value,
+                    props: option.props
                 });
             })
         );

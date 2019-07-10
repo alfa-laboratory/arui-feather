@@ -49,3 +49,15 @@
 .icon_size_xl.icon_name_bank-2449.icon_theme_alfa-on-color {
     background-image: url('./icon_bank-2449_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_bank-2449.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-2449_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_bank-2449.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_bank-2449.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_bank-2449_xxl_color.svg');
+}
+
+.icon_size_xxl.icon_name_bank-2449.icon_theme_alfa-on-color {
+    background-image: url('./icon_bank-2449_xxl_white.svg');
+}

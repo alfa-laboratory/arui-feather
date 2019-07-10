@@ -362,15 +362,6 @@ const selectOptions = [
         />
     </div>
 
-    <div className='row'>
-        <Input
-            label='Имя'
-            placeholder='Введите ваше имя'
-            view='filled'
-            size='m'
-        />
-    </div>
-
     <div className='row' style={ { width: '374px' } }>
         <Textarea
             placeholder='Введите назначение платежа'
@@ -387,31 +378,11 @@ const selectOptions = [
             view='filled'
         />
     </div>
-
     <div className='row' style={ { width: '374px' } }>
         <Textarea
             label='Назначение платежа'
-            placeholder='autosize false'
-            autosize={ false }
-            width='available'
-            view='filled'
-        />
-    </div>
-    <div className='row' style={ { width: '374px' } }>
-        <Textarea
-            label='Назначение платежа'
-            placeholder='maxHeight'
-            maxHeight={ 100 }
-            width='available'
-            view='filled'
-        />
-    </div>
-    <div className='row' style={ { width: '374px' } }>
-        <Textarea
-            label='Назначение платежа'
-            placeholder='minRows maxRows'
+            placeholder='Введите назначение платежа'
             minRows={ 5 }
-            maxRows={ 10 }
             width='available'
             view='filled'
         />

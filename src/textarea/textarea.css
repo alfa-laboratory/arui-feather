@@ -272,7 +272,7 @@
     .textarea__control {
         min-height: 56px;
         margin: 0;
-        padding: 8px 12px;
+        padding: 18px 12px 8px;
         color: rgba(11, 31, 53, 1);
         border-bottom-color: rgba(11, 31, 53, 0.15);
         background-color: rgba(11, 31, 53, 0.05);
@@ -289,7 +289,7 @@
     }
 
     &:not(.textarea_autosize) .textarea__control {
-        min-height: 106px;
+        min-height: 110px;
     }
 
     .textarea__top,
@@ -320,7 +320,7 @@
         padding-top: 0;
 
         .textarea__control {
-            padding-top: 26px;
+            padding-top: 28px;
         }
 
         .textarea__control::placeholder {

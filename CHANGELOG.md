@@ -1,3 +1,65 @@
+<a name="13.13.1"></a>
+## [13.13.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.13.0...v13.13.1) (2019-07-10)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.12.1 ([#833](https://github.com/alfa-laboratory/arui-feather/issues/833)) ([aa7c16f](https://github.com/alfa-laboratory/arui-feather/commit/aa7c16f))
+
+
+
+<a name="13.13.0"></a>
+# [13.13.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.12.1...v13.13.0) (2019-07-01)
+
+
+### Features
+
+* **input-autocomplete:** add props to input autocomplete options ([#830](https://github.com/alfa-laboratory/arui-feather/issues/830)) ([0bb64f2](https://github.com/alfa-laboratory/arui-feather/commit/0bb64f2))
+
+
+
+<a name="13.12.1"></a>
+## [13.12.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.12.0...v13.12.1) (2019-06-21)
+
+
+### Bug Fixes
+
+* **notification:** fix safari bug visibility ([#825](https://github.com/alfa-laboratory/arui-feather/issues/825)) ([cfd7196](https://github.com/alfa-laboratory/arui-feather/commit/cfd7196))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.12.0 ([#827](https://github.com/alfa-laboratory/arui-feather/issues/827)) ([bff274f](https://github.com/alfa-laboratory/arui-feather/commit/bff274f))
+
+
+
+<a name="13.12.0"></a>
+# [13.12.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.11.0...v13.12.0) (2019-06-17)
+
+
+### Features
+
+* **button:** add data-test-id property to button component ([#824](https://github.com/alfa-laboratory/arui-feather/issues/824)) ([9211008](https://github.com/alfa-laboratory/arui-feather/commit/9211008))
+* **icons:** latest icons from alfa-ui-primitives 1.11.0 ([#826](https://github.com/alfa-laboratory/arui-feather/issues/826)) ([e9fab2e](https://github.com/alfa-laboratory/arui-feather/commit/e9fab2e))
+
+
+
+<a name="13.11.0"></a>
+# [13.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.10.0...v13.11.0) (2019-05-14)
+
+
+### Bug Fixes
+
+* **input:** fix caret color ([#816](https://github.com/alfa-laboratory/arui-feather/issues/816)) ([808fff7](https://github.com/alfa-laboratory/arui-feather/commit/808fff7))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.10.0 ([#819](https://github.com/alfa-laboratory/arui-feather/issues/819)) ([d36abca](https://github.com/alfa-laboratory/arui-feather/commit/d36abca))
+* **form-field:** update gaps ([#811](https://github.com/alfa-laboratory/arui-feather/issues/811)) ([0021e8b](https://github.com/alfa-laboratory/arui-feather/commit/0021e8b))
+
+
+
 <a name="13.10.0"></a>
 # [13.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.9.1...v13.10.0) (2019-04-16)
 

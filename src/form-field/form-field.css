@@ -6,15 +6,18 @@
 
 .form-field {
     &_size_s {
-        padding-bottom: 20px;
+        padding-bottom: var(--gap-m);
     }
 
     &_size_m {
-        padding-bottom: 30px;
+        padding-bottom: var(--gap-xl);
     }
 
-    &_size_l,
+    &_size_l {
+        padding-bottom: var(--gap-2xl);
+    }
+
     &_size_xl {
-        padding-bottom: 35px;
+        padding-bottom: var(--gap-3xl);
     }
 }

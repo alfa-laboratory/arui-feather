@@ -1043,6 +1043,13 @@ exports[`icon render IconCategoryBusinessActivity without problems: IconCategory
 />
 `;
 
+exports[`icon render IconCategoryCards without problems: IconCategoryCards 1`] = `
+<Icon
+  name="category-cards"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryCash without problems: IconCategoryCash 1`] = `
 <Icon
   name="category-cash"
@@ -1155,6 +1162,13 @@ exports[`icon render IconCategoryHobby without problems: IconCategoryHobby 1`] =
 />
 `;
 
+exports[`icon render IconCategoryHouse without problems: IconCategoryHouse 1`] = `
+<Icon
+  name="category-house"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryHousekeeping without problems: IconCategoryHousekeeping 1`] = `
 <Icon
   name="category-housekeeping"
@@ -1211,6 +1225,13 @@ exports[`icon render IconCategoryPets without problems: IconCategoryPets 1`] = `
 />
 `;
 
+exports[`icon render IconCategoryPlane without problems: IconCategoryPlane 1`] = `
+<Icon
+  name="category-plane"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryRent without problems: IconCategoryRent 1`] = `
 <Icon
   name="category-rent"
@@ -1242,6 +1263,13 @@ exports[`icon render IconCategorySalary without problems: IconCategorySalary 1`]
 exports[`icon render IconCategoryScholarship without problems: IconCategoryScholarship 1`] = `
 <Icon
   name="category-scholarship"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryShield without problems: IconCategoryShield 1`] = `
+<Icon
+  name="category-shield"
   size="m"
 />
 `;
@@ -1323,6 +1351,13 @@ exports[`icon render IconCategoryVacation without problems: IconCategoryVacation
 />
 `;
 
+exports[`icon render IconCategoryWallet without problems: IconCategoryWallet 1`] = `
+<Icon
+  name="category-wallet"
+  size="m"
+/>
+`;
+
 exports[`icon render IconChat without problems: IconChat 1`] = `
 <Icon
   name="chat"
@@ -1379,6 +1414,13 @@ exports[`icon render IconCheckIndeterminate without problems: IconCheckIndetermi
 />
 `;
 
+exports[`icon render IconCheckboxDisabled without problems: IconCheckboxDisabled 1`] = `
+<Icon
+  name="checkbox-disabled"
+  size="m"
+/>
+`;
+
 exports[`icon render IconChevronRight without problems: IconChevronRight 1`] = `
 <Icon
   name="chevron-right"
@@ -1389,6 +1431,13 @@ exports[`icon render IconChevronRight without problems: IconChevronRight 1`] = `
 exports[`icon render IconClock without problems: IconClock 1`] = `
 <Icon
   name="clock"
+  size="m"
+/>
+`;
+
+exports[`icon render IconClockFilled without problems: IconClockFilled 1`] = `
+<Icon
+  name="clock-filled"
   size="m"
 />
 `;
@@ -1487,6 +1536,13 @@ exports[`icon render IconCreditCard without problems: IconCreditCard 1`] = `
 exports[`icon render IconCrown without problems: IconCrown 1`] = `
 <Icon
   name="crown"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCrownPremium without problems: IconCrownPremium 1`] = `
+<Icon
+  name="crown-premium"
   size="m"
 />
 `;
@@ -2170,6 +2226,13 @@ exports[`icon render IconNotifications without problems: IconNotifications 1`] =
 />
 `;
 
+exports[`icon render IconOffer without problems: IconOffer 1`] = `
+<Icon
+  name="offer"
+  size="m"
+/>
+`;
+
 exports[`icon render IconOffice without problems: IconOffice 1`] = `
 <Icon
   name="office"
@@ -2761,6 +2824,13 @@ exports[`icon render IconVisa without problems: IconVisa 1`] = `
 exports[`icon render IconWaiting without problems: IconWaiting 1`] = `
 <Icon
   name="waiting"
+  size="m"
+/>
+`;
+
+exports[`icon render IconWallet without problems: IconWallet 1`] = `
+<Icon
+  name="wallet"
   size="m"
 />
 `;

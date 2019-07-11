@@ -86,8 +86,8 @@ class Notification extends React.Component {
 
     static defaultProps = {
         autoCloseDelay: 5000,
-        stickTo: 'left',
-        offset: 0,
+        stickTo: 'right',
+        offset: 12,
         hasCloser: true
     };
 
@@ -143,6 +143,7 @@ class Notification extends React.Component {
                         visible: this.props.visible,
                         status: this.props.status,
                         hovered: this.state.hovered,
+                        'has-closer': this.props.hasCloser,
                         'stick-to': this.props.stickTo
                     }) }
                     id={ this.props.id }
@@ -157,6 +158,7 @@ class Notification extends React.Component {
                             this.props.icon ||
                             <ToggledIcon
                                 colored={ this.props.status === 'ok' || this.props.status === 'error' }
+                                theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                                 size='m'
                             />
                         }
@@ -166,9 +168,11 @@ class Notification extends React.Component {
                             { this.props.title }
                         </div>
                     }
-                    <div className={ cn('content') }>
-                        { this.props.children }
-                    </div>
+                    { this.props.children &&
+                        <div className={ cn('content') }>
+                            { this.props.children }
+                        </div>
+                    }
                     {
                         this.props.hasCloser &&
                         <IconButton
@@ -177,7 +181,8 @@ class Notification extends React.Component {
                             onClick={ this.handleCloserClick }
                         >
                             <IconClose
-                                size='m'
+                                size='s'
+                                theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                             />
                         </IconButton>
                     }

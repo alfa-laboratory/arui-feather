@@ -76,6 +76,8 @@ class CalendarInput extends React.Component {
         }),
         /** Управление возможностью раскрытия календаря */
         opened: Type.bool,
+        /** Тип инпута (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -323,6 +325,7 @@ class CalendarInput extends React.Component {
                         hint={ this.props.hint }
                         error={ this.props.error }
                         value={ value }
+                        view={ this.props.view }
                         width={ this.props.width }
                         id={ this.props.id }
                         name={ this.props.name }

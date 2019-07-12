@@ -30,6 +30,8 @@ class Input extends React.Component {
          * Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
          */
         type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
+        /** Тип инпута (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /**
@@ -164,7 +166,8 @@ class Input extends React.Component {
     static defaultProps = {
         formNoValidate: false,
         size: 'm',
-        type: 'text'
+        type: 'text',
+        view: 'default'
     };
 
     state = {
@@ -189,6 +192,7 @@ class Input extends React.Component {
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
+        let hasLeftAddons = !!this.props.leftAddons;
         let value = this.props.value !== undefined
             ? this.props.value
             : this.state.value;
@@ -198,11 +202,13 @@ class Input extends React.Component {
             <span
                 className={ cn({
                     type: this.props.type,
+                    view: this.props.view,
                     disabled: this.props.disabled,
                     focused,
                     size: this.props.size,
                     width: this.props.width,
                     'has-addons': hasAddons,
+                    'has-left-addons': hasLeftAddons,
                     'has-clear': !!this.props.clear,
                     'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
@@ -239,6 +245,7 @@ class Input extends React.Component {
         let inputProps = {
             className: cn('control'),
             type: this.props.type,
+            view: this.props.view,
             formNoValidate: this.props.formNoValidate,
             autoComplete: this.getAutoCompleteValue(),
             disabled: this.props.disabled || this.props.disabledAttr,

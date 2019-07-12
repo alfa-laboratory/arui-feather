@@ -18,6 +18,7 @@ exports[`money-input should render without problems 1`] = `
     size="m"
     type="text"
     value=""
+    view="default"
   />
 </div>
 `;

@@ -8,5 +8,6 @@ exports[`card-input should render without problems 1`] = `
   placeholder="0000 0000 0000 0000 00"
   size="m"
   type="tel"
+  view="default"
 />
 `;

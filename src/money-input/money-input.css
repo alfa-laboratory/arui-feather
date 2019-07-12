@@ -36,6 +36,17 @@
         .input_has-value &, .input_focused & {
             display: block;
         }
+
+        .input_view_filled & {
+            left: 12px;
+            top: 0;
+            line-height: 56px;
+        }
+
+        .input_has-label & {
+            top: 28px;
+            line-height: inherit;
+        }
     }
 
     &__value {
@@ -55,6 +66,10 @@
                 + .input__control {
                     padding-left: 0;
                 }
+            }
+
+            .input__top {
+                padding-left: 12px;
             }
         }
     }

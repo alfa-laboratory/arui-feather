@@ -46,6 +46,7 @@ exports[`calendar-input should render without problems 1`] = `
       size="m"
       type="tel"
       value="01.06.2018"
+      view="default"
     />
   </span>
   <Popup

@@ -53,6 +53,8 @@ class Select extends React.Component {
         mode: Type.oneOf(['check', 'radio', 'radio-check']),
         /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
         groupView: Type.oneOf(['default', 'line']),
+        /** Тип поля (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -195,6 +197,7 @@ class Select extends React.Component {
         disabled: false,
         size: 'm',
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
+        view: 'default',
         width: 'default',
         equalPopupWidth: false,
         options: [],
@@ -287,6 +290,7 @@ class Select extends React.Component {
                 className={ cn({
                     mode: this.props.mode,
                     size: this.props.size,
+                    view: this.props.view,
                     width: this.props.width,
                     checked: value.length > 0,
                     disabled: this.props.disabled,

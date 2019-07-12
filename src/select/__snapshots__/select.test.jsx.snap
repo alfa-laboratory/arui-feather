@@ -37,10 +37,11 @@ exports[`select should render without problem 1`] = `
   }
   renderPopupOnFocus={false}
   size="m"
+  view="default"
   width="default"
 >
   <div
-    className="select select_mode_check select_size_m select_width_default select_theme_alfa-on-white"
+    className="select select_mode_check select_size_m select_view_default select_width_default select_theme_alfa-on-white"
   >
     <span
       className="select__inner"

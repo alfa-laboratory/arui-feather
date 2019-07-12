@@ -2,7 +2,7 @@
 
 exports[`input should render without problems 1`] = `
 <span
-  className="input input_type_text input_size_m input_theme_alfa-on-white"
+  className="input input_type_text input_view_default input_size_m input_theme_alfa-on-white"
 >
   <span
     className="input__inner"
@@ -28,6 +28,7 @@ exports[`input should render without problems 1`] = `
         onTouchStart={[Function]}
         type="text"
         value=""
+        view="default"
       />
     </span>
   </span>

@@ -1,3 +1,16 @@
+<a name="14.0.0"></a>
+# [14.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.13.1...v14.0.0) (2019-07-12)
+
+
+### Features
+
+* new experimental input styles ([#812](https://github.com/alfa-laboratory/arui-feather/issues/812)) ([639c009](https://github.com/alfa-laboratory/arui-feather/commit/639c009))
+* **mq:** breakpoint vars ([#832](https://github.com/alfa-laboratory/arui-feather/issues/832)) ([b79a17e](https://github.com/alfa-laboratory/arui-feather/commit/b79a17e))
+* **notification:** new notification styles ([#828](https://github.com/alfa-laboratory/arui-feather/issues/828)) ([8d4a944](https://github.com/alfa-laboratory/arui-feather/commit/8d4a944))
+* **toggle:** introducing toggle component ([#829](https://github.com/alfa-laboratory/arui-feather/issues/829)) ([4e356f2](https://github.com/alfa-laboratory/arui-feather/commit/4e356f2))
+
+
+
 <a name="13.13.1"></a>
 ## [13.13.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.13.0...v13.13.1) (2019-07-10)
 

@@ -57,7 +57,7 @@
         border-bottom-style: solid;
     }
 
-    &_disabled &__icon, &_checked &__icon {
+    &_disabled &__icon, &:not(&_checked) &__icon {
         opacity: var(--opacity-disabled);
     }
 }

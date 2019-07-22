@@ -109,41 +109,37 @@ class Tooltip extends PureComponent {
         const { trigger, children } = this.props;
 
         return (
-            <Fragment>
-                <div
-                    id={ this.uniqID }
-                    className={ cn() }
-                    ref={ (ref) => { this.tooltipRef = ref; } }
+            <div
+                id={ this.uniqID }
+                className={ cn() }
+                ref={ this.handleCreateTooltipRef }
+            >
+                <Link
+                    pseudo={ true }
+                    className={ cn('children') }
+                    onClick={ this.toggleClick }
+                    ref={ this.handleCreateChildrenRef }
                 >
-                    <Link
-                        pseudo={ true }
-                        className={ cn('children') }
-                        onClick={ () => this.toggleClick() }
-                        ref={ (ref) => { this.childrenRef = ref; } }
-                    >
-                        {
-                            trigger === HOVER
-                                ? (
-                                    <span
-                                        onMouseEnter={ () => this.toggleHover(true) }
-                                        onMouseLeave={ () => this.toggleHover(false) }
-                                    >
-                                        { children }
-                                    </span>
-                                )
-                                : (<Fragment>{ children }</Fragment>)
-                        }
-                    </Link>
-                    <Fragment>
-                        <Mq query='--tablet-s'>
-                            { this.renderDesktop(cn) }
-                        </Mq>
-                        <Mq query='--mobile'>
-                            { this.renderMobile(cn) }
-                        </Mq>
-                    </Fragment>
-                </div>
-            </Fragment>
+                    {
+                        trigger === HOVER
+                            ? (
+                                <span
+                                    onMouseEnter={ this.toggleHoverTrue }
+                                    onMouseLeave={ this.toggleHoverFalse }
+                                >
+                                    { children }
+                                </span>
+                            )
+                            : children
+                    }
+                </Link>
+                <Mq query='--tablet-s'>
+                    { this.renderDesktop(cn) }
+                </Mq>
+                <Mq query='--mobile'>
+                    { this.renderMobile(cn) }
+                </Mq>
+            </div>
         );
     }
 
@@ -197,7 +193,7 @@ class Tooltip extends PureComponent {
                     clicked: tooltipClicked,
                     hovered: tooltipHovered
                 }) }
-                ref={ ref => this.handleCreatingDesktopContent(ref) }
+                ref={ this.handleCreatingDesktopContent }
             >
                 <div className={ cn('content-wrap') }>
                     { content }
@@ -220,7 +216,7 @@ class Tooltip extends PureComponent {
             <Fragment>
                 <Link
                     pseudo={ true }
-                    onClick={ () => this.toggleClick() }
+                    onClick={ this.toggleClick }
                     className={ cn('mobile-overlay', {
                         clicked: tooltipClicked
                     }) }
@@ -230,7 +226,7 @@ class Tooltip extends PureComponent {
                         mobile: true,
                         clicked: tooltipClicked
                     }) }
-                    ref={ (ref) => { this.mobileContentRef = ref; } }
+                    ref={ this.handleCreateMobileContentRef }
                 >
                     <div className={ cn('scrollable-mobile-content', { clicked: tooltipClicked }) }>
                         <div className={ cn('scrollable-mobile-content-wrap') }>
@@ -241,7 +237,7 @@ class Tooltip extends PureComponent {
                                 <Button
                                     text={ mobileButtonText }
                                     width='available'
-                                    onClick={ () => this.toggleClick() }
+                                    onClick={ this.toggleClick }
                                 />
                             </div>
                         </div>
@@ -252,6 +248,21 @@ class Tooltip extends PureComponent {
                 }
             </Fragment>
         );
+    }
+
+    @autobind
+    handleCreateMobileContentRef(ref) {
+        this.mobileContentRef = ref;
+    }
+
+    @autobind
+    handleCreateChildrenRef(ref) {
+        this.childrenRef = ref;
+    }
+
+    @autobind
+    handleCreateTooltipRef(ref) {
+        this.tooltipRef = ref;
     }
 
     @autobind
@@ -294,6 +305,7 @@ class Tooltip extends PureComponent {
         }, 300);
     }
 
+    @autobind
     handleCreatingDesktopContent(ref) {
         if (!ref || ref.clientHeight === 0) return;
 
@@ -379,6 +391,7 @@ class Tooltip extends PureComponent {
         return direction;
     }
 
+    @autobind
     toggleClick() {
         const { tooltipClicked } = this.state;
 
@@ -395,6 +408,17 @@ class Tooltip extends PureComponent {
         }
     }
 
+    @autobind
+    toggleHoverTrue() {
+        this.toggleHover(true);
+    }
+
+    @autobind
+    toggleHoverFalse() {
+        this.toggleHover(false);
+    }
+
+    @autobind
     toggleHover(tooltipHovered) {
         const direction = this.calcDir(this.desktopContentRef);
 

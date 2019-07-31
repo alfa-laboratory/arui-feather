@@ -207,6 +207,48 @@ describe('masked-input', () => {
             }, 0);
         });
 
+    it('should move caret position, if the number of non-editable characters has decreased at left of the caret',
+        (done) => {
+            let maskedInput = mount(<MaskedInput mask='111 111 111' value='124 567' />);
+            let inputNode = maskedInput.find('input');
+            maskedInput.instance().focus();
+
+            setTimeout(() => {
+                maskedInput.setProps({ mask: '1 111 111' });
+
+                inputNode.getDOMNode().selectionStart = 3;
+                inputNode.getDOMNode().selectionEnd = 3;
+
+                inputNode.simulate('beforeInput');
+                inputNode.simulate('input', { target: { value: '1 234 567' } });
+
+                expect(inputNode.getDOMNode().selectionStart).toBe(4);
+                expect(inputNode.getDOMNode().selectionEnd).toBe(4);
+                done();
+            }, 0);
+        });
+
+    it('should move caret position, if the number of non-editable characters has decreased at left of the caret',
+        (done) => {
+            let maskedInput = mount(<MaskedInput mask='1 111 111' value='1 234 567' />);
+            let inputNode = maskedInput.find('input');
+            maskedInput.instance().focus();
+
+            setTimeout(() => {
+                maskedInput.setProps({ mask: '111 111 111' });
+
+                inputNode.getDOMNode().selectionStart = 3;
+                inputNode.getDOMNode().selectionEnd = 3;
+
+                inputNode.simulate('beforeInput');
+                inputNode.simulate('input', { target: { value: '124 567' } });
+
+                expect(inputNode.getDOMNode().selectionStart).toBe(2);
+                expect(inputNode.getDOMNode().selectionEnd).toBe(2);
+                done();
+            }, 0);
+        });
+
     it('should return `HTMLInputElement` when `getControl` method called', () => {
         let maskedInput = mount(<MaskedInput mask='111' />);
         let controlNode = maskedInput.instance().getControl();

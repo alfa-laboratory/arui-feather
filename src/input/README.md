@@ -38,7 +38,6 @@ const sizes = ['s', 'm', 'l', 'xl'];
             <div className='row' key={ size }>
                 <Input
                     placeholder='Введите что-нибудь'
-                    view='line'
                     size={ size }
                 />
             </div>
@@ -57,7 +56,6 @@ const sizes = ['s', 'm', 'l', 'xl'];
                 <Input
                     label='Имя'
                     placeholder='Введите ваше имя'
-                    view='line'
                     size={ size }
                 />
             </div>
@@ -77,7 +75,6 @@ const sizes = ['s', 'm', 'l', 'xl'];
                     placeholder='Введите что-нибудь'
                     defaultValue='Корм для кота'
                     clear={ true }
-                    view='line'
                     size={ size }
                 />
             </div>
@@ -96,7 +93,6 @@ const sizes = ['s', 'm', 'l', 'xl'];
                 <Input
                     placeholder='Введите что-нибудь длинное'
                     width='available'
-                    view='line'
                     size={ size }
                 />
             </div>
@@ -119,13 +115,32 @@ initialState = {
                 <Input
                     placeholder='Введите что-нибудь'
                     error={ state.error ? 'Только кириллические символы' : null }
-                    view='line'
                     size={ size }
                     value={ state.value }
                     onChange={ value => setState({
                         value,
                         error: value.search(/[a-z]/i) !== -1
                     }) }
+                />
+            </div>
+        ))
+    }
+</div>
+```
+
+С ошибкой и подсказкой
+```jsx
+const sizes = ['s', 'm', 'l', 'xl'];
+<div>
+    {
+        sizes.map(size => (
+            <div className='row' key={ size }>
+                <Input
+                    error='Некорректный SWIFT-код'
+                    width='available'
+                    size={ size }
+                    value='ALFARUMM'
+                    hint='SWIFT-код состоит из 11 символов. Если известны только 8 — дополните последними символами «XXX». Пример: ALFARUMMXXX'
                 />
             </div>
         ))
@@ -144,7 +159,6 @@ const sizes = ['s', 'm', 'l', 'xl'];
             <div className='row' key={ size }>
                 <Input
                     placeholder='Введите ваше имя'
-                    view='line'
                     size={ size }
                     icon={
                         <IconOk
@@ -169,7 +183,6 @@ const sizes = ['s', 'm', 'l', 'xl'];
                 <Input
                     placeholder='Введите ваше имя'
                     disabled={ true }
-                    view='line'
                     size={ size }
                 />
             </div>

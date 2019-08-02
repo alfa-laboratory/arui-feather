@@ -172,6 +172,7 @@ class Input extends React.Component {
 
     state = {
         focused: false,
+        showError: true,
         value: this.props.defaultValue || ''
     };
 
@@ -213,7 +214,7 @@ class Input extends React.Component {
                     'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    invalid: !!this.props.error
+                    invalid: !!this.props.error && this.state.showError
                 }) }
                 ref={ (root) => { this.root = root; } }
             >
@@ -226,10 +227,16 @@ class Input extends React.Component {
                     }
                     { this.renderContent(cn, MaskedInput) }
                     {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
+                        !!this.props.error && this.state.showError ? (
+                            <span className={ cn('sub') }>
+                                { this.props.error }
+                            </span>
+                        ) : (
+                            !!this.props.hint &&
+                            <span className={ cn('sub') }>
+                                { this.props.hint }
+                            </span>
+                        )
                     }
                 </span>
             </span>
@@ -325,7 +332,7 @@ class Input extends React.Component {
 
     @autobind
     handleFocus(event) {
-        this.setState({ focused: true });
+        this.setState({ focused: true, showError: false });
         this.enableMouseWheel();
 
         if (this.props.onFocus) {

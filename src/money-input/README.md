@@ -10,3 +10,12 @@ C символом валюты
     bold={ true }
 />
 ```
+
+```jsx
+<MoneyInput
+    showCurrency={ true }
+    currencyCode='USD'
+    bold={ true }
+    label='Лейбл'
+/>
+```

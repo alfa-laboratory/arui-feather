@@ -17,17 +17,23 @@ import addYears from 'date-fns/add_years';
 import subtractYears from 'date-fns/sub_years';
 import formatDate from 'date-fns/format';
 import isSameMonth from 'date-fns/is_same_month';
+import setMonth from 'date-fns/set_month';
+import setYear from 'date-fns/set_year';
 import sortedIndexOf from 'lodash.sortedindexof';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
-import isCurrentDay from './utils';
+import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
 
 const DAYS_IN_WEEK = 7;
+const EARLY_YEARS_LIMIT = 100;
+const LATER_YEARS_LIMIT = 1;
 const ATTR_DAY = 'data-day';
+const ATTR_MONTH = 'data-month';
+const ATTR_YEAR = 'data-year';
 const ATTR_STEP_SIZE = 'data-step';
 const ATTR_DISABLED = 'data-disabled';
 
@@ -132,6 +138,11 @@ class Calendar extends React.Component {
      */
     blurTimeoutId = null;
 
+    /**
+     * @type {Array}
+     */
+    years = [];
+
     componentWillMount() {
         this.prepareData();
     }
@@ -148,10 +159,6 @@ class Calendar extends React.Component {
     }
 
     render(cn) {
-        let rows = [];
-        rows.push(this.renderShortWeekdays(cn));
-        rows = rows.concat(this.renderMonth(cn));
-
         return (
             <div
                 ref={ (root) => { this.root = root; } }
@@ -165,20 +172,7 @@ class Calendar extends React.Component {
                 onKeyUp={ this.props.isKeyboard && this.handleKeyUp }
             >
                 { this.renderTitle(cn) }
-                <table className={ cn('layout') }>
-                    <tbody>
-                        {
-                            rows.map((row, index) => (
-                                <tr
-                                    className={ cn('row') }
-                                    key={ `row_${index + 1}` }
-                                >
-                                    { row }
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
+                { this.renderContent(cn) }
             </div>
         );
     }
@@ -189,32 +183,9 @@ class Calendar extends React.Component {
             || differenceInMonths(month, startOfMonth(this.earlierLimit)) > 0;
         let isNextMonthEnabled = !this.laterLimit
             || differenceInMonths(month, this.laterLimit) < 0;
-        let prevYearEarlierLimit = this.earlierLimit && addYears(this.earlierLimit, 1);
-        let isPrevYearEnabled = !this.earlierLimit
-            || differenceInMonths(month, prevYearEarlierLimit) >= 0;
-        let nextYearLaterLimit = this.laterLimit && subtractYears(this.laterLimit, 1);
-        let isNextYearEnabled = !this.laterLimit
-            || differenceInMonths(month, nextYearLaterLimit) <= 0;
 
         return (
             <div className={ cn('title') }>
-                {
-                    this.props.showArrows &&
-                    <div
-                        className={
-                            cn('arrow', {
-                                direction: 'left',
-                                double: true,
-                                disabled: !isPrevYearEnabled
-                            })
-                        }
-                        data-step='-12'
-                        data-disabled={ !isPrevMonthEnabled }
-                        role='button'
-                        tabIndex='0'
-                        onClick={ this.handleArrowClick }
-                    />
-                }
                 {
                     this.props.showArrows &&
                     <div
@@ -229,24 +200,9 @@ class Calendar extends React.Component {
                         role='button'
                         tabIndex='0'
                         onClick={ this.handleArrowClick }
-                    />
-                }
-                {
-                    this.props.showArrows &&
-                    <div
-                        className={
-                            cn('arrow', {
-                                direction: 'right',
-                                double: true,
-                                disabled: !isNextYearEnabled
-                            })
-                        }
-                        data-step='12'
-                        data-disabled={ !isNextMonthEnabled }
-                        role='button'
-                        tabIndex='0'
-                        onClick={ this.handleArrowClick }
-                    />
+                    >
+                        ←
+                    </div>
                 }
                 {
                     this.props.showArrows &&
@@ -262,12 +218,192 @@ class Calendar extends React.Component {
                         role='button'
                         tabIndex='0'
                         onClick={ this.handleArrowClick }
-                    />
+                    >
+                        →
+                    </div>
                 }
                 <div className={ cn('name') }>
-                    { `${this.props.months[month.getMonth()]} ${month.getFullYear()}` }
+                    {
+                        <div
+                            className={
+                                cn('name', {
+                                    month: true
+                                })
+                            }
+                            role='button'
+                            tabIndex='0'
+                            onClick={ this.handleMonthClick }
+                        >
+                            { `${this.props.months[month.getMonth()]}` }
+                        </div>
+                    }
+                    {
+                        <div
+                            className={
+                                cn('name', {
+                                    year: true
+                                })
+                            }
+                            role='button'
+                            tabIndex='0'
+                            onClick={ this.handleYearClick }
+                        >
+                            { `${month.getFullYear()}` }
+                        </div>
+                    }
                 </div>
             </div>
+        );
+    }
+
+    @autobind
+    handleMonthClick() {
+        this.setState({
+            isMonthSelection: !this.state.isMonthSelection,
+            isYearSelection: false
+        });
+    }
+
+    @autobind
+    handleYearClick() {
+        this.setState({
+            isMonthSelection: false,
+            isYearSelection: !this.state.isYearSelection
+        });
+    }
+
+    renderContent(cn) {
+        if (this.state.isMonthSelection) {
+            return this.renderMonths(cn);
+        } else if (this.state.isYearSelection) {
+            return this.renderYears(cn);
+        }
+        return this.renderDays(cn);
+    }
+
+    renderMonths(cn) {
+        return (
+            <div className={ cn('wrapper') }>
+                <div className={ cn('months') }>
+                    {
+                        this.props.months.map((month, index) => {
+                            const newMonth = setMonth(this.state.month, index);
+                            const off = !this.isValidDate(startOfMonth(newMonth));
+
+                            const dataMonth = !off
+                                ? newMonth.getTime()
+                                : null;
+
+                            const mods = {};
+                            mods.type = off ? 'off' : null;
+
+                            return (
+                                <div
+                                    className={ cn('select', { month: true, ...mods }) }
+                                    key={ `month_${index + 1}` }
+                                    role='gridcell'
+                                    tabIndex='0'
+                                    data-month={ dataMonth }
+                                    onClick={ this.handleSelectMonthClick }
+                                >
+                                    { month }
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+            </div>
+        );
+    }
+
+    @autobind
+    handleSelectMonthClick(event) {
+        const newMonth = event.target.attributes[ATTR_MONTH];
+
+        if (newMonth) {
+            const monthTimestamp = parseInt(newMonth.nodeValue, 10);
+            if (this.props.onMonthChange) {
+                this.props.onMonthChange(monthTimestamp);
+            } else {
+                this.setState({
+                    month: monthTimestamp
+                });
+            }
+
+            this.setState({
+                isMonthSelection: false
+            });
+        }
+    }
+
+    renderYears(cn) {
+        return (
+            <div className={ cn('wrapper') }>
+                <div className={ cn('years') }>
+                    {
+                        this.years.map((year, index) => {
+                            const newYear = setYear(this.state.month, year);
+                            const dataYear = newYear.getTime();
+
+                            return (
+                                <div
+                                    className={ cn('select', { year: true }) }
+                                    key={ `year_${index + 1}` }
+                                    role='gridcell'
+                                    tabIndex='0'
+                                    data-year={ dataYear }
+                                    onClick={ this.handleSelectYearClick }
+                                >
+                                    { year }
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+            </div>
+        );
+    }
+
+    @autobind
+    handleSelectYearClick(event) {
+        const newYear = event.target.attributes[ATTR_YEAR];
+
+        if (newYear) {
+            const yearTimestamp = parseInt(newYear.nodeValue, 10);
+            if (this.props.onMonthChange) {
+                this.props.onMonthChange(yearTimestamp);
+            } else {
+                this.setState({
+                    month: yearTimestamp
+                });
+            }
+
+            this.setState({
+                isYearSelection: false
+            });
+        }
+    }
+
+    renderDays(cn) {
+        let rows = [];
+        rows.push(this.renderShortWeekdays(cn));
+        rows = rows.concat(this.renderMonth(cn));
+
+        return (
+            <table className={ cn('layout') }>
+                <tbody>
+                    {
+                        rows.map((row, index) => (
+                            <tr
+                                className={ cn('row') }
+                                key={ `row_${index + 1}` }
+                            >
+                                { row }
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         );
     }
 
@@ -288,7 +424,7 @@ class Calendar extends React.Component {
 
     renderWeek(cn, week) {
         return week.map((day, index) => {
-            let off = !this.isValidDate(day);
+            let off = !this.isValidDate(day) || this.isOffDay(day);
             let event = this.isEventDay(day);
             let current = isCurrentDay(day);
             let val = this.value;
@@ -316,6 +452,8 @@ class Calendar extends React.Component {
                 if (isSameDate || isBetweenPeriod) {
                     mods.state = 'current';
                 }
+            } else {
+                mods.empty = true;
             }
 
             let dataDay = day && !off
@@ -324,14 +462,18 @@ class Calendar extends React.Component {
 
             return (
                 <td
-                    className={ cn('day', mods) }
-                    data-day={ dataDay }
                     key={ day || `day_${index + 1}` }
-                    role='gridcell'
-                    onClick={ this.handleDayClick }
                 >
-                    { day ? day.getDate() : '' }
-                    { mods.event && <span data-day={ dataDay } className={ cn('event') } /> }
+                    <div
+                        className={ cn('day', mods) }
+                        role='gridcell'
+                        tabIndex='0'
+                        data-day={ dataDay }
+                        onClick={ this.handleDayClick }
+                    >
+                        { day ? day.getDate() : '' }
+                        { mods.event && <span data-day={ dataDay } className={ cn('event') } /> }
+                    </div>
                 </td>
             );
         });
@@ -459,8 +601,8 @@ class Calendar extends React.Component {
     }
 
     /**
-     * Возвращает `true`, если переданная дата является валидной,
-     * попадает в заданные лимиты календаря и не является выходным днем.
+     * Возвращает `true`, если переданная дата является валидной и
+     * попадает в заданные лимиты календаря.
      *
      * @param {Date|Number} value Дата для проверки
      * @returns {Boolean}
@@ -478,8 +620,7 @@ class Calendar extends React.Component {
 
         return !(
             (this.earlierLimit && this.earlierLimit > value) ||
-            (this.laterLimit && this.laterLimit < value) ||
-            this.isOffDay(value)
+            (this.laterLimit && this.laterLimit < value)
         );
     }
 
@@ -530,7 +671,7 @@ class Calendar extends React.Component {
         }
 
         let date = new Date(timestamp);
-        if (!this.isValidDate(date)) {
+        if (!this.isValidDate(date) || this.isOffDay(date)) {
             return;
         }
 
@@ -634,37 +775,46 @@ class Calendar extends React.Component {
         } else {
             month = new Date();
         }
-        this.setState({ month: startOfMonth(month) });
+
+        this.setState({
+            month: startOfMonth(month)
+        });
 
         if (isInitializing || this.props.earlierLimit !== nextProps.earlierLimit) {
-            this.earlierLimit = nextProps.earlierLimit ? normalizeDate(nextProps.earlierLimit) : null;
+            if (nextProps.earlierLimit) {
+                this.earlierLimit = normalizeDate(nextProps.earlierLimit);
+            } else {
+                this.earlierLimit = subtractYears(new Date(), EARLY_YEARS_LIMIT);
+            }
 
-            if (this.earlierLimit) {
-                this.earlierLimit = startOfDay(this.earlierLimit);
-                if (this.value) {
-                    let maxTimestamp = Math.max(
-                        this.value.valueOf(),
-                        this.earlierLimit.valueOf()
-                    );
-                    this.value = new Date(maxTimestamp);
-                }
+            this.earlierLimit = startOfDay(this.earlierLimit);
+            if (this.value) {
+                let maxTimestamp = Math.max(
+                    this.value.valueOf(),
+                    this.earlierLimit.valueOf()
+                );
+                this.value = new Date(maxTimestamp);
             }
         }
 
         if (isInitializing || this.props.laterLimit !== nextProps.laterLimit) {
-            this.laterLimit = nextProps.laterLimit ? normalizeDate(nextProps.laterLimit) : null;
+            if (nextProps.laterLimit) {
+                this.laterLimit = normalizeDate(nextProps.laterLimit);
+            } else {
+                this.laterLimit = addYears(new Date(), LATER_YEARS_LIMIT);
+            }
 
-            if (this.laterLimit) {
-                this.laterLimit = startOfDay(this.laterLimit);
-                if (this.value) {
-                    let minTimestamp = Math.min(
-                        this.value.valueOf(),
-                        this.laterLimit.valueOf()
-                    );
-                    this.value = new Date(minTimestamp);
-                }
+            this.laterLimit = startOfDay(this.laterLimit);
+            if (this.value) {
+                let minTimestamp = Math.min(
+                    this.value.valueOf(),
+                    this.laterLimit.valueOf()
+                );
+                this.value = new Date(minTimestamp);
             }
         }
+
+        this.years = getYearsRange(this.earlierLimit, this.laterLimit);
 
         if (isInitializing || this.props.selectedTo !== nextProps.selectedTo) {
             this.selectedTo = nextProps.selectedTo ? normalizeDate(nextProps.selectedTo) : null;

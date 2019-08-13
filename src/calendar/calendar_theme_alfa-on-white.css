@@ -4,38 +4,73 @@
     color: var(--color-content-alfa-on-white);
     background-color: var(--color-background-alfa-on-white);
 
-    .calendar__event {
-        background-color: var(--color-background-alfa-on-white);
+    .calendar {
+        &__event {
+            background-color: var(--color-background-alfa-on-white);
 
-        &:after {
-            background-color: var(--color-content-disabled-alfa-on-white);
+            &:after {
+                background-color: var(--color-content-disabled-alfa-on-white);
+            }
         }
-    }
 
-    .calendar__day_state_today {
-        &:before {
-            background-color: var(--color-content-disabled-alfa-on-white);
+        &__day {
+            &:hover {
+                background: var(--color-dark-indigo-10);
+            }
+
+            &_state_today {
+                border: 1px solid var(--color-dark-indigo);
+            }
+
+            &_state_current {
+                color: var(--color-accent-content);
+                background: var(--color-dark-indigo);
+
+                &:hover {
+                    background: var(--color-dark-indigo);
+                }
+            }
         }
-    }
 
-    .calendar__arrow_direction_left {
-        background-image: url('./images/arrow_wl.svg');
-
-        &.calendar__arrow_double {
-            background-image: url('./images/2_arrow_wl.svg');
+        &__dayname {
+            color: var(--color-dark-indigo);
         }
-    }
 
-    .calendar__arrow_direction_right {
-        background-image: url('./images/arrow_wr.svg');
+        &__day_empty,
+        &__select_type_off,
+        &__day_type_off,
+        &__day_type_weekend-off {
+            color: var(--color-content-disabled-alfa-on-white);
 
-        &.calendar__arrow_double {
-            background-image: url('./images/2_arrow_wr.svg');
+            &:hover {
+                background-color: var(--color-background-alfa-on-white);
+            }
         }
-    }
 
-    .calendar__day_type_off,
-    .calendar__day_type_weekend-off {
-        color: var(--color-content-disabled-alfa-on-white);
+        &__name {
+            &_month, &_year {
+                background: var(--color-dark-indigo-05);
+                border-radius: var(--border-radius-control);
+
+                &:hover {
+                    background-color: var(--color-dark-indigo-15);
+                }
+            }
+        }
+
+        &__select {
+            background: var(--color-dark-indigo-05);
+            border: 1px solid var(--color-dark-indigo-30);
+
+            &:hover {
+                background: var(--color-dark-indigo-15);
+                border: 1px solid var(--color-text-black-tertiary);
+            }
+
+            &_type_off:hover {
+                background: var(--color-dark-indigo-05);
+                border: 1px solid var(--color-dark-indigo-30);
+            }
+        }
     }
 }

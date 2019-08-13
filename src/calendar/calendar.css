@@ -6,12 +6,19 @@
 
 .calendar {
     display: inline-block;
-    padding: 0;
+    width: 335px;
+    min-height: 314px;
+    max-height: 332px;
+    padding: 16px;
     outline: 0;
+    overflow: hidden;
+
     font-family: var(--font);
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-normal);
-    border-radius: var(--border-radius-control);
+
+    box-shadow: 0 1px 2px var(--color-dark-indigo-15), 0 3px 12px var(--color-dark-indigo-10);
+    border-radius: var(--border-radius-2x);
 
     &_width_available {
         width: 100%;
@@ -23,68 +30,122 @@
 
     &__name {
         text-align: center;
+
+        &_month, &_year {
+            display: inline-block;
+            height: 30px;
+
+            cursor: pointer;
+            outline: none;
+
+            font-size: var(--font-size-l);
+            line-height: 30px;
+        }
+
+        &_month {
+            width: 89px;
+            margin-left: 30px;
+        }
+
+        &_year {
+            width: 73px;
+            margin-left: 8px;
+            margin-right: 30px;
+        }
+    }
+
+    &__wrapper {
+        width: 303px;
+        height: 246px;
+        overflow: hidden;
+    }
+
+    &__years, &__months {
+        width: 319px;
+        height: 246px;
+        overflow: auto;
+        padding: 4px;
+    }
+
+    &__select {
+        display: inline-block;
+
+        margin: 4px;
+        width: 90px;
+        height: 50px;
+
+        box-sizing: border-box;
+        border-radius: var(--border-radius-control);
+        outline: none;
+
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
     }
 
     &__layout {
         border-collapse: separate;
         border-spacing: 0;
+        width: 100%;
     }
 
     &__title {
         vertical-align: middle;
-        padding: 20px 7% 7px;
-        line-height: 20px;
+        padding: 0 0 16px;
+        line-height: 30px;
     }
 
     &__layout {
         padding: 0 10px 10px;
-
-        .calendar_width_available & {
-            width: 100%;
-        }
-    }
-
-    &__dayname,
-    &__day {
-        font-size: var(--font-size-s);
     }
 
     &__dayname {
         cursor: default;
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-s);
         font-weight: var(--font-weight-normal);
         line-height: 34px;
         text-align: center;
+
+        mix-blend-mode: normal;
+        opacity: 0.4;
     }
 
     &__day {
-        width: 35px;
+        width: 34px;
+        height: 30px;
+        margin-top: 6px;
+
         cursor: pointer;
+        border-radius: var(--border-radius-control);
         line-height: 30px;
         text-align: center;
         position: relative;
+        outline: none;
     }
 
-    &__arrow, &__double_arrow {
-        opacity: var(--opacity-minor);
-        width: 18px;
-        height: 18px;
+    &__arrow {
+        width: 36px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
         cursor: pointer;
         outline: none;
-        transition: all 0.1s ease-out;
-        background-position: center;
-        background-repeat: no-repeat;
+
+        font-size: var(--font-size-l);
+
+        mix-blend-mode: normal;
+        border-radius: var(--border-radius-control);
     }
 
     &__arrow:hover {
         opacity: var(--opacity-active);
     }
 
-    &__arrow_direction_left, &__double_arrow_direction_left {
+    &__arrow_direction_left {
         float: left;
     }
 
-    &__arrow_direction_right, &__double_arrow_direction_right {
+    &__arrow_direction_right {
         float: right;
     }
 
@@ -114,39 +175,19 @@
 
     &__day_state_today, &__day_state_current {
         position: relative;
-        margin: 0;
         outline: 0;
         user-select: none;
         text-align: center;
         z-index: 2;
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            bottom: 4px;
-            left: 50%;
-            width: 2.25em;
-            margin-left: -1.125em;
-            border-radius: 14px;
-            z-index: -1;
-        }
     }
 
-    .calendar__day_state_today {
-        &:before {
-            opacity: .3;
-        }
+    &__day_state_today {
+        box-sizing: border-box;
+        border-radius: var(--border-radius-control);
     }
 
-    &__day_state_current {
-        color: var(--color-accent-content);
-
-        &:before {
-            background: var(--color-accent);
-        }
-    }
-
+    &__day_empty,
+    &__select_type_off,
     &__day_type_off,
     &__day_type_weekend-off {
         cursor: default;

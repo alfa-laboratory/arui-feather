@@ -17,9 +17,6 @@
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-normal);
 
-    box-shadow: 0 1px 2px var(--color-dark-indigo-15), 0 3px 12px var(--color-dark-indigo-10);
-    border-radius: var(--border-radius-2x);
-
     &_width_available {
         width: 100%;
     }

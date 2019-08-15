@@ -840,6 +840,13 @@ exports[`icon render IconCamera without problems: IconCamera 1`] = `
 />
 `;
 
+exports[`icon render IconCancel without problems: IconCancel 1`] = `
+<Icon
+  name="cancel"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCard without problems: IconCard 1`] = `
 <Icon
   name="card"
@@ -1673,6 +1680,13 @@ exports[`icon render IconDown without problems: IconDown 1`] = `
 />
 `;
 
+exports[`icon render IconDownload without problems: IconDownload 1`] = `
+<Icon
+  name="download"
+  size="m"
+/>
+`;
+
 exports[`icon render IconDraft without problems: IconDraft 1`] = `
 <Icon
   name="draft"
@@ -2005,6 +2019,13 @@ exports[`icon render IconInvoiceForPayment without problems: IconInvoiceForPayme
 exports[`icon render IconKeyboard without problems: IconKeyboard 1`] = `
 <Icon
   name="keyboard"
+  size="m"
+/>
+`;
+
+exports[`icon render IconKeyboardHide without problems: IconKeyboardHide 1`] = `
+<Icon
+  name="keyboard-hide"
   size="m"
 />
 `;

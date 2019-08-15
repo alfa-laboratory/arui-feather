@@ -1,3 +1,20 @@
+<a name="14.2.0"></a>
+# [14.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.1.0...v14.2.0) (2019-08-15)
+
+
+### Bug Fixes
+
+* **input:** incorrect disabled input styles ([#781](https://github.com/alfa-laboratory/arui-feather/issues/781)) ([#835](https://github.com/alfa-laboratory/arui-feather/issues/835)) ([1a8a0c1](https://github.com/alfa-laboratory/arui-feather/commit/1a8a0c1))
+* **masked-input:** caret position if mask changes ([#837](https://github.com/alfa-laboratory/arui-feather/issues/837)) ([5598a33](https://github.com/alfa-laboratory/arui-feather/commit/5598a33))
+* **money-input:** fixed MoneyInput view=filled ([#843](https://github.com/alfa-laboratory/arui-feather/issues/843)) ([e71b17f](https://github.com/alfa-laboratory/arui-feather/commit/e71b17f))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.13.0 ([#842](https://github.com/alfa-laboratory/arui-feather/issues/842)) ([89e709b](https://github.com/alfa-laboratory/arui-feather/commit/89e709b))
+
+
+
 <a name="14.1.0"></a>
 # [14.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.0.0...v14.1.0) (2019-08-09)
 

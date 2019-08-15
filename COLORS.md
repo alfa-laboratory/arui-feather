@@ -11,4 +11,4 @@
 }
 ```
 
-[Актуальный список цветов](./src/vars/primitive-color.css)
+[Актуальный список цветов](./src/vars/primitive-colors.css)

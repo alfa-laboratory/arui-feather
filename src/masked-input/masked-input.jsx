@@ -45,6 +45,22 @@ const operationType = {
 };
 
 /**
+ * Возвращает количество не редактируемых символов в строке, в соответствии с указанной маской.
+ *
+ * @param {String} str Анализируемая строка
+ * @param {Mask} mask Маска
+ * @returns {Number}
+ */
+const getSeparatorsAmount = (str, mask) => (
+    str.split('').reduce((amount, char, index) => {
+        if (mask.isEditableIndex(index)) {
+            return amount;
+        }
+        return amount + 1;
+    }, 0)
+);
+
+/**
  * Компонент поля ввода с поддержкой масок.
  * Расширяет стандартный <input /> React-а.
  */
@@ -86,6 +102,11 @@ class MaskedInput extends React.Component {
     mask;
 
     /**
+     * @type {Mask}
+     */
+    beforeChangeMask;
+
+    /**
      * @type {FormatCharacters}
      */
     formatCharacters;
@@ -107,11 +128,14 @@ class MaskedInput extends React.Component {
 
     componentWillMount() {
         this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
+        this.beforeChangeMask = this.mask;
         this.value = this.mask.format(this.props.value || '');
     }
 
     componentWillReceiveProps(nextProps) {
         let reformatValue = false;
+
+        this.beforeChangeMask = this.mask;
 
         if (this.props.mask !== nextProps.mask || this.props.formatCharacters !== nextProps.formatCharacters) {
             this.setMask(nextProps.mask, nextProps.formatCharacters);
@@ -279,11 +303,36 @@ class MaskedInput extends React.Component {
                 }
             }
 
+            const beforeChangeSeparatorsAmount = getSeparatorsAmount(
+                currentValue.slice(0, prevSelection),
+                this.beforeChangeMask);
+
+            const afterChangeSeparatorsAmount = getSeparatorsAmount(
+                formattedValue.slice(0, newSelection),
+                this.mask);
+
+            // Двигаем каретку вправо, если слева от каретки добавились не редактируемые символы
+            const shouldShiftCaret =
+                beforeChangeSeparatorsAmount < afterChangeSeparatorsAmount
+                && (opType === operationType.ADD || opType === operationType.REPLACE)
+                && this.beforeChangeMask.isEditableIndex(this.beforeInputSelection.start)
+                && this.mask.isEditableIndex(newSelection);
+
+            // Двигаем каретку влево, если слева от каретки добавились не редактируемые символы
+            const shouldUnshiftCaret =
+                beforeChangeSeparatorsAmount > afterChangeSeparatorsAmount
+                && opType === operationType.DELETE
+                && (this.mask.isEditableIndex(newSelection - 1) && newSelection > 0);
+
+            if (shouldUnshiftCaret || shouldShiftCaret) {
+                newSelection += (afterChangeSeparatorsAmount - beforeChangeSeparatorsAmount);
+            }
+
             // Для операции добавления и замены, если мы стояли на нередактируемом символе,
             // то добавляем сдвиг до ближайшего редактируемого.
             if (opType === operationType.ADD || opType === operationType.REPLACE) {
                 let index = this.beforeInputSelection.start;
-                while (!this.mask.isEditableIndex(index) && index < formattedValue.length) {
+                while (!this.beforeChangeMask.isEditableIndex(index) && index < formattedValue.length) {
                     index += 1;
                 }
                 newSelection += index - this.beforeInputSelection.start;

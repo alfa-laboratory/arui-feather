@@ -119,7 +119,7 @@
         background: color(var(--color-background-alfa-on-color) a(.14));
 
         &.tag-button_checked {
-            background: color(var(--color-background-alfa-on-color) a(.55));
+            background: color(var(--color-background-alfa-on-color));
         }
     }
 

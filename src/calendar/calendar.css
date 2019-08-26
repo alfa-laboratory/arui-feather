@@ -40,14 +40,23 @@
         }
 
         &_month {
-            width: 89px;
-            margin-left: 30px;
+            float: left;
+            width: 105px;
+            margin-left: 22px;
+
+            .calendar__select-text {
+                width: 80px;
+            }
         }
 
         &_year {
+            float: right;
             width: 73px;
-            margin-left: 8px;
-            margin-right: 30px;
+            margin-right: 22px;
+
+            .calendar__select-text {
+                width: 48px;
+            }
         }
     }
 
@@ -132,6 +141,31 @@
 
         mix-blend-mode: normal;
         border-radius: var(--border-radius-control);
+
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__select-arrows {
+        position: relative;
+        vertical-align: top;
+        float: right;
+
+        width: 21px;
+        height: 30px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__select-text {
+        position: relative;
+        vertical-align: top;
+        float: left;
+        text-align: center;
+
+        height: 30px;
+        margin-left: 4px;
     }
 
     &__arrow:hover {

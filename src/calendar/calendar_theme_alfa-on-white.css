@@ -49,7 +49,7 @@
 
         &__name {
             &_month, &_year {
-                background: var(--color-dark-indigo-05);
+                background-color: var(--color-dark-indigo-05);
                 border-radius: var(--border-radius-control);
 
                 &:hover {
@@ -71,6 +71,18 @@
                 background: var(--color-dark-indigo-05);
                 border: 1px solid var(--color-dark-indigo-30);
             }
+        }
+
+        &__select-arrows {
+            background-image: url(./images/calendar__select-arrows-white.svg);
+        }
+
+        &__arrow_direction_left {
+            background-image: url(./images/calendar__arrow-left-white.svg);
+        }
+
+        &__arrow_direction_right {
+            background-image: url(./images/calendar__arrow-right-white.svg);
         }
     }
 }

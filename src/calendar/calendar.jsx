@@ -200,9 +200,7 @@ class Calendar extends React.Component {
                         role='button'
                         tabIndex='0'
                         onClick={ this.handleArrowClick }
-                    >
-                        ←
-                    </div>
+                    />
                 }
                 {
                     this.props.showArrows &&
@@ -218,9 +216,7 @@ class Calendar extends React.Component {
                         role='button'
                         tabIndex='0'
                         onClick={ this.handleArrowClick }
-                    >
-                        →
-                    </div>
+                    />
                 }
                 <div className={ cn('name') }>
                     {
@@ -234,7 +230,8 @@ class Calendar extends React.Component {
                             tabIndex='0'
                             onClick={ this.handleMonthClick }
                         >
-                            { `${this.props.months[month.getMonth()]}` }
+                            <div className={ cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
+                            <div className={ cn('select-arrows') } />
                         </div>
                     }
                     {
@@ -248,7 +245,8 @@ class Calendar extends React.Component {
                             tabIndex='0'
                             onClick={ this.handleYearClick }
                         >
-                            { `${month.getFullYear()}` }
+                            <div className={ cn('select-text') } >{ `${month.getFullYear()}` }</div>
+                            <div className={ cn('select-arrows') } />
                         </div>
                     }
                 </div>

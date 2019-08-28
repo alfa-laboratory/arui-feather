@@ -88,6 +88,8 @@ class IntlPhoneInput extends React.Component {
                         onChange={ this.handleSelectChange }
                         onClick={ this.handleSelectClick }
                         onFocus={ this.handleSelectFocus }
+                        onButtonFocus={ this.handleSelectButtonFocus }
+                        onButtonBlur={ this.handleSelectButtonBlur }
                     />
                 }
                 noValidate={ true }
@@ -127,7 +129,19 @@ class IntlPhoneInput extends React.Component {
     }
 
     @autobind
+    handleSelectButtonFocus() {
+        this.setState({
+            selectFocused: true
+        });
+    }
+
+    @autobind
     handleSelectBlur(event) {
+        this.resolveFocusedState({ selectFocused: false }, event);
+    }
+
+    @autobind
+    handleSelectButtonBlur(event) {
         this.resolveFocusedState({ selectFocused: false }, event);
     }
 

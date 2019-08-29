@@ -187,7 +187,7 @@ class Calendar extends React.Component {
         return (
             <div className={ cn('title') }>
                 {
-                    this.props.showArrows &&
+                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
                     <div
                         className={
                             cn('arrow', {
@@ -203,7 +203,7 @@ class Calendar extends React.Component {
                     />
                 }
                 {
-                    this.props.showArrows &&
+                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
                     <div
                         className={
                             cn('arrow', {

@@ -40,7 +40,6 @@
         }
 
         &_month {
-            float: left;
             width: 105px;
             margin-left: 22px;
 
@@ -50,9 +49,9 @@
         }
 
         &_year {
-            float: right;
             width: 73px;
             margin-right: 22px;
+            margin-left: 8px;
 
             .calendar__select-text {
                 width: 48px;
@@ -98,11 +97,13 @@
     &__title {
         vertical-align: middle;
         padding: 0 0 16px;
-        line-height: 30px;
+        height: 30px;
     }
 
     &__layout {
-        padding: 0 10px 10px;
+        padding: 0;
+        margin-top: 16px;
+        text-align: center;
     }
 
     &__dayname {
@@ -110,20 +111,20 @@
         font-size: var(--font-size-s);
         font-weight: var(--font-weight-normal);
         line-height: 34px;
-        text-align: center;
 
         mix-blend-mode: normal;
         opacity: 0.4;
     }
 
     &__day {
-        width: 34px;
-        height: 30px;
+        display: inline-block;
+        width: 36px;
+        height: 28px;
         margin-top: 6px;
 
         cursor: pointer;
         border-radius: var(--border-radius-control);
-        line-height: 30px;
+        line-height: 28px;
         text-align: center;
         position: relative;
         outline: none;

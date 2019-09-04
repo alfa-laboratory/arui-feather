@@ -365,6 +365,7 @@ class CalendarInput extends React.Component {
                 directions={ this.props.directions }
                 target={ this.isMobilePopup() ? 'screen' : 'anchor' }
                 header={ this.isMobilePopup() && this.renderMobileHeader() }
+                padded={ false }
             >
                 <div className={ cn('calendar-wrapper', { mobile: this.isMobilePopup() }) }>
                     <Calendar

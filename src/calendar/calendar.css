@@ -9,7 +9,7 @@
     width: 335px;
     min-height: 314px;
     max-height: 332px;
-    padding: 16px;
+    padding: 16px 16px 0;
     outline: 0;
     overflow: hidden;
 
@@ -30,6 +30,8 @@
 
         &_month, &_year {
             display: inline-block;
+            padding: 0 8px 0 12px;
+
             height: 30px;
 
             cursor: pointer;
@@ -40,8 +42,8 @@
         }
 
         &_month {
-            width: 105px;
-            margin-left: 22px;
+            width: 116px;
+            margin-left: 6px;
 
             .calendar__select-text {
                 width: 80px;
@@ -49,8 +51,8 @@
         }
 
         &_year {
-            width: 73px;
-            margin-right: 22px;
+            width: 78px;
+            margin-right: 11px;
             margin-left: 8px;
 
             .calendar__select-text {
@@ -61,13 +63,14 @@
 
     &__wrapper {
         width: 303px;
-        height: 246px;
+        height: 262px;
         overflow: hidden;
+        margin-top: 8px;
     }
 
     &__years, &__months {
         width: 319px;
-        height: 246px;
+        height: 282px;
         overflow: auto;
         padding: 4px;
     }
@@ -102,7 +105,7 @@
 
     &__layout {
         padding: 0;
-        margin-top: 16px;
+        margin-top: 8px;
         text-align: center;
     }
 
@@ -110,17 +113,16 @@
         cursor: default;
         font-size: var(--font-size-s);
         font-weight: var(--font-weight-normal);
-        line-height: 34px;
+        line-height: 30px;
 
         mix-blend-mode: normal;
         opacity: 0.4;
     }
 
     &__day {
-        display: inline-block;
-        width: 36px;
-        height: 28px;
-        margin-top: 6px;
+        width: 34px;
+        height: 30px;
+        margin: 6px auto 0;
 
         cursor: pointer;
         border-radius: var(--border-radius-control);
@@ -152,7 +154,7 @@
         vertical-align: top;
         float: right;
 
-        width: 21px;
+        width: 6px;
         height: 30px;
 
         background-position: center;
@@ -163,7 +165,7 @@
         position: relative;
         vertical-align: top;
         float: left;
-        text-align: center;
+        text-align: left;
 
         height: 30px;
         margin-left: 4px;
@@ -175,10 +177,12 @@
 
     &__arrow_direction_left {
         float: left;
+        margin-left: 4px;
     }
 
     &__arrow_direction_right {
         float: right;
+        margin-right: 4px;
     }
 
     &__day_type_weekend {

@@ -9,7 +9,7 @@ import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
 
-import IconCheck from '../icon/ui/check';
+import IconCheck from '../icon/ui/tick';
 import MenuItem from '../menu-item/menu-item';
 
 import cn from '../cn';

@@ -346,7 +346,7 @@ class Select extends React.Component {
         switch (this.props.size) {
             case 's':
             case 'm':
-                tickSize = 's';
+                tickSize = this.props.view === 'filled' ? 'l' : 's';
                 break;
             case 'l':
                 tickSize = 'm';

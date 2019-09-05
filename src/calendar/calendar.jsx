@@ -271,12 +271,13 @@ class Calendar extends React.Component {
     }
 
     renderContent(cn) {
-        if (this.state.isMonthSelection) {
-            return this.renderMonths(cn);
-        } else if (this.state.isYearSelection) {
-            return this.renderYears(cn);
-        }
-        return this.renderDays(cn);
+        return (
+            <React.Fragment>
+                { this.state.isMonthSelection ? this.renderMonths(cn) : null }
+                { this.state.isYearSelection ? this.renderYears(cn) : null }
+                { this.renderDays(cn) }
+            </React.Fragment>
+        );
     }
 
     renderMonths(cn) {

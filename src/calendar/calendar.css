@@ -5,11 +5,11 @@
 @import '../vars.css';
 
 .calendar {
+    position: relative;
     display: inline-block;
-    width: 335px;
-    min-height: 314px;
-    max-height: 332px;
-    padding: 16px 16px 0;
+    width: 320px;
+    min-height: 300px;
+    padding: 16px 12px;
     outline: 0;
     overflow: hidden;
 
@@ -27,9 +27,11 @@
 
     &__name {
         text-align: center;
+        transition: 0.2s;
 
         &_month, &_year {
             display: inline-block;
+            vertical-align: top;
             padding: 0 8px 0 12px;
 
             height: 30px;
@@ -42,53 +44,85 @@
         }
 
         &_month {
-            width: 116px;
-            margin-left: 6px;
-
             .calendar__select-text {
-                width: 80px;
+                width: 82px;
             }
         }
 
         &_year {
-            width: 78px;
-            margin-right: 11px;
             margin-left: 8px;
 
             .calendar__select-text {
-                width: 48px;
+                min-width: 42px;
             }
         }
     }
 
     &__wrapper {
-        width: 303px;
-        height: 262px;
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        top: 46px;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        margin-top: 8px;
+
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 20px;
+            content: '';
+        }
     }
 
     &__years, &__months {
-        width: 319px;
-        height: 282px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 16px 0;
+        text-align: center;
+    }
+
+    &__months {
+        overflow: hidden;
+    }
+
+    &__years {
         overflow: auto;
-        padding: 4px;
+
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     &__select {
         display: inline-block;
+        vertical-align: top;
 
         margin: 4px;
         width: 90px;
-        height: 50px;
+        height: 48px;
 
         box-sizing: border-box;
         border-radius: var(--border-radius-control);
         outline: none;
 
-        line-height: 50px;
+        line-height: 46px;
         text-align: center;
         cursor: pointer;
+
+        transition: 0.2s;
     }
 
     &__layout {
@@ -98,14 +132,13 @@
     }
 
     &__title {
-        vertical-align: middle;
-        padding: 0 0 16px;
-        height: 30px;
+        position: relative;
+        padding: 0 0 20px;
+        user-select: none;
     }
 
     &__layout {
         padding: 0;
-        margin-top: 8px;
         text-align: center;
     }
 
@@ -113,26 +146,33 @@
         cursor: default;
         font-size: var(--font-size-s);
         font-weight: var(--font-weight-normal);
-        line-height: 30px;
+        line-height: 1.2;
 
         mix-blend-mode: normal;
         opacity: 0.4;
+
+        padding: 0 0 4px;
     }
 
     &__day {
         width: 34px;
         height: 30px;
-        margin: 6px auto 0;
+        margin: 8px auto 0;
 
         cursor: pointer;
         border-radius: var(--border-radius-control);
-        line-height: 28px;
+        line-height: 30px;
         text-align: center;
         position: relative;
         outline: none;
+
+        transition: 0.2s;
     }
 
     &__arrow {
+        position: absolute;
+        top: 0;
+
         width: 36px;
         height: 30px;
         line-height: 30px;
@@ -147,15 +187,23 @@
 
         background-position: center;
         background-repeat: no-repeat;
+
+        &_direction_left {
+            left: 0;
+        }
+
+        &_direction_right {
+            right: 0;
+        }
     }
 
     &__select-arrows {
         position: relative;
-        vertical-align: top;
         float: right;
 
         width: 6px;
         height: 30px;
+        margin-left: 8px;
 
         background-position: center;
         background-repeat: no-repeat;
@@ -163,38 +211,24 @@
 
     &__select-text {
         position: relative;
-        vertical-align: top;
         float: left;
         text-align: left;
-
-        height: 30px;
-        margin-left: 4px;
     }
 
     &__arrow:hover {
         opacity: var(--opacity-active);
     }
 
-    &__arrow_direction_left {
-        float: left;
-        margin-left: 4px;
-    }
-
-    &__arrow_direction_right {
-        float: right;
-        margin-right: 4px;
-    }
-
     &__day_type_weekend {
-        font-weight: var(--font-weight-medium);
+        /* font-weight: var(--font-weight-medium); */
     }
 
     &__event {
-        width: 9px;
-        height: 9px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         position: absolute;
-        bottom: -1px;
+        bottom: -5px;
         left: 50%;
         margin-left: -5px;
 
@@ -203,8 +237,8 @@
             position: absolute;
             top: 2px;
             left: 2px;
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
         }
     }

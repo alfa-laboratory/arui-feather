@@ -39,9 +39,15 @@
         z-index: 1;
     }
 
+    &__calendar-wrapper {
+        .calendar {
+            display: block;
+        }
+    }
+
     &__calendar-wrapper_mobile {
         display: block;
-        width: 265px;
+        width: 340px;
         margin: 0 auto;
     }
 }

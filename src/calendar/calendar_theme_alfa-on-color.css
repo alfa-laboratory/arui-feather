@@ -75,6 +75,14 @@
                 background: var(--color-dark-indigo-05);
                 border: 1px solid var(--color-dark-indigo-60-flat);
             }
+
+            &_state_current {
+                border: 1px solid var(--color-dark-indigo-03-flat);
+
+                &:hover {
+                    border: 1px solid var(--color-dark-indigo-03-flat);
+                }
+            }
         }
 
         &__select-arrows {

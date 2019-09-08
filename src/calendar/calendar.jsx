@@ -288,6 +288,11 @@ class Calendar extends React.Component {
                         this.props.months.map((month, index) => {
                             const newMonth = setMonth(this.state.month, index);
                             const off = !this.isValidDate(startOfMonth(newMonth));
+                            const val = this.value;
+
+                            const isSameMonth = val && val.getMonth() === newMonth.getMonth();
+                            const isBetweenPeriod = this.selectedFrom && this.selectedTo &&
+                                this.selectedFrom <= newMonth && this.selectedTo >= newMonth;
 
                             const dataMonth = !off
                                 ? newMonth.getTime()
@@ -295,6 +300,7 @@ class Calendar extends React.Component {
 
                             const mods = {};
                             mods.type = off ? 'off' : null;
+                            mods.state = isSameMonth || isBetweenPeriod ? 'current' : null;
 
                             return (
                                 <div
@@ -343,10 +349,18 @@ class Calendar extends React.Component {
                         this.years.map((year, index) => {
                             const newYear = setYear(this.state.month, year);
                             const dataYear = newYear.getTime();
+                            const val = this.value;
+
+                            const isSameYear = val && val.getYear() === newYear.getYear();
+                            const isBetweenPeriod = this.selectedFrom && this.selectedTo &&
+                                this.selectedFrom <= newYear && this.selectedTo >= newYear;
+
+                            const mods = {};
+                            mods.state = isSameYear || isBetweenPeriod ? 'current' : null;
 
                             return (
                                 <div
-                                    className={ cn('select', { year: true }) }
+                                    className={ cn('select', { year: true, ...mods }) }
                                     key={ `year_${index + 1}` }
                                     role='gridcell'
                                     tabIndex='0'

@@ -288,11 +288,8 @@ class Calendar extends React.Component {
                         this.props.months.map((month, index) => {
                             const newMonth = setMonth(this.state.month, index);
                             const off = !this.isValidDate(startOfMonth(newMonth));
-                            const val = this.value;
-
-                            const isSameMonth = val && val.getMonth() === newMonth.getMonth();
-                            const isBetweenPeriod = this.selectedFrom && this.selectedTo &&
-                                this.selectedFrom <= newMonth && this.selectedTo >= newMonth;
+                            const selectedDate = new Date(this.state.month);
+                            const isSameMonth = selectedDate && selectedDate.getMonth() === newMonth.getMonth();
 
                             const dataMonth = !off
                                 ? newMonth.getTime()
@@ -300,7 +297,7 @@ class Calendar extends React.Component {
 
                             const mods = {};
                             mods.type = off ? 'off' : null;
-                            mods.state = isSameMonth || isBetweenPeriod ? 'current' : null;
+                            mods.state = isSameMonth ? 'current' : null;
 
                             return (
                                 <div
@@ -349,14 +346,11 @@ class Calendar extends React.Component {
                         this.years.map((year, index) => {
                             const newYear = setYear(this.state.month, year);
                             const dataYear = newYear.getTime();
-                            const val = this.value;
-
-                            const isSameYear = val && val.getYear() === newYear.getYear();
-                            const isBetweenPeriod = this.selectedFrom && this.selectedTo &&
-                                this.selectedFrom <= newYear && this.selectedTo >= newYear;
+                            const selectedDate = new Date(this.state.month);
+                            const isSameYear = selectedDate && selectedDate.getFullYear() === newYear.getFullYear();
 
                             const mods = {};
-                            mods.state = isSameYear || isBetweenPeriod ? 'current' : null;
+                            mods.state = isSameYear ? 'current' : null;
 
                             return (
                                 <div

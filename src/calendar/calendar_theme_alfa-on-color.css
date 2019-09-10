@@ -9,78 +9,81 @@
             background-color: var(--color-background-alfa-on-color);
 
             &:after {
-                background-color: var(--color-content-disabled-alfa-on-color);
+                background-color: var(--color-white-30);
             }
         }
 
         &__wrapper {
             background-color: var(--color-background-alfa-on-color);
+
+            &:before {
+                background: linear-gradient(to bottom, rgba(11, 31, 53, 1) 0%, rgba(11, 31, 53, 1) 33%, rgba(11, 31, 53, 0) 100%);
+            }
         }
 
         &__day {
             &:hover {
-                background: var(--color-dark-indigo-60-flat);
+                background: var(--color-white-10);
             }
 
             &_state_today {
-                box-shadow: inset 0 0 0 1px var(--color-dark-indigo-03-flat);
+                box-shadow: inset 0 0 0 1px var(--color-white);
             }
 
             &_state_current {
                 color: var(--color-dark-indigo);
-                background: var(--color-dark-indigo-03-flat);
+                background: var(--color-white);
 
                 &:hover {
-                    background: var(--color-dark-indigo-03-flat);
+                    background: var(--color-white);
                 }
             }
         }
 
         &__dayname {
-            color: var(--color-dark-indigo-30-flat);
+            color: var(--color-white-30);
         }
 
         &__day_empty,
         &__select_type_off,
         &__day_type_off,
         &__day_type_weekend-off {
-            color: var(--color-content-disabled-alfa-on-color);
+            color: var(--color-white-30);
 
             &:hover {
-                background-color: var(--color-background-alfa-on-color);
+                background-color: transparent;
             }
         }
 
         &__name {
             &_month, &_year {
-                background: var(--color-dark-indigo-05);
-                border-radius: var(--border-radius-control);
+                background: var(--color-white-05);
 
                 &:hover {
-                    background-color: var(--color-dark-indigo-60-flat);
+                    background-color: var(--color-white-20);
                 }
             }
         }
 
         &__select {
-            background: var(--color-dark-indigo-05);
-            border: 1px solid var(--color-dark-indigo-60-flat);
+            background: var(--color-white-05);
+            border: 1px solid var(--color-white-20);
 
             &:hover {
-                background: var(--color-dark-indigo-60-flat);
-                border: 1px solid var(--color-text-black-tertiary);
+                background: var(--color-white-20);
+                border-color: var(--color-white-30);
             }
 
             &_type_off:hover {
-                background: var(--color-dark-indigo-05);
-                border: 1px solid var(--color-dark-indigo-60-flat);
+                background: var(--color-white-05);
+                border-color: var(--color-white-20);
             }
 
             &_state_current {
-                border: 1px solid var(--color-dark-indigo-03-flat);
+                border-color: var(--color-white);
 
                 &:hover {
-                    border: 1px solid var(--color-dark-indigo-03-flat);
+                    border-color: var(--color-white);
                 }
             }
         }

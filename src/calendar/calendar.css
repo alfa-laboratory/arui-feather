@@ -9,7 +9,7 @@
     display: inline-block;
     width: 320px;
     min-height: 300px;
-    padding: 16px 12px;
+    padding: var(--gap-m) var(--gap-s);
     outline: 0;
     overflow: hidden;
 
@@ -32,7 +32,7 @@
         &_month, &_year {
             display: inline-block;
             vertical-align: top;
-            padding: 0 8px 0 12px;
+            padding: 0 var(--gap-xs) 0 var(--gap-s);
 
             height: 30px;
 
@@ -41,16 +41,18 @@
 
             font-size: var(--font-size-l);
             line-height: 30px;
+
+            border-radius: var(--border-radius-control);
         }
 
         &_month {
             .calendar__select-text {
-                width: 82px;
+                min-width: 82px;
             }
         }
 
         &_year {
-            margin-left: 8px;
+            margin-left: var(--gap-xs);
 
             .calendar__select-text {
                 min-width: 42px;
@@ -65,7 +67,6 @@
         right: 0;
         top: 46px;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.1);
         overflow: hidden;
 
         &:before {
@@ -86,7 +87,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        padding: 16px 0;
+        padding: var(--gap-m) 0;
         text-align: center;
     }
 
@@ -110,7 +111,7 @@
         display: inline-block;
         vertical-align: top;
 
-        margin: 4px;
+        margin: var(--gap-2xs);
         width: 90px;
         height: 48px;
 
@@ -133,7 +134,7 @@
 
     &__title {
         position: relative;
-        padding: 0 0 20px;
+        padding: 0 0 var(--gap-l);
         user-select: none;
     }
 
@@ -148,16 +149,13 @@
         font-weight: var(--font-weight-normal);
         line-height: 1.2;
 
-        mix-blend-mode: normal;
-        opacity: 0.4;
-
-        padding: 0 0 4px;
+        padding: 0 0 var(--gap-2xs);
     }
 
     &__day {
         width: 34px;
         height: 30px;
-        margin: 8px auto 0;
+        margin: var(--gap-xs) auto 0;
 
         cursor: pointer;
         border-radius: var(--border-radius-control);
@@ -203,7 +201,7 @@
 
         width: 6px;
         height: 30px;
-        margin-left: 8px;
+        margin-left: var(--gap-xs);
 
         background-position: center;
         background-repeat: no-repeat;

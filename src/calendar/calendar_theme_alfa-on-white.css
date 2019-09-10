@@ -9,7 +9,7 @@
             background-color: var(--color-background-alfa-on-white);
 
             &:after {
-                background-color: var(--color-content-disabled-alfa-on-white);
+                background-color: var(--color-dark-indigo-30);
             }
         }
 
@@ -31,7 +31,7 @@
             }
 
             &_state_current {
-                color: var(--color-accent-content);
+                color: var(--color-white);
                 background: var(--color-dark-indigo);
 
                 &:hover {
@@ -41,24 +41,23 @@
         }
 
         &__dayname {
-            color: var(--color-dark-indigo);
+            color: var(--color-dark-indigo-30);
         }
 
         &__day_empty,
         &__select_type_off,
         &__day_type_off,
         &__day_type_weekend-off {
-            color: var(--color-content-disabled-alfa-on-white);
+            color: var(--color-dark-indigo-30);
 
             &:hover {
-                background-color: var(--color-background-alfa-on-white);
+                background-color: transparent;
             }
         }
 
         &__name {
             &_month, &_year {
                 background-color: var(--color-dark-indigo-05);
-                border-radius: var(--border-radius-control);
 
                 &:hover {
                     background-color: var(--color-dark-indigo-15);
@@ -72,19 +71,19 @@
 
             &:hover {
                 background: var(--color-dark-indigo-15);
-                border: 1px solid var(--color-dark-indigo-30);
+                border-color: var(--color-dark-indigo-30);
             }
 
             &_type_off:hover {
                 background: var(--color-dark-indigo-05);
-                border: 1px solid var(--color-dark-indigo-15);
+                border-color: var(--color-dark-indigo-15);
             }
 
             &_state_current {
-                border: 1px solid var(--color-dark-indigo);
+                border-color: var(--color-dark-indigo);
 
                 &:hover {
-                    border: 1px solid var(--color-dark-indigo);
+                    border-color: var(--color-dark-indigo);
                 }
             }
         }

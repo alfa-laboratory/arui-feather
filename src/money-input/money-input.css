@@ -43,7 +43,7 @@
             line-height: 56px;
         }
 
-        .input_has-label & {
+        .input_view_filled.input_has-label & {
             top: 28px;
             line-height: inherit;
         }
@@ -52,7 +52,7 @@
     &__value {
         margin-right: 0.25em;
         color: transparent;
-        font-weight: bold;
+        font-weight: var(--font-weight-normal);
     }
 
     &_currency {
@@ -67,7 +67,9 @@
                     padding-left: 0;
                 }
             }
+        }
 
+        .input_view_filled {
             .input__top {
                 padding-left: 12px;
             }

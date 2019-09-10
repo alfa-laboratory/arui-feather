@@ -338,7 +338,7 @@ const selectOptions = [
             currencyCode='USD'
             bold={ true }
             view='filled'
-            label='Money Input'
+            label='Лейбл'
         />
     </div>
     <div className='row' style={ { width: '374px' } }>

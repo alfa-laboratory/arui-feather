@@ -1,0 +1,27 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.icon_size_l.icon_name_cancel.icon_colored.icon_theme_alfa-on-color, .icon_size_l.icon_name_cancel.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_cancel_l_color.svg');
+}
+
+.icon_size_m.icon_name_cancel.icon_colored.icon_theme_alfa-on-color, .icon_size_m.icon_name_cancel.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_cancel_m_color.svg');
+}
+
+.icon_size_s.icon_name_cancel.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_cancel.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_cancel_s_color.svg');
+}
+
+.icon_size_xl.icon_name_cancel.icon_colored.icon_theme_alfa-on-color, .icon_size_xl.icon_name_cancel.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_cancel_xl_color.svg');
+}
+
+.icon_size_xxl.icon_name_cancel.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_cancel.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_cancel_xxl_color.svg');
+}
+
+.icon_size_xxxl.icon_name_cancel.icon_colored.icon_theme_alfa-on-color, .icon_size_xxxl.icon_name_cancel.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_cancel_xxxl_color.svg');
+}

@@ -27,6 +27,7 @@ import IconDelete from './action/delete';
 import IconDislike from './action/dislike';
 import IconDislikeFilled from './action/dislike-filled';
 import IconDots from './action/dots';
+import IconDownload from './action/download';
 import IconEdit from './action/edit';
 import IconEmail from './action/email';
 import IconErase from './action/erase';
@@ -263,6 +264,7 @@ import IconHold from './entity/hold';
 import IconInbox from './entity/inbox';
 import IconInternet from './entity/internet';
 import IconKeyboard from './entity/keyboard';
+import IconKeyboardHide from './entity/keyboard-hide';
 import IconManager from './entity/manager';
 import IconMessage from './entity/message';
 import IconMetro from './entity/metro';
@@ -320,6 +322,7 @@ import IconAttentionMark from './ui/attention-mark';
 import IconAutopayment from './ui/autopayment';
 import IconBackspace from './ui/backspace';
 import IconBuy from './ui/buy';
+import IconCancel from './ui/cancel';
 import IconCheck from './ui/check';
 import IconCheckBold from './ui/check-bold';
 import IconCheckChat from './ui/check-chat';
@@ -441,6 +444,7 @@ describe('icon', () => {
             { componentName: IconDislike, name: 'dislike' },
             { componentName: IconDislikeFilled, name: 'dislike-filled' },
             { componentName: IconDots, name: 'dots' },
+            { componentName: IconDownload, name: 'download' },
             { componentName: IconEdit, name: 'edit' },
             { componentName: IconEmail, name: 'email' },
             { componentName: IconErase, name: 'erase' },
@@ -677,6 +681,7 @@ describe('icon', () => {
             { componentName: IconInbox, name: 'inbox' },
             { componentName: IconInternet, name: 'internet' },
             { componentName: IconKeyboard, name: 'keyboard' },
+            { componentName: IconKeyboardHide, name: 'keyboard-hide' },
             { componentName: IconManager, name: 'manager' },
             { componentName: IconMessage, name: 'message' },
             { componentName: IconMetro, name: 'metro' },
@@ -734,6 +739,7 @@ describe('icon', () => {
             { componentName: IconAutopayment, name: 'autopayment' },
             { componentName: IconBackspace, name: 'backspace' },
             { componentName: IconBuy, name: 'buy' },
+            { componentName: IconCancel, name: 'cancel' },
             { componentName: IconCheck, name: 'check' },
             { componentName: IconCheckBold, name: 'check-bold' },
             { componentName: IconCheckChat, name: 'check-chat' },

@@ -1,3 +1,37 @@
+<a name="14.2.0"></a>
+# [14.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.1.0...v14.2.0) (2019-08-15)
+
+
+### Bug Fixes
+
+* **input:** incorrect disabled input styles ([#781](https://github.com/alfa-laboratory/arui-feather/issues/781)) ([#835](https://github.com/alfa-laboratory/arui-feather/issues/835)) ([1a8a0c1](https://github.com/alfa-laboratory/arui-feather/commit/1a8a0c1))
+* **masked-input:** caret position if mask changes ([#837](https://github.com/alfa-laboratory/arui-feather/issues/837)) ([5598a33](https://github.com/alfa-laboratory/arui-feather/commit/5598a33))
+* **money-input:** fixed MoneyInput view=filled ([#843](https://github.com/alfa-laboratory/arui-feather/issues/843)) ([e71b17f](https://github.com/alfa-laboratory/arui-feather/commit/e71b17f))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.13.0 ([#842](https://github.com/alfa-laboratory/arui-feather/issues/842)) ([89e709b](https://github.com/alfa-laboratory/arui-feather/commit/89e709b))
+
+
+
+<a name="14.1.0"></a>
+# [14.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.0.0...v14.1.0) (2019-08-09)
+
+
+### Bug Fixes
+
+* **money-input:** label and currency style fix ([#838](https://github.com/alfa-laboratory/arui-feather/issues/838)) ([02c53a4](https://github.com/alfa-laboratory/arui-feather/commit/02c53a4))
+* **select:** underline style with select error ([#836](https://github.com/alfa-laboratory/arui-feather/issues/836)) ([d9a74c2](https://github.com/alfa-laboratory/arui-feather/commit/d9a74c2))
+* **tab-item:** fix opacity for checked Tabitem ([a7c4ccf](https://github.com/alfa-laboratory/arui-feather/commit/a7c4ccf))
+
+
+### Features
+
+* **input-autocomplete:** add full text filtering ([#840](https://github.com/alfa-laboratory/arui-feather/issues/840)) ([8f46c6b](https://github.com/alfa-laboratory/arui-feather/commit/8f46c6b))
+
+
+
 <a name="14.0.0"></a>
 # [14.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.13.1...v14.0.0) (2019-07-12)
 

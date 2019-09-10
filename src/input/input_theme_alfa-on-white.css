@@ -22,7 +22,7 @@
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
         &:-webkit-autofill:active {
-            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
+            -webkit-text-fill-color: var(--color-content-alfa-on-white);
             caret-color: var(--color-content-alfa-on-white);
         }
     }
@@ -62,11 +62,19 @@
         .input__box {
             border-bottom-color: var(--color-border-control-disabled-alfa-on-white);
             border-bottom-style: var(--border-style-control-disabled);
+            box-shadow: none;
         }
 
         &,
         .input__control {
             color: var(--color-content-disabled-alfa-on-white);
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-text-fill-color: var(--color-content-disabled-alfa-on-white);
+            }
         }
 
         .input__control::placeholder {

@@ -160,6 +160,7 @@
         &.textarea_has-value {
             .textarea__top {
                 transform: scale(var(--top-scale-s)) translateY(-22px);
+                width: calc((2 - var(--top-scale-s)) * 100)%;
             }
         }
     }
@@ -192,6 +193,7 @@
         &.textarea_has-value {
             .textarea__top {
                 transform: scale(var(--top-scale-m)) translateY(-30px);
+                width: calc((2 - var(--top-scale-m)) * 100)%;
             }
         }
     }
@@ -224,6 +226,7 @@
         &.textarea_has-value {
             .textarea__top {
                 transform: scale(var(--top-scale-l)) translateY(-40px);
+                width: calc((2 - var(--top-scale-l)) * 100)%;
             }
         }
     }
@@ -256,6 +259,7 @@
         &.textarea_has-value {
             .textarea__top {
                 transform: scale(var(--top-scale-xl)) translateY(-50px);
+                width: calc((2 - var(--top-scale-xl)) * 100)%;
             }
         }
     }
@@ -339,6 +343,7 @@
         .textarea__top {
             font-size: 13px;
             transform: translateY(-12px);
+            width: auto;
         }
     }
 

@@ -318,6 +318,12 @@
             text-overflow: ellipsis;
             padding-right: 18px;
         }
+
+        .icon-button {
+            &_size_m {
+                margin-right: var(--gap-2xs);
+            }
+        }
     }
 
     &.select_no-tick .select-button__text {

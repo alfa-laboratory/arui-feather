@@ -31,11 +31,6 @@ import { isNodeOutsideElement } from '../lib/window';
 const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
 const LATER_YEARS_LIMIT = 1;
-const ATTR_DAY = 'data-day';
-const ATTR_MONTH = 'data-month';
-const ATTR_YEAR = 'data-year';
-const ATTR_STEP_SIZE = 'data-step';
-const ATTR_DISABLED = 'data-disabled';
 
 /**
  * Компонент календаря.
@@ -218,7 +213,7 @@ class Calendar extends React.Component {
                         onClick={ this.handleArrowClick }
                     />
                 }
-                <div className={ cn('name') }>
+                <div className={ cn('select-buttons') }>
                     {
                         <div
                             className={
@@ -295,9 +290,10 @@ class Calendar extends React.Component {
                                 ? newMonth.getTime()
                                 : null;
 
-                            const mods = {};
-                            mods.type = off ? 'off' : null;
-                            mods.state = isSameMonth ? 'current' : null;
+                            const mods = {
+                                type: off ? 'off' : null,
+                                state: isSameMonth ? 'current' : null
+                            };
 
                             return (
                                 <div
@@ -320,7 +316,7 @@ class Calendar extends React.Component {
 
     @autobind
     handleSelectMonthClick(event) {
-        const newMonth = event.target.attributes[ATTR_MONTH];
+        const newMonth = event.target.attributes['data-month'];
 
         if (newMonth) {
             const monthTimestamp = parseInt(newMonth.nodeValue, 10);
@@ -349,8 +345,9 @@ class Calendar extends React.Component {
                             const selectedDate = new Date(this.state.month);
                             const isSameYear = selectedDate && selectedDate.getFullYear() === newYear.getFullYear();
 
-                            const mods = {};
-                            mods.state = isSameYear ? 'current' : null;
+                            const mods = {
+                                state: isSameYear ? 'current' : null
+                            };
 
                             return (
                                 <div
@@ -373,7 +370,7 @@ class Calendar extends React.Component {
 
     @autobind
     handleSelectYearClick(event) {
-        const newYear = event.target.attributes[ATTR_YEAR];
+        const newYear = event.target.attributes['data-year'];
 
         if (newYear) {
             const yearTimestamp = parseInt(newYear.nodeValue, 10);
@@ -392,9 +389,10 @@ class Calendar extends React.Component {
     }
 
     renderDays(cn) {
-        let rows = [];
-        rows.push(this.renderShortWeekdays(cn));
-        rows = rows.concat(this.renderMonth(cn));
+        let rows = [
+            this.renderShortWeekdays(cn),
+            ...this.renderMonth(cn)
+        ];
 
         return (
             <table className={ cn('layout') }>
@@ -488,7 +486,7 @@ class Calendar extends React.Component {
 
     @autobind
     handleDayClick(event) {
-        let day = event.target.attributes[ATTR_DAY];
+        let day = event.target.attributes['data-day'];
         if (day) {
             this.performChange(parseInt(day.nodeValue, 10));
         }
@@ -523,11 +521,11 @@ class Calendar extends React.Component {
 
     @autobind
     handleArrowClick(event) {
-        if (event.currentTarget.attributes[ATTR_DISABLED].nodeValue === 'true') {
+        if (event.currentTarget.attributes['data-disabled'].nodeValue === 'true') {
             return;
         }
 
-        let stepSize = event.currentTarget.attributes[ATTR_STEP_SIZE].nodeValue;
+        let stepSize = event.currentTarget.attributes['data-step'].nodeValue;
         let step = parseInt(stepSize, 10);
         let newMonth = new Date(this.state.month);
         newMonth.setMonth(newMonth.getMonth() + step);

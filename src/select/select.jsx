@@ -188,7 +188,9 @@ class Select extends React.Component {
         /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
         renderButtonContent: Type.func,
         /** Максимальная высота попапа */
-        maxHeight: Type.number
+        maxHeight: Type.number,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -304,6 +306,7 @@ class Select extends React.Component {
                 ref={ (root) => {
                     this.root = root;
                 } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value } />

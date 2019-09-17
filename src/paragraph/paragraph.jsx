@@ -26,12 +26,18 @@ class Paragraph extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     render(cn) {
         return (
-            <p className={ cn({ view: this.props.view }) } id={ this.props.id }>
+            <p
+                className={ cn({ view: this.props.view }) }
+                id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 { this.props.mark &&
                     <span className={ cn('marker') }>{ this.props.mark }</span>
                 }

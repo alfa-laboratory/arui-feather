@@ -33,7 +33,9 @@ class PopupHeader extends React.Component {
          * Обработчик клика по кнопке закрытия
          * @param {React.MouseEvent} event
          */
-        onCloserClick: Type.func
+        onCloserClick: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     render(cn) {
@@ -43,6 +45,7 @@ class PopupHeader extends React.Component {
                     size: this.props.size
                 }) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <IconButton
                     className={ cn('closer') }

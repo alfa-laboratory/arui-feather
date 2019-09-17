@@ -71,7 +71,9 @@ class MoneyInput extends React.Component {
         /** Отображение символа валюты */
         showCurrency: Type.bool,
         /** Международный код валюты */
-        currencyCode: Type.string
+        currencyCode: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -119,6 +121,7 @@ class MoneyInput extends React.Component {
                     bold: this.props.bold,
                     width: this.props.width
                 }) }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <Input
                     { ...this.props }

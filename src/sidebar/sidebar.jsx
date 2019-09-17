@@ -86,7 +86,9 @@ class Sidebar extends React.Component {
          * Обработчик клика на элемент закрытия
          * @param {React.MouseEvent} event
          */
-        onCloserClick: Type.func
+        onCloserClick: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -147,7 +149,11 @@ class Sidebar extends React.Component {
         let contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
-            <PopupContainerProvider className={ cn({ visible }) } style={ style }>
+            <PopupContainerProvider
+                className={ cn({ visible }) }
+                style={ style }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 <div
                     role='button'
                     tabIndex='-1'

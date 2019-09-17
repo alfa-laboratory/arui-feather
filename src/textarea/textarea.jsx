@@ -100,7 +100,9 @@ class Textarea extends React.Component {
          * Обработчик события keyDown
          * @param {React.KeyboardEvent} event
          */
-        onKeyDown: Type.func
+        onKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -167,6 +169,7 @@ class Textarea extends React.Component {
                     'has-value': !!value
                 }) }
                 ref={ (root) => { this.root = root; } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     {

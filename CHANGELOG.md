@@ -1,3 +1,13 @@
+<a name="14.4.0"></a>
+# [14.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.3.0...v14.4.0) (2019-09-19)
+
+
+### Features
+
+* added data-test-id property to all components (for autotests) ([#850](https://github.com/alfa-laboratory/arui-feather/issues/850)) ([599bcf4](https://github.com/alfa-laboratory/arui-feather/commit/599bcf4))
+
+
+
 <a name="14.3.0"></a>
 # [14.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.2.0...v14.3.0) (2019-09-12)
 

@@ -113,7 +113,9 @@ class Menu extends React.Component {
          * Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem
          * @param highlightedItem
          */
-        onHighlightItem: Type.func
+        onHighlightItem: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -193,6 +195,7 @@ class Menu extends React.Component {
                 onKeyUp={ this.handleKeyUp }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { !!this.props.content && this.renderMenuItemList(cn, this.props.content) }
             </div>

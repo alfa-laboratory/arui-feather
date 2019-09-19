@@ -74,7 +74,9 @@ class MenuItem extends React.Component {
          * Обработчик события снятия курсора с элемента меню
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -94,7 +96,8 @@ class MenuItem extends React.Component {
         let content = this.props.children || this.props.value;
         let itemElement;
         let menuItemProps = {
-            ref: (root) => { this.root = root; }
+            ref: (root) => { this.root = root; },
+            'data-test-id': this.props['data-test-id']
         };
 
         switch (this.props.type) {

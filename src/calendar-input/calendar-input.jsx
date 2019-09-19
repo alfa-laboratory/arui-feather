@@ -169,7 +169,9 @@ class CalendarInput extends React.Component {
          * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле
          * @param {React.KeyboardEvent} event
          */
-        onInputKeyDown: Type.func
+        onInputKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -281,6 +283,7 @@ class CalendarInput extends React.Component {
         return (
             <span
                 className={ cn({ width: this.props.width }) }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span
                     { ...wrapperProps }

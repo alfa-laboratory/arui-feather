@@ -156,7 +156,9 @@ class Attach extends React.Component {
          * Обработчик события снятия курсора с кнопки
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -200,6 +202,7 @@ class Attach extends React.Component {
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
                 ref={ (root) => { this.root = root; } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.renderButton(cn) }
                 { this.renderStatusText(cn) }

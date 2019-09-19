@@ -54,7 +54,9 @@ class PopupContainerProvider extends React.Component {
         /** Объект со стилями */
         style: styleType,
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static childContextTypes = {
@@ -86,6 +88,7 @@ class PopupContainerProvider extends React.Component {
                 id={ this.props.id }
                 ref={ (positioningContainer) => { this.positioningContainer = positioningContainer; } }
                 style={ this.props.style }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.children }
                 <IsolatedContainer

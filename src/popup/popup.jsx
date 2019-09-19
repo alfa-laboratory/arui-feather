@@ -112,7 +112,9 @@ class Popup extends React.Component {
         /** Максимальная высота попапа */
         maxHeight: Type.number,
         /** Указатель на родительский элемент */
-        for: Type.string
+        for: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -270,6 +272,7 @@ class Popup extends React.Component {
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ cn('container') }>
                     {

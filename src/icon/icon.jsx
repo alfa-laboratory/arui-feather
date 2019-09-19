@@ -26,7 +26,9 @@ class Icon extends React.Component {
         /** Размер иконки */
         size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']),
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -48,6 +50,7 @@ class Icon extends React.Component {
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             />
         );
     }

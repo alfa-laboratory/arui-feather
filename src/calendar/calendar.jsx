@@ -124,6 +124,10 @@ class Calendar extends React.Component {
         isKeyboard: true
     };
 
+    state = {
+        month: startOfMonth(new Date())
+    }
+
     /**
      * @type {HTMLDivElement}
      */

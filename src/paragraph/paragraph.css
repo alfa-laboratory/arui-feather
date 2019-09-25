@@ -21,6 +21,10 @@
         font-size: var(--font-size-xl);
     }
 
+    &_view_small {
+        font-size: var(--font-size-s);
+    }
+
     &_theme_alfa-on-color {
         color: var(--color-content-accent-alfa-on-color);
     }

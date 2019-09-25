@@ -16,7 +16,7 @@ import performance from '../performance';
 class Paragraph extends React.Component {
     static propTypes = {
         /** Тип параграфа */
-        view: Type.oneOf(['lead', 'normal']),
+        view: Type.oneOf(['lead', 'normal', 'small']),
         /** Маркер параграфа */
         mark: Type.node,
         /** Дочерние элементы `Paragraph` */

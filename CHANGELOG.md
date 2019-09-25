@@ -1,3 +1,13 @@
+<a name="14.5.0"></a>
+# [14.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.4.0...v14.5.0) (2019-09-25)
+
+
+### Features
+
+* **paragraph:** small size ([#852](https://github.com/alfa-laboratory/arui-feather/issues/852)) ([0628a38](https://github.com/alfa-laboratory/arui-feather/commit/0628a38))
+
+
+
 <a name="14.4.0"></a>
 # [14.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.3.0...v14.4.0) (2019-09-19)
 

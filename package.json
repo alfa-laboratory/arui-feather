@@ -65,20 +65,12 @@
   },
   "maintainers": [
     {
-      "email": "vgalakhov@alfabank.ru",
-      "name": "Vitaliy Green"
+      "email": "esergeev2@alfabank.ru",
+      "name": "Evgeny Sergeev"
     },
     {
       "email": "akitov@alfabank.ru",
       "name": "Alexander Kitov"
-    },
-    {
-      "email": "dteryaev@alfabank.ru",
-      "name": "Mitya Teryaew"
-    },
-    {
-      "email": "dvolkov2@alfabank.ru",
-      "name": "Daniil Volkov"
     }
   ],
   "author": "Good guys from Alfa Laboratory",

@@ -489,4 +489,17 @@ describe('input', () => {
             expect(input.instance().disableMouseWheel).toHaveBeenCalled();
         }
     );
+
+    it(
+        'should call `resetError` after focus',
+        () => {
+            let input = mount(<Input />);
+            let controlNode = input.find('input');
+
+            jest.spyOn(input.instance(), 'resetError');
+
+            controlNode.simulate('focus');
+            expect(input.instance().resetError).toHaveBeenCalled();
+        }
+    );
 });

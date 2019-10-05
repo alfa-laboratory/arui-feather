@@ -88,6 +88,8 @@ class Input extends React.Component {
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
+        /** Сброс ошибки при установке фокуса */
+        resetError: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -160,20 +162,20 @@ class Input extends React.Component {
          * Обработчик, вызываемый перед началом ввода в маскированное поле
          * @param {React.ChangeEvent} event
          */
-        onProcessMaskInputEvent: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
+        onProcessMaskInputEvent: Type.func
     };
 
     static defaultProps = {
         formNoValidate: false,
         size: 'm',
         type: 'text',
-        view: 'default'
+        view: 'default',
+        resetError: true
     };
 
     state = {
         focused: false,
+        error: this.props.error || null,
         value: this.props.defaultValue || ''
     };
 
@@ -191,6 +193,13 @@ class Input extends React.Component {
      * @type {HTMLInputElement}
      */
     control;
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            error: nextProps.error
+        });
+    }
+
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
@@ -215,10 +224,9 @@ class Input extends React.Component {
                     'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    invalid: !!this.props.error
+                    invalid: !!this.state.error
                 }) }
                 ref={ (root) => { this.root = root; } }
-                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     {
@@ -229,9 +237,9 @@ class Input extends React.Component {
                     }
                     { this.renderContent(cn, MaskedInput) }
                     {
-                        (this.props.error || this.props.hint) &&
+                        (this.state.error || this.props.hint) &&
                         <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
+                            { this.state.error || this.props.hint }
                         </span>
                     }
                 </span>
@@ -330,6 +338,7 @@ class Input extends React.Component {
     handleFocus(event) {
         this.setState({ focused: true });
         this.enableMouseWheel();
+        this.resetError();
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
@@ -570,6 +579,19 @@ class Input extends React.Component {
      */
     getFocused() {
         return this.props.focused !== undefined ? this.props.focused : this.state.focused;
+    }
+
+    /**
+     * Сбрасывает состояние ошибки.
+     *
+     * @returns {void}
+     */
+    resetError() {
+        if (this.props.resetError) {
+            this.setState({
+                error: null
+            });
+        }
     }
 }
 

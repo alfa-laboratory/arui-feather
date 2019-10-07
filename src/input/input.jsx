@@ -162,7 +162,9 @@ class Input extends React.Component {
          * Обработчик, вызываемый перед началом ввода в маскированное поле
          * @param {React.ChangeEvent} event
          */
-        onProcessMaskInputEvent: Type.func
+        onProcessMaskInputEvent: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {

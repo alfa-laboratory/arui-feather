@@ -40,7 +40,7 @@
         .input_view_filled.input_size_s & {
             left: 8px;
             top: 0;
-            line-height: 44px;
+            line-height: 42px;
         }
 
         .input_view_filled.input_has-label.input_size_s & {

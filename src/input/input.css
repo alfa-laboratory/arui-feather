@@ -439,17 +439,17 @@
 .input_view_filled {
     &.input_size_s {
         .input__top {
-            line-height: 44px;
+            line-height: 43px;
             padding: 0 8px;
         }
 
         .input__box {
-            height: 44px;
+            height: 42px;
             padding: 0 8px;
         }
 
         .input__control {
-            min-height: 44px;
+            height: 42px;
         }
 
         .input__top,
@@ -459,8 +459,8 @@
 
         &.input_has-label {
             .input__control {
-                padding-top: 20px;
-                padding-bottom: 8px;
+                padding-top: 21px;
+                padding-bottom: 7px;
             }
         }
 
@@ -478,8 +478,8 @@
             .input__clear {
                 top: 50%;
                 width: 40px;
-                height: 40px;
-                margin-top: -20px;
+                height: 42px;
+                margin-top: -21px;
             }
 
             .input__box {
@@ -489,7 +489,7 @@
 
         &.input_has-addons {
             .input__box {
-                height: 44px;
+                height: 43px;
             }
         }
 

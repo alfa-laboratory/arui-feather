@@ -296,17 +296,21 @@
     &.select_size_s {
         .select__top {
             padding: 0 8px;
-            line-height: 44px;
+            line-height: 42px;
         }
 
         .select-button {
-            height: 44px;
+            height: 42px;
             padding: 0 8px;
-        }
 
-        .select-button {
             &__content {
                 padding-right: 14px;
+            }
+
+            .icon-button {
+                &_size_s {
+                    margin-right: var(--gap-xs);
+                }
             }
         }
 
@@ -338,18 +342,22 @@
 
     &.select_size_m {
         .select__top {
-            padding: 0 8px;
-            line-height: 44px;
+            padding: 0 12px;
+            line-height: 56px;
         }
 
         .select-button {
-            height: 44px;
-            padding: 0 8px;
-        }
+            height: 56px;
+            padding: 0 12px;
 
-        .select-button {
             &__content {
                 padding-right: 18px;
+            }
+
+            .icon-button {
+                &_size_m {
+                    margin-right: var(--gap-2xs);
+                }
             }
         }
 
@@ -398,12 +406,6 @@
             display: block;
             overflow: hidden;
             text-overflow: ellipsis;
-        }
-
-        .icon-button {
-            &_size_m {
-                margin-right: var(--gap-2xs);
-            }
         }
     }
 

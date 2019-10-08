@@ -30,7 +30,9 @@ class FlagIcon extends React.Component {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
-        className: Type.oneOfType([Type.func, Type.string])
+        className: Type.oneOfType([Type.func, Type.string]),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -48,6 +50,7 @@ class FlagIcon extends React.Component {
                     mode: this.props.mode,
                     size: this.props.size
                 }) }
+                data-test-id={ this.props['data-test-id'] }
             />
         );
     }

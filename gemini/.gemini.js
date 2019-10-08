@@ -5,12 +5,12 @@ const fs = require('fs');
 const ALL_BROWSERS = !!process.env.ALL_BROWSERS;
 const FILE_REGEXP = /\.gemini.\jsx?$/;
 
-let sets = fs.readdirSync('./gemini')
+let sets = fs.readdirSync('./')
     .filter(item => FILE_REGEXP.test(item))
     .map(item => item.replace(FILE_REGEXP, ''))
     .reduce((result, item) => {
         result[item] = {
-            files: [`./gemini/${item}.gemini.js`]
+            files: [`./${item}.gemini.js`]
         };
         return result;
     }, {});
@@ -41,10 +41,10 @@ let config = {
         debug: false,
         exclude: [
             'demo/',
-            'gemini/screens/',
-            'gemini-*/',
+            'screens/',
+            '../gemini-*/',
             'node_modules/',
-            'src/'
+            '../src/'
         ],
         plugins: {
             babel: true,
@@ -54,7 +54,7 @@ let config = {
             },
             optipng: true,
             react: {
-                jsModules: ['./gemini-utils/gemini-main.css'],
+                jsModules: ['../gemini-utils/gemini-main.css'],
                 port: 8668,
                 staticRoot: './',
                 webpackConfig: './webpack.gemini.config.js'
@@ -63,7 +63,8 @@ let config = {
         },
         projectRoot: './',
         tempDir: './'
-    }
+    },
+    screenshotsDir: './screens/'
 };
 
 if (ALL_BROWSERS) {

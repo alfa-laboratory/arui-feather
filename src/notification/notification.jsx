@@ -81,7 +81,9 @@ class Notification extends React.Component {
          * Обработчик клика по компоненту
          * @param {React.MouseEvent} event
          */
-        onClick: Type.func
+        onClick: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -152,6 +154,7 @@ class Notification extends React.Component {
                     onMouseLeave={ this.handleMouseLeave }
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
+                    data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ cn('icon') }>
                         {

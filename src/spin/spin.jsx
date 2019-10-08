@@ -24,7 +24,9 @@ class Spin extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -40,6 +42,7 @@ class Spin extends React.Component {
                     visible: this.props.visible
                 }) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             />
         );
     }

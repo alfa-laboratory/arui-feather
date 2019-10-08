@@ -46,7 +46,9 @@ class Toggle extends React.Component {
          * Обработчик снятия фокуса компонента
          * @param {React.FocusEvent} event
          */
-        onBlur: Type.func
+        onBlur: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     state = {
@@ -70,6 +72,7 @@ class Toggle extends React.Component {
                 onMouseDown={ this.handleUnfocus }
                 onMouseUp={ this.handleUnfocus }
                 htmlFor={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('wrapper') }>
                     <input

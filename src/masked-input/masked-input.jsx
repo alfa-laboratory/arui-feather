@@ -83,7 +83,9 @@ class MaskedInput extends React.Component {
          */
         onProcessInputEvent: Type.func,
         /** Признак что пробелы удалять не надо */
-        useWhitespaces: Type.bool
+        useWhitespaces: Type.bool,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     /**

@@ -10,6 +10,9 @@ const PROP_SETS = [
     {
         view: 'lead',
         mark: 'Ex'
+    },
+    {
+        view: 'small'
     }
 ];
 

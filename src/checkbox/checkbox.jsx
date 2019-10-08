@@ -84,7 +84,9 @@ class CheckBox extends React.Component {
          * Обработчик события снятия курсора с чекбокса
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -125,6 +127,7 @@ class CheckBox extends React.Component {
                 ref={ (root) => {
                     this.root = root;
                 } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.type === 'button'
                     ? this.renderButtonCheckbox(cn, checked, TagButton)

@@ -1,4 +1,5 @@
 ```jsx
+import GridRow from 'arui-feather/grid-row';
 const style = {
     height: 30,
     lineHeight: '30px',
@@ -66,6 +67,7 @@ const style = {
 Сетку можно настроить для каждой контрольной точки для построения сложного адаптивного интерфейса.
 
 ```jsx
+import GridRow from 'arui-feather/grid-row';
 const style = {
     height: 30,
     lineHeight: '30px',
@@ -92,6 +94,7 @@ const style = {
 ### Вертикальное выравнивание
 
 ```jsx
+import GridRow from 'arui-feather/grid-row';
 const style = {
     height: 30,
     background: '#ff5c5c'
@@ -115,6 +118,7 @@ const style = {
 ### Изменение порядка элементов
 
 ```jsx
+import GridRow from 'arui-feather/grid-row';
 const style = {
     height: 30,
     lineHeight: '30px',
@@ -140,6 +144,7 @@ const style = {
 ### Смещение колонок
 
 ```jsx
+import GridRow from 'arui-feather/grid-row';
 const style = {
     height: 30,
     lineHeight: '30px',

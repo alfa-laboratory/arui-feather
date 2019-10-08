@@ -31,7 +31,9 @@ class SlideDown extends React.Component {
         /** Обработчик события начала анимации */
         onAnimationStart: Type.func,
         /** Обработчик события окончания анимации */
-        onAnimationEnd: Type.func
+        onAnimationEnd: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     state = {
@@ -65,6 +67,7 @@ class SlideDown extends React.Component {
                 }
                 onTransitionEnd={ this.handleTransitionEnd }
                 ref={ (slideDown) => { this.slideDown = slideDown; } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     className={ cn('content', { expanded: this.state.isHeightAuto }) }

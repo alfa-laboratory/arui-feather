@@ -24,6 +24,8 @@ exports[`intl-phone-input renders without problems 1`] = `
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -76,6 +78,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -128,6 +132,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -180,6 +186,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -232,6 +240,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}

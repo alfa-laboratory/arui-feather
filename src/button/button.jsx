@@ -157,7 +157,6 @@ class Button extends React.Component {
             tabIndex: this.props.disabled ? '-1' : this.props.tabIndex,
             disabled: this.props.disabled,
             formNoValidate: isButton ? this.props.formNoValidate : null,
-            'data-test-id': this.props['data-test-id'],
             className: cn({
                 disabled: this.props.disabled,
                 pseudo: this.props.pseudo,
@@ -179,7 +178,8 @@ class Button extends React.Component {
             onMouseUp: this.handleMouseUp,
             onMouseOut: this.handleMouseOut,
             onKeyDown: this.handleKeyDown,
-            onKeyUp: this.handleKeyUp
+            onKeyUp: this.handleKeyUp,
+            'data-test-id': this.props['data-test-id']
         };
 
         let buttonContent = [

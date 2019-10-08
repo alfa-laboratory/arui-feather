@@ -1,4 +1,6 @@
 ```jsx
+import TabItem from 'arui-feather/tab-item';
+
 initialState = {
     page: '/about'
 };

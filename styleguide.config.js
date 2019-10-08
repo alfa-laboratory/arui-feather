@@ -21,18 +21,22 @@ const TITLE = 'arui-feather';
 
 const getContext = source =>
     readdirSync(source)
-        .filter(name => !['lib', 'mq', 'vars', 'font'].includes(name)) // TODO: find simple way to check it's component
+        .filter(name => !['lib', 'mq', 'vars', 'font', 'skeleton-mixins'].includes(name))
         .map(name => path.join(source, name))
         .filter(file => lstatSync(file).isDirectory())
-        .reduce((prev, componentDirName) => {
-            const componentSourcesFileName = componentDirName.split(path.sep).pop();
-            const componentName = upperCamelCase(componentSourcesFileName);
-            prev[componentName] = componentDirName;
-            return prev;
-        }, {});
+        .reduce(
+            (prev, componentDirName) => {
+                const componentSourcesFileName = componentDirName.split(path.sep).pop();
+                const componentName = upperCamelCase(componentSourcesFileName);
+                prev[componentName] = componentDirName;
+                return prev;
+            },
+            {
+                PreviewFrame: 'arui-demo/preview-frame'
+            }
+        );
 
 const context = getContext(path.join(__dirname, 'src'));
-
 
 module.exports = {
     ...config,
@@ -40,6 +44,8 @@ module.exports = {
     version,
     serverPort: PORT,
     skipComponentsWithoutExample: true,
+    components: './src/*/index.{ts,js}',
+
     propsParser(filePath) {
         return reactDoc(filePath);
     },
@@ -58,34 +64,30 @@ module.exports = {
     },
     context,
     styleguideDir: path.resolve(__dirname, './demo/styleguide/'),
-    template: {
-        head: {
-            scripts: [
-                {
-                    async: true,
-                    src: 'https://www.googletagmanager.com/gtag/js?id=UA-112533775-1'
-                }
-            ],
-            raw: `
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'UA-112533775-1');
-                </script>
-            `
-        },
-        favicon: 'https://design.alfabank.ru/assets/favicon.ico'
-    },
     webpackConfig: merge.smart(WEBPACK_BASE_TEMPLATE, {
+        resolve: {
+            extensions: ['.ts', '.tsx']
+        },
         devServer: {
             disableHostCheck: true
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(ico|xml)$/i,
+                    loader: 'file-loader'
+                },
+                {
+                    test: /\.tsx?/i,
+                    loader: 'ts-loader'
+                }
+            ]
         }
     }),
     sections: [
         {
             title: 'Components',
-            components: './src/*/index.js',
+            components: ['./src/*/index.js', './src/*/index.ts'],
             sectionDepth: 1
         }
     ]

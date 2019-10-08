@@ -135,7 +135,7 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-frame-component": "2.0.2",
-    "react-styleguidist": "9.0.8",
+    "react-styleguidist": "9.1.16",
     "region-flags": "1.1.0",
     "style-loader": "^0.23.1",
     "svgo": "1.0.5",

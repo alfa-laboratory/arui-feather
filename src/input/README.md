@@ -183,7 +183,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 
 Новые экспериментальные (type="filled")
 ```jsx
-const Icon = require('../../src/icon/ui/info').default;
+const InputIcon = require('../../src/icon/ui/info').default;
 
 const autocompleteOptions = [
     { value: 'Facebook' },
@@ -242,7 +242,7 @@ const selectOptions = [
             view='filled'
             size='m'
             icon={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -253,7 +253,7 @@ const selectOptions = [
             view='filled'
             size='m'
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -264,7 +264,7 @@ const selectOptions = [
             view='filled'
             size='m'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -275,10 +275,10 @@ const selectOptions = [
             view='filled'
             size='m'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -289,13 +289,13 @@ const selectOptions = [
             view='filled'
             size='m'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
             icon={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>

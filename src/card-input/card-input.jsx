@@ -22,7 +22,9 @@ class CardInput extends React.Component {
     static propTypes = {
         ...Input.propTypes,
         /** Подсказка в текстовом поле */
-        placeholder: Type.string
+        placeholder: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {

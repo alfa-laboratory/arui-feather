@@ -26,7 +26,9 @@ class Label extends React.Component {
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Управление возможностью рендерить компонент в одну сроку */
-        isNoWrap: Type.bool
+        isNoWrap: Type.bool,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -42,6 +44,7 @@ class Label extends React.Component {
                     'no-wrap': this.props.isNoWrap
                 }) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     { this.props.children }

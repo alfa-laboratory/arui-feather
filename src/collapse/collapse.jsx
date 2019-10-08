@@ -39,7 +39,9 @@ class Collapse extends React.Component {
          * Обработчик смены состояний `expanded/collapsed`
          * @param {boolean} isExpanded
          */
-        onExpandedChange: Type.func
+        onExpandedChange: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -79,6 +81,7 @@ class Collapse extends React.Component {
                     expanded
                 }) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     ref={ (content) => { this.content = content; } }

@@ -1,3 +1,41 @@
+<a name="14.5.0"></a>
+# [14.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.4.0...v14.5.0) (2019-09-25)
+
+
+### Features
+
+* **paragraph:** small size ([#852](https://github.com/alfa-laboratory/arui-feather/issues/852)) ([0628a38](https://github.com/alfa-laboratory/arui-feather/commit/0628a38))
+
+
+
+<a name="14.4.0"></a>
+# [14.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.3.0...v14.4.0) (2019-09-19)
+
+
+### Features
+
+* added data-test-id property to all components (for autotests) ([#850](https://github.com/alfa-laboratory/arui-feather/issues/850)) ([599bcf4](https://github.com/alfa-laboratory/arui-feather/commit/599bcf4))
+
+
+
+<a name="14.3.0"></a>
+# [14.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.2.0...v14.3.0) (2019-09-12)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** fixed focus ([#845](https://github.com/alfa-laboratory/arui-feather/issues/845)) ([94d4199](https://github.com/alfa-laboratory/arui-feather/commit/94d4199))
+* **tab-button:** checked focused styles ([#846](https://github.com/alfa-laboratory/arui-feather/issues/846)) ([e7eb592](https://github.com/alfa-laboratory/arui-feather/commit/e7eb592))
+
+
+### Features
+
+* Upgraded peerDependency react version to 16.2; Removed IS_REACT_16 checking in popup.jsx ([e55bbaa](https://github.com/alfa-laboratory/arui-feather/commit/e55bbaa))
+* **input,textarea,select:** fixed styles for label ([#849](https://github.com/alfa-laboratory/arui-feather/issues/849)) ([71adad5](https://github.com/alfa-laboratory/arui-feather/commit/71adad5))
+* **select:** new checked icon, larger arrow icon for filled view ([#847](https://github.com/alfa-laboratory/arui-feather/issues/847)) ([4d173be](https://github.com/alfa-laboratory/arui-feather/commit/4d173be))
+
+
+
 <a name="14.2.0"></a>
 # [14.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.1.0...v14.2.0) (2019-08-15)
 

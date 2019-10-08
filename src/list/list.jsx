@@ -29,7 +29,9 @@ class List extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     render(cn) {
@@ -48,7 +50,8 @@ class List extends React.Component {
             className: cn({
                 type: this.props.type
             }),
-            id: this.props.id
+            id: this.props.id,
+            'data-test-id': this.props['data-test-id']
         };
 
         return React.createElement(

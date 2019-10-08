@@ -16,7 +16,9 @@ class ProgressBar extends React.Component {
         /** Размер компонента */
         size: Type.oneOf(['m']),
         /** Дополнительный класс */
-        className: Type.string
+        className: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -28,7 +30,10 @@ class ProgressBar extends React.Component {
         const styles = { width: `${this.props.percent}%` };
 
         return (
-            <div className={ cn({ size: this.props.size }) }>
+            <div
+                className={ cn({ size: this.props.size }) }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 <div
                     style={ styles }
                     className={ cn('current-value') }

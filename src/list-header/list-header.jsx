@@ -23,12 +23,17 @@ class ListHeader extends React.Component {
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /** Вид компонента */
-        view: Type.oneOf(['transparent', 'filled'])
+        view: Type.oneOf(['transparent', 'filled']),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     render(cn) {
         return (
-            <div className={ cn({ filled: this.props.view === 'filled' }) }>
+            <div
+                className={ cn({ filled: this.props.view === 'filled' }) }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 <span className={ cn('title') }>{ this.props.title }</span>
                 { this.props.description && <span className={ cn('description') }>, { this.props.description }</span> }
             </div>

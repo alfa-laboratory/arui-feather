@@ -25,7 +25,9 @@ class FormField extends React.Component {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -37,6 +39,7 @@ class FormField extends React.Component {
             <div
                 className={ cn({ size: this.props.size }) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.children }
             </div>

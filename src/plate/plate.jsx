@@ -48,7 +48,9 @@ class Plate extends React.Component {
          * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
          * @param {React.KeyboardEvent} event
          */
-        onKeyDown: Type.func
+        onKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -77,6 +79,7 @@ class Plate extends React.Component {
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
                     ref={ (node) => { this.root = node; } }
+                    data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ cn('content') }>
                         { this.props.children }

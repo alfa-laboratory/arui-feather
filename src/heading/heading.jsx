@@ -32,7 +32,9 @@ class Heading extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -44,7 +46,8 @@ class Heading extends React.Component {
             className: cn({
                 size: this.props.size
             }),
-            id: this.props.id
+            id: this.props.id,
+            'data-test-id': this.props['data-test-id']
         };
 
         return React.createElement(`h${HEADING_LEVEL[this.props.size]}`,

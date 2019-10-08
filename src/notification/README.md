@@ -1,5 +1,7 @@
 Всплывающее окно слева
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -23,6 +25,8 @@ initialState = {
 
 Всплывающее окно справа
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -46,6 +50,8 @@ initialState = {
 
 Всплывающее окно с ошибкой
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -69,7 +75,8 @@ initialState = {
 
 Сообщение с иконкой
 ```jsx
-const IconCalendar = require('../../src/icon/entity/calendar').default;
+import Button from 'arui-feather/button';
+import IconCalendar from 'arui-feather/icon/entity/calendar';
 
 initialState = {
     visible: false
@@ -95,6 +102,8 @@ initialState = {
 
 Уведомление закрывается по клику снаружи компонента
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };

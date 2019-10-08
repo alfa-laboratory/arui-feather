@@ -1,4 +1,9 @@
 ```jsx
+import Button from 'arui-feather/button';
+import Paragraph from 'arui-feather/paragraph';
+import Label from 'arui-feather/label';
+import Link from 'arui-feather/link';
+
 class PopupDemo extends React.Component {
     constructor() {
         super();

@@ -21,6 +21,8 @@ class Textarea extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
+        /** Тип поля (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Управление автозаполнением компонента */
@@ -98,10 +100,13 @@ class Textarea extends React.Component {
          * Обработчик события keyDown
          * @param {React.KeyboardEvent} event
          */
-        onKeyDown: Type.func
+        onKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
+        view: 'default',
         width: 'default',
         autocomplete: true,
         disabled: false,
@@ -156,6 +161,7 @@ class Textarea extends React.Component {
                     focused: this.state.focused,
                     autosize: this.props.autosize,
                     size: this.props.size,
+                    view: this.props.view,
                     width: this.props.width,
                     resize: this.props.resize,
                     invalid: !!this.props.error,
@@ -163,6 +169,7 @@ class Textarea extends React.Component {
                     'has-value': !!value
                 }) }
                 ref={ (root) => { this.root = root; } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     {

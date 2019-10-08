@@ -25,7 +25,9 @@ export default class Tabs extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -34,7 +36,11 @@ export default class Tabs extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn({ scrollable: this.props.scrollable }) } id={ this.props.id }>
+            <div
+                className={ cn({ scrollable: this.props.scrollable }) }
+                id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 <div className={ cn('panel') }>
                     <div className={ cn('content') }>
                         { this.props.children }

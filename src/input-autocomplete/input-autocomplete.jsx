@@ -72,7 +72,9 @@ class InputAutocomplete extends React.Component {
          */
         onItemSelect: Type.func,
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
-        closeOnSelect: Type.bool
+        closeOnSelect: Type.bool,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {

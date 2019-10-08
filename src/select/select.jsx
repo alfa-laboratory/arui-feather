@@ -53,6 +53,8 @@ class Select extends React.Component {
         mode: Type.oneOf(['check', 'radio', 'radio-check']),
         /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
         groupView: Type.oneOf(['default', 'line']),
+        /** Тип поля (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -186,7 +188,9 @@ class Select extends React.Component {
         /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
         renderButtonContent: Type.func,
         /** Максимальная высота попапа */
-        maxHeight: Type.number
+        maxHeight: Type.number,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -195,6 +199,7 @@ class Select extends React.Component {
         disabled: false,
         size: 'm',
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
+        view: 'default',
         width: 'default',
         equalPopupWidth: false,
         options: [],
@@ -287,6 +292,7 @@ class Select extends React.Component {
                 className={ cn({
                     mode: this.props.mode,
                     size: this.props.size,
+                    view: this.props.view,
                     width: this.props.width,
                     checked: value.length > 0,
                     disabled: this.props.disabled,
@@ -300,6 +306,7 @@ class Select extends React.Component {
                 ref={ (root) => {
                     this.root = root;
                 } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value } />
@@ -342,7 +349,7 @@ class Select extends React.Component {
         switch (this.props.size) {
             case 's':
             case 'm':
-                tickSize = 's';
+                tickSize = this.props.view === 'filled' ? 'l' : 's';
                 break;
             case 'l':
                 tickSize = 'm';

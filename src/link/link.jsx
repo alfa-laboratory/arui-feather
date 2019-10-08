@@ -74,7 +74,9 @@ class Link extends React.Component {
         /**
          * Обработчик клика по disabled ссылке
          */
-        onDisabledClick: Type.func
+        onDisabledClick: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -118,7 +120,8 @@ class Link extends React.Component {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave
+            onMouseLeave: this.handleMouseLeave,
+            'data-test-id': this.props['data-test-id']
         };
 
         if (this.props.target === '_blank') {

@@ -105,7 +105,9 @@ class Calendar extends React.Component {
          * Обработчик снятия фокуса
          * @param {React.FocusEvent} event
          */
-        onBlur: Type.func
+        onBlur: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -121,6 +123,10 @@ class Calendar extends React.Component {
         showArrows: true,
         isKeyboard: true
     };
+
+    state = {
+        month: startOfMonth(new Date())
+    }
 
     /**
      * @type {HTMLDivElement}
@@ -163,6 +169,7 @@ class Calendar extends React.Component {
                 onFocus={ this.handleFocus }
                 onKeyDown={ this.props.isKeyboard && this.handleKeyDown }
                 onKeyUp={ this.props.isKeyboard && this.handleKeyUp }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.renderTitle(cn) }
                 <table className={ cn('layout') }>

@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "13.13.0",
+  "version": "14.5.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -65,20 +65,12 @@
   },
   "maintainers": [
     {
-      "email": "vgalakhov@alfabank.ru",
-      "name": "Vitaliy Green"
+      "email": "esergeev2@alfabank.ru",
+      "name": "Evgeny Sergeev"
     },
     {
       "email": "akitov@alfabank.ru",
       "name": "Alexander Kitov"
-    },
-    {
-      "email": "dteryaev@alfabank.ru",
-      "name": "Mitya Teryaew"
-    },
-    {
-      "email": "dvolkov2@alfabank.ru",
-      "name": "Daniil Volkov"
     }
   ],
   "author": "Good guys from Alfa Laboratory",
@@ -109,10 +101,10 @@
   },
   "devDependencies": {
     "acorn": "^6.1.1",
-    "arui-demo": "1.0.2",
+    "arui-demo": "2.0.0",
     "arui-presets": "^4.13.4",
     "babel-loader": "^7.1.2",
-    "alfa-ui-primitives": "1.12.0",
+    "alfa-ui-primitives": "1.13.0",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "conventional-changelog-cli": "1.3.14",
     "conventional-github-releaser": "2.0.0",
@@ -131,7 +123,7 @@
     "gulp-imagemin": "4.1.0",
     "gulp-rename": "1.2.2",
     "gulp.spritesmith": "6.9.0",
-    "handlebars": "4.0.11",
+    "handlebars": "4.1.2",
     "html-reporter": "2.12.3",
     "husky": "0.14.3",
     "jest": "^23.2.0",

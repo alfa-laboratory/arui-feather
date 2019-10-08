@@ -58,7 +58,9 @@ class RadioGroup extends React.Component {
          * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
          * @param {string} value
          */
-        onChange: Type.func
+        onChange: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -122,6 +124,7 @@ class RadioGroup extends React.Component {
                 tabIndex='-1'
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ cn('inner') }>
                     {

@@ -65,7 +65,9 @@ export default class GridCol extends React.PureComponent {
         /** Html тег компонента. */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */
-        children: Type.node
+        children: Type.node,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     }
 
     static defaultProps = {

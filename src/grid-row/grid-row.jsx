@@ -46,7 +46,9 @@ export default class GridRow extends React.PureComponent {
          */
         tag: Type.string,
         /** Дочерние элементы `GridRow` */
-        children: Type.node
+        children: Type.node,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     }
 
     static defaultProps = {

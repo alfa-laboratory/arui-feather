@@ -88,6 +88,8 @@ class IntlPhoneInput extends React.Component {
                         onChange={ this.handleSelectChange }
                         onClick={ this.handleSelectClick }
                         onFocus={ this.handleSelectFocus }
+                        onButtonFocus={ this.handleSelectButtonFocus }
+                        onButtonBlur={ this.handleSelectButtonBlur }
                     />
                 }
                 noValidate={ true }
@@ -127,7 +129,19 @@ class IntlPhoneInput extends React.Component {
     }
 
     @autobind
+    handleSelectButtonFocus() {
+        this.setState({
+            selectFocused: true
+        });
+    }
+
+    @autobind
     handleSelectBlur(event) {
+        this.resolveFocusedState({ selectFocused: false }, event);
+    }
+
+    @autobind
+    handleSelectButtonBlur(event) {
         this.resolveFocusedState({ selectFocused: false }, event);
     }
 
@@ -226,18 +240,23 @@ class IntlPhoneInput extends React.Component {
         let relatedTarget = getRelatedTarget(event);
         let hasMatchedRelatedTarget = relatedTarget === event.target;
         let hasSelectRelatedTarget = false;
+        let isSwitchBetweenRelatedTargers = false;
 
         // Check classNames matching in select's button (relatedTarget) & menu (focused target)
         if (relatedTarget.classList && event.target.classList) {
             hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
                 Array.from(event.target.classList).some(item => /select/.test(item));
+
+            isSwitchBetweenRelatedTargers =
+                !Object.values(focusedState).some(item => item) &&
+                !Array.from(event.target.classList).some(item => /select/.test(item)) &&
+                Array.from(relatedTarget.classList).some(item => /select/.test(item));
         }
 
         if (event.type === 'focus') {
-            if (hasMatchedRelatedTarget || hasSelectRelatedTarget) {
+            if (hasMatchedRelatedTarget || hasSelectRelatedTarget || isSwitchBetweenRelatedTargers) {
                 // If we have smth already focused, do not do anything
                 let alreadyInFocus = Object.values(focusedState).some(item => item);
-
                 if (!alreadyInFocus) {
                     this.setState(nextFocusedStateItem);
 
@@ -249,7 +268,7 @@ class IntlPhoneInput extends React.Component {
         }
 
         if (event.type === 'blur') {
-            if (relatedTarget === document.body) {
+            if (!hasMatchedRelatedTarget) {
                 // Set all values in focusedState to false cause we are blurring now
                 this.setState(
                     Object.keys(focusedState).reduce((result, item) => {

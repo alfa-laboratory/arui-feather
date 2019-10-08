@@ -51,7 +51,9 @@ class Amount extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -74,7 +76,11 @@ class Amount extends React.Component {
         );
 
         return (
-            <div className={ cn({ bold: this.props.bold }) } id={ this.props.id }>
+            <div
+                className={ cn({ bold: this.props.bold }) }
+                id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 { this.props.isHeading ? (
                     <Heading size={ size }>{ amountInner }</Heading>
                 ) : (

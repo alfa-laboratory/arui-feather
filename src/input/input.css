@@ -32,7 +32,7 @@
         position: relative;
         user-select: none;
         transition-duration: 250ms;
-        transition-property: border-bottom-color, box-shadow, width;
+        transition-property: border-bottom-color, box-shadow, width, background-color;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
         -webkit-touch-callout: none;
     }
@@ -49,7 +49,7 @@
         transform: scale(1) translateY(0);
         transform-origin: 0 100%;
         transition-duration: 200ms;
-        transition-property: color, transform;
+        transition-property: color, transform, font-size;
         transition-timing-function: cubic-bezier(.25, .1, .25, 1);
     }
 
@@ -260,6 +260,7 @@
     &.input_has-value {
         .input__top {
             transform: scale(var(--top-scale-s)) translateY(-22px);
+            width: calc((2 - var(--top-scale-s)) * 100)%;
         }
     }
 
@@ -305,6 +306,7 @@
     &.input_has-value {
         .input__top {
             transform: scale(var(--top-scale-m)) translateY(-30px);
+            width: calc((2 - var(--top-scale-m)) * 100)%;
         }
     }
 
@@ -350,6 +352,7 @@
     &.input_has-value {
         .input__top {
             transform: scale(var(--top-scale-l)) translateY(-40px);
+            width: calc((2 - var(--top-scale-l)) * 100)%;
         }
     }
 
@@ -395,6 +398,7 @@
     &.input_has-value {
         .input__top {
             transform: scale(var(--top-scale-xl)) translateY(-50px);
+            width: calc((2 - var(--top-scale-xl)) * 100)%;
         }
     }
 
@@ -430,4 +434,175 @@
 /* IE fix for input with label and placeholder */
 .input_has-label .input__control:-ms-input-placeholder {
     opacity: 0;
+}
+
+.input_view_filled {
+    .input__top {
+        padding: 0 12px;
+        line-height: 56px;
+        transform-origin: 0 50%;
+    }
+
+    .input__box {
+        height: 56px;
+        padding: 0 12px;
+        border-bottom-color: rgba(11, 31, 53, 0.15);
+        background-color: rgba(11, 31, 53, 0.05);
+        border-radius: 4px 4px 0 0;
+
+        &:hover {
+            background-color: rgba(11, 31, 53, 0.1);
+            border-color: rgba(11, 31, 53, 0.6);
+        }
+    }
+
+    .input__top,
+    .input__box {
+        font-size: var(--font-size-m);
+    }
+
+    &__sub {
+        padding-top: 4px;
+        padding-right: 12px;
+        font-size: var(--font-size-s);
+        line-height: 1.2;
+    }
+
+    .input__top,
+    .input__sub {
+        color: rgba(11, 31, 53, 0.6);
+    }
+
+    .input__control {
+        min-height: 55px;
+        padding: 8px 0;
+        color: rgba(11, 31, 53, 1);
+
+        &::placeholder {
+            color: rgba(11, 31, 53, 0.6);
+        }
+
+        /*
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
+        }
+        */
+    }
+
+    &.input_focused {
+        .input__box {
+            border-bottom-color: rgba(11, 31, 53, 1);
+            box-shadow: inset 0 -1px 0 rgba(11, 31, 53, 1);
+        }
+    }
+
+    &.input_has-label {
+        padding-top: 0;
+
+        .input__control {
+            padding-top: 26px;
+            padding-bottom: 8px;
+        }
+
+        .input__control::placeholder {
+            color: transparent;
+        }
+
+        &.input_focused {
+            .input__control::placeholder {
+                color: rgba(11, 31, 53, 0.6);
+            }
+        }
+    }
+
+    &.input_focused,
+    &.input_has-value {
+        .input__top {
+            font-size: 13px;
+            transform: translateY(-12px);
+            width: auto;
+        }
+    }
+
+    &.input_has-icon,
+    &.input_has-clear {
+        .input__icon,
+        .input__clear {
+            top: 50%;
+            width: 48px;
+            height: 48px;
+            margin-top: -24px;
+        }
+
+        .input__box {
+            padding-right: 48px;
+        }
+    }
+
+    &.input_has-addons {
+        .input__addons_left + .input__control {
+            padding-right: var(--gap-s);
+        }
+
+        .input__control {
+            padding-left: var(--gap-s);
+            padding-right: var(--gap-s);
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .input__box {
+            height: 56px;
+        }
+    }
+
+    &.input_has-left-addons {
+        .input__top {
+            padding-left: 48px;
+        }
+    }
+
+    &.input_disabled {
+        .input__box {
+            background-color: rgba(11, 31, 53, 0.1);
+            border-bottom-color: rgba(11, 31, 53, 0.15);
+            border-bottom-style: var(--border-style-control-disabled);
+            box-shadow: none;
+        }
+
+        .input__control {
+            color: rgba(11, 31, 53, 0.6);
+        }
+
+        .input__top, .input__control::placeholder {
+            color: rgba(11, 31, 53, 0.3);
+        }
+    }
+
+    &.input_invalid {
+        .input__sub {
+            color: var(--color-error);
+        }
+
+        .input__box {
+            border-bottom-color: var(--color-error);
+            box-shadow: inset 0 -1px 0 var(--color-error);
+        }
+
+        &.input_focused {
+            .input__box {
+                border-bottom-color: var(--color-error);
+                box-shadow: inset 0 -1px 0 var(--color-error);
+            }
+        }
+    }
 }

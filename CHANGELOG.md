@@ -1,3 +1,98 @@
+<a name="14.5.0"></a>
+# [14.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.4.0...v14.5.0) (2019-09-25)
+
+
+### Features
+
+* **paragraph:** small size ([#852](https://github.com/alfa-laboratory/arui-feather/issues/852)) ([0628a38](https://github.com/alfa-laboratory/arui-feather/commit/0628a38))
+
+
+
+<a name="14.4.0"></a>
+# [14.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.3.0...v14.4.0) (2019-09-19)
+
+
+### Features
+
+* added data-test-id property to all components (for autotests) ([#850](https://github.com/alfa-laboratory/arui-feather/issues/850)) ([599bcf4](https://github.com/alfa-laboratory/arui-feather/commit/599bcf4))
+
+
+
+<a name="14.3.0"></a>
+# [14.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.2.0...v14.3.0) (2019-09-12)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** fixed focus ([#845](https://github.com/alfa-laboratory/arui-feather/issues/845)) ([94d4199](https://github.com/alfa-laboratory/arui-feather/commit/94d4199))
+* **tab-button:** checked focused styles ([#846](https://github.com/alfa-laboratory/arui-feather/issues/846)) ([e7eb592](https://github.com/alfa-laboratory/arui-feather/commit/e7eb592))
+
+
+### Features
+
+* Upgraded peerDependency react version to 16.2; Removed IS_REACT_16 checking in popup.jsx ([e55bbaa](https://github.com/alfa-laboratory/arui-feather/commit/e55bbaa))
+* **input,textarea,select:** fixed styles for label ([#849](https://github.com/alfa-laboratory/arui-feather/issues/849)) ([71adad5](https://github.com/alfa-laboratory/arui-feather/commit/71adad5))
+* **select:** new checked icon, larger arrow icon for filled view ([#847](https://github.com/alfa-laboratory/arui-feather/issues/847)) ([4d173be](https://github.com/alfa-laboratory/arui-feather/commit/4d173be))
+
+
+
+<a name="14.2.0"></a>
+# [14.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.1.0...v14.2.0) (2019-08-15)
+
+
+### Bug Fixes
+
+* **input:** incorrect disabled input styles ([#781](https://github.com/alfa-laboratory/arui-feather/issues/781)) ([#835](https://github.com/alfa-laboratory/arui-feather/issues/835)) ([1a8a0c1](https://github.com/alfa-laboratory/arui-feather/commit/1a8a0c1))
+* **masked-input:** caret position if mask changes ([#837](https://github.com/alfa-laboratory/arui-feather/issues/837)) ([5598a33](https://github.com/alfa-laboratory/arui-feather/commit/5598a33))
+* **money-input:** fixed MoneyInput view=filled ([#843](https://github.com/alfa-laboratory/arui-feather/issues/843)) ([e71b17f](https://github.com/alfa-laboratory/arui-feather/commit/e71b17f))
+
+
+### Features
+
+* latest icons and colors from alfa-ui-primitives 1.13.0 ([#842](https://github.com/alfa-laboratory/arui-feather/issues/842)) ([89e709b](https://github.com/alfa-laboratory/arui-feather/commit/89e709b))
+
+
+
+<a name="14.1.0"></a>
+# [14.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.0.0...v14.1.0) (2019-08-09)
+
+
+### Bug Fixes
+
+* **money-input:** label and currency style fix ([#838](https://github.com/alfa-laboratory/arui-feather/issues/838)) ([02c53a4](https://github.com/alfa-laboratory/arui-feather/commit/02c53a4))
+* **select:** underline style with select error ([#836](https://github.com/alfa-laboratory/arui-feather/issues/836)) ([d9a74c2](https://github.com/alfa-laboratory/arui-feather/commit/d9a74c2))
+* **tab-item:** fix opacity for checked Tabitem ([a7c4ccf](https://github.com/alfa-laboratory/arui-feather/commit/a7c4ccf))
+
+
+### Features
+
+* **input-autocomplete:** add full text filtering ([#840](https://github.com/alfa-laboratory/arui-feather/issues/840)) ([8f46c6b](https://github.com/alfa-laboratory/arui-feather/commit/8f46c6b))
+
+
+
+<a name="14.0.0"></a>
+# [14.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.13.1...v14.0.0) (2019-07-12)
+
+
+### Features
+
+* new experimental input styles ([#812](https://github.com/alfa-laboratory/arui-feather/issues/812)) ([639c009](https://github.com/alfa-laboratory/arui-feather/commit/639c009))
+* **mq:** breakpoint vars ([#832](https://github.com/alfa-laboratory/arui-feather/issues/832)) ([b79a17e](https://github.com/alfa-laboratory/arui-feather/commit/b79a17e))
+* **notification:** new notification styles ([#828](https://github.com/alfa-laboratory/arui-feather/issues/828)) ([8d4a944](https://github.com/alfa-laboratory/arui-feather/commit/8d4a944))
+* **toggle:** introducing toggle component ([#829](https://github.com/alfa-laboratory/arui-feather/issues/829)) ([4e356f2](https://github.com/alfa-laboratory/arui-feather/commit/4e356f2))
+
+
+
+<a name="13.13.1"></a>
+## [13.13.1](https://github.com/alfa-laboratory/arui-feather/compare/v13.13.0...v13.13.1) (2019-07-10)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 1.12.1 ([#833](https://github.com/alfa-laboratory/arui-feather/issues/833)) ([aa7c16f](https://github.com/alfa-laboratory/arui-feather/commit/aa7c16f))
+
+
+
 <a name="13.13.0"></a>
 # [13.13.0](https://github.com/alfa-laboratory/arui-feather/compare/v13.12.1...v13.13.0) (2019-07-01)
 

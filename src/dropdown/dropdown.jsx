@@ -98,7 +98,9 @@ class Dropdown extends React.Component {
          * Обработчик события клика попапа за пределами попапа
          * @param {React.MouseEvent} event
          */
-        onPopupClickOutside: Type.func
+        onPopupClickOutside: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -126,7 +128,11 @@ class Dropdown extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn() } id={ this.props.id }>
+            <div
+                className={ cn() }
+                id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 { this.renderSwitcher(cn) }
                 { this.renderPopup(cn) }
             </div>

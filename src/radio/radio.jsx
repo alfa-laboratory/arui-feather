@@ -82,7 +82,9 @@ class Radio extends React.Component {
          * Обработчик события снятия курсора с радио-кнопки
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -126,6 +128,7 @@ class Radio extends React.Component {
                 ref={ (label) => {
                     this.label = label;
                 } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.type === 'button'
                     ? this.renderButtonRadio(cn, checked, TagButton)

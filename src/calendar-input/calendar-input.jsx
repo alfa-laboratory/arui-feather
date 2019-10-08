@@ -76,6 +76,8 @@ class CalendarInput extends React.Component {
         }),
         /** Управление возможностью раскрытия календаря */
         opened: Type.bool,
+        /** Тип инпута (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Направления, в которые может открываться попап компонента */
@@ -167,7 +169,9 @@ class CalendarInput extends React.Component {
          * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле
          * @param {React.KeyboardEvent} event
          */
-        onInputKeyDown: Type.func
+        onInputKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -279,6 +283,7 @@ class CalendarInput extends React.Component {
         return (
             <span
                 className={ cn({ width: this.props.width }) }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span
                     { ...wrapperProps }
@@ -323,6 +328,7 @@ class CalendarInput extends React.Component {
                         hint={ this.props.hint }
                         error={ this.props.error }
                         value={ value }
+                        view={ this.props.view }
                         width={ this.props.width }
                         id={ this.props.id }
                         name={ this.props.name }

@@ -15,6 +15,19 @@
     --content-width: 1094px;
 
     /**
+     * Брейкпоинты
+     */
+    --mobile-s: 320px;
+    --mobile-m: 375px;
+    --mobile-l: 412px;
+    --tablet-s: 600px;
+    --tablet-m: 768px;
+    --desktop-s: 1024px;
+    --desktop-m: 1280px;
+    --desktop-l: 1440px;
+    --desktop-xl: 1920px;
+
+    /**
      * Система отступов
      * https://github.com/alfa-laboratory/arui-feather/blob/master/GUIDE.md
      */

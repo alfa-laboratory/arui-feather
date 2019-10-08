@@ -109,7 +109,7 @@
 
     &.menu_mode_check {
         .menu-item_checked .icon {
-            top: 13px;
+            top: 12px;
             left: 8px;
         }
     }

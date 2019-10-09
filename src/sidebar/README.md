@@ -1,5 +1,10 @@
 Сайдбар
 ```jsx
+import Button from 'arui-feather/button';
+import Heading from 'arui-feather/heading';
+import Input from 'arui-feather/input';
+import Paragraph from 'arui-feather/paragraph';
+
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
 }
@@ -49,6 +54,13 @@ initialState = {
 
 Сайдбар с кнопкой в шапке сайдбара (используется только в мобильной версии)
 ```jsx
+import Button from 'arui-feather/button';
+import Heading from 'arui-feather/heading';
+import RadioGroup from 'arui-feather/radio-group';
+import Radio from 'arui-feather/radio';
+import CheckBoxGroup from 'arui-feather/checkbox-group';
+import CheckBox from 'arui-feather/checkbox';
+
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
 }

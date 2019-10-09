@@ -1,4 +1,6 @@
 ```jsx
+import Heading from 'arui-feather/heading';
+
 const MENU_1 = [
     {
         type: 'item',

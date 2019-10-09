@@ -415,7 +415,7 @@ const selectOptions = [
 
 Новые экспериментальные (type="filled", size="s")
 ```jsx
-const Icon = require('../../src/icon/ui/info').default;
+const InputIcon = require('../../src/icon/ui/info').default;
 
 const autocompleteOptions = [
     { value: 'Facebook' },
@@ -474,7 +474,7 @@ const selectOptions = [
             view='filled'
             size='s'
             icon={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -485,7 +485,7 @@ const selectOptions = [
             view='filled'
             size='s'
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -496,7 +496,7 @@ const selectOptions = [
             view='filled'
             size='s'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -507,10 +507,10 @@ const selectOptions = [
             view='filled'
             size='s'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -521,13 +521,13 @@ const selectOptions = [
             view='filled'
             size='s'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
             icon={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>

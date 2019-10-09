@@ -76,7 +76,7 @@
         flex: 0 0 auto;
         position: relative;
         background-color: var(--color-dark-indigo-30);
-        opacity: 0.8;
+        opacity: 0.85;
         cursor: pointer;
         transition: 0.2s;
 
@@ -84,7 +84,7 @@
             display: inline-block;
             vertical-align: top;
             float: right;
-            background-color: #ef3124;
+            background-color: var(--color-red-brand);
             opacity: 0;
             transition: 0.2s;
             content: '';

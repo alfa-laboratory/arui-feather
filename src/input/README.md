@@ -1,4 +1,7 @@
 ```jsx
+import Radio from 'arui-feather/radio';
+import RadioGroup from 'arui-feather/radio-group';
+
 initialState = {
     money: ''
 };
@@ -135,7 +138,7 @@ initialState = {
 
 С произвольной иконкой
 ```jsx
-const IconOk = require('../../src/icon/ui/ok').default;
+import IconOk from 'arui-feather/icon/ui/ok';
 
 const sizes = ['s', 'm', 'l', 'xl'];
 <div>
@@ -180,7 +183,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 
 Новые экспериментальные (type="filled")
 ```jsx
-const Icon = require('../../src/icon/ui/info').default;
+const InputIcon = require('../../src/icon/ui/info').default;
 
 const autocompleteOptions = [
     { value: 'Facebook' },
@@ -239,7 +242,7 @@ const selectOptions = [
             view='filled'
             size='m'
             icon={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -250,7 +253,7 @@ const selectOptions = [
             view='filled'
             size='m'
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -261,7 +264,7 @@ const selectOptions = [
             view='filled'
             size='m'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -272,10 +275,10 @@ const selectOptions = [
             view='filled'
             size='m'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>
@@ -286,13 +289,13 @@ const selectOptions = [
             view='filled'
             size='m'
             leftAddons={
-                <Icon />
+                <InputIcon />
             }
             rightAddons={
-                <Icon />
+                <InputIcon />
             }
             icon={
-                <Icon />
+                <InputIcon />
             }
         />
     </div>

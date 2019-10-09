@@ -1,4 +1,6 @@
 ```jsx
+import Input from 'arui-feather/input';
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (

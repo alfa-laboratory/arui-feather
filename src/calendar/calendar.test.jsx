@@ -172,7 +172,7 @@ describe('calendar', () => {
 
         arrowNode.at(0).simulate('click');
 
-        expect(onMonthChange).toHaveBeenCalledWith((new Date(2015, 0, 1)).valueOf());
+        expect(onMonthChange).toHaveBeenCalledWith((new Date(2015, 11, 1)).valueOf());
     });
 
     it('should call `onMonthChange` callback when month was changed by arrow key press', () => {
@@ -239,7 +239,7 @@ describe('calendar', () => {
             .toHaveBeenCalledWith(expectedDate.valueOf(), formatDate(expectedDate, DATE_FORMAT), true);
     });
 
-    it('should hide prev year/month arrows when earlier limit is in current month', () => {
+    it('should hide prev month arrows when earlier limit is in current month', () => {
         let calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -247,14 +247,12 @@ describe('calendar', () => {
             />
         );
 
-        let prevMonthArrow = calendar.find('.calendar__arrow_direction_left').not('.calendar__arrow_double');
-        let prevYearArrow = calendar.find('.calendar__arrow_direction_left.calendar__arrow_double');
+        let prevMonthArrow = calendar.find('.calendar__arrow_direction_left');
 
         expect(prevMonthArrow.getDOMNode().className).toContain('calendar__arrow_disabled');
-        expect(prevYearArrow.getDOMNode().className).toContain('calendar__arrow_disabled');
     });
 
-    it('should hide next year/month arrows when laterLimit is in current month', () => {
+    it('should hide next month arrows when laterLimit is in current month', () => {
         let calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
@@ -262,11 +260,9 @@ describe('calendar', () => {
             />
         );
 
-        let nextMonthArrow = calendar.find('.calendar__arrow_direction_right').not('.calendar__arrow_double');
-        let nextYearArrow = calendar.find('.calendar__arrow_direction_right.calendar__arrow_double');
+        let nextMonthArrow = calendar.find('.calendar__arrow_direction_right');
 
         expect(nextMonthArrow.getDOMNode().className).toContain('calendar__arrow_disabled');
-        expect(nextYearArrow.getDOMNode().className).toContain('calendar__arrow_disabled');
     });
 
     it('should show prev month arrow when earlierLimit is in prev month', () => {
@@ -301,5 +297,52 @@ describe('calendar', () => {
         let node = calendar.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
+    });
+
+    it('should change month when select one from selection list', () => {
+        let calendar = mount(<Calendar />);
+
+        let monthNode = calendar.find('.calendar__name_month');
+        monthNode.simulate('click');
+
+        let calendarSelectNode = calendar.find('.calendar__select');
+        calendarSelectNode.at(1).simulate('click');
+
+        expect(monthNode.text()).toContain(calendarSelectNode.at(1).text());
+    });
+
+    it('should change year when select one from selection list', () => {
+        let calendar = mount(<Calendar />);
+
+        let yearNode = calendar.find('.calendar__name_year');
+        yearNode.simulate('click');
+
+        let calendarSelectNode = calendar.find('.calendar__select');
+        calendarSelectNode.at(1).simulate('click');
+
+        expect(yearNode.text()).toContain(calendarSelectNode.at(1).text());
+    });
+
+    it('should make list of years whith amount by default', () => {
+        let calendar = mount(<Calendar />);
+
+        let yearNode = calendar.find('.calendar__name_year');
+        yearNode.simulate('click');
+
+        let calendarSelectNode = calendar.find('.calendar__select');
+        expect(calendarSelectNode.length).toBe(102);
+    });
+
+    it('should make correct list of years with established date limits', () => {
+        let calendar = mount(<Calendar
+            earlierLimit={ 666565200000 }
+            laterLimit={ 1582923600000 }
+        />);
+
+        let yearNode = calendar.find('.calendar__name_year');
+        yearNode.simulate('click');
+
+        let calendarSelectNode = calendar.find('.calendar__select');
+        expect(calendarSelectNode.length).toBe(30);
     });
 });

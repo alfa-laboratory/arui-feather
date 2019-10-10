@@ -178,7 +178,7 @@ class Sidebar extends React.Component {
                                     size={ this.state.isMobile ? 'm' : 'l' }
                                     onClick={ this.handleClose }
                                 >
-                                    <IconClose size={ this.state.isMobile ? 'm' : 'l' } />
+                                    <IconClose size='l' />
                                 </IconButton>
                             </div>
                         }

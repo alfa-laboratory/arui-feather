@@ -52,25 +52,9 @@ exports[`calendar should render without problems 1`] = `
       className="calendar__title"
     >
       <div
-        className="calendar__arrow calendar__arrow_direction_left calendar__arrow_double"
-        data-disabled={false}
-        data-step="-12"
-        onClick={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-      <div
         className="calendar__arrow calendar__arrow_direction_left"
         data-disabled={false}
         data-step="-1"
-        onClick={[Function]}
-        role="button"
-        tabIndex="0"
-      />
-      <div
-        className="calendar__arrow calendar__arrow_direction_right calendar__arrow_double"
-        data-disabled={false}
-        data-step="12"
         onClick={[Function]}
         role="button"
         tabIndex="0"
@@ -84,9 +68,38 @@ exports[`calendar should render without problems 1`] = `
         tabIndex="0"
       />
       <div
-        className="calendar__name"
+        className="calendar__select-buttons"
       >
-        Июнь 2018
+        <div
+          className="calendar__name calendar__name_month"
+          onClick={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <div
+            className="calendar__select-text"
+          >
+            Июнь
+          </div>
+          <div
+            className="calendar__select-arrows"
+          />
+        </div>
+        <div
+          className="calendar__name calendar__name_year"
+          onClick={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <div
+            className="calendar__select-text"
+          >
+            2018
+          </div>
+          <div
+            className="calendar__select-arrows"
+          />
+        </div>
       </div>
     </div>
     <table
@@ -145,59 +158,87 @@ exports[`calendar should render without problems 1`] = `
           key="row_2"
         >
           <td
-            className="calendar__day"
-            data-day={null}
             key="day_1"
-            onClick={[Function]}
-            role="gridcell"
-          />
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            />
+          </td>
           <td
-            className="calendar__day"
-            data-day={null}
             key="day_2"
-            onClick={[Function]}
-            role="gridcell"
-          />
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            />
+          </td>
           <td
-            className="calendar__day"
-            data-day={null}
             key="day_3"
-            onClick={[Function]}
-            role="gridcell"
-          />
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            />
+          </td>
           <td
-            className="calendar__day"
-            data-day={null}
             key="day_4"
-            onClick={[Function]}
-            role="gridcell"
-          />
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            />
+          </td>
           <td
-            className="calendar__day"
-            data-day={1527811200000}
             key="1527811200000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            1
+            <div
+              className="calendar__day"
+              data-day={1527811200000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              1
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1527897600000}
             key="1527897600000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            2
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1527897600000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              2
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1527984000000}
             key="1527984000000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            3
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1527984000000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              3
+            </div>
           </td>
         </tr>
         <tr
@@ -205,67 +246,95 @@ exports[`calendar should render without problems 1`] = `
           key="row_3"
         >
           <td
-            className="calendar__day"
-            data-day={1528070400000}
             key="1528070400000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            4
+            <div
+              className="calendar__day"
+              data-day={1528070400000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              4
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528156800000}
             key="1528156800000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            5
+            <div
+              className="calendar__day"
+              data-day={1528156800000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              5
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528243200000}
             key="1528243200000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            6
+            <div
+              className="calendar__day"
+              data-day={1528243200000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              6
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528329600000}
             key="1528329600000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            7
+            <div
+              className="calendar__day"
+              data-day={1528329600000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              7
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528416000000}
             key="1528416000000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            8
+            <div
+              className="calendar__day"
+              data-day={1528416000000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              8
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1528502400000}
             key="1528502400000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            9
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1528502400000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              9
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1528588800000}
             key="1528588800000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            10
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1528588800000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              10
+            </div>
           </td>
         </tr>
         <tr
@@ -273,67 +342,95 @@ exports[`calendar should render without problems 1`] = `
           key="row_4"
         >
           <td
-            className="calendar__day"
-            data-day={1528675200000}
             key="1528675200000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            11
+            <div
+              className="calendar__day"
+              data-day={1528675200000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              11
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528761600000}
             key="1528761600000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            12
+            <div
+              className="calendar__day"
+              data-day={1528761600000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              12
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528848000000}
             key="1528848000000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            13
+            <div
+              className="calendar__day"
+              data-day={1528848000000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              13
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1528934400000}
             key="1528934400000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            14
+            <div
+              className="calendar__day"
+              data-day={1528934400000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              14
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1529020800000}
             key="1529020800000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            15
+            <div
+              className="calendar__day"
+              data-day={1529020800000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              15
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1529107200000}
             key="1529107200000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            16
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1529107200000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              16
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1529193600000}
             key="1529193600000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            17
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1529193600000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              17
+            </div>
           </td>
         </tr>
         <tr
@@ -341,67 +438,95 @@ exports[`calendar should render without problems 1`] = `
           key="row_5"
         >
           <td
-            className="calendar__day"
-            data-day={1529280000000}
             key="1529280000000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            18
+            <div
+              className="calendar__day"
+              data-day={1529280000000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              18
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1529366400000}
             key="1529366400000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            19
+            <div
+              className="calendar__day"
+              data-day={1529366400000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              19
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1529452800000}
             key="1529452800000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            20
+            <div
+              className="calendar__day"
+              data-day={1529452800000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              20
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1529539200000}
             key="1529539200000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            21
+            <div
+              className="calendar__day"
+              data-day={1529539200000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              21
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1529625600000}
             key="1529625600000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            22
+            <div
+              className="calendar__day"
+              data-day={1529625600000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              22
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1529712000000}
             key="1529712000000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            23
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1529712000000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              23
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1529798400000}
             key="1529798400000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            24
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1529798400000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              24
+            </div>
           </td>
         </tr>
         <tr
@@ -409,66 +534,94 @@ exports[`calendar should render without problems 1`] = `
           key="row_6"
         >
           <td
-            className="calendar__day"
-            data-day={1529884800000}
             key="1529884800000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            25
+            <div
+              className="calendar__day"
+              data-day={1529884800000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              25
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1529971200000}
             key="1529971200000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            26
+            <div
+              className="calendar__day"
+              data-day={1529971200000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              26
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1530057600000}
             key="1530057600000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            27
+            <div
+              className="calendar__day"
+              data-day={1530057600000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              27
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1530144000000}
             key="1530144000000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            28
+            <div
+              className="calendar__day"
+              data-day={1530144000000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              28
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={1530230400000}
             key="1530230400000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            29
+            <div
+              className="calendar__day"
+              data-day={1530230400000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              29
+            </div>
           </td>
           <td
-            className="calendar__day calendar__day_type_weekend"
-            data-day={1530316800000}
             key="1530316800000"
-            onClick={[Function]}
-            role="gridcell"
           >
-            30
+            <div
+              className="calendar__day calendar__day_type_weekend"
+              data-day={1530316800000}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            >
+              30
+            </div>
           </td>
           <td
-            className="calendar__day"
-            data-day={null}
             key="day_7"
-            onClick={[Function]}
-            role="gridcell"
-          />
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex="0"
+            />
+          </td>
         </tr>
       </tbody>
     </table>

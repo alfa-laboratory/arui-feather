@@ -56,6 +56,12 @@ geminiReact.suite(NAME, function () {
                     .capture('plain')
                     .capture('hovered', function (actions) {
                         actions.mouseMove('.calendar__arrow.calendar__arrow_direction_right');
+                    })
+                    .capture('selectMonths', function (actions) {
+                        actions.click('.calendar__name.calendar__name_month');
+                    })
+                    .capture('selectYear', function (actions) {
+                        actions.click('.calendar__name.calendar__name_year');
                     });
             });
         });

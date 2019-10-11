@@ -269,11 +269,11 @@
     &.textarea_size_s {
         .textarea__top {
             padding: 0 8px;
-            line-height: 44px;
+            line-height: 43px;
         }
 
         .textarea__control {
-            min-height: 44px;
+            min-height: 43px;
             padding: 14px 8px 6px;
         }
 
@@ -290,7 +290,7 @@
 
         &.textarea_has-label {
             .textarea__control {
-                padding-top: 28px;
+                padding-top: 21px;
             }
         }
 

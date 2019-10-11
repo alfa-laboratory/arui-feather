@@ -22,13 +22,13 @@ class PopupHeaderDemo extends React.Component {
             <div>
                 <div className='row'>
                     <div style={ { width: '100%' } }>
-                        {['s', 'm', 'l', 'xl'].map(size => (
+                        { ['s', 'm', 'l', 'xl'].map(size => (
                             <PopupHeader
                                 key={ size }
                                 size={ size }
                                 title='Заголовок'
                             />
-                        ))}
+                        )) }
                     </div>
                 </div>
                 <div className='row'>

@@ -2,6 +2,7 @@
 ```jsx
 import CheckBox from 'arui-feather/checkbox';
 import Label from 'arui-feather/label';
+
 <CheckBoxGroup label={ <Label size='m'>Выберите счёт</Label> }>
     <CheckBox
         text='Текущий счет'
@@ -25,6 +26,7 @@ import Label from 'arui-feather/label';
 Горизонтальная группа чекбоксов, состоящая из обычных кнопок
 ```jsx
 import CheckBox from 'arui-feather/checkbox';
+
 <CheckBoxGroup type='button'>
     <CheckBox
         disabled={ true }
@@ -54,6 +56,7 @@ import CheckBox from 'arui-feather/checkbox';
 Горизонтальная группа неактивных чекбоксов, состоящая из обычных кнопок
 ```jsx
 import CheckBox from 'arui-feather/checkbox';
+
 <CheckBoxGroup type='button' disabled={ true }>
     <CheckBox
         text='Текущий'
@@ -81,6 +84,7 @@ import CheckBox from 'arui-feather/checkbox';
 Горизонтальная группа чекбоксов
 ```jsx
 import CheckBox from 'arui-feather/checkbox';
+
 <CheckBoxGroup type='line'>
     <CheckBox
         text='Текущий'
@@ -104,6 +108,7 @@ import CheckBox from 'arui-feather/checkbox';
 Горизонтальная группа неактивных чекбоксов
 ```jsx
 import CheckBox from 'arui-feather/checkbox';
+
 <CheckBoxGroup type='line' disabled={ true }>
     <CheckBox
         text='Текущий'

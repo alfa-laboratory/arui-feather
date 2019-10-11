@@ -8,7 +8,10 @@ module.exports = {
         'chai-friendly/no-unused-expressions': 0,
         'react/jsx-indent': 0,
         'semi': 0,
-        'react/prop-types': 0
+        'react/prop-types': 0,
+        // in readme we import 'arui-feather/bla', which always be unresolved inside arui-feather
+        'import/no-unresolved': 0,
+        'import/extensions': 0
     },
     plugins: [
         'markdown'

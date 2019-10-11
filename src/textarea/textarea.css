@@ -266,17 +266,87 @@
 }
 
 .textarea_view_filled {
+    &.textarea_size_s {
+        .textarea__top {
+            padding: 0 8px;
+            line-height: 43px;
+        }
+
+        .textarea__control {
+            min-height: 43px;
+            padding: 14px 8px 6px;
+        }
+
+        .textarea__top,
+        .textarea__control {
+            font-size: var(--font-size-s);
+        }
+
+        .textarea__sub {
+            padding-top: 4px;
+            padding-right: 8px;
+            font-size: var(--font-size-xs);
+        }
+
+        &.textarea_has-label {
+            .textarea__control {
+                padding-top: 21px;
+            }
+        }
+
+        &.textarea_focused,
+        &.textarea_has-value {
+            .textarea__top {
+                font-size: var(--font-size-xs);
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    &.textarea_size_m {
+        .textarea__top {
+            padding: 0 12px;
+            line-height: 56px;
+        }
+
+        .textarea__control {
+            min-height: 56px;
+            padding: 18px 12px 8px;
+        }
+
+        .textarea__top,
+        .textarea__control {
+            font-size: var(--font-size-m);
+        }
+
+        .textarea__sub {
+            padding-top: 4px;
+            padding-right: 12px;
+            font-size: var(--font-size-s);
+        }
+
+        &.textarea_has-label {
+            .textarea__control {
+                padding-top: 28px;
+            }
+        }
+
+        &.textarea_focused,
+        &.textarea_has-value {
+            .textarea__top {
+                font-size: var(--font-size-s);
+                transform: translateY(-12px);
+            }
+        }
+    }
+
     .textarea__top {
-        padding: 0 12px;
-        line-height: 56px;
         transform-origin: 0 50%;
         will-change: transform;
     }
 
     .textarea__control {
-        min-height: 56px;
         margin: 0;
-        padding: 18px 12px 8px;
         color: rgba(11, 31, 53, 1);
         border-bottom-color: rgba(11, 31, 53, 0.15);
         background-color: rgba(11, 31, 53, 0.05);
@@ -296,15 +366,7 @@
         min-height: 110px;
     }
 
-    .textarea__top,
-    .textarea__control {
-        font-size: var(--font-size-m);
-    }
-
     &__sub {
-        padding-top: 4px;
-        padding-right: 12px;
-        font-size: var(--font-size-s);
         line-height: 1.2;
     }
 
@@ -323,10 +385,6 @@
     &.textarea_has-label {
         padding-top: 0;
 
-        .textarea__control {
-            padding-top: 28px;
-        }
-
         .textarea__control::placeholder {
             color: transparent;
         }
@@ -341,8 +399,6 @@
     &.textarea_focused,
     &.textarea_has-value {
         .textarea__top {
-            font-size: 13px;
-            transform: translateY(-12px);
             width: auto;
         }
     }

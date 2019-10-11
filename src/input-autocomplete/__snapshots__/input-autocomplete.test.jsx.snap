@@ -69,6 +69,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
         ]
       }
       renderPopupOnFocus={false}
+      resetError={true}
       size="m"
       type="text"
       updateValueOnItemSelect={true}
@@ -371,6 +372,7 @@ exports[`input-autocomplete should render without problem 1`] = `
       onKeyDown={[Function]}
       options={Array []}
       renderPopupOnFocus={false}
+      resetError={true}
       size="m"
       type="text"
       updateValueOnItemSelect={true}

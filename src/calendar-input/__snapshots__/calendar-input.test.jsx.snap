@@ -60,7 +60,7 @@ exports[`calendar-input should render without problems 1`] = `
     }
     fitContaiterOffset={0}
     header={false}
-    padded={true}
+    padded={false}
     secondaryOffset={0}
     size="s"
     target="anchor"

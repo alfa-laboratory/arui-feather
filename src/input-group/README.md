@@ -1,6 +1,7 @@
 Группа полей для ввода
 ```jsx
 import Input from 'arui-feather/input';
+
 const inputs = [1, 2, 3, 4];
 <InputGroup>
     { inputs.map(input => (

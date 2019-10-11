@@ -496,7 +496,7 @@ const selectOptions = [
             view='filled'
             size='s'
             leftAddons={
-                <InputIcon />
+                <InputIcon size='s' />
             }
         />
     </div>
@@ -507,7 +507,7 @@ const selectOptions = [
             view='filled'
             size='s'
             leftAddons={
-                <InputIcon />
+                <InputIcon size='s' />
             }
             rightAddons={
                 <InputIcon />
@@ -521,7 +521,7 @@ const selectOptions = [
             view='filled'
             size='s'
             leftAddons={
-                <InputIcon />
+                <InputIcon size='s' />
             }
             rightAddons={
                 <InputIcon />

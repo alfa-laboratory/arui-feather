@@ -2,6 +2,7 @@
 
 ```jsx
 import GridCol from 'arui-feather/grid-col';
+
 const style = {
     height: 30,
     background: '#ff5c5c'
@@ -25,6 +26,7 @@ const style = {
 
 ```jsx
 import GridCol from 'arui-feather/grid-col';
+
 const style = {
     height: 30,
     background: '#ff5c5c'
@@ -85,6 +87,7 @@ const styleLastDiv = {
 
 ```jsx
 import GridCol from 'arui-feather/grid-col';
+
 const style = {
     height: 30,
     background: '#ff5c5c',

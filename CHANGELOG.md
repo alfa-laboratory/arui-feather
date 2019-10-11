@@ -1,3 +1,24 @@
+<a name="15.0.0"></a>
+# [15.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.5.0...v15.0.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* **calendar:** add missing state ([#851](https://github.com/alfa-laboratory/arui-feather/issues/851)) ([3bec087](https://github.com/alfa-laboratory/arui-feather/commit/3bec087))
+* **toggle:** red-brand opacity 0.85 ([215c1ad](https://github.com/alfa-laboratory/arui-feather/commit/215c1ad))
+
+
+### Features
+
+* Upgraded peerDependency react version to 16.2; Removed IS_REACT_16 checking in popup.jsx ([#844](https://github.com/alfa-laboratory/arui-feather/issues/844)) ([23c7a70](https://github.com/alfa-laboratory/arui-feather/commit/23c7a70))
+* **calendar:** update calendar ([#841](https://github.com/alfa-laboratory/arui-feather/issues/841)) ([b819cec](https://github.com/alfa-laboratory/arui-feather/commit/b819cec))
+* **input:** add s size for filled view ([#854](https://github.com/alfa-laboratory/arui-feather/issues/854)) ([6f6b570](https://github.com/alfa-laboratory/arui-feather/commit/6f6b570))
+* **input:** reset error message on focus ([#855](https://github.com/alfa-laboratory/arui-feather/issues/855)) ([e5539ff](https://github.com/alfa-laboratory/arui-feather/commit/e5539ff))
+* **sidebar:** updated styles from figma component ([#858](https://github.com/alfa-laboratory/arui-feather/issues/858)) ([9a42a0a](https://github.com/alfa-laboratory/arui-feather/commit/9a42a0a))
+* **toggle:** add size s ([9e06d80](https://github.com/alfa-laboratory/arui-feather/commit/9e06d80))
+
+
+
 <a name="14.5.0"></a>
 # [14.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.4.0...v14.5.0) (2019-09-25)
 

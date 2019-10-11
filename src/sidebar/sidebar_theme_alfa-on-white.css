@@ -11,8 +11,9 @@
 @media (--small-only) {
     .sidebar_theme_alfa-on-white {
         .sidebar__header {
-            background-color: var(--color-background-alfa-on-white);
-            border-bottom: 1px solid var(--color-border-separator-alfa-on-white);
+            /* TODO заменить на токены, цвета должны соответствовать Modal */
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .sidebar__footer:after {

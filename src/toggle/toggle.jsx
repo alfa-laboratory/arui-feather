@@ -27,6 +27,8 @@ class Toggle extends React.Component {
         disabled: Type.bool,
         /** Управление состоянием вкл/выкл компонента */
         checked: Type.bool,
+        /** Размер компонента */
+        size: Type.oneOf(['s', 'm']),
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -51,6 +53,10 @@ class Toggle extends React.Component {
         'data-test-id': Type.string
     };
 
+    static defaultProps = {
+        size: 'm'
+    };
+
     state = {
         checked: false,
         focused: false
@@ -65,7 +71,8 @@ class Toggle extends React.Component {
                 className={ cn({
                     checked,
                     focused: this.state.focused,
-                    disabled: this.props.disabled
+                    disabled: this.props.disabled,
+                    size: this.props.size
                 }) }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }

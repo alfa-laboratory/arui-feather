@@ -183,7 +183,8 @@ class Popup extends React.Component {
         }
     }, 200);
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         if (
             this.context.isInCustomContainer &&
             this.context.renderContainerElement &&
@@ -220,7 +221,8 @@ class Popup extends React.Component {
         /* eslint-enable */
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         if (
             !this.state.receivedContainer &&
             nextContext.renderContainerElement &&

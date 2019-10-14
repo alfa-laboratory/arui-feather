@@ -250,7 +250,8 @@ class Select extends React.Component {
      */
     awaitClosing = false;
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.setState({
             hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
         });
@@ -265,7 +266,8 @@ class Select extends React.Component {
         this.updatePopupStyles();
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         this.setPopupTarget();
         this.updatePopupStyles();
 

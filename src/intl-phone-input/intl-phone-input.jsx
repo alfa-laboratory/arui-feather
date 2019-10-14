@@ -51,7 +51,8 @@ class IntlPhoneInput extends React.Component {
         this.setCountry();
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
         if (this.state.inputValue !== nextState.inputValue) {
             if (this.props.onChange) {
                 this.props.onChange(nextState.inputValue);

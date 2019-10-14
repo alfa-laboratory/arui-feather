@@ -196,7 +196,8 @@ class Input extends React.Component {
      */
     control;
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         this.setState({
             error: nextProps.error
         });

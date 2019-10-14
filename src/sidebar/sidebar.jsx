@@ -108,7 +108,8 @@ class Sidebar extends React.Component {
         window.addEventListener('scroll', handleBodyScroll);
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         setBodyClass({ visible: nextProps.visible, hasOverlay: nextProps.hasOverlay });
         if (this.state.isMobile) {
             setCurrentPosition();

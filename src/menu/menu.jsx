@@ -145,7 +145,8 @@ class Menu extends React.Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.mode !== 'check' && this.state.checkedItems[0] &&
             nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
             let highlightedItem;
@@ -162,7 +163,8 @@ class Menu extends React.Component {
         }
     }
 
-    componentWillUpdate() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillUpdate() {
         this.menuItemList = [];
     }
 

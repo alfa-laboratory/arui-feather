@@ -128,13 +128,15 @@ class MaskedInput extends React.Component {
      */
     beforeInputSelection = { start: 0, end: 0 };
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
         this.beforeChangeMask = this.mask;
         this.value = this.mask.format(this.props.value || '');
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         let reformatValue = false;
 
         this.beforeChangeMask = this.mask;
@@ -157,13 +159,15 @@ class MaskedInput extends React.Component {
     }
 
     render() {
-        let props = { ...this.props };
-        let length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
+        const {
+            mask,
+            formatCharacters,
+            onProcessInputEvent,
+            useWhitespaces,
+            ...props
+        } = this.props;
 
-        delete props.mask;
-        delete props.formatCharacters;
-        delete props.onProcessInputEvent;
-        delete props.useWhitespaces;
+        let length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
 
         return (
             <input
@@ -264,7 +268,7 @@ class MaskedInput extends React.Component {
      * @public
      * @param {String} newMask Новая маска
      * @param {FormatCharacters} [formatCharacters] Форматтер маски
-     * @param {Boolean} useWhitespaces использовать в маске пробелы
+     * @param {Boolean} useWhitespaces Использовать в маске пробелы
      */
     setMask(newMask, formatCharacters, useWhitespaces) {
         if (this.maskPattern !== newMask || this.formatCharacters !== formatCharacters) {

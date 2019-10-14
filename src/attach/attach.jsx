@@ -181,7 +181,8 @@ class Attach extends React.Component {
      */
     input;
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         let nextValue = nextProps.value || [];
 
         if (!isEqualArray(nextValue, this.state.value)) {

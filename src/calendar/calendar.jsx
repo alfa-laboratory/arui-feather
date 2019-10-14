@@ -144,11 +144,13 @@ class Calendar extends React.Component {
      */
     years = [];
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.prepareData();
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         this.prepareData(nextProps);
     }
 

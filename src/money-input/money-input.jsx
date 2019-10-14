@@ -103,11 +103,13 @@ class MoneyInput extends React.Component {
      */
     root;
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.updateMaskByValue(this.getValue());
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.value !== nextProps.value) {
             this.updateMaskByValue(nextProps.value || '');
         }
@@ -171,11 +173,11 @@ class MoneyInput extends React.Component {
 
     @autobind
     handleChange(value) {
-        this.setState({ value });
-
-        if (this.props.onChange) {
-            this.props.onChange(value, Number(value.replace(/[^\d,]/g, '').replace(/,/g, '.')));
-        }
+        this.setState(() => ({ value }), () => {
+            if (this.props.onChange) {
+                this.props.onChange(value, Number(value.replace(/[^\d,]/g, '').replace(/,/g, '.')));
+            }
+        });
     }
 
     /**

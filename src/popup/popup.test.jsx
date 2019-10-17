@@ -52,6 +52,8 @@ function renderPopup(popupProps, anchorProps) {
         popup.instance().setTarget(anchor.getDOMNode());
     }
 
+    console.log(popup.children());
+
     return {
         popup,
         anchor,

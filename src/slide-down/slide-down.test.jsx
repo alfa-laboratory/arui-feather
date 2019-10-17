@@ -48,7 +48,7 @@ describe('slide-down', () => {
         let slideDownNode = mount(
             <SlideDown { ...props } />
         );
-        slideDownNode.instance().componentWillReceiveProps({ ...props, isExpanded: true });
+        slideDownNode.instance().UNSAFE_componentWillReceiveProps({ ...props, isExpanded: true });
         expect(onAnimationStart).toHaveBeenCalled();
     });
 

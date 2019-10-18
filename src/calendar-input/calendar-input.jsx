@@ -6,6 +6,7 @@
 
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
+import Modernizr from 'modernizr';
 import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
@@ -19,7 +20,6 @@ import PopupHeader from '../popup-header/popup-header';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import Modernizr from '../modernizr';
 import { isNodeOutsideElement } from '../lib/window';
 import { parseDate, calculateMonth, changeDateFormat } from './utils';
 import performance from '../performance';
@@ -33,7 +33,6 @@ const CUSTOM_DATE_FORMAT = 'DD.MM.YYYY';
 const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && Modernizr.inputtypes.date;
-
 
 /**
  * Компонент для ввода даты.

@@ -122,6 +122,18 @@ class Button extends React.Component {
         formNoValidate: false
     };
 
+
+    static getDerivedStateFromProps({ disabled }) {
+        if (disabled) {
+            return {
+                hovered: false,
+                focused: false
+            };
+        }
+
+        return null;
+    }
+
     state = {
         focused: false,
         hovered: false,
@@ -132,16 +144,6 @@ class Button extends React.Component {
      * @type {HTMLButtonElement|HTMLSpanElement}
      */
     control;
-
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.disabled) {
-            this.setState({
-                hovered: false,
-                focused: false
-            });
-        }
-    }
 
     render(cn) {
         const isButton = this.props.tag !== 'span';

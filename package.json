@@ -144,6 +144,7 @@
     "validate-commit-message": "3.0.1",
     "vinyl-buffer": "1.0.1",
     "webpack": "4.28.0",
-    "webpack-merge": "4.2.1"
+    "webpack-merge": "4.2.1",
+    "webpack-modernizr-loader": "^5.0.0"
   }
 }

@@ -175,6 +175,16 @@ class Input extends React.Component {
         resetError: true
     };
 
+    static getDerivedStateFromProps({ error }, prevState) {
+        if (error && error !== prevState.error) {
+            return {
+                error
+            };
+        }
+
+        return null;
+    }
+
     state = {
         focused: false,
         error: this.props.error || null,
@@ -195,14 +205,6 @@ class Input extends React.Component {
      * @type {HTMLInputElement}
      */
     control;
-
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        this.setState({
-            error: nextProps.error
-        });
-    }
-
 
     render(cn, MaskedInput) {
         let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;

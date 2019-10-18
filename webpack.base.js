@@ -9,6 +9,9 @@ const QUERY = {
 
 module.exports = {
     resolve: {
+        alias: {
+            modernizr$: path.resolve(__dirname, ".modernizrrc")
+        },
         modules: [
             'node_modules',
             path.join(process.cwd(), 'node_modules')
@@ -63,7 +66,12 @@ module.exports = {
                     require.resolve('css-loader'),
                     require.resolve('postcss-loader')
                 ]
-            }
+            },
+            {
+                loader: "webpack-modernizr-loader",
+                test: /\.modernizrrc$/,
+                // type: 'javascript/auto'
+            },
         ]
     },
     plugins: [

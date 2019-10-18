@@ -5,7 +5,7 @@
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
-import Modernizr from '../modernizr';
+import Modernizr from 'modernizr';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 
 const IS_BROWSER = typeof window !== 'undefined';

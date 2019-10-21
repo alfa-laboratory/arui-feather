@@ -338,6 +338,8 @@ class Calendar extends React.Component {
             this.setState({
                 isMonthSelection: false
             });
+
+            this.root.focus();
         }
     }
 
@@ -392,6 +394,8 @@ class Calendar extends React.Component {
             this.setState({
                 isYearSelection: false
             });
+
+            this.root.focus();
         }
     }
 

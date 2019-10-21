@@ -1,3 +1,14 @@
+<a name="15.0.1"></a>
+## [15.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.0.0...v15.0.1) (2019-10-21)
+
+
+### Bug Fixes
+
+* **calendar:** focus when select month or year ([#860](https://github.com/alfa-laboratory/arui-feather/issues/860)) ([f69e0a4](https://github.com/alfa-laboratory/arui-feather/commit/f69e0a4))
+* **input:** remove opacity from all inputs icons ([#859](https://github.com/alfa-laboratory/arui-feather/issues/859)) ([7d1d833](https://github.com/alfa-laboratory/arui-feather/commit/7d1d833))
+
+
+
 <a name="15.0.0"></a>
 # [15.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.5.0...v15.0.0) (2019-10-11)
 

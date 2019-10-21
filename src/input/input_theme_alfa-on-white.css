@@ -47,7 +47,6 @@
     &.input_has-icon {
         .input__icon {
             color: var(--color-content-alfa-on-white);
-            opacity: var(--opacity-minor);
         }
     }
 

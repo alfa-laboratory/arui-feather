@@ -9,41 +9,62 @@ import { shallow, mount } from 'enzyme';
 
 import Sidebar from './sidebar';
 
+jest.mock('modernizr', () => ({
+    inputtypes: {
+        search: true,
+        tel: true,
+        url: true,
+        email: true,
+        datetime: false,
+        date: true,
+        month: true,
+        week: true,
+        time: true,
+        'datetime-local': true,
+        number: true,
+        range: true,
+        color: true
+    },
+    pointerevents: true,
+    touchevents: true
+}));
+
 describe('sidebar component', () => {
     it('should render without problems', () => {
-        let sidebar = shallow(<Sidebar visible={ true }>defaultText</Sidebar>);
+        const sidebar = shallow(<Sidebar visible={ true }>defaultText</Sidebar>);
 
         expect(sidebar).toMatchSnapshot();
-        expect(sidebar.find('.sidebar__content').text()).toContain('defaultText');
+        expect(sidebar.find('.sidebar__content').text()).toContain(
+            'defaultText'
+        );
     });
 
     it('should render cross icon by default', () => {
-        let sidebar = shallow(<Sidebar visible={ true }>defaultText</Sidebar>);
-        let closeIcon = sidebar.find('.sidebar__closer');
+        const sidebar = shallow(<Sidebar visible={ true }>defaultText</Sidebar>);
+        const closeIcon = sidebar.find('.sidebar__closer');
 
         expect(closeIcon.length).toBe(1);
     });
 
     it('shouldn`t render cross icon with special param', () => {
-        let sidebar = shallow(<Sidebar visible={ true } hasCloser={ false }>defaultText</Sidebar>);
-        let closeIcon = sidebar.find('.sidebar__closer');
+        const sidebar = shallow(
+            <Sidebar visible={ true } hasCloser={ false }>
+                defaultText
+            </Sidebar>
+        );
+        const closeIcon = sidebar.find('.sidebar__closer');
 
         expect(closeIcon.length).toBe(0);
     });
 
-
     it('should call `onCloserClick` callback after cross icon was clicked', () => {
-        let onClick = jest.fn();
-        let sidebar = mount(
-            <Sidebar
-                visible={ true }
-                hasCloser={ true }
-                onCloserClick={ onClick }
-            >
+        const onClick = jest.fn();
+        const sidebar = mount(
+            <Sidebar visible={ true } hasCloser={ true } onCloserClick={ onClick }>
                 defaultText
             </Sidebar>
         );
-        let closeIcon = sidebar.find('.sidebar__closer .icon-button');
+        const closeIcon = sidebar.find('.sidebar__closer .icon-button');
 
         closeIcon.simulate('click');
 
@@ -51,30 +72,28 @@ describe('sidebar component', () => {
     });
 
     it('should render with `width` from props on desktop', () => {
-        let sidebar = mount(
-            <Sidebar
-                visible={ true }
-                width={ 500 }
-            >
+        const sidebar = mount(
+            <Sidebar visible={ true } width={ 500 }>
                 defaultText
             </Sidebar>
         );
 
-        expect(sidebar.find('div.sidebar').props().style).toEqual({ width: '500px' });
+        expect(sidebar.find('div.sidebar').props().style).toEqual({
+            width: '500px'
+        });
     });
 
     it('should render with `width: 100%` on mobile', () => {
-        let sidebar = mount(
-            <Sidebar
-                visible={ true }
-                width={ 500 }
-            >
+        const sidebar = mount(
+            <Sidebar visible={ true } width={ 500 }>
                 defaultText
             </Sidebar>
         );
 
         sidebar.setState({ isMobile: true });
 
-        expect(sidebar.find('div.sidebar').props().style).toEqual({ width: '100%' });
+        expect(sidebar.find('div.sidebar').props().style).toEqual({
+            width: '100%'
+        });
     });
 });

@@ -12,6 +12,7 @@ import IconAdd from './action/add';
 import IconAddFilled from './action/add-filled';
 import IconAnalytics from './action/analytics';
 import IconArrowBack from './action/arrow-back';
+import IconArrowBackBold from './action/arrow-back-bold';
 import IconAttachment from './action/attachment';
 import IconBack from './action/back';
 import IconCall from './action/call';
@@ -42,6 +43,7 @@ import IconMore from './action/more';
 import IconNavigationChat from './action/navigation-chat';
 import IconNavigationHistory from './action/navigation-history';
 import IconNavigationHome from './action/navigation-home';
+import IconNavigationMarketplace from './action/navigation-marketplace';
 import IconNavigationPayment from './action/navigation-payment';
 import IconNext from './action/next';
 import IconPasswordChange from './action/password-change';
@@ -67,6 +69,7 @@ import IconUnlock from './action/unlock';
 import IconAccountAdd from './banking/account-add';
 import IconAccountDefault from './banking/account-default';
 import IconAccountShared from './banking/account-shared';
+import IconAttentionBold from './banking/attention-bold';
 import IconBalanceTransfer from './banking/balance-transfer';
 import IconCard from './banking/card';
 import IconCardAccountsList from './banking/card-accounts-list';
@@ -98,6 +101,7 @@ import IconInvoiceForPayment from './banking/invoice-for-payment';
 import IconLimits from './banking/limits';
 import IconMarketplace from './banking/marketplace';
 import IconOffer from './banking/offer';
+import IconOfferFill from './banking/offer-fill';
 import IconOutcome from './banking/outcome';
 import IconOverdraft from './banking/overdraft';
 import IconPayBack from './banking/pay-back';
@@ -119,6 +123,7 @@ import IconSubscrption from './banking/subscrption';
 import IconTransferAnyBank from './banking/transfer-any-bank';
 import IconTransferAnyBankCredit from './banking/transfer-any-bank-credit';
 import IconTransferBetweenAccounts from './banking/transfer-between-accounts';
+import IconTransferByPhone from './banking/transfer-by-phone';
 import IconTransferCard from './banking/transfer-card';
 import IconTransferExternal from './banking/transfer-external';
 import IconTransferIn from './banking/transfer-in';
@@ -245,6 +250,7 @@ import IconApcBonus from './entity/APC-bonus';
 import IconAtm from './entity/atm';
 import IconBag from './entity/bag';
 import IconCalendar from './entity/calendar';
+import IconCardVoid from './entity/card-void';
 import IconCashback from './entity/cashback';
 import IconCashbackBonus from './entity/cashback-bonus';
 import IconChatPhoto from './entity/chat-photo';
@@ -308,6 +314,7 @@ import IconFormatTxt from './file/format-txt';
 import IconFormatXls from './file/format-xls';
 import IconFormatXml from './file/format-xml';
 import IconFormatZip from './file/format-zip';
+import IconAndroidReorder from './ui/android-reorder';
 import IconArrowBottom from './ui/arrow-bottom';
 import IconArrowCollapse from './ui/arrow-collapse';
 import IconArrowDouble from './ui/arrow-double';
@@ -341,13 +348,16 @@ import IconFavorite from './ui/favorite';
 import IconFeature from './ui/feature';
 import IconFingerPointing from './ui/finger-pointing';
 import IconGeolocation from './ui/geolocation';
+import IconGeolocationMap from './ui/geolocation-map';
 import IconHelp from './ui/help';
 import IconHelpFilled from './ui/help-filled';
 import IconInfo from './ui/info';
 import IconLeft from './ui/left';
 import IconLocation from './ui/location';
+import IconMetroMap from './ui/metro-map';
 import IconOk from './ui/ok';
 import IconOkFilled from './ui/ok-filled';
+import IconOutside from './ui/outside';
 import IconPlay from './ui/play';
 import IconRight from './ui/right';
 import IconSell from './ui/sell';
@@ -429,6 +439,7 @@ describe('icon', () => {
             { componentName: IconAddFilled, name: 'add-filled' },
             { componentName: IconAnalytics, name: 'analytics' },
             { componentName: IconArrowBack, name: 'arrow-back' },
+            { componentName: IconArrowBackBold, name: 'arrow-back-bold' },
             { componentName: IconAttachment, name: 'attachment' },
             { componentName: IconBack, name: 'back' },
             { componentName: IconCall, name: 'call' },
@@ -459,6 +470,7 @@ describe('icon', () => {
             { componentName: IconNavigationChat, name: 'navigation-chat' },
             { componentName: IconNavigationHistory, name: 'navigation-history' },
             { componentName: IconNavigationHome, name: 'navigation-home' },
+            { componentName: IconNavigationMarketplace, name: 'navigation-marketplace' },
             { componentName: IconNavigationPayment, name: 'navigation-payment' },
             { componentName: IconNext, name: 'next' },
             { componentName: IconPasswordChange, name: 'password-change' },
@@ -484,6 +496,7 @@ describe('icon', () => {
             { componentName: IconAccountAdd, name: 'account-add' },
             { componentName: IconAccountDefault, name: 'account-default' },
             { componentName: IconAccountShared, name: 'account-shared' },
+            { componentName: IconAttentionBold, name: 'attention-bold' },
             { componentName: IconBalanceTransfer, name: 'balance-transfer' },
             { componentName: IconCard, name: 'card' },
             { componentName: IconCardAccountsList, name: 'card-accounts-list' },
@@ -515,6 +528,7 @@ describe('icon', () => {
             { componentName: IconLimits, name: 'limits' },
             { componentName: IconMarketplace, name: 'marketplace' },
             { componentName: IconOffer, name: 'offer' },
+            { componentName: IconOfferFill, name: 'offer-fill' },
             { componentName: IconOutcome, name: 'outcome' },
             { componentName: IconOverdraft, name: 'overdraft' },
             { componentName: IconPayBack, name: 'pay-back' },
@@ -536,6 +550,7 @@ describe('icon', () => {
             { componentName: IconTransferAnyBank, name: 'transfer-any-bank' },
             { componentName: IconTransferAnyBankCredit, name: 'transfer-any-bank-credit' },
             { componentName: IconTransferBetweenAccounts, name: 'transfer-between-accounts' },
+            { componentName: IconTransferByPhone, name: 'transfer-by-phone' },
             { componentName: IconTransferCard, name: 'transfer-card' },
             { componentName: IconTransferExternal, name: 'transfer-external' },
             { componentName: IconTransferIn, name: 'transfer-in' },
@@ -662,6 +677,7 @@ describe('icon', () => {
             { componentName: IconAtm, name: 'atm' },
             { componentName: IconBag, name: 'bag' },
             { componentName: IconCalendar, name: 'calendar' },
+            { componentName: IconCardVoid, name: 'card-void' },
             { componentName: IconCashback, name: 'cashback' },
             { componentName: IconCashbackBonus, name: 'cashback-bonus' },
             { componentName: IconChatPhoto, name: 'chat-photo' },
@@ -725,6 +741,7 @@ describe('icon', () => {
             { componentName: IconFormatXls, name: 'format-xls' },
             { componentName: IconFormatXml, name: 'format-xml' },
             { componentName: IconFormatZip, name: 'format-zip' },
+            { componentName: IconAndroidReorder, name: 'android-reorder' },
             { componentName: IconArrowBottom, name: 'arrow-bottom' },
             { componentName: IconArrowCollapse, name: 'arrow-collapse' },
             { componentName: IconArrowDouble, name: 'arrow-double' },
@@ -758,13 +775,16 @@ describe('icon', () => {
             { componentName: IconFeature, name: 'feature' },
             { componentName: IconFingerPointing, name: 'finger-pointing' },
             { componentName: IconGeolocation, name: 'geolocation' },
+            { componentName: IconGeolocationMap, name: 'geolocation-map' },
             { componentName: IconHelp, name: 'help' },
             { componentName: IconHelpFilled, name: 'help-filled' },
             { componentName: IconInfo, name: 'info' },
             { componentName: IconLeft, name: 'left' },
             { componentName: IconLocation, name: 'location' },
+            { componentName: IconMetroMap, name: 'metro-map' },
             { componentName: IconOk, name: 'ok' },
             { componentName: IconOkFilled, name: 'ok-filled' },
+            { componentName: IconOutside, name: 'outside' },
             { componentName: IconPlay, name: 'play' },
             { componentName: IconRight, name: 'right' },
             { componentName: IconSell, name: 'sell' },

@@ -112,6 +112,13 @@ exports[`icon render IconAnalytics without problems: IconAnalytics 1`] = `
 />
 `;
 
+exports[`icon render IconAndroidReorder without problems: IconAndroidReorder 1`] = `
+<Icon
+  name="android-reorder"
+  size="m"
+/>
+`;
+
 exports[`icon render IconApcBonus without problems: IconApcBonus 1`] = `
 <Icon
   name="APC-bonus"
@@ -122,6 +129,13 @@ exports[`icon render IconApcBonus without problems: IconApcBonus 1`] = `
 exports[`icon render IconArrowBack without problems: IconArrowBack 1`] = `
 <Icon
   name="arrow-back"
+  size="m"
+/>
+`;
+
+exports[`icon render IconArrowBackBold without problems: IconArrowBackBold 1`] = `
+<Icon
+  name="arrow-back-bold"
   size="m"
 />
 `;
@@ -206,6 +220,13 @@ exports[`icon render IconAttachment without problems: IconAttachment 1`] = `
 exports[`icon render IconAttention without problems: IconAttention 1`] = `
 <Icon
   name="attention"
+  size="m"
+/>
+`;
+
+exports[`icon render IconAttentionBold without problems: IconAttentionBold 1`] = `
+<Icon
+  name="attention-bold"
   size="m"
 />
 `;
@@ -976,6 +997,13 @@ exports[`icon render IconCardVisa without problems: IconCardVisa 1`] = `
 exports[`icon render IconCardVisaElectron without problems: IconCardVisaElectron 1`] = `
 <Icon
   name="card-visa-electron"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCardVoid without problems: IconCardVoid 1`] = `
+<Icon
+  name="card-void"
   size="m"
 />
 `;
@@ -1932,6 +1960,13 @@ exports[`icon render IconGeolocation without problems: IconGeolocation 1`] = `
 />
 `;
 
+exports[`icon render IconGeolocationMap without problems: IconGeolocationMap 1`] = `
+<Icon
+  name="geolocation-map"
+  size="m"
+/>
+`;
+
 exports[`icon render IconGoals without problems: IconGoals 1`] = `
 <Icon
   name="goals"
@@ -2135,6 +2170,13 @@ exports[`icon render IconMetro without problems: IconMetro 1`] = `
 />
 `;
 
+exports[`icon render IconMetroMap without problems: IconMetroMap 1`] = `
+<Icon
+  name="metro-map"
+  size="m"
+/>
+`;
+
 exports[`icon render IconMir without problems: IconMir 1`] = `
 <Icon
   name="mir"
@@ -2187,6 +2229,13 @@ exports[`icon render IconNavigationHistory without problems: IconNavigationHisto
 exports[`icon render IconNavigationHome without problems: IconNavigationHome 1`] = `
 <Icon
   name="navigation-home"
+  size="m"
+/>
+`;
+
+exports[`icon render IconNavigationMarketplace without problems: IconNavigationMarketplace 1`] = `
+<Icon
+  name="navigation-marketplace"
   size="m"
 />
 `;
@@ -2254,6 +2303,13 @@ exports[`icon render IconOffer without problems: IconOffer 1`] = `
 />
 `;
 
+exports[`icon render IconOfferFill without problems: IconOfferFill 1`] = `
+<Icon
+  name="offer-fill"
+  size="m"
+/>
+`;
+
 exports[`icon render IconOffice without problems: IconOffice 1`] = `
 <Icon
   name="office"
@@ -2278,6 +2334,13 @@ exports[`icon render IconOkFilled without problems: IconOkFilled 1`] = `
 exports[`icon render IconOutcome without problems: IconOutcome 1`] = `
 <Icon
   name="outcome"
+  size="m"
+/>
+`;
+
+exports[`icon render IconOutside without problems: IconOutside 1`] = `
+<Icon
+  name="outside"
   size="m"
 />
 `;
@@ -2733,6 +2796,13 @@ exports[`icon render IconTransferAnyBankCredit without problems: IconTransferAny
 exports[`icon render IconTransferBetweenAccounts without problems: IconTransferBetweenAccounts 1`] = `
 <Icon
   name="transfer-between-accounts"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTransferByPhone without problems: IconTransferByPhone 1`] = `
+<Icon
+  name="transfer-by-phone"
   size="m"
 />
 `;

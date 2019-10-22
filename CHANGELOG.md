@@ -1,3 +1,13 @@
+<a name="15.1.1"></a>
+## [15.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.0...v15.1.1) (2019-10-22)
+
+
+### Bug Fixes
+
+* **icons:** missed icons ([6b35738](https://github.com/alfa-laboratory/arui-feather/commit/6b35738))
+
+
+
 <a name="15.1.0"></a>
 # [15.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.0.1...v15.1.0) (2019-10-22)
 

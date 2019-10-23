@@ -8,6 +8,7 @@ import Type from 'prop-types';
 
 import Button from '../button/button';
 import IconAttachment from '../icon/action/attachment';
+import ProgressBar from '../progress-bar';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -119,8 +120,12 @@ class Attach extends React.Component {
         accept: Type.string,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
-        /** Управляет возможностью выбора нескольких файлов */
+        /** Управление возможностью выбора нескольких файлов */
         multiple: Type.bool,
+        /** Управление возможностью отображать прогресс загрузки файла */
+        showProgressBar: Type.bool,
+        /** Процент выполнения загрузки файла */
+        progressBarPercent: Type.number,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -166,6 +171,7 @@ class Attach extends React.Component {
         size: 'm',
         disabled: false,
         multiple: false,
+        showProgressBar: false,
         tabIndex: 0,
         noFileText: 'Нет файла'
     };
@@ -280,6 +286,12 @@ class Attach extends React.Component {
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
                     />
+                    { this.props.showProgressBar && (
+                        <ProgressBar
+                            percent={ this.props.progressBarPercent }
+                            className={ cn('progress-bar') }
+                        />
+                    ) }
                 </span>
             );
         }

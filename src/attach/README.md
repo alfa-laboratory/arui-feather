@@ -54,3 +54,23 @@ function handleChange(value) {
     </div>
 </div>
 ```
+
+С отслеживанием процесса загрузки файла
+```jsx
+function handleChange(value) {
+    setState({ value });
+}
+
+<div>
+    <div className='row'>
+        <Attach
+            showProgressBar={ true }
+            progressBarPercent={ 50 }
+            buttonContent='Выберите файл'
+            size='s'
+            onChange={ handleChange }
+            value={ state.value }
+        />
+    </div>
+</div>
+```

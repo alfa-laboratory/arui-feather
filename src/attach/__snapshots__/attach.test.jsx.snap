@@ -6,6 +6,7 @@ exports[`attach should render without problems 1`] = `
   disabled={false}
   multiple={false}
   noFileText="Нет файла"
+  showProgressBar={false}
   size="m"
   tabIndex={0}
 >

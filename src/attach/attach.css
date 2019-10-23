@@ -67,6 +67,7 @@
     &__no-file {
         display: inline;
         margin-left: 0.5em;
+        text-align: center;
     }
 
     &__clear {
@@ -83,6 +84,10 @@
         &:before {
             content: '×';
         }
+    }
+
+    &__progress-bar {
+        margin-top: var(--gap-2xs);
     }
 
     &_disabled &__control {

@@ -122,8 +122,6 @@ class Attach extends React.Component {
         disabled: Type.bool,
         /** Управление возможностью выбора нескольких файлов */
         multiple: Type.bool,
-        /** Управление возможностью отображать прогресс загрузки файла */
-        showProgressBar: Type.bool,
         /** Процент выполнения загрузки файла */
         progressBarPercent: Type.number,
         /** Размер компонента */
@@ -171,7 +169,6 @@ class Attach extends React.Component {
         size: 'm',
         disabled: false,
         multiple: false,
-        showProgressBar: false,
         tabIndex: 0,
         noFileText: 'Нет файла'
     };
@@ -286,7 +283,7 @@ class Attach extends React.Component {
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
                     />
-                    { this.props.showProgressBar && (
+                    { typeof this.props.progressBarPercent !== 'undefined' && (
                         <ProgressBar
                             percent={ this.props.progressBarPercent }
                             className={ cn('progress-bar') }

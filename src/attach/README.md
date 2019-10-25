@@ -55,7 +55,7 @@ function handleChange(value) {
 </div>
 ```
 
-С отслеживанием процесса загрузки файла
+С отображением прогресса загрузки файла
 ```jsx
 function handleChange(value) {
     setState({ value });
@@ -64,7 +64,6 @@ function handleChange(value) {
 <div>
     <div className='row'>
         <Attach
-            showProgressBar={ true }
             progressBarPercent={ 50 }
             buttonContent='Выберите файл'
             size='s'

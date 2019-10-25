@@ -1,3 +1,44 @@
+<a name="15.1.2"></a>
+## [15.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.1...v15.1.2) (2019-10-25)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.0 ([059c5f6](https://github.com/alfa-laboratory/arui-feather/commit/059c5f6))
+
+
+
+<a name="15.1.1"></a>
+## [15.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.0...v15.1.1) (2019-10-22)
+
+
+### Bug Fixes
+
+* **icons:** missed icons ([6b35738](https://github.com/alfa-laboratory/arui-feather/commit/6b35738))
+
+
+
+<a name="15.1.0"></a>
+# [15.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.0.1...v15.1.0) (2019-10-22)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.2.0 ([#863](https://github.com/alfa-laboratory/arui-feather/issues/863)) ([756165a](https://github.com/alfa-laboratory/arui-feather/commit/756165a))
+
+
+
+<a name="15.0.1"></a>
+## [15.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.0.0...v15.0.1) (2019-10-21)
+
+
+### Bug Fixes
+
+* **calendar:** focus when select month or year ([#860](https://github.com/alfa-laboratory/arui-feather/issues/860)) ([f69e0a4](https://github.com/alfa-laboratory/arui-feather/commit/f69e0a4))
+* **input:** remove opacity from all inputs icons ([#859](https://github.com/alfa-laboratory/arui-feather/issues/859)) ([7d1d833](https://github.com/alfa-laboratory/arui-feather/commit/7d1d833))
+
+
+
 <a name="15.0.0"></a>
 # [15.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v14.5.0...v15.0.0) (2019-10-11)
 

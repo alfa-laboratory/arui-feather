@@ -10,6 +10,14 @@
     background-image: url('./icon_payment-outbox_m_white.svg');
 }
 
+.icon_size_s.icon_name_payment-outbox.icon_theme_alfa-on-white {
+    background-image: url('./icon_payment-outbox_s_black.svg');
+}
+
+.icon_size_s.icon_name_payment-outbox.icon_theme_alfa-on-color {
+    background-image: url('./icon_payment-outbox_s_white.svg');
+}
+
 .icon_size_xl.icon_name_payment-outbox.icon_theme_alfa-on-white {
     background-image: url('./icon_payment-outbox_xl_black.svg');
 }

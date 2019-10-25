@@ -47,6 +47,7 @@ module.exports = {
         'import/prefer-default-export': 'off',
 
         'no-negated-condition': 'off',
-        'class-methods-use-this': 'off'
+        'class-methods-use-this': 'off',
+        'import/no-useless-path-segments': 'off'
     }
 };

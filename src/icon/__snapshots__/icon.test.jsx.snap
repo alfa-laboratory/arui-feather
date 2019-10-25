@@ -2191,6 +2191,20 @@ exports[`icon render IconMobile without problems: IconMobile 1`] = `
 />
 `;
 
+exports[`icon render IconMobileAndroid without problems: IconMobileAndroid 1`] = `
+<Icon
+  name="mobile-android"
+  size="m"
+/>
+`;
+
+exports[`icon render IconMobileIos without problems: IconMobileIos 1`] = `
+<Icon
+  name="mobile-ios"
+  size="m"
+/>
+`;
+
 exports[`icon render IconMoneybox without problems: IconMoneybox 1`] = `
 <Icon
   name="moneybox"
@@ -2418,6 +2432,13 @@ exports[`icon render IconPaymentPlus without problems: IconPaymentPlus 1`] = `
 exports[`icon render IconPaymentRoundedPlus without problems: IconPaymentRoundedPlus 1`] = `
 <Icon
   name="payment-rounded-plus"
+  size="m"
+/>
+`;
+
+exports[`icon render IconPaymentRoundedPlusBig without problems: IconPaymentRoundedPlusBig 1`] = `
+<Icon
+  name="payment-rounded-plus-big"
   size="m"
 />
 `;
@@ -2803,6 +2824,20 @@ exports[`icon render IconTransferBetweenAccounts without problems: IconTransferB
 exports[`icon render IconTransferByPhone without problems: IconTransferByPhone 1`] = `
 <Icon
   name="transfer-by-phone"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTransferByPhoneAndroid without problems: IconTransferByPhoneAndroid 1`] = `
+<Icon
+  name="transfer-by-phone-android"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTransferByPhoneIos without problems: IconTransferByPhoneIos 1`] = `
+<Icon
+  name="transfer-by-phone-ios"
   size="m"
 />
 `;

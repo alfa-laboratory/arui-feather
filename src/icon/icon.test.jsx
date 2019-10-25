@@ -110,6 +110,7 @@ import IconPaymentError from './banking/payment-error';
 import IconPaymentOutbox from './banking/payment-outbox';
 import IconPaymentPlus from './banking/payment-plus';
 import IconPaymentRoundedPlus from './banking/payment-rounded-plus';
+import IconPaymentRoundedPlusBig from './banking/payment-rounded-plus-big';
 import IconPaymentToCompany from './banking/payment-to-company';
 import IconPaymentToPerson from './banking/payment-to-person';
 import IconPaymentToSelf from './banking/payment-to-self';
@@ -124,6 +125,8 @@ import IconTransferAnyBank from './banking/transfer-any-bank';
 import IconTransferAnyBankCredit from './banking/transfer-any-bank-credit';
 import IconTransferBetweenAccounts from './banking/transfer-between-accounts';
 import IconTransferByPhone from './banking/transfer-by-phone';
+import IconTransferByPhoneAndroid from './banking/transfer-by-phone-android';
+import IconTransferByPhoneIos from './banking/transfer-by-phone-ios';
 import IconTransferCard from './banking/transfer-card';
 import IconTransferExternal from './banking/transfer-external';
 import IconTransferIn from './banking/transfer-in';
@@ -275,6 +278,8 @@ import IconManager from './entity/manager';
 import IconMessage from './entity/message';
 import IconMetro from './entity/metro';
 import IconMobile from './entity/mobile';
+import IconMobileAndroid from './entity/mobile-android';
+import IconMobileIos from './entity/mobile-ios';
 import IconMoneybox from './entity/moneybox';
 import IconMypayments from './entity/mypayments';
 import IconNews from './entity/news';
@@ -537,6 +542,7 @@ describe('icon', () => {
             { componentName: IconPaymentOutbox, name: 'payment-outbox' },
             { componentName: IconPaymentPlus, name: 'payment-plus' },
             { componentName: IconPaymentRoundedPlus, name: 'payment-rounded-plus' },
+            { componentName: IconPaymentRoundedPlusBig, name: 'payment-rounded-plus-big' },
             { componentName: IconPaymentToCompany, name: 'payment-to-company' },
             { componentName: IconPaymentToPerson, name: 'payment-to-person' },
             { componentName: IconPaymentToSelf, name: 'payment-to-self' },
@@ -551,6 +557,8 @@ describe('icon', () => {
             { componentName: IconTransferAnyBankCredit, name: 'transfer-any-bank-credit' },
             { componentName: IconTransferBetweenAccounts, name: 'transfer-between-accounts' },
             { componentName: IconTransferByPhone, name: 'transfer-by-phone' },
+            { componentName: IconTransferByPhoneAndroid, name: 'transfer-by-phone-android' },
+            { componentName: IconTransferByPhoneIos, name: 'transfer-by-phone-ios' },
             { componentName: IconTransferCard, name: 'transfer-card' },
             { componentName: IconTransferExternal, name: 'transfer-external' },
             { componentName: IconTransferIn, name: 'transfer-in' },
@@ -702,6 +710,8 @@ describe('icon', () => {
             { componentName: IconMessage, name: 'message' },
             { componentName: IconMetro, name: 'metro' },
             { componentName: IconMobile, name: 'mobile' },
+            { componentName: IconMobileAndroid, name: 'mobile-android' },
+            { componentName: IconMobileIos, name: 'mobile-ios' },
             { componentName: IconMoneybox, name: 'moneybox' },
             { componentName: IconMypayments, name: 'mypayments' },
             { componentName: IconNews, name: 'news' },

@@ -99,10 +99,11 @@ class Radio extends React.Component {
     };
 
     label;
+
     control;
 
     render(cn, TagButton) {
-        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
+        const checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -209,7 +210,7 @@ class Radio extends React.Component {
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
+            const nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
 
             this.setState({ checked: nextCheckedValue });
 
@@ -299,7 +300,7 @@ class Radio extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.label.getBoundingClientRect();
+        const elementRect = this.label.getBoundingClientRect();
 
         scrollTo({
             // eslint-disable-next-line no-mixed-operators

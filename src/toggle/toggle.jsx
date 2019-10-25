@@ -63,7 +63,7 @@ class Toggle extends React.Component {
     };
 
     render(cn) {
-        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
+        const checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -115,7 +115,8 @@ class Toggle extends React.Component {
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
+            const { checked } = this.state;
+            const nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : checked);
 
             this.setState({ checked: nextCheckedValue });
 

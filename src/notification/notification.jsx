@@ -100,7 +100,9 @@ class Notification extends React.Component {
     root;
 
     closeTimeout = null;
+
     clickEventBindTimeout = null;
+
     isWindowClickBinded = false;
 
     componentDidMount() {
@@ -140,7 +142,9 @@ class Notification extends React.Component {
         return (
             <Swipeable onSwipe={ this.handleSwipe }>
                 <div
-                    ref={ (root) => { this.root = root; } }
+                    ref={ (root) => {
+                        this.root = root;
+                    } }
                     className={ cn({
                         visible: this.props.visible,
                         status: this.props.status,
@@ -158,37 +162,37 @@ class Notification extends React.Component {
                 >
                     <div className={ cn('icon') }>
                         {
-                            this.props.icon ||
-                            <ToggledIcon
-                                colored={ this.props.status === 'ok' || this.props.status === 'error' }
-                                theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
-                                size='m'
-                            />
-                        }
+                            this.props.icon || (
+                                <ToggledIcon
+                                    colored={ this.props.status === 'ok' || this.props.status === 'error' }
+                                    theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
+                                    size='m'
+                                />
+                            ) }
                     </div>
-                    { this.props.title &&
+                    { this.props.title && (
                         <div className={ cn('title') }>
                             { this.props.title }
                         </div>
-                    }
-                    { this.props.children &&
+                    ) }
+                    { this.props.children && (
                         <div className={ cn('content') }>
                             { this.props.children }
                         </div>
-                    }
+                    ) }
                     {
-                        this.props.hasCloser &&
-                        <IconButton
-                            className={ cn('closer') }
-                            size='m'
-                            onClick={ this.handleCloserClick }
-                        >
-                            <IconClose
-                                size='s'
-                                theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
-                            />
-                        </IconButton>
-                    }
+                        this.props.hasCloser && (
+                            <IconButton
+                                className={ cn('closer') }
+                                size='m'
+                                onClick={ this.handleCloserClick }
+                            >
+                                <IconClose
+                                    size='s'
+                                    theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
+                                />
+                            </IconButton>
+                        ) }
                 </div>
             </Swipeable>
         );
@@ -269,7 +273,7 @@ class Notification extends React.Component {
     }
 
     ensureClickEvent(isDestroy) {
-        let isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).

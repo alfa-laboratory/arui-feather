@@ -131,13 +131,15 @@ class Textarea extends React.Component {
     control;
 
     render(cn) {
-        let value = this.props.value !== undefined
+        const value = this.props.value !== undefined
             ? this.props.value
             : this.state.value;
 
-        let textareaProps = {
+        const textareaProps = {
             className: cn('control'),
-            [this.props.autosize ? 'inputRef' : 'ref']: (control) => { this.control = control; },
+            [this.props.autosize ? 'inputRef' : 'ref']: (control) => {
+                this.control = control;
+            },
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled,
             id: this.props.id,
@@ -168,33 +170,37 @@ class Textarea extends React.Component {
                     'has-label': !!this.props.label,
                     'has-value': !!value
                 }) }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     {
-                        !!this.props.label &&
-                        <span className={ cn('top') }>
-                            { this.props.label }
-                        </span>
-                    }
+                        !!this.props.label && (
+                            <span className={ cn('top') }>
+                                { this.props.label }
+                            </span>
+                        ) }
                     {
                         !this.props.autosize
                             ? <textarea { ...textareaProps } />
-                            : <TextareaAutosize
-                                { ...textareaProps }
-                                maxRows={ this.props.maxRows }
-                                minRows={ this.props.minRows }
-                                style={ { maxHeight: this.props.maxHeight } }
-                                onHeightChange={ this.handleHeightChange }
-                            />
+                            : (
+                                <TextareaAutosize
+                                    { ...textareaProps }
+                                    maxRows={ this.props.maxRows }
+                                    minRows={ this.props.minRows }
+                                    style={ { maxHeight: this.props.maxHeight } }
+                                    onHeightChange={ this.handleHeightChange }
+                                />
+                            )
                     }
                     {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
-                    }
+                        (this.props.error || this.props.hint) && (
+                            <span className={ cn('sub') }>
+                                { this.props.error || this.props.hint }
+                            </span>
+                        ) }
                 </span>
             </span>
         );
@@ -220,7 +226,8 @@ class Textarea extends React.Component {
 
     @autobind
     handleChange(event) {
-        let { value } = event.target;
+        const { value } = event.target;
+
         if (this.props.value === undefined) {
             this.setState({ value });
         }
@@ -284,7 +291,7 @@ class Textarea extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.root.getBoundingClientRect();
+        const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION

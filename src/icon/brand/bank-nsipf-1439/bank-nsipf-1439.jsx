@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Icon from '../../../icon';
+import Icon from '../..';
 
 class IconBankNsipf1439 extends React.Component {
     static propTypes = Icon.propTypes;

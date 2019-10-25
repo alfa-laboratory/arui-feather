@@ -9,14 +9,14 @@ import SlideDown from './slide-down';
 
 describe('slide-down', () => {
     it('should render without problems', () => {
-        let slideDownNode = shallow(<SlideDown>slide-down-text</SlideDown>);
+        const slideDownNode = shallow(<SlideDown>slide-down-text</SlideDown>);
 
         expect(slideDownNode).toMatchSnapshot();
         expect(slideDownNode.text()).toContain('slide-down-text');
     });
 
     it('should render with height=0 by default', () => {
-        let slideDownNode = shallow(
+        const slideDownNode = shallow(
             <SlideDown>
                 <div style={ { height: '100px' } } />
             </SlideDown>
@@ -26,7 +26,7 @@ describe('slide-down', () => {
     });
 
     it('should render with height=auto when isExpanded=true', () => {
-        let slideDownNode = shallow(
+        const slideDownNode = shallow(
             <SlideDown isExpanded={ true } />
         );
 
@@ -34,29 +34,32 @@ describe('slide-down', () => {
     });
 
     it('should set `slide-down__content_expanded` class to content when isExpanded=true', () => {
-        let slideDownNode = shallow(
+        const slideDownNode = shallow(
             <SlideDown isExpanded={ true } />
         );
 
-        let slideDownContentNode = slideDownNode.find('.slide-down__content');
+        const slideDownContentNode = slideDownNode.find('.slide-down__content');
+
         expect(slideDownContentNode.props().className).toContain('slide-down__content_expanded');
     });
 
     it('should call onAnimationStart when received new isExpanded prop', () => {
-        let onAnimationStart = jest.fn();
-        let props = { isExpanded: false, onAnimationStart };
-        let slideDownNode = mount(
+        const onAnimationStart = jest.fn();
+        const props = { isExpanded: false, onAnimationStart };
+        const slideDownNode = mount(
             <SlideDown { ...props } />
         );
+
         slideDownNode.instance().UNSAFE_componentWillReceiveProps({ ...props, isExpanded: true });
         expect(onAnimationStart).toHaveBeenCalled();
     });
 
     it('should call onAnimationEnd when handleTransitionEnd is called', () => {
-        let onAnimationEnd = jest.fn();
-        let slideDownNode = shallow(
+        const onAnimationEnd = jest.fn();
+        const slideDownNode = shallow(
             <SlideDown isExpanded={ false } onAnimationEnd={ onAnimationEnd } />
         );
+
         slideDownNode.instance().handleTransitionEnd({});
         expect(onAnimationEnd).toHaveBeenCalled();
     });

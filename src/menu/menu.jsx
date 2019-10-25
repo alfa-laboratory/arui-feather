@@ -132,14 +132,16 @@ class Menu extends React.Component {
     };
 
     root;
+
     menuItemList = [];
+
     blurTimeoutId = null;
 
     componentDidMount() {
-        if (!!this.props.content && this.props.content.length > 0
-            && (!this.props.checkedItems || this.props.checkedItems.length === 0)
-            && this.props.mode === 'radio') {
-            let firstItem = this.getFirstItem(this.props.content);
+        if (!!this.props.content && this.props.content.length > 0 &&
+            (!this.props.checkedItems || this.props.checkedItems.length === 0) &&
+            this.props.mode === 'radio') {
+            const firstItem = this.getFirstItem(this.props.content);
 
             this.changeCheckedItems([firstItem.value]);
         }
@@ -179,7 +181,9 @@ class Menu extends React.Component {
         /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
         return (
             <div
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 style={ this.props.style }
                 className={ cn({
                     size: this.props.size,
@@ -206,7 +210,7 @@ class Menu extends React.Component {
     }
 
     renderMenuItemList(cn, content) {
-        let result = [];
+        const result = [];
         let groupKey = 0;
 
         content.forEach((item) => {
@@ -216,11 +220,11 @@ class Menu extends React.Component {
                         className={ cn('group') }
                         key={ `group_${groupKey}` }
                     >
-                        { !!item.title &&
+                        { !!item.title && (
                             <div className={ cn('group-title') }>
                                 { item.title }
                             </div>
-                        }
+                        ) }
                         { this.renderMenuItemList(cn, item.content) }
                     </div>
                 );
@@ -234,22 +238,22 @@ class Menu extends React.Component {
     }
 
     renderMenuItem(item) {
-        let itemProps = item.props || {};
-        let isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
-        let isItemDisabled = this.props.disabled || itemProps.disabled;
-        let clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
-        let menuItem = {
+        const itemProps = item.props || {};
+        const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
+        const isItemDisabled = this.props.disabled || itemProps.disabled;
+        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
+        const menuItem = {
             item,
             ref: item.value
         };
-        let menuItemProps = {
+        const menuItemProps = {
             ...itemProps,
             disabled: isItemDisabled,
             value: item.value,
             size: this.props.size || itemProps.size,
             onClick: !isItemDisabled ? clickHandler : undefined
         };
-        let highlightedItem = this.props.highlightedItem === undefined
+        const highlightedItem = this.props.highlightedItem === undefined
             ? this.state.highlightedItem
             : this.props.highlightedItem;
         let iconSize;
@@ -264,7 +268,9 @@ class Menu extends React.Component {
         return (
             <MenuItem
                 { ...menuItemProps }
-                ref={ (instance) => { menuItem.instance = instance; } }
+                ref={ (instance) => {
+                    menuItem.instance = instance;
+                } }
                 key={ item.key || item.value }
                 checked={ isItemChecked }
                 type={ this.props.mode !== 'basic' ? 'block' : itemProps.type }
@@ -273,11 +279,11 @@ class Menu extends React.Component {
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
             >
                 {
-                    this.props.mode === 'check' && isItemChecked &&
-                    <IconCheck
-                        size={ iconSize }
-                    />
-                }
+                    this.props.mode === 'check' && isItemChecked && (
+                        <IconCheck
+                            size={ iconSize }
+                        />
+                    ) }
                 { item.content }
             </MenuItem>
         );
@@ -321,7 +327,7 @@ class Menu extends React.Component {
     handleKeyDown(event) {
         let highlightedItem = null;
         let highlightedMenuItem = null;
-        let menuIteListLength = this.menuItemList.length;
+        const menuIteListLength = this.menuItemList.length;
 
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
@@ -470,7 +476,8 @@ class Menu extends React.Component {
         this.root.focus();
 
         if (this.props.autoFocusFirstItem) {
-            let highlightedItem = this.menuItemList[0];
+            const highlightedItem = this.menuItemList[0];
+
             this.setState({
                 highlightedItem
             });
@@ -493,11 +500,11 @@ class Menu extends React.Component {
     }
 
     setNewCheckedItems(item) {
-        let { value } = item;
+        const { value } = item;
         let checkedItems = this.props.checkedItems !== undefined
             ? Array.from(this.props.checkedItems)
             : Array.from(this.state.checkedItems);
-        let indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
+        const indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
 
         switch (this.props.mode) {
             case 'check':
@@ -544,12 +551,13 @@ class Menu extends React.Component {
 
     @autobind
     getIndexInCheckedItemsList(value) {
-        let checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
+        const checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
+
         return checkedItems.indexOf(value);
     }
 
     getFirstItem(content) {
-        let firstItem = content[0];
+        const firstItem = content[0];
 
         return firstItem.type === 'group' ? this.getFirstItem(firstItem.content) : firstItem;
     }

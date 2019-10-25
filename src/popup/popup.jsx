@@ -166,15 +166,23 @@ class Popup extends React.Component {
     };
 
     anchor = null;
+
     clickEventBindTimeout = null;
+
     domElemPopup = null;
+
     domElemPopupInner = null;
+
     domElemPopupContent = null;
+
     isWindowClickBinded = false;
+
     position = null;
 
     popup;
+
     inner;
+
     content;
 
     handleWindowResize = debounce(() => {
@@ -272,7 +280,7 @@ class Popup extends React.Component {
             return null;
         }
 
-        let template = (
+        const template = (
             <div
                 ref={ (popup) => {
                     this.popup = popup;
@@ -335,15 +343,15 @@ class Popup extends React.Component {
 
     @autobind
     handleInnerScroll(event) {
-        let { scrollTop, offsetHeight, scrollHeight } = event.target;
-        let isTopReached = Math.round(scrollTop) === 0;
-        let isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
+        const { scrollTop, offsetHeight, scrollHeight } = event.target;
+        const isTopReached = Math.round(scrollTop) === 0;
+        const isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
 
         if (this.props.height === 'adaptive' || this.props.target === 'screen') {
-            let topGradientStyles = {
+            const topGradientStyles = {
                 width: this.state.topGradientStyles.width
             };
-            let bottomGradientStyles = {
+            const bottomGradientStyles = {
                 width: this.state.bottomGradientStyles.width
             };
 
@@ -516,7 +524,7 @@ class Popup extends React.Component {
             this.domElemPopupContent = this.content;
         }
 
-        let popupHash = this.getPopupHash();
+        const popupHash = this.getPopupHash();
         let bestDrawingParams;
 
         switch (this.props.target) {
@@ -553,7 +561,7 @@ class Popup extends React.Component {
     }
 
     ensureClickEvent(isDestroy) {
-        let isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).
@@ -635,7 +643,7 @@ class Popup extends React.Component {
     }
 
     setGradientStyles() {
-        let { clientWidth } = this.inner;
+        const { clientWidth } = this.inner;
 
         this.setState({
             topGradientStyles: {

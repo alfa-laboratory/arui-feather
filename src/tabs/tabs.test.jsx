@@ -9,13 +9,13 @@ import Tabs from './tabs';
 
 describe('tabs', () => {
     it('should render without problems', () => {
-        let tabs = mount(<Tabs />);
+        const tabs = mount(<Tabs />);
 
         expect(tabs).toMatchSnapshot();
     });
 
     it('should set scrollable className when scrollable=true without problems', () => {
-        let tabs = mount(<Tabs />);
+        const tabs = mount(<Tabs />);
 
         expect(tabs.getDOMNode().className).toContain('tabs_scrollable');
     });

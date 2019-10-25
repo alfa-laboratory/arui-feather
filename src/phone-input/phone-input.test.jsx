@@ -10,7 +10,7 @@ import PhoneInput from './phone-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('phone-input', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -21,9 +21,9 @@ describe('phone-input', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        let phoneInput = mount(<PhoneInput />);
-        let elemTopPosition = phoneInput.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const phoneInput = mount(<PhoneInput />);
+        const elemTopPosition = phoneInput.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         phoneInput.instance().scrollTo();
 
@@ -31,12 +31,12 @@ describe('phone-input', () => {
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        let phoneInput = mount(<PhoneInput />);
+        const phoneInput = mount(<PhoneInput />);
 
-        let input = phoneInput.instance().root;
+        const input = phoneInput.instance().root;
+
         jest.spyOn(input, 'focus');
         jest.spyOn(input, 'blur');
-
 
         phoneInput.instance().focus();
         expect(input.focus).toHaveBeenCalled();

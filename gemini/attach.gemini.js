@@ -15,23 +15,23 @@ const PROP_SETS = [
     }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
-                let props = { theme, size, ...set };
-                let template = (
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const props = { theme, size, ...set };
+                const template = (
                     <GeminiBox theme={ theme }>
                         <Attach { ...props } />
                     </GeminiBox>
                 );
 
-                geminiReact.suite(selector, function (suite) {
+                geminiReact.suite(selector, (suite) => {
                     suite
                         .render(template)
                         .capture('plain');

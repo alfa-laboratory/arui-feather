@@ -164,7 +164,9 @@ class Calendar extends React.Component {
     render(cn) {
         return (
             <div
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 className={ cn({ width: this.props.width }) }
                 id={ this.props.id }
                 role='grid'
@@ -183,45 +185,45 @@ class Calendar extends React.Component {
 
     renderTitle(cn) {
         const month = new Date(this.state.month);
-        let isPrevMonthEnabled = !this.earlierLimit
-            || differenceInMonths(month, startOfMonth(this.earlierLimit)) > 0;
-        let isNextMonthEnabled = !this.laterLimit
-            || differenceInMonths(month, this.laterLimit) < 0;
+        const isPrevMonthEnabled = !this.earlierLimit ||
+            differenceInMonths(month, startOfMonth(this.earlierLimit)) > 0;
+        const isNextMonthEnabled = !this.laterLimit ||
+            differenceInMonths(month, this.laterLimit) < 0;
 
         return (
             <div className={ cn('title') }>
                 {
-                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
-                    <div
-                        className={
-                            cn('arrow', {
-                                direction: 'left',
-                                disabled: !isPrevMonthEnabled
-                            })
-                        }
-                        data-step='-1'
-                        data-disabled={ !isPrevMonthEnabled }
-                        role='button'
-                        tabIndex='0'
-                        onClick={ this.handleArrowClick }
-                    />
-                }
+                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection && (
+                        <div
+                            className={
+                                cn('arrow', {
+                                    direction: 'left',
+                                    disabled: !isPrevMonthEnabled
+                                })
+                            }
+                            data-step='-1'
+                            data-disabled={ !isPrevMonthEnabled }
+                            role='button'
+                            tabIndex='0'
+                            onClick={ this.handleArrowClick }
+                        />
+                    ) }
                 {
-                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
-                    <div
-                        className={
-                            cn('arrow', {
-                                direction: 'right',
-                                disabled: !isNextMonthEnabled
-                            })
-                        }
-                        data-step='1'
-                        data-disabled={ !isNextMonthEnabled }
-                        role='button'
-                        tabIndex='0'
-                        onClick={ this.handleArrowClick }
-                    />
-                }
+                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection && (
+                        <div
+                            className={
+                                cn('arrow', {
+                                    direction: 'right',
+                                    disabled: !isNextMonthEnabled
+                                })
+                            }
+                            data-step='1'
+                            data-disabled={ !isNextMonthEnabled }
+                            role='button'
+                            tabIndex='0'
+                            onClick={ this.handleArrowClick }
+                        />
+                    ) }
                 <div className={ cn('select-buttons') }>
                     {
                         <div
@@ -234,7 +236,7 @@ class Calendar extends React.Component {
                             tabIndex='0'
                             onClick={ this.handleMonthClick }
                         >
-                            <div className={ cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
+                            <div className={ cn('select-text') }>{ `${this.props.months[month.getMonth()]}` }</div>
                             <div className={ cn('select-arrows') } />
                         </div>
                     }
@@ -249,7 +251,7 @@ class Calendar extends React.Component {
                             tabIndex='0'
                             onClick={ this.handleYearClick }
                         >
-                            <div className={ cn('select-text') } >{ `${month.getFullYear()}` }</div>
+                            <div className={ cn('select-text') }>{ `${month.getFullYear()}` }</div>
                             <div className={ cn('select-arrows') } />
                         </div>
                     }
@@ -329,6 +331,7 @@ class Calendar extends React.Component {
 
         if (newMonth) {
             const monthTimestamp = parseInt(newMonth.nodeValue, 10);
+
             if (this.props.onMonthChange) {
                 this.props.onMonthChange(monthTimestamp);
             } else {
@@ -383,6 +386,7 @@ class Calendar extends React.Component {
 
         if (newYear) {
             const yearTimestamp = parseInt(newYear.nodeValue, 10);
+
             if (this.props.onMonthChange) {
                 this.props.onMonthChange(yearTimestamp);
             } else {
@@ -398,7 +402,7 @@ class Calendar extends React.Component {
     }
 
     renderDays(cn) {
-        let rows = [
+        const rows = [
             this.renderShortWeekdays(cn),
             ...this.renderMonth(cn)
         ];
@@ -438,15 +442,16 @@ class Calendar extends React.Component {
 
     renderWeek(cn, week) {
         return week.map((day, index) => {
-            let off = !this.isValidDate(day) || this.isOffDay(day);
-            let event = this.isEventDay(day);
-            let current = isCurrentDay(day);
-            let val = this.value;
-            let weekend = index > 4;
-            let mods = {};
+            const off = !this.isValidDate(day) || this.isOffDay(day);
+            const event = this.isEventDay(day);
+            const current = isCurrentDay(day);
+            const val = this.value;
+            const weekend = index > 4;
+            const mods = {};
+
             if (day) {
-                let isSameDate = val && val.getTime() === day.getTime();
-                let isBetweenPeriod = this.selectedFrom && this.selectedTo &&
+                const isSameDate = val && val.getTime() === day.getTime();
+                const isBetweenPeriod = this.selectedFrom && this.selectedTo &&
                     this.selectedFrom <= day && this.selectedTo >= day;
 
                 if (off || weekend) {
@@ -470,7 +475,7 @@ class Calendar extends React.Component {
                 mods.empty = true;
             }
 
-            let dataDay = day && !off
+            const dataDay = day && !off
                 ? day.getTime()
                 : null;
 
@@ -495,7 +500,8 @@ class Calendar extends React.Component {
 
     @autobind
     handleDayClick(event) {
-        let day = event.target.attributes['data-day'];
+        const day = event.target.attributes['data-day'];
+
         if (day) {
             this.performChange(parseInt(day.nodeValue, 10));
         }
@@ -534,9 +540,10 @@ class Calendar extends React.Component {
             return;
         }
 
-        let stepSize = event.currentTarget.attributes['data-step'].nodeValue;
-        let step = parseInt(stepSize, 10);
-        let newMonth = new Date(this.state.month);
+        const stepSize = event.currentTarget.attributes['data-step'].nodeValue;
+        const step = parseInt(stepSize, 10);
+        const newMonth = new Date(this.state.month);
+
         newMonth.setMonth(newMonth.getMonth() + step);
 
         if (this.props.onMonthChange) {
@@ -646,7 +653,7 @@ class Calendar extends React.Component {
      */
     isOffDay(date) {
         if (this.props.offDays && Array.isArray(this.props.offDays)) {
-            let timestamp = date.valueOf();
+            const timestamp = date.valueOf();
 
             // Поскольку offDays - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
             return sortedIndexOf(this.props.offDays, timestamp) !== -1;
@@ -663,7 +670,7 @@ class Calendar extends React.Component {
      */
     isEventDay(date) {
         if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
-            let timestamp = date.valueOf();
+            const timestamp = date.valueOf();
 
             // Поскольку events - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
             return sortedIndexOf(this.props.eventDays, timestamp) !== -1;
@@ -684,7 +691,8 @@ class Calendar extends React.Component {
             return;
         }
 
-        let date = new Date(timestamp);
+        const date = new Date(timestamp);
+
         if (!this.isValidDate(date) || this.isOffDay(date)) {
             return;
         }
@@ -715,7 +723,8 @@ class Calendar extends React.Component {
         if (!this.value) {
             this.performChange(this.state.month, true);
         } else {
-            let shiftedValue = addDays(this.value, dayShift);
+            const shiftedValue = addDays(this.value, dayShift);
+
             this.performChange(shiftedValue.valueOf(), isTriggeredByKeyboard);
 
             if (this.props.onMonthChange && !isSameMonth(shiftedValue, this.value)) {
@@ -725,18 +734,18 @@ class Calendar extends React.Component {
     }
 
     ensureValueInLimits(dayShift) {
-        let shiftedDay = addDays(this.value, dayShift);
+        const shiftedDay = addDays(this.value, dayShift);
 
-        return (!this.earlierLimit || differenceInMilliseconds(shiftedDay, this.earlierLimit) >= 0)
-            && (!this.laterLimit || differenceInMilliseconds(shiftedDay, this.laterLimit) <= 0);
+        return (!this.earlierLimit || differenceInMilliseconds(shiftedDay, this.earlierLimit) >= 0) &&
+            (!this.laterLimit || differenceInMilliseconds(shiftedDay, this.laterLimit) <= 0);
     }
 
     calculateWeeks() {
         let weekDay;
-        let weeks = [];
-        let lastDay = 6;
-        let month = new Date(this.state.month);
-        let dateIterator = new Date(this.state.month);
+        const weeks = [];
+        const lastDay = 6;
+        const month = new Date(this.state.month);
+        const dateIterator = new Date(this.state.month);
 
         // Далее я использую map для обхода массива, но при создании через new Array(DAYS_IN_WEEK);
         // map не вызывает колбек, для ключей, к которым не были приассигнены значения
@@ -768,6 +777,7 @@ class Calendar extends React.Component {
 
     prepareData(nextProps) {
         let isInitializing = false;
+
         if (!nextProps) {
             nextProps = this.props;
             isInitializing = true;
@@ -782,6 +792,7 @@ class Calendar extends React.Component {
         }
 
         let month;
+
         if (nextProps.month) {
             month = normalizeDate(nextProps.month);
         } else if (this.value) {
@@ -803,10 +814,11 @@ class Calendar extends React.Component {
 
             this.earlierLimit = startOfDay(this.earlierLimit);
             if (this.value) {
-                let maxTimestamp = Math.max(
+                const maxTimestamp = Math.max(
                     this.value.valueOf(),
                     this.earlierLimit.valueOf()
                 );
+
                 this.value = new Date(maxTimestamp);
             }
         }
@@ -820,10 +832,11 @@ class Calendar extends React.Component {
 
             this.laterLimit = startOfDay(this.laterLimit);
             if (this.value) {
-                let minTimestamp = Math.min(
+                const minTimestamp = Math.min(
                     this.value.valueOf(),
                     this.laterLimit.valueOf()
                 );
+
                 this.value = new Date(minTimestamp);
             }
         }

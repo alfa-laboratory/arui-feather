@@ -4,7 +4,7 @@ import Toggle from './toggle';
 
 describe('toggle', () => {
     it('should render without problems', () => {
-        let toggle = shallow(<Toggle />);
+        const toggle = shallow(<Toggle />);
 
         expect(toggle).toMatchSnapshot();
     });

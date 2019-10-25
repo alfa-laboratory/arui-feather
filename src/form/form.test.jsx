@@ -9,22 +9,22 @@ import Form from './form';
 
 describe('form', () => {
     it('should render without problems', () => {
-        let form = shallow(<Form>Form-example</Form>);
+        const form = shallow(<Form>Form-example</Form>);
 
         expect(form).toMatchSnapshot();
         expect(form.text()).toContain('Form-example');
     });
 
     it('should render footer at the end of a form', () => {
-        let form = shallow(<Form footer={ <div>footer</div> }>Form-content</Form>);
-        let contentNode = form.find('.form__footer');
+        const form = shallow(<Form footer={ <div>footer</div> }>Form-content</Form>);
+        const contentNode = form.find('.form__footer');
 
         expect(contentNode.text()).toContain('footer');
     });
 
     it('should call `onSubmit` callback after form was submitted', () => {
-        let onSubmit = jest.fn();
-        let form = mount(<Form onSubmit={ onSubmit } />);
+        const onSubmit = jest.fn();
+        const form = mount(<Form onSubmit={ onSubmit } />);
 
         form.simulate('submit');
 

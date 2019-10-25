@@ -7,14 +7,15 @@ import performance from '../performance';
 
 export const getCoordinates = ({
     touches, changedTouches, clientX, clientY
-}) => (
-    (touches && changedTouches)
-        ? { clientX: (touches[0] || changedTouches[0]).clientX, clientY: (touches[0] || changedTouches[0]).clientY }
-        : { clientX, clientY }
-);
+}) => (touches && changedTouches
+    ? {
+        clientX: (touches[0] || changedTouches[0]).clientX,
+        clientY: (touches[0] || changedTouches[0]).clientY
+    }
+    : { clientX, clientY });
 
 @performance()
-export default class Swipeable extends React.Component {
+class Swipeable extends React.Component {
     static propTypes = {
         /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
         delta: Type.number,
@@ -37,8 +38,11 @@ export default class Swipeable extends React.Component {
     };
 
     swipeStartX = 0;
+
     swipeStartY = 0;
+
     deltaX = 0;
+
     deltaY = 0;
 
     componentWillUnmount() {
@@ -66,7 +70,9 @@ export default class Swipeable extends React.Component {
 
     @autobind
     handleTouchStart(event) {
-        if (event.touches && event.touches.length > 1) return;
+        if (event.touches && event.touches.length > 1) {
+            return;
+        }
 
         if (this.props.children.props.onTouchStart) {
             this.props.children.props.onTouchStart(event);
@@ -89,7 +95,9 @@ export default class Swipeable extends React.Component {
 
     @autobind
     handleSwipeEnd(event) {
-        const { props: { delta, onSwipe } } = this;
+        const {
+            props: { delta, onSwipe }
+        } = this;
         const { clientX, clientY } = getCoordinates(event);
 
         this.deltaX = this.swipeStartX - clientX;
@@ -121,3 +129,5 @@ export default class Swipeable extends React.Component {
         this.deltaY = 0;
     }
 }
+
+export default Swipeable;

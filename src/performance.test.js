@@ -26,27 +26,32 @@ describe('isEqual', () => {
 
         it('should return `true` when same objects are passed', () => {
             const object = { foo: 'bar' };
+
             expect(isEqual(object, object)).toBe(true);
         });
 
         it('should return `true` when same arrays are passed', () => {
             const array = [4, 8, 15, 16, 23, 42];
+
             expect(isEqual(array, array)).toBe(true);
         });
 
         it('should return `true` when different objects with same values are passed', () => {
             const object = { foo: 'bar' };
+
             expect(isEqual(object, { ...object })).toBe(true);
         });
 
         it('should return `true` when different arrays with same values are passed', () => {
             const array = [4, 8, 15, 16, 23, 42];
+
             expect(isEqual(array, array.slice(0))).toBe(true);
         });
 
         it('should return `false` when objects has props with different primitive values', () => {
             const object1 = { foo: 'bar' };
             const object2 = { foo: 'buz' };
+
             expect(isEqual(object1, object2)).toBe(false);
         });
 
@@ -54,6 +59,7 @@ describe('isEqual', () => {
             const child = { foobar: 42 };
             const object1 = { foo: 'bar', child };
             const object2 = { foo: 'bar', child };
+
             expect(isEqual(object1, object2)).toBe(true);
         });
 

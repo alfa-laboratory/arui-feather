@@ -32,10 +32,23 @@ class Dropdown extends React.Component {
             className: Type.string,
             type: Type.oneOf(['default', 'tooltip']),
             height: Type.oneOf(['default', 'available', 'adaptive']),
-            directions: Type.arrayOf(Type.oneOf([
-                'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
-                'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
-            ])),
+            directions: Type.arrayOf(
+                Type.oneOf([
+                    'anchor',
+                    'top-left',
+                    'top-center',
+                    'top-right',
+                    'left-top',
+                    'left-center',
+                    'left-bottom',
+                    'right-top',
+                    'right-center',
+                    'right-bottom',
+                    'bottom-left',
+                    'bottom-center',
+                    'bottom-right'
+                ])
+            ),
             target: Type.oneOf(['anchor', 'position', 'screen']),
             mainOffset: Type.number,
             secondaryOffset: Type.number,
@@ -120,6 +133,7 @@ class Dropdown extends React.Component {
     };
 
     popup;
+
     switcher;
 
     componentDidMount() {
@@ -140,8 +154,8 @@ class Dropdown extends React.Component {
     }
 
     renderSwitcher(cn) {
-        let content = this.props.children || this.props.switcherText;
-        let opened = this.props.opened !== undefined
+        const content = this.props.children || this.props.switcherText;
+        const opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.opened;
 
@@ -155,11 +169,15 @@ class Dropdown extends React.Component {
             <Button
                 className={ cn('switcher') }
                 size={ this.props.size }
-                ref={ (switcher) => { this.switcher = switcher; } }
+                ref={ (switcher) => {
+                    this.switcher = switcher;
+                } }
                 disabled={ this.props.disabled }
                 togglable={ this.props.togglable }
                 checked={ this.props.togglable === 'check' && opened }
-                onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
+                onClick={
+                    !this.props.disabled ? this.handleSwitcherClick : undefined
+                }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
             >
@@ -173,11 +191,15 @@ class Dropdown extends React.Component {
             <Link
                 className={ cn('switcher') }
                 size={ this.props.size }
-                ref={ (switcher) => { this.switcher = switcher; } }
+                ref={ (switcher) => {
+                    this.switcher = switcher;
+                } }
                 disabled={ this.props.disabled }
                 pseudo={ true }
                 text={ content }
-                onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
+                onClick={
+                    !this.props.disabled ? this.handleSwitcherClick : undefined
+                }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
             />
@@ -186,21 +208,27 @@ class Dropdown extends React.Component {
 
     renderPopup(cn) {
         let mainOffset;
-        let opened = this.props.opened !== undefined
+        const opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.opened;
 
-        if (this.props.popupProps === undefined || (
-            this.props.popupProps && this.props.popupProps.type !== 'tooltip')) {
+        if (
+            this.props.popupProps === undefined ||
+            (this.props.popupProps && this.props.popupProps.type !== 'tooltip')
+        ) {
             switch (this.props.size) {
                 case 's':
-                case 'm': mainOffset = POPUP_MAIN_OFFSET / 2; break;
+                case 'm':
+                    mainOffset = POPUP_MAIN_OFFSET / 2;
+                    break;
                 case 'l':
-                case 'xl': mainOffset = POPUP_MAIN_OFFSET; break;
+                case 'xl':
+                    mainOffset = POPUP_MAIN_OFFSET;
+                    break;
             }
         }
 
-        let popupProps = {
+        const popupProps = {
             className: cn('popup'),
             size: this.props.size,
             mainOffset,
@@ -210,10 +238,13 @@ class Dropdown extends React.Component {
         return (
             <Popup
                 { ...popupProps }
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ (popup) => {
+                    this.popup = popup;
+                } }
                 visible={
                     (!this.props.disabled && opened) ||
-                    (this.props.mode === 'hover' && (this.state.switcherHovered || this.state.popupHovered))
+                    (this.props.mode === 'hover' &&
+                        (this.state.switcherHovered || this.state.popupHovered))
                 }
                 onMouseEnter={ this.handlePopupMouseEnter }
                 onMouseLeave={ this.handlePopupMouseLeave }
@@ -226,7 +257,7 @@ class Dropdown extends React.Component {
 
     @autobind
     handleSwitcherClick() {
-        let newOpenedStatusValue = this.props.opened !== undefined
+        const newOpenedStatusValue = this.props.opened !== undefined
             ? !this.props.opened
             : !this.state.opened;
 

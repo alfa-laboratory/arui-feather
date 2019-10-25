@@ -3,6 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './share-android.css';
-import '../../../icon';
+import '../..';
 
 export default from './share-android';

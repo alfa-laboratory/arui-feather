@@ -43,7 +43,8 @@ const DEFAULT_DIRECTIONS = [
  * @returns {String|Boolean}
  */
 function getMainDirection(direction) {
-    let deliveryPosition = direction.indexOf('-');
+    const deliveryPosition = direction.indexOf('-');
+
     return (deliveryPosition !== -1) && direction.substr(0, deliveryPosition);
 }
 
@@ -52,7 +53,8 @@ function getMainDirection(direction) {
  * @returns {String|Boolean}
  */
 function getSecondaryDirection(direction) {
-    let deliveryPosition = direction.indexOf('-');
+    const deliveryPosition = direction.indexOf('-');
+
     return (deliveryPosition !== -1) && direction.substr(deliveryPosition + 1);
 }
 
@@ -72,12 +74,12 @@ export function calcTargetDimensions(popup) {
         };
     }
 
-    let anchor = popup.targetAnchor;
-    let anchorRect = anchor.getBoundingClientRect();
-    let { fitContainer } = popup;
+    const anchor = popup.targetAnchor;
+    const anchorRect = anchor.getBoundingClientRect();
+    const { fitContainer } = popup;
 
     if (fitContainer) {
-        let fitContainerRect = fitContainer.getBoundingClientRect();
+        const fitContainerRect = fitContainer.getBoundingClientRect();
 
         return {
             left: (anchorRect.left - fitContainerRect.left) + fitContainer.scrollLeft,
@@ -101,10 +103,10 @@ export function calcTargetDimensions(popup) {
  * @returns {Rect}
  */
 function calcViewportDimensions() {
-    let winTop = window.pageYOffset;
-    let winLeft = window.pageXOffset;
-    let winWidth = window.innerWidth;
-    let winHeight = window.innerHeight;
+    const winTop = window.pageYOffset;
+    const winLeft = window.pageXOffset;
+    const winWidth = window.innerWidth;
+    const winHeight = window.innerHeight;
 
     return {
         top: winTop,
@@ -121,10 +123,10 @@ function calcViewportDimensions() {
  * @returns {Rect}
  */
 function calcContainerDimensions(container) {
-    let containerTop = container.scrollTop;
-    let containerLeft = container.scrollLeft;
-    let containerHeight = container.offsetHeight;
-    let containerWidth = container.offsetWidth;
+    const containerTop = container.scrollTop;
+    const containerLeft = container.scrollLeft;
+    const containerHeight = container.offsetHeight;
+    const containerWidth = container.offsetWidth;
 
     return {
         top: containerTop,
@@ -141,7 +143,7 @@ function calcContainerDimensions(container) {
  * @returns {Rect}
  */
 export function calcFitContainerDimensions(popup) {
-    let { fitContainer } = popup;
+    const { fitContainer } = popup;
 
     return fitContainer
         ? calcContainerDimensions(fitContainer)
@@ -164,22 +166,22 @@ function calcFitContainerFactor(
     fitContainerDimensions,
     popupDimensions,
     popupOffsetFitContainer) {
-    let intersectionLeft = Math.max(
+    const intersectionLeft = Math.max(
         position.left,
         fitContainerDimensions.left + popupOffsetFitContainer
     );
 
-    let intersectionRight = Math.min(
+    const intersectionRight = Math.min(
         position.left + popupDimensions.width,
         fitContainerDimensions.right - popupOffsetFitContainer
     );
 
-    let intersectionTop = Math.max(
+    const intersectionTop = Math.max(
         position.top,
         fitContainerDimensions.top + popupOffsetFitContainer
     );
 
-    let intersectionBottom = Math.min(
+    const intersectionBottom = Math.min(
         position.top + popupDimensions.height,
         fitContainerDimensions.bottom - popupOffsetFitContainer
     );
@@ -203,12 +205,12 @@ function calcFitContainerFactor(
  * @returns {Point}
  */
 function calcPos(direction, targetDimensions, popupDimensions, popup) {
-    let result = {};
-    let mainOffset = popup.offset.main || (popup.isHaveTooltip && POPUP_MAIN_OFFSET) || 0;
-    let secondaryOffset = popup.offset.second;
+    const result = {};
+    const mainOffset = popup.offset.main || (popup.isHaveTooltip && POPUP_MAIN_OFFSET) || 0;
+    const secondaryOffset = popup.offset.second;
 
-    let mainDirection = getMainDirection(direction);
-    let secondaryDirection = getSecondaryDirection(direction);
+    const mainDirection = getMainDirection(direction);
+    const secondaryDirection = getSecondaryDirection(direction);
 
     switch (mainDirection) {
         case 'bottom':
@@ -274,12 +276,12 @@ function calcPos(direction, targetDimensions, popupDimensions, popup) {
  * @returns {DrawingParams}
  */
 export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimensions) {
-    let popupDimensions = {
+    const popupDimensions = {
         width: popup.width,
         height: popup.height,
         area: popup.width * popup.height
     };
-    let directions = popup.directions
+    const directions = popup.directions
         ? popup.directions
         : (popup.isHeightAvailable && ['top-left']) || DEFAULT_DIRECTIONS;
     let i = 0;

@@ -54,6 +54,7 @@ class Collapse extends React.Component {
     };
 
     content;
+
     contentCase;
 
     componentDidMount() {
@@ -66,7 +67,7 @@ class Collapse extends React.Component {
 
     render(cn) {
         let ToggledIcon;
-        let expanded = this.props.isExpanded !== undefined
+        const expanded = this.props.isExpanded !== undefined
             ? this.props.isExpanded
             : this.state.isExpanded;
 
@@ -84,10 +85,15 @@ class Collapse extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
-                    ref={ (content) => { this.content = content; } }
+                    ref={ (content) => {
+                        this.content = content;
+                    } }
                     className={ cn('content') }
                 >
-                    <div ref={ (contentCase) => { this.contentCase = contentCase; } }>
+                    <div ref={ (contentCase) => {
+                        this.contentCase = contentCase;
+                    } }
+                    >
                         { this.props.children }
                     </div>
                     <ResizeSensor onResize={ this.updateContentHeight } />
@@ -112,7 +118,7 @@ class Collapse extends React.Component {
 
     @autobind
     handleExpandedChange() {
-        let newExpandedValue = this.props.isExpanded !== undefined
+        const newExpandedValue = this.props.isExpanded !== undefined
             ? !this.props.isExpanded
             : !this.state.isExpanded;
 
@@ -127,7 +133,7 @@ class Collapse extends React.Component {
 
     @autobind
     updateContentHeight() {
-        let expanded = this.props.isExpanded !== undefined
+        const expanded = this.props.isExpanded !== undefined
             ? this.props.isExpanded
             : this.state.isExpanded;
 

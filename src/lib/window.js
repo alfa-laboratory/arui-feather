@@ -14,8 +14,9 @@ export const isEventOusideBounds = deprecated({
     name: 'isEventOusideBounds',
     alternative: 'isEventOutsideClientBounds',
     version: '12.0.1'
-}, function isEventOusideBounds(event, element) {
-    let rect = element.getBoundingClientRect();
+}, (event, element) => {
+    const rect = element.getBoundingClientRect();
+
     return ((event.pageX < rect.left || event.pageX > rect.right) ||
             (event.pageY < rect.top || event.pageY > rect.bottom));
 });
@@ -39,7 +40,8 @@ export function isNodeOutsideElement(node, element) {
  * @returns {Boolean}
  */
 export function isEventOutsideClientBounds(event, element) {
-    let rect = element.getBoundingClientRect();
-    return event.clientX < rect.left || event.clientX > rect.right
-        || event.clientY < rect.top || event.clientY > rect.bottom;
+    const rect = element.getBoundingClientRect();
+
+    return event.clientX < rect.left || event.clientX > rect.right ||
+        event.clientY < rect.top || event.clientY > rect.bottom;
 }

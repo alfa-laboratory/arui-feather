@@ -13,7 +13,8 @@ import Mask from './mask';
 // В эту проверку попадают IE9 и IE10, которые не могут корректно работать с кареткой на событии `input`.
 const IS_IE9_10 = typeof window !== 'undefined' && !!window.ActiveXObject;
 
-const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
+const IS_ANDROID = typeof window !== 'undefined' &&
+    /(android)/i.test(window.navigator.userAgent);
 
 /**
  * Возвращает версию андроида в формате "4.2.1" или false, если не аднроид.
@@ -34,8 +35,9 @@ export function getAndroidVersion() {
 // Для IE11 вместо `onChange`, используем событие `onInput`, для правильной работы copy/paste
 // Issue на ошибку в React: https://github.com/facebook/react/issues/7211
 // Детектим IE11: `Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;`
-const IS_IE11 =
-    typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
+const IS_IE11 = typeof window !== 'undefined' &&
+    Object.hasOwnProperty.call(window, 'ActiveXObject') &&
+    !window.ActiveXObject;
 
 // Типы операции, которые пользователь может производить с текстовым полем.
 const operationType = {
@@ -51,14 +53,13 @@ const operationType = {
  * @param {Mask} mask Маска
  * @returns {Number}
  */
-const getSeparatorsAmount = (str, mask) => (
-    str.split('').reduce((amount, char, index) => {
-        if (mask.isEditableIndex(index)) {
-            return amount;
-        }
-        return amount + 1;
-    }, 0)
-);
+const getSeparatorsAmount = (str, mask) => str.split('').reduce((amount, char, index) => {
+    if (mask.isEditableIndex(index)) {
+        return amount;
+    }
+
+    return amount + 1;
+}, 0);
 
 /**
  * Компонент поля ввода с поддержкой масок.
@@ -130,7 +131,11 @@ class MaskedInput extends React.Component {
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
-        this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
+        this.setMask(
+            this.props.mask,
+            this.props.formatCharacters,
+            this.props.useWhitespaces
+        );
         this.beforeChangeMask = this.mask;
         this.value = this.mask.format(this.props.value || '');
     }
@@ -141,7 +146,10 @@ class MaskedInput extends React.Component {
 
         this.beforeChangeMask = this.mask;
 
-        if (this.props.mask !== nextProps.mask || this.props.formatCharacters !== nextProps.formatCharacters) {
+        if (
+            this.props.mask !== nextProps.mask ||
+            this.props.formatCharacters !== nextProps.formatCharacters
+        ) {
             this.setMask(nextProps.mask, nextProps.formatCharacters);
             reformatValue = true;
         }
@@ -167,7 +175,7 @@ class MaskedInput extends React.Component {
             ...props
         } = this.props;
 
-        let length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
+        const length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
 
         return (
             <input
@@ -203,7 +211,9 @@ class MaskedInput extends React.Component {
      */
     @autobind
     handleInput(event) {
-        const processedEvent = IS_IE9_10 ? event : this.processInputEvent(event);
+        const processedEvent = IS_IE9_10
+            ? event
+            : this.processInputEvent(event);
 
         if (this.props.onInput) {
             this.props.onInput(processedEvent);
@@ -227,7 +237,9 @@ class MaskedInput extends React.Component {
             return;
         }
 
-        const processedInput = IS_IE9_10 ? this.processInputEvent(event) : event;
+        const processedInput = IS_IE9_10
+            ? this.processInputEvent(event)
+            : event;
 
         if (this.props.onChange) {
             this.props.onChange(processedInput);
@@ -271,7 +283,10 @@ class MaskedInput extends React.Component {
      * @param {Boolean} useWhitespaces Использовать в маске пробелы
      */
     setMask(newMask, formatCharacters, useWhitespaces) {
-        if (this.maskPattern !== newMask || this.formatCharacters !== formatCharacters) {
+        if (
+            this.maskPattern !== newMask ||
+            this.formatCharacters !== formatCharacters
+        ) {
             this.mask = new Mask(newMask, formatCharacters, useWhitespaces);
             this.maskPattern = newMask;
             this.formatCharacters = formatCharacters;
@@ -283,11 +298,12 @@ class MaskedInput extends React.Component {
             this.props.onProcessInputEvent(event);
         }
 
-        let prevSelection = this.input.selectionStart;
-        let newValue = event.target.value;
+        const prevSelection = this.input.selectionStart;
+        const newValue = event.target.value;
 
-        let currentValue = this.value;
-        let formattedValue = this.mask.format(newValue);
+        const currentValue = this.value;
+        const formattedValue = this.mask.format(newValue);
+
         this.value = formattedValue;
         event.target.value = formattedValue;
 
@@ -298,47 +314,65 @@ class MaskedInput extends React.Component {
             let newSelection = prevSelection;
 
             // Определяем тип операции, который был произведен над текстовым полем.
-            let opType = newValue.length >= currentValue.length ? operationType.ADD : operationType.DELETE;
+            let opType = newValue.length >= currentValue.length
+                ? operationType.ADD
+                : operationType.DELETE;
 
             // На пользовательском инпуте было выделение перед операцией,
             // значит могла быть операция или удаления или замены.
-            let beforeInputSelectionLength = this.beforeInputSelection.end - this.beforeInputSelection.start;
+            const beforeInputSelectionLength = this.beforeInputSelection.end - this.beforeInputSelection.start;
+
             if (beforeInputSelectionLength >= 1) {
-                if (newValue.length !== currentValue.length - beforeInputSelectionLength) {
+                if (
+                    newValue.length !==
+                    currentValue.length - beforeInputSelectionLength
+                ) {
                     opType = operationType.REPLACE;
                 }
             }
 
             const beforeChangeSeparatorsAmount = getSeparatorsAmount(
                 currentValue.slice(0, prevSelection),
-                this.beforeChangeMask);
+                this.beforeChangeMask
+            );
 
             const afterChangeSeparatorsAmount = getSeparatorsAmount(
                 formattedValue.slice(0, newSelection),
-                this.mask);
+                this.mask
+            );
 
             // Двигаем каретку вправо, если слева от каретки добавились не редактируемые символы
-            const shouldShiftCaret =
-                beforeChangeSeparatorsAmount < afterChangeSeparatorsAmount
-                && (opType === operationType.ADD || opType === operationType.REPLACE)
-                && this.beforeChangeMask.isEditableIndex(this.beforeInputSelection.start)
-                && this.mask.isEditableIndex(newSelection);
+            const shouldShiftCaret = beforeChangeSeparatorsAmount < afterChangeSeparatorsAmount &&
+                (opType === operationType.ADD ||
+                    opType === operationType.REPLACE) &&
+                this.beforeChangeMask.isEditableIndex(
+                    this.beforeInputSelection.start
+                ) &&
+                this.mask.isEditableIndex(newSelection);
 
             // Двигаем каретку влево, если слева от каретки добавились не редактируемые символы
-            const shouldUnshiftCaret =
-                beforeChangeSeparatorsAmount > afterChangeSeparatorsAmount
-                && opType === operationType.DELETE
-                && (this.mask.isEditableIndex(newSelection - 1) && newSelection > 0);
+            const shouldUnshiftCaret = beforeChangeSeparatorsAmount > afterChangeSeparatorsAmount &&
+                opType === operationType.DELETE &&
+                (this.mask.isEditableIndex(newSelection - 1) &&
+                    newSelection > 0);
 
             if (shouldUnshiftCaret || shouldShiftCaret) {
-                newSelection += (afterChangeSeparatorsAmount - beforeChangeSeparatorsAmount);
+                newSelection +=
+                    afterChangeSeparatorsAmount - beforeChangeSeparatorsAmount;
             }
 
             // Для операции добавления и замены, если мы стояли на нередактируемом символе,
             // то добавляем сдвиг до ближайшего редактируемого.
-            if (opType === operationType.ADD || opType === operationType.REPLACE) {
+            if (
+                opType === operationType.ADD ||
+                opType === operationType.REPLACE
+            ) {
                 let index = this.beforeInputSelection.start;
-                while (!this.beforeChangeMask.isEditableIndex(index) && index < formattedValue.length) {
+
+                while (
+                    !this.beforeChangeMask.isEditableIndex(index) &&
+                    index < formattedValue.length
+                ) {
                     index += 1;
                 }
                 newSelection += index - this.beforeInputSelection.start;
@@ -346,12 +380,21 @@ class MaskedInput extends React.Component {
 
             // Если вдруг попали на нередактируемый символ маски,
             // то подвигаем курсом до ближайшего редактируемого.
-            if (opType === operationType.ADD || opType === operationType.REPLACE) {
-                while (!this.mask.isEditableIndex(newSelection) && newSelection < formattedValue.length) {
+            if (
+                opType === operationType.ADD ||
+                opType === operationType.REPLACE
+            ) {
+                while (
+                    !this.mask.isEditableIndex(newSelection) &&
+                    newSelection < formattedValue.length
+                ) {
                     newSelection += 1;
                 }
             } else if (opType === operationType.DELETE) {
-                while (!this.mask.isEditableIndex(newSelection - 1) && newSelection > 0) {
+                while (
+                    !this.mask.isEditableIndex(newSelection - 1) &&
+                    newSelection > 0
+                ) {
                     newSelection -= 1;
                 }
             }
@@ -360,8 +403,11 @@ class MaskedInput extends React.Component {
             const clampedSection = this.clampSelection(newSelection);
 
             // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
-            const offsetSection =
-                opType === operationType.ADD && IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
+            const offsetSection = opType === operationType.ADD &&
+                IS_ANDROID &&
+                parseFloat(getAndroidVersion(), 10) < 4.4
+                ? 1
+                : 0;
 
             this.setInputSelection(clampedSection + offsetSection);
         } else if (IS_ANDROID) {

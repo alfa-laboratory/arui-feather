@@ -42,7 +42,9 @@ function setCurrentPosition() {
  */
 function setBodyClass({ visible, hasOverlay }) {
     document.body.classList[visible ? 'add' : 'remove']('sidebar-visible');
-    if (hasOverlay) document.body.classList[visible ? 'add' : 'remove']('sidebar-overlay');
+    if (hasOverlay) {
+        document.body.classList[visible ? 'add' : 'remove']('sidebar-overlay');
+    }
 }
 
 /**
@@ -50,7 +52,7 @@ function setBodyClass({ visible, hasOverlay }) {
  * сохраняя scrollTop для последующего использования в сайдбаре.
  */
 function handleBodyScroll() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
     if (scrollTop) {
         savedScrollPosition = scrollTop;
@@ -104,7 +106,9 @@ class Sidebar extends React.Component {
     componentDidMount() {
         this.styleBodyRightMargin();
         setBodyClass({ visible: this.props.visible, hasOverlay: this.props.hasOverlay });
-        if (this.props.visible) window.addEventListener('keydown', this.handleKeyDown);
+        if (this.props.visible) {
+            window.addEventListener('keydown', this.handleKeyDown);
+        }
         window.addEventListener('scroll', handleBodyScroll);
     }
 
@@ -136,7 +140,7 @@ class Sidebar extends React.Component {
     }
 
     render(cn) {
-        let {
+        const {
             hasCloser,
             children,
             visible,
@@ -145,9 +149,9 @@ class Sidebar extends React.Component {
             width
         } = this.props;
 
-        let offset = visible ? getScrollbarWidth() : 0;
-        let style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
-        let contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
+        const offset = visible ? getScrollbarWidth() : 0;
+        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
             <PopupContainerProvider
@@ -173,16 +177,16 @@ class Sidebar extends React.Component {
                         className={ cn('header') }
                     >
                         {
-                            hasCloser &&
-                            <div className={ cn('closer') }>
-                                <IconButton
-                                    size={ this.state.isMobile ? 'm' : 'l' }
-                                    onClick={ this.handleClose }
-                                >
-                                    <IconClose size='l' />
-                                </IconButton>
-                            </div>
-                        }
+                            hasCloser && (
+                                <div className={ cn('closer') }>
+                                    <IconButton
+                                        size={ this.state.isMobile ? 'm' : 'l' }
+                                        onClick={ this.handleClose }
+                                    >
+                                        <IconClose size='l' />
+                                    </IconButton>
+                                </div>
+                            ) }
                         {
                             headerContent
                                 ? this.renderHeaderContent(cn)
@@ -236,7 +240,8 @@ class Sidebar extends React.Component {
     }
 
     styleBodyRightMargin() {
-        let offset = this.props.visible ? getScrollbarWidth() : 0;
+        const offset = this.props.visible ? getScrollbarWidth() : 0;
+
         document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : 0;
     }
 }

@@ -17,7 +17,8 @@ export function parseDate(value, format) {
 
     // Проверяем, чтобы пользователь ввёл полную строку даты без пробелов.
     if (valueTrimmed.length === format.length && !valueTrimmed.match(/\s/)) {
-        let valueDate = parse(valueTrimmed, format);
+        const valueDate = parse(valueTrimmed, format);
+
         if (isDateValid(valueDate)) {
             result = valueDate.valueOf();
         }
@@ -35,11 +36,12 @@ export function parseDate(value, format) {
  * @returns {String}
  */
 export function changeDateFormat(value, inFormat, outFormat) {
-    let date = parseDate(value, inFormat);
+    const date = parseDate(value, inFormat);
 
     if (date) {
         return formatDate(date, outFormat);
     }
+
     return value;
 }
 

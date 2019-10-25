@@ -86,13 +86,17 @@ class PopupContainerProvider extends React.Component {
             <div
                 className={ cn() }
                 id={ this.props.id }
-                ref={ (positioningContainer) => { this.positioningContainer = positioningContainer; } }
+                ref={ (positioningContainer) => {
+                    this.positioningContainer = positioningContainer;
+                } }
                 style={ this.props.style }
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.children }
                 <IsolatedContainer
-                    ref={ (renderContainer) => { this.renderContainer = renderContainer; } }
+                    ref={ (renderContainer) => {
+                        this.renderContainer = renderContainer;
+                    } }
                 />
             </div>
         );

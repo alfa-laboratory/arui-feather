@@ -9,7 +9,8 @@ import TabItem from './tab-item';
 
 describe('tab-item', () => {
     it('renders without problems', () => {
-        let tabItem = mount(<TabItem />);
+        const tabItem = mount(<TabItem />);
+
         expect(tabItem).toMatchSnapshot();
     });
 });

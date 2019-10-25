@@ -79,11 +79,11 @@ class Form extends React.Component {
             >
                 { this.props.children }
                 {
-                    this.props.footer &&
+                    this.props.footer && (
                         <div className={ cn('footer') }>
                             { this.props.footer }
                         </div>
-                }
+                    ) }
             </form>
         );
     }

@@ -70,7 +70,7 @@ class CheckBoxGroup extends React.Component {
     render(cn) {
         let children = null;
         let props = { name: this.props.name };
-        let checkboxGroupParts = {};
+        const checkboxGroupParts = {};
 
         if (this.props.disabled !== undefined) {
             props.disabled = this.props.disabled;
@@ -87,12 +87,12 @@ class CheckBoxGroup extends React.Component {
         if (children) {
             this.checkboxes = [];
 
-            let value = this.props.value !== undefined
+            const value = this.props.value !== undefined
                 ? this.props.value
                 : this.state.value;
 
             React.Children.forEach(children, (checkbox, index) => {
-                let checkboxNode = React.cloneElement(checkbox, {
+                const checkboxNode = React.cloneElement(checkbox, {
                     ref: checkbox => this.checkboxes.push(checkbox),
                     checked: checkbox.props.checked !== undefined
                         ? checkbox.props.checked : value.some(groupValue => groupValue === checkbox.props.value),
@@ -124,11 +124,11 @@ class CheckBoxGroup extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 {
-                    !!this.props.label &&
-                    <div className={ cn('label') }>
-                        { this.props.label }
-                    </div>
-                }
+                    !!this.props.label && (
+                        <div className={ cn('label') }>
+                            { this.props.label }
+                        </div>
+                    ) }
                 <div className={ cn('box') }>
                     { createFragment(checkboxGroupParts) }
                 </div>
@@ -138,8 +138,8 @@ class CheckBoxGroup extends React.Component {
 
     @autobind
     handleCheckboxChange(value, checked) {
-        let newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
-        let changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
+        const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
+        const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
         if (checked) {
             newValue.push(value);

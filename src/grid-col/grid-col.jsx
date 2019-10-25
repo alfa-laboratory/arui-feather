@@ -27,7 +27,7 @@ const breakpointsType = {
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
 @cn('grid-col')
-export default class GridCol extends React.PureComponent {
+class GridCol extends React.PureComponent {
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -43,7 +43,11 @@ export default class GridCol extends React.PureComponent {
          * tablet: { s: [1..12], m: [1..12] },
          * desktop: { s: [1..12], m: [1..12], l: [1..12], xl: [1..12] } }`.
          */
-        width: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
+        width: Type.oneOfType([
+            Type.string,
+            Type.number,
+            Type.shape(breakpointsType)
+        ]),
         /**
          * Управлние смещением колонки.
          * Возможные значения: `[1..11]`
@@ -52,7 +56,11 @@ export default class GridCol extends React.PureComponent {
          * tablet: { s: [1..11], m: [1..11] },
          * desktop: { s: [1..11], m: [1..11], l: [1..11], xl: [1..11] } }`.
          */
-        offset: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
+        offset: Type.oneOfType([
+            Type.string,
+            Type.number,
+            Type.shape(breakpointsType)
+        ]),
         /**
          * Управление порядком колонок.
          * Возможные значения: `[1..12, first, last]`
@@ -61,18 +69,22 @@ export default class GridCol extends React.PureComponent {
          * tablet: { s: [1..last], m: [1..last] },
          * desktop: { s: [1..last], m: [1..last], l: [1..last], xl: [1..last] } }`.
          */
-        order: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
+        order: Type.oneOfType([
+            Type.string,
+            Type.number,
+            Type.shape(breakpointsType)
+        ]),
         /** Html тег компонента. */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */
         children: Type.node,
         /** Идентификатор для систем автоматизированного тестирования */
         'data-test-id': Type.string
-    }
+    };
 
     static defaultProps = {
         tag: 'div'
-    }
+    };
 
     render(cn) {
         const {
@@ -105,15 +117,19 @@ export default class GridCol extends React.PureComponent {
      * @param {Object} props Свойства.
      * @returns {Object}
      */
-    createClassNames(props) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    createClassNames(props) {
+        // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
         const classNames = {};
+
         Object.keys(props).forEach((name) => {
             const prop = props[name];
+
             if (!prop) {
                 return;
             }
             if (typeof prop !== 'object') {
                 classNames[name] = prop;
+
                 return;
             }
             Object.keys(prop).forEach((breakpoint) => {
@@ -125,13 +141,20 @@ export default class GridCol extends React.PureComponent {
                         if (prop[breakpoint][size] === null) {
                             return;
                         }
-                        classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][size].toString();
+                        classNames[`${name}-${breakpoint}-${size}`] = prop[
+                            breakpoint
+                        ][size].toString();
                     });
                 } else {
-                    classNames[`${name}-${breakpoint}`] = prop[breakpoint].toString();
+                    classNames[`${name}-${breakpoint}`] = prop[
+                        breakpoint
+                    ].toString();
                 }
             });
         });
+
         return classNames;
     }
 }
+
+export default GridCol;

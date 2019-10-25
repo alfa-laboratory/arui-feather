@@ -24,6 +24,9 @@ module.exports = {
         // List of file extensions with jsx support
         'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx'] }],
 
+        'react/destructuring-assignment': 'off',
+        'react/no-access-state-in-setstate': 'off',
+
         // Setting the max length of the code
         'max-len': ['error', 120],
 
@@ -41,6 +44,9 @@ module.exports = {
         'prefer-destructuring': 'off',
 
         // Default exports are evil 👿
-        'import/prefer-default-export': 'off'
+        'import/prefer-default-export': 'off',
+
+        'no-negated-condition': 'off',
+        'class-methods-use-this': 'off'
     }
 };

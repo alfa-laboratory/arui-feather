@@ -90,13 +90,16 @@ class MenuItem extends React.Component {
     };
 
     root;
+
     control;
 
     render(cn) {
-        let content = this.props.children || this.props.value;
+        const content = this.props.children || this.props.value;
         let itemElement;
         let menuItemProps = {
-            ref: (root) => { this.root = root; },
+            ref: (root) => {
+                this.root = root;
+            },
             'data-test-id': this.props['data-test-id']
         };
 
@@ -104,7 +107,9 @@ class MenuItem extends React.Component {
             case 'dropdown':
                 itemElement = (
                     <Dropdown
-                        ref={ (control) => { this.control = control; } }
+                        ref={ (control) => {
+                            this.control = control;
+                        } }
                         className={ `${cn('control')} ${cn('dropdown')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
@@ -140,7 +145,9 @@ class MenuItem extends React.Component {
             default:
                 itemElement = (
                     <Link
-                        ref={ (control) => { this.control = control; } }
+                        ref={ (control) => {
+                            this.control = control;
+                        } }
                         className={ `${cn('control')} ${cn('link')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
@@ -183,6 +190,7 @@ class MenuItem extends React.Component {
     handleClick(event) {
         if (this.props.disabled) {
             event.preventDefault();
+
             return;
         }
 

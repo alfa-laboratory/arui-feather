@@ -3,6 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './action-photo-or-file.css';
-import '../../../icon';
+import '../..';
 
 export default from './action-photo-or-file';

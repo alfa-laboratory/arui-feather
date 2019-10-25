@@ -13,17 +13,17 @@ const PROP_SETS = [
     { text: 'Checkbox', disabled: true }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
-                let props = { theme, size, ...set };
-                let template = (
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const props = { theme, size, ...set };
+                const template = (
                     <GeminiBox theme={ theme }>
                         <Checkbox
                             { ...props }
@@ -36,7 +36,7 @@ geminiReact.suite(NAME, function () {
                     return;
                 }
 
-                geminiReact.suite(selector, function (suite) {
+                geminiReact.suite(selector, (suite) => {
                     if (set.disabled) {
                         suite
                             .render(template)
@@ -51,7 +51,7 @@ geminiReact.suite(NAME, function () {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('focused', function (actions, find) {
+                            .capture('focused', (actions, find) => {
                                 actions.focus(find('.checkbox__control'));
                             });
                     }

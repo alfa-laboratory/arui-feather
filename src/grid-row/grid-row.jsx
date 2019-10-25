@@ -13,13 +13,12 @@ const breakpointsType = {
     desktop: Type.oneOfType([Type.string, Type.number, Type.object])
 };
 
-
 /**
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
 @cn('grid-row')
-export default class GridRow extends React.PureComponent {
+class GridRow extends React.PureComponent {
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -33,7 +32,11 @@ export default class GridRow extends React.PureComponent {
          * tablet: { s: [0..24], m: [0..24] },
          * desktop: { s: [0..24], m: [0..24], l: [0..24], xl: [0..24] } }`.
          */
-        gutter: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
+        gutter: Type.oneOfType([
+            Type.string,
+            Type.number,
+            Type.shape(breakpointsType)
+        ]),
         /** Управление выравниванием колонок по вертикальной оси */
         align: Type.oneOf(['top', 'middle', 'bottom']),
         /** Управление выравниванием колонок по горизонтальной оси */
@@ -49,7 +52,7 @@ export default class GridRow extends React.PureComponent {
         children: Type.node,
         /** Идентификатор для систем автоматизированного тестирования */
         'data-test-id': Type.string
-    }
+    };
 
     static defaultProps = {
         tag: 'div',
@@ -62,13 +65,13 @@ export default class GridRow extends React.PureComponent {
             }
         },
         justify: 'between'
-    }
+    };
 
     /**
      * Класс колонки
      * @type {string}
      */
-    classCol = 'grid-col'
+    classCol = 'grid-col';
 
     render(cn) {
         const {
@@ -81,6 +84,7 @@ export default class GridRow extends React.PureComponent {
         } = this.props;
 
         let gutters = {};
+
         if (typeof gutter === 'object') {
             Object.keys(gutter).forEach((breakpoint) => {
                 if (gutter[breakpoint] === null) {
@@ -91,10 +95,14 @@ export default class GridRow extends React.PureComponent {
                         if (gutter[breakpoint][size] === null) {
                             return;
                         }
-                        gutters[`gutter-${breakpoint}-${size}`] = gutter[breakpoint][size].toString();
+                        gutters[`gutter-${breakpoint}-${size}`] = gutter[
+                            breakpoint
+                        ][size].toString();
                     });
                 } else {
-                    gutters[`gutter-${breakpoint}`] = gutter[breakpoint].toString();
+                    gutters[`gutter-${breakpoint}`] = gutter[
+                        breakpoint
+                    ].toString();
                 }
             });
         } else {
@@ -124,20 +132,25 @@ export default class GridRow extends React.PureComponent {
      * @returns {ReactElement}
      */
     injectGutterClassNamesToChildren(gutters, children) {
-        return (
-            Children.map(children, (col) => {
-                if (!col) {
-                    return null;
-                }
-                if (!col.props) {
-                    return col;
-                }
-                const gutterClassNames = Object.keys(gutters).map(
-                    gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
-                );
-                const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
-                return cloneElement(col, { className: `${gutterClassNames.join(' ')}${classNameFromProps}` });
-            })
-        );
+        return Children.map(children, (col) => {
+            if (!col) {
+                return null;
+            }
+            if (!col.props) {
+                return col;
+            }
+            const gutterClassNames = Object.keys(gutters).map(
+                gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
+            );
+            const classNameFromProps = col.props.className
+                ? ` ${col.props.className}`
+                : '';
+
+            return cloneElement(col, {
+                className: `${gutterClassNames.join(' ')}${classNameFromProps}`
+            });
+        });
     }
 }
+
+export default GridRow;

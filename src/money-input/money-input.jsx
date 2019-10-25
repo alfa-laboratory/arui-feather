@@ -46,8 +46,8 @@ function splitInteger(str) {
         return [str];
     }
 
-    let from = str.length - INTEGER_PART_SIZE;
-    let to = str.length;
+    const from = str.length - INTEGER_PART_SIZE;
+    const to = str.length;
 
     return [str.slice(from, to)].concat(splitInteger(str.slice(0, from)));
 }
@@ -153,12 +153,12 @@ class MoneyInput extends React.Component {
 
     @autobind
     handleProcessMaskInputEvent(event) {
-        let currentValue = this.mask.format(this.getValue());
+        const currentValue = this.mask.format(this.getValue());
         let newValue = event.target.value;
 
         // При удалении отрезаем запятую, если исчезла дробная часть.
         if (newValue.length < currentValue.length) {
-            let fractionPart = getValueParts(newValue)[1]; // Берем значение после запятой
+            const fractionPart = getValueParts(newValue)[1]; // Берем значение после запятой
 
             // `fractionPart !== undefined` - значит запятая введена, но
             // `fractionPart.length === 0` - значит цифр после запятой нет.
@@ -213,9 +213,10 @@ class MoneyInput extends React.Component {
      * @param {String} value Значение
      */
     updateMaskByValue(value) {
-        let [integerPart, fractionPart] = getValueParts(value);
+        const [integerPart, fractionPart] = getValueParts(value);
 
-        let integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
+        const integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
+
         this.maskPattern = splitInteger(new Array(integerPartLength + 1).join('1'))
             .reverse()
             .join(' ');

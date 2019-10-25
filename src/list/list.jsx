@@ -35,9 +35,9 @@ class List extends React.Component {
     };
 
     render(cn) {
-        let listElement = ((this.props.type !== 'ordered') ? 'ul' : 'ol');
+        const listElement = ((this.props.type !== 'ordered') ? 'ul' : 'ol');
 
-        let listContent = (this.props.items || []).map(item => (
+        const listContent = (this.props.items || []).map(item => (
             <li
                 key={ `item-${item.key}` }
                 className={ cn('item') }
@@ -46,7 +46,7 @@ class List extends React.Component {
             </li>
         ));
 
-        let listProps = {
+        const listProps = {
             className: cn({
                 type: this.props.type
             }),

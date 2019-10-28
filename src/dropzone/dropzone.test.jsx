@@ -35,4 +35,49 @@ describe('dropzone', () => {
         dropzone.simulate('dragLeave');
         expect(dropzone.getDOMNode().className).not.toContain('.dropzone__view_active');
     });
+
+    it('should call `onDrop` callback after drop file on DropZone', () => {
+        const onDrop = jest.fn();
+        const dropzone = mount(<Dropzone onDrop={ onDrop } />);
+
+        dropzone.simulate('drop', { dataTransfer });
+
+        expect(onDrop).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call `onDragEnter` callback after drop file on DropZone', () => {
+        const onDragEnter = jest.fn();
+        const dropzone = mount(<Dropzone onDragEnter={ onDragEnter } />);
+
+        dropzone.simulate('dragenter', { dataTransfer });
+
+        expect(onDragEnter).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call `onDragLeave` callback after drop file on DropZone', () => {
+        const onDragLeave = jest.fn();
+        const dropzone = mount(<Dropzone onDragLeave={ onDragLeave } />);
+
+        dropzone.simulate('dragleave');
+
+        expect(onDragLeave).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call `onDragOver` callback after drop file on DropZone', () => {
+        const onDragOver = jest.fn();
+        const dropzone = mount(<Dropzone onDragOver={ onDragOver } />);
+
+        dropzone.simulate('dragover');
+
+        expect(onDragOver).toHaveBeenCalledTimes(1);
+    });
+
+    it('onDrop should recieve files list', () => {
+        const onDrop = jest.fn();
+        let dropzone = mount(<Dropzone onDrop={ onDrop } />);
+
+        dropzone.simulate('drop', { dataTransfer });
+
+        expect(onDrop.mock.calls[0][0]).toEqual(filesList);
+    });
 });

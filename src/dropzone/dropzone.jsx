@@ -32,6 +32,30 @@ class Dropzone extends React.Component {
         /** Уникальное имя блока */
         name: Type.string,
 
+        /**
+         * Обработчик события 'drop'
+         * @param {Array} files
+         */
+        onDrop: Type.func,
+
+        /**
+         * Обработчик события 'dragover'
+         * @param {React.FocusEvent} event
+         */
+        onDragOver: Type.func,
+
+        /**
+         * Обработчик события 'dragleave'
+         * @param {React.FocusEvent} event
+         */
+        onDragLeave: Type.func,
+
+        /**
+         * Обработчик события 'dragenter'
+         * @param {React.FocusEvent} event
+         */
+        onDragEnter: Type.func,
+
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
 
@@ -61,6 +85,10 @@ class Dropzone extends React.Component {
     handleDragOver = (event) => {
         event.preventDefault();
         event.stopPropagation();
+
+        if (this.props.onDragOver) {
+            this.props.onDragOver(event);
+        }
     }
 
     handleDragEnter = (event) => {
@@ -71,6 +99,10 @@ class Dropzone extends React.Component {
         if (event.dataTransfer.items && event.dataTransfer.items.length > 0) {
             this.setState({ dragging: true });
         }
+
+        if (this.props.onDragEnter) {
+            this.props.onDragEnter(event);
+        }
     };
 
     handleDragLeave = (event) => {
@@ -80,6 +112,10 @@ class Dropzone extends React.Component {
         this.dragCounter -= 1;
         if (this.dragCounter > 0) return;
         this.setState({ dragging: false });
+
+        if (this.props.onDragLeave) {
+            this.props.onDragLeave(event);
+        }
     };
 
     handleDrop = (event) => {
@@ -89,6 +125,10 @@ class Dropzone extends React.Component {
         this.setState({ dragging: false });
 
         if (event.dataTransfer.files && event.dataTransfer.files.length > 0) {
+            if (this.props.onDrop) {
+                this.props.onDrop(event.dataTransfer.files);
+            }
+
             event.dataTransfer.clearData();
             this.dragCounter = 0;
         }

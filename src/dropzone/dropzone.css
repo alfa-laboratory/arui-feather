@@ -7,4 +7,32 @@
 .dropzone {
     display: inline-block;
     position: relative;
+
+    &__view {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        font-size: 36px;
+        line-height: 52px;
+        color: var(--color-dark-indigo-30);
+
+        background-color: var(--color-white-60);
+        border: 2px dashed var(--color-dark-indigo-60);
+        border-radius: 8px;
+        box-sizing: border-box;
+
+        opacity: 0;
+        transition: 0.6s;
+
+        &_active {
+            opacity: 1;
+            transition: 0.6s;
+        }
+    }
 }

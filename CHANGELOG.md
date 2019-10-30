@@ -1,3 +1,8 @@
+<a name="15.2.1"></a>
+## [15.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.2.0...v15.2.1) (2019-10-30)
+
+
+
 <a name="15.2.0"></a>
 # [15.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.2...v15.2.0) (2019-10-29)
 

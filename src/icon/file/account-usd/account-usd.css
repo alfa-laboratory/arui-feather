@@ -10,6 +10,14 @@
     background-image: url('./icon_account-usd_m_white.svg');
 }
 
+.icon_size_s.icon_name_account-usd.icon_theme_alfa-on-white {
+    background-image: url('./icon_account-usd_s_black.svg');
+}
+
+.icon_size_s.icon_name_account-usd.icon_theme_alfa-on-color {
+    background-image: url('./icon_account-usd_s_white.svg');
+}
+
 .icon_size_xl.icon_name_account-usd.icon_theme_alfa-on-white {
     background-image: url('./icon_account-usd_xl_black.svg');
 }

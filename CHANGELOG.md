@@ -1,3 +1,28 @@
+<a name="15.2.1"></a>
+## [15.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.2.0...v15.2.1) (2019-10-30)
+
+
+
+<a name="15.2.0"></a>
+# [15.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.2...v15.2.0) (2019-10-29)
+
+
+### Features
+
+* add three xl icons ([a9ae967](https://github.com/alfa-laboratory/arui-feather/commit/a9ae967))
+
+
+
+<a name="15.1.2"></a>
+## [15.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.1...v15.1.2) (2019-10-25)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.0 ([059c5f6](https://github.com/alfa-laboratory/arui-feather/commit/059c5f6))
+
+
+
 <a name="15.1.1"></a>
 ## [15.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.0...v15.1.1) (2019-10-22)
 

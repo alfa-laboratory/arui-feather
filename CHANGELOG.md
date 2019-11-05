@@ -1,3 +1,19 @@
+<a name="16.0.0-alpha.0"></a>
+# [16.0.0-alpha.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.2...v16.0.0-alpha.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* **eslint:** in progress: eslint errors fix ([90ebf15](https://github.com/alfa-laboratory/arui-feather/commit/90ebf15))
+* **tests:** Make tests green again ([47ba21a](https://github.com/alfa-laboratory/arui-feather/commit/47ba21a))
+
+
+### Features
+
+* Add prefix to unsafe lifecycles. Bump React version ([b9073c9](https://github.com/alfa-laboratory/arui-feather/commit/b9073c9))
+
+
+
 <a name="15.1.2"></a>
 ## [15.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.1...v15.1.2) (2019-10-25)
 

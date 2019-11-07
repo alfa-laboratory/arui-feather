@@ -802,10 +802,10 @@ ajv@^6.0.1, ajv@^6.1.0, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alfa-ui-primitives@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-2.3.0.tgz#133d866d8501b33221cdf9f4ae2723ee10a5b3b1"
-  integrity sha512-NGuzaADwj+AtFkSRxReC8Dpcxzc65sxs3jjGuXrcPP33I1WE98NFUP8nfoR5ffaDOWHhz8/45oLU/DUiO5sR/A==
+alfa-ui-primitives@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-2.3.1.tgz#27e16311d2c82f4b9a6e1f27f2162a27ce859b43"
+  integrity sha512-lHD3JaxiJxuJKH5/wbUZLnPzfC+U1nXoUKMGlzV52C93bg+LPVMfIMVANx5GSnrnUaINM+cgdGZ/7aCIWY+oxA==
 
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"

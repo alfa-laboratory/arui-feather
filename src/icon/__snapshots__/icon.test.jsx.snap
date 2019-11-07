@@ -182,9 +182,23 @@ exports[`icon render IconArrowLeft without problems: IconArrowLeft 1`] = `
 />
 `;
 
+exports[`icon render IconArrowLeftDouble without problems: IconArrowLeftDouble 1`] = `
+<Icon
+  name="arrow-left-double"
+  size="m"
+/>
+`;
+
 exports[`icon render IconArrowRight without problems: IconArrowRight 1`] = `
 <Icon
   name="arrow-right"
+  size="m"
+/>
+`;
+
+exports[`icon render IconArrowRightDouble without problems: IconArrowRightDouble 1`] = `
+<Icon
+  name="arrow-right-double"
   size="m"
 />
 `;
@@ -1162,6 +1176,13 @@ exports[`icon render IconCategoryFines without problems: IconCategoryFines 1`] =
 />
 `;
 
+exports[`icon render IconCategoryGaming without problems: IconCategoryGaming 1`] = `
+<Icon
+  name="category-gaming"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryGasoline without problems: IconCategoryGasoline 1`] = `
 <Icon
   name="category-gasoline"
@@ -2093,6 +2114,13 @@ exports[`icon render IconLimits without problems: IconLimits 1`] = `
 />
 `;
 
+exports[`icon render IconList without problems: IconList 1`] = `
+<Icon
+  name="list"
+  size="m"
+/>
+`;
+
 exports[`icon render IconLocation without problems: IconLocation 1`] = `
 <Icon
   name="location"
@@ -2775,6 +2803,13 @@ exports[`icon render IconSystemHelp without problems: IconSystemHelp 1`] = `
 exports[`icon render IconSystemHideArrow without problems: IconSystemHideArrow 1`] = `
 <Icon
   name="system-hide-arrow"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTable without problems: IconTable 1`] = `
+<Icon
+  name="table"
   size="m"
 />
 `;

@@ -1,3 +1,13 @@
+<a name="15.3.1"></a>
+## [15.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.0...v15.3.1) (2019-11-07)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.1 ([e0b354d](https://github.com/alfa-laboratory/arui-feather/commit/e0b354d))
+
+
+
 <a name="15.3.0"></a>
 # [15.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.2.1...v15.3.0) (2019-11-05)
 

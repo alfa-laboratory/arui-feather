@@ -18,8 +18,8 @@
         align-items: center;
         text-align: center;
 
-        font-size: 36px;
-        line-height: 52px;
+        font-size: var(--font-size-2xl);
+        line-height: var(--line-height-condensed);
         color: var(--color-dark-indigo-30);
 
         background-color: var(--color-white-60);

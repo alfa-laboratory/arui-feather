@@ -36,4 +36,45 @@ describe('list', () => {
         expect(list).toMatchSnapshot();
         expect(list.hasClass('list_type_ordered')).toBe(true);
     });
+    it('should render nested lists', () => {
+        const ITEMS_UL = [
+            {
+                key: 'one',
+                value: 'Apple',
+                list: [
+                    {
+                        key: 'subone',
+                        value: 'Red apple'
+                    },
+                    {
+                        key: 'subtwo',
+                        value: 'Greeen apple'
+                    }
+                ]
+            },
+            {
+                key: 'two',
+                value: 'Orange'
+            },
+            {
+                key: 'three',
+                value: 'Banana',
+                list: [
+                    {
+                        key: 'subthree',
+                        value: 'Small banana'
+                    },
+                    {
+                        key: 'subfour',
+                        value: 'Big banana'
+                    }
+                ]
+            }
+        ];
+
+        const list = shallow(<List items={ ITEMS_UL } />);
+        expect(list).toMatchSnapshot();
+        const sublists = list.find('List');
+        expect(sublists.length).toBe(2);
+    });
 });

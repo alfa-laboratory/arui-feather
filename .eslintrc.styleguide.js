@@ -11,6 +11,7 @@ module.exports = {
         'react/prop-types': 0,
         // in readme we import 'arui-feather/bla', which always be unresolved inside arui-feather
         'import/no-unresolved': 0,
+        'import/no-extraneous-dependencies': 0,
         'import/extensions': 0
     },
     plugins: [

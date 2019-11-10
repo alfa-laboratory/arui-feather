@@ -143,6 +143,7 @@ class Dropzone extends React.Component {
             <div
                 ref={ (root) => { this.root = root; } }
                 id={ this.props.id }
+                name={ this.props.name }
                 data-test-id={ this.props['data-test-id'] }
                 className={ cn() }
                 onDragEnter={ this.handleDragEnter }

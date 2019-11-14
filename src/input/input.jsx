@@ -358,6 +358,7 @@ class Input extends React.Component {
     handleBlur(event) {
         this.setState({ focused: false });
         this.disableMouseWheel();
+        this.restoreError();
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
@@ -560,7 +561,7 @@ class Input extends React.Component {
     }
 
     /**
-     * Изменяет текущение значение поля ввода и генерирует событие об этом.
+     * Изменяет текущее значение поля ввода и генерирует событие об этом.
      *
      * @param {String} value Новое значение
      */
@@ -592,6 +593,19 @@ class Input extends React.Component {
         if (this.props.resetError) {
             this.setState({
                 error: null
+            });
+        }
+    }
+
+    /**
+     * Восстанавливает состояние ошибки.
+     *
+     * @returns {void}
+     */
+    restoreError() {
+        if (this.props.resetError) {
+            this.setState({
+                error: this.props.error
             });
         }
     }

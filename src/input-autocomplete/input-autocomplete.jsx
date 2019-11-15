@@ -74,7 +74,9 @@ class InputAutocomplete extends React.Component {
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
         closeOnSelect: Type.bool,
         /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
+        'data-test-id': Type.string,
+        /** Максимальная высота выпадающего списка опций */
+        popupMaxHeight: Type.number
     };
 
     static defaultProps = {
@@ -210,6 +212,7 @@ class InputAutocomplete extends React.Component {
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
                 key='popup'
+                maxHeight={ this.props.popupMaxHeight }
             >
                 <Menu
                     ref={ (menu) => { this.menu = menu; } }

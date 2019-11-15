@@ -1,3 +1,13 @@
+<a name="15.4.0"></a>
+# [15.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.2...v15.4.0) (2019-11-15)
+
+
+### Features
+
+* **input-autocomplete:** add max height for popup content ([#872](https://github.com/alfa-laboratory/arui-feather/issues/872)) ([5b5b8db](https://github.com/alfa-laboratory/arui-feather/commit/5b5b8db))
+
+
+
 <a name="15.3.2"></a>
 ## [15.3.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.1...v15.3.2) (2019-11-08)
 

@@ -283,7 +283,8 @@ class Popup extends React.Component {
                     size: this.props.size,
                     visible: this.props.visible,
                     height: this.props.height,
-                    padded: this.props.padded
+                    padded: this.props.padded,
+                    overflow: !!this.props.maxHeight
                 }) }
                 id={ this.props.id }
                 style={ {

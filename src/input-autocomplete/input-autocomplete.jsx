@@ -206,8 +206,8 @@ class InputAutocomplete extends React.Component {
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
                 target='anchor'
+                height={ this.props.popupMaxHeight ? 'default' : 'adaptive' }
                 directions={ this.props.directions }
-                height='adaptive'
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }

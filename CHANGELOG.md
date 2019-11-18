@@ -1,3 +1,14 @@
+<a name="15.5.0"></a>
+# [15.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.4.0...v15.5.0) (2019-11-18)
+
+
+### Features
+
+* **dropzone:** new dropzone component ([#867](https://github.com/alfa-laboratory/arui-feather/issues/867)) ([9fa3ef5](https://github.com/alfa-laboratory/arui-feather/commit/9fa3ef5))
+* **list:** nested lists ([#870](https://github.com/alfa-laboratory/arui-feather/issues/870)) ([072b466](https://github.com/alfa-laboratory/arui-feather/commit/072b466))
+
+
+
 <a name="15.4.0"></a>
 # [15.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.2...v15.4.0) (2019-11-15)
 

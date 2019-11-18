@@ -1,3 +1,13 @@
+<a name="15.5.1"></a>
+## [15.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.0...v15.5.1) (2019-11-18)
+
+
+### Bug Fixes
+
+* **popup:** fix overflow with maxHeight ([#875](https://github.com/alfa-laboratory/arui-feather/issues/875)) ([1174db5](https://github.com/alfa-laboratory/arui-feather/commit/1174db5))
+
+
+
 <a name="15.5.0"></a>
 # [15.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.4.0...v15.5.0) (2019-11-18)
 

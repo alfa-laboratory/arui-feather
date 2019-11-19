@@ -20,6 +20,7 @@ class Toggle extends React.Component {
         /** Текст подписи к чекбоксу */
         label: Type.node,
         /** Подсказка под полем */
+        labelAlign: Type.oneOf(['left', 'right']),
         hint: Type.node,
         /** Значение чекбокса, которое будет отправлено на сервер, если он выбран */
         value: Type.string,
@@ -54,7 +55,8 @@ class Toggle extends React.Component {
     };
 
     static defaultProps = {
-        size: 'm'
+        size: 'm',
+        labelAlign: 'left'
     };
 
     state = {
@@ -63,7 +65,7 @@ class Toggle extends React.Component {
     };
 
     render(cn) {
-        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
+        const checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -96,7 +98,9 @@ class Toggle extends React.Component {
                     />
                     <span className={ cn('switch') } />
                     { this.props.label && (
-                        <span className={ cn('label') }>{ this.props.label }</span>
+                        <span className={ cn('label', { align: this.props.labelAlign }) }>
+                            { this.props.label }
+                        </span>
                     ) }
                 </span>
                 { this.props.hint && (

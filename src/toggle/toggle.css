@@ -58,6 +58,7 @@
         }
 
         @media (--mobile) {
+            order: -1;
             margin-left: 0;
         }
     }

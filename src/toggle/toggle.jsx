@@ -56,7 +56,7 @@ class Toggle extends React.Component {
 
     static defaultProps = {
         size: 'm',
-        labelAlign: 'left'
+        labelAlign: 'right'
     };
 
     state = {

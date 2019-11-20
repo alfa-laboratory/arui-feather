@@ -53,7 +53,7 @@
         line-height: var(--line-height-condensed);
         font-weight: var(--font-weight-normal);
 
-        &_align_right {
+        &_align_left {
             order: -1;
         }
 

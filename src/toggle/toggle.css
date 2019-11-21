@@ -55,6 +55,7 @@
 
         &_align_left {
             order: -1;
+            margin-left: 0;
         }
 
         @media (--mobile) {

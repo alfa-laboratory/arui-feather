@@ -76,7 +76,9 @@ class InputAutocomplete extends React.Component {
         /** Идентификатор для систем автоматизированного тестирования */
         'data-test-id': Type.string,
         /** Максимальная высота выпадающего списка опций */
-        popupMaxHeight: Type.number
+        popupMaxHeight: Type.number,
+        /** Название класса попапа с опциями */
+        popupClassName: Type.string
     };
 
     static defaultProps = {
@@ -199,7 +201,7 @@ class InputAutocomplete extends React.Component {
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
-                className={ cn('popup') }
+                className={ cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
                 ref={ (popup) => { this.popup = popup; } }
                 for={ this.props.name }

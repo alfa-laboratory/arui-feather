@@ -190,9 +190,6 @@ class InputAutocomplete extends React.Component {
             ? this.props.opened
             : this.state.inputFocused || this.state.menuFocused;
 
-        const popupCustomClassName = typeof this.props.popupClassName === 'undefined' ?
-            false : this.props.popupClassName;
-
         if (this.props.options.length === 0) {
             this.popup = null;
             return null;
@@ -204,7 +201,7 @@ class InputAutocomplete extends React.Component {
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
-                className={ cn('popup', { custom: popupCustomClassName }) }
+                className={ cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
                 ref={ (popup) => { this.popup = popup; } }
                 for={ this.props.name }

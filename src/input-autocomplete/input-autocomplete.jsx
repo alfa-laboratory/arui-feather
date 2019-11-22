@@ -191,7 +191,7 @@ class InputAutocomplete extends React.Component {
             : this.state.inputFocused || this.state.menuFocused;
 
         const popupCustomClassName = typeof this.props.popupClassName === 'undefined' ?
-            false : `${this.props.popupClassName}`;
+            false : this.props.popupClassName;
 
         if (this.props.options.length === 0) {
             this.popup = null;

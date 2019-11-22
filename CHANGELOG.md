@@ -1,3 +1,13 @@
+<a name="15.5.2"></a>
+## [15.5.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.1...v15.5.2) (2019-11-22)
+
+
+### Features
+
+* **input-autocomplete:** add className for popup options container ([#877](https://github.com/alfa-laboratory/arui-feather/issues/877)) ([8d8fabe](https://github.com/alfa-laboratory/arui-feather/commit/8d8fabe))
+
+
+
 <a name="15.5.1"></a>
 ## [15.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.0...v15.5.1) (2019-11-18)
 

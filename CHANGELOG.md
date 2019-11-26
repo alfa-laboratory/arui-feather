@@ -1,3 +1,14 @@
+<a name="15.6.0"></a>
+# [15.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.2...v15.6.0) (2019-11-26)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.3 ([184293e](https://github.com/alfa-laboratory/arui-feather/commit/184293e))
+* **toggle:** label position property ([#876](https://github.com/alfa-laboratory/arui-feather/issues/876)) ([6ef9ae1](https://github.com/alfa-laboratory/arui-feather/commit/6ef9ae1))
+
+
+
 <a name="15.5.2"></a>
 ## [15.5.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.1...v15.5.2) (2019-11-22)
 

@@ -53,9 +53,14 @@
         line-height: var(--line-height-condensed);
         font-weight: var(--font-weight-normal);
 
-        @media (--mobile) {
-            margin-left: 0;
+        &_align_left {
             order: -1;
+            margin-left: 0;
+        }
+
+        @media (--mobile) {
+            order: -1;
+            margin-left: 0;
         }
     }
 

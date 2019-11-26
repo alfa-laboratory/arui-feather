@@ -6,12 +6,20 @@
     background-image: url('./icon_attention_l_black.svg');
 }
 
+.icon_size_l.icon_name_attention.icon_colored.icon_theme_alfa-on-color, .icon_size_l.icon_name_attention.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_attention_l_color.svg');
+}
+
 .icon_size_l.icon_name_attention.icon_theme_alfa-on-color {
     background-image: url('./icon_attention_l_white.svg');
 }
 
 .icon_size_m.icon_name_attention.icon_theme_alfa-on-white {
     background-image: url('./icon_attention_m_black.svg');
+}
+
+.icon_size_m.icon_name_attention.icon_colored.icon_theme_alfa-on-color, .icon_size_m.icon_name_attention.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_attention_m_color.svg');
 }
 
 .icon_size_m.icon_name_attention.icon_theme_alfa-on-color {
@@ -22,6 +30,10 @@
     background-image: url('./icon_attention_s_black.svg');
 }
 
+.icon_size_s.icon_name_attention.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_attention.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_attention_s_color.svg');
+}
+
 .icon_size_s.icon_name_attention.icon_theme_alfa-on-color {
     background-image: url('./icon_attention_s_white.svg');
 }
@@ -30,6 +42,18 @@
     background-image: url('./icon_attention_xl_black.svg');
 }
 
+.icon_size_xl.icon_name_attention.icon_colored.icon_theme_alfa-on-color, .icon_size_xl.icon_name_attention.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_attention_xl_color.svg');
+}
+
 .icon_size_xl.icon_name_attention.icon_theme_alfa-on-color {
     background-image: url('./icon_attention_xl_white.svg');
+}
+
+.icon_size_xxl.icon_name_attention.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_attention.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_attention_xxl_color.svg');
+}
+
+.icon_size_xxxl.icon_name_attention.icon_colored.icon_theme_alfa-on-color, .icon_size_xxxl.icon_name_attention.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_attention_xxxl_color.svg');
 }

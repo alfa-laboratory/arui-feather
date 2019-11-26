@@ -1064,6 +1064,13 @@ exports[`icon render IconCategoryAuto without problems: IconCategoryAuto 1`] = `
 />
 `;
 
+exports[`icon render IconCategoryAutoLoan without problems: IconCategoryAutoLoan 1`] = `
+<Icon
+  name="category-auto-loan"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryBooksMovies without problems: IconCategoryBooksMovies 1`] = `
 <Icon
   name="category-books-movies"
@@ -1116,6 +1123,13 @@ exports[`icon render IconCategoryCashback without problems: IconCategoryCashback
 exports[`icon render IconCategoryCharity without problems: IconCategoryCharity 1`] = `
 <Icon
   name="category-charity"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryConsulting without problems: IconCategoryConsulting 1`] = `
+<Icon
+  name="category-consulting"
   size="m"
 />
 `;
@@ -1403,6 +1417,20 @@ exports[`icon render IconCategoryUser without problems: IconCategoryUser 1`] = `
 exports[`icon render IconCategoryVacation without problems: IconCategoryVacation 1`] = `
 <Icon
   name="category-vacation"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryVipManager without problems: IconCategoryVipManager 1`] = `
+<Icon
+  name="category-vip-manager"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryVipRoom without problems: IconCategoryVipRoom 1`] = `
+<Icon
+  name="category-vip-room"
   size="m"
 />
 `;

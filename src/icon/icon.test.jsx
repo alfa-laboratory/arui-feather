@@ -188,6 +188,7 @@ import IconVisa from './brand/visa';
 import IconCategoryAppliances from './category/category-appliances';
 import IconCategoryAtm from './category/category-atm';
 import IconCategoryAuto from './category/category-auto';
+import IconCategoryAutoLoan from './category/category-auto-loan';
 import IconCategoryBooksMovies from './category/category-books-movies';
 import IconCategoryBudget from './category/category-budget';
 import IconCategoryBusiness from './category/category-business';
@@ -196,6 +197,7 @@ import IconCategoryCards from './category/category-cards';
 import IconCategoryCash from './category/category-cash';
 import IconCategoryCashback from './category/category-cashback';
 import IconCategoryCharity from './category/category-charity';
+import IconCategoryConsulting from './category/category-consulting';
 import IconCategoryDefault from './category/category-default';
 import IconCategoryDress from './category/category-dress';
 import IconCategoryEducation from './category/category-education';
@@ -237,6 +239,8 @@ import IconCategoryTv from './category/category-tv';
 import IconCategoryUnknown from './category/category-unknown';
 import IconCategoryUser from './category/category-user';
 import IconCategoryVacation from './category/category-vacation';
+import IconCategoryVipManager from './category/category-vip-manager';
+import IconCategoryVipRoom from './category/category-vip-room';
 import IconCategoryWallet from './category/category-wallet';
 import IconUtilities from './category/utilities';
 import IconCurrencyChf from './currency/currency-chf';
@@ -625,6 +629,7 @@ describe('icon', () => {
             { componentName: IconCategoryAppliances, name: 'category-appliances' },
             { componentName: IconCategoryAtm, name: 'category-atm' },
             { componentName: IconCategoryAuto, name: 'category-auto' },
+            { componentName: IconCategoryAutoLoan, name: 'category-auto-loan' },
             { componentName: IconCategoryBooksMovies, name: 'category-books-movies' },
             { componentName: IconCategoryBudget, name: 'category-budget' },
             { componentName: IconCategoryBusiness, name: 'category-business' },
@@ -633,6 +638,7 @@ describe('icon', () => {
             { componentName: IconCategoryCash, name: 'category-cash' },
             { componentName: IconCategoryCashback, name: 'category-cashback' },
             { componentName: IconCategoryCharity, name: 'category-charity' },
+            { componentName: IconCategoryConsulting, name: 'category-consulting' },
             { componentName: IconCategoryDefault, name: 'category-default' },
             { componentName: IconCategoryDress, name: 'category-dress' },
             { componentName: IconCategoryEducation, name: 'category-education' },
@@ -674,6 +680,8 @@ describe('icon', () => {
             { componentName: IconCategoryUnknown, name: 'category-unknown' },
             { componentName: IconCategoryUser, name: 'category-user' },
             { componentName: IconCategoryVacation, name: 'category-vacation' },
+            { componentName: IconCategoryVipManager, name: 'category-vip-manager' },
+            { componentName: IconCategoryVipRoom, name: 'category-vip-room' },
             { componentName: IconCategoryWallet, name: 'category-wallet' },
             { componentName: IconUtilities, name: 'utilities' },
             { componentName: IconCurrencyChf, name: 'currency-chf' },

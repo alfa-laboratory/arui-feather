@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "16.0.0-alpha.0-rc1",
+  "version": "16.0.0-alpha.0-rc4",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -76,6 +76,7 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
+    "@babel/runtime-corejs2": "^7.7.5",
     "bezier-easing": "2.0.3",
     "cn-decorator": "2.1.0",
     "core-decorators": "0.20.0",

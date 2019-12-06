@@ -6,7 +6,6 @@
 
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
-import Modernizr from 'modernizr';
 import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 
@@ -17,6 +16,7 @@ import Input from '../input/input';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
 import PopupHeader from '../popup-header/popup-header';
+import Modernizr from '../modernizr';
 
 import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';

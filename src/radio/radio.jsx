@@ -201,7 +201,7 @@ class Radio extends React.Component {
     }
 
     @autobind
-    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this
     handleInputControlClick(event) {
         event.stopPropagation();
     }
@@ -287,6 +287,7 @@ class Radio extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

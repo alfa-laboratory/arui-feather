@@ -105,7 +105,8 @@ export default class GridCol extends React.PureComponent {
      * @param {Object} props Свойства.
      * @returns {Object}
      */
-    createClassNames(props) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this
+    createClassNames(props) {
         const classNames = {};
 
         Object.keys(props).forEach((name) => {

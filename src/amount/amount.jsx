@@ -115,6 +115,7 @@ class Amount extends React.Component {
         return null;
     }
 
+    // eslint-disable-next-line class-methods-use-this
     renderCurrencySymbol(cn, currencySymbol) {
         return (
             <span className={ cn('currency') }>

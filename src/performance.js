@@ -35,6 +35,7 @@ export function isEqual(objA, objB, deep = false) {
     }
 
     const bHasOwnProperty = hasOwnProperty.bind(objB);
+
     while (keysA.length > 0) {
         const key = keysA.pop();
 
@@ -52,7 +53,9 @@ export function isEqual(objA, objB, deep = false) {
 
             // https://github.com/erikras/redux-form/issues/3461
             // https://github.com/erikras/redux-form/pull/3481
-            if (isValidElement(a) || isValidElement(b)) return false;
+            if (isValidElement(a) || isValidElement(b)) {
+                return false;
+            }
 
             if (!isEqual(a, b, deep)) {
                 return false;
@@ -72,9 +75,9 @@ export function isEqual(objA, objB, deep = false) {
  * @returns {Boolean}
  */
 function shallow(nextProps, nextState, nextContext) {
-    return !isEqual(this.props, nextProps)
-        || !isEqual(this.state, nextState)
-        || !isEqual(this.context, nextContext);
+    return !isEqual(this.props, nextProps) ||
+        !isEqual(this.state, nextState) ||
+        !isEqual(this.context, nextContext);
 }
 
 /**
@@ -87,9 +90,9 @@ function shallow(nextProps, nextState, nextContext) {
  * @returns {Boolean}
  */
 function deep(nextProps, nextState, nextContext) {
-    return !isEqual(this.props, nextProps, true)
-        || !isEqual(this.state, nextState, true)
-        || !isEqual(this.context, nextContext, true);
+    return !isEqual(this.props, nextProps, true) ||
+        !isEqual(this.state, nextState, true) ||
+        !isEqual(this.context, nextContext, true);
 }
 
 /**

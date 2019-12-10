@@ -9,6 +9,7 @@ import ResizeSensor from './resize-sensor';
 
 describe('resize-sensor', () => {
     let target;
+
     beforeEach(() => {
         target = document.createElement('div');
 
@@ -20,20 +21,20 @@ describe('resize-sensor', () => {
     });
 
     it('should render without problem', () => {
-        let resizeSensor = mount(<ResizeSensor />);
+        const resizeSensor = mount(<ResizeSensor />);
 
         expect(resizeSensor).toMatchSnapshot();
     });
 
     it('should call `onResize` callback when `ResizeSensor` detects new dimensions', () => {
-        let onResize = jest.fn();
-        let resizeSensor = mount(
+        const onResize = jest.fn();
+        const resizeSensor = mount(
             <ResizeSensor onResize={ onResize } />,
             { attachTo: target }
         );
-        let iframeNode = resizeSensor.find('iframe').getDOMNode();
-        iframeNode.contentWindow.dispatchEvent(new Event('resize'));
+        const iframeNode = resizeSensor.find('iframe').getDOMNode();
 
+        iframeNode.contentWindow.dispatchEvent(new Event('resize'));
 
         expect(onResize).toHaveBeenCalled();
     });

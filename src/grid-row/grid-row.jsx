@@ -13,7 +13,6 @@ const breakpointsType = {
     desktop: Type.oneOfType([Type.string, Type.number, Type.object])
 };
 
-
 /**
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
@@ -81,6 +80,7 @@ export default class GridRow extends React.PureComponent {
         } = this.props;
 
         let gutters = {};
+
         if (typeof gutter === 'object') {
             Object.keys(gutter).forEach((breakpoint) => {
                 if (gutter[breakpoint] === null) {
@@ -136,6 +136,7 @@ export default class GridRow extends React.PureComponent {
                     gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
                 );
                 const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
+
                 return cloneElement(col, { className: `${gutterClassNames.join(' ')}${classNameFromProps}` });
             })
         );

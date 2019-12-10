@@ -13,7 +13,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 const SIZES = ['s', 'm', 'l', 'xl'];
 
 describe('intl-phone-input', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -24,27 +24,29 @@ describe('intl-phone-input', () => {
     });
 
     it('renders without problems', () => {
-        let intlPhoneInput = shallow(<IntlPhoneInput />);
+        const intlPhoneInput = shallow(<IntlPhoneInput />);
+
         expect(intlPhoneInput).toMatchSnapshot();
     });
 
     it('renders without problems in all sizes', () => {
         SIZES.forEach((size) => {
-            let intlPhoneInput = shallow(<IntlPhoneInput size={ size } />);
+            const intlPhoneInput = shallow(<IntlPhoneInput size={ size } />);
+
             expect(intlPhoneInput).toMatchSnapshot(`size = ${size}`);
         });
     });
 
     it('should return `HTMLInputElement` when `getControl` method called', () => {
-        let elem = mount(<IntlPhoneInput />);
-        let controlNode = elem.instance().getControl();
+        const elem = mount(<IntlPhoneInput />);
+        const controlNode = elem.instance().getControl();
 
         expect(controlNode).toBeInstanceOf(HTMLInputElement);
     });
 
     it('should call `onFocus` callback on input focus', () => {
-        let onFocus = jest.fn();
-        let elem = mount(<IntlPhoneInput onFocus={ onFocus } />);
+        const onFocus = jest.fn();
+        const elem = mount(<IntlPhoneInput onFocus={ onFocus } />);
 
         elem.find('input[type="tel"]').simulate('focus');
 
@@ -52,8 +54,8 @@ describe('intl-phone-input', () => {
     });
 
     it('should call `onBlur` on input blur', () => {
-        let onBlur = jest.fn();
-        let elem = mount(<IntlPhoneInput onBlur={ onBlur } />);
+        const onBlur = jest.fn();
+        const elem = mount(<IntlPhoneInput onBlur={ onBlur } />);
 
         elem.find('input[type="tel"]').simulate('blur');
 
@@ -61,9 +63,9 @@ describe('intl-phone-input', () => {
     });
 
     it('should scroll window to element on public `scrollTo` method', () => {
-        let elem = mount(<IntlPhoneInput />);
-        let elemTopPosition = elem.instance().input.getNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elem = mount(<IntlPhoneInput />);
+        const elemTopPosition = elem.instance().input.getNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         elem.instance().scrollTo();
 
@@ -71,8 +73,8 @@ describe('intl-phone-input', () => {
     });
 
     it('should call `onChange` callback after input was changed with dial code of country without priority', () => {
-        let onChange = jest.fn();
-        let elem = mount(<IntlPhoneInput onChange={ onChange } />);
+        const onChange = jest.fn();
+        const elem = mount(<IntlPhoneInput onChange={ onChange } />);
 
         elem.find('input[type="tel"]').simulate('change', { target: { value: '+54' } });
 
@@ -81,8 +83,8 @@ describe('intl-phone-input', () => {
     });
 
     it('should call `onChange` callback after input was changed with dial code of country from NANP', () => {
-        let onChange = jest.fn();
-        let elem = mount(<IntlPhoneInput onChange={ onChange } />);
+        const onChange = jest.fn();
+        const elem = mount(<IntlPhoneInput onChange={ onChange } />);
 
         elem.find('input[type="tel"]').simulate('change', { target: { value: '+1868' } });
 
@@ -91,8 +93,8 @@ describe('intl-phone-input', () => {
     });
 
     it('should call `onChange` callback after input was changed with whole russian number', () => {
-        let onChange = jest.fn();
-        let elem = mount(<IntlPhoneInput onChange={ onChange } />);
+        const onChange = jest.fn();
+        const elem = mount(<IntlPhoneInput onChange={ onChange } />);
 
         elem.find('input[type="tel"]').simulate('change', { target: { value: '+74957888878' } });
 
@@ -101,19 +103,20 @@ describe('intl-phone-input', () => {
     });
 
     it('should have default country flag icon', () => {
-        let elem = mount(<IntlPhoneInput />);
+        const elem = mount(<IntlPhoneInput />);
 
         expect(elem.find('.flag-icon').props().className).toContain('flag-icon_country_ru');
     });
 
     it('should set new country flag icon from props', () => {
-        let elem = mount(<IntlPhoneInput value='+61' />);
+        const elem = mount(<IntlPhoneInput value='+61' />);
 
         expect(elem.find('.flag-icon').props().className).toContain('flag-icon_country_au');
     });
 
     it('should call loadUtil method on componentDidMount', () => {
         const instance = mount(<IntlPhoneInput />).instance();
+
         jest.spyOn(instance, 'loadUtil');
         instance.componentDidMount();
         expect(instance.loadUtil).toHaveBeenCalled();
@@ -134,9 +137,10 @@ describe('intl-phone-input', () => {
     });
 
     it('should call `onChange` callback after select was changed', () => {
-        let onChange = jest.fn();
+        const onChange = jest.fn();
 
         const wrapper = mount(<IntlPhoneInput onChange={ onChange } />);
+
         wrapper.setState({ onceOpened: true });
 
         const firstOptionNode = wrapper.find('.popup .menu-item').at(0);
@@ -147,12 +151,14 @@ describe('intl-phone-input', () => {
     });
 
     it('should focus on input after select was changed', (done) => {
-        let elem = mount(<IntlPhoneInput />);
+        const elem = mount(<IntlPhoneInput />);
+
         elem.setState({ onceOpened: true });
-        let controlNode = elem.instance().input;
+        const controlNode = elem.instance().input;
+
         jest.spyOn(controlNode, 'focus');
-        let popupNode = elem.find('.popup');
-        let firstOptionNode = popupNode.find('.menu-item').at(0);
+        const popupNode = elem.find('.popup');
+        const firstOptionNode = popupNode.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
 
@@ -163,9 +169,10 @@ describe('intl-phone-input', () => {
     });
 
     it('should focus on input after select was closed by button toggle', () => {
-        let elem = mount(<IntlPhoneInput />);
-        let selectButtonNode = elem.find('.select-button');
-        let controlNode = elem.instance().input;
+        const elem = mount(<IntlPhoneInput />);
+        const selectButtonNode = elem.find('.select-button');
+        const controlNode = elem.instance().input;
+
         jest.spyOn(controlNode, 'focus');
 
         elem.setState({ selectFocused: true });

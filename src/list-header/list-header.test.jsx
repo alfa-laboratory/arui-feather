@@ -4,19 +4,19 @@ import ListHeader from './list-header';
 
 describe('list-header', () => {
     it('should render without problems', () => {
-        let listHeader = shallow(<ListHeader title='Title' />);
+        const listHeader = shallow(<ListHeader title='Title' />);
 
         expect(listHeader).toMatchSnapshot();
     });
 
     it('should render with `description` prop passed', () => {
-        let listHeader = shallow(<ListHeader title='Title' description='description' />);
+        const listHeader = shallow(<ListHeader title='Title' description='description' />);
 
         expect(listHeader).toMatchSnapshot();
     });
 
     it('should render with `filled` view passed', () => {
-        let listHeader = shallow(<ListHeader title='Title' description='description' view='filled' />);
+        const listHeader = shallow(<ListHeader title='Title' description='description' view='filled' />);
 
         expect(listHeader).toMatchSnapshot();
     });

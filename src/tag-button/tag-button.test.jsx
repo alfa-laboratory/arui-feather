@@ -9,7 +9,8 @@ import TagButton from './tag-button';
 
 describe('tag-button', () => {
     it('renders without problems', () => {
-        let tagButton = mount(<TagButton />);
+        const tagButton = mount(<TagButton />);
+
         expect(tagButton).toMatchSnapshot();
     });
 });

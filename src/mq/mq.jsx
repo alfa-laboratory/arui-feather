@@ -52,7 +52,9 @@ class Mq extends React.Component {
     }
 
     render() {
-        if (!this.props.children || !IS_BROWSER || !this.state.isMatched) return false;
+        if (!this.props.children || !IS_BROWSER || !this.state.isMatched) {
+            return false;
+        }
 
         return this.props.children;
     }

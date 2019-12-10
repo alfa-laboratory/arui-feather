@@ -12,43 +12,42 @@ import Mq from './mq';
 jest.mock('../modernizr', () => ({ pointerevents: true }));
 jest.mock('../lib/match-media');
 
-
 describe('mq', () => {
     it('should not mount this.props.children on conditions mismatch', () => {
         getMatchMedia.mockReturnValueOnce({ addListener: jest.fn, matches: false });
-        let mq = mount(<Mq query='--small-only' touch={ true }>Content</Mq>);
+        const mq = mount(<Mq query='--small-only' touch={ true }>Content</Mq>);
 
         expect(mq.children().length).toBe(0);
     });
 
     it('should mount with matching query and matching touch screen', () => {
         getMatchMedia.mockReturnValueOnce({ addListener: jest.fn, matches: true });
-        let mq = mount(<Mq query='--small-only' touch={ true }>Content</Mq>);
+        const mq = mount(<Mq query='--small-only' touch={ true }>Content</Mq>);
 
         expect(mq.text()).toBe('Content');
     });
 
     it('should mount with matching query and missing touch', () => {
         getMatchMedia.mockReturnValueOnce({ addListener: jest.fn, matches: true });
-        let mq = mount(<Mq query='--small-only'>Content</Mq>);
+        const mq = mount(<Mq query='--small-only'>Content</Mq>);
 
         expect(mq.text()).toBe('Content');
     });
 
     it('should mount with missing query and matching touch screen', () => {
-        let mq = mount(<Mq touch={ true }>Content</Mq>);
+        const mq = mount(<Mq touch={ true }>Content</Mq>);
 
         expect(mq.text()).toBe('Content');
     });
 
     it('should mount with missing query and missing touch', () => {
-        let mq = mount(<Mq>Content</Mq>);
+        const mq = mount(<Mq>Content</Mq>);
 
         expect(mq.text()).toBe('Content');
     });
 
     it('should not mount with non-matching query', () => {
-        let mq = mount(<Mq query='--non-matching-query'><div /></Mq>);
+        const mq = mount(<Mq query='--non-matching-query'><div /></Mq>);
 
         expect(mq.children().length).toBe(0);
     });

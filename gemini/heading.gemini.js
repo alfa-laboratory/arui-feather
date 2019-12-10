@@ -5,17 +5,17 @@ const NAME = 'heading';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
 const SIZES = process.env.ALL_SIZES ? ['xs', 's', 'm', 'l', 'xl'] : ['m'];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
-            let selector = `${themeSelector}.${sizeSelector}`;
+            const sizeSelector = `${NAME}_size_${size}`;
+            const selector = `${themeSelector}.${sizeSelector}`;
 
-            geminiReact.suite(selector, function (suite) {
-                let props = { theme, size };
-                let template = (
+            geminiReact.suite(selector, (suite) => {
+                const props = { theme, size };
+                const template = (
                     <GeminiBox theme={ theme }>
                         <Heading { ...props }>
                             Heading Size { size.toUpperCase() }

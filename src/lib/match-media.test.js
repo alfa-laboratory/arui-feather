@@ -4,6 +4,7 @@ import defaultMq from '../mq/mq.json';
 describe('match-media', () => {
     const originalMatchMedia = window.matchMedia;
     let matchMediaFn;
+
     beforeEach(() => {
         matchMediaFn = jest.fn();
         window.matchMedia = matchMediaFn;

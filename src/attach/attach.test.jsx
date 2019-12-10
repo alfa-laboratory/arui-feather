@@ -9,7 +9,7 @@ import Attach from './attach';
 
 describe('attach', () => {
     it('should render without problems', () => {
-        let attach = mount(<Attach />);
+        const attach = mount(<Attach />);
 
         expect(attach).toMatchSnapshot();
     });
@@ -32,7 +32,7 @@ describe('attach', () => {
     });
 
     it('should set/unset class on attach hovered/unhovered', () => {
-        let attach = mount(<Attach />);
+        const attach = mount(<Attach />);
 
         attach.simulate('mouseEnter');
         expect(attach.getDOMNode().className).toContain('attach_hovered');
@@ -87,8 +87,9 @@ describe('attach', () => {
     });
 
     it('should render selected file name if one file selected', () => {
-        let attach = mount(<Attach />);
-        let controlNode = attach.find('.attach__control');
+        const attach = mount(<Attach />);
+        const controlNode = attach.find('.attach__control');
+
         controlNode.simulate('change', {
             target: {
                 files: [{
@@ -97,13 +98,15 @@ describe('attach', () => {
             }
         });
 
-        let fileTitleNode = attach.find('.attach__text');
+        const fileTitleNode = attach.find('.attach__text');
+
         expect(fileTitleNode.text()).toContain('test.txt');
     });
 
     it('should render selected files count if several files selected', () => {
-        let attach = mount(<Attach />);
-        let controlNode = attach.find('.attach__control');
+        const attach = mount(<Attach />);
+        const controlNode = attach.find('.attach__control');
+
         controlNode.simulate('change', {
             target: {
                 files: [
@@ -120,13 +123,15 @@ describe('attach', () => {
             }
         });
 
-        let filesTitleNode = attach.find('.attach__text abbr');
+        const filesTitleNode = attach.find('.attach__text abbr');
+
         expect(filesTitleNode.text()).toContain('3 файла');
     });
 
     it('should render "no file" and clear input value after clear button was clicked', () => {
-        let attach = mount(<Attach />);
-        let controlNode = attach.find('.attach__control');
+        const attach = mount(<Attach />);
+        const controlNode = attach.find('.attach__control');
+
         controlNode.simulate('change', {
             target: {
                 files: [{
@@ -135,13 +140,16 @@ describe('attach', () => {
             }
         });
 
-        let fileTitleNode = attach.find('.attach__text');
+        const fileTitleNode = attach.find('.attach__text');
+
         expect(fileTitleNode.text()).toContain('test.txt');
 
-        let clearButtonNode = attach.find('.attach__clear');
+        const clearButtonNode = attach.find('.attach__clear');
+
         clearButtonNode.simulate('click');
 
-        let statusNode = attach.find('.attach__no-file');
+        const statusNode = attach.find('.attach__no-file');
+
         expect(statusNode.text()).toContain('Нет файла');
         expect(controlNode.props().value).toBeFalsy();
     });

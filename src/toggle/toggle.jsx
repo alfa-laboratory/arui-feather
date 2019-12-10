@@ -119,7 +119,7 @@ class Toggle extends React.Component {
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
+            const nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
 
             this.setState({ checked: nextCheckedValue });
 

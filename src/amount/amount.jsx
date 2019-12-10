@@ -64,10 +64,10 @@ class Amount extends React.Component {
     };
 
     render(cn) {
-        let { amount, size } = this.props;
-        let { majorPart, minorPart, currencySymbol } = formatAmount(amount);
+        const { amount, size } = this.props;
+        const { majorPart, minorPart, currencySymbol } = formatAmount(amount);
 
-        let amountInner = (
+        const amountInner = (
             <span>
                 <span className={ cn('major') }>{ majorPart }</span>
                 { this.renderSeparatorAndMinorPart(cn, minorPart) }
@@ -91,7 +91,7 @@ class Amount extends React.Component {
     }
 
     renderSeparatorAndMinorPart(cn, minorPart) {
-        let { showZeroMinorPart } = this.props;
+        const { showZeroMinorPart } = this.props;
 
         let needMinorPart = false;
 
@@ -111,6 +111,7 @@ class Amount extends React.Component {
                 </div>
             );
         }
+
         return null;
     }
 

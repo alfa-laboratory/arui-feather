@@ -66,7 +66,9 @@ export default class Swipeable extends React.Component {
 
     @autobind
     handleTouchStart(event) {
-        if (event.touches && event.touches.length > 1) return;
+        if (event.touches && event.touches.length > 1) {
+            return;
+        }
 
         if (this.props.children.props.onTouchStart) {
             this.props.children.props.onTouchStart(event);

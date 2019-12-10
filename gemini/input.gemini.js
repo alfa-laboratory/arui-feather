@@ -13,7 +13,7 @@ function renderAddons(inputSize) {
         case 'xl': radioSize = 'l'; break;
     }
 
-    let buttonControlNodes = [1, 2, 3].map(item => (
+    const buttonControlNodes = [1, 2, 3].map(item => (
         <Radio
             key={ item }
             size={ radioSize }
@@ -54,29 +54,29 @@ const PROP_SETS = [
     }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 
                 if (set.view === 'line' && size !== 'm') {
                     return;
                 }
 
-                geminiReact.suite(selector, function (suite) {
-                    let props = {
+                geminiReact.suite(selector, (suite) => {
+                    const props = {
                         theme,
                         size,
                         rightAddons: (index === 0 || index === 1) && renderAddons(size),
                         leftAddons: (index === 0 || index === 1) && renderAddons(size),
                         ...set
                     };
-                    let template = (
+                    const template = (
                         <GeminiBox theme={ theme } width={ set.width }>
                             <Input { ...props } />
                         </GeminiBox>
@@ -96,7 +96,7 @@ geminiReact.suite(NAME, function () {
                             .capture('pressed', function (actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('focused', function (actions, find) {
+                            .capture('focused', (actions, find) => {
                                 actions.focus(find('.input__control'));
                             });
                     }

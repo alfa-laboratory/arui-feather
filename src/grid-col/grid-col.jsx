@@ -107,13 +107,16 @@ export default class GridCol extends React.PureComponent {
      */
     createClassNames(props) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
         const classNames = {};
+
         Object.keys(props).forEach((name) => {
             const prop = props[name];
+
             if (!prop) {
                 return;
             }
             if (typeof prop !== 'object') {
                 classNames[name] = prop;
+
                 return;
             }
             Object.keys(prop).forEach((breakpoint) => {
@@ -132,6 +135,7 @@ export default class GridCol extends React.PureComponent {
                 }
             });
         });
+
         return classNames;
     }
 }

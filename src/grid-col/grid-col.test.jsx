@@ -9,20 +9,19 @@ import GridCol from './grid-col';
 
 describe('grid-col', () => {
     it('should render without problems', () => {
-        let col = shallow(<GridCol />);
+        const col = shallow(<GridCol />);
 
         expect(col).toMatchSnapshot();
     });
 
-
     it('should set classes for column width', () => {
-        let col = mount(
+        const col = mount(
             <GridCol width={ { mobile: 12, tablet: 6, desktop: { s: 4 } } }>
                 GridCol-test
             </GridCol>
         );
 
-        let colClassName = col.getDOMNode().className;
+        const colClassName = col.getDOMNode().className;
 
         expect(colClassName).toContain('grid-col_width-mobile_12');
         expect(colClassName).toContain('grid-col_width-tablet_6');

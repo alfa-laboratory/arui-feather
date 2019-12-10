@@ -8,10 +8,9 @@ import { mount } from 'enzyme';
 import Amount from './amount';
 import { CURRENCY_MAP } from '../lib/currency-codes';
 
-
 describe('amount', () => {
     it('should render without problems', () => {
-        let amount = mount(
+        const amount = mount(
             <Amount
                 amount={ {
                     value: 123314145,
@@ -29,7 +28,7 @@ describe('amount', () => {
     });
 
     it('should render when amount is negative', () => {
-        let amount = mount(
+        const amount = mount(
             <Amount
                 amount={ {
                     value: -452599,
@@ -40,12 +39,13 @@ describe('amount', () => {
                 } }
             />
         );
+
         // eslint-disable-next-line no-irregular-whitespace
         expect(amount.text()).toContain(`−4 525,99 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when amount value without minor number', () => {
-        let amount = mount(
+        const amount = mount(
             <Amount
                 amount={ {
                     value: 1789000,
@@ -56,12 +56,13 @@ describe('amount', () => {
                 } }
             />
         );
+
         // eslint-disable-next-line no-irregular-whitespace
         expect(amount.text()).toContain(`17 890,00 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render without zero minor part when prop showZeroMinorPart=false ', () => {
-        let amount = mount(
+        const amount = mount(
             <Amount
                 amount={ {
                     value: 1789000,
@@ -73,12 +74,13 @@ describe('amount', () => {
                 showZeroMinorPart={ false }
             />
         );
+
         // eslint-disable-next-line no-irregular-whitespace
         expect(amount.text()).toContain(`17 890 ${CURRENCY_MAP.RUR}`);
     });
 
     it('should render when minority equals 1', () => {
-        let amount = mount(
+        const amount = mount(
             <Amount
                 amount={ {
                     value: 999,
@@ -89,12 +91,13 @@ describe('amount', () => {
                 } }
             />
         );
+
         // eslint-disable-next-line no-irregular-whitespace
         expect(amount.text()).toContain(`999 ${CURRENCY_MAP.BYR}`);
     });
 
     it('should render when minority equals 0', () => {
-        let amount = mount(
+        const amount = mount(
             <Amount
                 amount={ {
                     value: 999,
@@ -105,6 +108,7 @@ describe('amount', () => {
                 } }
             />
         );
+
         // eslint-disable-next-line no-irregular-whitespace
         expect(amount.text()).toContain(`999 ${CURRENCY_MAP.ZWD}`);
     });

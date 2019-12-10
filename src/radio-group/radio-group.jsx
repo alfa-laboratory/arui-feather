@@ -74,9 +74,9 @@ class RadioGroup extends React.Component {
 
     render(cn) {
         let children = null;
-        let { size, name } = this.props;
+        const { size, name } = this.props;
         let props = { name };
-        let radioGroupParts = {};
+        const radioGroupParts = {};
 
         if (this.props.disabled !== undefined) {
             props.disabled = this.props.disabled;
@@ -93,7 +93,7 @@ class RadioGroup extends React.Component {
         if (children) {
             this.radios = [];
 
-            let value = this.props.value !== undefined
+            const value = this.props.value !== undefined
                 ? this.props.value
                 : this.state.value;
 
@@ -110,6 +110,7 @@ class RadioGroup extends React.Component {
                 });
             });
         }
+
         return (
             <div
                 className={

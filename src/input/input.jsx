@@ -202,14 +202,13 @@ class Input extends React.Component {
         });
     }
 
-
     render(cn, MaskedInput) {
-        let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
-        let hasLeftAddons = !!this.props.leftAddons;
-        let value = this.props.value !== undefined
+        const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
+        const hasLeftAddons = !!this.props.leftAddons;
+        const value = this.props.value !== undefined
             ? this.props.value
             : this.state.value;
-        let focused = this.getFocused();
+        const focused = this.getFocused();
 
         return (
             <span
@@ -228,7 +227,9 @@ class Input extends React.Component {
                     'has-value': !!value,
                     invalid: !!this.state.error
                 }) }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
             >
                 <span className={ cn('inner') }>
                     {
@@ -250,12 +251,12 @@ class Input extends React.Component {
     }
 
     renderContent(cn, MaskedInput) {
-        let isMaskedInput = this.props.mask !== undefined;
-        let value = this.props.value !== undefined
+        const isMaskedInput = this.props.mask !== undefined;
+        const value = this.props.value !== undefined
             ? this.props.value
             : this.state.value;
 
-        let inputProps = {
+        const inputProps = {
             className: cn('control'),
             type: this.props.type,
             view: this.props.view,
@@ -269,7 +270,9 @@ class Input extends React.Component {
             tabIndex: this.props.tabIndex,
             placeholder: this.props.placeholder,
             pattern: this.props.pattern,
-            ref: (control) => { this.control = control; },
+            ref: (control) => {
+                this.control = control;
+            },
             title: this.props.title,
             onChange: this.handleChange,
             onFocus: this.handleFocus,
@@ -288,7 +291,9 @@ class Input extends React.Component {
             <span
                 className={ cn('box') }
                 key='input-wrapper'
-                ref={ (box) => { this.box = box; } }
+                ref={ (box) => {
+                    this.box = box;
+                } }
             >
                 {
                     this.props.leftAddons &&

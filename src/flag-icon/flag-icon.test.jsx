@@ -9,7 +9,8 @@ import FlagIcon from './flag-icon';
 
 describe('flag-icon', () => {
     it('renders without problems', () => {
-        let flagIcon = mount(<FlagIcon />);
+        const flagIcon = mount(<FlagIcon />);
+
         expect(flagIcon).toMatchSnapshot();
     });
 });

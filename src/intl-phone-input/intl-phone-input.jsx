@@ -70,13 +70,17 @@ class IntlPhoneInput extends React.Component {
         return (
             <Input
                 className={ cn() }
-                ref={ (input) => { this.input = input; } }
+                ref={ (input) => {
+                    this.input = input;
+                } }
                 { ...this.props }
                 focused={ this.state.inputFocused || this.state.selectFocused }
                 leftAddons={
                     <Select
                         className={ cn('select') }
-                        ref={ (select) => { this.select = select; } }
+                        ref={ (select) => {
+                            this.select = select;
+                        } }
                         disabled={ this.props.disabled }
                         mode='radio'
                         options={ this.getOptions(cn) }
@@ -147,7 +151,7 @@ class IntlPhoneInput extends React.Component {
 
     @autobind
     handleSelectChange(value) {
-        let inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
+        const inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
             countryIso2: value[0],
@@ -227,18 +231,20 @@ class IntlPhoneInput extends React.Component {
 
     loadUtil() {
         return import(/* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min')
-            .then((util) => { this.util = util; })
+            .then((util) => {
+                this.util = util;
+            })
             .catch(error => `An error occurred while loading libphonenumber-js:\n${error}`);
     }
 
     resolveFocusedState(nextFocusedStateItem, event) {
-        let focusedState = {
+        const focusedState = {
             inputFocused: this.state.inputFocused,
             selectFocused: this.state.selectFocused
         };
 
-        let relatedTarget = getRelatedTarget(event);
-        let hasMatchedRelatedTarget = relatedTarget === event.target;
+        const relatedTarget = getRelatedTarget(event);
+        const hasMatchedRelatedTarget = relatedTarget === event.target;
         let hasSelectRelatedTarget = false;
         let isSwitchBetweenRelatedTargers = false;
 
@@ -247,8 +253,7 @@ class IntlPhoneInput extends React.Component {
             hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
                 Array.from(event.target.classList).some(item => /select/.test(item));
 
-            isSwitchBetweenRelatedTargers =
-                !Object.values(focusedState).some(item => item) &&
+            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some(item => item) &&
                 !Array.from(event.target.classList).some(item => /select/.test(item)) &&
                 Array.from(relatedTarget.classList).some(item => /select/.test(item));
         }
@@ -256,7 +261,8 @@ class IntlPhoneInput extends React.Component {
         if (event.type === 'focus') {
             if (hasMatchedRelatedTarget || hasSelectRelatedTarget || isSwitchBetweenRelatedTargers) {
                 // If we have smth already focused, do not do anything
-                let alreadyInFocus = Object.values(focusedState).some(item => item);
+                const alreadyInFocus = Object.values(focusedState).some(item => item);
+
                 if (!alreadyInFocus) {
                     this.setState(nextFocusedStateItem);
 
@@ -273,6 +279,7 @@ class IntlPhoneInput extends React.Component {
                 this.setState(
                     Object.keys(focusedState).reduce((result, item) => {
                         result[item] = false;
+
                         return result;
                     }, {})
                 );
@@ -285,10 +292,10 @@ class IntlPhoneInput extends React.Component {
     }
 
     setCountry() {
-        let inputValue = this.getValue().replace(/ /g, '');
+        const inputValue = this.getValue().replace(/ /g, '');
 
         for (let i = 0; i < this.countries.length; i++) {
-            let country = this.countries[i];
+            const country = this.countries[i];
 
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
                 // Handle countries with priority field

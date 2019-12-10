@@ -38,7 +38,7 @@ class ResizeSensor extends React.Component {
     }
 
     render() {
-        let iframeStyle = {
+        const iframeStyle = {
             position: 'absolute',
             top: 0,
             left: 0,
@@ -52,7 +52,9 @@ class ResizeSensor extends React.Component {
         /* eslint-disable jsx-a11y/iframe-has-title */
         return (
             <iframe
-                ref={ (iframe) => { this.iframe = iframe; } }
+                ref={ (iframe) => {
+                    this.iframe = iframe;
+                } }
                 style={ iframeStyle }
                 tabIndex='-1'
             />

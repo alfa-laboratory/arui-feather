@@ -42,7 +42,7 @@ class Heading extends React.Component {
     };
 
     render(cn) {
-        let headingProps = {
+        const headingProps = {
             className: cn({
                 size: this.props.size
             }),

@@ -17,15 +17,15 @@ import { SCROLL_TO_EASING } from '../vars';
  * @returns {Promise}
  */
 export default function scrollTo(options) {
-    let {
+    const {
         targetY,
         container,
         duration = 0,
         easing = SCROLL_TO_EASING
     } = options;
 
-    let scrollY = container ? container.scrollTop : window.pageYOffset;
-    let startTime = window.performance.now();
+    const scrollY = container ? container.scrollTop : window.pageYOffset;
+    const startTime = window.performance.now();
 
     if (duration < 0) {
         throw new Error('Incorrect duration in options');
@@ -35,7 +35,7 @@ export default function scrollTo(options) {
         throw new Error('Incorrect easing in options');
     }
 
-    let easingFunc = easings[easing];
+    const easingFunc = easings[easing];
 
     return new Promise((resolve) => {
         function scrollToTarget(y) {
@@ -47,10 +47,10 @@ export default function scrollTo(options) {
         }
 
         function loop(timestamp) {
-            let currentTime = Math.abs(timestamp - startTime);
-            let t = currentTime / duration;
-            let val = easingFunc(t);
-            let currentTargetY = scrollY + ((targetY - scrollY) * val);
+            const currentTime = Math.abs(timestamp - startTime);
+            const t = currentTime / duration;
+            const val = easingFunc(t);
+            const currentTargetY = scrollY + ((targetY - scrollY) * val);
 
             if (t < 1) {
                 window.requestAnimationFrame(loop);

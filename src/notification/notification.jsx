@@ -140,7 +140,9 @@ class Notification extends React.Component {
         return (
             <Swipeable onSwipe={ this.handleSwipe }>
                 <div
-                    ref={ (root) => { this.root = root; } }
+                    ref={ (root) => {
+                        this.root = root;
+                    } }
                     className={ cn({
                         visible: this.props.visible,
                         status: this.props.status,
@@ -269,7 +271,7 @@ class Notification extends React.Component {
     }
 
     ensureClickEvent(isDestroy) {
-        let isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).

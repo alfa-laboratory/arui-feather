@@ -34,8 +34,7 @@ export function getAndroidVersion() {
 // Для IE11 вместо `onChange`, используем событие `onInput`, для правильной работы copy/paste
 // Issue на ошибку в React: https://github.com/facebook/react/issues/7211
 // Детектим IE11: `Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;`
-const IS_IE11 =
-    typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
+const IS_IE11 = typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
 
 // Типы операции, которые пользователь может производить с текстовым полем.
 const operationType = {
@@ -56,6 +55,7 @@ const getSeparatorsAmount = (str, mask) => (
         if (mask.isEditableIndex(index)) {
             return amount;
         }
+
         return amount + 1;
     }, 0)
 );
@@ -157,8 +157,8 @@ class MaskedInput extends React.Component {
     }
 
     render() {
-        let props = { ...this.props };
-        let length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
+        const props = { ...this.props };
+        const length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
 
         delete props.mask;
         delete props.formatCharacters;
@@ -279,11 +279,12 @@ class MaskedInput extends React.Component {
             this.props.onProcessInputEvent(event);
         }
 
-        let prevSelection = this.input.selectionStart;
-        let newValue = event.target.value;
+        const prevSelection = this.input.selectionStart;
+        const newValue = event.target.value;
 
-        let currentValue = this.value;
-        let formattedValue = this.mask.format(newValue);
+        const currentValue = this.value;
+        const formattedValue = this.mask.format(newValue);
+
         this.value = formattedValue;
         event.target.value = formattedValue;
 
@@ -298,7 +299,8 @@ class MaskedInput extends React.Component {
 
             // На пользовательском инпуте было выделение перед операцией,
             // значит могла быть операция или удаления или замены.
-            let beforeInputSelectionLength = this.beforeInputSelection.end - this.beforeInputSelection.start;
+            const beforeInputSelectionLength = this.beforeInputSelection.end - this.beforeInputSelection.start;
+
             if (beforeInputSelectionLength >= 1) {
                 if (newValue.length !== currentValue.length - beforeInputSelectionLength) {
                     opType = operationType.REPLACE;
@@ -314,17 +316,15 @@ class MaskedInput extends React.Component {
                 this.mask);
 
             // Двигаем каретку вправо, если слева от каретки добавились не редактируемые символы
-            const shouldShiftCaret =
-                beforeChangeSeparatorsAmount < afterChangeSeparatorsAmount
-                && (opType === operationType.ADD || opType === operationType.REPLACE)
-                && this.beforeChangeMask.isEditableIndex(this.beforeInputSelection.start)
-                && this.mask.isEditableIndex(newSelection);
+            const shouldShiftCaret = beforeChangeSeparatorsAmount < afterChangeSeparatorsAmount &&
+                (opType === operationType.ADD || opType === operationType.REPLACE) &&
+                this.beforeChangeMask.isEditableIndex(this.beforeInputSelection.start) &&
+                this.mask.isEditableIndex(newSelection);
 
             // Двигаем каретку влево, если слева от каретки добавились не редактируемые символы
-            const shouldUnshiftCaret =
-                beforeChangeSeparatorsAmount > afterChangeSeparatorsAmount
-                && opType === operationType.DELETE
-                && (this.mask.isEditableIndex(newSelection - 1) && newSelection > 0);
+            const shouldUnshiftCaret = beforeChangeSeparatorsAmount > afterChangeSeparatorsAmount &&
+                opType === operationType.DELETE &&
+                (this.mask.isEditableIndex(newSelection - 1) && newSelection > 0);
 
             if (shouldUnshiftCaret || shouldShiftCaret) {
                 newSelection += (afterChangeSeparatorsAmount - beforeChangeSeparatorsAmount);
@@ -334,6 +334,7 @@ class MaskedInput extends React.Component {
             // то добавляем сдвиг до ближайшего редактируемого.
             if (opType === operationType.ADD || opType === operationType.REPLACE) {
                 let index = this.beforeInputSelection.start;
+
                 while (!this.beforeChangeMask.isEditableIndex(index) && index < formattedValue.length) {
                     index += 1;
                 }

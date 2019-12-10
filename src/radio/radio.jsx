@@ -102,7 +102,7 @@ class Radio extends React.Component {
     control;
 
     render(cn, TagButton) {
-        const checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
+        const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -209,7 +209,7 @@ class Radio extends React.Component {
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            const nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
+            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 

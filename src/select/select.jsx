@@ -976,7 +976,7 @@ class Select extends React.Component {
      * @returns {Boolean}
      */
     getOpened() {
-        return this.props.opened !== undefined ? this.props.opened : this.state.opened;
+        return this.props.opened === undefined ? this.state.opened : this.props.opened;
     }
 
     getRevisedEvent(event) {

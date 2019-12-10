@@ -65,7 +65,7 @@ class Toggle extends React.Component {
     };
 
     render(cn) {
-        const checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
+        const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -93,7 +93,7 @@ class Toggle extends React.Component {
                         value={ this.props.value }
                         checked={ checked }
                         disabled={ this.props.disabled }
-                        onClick={ this.handleClick }
+                        onClick={ Toggle.handleClick }
                         onChange={ this.handleChange }
                     />
                     <span className={ cn('switch') } />
@@ -111,15 +111,14 @@ class Toggle extends React.Component {
     }
 
     @autobind
-    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
-    handleClick(event) {
+    static handleClick(event) {
         event.stopPropagation();
     }
 
     @autobind
     handleChange() {
         if (!this.props.disabled) {
-            const nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
+            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 

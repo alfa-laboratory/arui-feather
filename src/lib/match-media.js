@@ -12,11 +12,11 @@ const refCounters = {};
 export function getMatchMedia(queryProp) {
     const query = MqList[queryProp] || queryProp;
 
-    if (!pool[query]) {
+    if (pool[query]) {
+        refCounters[query] += 1;
+    } else {
         pool[query] = window.matchMedia(query);
         refCounters[query] = 1;
-    } else {
-        refCounters[query] += 1;
     }
 
     return pool[query];

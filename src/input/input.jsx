@@ -252,9 +252,7 @@ class Input extends React.Component {
 
     renderContent(cn, MaskedInput) {
         const isMaskedInput = this.props.mask !== undefined;
-        const value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const inputProps = {
             className: cn('control'),
@@ -302,15 +300,15 @@ class Input extends React.Component {
                     </span>
                 }
                 {
-                    !isMaskedInput
-                        ? <input { ...inputProps } />
-                        : <MaskedInput
+                    isMaskedInput
+                        ? <MaskedInput
                             { ...inputProps }
                             mask={ this.props.mask }
                             formatCharacters={ this.props.maskFormatCharacters }
                             onProcessInputEvent={ this.props.onProcessMaskInputEvent }
                             useWhitespaces={ this.props.useWhitespacesInMask }
                         />
+                        : <input { ...inputProps } />
                 }
                 {
                     this.props.clear && value &&
@@ -585,7 +583,7 @@ class Input extends React.Component {
      * @returns {Boolean}
      */
     getFocused() {
-        return this.props.focused !== undefined ? this.props.focused : this.state.focused;
+        return this.props.focused === undefined ? this.state.focused : this.props.focused;
     }
 
     /**

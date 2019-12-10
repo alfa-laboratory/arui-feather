@@ -158,7 +158,7 @@ class MaskedInput extends React.Component {
 
     render() {
         const props = { ...this.props };
-        const length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
+        const length = props.maxLength === undefined ? this.mask.length : props.maxLength;
 
         delete props.mask;
         delete props.formatCharacters;
@@ -357,8 +357,8 @@ class MaskedInput extends React.Component {
             const clampedSection = this.clampSelection(newSelection);
 
             // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
-            const offsetSection =
-                opType === operationType.ADD && IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
+            const offsetSection = opType === operationType.ADD &&
+                IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
 
             this.setInputSelection(clampedSection + offsetSection);
         } else if (IS_ANDROID) {

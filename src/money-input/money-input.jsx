@@ -251,7 +251,7 @@ class MoneyInput extends React.Component {
      * @returns {String}
      */
     getValue() {
-        return this.props.value !== undefined ? this.props.value : this.state.value;
+        return this.props.value === undefined ? this.state.value : this.props.value;
     }
 }
 

@@ -145,14 +145,7 @@ class Mask {
         const patternLength = this.pattern.length;
 
         while (patternIndex < patternLength && cleanValueIndex < cleanValueLength) {
-            if (!this.pattern.isEditableIndex(patternIndex)) {
-                patternChar = this.pattern.pattern[patternIndex];
-                formattedValue += patternChar;
-                patternIndex += 1;
-                if (cleanValue.charAt(cleanValueIndex) === patternChar) {
-                    cleanValueIndex += 1;
-                }
-            } else {
+            if (this.pattern.isEditableIndex(patternIndex)) {
                 // eslint-disable-next-line no-cond-assign
                 while ((cleanValueChar = cleanValue.charAt(cleanValueIndex)) !== '') {
                     if (this.pattern.isValidAtIndex(cleanValueChar, patternIndex)) {
@@ -163,6 +156,13 @@ class Mask {
                     } else {
                         cleanValueIndex += 1;
                     }
+                }
+            } else {
+                patternChar = this.pattern.pattern[patternIndex];
+                formattedValue += patternChar;
+                patternIndex += 1;
+                if (cleanValue.charAt(cleanValueIndex) === patternChar) {
+                    cleanValueIndex += 1;
                 }
             }
         }

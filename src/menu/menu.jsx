@@ -247,7 +247,7 @@ class Menu extends React.Component {
             disabled: isItemDisabled,
             value: item.value,
             size: this.props.size || itemProps.size,
-            onClick: !isItemDisabled ? clickHandler : undefined
+            onClick: isItemDisabled ? undefined : clickHandler
         };
         const highlightedItem = this.props.highlightedItem === undefined
             ? this.state.highlightedItem
@@ -269,7 +269,7 @@ class Menu extends React.Component {
                 } }
                 key={ item.key || item.value }
                 checked={ isItemChecked }
-                type={ this.props.mode !== 'basic' ? 'block' : itemProps.type }
+                type={ this.props.mode === 'basic' ? itemProps.type : 'block' }
                 onMouseEnter={ () => this.handleMenuItemMouseEnter(menuItem) }
                 onMouseLeave={ this.handleMenuItemMouseLeave }
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
@@ -497,9 +497,9 @@ class Menu extends React.Component {
 
     setNewCheckedItems(item) {
         const { value } = item;
-        let checkedItems = this.props.checkedItems !== undefined
-            ? Array.from(this.props.checkedItems)
-            : Array.from(this.state.checkedItems);
+        let checkedItems = this.props.checkedItems === undefined
+            ? Array.from(this.state.checkedItems)
+            : Array.from(this.props.checkedItems);
         const indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
 
         switch (this.props.mode) {

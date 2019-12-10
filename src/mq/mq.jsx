@@ -5,11 +5,11 @@
 import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
-import Modernizr from '../modernizr';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
+import { isPointerEventsSupported, isTouchSupported } from './utils';
 
 const IS_BROWSER = typeof window !== 'undefined';
-const SUPPORTS_TOUCH = IS_BROWSER && (Modernizr.pointerevents || Modernizr.touchevents);
+const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSupported());
 
 /**
  * Компонент, имплементирующий поддержку медиа запросов в шаблонах.

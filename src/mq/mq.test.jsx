@@ -9,27 +9,45 @@ import { mount } from 'enzyme';
 import { getMatchMedia } from '../lib/match-media';
 import Mq from './mq';
 
-jest.mock('../modernizr', () => ({ pointerevents: true }));
 jest.mock('../lib/match-media');
-
+jest.mock('./utils', () => ({
+    isPointerEventsSupported: jest.fn(() => true)
+}));
 
 describe('mq', () => {
     it('should not mount this.props.children on conditions mismatch', () => {
-        getMatchMedia.mockReturnValueOnce({ addListener: jest.fn, matches: false });
-        let mq = mount(<Mq query='--small-only' touch={ true }>Content</Mq>);
+        getMatchMedia.mockReturnValueOnce({
+            addListener: jest.fn,
+            matches: false
+        });
+        let mq = mount(
+            <Mq query='--small-only' touch={ true }>
+                Content
+            </Mq>
+        );
 
         expect(mq.children().length).toBe(0);
     });
 
     it('should mount with matching query and matching touch screen', () => {
-        getMatchMedia.mockReturnValueOnce({ addListener: jest.fn, matches: true });
-        let mq = mount(<Mq query='--small-only' touch={ true }>Content</Mq>);
+        getMatchMedia.mockReturnValueOnce({
+            addListener: jest.fn,
+            matches: true
+        });
+        let mq = mount(
+            <Mq query='--small-only' touch={ true }>
+                Content
+            </Mq>
+        );
 
         expect(mq.text()).toBe('Content');
     });
 
     it('should mount with matching query and missing touch', () => {
-        getMatchMedia.mockReturnValueOnce({ addListener: jest.fn, matches: true });
+        getMatchMedia.mockReturnValueOnce({
+            addListener: jest.fn,
+            matches: true
+        });
         let mq = mount(<Mq query='--small-only'>Content</Mq>);
 
         expect(mq.text()).toBe('Content');
@@ -48,7 +66,11 @@ describe('mq', () => {
     });
 
     it('should not mount with non-matching query', () => {
-        let mq = mount(<Mq query='--non-matching-query'><div /></Mq>);
+        let mq = mount(
+            <Mq query='--non-matching-query'>
+                <div />
+            </Mq>
+        );
 
         expect(mq.children().length).toBe(0);
     });

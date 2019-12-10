@@ -10,7 +10,9 @@ import { getMatchMedia } from '../lib/match-media';
 import mqDecorator from './decorator';
 
 jest.mock('../lib/match-media');
-jest.mock('../modernizr', () => ({ pointerevents: true }));
+jest.mock('./utils', () => ({
+    isPointerEventsSupported: jest.fn(() => true)
+}));
 
 describe('mq-decorator', () => {
     it('should pass mqMatch property to decorated component', () => {

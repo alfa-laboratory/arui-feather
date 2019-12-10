@@ -14,7 +14,7 @@ initialState = {
     >
         Как узнать дату и сумму платежа
     </Button>
-    <div className='row' >
+    <div className='row'>
         <SlideDown isExpanded={ state.isExpanded }>
             <Paragraph>
                 Узнать сумму платежа по кредиту с ежемесячным погашением равными частями вы

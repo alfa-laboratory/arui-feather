@@ -53,11 +53,11 @@ initialState = {
 <div>
     <Button onClick={ toggleSidebar }>Фильтр</Button>
     <Sidebar
-        headerContent={
+        headerContent={ (
             <Link onClick={ toggleSidebar }>
                 Применить
             </Link>
-        }
+        ) }
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
     >

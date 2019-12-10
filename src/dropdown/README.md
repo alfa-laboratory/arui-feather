@@ -1,6 +1,6 @@
 ```jsx
 <div>
-    <div className='row' >
+    <div className='row'>
         <Dropdown
             size='s'
             popupContent='Последние 3 цифры на обороте карты'
@@ -8,7 +8,7 @@
             Подробнее
         </Dropdown>
     </div>
-    <div className='row' >
+    <div className='row'>
         <Dropdown
             size='m'
             popupContent='Последние 3 цифры на обороте карты'
@@ -20,7 +20,7 @@
             Подробнее
         </Dropdown>
     </div>
-    <div className='row' >
+    <div className='row'>
         <Dropdown
             size='l'
             popupContent='Последние 3 цифры на обороте карты'
@@ -32,7 +32,7 @@
             } }
         />
     </div>
-    <div className='row' >
+    <div className='row'>
         <Dropdown
             size='xl'
             popupContent='Последние 3 цифры на обороте карты'

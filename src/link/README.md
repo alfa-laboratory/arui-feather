@@ -48,15 +48,16 @@ const columnStyle = {
     display: 'flex',
     width: '50%'
 };
+
 <div style={ { width: '100%' } }>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
             <span className='row' key={ size }>
                 <div className='column' style={ columnStyle }>
-                    <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
+                    <Link size={ size }><span role='img' aria-label='smile'>😊</span></Link>
                 </div>
                 <div className='column' style={ columnStyle }>
-                    <Link size={ size } >¯\_(ツ)_/¯</Link>
+                    <Link size={ size }>¯\_(ツ)_/¯</Link>
                 </div>
             </span>
         ))

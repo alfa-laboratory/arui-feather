@@ -12,7 +12,7 @@ function handleMoneyChange(money) {
     <Input
         size='m'
         placeholder='Введите сумму'
-        rightAddons={
+        rightAddons={ (
             <RadioGroup type='button'>
                 {
                     ['₽', '$', '€'].map(item => (
@@ -26,7 +26,7 @@ function handleMoneyChange(money) {
                     ))
                 }
             </RadioGroup>
-        }
+        ) }
         type='number'
     />
 </div>
@@ -35,6 +35,7 @@ function handleMoneyChange(money) {
 Обычные
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -53,6 +54,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С лейблами
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -72,6 +74,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С крестиком «Очистить»
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -92,6 +95,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С шириной 100%
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -111,6 +115,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С ошибкой
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 initialState = {
     value: 'Конsтантин',
     error: true
@@ -141,6 +146,7 @@ initialState = {
 import IconOk from 'arui-feather/icon/ui/ok';
 
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -149,12 +155,12 @@ const sizes = ['s', 'm', 'l', 'xl'];
                     placeholder='Введите ваше имя'
                     view='line'
                     size={ size }
-                    icon={
+                    icon={ (
                         <IconOk
                             colored={ true }
                             size={ size }
                         />
-                    }
+                    ) }
                 />
             </div>
         ))
@@ -165,6 +171,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 В неактивном состоянии
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (

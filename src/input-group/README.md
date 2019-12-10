@@ -3,6 +3,7 @@
 import Input from 'arui-feather/input';
 
 const inputs = [1, 2, 3, 4];
+
 <InputGroup>
     { inputs.map(input => (
         <Input
@@ -18,7 +19,8 @@ const inputs = [1, 2, 3, 4];
 import Input from 'arui-feather/input';
 
 const inputs = [1, 2, 3, 4];
-<InputGroup width='available' >
+
+<InputGroup width='available'>
     { inputs.map(input => (
         <Input
             key={ input }

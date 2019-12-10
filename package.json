@@ -107,6 +107,7 @@
     "acorn": "^6.1.1",
     "arui-demo": "2.0.0",
     "arui-presets": "^4.13.4",
+    "arui-presets-lint": "^2.0.0",
     "babel-loader": "^7.1.2",
     "alfa-ui-primitives": "2.3.3",
     "babel-plugin-dynamic-import-node": "^2.0.0",

@@ -24,9 +24,6 @@ module.exports = {
         // List of file extensions with jsx support
         'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx'] }],
 
-        // Setting the max length of the code
-        'max-len': ['error', 120],
-
         // The validation of jsdoc was disabled due to an unnecessary
         // restriction of writing comments that scares off write developers to
         // write descriptions
@@ -38,9 +35,6 @@ module.exports = {
         'sort-class-members/sort-class-members': 'off',
 
         // Destructuring is a syntactic possibility, not a necessity
-        'prefer-destructuring': 'off',
-
-        // Default exports are evil 👿
-        'import/prefer-default-export': 'off'
+        'prefer-destructuring': 'off'
     }
 };

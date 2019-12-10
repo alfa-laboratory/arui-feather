@@ -262,9 +262,7 @@ class Attach extends React.Component {
     }
 
     renderStatusText(cn) {
-        const files = this.props.value !== undefined
-            ? this.props.value || []
-            : this.state.value;
+        const files = this.props.value === undefined ? this.state.value : (this.props.value || []);
 
         if (files && files.length > 0) {
             const content = (files.length === 1)

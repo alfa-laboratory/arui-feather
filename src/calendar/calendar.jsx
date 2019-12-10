@@ -295,9 +295,7 @@ class Calendar extends React.Component {
                             const selectedDate = new Date(this.state.month);
                             const isSameMonth = selectedDate && selectedDate.getMonth() === newMonth.getMonth();
 
-                            const dataMonth = !off
-                                ? newMonth.getTime()
-                                : null;
+                            const dataMonth = off ? null : newMonth.getTime();
 
                             const mods = {
                                 type: off ? 'off' : null,
@@ -722,9 +720,7 @@ class Calendar extends React.Component {
             dayShift += Math.abs(dayShift) / dayShift;
         }
 
-        if (!this.value) {
-            this.performChange(this.state.month, true);
-        } else {
+        if (this.value) {
             const shiftedValue = addDays(this.value, dayShift);
 
             this.performChange(shiftedValue.valueOf(), isTriggeredByKeyboard);
@@ -732,6 +728,8 @@ class Calendar extends React.Component {
             if (this.props.onMonthChange && !isSameMonth(shiftedValue, this.value)) {
                 this.props.onMonthChange(shiftedValue.valueOf());
             }
+        } else {
+            this.performChange(this.state.month, true);
         }
     }
 

@@ -66,9 +66,7 @@ class Collapse extends React.Component {
 
     render(cn) {
         let ToggledIcon;
-        const expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
+        const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         switch (expanded) {
             case true: ToggledIcon = IconArrowUp; break;
@@ -117,9 +115,7 @@ class Collapse extends React.Component {
 
     @autobind
     handleExpandedChange() {
-        const newExpandedValue = this.props.isExpanded !== undefined
-            ? !this.props.isExpanded
-            : !this.state.isExpanded;
+        const newExpandedValue = this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
 
         this.setState({
             isExpanded: newExpandedValue
@@ -132,9 +128,7 @@ class Collapse extends React.Component {
 
     @autobind
     updateContentHeight() {
-        const expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
+        const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         let contentHeight;
 

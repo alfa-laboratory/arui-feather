@@ -1,4 +1,5 @@
 {
+  "sourceType": "unambiguous",
   "presets": ["arui-presets/babel"],
   "plugins": [
     ["transform-react-remove-prop-types", {"mode": "wrap"}]

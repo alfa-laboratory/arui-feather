@@ -25,6 +25,7 @@
     "version": "git fetch --tags && npm run changelog && git add CHANGELOG.md",
     "postversion": "git push origin master && git push --tags && npm run pub",
     "modernizr": "node ./tools/modernizr-build.js",
+    "lint-staged": "lint-staged",
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
     "demo": "styleguidist server",

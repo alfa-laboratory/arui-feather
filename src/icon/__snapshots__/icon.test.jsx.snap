@@ -182,9 +182,23 @@ exports[`icon render IconArrowLeft without problems: IconArrowLeft 1`] = `
 />
 `;
 
+exports[`icon render IconArrowLeftDouble without problems: IconArrowLeftDouble 1`] = `
+<Icon
+  name="arrow-left-double"
+  size="m"
+/>
+`;
+
 exports[`icon render IconArrowRight without problems: IconArrowRight 1`] = `
 <Icon
   name="arrow-right"
+  size="m"
+/>
+`;
+
+exports[`icon render IconArrowRightDouble without problems: IconArrowRightDouble 1`] = `
+<Icon
+  name="arrow-right-double"
   size="m"
 />
 `;
@@ -1050,6 +1064,13 @@ exports[`icon render IconCategoryAuto without problems: IconCategoryAuto 1`] = `
 />
 `;
 
+exports[`icon render IconCategoryAutoLoan without problems: IconCategoryAutoLoan 1`] = `
+<Icon
+  name="category-auto-loan"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryBooksMovies without problems: IconCategoryBooksMovies 1`] = `
 <Icon
   name="category-books-movies"
@@ -1106,6 +1127,13 @@ exports[`icon render IconCategoryCharity without problems: IconCategoryCharity 1
 />
 `;
 
+exports[`icon render IconCategoryConsulting without problems: IconCategoryConsulting 1`] = `
+<Icon
+  name="category-consulting"
+  size="m"
+/>
+`;
+
 exports[`icon render IconCategoryDefault without problems: IconCategoryDefault 1`] = `
 <Icon
   name="category-default"
@@ -1158,6 +1186,13 @@ exports[`icon render IconCategoryFinance without problems: IconCategoryFinance 1
 exports[`icon render IconCategoryFines without problems: IconCategoryFines 1`] = `
 <Icon
   name="category-fines"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryGaming without problems: IconCategoryGaming 1`] = `
+<Icon
+  name="category-gaming"
   size="m"
 />
 `;
@@ -1382,6 +1417,20 @@ exports[`icon render IconCategoryUser without problems: IconCategoryUser 1`] = `
 exports[`icon render IconCategoryVacation without problems: IconCategoryVacation 1`] = `
 <Icon
   name="category-vacation"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryVipManager without problems: IconCategoryVipManager 1`] = `
+<Icon
+  name="category-vip-manager"
+  size="m"
+/>
+`;
+
+exports[`icon render IconCategoryVipRoom without problems: IconCategoryVipRoom 1`] = `
+<Icon
+  name="category-vip-room"
   size="m"
 />
 `;
@@ -2093,6 +2142,13 @@ exports[`icon render IconLimits without problems: IconLimits 1`] = `
 />
 `;
 
+exports[`icon render IconList without problems: IconList 1`] = `
+<Icon
+  name="list"
+  size="m"
+/>
+`;
+
 exports[`icon render IconLocation without problems: IconLocation 1`] = `
 <Icon
   name="location"
@@ -2775,6 +2831,13 @@ exports[`icon render IconSystemHelp without problems: IconSystemHelp 1`] = `
 exports[`icon render IconSystemHideArrow without problems: IconSystemHideArrow 1`] = `
 <Icon
   name="system-hide-arrow"
+  size="m"
+/>
+`;
+
+exports[`icon render IconTable without problems: IconTable 1`] = `
+<Icon
+  name="table"
   size="m"
 />
 `;

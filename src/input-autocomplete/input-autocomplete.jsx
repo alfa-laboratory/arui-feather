@@ -74,7 +74,11 @@ class InputAutocomplete extends React.Component {
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
         closeOnSelect: Type.bool,
         /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
+        'data-test-id': Type.string,
+        /** Максимальная высота выпадающего списка опций */
+        popupMaxHeight: Type.number,
+        /** Название класса попапа с опциями */
+        popupClassName: Type.string
     };
 
     static defaultProps = {
@@ -201,7 +205,7 @@ class InputAutocomplete extends React.Component {
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
-                className={ cn('popup') }
+                className={ cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
                 ref={ (popup) => {
                     this.popup = popup;
@@ -211,11 +215,12 @@ class InputAutocomplete extends React.Component {
                 onClickOutside={ this.handleClickOutside }
                 target='anchor'
                 directions={ this.props.directions }
-                height='adaptive'
+                height={ this.props.popupMaxHeight ? 'default' : 'adaptive' }
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
                 key='popup'
+                maxHeight={ this.props.popupMaxHeight }
             >
                 <Menu
                     ref={ (menu) => {

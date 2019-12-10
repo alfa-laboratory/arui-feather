@@ -14,6 +14,103 @@
 
 
 
+<a name="15.6.0"></a>
+# [15.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.2...v15.6.0) (2019-11-26)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.3 ([184293e](https://github.com/alfa-laboratory/arui-feather/commit/184293e))
+* **toggle:** label position property ([#876](https://github.com/alfa-laboratory/arui-feather/issues/876)) ([6ef9ae1](https://github.com/alfa-laboratory/arui-feather/commit/6ef9ae1))
+
+
+
+<a name="15.5.2"></a>
+## [15.5.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.1...v15.5.2) (2019-11-22)
+
+
+### Features
+
+* **input-autocomplete:** add className for popup options container ([#877](https://github.com/alfa-laboratory/arui-feather/issues/877)) ([8d8fabe](https://github.com/alfa-laboratory/arui-feather/commit/8d8fabe))
+
+
+
+<a name="15.5.1"></a>
+## [15.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.0...v15.5.1) (2019-11-18)
+
+
+### Bug Fixes
+
+* **popup:** fix overflow with maxHeight ([#875](https://github.com/alfa-laboratory/arui-feather/issues/875)) ([1174db5](https://github.com/alfa-laboratory/arui-feather/commit/1174db5))
+
+
+
+<a name="15.5.0"></a>
+# [15.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.4.0...v15.5.0) (2019-11-18)
+
+
+### Features
+
+* **dropzone:** new dropzone component ([#867](https://github.com/alfa-laboratory/arui-feather/issues/867)) ([9fa3ef5](https://github.com/alfa-laboratory/arui-feather/commit/9fa3ef5))
+* **list:** nested lists ([#870](https://github.com/alfa-laboratory/arui-feather/issues/870)) ([072b466](https://github.com/alfa-laboratory/arui-feather/commit/072b466))
+
+
+
+<a name="15.4.0"></a>
+# [15.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.2...v15.4.0) (2019-11-15)
+
+
+### Features
+
+* **input-autocomplete:** add max height for popup content ([#872](https://github.com/alfa-laboratory/arui-feather/issues/872)) ([5b5b8db](https://github.com/alfa-laboratory/arui-feather/commit/5b5b8db))
+
+
+
+<a name="15.3.2"></a>
+## [15.3.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.1...v15.3.2) (2019-11-08)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.2 ([52cfc99](https://github.com/alfa-laboratory/arui-feather/commit/52cfc99))
+
+
+
+<a name="15.3.1"></a>
+## [15.3.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.3.0...v15.3.1) (2019-11-07)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives 2.3.1 ([e0b354d](https://github.com/alfa-laboratory/arui-feather/commit/e0b354d))
+
+
+
+<a name="15.3.0"></a>
+# [15.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.2.1...v15.3.0) (2019-11-05)
+
+
+### Features
+
+* **attach:** add progress bar ([#865](https://github.com/alfa-laboratory/arui-feather/issues/865)) ([fe15c5d](https://github.com/alfa-laboratory/arui-feather/commit/fe15c5d))
+
+
+
+<a name="15.2.1"></a>
+## [15.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v15.2.0...v15.2.1) (2019-10-30)
+
+
+
+<a name="15.2.0"></a>
+# [15.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.2...v15.2.0) (2019-10-29)
+
+
+### Features
+
+* add three xl icons ([a9ae967](https://github.com/alfa-laboratory/arui-feather/commit/a9ae967))
+
+
+
 <a name="15.1.2"></a>
 ## [15.1.2](https://github.com/alfa-laboratory/arui-feather/compare/v15.1.1...v15.1.2) (2019-10-25)
 

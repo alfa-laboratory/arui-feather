@@ -188,6 +188,7 @@ import IconVisa from './brand/visa';
 import IconCategoryAppliances from './category/category-appliances';
 import IconCategoryAtm from './category/category-atm';
 import IconCategoryAuto from './category/category-auto';
+import IconCategoryAutoLoan from './category/category-auto-loan';
 import IconCategoryBooksMovies from './category/category-books-movies';
 import IconCategoryBudget from './category/category-budget';
 import IconCategoryBusiness from './category/category-business';
@@ -196,6 +197,7 @@ import IconCategoryCards from './category/category-cards';
 import IconCategoryCash from './category/category-cash';
 import IconCategoryCashback from './category/category-cashback';
 import IconCategoryCharity from './category/category-charity';
+import IconCategoryConsulting from './category/category-consulting';
 import IconCategoryDefault from './category/category-default';
 import IconCategoryDress from './category/category-dress';
 import IconCategoryEducation from './category/category-education';
@@ -204,6 +206,7 @@ import IconCategoryExperiments from './category/category-experiments';
 import IconCategoryFamily from './category/category-family';
 import IconCategoryFinance from './category/category-finance';
 import IconCategoryFines from './category/category-fines';
+import IconCategoryGaming from './category/category-gaming';
 import IconCategoryGasoline from './category/category-gasoline';
 import IconCategoryGibddFines from './category/category-gibdd-fines';
 import IconCategoryGuard from './category/category-guard';
@@ -236,6 +239,8 @@ import IconCategoryTv from './category/category-tv';
 import IconCategoryUnknown from './category/category-unknown';
 import IconCategoryUser from './category/category-user';
 import IconCategoryVacation from './category/category-vacation';
+import IconCategoryVipManager from './category/category-vip-manager';
+import IconCategoryVipRoom from './category/category-vip-room';
 import IconCategoryWallet from './category/category-wallet';
 import IconUtilities from './category/utilities';
 import IconCurrencyChf from './currency/currency-chf';
@@ -326,7 +331,9 @@ import IconArrowDouble from './ui/arrow-double';
 import IconArrowDown from './ui/arrow-down';
 import IconArrowExpand from './ui/arrow-expand';
 import IconArrowLeft from './ui/arrow-left';
+import IconArrowLeftDouble from './ui/arrow-left-double';
 import IconArrowRight from './ui/arrow-right';
+import IconArrowRightDouble from './ui/arrow-right-double';
 import IconArrowTop from './ui/arrow-top';
 import IconArrowUp from './ui/arrow-up';
 import IconAttention from './ui/attention';
@@ -358,6 +365,7 @@ import IconHelp from './ui/help';
 import IconHelpFilled from './ui/help-filled';
 import IconInfo from './ui/info';
 import IconLeft from './ui/left';
+import IconList from './ui/list';
 import IconLocation from './ui/location';
 import IconMetroMap from './ui/metro-map';
 import IconOk from './ui/ok';
@@ -375,6 +383,7 @@ import IconSubmit from './ui/submit';
 import IconSystemBack from './ui/system-back';
 import IconSystemHelp from './ui/system-help';
 import IconSystemHideArrow from './ui/system-hide-arrow';
+import IconTable from './ui/table';
 import IconTick from './ui/tick';
 import IconUp from './ui/up';
 import IconVerifying from './ui/verifying';
@@ -621,6 +630,7 @@ describe('icon', () => {
             { componentName: IconCategoryAppliances, name: 'category-appliances' },
             { componentName: IconCategoryAtm, name: 'category-atm' },
             { componentName: IconCategoryAuto, name: 'category-auto' },
+            { componentName: IconCategoryAutoLoan, name: 'category-auto-loan' },
             { componentName: IconCategoryBooksMovies, name: 'category-books-movies' },
             { componentName: IconCategoryBudget, name: 'category-budget' },
             { componentName: IconCategoryBusiness, name: 'category-business' },
@@ -629,6 +639,7 @@ describe('icon', () => {
             { componentName: IconCategoryCash, name: 'category-cash' },
             { componentName: IconCategoryCashback, name: 'category-cashback' },
             { componentName: IconCategoryCharity, name: 'category-charity' },
+            { componentName: IconCategoryConsulting, name: 'category-consulting' },
             { componentName: IconCategoryDefault, name: 'category-default' },
             { componentName: IconCategoryDress, name: 'category-dress' },
             { componentName: IconCategoryEducation, name: 'category-education' },
@@ -637,6 +648,7 @@ describe('icon', () => {
             { componentName: IconCategoryFamily, name: 'category-family' },
             { componentName: IconCategoryFinance, name: 'category-finance' },
             { componentName: IconCategoryFines, name: 'category-fines' },
+            { componentName: IconCategoryGaming, name: 'category-gaming' },
             { componentName: IconCategoryGasoline, name: 'category-gasoline' },
             { componentName: IconCategoryGibddFines, name: 'category-gibdd-fines' },
             { componentName: IconCategoryGuard, name: 'category-guard' },
@@ -669,6 +681,8 @@ describe('icon', () => {
             { componentName: IconCategoryUnknown, name: 'category-unknown' },
             { componentName: IconCategoryUser, name: 'category-user' },
             { componentName: IconCategoryVacation, name: 'category-vacation' },
+            { componentName: IconCategoryVipManager, name: 'category-vip-manager' },
+            { componentName: IconCategoryVipRoom, name: 'category-vip-room' },
             { componentName: IconCategoryWallet, name: 'category-wallet' },
             { componentName: IconUtilities, name: 'utilities' },
             { componentName: IconCurrencyChf, name: 'currency-chf' },
@@ -759,7 +773,9 @@ describe('icon', () => {
             { componentName: IconArrowDown, name: 'arrow-down' },
             { componentName: IconArrowExpand, name: 'arrow-expand' },
             { componentName: IconArrowLeft, name: 'arrow-left' },
+            { componentName: IconArrowLeftDouble, name: 'arrow-left-double' },
             { componentName: IconArrowRight, name: 'arrow-right' },
+            { componentName: IconArrowRightDouble, name: 'arrow-right-double' },
             { componentName: IconArrowTop, name: 'arrow-top' },
             { componentName: IconArrowUp, name: 'arrow-up' },
             { componentName: IconAttention, name: 'attention' },
@@ -791,6 +807,7 @@ describe('icon', () => {
             { componentName: IconHelpFilled, name: 'help-filled' },
             { componentName: IconInfo, name: 'info' },
             { componentName: IconLeft, name: 'left' },
+            { componentName: IconList, name: 'list' },
             { componentName: IconLocation, name: 'location' },
             { componentName: IconMetroMap, name: 'metro-map' },
             { componentName: IconOk, name: 'ok' },
@@ -808,6 +825,7 @@ describe('icon', () => {
             { componentName: IconSystemBack, name: 'system-back' },
             { componentName: IconSystemHelp, name: 'system-help' },
             { componentName: IconSystemHideArrow, name: 'system-hide-arrow' },
+            { componentName: IconTable, name: 'table' },
             { componentName: IconTick, name: 'tick' },
             { componentName: IconUp, name: 'up' },
             { componentName: IconVerifying, name: 'verifying' },

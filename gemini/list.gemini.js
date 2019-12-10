@@ -12,7 +12,17 @@ const ITEMS = [
     },
     {
         key: 'two',
-        value: 'Two'
+        value: 'Two',
+        list: [
+            {
+                key: 'subone',
+                value: 'Sub one'
+            },
+            {
+                key: 'subtwo',
+                value: 'Sub two'
+            }
+        ]
     },
     {
         key: 'three',

@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`list should render nested lists 1`] = `
+<ul
+  className="list list_theme_alfa-on-white"
+>
+  <li
+    className="list__item"
+    key="item-one"
+  >
+    Apple
+    <List
+      items={
+        Array [
+          Object {
+            "key": "subone",
+            "value": "Red apple",
+          },
+          Object {
+            "key": "subtwo",
+            "value": "Greeen apple",
+          },
+        ]
+      }
+    />
+  </li>
+  <li
+    className="list__item"
+    key="item-two"
+  >
+    Orange
+  </li>
+  <li
+    className="list__item"
+    key="item-three"
+  >
+    Banana
+    <List
+      items={
+        Array [
+          Object {
+            "key": "subthree",
+            "value": "Small banana",
+          },
+          Object {
+            "key": "subfour",
+            "value": "Big banana",
+          },
+        ]
+      }
+    />
+  </li>
+</ul>
+`;
+
 exports[`list should render ul type without problem 1`] = `
 <ol
   className="list list_type_ordered list_theme_alfa-on-white"

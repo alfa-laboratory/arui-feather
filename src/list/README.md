@@ -10,6 +10,20 @@ const ITEMS_OL = [
         value: 'Депозиты'
     },
     {
+        key: 'nested',
+        value: 'Кредиты',
+        list: [
+            {
+                key: 'sub-one',
+                value: 'Ипотечный кредит'
+            },
+            {
+                key: 'sub-two',
+                value: 'Потребительский кредит'
+            }
+        ]
+    },
+    {
         key: 'three',
         value: 'Бесплатные сервисы для накоплений'
     }
@@ -31,6 +45,20 @@ const ITEMS_UL = [
     {
         key: 'two',
         value: 'Повышенные % ставки по депозитам'
+    },
+    {
+        key: 'nested',
+        value: 'Кредиты',
+        list: [
+            {
+                key: 'sub-one',
+                value: 'Ипотечный кредит'
+            },
+            {
+                key: 'sub-two',
+                value: 'Потребительский кредит'
+            }
+        ]
     },
     {
         key: 'three',

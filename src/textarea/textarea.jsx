@@ -131,9 +131,7 @@ class Textarea extends React.Component {
     control;
 
     render(cn) {
-        const value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const textareaProps = {
             className: cn('control'),
@@ -183,15 +181,15 @@ class Textarea extends React.Component {
                         </span>
                     }
                     {
-                        !this.props.autosize
-                            ? <textarea { ...textareaProps } />
-                            : <TextareaAutosize
+                        this.props.autosize
+                            ? <TextareaAutosize
                                 { ...textareaProps }
                                 maxRows={ this.props.maxRows }
                                 minRows={ this.props.minRows }
                                 style={ { maxHeight: this.props.maxHeight } }
                                 onHeightChange={ this.handleHeightChange }
                             />
+                            : <textarea { ...textareaProps } />
                     }
                     {
                         (this.props.error || this.props.hint) &&
@@ -277,6 +275,7 @@ class Textarea extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

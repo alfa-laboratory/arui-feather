@@ -552,7 +552,7 @@ class Popup extends React.Component {
     }
 
     ensureClickEvent(isDestroy) {
-        const isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).
@@ -588,21 +588,21 @@ class Popup extends React.Component {
      * @returns {Number}
      */
     getMinWidth() {
-        return this.props.minWidth !== undefined ? this.props.minWidth : 0;
+        return this.props.minWidth === undefined ? 0 : this.props.minWidth;
     }
 
     /**
      * @returns {Number}
      */
     getMaxWidth() {
-        return this.props.maxWidth !== undefined ? this.props.maxWidth : 'none';
+        return this.props.maxWidth === undefined ? 'none' : this.props.maxWidth;
     }
 
     /**
      * @returns {Number}
      */
     getMaxHeight() {
-        return this.props.maxHeight !== undefined ? this.props.maxHeight : 'none';
+        return this.props.maxHeight === undefined ? 'none' : this.props.maxHeight;
     }
 
     /**

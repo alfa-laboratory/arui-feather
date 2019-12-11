@@ -163,7 +163,7 @@ class Button extends React.Component {
                 view: this.props.view,
                 size: this.props.size,
                 width: this.props.width,
-                focused: this.props.focused !== undefined ? this.props.focused : this.state.focused,
+                focused: this.props.focused === undefined ? this.state.focused : this.props.focused,
                 hovered: this.state.hovered,
                 pressed: this.state.pressed,
                 togglable: this.props.togglable,
@@ -346,6 +346,7 @@ class Button extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

@@ -299,26 +299,25 @@ class IntlPhoneInput extends React.Component {
 
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
                 // Handle countries with priority field
-                if (country.priority !== undefined) {
-                    // Check max dial code length to allow country change
-                    // For countries with identical dial codes or North American Numbering Plan (NANP)
-                    if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
-                        // Update only value if countries are equal
-                        if (this.state.countryIso2 === country.iso2) {
-                            this.setValue(country.iso2, inputValue);
-                            break;
-                        // If not equal — set highest by priority
-                        } else if (country.priority === 0) {
-                            this.setValue(country.iso2, inputValue);
-                            break;
-                        }
-                    // Otherwise don't change already selected country, just set value
-                    } else if (this.state.countryIso2 === country.iso2) {
+                if (country.priority === undefined) {
+                    this.setValue(country.iso2, inputValue);
+                    break;
+                }
+
+                // Check max dial code length to allow country change
+                // For countries with identical dial codes or North American Numbering Plan (NANP)
+                if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
+                    // Update only value if countries are equal
+                    if (this.state.countryIso2 === country.iso2) {
+                        this.setValue(country.iso2, inputValue);
+                        break;
+                    // If not equal — set highest by priority
+                    } else if (country.priority === 0) {
                         this.setValue(country.iso2, inputValue);
                         break;
                     }
-                // Handle all other countries
-                } else {
+                // Otherwise don't change already selected country, just set value
+                } else if (this.state.countryIso2 === country.iso2) {
                     this.setValue(country.iso2, inputValue);
                     break;
                 }

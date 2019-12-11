@@ -856,6 +856,7 @@ class Select extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();
@@ -976,7 +977,7 @@ class Select extends React.Component {
      * @returns {Boolean}
      */
     getOpened() {
-        return this.props.opened !== undefined ? this.props.opened : this.state.opened;
+        return this.props.opened === undefined ? this.state.opened : this.props.opened;
     }
 
     getRevisedEvent(event) {

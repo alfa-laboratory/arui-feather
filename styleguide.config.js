@@ -19,22 +19,23 @@ const TITLE = 'arui-feather';
 // Prepare styleguidist context https://react-styleguidist.js.org/docs/configuration.html#context
 // For share example functionality
 
-const getContext = source =>
-    readdirSync(source)
-        .filter(name => !['lib', 'mq', 'vars', 'font', 'skeleton-mixins'].includes(name))
-        .map(name => path.join(source, name))
-        .filter(file => lstatSync(file).isDirectory())
-        .reduce(
-            (prev, componentDirName) => {
-                const componentSourcesFileName = componentDirName.split(path.sep).pop();
-                const componentName = upperCamelCase(componentSourcesFileName);
-                prev[componentName] = componentDirName;
-                return prev;
-            },
-            {
-                PreviewFrame: 'arui-demo/preview-frame'
-            }
-        );
+const getContext = source => readdirSync(source)
+    .filter(name => !['lib', 'mq', 'vars', 'font', 'skeleton-mixins'].includes(name))
+    .map(name => path.join(source, name))
+    .filter(file => lstatSync(file).isDirectory())
+    .reduce(
+        (prev, componentDirName) => {
+            const componentSourcesFileName = componentDirName.split(path.sep).pop();
+            const componentName = upperCamelCase(componentSourcesFileName);
+
+            prev[componentName] = componentDirName;
+
+            return prev;
+        },
+        {
+            PreviewFrame: 'arui-demo/preview-frame'
+        }
+    );
 
 const context = getContext(path.join(__dirname, 'src'));
 
@@ -53,6 +54,7 @@ module.exports = {
         const componentDirName = path.dirname(filePath);
         const componentSourcesFileName = componentDirName.split(path.sep).pop();
         const componentName = upperCamelCase(componentSourcesFileName);
+
         return `import ${componentName} from '${TITLE}/${componentSourcesFileName}';`;
     },
     getExampleFilename(componentPath) {

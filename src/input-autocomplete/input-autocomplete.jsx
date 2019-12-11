@@ -154,7 +154,7 @@ class InputAutocomplete extends React.Component {
     }
 
     render(cn, Input) {
-        const value = this.props.value !== undefined ? this.props.value : this.state.value;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const props = {
             ...this.props,
@@ -188,9 +188,9 @@ class InputAutocomplete extends React.Component {
             ? this.formatOptionsList(this.props.options)
             : [];
 
-        const opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.inputFocused || this.state.menuFocused;
+        const opened = this.props.opened === undefined
+            ? (this.state.inputFocused || this.state.menuFocused)
+            : this.props.opened;
 
         if (this.props.options.length === 0) {
             this.popup = null;

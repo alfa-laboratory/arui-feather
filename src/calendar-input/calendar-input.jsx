@@ -253,9 +253,7 @@ class CalendarInput extends React.Component {
     }
 
     render(cn, Input, Popup) {
-        const value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const commonProps = {
             disabled: this.props.disabled,
@@ -354,9 +352,7 @@ class CalendarInput extends React.Component {
     }
 
     renderPopup(cn, value, Popup) {
-        let opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.opened;
+        let opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         if (this.isSimpleInput()) {
             opened = false;
@@ -574,9 +570,7 @@ class CalendarInput extends React.Component {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
 
-                const value = this.props.value !== undefined
-                    ? this.props.value
-                    : this.state.value;
+                const value = this.props.value === undefined ? this.state.value : this.props.value;
 
                 this.setState({
                     opened: true,
@@ -719,18 +713,16 @@ class CalendarInput extends React.Component {
             clearTimeout(this.timeoutId);
         }
         this.timeoutId = setTimeout(() => {
-            const value = this.props.value !== undefined
-                ? this.props.value
-                : this.state.value;
+            const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-            const newMonth = this.state.opened !== opened
-                ? calculateMonth(
+            const newMonth = this.state.opened === opened
+                ? this.state.month
+                : calculateMonth(
                     value || this.props.defaultMonth,
                     CUSTOM_DATE_FORMAT,
                     this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                     this.props.calendar ? this.props.calendar.laterLimit : undefined
-                )
-                : this.state.month;
+                );
 
             this.setState({
                 opened,

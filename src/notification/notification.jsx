@@ -271,7 +271,7 @@ class Notification extends React.Component {
     }
 
     ensureClickEvent(isDestroy) {
-        const isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).

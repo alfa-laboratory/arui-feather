@@ -86,18 +86,17 @@ class CheckBoxGroup extends React.Component {
 
         if (children) {
             this.checkboxes = [];
-
-            const value = this.props.value !== undefined
-                ? this.props.value
-                : this.state.value;
+            const value = this.props.value === undefined ? this.state.value : this.props.value;
 
             React.Children.forEach(children, (checkbox, index) => {
                 const checkboxNode = React.cloneElement(checkbox, {
                     ref: checkbox => this.checkboxes.push(checkbox),
-                    checked: checkbox.props.checked !== undefined
-                        ? checkbox.props.checked : value.some(groupValue => groupValue === checkbox.props.value),
-                    onChange: checkbox.props.onChange !== undefined
-                        ? checkbox.props.onChange : checked => this.handleCheckboxChange(checkbox.props.value, checked),
+                    checked: checkbox.props.checked === undefined
+                        ? value.some(groupValue => groupValue === checkbox.props.value)
+                        : checkbox.props.checked,
+                    onChange: checkbox.props.onChange === undefined
+                        ? checked => this.handleCheckboxChange(checkbox.props.value, checked)
+                        : checkbox.props.onChange,
                     ...props
                 });
 
@@ -186,6 +185,7 @@ class CheckBoxGroup extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

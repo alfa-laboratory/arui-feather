@@ -141,9 +141,7 @@ class Dropdown extends React.Component {
 
     renderSwitcher(cn) {
         const content = this.props.children || this.props.switcherText;
-        const opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.opened;
+        const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         return this.props.switcherType === 'button'
             ? this.renderSwitcherButton(cn, content, opened)
@@ -161,7 +159,7 @@ class Dropdown extends React.Component {
                 disabled={ this.props.disabled }
                 togglable={ this.props.togglable }
                 checked={ this.props.togglable === 'check' && opened }
-                onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
+                onClick={ this.props.disabled ? undefined : this.handleSwitcherClick }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
             >
@@ -181,7 +179,7 @@ class Dropdown extends React.Component {
                 disabled={ this.props.disabled }
                 pseudo={ true }
                 text={ content }
-                onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
+                onClick={ this.props.disabled ? undefined : this.handleSwitcherClick }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
             />
@@ -190,9 +188,7 @@ class Dropdown extends React.Component {
 
     renderPopup(cn) {
         let mainOffset;
-        const opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.opened;
+        const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         if (this.props.popupProps === undefined || (
             this.props.popupProps && this.props.popupProps.type !== 'tooltip')) {
@@ -232,9 +228,7 @@ class Dropdown extends React.Component {
 
     @autobind
     handleSwitcherClick() {
-        const newOpenedStatusValue = this.props.opened !== undefined
-            ? !this.props.opened
-            : !this.state.opened;
+        const newOpenedStatusValue = this.props.opened === undefined ? !this.state.opened : !this.props.opened;
 
         this.setState({
             opened: newOpenedStatusValue

@@ -92,20 +92,14 @@ class RadioGroup extends React.Component {
 
         if (children) {
             this.radios = [];
-
-            const value = this.props.value !== undefined
-                ? this.props.value
-                : this.state.value;
+            const value = this.props.value === undefined ? this.state.value : this.props.value;
 
             React.Children.forEach(children, (radio, index) => {
                 radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
                     ref: radio => this.radios.push(radio),
-                    error: radio.props.error !== undefined
-                        ? radio.props.error : Boolean(this.props.error),
-                    checked: radio.props.checked !== undefined
-                        ? radio.props.checked : (value === radio.props.value),
-                    onChange: radio.props.onChange !== undefined
-                        ? radio.props.onChange : this.handleRadioChange,
+                    error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
+                    checked: radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked,
+                    onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
                     ...props
                 });
             });
@@ -187,6 +181,7 @@ class RadioGroup extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

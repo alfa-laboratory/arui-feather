@@ -24,8 +24,6 @@
     "release-major": "npm version major -m 'chore(*): major version'",
     "version": "git fetch --tags && npm run changelog && git add CHANGELOG.md",
     "postversion": "git push origin master && git push --tags && npm run pub",
-    "commitmsg": "validate-commit-msg",
-    "precommit": "lint-staged",
     "lint-staged": "lint-staged",
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
@@ -60,6 +58,12 @@
       "src/**/*.md": [
         "npm run lint-md"
       ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged"
     }
   },
   "maintainers": [
@@ -101,6 +105,7 @@
     "acorn": "^6.1.1",
     "arui-demo": "2.0.0",
     "arui-presets": "^4.13.4",
+    "arui-presets-lint": "^2.0.0",
     "babel-loader": "^7.1.2",
     "alfa-ui-primitives": "2.3.3",
     "babel-plugin-dynamic-import-node": "^2.0.0",
@@ -123,7 +128,7 @@
     "gulp.spritesmith": "6.9.0",
     "handlebars": "4.1.2",
     "html-reporter": "2.12.3",
-    "husky": "0.14.3",
+    "husky": "3.1.0",
     "jest": "^23.2.0",
     "library-utils": "2.3.1",
     "lint-staged": "8.1.1",

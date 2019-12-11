@@ -76,3 +76,17 @@ export function calculateMonth(value, format, earlierLimit, laterLimit) {
 
     return startOfDay(newValue).valueOf();
 }
+
+/**
+ * Возвращает `true`, если поддерживается `input[type="date"]`
+ *
+ * @returns {Boolean}
+ */
+export function isInputDateSupported() {
+    const input = document.createElement('input');
+    const value = 'a';
+    input.setAttribute('type', 'date');
+    input.setAttribute('value', value);
+
+    return input.value !== value;
+}

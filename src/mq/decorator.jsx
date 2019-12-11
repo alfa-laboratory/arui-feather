@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import autobind from 'core-decorators/lib/autobind';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 
 export default function mqDecorator(query, propName = 'mqMatch') {
@@ -34,8 +33,7 @@ export default function mqDecorator(query, propName = 'mqMatch') {
                 });
             }
 
-            @autobind
-            handleMatchChange(mql) {
+            handleMatchChange = (mql) => {
                 this.setState({
                     matched: mql.matches
                 });

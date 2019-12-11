@@ -4,7 +4,6 @@
 
 /* eslint react/prop-types: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -149,8 +148,7 @@ class MoneyInput extends React.Component {
         );
     }
 
-    @autobind
-    handleProcessMaskInputEvent(event) {
+    handleProcessMaskInputEvent = (event) => {
         const currentValue = this.mask.format(this.getValue());
         let newValue = event.target.value;
 
@@ -167,16 +165,15 @@ class MoneyInput extends React.Component {
         }
 
         this.updateMaskByValue(newValue);
-    }
+    };
 
-    @autobind
-    handleChange(value) {
+    handleChange = (value) => {
         this.setState({ value });
 
         if (this.props.onChange) {
             this.props.onChange(value, Number(value.replace(/[^\d,]/g, '').replace(/,/g, '.')));
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.

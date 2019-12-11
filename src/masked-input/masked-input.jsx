@@ -4,7 +4,6 @@
 
 /* eslint react/prop-types: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -180,8 +179,7 @@ class MaskedInput extends React.Component {
         );
     }
 
-    @autobind
-    handleBeforeInput(event) {
+    handleBeforeInput = (event) => {
         this.beforeInputSelection = {
             start: this.input.selectionStart,
             end: this.input.selectionEnd
@@ -190,15 +188,14 @@ class MaskedInput extends React.Component {
         if (this.props.onBeforeInput) {
             this.props.onBeforeInput(event);
         }
-    }
+    };
 
     /**
      * Обрабатывает событие «input».
      *
      * @param {React.ChangeEvent<HTMLInput>} event The Event object
      */
-    @autobind
-    handleInput(event) {
+    handleInput = (event) => {
         const processedEvent = IS_IE9_10 ? event : this.processInputEvent(event);
 
         if (this.props.onInput) {
@@ -210,15 +207,14 @@ class MaskedInput extends React.Component {
                 this.props.onChange(processedEvent);
             }
         }
-    }
+    };
 
     /**
      * Обрабатывает событие «change».
      *
      * @param {React.ChangeEvent<HTMLInput>} event The Event object
      */
-    @autobind
-    handleChange(event) {
+    handleChange = (event) => {
         if (IS_IE11 || !this.props.onChange) {
             return;
         }
@@ -228,7 +224,7 @@ class MaskedInput extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(processedInput);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.

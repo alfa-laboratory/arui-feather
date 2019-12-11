@@ -4,7 +4,6 @@
 
 import React from 'react';
 import Type from 'prop-types';
-import autobind from 'core-decorators/lib/autobind';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
@@ -63,8 +62,7 @@ class PopupHeader extends React.Component {
         );
     }
 
-    @autobind
-    handleCloserClick(event) {
+    handleCloserClick = (event) => {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }

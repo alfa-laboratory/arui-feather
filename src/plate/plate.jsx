@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -100,15 +99,13 @@ class Plate extends React.Component {
         );
     }
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleCloserClick(event) {
+    handleCloserClick = (event) => {
         this.setState({
             isHidden: true
         });
@@ -116,10 +113,9 @@ class Plate extends React.Component {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }

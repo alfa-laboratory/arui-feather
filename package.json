@@ -62,9 +62,12 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "validate-commit-msg",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
+  },
+  "commitlint": {
+    "extends": ["./node_modules/arui-presets-lint/commitlint"]
   },
   "maintainers": [
     {
@@ -81,7 +84,6 @@
   "dependencies": {
     "bezier-easing": "2.0.3",
     "cn-decorator": "2.1.0",
-    "core-decorators": "0.20.0",
     "core-js": "2.5.5",
     "date-fns": "1.29.0",
     "deprecated-decorator": "0.1.6",
@@ -103,12 +105,13 @@
   },
   "devDependencies": {
     "acorn": "^6.1.1",
+    "alfa-ui-primitives": "2.3.3",
     "arui-demo": "2.0.0",
     "arui-presets": "^4.13.4",
     "arui-presets-lint": "^2.0.0",
     "babel-loader": "^7.1.2",
-    "alfa-ui-primitives": "2.3.3",
     "babel-plugin-dynamic-import-node": "^2.0.0",
+    "commitlint": "8.2.0",
     "conventional-changelog-cli": "1.3.14",
     "conventional-github-releaser": "2.0.0",
     "coveralls": "3.0.0",
@@ -144,7 +147,6 @@
     "svgo": "1.0.5",
     "timezone-mock": "^1.0.0",
     "uppercamelcase": "3.0.0",
-    "validate-commit-message": "3.0.1",
     "vinyl-buffer": "1.0.1",
     "webpack": "4.28.0",
     "webpack-merge": "4.2.1"

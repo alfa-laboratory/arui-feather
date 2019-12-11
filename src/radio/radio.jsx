@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -200,14 +199,11 @@ class Radio extends React.Component {
         );
     }
 
-    @autobind
-    // eslint-disable-next-line class-methods-use-this
-    handleInputControlClick(event) {
+    handleInputControlClick = (event) => {
         event.stopPropagation();
-    }
+    };
 
-    @autobind
-    handleChange() {
+    handleChange = () => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -217,10 +213,9 @@ class Radio extends React.Component {
                 this.props.onChange(this.props.value, nextCheckedValue);
             }
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (!this.props.disabled) {
             this.setState({ focused: true });
         }
@@ -232,12 +227,11 @@ class Radio extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
     handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         if (!this.props.disabled) {
             this.setState({ focused: false });
         }
@@ -249,10 +243,9 @@ class Radio extends React.Component {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -260,10 +253,9 @@ class Radio extends React.Component {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -271,7 +263,7 @@ class Radio extends React.Component {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на радио-кнопку.

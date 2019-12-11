@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -140,8 +139,7 @@ class RadioGroup extends React.Component {
         );
     }
 
-    @autobind
-    handleRadioChange(value) {
+    handleRadioChange = (value) => {
         if (this.state.value !== value) {
             this.setState({ value });
         }
@@ -149,21 +147,19 @@ class RadioGroup extends React.Component {
         if (this.props.value !== value && this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на первую радиокнопку в группе.

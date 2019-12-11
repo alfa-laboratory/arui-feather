@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -560,8 +559,7 @@ class Select extends React.Component {
         );
     }
 
-    @autobind
-    handleButtonClick(event) {
+    handleButtonClick = (event) => {
         if (!this.props.disabled) {
             this.toggleOpened();
         }
@@ -569,10 +567,9 @@ class Select extends React.Component {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleButtonKeyDown(event) {
+    handleButtonKeyDown = (event) => {
         if (!this.props.disabled) {
             if (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) {
                 this.toggleOpened();
@@ -582,24 +579,21 @@ class Select extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleButtonFocus(event) {
+    handleButtonFocus = (event) => {
         if (this.props.onButtonFocus) {
             this.props.onButtonFocus(this.getRevisedEvent(event));
         }
-    }
+    };
 
-    @autobind
-    handleButtonBlur(event) {
+    handleButtonBlur = (event) => {
         if (this.props.onButtonBlur) {
             this.props.onButtonBlur(this.getRevisedEvent(event));
         }
-    }
+    };
 
-    @autobind
-    handleMenuFocus(event) {
+    handleMenuFocus = (event) => {
         event.target.value = this.getValue();
 
         if (this.props.onFocus) {
@@ -609,10 +603,9 @@ class Select extends React.Component {
         if (this.props.onMenuFocus) {
             this.props.onMenuFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleMenuBlur(event) {
+    handleMenuBlur = (event) => {
         event.target.value = this.getValue();
 
         if (this.awaitClosing || event.relatedTarget !== this.button.getNode()) {
@@ -629,18 +622,16 @@ class Select extends React.Component {
         if (this.props.onMenuBlur) {
             this.props.onMenuBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMenuHighlightItem(highlightedItem) {
+    handleMenuHighlightItem = (highlightedItem) => {
         if (!this.getOpened() && highlightedItem && this.popup) {
             this.popup.getInnerNode().scrollTop = 0;
             this.scrollToHighlightedItem(highlightedItem);
         }
-    }
+    };
 
-    @autobind
-    handleOptionCheck(value) {
+    handleOptionCheck = (value) => {
         const opened = this.getOpened();
 
         this.setState({ value, opened: this.props.mode === 'check' }, () => {
@@ -657,10 +648,9 @@ class Select extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handleNativeOptionCheck(event) {
+    handleNativeOptionCheck = (event) => {
         function getFlattenedPropOptions(options) {
             let result = [];
 
@@ -699,10 +689,9 @@ class Select extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handleClickOutside() {
+    handleClickOutside = () => {
         this.setState({
             opened: false
         });
@@ -710,10 +699,9 @@ class Select extends React.Component {
         if (this.props.onClickOutside) {
             this.props.onClickOutside();
         }
-    }
+    };
 
-    @autobind
-    handleMenuKeyDown(event, highlightedItem) {
+    handleMenuKeyDown = (event, highlightedItem) => {
         const opened = this.getOpened();
 
         switch (event.which) {
@@ -740,10 +728,9 @@ class Select extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleNativeFocus(event) {
+    handleNativeFocus = (event) => {
         if (!this.props.disabled) {
             this.toggleOpened();
         }
@@ -751,10 +738,9 @@ class Select extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(this.getRevisedEvent(event));
         }
-    }
+    };
 
-    @autobind
-    handleNativeBlur(event) {
+    handleNativeBlur = (event) => {
         if (!this.props.disabled) {
             this.toggleOpened();
         }
@@ -762,17 +748,15 @@ class Select extends React.Component {
         if (this.props.onBlur) {
             this.props.onBlur(this.getRevisedEvent(event));
         }
-    }
+    };
 
-    @autobind
-    handleNativeClick(event) {
+    handleNativeClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(this.getRevisedEvent(event));
         }
-    }
+    };
 
-    @autobind
-    handleMqMatchChange(isMatched) {
+    handleMqMatchChange = (isMatched) => {
         this.setState(
             {
                 isMobile: isMatched
@@ -782,17 +766,15 @@ class Select extends React.Component {
                 this.updatePopupStyles();
             }
         );
-    }
+    };
 
-    @autobind
-    handlePopupCloserClick() {
+    handlePopupCloserClick = () => {
         this.setState({
             opened: false
         });
-    }
+    };
 
-    @autobind
-    setPopupRef(ref) {
+    setPopupRef = (ref) => {
         this.popup = ref;
 
         if (this.popup) {
@@ -812,12 +794,11 @@ class Select extends React.Component {
                 }, 0);
             }
         }
-    }
+    };
 
-    @autobind
-    setMenuRef(menu) {
+    setMenuRef = (menu) => {
         this.menu = menu;
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
@@ -937,8 +918,7 @@ class Select extends React.Component {
         );
     }
 
-    @autobind
-    updatePopupStyles() {
+    updatePopupStyles = () => {
         const buttonWidth = this.button.getNode().getBoundingClientRect().width;
         const popupStyles = { minWidth: buttonWidth };
 
@@ -947,14 +927,13 @@ class Select extends React.Component {
         }
 
         this.setState({ popupStyles });
-    }
+    };
 
-    @autobind
-    setPopupTarget() {
+    setPopupTarget = () => {
         if (this.popup) {
             this.popup.setTarget(this.button.getNode());
         }
-    }
+    };
 
     getCheckedItems(options) {
         const value = this.getValue();

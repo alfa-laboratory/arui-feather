@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
@@ -202,26 +201,23 @@ class Textarea extends React.Component {
         );
     }
 
-    @autobind
-    handleFocus() {
+    handleFocus = () => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus();
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleChange(event) {
+    handleChange = (event) => {
         const { value } = event.target;
 
         if (this.props.value === undefined) {
@@ -231,35 +227,31 @@ class Textarea extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handlePaste(event) {
+    handlePaste = (event) => {
         if (this.props.onPaste) {
             this.props.onPaste(event);
         }
-    }
+    };
 
-    @autobind
-    handleHeightChange(height) {
+    handleHeightChange = (height) => {
         if (this.props.onHeightChange) {
             this.props.onHeightChange(height);
         }
-    }
+    };
 
-    @autobind
-    handleKeyPress(event) {
+    handleKeyPress = (event) => {
         if (this.props.onKeyPress) {
             this.props.onKeyPress(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.

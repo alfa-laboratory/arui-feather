@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -196,39 +195,34 @@ class Notification extends React.Component {
         );
     }
 
-    @autobind
-    handleSwipe(direction) {
+    handleSwipe = (direction) => {
         if (direction === 'left' || direction === 'right' || direction === 'top') {
             this.handleCloserClick();
         }
-    }
+    };
 
-    @autobind
-    handleCloserClick(event) {
+    handleCloserClick = (event) => {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
         this.stopCloseTimer();
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
         this.stopCloseTimer();
         this.startCloseTimer();
@@ -236,22 +230,20 @@ class Notification extends React.Component {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleWindowClick(event) {
+    handleWindowClick = (event) => {
         if (this.props.onClickOutside && this.root &&
             isNodeOutsideElement(event.target, this.root)) {
             this.props.onClickOutside(event);
         }
-    }
+    };
 
     getPosition() {
         return { top: this.props.offset };

@@ -5,8 +5,6 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import autobind from 'core-decorators/lib/autobind';
-
 import cn from '../cn';
 import performance from '../performance';
 
@@ -83,15 +81,14 @@ class SlideDown extends React.Component {
         );
     }
 
-    @autobind
-    handleTransitionEnd(event) {
+    handleTransitionEnd = (event) => {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
         }
         if (this.props.onAnimationEnd) {
             this.props.onAnimationEnd();
         }
-    }
+    };
 
     getHeight() {
         return this.state.isHeightAuto

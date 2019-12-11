@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -135,8 +134,7 @@ class CheckBoxGroup extends React.Component {
         );
     }
 
-    @autobind
-    handleCheckboxChange(value, checked) {
+    handleCheckboxChange = (value, checked) => {
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
         const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
@@ -153,21 +151,19 @@ class CheckBoxGroup extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(newValue);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на первую чекбокс-кнопку в группе.

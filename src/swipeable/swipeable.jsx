@@ -1,8 +1,6 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import autobind from 'core-decorators/lib/autobind';
-
 import performance from '../performance';
 
 export const getCoordinates = ({
@@ -52,8 +50,7 @@ export default class Swipeable extends React.Component {
         });
     }
 
-    @autobind
-    handleMouseDown(event) {
+    handleMouseDown = (event) => {
         if (this.props.children.props.onMouseDown) {
             this.props.children.props.onMouseDown(event);
         }
@@ -62,10 +59,9 @@ export default class Swipeable extends React.Component {
 
         document.addEventListener('mouseup', this.handleSwipeEnd);
         document.addEventListener('mouseup', this.removeListeners);
-    }
+    };
 
-    @autobind
-    handleTouchStart(event) {
+    handleTouchStart = (event) => {
         if (event.touches && event.touches.length > 1) {
             return;
         }
@@ -79,18 +75,16 @@ export default class Swipeable extends React.Component {
         document.addEventListener('touchend', this.handleSwipeEnd);
         document.addEventListener('touchend', this.removeListeners);
         document.addEventListener('touchcancel', this.removeListeners);
-    }
+    };
 
-    @autobind
-    handleSwipeStart(event) {
+    handleSwipeStart = (event) => {
         const { clientX, clientY } = getCoordinates(event);
 
         this.swipeStartX = clientX;
         this.swipeStartY = clientY;
-    }
+    };
 
-    @autobind
-    handleSwipeEnd(event) {
+    handleSwipeEnd = (event) => {
         const { props: { delta, onSwipe } } = this;
         const { clientX, clientY } = getCoordinates(event);
 
@@ -108,10 +102,9 @@ export default class Swipeable extends React.Component {
                 onSwipe('bottom');
             }
         }
-    }
+    };
 
-    @autobind
-    removeListeners() {
+    removeListeners = () => {
         document.removeEventListener('mouseup', this.handleSwipeEnd);
         document.removeEventListener('mouseup', this.removeListeners);
         document.removeEventListener('touchend', this.handleSwipeEnd);
@@ -121,5 +114,5 @@ export default class Swipeable extends React.Component {
         this.swipeStartY = 0;
         this.deltaX = 0;
         this.deltaY = 0;
-    }
+    };
 }

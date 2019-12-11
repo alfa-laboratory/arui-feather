@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -216,15 +215,13 @@ class Button extends React.Component {
         );
     }
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.state.pressed) {
             return;
         }
@@ -234,19 +231,17 @@ class Button extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -254,10 +249,9 @@ class Button extends React.Component {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -265,10 +259,9 @@ class Button extends React.Component {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseDown(event) {
+    handleMouseDown = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -276,10 +269,9 @@ class Button extends React.Component {
         if (this.props.onMouseDown) {
             this.props.onMouseDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseUp(event) {
+    handleMouseUp = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -287,10 +279,9 @@ class Button extends React.Component {
         if (this.props.onMouseUp) {
             this.props.onMouseUp(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseOut(event) {
+    handleMouseOut = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -298,10 +289,9 @@ class Button extends React.Component {
         if (this.props.onMouseOut) {
             this.props.onMouseOut(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -309,10 +299,9 @@ class Button extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -320,7 +309,7 @@ class Button extends React.Component {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.

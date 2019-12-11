@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
@@ -285,42 +284,37 @@ class Menu extends React.Component {
         );
     }
 
-    @autobind
-    handleMenuItemClick(item) {
+    handleMenuItemClick = (item) => {
         this.setNewCheckedItems(item);
 
         if (this.props.onItemClick) {
             this.props.onItemClick(item);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         let highlightedItem = null;
         let highlightedMenuItem = null;
         const menuIteListLength = this.menuItemList.length;
@@ -403,10 +397,9 @@ class Menu extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event, highlightedMenuItem);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
             this.blurTimeoutId = null;
@@ -415,10 +408,9 @@ class Menu extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         event.persist();
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
@@ -430,7 +422,7 @@ class Menu extends React.Component {
             }
             this.blurTimeoutId = null;
         }, 0);
-    }
+    };
 
     handleMenuItemMouseEnter(menuItem) {
         this.setState({
@@ -442,8 +434,7 @@ class Menu extends React.Component {
         }
     }
 
-    @autobind
-    handleMenuItemMouseLeave() {
+    handleMenuItemMouseLeave = () => {
         this.setState({
             highlightedItem: null
         });
@@ -451,7 +442,7 @@ class Menu extends React.Component {
         if (this.props.onHighlightItem) {
             this.props.onHighlightItem(null);
         }
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
@@ -546,12 +537,11 @@ class Menu extends React.Component {
         }
     }
 
-    @autobind
-    getIndexInCheckedItemsList(value) {
+    getIndexInCheckedItemsList = (value) => {
         const checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
 
         return checkedItems.indexOf(value);
-    }
+    };
 
     getFirstItem(content) {
         const firstItem = content[0];

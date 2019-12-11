@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -113,8 +112,7 @@ class Collapse extends React.Component {
         );
     }
 
-    @autobind
-    handleExpandedChange() {
+    handleExpandedChange = () => {
         const newExpandedValue = this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
 
         this.setState({
@@ -124,10 +122,9 @@ class Collapse extends React.Component {
         if (this.props.onExpandedChange) {
             this.props.onExpandedChange(newExpandedValue);
         }
-    }
+    };
 
-    @autobind
-    updateContentHeight() {
+    updateContentHeight = () => {
         const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         let contentHeight;

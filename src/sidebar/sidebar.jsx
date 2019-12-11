@@ -4,7 +4,6 @@
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -212,13 +211,11 @@ class Sidebar extends React.Component {
         );
     }
 
-    @autobind
-    handleMqMatchChange(isMatched) {
+    handleMqMatchChange = (isMatched) => {
         this.setState({ isMobile: isMatched });
-    }
+    };
 
-    @autobind
-    handleClose(event) {
+    handleClose = (event) => {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
@@ -226,17 +223,16 @@ class Sidebar extends React.Component {
             }
             this.props.onCloserClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.ESCAPE:
                 event.preventDefault();
                 this.handleClose();
                 break;
         }
-    }
+    };
 
     styleBodyRightMargin() {
         const offset = this.props.visible ? getScrollbarWidth() : 0;

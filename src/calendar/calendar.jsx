@@ -4,7 +4,6 @@
 
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -127,7 +126,7 @@ class Calendar extends React.Component {
 
     state = {
         month: startOfMonth(new Date())
-    }
+    };
 
     /**
      * @type {HTMLDivElement}
@@ -258,21 +257,19 @@ class Calendar extends React.Component {
         );
     }
 
-    @autobind
-    handleMonthClick() {
+    handleMonthClick = () => {
         this.setState({
             isMonthSelection: !this.state.isMonthSelection,
             isYearSelection: false
         });
-    }
+    };
 
-    @autobind
-    handleYearClick() {
+    handleYearClick = () => {
         this.setState({
             isMonthSelection: false,
             isYearSelection: !this.state.isYearSelection
         });
-    }
+    };
 
     renderContent(cn) {
         return (
@@ -321,8 +318,7 @@ class Calendar extends React.Component {
         );
     }
 
-    @autobind
-    handleSelectMonthClick(event) {
+    handleSelectMonthClick = (event) => {
         const newMonth = event.target.attributes['data-month'];
 
         if (newMonth) {
@@ -342,7 +338,7 @@ class Calendar extends React.Component {
 
             this.root.focus();
         }
-    }
+    };
 
     renderYears(cn) {
         return (
@@ -378,8 +374,7 @@ class Calendar extends React.Component {
         );
     }
 
-    @autobind
-    handleSelectYearClick(event) {
+    handleSelectYearClick = (event) => {
         const newYear = event.target.attributes['data-year'];
 
         if (newYear) {
@@ -399,7 +394,7 @@ class Calendar extends React.Component {
 
             this.root.focus();
         }
-    }
+    };
 
     renderDays(cn) {
         const rows = [
@@ -498,17 +493,15 @@ class Calendar extends React.Component {
         });
     }
 
-    @autobind
-    handleDayClick(event) {
+    handleDayClick = (event) => {
         const day = event.target.attributes['data-day'];
 
         if (day) {
             this.performChange(parseInt(day.nodeValue, 10));
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
             this.blurTimeoutId = null;
@@ -517,10 +510,9 @@ class Calendar extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         event.persist();
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
@@ -532,10 +524,9 @@ class Calendar extends React.Component {
             }
             this.blurTimeoutId = null;
         }, 0);
-    }
+    };
 
-    @autobind
-    handleArrowClick(event) {
+    handleArrowClick = (event) => {
         if (event.currentTarget.attributes['data-disabled'].nodeValue === 'true') {
             return;
         }
@@ -553,10 +544,9 @@ class Calendar extends React.Component {
                 month: newMonth.valueOf()
             });
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
@@ -582,14 +572,13 @@ class Calendar extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на календарь.

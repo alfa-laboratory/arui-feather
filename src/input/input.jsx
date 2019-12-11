@@ -4,7 +4,6 @@
 
 /* eslint-disable max-len */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -337,8 +336,7 @@ class Input extends React.Component {
         );
     }
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
         this.enableMouseWheel();
         this.resetError();
@@ -346,32 +344,28 @@ class Input extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
         this.disableMouseWheel();
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleChange(event) {
+    handleChange = (event) => {
         this.changeValue(event.target.value);
-    }
+    };
 
-    @autobind
-    handleClearClick(event) {
+    handleClearClick = (event) => {
         this.changeValue('');
 
         if (this.props.onClearClick) {
@@ -379,56 +373,49 @@ class Input extends React.Component {
         }
 
         this.focus();
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
-    @autobind
-    handlePaste(event) {
+    handlePaste = (event) => {
         if (this.props.onPaste) {
             this.props.onPaste(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchStart(event) {
+    handleTouchStart = (event) => {
         if (this.props.onTouchStart) {
             this.props.onTouchStart(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchEnd(event) {
+    handleTouchEnd = (event) => {
         if (this.props.onTouchEnd) {
             this.props.onTouchEnd(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchMove(event) {
+    handleTouchMove = (event) => {
         if (this.props.onTouchMove) {
             this.props.onTouchMove(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchCancel(event) {
+    handleTouchCancel = (event) => {
         if (this.props.onTouchCancel) {
             this.props.onTouchCancel(event);
         }
-    }
+    };
 
     getAutoCompleteValue() {
         if (typeof this.props.autocomplete === 'string') {

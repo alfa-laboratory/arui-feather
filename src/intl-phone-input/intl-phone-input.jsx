@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 
 import FlagIcon from '../flag-icon/flag-icon';
@@ -37,7 +36,7 @@ class IntlPhoneInput extends React.Component {
         inputValue: this.props.value,
         selectFocused: false,
         onceOpened: false
-    }
+    };
 
     countries;
     input;
@@ -116,13 +115,9 @@ class IntlPhoneInput extends React.Component {
         );
     }
 
-    @autobind
-    renderSelectButtonContent() {
-        return this.renderFlagIcon(this.state.countryIso2);
-    }
+    renderSelectButtonContent = () => this.renderFlagIcon(this.state.countryIso2);
 
-    @autobind
-    handleSelectFocus(event) {
+    handleSelectFocus = (event) => {
         if (!this.state.onceOpened) {
             this.setState({
                 onceOpened: true
@@ -130,27 +125,23 @@ class IntlPhoneInput extends React.Component {
         }
 
         this.resolveFocusedState({ selectFocused: true }, event);
-    }
+    };
 
-    @autobind
-    handleSelectButtonFocus() {
+    handleSelectButtonFocus = () => {
         this.setState({
             selectFocused: true
         });
-    }
+    };
 
-    @autobind
-    handleSelectBlur(event) {
+    handleSelectBlur = (event) => {
         this.resolveFocusedState({ selectFocused: false }, event);
-    }
+    };
 
-    @autobind
-    handleSelectButtonBlur(event) {
+    handleSelectButtonBlur = (event) => {
         this.resolveFocusedState({ selectFocused: false }, event);
-    }
+    };
 
-    @autobind
-    handleSelectChange(value) {
+    handleSelectChange = (value) => {
         const inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
@@ -163,36 +154,31 @@ class IntlPhoneInput extends React.Component {
                 this.input.setSelectionRange(inputValue.length);
             }, 0);
         });
-    }
+    };
 
-    @autobind
-    handleSelectClick() {
+    handleSelectClick = () => {
         // Set focus to input on select closing by it's button toggle
         if (this.state.selectFocused) {
             this.input.focus();
             this.input.setSelectionRange(-1);
         }
-    }
+    };
 
-    @autobind
-    handleInputFocus(event) {
+    handleInputFocus = (event) => {
         this.resolveFocusedState({ inputFocused: true }, event);
-    }
+    };
 
-    @autobind
-    handleInputBlur(event) {
+    handleInputBlur = (event) => {
         this.resolveFocusedState({ inputFocused: false }, event);
-    }
+    };
 
-    @autobind
-    handleInputChange(value) {
+    handleInputChange = (value) => {
         this.setState({
             inputValue: value.length === 1 && value !== '+' ? `+${value}` : value
         }, this.setCountry);
-    }
+    };
 
-    @autobind
-    getOptions(cn) {
+    getOptions = (cn) => {
         this.countries = countries.getCountries();
 
         return this.state.onceOpened ? this.countries.map(country => ({
@@ -210,7 +196,7 @@ class IntlPhoneInput extends React.Component {
                 </span>
             )
         })) : [];
-    }
+    };
 
     getSelectPopupOffset() {
         switch (this.props.size) {

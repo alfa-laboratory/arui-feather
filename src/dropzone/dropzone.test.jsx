@@ -20,7 +20,7 @@ describe('dropzone', () => {
     };
 
     it('should render without problems', () => {
-        let dropzone = mount(<Dropzone />);
+        const dropzone = mount(<Dropzone />);
 
         expect(dropzone).toMatchSnapshot();
     });
@@ -74,7 +74,7 @@ describe('dropzone', () => {
 
     it('onDrop should recieve files list', () => {
         const onDrop = jest.fn();
-        let dropzone = mount(<Dropzone onDrop={ onDrop } />);
+        const dropzone = mount(<Dropzone onDrop={ onDrop } />);
 
         dropzone.simulate('drop', { dataTransfer });
 

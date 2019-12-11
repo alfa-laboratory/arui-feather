@@ -10,19 +10,19 @@ import Input from '../input/input';
 
 describe('input-group', () => {
     it('should render without any children', () => {
-        let inputGroup = shallow(<InputGroup />);
+        const inputGroup = shallow(<InputGroup />);
 
         expect(inputGroup).toMatchSnapshot();
     });
 
     it('should render with only one children', () => {
-        let inputGroup = shallow(<InputGroup><Input key='1' /></InputGroup>);
+        const inputGroup = shallow(<InputGroup><Input key='1' /></InputGroup>);
 
         expect(inputGroup).toMatchSnapshot();
     });
 
     it('should render with many input children without problems', () => {
-        let inputGroup = shallow(<InputGroup><Input key='1' /><Input key='2' /></InputGroup>);
+        const inputGroup = shallow(<InputGroup><Input key='1' /><Input key='2' /></InputGroup>);
 
         expect(inputGroup).toMatchSnapshot();
     });

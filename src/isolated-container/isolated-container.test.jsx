@@ -9,15 +9,15 @@ import IsolatedContainer from './isolated-container';
 
 describe('isolated-container', () => {
     it('should render without problems', () => {
-        let isolatedContainer = mount(<IsolatedContainer />);
+        const isolatedContainer = mount(<IsolatedContainer />);
 
         expect(isolatedContainer).toMatchSnapshot();
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let isolatedContainer = mount(<IsolatedContainer />);
+        const isolatedContainer = mount(<IsolatedContainer />);
 
-        let node = isolatedContainer.instance().getNode();
+        const node = isolatedContainer.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
     });

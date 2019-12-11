@@ -13,8 +13,7 @@ describe('masked-input', () => {
         it('should return version 4.0.4', () => {
             Object.defineProperty(window.navigator, 'userAgent', {
                 configurable: true,
-                get: () =>
-                    'Mozilla/5.0 (Linux; U; Android 4.0.4; pt-br; MZ608 Build/7.7.1-141-7-FLEM-UMTS-LA) ' +
+                get: () => 'Mozilla/5.0 (Linux; U; Android 4.0.4; pt-br; MZ608 Build/7.7.1-141-7-FLEM-UMTS-LA) ' +
                     'AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
             });
 
@@ -24,8 +23,7 @@ describe('masked-input', () => {
         it('should return false', () => {
             Object.defineProperty(window.navigator, 'userAgent', {
                 configurable: true,
-                get: () =>
-                    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko)' +
+                get: () => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko)' +
                     'Chrome/67.0.3396.99 Safari/537.36'
             });
 
@@ -34,13 +32,13 @@ describe('masked-input', () => {
     });
 
     it('should render without problems', () => {
-        let maskedInput = shallow(<MaskedInput mask='1111 1111 1111 1111' />);
+        const maskedInput = shallow(<MaskedInput mask='1111 1111 1111 1111' />);
 
         expect(maskedInput).toMatchSnapshot();
     });
 
     it('should format unformatted value', () => {
-        let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234567890123456' />);
+        const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234567890123456' />);
 
         expect(maskedInput.find('input').props().value).toBe('1234 5678 9012 3456');
     });
@@ -48,10 +46,12 @@ describe('masked-input', () => {
     it('should format unformatted value with custom formatter', () => {
         const cyrillic = {
             c: {
-                validate(char) { return /^[ЁёА-Яа-я]$/.test(char); }
+                validate(char) {
+                    return /^[ЁёА-Яа-я]$/.test(char);
+                }
             }
         };
-        let maskedInput = mount(
+        const maskedInput = mount(
             <MaskedInput formatCharacters={ cyrillic } mask='c 111 cc' value='12-3hjhkА456ИТг' />
         );
 
@@ -59,7 +59,7 @@ describe('masked-input', () => {
     });
 
     it('should strip value size to mask size', () => {
-        let maskedInput = mount(
+        const maskedInput = mount(
             <MaskedInput mask='1111 1111 1111 1111' value='1234 5678 9012 3456 7890 1234' />
         );
 
@@ -67,7 +67,7 @@ describe('masked-input', () => {
     });
 
     it('should format value skipping non maskable chars', () => {
-        let maskedInput = mount(
+        const maskedInput = mount(
             <MaskedInput mask='1111 1111 1111 1111' value='Abc 1234 @&&*() 5678 klm90123456' />
         );
 
@@ -75,7 +75,7 @@ describe('masked-input', () => {
     });
 
     it('should reformat value by new mask after mask was changed', () => {
-        let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234567890123456' />);
+        const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234567890123456' />);
 
         maskedInput.setProps({
             mask: '+1 (111) 111-11-11'
@@ -88,10 +88,12 @@ describe('masked-input', () => {
         const mask = 'ccc 1 ccc';
         const cyrillic = {
             c: {
-                validate(char) { return /^[ЁёА-Яа-я]$/.test(char); }
+                validate(char) {
+                    return /^[ЁёА-Яа-я]$/.test(char);
+                }
             }
         };
-        let maskedInput = mount(<MaskedInput mask={ mask } value='абв6гщз' />);
+        const maskedInput = mount(<MaskedInput mask={ mask } value='абв6гщз' />);
 
         maskedInput.setProps({ formatCharacters: cyrillic });
 
@@ -99,7 +101,7 @@ describe('masked-input', () => {
     });
 
     it('should reformat value after value was changed', () => {
-        let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234567890123456' />);
+        const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234567890123456' />);
 
         maskedInput.setProps({ value: '0987654321098765' });
 
@@ -107,8 +109,9 @@ describe('masked-input', () => {
     });
 
     it('should focus on input after focus() call', () => {
-        let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' />);
-        let inputNode = maskedInput.instance().input;
+        const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' />);
+        const inputNode = maskedInput.instance().input;
+
         jest.spyOn(inputNode, 'focus');
 
         maskedInput.instance().focus();
@@ -117,8 +120,9 @@ describe('masked-input', () => {
     });
 
     it('should remove focus from input after blur() call', () => {
-        let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' />);
-        let inputNode = maskedInput.instance().input;
+        const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' />);
+        const inputNode = maskedInput.instance().input;
+
         jest.spyOn(inputNode, 'blur');
 
         maskedInput.instance().blur();
@@ -127,8 +131,8 @@ describe('masked-input', () => {
     });
 
     it('should call `onProcessInputEvent` during `onInput` process', (done) => {
-        let onProcessInputEvent = jest.fn();
-        let maskedInput = mount(
+        const onProcessInputEvent = jest.fn();
+        const maskedInput = mount(
             <MaskedInput
                 mask='1111 1111 1111 1111'
                 value='1234 5'
@@ -149,8 +153,8 @@ describe('masked-input', () => {
 
     it('should move caret position from uneditable position to next editable position during `onInput`',
         (done) => {
-            let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
-            let inputNode = maskedInput.find('input');
+            const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
+            const inputNode = maskedInput.find('input');
 
             maskedInput.instance().focus();
 
@@ -169,8 +173,8 @@ describe('masked-input', () => {
 
     it('should move caret position from uneditable position to prev editable position during `onInput` (delete)',
         (done) => {
-            let maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
-            let inputNode = maskedInput.find('input');
+            const maskedInput = mount(<MaskedInput mask='1111 1111 1111 1111' value='1234 5' />);
+            const inputNode = maskedInput.find('input');
 
             maskedInput.instance().focus();
 
@@ -189,8 +193,8 @@ describe('masked-input', () => {
 
     it('should move caret position from uneditable position to next editable position during `onInput` (replace)',
         (done) => {
-            let maskedInput = mount(<MaskedInput mask='+1 111 11 11 11' value='+7 903 752' />);
-            let inputNode = maskedInput.find('input');
+            const maskedInput = mount(<MaskedInput mask='+1 111 11 11 11' value='+7 903 752' />);
+            const inputNode = maskedInput.find('input');
 
             maskedInput.instance().focus();
 
@@ -209,8 +213,9 @@ describe('masked-input', () => {
 
     it('should move caret position, if the number of non-editable characters has decreased at left of the caret',
         (done) => {
-            let maskedInput = mount(<MaskedInput mask='111 111 111' value='124 567' />);
-            let inputNode = maskedInput.find('input');
+            const maskedInput = mount(<MaskedInput mask='111 111 111' value='124 567' />);
+            const inputNode = maskedInput.find('input');
+
             maskedInput.instance().focus();
 
             setTimeout(() => {
@@ -230,8 +235,9 @@ describe('masked-input', () => {
 
     it('should move caret position, if the number of non-editable characters has decreased at left of the caret',
         (done) => {
-            let maskedInput = mount(<MaskedInput mask='1 111 111' value='1 234 567' />);
-            let inputNode = maskedInput.find('input');
+            const maskedInput = mount(<MaskedInput mask='1 111 111' value='1 234 567' />);
+            const inputNode = maskedInput.find('input');
+
             maskedInput.instance().focus();
 
             setTimeout(() => {
@@ -250,8 +256,8 @@ describe('masked-input', () => {
         });
 
     it('should return `HTMLInputElement` when `getControl` method called', () => {
-        let maskedInput = mount(<MaskedInput mask='111' />);
-        let controlNode = maskedInput.instance().getControl();
+        const maskedInput = mount(<MaskedInput mask='111' />);
+        const controlNode = maskedInput.instance().getControl();
 
         expect(controlNode).toBeInstanceOf(HTMLInputElement);
     });

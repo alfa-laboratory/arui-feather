@@ -9,7 +9,7 @@ import MenuItem from './menu-item';
 
 describe('menu-item', () => {
     it('should render without problem', () => {
-        let menuItem = shallow(
+        const menuItem = shallow(
             <MenuItem>MenuItem</MenuItem>
         );
 
@@ -18,7 +18,7 @@ describe('menu-item', () => {
     });
 
     it('should render `Link` element by default', () => {
-        let menuItem = mount(
+        const menuItem = mount(
             <MenuItem>MenuItem</MenuItem>
         );
 
@@ -26,7 +26,7 @@ describe('menu-item', () => {
     });
 
     it('should render `Link` with url', () => {
-        let menuItem = mount(
+        const menuItem = mount(
             <MenuItem url='#menu-item'>MenuItem</MenuItem>
         );
 
@@ -34,7 +34,7 @@ describe('menu-item', () => {
     });
 
     it('should render just SPAN element inside when type=`block`', () => {
-        let menuItem = mount(
+        const menuItem = mount(
             <MenuItem type='block'>MenuItem</MenuItem>
         );
 
@@ -42,7 +42,7 @@ describe('menu-item', () => {
     });
 
     it('should render `Dropdown` with `Link` and `Popup` content from `popup` property when type=`dropdown`', () => {
-        let menuItem = mount(
+        const menuItem = mount(
             <MenuItem type='dropdown' popup='MenuItem Popup'>MenuItem</MenuItem>
         );
         const popupNode = menuItem.find('.popup');
@@ -55,17 +55,18 @@ describe('menu-item', () => {
     });
 
     it('should show popup when menu-item type=`dropdown` was hovered', () => {
-        let menuItem = mount(
+        const menuItem = mount(
             <MenuItem type='dropdown'>MenuItem</MenuItem>
         );
         const switcherNode = menuItem.find('.dropdown__switcher').at(0);
+
         switcherNode.simulate('mouseEnter');
 
         expect(menuItem.find('.popup').prop('className')).toContain('popup_visible');
     });
 
     it('should set/unset class when menu-item focus/blur', () => {
-        let wrapper = mount(
+        const wrapper = mount(
             <MenuItem>MenuItem</MenuItem>
         );
         const controlNode = wrapper.find('.menu-item__control').at(0);
@@ -79,7 +80,7 @@ describe('menu-item', () => {
     });
 
     it('should set class when menu-item hovered', () => {
-        let wrapper = mount(
+        const wrapper = mount(
             <MenuItem>MenuItem</MenuItem>
         );
         const controlNode = wrapper.find('.menu-item__control').at(0);
@@ -90,8 +91,8 @@ describe('menu-item', () => {
     });
 
     it('should call `onClick` callback after menu-item was clicked', () => {
-        let onClick = jest.fn();
-        let wrapper = mount(
+        const onClick = jest.fn();
+        const wrapper = mount(
             <MenuItem onClick={ onClick }>MenuItem</MenuItem>
         );
         const controlNode = wrapper.find('.menu-item__control').at(0);
@@ -102,8 +103,8 @@ describe('menu-item', () => {
     });
 
     it('should not call `onClick` callback after menu-item was clicked then disabled=true', () => {
-        let onClick = jest.fn();
-        let wrapper = mount(
+        const onClick = jest.fn();
+        const wrapper = mount(
             <MenuItem onClick={ onClick } disabled={ true }>MenuItem</MenuItem>
         );
         const controlNode = wrapper.find('.menu-item__control').at(0);
@@ -114,8 +115,8 @@ describe('menu-item', () => {
     });
 
     it('should prevent default link behavior when disabled=true', () => {
-        let event = { preventDefault: jest.fn() };
-        let wrapper = mount(
+        const event = { preventDefault: jest.fn() };
+        const wrapper = mount(
             <MenuItem disabled={ true }>MenuItem</MenuItem>
         );
 
@@ -125,8 +126,8 @@ describe('menu-item', () => {
     });
 
     it('should call `onFocus` callback after menu-item was focused', () => {
-        let onFocus = jest.fn();
-        let wrapper = mount(
+        const onFocus = jest.fn();
+        const wrapper = mount(
             <MenuItem onFocus={ onFocus }>MenuItem</MenuItem>
         );
 
@@ -136,8 +137,8 @@ describe('menu-item', () => {
     });
 
     it('should call `onBlur` callback after menu-item was unfocused', () => {
-        let onBlur = jest.fn();
-        let wrapper = mount(
+        const onBlur = jest.fn();
+        const wrapper = mount(
             <MenuItem onBlur={ onBlur }>MenuItem</MenuItem>
         );
 
@@ -147,8 +148,8 @@ describe('menu-item', () => {
     });
 
     it('should call `onMouseEnter` callback after menu-item was hovered', () => {
-        let onMouseEnter = jest.fn();
-        let wrapper = mount(
+        const onMouseEnter = jest.fn();
+        const wrapper = mount(
             <MenuItem onMouseEnter={ onMouseEnter }>MenuItem</MenuItem>
         );
         const controlNode = wrapper.find('.menu-item__control').at(0);
@@ -159,8 +160,8 @@ describe('menu-item', () => {
     });
 
     it('should call `onMouseLeave` callback after menu-item was unhovered', () => {
-        let onMouseLeave = jest.fn();
-        let wrapper = mount(
+        const onMouseLeave = jest.fn();
+        const wrapper = mount(
             <MenuItem onMouseLeave={ onMouseLeave }>MenuItem</MenuItem>
         );
         const controlNode = wrapper.find('.menu-item__control').at(0);
@@ -171,18 +172,17 @@ describe('menu-item', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let wrapper = mount(
+        const wrapper = mount(
             <MenuItem>MenuItem</MenuItem>
         );
 
-        let node = wrapper.instance().getNode();
+        const node = wrapper.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
     });
 
-
     it('should link have a theme class', () => {
-        let wrapper = mount(
+        const wrapper = mount(
             <MenuItem theme='alfa-on-color'>MenuItem</MenuItem>
         );
 
@@ -192,7 +192,7 @@ describe('menu-item', () => {
     });
 
     it('should dropdown have a theme class', () => {
-        let wrapper = mount(
+        const wrapper = mount(
             <MenuItem theme='alfa-on-color' type='dropdown'>MenuItem</MenuItem>
         );
 

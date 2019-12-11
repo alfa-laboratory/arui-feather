@@ -10,7 +10,7 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 import MoneyInput from './money-input';
 
 describe('money-input', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -21,14 +21,14 @@ describe('money-input', () => {
     });
 
     it('should render without problems', () => {
-        let moneyInput = shallow(<MoneyInput />);
+        const moneyInput = shallow(<MoneyInput />);
 
         expect(moneyInput).toMatchSnapshot();
     });
 
     it('should call input focus method on `focus()` call', () => {
-        let moneyInput = mount(<MoneyInput />);
-        let input = moneyInput.instance().root;
+        const moneyInput = mount(<MoneyInput />);
+        const input = moneyInput.instance().root;
 
         jest.spyOn(input, 'focus');
 
@@ -38,8 +38,8 @@ describe('money-input', () => {
     });
 
     it('should call input blur method on `blur()` call', () => {
-        let moneyInput = mount(<MoneyInput />);
-        let input = moneyInput.instance().root;
+        const moneyInput = mount(<MoneyInput />);
+        const input = moneyInput.instance().root;
 
         jest.spyOn(input, 'blur');
 
@@ -49,23 +49,23 @@ describe('money-input', () => {
     });
 
     it('should format input value passed with props', () => {
-        let moneyInput = mount(<MoneyInput value='1234,567' />);
-        let controlNode = moneyInput.find('input');
+        const moneyInput = mount(<MoneyInput value='1234,567' />);
+        const controlNode = moneyInput.find('input');
 
         expect(controlNode.prop('value')).toBe('1 234,56');
     });
 
     it('should format fraction part of input value when fractionLength is 4', () => {
-        let moneyInput = mount(<MoneyInput value='1234,56789' fractionLength={ 4 } />);
-        let controlNode = moneyInput.find('input');
+        const moneyInput = mount(<MoneyInput value='1234,56789' fractionLength={ 4 } />);
+        const controlNode = moneyInput.find('input');
 
         expect(controlNode.prop('value')).toBe('1 234,5678');
     });
 
     it('should call `onChange` callback after input was changed', () => {
-        let onChange = jest.fn();
-        let moneyInput = mount(<MoneyInput onChange={ onChange } />);
-        let controlNode = moneyInput.find('input');
+        const onChange = jest.fn();
+        const moneyInput = mount(<MoneyInput onChange={ onChange } />);
+        const controlNode = moneyInput.find('input');
 
         controlNode.simulate('change');
 
@@ -73,9 +73,9 @@ describe('money-input', () => {
     });
 
     it('should call `onChange` with 2 params after input was changed', () => {
-        let onChange = jest.fn();
-        let moneyInput = mount(<MoneyInput onChange={ onChange } />);
-        let controlNode = moneyInput.find('input');
+        const onChange = jest.fn();
+        const moneyInput = mount(<MoneyInput onChange={ onChange } />);
+        const controlNode = moneyInput.find('input');
 
         controlNode.simulate('change', { target: { value: '1 234 567,89' } });
 
@@ -83,9 +83,9 @@ describe('money-input', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        let moneyInput = mount(<MoneyInput />);
-        let elemTopPosition = moneyInput.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const moneyInput = mount(<MoneyInput />);
+        const elemTopPosition = moneyInput.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         moneyInput.instance().scrollTo();
 
@@ -93,7 +93,7 @@ describe('money-input', () => {
     });
 
     it('should format new value received in props', () => {
-        let moneyInput = mount(<MoneyInput value='' />);
+        const moneyInput = mount(<MoneyInput value='' />);
 
         moneyInput.setProps({ value: '1234,567' });
 

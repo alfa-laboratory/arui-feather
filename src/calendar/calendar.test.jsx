@@ -34,21 +34,21 @@ describe('calendar', () => {
     });
 
     it('should render without problems', () => {
-        let calendar = mount(<Calendar month={ new Date('2018-06-15').valueOf() } />);
+        const calendar = mount(<Calendar month={ new Date('2018-06-15').valueOf() } />);
 
         expect(calendar).toMatchSnapshot();
     });
 
     it('should call `onDayClick` callback on day change', () => {
-        let onValueChange = jest.fn();
-        let calendar = mount(
+        const onValueChange = jest.fn();
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onValueChange={ onValueChange }
             />
         );
-        let dateToClick = addDays(INITIAL_DAY, 1);
-        let dayNodes = calendar
+        const dateToClick = addDays(INITIAL_DAY, 1);
+        const dayNodes = calendar
             .find('.calendar__day')
             .findWhere(e => e.length > 0 && e.props()['data-day'] === dateToClick.valueOf());
 
@@ -58,25 +58,25 @@ describe('calendar', () => {
     });
 
     it('should display current date', () => {
-        let calendar = mount(<Calendar value={ INITIAL_DAY.valueOf() } />);
-        let currentDayNode = calendar.find('.calendar__day_state_current');
+        const calendar = mount(<Calendar value={ INITIAL_DAY.valueOf() } />);
+        const currentDayNode = calendar.find('.calendar__day_state_current');
 
         expect(currentDayNode.text()).toContain(INITIAL_DAY.getDate().toString());
     });
 
     it('should display today', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 showToday={ true }
             />
         );
-        let todayNode = calendar.find('.calendar__day_state_today');
+        const todayNode = calendar.find('.calendar__day_state_today');
 
         expect(todayNode.text()).toContain(TODAY_DAY.getDate().toString());
     });
 
     it('should display days off', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 offDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
@@ -92,83 +92,83 @@ describe('calendar', () => {
     });
 
     it('should display event days', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 eventDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
             />
         );
-        let dayOfEventsNode = calendar.find('.calendar__day_event');
+        const dayOfEventsNode = calendar.find('.calendar__day_event');
 
         expect(dayOfEventsNode.text()).toContain(`${addDays(INITIAL_DAY, 1).getDate()}`);
     });
 
     it('should display earlier limit', () => {
         const EARLIER_LIMIT = 4;
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ subtractDays(INITIAL_DAY, EARLIER_LIMIT).valueOf() }
             />
         );
-        let daysOffCount = calendar.find('.calendar__day_type_off').length;
-        let weekendDaysOffCount = calendar.find('.calendar__day_type_weekend-off').length;
+        const daysOffCount = calendar.find('.calendar__day_type_off').length;
+        const weekendDaysOffCount = calendar.find('.calendar__day_type_weekend-off').length;
 
         expect(daysOffCount + weekendDaysOffCount).toEqual(INITIAL_DAY.getDate() - (EARLIER_LIMIT + 1));
     });
 
     it('should display later limit', () => {
         const LATER_LIMIT = 1;
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ addDays(INITIAL_DAY, LATER_LIMIT).valueOf() }
             />
         );
-        let daysCount = (new Date(INITIAL_DAY.getFullYear(), INITIAL_DAY.getMonth() + 1, 0)).getDate();
-        let daysOffCount = calendar.find('.calendar__day_type_off').length;
-        let weekendDaysOffCount = calendar.find('.calendar__day_type_weekend-off').length;
+        const daysCount = (new Date(INITIAL_DAY.getFullYear(), INITIAL_DAY.getMonth() + 1, 0)).getDate();
+        const daysOffCount = calendar.find('.calendar__day_type_off').length;
+        const weekendDaysOffCount = calendar.find('.calendar__day_type_weekend-off').length;
 
         expect(daysCount - (INITIAL_DAY.getDate() + LATER_LIMIT)).toEqual(daysOffCount + weekendDaysOffCount);
     });
 
     it('should re set current day if it is day off with earlier limit', () => {
         const EARLIER_LIMIT = 2;
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ addDays(INITIAL_DAY, EARLIER_LIMIT).valueOf() }
             />
         );
-        let currentDay = calendar.find('.calendar__day_state_current');
-        let expectedDay = addDays(INITIAL_DAY, EARLIER_LIMIT).valueOf();
+        const currentDay = calendar.find('.calendar__day_state_current');
+        const expectedDay = addDays(INITIAL_DAY, EARLIER_LIMIT).valueOf();
 
         expect(currentDay.props()['data-day']).toEqual(expectedDay);
     });
 
     it('should re set current day if it is day off with later limit', () => {
         const LATER_LIMIT = 2;
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 laterLimit={ subtractDays(INITIAL_DAY, LATER_LIMIT).valueOf() }
             />
         );
-        let currentDay = calendar.find('.calendar__day_state_current');
-        let expectedDay = subtractDays(INITIAL_DAY, LATER_LIMIT).valueOf();
+        const currentDay = calendar.find('.calendar__day_state_current');
+        const expectedDay = subtractDays(INITIAL_DAY, LATER_LIMIT).valueOf();
 
         expect(currentDay.props()['data-day']).toEqual(expectedDay);
     });
 
     it('should call `onMonthChange` callback on month change', () => {
-        let onMonthChange = jest.fn();
-        let calendar = mount(
+        const onMonthChange = jest.fn();
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onMonthChange={ onMonthChange }
             />
         );
-        let arrowNode = calendar.find('.calendar__arrow_direction_left');
+        const arrowNode = calendar.find('.calendar__arrow_direction_left');
 
         arrowNode.at(0).simulate('click');
 
@@ -177,8 +177,8 @@ describe('calendar', () => {
 
     it('should call `onMonthChange` callback when month was changed by arrow key press', () => {
         const LAST_DAY_OF_MONTH = startOfDay(new Date('2016-01-31'));
-        let onMonthChange = jest.fn();
-        let calendar = mount(
+        const onMonthChange = jest.fn();
+        const calendar = mount(
             <Calendar
                 value={ LAST_DAY_OF_MONTH.valueOf() }
                 onMonthChange={ onMonthChange }
@@ -191,14 +191,14 @@ describe('calendar', () => {
     });
 
     it('should select date on next week after down arrow key was pressed', () => {
-        let onValueChange = jest.fn();
-        let calendar = mount(
+        const onValueChange = jest.fn();
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onValueChange={ onValueChange }
             />
         );
-        let expectedDate = addDays(INITIAL_DAY, 7);
+        const expectedDate = addDays(INITIAL_DAY, 7);
 
         calendar.simulate('keyDown', { which: keyboardCode.DOWN_ARROW });
 
@@ -207,14 +207,14 @@ describe('calendar', () => {
     });
 
     it('should select date on previous week after up arrow key was pressed', () => {
-        let onValueChange = jest.fn();
-        let calendar = mount(
+        const onValueChange = jest.fn();
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onValueChange={ onValueChange }
             />
         );
-        let expectedDate = subtractDays(INITIAL_DAY, 7);
+        const expectedDate = subtractDays(INITIAL_DAY, 7);
 
         calendar.simulate('keyDown', { which: keyboardCode.UP_ARROW });
 
@@ -223,8 +223,8 @@ describe('calendar', () => {
     });
 
     it('should select date jump over off day when navigate using keyboard', () => {
-        let onValueChange = jest.fn();
-        let calendar = mount(
+        const onValueChange = jest.fn();
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 offDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
@@ -234,115 +234,124 @@ describe('calendar', () => {
 
         calendar.simulate('keyDown', { which: keyboardCode.RIGHT_ARROW });
 
-        let expectedDate = addDays(INITIAL_DAY, 2);
+        const expectedDate = addDays(INITIAL_DAY, 2);
+
         expect(onValueChange)
             .toHaveBeenCalledWith(expectedDate.valueOf(), formatDate(expectedDate, DATE_FORMAT), true);
     });
 
     it('should hide prev month arrows when earlier limit is in current month', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ subtractDays(INITIAL_DAY, 10).valueOf() }
             />
         );
 
-        let prevMonthArrow = calendar.find('.calendar__arrow_direction_left');
+        const prevMonthArrow = calendar.find('.calendar__arrow_direction_left');
 
         expect(prevMonthArrow.getDOMNode().className).toContain('calendar__arrow_disabled');
     });
 
     it('should hide next month arrows when laterLimit is in current month', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 laterLimit={ addDays(INITIAL_DAY, 10).valueOf() }
             />
         );
 
-        let nextMonthArrow = calendar.find('.calendar__arrow_direction_right');
+        const nextMonthArrow = calendar.find('.calendar__arrow_direction_right');
 
         expect(nextMonthArrow.getDOMNode().className).toContain('calendar__arrow_disabled');
     });
 
     it('should show prev month arrow when earlierLimit is in prev month', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ subtractMonth(INITIAL_DAY, 1).valueOf() }
             />
         );
 
-        let prevMonthArrow = calendar.find('.calendar__arrow_direction_left').not('.calendar__arrow_double');
+        const prevMonthArrow = calendar.find('.calendar__arrow_direction_left').not('.calendar__arrow_double');
 
         expect(prevMonthArrow.getDOMNode().className).not.toContain('calendar__arrow_disabled');
     });
 
     it('should show next month arrow when laterLimit is in next month', () => {
-        let calendar = mount(
+        const calendar = mount(
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 laterLimit={ addMonth(INITIAL_DAY, 1).valueOf() }
             />
         );
 
-        let nextMonthArrow = calendar.find('.calendar__arrow_direction_right').not('.calendar__arrow_double');
+        const nextMonthArrow = calendar.find('.calendar__arrow_direction_right').not('.calendar__arrow_double');
 
         expect(nextMonthArrow.getDOMNode().className).not.toContain('calendar__arrow_disabled');
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let calendar = mount(<Calendar />);
+        const calendar = mount(<Calendar />);
 
-        let node = calendar.instance().getNode();
+        const node = calendar.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
     });
 
     it('should change month when select one from selection list', () => {
-        let calendar = mount(<Calendar />);
+        const calendar = mount(<Calendar />);
 
-        let monthNode = calendar.find('.calendar__name_month');
+        const monthNode = calendar.find('.calendar__name_month');
+
         monthNode.simulate('click');
 
-        let calendarSelectNode = calendar.find('.calendar__select');
+        const calendarSelectNode = calendar.find('.calendar__select');
+
         calendarSelectNode.at(1).simulate('click');
 
         expect(monthNode.text()).toContain(calendarSelectNode.at(1).text());
     });
 
     it('should change year when select one from selection list', () => {
-        let calendar = mount(<Calendar />);
+        const calendar = mount(<Calendar />);
 
-        let yearNode = calendar.find('.calendar__name_year');
+        const yearNode = calendar.find('.calendar__name_year');
+
         yearNode.simulate('click');
 
-        let calendarSelectNode = calendar.find('.calendar__select');
+        const calendarSelectNode = calendar.find('.calendar__select');
+
         calendarSelectNode.at(1).simulate('click');
 
         expect(yearNode.text()).toContain(calendarSelectNode.at(1).text());
     });
 
     it('should make list of years whith amount by default', () => {
-        let calendar = mount(<Calendar />);
+        const calendar = mount(<Calendar />);
 
-        let yearNode = calendar.find('.calendar__name_year');
+        const yearNode = calendar.find('.calendar__name_year');
+
         yearNode.simulate('click');
 
-        let calendarSelectNode = calendar.find('.calendar__select');
+        const calendarSelectNode = calendar.find('.calendar__select');
+
         expect(calendarSelectNode.length).toBe(102);
     });
 
     it('should make correct list of years with established date limits', () => {
-        let calendar = mount(<Calendar
+        const calendar = mount(<Calendar
             earlierLimit={ 666565200000 }
             laterLimit={ 1582923600000 }
         />);
 
-        let yearNode = calendar.find('.calendar__name_year');
+        const yearNode = calendar.find('.calendar__name_year');
+
         yearNode.simulate('click');
 
-        let calendarSelectNode = calendar.find('.calendar__select');
+        const calendarSelectNode = calendar.find('.calendar__select');
+
         expect(calendarSelectNode.length).toBe(30);
     });
 });

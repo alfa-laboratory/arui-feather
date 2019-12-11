@@ -8,7 +8,6 @@ import Type from 'prop-types';
 import cn from '../cn';
 import performance from '../performance';
 
-
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */

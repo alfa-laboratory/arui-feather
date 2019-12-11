@@ -9,13 +9,13 @@ import Spin from './spin';
 
 describe('spin', () => {
     it('should render without problems', () => {
-        let spin = mount(<Spin />);
+        const spin = mount(<Spin />);
 
         expect(spin).toMatchSnapshot();
     });
 
     it('should set class `spin_visible` when visible=true', () => {
-        let spin = mount(<Spin visible={ true } />);
+        const spin = mount(<Spin visible={ true } />);
 
         expect(spin.getDOMNode().className).toContain('spin_visible');
     });

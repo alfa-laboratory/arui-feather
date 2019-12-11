@@ -9,7 +9,7 @@ import CardInput from './card-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('card-input', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -20,15 +20,15 @@ describe('card-input', () => {
     });
 
     it('should render without problems', () => {
-        let cardInput = shallow(<CardInput />);
+        const cardInput = shallow(<CardInput />);
 
         expect(cardInput).toMatchSnapshot();
     });
 
     it('should scroll window to element on public `scrollTo` method call', () => {
-        let cardInput = mount(<CardInput />);
-        let elemTopPosition = cardInput.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const cardInput = mount(<CardInput />);
+        const elemTopPosition = cardInput.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         cardInput.instance().scrollTo();
 
@@ -36,11 +36,11 @@ describe('card-input', () => {
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        let cardInput = mount(<CardInput />);
-        let input = cardInput.instance().root;
+        const cardInput = mount(<CardInput />);
+        const input = cardInput.instance().root;
+
         jest.spyOn(input, 'focus');
         jest.spyOn(input, 'blur');
-
 
         cardInput.instance().focus();
         expect(input.focus).toHaveBeenCalled();
@@ -50,9 +50,10 @@ describe('card-input', () => {
     });
 
     it('should set `type` attribute to `tel`', () => {
-        let cardInput = mount(<CardInput />);
+        const cardInput = mount(<CardInput />);
 
-        let inputNode = cardInput.find('input');
+        const inputNode = cardInput.find('input');
+
         expect(inputNode.prop('type')).toBe('tel');
     });
 });

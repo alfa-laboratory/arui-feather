@@ -30,8 +30,7 @@ describe('mq-decorator', () => {
             }
         }
 
-
-        let result = mount(<Example />);
+        const result = mount(<Example />);
 
         expect(result.find('Example').props().mqMatch).toBe(false);
     });
@@ -53,7 +52,7 @@ describe('mq-decorator', () => {
             }
         }
 
-        let result = mount(<Example />);
+        const result = mount(<Example />);
 
         expect(result.find('Example').props().isSmall).toBe(false);
     });

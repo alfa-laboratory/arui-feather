@@ -12,19 +12,19 @@ import Paragraph from '../paragraph/paragraph';
 
 describe('theme-provider', () => {
     it('should render without problems', () => {
-        let themeProvider = mount(<ThemeProvider><div>Render-test</div></ThemeProvider>);
+        const themeProvider = mount(<ThemeProvider><div>Render-test</div></ThemeProvider>);
 
         expect(themeProvider).toMatchSnapshot();
     });
 
     it('should render child', () => {
-        let themeProvider = mount(<ThemeProvider><div>Render-test</div></ThemeProvider>);
+        const themeProvider = mount(<ThemeProvider><div>Render-test</div></ThemeProvider>);
 
         expect(themeProvider.text()).toContain('Render-test');
     });
 
     it('should render Button with `alfa-on-color` theme', () => {
-        let themeProvider = mount(
+        const themeProvider = mount(
             <ThemeProvider theme='alfa-on-color'>
                 <Button>Render-test</Button>
             </ThemeProvider>
@@ -34,7 +34,7 @@ describe('theme-provider', () => {
     });
 
     it('should render children with redefinition theme', () => {
-        let themeProvider = mount(
+        const themeProvider = mount(
             <ThemeProvider theme='alfa-on-color'>
                 <div>
                     <Heading>Title-test</Heading>
@@ -46,8 +46,8 @@ describe('theme-provider', () => {
                 </div>
             </ThemeProvider>
         );
-        let headingNode = themeProvider.find('.heading');
-        let paragraphNode = themeProvider.find('.paragraph');
+        const headingNode = themeProvider.find('.heading');
+        const paragraphNode = themeProvider.find('.paragraph');
 
         expect(headingNode.getDOMNode().className).toContain('heading_theme_alfa-on-color');
         expect(paragraphNode.getDOMNode().className).toContain('paragraph_theme_alfa-on-white');

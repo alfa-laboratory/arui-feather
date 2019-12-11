@@ -154,11 +154,13 @@ class InputAutocomplete extends React.Component {
     }
 
     render(cn, Input) {
-        let value = this.props.value !== undefined ? this.props.value : this.state.value;
+        const value = this.props.value !== undefined ? this.props.value : this.state.value;
 
-        let props = {
+        const props = {
             ...this.props,
-            ref: (input) => { this.input = input; },
+            ref: (input) => {
+                this.input = input;
+            },
             className: cn({
                 focused: this.state.inputFocused || this.state.menuFocused,
                 'has-autocomplete': true
@@ -182,28 +184,32 @@ class InputAutocomplete extends React.Component {
     }
 
     renderPopup(cn) {
-        let formattedOptionsList = this.props.options
+        const formattedOptionsList = this.props.options
             ? this.formatOptionsList(this.props.options)
             : [];
 
-        let opened = this.props.opened !== undefined
+        const opened = this.props.opened !== undefined
             ? this.props.opened
             : this.state.inputFocused || this.state.menuFocused;
 
         if (this.props.options.length === 0) {
             this.popup = null;
+
             return null;
         }
 
         if (this.props.renderPopupOnFocus && !opened) {
             return null;
         }
+
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
                 className={ cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ (popup) => {
+                    this.popup = popup;
+                } }
                 for={ this.props.name }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
@@ -217,7 +223,9 @@ class InputAutocomplete extends React.Component {
                 maxHeight={ this.props.popupMaxHeight }
             >
                 <Menu
-                    ref={ (menu) => { this.menu = menu; } }
+                    ref={ (menu) => {
+                        this.menu = menu;
+                    } }
                     className={ cn('menu') }
                     size={ this.props.size }
                     mode='radio-check'
@@ -237,10 +245,10 @@ class InputAutocomplete extends React.Component {
 
     @autobind
     handleItemCheck(checkedItemsValues) {
-        let checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
-        let checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
+        const checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
+        const checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
-        let newValue = checkedItem
+        const newValue = checkedItem
             ? (checkedItem.text || checkedItem.value)
             : this.state.value;
 
@@ -348,8 +356,8 @@ class InputAutocomplete extends React.Component {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
 
-                let posX = window.pageXOffset;
-                let posY = window.pageYOffset;
+                const posX = window.pageXOffset;
+                const posY = window.pageYOffset;
 
                 if (this.menu) {
                     this.menu.focus();
@@ -430,18 +438,18 @@ class InputAutocomplete extends React.Component {
      * @param {SyntheticEvent} event Событие focus/blur, которое будет проброшено в обработчик onFocus/onBlur
      */
     solveFocused(event) {
-        let currentFocused = this.state.inputFocused || this.state.menuFocused;
+        const currentFocused = this.state.inputFocused || this.state.menuFocused;
 
-        let focusedElement = document.activeElement;
+        const focusedElement = document.activeElement;
 
-        let newState = {
+        const newState = {
             inputFocused: (focusedElement === this.input.getControl()),
             menuFocused: this.menu
                 ? (this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement))
                 : false
         };
 
-        let newFocused = newState.inputFocused || newState.menuFocused;
+        const newFocused = newState.inputFocused || newState.menuFocused;
 
         if (currentFocused !== newFocused) {
             if (newFocused) {
@@ -460,7 +468,7 @@ class InputAutocomplete extends React.Component {
         return (
             options.map((option) => {
                 if (option.type === 'group' && !!option.content) {
-                    let content = this.formatOptionsList(option.content);
+                    const content = this.formatOptionsList(option.content);
 
                     return ({
                         type: 'group',
@@ -484,13 +492,16 @@ class InputAutocomplete extends React.Component {
 
         options.find((option) => {
             if (option.type === 'group' && !!option.content) {
-                let findInGroup = this.getCheckedOption(option.content, value);
+                const findInGroup = this.getCheckedOption(option.content, value);
+
                 if (findInGroup) {
                     result = findInGroup;
+
                     return true;
                 }
             } else if (option.value === value) {
                 result = option;
+
                 return true;
             }
 
@@ -502,9 +513,9 @@ class InputAutocomplete extends React.Component {
 
     @autobind
     updatePopupStyles() {
-        let input = this.input.getNode();
-        let inputWidth = input.getBoundingClientRect().width;
-        let popupStyles = { minWidth: inputWidth };
+        const input = this.input.getNode();
+        const inputWidth = input.getBoundingClientRect().width;
+        const popupStyles = { minWidth: inputWidth };
 
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = inputWidth;
@@ -525,9 +536,9 @@ class InputAutocomplete extends React.Component {
      * @param {MenuItem} highlightedItem Выбранный пункт меню
      */
     syncKeyboardNavigationWithScroll(highlightedItem) {
-        let element = highlightedItem.getNode();
-        let container = this.popup.getInnerNode();
-        let correction = element.offsetHeight;
+        const element = highlightedItem.getNode();
+        const container = this.popup.getInnerNode();
+        const correction = element.offsetHeight;
 
         if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
             scrollTo({

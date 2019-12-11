@@ -66,12 +66,16 @@ class SlideDown extends React.Component {
                     { height: this.getHeight() }
                 }
                 onTransitionEnd={ this.handleTransitionEnd }
-                ref={ (slideDown) => { this.slideDown = slideDown; } }
+                ref={ (slideDown) => {
+                    this.slideDown = slideDown;
+                } }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     className={ cn('content', { expanded: this.state.isHeightAuto }) }
-                    ref={ (slideDownContent) => { this.slideDownContent = slideDownContent; } }
+                    ref={ (slideDownContent) => {
+                        this.slideDownContent = slideDownContent;
+                    } }
                 >
                     { this.props.children }
                 </div>

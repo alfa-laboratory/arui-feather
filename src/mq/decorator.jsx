@@ -6,7 +6,6 @@ import React from 'react';
 import autobind from 'core-decorators/lib/autobind';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 
-
 export default function mqDecorator(query, propName = 'mqMatch') {
     return function (Component) {
         return class extends React.Component {

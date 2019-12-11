@@ -9,21 +9,21 @@ import Paragraph from './paragraph';
 
 describe('paragraph', () => {
     it('should render without problems', () => {
-        let paragraph = shallow(<Paragraph />);
+        const paragraph = shallow(<Paragraph />);
 
         expect(paragraph).toMatchSnapshot();
     });
 
     it('should render block `p` with text inside', () => {
-        let paragraph = shallow(<Paragraph>Paragraph text</Paragraph>);
+        const paragraph = shallow(<Paragraph>Paragraph text</Paragraph>);
 
         expect(paragraph.is('p')).toBe(true);
         expect(paragraph.text()).toContain('Paragraph text');
     });
 
     it('should render marker from property `mark` before text', () => {
-        let paragraph = shallow(<Paragraph mark='!Important '>Paragraph text</Paragraph>);
-        let paragraphMarkerNode = paragraph.childAt(0);
+        const paragraph = shallow(<Paragraph mark='!Important '>Paragraph text</Paragraph>);
+        const paragraphMarkerNode = paragraph.childAt(0);
 
         expect(paragraphMarkerNode.hasClass('paragraph__marker')).toBe(true);
         expect(paragraphMarkerNode.text()).toBe('!Important ');

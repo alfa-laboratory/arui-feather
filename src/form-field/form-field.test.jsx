@@ -9,7 +9,7 @@ import FormField from './form-field';
 
 describe('form-field', () => {
     it('should render without problems', () => {
-        let formField = mount(<FormField>FormField-test</FormField>);
+        const formField = mount(<FormField>FormField-test</FormField>);
 
         expect(formField).toMatchSnapshot();
     });

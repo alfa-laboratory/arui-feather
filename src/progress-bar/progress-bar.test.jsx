@@ -8,14 +8,14 @@ import ProgressBar from './progress-bar';
 
 describe('progress-bar', () => {
     it('should render without problems', () => {
-        let progressBar = mount(<ProgressBar />);
+        const progressBar = mount(<ProgressBar />);
 
         expect(progressBar).toMatchSnapshot();
     });
 
     it('should display current value', () => {
-        let progressBar = mount(<ProgressBar percent={ 50 } />);
-        let currentValueWrapper = progressBar.find('.progress-bar__current-value');
+        const progressBar = mount(<ProgressBar percent={ 50 } />);
+        const currentValueWrapper = progressBar.find('.progress-bar__current-value');
 
         expect(currentValueWrapper.getDOMNode().getAttribute('style')).toEqual('width: 50%;');
     });

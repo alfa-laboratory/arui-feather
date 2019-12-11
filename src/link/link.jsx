@@ -97,10 +97,10 @@ class Link extends React.Component {
     root;
 
     render(cn) {
-        let linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
+        const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
         const { iconPosition } = this.props;
 
-        let linkProps = {
+        const linkProps = {
             ref: (root) => {
                 this.root = root;
             },
@@ -133,14 +133,14 @@ class Link extends React.Component {
             linkProps.target = this.props.target;
         }
 
-        let linkContent = [this.props.children];
-        let iconTemplate = this.props.icon && (
+        const linkContent = [this.props.children];
+        const iconTemplate = this.props.icon && (
             <span key='icon' className={ cn('icon', { left: iconPosition === 'left' }) }>
                 { this.props.icon }
             </span>
         );
 
-        let textTemplate = this.props.text && (
+        const textTemplate = this.props.text && (
             <span key='text' className={ cn('text-container') }>
                 <span className={ cn('text') }>{ this.props.text }</span>
             </span>

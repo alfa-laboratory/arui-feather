@@ -9,16 +9,16 @@ import PopupHeader from './popup-header';
 
 describe('popup-header', () => {
     it('should render without problems', () => {
-        let popupHeader = shallow(<PopupHeader title='Title' />);
+        const popupHeader = shallow(<PopupHeader title='Title' />);
 
         expect(popupHeader).toMatchSnapshot();
         expect(popupHeader.text()).toContain('Title');
     });
 
     it('should call `onCloserClick` callback after closer was clicked', () => {
-        let onCloserClick = jest.fn();
-        let popupHeader = shallow(<PopupHeader onCloserClick={ onCloserClick } />);
-        let closer = popupHeader.find('.popup-header__closer');
+        const onCloserClick = jest.fn();
+        const popupHeader = shallow(<PopupHeader onCloserClick={ onCloserClick } />);
+        const closer = popupHeader.find('.popup-header__closer');
 
         closer.simulate('click');
 

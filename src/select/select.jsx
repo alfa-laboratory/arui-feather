@@ -285,7 +285,7 @@ class Select extends React.Component {
     }
 
     render(cn, SelectButton, Popup) {
-        let value = this.getValue();
+        const value = this.getValue();
 
         return (
             <div
@@ -335,7 +335,7 @@ class Select extends React.Component {
     renderButton(cn, SelectButton) {
         let tickSize;
         let ToggledIcon;
-        let opened = this.getOpened();
+        const opened = this.getOpened();
 
         switch (opened) {
             case true:
@@ -386,9 +386,9 @@ class Select extends React.Component {
     }
 
     renderNativeSelect(cn) {
-        let isCheckMode = this.props.mode === 'check';
-        let hasEmptyOptGroup = isCheckMode || this.state.hasGroup;
-        let hasEmptyOption = !isCheckMode && !this.state.hasGroup;
+        const isCheckMode = this.props.mode === 'check';
+        const hasEmptyOptGroup = isCheckMode || this.state.hasGroup;
+        const hasEmptyOption = !isCheckMode && !this.state.hasGroup;
         let value = this.getValue();
 
         if (!isCheckMode) {
@@ -430,9 +430,9 @@ class Select extends React.Component {
     }
 
     renderPopup(cn, Popup) {
-        let optionsList = this.renderOptionsList(this.props.options);
-        let opened = this.getOpened();
-        let value = this.getValue();
+        const optionsList = this.renderOptionsList(this.props.options);
+        const opened = this.getOpened();
+        const value = this.getValue();
         const { popupIsReady } = this.state;
         const popupIsVisible = this.props.renderPopupOnFocus ? opened && popupIsReady : opened;
 
@@ -482,7 +482,7 @@ class Select extends React.Component {
     renderOptionsList(options) {
         return options.map((option) => {
             if (option.type === 'group' && !!option.content) {
-                let content = this.renderOptionsList(option.content);
+                const content = this.renderOptionsList(option.content);
 
                 return {
                     type: 'group',
@@ -491,7 +491,7 @@ class Select extends React.Component {
                 };
             }
 
-            let content = option.description || option.text;
+            const content = option.description || option.text;
 
             return {
                 props: option.props,
@@ -506,7 +506,7 @@ class Select extends React.Component {
 
         return options.map((option) => {
             if (option.type === 'group' && !!option.content) {
-                let content = this.renderNativeOptionsList(option.content);
+                const content = this.renderNativeOptionsList(option.content);
 
                 groupKey += 1;
 
@@ -526,16 +526,18 @@ class Select extends React.Component {
     }
 
     renderButtonContent(cn) {
-        let checkedItems = this.getCheckedItems(this.props.options);
+        const checkedItems = this.getCheckedItems(this.props.options);
 
         if (this.props.renderButtonContent) {
             return this.props.renderButtonContent(checkedItems);
         }
 
-        let checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
+        const checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
+
         if (checkedItemsText) {
             return checkedItemsText;
         }
+
         // Если ничего не выбрано, то рендерим плейсхолдер
         // Если плейсхолдера нет, то рендерим текст лейбла. Но отрендерится он прозрачным - это нужно для того, чтобы
         // лейбл растягивал блок до нужной ширины, т. к. настоящий лейбл позиционируется абсолютно и не влияет на размер
@@ -639,13 +641,14 @@ class Select extends React.Component {
 
     @autobind
     handleOptionCheck(value) {
-        let opened = this.getOpened();
+        const opened = this.getOpened();
 
         this.setState({ value, opened: this.props.mode === 'check' }, () => {
             // Если у Select-а закрылось выпадающее меню,
             // то возвращаем фокус на кнопку Select
             // после выбора опции.
-            let newOpened = this.getOpened();
+            const newOpened = this.getOpened();
+
             if (!newOpened && opened !== newOpened) {
                 this.button.focus();
             }
@@ -663,7 +666,8 @@ class Select extends React.Component {
 
             options.forEach((option) => {
                 if (option.type === 'group' && !!option.content) {
-                    let findInGroup = getFlattenedPropOptions(option.content);
+                    const findInGroup = getFlattenedPropOptions(option.content);
+
                     result = result.concat(findInGroup);
                 } else {
                     result.push(option);
@@ -673,15 +677,16 @@ class Select extends React.Component {
             return result;
         }
 
-        let hasEmptyOption = this.props.mode !== 'check' && !this.state.hasGroup;
-        let domOptions = Array.from(event.currentTarget.options).filter(
+        const hasEmptyOption = this.props.mode !== 'check' && !this.state.hasGroup;
+        const domOptions = Array.from(event.currentTarget.options).filter(
             (option, index) => !(hasEmptyOption && option.disabled && index === 0)
         );
-        let flattenedPropOptions = getFlattenedPropOptions(this.props.options);
-        let value = domOptions.reduce((result, item, index) => {
+        const flattenedPropOptions = getFlattenedPropOptions(this.props.options);
+        const value = domOptions.reduce((result, item, index) => {
             if (item.selected) {
                 result.push(flattenedPropOptions[index].value);
             }
+
             return result;
         }, []);
 
@@ -709,7 +714,7 @@ class Select extends React.Component {
 
     @autobind
     handleMenuKeyDown(event, highlightedItem) {
-        let opened = this.getOpened();
+        const opened = this.getOpened();
 
         switch (event.which) {
             case keyboardCode.DOWN_ARROW:
@@ -863,7 +868,7 @@ class Select extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.root.getBoundingClientRect();
+        const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             // eslint-disable-next-line no-mixed-operators
@@ -876,12 +881,14 @@ class Select extends React.Component {
             return;
         }
 
-        if (this.state.isMobile && this.props.mobileMenuMode === 'popup') return;
+        if (this.state.isMobile && this.props.mobileMenuMode === 'popup') {
+            return;
+        }
 
-        let scrollContainer = this.getScrollContainer();
+        const scrollContainer = this.getScrollContainer();
 
-        let posX = scrollContainer.scrollTop;
-        let posY = scrollContainer.scrollLeft;
+        const posX = scrollContainer.scrollTop;
+        const posY = scrollContainer.scrollLeft;
 
         this.menu.focus();
         scrollContainer.scrollTop = posX;
@@ -892,9 +899,9 @@ class Select extends React.Component {
      * @param {MenuItem} highlightedItem Выбранный в текущий момент пункт меню
      */
     scrollToHighlightedItem(highlightedItem) {
-        let element = highlightedItem.getNode();
-        let container = this.popup.getInnerNode();
-        let correction = element.offsetHeight;
+        const element = highlightedItem.getNode();
+        const container = this.popup.getInnerNode();
+        const correction = element.offsetHeight;
 
         if (container) {
             if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
@@ -915,7 +922,7 @@ class Select extends React.Component {
     }
 
     toggleOpened() {
-        let newOpenedState = !this.getOpened();
+        const newOpenedState = !this.getOpened();
 
         this.setState(
             {
@@ -931,8 +938,8 @@ class Select extends React.Component {
 
     @autobind
     updatePopupStyles() {
-        let buttonWidth = this.button.getNode().getBoundingClientRect().width;
-        let popupStyles = { minWidth: buttonWidth };
+        const buttonWidth = this.button.getNode().getBoundingClientRect().width;
+        const popupStyles = { minWidth: buttonWidth };
 
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = buttonWidth;
@@ -949,12 +956,13 @@ class Select extends React.Component {
     }
 
     getCheckedItems(options) {
-        let value = this.getValue();
+        const value = this.getValue();
         let result = [];
 
         options.forEach((option) => {
             if (option.type === 'group' && !!option.content) {
-                let findInGroup = this.getCheckedItems(option.content);
+                const findInGroup = this.getCheckedItems(option.content);
+
                 result = result.concat(findInGroup);
             } else if (value.indexOf(option.value) !== -1) {
                 result.push(option);
@@ -1004,6 +1012,7 @@ class Select extends React.Component {
 
     selectFirstOption() {
         const firstOption = this.getFirstOption(this.props.options);
+
         this.handleOptionCheck([firstOption.value]);
     }
 

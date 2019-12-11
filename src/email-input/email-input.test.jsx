@@ -9,7 +9,7 @@ import EmailInput from './email-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('email-input', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -20,15 +20,15 @@ describe('email-input', () => {
     });
 
     it('should render without problems', () => {
-        let emailInput = shallow(<EmailInput />);
+        const emailInput = shallow(<EmailInput />);
 
         expect(emailInput).toMatchSnapshot();
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        let emailInput = mount(<EmailInput />);
-        let elemTopPosition = emailInput.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const emailInput = mount(<EmailInput />);
+        const elemTopPosition = emailInput.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         emailInput.instance().scrollTo();
 
@@ -36,12 +36,12 @@ describe('email-input', () => {
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        let emailInput = mount(<EmailInput />);
+        const emailInput = mount(<EmailInput />);
 
-        let input = emailInput.instance().root;
+        const input = emailInput.instance().root;
+
         jest.spyOn(input, 'focus');
         jest.spyOn(input, 'blur');
-
 
         emailInput.instance().focus();
         expect(input.focus).toHaveBeenCalled();

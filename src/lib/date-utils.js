@@ -25,8 +25,8 @@ export function normalizeDate(date) {
  * @returns {Number}
  */
 export function getRussianWeekDay(date) {
-    let sunday = 0;
-    let foreignWeekDayIndex = date.getDay();
+    const sunday = 0;
+    const foreignWeekDayIndex = date.getDay();
 
     return foreignWeekDayIndex === sunday
         ? DAYS_IN_WEEK - 1
@@ -90,12 +90,13 @@ function parseFormat(format) {
         return PARSER_CACHE[format];
     }
 
-    let parser = [];
+    const parser = [];
     let processingFormat = format;
 
     while (processingFormat.length > 0) {
         /* eslint no-loop-func: 0 */
-        let matchedToken = PARSE_TOKENS.find(t => processingFormat.match(t.formatRegex));
+        const matchedToken = PARSE_TOKENS.find(t => processingFormat.match(t.formatRegex));
+
         if (matchedToken) {
             parser.push(matchedToken);
             processingFormat = processingFormat.replace(matchedToken.formatRegex, '');
@@ -106,6 +107,7 @@ function parseFormat(format) {
     }
 
     PARSER_CACHE[format] = parser;
+
     return parser;
 }
 
@@ -126,10 +128,12 @@ function parseFormat(format) {
  * @returns {Date}
  */
 export function parse(input, format = 'DD.MM.YYYY', strict = true) {
-    let parsedFormat = parseFormat(format);
-    let parsedResult = {};
+    const parsedFormat = parseFormat(format);
+    const parsedResult = {};
+
     for (let i = 0; i < parsedFormat.length; i++) {
-        let token = parsedFormat[i];
+        const token = parsedFormat[i];
+
         if (token.type === 'delimiter') {
             if (input[0] !== token.value) {
                 return new Date('invalid');
@@ -138,7 +142,8 @@ export function parse(input, format = 'DD.MM.YYYY', strict = true) {
             continue;
         }
 
-        let match = input.match(token.regex);
+        const match = input.match(token.regex);
+
         if (!match) {
             return new Date('invalid');
         }
@@ -147,7 +152,7 @@ export function parse(input, format = 'DD.MM.YYYY', strict = true) {
         input = input.replace(token.regex, '');
     }
 
-    let {
+    const {
         date: dateLimits,
         month: monthLimits,
         year: yearLimits
@@ -155,9 +160,9 @@ export function parse(input, format = 'DD.MM.YYYY', strict = true) {
 
     if (
         strict && (
-            parsedResult.date > dateLimits.max || parsedResult.date < dateLimits.min
-            || parsedResult.month > monthLimits.max || parsedResult.month < monthLimits.min
-            || parsedResult.year > yearLimits.max || parsedResult.year < yearLimits.min
+            parsedResult.date > dateLimits.max || parsedResult.date < dateLimits.min ||
+            parsedResult.month > monthLimits.max || parsedResult.month < monthLimits.min ||
+            parsedResult.year > yearLimits.max || parsedResult.year < yearLimits.min
         )
     ) {
         return new Date('invalid');

@@ -52,7 +52,7 @@ class List extends React.Component {
             </li>
         ));
 
-        let listProps = {
+        const listProps = {
             className: cn({ type }),
             id: this.props.id,
             'data-test-id': this.props['data-test-id']

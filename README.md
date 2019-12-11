@@ -145,21 +145,6 @@ import performance from '../performance';
 class Component extends React.Component {}
 ```
 
-## Использование Modernizr
-
-Поскольку modernizr на данный момент не умеет правильно работать внутри webpack
-используется скрипт для генерации webpack на основе конфигурации для него.
-
-Настройки modernizr находятся в файле `.modernizrrc` (см. [список доступных опций](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json)).
-
-Автоматическая перегенерация `modernizr.js` не предусмотрена, в случае если вы поменяли его настройки — вам нужно
-будет перегенерировать файл.
-
-Для ручного обновления собранного `Modernizr`:
-
-```sh
-npm run modernizr
-```
 
 ## Публикация
 

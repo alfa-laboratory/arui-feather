@@ -9,8 +9,10 @@ import { mount } from 'enzyme';
 import { getMatchMedia } from '../lib/match-media';
 import Mq from './mq';
 
-jest.mock('../modernizr', () => ({ pointerevents: true }));
 jest.mock('../lib/match-media');
+jest.mock('./utils', () => ({
+    isPointerEventsSupported: jest.fn(() => true)
+}));
 
 describe('mq', () => {
     it('should not mount this.props.children on conditions mismatch', () => {

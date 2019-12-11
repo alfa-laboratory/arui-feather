@@ -10,19 +10,19 @@ import Radio from '../radio/radio';
 
 describe('radio-group', () => {
     it('should render without any children', () => {
-        let radioGroup = shallow(<RadioGroup />);
+        const radioGroup = shallow(<RadioGroup />);
 
         expect(radioGroup).toMatchSnapshot();
     });
 
     it('should render with only one children', () => {
-        let radioGroup = shallow(<RadioGroup><Radio key='1' /></RadioGroup>);
+        const radioGroup = shallow(<RadioGroup><Radio key='1' /></RadioGroup>);
 
         expect(radioGroup).toMatchSnapshot();
     });
 
     it('should render with many radio children without problems', () => {
-        let radioGroup = shallow(
+        const radioGroup = shallow(
             <RadioGroup>
                 <Radio key='1' text='label' />
                 <Radio key='2' text='label' />
@@ -33,7 +33,7 @@ describe('radio-group', () => {
     });
 
     it('should render checked radio with value from `value` props', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup
                 value='1'
             >
@@ -41,57 +41,57 @@ describe('radio-group', () => {
                 <Radio key='2' value='2' text='label 2' />
             </RadioGroup>
         );
-        let radioNode = radioGroup.find('.radio').at(0);
+        const radioNode = radioGroup.find('.radio').at(0);
 
         expect(radioNode.getDOMNode().className).toContain('radio_checked');
     });
 
     it('should render radio in error state with error on radioGroup', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup error='errorText'>
                 <Radio key='1' />
             </RadioGroup>
         );
-        let radioNode = radioGroup.find('.radio');
+        const radioNode = radioGroup.find('.radio');
 
         expect(radioNode.getDOMNode().className).toContain('radio_invalid');
     });
 
     it('should render with `error` from props', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup error='errorText'>
                 <Radio key='1' />
             </RadioGroup>
         );
-        let subNode = radioGroup.find('.radio-group__sub');
+        const subNode = radioGroup.find('.radio-group__sub');
 
         expect(subNode.text()).toContain('errorText');
     });
 
     it('should render with `hint` from props', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup hint='hintText'>
                 <Radio key='1' />
             </RadioGroup>
         );
-        let subNode = radioGroup.find('.radio-group__sub');
+        const subNode = radioGroup.find('.radio-group__sub');
 
         expect(subNode.text()).toContain('hintText');
     });
 
     it('should render with `error` and without `hint` when both of them passed via props', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup error='errorText' hint='hintText'>
                 <Radio key='1' />
             </RadioGroup>
         );
-        let subNode = radioGroup.find('.radio-group__sub');
+        const subNode = radioGroup.find('.radio-group__sub');
 
         expect(subNode.text()).toContain('errorText');
     });
 
     it('should focus first child radio-button on public focus method', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup>
                 <Radio key='1' />
                 <Radio key='2' />
@@ -100,6 +100,7 @@ describe('radio-group', () => {
         );
 
         const firstRadio = radioGroup.instance().radios[0];
+
         jest.spyOn(firstRadio, 'focus');
 
         radioGroup.instance().focus();
@@ -112,7 +113,7 @@ describe('radio-group', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup>
                 <Radio key='1' />
                 <Radio key='2' />
@@ -128,8 +129,8 @@ describe('radio-group', () => {
     });
 
     it('should call `onFocus` callback after radio-group was focused', () => {
-        let onFocus = jest.fn();
-        let radioGroup = mount(
+        const onFocus = jest.fn();
+        const radioGroup = mount(
             <RadioGroup onFocus={ onFocus }>
                 <Radio key='1' />
             </RadioGroup>
@@ -141,8 +142,8 @@ describe('radio-group', () => {
     });
 
     it('should call `onBlur` callback after radio-group was blured', () => {
-        let onBlur = jest.fn();
-        let radioGroup = mount(
+        const onBlur = jest.fn();
+        const radioGroup = mount(
             <RadioGroup onBlur={ onBlur }>
                 <Radio key='1' />
             </RadioGroup>
@@ -154,13 +155,13 @@ describe('radio-group', () => {
     });
 
     it('should call `onChange` callback after radio-group was checked', () => {
-        let onChange = jest.fn();
-        let radioGroup = mount(
+        const onChange = jest.fn();
+        const radioGroup = mount(
             <RadioGroup onChange={ onChange }>
                 <Radio key='1' value='1' />
             </RadioGroup>
         );
-        let radioControlNode = radioGroup.find('.radio__control');
+        const radioControlNode = radioGroup.find('.radio__control');
 
         radioControlNode.simulate('change');
 
@@ -199,7 +200,7 @@ describe('radio-group', () => {
     });
 
     it('should disable all child radios when disabled=true', () => {
-        let radioGroup = mount(
+        const radioGroup = mount(
             <RadioGroup disabled={ true }>
                 <Radio key='1' />
                 <Radio key='2' />
@@ -207,18 +208,19 @@ describe('radio-group', () => {
             </RadioGroup>
         );
 
-        let disabledRadioNodes = radioGroup.find('.radio_disabled');
+        const disabledRadioNodes = radioGroup.find('.radio_disabled');
+
         expect(disabledRadioNodes.length).toBe(3);
     });
 
-    it('shouldn\'t call `onChange` callback when disabled=true', function () {
-        let onChange = jest.fn();
-        let radioGroup = mount(
+    it('shouldn\'t call `onChange` callback when disabled=true', () => {
+        const onChange = jest.fn();
+        const radioGroup = mount(
             <RadioGroup onChange={ onChange } disabled={ true }>
                 <Radio key='1' />
             </RadioGroup>
         );
-        let radio = radioGroup.find('.radio');
+        const radio = radioGroup.find('.radio');
 
         radio.simulate('change');
 

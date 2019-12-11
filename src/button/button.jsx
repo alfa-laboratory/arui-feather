@@ -145,7 +145,7 @@ class Button extends React.Component {
     render(cn) {
         const isButton = this.props.tag !== 'span';
 
-        let buttonProps = {
+        const buttonProps = {
             ref: (control) => {
                 this.control = control;
             },
@@ -182,7 +182,7 @@ class Button extends React.Component {
             'data-test-id': this.props['data-test-id']
         };
 
-        let buttonContent = [
+        const buttonContent = [
             this.props.leftAddons && (
                 <span key='left-addons' className={ cn('addon') }>
                     { this.props.leftAddons }
@@ -225,7 +225,9 @@ class Button extends React.Component {
 
     @autobind
     handleFocus(event) {
-        if (this.state.pressed) return;
+        if (this.state.pressed) {
+            return;
+        }
 
         this.setState({ focused: true });
 

@@ -27,21 +27,35 @@ const ALPHANNUMERIC_RE = /^[\dA-Za-z]$/;
  */
 const DEFAULT_FORMAT_CHARACTERS = {
     '*': {
-        validate(char) { return ALPHANNUMERIC_RE.test(char); }
+        validate(char) {
+            return ALPHANNUMERIC_RE.test(char);
+        }
     },
     1: {
-        validate(char) { return DIGIT_RE.test(char); }
+        validate(char) {
+            return DIGIT_RE.test(char);
+        }
     },
     a: {
-        validate(char) { return LETTER_RE.test(char); }
+        validate(char) {
+            return LETTER_RE.test(char);
+        }
     },
     A: {
-        validate(char) { return LETTER_RE.test(char); },
-        transform(char) { return char.toUpperCase(); }
+        validate(char) {
+            return LETTER_RE.test(char);
+        },
+        transform(char) {
+            return char.toUpperCase();
+        }
     },
     '#': {
-        validate(char) { return ALPHANNUMERIC_RE.test(char); },
-        transform(char) { return char.toUpperCase(); }
+        validate(char) {
+            return ALPHANNUMERIC_RE.test(char);
+        },
+        transform(char) {
+            return char.toUpperCase();
+        }
     }
 };
 
@@ -121,14 +135,14 @@ class Mask {
     format(value) {
         let formattedValue = '';
 
-        let cleanValue = this.useWhitespaces ? value : value.replace(/\s+/g, '');
-        let cleanValueLength = cleanValue.length;
+        const cleanValue = this.useWhitespaces ? value : value.replace(/\s+/g, '');
+        const cleanValueLength = cleanValue.length;
         let cleanValueIndex = 0;
         let cleanValueChar;
 
         let patternIndex = 0;
         let patternChar;
-        let patternLength = this.pattern.length;
+        const patternLength = this.pattern.length;
 
         while (patternIndex < patternLength && cleanValueIndex < cleanValueLength) {
             if (!this.pattern.isEditableIndex(patternIndex)) {

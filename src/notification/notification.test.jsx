@@ -9,7 +9,7 @@ import Notification from './';
 
 describe('notification', () => {
     it('should render without problems', () => {
-        let notification = shallow(
+        const notification = shallow(
             <Notification>
                 notification-text
             </Notification>
@@ -20,8 +20,8 @@ describe('notification', () => {
     });
 
     it('should call `onClick` callback after notification was clicked', () => {
-        let onClick = jest.fn();
-        let notification = mount(
+        const onClick = jest.fn();
+        const notification = mount(
             <Notification
                 hasCloser={ true }
                 visible={ true }
@@ -37,8 +37,8 @@ describe('notification', () => {
     });
 
     it('should call `onCloserClick` callback after notification\'s cross was clicked', () => {
-        let onCloserClick = jest.fn();
-        let notification = mount(
+        const onCloserClick = jest.fn();
+        const notification = mount(
             <Notification
                 hasCloser={ true }
                 visible={ true }
@@ -47,7 +47,7 @@ describe('notification', () => {
                 notification-text
             </Notification>
         );
-        let crossIconNode = notification.find('.notification__closer').at(0);
+        const crossIconNode = notification.find('.notification__closer').at(0);
 
         crossIconNode.simulate('click');
 
@@ -55,8 +55,8 @@ describe('notification', () => {
     });
 
     it('should call `onCloseTimeout` callback after close timeout was ended', (done) => {
-        let onCloseTimeout = jest.fn();
-        let notification = mount(
+        const onCloseTimeout = jest.fn();
+        const notification = mount(
             <Notification
                 hasCloser={ true }
                 autoCloseDelay={ 100 }
@@ -76,7 +76,8 @@ describe('notification', () => {
     });
 
     it('should call `onClickOutside` callback after click outside notification', (done) => {
-        let onClickOutside = jest.fn();
+        const onClickOutside = jest.fn();
+
         mount(
             <Notification
                 visible={ true }
@@ -86,7 +87,8 @@ describe('notification', () => {
             </Notification>
         );
 
-        let outsideElement = document.createElement('div');
+        const outsideElement = document.createElement('div');
+
         outsideElement.setAttribute('style',
             'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
         );
@@ -100,7 +102,7 @@ describe('notification', () => {
     });
 
     it('should render passed custom icon component', () => {
-        let notification = shallow(
+        const notification = shallow(
             <Notification
                 hasCloser={ true }
                 icon={ <div className='super-icon' /> }
@@ -108,7 +110,7 @@ describe('notification', () => {
                 notification-text
             </Notification>
         );
-        let iconNode = notification.find('.super-icon');
+        const iconNode = notification.find('.super-icon');
 
         expect(iconNode.length).toBe(1);
     });

@@ -4,7 +4,6 @@
 
 import getRelatedTarget from './related-target';
 
-
 describe('related-target', () => {
     it('should return relatedTarget if event has it', () => {
         const eventStub = { relatedTarget: 'Some target' };

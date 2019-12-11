@@ -27,17 +27,17 @@ const PROP_SETS = [
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 
                 geminiReact.suite(selector, (suite) => {
-                    let props = { theme, size, ...set };
-                    let template = (
+                    const props = { theme, size, ...set };
+                    const template = (
                         <GeminiBox theme={ theme }>
                             <Textarea { ...props } />
                         </GeminiBox>
@@ -60,7 +60,7 @@ geminiReact.suite(NAME, () => {
                             .capture('focused', function (actions) {
                                 actions.mouseUp(this.renderedComponent);
                             })
-                            .capture('with-text', function (actions, find) {
+                            .capture('with-text', (actions, find) => {
                                 actions.sendKeys(find('.textarea_has-label .textarea__control'), TEXT.repeat(3));
                             });
                     } else {

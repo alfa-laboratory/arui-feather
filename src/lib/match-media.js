@@ -1,7 +1,7 @@
 import MqList from '../mq/mq.json';
 
-let pool = {};
-let refCounters = {};
+const pool = {};
+const refCounters = {};
 
 /**
  * Возвращает MediaQueryList для заданного media-выражения.
@@ -10,7 +10,7 @@ let refCounters = {};
  * @returns {MediaQueryList}
  */
 export function getMatchMedia(queryProp) {
-    let query = MqList[queryProp] || queryProp;
+    const query = MqList[queryProp] || queryProp;
 
     if (!pool[query]) {
         pool[query] = window.matchMedia(query);
@@ -28,7 +28,7 @@ export function getMatchMedia(queryProp) {
  * @param {String} queryProp media выражение
  */
 export function releaseMatchMedia(queryProp) {
-    let query = MqList[queryProp] || queryProp;
+    const query = MqList[queryProp] || queryProp;
 
     refCounters[query] -= 1;
 

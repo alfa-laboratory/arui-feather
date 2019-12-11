@@ -32,7 +32,7 @@ class InputGroup extends React.Component {
 
     render(cn) {
         let children = null;
-        let inputGroupParts = {};
+        const inputGroupParts = {};
 
         if (this.props.children) {
             children = this.props.children.length ? this.props.children : [this.props.children];

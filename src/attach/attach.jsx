@@ -59,10 +59,10 @@ function isEqualArray(array1, array2) {
         return true;
     }
 
-    return array1
-        && array2
-        && array1.length === array2.length
-        && array1.every((item, index) => item === array2[index]);
+    return array1 &&
+        array2 &&
+        array1.length === array2.length &&
+        array1.every((item, index) => item === array2[index]);
 }
 
 /**
@@ -185,7 +185,7 @@ class Attach extends React.Component {
     input;
 
     componentWillReceiveProps(nextProps) {
-        let nextValue = nextProps.value || [];
+        const nextValue = nextProps.value || [];
 
         if (!isEqualArray(nextValue, this.state.value)) {
             this.input.value = '';
@@ -204,7 +204,9 @@ class Attach extends React.Component {
                 }) }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.renderButton(cn) }
@@ -214,7 +216,7 @@ class Attach extends React.Component {
     }
 
     renderButton(cn) {
-        let buttonProps = {
+        const buttonProps = {
             ...this.props.buttonProps,
             className: cn('button'),
             disabled: this.props.disabled,
@@ -233,7 +235,9 @@ class Attach extends React.Component {
                         htmlFor={ this.props.id }
                     >
                         <input
-                            ref={ (input) => { this.input = input; } }
+                            ref={ (input) => {
+                                this.input = input;
+                            } }
                             className={ cn('control') }
                             accept={ this.props.accept }
                             disabled={ this.props.disabled }
@@ -258,12 +262,12 @@ class Attach extends React.Component {
     }
 
     renderStatusText(cn) {
-        let files = this.props.value !== undefined
+        const files = this.props.value !== undefined
             ? this.props.value || []
             : this.state.value;
 
         if (files && files.length > 0) {
-            let content = (files.length === 1)
+            const content = (files.length === 1)
                 ? files[0].name
                 : (
                     <abbr
@@ -373,7 +377,7 @@ class Attach extends React.Component {
     }
 
     performChange(value) {
-        let shouldFireChange = !isEqualArray(value, this.state.value);
+        const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {
             if (this.props.onChange && shouldFireChange) {

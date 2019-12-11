@@ -42,7 +42,7 @@ export function render(jsx, options = {}) {
         container = sharedContainer;
     }
 
-    let instance = ReactDOM.render(jsx, container);
+    const instance = ReactDOM.render(jsx, container);
 
     return {
         instance,

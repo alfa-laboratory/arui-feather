@@ -32,13 +32,13 @@ const PROP_SETS = [
     }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     PROP_SETS.forEach((set, index) => {
-        let selector = `${NAME}_prop-set_${index + 1}`;
+        const selector = `${NAME}_prop-set_${index + 1}`;
 
-        geminiReact.suite(selector, function (suite) {
-            let props = { ...set };
-            let template = (
+        geminiReact.suite(selector, (suite) => {
+            const props = { ...set };
+            const template = (
                 <Notification { ...props }>
                     Notification message
                 </Notification>

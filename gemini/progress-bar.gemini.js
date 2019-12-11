@@ -4,12 +4,12 @@ import ProgressBar from '../src/progress-bar';
 const NAME = 'progress-bar';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let selector = `${NAME}_theme_${theme}`;
+        const selector = `${NAME}_theme_${theme}`;
 
-        geminiReact.suite(selector, function (suite) {
-            let template = (
+        geminiReact.suite(selector, (suite) => {
+            const template = (
                 <GeminiBox theme={ theme }>
                     <ProgressBar percent={ 50 } />
                 </GeminiBox>

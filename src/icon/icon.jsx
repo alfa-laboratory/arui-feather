@@ -36,7 +36,7 @@ class Icon extends React.Component {
     };
 
     render(cn) {
-        let mods = { size: this.props.size };
+        const mods = { size: this.props.size };
 
         if (this.props.name) {
             mods.name = this.props.name;

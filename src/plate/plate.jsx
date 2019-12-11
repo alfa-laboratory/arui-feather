@@ -78,7 +78,9 @@ class Plate extends React.Component {
                     id={ this.props.id }
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
-                    ref={ (node) => { this.root = node; } }
+                    ref={ (node) => {
+                        this.root = node;
+                    } }
                     data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ cn('content') }>

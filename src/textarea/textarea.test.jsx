@@ -10,7 +10,7 @@ import Textarea from './textarea';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('textarea', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -21,14 +21,14 @@ describe('textarea', () => {
     });
 
     it('should render without problems', () => {
-        let textarea = mount(<Textarea />);
+        const textarea = mount(<Textarea />);
 
         expect(textarea).toMatchSnapshot();
     });
 
     it('should unset class on textarea blur', () => {
-        let textarea = mount(<Textarea />);
-        let control = textarea.find('textarea');
+        const textarea = mount(<Textarea />);
+        const control = textarea.find('textarea');
 
         control.simulate('focus');
         expect(textarea.getDOMNode().className).toContain('textarea_focused');
@@ -38,15 +38,16 @@ describe('textarea', () => {
     });
 
     it('should render with disabled class', () => {
-        let textarea = mount(<Textarea disabled={ true } />);
+        const textarea = mount(<Textarea disabled={ true } />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_disabled');
     });
 
     it('should focus textarea on public focus method', () => {
-        let wrapper = mount(<Textarea />);
+        const wrapper = mount(<Textarea />);
 
-        let textarea = wrapper.instance().control;
+        const textarea = wrapper.instance().control;
+
         jest.spyOn(textarea, 'focus');
 
         wrapper.instance().focus();
@@ -59,7 +60,7 @@ describe('textarea', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        let textarea = mount(<Textarea />);
+        const textarea = mount(<Textarea />);
 
         document.activeElement.blur = jest.fn();
 
@@ -69,7 +70,7 @@ describe('textarea', () => {
     });
 
     it('should set class on textarea focus', () => {
-        let textarea = mount(<Textarea />);
+        const textarea = mount(<Textarea />);
 
         textarea.find('textarea').simulate('focus');
 
@@ -77,8 +78,8 @@ describe('textarea', () => {
     });
 
     it('should call `onFocus` callback after textarea was focused', () => {
-        let onFocus = jest.fn();
-        let textarea = mount(<Textarea onFocus={ onFocus } />);
+        const onFocus = jest.fn();
+        const textarea = mount(<Textarea onFocus={ onFocus } />);
 
         textarea.find('textarea').simulate('focus');
 
@@ -86,8 +87,8 @@ describe('textarea', () => {
     });
 
     it('should call `onBlur` callback after textarea was blured', () => {
-        let onBlur = jest.fn();
-        let textarea = mount(<Textarea onBlur={ onBlur } />);
+        const onBlur = jest.fn();
+        const textarea = mount(<Textarea onBlur={ onBlur } />);
 
         textarea.find('textarea').simulate('blur');
 
@@ -96,8 +97,8 @@ describe('textarea', () => {
     });
 
     it('should change the state value when props is not defined', () => {
-        let textarea = mount(<Textarea />);
-        let control = textarea.find('textarea');
+        const textarea = mount(<Textarea />);
+        const control = textarea.find('textarea');
 
         control.simulate('change', { target: { value: 'other value' } });
 
@@ -105,14 +106,14 @@ describe('textarea', () => {
     });
 
     it('should set value from props', () => {
-        let textarea = mount(<Textarea value='text' />);
+        const textarea = mount(<Textarea value='text' />);
 
         expect(textarea.find('textarea').props().value).toEqual('text');
     });
 
     it('should call onChange callback', () => {
-        let onChange = jest.fn();
-        let textarea = mount(<Textarea onChange={ onChange } />);
+        const onChange = jest.fn();
+        const textarea = mount(<Textarea onChange={ onChange } />);
 
         textarea.find('textarea').simulate('change', { target: { value: 'other value' } });
 
@@ -120,45 +121,45 @@ describe('textarea', () => {
     });
 
     it('should render with `off` autocomplete attribute', () => {
-        let textarea = shallow(<Textarea autocomplete={ false } />);
+        const textarea = shallow(<Textarea autocomplete={ false } />);
 
         expect(textarea.find('.textarea__control').props().autoComplete).toEqual('off');
     });
 
     it('should render with `on` autocomplete attribute', () => {
-        let textarea = shallow(<Textarea autocomplete={ true } />);
+        const textarea = shallow(<Textarea autocomplete={ true } />);
 
         expect(textarea.find('.textarea__control').props().autoComplete).toEqual('on');
     });
 
     it('should render with resize `none` class', () => {
-        let textarea = mount(<Textarea resize='none' />);
+        const textarea = mount(<Textarea resize='none' />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_none');
     });
 
     it('should render with resize `both` class', () => {
-        let textarea = mount(<Textarea resize='both' />);
+        const textarea = mount(<Textarea resize='both' />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_both');
     });
 
     it('should render with resize `vertical` class', () => {
-        let textarea = mount(<Textarea resize='vertical' />);
+        const textarea = mount(<Textarea resize='vertical' />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_vertical');
     });
 
     it('should render with resize `horizontal` class', () => {
-        let textarea = mount(<Textarea resize='horizontal' />);
+        const textarea = mount(<Textarea resize='horizontal' />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_horizontal');
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        let textarea = mount(<Textarea />);
-        let elemTopPosition = textarea.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const textarea = mount(<Textarea />);
+        const elemTopPosition = textarea.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         textarea.instance().scrollTo();
 
@@ -166,14 +167,14 @@ describe('textarea', () => {
     });
 
     it('should render with autosize class', () => {
-        let textarea = mount(<Textarea autosize={ true } />);
+        const textarea = mount(<Textarea autosize={ true } />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_autosize');
     });
 
     it('should call onKeyPress callback', () => {
-        let onKeyPress = jest.fn();
-        let textarea = mount(<Textarea onKeyPress={ onKeyPress } />);
+        const onKeyPress = jest.fn();
+        const textarea = mount(<Textarea onKeyPress={ onKeyPress } />);
 
         textarea.find('textarea').simulate('keyPress', { key: 'Enter' });
 
@@ -181,8 +182,8 @@ describe('textarea', () => {
     });
 
     it('should call onKeyDown callback', () => {
-        let onKeyDown = jest.fn();
-        let textarea = mount(<Textarea onKeyDown={ onKeyDown } />);
+        const onKeyDown = jest.fn();
+        const textarea = mount(<Textarea onKeyDown={ onKeyDown } />);
 
         textarea.find('textarea').simulate('keyDown', { key: 'Down' });
 

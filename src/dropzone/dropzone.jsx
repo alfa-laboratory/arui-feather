@@ -110,7 +110,9 @@ class Dropzone extends React.Component {
         event.stopPropagation();
 
         this.dragCounter -= 1;
-        if (this.dragCounter > 0) return;
+        if (this.dragCounter > 0) {
+            return;
+        }
         this.setState({ dragging: false });
 
         if (this.props.onDragLeave) {
@@ -141,7 +143,9 @@ class Dropzone extends React.Component {
     render(cn) {
         return (
             <div
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 id={ this.props.id }
                 name={ this.props.name }
                 data-test-id={ this.props['data-test-id'] }

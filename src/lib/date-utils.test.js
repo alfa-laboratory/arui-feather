@@ -7,20 +7,21 @@ import { normalizeDate, getRussianWeekDay, parse } from './date-utils';
 describe('date utils', () => {
     describe('normalizeDate', () => {
         it('should return Date object when other date is passed', () => {
-            let date = new Date();
-            let result = normalizeDate(date);
+            const date = new Date();
+            const result = normalizeDate(date);
+
             expect(result).toBeInstanceOf(Date);
             expect(result.valueOf()).toEqual(date.valueOf());
         });
 
         it('should return Date object when timestamp is passed', () => {
-            let timestamp = 1452470400000;
-            let result = normalizeDate(timestamp);
+            const timestamp = 1452470400000;
+            const result = normalizeDate(timestamp);
+
             expect(result).toBeInstanceOf(Date);
             expect(result.valueOf()).toEqual(timestamp);
         });
     });
-
 
     describe('getRussianWeekDay', () => {
         it('should return correct russian weekday indexes for entire week', () => {

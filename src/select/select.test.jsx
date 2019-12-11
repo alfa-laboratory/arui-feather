@@ -32,15 +32,16 @@ const OPTIONS = [
     }
 ];
 let wrapper;
+
 function renderSelect(props) {
-    let select = mount(<Select { ...props } />);
+    const select = mount(<Select { ...props } />);
 
     wrapper = select;
 
-    let nativeSelectNode = select.find('.select__native-control');
-    let buttonNode = select.find('.select-button');
-    let { popupNode, menuNode } = getPopupNode(select);
-    let hiddenInput = select.find('input');
+    const nativeSelectNode = select.find('.select__native-control');
+    const buttonNode = select.find('.select-button');
+    const { popupNode, menuNode } = getPopupNode(select);
+    const hiddenInput = select.find('input');
 
     return {
         select, nativeSelectNode, popupNode, buttonNode, menuNode, hiddenInput
@@ -48,14 +49,14 @@ function renderSelect(props) {
 }
 
 function getPopupNode(select) {
-    let popupNode = select.find('.popup');
-    let menuNode = popupNode.length > 0 ? popupNode.find('div.select__menu') : null;
+    const popupNode = select.find('.popup');
+    const menuNode = popupNode.length > 0 ? popupNode.find('div.select__menu') : null;
 
     return { popupNode, menuNode };
 }
 
 describe('select', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
         window.scrollTo = jest.fn();
@@ -68,91 +69,91 @@ describe('select', () => {
     });
 
     it('should render without problem', () => {
-        let { select } = renderSelect({ options: OPTIONS });
+        const { select } = renderSelect({ options: OPTIONS });
 
         expect(select).toMatchSnapshot();
     });
 
     it('should render hidden input', () => {
-        let { select } = renderSelect({ options: OPTIONS });
-        let hiddenInputNode = select.find('input');
+        const { select } = renderSelect({ options: OPTIONS });
+        const hiddenInputNode = select.find('input');
 
         expect(hiddenInputNode.length).toBe(1);
     });
 
     it('should render hidden input with proper id attr', () => {
-        let { select } = renderSelect({ options: OPTIONS, id: 'id' });
-        let hiddenInputNode = select.find('input');
+        const { select } = renderSelect({ options: OPTIONS, id: 'id' });
+        const hiddenInputNode = select.find('input');
 
         expect(hiddenInputNode.props().id).toBe('id');
     });
 
     it('should render hidden input with proper name attr', () => {
-        let { select } = renderSelect({ options: OPTIONS, name: 'name' });
-        let hiddenInputNode = select.find('input');
+        const { select } = renderSelect({ options: OPTIONS, name: 'name' });
+        const hiddenInputNode = select.find('input');
 
         expect(hiddenInputNode.props().name).toBe('name');
     });
 
     it('should render hidden input with proper value attr', () => {
-        let { select } = renderSelect({ options: OPTIONS, value: ['value'] });
-        let hiddenInputNode = select.find('input');
+        const { select } = renderSelect({ options: OPTIONS, value: ['value'] });
+        const hiddenInputNode = select.find('input');
 
         expect(hiddenInputNode.props().value).toEqual(['value']);
     });
 
     it('should render with `label` from props', () => {
-        let { select } = renderSelect({ options: OPTIONS, label: 'Label' });
-        let topNode = select.find('.select__top');
+        const { select } = renderSelect({ options: OPTIONS, label: 'Label' });
+        const topNode = select.find('.select__top');
 
         expect(topNode.text()).toBe('Label');
     });
 
     it('should render with `placeholder` from props', () => {
-        let { buttonNode } = renderSelect({ options: OPTIONS, placeholder: 'Placeholder' });
+        const { buttonNode } = renderSelect({ options: OPTIONS, placeholder: 'Placeholder' });
 
         expect(buttonNode.text()).toBe('Placeholder');
     });
 
     it('should render with `hint` from props', () => {
-        let { select } = renderSelect({ options: OPTIONS, hint: 'Hint' });
-        let subNode = select.find('.select__sub');
+        const { select } = renderSelect({ options: OPTIONS, hint: 'Hint' });
+        const subNode = select.find('.select__sub');
 
         expect(subNode.text()).toBe('Hint');
     });
 
     it('should render with `error` from props', () => {
-        let { select } = renderSelect({ options: OPTIONS, error: 'Error' });
-        let subNode = select.find('.select__sub');
+        const { select } = renderSelect({ options: OPTIONS, error: 'Error' });
+        const subNode = select.find('.select__sub');
 
         expect(subNode.text()).toBe('Error');
     });
 
     it('should show multiple options', () => {
-        let checkedOptions = [OPTIONS[1], OPTIONS[2]];
-        let selectProps = {
+        const checkedOptions = [OPTIONS[1], OPTIONS[2]];
+        const selectProps = {
             options: OPTIONS,
             value: [checkedOptions[0].value, checkedOptions[1].value]
         };
-        let expectedOptions = checkedOptions.map(option => option.checkedText || option.text).join(', ');
-        let { buttonNode } = renderSelect(selectProps);
+        const expectedOptions = checkedOptions.map(option => option.checkedText || option.text).join(', ');
+        const { buttonNode } = renderSelect(selectProps);
 
         expect(buttonNode.text()).toBe(expectedOptions);
     });
 
     it('should show checkedText of checked options in button if it is undefined', () => {
-        let checkedOption = OPTIONS[0];
-        let selectProps = {
+        const checkedOption = OPTIONS[0];
+        const selectProps = {
             options: OPTIONS,
             value: [checkedOption.value]
         };
-        let { buttonNode } = renderSelect(selectProps);
+        const { buttonNode } = renderSelect(selectProps);
 
         expect(buttonNode.text()).toBe(checkedOption.checkedText);
     });
 
     it('should set class on public focus method', () => {
-        let { select } = renderSelect({ options: OPTIONS });
+        const { select } = renderSelect({ options: OPTIONS });
 
         select.instance().focus();
         select.update();
@@ -161,7 +162,7 @@ describe('select', () => {
     });
 
     it('should unset class on public blur method', () => {
-        let { select, menuNode } = renderSelect({ options: OPTIONS });
+        const { select, menuNode } = renderSelect({ options: OPTIONS });
 
         select.instance().focus();
         select.update();
@@ -173,9 +174,9 @@ describe('select', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        let { select } = renderSelect({ options: OPTIONS });
-        let elemTopPosition = select.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const { select } = renderSelect({ options: OPTIONS });
+        const elemTopPosition = select.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         select.instance().scrollTo();
 
@@ -183,9 +184,9 @@ describe('select', () => {
     });
 
     it('should call `onClick` callback after button was clicked', () => {
-        let onClick = jest.fn();
-        let selectProps = { options: OPTIONS, onClick };
-        let { buttonNode } = renderSelect(selectProps);
+        const onClick = jest.fn();
+        const selectProps = { options: OPTIONS, onClick };
+        const { buttonNode } = renderSelect(selectProps);
 
         buttonNode.simulate('click');
 
@@ -193,8 +194,9 @@ describe('select', () => {
     });
 
     it('should receive event.target.value on `onFocus` callback', () => {
-        let onFocus = jest.fn();
-        let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onFocus });
+        const onFocus = jest.fn();
+        const { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onFocus });
+
         menuNode.simulate('focus');
 
         expect(onFocus).toHaveBeenCalled();
@@ -204,8 +206,8 @@ describe('select', () => {
     });
 
     it('should receive event.target.value on `onBlur` callback', (done) => {
-        let onBlur = jest.fn();
-        let { select } = renderSelect({ value: [1, 2], options: OPTIONS, onBlur });
+        const onBlur = jest.fn();
+        const { select } = renderSelect({ value: [1, 2], options: OPTIONS, onBlur });
 
         select.find('.menu').simulate('blur');
 
@@ -217,51 +219,51 @@ describe('select', () => {
     });
 
     it('should set `checked` class when item is selected', () => {
-        let checkedOption = OPTIONS[0];
-        let selectProps = {
+        const checkedOption = OPTIONS[0];
+        const selectProps = {
             options: OPTIONS,
             value: [checkedOption.value]
         };
-        let { select } = renderSelect(selectProps);
+        const { select } = renderSelect(selectProps);
 
         expect(select.children().props().className).toContain('select_checked');
     });
 
     it('should set `checked` class when item is selected and select type is `radio`', () => {
-        let checkedOption = OPTIONS[0];
-        let selectProps = {
+        const checkedOption = OPTIONS[0];
+        const selectProps = {
             mode: 'radio',
             options: OPTIONS,
             value: [checkedOption.value]
         };
-        let { select } = renderSelect(selectProps);
+        const { select } = renderSelect(selectProps);
 
         expect(select.children().props().className).toContain('select_checked');
     });
 
     it('should render popup with options', () => {
-        let { select, popupNode } = renderSelect({ options: OPTIONS });
+        const { select, popupNode } = renderSelect({ options: OPTIONS });
 
         expect(select.getDOMNode()).toBeDefined();
         expect(popupNode.props().className).toContain('popup');
     });
 
     it('should set width to popup equal or more than button width', () => {
-        let selectProps = {
+        const selectProps = {
             options: OPTIONS,
             placeholder: 'Long text placeholder',
             opened: true
         };
 
-        let { popupNode, buttonNode } = renderSelect(selectProps);
-        let popupWidth = popupNode.getDOMNode().getBoundingClientRect().width;
-        let buttonWidth = buttonNode.getDOMNode().getBoundingClientRect().width;
+        const { popupNode, buttonNode } = renderSelect(selectProps);
+        const popupWidth = popupNode.getDOMNode().getBoundingClientRect().width;
+        const buttonWidth = buttonNode.getDOMNode().getBoundingClientRect().width;
 
         expect(popupWidth).toBeGreaterThanOrEqual(buttonWidth);
     });
 
     it('should set popup width equal to button width when equalPopupWidth = true', () => {
-        let selectProps = {
+        const selectProps = {
             options: [
                 {
                     value: 1,
@@ -280,16 +282,16 @@ describe('select', () => {
             opened: true
         };
 
-        let { popupNode, buttonNode } = renderSelect(selectProps);
-        let popupWidth = popupNode.getDOMNode().getBoundingClientRect().width;
-        let buttonWidth = buttonNode.getDOMNode().getBoundingClientRect().width;
+        const { popupNode, buttonNode } = renderSelect(selectProps);
+        const popupWidth = popupNode.getDOMNode().getBoundingClientRect().width;
+        const buttonWidth = buttonNode.getDOMNode().getBoundingClientRect().width;
 
         expect(popupWidth).toBe(buttonWidth);
     });
 
     it('should call `onFocus` after button was clicked', (done) => {
-        let onFocus = jest.fn();
-        let { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
+        const onFocus = jest.fn();
+        const { buttonNode } = renderSelect({ options: OPTIONS, onFocus });
 
         buttonNode.simulate('click');
 
@@ -300,8 +302,8 @@ describe('select', () => {
     });
 
     it('should call `onBlur` after escape key was pressed', (done) => {
-        let onBlur = jest.fn();
-        let { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
+        const onBlur = jest.fn();
+        const { buttonNode, menuNode } = renderSelect({ options: OPTIONS, onBlur });
 
         buttonNode.simulate('click');
 
@@ -316,8 +318,8 @@ describe('select', () => {
     });
 
     it('should call `onButtonFocus` after component was focused', () => {
-        let onButtonFocus = jest.fn();
-        let { buttonNode } = renderSelect({ options: OPTIONS, onButtonFocus });
+        const onButtonFocus = jest.fn();
+        const { buttonNode } = renderSelect({ options: OPTIONS, onButtonFocus });
 
         buttonNode.simulate('focus');
 
@@ -325,8 +327,8 @@ describe('select', () => {
     });
 
     it('should call `onButtonBlur` after component was blured', () => {
-        let onButtonBlur = jest.fn();
-        let { buttonNode } = renderSelect({ options: OPTIONS, onButtonBlur });
+        const onButtonBlur = jest.fn();
+        const { buttonNode } = renderSelect({ options: OPTIONS, onButtonBlur });
 
         buttonNode.simulate('blur');
 
@@ -334,8 +336,8 @@ describe('select', () => {
     });
 
     it('should call `onMenuFocus` after component was focused', () => {
-        let onMenuFocus = jest.fn();
-        let { menuNode } = renderSelect({ options: OPTIONS, onMenuFocus });
+        const onMenuFocus = jest.fn();
+        const { menuNode } = renderSelect({ options: OPTIONS, onMenuFocus });
 
         menuNode.simulate('focus');
 
@@ -343,8 +345,8 @@ describe('select', () => {
     });
 
     it('should call `onMenuBlur` after component was blured', (done) => {
-        let onMenuBlur = jest.fn();
-        let { menuNode } = renderSelect({ options: OPTIONS, onMenuBlur });
+        const onMenuBlur = jest.fn();
+        const { menuNode } = renderSelect({ options: OPTIONS, onMenuBlur });
 
         menuNode.simulate('blur');
 
@@ -355,8 +357,8 @@ describe('select', () => {
     });
 
     it('should receive event.target.value on `onButtonFocus` callback', (done) => {
-        let onButtonFocus = jest.fn();
-        let { buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonFocus });
+        const onButtonFocus = jest.fn();
+        const { buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonFocus });
 
         buttonNode.simulate('focus');
 
@@ -369,8 +371,8 @@ describe('select', () => {
     });
 
     it('should receive event.target.value on `onButtonBlur` callback', (done) => {
-        let onButtonBlur = jest.fn();
-        let { buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonBlur });
+        const onButtonBlur = jest.fn();
+        const { buttonNode } = renderSelect({ value: [1, 2], options: OPTIONS, onButtonBlur });
 
         buttonNode.simulate('blur');
 
@@ -383,8 +385,8 @@ describe('select', () => {
     });
 
     it('should receive event.target.value on `onMenuFocus` callback', (done) => {
-        let onMenuFocus = jest.fn();
-        let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuFocus });
+        const onMenuFocus = jest.fn();
+        const { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuFocus });
 
         menuNode.simulate('focus');
 
@@ -397,8 +399,8 @@ describe('select', () => {
     });
 
     it('should receive event.target.value on `onMenuBlur` callback', (done) => {
-        let onMenuBlur = jest.fn();
-        let { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
+        const onMenuBlur = jest.fn();
+        const { menuNode } = renderSelect({ value: [1, 2], options: OPTIONS, onMenuBlur });
 
         menuNode.simulate('blur');
 
@@ -411,13 +413,13 @@ describe('select', () => {
     });
 
     it('should call `onChange` callback in custom select after option was clicked', () => {
-        let onChange = jest.fn();
-        let selectProps = {
+        const onChange = jest.fn();
+        const selectProps = {
             options: OPTIONS,
             onChange
         };
-        let { popupNode } = renderSelect(selectProps);
-        let firstOptionNode = popupNode.find('.menu-item').at(0);
+        const { popupNode } = renderSelect(selectProps);
+        const firstOptionNode = popupNode.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
 
@@ -426,12 +428,12 @@ describe('select', () => {
 
     // add after decorator update
     it('should call `onClickOutside` callback after click outside of open popup', () => {
-        let onClickOutside = jest.fn();
-        let selectProps = {
+        const onClickOutside = jest.fn();
+        const selectProps = {
             options: OPTIONS,
             onClickOutside
         };
-        let { select } = renderSelect(selectProps);
+        const { select } = renderSelect(selectProps);
 
         // just trigger popup event handler, we don't actually want to test this behavior here
         select.instance().popup.handleWindowClick({});
@@ -440,13 +442,13 @@ describe('select', () => {
     });
 
     it('should have `has-value` modificator when given value', () => {
-        let { select } = renderSelect({ value: [OPTIONS[0].value], options: OPTIONS });
+        const { select } = renderSelect({ value: [OPTIONS[0].value], options: OPTIONS });
 
         expect(select.find('div.select').hasClass('select_has-value')).toBeTruthy();
     });
 
     it('should not have `has-value` modificator when given no value', () => {
-        let { select } = renderSelect({ options: OPTIONS });
+        const { select } = renderSelect({ options: OPTIONS });
 
         expect(select.find('div.select').hasClass('select_has-value')).toBeFalsy();
     });
@@ -583,36 +585,36 @@ describe('select', () => {
         });
 
         it('should render default placeholder text', () => {
-            let selectProps = { options: OPTIONS };
-            let { nativeSelectNode } = renderSelect(selectProps);
-            let optGroup = nativeSelectNode.find('optgroup');
+            const selectProps = { options: OPTIONS };
+            const { nativeSelectNode } = renderSelect(selectProps);
+            const optGroup = nativeSelectNode.find('optgroup');
 
             expect(optGroup.props().label).toBe('Выберите:');
         });
 
         it('should render placeholder text from props', () => {
-            let selectProps = { options: OPTIONS, nativeOptionPlaceholder: 'Select something' };
-            let { nativeSelectNode } = renderSelect(selectProps);
-            let optGroup = nativeSelectNode.find('optgroup');
+            const selectProps = { options: OPTIONS, nativeOptionPlaceholder: 'Select something' };
+            const { nativeSelectNode } = renderSelect(selectProps);
+            const optGroup = nativeSelectNode.find('optgroup');
 
             expect(optGroup.props().label).toBe('Select something');
         });
 
         it('should render popup when mobileMenuMode = popup', () => {
-            let selectProps = {
+            const selectProps = {
                 options: OPTIONS,
                 mobileMenuMode: 'popup',
                 opened: true
             };
-            let { nativeSelectNode, popupNode } = renderSelect(selectProps);
+            const { nativeSelectNode, popupNode } = renderSelect(selectProps);
 
             expect(nativeSelectNode.length).toBe(0);
             expect(popupNode.props().className).toContain('popup');
         });
 
         it('should call `onFocus` after native select was focused', () => {
-            let onFocus = jest.fn();
-            let { nativeSelectNode } = renderSelect({ options: OPTIONS, onFocus });
+            const onFocus = jest.fn();
+            const { nativeSelectNode } = renderSelect({ options: OPTIONS, onFocus });
 
             nativeSelectNode.simulate('focus');
 
@@ -620,8 +622,8 @@ describe('select', () => {
         });
 
         it('should call `onBlur` after native select was blurred', () => {
-            let onBlur = jest.fn();
-            let { nativeSelectNode } = renderSelect({ options: OPTIONS, onBlur });
+            const onBlur = jest.fn();
+            const { nativeSelectNode } = renderSelect({ options: OPTIONS, onBlur });
 
             nativeSelectNode.simulate('blur');
 

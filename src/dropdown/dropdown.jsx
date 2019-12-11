@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -226,8 +225,7 @@ class Dropdown extends React.Component {
         );
     }
 
-    @autobind
-    handleSwitcherClick() {
+    handleSwitcherClick = () => {
         const newOpenedStatusValue = this.props.opened === undefined ? !this.state.opened : !this.props.opened;
 
         this.setState({
@@ -237,46 +235,41 @@ class Dropdown extends React.Component {
         if (this.props.onSwitcherClick) {
             this.props.onSwitcherClick(newOpenedStatusValue);
         }
-    }
+    };
 
-    @autobind
-    handleSwitcherMouseEnter(event) {
+    handleSwitcherMouseEnter = (event) => {
         this.setState({ switcherHovered: true });
 
         if (this.props.onSwitcherMouseEnter) {
             this.props.onSwitcherMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleSwitcherMouseLeave(event) {
+    handleSwitcherMouseLeave = (event) => {
         this.setState({ switcherHovered: false });
 
         if (this.props.onSwitcherMouseLeave) {
             this.props.onSwitcherMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handlePopupMouseEnter(event) {
+    handlePopupMouseEnter = (event) => {
         this.setState({ popupHovered: true });
 
         if (this.props.onPopupMouseEnter) {
             this.props.onPopupMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handlePopupMouseLeave(event) {
+    handlePopupMouseLeave = (event) => {
         this.setState({ popupHovered: false });
 
         if (this.props.onPopupMouseLeave) {
             this.props.onPopupMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handlePopupClickOutside(event) {
+    handlePopupClickOutside = (event) => {
         this.setState({ opened: false });
 
         if (this.props.onPopupClickOutside) {

@@ -4,7 +4,6 @@
 
 /* eslint react/prop-types: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -243,8 +242,7 @@ class InputAutocomplete extends React.Component {
         ];
     }
 
-    @autobind
-    handleItemCheck(checkedItemsValues) {
+    handleItemCheck = (checkedItemsValues) => {
         const checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
         const checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
@@ -280,19 +278,17 @@ class InputAutocomplete extends React.Component {
                 this.input.setSelectionRange(newValue.length);
             }, 0);
         }
-    }
+    };
 
-    @autobind
-    handleChange(value) {
+    handleChange = (value) => {
         this.setState({ value });
 
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handleInputFocus(event) {
+    handleInputFocus = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
@@ -303,10 +299,9 @@ class InputAutocomplete extends React.Component {
         this.setState({
             highlightedItem: null
         });
-    }
+    };
 
-    @autobind
-    handleInputBlur(event) {
+    handleInputBlur = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
         }
@@ -317,20 +312,18 @@ class InputAutocomplete extends React.Component {
             this.solveFocused(event);
             this.blurTimeout = null;
         }, 0);
-    }
+    };
 
-    @autobind
-    handleMenuFocus(event) {
+    handleMenuFocus = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
         }
 
         this.solveFocused(event);
-    }
+    };
 
-    @autobind
-    handleMenuBlur(event) {
+    handleMenuBlur = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
         }
@@ -341,17 +334,15 @@ class InputAutocomplete extends React.Component {
             this.solveFocused(event);
             this.blurTimeout = null;
         }, 0);
-    }
+    };
 
-    @autobind
-    handleClickOutside() {
+    handleClickOutside = () => {
         if (this.props.onClickOutside) {
             this.props.onClickOutside();
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
@@ -377,17 +368,15 @@ class InputAutocomplete extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleHighlightedItem(highlightedItem) {
+    handleHighlightedItem = (highlightedItem) => {
         this.setState({
             highlightedItem
         });
-    }
+    };
 
-    @autobind
-    handleMenuKeyDown(event, highlightedItem) {
+    handleMenuKeyDown = (event, highlightedItem) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW:
             case keyboardCode.UP_ARROW:
@@ -403,7 +392,7 @@ class InputAutocomplete extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.
@@ -511,8 +500,7 @@ class InputAutocomplete extends React.Component {
         return result;
     }
 
-    @autobind
-    updatePopupStyles() {
+    updatePopupStyles = () => {
         const input = this.input.getNode();
         const inputWidth = input.getBoundingClientRect().width;
         const popupStyles = { minWidth: inputWidth };
@@ -524,7 +512,7 @@ class InputAutocomplete extends React.Component {
         this.setState({
             popupStyles
         });
-    }
+    };
 
     updatePopupTarget() {
         if (this.popup) {

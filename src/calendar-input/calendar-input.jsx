@@ -4,7 +4,6 @@
 
 /* eslint-disable max-len */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import formatDate from 'date-fns/format';
 import Type from 'prop-types';
@@ -399,8 +398,7 @@ class CalendarInput extends React.Component {
         );
     }
 
-    @autobind
-    handleCalendarChange(value, formatted, isTriggeredByKeyboard) {
+    handleCalendarChange = (value, formatted, isTriggeredByKeyboard) => {
         if (!isTriggeredByKeyboard) {
             this.changeCloseTimeoutId = setTimeout(() => {
                 this.calendar.blur(); // FF не испускает событие `blur` когда элементы становятся невидимыми, делаем это явно
@@ -420,27 +418,23 @@ class CalendarInput extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(formatted, value);
         }
-    }
+    };
 
-    @autobind
-    handleCalendarMonthChange(month) {
+    handleCalendarMonthChange = (month) => {
         this.setState({
             month
         });
-    }
+    };
 
-    @autobind
-    handleCalendarFocus(event) {
+    handleCalendarFocus = (event) => {
         this.changeFocused({ isCalendarFocused: true }, event);
-    }
+    };
 
-    @autobind
-    handleCalendarBlur(event) {
+    handleCalendarBlur = (event) => {
         this.changeFocused({ isCalendarFocused: false }, event);
-    }
+    };
 
-    @autobind
-    handleCalendarKeyDown(event) {
+    handleCalendarKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.ESCAPE:
                 event.preventDefault();
@@ -462,15 +456,13 @@ class CalendarInput extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleIconButtonClick() {
+    handleIconButtonClick = () => {
         this.customCalendarTarget.focus();
-    }
+    };
 
-    @autobind
-    handleCustomInputChange(value) {
+    handleCustomInputChange = (value) => {
         const month = calculateMonth(
             value,
             CUSTOM_DATE_FORMAT,
@@ -492,10 +484,9 @@ class CalendarInput extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value, parseDate(value, CUSTOM_DATE_FORMAT));
         }
-    }
+    };
 
-    @autobind
-    handleNativeInputChange(event) {
+    handleNativeInputChange = (event) => {
         let value = changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT);
 
         // Детектим нажатие `сlear` в нативном календаре
@@ -512,19 +503,17 @@ class CalendarInput extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value, parseDate(value, CUSTOM_DATE_FORMAT));
         }
-    }
+    };
 
-    @autobind
-    handleCustomInputFocus(event) {
+    handleCustomInputFocus = (event) => {
         this.changeFocused({ isInputFocused: true }, event);
 
         if (this.props.onInputFocus) {
             this.props.onInputFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleNativeInputFocus(event) {
+    handleNativeInputFocus = (event) => {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
         const resultEvent = {
             ...event,
@@ -537,19 +526,17 @@ class CalendarInput extends React.Component {
         if (this.props.onInputFocus) {
             this.props.onInputFocus(resultEvent);
         }
-    }
+    };
 
-    @autobind
-    handleCustomInputBlur(event) {
+    handleCustomInputBlur = (event) => {
         this.changeFocused({ isInputFocused: false }, event);
 
         if (this.props.onInputBlur) {
             this.props.onInputBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleNativeInputBlur(event) {
+    handleNativeInputBlur = (event) => {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
         const resultEvent = {
             ...event,
@@ -562,10 +549,9 @@ class CalendarInput extends React.Component {
         if (this.props.onInputBlur) {
             this.props.onInputBlur(resultEvent);
         }
-    }
+    };
 
-    @autobind
-    handleInputKeyDown(event) {
+    handleInputKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
@@ -604,24 +590,21 @@ class CalendarInput extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleMqMatchChange(isMatched) {
+    handleMqMatchChange = (isMatched) => {
         this.setState({
             isMobile: isMatched
         });
-    }
+    };
 
-    @autobind
-    handleMobileWrapperClick() {
+    handleMobileWrapperClick = () => {
         this.setOpened(true);
-    }
+    };
 
-    @autobind
-    handlePopupCloserClick() {
+    handlePopupCloserClick = () => {
         this.setOpened(false);
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода, открывает календарь.

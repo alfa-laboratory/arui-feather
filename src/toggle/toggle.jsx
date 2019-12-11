@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 import cn from '../cn';
@@ -110,13 +109,11 @@ class Toggle extends React.Component {
         );
     }
 
-    @autobind
     static handleClick(event) {
         event.stopPropagation();
     }
 
-    @autobind
-    handleChange() {
+    handleChange = () => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -126,21 +123,19 @@ class Toggle extends React.Component {
                 this.props.onChange(nextCheckedValue, this.props.value);
             }
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
     handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {

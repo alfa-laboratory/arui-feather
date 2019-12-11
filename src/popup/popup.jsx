@@ -4,7 +4,6 @@
 
 /* eslint-disable max-len */
 
-import autobind from 'core-decorators/lib/autobind';
 import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
@@ -332,8 +331,7 @@ class Popup extends React.Component {
         return ReactDOM.createPortal(template, this.getRenderContainer());
     }
 
-    @autobind
-    handleInnerScroll(event) {
+    handleInnerScroll = (event) => {
         const { scrollTop, offsetHeight, scrollHeight } = event.target;
         const isTopReached = Math.round(scrollTop) === 0;
         const isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
@@ -359,37 +357,33 @@ class Popup extends React.Component {
                 bottomGradientStyles
             });
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleWindowClick(event) {
+    handleWindowClick = (event) => {
         if (this.props.onClickOutside && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
             this.props.onClickOutside(event);
         }
-    }
+    };
 
-    @autobind
-    handleResize() {
+    handleResize = () => {
         if (!this.props.visible) {
             return;
         }
 
         this.redraw();
-    }
+    };
 
     /**
      * Задает элемент, к которому будет привязан popup.
@@ -484,8 +478,7 @@ class Popup extends React.Component {
         );
     }
 
-    @autobind
-    redraw() {
+    redraw = () => {
         /*
          * Если функция redraw() была вызвана до componentDidMount,
          * то нужно отложить её вызов до момента,
@@ -549,7 +542,7 @@ class Popup extends React.Component {
         });
 
         this.setGradientStyles();
-    }
+    };
 
     ensureClickEvent(isDestroy) {
         const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;

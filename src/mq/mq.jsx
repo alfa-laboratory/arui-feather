@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
@@ -62,8 +61,7 @@ class Mq extends React.Component {
     /**
      * @param {Object} [mql] MediaQueryList или MediaQueryListEvent
      */
-    @autobind
-    handleMatch(mql) {
+    handleMatch = (mql) => {
         let queryPass = true;
         let touchPass = true;
 

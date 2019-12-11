@@ -22,7 +22,6 @@
     &__top {
         display: inline-block;
         line-height: var(--line-height-normal);
-        white-space: nowrap;
         word-break: normal;
     }
 

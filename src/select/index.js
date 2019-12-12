@@ -16,4 +16,4 @@ import './select.css';
 import './select_theme_alfa-on-color.css';
 import './select_theme_alfa-on-white.css';
 
-export default from './select';
+export { default } from './select';

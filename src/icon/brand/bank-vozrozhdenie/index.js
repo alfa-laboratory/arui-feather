@@ -5,4 +5,4 @@
 import './bank-vozrozhdenie.css';
 import '../../../icon';
 
-export default from './bank-vozrozhdenie';
+export { default } from './bank-vozrozhdenie';

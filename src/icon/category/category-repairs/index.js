@@ -5,4 +5,4 @@
 import './category-repairs.css';
 import '../../../icon';
 
-export default from './category-repairs';
+export { default } from './category-repairs';

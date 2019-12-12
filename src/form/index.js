@@ -4,4 +4,4 @@
 
 import './form.css';
 
-export default from './form';
+export { default } from './form';

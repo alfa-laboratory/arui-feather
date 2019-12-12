@@ -5,4 +5,4 @@
 import './payment-outbox.css';
 import '../../../icon';
 
-export default from './payment-outbox';
+export { default } from './payment-outbox';

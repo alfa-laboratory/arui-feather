@@ -5,4 +5,4 @@
 import './unlock.css';
 import '../../../icon';
 
-export default from './unlock';
+export { default } from './unlock';

@@ -5,4 +5,4 @@
 import './ok.css';
 import '../../../icon';
 
-export default from './ok';
+export { default } from './ok';

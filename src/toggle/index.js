@@ -4,4 +4,4 @@
 
 import './toggle.css';
 
-export default from './toggle';
+export { default } from './toggle';

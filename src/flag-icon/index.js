@@ -12,4 +12,4 @@ import './flag-icon_size_m.sprite.css';
 import './flag-icon_size_l.sprite.css';
 import './flag-icon_size_xl.sprite.css';
 
-export default from './flag-icon';
+export { default } from './flag-icon';

@@ -4,4 +4,4 @@
 
 import './spin.css';
 
-export default from './spin';
+export { default } from './spin';

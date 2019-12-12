@@ -4,4 +4,4 @@
 
 import './grid-row.css';
 
-export default from './grid-row';
+export { default } from './grid-row';

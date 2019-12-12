@@ -5,4 +5,4 @@
 import './down.css';
 import '../../../icon';
 
-export default from './down';
+export { default } from './down';

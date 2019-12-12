@@ -5,4 +5,4 @@
 import './bank-binbank.css';
 import '../../../icon';
 
-export default from './bank-binbank';
+export { default } from './bank-binbank';

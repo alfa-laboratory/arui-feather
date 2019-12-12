@@ -5,4 +5,4 @@
 import './metro-map.css';
 import '../../../icon';
 
-export default from './metro-map';
+export { default } from './metro-map';

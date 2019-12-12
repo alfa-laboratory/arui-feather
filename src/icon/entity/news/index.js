@@ -5,4 +5,4 @@
 import './news.css';
 import '../../../icon';
 
-export default from './news';
+export { default } from './news';

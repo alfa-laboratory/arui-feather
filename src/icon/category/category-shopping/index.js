@@ -5,4 +5,4 @@
 import './category-shopping.css';
 import '../../../icon';
 
-export default from './category-shopping';
+export { default } from './category-shopping';

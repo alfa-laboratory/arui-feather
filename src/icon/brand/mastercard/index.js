@@ -5,4 +5,4 @@
 import './mastercard.css';
 import '../../../icon';
 
-export default from './mastercard';
+export { default } from './mastercard';

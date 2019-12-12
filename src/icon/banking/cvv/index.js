@@ -5,4 +5,4 @@
 import './cvv.css';
 import '../../../icon';
 
-export default from './cvv';
+export { default } from './cvv';

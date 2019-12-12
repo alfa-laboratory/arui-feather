@@ -18,7 +18,7 @@ const breakpointsType = {
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
 @cn('grid-row')
-export default class GridRow extends React.PureComponent {
+class GridRow extends React.PureComponent {
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -142,3 +142,5 @@ export default class GridRow extends React.PureComponent {
         );
     }
 }
+
+export default GridRow;

@@ -67,7 +67,9 @@
     }
   },
   "commitlint": {
-    "extends": ["./node_modules/arui-presets-lint/commitlint"]
+    "extends": [
+      "./node_modules/arui-presets-lint/commitlint"
+    ]
   },
   "maintainers": [
     {

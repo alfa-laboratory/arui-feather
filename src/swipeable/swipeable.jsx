@@ -12,7 +12,7 @@ export const getCoordinates = ({
 );
 
 @performance()
-export default class Swipeable extends React.Component {
+class Swipeable extends React.Component {
     static propTypes = {
         /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
         delta: Type.number,
@@ -116,3 +116,5 @@ export default class Swipeable extends React.Component {
         this.deltaY = 0;
     };
 }
+
+export default Swipeable;

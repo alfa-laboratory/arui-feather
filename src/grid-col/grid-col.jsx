@@ -27,7 +27,7 @@ const breakpointsType = {
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
 @cn('grid-col')
-export default class GridCol extends React.PureComponent {
+class GridCol extends React.PureComponent {
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -140,3 +140,5 @@ export default class GridCol extends React.PureComponent {
         return classNames;
     }
 }
+
+export default GridCol;

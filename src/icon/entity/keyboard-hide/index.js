@@ -5,4 +5,4 @@
 import './keyboard-hide.css';
 import '../../../icon';
 
-export default from './keyboard-hide';
+export { default } from './keyboard-hide';

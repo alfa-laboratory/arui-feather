@@ -5,4 +5,4 @@
 import './bank-skb.css';
 import '../../../icon';
 
-export default from './bank-skb';
+export { default } from './bank-skb';

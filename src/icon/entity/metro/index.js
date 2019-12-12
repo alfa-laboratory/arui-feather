@@ -5,4 +5,4 @@
 import './metro.css';
 import '../../../icon';
 
-export default from './metro';
+export { default } from './metro';

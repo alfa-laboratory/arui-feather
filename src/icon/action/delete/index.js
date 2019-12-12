@@ -5,4 +5,4 @@
 import './delete.css';
 import '../../../icon';
 
-export default from './delete';
+export { default } from './delete';

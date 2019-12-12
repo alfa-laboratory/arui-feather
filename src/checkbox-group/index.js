@@ -6,4 +6,4 @@ import './checkbox-group.css';
 import './checkbox-group_theme_alfa-on-color.css';
 import './checkbox-group_theme-alfa-on-white.css';
 
-export default from './checkbox-group';
+export { default } from './checkbox-group';

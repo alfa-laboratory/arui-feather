@@ -5,4 +5,4 @@
 import './table.css';
 import '../../../icon';
 
-export default from './table';
+export { default } from './table';

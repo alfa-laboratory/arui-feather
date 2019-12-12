@@ -5,4 +5,4 @@
 import './search.css';
 import '../../../icon';
 
-export default from './search';
+export { default } from './search';

@@ -5,4 +5,4 @@
 import './mobile.css';
 import '../../../icon';
 
-export default from './mobile';
+export { default } from './mobile';

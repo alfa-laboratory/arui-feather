@@ -5,4 +5,4 @@
 import './alfamobile.css';
 import '../../../icon';
 
-export default from './alfamobile';
+export { default } from './alfamobile';

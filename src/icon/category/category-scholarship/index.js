@@ -5,4 +5,4 @@
 import './category-scholarship.css';
 import '../../../icon';
 
-export default from './category-scholarship';
+export { default } from './category-scholarship';

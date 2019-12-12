@@ -5,4 +5,4 @@
 import './category-gasoline.css';
 import '../../../icon';
 
-export default from './category-gasoline';
+export { default } from './category-gasoline';

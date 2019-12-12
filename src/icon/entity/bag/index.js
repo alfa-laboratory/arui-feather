@@ -5,4 +5,4 @@
 import './bag.css';
 import '../../../icon';
 
-export default from './bag';
+export { default } from './bag';

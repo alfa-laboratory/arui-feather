@@ -42,7 +42,8 @@ class SlideDown extends React.Component {
     slideDown;
     slideDownContent;
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.isExpanded !== nextProps.isExpanded) {
             if (nextProps.isExpanded) {
                 this.setHeightToContentHeight();

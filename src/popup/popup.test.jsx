@@ -102,13 +102,13 @@ describe('popup', () => {
     it('should set data-for when `for` prop is set', () => {
         const { popup } = renderPopup({ for: 'example' }, {});
 
-        expect(popup.children().prop('data-for')).toBe('example');
+        expect(popup.children().children().props()['data-for']).toEqual('example');
     });
 
     it('should have tooltip with target=`anchor` and type=`tooltip`', () => {
         const { popup } = renderPopup({ type: 'tooltip' }, {});
 
-        expect(popup.children().props().className).toContain('popup_type_tooltip');
+        expect(popup.children().children().props().className).toContain('popup_type_tooltip');
     });
 
     it('should not have tooltip with target=`position` and type=`tooltip`', () => {
@@ -119,7 +119,7 @@ describe('popup', () => {
 
         popup.instance().setPosition(100, 200);
 
-        expect(popup.children().props().className).not.toContain('popup_type_tooltip');
+        expect(popup.children().children().props().className).not.toContain('popup_type_tooltip');
     });
 
     it('should call `onMouseEnter` callback after popup was hovered', () => {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import MqList from '../mq/mq.json';
 
 const pool = {};

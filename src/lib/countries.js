@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint comma-dangle: 0 */
 
 // Copy of https://github.com/patw0929/react-intl-tel-input/blob/master/src/components/AllCountries.js

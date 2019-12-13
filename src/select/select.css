@@ -336,6 +336,7 @@
             .select__top {
                 font-size: var(--font-size-xs);
                 transform: translateY(-8px);
+                width: auto;
             }
         }
     }
@@ -383,6 +384,7 @@
             .select__top {
                 font-size: var(--font-size-s);
                 transform: translateY(-12px);
+                width: auto;
             }
         }
     }

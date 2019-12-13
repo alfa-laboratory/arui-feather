@@ -7,6 +7,4 @@ import '../label';
 
 import './amount.css';
 
-/* eslint-disable import/export */
-export * from './amount';
 export { default } from './amount';

@@ -42,9 +42,9 @@ let config = {
         exclude: [
             'demo/',
             './gemini/screens/',
-            '../gemini-*/',
+            './gemini-*/',
             'node_modules/',
-            '../src/'
+            './src/'
         ],
         plugins: {
             babel7: true,
@@ -62,7 +62,7 @@ let config = {
             'saucelabs-info': {}
         },
         projectRoot: './',
-        tempDir: './'
+        tempDir: './gemini/'
     },
     screenshotsDir: './gemini/screens/'
 };

@@ -149,7 +149,7 @@
     "mkdirp": "0.5.1",
     "postcss-loader": "^3.0.0",
     "react": "16.2.0",
-    "react-dom": "16.2.0",
+    "react-dom": "16.2.1",
     "react-frame-component": "2.0.2",
     "react-styleguidist": "9.1.16",
     "region-flags": "1.1.0",

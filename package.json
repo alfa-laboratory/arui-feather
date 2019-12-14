@@ -14,7 +14,7 @@
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
     "lint-css": "stylelint ./src/**/*.css",
     "gemini": "gemini test",
-    "gemini-ci": "cd gemini && node ./gemini-ci.js",
+    "gemini-ci": "node ./gemini-ci.js",
     "gemini-update": "ALL_SIZES=1 gemini update",
     "sauce-connect": "cd gemini && sh ./sauce-connect.sh",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",

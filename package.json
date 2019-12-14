@@ -13,9 +13,9 @@
     "lint-js": "eslint ./*.js ./src/ ./gemini/ --ext .js,.jsx",
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
     "lint-css": "stylelint ./src/**/*.css",
-    "gemini": "cd gemini && npm i && npm run gemini",
-    "gemini-ci": "cd gemini && npm i && node ./gemini-ci.js",
-    "gemini-update": "cd gemini && npm i && ALL_SIZES=1 gemini update",
+    "gemini": "gemini test",
+    "gemini-ci": "node ./gemini-ci.js",
+    "gemini-update": "ALL_SIZES=1 gemini update",
     "sauce-connect": "cd gemini && sh ./sauce-connect.sh",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "github-release": "conventional-github-releaser -p angular",
@@ -159,6 +159,12 @@
     "uppercamelcase": "3.0.0",
     "vinyl-buffer": "1.0.1",
     "webpack": "4.28.0",
-    "webpack-merge": "4.2.1"
+    "webpack-merge": "4.2.1",
+    "gemini": "5.5.0",
+    "gemini-babel7": "^1.0.0",
+    "gemini-core": "2.9.1",
+    "gemini-optipng": "^1.2.0",
+    "gemini-react": "0.11.0",
+    "gemini-saucelabs-info": "^1.0.0"
   }
 }

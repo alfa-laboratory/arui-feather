@@ -3,14 +3,14 @@ global.React = require('react');
 const fs = require('fs');
 
 const ALL_BROWSERS = !!process.env.ALL_BROWSERS;
-const FILE_REGEXP = /\.gemini.\jsx?$/;
+const FILE_REGEXP = /\.gemini.\js?$/;
 
-let sets = fs.readdirSync('./')
+let sets = fs.readdirSync('./gemini/')
     .filter(item => FILE_REGEXP.test(item))
     .map(item => item.replace(FILE_REGEXP, ''))
     .reduce((result, item) => {
         result[item] = {
-            files: [`./${item}.gemini.js`]
+            files: [`gemini/${item}.gemini.js`]
         };
         return result;
     }, {});
@@ -41,30 +41,30 @@ let config = {
         debug: false,
         exclude: [
             'demo/',
-            'screens/',
-            '../gemini-*/',
+            './gemini/screens/',
+            './gemini-*/',
             'node_modules/',
-            '../src/'
+            './src/'
         ],
         plugins: {
-            babel: true,
+            babel7: true,
             'html-reporter/gemini': {
                 defaultView: 'failed',
                 path: './gemini-report'
             },
             optipng: true,
             react: {
-                jsModules: ['../gemini-utils/gemini-main.css'],
+                jsModules: ['./gemini-utils/gemini-main.css'],
                 port: 8668,
                 staticRoot: './',
-                webpackConfig: './webpack.gemini.config.js'
+                webpackConfig: './gemini/webpack.gemini.config.js'
             },
             'saucelabs-info': {}
         },
         projectRoot: './',
-        tempDir: './'
+        tempDir: './gemini/'
     },
-    screenshotsDir: './screens/'
+    screenshotsDir: './gemini/screens/'
 };
 
 if (ALL_BROWSERS) {

@@ -35,7 +35,7 @@ before_script:
   - |
     if [ "${TEST_SCOPE}" == "gemini" ]; then
       npm run sauce-connect
-      cat ./gemini/.gemini.js
+      cat ./.gemini.js
     fi
 
 script:

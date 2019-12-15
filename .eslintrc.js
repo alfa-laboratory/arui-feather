@@ -37,10 +37,11 @@ module.exports = {
         // Destructuring is a syntactic possibility, not a necessity
         'prefer-destructuring': 'off',
 
-        "template-curly-spacing" : "off",
-        indent : "off",
+        // temporary fix: https://github.com/babel/babel-eslint/issues/681
+        "template-curly-spacing" : 'off',
+        'indent' : 'off',
 
-
+        // TODO: enable this rules in future
         'react/jsx-props-no-spreading': 'off', // TODO: replace to on
         'react/destructuring-assignment': 'off', // TODO: replace to always
         'react/state-in-constructor': 'off', // TODO: replace to on

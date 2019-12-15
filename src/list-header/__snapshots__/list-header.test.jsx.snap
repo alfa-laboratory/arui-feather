@@ -12,8 +12,7 @@ exports[`list-header should render with \`description\` prop passed 1`] = `
   <span
     className="list-header__description"
   >
-    , 
-    description
+    , description
   </span>
 </div>
 `;
@@ -30,8 +29,7 @@ exports[`list-header should render with \`filled\` view passed 1`] = `
   <span
     className="list-header__description"
   >
-    , 
-    description
+    , description
   </span>
 </div>
 `;

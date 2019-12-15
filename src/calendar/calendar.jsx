@@ -256,17 +256,17 @@ class Calendar extends React.Component {
     }
 
     handleMonthClick = () => {
-        this.setState({
-            isMonthSelection: !this.state.isMonthSelection,
+        this.setState((prevState) => ({
+            isMonthSelection: !prevState.isMonthSelection,
             isYearSelection: false
-        });
+        }));
     };
 
     handleYearClick = () => {
-        this.setState({
+        this.setState((prevState) => ({
             isMonthSelection: false,
-            isYearSelection: !this.state.isYearSelection
-        });
+            isYearSelection: !prevState.isYearSelection
+        }));
     };
 
     renderContent(cn) {

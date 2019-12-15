@@ -12,7 +12,7 @@ import CalendarInput from './calendar-input';
 import * as calendarUtils from './utils';
 import keyboardCode from '../lib/keyboard-code';
 import { SCROLL_TO_CORRECTION } from '../vars';
-import { setIsMatched as setMqMatched } from '../mq/mq';
+import { setIsMatched as setMqMatched } from '../mq/__mocks__/mq';
 
 jest.mock('../mq/mq');
 

@@ -22,10 +22,12 @@ describe('input-group', () => {
     });
 
     it('should render with many input children without problems', () => {
-        const inputGroup = shallow(<InputGroup>
-            <Input key='1' />
-            <Input key='2' />
-                                   </InputGroup>);
+        const inputGroup = shallow(
+            <InputGroup>
+                <Input key='1' />
+                <Input key='2' />
+            </InputGroup>
+        );
 
         expect(inputGroup).toMatchSnapshot();
     });

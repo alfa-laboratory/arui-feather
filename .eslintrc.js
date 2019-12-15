@@ -45,9 +45,11 @@ module.exports = {
         'react/destructuring-assignment': 'off', // TODO: replace to always
         'react/state-in-constructor': 'off', // TODO: replace to on
         'react/button-has-type': 'off', // TODO: replace to on
+        'react/no-access-state-in-setstate': 'off', // TODO: replace to on
         'react/static-property-placement': 'off',
         'import/no-useless-path-segments': 'off', //TODO: replace to on
         'jsx-a11y/control-has-associated-label': 'off', //TODO: replace to on
-        'lines-between-class-members': 'off' //TODO: replace to on
+        'lines-between-class-members': 'off', //TODO: replace to on
+        'max-classes-per-file': 'off' //TODO: replace to on
     }
 };

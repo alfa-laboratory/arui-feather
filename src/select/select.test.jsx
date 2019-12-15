@@ -11,7 +11,7 @@ import Select from './select';
 import keyboardCode from '../lib/keyboard-code';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
-import { setIsMatched as setMqMatched } from '../mq/mq';
+import { setIsMatched as setMqMatched } from '../mq/__mocks__/mq';
 
 jest.mock('../mq/mq');
 

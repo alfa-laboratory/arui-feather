@@ -18,7 +18,7 @@ geminiReact.suite(NAME, () => {
                 const template = (
                     <GeminiBox theme={ theme }>
                         <Heading { ...props }>
-                            Heading Size { size.toUpperCase() }
+                            { `Heading Size ${size.toUpperCase()}` }
                         </Heading>
                     </GeminiBox>
                 );

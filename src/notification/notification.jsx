@@ -158,15 +158,13 @@ class Notification extends React.Component {
                     data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ cn('icon') }>
-                        {
-                            this.props.icon || (
+                        { this.props.icon || (
                             <ToggledIcon
                                 colored={ this.props.status === 'ok' || this.props.status === 'error' }
                                 theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                                 size='m'
                             />
-                          )
-}
+                        ) }
                     </div>
                     { this.props.title && (
                         <div className={ cn('title') }>
@@ -191,7 +189,7 @@ class Notification extends React.Component {
                             />
                         </IconButton>
                       )
-}
+                    }
                 </div>
             </Swipeable>
         );

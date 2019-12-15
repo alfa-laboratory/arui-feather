@@ -418,7 +418,7 @@ class Select extends React.Component {
                         https://discussions.apple.com/message/24694954
                     */
                     hasEmptyOptGroup && <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } />
-}
+                }
                 { hasEmptyOption && (
                     <option disabled={ true } value=''>
                         { this.props.nativeOptionPlaceholder }

@@ -179,7 +179,7 @@ class Textarea extends React.Component {
                             { this.props.label }
                         </span>
                       )
-}
+                    }
                     {
                         this.props.autosize
                             ? (
@@ -190,7 +190,7 @@ class Textarea extends React.Component {
                                     style={ { maxHeight: this.props.maxHeight } }
                                     onHeightChange={ this.handleHeightChange }
                                 />
-)
+                              )
                             : <textarea { ...textareaProps } />
                     }
                     {
@@ -199,7 +199,7 @@ class Textarea extends React.Component {
                             { this.props.error || this.props.hint }
                         </span>
                       )
-}
+                    }
                 </span>
             </span>
         );

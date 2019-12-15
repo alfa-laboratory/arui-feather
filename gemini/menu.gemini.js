@@ -131,7 +131,7 @@ geminiReact.suite(NAME, () => {
                                         }
                                     </Label>
                                   )
-}
+                                }
                                 <Menu { ...props }>
                                     Menu Item
                                 </Menu>

@@ -130,11 +130,11 @@ class RadioGroup extends React.Component {
                     </div>
                     {
                         (this.props.error || this.props.hint) && (
-                        <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
-                      )
-}
+                            <span className={ cn('sub') }>
+                                { this.props.error || this.props.hint }
+                            </span>
+                        )
+                    }
                 </div>
             </div>
         );

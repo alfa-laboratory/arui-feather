@@ -306,7 +306,7 @@ class CalendarInput extends React.Component {
                                 onFocus={ this.handleNativeInputFocus }
                             />
                           )
-}
+                        }
                     </Mq>
                     <Input
                         ref={ (customCalendarTarget) => {
@@ -344,7 +344,7 @@ class CalendarInput extends React.Component {
                                 />
                             </IconButton>
                           )
-}
+                        }
                     />
                 </span>
                 { this.renderPopup(cn, value, Popup) }

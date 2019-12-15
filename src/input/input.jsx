@@ -235,7 +235,7 @@ class Input extends React.Component {
                             { this.props.label }
                         </span>
                       )
-}
+                    }
                     { this.renderContent(cn, MaskedInput) }
                     {
                         (this.state.error || this.props.hint) && (
@@ -243,7 +243,7 @@ class Input extends React.Component {
                             { this.state.error || this.props.hint }
                         </span>
                       )
-}
+                    }
                 </span>
             </span>
         );
@@ -298,7 +298,7 @@ class Input extends React.Component {
                         { this.props.leftAddons }
                     </span>
                   )
-}
+                }
                 {
                     isMaskedInput
                         ? (
@@ -309,7 +309,7 @@ class Input extends React.Component {
                                 onProcessInputEvent={ this.props.onProcessMaskInputEvent }
                                 useWhitespaces={ this.props.useWhitespacesInMask }
                             />
-)
+                          )
                         : <input { ...inputProps } />
                 }
                 {
@@ -325,21 +325,21 @@ class Input extends React.Component {
                         />
                     </IconButton>
                   )
-}
+                }
                 {
                     this.props.icon && (
                     <span className={ cn('icon') }>
                         { this.props.icon }
                     </span>
                   )
-}
+                }
                 {
                     this.props.rightAddons && (
                     <span className={ cn('addons', { right: true }) } key='right-addons'>
                         { this.props.rightAddons }
                     </span>
                   )
-}
+                }
             </span>
         );
     }

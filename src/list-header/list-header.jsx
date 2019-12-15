@@ -36,11 +36,10 @@ class ListHeader extends React.Component {
             >
                 <span className={ cn('title') }>{ this.props.title }</span>
                 { this.props.description && (
-                <span className={ cn('description') }>
-,
-                    { this.props.description }
-                </span>
-) }
+                    <span className={ cn('description') }>
+                        { `, ${this.props.description}` }
+                    </span>
+                ) }
             </div>
         );
     }

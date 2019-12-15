@@ -205,7 +205,7 @@ class Calendar extends React.Component {
                         onClick={ this.handleArrowClick }
                     />
                   )
-}
+                }
                 {
                     this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection && (
                     <div
@@ -222,7 +222,7 @@ class Calendar extends React.Component {
                         onClick={ this.handleArrowClick }
                     />
                   )
-}
+                }
                 <div className={ cn('select-buttons') }>
                     <div
                         className={

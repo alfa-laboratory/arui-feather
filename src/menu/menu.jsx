@@ -279,7 +279,7 @@ class Menu extends React.Component {
                         size={ iconSize }
                     />
                   )
-}
+                }
                 { item.content }
             </MenuItem>
         );

@@ -185,7 +185,7 @@ class Sidebar extends React.Component {
                                 </IconButton>
                             </div>
                           )
-}
+                        }
                         {
                             headerContent
                                 ? this.renderHeaderContent(cn)

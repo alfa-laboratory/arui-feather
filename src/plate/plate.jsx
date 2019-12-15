@@ -93,7 +93,7 @@ class Plate extends React.Component {
                                     <IconClose />
                                 </IconButton>
                               )
-}
+                        }
                     </div>
                 </div>
             </ThemeProvider>

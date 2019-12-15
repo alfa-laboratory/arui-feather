@@ -127,7 +127,7 @@ class CheckBoxGroup extends React.Component {
                         { this.props.label }
                     </div>
                   )
-}
+                }
                 <div className={ cn('box') }>
                     { createFragment(checkboxGroupParts) }
                 </div>

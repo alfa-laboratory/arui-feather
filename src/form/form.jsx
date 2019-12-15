@@ -83,7 +83,7 @@ class Form extends React.Component {
                             { this.props.footer }
                         </div>
                       )
-}
+                }
             </form>
         );
     }

@@ -48,7 +48,7 @@ geminiReact.suite(NAME, () => {
                         <GeminiBox theme={ theme } width={ set.width }>
                             <InputGroup { ...props }>
                                 {
-                                    set.inputs.map(input => (
+                                    set.inputs.map((input) => (
                                         <Input
                                             key={ input.key }
                                             placeholder='Input ...'

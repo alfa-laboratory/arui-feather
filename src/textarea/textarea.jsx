@@ -174,28 +174,32 @@ class Textarea extends React.Component {
             >
                 <span className={ cn('inner') }>
                     {
-                        !!this.props.label &&
+                        !!this.props.label && (
                         <span className={ cn('top') }>
                             { this.props.label }
                         </span>
-                    }
+                      )
+}
                     {
                         this.props.autosize
-                            ? <TextareaAutosize
-                                { ...textareaProps }
-                                maxRows={ this.props.maxRows }
-                                minRows={ this.props.minRows }
-                                style={ { maxHeight: this.props.maxHeight } }
-                                onHeightChange={ this.handleHeightChange }
-                            />
+                            ? (
+                                <TextareaAutosize
+                                    { ...textareaProps }
+                                    maxRows={ this.props.maxRows }
+                                    minRows={ this.props.minRows }
+                                    style={ { maxHeight: this.props.maxHeight } }
+                                    onHeightChange={ this.handleHeightChange }
+                                />
+)
                             : <textarea { ...textareaProps } />
                     }
                     {
-                        (this.props.error || this.props.hint) &&
+                        (this.props.error || this.props.hint) && (
                         <span className={ cn('sub') }>
                             { this.props.error || this.props.hint }
                         </span>
-                    }
+                      )
+}
                 </span>
             </span>
         );

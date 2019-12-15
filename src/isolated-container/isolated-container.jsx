@@ -20,10 +20,12 @@ class IsolatedContainer extends React.Component {
     }
 
     render() {
-        return (<div ref={ (element) => {
+        return (
+            <div ref={ (element) => {
             this.element = element;
         } }
-        />);
+            />
+);
     }
 
     /**

@@ -228,7 +228,7 @@ class Attach extends React.Component {
             <Button
                 { ...buttonProps }
                 tag='span'
-                leftAddons={
+                leftAddons={ (
                     <label
                         className={ cn('label') }
                         htmlFor={ this.props.id }
@@ -249,7 +249,7 @@ class Attach extends React.Component {
                             onChange={ this.handleInputChange }
                         />
                     </label>
-                }
+                  ) }
                 tabIndex={ this.props.tabIndex }
                 onClick={ this.handleButtonClick }
                 onFocus={ this.handleFocus }
@@ -268,9 +268,11 @@ class Attach extends React.Component {
                 ? files[0].name
                 : (
                     <abbr
-                        title={ files.map(file => file.name).join() }
+                        title={ files.map((file) => file.name).join() }
                     >
-                        { files.length } { getDeclension(files.length, MULTIPLE_TEXTS) }
+                        { files.length }
+                        { ' ' }
+                        { getDeclension(files.length, MULTIPLE_TEXTS) }
                     </abbr>
                 );
 

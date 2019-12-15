@@ -159,26 +159,27 @@ class Notification extends React.Component {
                 >
                     <div className={ cn('icon') }>
                         {
-                            this.props.icon ||
+                            this.props.icon || (
                             <ToggledIcon
                                 colored={ this.props.status === 'ok' || this.props.status === 'error' }
                                 theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                                 size='m'
                             />
-                        }
+                          )
+}
                     </div>
-                    { this.props.title &&
+                    { this.props.title && (
                         <div className={ cn('title') }>
                             { this.props.title }
                         </div>
-                    }
-                    { this.props.children &&
+                      ) }
+                    { this.props.children && (
                         <div className={ cn('content') }>
                             { this.props.children }
                         </div>
-                    }
+                      ) }
                     {
-                        this.props.hasCloser &&
+                        this.props.hasCloser && (
                         <IconButton
                             className={ cn('closer') }
                             size='m'
@@ -189,7 +190,8 @@ class Notification extends React.Component {
                                 theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                             />
                         </IconButton>
-                    }
+                      )
+}
                 </div>
             </Swipeable>
         );

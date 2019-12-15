@@ -56,7 +56,7 @@ SIZES.forEach((size) => {
         }))
         // You need graphicsmagick installed on your system:
         // https://github.com/scalableminds/gulp-gm#graphicsmagick-or-imagemagick
-        .pipe(gm((file => file.resize(
+        .pipe(gm(((file) => file.resize(
             getImageHeightBySize(size, 2).width,
             getImageHeightBySize(size, 2).height
         ))))
@@ -124,7 +124,7 @@ SIZES.forEach((size) => {
                 });
             }))
             .on('end', () => {
-                cssChunksData.retinaChunks = cssChunksData.chunks.map(item => ({
+                cssChunksData.retinaChunks = cssChunksData.chunks.map((item) => ({
                     name: item.name,
                     url: item.url.replace('/1x/', '/2x/')
                 }));
@@ -170,6 +170,6 @@ SIZES.forEach((size) => {
 });
 
 gulp.task('default', ['clean:flag-icon']
-    .concat(SIZES.map(size => `flag-icon:chunks-${size}`))
-    .concat(SIZES.map(size => `flag-icon:sprite-${size}`))
+    .concat(SIZES.map((size) => `flag-icon:chunks-${size}`))
+    .concat(SIZES.map((size) => `flag-icon:sprite-${size}`))
 );

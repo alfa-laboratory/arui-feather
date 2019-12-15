@@ -190,7 +190,7 @@ class Calendar extends React.Component {
         return (
             <div className={ cn('title') }>
                 {
-                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
+                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection && (
                     <div
                         className={
                             cn('arrow', {
@@ -204,9 +204,10 @@ class Calendar extends React.Component {
                         tabIndex='0'
                         onClick={ this.handleArrowClick }
                     />
-                }
+                  )
+}
                 {
-                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
+                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection && (
                     <div
                         className={
                             cn('arrow', {
@@ -220,38 +221,35 @@ class Calendar extends React.Component {
                         tabIndex='0'
                         onClick={ this.handleArrowClick }
                     />
-                }
+                  )
+}
                 <div className={ cn('select-buttons') }>
-                    {
-                        <div
-                            className={
+                    <div
+                        className={
                                 cn('name', {
                                     month: true
                                 })
                             }
-                            role='button'
-                            tabIndex='0'
-                            onClick={ this.handleMonthClick }
-                        >
-                            <div className={ cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
-                            <div className={ cn('select-arrows') } />
-                        </div>
-                    }
-                    {
-                        <div
-                            className={
+                        role='button'
+                        tabIndex='0'
+                        onClick={ this.handleMonthClick }
+                    >
+                        <div className={ cn('select-text') }>{ `${this.props.months[month.getMonth()]}` }</div>
+                        <div className={ cn('select-arrows') } />
+                    </div>
+                    <div
+                        className={
                                 cn('name', {
                                     year: true
                                 })
                             }
-                            role='button'
-                            tabIndex='0'
-                            onClick={ this.handleYearClick }
-                        >
-                            <div className={ cn('select-text') } >{ `${month.getFullYear()}` }</div>
-                            <div className={ cn('select-arrows') } />
-                        </div>
-                    }
+                        role='button'
+                        tabIndex='0'
+                        onClick={ this.handleYearClick }
+                    >
+                        <div className={ cn('select-text') }>{ `${month.getFullYear()}` }</div>
+                        <div className={ cn('select-arrows') } />
+                    </div>
                 </div>
             </div>
         );
@@ -273,11 +271,11 @@ class Calendar extends React.Component {
 
     renderContent(cn) {
         return (
-            <React.Fragment>
+            <>
                 { this.state.isMonthSelection ? this.renderMonths(cn) : null }
                 { this.state.isYearSelection ? this.renderYears(cn) : null }
                 { this.renderDays(cn) }
-            </React.Fragment>
+            </>
         );
     }
 
@@ -432,7 +430,7 @@ class Calendar extends React.Component {
     }
 
     renderMonth(cn) {
-        return this.calculateWeeks().map(week => this.renderWeek(cn, week));
+        return this.calculateWeeks().map((week) => this.renderWeek(cn, week));
     }
 
     renderWeek(cn, week) {

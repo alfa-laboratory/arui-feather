@@ -89,12 +89,12 @@ class CheckBoxGroup extends React.Component {
 
             React.Children.forEach(children, (checkbox, index) => {
                 const checkboxNode = React.cloneElement(checkbox, {
-                    ref: checkbox => this.checkboxes.push(checkbox),
+                    ref: (checkbox) => this.checkboxes.push(checkbox),
                     checked: checkbox.props.checked === undefined
-                        ? value.some(groupValue => groupValue === checkbox.props.value)
+                        ? value.some((groupValue) => groupValue === checkbox.props.value)
                         : checkbox.props.checked,
                     onChange: checkbox.props.onChange === undefined
-                        ? checked => this.handleCheckboxChange(checkbox.props.value, checked)
+                        ? (checked) => this.handleCheckboxChange(checkbox.props.value, checked)
                         : checkbox.props.onChange,
                     ...props
                 });
@@ -122,11 +122,12 @@ class CheckBoxGroup extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 {
-                    !!this.props.label &&
+                    !!this.props.label && (
                     <div className={ cn('label') }>
                         { this.props.label }
                     </div>
-                }
+                  )
+}
                 <div className={ cn('box') }>
                     { createFragment(checkboxGroupParts) }
                 </div>
@@ -136,7 +137,7 @@ class CheckBoxGroup extends React.Component {
 
     handleCheckboxChange = (value, checked) => {
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
-        const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
+        const changedValueIndex = newValue.findIndex((stateValue) => stateValue === value);
 
         if (checked) {
             newValue.push(value);

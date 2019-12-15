@@ -135,7 +135,7 @@ describe('select', () => {
             options: OPTIONS,
             value: [checkedOptions[0].value, checkedOptions[1].value]
         };
-        const expectedOptions = checkedOptions.map(option => option.checkedText || option.text).join(', ');
+        const expectedOptions = checkedOptions.map((option) => option.checkedText || option.text).join(', ');
         const { buttonNode } = renderSelect(selectProps);
 
         expect(buttonNode.text()).toBe(expectedOptions);

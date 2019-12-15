@@ -39,8 +39,7 @@ class Paragraph extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.mark &&
-                    <span className={ cn('marker') }>{ this.props.mark }</span>
-                }
+                    <span className={ cn('marker') }>{ this.props.mark }</span> }
                 { this.props.children }
             </p>
         );

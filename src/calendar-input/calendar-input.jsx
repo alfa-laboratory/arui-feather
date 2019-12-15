@@ -291,7 +291,7 @@ class CalendarInput extends React.Component {
                         onMatchChange={ this.handleMqMatchChange }
                     >
                         {
-                            this.canBeNative() &&
+                            this.canBeNative() && (
                             <input
                                 ref={ (nativeCalendarTarget) => {
                                     this.nativeCalendarTarget = nativeCalendarTarget;
@@ -305,7 +305,8 @@ class CalendarInput extends React.Component {
                                 onChange={ this.handleNativeInputChange }
                                 onFocus={ this.handleNativeInputFocus }
                             />
-                        }
+                          )
+}
                     </Mq>
                     <Input
                         ref={ (customCalendarTarget) => {
@@ -336,13 +337,14 @@ class CalendarInput extends React.Component {
                         onFocus={ this.handleCustomInputFocus }
                         onKeyDown={ this.handleInputKeyDown }
                         icon={
-                            this.props.withIcon &&
+                            this.props.withIcon && (
                             <IconButton onClick={ this.handleIconButtonClick }>
                                 <IconCalendar
                                     size={ this.props.size }
                                 />
                             </IconButton>
-                        }
+                          )
+}
                     />
                 </span>
                 { this.renderPopup(cn, value, Popup) }

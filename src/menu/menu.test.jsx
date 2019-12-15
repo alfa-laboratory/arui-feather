@@ -95,7 +95,7 @@ describe('menu', () => {
         const menu = mount(<Menu mode='radio' content={ [MENU_ITEM1, MENU_ITEM2] } />);
         const menuChildsNode = menu.find('.menu-item');
 
-        menuChildsNode.forEach(child => child.simulate('click'));
+        menuChildsNode.forEach((child) => child.simulate('click'));
 
         const checkedMenuItems = menu.find('.menu-item_checked');
 
@@ -106,7 +106,7 @@ describe('menu', () => {
         const menu = mount(<Menu mode='check' content={ [MENU_ITEM1, MENU_ITEM2] } />);
         const menuChildsNode = menu.find('.menu-item');
 
-        menuChildsNode.forEach(child => child.simulate('click'));
+        menuChildsNode.forEach((child) => child.simulate('click'));
 
         const checkedMenuItems = menu.find('.menu-item_checked');
 

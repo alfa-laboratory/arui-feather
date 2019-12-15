@@ -175,7 +175,7 @@ class Sidebar extends React.Component {
                         className={ cn('header') }
                     >
                         {
-                            hasCloser &&
+                            hasCloser && (
                             <div className={ cn('closer') }>
                                 <IconButton
                                     size={ this.state.isMobile ? 'm' : 'l' }
@@ -184,7 +184,8 @@ class Sidebar extends React.Component {
                                     <IconClose size='l' />
                                 </IconButton>
                             </div>
-                        }
+                          )
+}
                         {
                             headerContent
                                 ? this.renderHeaderContent(cn)

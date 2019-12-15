@@ -15,7 +15,7 @@ function exit(code) {
 }
 
 function promiseTry(func) {
-    return new Promise(resolve => resolve(func()));
+    return new Promise((resolve) => resolve(func()));
 }
 
 function runGemini(paths = []) {
@@ -25,12 +25,15 @@ function runGemini(paths = []) {
         checkForDeprecations();
 
         const gemini = new Gemini();
-        gemini.on(Events.INTERRUPT, (data) => { exit(data.exitCode); });
+
+        gemini.on(Events.INTERRUPT, (data) => {
+            exit(data.exitCode);
+        });
 
         return gemini;
     })
-        .then(gemini => gemini.test(paths, { reporters: [{ name: 'flat' }] }))
-        .then(stats => stats.failed > 0 ? 2 : 0)
+        .then((gemini) => gemini.test(paths, { reporters: [{ name: 'flat' }] }))
+        .then((stats) => stats.failed > 0 ? 2 : 0)
         .catch(handleErrors)
         .then(exit);
 }

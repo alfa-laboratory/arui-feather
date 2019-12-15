@@ -74,7 +74,7 @@ class IntlPhoneInput extends React.Component {
                 } }
                 { ...this.props }
                 focused={ this.state.inputFocused || this.state.selectFocused }
-                leftAddons={
+                leftAddons={ (
                     <Select
                         className={ cn('select') }
                         ref={ (select) => {
@@ -94,7 +94,7 @@ class IntlPhoneInput extends React.Component {
                         onButtonFocus={ this.handleSelectButtonFocus }
                         onButtonBlur={ this.handleSelectButtonBlur }
                     />
-                }
+                  ) }
                 noValidate={ true }
                 type='tel'
                 value={ this.getValue() }
@@ -142,7 +142,7 @@ class IntlPhoneInput extends React.Component {
     };
 
     handleSelectChange = (value) => {
-        const inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
+        const inputValue = `+${this.countries.find((country) => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
             countryIso2: value[0],
@@ -181,12 +181,15 @@ class IntlPhoneInput extends React.Component {
     getOptions = (cn) => {
         this.countries = countries.getCountries();
 
-        return this.state.onceOpened ? this.countries.map(country => ({
+        return this.state.onceOpened ? this.countries.map((country) => ({
             value: country.iso2,
             text: (
                 <span>
                     { country.name }
-                    <span className={ cn('select-option-code') }>+{ country.dialCode }</span>
+                    <span className={ cn('select-option-code') }>
++
+                        { country.dialCode }
+                    </span>
                 </span>
             ),
             nativeText: `${country.name} +${country.dialCode}`,
@@ -220,7 +223,7 @@ class IntlPhoneInput extends React.Component {
             .then((util) => {
                 this.util = util;
             })
-            .catch(error => `An error occurred while loading libphonenumber-js:\n${error}`);
+            .catch((error) => `An error occurred while loading libphonenumber-js:\n${error}`);
     }
 
     resolveFocusedState(nextFocusedStateItem, event) {
@@ -236,18 +239,18 @@ class IntlPhoneInput extends React.Component {
 
         // Check classNames matching in select's button (relatedTarget) & menu (focused target)
         if (relatedTarget.classList && event.target.classList) {
-            hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
-                Array.from(event.target.classList).some(item => /select/.test(item));
+            hasSelectRelatedTarget = Array.from(relatedTarget.classList).some((item) => /select/.test(item)) ===
+                Array.from(event.target.classList).some((item) => /select/.test(item));
 
-            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some(item => item) &&
-                !Array.from(event.target.classList).some(item => /select/.test(item)) &&
-                Array.from(relatedTarget.classList).some(item => /select/.test(item));
+            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some((item) => item) &&
+                !Array.from(event.target.classList).some((item) => /select/.test(item)) &&
+                Array.from(relatedTarget.classList).some((item) => /select/.test(item));
         }
 
         if (event.type === 'focus') {
             if (hasMatchedRelatedTarget || hasSelectRelatedTarget || isSwitchBetweenRelatedTargers) {
                 // If we have smth already focused, do not do anything
-                const alreadyInFocus = Object.values(focusedState).some(item => item);
+                const alreadyInFocus = Object.values(focusedState).some((item) => item);
 
                 if (!alreadyInFocus) {
                     this.setState(nextFocusedStateItem);

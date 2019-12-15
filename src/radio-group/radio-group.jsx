@@ -95,7 +95,7 @@ class RadioGroup extends React.Component {
 
             React.Children.forEach(children, (radio, index) => {
                 radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
-                    ref: radio => this.radios.push(radio),
+                    ref: (radio) => this.radios.push(radio),
                     error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
                     checked: radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked,
                     onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
@@ -129,11 +129,12 @@ class RadioGroup extends React.Component {
                         { createFragment(radioGroupParts) }
                     </div>
                     {
-                        (this.props.error || this.props.hint) &&
+                        (this.props.error || this.props.hint) && (
                         <span className={ cn('sub') }>
                             { this.props.error || this.props.hint }
                         </span>
-                    }
+                      )
+}
                 </div>
             </div>
         );

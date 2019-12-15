@@ -97,7 +97,7 @@ function parseFormat(format) {
 
     while (processingFormat.length > 0) {
         /* eslint no-loop-func: 0 */
-        const matchedToken = PARSE_TOKENS.find(t => processingFormat.match(t.formatRegex));
+        const matchedToken = PARSE_TOKENS.find((t) => processingFormat.match(t.formatRegex));
 
         if (matchedToken) {
             parser.push(matchedToken);

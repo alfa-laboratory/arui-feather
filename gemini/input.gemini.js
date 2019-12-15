@@ -13,7 +13,7 @@ function renderAddons(inputSize) {
         case 'xl': radioSize = 'l'; break;
     }
 
-    const buttonControlNodes = [1, 2, 3].map(item => (
+    const buttonControlNodes = [1, 2, 3].map((item) => (
         <Radio
             key={ item }
             size={ radioSize }

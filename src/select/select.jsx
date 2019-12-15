@@ -251,7 +251,7 @@ class Select extends React.Component {
 
     componentWillMount() {
         this.setState({
-            hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
+            hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content))
         });
     }
 
@@ -273,7 +273,7 @@ class Select extends React.Component {
         }
 
         this.setState({
-            hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content))
+            hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content))
         });
     }
 
@@ -417,7 +417,8 @@ class Select extends React.Component {
                         https://discussions.apple.com/message/23745665
                         https://discussions.apple.com/message/24694954
                     */
-                    hasEmptyOptGroup && <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } /> }
+                    hasEmptyOptGroup && <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } />
+}
                 { hasEmptyOption && (
                     <option disabled={ true } value=''>
                         { this.props.nativeOptionPlaceholder }
@@ -531,7 +532,7 @@ class Select extends React.Component {
             return this.props.renderButtonContent(checkedItems);
         }
 
-        const checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
+        const checkedItemsText = checkedItems.map((item) => item.checkedText || item.text).join(', ');
 
         if (checkedItemsText) {
             return checkedItemsText;

@@ -50,7 +50,7 @@ describe('calendar', () => {
         const dateToClick = addDays(INITIAL_DAY, 1);
         const dayNodes = calendar
             .find('.calendar__day')
-            .findWhere(e => e.length > 0 && e.props()['data-day'] === dateToClick.valueOf());
+            .findWhere((e) => e.length > 0 && e.props()['data-day'] === dateToClick.valueOf());
 
         dayNodes.simulate('click');
 

@@ -133,7 +133,7 @@ class GridRow extends React.PureComponent {
                     return col;
                 }
                 const gutterClassNames = Object.keys(gutters).map(
-                    gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
+                    (gutter) => `${this.classCol}_${gutter}_${gutters[gutter]}`
                 );
                 const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
 

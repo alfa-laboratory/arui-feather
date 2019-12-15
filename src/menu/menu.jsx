@@ -215,11 +215,11 @@ class Menu extends React.Component {
                         className={ cn('group') }
                         key={ `group_${groupKey}` }
                     >
-                        { !!item.title &&
+                        { !!item.title && (
                             <div className={ cn('group-title') }>
                                 { item.title }
                             </div>
-                        }
+                          ) }
                         { this.renderMenuItemList(cn, item.content) }
                     </div>
                 );
@@ -274,11 +274,12 @@ class Menu extends React.Component {
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
             >
                 {
-                    this.props.mode === 'check' && isItemChecked &&
+                    this.props.mode === 'check' && isItemChecked && (
                     <IconCheck
                         size={ iconSize }
                     />
-                }
+                  )
+}
                 { item.content }
             </MenuItem>
         );

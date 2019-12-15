@@ -118,7 +118,7 @@ geminiReact.suite(NAME, () => {
                         <GeminiBox theme={ theme }>
                             <div>
                                 {
-                                    set.mode &&
+                                    set.mode && (
                                     <Label size={ size }>
                                         {
                                             (set.mode === 'check' &&
@@ -130,7 +130,8 @@ geminiReact.suite(NAME, () => {
                                             )
                                         }
                                     </Label>
-                                }
+                                  )
+}
                                 <Menu { ...props }>
                                     Menu Item
                                 </Menu>

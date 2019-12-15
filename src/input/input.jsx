@@ -230,18 +230,20 @@ class Input extends React.Component {
             >
                 <span className={ cn('inner') }>
                     {
-                        !!this.props.label &&
+                        !!this.props.label && (
                         <span className={ cn('top') }>
                             { this.props.label }
                         </span>
-                    }
+                      )
+}
                     { this.renderContent(cn, MaskedInput) }
                     {
-                        (this.state.error || this.props.hint) &&
+                        (this.state.error || this.props.hint) && (
                         <span className={ cn('sub') }>
                             { this.state.error || this.props.hint }
                         </span>
-                    }
+                      )
+}
                 </span>
             </span>
         );
@@ -291,24 +293,27 @@ class Input extends React.Component {
                 } }
             >
                 {
-                    this.props.leftAddons &&
+                    this.props.leftAddons && (
                     <span className={ cn('addons', { left: true }) } key='left-addons'>
                         { this.props.leftAddons }
                     </span>
-                }
+                  )
+}
                 {
                     isMaskedInput
-                        ? <MaskedInput
-                            { ...inputProps }
-                            mask={ this.props.mask }
-                            formatCharacters={ this.props.maskFormatCharacters }
-                            onProcessInputEvent={ this.props.onProcessMaskInputEvent }
-                            useWhitespaces={ this.props.useWhitespacesInMask }
-                        />
+                        ? (
+                            <MaskedInput
+                                { ...inputProps }
+                                mask={ this.props.mask }
+                                formatCharacters={ this.props.maskFormatCharacters }
+                                onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                                useWhitespaces={ this.props.useWhitespacesInMask }
+                            />
+)
                         : <input { ...inputProps } />
                 }
                 {
-                    this.props.clear && value &&
+                    this.props.clear && value && (
                     <IconButton
                         className={ cn('clear') }
                         size={ this.props.size }
@@ -319,19 +324,22 @@ class Input extends React.Component {
                             size={ this.props.size }
                         />
                     </IconButton>
-                }
+                  )
+}
                 {
-                    this.props.icon &&
+                    this.props.icon && (
                     <span className={ cn('icon') }>
                         { this.props.icon }
                     </span>
-                }
+                  )
+}
                 {
-                    this.props.rightAddons &&
+                    this.props.rightAddons && (
                     <span className={ cn('addons', { right: true }) } key='right-addons'>
                         { this.props.rightAddons }
                     </span>
-                }
+                  )
+}
             </span>
         );
     }

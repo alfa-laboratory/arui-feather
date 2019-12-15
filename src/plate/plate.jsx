@@ -85,14 +85,15 @@ class Plate extends React.Component {
                     <div className={ cn('content') }>
                         { this.props.children }
                         {
-                            this.props.hasCloser &&
+                            this.props.hasCloser && (
                                 <IconButton
                                     className={ cn('closer') }
                                     onClick={ this.handleCloserClick }
                                 >
                                     <IconClose />
                                 </IconButton>
-                        }
+                              )
+}
                     </div>
                 </div>
             </ThemeProvider>

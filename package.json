@@ -107,6 +107,7 @@
     "react-dom": ">=16.2"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "acorn": "^6.1.1",
     "alfa-ui-primitives": "2.3.3",
     "arui-demo": "2.0.0",

@@ -29,3 +29,20 @@ import Paragraph from 'arui-feather/paragraph';
     </Paragraph>
 </Plate>
 ```
+
+Интерактивная плашка
+
+```jsx
+import Heading from 'arui-feather/heading';
+import Paragraph from 'arui-feather/paragraph';
+
+<Plate
+    hasShrink={ true }
+    title={ 'Альфа-Мобайл 9.0' }
+
+>
+    <Paragraph>
+        Новый, превосходный, невероятный, беспрецедентный, большой, внушительный, четкий, безотказный, волшебный, понятный. +40 новых возможностей твоего мобайла!
+    </Paragraph>
+</Plate>
+```

@@ -7,6 +7,7 @@
 .plate {
     display: inline-block;
     position: relative;
+    width: 100%;
     margin-right: 7px;
     margin-bottom: 7px;
     padding: var(--gap-s);
@@ -21,10 +22,16 @@
         padding-right: 34px;
     }
 
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 22px;
+    }
+
     &__closer {
         opacity: var(--opacity-minor);
         position: absolute;
-        top: 0;
+        top: 2px;
         right: 0;
         cursor: pointer;
         transition: opacity .1s ease-out;

@@ -34,6 +34,8 @@ class Plate extends React.Component {
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Заголовок `Plate` */
         title: Type.string,
+        /** Тип `Plate` */
+        type: Type.oneOf(['default', 'common', 'error', 'success']),
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
@@ -59,6 +61,7 @@ class Plate extends React.Component {
 
     static defaultProps = {
         hasCloser: false,
+        type: 'default',
         title: ''
     };
 

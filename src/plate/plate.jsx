@@ -26,8 +26,6 @@ class Plate extends React.Component {
         hasCloser: Type.bool,
         /** Управление наличием стрелки скрытия контента */
         hasShrink: Type.bool,
-        /** Плоская тема */
-        isFlat: Type.bool,
         /** Дочерние элементы `Plate` */
         children: Type.node,
         /** Тема компонента */
@@ -82,7 +80,6 @@ class Plate extends React.Component {
                     'has-closer': this.props.hasCloser,
                     'has-shrink': this.props.hasShrink,
                     hidden: this.props.hasCloser && this.state.isHidden,
-                    flat: this.props.isFlat,
                     type: this.props.type
                 }) }
                 id={ this.props.id }

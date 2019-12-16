@@ -67,8 +67,4 @@
             opacity: 1;
         }
     }
-
-    &_flat {
-        box-shadow: none;
-    }
 }

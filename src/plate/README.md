@@ -3,12 +3,43 @@
 ```jsx
 import Heading from 'arui-feather/heading';
 import Paragraph from 'arui-feather/paragraph';
+import IconOk from 'arui-feather/icon/ui/ok';
+import IconError from 'arui-feather/icon/ui/error';
+import IconVerifying from 'arui-feather/icon/ui/verifying';
 
 <div>
-    <Plate title={ 'Основной' } hasCloser={ true } />
-    <Plate title={ 'Обычный' } type={ 'common' } hasCloser={ true } />
-    <Plate title={ 'Ошибочный' } type={ 'error' } hasCloser={ true } />
-    <Plate title={ 'Успешный' } type={ 'success' } hasCloser={ true } />
+    <Plate
+        title={ 'Основной' }
+        hasCloser={ true }
+    />
+    <Plate
+        title={ 'Обычный' }
+        type={ 'common' }
+        hasCloser={ true }
+        icon={
+            <IconVerifying />
+        }
+    />
+    <Plate
+        title={ 'Ошибочный' }
+        type={ 'error' }
+        hasCloser={ true }
+        icon={
+            <IconError
+                colored={ true }
+            />
+        }
+    />
+    <Plate
+        title={ 'Успешный' }
+        type={ 'success' }
+        hasCloser={ true }
+        icon={
+            <IconOk
+                colored={ true }
+            />
+        }
+    />
 </div>
 ```
 

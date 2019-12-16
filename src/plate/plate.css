@@ -45,6 +45,10 @@
         padding-right: 34px;
     }
 
+    &_has-icon {
+        padding-left: 56px;
+    }
+
     &__title {
         font-size: 18px;
         font-weight: bold;
@@ -54,6 +58,16 @@
     &__content_shrank {
         display: none;
     }
+
+    &_has-icon &__icon {
+        position: absolute;
+        left: 0;
+        width: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 
     &__closer, &__shrink {
         opacity: var(--opacity-minor);

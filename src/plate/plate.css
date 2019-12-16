@@ -18,7 +18,7 @@
         display: none;
     }
 
-    &_has-closer {
+    &_has-closer, &_has-shrink {
         padding-right: 34px;
     }
 
@@ -28,7 +28,15 @@
         line-height: 22px;
     }
 
-    &__closer {
+    &__content {
+        margin-top: 7px;
+
+        &_shrank {
+            display: none;
+        }
+    }
+
+    &__closer, &__shrink {
         opacity: var(--opacity-minor);
         position: absolute;
         top: 2px;

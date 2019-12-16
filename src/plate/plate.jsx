@@ -8,6 +8,8 @@ import React from 'react';
 import Type from 'prop-types';
 
 import IconClose from '../icon/ui/close';
+import IconArrowLeft from '../icon/ui/arrow-left';
+import IconArrowDown from '../icon/ui/arrow-down';
 import IconButton from '../icon-button/icon-button';
 
 import cn from '../cn';
@@ -22,6 +24,8 @@ class Plate extends React.Component {
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,
+        /** Управление наличием стрелки скрытия контента */
+        hasShrink: Type.bool,
         /** Плоская тема */
         isFlat: Type.bool,
         /** Дочерние элементы `Plate` */
@@ -59,7 +63,8 @@ class Plate extends React.Component {
     };
 
     state = {
-        isHidden: false
+        isHidden: false,
+        isShrank: false
     };
 
     /**
@@ -72,6 +77,7 @@ class Plate extends React.Component {
             <div
                 className={ cn({
                     'has-closer': this.props.hasCloser,
+                    'has-shrink': this.props.hasShrink,
                     hidden: this.props.hasCloser && this.state.isHidden,
                     flat: this.props.isFlat,
                     type: this.props.type
@@ -88,11 +94,29 @@ class Plate extends React.Component {
                     this.props.title
                     && <div className={ cn('title') }>
                         { this.props.title }
+                        {
+                            this.props.hasShrink &&
+                                <IconButton
+                                    className={ cn('shrink') }
+                                    onClick={ this.handleShrinkClick }
+                                >
+                                    {
+                                        this.state.isShrank
+                                            ? <IconArrowLeft />
+                                            : <IconArrowDown />
+                                    }
+                            </IconButton>
+                        }
                     </div>
                 }
-                <div className={ cn('content') }>
+                <div
+                    className={ cn('content', {
+                        shrank: this.props.hasShrink && this.state.isShrank
+                    }) }
+                >
                     { this.props.children }
                     {
+                        this.props.hasShrink ||
                         this.props.hasCloser &&
                             <IconButton
                                 className={ cn('closer') }
@@ -109,6 +133,16 @@ class Plate extends React.Component {
     handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
+        }
+    };
+
+    handleShrinkClick = (event) => {
+        this.setState({
+            isShrank: !this.state.isShrank
+        });
+
+        if (this.props.onShrinkerClick) {
+            this.props.onCloserClick(event);
         }
     };
 

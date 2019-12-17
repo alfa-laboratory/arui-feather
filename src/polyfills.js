@@ -9,6 +9,8 @@ require('core-js/fn/array/fill');
 require('core-js/fn/array/find');
 require('core-js/fn/array/find-index');
 require('core-js/fn/array/from');
+require('core-js/fn/array/includes');
+require('core-js/fn/object/assign');
 require('core-js/fn/object/is');
 require('core-js/fn/object/values');
 require('core-js/es6/promise');

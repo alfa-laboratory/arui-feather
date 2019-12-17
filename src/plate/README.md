@@ -1,28 +1,26 @@
 Виды плашек:
 
 ```jsx
-import Heading from 'arui-feather/heading';
-import Paragraph from 'arui-feather/paragraph';
 import IconOk from 'arui-feather/icon/ui/ok';
 import IconError from 'arui-feather/icon/ui/error';
 import IconVerifying from 'arui-feather/icon/ui/verifying';
 
 <div>
     <Plate
-        title={ 'Основной' }
+        title='Основной'
         hasCloser={ true }
     />
     <Plate
-        title={ 'Обычный' }
-        type={ 'common' }
+        title='Обычный'
+        type='common'
         hasCloser={ true }
         icon={
             <IconVerifying />
         }
     />
     <Plate
-        title={ 'Ошибочный' }
-        type={ 'error' }
+        title='Ошибочный'
+        type='error'
         hasCloser={ true }
         icon={
             <IconError
@@ -31,8 +29,8 @@ import IconVerifying from 'arui-feather/icon/ui/verifying';
         }
     />
     <Plate
-        title={ 'Успешный' }
-        type={ 'success' }
+        title='Успешный'
+        type='success'
         hasCloser={ true }
         icon={
             <IconOk
@@ -46,13 +44,11 @@ import IconVerifying from 'arui-feather/icon/ui/verifying';
 Интерактивная плашка
 
 ```jsx
-import Heading from 'arui-feather/heading';
 import Paragraph from 'arui-feather/paragraph';
 
 <Plate
-    hasShrink={ true }
-    title={ 'Альфа-Мобайл 9.0' }
-
+    foldable={ true }
+    title='Альфа-Мобайл 9.0'
 >
     <Paragraph>
         Новый, превосходный, невероятный, беспрецедентный, большой, внушительный, четкий, безотказный, волшебный, понятный. +40 новых возможностей твоего мобайла!

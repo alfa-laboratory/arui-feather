@@ -1,19 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`plate should render without problems 1`] = `
-<ThemeProvider
-  theme="alfa-on-white"
+<div
+  className="plate plate_type_default plate_theme_alfa-on-white"
+  onClick={[Function]}
+  onKeyDown={[Function]}
 >
   <div
-    className="plate plate_theme_alfa-on-white"
-    onClick={[Function]}
-    onKeyDown={[Function]}
+    className="plate__content"
   >
-    <div
-      className="plate__content"
-    >
-      plate-text
-    </div>
+    plate-text
   </div>
-</ThemeProvider>
+</div>
 `;

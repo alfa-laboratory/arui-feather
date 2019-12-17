@@ -25,7 +25,9 @@ class Plate extends React.Component {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,
         /** Управление наличием стрелки скрытия контента */
-        hasShrink: Type.bool,
+        foldable: Type.bool,
+        /** Начальное состояние контента при foldable={ true } */
+        folden: Type.bool,
         /** Иконка компонента */
         icon: Type.node,
         /** Дочерние элементы `Plate` */
@@ -40,6 +42,11 @@ class Plate extends React.Component {
         className: Type.string,
         /** Идентификатор компонента в DOM */
         id: Type.string,
+        /**
+         * Обработчик клика стрелсе сворачивания\разворачивания плашки
+         * @param {React.MouseEvent} event
+         */
+        onFolderClick: Type.func,
         /**
          * Обработчик клика по плашке
          * @param {React.MouseEvent} event
@@ -60,14 +67,15 @@ class Plate extends React.Component {
     };
 
     static defaultProps = {
-        hasCloser: false,
+        foldable: false,
+        folden: true,
         type: 'default',
         title: ''
     };
 
     state = {
         isHidden: false,
-        isShrank: false
+        isFolden: this.props.folden
     };
 
     /**
@@ -80,7 +88,7 @@ class Plate extends React.Component {
             <div
                 className={ cn({
                     'has-closer': this.props.hasCloser,
-                    'has-shrink': this.props.hasShrink,
+                    foldable: this.props.foldable,
                     'has-icon': !!this.props.icon,
                     hidden: this.props.hasCloser && this.state.isHidden,
                     type: this.props.type
@@ -100,39 +108,39 @@ class Plate extends React.Component {
                     </span>
                 }
                 {
-                    this.props.title
-                    && <div className={ cn('title') }>
+                    this.props.title &&
+                    <div className={ cn('title') }>
                         { this.props.title }
                         {
-                            this.props.hasShrink &&
-                                <IconButton
-                                    className={ cn('shrink') }
-                                    onClick={ this.handleShrinkClick }
-                                >
-                                    {
-                                        this.state.isShrank
-                                            ? <IconArrowLeft />
-                                            : <IconArrowDown />
-                                    }
+                            this.props.foldable &&
+                            <IconButton
+                                className={ cn('folder') }
+                                onClick={ this.handleFolderClick }
+                            >
+                                {
+                                    this.state.isFolden
+                                        ? <IconArrowLeft />
+                                        : <IconArrowDown />
+                                }
                             </IconButton>
                         }
                     </div>
                 }
                 <div
                     className={ cn('content', {
-                        shrank: this.props.hasShrink && this.state.isShrank
+                        folden: this.props.foldable && this.state.isFolden
                     }) }
                 >
                     { this.props.children }
                     {
-                        this.props.hasShrink ||
-                        this.props.hasCloser &&
-                            <IconButton
-                                className={ cn('closer') }
-                                onClick={ this.handleCloserClick }
-                            >
-                                <IconClose />
-                            </IconButton>
+                        this.props.foldable ||
+                        (this.props.hasCloser &&
+                        <IconButton
+                            className={ cn('closer') }
+                            onClick={ this.handleCloserClick }
+                        >
+                            <IconClose />
+                        </IconButton>)
                     }
                 </div>
             </div>
@@ -145,13 +153,13 @@ class Plate extends React.Component {
         }
     };
 
-    handleShrinkClick = (event) => {
+    handleFolderClick = (event) => {
         this.setState({
-            isShrank: !this.state.isShrank
+            isFolden: !this.state.isFolden
         });
 
-        if (this.props.onShrinkerClick) {
-            this.props.onCloserClick(event);
+        if (this.props.onFolderClick) {
+            this.props.onFolderClick(event);
         }
     };
 

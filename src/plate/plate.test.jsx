@@ -6,6 +6,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import Plate from './plate';
+import IconOk from '../icon/ui/ok';
 
 describe('plate', () => {
     it('should render without problems', () => {
@@ -44,4 +45,35 @@ describe('plate', () => {
 
         expect(onClick).toHaveBeenCalled();
     });
+
+    it('should call `onFolderClick` callback after plate folder was clicked', () => {
+        const onFolderClick = jest.fn();
+        const plate = shallow(
+            <Plate title='plate-title' foldable={ true } onFolderClick={ onFolderClick }>plate-text</Plate>
+        );
+        const folder = plate.find('.plate__folder');
+
+        folder.simulate('click');
+
+        expect(onFolderClick).toHaveBeenCalled();
+    });
+
+    it('should render icon when it propperty is setted', () => {
+        const plate = shallow(
+            <Plate
+                title='Успешный'
+                type='success'
+                hasCloser={ true }
+                icon={
+                    <IconOk
+                        colored={ true }
+                    />
+                }
+            />
+        );
+
+        expect(plate).toMatchSnapshot();
+        expect(plate.html()).toContain('plate__icon');
+    });
+
 });

@@ -6,6 +6,8 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
+import performance from '../performance';
+
 import Heading from '../heading/heading';
 import Label from '../label/label';
 
@@ -21,7 +23,8 @@ const ZERO_MINOR_PART_REGEXP = /^0+$/;
  * Компонент для отображения суммы, согласно следующему гайдлайну:
  * https://design.alfabank.ru/patterns/amount
  */
-class Amount extends React.PureComponent {
+@performance(true)
+class Amount extends React.Component {
     cn = createCn('amount');
     static propTypes = {
         amount: Type.shape({

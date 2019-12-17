@@ -21,6 +21,7 @@ import setYear from 'date-fns/set_year';
 import sortedIndexOf from 'lodash.sortedindexof';
 
 import { createCn } from 'bem-react-classname';
+import performance from '../performance';
 import keyboardCode from '../lib/keyboard-code';
 import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
@@ -33,7 +34,8 @@ const LATER_YEARS_LIMIT = 1;
 /**
  * Компонент календаря.
  */
-class Calendar extends React.PureComponent {
+@performance(true)
+class Calendar extends React.Component {
     cn = createCn('calendar');
     static propTypes = {
         /** Выбранная дата, в формате unix timestamp */

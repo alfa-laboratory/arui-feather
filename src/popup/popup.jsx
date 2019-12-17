@@ -9,6 +9,7 @@ import React from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
+import performance from '../performance';
 
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
@@ -49,7 +50,8 @@ import { isNodeOutsideElement } from '../lib/window';
 /**
  * Компонент popup'а.
  */
-class Popup extends React.PureComponent {
+@performance(true)
+class Popup extends React.Component {
     cn = createCn('popup');
     static propTypes = {
         /** Дополнительный класс */

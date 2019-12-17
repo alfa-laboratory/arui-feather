@@ -9,6 +9,8 @@ import styleType from 'react-style-proptype';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
+import performance from '../performance';
+
 import IconCheck from '../icon/ui/tick';
 import MenuItem from '../menu-item/menu-item';
 
@@ -18,7 +20,8 @@ import keyboardCode from '../lib/keyboard-code';
 /**
  * Компонент меню.
  */
-class Menu extends React.PureComponent {
+@performance(true)
+class Menu extends React.Component {
     cn = createCn('menu');
     static propTypes = {
         /** Тип расположения меню: 'horizontal' */

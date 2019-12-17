@@ -6,6 +6,7 @@ import createFragment from 'react-addons-create-fragment';
 import { createCn } from 'bem-react-classname';
 import React from 'react';
 import Type from 'prop-types';
+import performance from '../performance';
 
 import Button from '../button/button';
 import IconButton from '../icon-button/icon-button';
@@ -42,7 +43,8 @@ class SelectButton extends Button {
 /**
  * Компонент выпадающего списка.
  */
-class Select extends React.PureComponent {
+@performance(true)
+class Select extends React.Component {
     cn = createCn('select');
     static propTypes = {
         /** Дополнительный класс */
@@ -311,7 +313,7 @@ class Select extends React.PureComponent {
                 <span className={ this.cn('inner') }>
                     <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value } />
                     { !!this.props.label && <span className={ this.cn('top') }>{ this.props.label }</span> }
-                    { this.renderButton(SelectButton) }
+                    { this.renderButton() }
 
                     <Mq query='--small-only' touch={ true } onMatchChange={ this.handleMqMatchChange }>
                         { this.props.mobileMenuMode === 'native' && this.renderNativeSelect() }
@@ -332,7 +334,7 @@ class Select extends React.PureComponent {
         );
     }
 
-    renderButton(SelectButton) {
+    renderButton() {
         let tickSize;
         let ToggledIcon;
         const opened = this.getOpened();

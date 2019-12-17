@@ -8,6 +8,8 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
+import performcance from '../performance';
+
 import Input from '../input/input';
 import Menu from '../menu/menu';
 import Popup from '../popup/popup';
@@ -22,7 +24,8 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
  *
  * @extends Input
  */
-class InputAutocomplete extends React.PureComponent {
+@performcance(true)
+class InputAutocomplete extends React.Component {
     cn = createCn('input');
     static propTypes = {
         ...Input.propTypes,

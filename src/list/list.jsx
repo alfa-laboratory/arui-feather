@@ -7,10 +7,13 @@ import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
 
+import performance from '../performance';
+
 /**
  * Компонент списка.
  */
-class List extends React.PureComponent {
+@performance(true)
+class List extends React.Component {
     cn = createCn('list');
     static propTypes = {
         /** Список элементов */

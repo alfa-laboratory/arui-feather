@@ -9,6 +9,8 @@ import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
+import performance from '../performance';
+
 import Calendar from '../calendar/calendar';
 import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/icon-button';
@@ -36,7 +38,8 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 /**
  * Компонент для ввода даты.
  */
-class CalendarInput extends React.PureComponent {
+@performance(true)
+class CalendarInput extends React.Component {
     cn = createCn('calendar-input');
     static propTypes = {
         /** Содержимое поля ввода */

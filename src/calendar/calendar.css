@@ -43,7 +43,7 @@
             outline: none;
 
             font-size: var(--font-size-l);
-            line-height: 30px;
+            line-height: var(--font-size-2xl);
 
             border-radius: var(--border-radius-control);
         }
@@ -150,7 +150,7 @@
         cursor: default;
         font-size: var(--font-size-s);
         font-weight: var(--font-weight-normal);
-        line-height: 1.2;
+        line-height: var(--line-height-condensed);
 
         padding: 0 0 var(--gap-2xs);
     }
@@ -162,7 +162,7 @@
 
         cursor: pointer;
         border-radius: var(--border-radius-control);
-        line-height: 30px;
+        line-height: var(--font-size-2xl);
         text-align: center;
         position: relative;
         outline: none;
@@ -176,7 +176,7 @@
 
         width: 36px;
         height: 30px;
-        line-height: 30px;
+        line-height: var(--font-size-2xl);
         text-align: center;
         cursor: pointer;
         outline: none;

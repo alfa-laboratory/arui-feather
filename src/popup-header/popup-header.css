@@ -24,22 +24,22 @@
     }
 
     &_size_s {
-        padding: 6px 48px;
+        padding: 6px var(--gap-4xl);
         font-size: var(--font-size-s);
     }
 
     &_size_m {
-        padding: 9px 48px;
+        padding: 9px var(--gap-4xl);
         font-size: var(--font-size-m);
     }
 
     &_size_l {
-        padding: 12px 48px;
+        padding: var(--gap-s) var(--gap-4xl);
         font-size: var(--font-size-l);
     }
 
     &_size_xl {
-        padding: 11px 48px;
+        padding: 11px var(--gap-4xl);
         font-size: var(--font-size-xl);
     }
 }

@@ -9,6 +9,7 @@ const style = {
     textAlign: 'center',
     marginTop: 10
 };
+
 <div>
     <GridRow>
         <GridCol width={ { desktop: { m: 12 } } }>
@@ -78,6 +79,7 @@ const style = {
     background: '#ff5c5c',
     marginBottom: '10px'
 };
+
 <div style={ { marginBottom: '-10px' } }>
     <GridRow>
         <GridCol width={ { mobile: 12, tablet: 12, desktop: 4 } }>
@@ -102,6 +104,7 @@ const style = {
     height: 30,
     background: '#ff5c5c'
 };
+
 <div style={ { background: '#f3f4f5' } }>
     <GridRow>
         <GridCol align='top'>
@@ -130,6 +133,7 @@ const style = {
     textAlign: 'center',
     background: '#ff5c5c'
 };
+
 <GridRow>
     <GridCol order='1'>
         <div style={ style }>Первый (order=1)</div>
@@ -157,6 +161,7 @@ const style = {
     textAlign: 'center',
     background: '#ff5c5c'
 };
+
 <div>
     <GridRow>
         <GridCol width='4'>

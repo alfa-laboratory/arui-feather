@@ -22,6 +22,7 @@ const socialNetworks = [
     { value: 'mixi' },
     { value: 'XING' }
 ];
+
 function getFilteredOptions(list, typedValue) {
     if (!typedValue) {
         return list;
@@ -70,6 +71,7 @@ function Circle({ background }) {
         marginRight: '10px',
         marginLeft: '-20px'
     };
+
     return (
         <span style={ circleStyles } />
     )
@@ -106,6 +108,7 @@ const socialNetworks = [
             </Label>
     }
 ];
+
 function getFilteredOptions(list, typedValue) {
     if (!typedValue) {
         return list;
@@ -159,11 +162,11 @@ const socialNetworks = [
     { value: 'mixi' },
     { value: 'XING' }
 ];
+
 function getFilteredOptions(list, typedValue) {
     if (!typedValue) {
         return list;
     }
-
 
     const typedValueLCase = typedValue.toLowerCase();
 
@@ -171,7 +174,8 @@ function getFilteredOptions(list, typedValue) {
 }
 
 function handleItemSelect(item) {
-    let values = state.values || [];
+    const values = state.values || [];
+
     if (!values.includes(item.value)) {
         setState({ values: values.concat([item.value]) });
     }

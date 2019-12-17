@@ -27,7 +27,7 @@
 
                 &_size_m {
                     padding-left: 6px;
-                    padding-right: 24px;
+                    padding-right: var(--gap-xl);
                 }
 
                 &_size_l {
@@ -36,7 +36,7 @@
                 }
 
                 &_size_xl {
-                    padding-left: 12px;
+                    padding-left: var(--gap-s);
                     padding-right: 30px;
                 }
 
@@ -82,7 +82,7 @@
 
     &.input_view_filled {
         .select-button {
-            padding: 2px 24px 0 2px;
+            padding: 2px var(--gap-xl) 0 2px;
 
             &.select-button_pressed {
                 border-bottom-color: transparent;
@@ -95,7 +95,7 @@
 .select__popup {
     &.popup_size_s .intl-phone-input__select-option-flag {
         min-width: 16px;
-        margin-right: 8px;
+        margin-right: var(--gap-xs);
     }
 
     &.popup_size_m .intl-phone-input__select-option-flag {
@@ -105,11 +105,11 @@
 
     &.popup_size_l .intl-phone-input__select-option-flag {
         min-width: 22px;
-        margin-right: 12px;
+        margin-right: var(--gap-s);
     }
 
     &.popup_size_xl .intl-phone-input__select-option-flag {
         min-width: 24px;
-        margin-right: 16px;
+        margin-right: var(--gap-m);
     }
 }

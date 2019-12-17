@@ -75,7 +75,7 @@ body.sidebar-overlay {
         transition: opacity var(--transition-duration);
 
         &:hover {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
 
         .icon-button {

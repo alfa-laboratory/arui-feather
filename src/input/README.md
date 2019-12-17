@@ -35,6 +35,7 @@ function handleMoneyChange(money) {
 Обычные
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -53,6 +54,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С лейблами
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -72,6 +74,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С крестиком «Очистить»
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -92,6 +95,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С шириной 100%
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -111,6 +115,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 С ошибкой
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 initialState = {
     value: 'Конsтантин',
     error: true
@@ -141,6 +146,7 @@ initialState = {
 import IconOk from 'arui-feather/icon/ui/ok';
 
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (
@@ -165,6 +171,7 @@ const sizes = ['s', 'm', 'l', 'xl'];
 В неактивном состоянии
 ```jsx
 const sizes = ['s', 'm', 'l', 'xl'];
+
 <div>
     {
         sizes.map(size => (

@@ -8,7 +8,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import IconClose from '../icon/ui/close';
-import IconArrowLeft from '../icon/ui/arrow-left';
+import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconButton from '../icon-button/icon-button';
 
@@ -119,8 +119,8 @@ class Plate extends React.Component {
                             >
                                 {
                                     this.state.isFolden
-                                        ? <IconArrowLeft />
-                                        : <IconArrowDown />
+                                        ? <IconArrowDown />
+                                        : <IconArrowUp />
                                 }
                             </IconButton>
                         }

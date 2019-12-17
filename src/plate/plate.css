@@ -55,8 +55,14 @@
         line-height: 22px;
     }
 
-    &__content_folden {
-        display: none;
+    &__content {
+        max-height: 100vh;
+        overflow: hidden;
+        transition: max-height 1s;
+
+        &_folden {
+            max-height: 0;
+        }
     }
 
     &_has-icon &__icon {

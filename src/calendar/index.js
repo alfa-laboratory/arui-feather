@@ -8,4 +8,5 @@ import './calendar_theme_alfa-on-color.css';
 
 import { withTheme } from '../cn';
 import Component from './calendar';
+
 export default withTheme(Component);

@@ -11,4 +11,5 @@ import './checkbox_theme_alfa-on-white.css';
 
 import { withTheme } from '../cn';
 import Component from './checkbox';
+
 export default withTheme(Component);

@@ -6,13 +6,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Input from '../input/input';
 import Menu from '../menu/menu';
 import Popup from '../popup/popup';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
-import { createCn } from 'bem-react-classname';
 import keyboardCode from '../lib/keyboard-code';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';

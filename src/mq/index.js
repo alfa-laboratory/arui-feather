@@ -4,4 +4,5 @@
 
 import { withTheme } from '../cn';
 import Component from './mq';
+
 export default withTheme(Component);

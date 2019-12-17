@@ -10,4 +10,5 @@ import './radio-group_theme_alfa-on-white.css';
 
 import { withTheme } from '../cn';
 import Component from './radio-group';
+
 export default withTheme(Component);

@@ -6,10 +6,9 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Input from '../input/input';
-
-import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент ввода телефона по маске.

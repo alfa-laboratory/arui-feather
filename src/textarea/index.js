@@ -8,4 +8,5 @@ import './textarea_theme_alfa-on-white.css';
 
 import { withTheme } from '../cn';
 import Component from './textarea';
+
 export default withTheme(Component);

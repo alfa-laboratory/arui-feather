@@ -4,13 +4,12 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
-
-import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».

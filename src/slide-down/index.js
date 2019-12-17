@@ -6,4 +6,5 @@ import './slide-down.css';
 
 import { withTheme } from '../cn';
 import Component from './slide-down';
+
 export default withTheme(Component);

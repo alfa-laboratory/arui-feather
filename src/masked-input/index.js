@@ -4,4 +4,5 @@
 
 import { withTheme } from '../cn';
 import Component from './masked-input';
+
 export default withTheme(Component);

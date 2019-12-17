@@ -6,4 +6,5 @@ import './grid-col.css';
 
 import { withTheme } from '../cn';
 import Component from './grid-col';
+
 export default withTheme(Component);

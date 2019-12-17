@@ -10,4 +10,5 @@ import './intl-phone-input.css';
 
 import { withTheme } from '../cn';
 import Component from './intl-phone-input';
+
 export default withTheme(Component);

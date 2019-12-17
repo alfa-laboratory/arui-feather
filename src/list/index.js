@@ -3,9 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './list.css';
+import { withTheme } from '../cn';
+import Component from './list';
 
 /* eslint-disable import/export */
 export * from './list';
-import { withTheme } from '../cn';
-import Component from './list';
 export default withTheme(Component);

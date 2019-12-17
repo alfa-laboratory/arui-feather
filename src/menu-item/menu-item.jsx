@@ -4,11 +4,10 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
-
-import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.

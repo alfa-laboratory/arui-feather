@@ -8,4 +8,5 @@ import './popup-container.css';
 
 import { withTheme } from '../cn';
 import Component from './popup-container-provider';
+
 export default withTheme(Component);

@@ -3,12 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { createCn } from 'bem-react-classname';
 
 import FlagIcon from '../flag-icon/flag-icon';
 import Input from '../input/input';
 import Select from '../select/select';
-
-import { createCn } from 'bem-react-classname';
 
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';

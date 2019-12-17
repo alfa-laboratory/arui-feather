@@ -4,4 +4,5 @@
 
 import { withTheme } from '../cn';
 import Component from './resize-sensor';
+
 export default withTheme(Component);

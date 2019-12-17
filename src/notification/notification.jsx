@@ -6,6 +6,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconError from '../icon/ui/error';
@@ -14,7 +15,6 @@ import IconOk from '../icon/ui/ok';
 import IconButton from '../icon-button/icon-button';
 import Swipeable from '../swipeable';
 
-import { createCn } from 'bem-react-classname';
 import { isNodeOutsideElement } from '../lib/window';
 
 /**

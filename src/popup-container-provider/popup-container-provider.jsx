@@ -5,10 +5,10 @@
 import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IsolatedContainer from '../isolated-container/isolated-container';
 
-import { createCn } from 'bem-react-classname';
 import { HtmlElement } from '../lib/prop-types';
 
 /**

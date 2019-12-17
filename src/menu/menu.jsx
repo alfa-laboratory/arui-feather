@@ -7,11 +7,11 @@
 import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconCheck from '../icon/ui/tick';
 import MenuItem from '../menu-item/menu-item';
 
-import { createCn } from 'bem-react-classname';
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
 

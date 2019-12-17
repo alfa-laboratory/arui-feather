@@ -1,7 +1,6 @@
 import React from 'react';
 import Type from 'prop-types';
 
-
 export const getCoordinates = ({
     touches, changedTouches, clientX, clientY
 }) => (

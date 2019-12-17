@@ -6,4 +6,5 @@ import './form-field.css';
 
 import { withTheme } from '../cn';
 import Component from './form-field';
+
 export default withTheme(Component);

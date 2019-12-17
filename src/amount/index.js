@@ -6,9 +6,9 @@ import '../heading';
 import '../label';
 
 import './amount.css';
+import { withTheme } from '../cn';
+import Component from './amount';
 
 /* eslint-disable import/export */
 export * from './amount';
-import { withTheme } from '../cn';
-import Component from './amount';
 export default withTheme(Component);

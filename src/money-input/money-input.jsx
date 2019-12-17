@@ -6,11 +6,11 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Input from '../input/input';
 import Mask from '../masked-input/mask';
 
-import { createCn } from 'bem-react-classname';
 import { getCurrencySymbol } from '../lib/currency-codes';
 
 const DEFAULT_FRACTION_SIZE = 2;

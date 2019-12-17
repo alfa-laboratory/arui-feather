@@ -8,10 +8,11 @@ import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
+import { createCn } from 'bem-react-classname';
+
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
-import { createCn } from 'bem-react-classname';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 

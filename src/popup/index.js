@@ -10,4 +10,5 @@ import './popup_theme_alfa-on-color.css';
 
 import { withTheme } from '../cn';
 import Component from './popup';
+
 export default withTheme(Component);

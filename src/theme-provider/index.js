@@ -4,4 +4,5 @@
 
 import { withTheme } from '../cn';
 import Component from './theme-provider';
+
 export default withTheme(Component);

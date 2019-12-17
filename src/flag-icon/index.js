@@ -14,4 +14,5 @@ import './flag-icon_size_xl.sprite.css';
 
 import { withTheme } from '../cn';
 import Component from './flag-icon';
+
 export default withTheme(Component);

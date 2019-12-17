@@ -6,6 +6,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
@@ -14,7 +15,6 @@ import PopupContainerProvider from '../popup-container-provider/popup-container-
 import keyboardCode from '../lib/keyboard-code';
 import getScrollbarWidth from '../lib/scrollbar-width';
 
-import { createCn } from 'bem-react-classname';
 import Mq from '../mq';
 
 const SIDEBAR_WIDTH = 430;

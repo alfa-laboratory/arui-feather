@@ -4,4 +4,5 @@
 
 import { withTheme } from '../cn';
 import Component from './isolated-container';
+
 export default withTheme(Component);

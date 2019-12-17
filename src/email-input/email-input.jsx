@@ -3,10 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { createCn } from 'bem-react-classname';
 
 import Input from '../input/input';
-
-import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент поля ввода почты.

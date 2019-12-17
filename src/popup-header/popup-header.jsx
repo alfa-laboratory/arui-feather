@@ -4,11 +4,10 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
-
-import { createCn } from 'bem-react-classname';
 
 /**
  * Заголовок в Popup.

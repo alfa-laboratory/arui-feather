@@ -8,4 +8,5 @@ import './button_theme_alfa-on-white.css';
 
 import { withTheme } from '../cn';
 import Component from './button';
+
 export default withTheme(Component);

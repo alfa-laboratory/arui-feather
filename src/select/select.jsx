@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import createFragment from 'react-addons-create-fragment';
+import { createCn } from 'bem-react-classname';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -16,7 +17,6 @@ import Popup from '../popup/popup';
 import PopupHeader from '../popup-header/popup-header';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
-import { createCn } from 'bem-react-classname';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
 import scrollTo from '../lib/scroll-to';

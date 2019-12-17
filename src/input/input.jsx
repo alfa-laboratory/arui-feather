@@ -6,12 +6,12 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
-import { createCn } from 'bem-react-classname';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 

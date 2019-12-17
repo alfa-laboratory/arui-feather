@@ -127,13 +127,15 @@ class MaskedInput extends React.Component {
      */
     beforeInputSelection = { start: 0, end: 0 };
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
         this.beforeChangeMask = this.mask;
         this.value = this.mask.format(this.props.value || '');
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         let reformatValue = false;
 
         this.beforeChangeMask = this.mask;

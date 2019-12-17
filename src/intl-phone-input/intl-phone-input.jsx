@@ -50,7 +50,8 @@ class IntlPhoneInput extends React.Component {
         this.setCountry();
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
         if (this.state.inputValue !== nextState.inputValue) {
             if (this.props.onChange) {
                 this.props.onChange(nextState.inputValue);
@@ -211,7 +212,7 @@ class IntlPhoneInput extends React.Component {
 
     getValue() {
         // Use value from state not props, cause of some formatting steps in component
-        // Sync props.value with state.inputValue in componentWillUpdate
+        // Sync props.value with state.inputValue in UNSAFE_componentWillUpdate
         return this.state.inputValue;
     }
 

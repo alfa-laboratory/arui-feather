@@ -1215,7 +1215,7 @@
 * **flag-icon:** change root style to inline-flex ([#381](https://github.com/alfa-laboratory/arui-feather/issues/381)) ([64a114f](https://github.com/alfa-laboratory/arui-feather/commit/64a114f))
 * **intl-phone-input:** fix popup offset values ([#383](https://github.com/alfa-laboratory/arui-feather/issues/383)) ([a832794](https://github.com/alfa-laboratory/arui-feather/commit/a832794))
 * **intl-phone-input:** use input as root node ([#380](https://github.com/alfa-laboratory/arui-feather/issues/380)) ([61f8a69](https://github.com/alfa-laboratory/arui-feather/commit/61f8a69))
-* **menu:** fix item highlighting on componentWillReceiveProps ([#382](https://github.com/alfa-laboratory/arui-feather/issues/382)) ([382ccd5](https://github.com/alfa-laboratory/arui-feather/commit/382ccd5))
+* **menu:** fix item highlighting on UNSAFE_componentWillReceiveProps ([#382](https://github.com/alfa-laboratory/arui-feather/issues/382)) ([382ccd5](https://github.com/alfa-laboratory/arui-feather/commit/382ccd5))
 * **popup:** fix server-side rendering ([#391](https://github.com/alfa-laboratory/arui-feather/issues/391)) ([477476c](https://github.com/alfa-laboratory/arui-feather/commit/477476c))
 
 

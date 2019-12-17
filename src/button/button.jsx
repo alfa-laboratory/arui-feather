@@ -132,7 +132,8 @@ class Button extends React.Component {
      */
     control;
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.disabled) {
             this.setState({
                 hovered: false,

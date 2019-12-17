@@ -8,15 +8,15 @@ import Type from 'prop-types';
 import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
 @cn('menu-item')
-@performance()
 class MenuItem extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),
@@ -91,7 +91,7 @@ class MenuItem extends React.Component {
     root;
     control;
 
-    render(cn) {
+    render() {
         const content = this.props.children || this.props.value;
         let itemElement;
         let menuItemProps = {
@@ -136,7 +136,7 @@ class MenuItem extends React.Component {
                     onMouseEnter: this.handleMouseEnter,
                     onMouseLeave: this.handleMouseLeave
                 };
-                itemElement = <span className={ cn('control') }>{ content }</span>;
+                itemElement = <span className={ this.cn('control') }>{ content }</span>;
 
                 break;
             case 'link':
@@ -169,7 +169,7 @@ class MenuItem extends React.Component {
 
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     disabled: this.props.disabled,
                     checked: this.props.checked,
                     hidden: this.props.hidden,
@@ -260,4 +260,4 @@ class MenuItem extends React.Component {
     }
 }
 
-export default MenuItem;
+export default withTheme(MenuItem);

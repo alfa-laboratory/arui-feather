@@ -18,4 +18,4 @@ class IconNavigationMarketplace extends React.Component {
     }
 }
 
-export default IconNavigationMarketplace;
+export default withTheme(IconNavigationMarketplace);

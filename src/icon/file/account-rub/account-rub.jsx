@@ -18,4 +18,4 @@ class IconAccountRub extends React.Component {
     }
 }
 
-export default IconAccountRub;
+export default withTheme(IconAccountRub);

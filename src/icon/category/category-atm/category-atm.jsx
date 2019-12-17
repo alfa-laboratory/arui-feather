@@ -18,4 +18,4 @@ class IconCategoryAtm extends React.Component {
     }
 }
 
-export default IconCategoryAtm;
+export default withTheme(IconCategoryAtm);

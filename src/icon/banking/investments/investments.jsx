@@ -18,4 +18,4 @@ class IconInvestments extends React.Component {
     }
 }
 
-export default IconInvestments;
+export default withTheme(IconInvestments);

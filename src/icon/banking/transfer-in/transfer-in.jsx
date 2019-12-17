@@ -18,4 +18,4 @@ class IconTransferIn extends React.Component {
     }
 }
 
-export default IconTransferIn;
+export default withTheme(IconTransferIn);

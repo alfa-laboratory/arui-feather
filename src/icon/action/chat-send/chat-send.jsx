@@ -18,4 +18,4 @@ class IconChatSend extends React.Component {
     }
 }
 
-export default IconChatSend;
+export default withTheme(IconChatSend);

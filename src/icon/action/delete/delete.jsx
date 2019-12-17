@@ -18,4 +18,4 @@ class IconDelete extends React.Component {
     }
 }
 
-export default IconDelete;
+export default withTheme(IconDelete);

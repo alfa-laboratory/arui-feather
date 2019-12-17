@@ -18,4 +18,4 @@ class IconFormatTxt extends React.Component {
     }
 }
 
-export default IconFormatTxt;
+export default withTheme(IconFormatTxt);

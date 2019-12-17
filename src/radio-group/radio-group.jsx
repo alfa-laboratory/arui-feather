@@ -6,15 +6,15 @@ import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент группы радио-кнопок.
  */
 @cn('radio-group')
-@performance()
 class RadioGroup extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Тип группы кнопок */
         type: Type.oneOf(['normal', 'button', 'line']),
@@ -71,7 +71,7 @@ class RadioGroup extends React.Component {
         value: ''
     };
 
-    render(cn) {
+    render() {
         let children = null;
         const { size, name } = this.props;
         let props = { name };
@@ -120,17 +120,17 @@ class RadioGroup extends React.Component {
                 onBlur={ this.handleBlur }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <div className={ cn('inner') }>
+                <div className={ this.cn('inner') }>
                     {
                         !!this.props.label &&
-                        <div className={ cn('top') }>{ this.props.label }</div>
+                        <div className={ this.cn('top') }>{ this.props.label }</div>
                     }
-                    <div className={ cn('box') }>
+                    <div className={ this.cn('box') }>
                         { createFragment(radioGroupParts) }
                     </div>
                     {
                         (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
+                        <span className={ this.cn('sub') }>
                             { this.props.error || this.props.hint }
                         </span>
                     }
@@ -185,4 +185,4 @@ class RadioGroup extends React.Component {
     }
 }
 
-export default RadioGroup;
+export default withTheme(RadioGroup);

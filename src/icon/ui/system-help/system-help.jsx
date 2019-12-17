@@ -18,4 +18,4 @@ class IconSystemHelp extends React.Component {
     }
 }
 
-export default IconSystemHelp;
+export default withTheme(IconSystemHelp);

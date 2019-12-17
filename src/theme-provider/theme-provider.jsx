@@ -4,38 +4,29 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { ThemeProvider as TrueThemeProvider } from '../cn';
 
 /**
  * Компонент задающий тему для своих дочерних компонентов.
  * Важно! Может содержать в себе строго один дочерний компонент.
  */
 class ThemeProvider extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Дочерний элемент `ThemeProvider` */
         children: Type.node,
-        /** Дополнительный класс */
-        className: Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
     };
 
-    static contextTypes = {
-        theme: Type.string
-    };
-
-    static childContextTypes = {
-        theme: Type.string
-    };
-
-    getChildContext() {
-        return {
-            theme: this.props.theme
-        };
-    }
-
     render() {
-        return React.Children.only(this.props.children);
+
+        return (
+            <TrueThemeProvider value={ this.props.theme }>
+                { this.props.children }
+            </TrueThemeProvider>
+        );
     }
 }
 
-export default ThemeProvider;
+export default withTheme(ThemeProvider);

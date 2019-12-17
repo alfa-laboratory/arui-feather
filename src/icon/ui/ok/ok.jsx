@@ -18,4 +18,4 @@ class IconOk extends React.Component {
     }
 }
 
-export default IconOk;
+export default withTheme(IconOk);

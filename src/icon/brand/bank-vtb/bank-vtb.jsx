@@ -18,4 +18,4 @@ class IconBankVtb extends React.Component {
     }
 }
 
-export default IconBankVtb;
+export default withTheme(IconBankVtb);

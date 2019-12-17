@@ -18,4 +18,4 @@ class IconVisa extends React.Component {
     }
 }
 
-export default IconVisa;
+export default withTheme(IconVisa);

@@ -18,4 +18,4 @@ class IconTransferCard extends React.Component {
     }
 }
 
-export default IconTransferCard;
+export default withTheme(IconTransferCard);

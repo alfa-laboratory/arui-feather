@@ -10,15 +10,15 @@ import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
 @cn('collapse')
-@performance()
 class Collapse extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Управление `expanded` состоянием компонента */
         isExpanded: Type.bool,
@@ -63,7 +63,7 @@ class Collapse extends React.Component {
         this.updateContentHeight();
     }
 
-    render(cn) {
+    render() {
         let ToggledIcon;
         const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
@@ -74,7 +74,7 @@ class Collapse extends React.Component {
 
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     expanded
                 }) }
                 id={ this.props.id }
@@ -84,7 +84,7 @@ class Collapse extends React.Component {
                     ref={ (content) => {
                         this.content = content;
                     } }
-                    className={ cn('content') }
+                    className={ this.cn('content') }
                 >
                     <div ref={ (contentCase) => {
                         this.contentCase = contentCase;
@@ -95,7 +95,7 @@ class Collapse extends React.Component {
                     <ResizeSensor onResize={ this.updateContentHeight } />
                 </div>
                 <Link
-                    className={ cn('link') }
+                    className={ this.cn('link') }
                     pseudo={ true }
                     icon={
                         <ToggledIcon size='s' />
@@ -141,4 +141,4 @@ class Collapse extends React.Component {
     }
 }
 
-export default Collapse;
+export default withTheme(Collapse);

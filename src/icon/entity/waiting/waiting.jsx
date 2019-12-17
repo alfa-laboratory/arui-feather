@@ -18,4 +18,4 @@ class IconWaiting extends React.Component {
     }
 }
 
-export default IconWaiting;
+export default withTheme(IconWaiting);

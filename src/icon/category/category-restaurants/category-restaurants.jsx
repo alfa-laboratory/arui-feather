@@ -18,4 +18,4 @@ class IconCategoryRestaurants extends React.Component {
     }
 }
 
-export default IconCategoryRestaurants;
+export default withTheme(IconCategoryRestaurants);

@@ -18,4 +18,4 @@ class IconCardVisa extends React.Component {
     }
 }
 
-export default IconCardVisa;
+export default withTheme(IconCardVisa);

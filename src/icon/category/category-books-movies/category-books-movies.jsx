@@ -18,4 +18,4 @@ class IconCategoryBooksMovies extends React.Component {
     }
 }
 
-export default IconCategoryBooksMovies;
+export default withTheme(IconCategoryBooksMovies);

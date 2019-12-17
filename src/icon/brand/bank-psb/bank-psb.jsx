@@ -18,4 +18,4 @@ class IconBankPsb extends React.Component {
     }
 }
 
-export default IconBankPsb;
+export default withTheme(IconBankPsb);

@@ -21,4 +21,4 @@ export function setIsMatched(newIsMatched) {
     isMatched = newIsMatched;
 }
 
-export default Mq;
+export default withTheme(Mq);

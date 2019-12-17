@@ -18,4 +18,4 @@ class IconCategoryPlane extends React.Component {
     }
 }
 
-export default IconCategoryPlane;
+export default withTheme(IconCategoryPlane);

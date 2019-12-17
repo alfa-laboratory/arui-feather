@@ -18,4 +18,4 @@ class IconSliderArrowDouble extends React.Component {
     }
 }
 
-export default IconSliderArrowDouble;
+export default withTheme(IconSliderArrowDouble);

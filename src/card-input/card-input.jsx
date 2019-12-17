@@ -7,8 +7,8 @@ import Type from 'prop-types';
 
 import Input from '../input/input';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Поле ввода номера карты с маской.
@@ -17,8 +17,8 @@ import performance from '../performance';
  * @extends Input
  */
 @cn('card-input', Input)
-@performance()
 class CardInput extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         ...Input.propTypes,
         /** Подсказка в текстовом поле */
@@ -36,7 +36,7 @@ class CardInput extends React.Component {
      */
     root;
 
-    render(cn, Input) {
+    render(Input) {
         return (
             <Input
                 { ...this.props }
@@ -46,7 +46,7 @@ class CardInput extends React.Component {
                 } }
                 mask='1111 1111 1111 1111 11'
                 formNoValidate={ true }
-                className={ cn() }
+                className={ this.cn() }
             />
         );
     }
@@ -79,4 +79,4 @@ class CardInput extends React.Component {
     }
 }
 
-export default CardInput;
+export default withTheme(CardInput);

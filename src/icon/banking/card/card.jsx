@@ -18,4 +18,4 @@ class IconCard extends React.Component {
     }
 }
 
-export default IconCard;
+export default withTheme(IconCard);

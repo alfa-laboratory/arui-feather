@@ -18,4 +18,4 @@ class IconCategoryRepairs extends React.Component {
     }
 }
 
-export default IconCategoryRepairs;
+export default withTheme(IconCategoryRepairs);

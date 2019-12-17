@@ -5,7 +5,8 @@
 import React, { Children, cloneElement } from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
@@ -19,6 +20,7 @@ const breakpointsType = {
  */
 @cn('grid-row')
 class GridRow extends React.PureComponent {
+    cn = createCn('hoba');
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -69,7 +71,7 @@ class GridRow extends React.PureComponent {
      */
     classCol = 'grid-col'
 
-    render(cn) {
+    render() {
         const {
             tag: Tag,
             gutter,
@@ -104,7 +106,7 @@ class GridRow extends React.PureComponent {
         return (
             <Tag
                 { ...props }
-                className={ cn({
+                className={ this.cn({
                     ...gutters,
                     align,
                     justify
@@ -143,4 +145,4 @@ class GridRow extends React.PureComponent {
     }
 }
 
-export default GridRow;
+export default withTheme(GridRow);

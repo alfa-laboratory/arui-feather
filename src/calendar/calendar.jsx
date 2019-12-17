@@ -20,9 +20,9 @@ import setMonth from 'date-fns/set_month';
 import setYear from 'date-fns/set_year';
 import sortedIndexOf from 'lodash.sortedindexof';
 
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
@@ -35,8 +35,8 @@ const LATER_YEARS_LIMIT = 1;
  * Компонент календаря.
  */
 @cn('calendar')
-@performance(true)
 class Calendar extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Выбранная дата, в формате unix timestamp */
         value: Type.number,
@@ -160,13 +160,13 @@ class Calendar extends React.Component {
         }
     }
 
-    render(cn) {
+    render() {
         return (
             <div
                 ref={ (root) => {
                     this.root = root;
                 } }
-                className={ cn({ width: this.props.width }) }
+                className={ this.cn({ width: this.props.width }) }
                 id={ this.props.id }
                 role='grid'
                 tabIndex='0'
@@ -176,13 +176,13 @@ class Calendar extends React.Component {
                 onKeyUp={ this.props.isKeyboard && this.handleKeyUp }
                 data-test-id={ this.props['data-test-id'] }
             >
-                { this.renderTitle(cn) }
-                { this.renderContent(cn) }
+                { this.renderTitle() }
+                { this.renderContent() }
             </div>
         );
     }
 
-    renderTitle(cn) {
+    renderTitle() {
         const month = new Date(this.state.month);
         const isPrevMonthEnabled = !this.earlierLimit ||
             differenceInMonths(month, startOfMonth(this.earlierLimit)) > 0;
@@ -190,12 +190,12 @@ class Calendar extends React.Component {
             differenceInMonths(month, this.laterLimit) < 0;
 
         return (
-            <div className={ cn('title') }>
+            <div className={ this.cn('title') }>
                 {
                     this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
                     <div
                         className={
-                            cn('arrow', {
+                            this.cn('arrow', {
                                 direction: 'left',
                                 disabled: !isPrevMonthEnabled
                             })
@@ -211,7 +211,7 @@ class Calendar extends React.Component {
                     this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection &&
                     <div
                         className={
-                            cn('arrow', {
+                            this.cn('arrow', {
                                 direction: 'right',
                                 disabled: !isNextMonthEnabled
                             })
@@ -223,11 +223,11 @@ class Calendar extends React.Component {
                         onClick={ this.handleArrowClick }
                     />
                 }
-                <div className={ cn('select-buttons') }>
+                <div className={ this.cn('select-buttons') }>
                     {
                         <div
                             className={
-                                cn('name', {
+                                this.cn('name', {
                                     month: true
                                 })
                             }
@@ -235,14 +235,14 @@ class Calendar extends React.Component {
                             tabIndex='0'
                             onClick={ this.handleMonthClick }
                         >
-                            <div className={ cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
-                            <div className={ cn('select-arrows') } />
+                            <div className={ this.cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
+                            <div className={ this.cn('select-arrows') } />
                         </div>
                     }
                     {
                         <div
                             className={
-                                cn('name', {
+                                this.cn('name', {
                                     year: true
                                 })
                             }
@@ -250,8 +250,8 @@ class Calendar extends React.Component {
                             tabIndex='0'
                             onClick={ this.handleYearClick }
                         >
-                            <div className={ cn('select-text') } >{ `${month.getFullYear()}` }</div>
-                            <div className={ cn('select-arrows') } />
+                            <div className={ this.cn('select-text') } >{ `${month.getFullYear()}` }</div>
+                            <div className={ this.cn('select-arrows') } />
                         </div>
                     }
                 </div>
@@ -273,20 +273,20 @@ class Calendar extends React.Component {
         });
     };
 
-    renderContent(cn) {
+    renderContent() {
         return (
             <React.Fragment>
-                { this.state.isMonthSelection ? this.renderMonths(cn) : null }
-                { this.state.isYearSelection ? this.renderYears(cn) : null }
-                { this.renderDays(cn) }
+                { this.state.isMonthSelection ? this.renderMonths() : null }
+                { this.state.isYearSelection ? this.renderYears() : null }
+                { this.renderDays() }
             </React.Fragment>
         );
     }
 
-    renderMonths(cn) {
+    renderMonths() {
         return (
-            <div className={ cn('wrapper') }>
-                <div className={ cn('months') }>
+            <div className={ this.cn('wrapper') }>
+                <div className={ this.cn('months') }>
                     {
                         this.props.months.map((month, index) => {
                             const newMonth = setMonth(this.state.month, index);
@@ -303,7 +303,7 @@ class Calendar extends React.Component {
 
                             return (
                                 <div
-                                    className={ cn('select', { month: true, ...mods }) }
+                                    className={ this.cn('select', { month: true, ...mods }) }
                                     key={ `month_${index + 1}` }
                                     role='gridcell'
                                     tabIndex='0'
@@ -342,10 +342,10 @@ class Calendar extends React.Component {
         }
     };
 
-    renderYears(cn) {
+    renderYears() {
         return (
-            <div className={ cn('wrapper') }>
-                <div className={ cn('years') }>
+            <div className={ this.cn('wrapper') }>
+                <div className={ this.cn('years') }>
                     {
                         this.years.map((year, index) => {
                             const newYear = setYear(this.state.month, year);
@@ -359,7 +359,7 @@ class Calendar extends React.Component {
 
                             return (
                                 <div
-                                    className={ cn('select', { year: true, ...mods }) }
+                                    className={ this.cn('select', { year: true, ...mods }) }
                                     key={ `year_${index + 1}` }
                                     role='gridcell'
                                     tabIndex='0'
@@ -398,19 +398,19 @@ class Calendar extends React.Component {
         }
     };
 
-    renderDays(cn) {
+    renderDays() {
         const rows = [
-            this.renderShortWeekdays(cn),
-            ...this.renderMonth(cn)
+            this.renderShortWeekdays(),
+            ...this.renderMonth()
         ];
 
         return (
-            <table className={ cn('layout') }>
+            <table className={ this.cn('layout') }>
                 <tbody>
                     {
                         rows.map((row, index) => (
                             <tr
-                                className={ cn('row') }
+                                className={ this.cn('row') }
                                 key={ `row_${index + 1}` }
                             >
                                 { row }
@@ -422,10 +422,10 @@ class Calendar extends React.Component {
         );
     }
 
-    renderShortWeekdays(cn) {
+    renderShortWeekdays() {
         return this.props.weekdays.map((weekdayName, index) => (
             <th
-                className={ cn('dayname', { type: index > 4 ? 'weekend' : false }) }
+                className={ this.cn('dayname', { type: index > 4 ? 'weekend' : false }) }
                 key={ weekdayName }
             >
                 { weekdayName }
@@ -433,11 +433,11 @@ class Calendar extends React.Component {
         ));
     }
 
-    renderMonth(cn) {
-        return this.calculateWeeks().map(week => this.renderWeek(cn, week));
+    renderMonth() {
+        return this.calculateWeeks().map(week => this.renderWeek(week));
     }
 
-    renderWeek(cn, week) {
+    renderWeek(week) {
         return week.map((day, index) => {
             const off = !this.isValidDate(day) || this.isOffDay(day);
             const event = this.isEventDay(day);
@@ -481,14 +481,14 @@ class Calendar extends React.Component {
                     key={ day || `day_${index + 1}` }
                 >
                     <div
-                        className={ cn('day', mods) }
+                        className={ this.cn('day', mods) }
                         role='gridcell'
                         tabIndex='0'
                         data-day={ dataDay }
                         onClick={ this.handleDayClick }
                     >
                         { day ? day.getDate() : '' }
-                        { mods.event && <span data-day={ dataDay } className={ cn('event') } /> }
+                        { mods.event && <span data-day={ dataDay } className={ this.cn('event') } /> }
                     </div>
                 </td>
             );
@@ -845,4 +845,4 @@ class Calendar extends React.Component {
     }
 }
 
-export default Calendar;
+export default withTheme(Calendar);

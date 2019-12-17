@@ -18,4 +18,4 @@ class IconHistory extends React.Component {
     }
 }
 
-export default IconHistory;
+export default withTheme(IconHistory);

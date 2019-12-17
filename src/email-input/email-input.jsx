@@ -6,16 +6,16 @@ import React from 'react';
 
 import Input from '../input/input';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент поля ввода почты.
  * @extends Input
  */
 @cn('email-input', Input)
-@performance()
 class EmailInput extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         ...Input.propTypes
     };
@@ -25,7 +25,7 @@ class EmailInput extends React.Component {
      */
     root;
 
-    render(cn, Input) {
+    render(Input) {
         return (
             <Input
                 { ...this.props }
@@ -34,7 +34,7 @@ class EmailInput extends React.Component {
                     this.root = root;
                 } }
                 formNoValidate={ true }
-                className={ cn() }
+                className={ this.cn() }
             />
         );
     }
@@ -67,4 +67,4 @@ class EmailInput extends React.Component {
     }
 }
 
-export default EmailInput;
+export default withTheme(EmailInput);

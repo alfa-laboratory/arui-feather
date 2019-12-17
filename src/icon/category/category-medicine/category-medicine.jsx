@@ -18,4 +18,4 @@ class IconCategoryMedicine extends React.Component {
     }
 }
 
-export default IconCategoryMedicine;
+export default withTheme(IconCategoryMedicine);

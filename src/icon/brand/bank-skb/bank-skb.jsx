@@ -18,4 +18,4 @@ class IconBankSkb extends React.Component {
     }
 }
 
-export default IconBankSkb;
+export default withTheme(IconBankSkb);

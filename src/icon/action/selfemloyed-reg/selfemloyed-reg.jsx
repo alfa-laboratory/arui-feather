@@ -18,4 +18,4 @@ class IconSelfemloyedReg extends React.Component {
     }
 }
 
-export default IconSelfemloyedReg;
+export default withTheme(IconSelfemloyedReg);

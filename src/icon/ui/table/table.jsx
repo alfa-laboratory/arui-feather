@@ -18,4 +18,4 @@ class IconTable extends React.Component {
     }
 }
 
-export default IconTable;
+export default withTheme(IconTable);

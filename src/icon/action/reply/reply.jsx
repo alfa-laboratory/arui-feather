@@ -18,4 +18,4 @@ class IconReply extends React.Component {
     }
 }
 
-export default IconReply;
+export default withTheme(IconReply);

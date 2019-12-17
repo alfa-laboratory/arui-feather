@@ -18,4 +18,4 @@ class IconOutside extends React.Component {
     }
 }
 
-export default IconOutside;
+export default withTheme(IconOutside);

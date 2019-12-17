@@ -18,4 +18,4 @@ class IconRepeat extends React.Component {
     }
 }
 
-export default IconRepeat;
+export default withTheme(IconRepeat);

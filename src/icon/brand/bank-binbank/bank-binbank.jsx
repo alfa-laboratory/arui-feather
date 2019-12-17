@@ -18,4 +18,4 @@ class IconBankBinbank extends React.Component {
     }
 }
 
-export default IconBankBinbank;
+export default withTheme(IconBankBinbank);

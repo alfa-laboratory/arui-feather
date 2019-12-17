@@ -18,4 +18,4 @@ class IconRight extends React.Component {
     }
 }
 
-export default IconRight;
+export default withTheme(IconRight);

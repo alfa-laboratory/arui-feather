@@ -18,4 +18,4 @@ class IconAddFilled extends React.Component {
     }
 }
 
-export default IconAddFilled;
+export default withTheme(IconAddFilled);

@@ -18,4 +18,4 @@ class IconMetro extends React.Component {
     }
 }
 
-export default IconMetro;
+export default withTheme(IconMetro);

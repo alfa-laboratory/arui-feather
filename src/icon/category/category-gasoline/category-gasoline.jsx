@@ -18,4 +18,4 @@ class IconCategoryGasoline extends React.Component {
     }
 }
 
-export default IconCategoryGasoline;
+export default withTheme(IconCategoryGasoline);

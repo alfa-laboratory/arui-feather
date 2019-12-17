@@ -18,4 +18,4 @@ class IconNetworkVk extends React.Component {
     }
 }
 
-export default IconNetworkVk;
+export default withTheme(IconNetworkVk);

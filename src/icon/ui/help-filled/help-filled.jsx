@@ -18,4 +18,4 @@ class IconHelpFilled extends React.Component {
     }
 }
 
-export default IconHelpFilled;
+export default withTheme(IconHelpFilled);

@@ -18,4 +18,4 @@ class IconSite extends React.Component {
     }
 }
 
-export default IconSite;
+export default withTheme(IconSite);

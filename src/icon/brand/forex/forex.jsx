@@ -18,4 +18,4 @@ class IconForex extends React.Component {
     }
 }
 
-export default IconForex;
+export default withTheme(IconForex);

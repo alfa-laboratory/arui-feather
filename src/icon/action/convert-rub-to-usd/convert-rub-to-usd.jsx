@@ -18,4 +18,4 @@ class IconConvertRubToUsd extends React.Component {
     }
 }
 
-export default IconConvertRubToUsd;
+export default withTheme(IconConvertRubToUsd);

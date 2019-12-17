@@ -18,4 +18,4 @@ class IconFingerprint extends React.Component {
     }
 }
 
-export default IconFingerprint;
+export default withTheme(IconFingerprint);

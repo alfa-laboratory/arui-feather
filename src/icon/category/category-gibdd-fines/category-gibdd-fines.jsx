@@ -18,4 +18,4 @@ class IconCategoryGibddFines extends React.Component {
     }
 }
 
-export default IconCategoryGibddFines;
+export default withTheme(IconCategoryGibddFines);

@@ -18,4 +18,4 @@ class IconCategoryUnknown extends React.Component {
     }
 }
 
-export default IconCategoryUnknown;
+export default withTheme(IconCategoryUnknown);

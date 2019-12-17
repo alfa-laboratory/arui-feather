@@ -18,4 +18,4 @@ class IconArrowCollapse extends React.Component {
     }
 }
 
-export default IconArrowCollapse;
+export default withTheme(IconArrowCollapse);

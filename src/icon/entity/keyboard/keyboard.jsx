@@ -18,4 +18,4 @@ class IconKeyboard extends React.Component {
     }
 }
 
-export default IconKeyboard;
+export default withTheme(IconKeyboard);

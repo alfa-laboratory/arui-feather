@@ -18,4 +18,4 @@ class IconOkFilled extends React.Component {
     }
 }
 
-export default IconOkFilled;
+export default withTheme(IconOkFilled);

@@ -18,4 +18,4 @@ class IconPinUnpin extends React.Component {
     }
 }
 
-export default IconPinUnpin;
+export default withTheme(IconPinUnpin);

@@ -4,7 +4,8 @@
 
 import Button from '../button/button';
 
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент кнопки с иконкой.
@@ -14,4 +15,4 @@ import cn from '../cn';
 @cn('icon-button')
 class IconButton extends Button {}
 
-export default IconButton;
+export default withTheme(IconButton);

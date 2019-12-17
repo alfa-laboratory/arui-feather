@@ -18,4 +18,4 @@ class IconDirections extends React.Component {
     }
 }
 
-export default IconDirections;
+export default withTheme(IconDirections);

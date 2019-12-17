@@ -18,4 +18,4 @@ class IconBankSocieteGenerale extends React.Component {
     }
 }
 
-export default IconBankSocieteGenerale;
+export default withTheme(IconBankSocieteGenerale);

@@ -18,4 +18,4 @@ class IconDeposit extends React.Component {
     }
 }
 
-export default IconDeposit;
+export default withTheme(IconDeposit);

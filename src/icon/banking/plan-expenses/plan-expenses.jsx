@@ -18,4 +18,4 @@ class IconPlanExpenses extends React.Component {
     }
 }
 
-export default IconPlanExpenses;
+export default withTheme(IconPlanExpenses);

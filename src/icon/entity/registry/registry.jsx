@@ -18,4 +18,4 @@ class IconRegistry extends React.Component {
     }
 }
 
-export default IconRegistry;
+export default withTheme(IconRegistry);

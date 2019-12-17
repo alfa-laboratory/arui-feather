@@ -18,4 +18,4 @@ class IconInfo extends React.Component {
     }
 }
 
-export default IconInfo;
+export default withTheme(IconInfo);

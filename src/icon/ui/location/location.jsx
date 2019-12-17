@@ -18,4 +18,4 @@ class IconLocation extends React.Component {
     }
 }
 
-export default IconLocation;
+export default withTheme(IconLocation);

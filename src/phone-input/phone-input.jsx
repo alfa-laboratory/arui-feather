@@ -9,8 +9,8 @@ import Type from 'prop-types';
 
 import Input from '../input/input';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент ввода телефона по маске.
@@ -18,8 +18,8 @@ import performance from '../performance';
  * @extends Input
  */
 @cn('phone-input', Input)
-@performance()
 class PhoneInput extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         ...Input.propTypes,
         /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
@@ -35,7 +35,7 @@ class PhoneInput extends React.Component {
 
     root;
 
-    render(cn, Input) {
+    render(Input) {
         return (
             <Input
                 { ...this.props }
@@ -44,7 +44,7 @@ class PhoneInput extends React.Component {
                     this.root = root;
                 } }
                 formNoValidate={ true }
-                className={ cn() }
+                className={ this.cn() }
             />
         );
     }
@@ -77,4 +77,4 @@ class PhoneInput extends React.Component {
     }
 }
 
-export default PhoneInput;
+export default withTheme(PhoneInput);

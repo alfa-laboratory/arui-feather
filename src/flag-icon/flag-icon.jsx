@@ -7,15 +7,15 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент флага в виде иконки.
  */
 @cn('flag-icon')
-@performance()
 class FlagIcon extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Код страны из <a href="https://ru.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">ISO 3166-1 alpha-2</a> */
         country: Type.string,
@@ -41,10 +41,10 @@ class FlagIcon extends React.Component {
         size: 'm'
     };
 
-    render(cn) {
+    render() {
         return (
             <span
-                className={ cn({
+                className={ this.cn({
                     country: this.props.country,
                     flat: this.props.isFlat,
                     mode: this.props.mode,
@@ -56,4 +56,4 @@ class FlagIcon extends React.Component {
     }
 }
 
-export default FlagIcon;
+export default withTheme(FlagIcon);

@@ -37,4 +37,4 @@ class IsolatedContainer extends React.Component {
     }
 }
 
-export default IsolatedContainer;
+export default withTheme(IsolatedContainer);

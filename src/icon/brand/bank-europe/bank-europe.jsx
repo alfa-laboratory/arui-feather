@@ -18,4 +18,4 @@ class IconBankEurope extends React.Component {
     }
 }
 
-export default IconBankEurope;
+export default withTheme(IconBankEurope);

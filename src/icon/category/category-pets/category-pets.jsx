@@ -18,4 +18,4 @@ class IconCategoryPets extends React.Component {
     }
 }
 
-export default IconCategoryPets;
+export default withTheme(IconCategoryPets);

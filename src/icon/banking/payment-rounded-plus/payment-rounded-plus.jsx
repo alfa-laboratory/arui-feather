@@ -18,4 +18,4 @@ class IconPaymentRoundedPlus extends React.Component {
     }
 }
 
-export default IconPaymentRoundedPlus;
+export default withTheme(IconPaymentRoundedPlus);

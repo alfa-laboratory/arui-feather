@@ -5,16 +5,16 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 
 /**
  * Компонент кнопки (да, она нажимается!).
  */
 @cn('button')
-@performance()
 class Button extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Текст кнопки */
         text: Type.node,
@@ -142,7 +142,7 @@ class Button extends React.Component {
         }
     }
 
-    render(cn) {
+    render() {
         const isButton = this.props.tag !== 'span';
 
         const buttonProps = {
@@ -157,7 +157,7 @@ class Button extends React.Component {
             tabIndex: this.props.disabled ? '-1' : this.props.tabIndex,
             disabled: this.props.disabled,
             formNoValidate: isButton ? this.props.formNoValidate : null,
-            className: cn({
+            className: this.cn({
                 disabled: this.props.disabled,
                 pseudo: this.props.pseudo,
                 view: this.props.view,
@@ -184,26 +184,26 @@ class Button extends React.Component {
 
         const buttonContent = [
             this.props.leftAddons && (
-                <span key='left-addons' className={ cn('addon') }>
+                <span key='left-addons' className={ this.cn('addon') }>
                     { this.props.leftAddons }
                 </span>
             ),
             (this.props.children || this.props.text || this.props.icon) && (
-                <span key='content' className={ cn('content') }>
+                <span key='content' className={ this.cn('content') }>
                     { this.props.icon && (
-                        <span key='icon' className={ cn('icon') }>
+                        <span key='icon' className={ this.cn('icon') }>
                             { this.props.icon }
                         </span>
                     ) }
                     { (this.props.children || this.props.text) && (
-                        <span key='text' className={ cn('text') }>
+                        <span key='text' className={ this.cn('text') }>
                             { this.props.children || this.props.text }
                         </span>
                     ) }
                 </span>
             ),
             this.props.rightAddons && (
-                <span key='right-addons' className={ cn('addon') }>
+                <span key='right-addons' className={ this.cn('addon') }>
                     { this.props.rightAddons }
                 </span>
             )
@@ -344,4 +344,4 @@ class Button extends React.Component {
     }
 }
 
-export default Button;
+export default withTheme(Button);

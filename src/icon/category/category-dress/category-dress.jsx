@@ -18,4 +18,4 @@ class IconCategoryDress extends React.Component {
     }
 }
 
-export default IconCategoryDress;
+export default withTheme(IconCategoryDress);

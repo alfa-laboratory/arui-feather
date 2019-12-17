@@ -18,4 +18,4 @@ class IconCurrencyChf extends React.Component {
     }
 }
 
-export default IconCurrencyChf;
+export default withTheme(IconCurrencyChf);

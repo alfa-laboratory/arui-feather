@@ -18,4 +18,4 @@ class IconLikeFilled extends React.Component {
     }
 }
 
-export default IconLikeFilled;
+export default withTheme(IconLikeFilled);

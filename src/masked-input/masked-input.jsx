@@ -64,6 +64,7 @@ const getSeparatorsAmount = (str, mask) => (
  * Расширяет стандартный <input /> React-а.
  */
 class MaskedInput extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Маска для поля ввода, использует формат https://github.com/insin/inputmask-core */
         mask: Type.string.isRequired,
@@ -428,4 +429,4 @@ class MaskedInput extends React.Component {
     }
 }
 
-export default MaskedInput;
+export default withTheme(MaskedInput);

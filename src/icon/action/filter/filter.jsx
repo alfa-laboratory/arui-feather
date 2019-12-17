@@ -18,4 +18,4 @@ class IconFilter extends React.Component {
     }
 }
 
-export default IconFilter;
+export default withTheme(IconFilter);

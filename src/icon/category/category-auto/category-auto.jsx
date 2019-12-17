@@ -18,4 +18,4 @@ class IconCategoryAuto extends React.Component {
     }
 }
 
-export default IconCategoryAuto;
+export default withTheme(IconCategoryAuto);

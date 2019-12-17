@@ -18,4 +18,4 @@ class IconFail extends React.Component {
     }
 }
 
-export default IconFail;
+export default withTheme(IconFail);

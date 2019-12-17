@@ -18,4 +18,4 @@ class IconCategoryCharity extends React.Component {
     }
 }
 
-export default IconCategoryCharity;
+export default withTheme(IconCategoryCharity);

@@ -18,4 +18,4 @@ class IconMaestro extends React.Component {
     }
 }
 
-export default IconMaestro;
+export default withTheme(IconMaestro);

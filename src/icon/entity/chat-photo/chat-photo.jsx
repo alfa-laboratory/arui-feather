@@ -18,4 +18,4 @@ class IconChatPhoto extends React.Component {
     }
 }
 
-export default IconChatPhoto;
+export default withTheme(IconChatPhoto);

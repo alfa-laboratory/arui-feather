@@ -18,4 +18,4 @@ class IconFingerPointing extends React.Component {
     }
 }
 
-export default IconFingerPointing;
+export default withTheme(IconFingerPointing);

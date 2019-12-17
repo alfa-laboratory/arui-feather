@@ -18,4 +18,4 @@ class IconFormatDoc extends React.Component {
     }
 }
 
-export default IconFormatDoc;
+export default withTheme(IconFormatDoc);

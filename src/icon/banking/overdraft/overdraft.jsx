@@ -18,4 +18,4 @@ class IconOverdraft extends React.Component {
     }
 }
 
-export default IconOverdraft;
+export default withTheme(IconOverdraft);

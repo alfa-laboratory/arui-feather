@@ -18,6 +18,7 @@ const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSuppo
  * Пока браузеры не поддерживают CSS4 Media Queries, поддержка тач-событий определяется через `touch`.
  */
 class Mq extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Медиа запрос */
         query: Type.string,
@@ -84,4 +85,4 @@ class Mq extends React.Component {
     }
 }
 
-export default Mq;
+export default withTheme(Mq);

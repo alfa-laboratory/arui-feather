@@ -18,4 +18,4 @@ class IconPerson extends React.Component {
     }
 }
 
-export default IconPerson;
+export default withTheme(IconPerson);

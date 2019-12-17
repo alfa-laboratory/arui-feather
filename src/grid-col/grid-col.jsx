@@ -4,7 +4,8 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
@@ -28,6 +29,7 @@ const breakpointsType = {
  */
 @cn('grid-col')
 class GridCol extends React.PureComponent {
+    cn = createCn('hoba');
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -74,7 +76,7 @@ class GridCol extends React.PureComponent {
         tag: 'div'
     }
 
-    render(cn) {
+    render() {
         const {
             width,
             offset,
@@ -88,7 +90,7 @@ class GridCol extends React.PureComponent {
         return (
             <Tag
                 { ...props }
-                className={ cn({
+                className={ this.cn({
                     align,
                     ...this.createClassNames({ width, offset, order })
                 }) }
@@ -141,4 +143,4 @@ class GridCol extends React.PureComponent {
     }
 }
 
-export default GridCol;
+export default withTheme(GridCol);

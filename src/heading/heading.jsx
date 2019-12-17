@@ -5,8 +5,8 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 const HEADING_LEVEL = {
     xl: 1,
@@ -20,8 +20,8 @@ const HEADING_LEVEL = {
  * Компонент заголовка.
  */
 @cn('heading')
-@performance()
 class Heading extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Дочерние элементы `Heading` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
@@ -41,9 +41,9 @@ class Heading extends React.Component {
         size: 'xl'
     };
 
-    render(cn) {
+    render() {
         const headingProps = {
-            className: cn({
+            className: this.cn({
                 size: this.props.size
             }),
             id: this.props.id,
@@ -57,4 +57,4 @@ class Heading extends React.Component {
     }
 }
 
-export default Heading;
+export default withTheme(Heading);

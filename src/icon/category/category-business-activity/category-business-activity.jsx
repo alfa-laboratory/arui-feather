@@ -18,4 +18,4 @@ class IconCategoryBusinessActivity extends React.Component {
     }
 }
 
-export default IconCategoryBusinessActivity;
+export default withTheme(IconCategoryBusinessActivity);

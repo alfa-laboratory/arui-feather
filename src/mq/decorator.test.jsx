@@ -23,7 +23,8 @@ describe('mq-decorator', () => {
 
         @mqDecorator('--small-only')
         class Example extends React.Component {
-            static propTypes = {
+            cn = createCn('hoba');
+    static propTypes = {
                 mqMatch: Type.bool
             };
 
@@ -45,7 +46,8 @@ describe('mq-decorator', () => {
 
         @mqDecorator('--small-only', 'isSmall')
         class Example extends React.Component {
-            static propTypes = {
+            cn = createCn('hoba');
+    static propTypes = {
                 isSmall: Type.bool
             };
 

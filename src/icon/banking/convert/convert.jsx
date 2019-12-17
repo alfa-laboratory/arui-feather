@@ -18,4 +18,4 @@ class IconConvert extends React.Component {
     }
 }
 
-export default IconConvert;
+export default withTheme(IconConvert);

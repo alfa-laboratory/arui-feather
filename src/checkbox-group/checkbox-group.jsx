@@ -6,15 +6,15 @@ import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент группы чекбоксов.
  */
 @cn('checkbox-group')
-@performance()
 class CheckBoxGroup extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Тип компонента */
         type: Type.oneOf(['normal', 'button', 'line']),
@@ -66,7 +66,7 @@ class CheckBoxGroup extends React.Component {
         value: []
     };
 
-    render(cn) {
+    render() {
         let children = null;
         let props = { name: this.props.name };
         const checkboxGroupParts = {};
@@ -123,11 +123,11 @@ class CheckBoxGroup extends React.Component {
             >
                 {
                     !!this.props.label &&
-                    <div className={ cn('label') }>
+                    <div className={ this.cn('label') }>
                         { this.props.label }
                     </div>
                 }
-                <div className={ cn('box') }>
+                <div className={ this.cn('box') }>
                     { createFragment(checkboxGroupParts) }
                 </div>
             </span>
@@ -189,4 +189,4 @@ class CheckBoxGroup extends React.Component {
     }
 }
 
-export default CheckBoxGroup;
+export default withTheme(CheckBoxGroup);

@@ -18,4 +18,4 @@ class IconCurrencyJpy extends React.Component {
     }
 }
 
-export default IconCurrencyJpy;
+export default withTheme(IconCurrencyJpy);

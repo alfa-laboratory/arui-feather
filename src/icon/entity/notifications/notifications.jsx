@@ -18,4 +18,4 @@ class IconNotifications extends React.Component {
     }
 }
 
-export default IconNotifications;
+export default withTheme(IconNotifications);

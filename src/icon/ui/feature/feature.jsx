@@ -18,4 +18,4 @@ class IconFeature extends React.Component {
     }
 }
 
-export default IconFeature;
+export default withTheme(IconFeature);

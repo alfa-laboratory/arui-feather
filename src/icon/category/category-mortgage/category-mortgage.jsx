@@ -18,4 +18,4 @@ class IconCategoryMortgage extends React.Component {
     }
 }
 
-export default IconCategoryMortgage;
+export default withTheme(IconCategoryMortgage);

@@ -18,4 +18,4 @@ class IconTransferBetweenAccounts extends React.Component {
     }
 }
 
-export default IconTransferBetweenAccounts;
+export default withTheme(IconTransferBetweenAccounts);

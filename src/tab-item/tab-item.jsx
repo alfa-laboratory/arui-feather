@@ -3,7 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import Link from '../link/link';
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент таба. Как правило, используется совместно с `Tabs`.
@@ -20,4 +21,4 @@ class TabItem extends Link {
     };
 }
 
-export default TabItem;
+export default withTheme(TabItem);

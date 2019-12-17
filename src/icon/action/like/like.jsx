@@ -18,4 +18,4 @@ class IconLike extends React.Component {
     }
 }
 
-export default IconLike;
+export default withTheme(IconLike);

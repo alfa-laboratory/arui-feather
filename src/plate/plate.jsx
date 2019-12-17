@@ -11,15 +11,15 @@ import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 import ThemeProvider from '../theme-provider/theme-provider';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент плашки.
  */
 @cn('plate')
-@performance()
 class Plate extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,
@@ -65,11 +65,11 @@ class Plate extends React.Component {
      */
     root;
 
-    render(cn) {
+    render() {
         return (
             <ThemeProvider theme='alfa-on-white'>
                 <div
-                    className={ cn({
+                    className={ this.cn({
                         'has-closer': this.props.hasCloser,
                         hidden: this.props.hasCloser && this.state.isHidden,
                         flat: this.props.isFlat
@@ -82,12 +82,12 @@ class Plate extends React.Component {
                     } }
                     data-test-id={ this.props['data-test-id'] }
                 >
-                    <div className={ cn('content') }>
+                    <div className={ this.cn('content') }>
                         { this.props.children }
                         {
                             this.props.hasCloser &&
                                 <IconButton
-                                    className={ cn('closer') }
+                                    className={ this.cn('closer') }
                                     onClick={ this.handleCloserClick }
                                 >
                                     <IconClose />
@@ -122,4 +122,4 @@ class Plate extends React.Component {
     }
 }
 
-export default Plate;
+export default withTheme(Plate);

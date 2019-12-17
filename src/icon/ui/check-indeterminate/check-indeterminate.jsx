@@ -18,4 +18,4 @@ class IconCheckIndeterminate extends React.Component {
     }
 }
 
-export default IconCheckIndeterminate;
+export default withTheme(IconCheckIndeterminate);

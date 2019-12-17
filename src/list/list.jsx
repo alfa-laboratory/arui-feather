@@ -5,15 +5,15 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент списка.
  */
 @cn('list')
-@performance(true)
 class List extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Список элементов */
         items: Type.arrayOf(Type.shape({
@@ -34,14 +34,14 @@ class List extends React.Component {
         'data-test-id': Type.string
     };
 
-    render(cn) {
+    render() {
         const { items, type } = this.props;
         const listElement = type === 'ordered' ? 'ol' : 'ul';
 
         const listContent = (items || []).map(({ key, value, list }) => (
             <li
                 key={ `item-${key}` }
-                className={ cn('item') }
+                className={ this.cn('item') }
             >
                 { value }
                 {
@@ -53,7 +53,7 @@ class List extends React.Component {
         ));
 
         const listProps = {
-            className: cn({ type }),
+            className: this.cn({ type }),
             id: this.props.id,
             'data-test-id': this.props['data-test-id']
         };
@@ -66,4 +66,4 @@ class List extends React.Component {
     }
 }
 
-export default List;
+export default withTheme(List);

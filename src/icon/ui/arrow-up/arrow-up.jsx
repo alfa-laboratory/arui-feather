@@ -18,4 +18,4 @@ class IconArrowUp extends React.Component {
     }
 }
 
-export default IconArrowUp;
+export default withTheme(IconArrowUp);

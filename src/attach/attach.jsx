@@ -9,8 +9,8 @@ import Button from '../button/button';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 
@@ -68,8 +68,8 @@ function isEqualArray(array1, array2) {
  * Компонент прикрепления файлов.
  */
 @cn('attach')
-@performance()
 class Attach extends React.Component {
+    cn = createCn('attach');
     static propTypes = {
         /** Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null. */
         value: Type.array, // eslint-disable-line react/forbid-prop-types
@@ -193,10 +193,10 @@ class Attach extends React.Component {
         }
     }
 
-    render(cn) {
+    render() {
         return (
             <span
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     disabled: this.props.disabled,
                     hovered: this.state.hovered,
@@ -209,16 +209,16 @@ class Attach extends React.Component {
                 } }
                 data-test-id={ this.props['data-test-id'] }
             >
-                { this.renderButton(cn) }
-                { this.renderStatusText(cn) }
+                { this.renderButton() }
+                { this.renderStatusText() }
             </span>
         );
     }
 
-    renderButton(cn) {
+    renderButton() {
         const buttonProps = {
             ...this.props.buttonProps,
-            className: cn('button'),
+            className: this.cn('button'),
             disabled: this.props.disabled,
             size: this.props.size,
             icon: this.props.icon ? this.props.icon : <IconAttachment size={ this.props.size } />,
@@ -231,14 +231,14 @@ class Attach extends React.Component {
                 tag='span'
                 leftAddons={
                     <label
-                        className={ cn('label') }
+                        className={ this.cn('label') }
                         htmlFor={ this.props.id }
                     >
                         <input
                             ref={ (input) => {
                                 this.input = input;
                             } }
-                            className={ cn('control') }
+                            className={ this.cn('control') }
                             accept={ this.props.accept }
                             disabled={ this.props.disabled }
                             id={ this.props.id }
@@ -261,7 +261,7 @@ class Attach extends React.Component {
         );
     }
 
-    renderStatusText(cn) {
+    renderStatusText() {
         const files = this.props.value === undefined ? this.state.value : (this.props.value || []);
 
         if (files && files.length > 0) {
@@ -276,19 +276,19 @@ class Attach extends React.Component {
                 );
 
             return (
-                <span className={ cn('file') }>
-                    <span className={ cn('text') }>
+                <span className={ this.cn('file') }>
+                    <span className={ this.cn('text') }>
                         { content }
                     </span>
                     <button
                         type='button'
-                        className={ cn('clear') }
+                        className={ this.cn('clear') }
                         onClick={ this.handleClearClick }
                     />
                     { typeof this.props.progressBarPercent !== 'undefined' && (
                         <ProgressBar
                             percent={ this.props.progressBarPercent }
-                            className={ cn('progress-bar') }
+                            className={ this.cn('progress-bar') }
                         />
                     ) }
                 </span>
@@ -296,7 +296,7 @@ class Attach extends React.Component {
         }
 
         return (
-            <span className={ cn('no-file') }>
+            <span className={ this.cn('no-file') }>
                 { this.props.noFileText }
             </span>
         );
@@ -378,4 +378,4 @@ class Attach extends React.Component {
     }
 }
 
-export default Attach;
+export default withTheme(Attach);

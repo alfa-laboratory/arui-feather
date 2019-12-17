@@ -18,4 +18,4 @@ class IconNavigationPayment extends React.Component {
     }
 }
 
-export default IconNavigationPayment;
+export default withTheme(IconNavigationPayment);

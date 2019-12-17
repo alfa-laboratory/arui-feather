@@ -18,4 +18,4 @@ class IconManager extends React.Component {
     }
 }
 
-export default IconManager;
+export default withTheme(IconManager);

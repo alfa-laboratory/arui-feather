@@ -18,4 +18,4 @@ class IconCopy extends React.Component {
     }
 }
 
-export default IconCopy;
+export default withTheme(IconCopy);

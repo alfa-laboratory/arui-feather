@@ -18,4 +18,4 @@ class IconSettings extends React.Component {
     }
 }
 
-export default IconSettings;
+export default withTheme(IconSettings);

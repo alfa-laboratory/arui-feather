@@ -18,4 +18,4 @@ class IconCategoryHouse extends React.Component {
     }
 }
 
-export default IconCategoryHouse;
+export default withTheme(IconCategoryHouse);

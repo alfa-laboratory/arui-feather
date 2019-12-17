@@ -1,7 +1,6 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import performance from '../performance';
 
 export const getCoordinates = ({
     touches, changedTouches, clientX, clientY
@@ -11,8 +10,8 @@ export const getCoordinates = ({
         : { clientX, clientY }
 );
 
-@performance()
 class Swipeable extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
         delta: Type.number,
@@ -117,4 +116,4 @@ class Swipeable extends React.Component {
     };
 }
 
-export default Swipeable;
+export default withTheme(Swipeable);

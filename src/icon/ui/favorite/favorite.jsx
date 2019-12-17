@@ -18,4 +18,4 @@ class IconFavorite extends React.Component {
     }
 }
 
-export default IconFavorite;
+export default withTheme(IconFavorite);

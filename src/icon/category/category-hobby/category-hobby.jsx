@@ -18,4 +18,4 @@ class IconCategoryHobby extends React.Component {
     }
 }
 
-export default IconCategoryHobby;
+export default withTheme(IconCategoryHobby);

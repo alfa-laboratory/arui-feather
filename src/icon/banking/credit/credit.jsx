@@ -18,4 +18,4 @@ class IconCredit extends React.Component {
     }
 }
 
-export default IconCredit;
+export default withTheme(IconCredit);

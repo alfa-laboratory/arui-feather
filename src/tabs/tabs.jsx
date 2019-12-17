@@ -5,15 +5,15 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
 @cn('tabs')
-@performance()
 class Tabs extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Управление возможность скроллить компонент по-горизонтали */
         scrollable: Type.bool,
@@ -33,15 +33,15 @@ class Tabs extends React.Component {
         scrollable: true
     }
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn({ scrollable: this.props.scrollable }) }
+                className={ this.cn({ scrollable: this.props.scrollable }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <div className={ cn('panel') }>
-                    <div className={ cn('content') }>
+                <div className={ this.cn('panel') }>
+                    <div className={ this.cn('content') }>
                         { this.props.children }
                     </div>
                 </div>
@@ -50,4 +50,4 @@ class Tabs extends React.Component {
     }
 }
 
-export default Tabs;
+export default withTheme(Tabs);

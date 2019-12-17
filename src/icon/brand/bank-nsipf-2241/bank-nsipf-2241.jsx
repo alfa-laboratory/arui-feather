@@ -18,4 +18,4 @@ class IconBankNsipf2241 extends React.Component {
     }
 }
 
-export default IconBankNsipf2241;
+export default withTheme(IconBankNsipf2241);

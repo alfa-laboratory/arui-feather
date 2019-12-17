@@ -18,4 +18,4 @@ class IconSentDone extends React.Component {
     }
 }
 
-export default IconSentDone;
+export default withTheme(IconSentDone);

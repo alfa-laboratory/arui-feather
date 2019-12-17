@@ -18,4 +18,4 @@ class IconCategoryEducation extends React.Component {
     }
 }
 
-export default IconCategoryEducation;
+export default withTheme(IconCategoryEducation);

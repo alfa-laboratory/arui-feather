@@ -18,4 +18,4 @@ class IconCategoryVacation extends React.Component {
     }
 }
 
-export default IconCategoryVacation;
+export default withTheme(IconCategoryVacation);

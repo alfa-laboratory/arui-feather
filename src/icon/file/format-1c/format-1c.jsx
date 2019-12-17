@@ -18,4 +18,4 @@ class IconFormat1c extends React.Component {
     }
 }
 
-export default IconFormat1c;
+export default withTheme(IconFormat1c);

@@ -18,4 +18,4 @@ class IconBankTinkoff extends React.Component {
     }
 }
 
-export default IconBankTinkoff;
+export default withTheme(IconBankTinkoff);

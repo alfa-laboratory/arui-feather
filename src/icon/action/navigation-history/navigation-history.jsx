@@ -18,4 +18,4 @@ class IconNavigationHistory extends React.Component {
     }
 }
 
-export default IconNavigationHistory;
+export default withTheme(IconNavigationHistory);

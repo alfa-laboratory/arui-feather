@@ -18,4 +18,4 @@ class IconBankUralsib extends React.Component {
     }
 }
 
-export default IconBankUralsib;
+export default withTheme(IconBankUralsib);

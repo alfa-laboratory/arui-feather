@@ -18,4 +18,4 @@ class IconFormatCsv extends React.Component {
     }
 }
 
-export default IconFormatCsv;
+export default withTheme(IconFormatCsv);

@@ -5,15 +5,15 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
  */
 @cn('icon')
-@performance()
 class Icon extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -35,7 +35,7 @@ class Icon extends React.Component {
         size: 'm'
     };
 
-    render(cn) {
+    render() {
         const mods = { size: this.props.size };
 
         if (this.props.name) {
@@ -48,7 +48,7 @@ class Icon extends React.Component {
 
         return (
             <span
-                className={ cn(mods) }
+                className={ this.cn(mods) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             />
@@ -56,4 +56,4 @@ class Icon extends React.Component {
     }
 }
 
-export default Icon;
+export default withTheme(Icon);

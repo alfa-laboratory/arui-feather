@@ -18,4 +18,4 @@ class IconFormatPng extends React.Component {
     }
 }
 
-export default IconFormatPng;
+export default withTheme(IconFormatPng);

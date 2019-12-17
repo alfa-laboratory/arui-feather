@@ -18,4 +18,4 @@ class IconDraft extends React.Component {
     }
 }
 
-export default IconDraft;
+export default withTheme(IconDraft);

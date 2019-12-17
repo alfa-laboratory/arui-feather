@@ -18,4 +18,4 @@ class IconSystemBack extends React.Component {
     }
 }
 
-export default IconSystemBack;
+export default withTheme(IconSystemBack);

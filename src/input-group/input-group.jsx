@@ -6,15 +6,15 @@ import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент группы полей для текстового ввода.
  */
 @cn('input-group')
-@performance()
 class InputGroup extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
@@ -30,7 +30,7 @@ class InputGroup extends React.Component {
         'data-test-id': Type.string
     };
 
-    render(cn) {
+    render() {
         let children = null;
         const inputGroupParts = {};
 
@@ -46,7 +46,7 @@ class InputGroup extends React.Component {
 
                 inputGroupParts[`input-${index}`] = (
                     <span
-                        className={ cn('input-case', {
+                        className={ this.cn('input-case', {
                             invalid: !!input.props.error,
                             disabled: input.props.disabled
                         }) }
@@ -71,4 +71,4 @@ class InputGroup extends React.Component {
     }
 }
 
-export default InputGroup;
+export default withTheme(InputGroup);

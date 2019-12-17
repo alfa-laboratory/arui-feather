@@ -18,4 +18,4 @@ class IconDownload extends React.Component {
     }
 }
 
-export default IconDownload;
+export default withTheme(IconDownload);

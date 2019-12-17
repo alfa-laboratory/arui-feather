@@ -18,4 +18,4 @@ class IconQr extends React.Component {
     }
 }
 
-export default IconQr;
+export default withTheme(IconQr);

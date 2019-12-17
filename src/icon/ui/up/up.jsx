@@ -18,4 +18,4 @@ class IconUp extends React.Component {
     }
 }
 
-export default IconUp;
+export default withTheme(IconUp);

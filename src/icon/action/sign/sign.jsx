@@ -18,4 +18,4 @@ class IconSign extends React.Component {
     }
 }
 
-export default IconSign;
+export default withTheme(IconSign);

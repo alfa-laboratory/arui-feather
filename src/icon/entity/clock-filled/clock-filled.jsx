@@ -18,4 +18,4 @@ class IconClockFilled extends React.Component {
     }
 }
 
-export default IconClockFilled;
+export default withTheme(IconClockFilled);

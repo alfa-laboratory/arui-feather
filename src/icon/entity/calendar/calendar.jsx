@@ -18,4 +18,4 @@ class IconCalendar extends React.Component {
     }
 }
 
-export default IconCalendar;
+export default withTheme(IconCalendar);

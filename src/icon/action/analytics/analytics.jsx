@@ -18,4 +18,4 @@ class IconAnalytics extends React.Component {
     }
 }
 
-export default IconAnalytics;
+export default withTheme(IconAnalytics);

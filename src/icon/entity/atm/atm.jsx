@@ -18,4 +18,4 @@ class IconAtm extends React.Component {
     }
 }
 
-export default IconAtm;
+export default withTheme(IconAtm);

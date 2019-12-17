@@ -18,4 +18,4 @@ class IconPasswordHide extends React.Component {
     }
 }
 
-export default IconPasswordHide;
+export default withTheme(IconPasswordHide);

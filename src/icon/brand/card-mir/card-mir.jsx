@@ -18,4 +18,4 @@ class IconCardMir extends React.Component {
     }
 }
 
-export default IconCardMir;
+export default withTheme(IconCardMir);

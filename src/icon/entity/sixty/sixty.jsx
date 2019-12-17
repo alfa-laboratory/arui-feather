@@ -18,4 +18,4 @@ class IconSixty extends React.Component {
     }
 }
 
-export default IconSixty;
+export default withTheme(IconSixty);

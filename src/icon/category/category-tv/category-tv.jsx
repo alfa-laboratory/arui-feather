@@ -18,4 +18,4 @@ class IconCategoryTv extends React.Component {
     }
 }
 
-export default IconCategoryTv;
+export default withTheme(IconCategoryTv);

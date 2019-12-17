@@ -18,4 +18,4 @@ class IconPresent extends React.Component {
     }
 }
 
-export default IconPresent;
+export default withTheme(IconPresent);

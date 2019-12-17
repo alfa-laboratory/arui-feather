@@ -18,4 +18,4 @@ class IconEmail extends React.Component {
     }
 }
 
-export default IconEmail;
+export default withTheme(IconEmail);

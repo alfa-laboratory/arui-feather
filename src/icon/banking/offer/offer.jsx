@@ -18,4 +18,4 @@ class IconOffer extends React.Component {
     }
 }
 
-export default IconOffer;
+export default withTheme(IconOffer);

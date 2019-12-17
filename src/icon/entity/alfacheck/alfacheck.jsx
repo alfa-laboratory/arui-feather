@@ -18,4 +18,4 @@ class IconAlfacheck extends React.Component {
     }
 }
 
-export default IconAlfacheck;
+export default withTheme(IconAlfacheck);

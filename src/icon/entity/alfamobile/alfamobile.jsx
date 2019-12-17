@@ -18,4 +18,4 @@ class IconAlfamobile extends React.Component {
     }
 }
 
-export default IconAlfamobile;
+export default withTheme(IconAlfamobile);

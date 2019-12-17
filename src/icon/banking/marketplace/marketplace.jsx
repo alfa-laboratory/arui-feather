@@ -18,4 +18,4 @@ class IconMarketplace extends React.Component {
     }
 }
 
-export default IconMarketplace;
+export default withTheme(IconMarketplace);

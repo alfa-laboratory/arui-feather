@@ -18,4 +18,4 @@ class IconFormatPdf extends React.Component {
     }
 }
 
-export default IconFormatPdf;
+export default withTheme(IconFormatPdf);

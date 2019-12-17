@@ -9,8 +9,8 @@ import IconCheck from '../icon/ui/tick';
 import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -26,8 +26,8 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
  * Компонент чекбокса.
  */
 @cn('checkbox', TagButton)
-@performance()
 class CheckBox extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Текст подписи к чекбоксу */
         text: Type.node,
@@ -101,13 +101,13 @@ class CheckBox extends React.Component {
 
     root;
 
-    render(cn, TagButton) {
+    render(TagButton) {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     disabled: this.props.disabled,
                     checked: checked || this.props.indeterminate,
@@ -129,17 +129,17 @@ class CheckBox extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.type === 'button'
-                    ? this.renderButtonCheckbox(cn, checked, TagButton)
-                    : this.renderNormalCheckbox(cn, checked) }
+                    ? this.renderButtonCheckbox(checked, TagButton)
+                    : this.renderNormalCheckbox(checked) }
             </label>
         );
     }
 
-    renderNormalCheckbox(cn, checked) {
+    renderNormalCheckbox(checked) {
         return [
-            <span className={ cn('box') } key='box'>
+            <span className={ this.cn('box') } key='box'>
                 <input
-                    className={ cn('control') }
+                    className={ this.cn('control') }
                     type='checkbox'
                     autoComplete='off'
                     name={ this.props.name }
@@ -152,35 +152,35 @@ class CheckBox extends React.Component {
                 />
                 { !this.props.indeterminate && (
                     <IconCheck
-                        className={ cn('icon') }
+                        className={ this.cn('icon') }
                         size={ this.props.size === 'l' ? 's' : 'xs' }
                         theme='alfa-on-color'
                     />
                 ) }
                 { !checked && this.props.indeterminate && (
                     <IconIndeterminate
-                        className={ cn('icon') }
+                        className={ this.cn('icon') }
                         size={ this.props.size === 'l' ? 'm' : 's' }
                         theme='alfa-on-color'
                     />
                 ) }
                 { checked && this.props.indeterminate && (
                     <IconCheck
-                        className={ cn('icon') }
+                        className={ this.cn('icon') }
                         size={ this.props.size === 'l' ? 's' : 'xs' }
                         theme='alfa-on-color'
                     />
                 ) }
             </span>,
             this.props.text && (
-                <span className={ cn('text') } key='text' role='presentation'>
+                <span className={ this.cn('text') } key='text' role='presentation'>
                     { this.props.text }
                 </span>
             )
         ];
     }
 
-    renderButtonCheckbox(cn, checked, TagButton) {
+    renderButtonCheckbox(checked, TagButton) {
         return [
             <TagButton
                 key='button'
@@ -197,7 +197,7 @@ class CheckBox extends React.Component {
                 { this.props.text ? this.props.text : '' }
             </TagButton>,
             <input
-                className={ cn('control') }
+                className={ this.cn('control') }
                 key='control'
                 type='checkbox'
                 tabIndex={ -1 }
@@ -303,4 +303,4 @@ class CheckBox extends React.Component {
     }
 }
 
-export default CheckBox;
+export default withTheme(CheckBox);

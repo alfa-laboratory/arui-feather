@@ -5,15 +5,15 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент параграфа текста.
  */
 @cn('paragraph')
-@performance()
 class Paragraph extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Тип параграфа */
         view: Type.oneOf(['lead', 'normal', 'small']),
@@ -31,15 +31,15 @@ class Paragraph extends React.Component {
         'data-test-id': Type.string
     };
 
-    render(cn) {
+    render() {
         return (
             <p
-                className={ cn({ view: this.props.view }) }
+                className={ this.cn({ view: this.props.view }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.mark &&
-                    <span className={ cn('marker') }>{ this.props.mark }</span>
+                    <span className={ this.cn('marker') }>{ this.props.mark }</span>
                 }
                 { this.props.children }
             </p>
@@ -47,4 +47,4 @@ class Paragraph extends React.Component {
     }
 }
 
-export default Paragraph;
+export default withTheme(Paragraph);

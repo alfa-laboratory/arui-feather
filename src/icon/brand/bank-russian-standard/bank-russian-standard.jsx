@@ -18,4 +18,4 @@ class IconBankRussianStandard extends React.Component {
     }
 }
 
-export default IconBankRussianStandard;
+export default withTheme(IconBankRussianStandard);

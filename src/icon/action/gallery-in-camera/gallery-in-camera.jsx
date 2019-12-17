@@ -18,4 +18,4 @@ class IconGalleryInCamera extends React.Component {
     }
 }
 
-export default IconGalleryInCamera;
+export default withTheme(IconGalleryInCamera);

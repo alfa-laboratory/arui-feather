@@ -18,4 +18,4 @@ class IconCategoryHousekeeping extends React.Component {
     }
 }
 
-export default IconCategoryHousekeeping;
+export default withTheme(IconCategoryHousekeeping);

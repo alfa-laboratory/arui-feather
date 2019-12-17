@@ -18,4 +18,4 @@ class IconBankGazprombank extends React.Component {
     }
 }
 
-export default IconBankGazprombank;
+export default withTheme(IconBankGazprombank);

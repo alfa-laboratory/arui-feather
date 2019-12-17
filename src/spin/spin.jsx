@@ -5,15 +5,15 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
  */
 @cn('spin')
-@performance()
 class Spin extends React.Component {
+    cn = createCn('hoba');
     static propTypes = {
         /** Управление видимостью компонента */
         visible: Type.bool,
@@ -34,10 +34,10 @@ class Spin extends React.Component {
         size: 'm'
     };
 
-    render(cn) {
+    render() {
         return (
             <span
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     visible: this.props.visible
                 }) }
@@ -48,4 +48,4 @@ class Spin extends React.Component {
     }
 }
 
-export default Spin;
+export default withTheme(Spin);

@@ -18,4 +18,4 @@ class IconMetroMap extends React.Component {
     }
 }
 
-export default IconMetroMap;
+export default withTheme(IconMetroMap);

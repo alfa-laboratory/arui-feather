@@ -18,4 +18,4 @@ class IconEdit extends React.Component {
     }
 }
 
-export default IconEdit;
+export default withTheme(IconEdit);

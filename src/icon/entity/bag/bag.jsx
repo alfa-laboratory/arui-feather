@@ -18,4 +18,4 @@ class IconBag extends React.Component {
     }
 }
 
-export default IconBag;
+export default withTheme(IconBag);

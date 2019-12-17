@@ -18,4 +18,4 @@ class IconActionPhotoOrFile extends React.Component {
     }
 }
 
-export default IconActionPhotoOrFile;
+export default withTheme(IconActionPhotoOrFile);

@@ -18,4 +18,4 @@ class IconArrowDouble extends React.Component {
     }
 }
 
-export default IconArrowDouble;
+export default withTheme(IconArrowDouble);

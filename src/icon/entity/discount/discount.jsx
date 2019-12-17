@@ -18,4 +18,4 @@ class IconDiscount extends React.Component {
     }
 }
 
-export default IconDiscount;
+export default withTheme(IconDiscount);

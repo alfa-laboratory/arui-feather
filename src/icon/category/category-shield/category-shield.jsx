@@ -18,4 +18,4 @@ class IconCategoryShield extends React.Component {
     }
 }
 
-export default IconCategoryShield;
+export default withTheme(IconCategoryShield);

@@ -18,4 +18,4 @@ class IconCategoryTroika extends React.Component {
     }
 }
 
-export default IconCategoryTroika;
+export default withTheme(IconCategoryTroika);

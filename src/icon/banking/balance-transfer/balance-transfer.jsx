@@ -18,4 +18,4 @@ class IconBalanceTransfer extends React.Component {
     }
 }
 
-export default IconBalanceTransfer;
+export default withTheme(IconBalanceTransfer);

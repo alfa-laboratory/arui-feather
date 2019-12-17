@@ -18,4 +18,4 @@ class IconPayBack extends React.Component {
     }
 }
 
-export default IconPayBack;
+export default withTheme(IconPayBack);

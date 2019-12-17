@@ -18,4 +18,4 @@ class IconPaymentByPhoto extends React.Component {
     }
 }
 
-export default IconPaymentByPhoto;
+export default withTheme(IconPaymentByPhoto);

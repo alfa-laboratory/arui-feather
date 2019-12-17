@@ -18,4 +18,4 @@ class IconDislikeFilled extends React.Component {
     }
 }
 
-export default IconDislikeFilled;
+export default withTheme(IconDislikeFilled);

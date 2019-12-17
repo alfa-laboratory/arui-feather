@@ -18,4 +18,4 @@ class IconCategoryGaming extends React.Component {
     }
 }
 
-export default IconCategoryGaming;
+export default withTheme(IconCategoryGaming);

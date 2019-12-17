@@ -18,4 +18,4 @@ class IconExpandDown extends React.Component {
     }
 }
 
-export default IconExpandDown;
+export default withTheme(IconExpandDown);

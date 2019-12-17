@@ -7,9 +7,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент прогресс-бара.
  */
-@cn('progress-bar')
-class ProgressBar extends React.Component {
-    cn = createCn('hoba');
+class ProgressBar extends React.PureComponent {
+    cn = createCn('progress-bar');
     static propTypes = {
         /** Прогресс в процентах */
         percent: Type.number,

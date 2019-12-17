@@ -23,9 +23,8 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
  *
  * @extends Input
  */
-@cn('input', Input)
-class InputAutocomplete extends React.Component {
-    cn = createCn('hoba');
+class InputAutocomplete extends React.PureComponent {
+    cn = createCn('input');
     static propTypes = {
         ...Input.propTypes,
         /** Список вариантов выбора */

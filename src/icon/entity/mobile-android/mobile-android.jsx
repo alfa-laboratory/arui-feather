@@ -18,4 +18,4 @@ class IconMobileAndroid extends React.Component {
     }
 }
 
-export default withTheme(IconMobileAndroid);
+export default IconMobileAndroid;

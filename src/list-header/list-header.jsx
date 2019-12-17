@@ -10,9 +10,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент для разделения списка по датам или смысловым группам.
  */
-@cn('list-header')
-class ListHeader extends React.Component {
-    cn = createCn('hoba');
+class ListHeader extends React.PureComponent {
+    cn = createCn('list-header');
     static propTypes = {
         /** Заголовок */
         title: Type.node,

@@ -18,4 +18,4 @@ class IconCardClose extends React.Component {
     }
 }
 
-export default withTheme(IconCardClose);
+export default IconCardClose;

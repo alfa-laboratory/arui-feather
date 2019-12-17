@@ -18,4 +18,4 @@ class IconCall extends React.Component {
     }
 }
 
-export default withTheme(IconCall);
+export default IconCall;

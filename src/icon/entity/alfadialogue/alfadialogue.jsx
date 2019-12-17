@@ -18,4 +18,4 @@ class IconAlfadialogue extends React.Component {
     }
 }
 
-export default withTheme(IconAlfadialogue);
+export default IconAlfadialogue;

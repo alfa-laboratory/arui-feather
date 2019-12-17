@@ -18,4 +18,4 @@ class IconCardList extends React.Component {
     }
 }
 
-export default withTheme(IconCardList);
+export default IconCardList;

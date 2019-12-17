@@ -16,9 +16,8 @@ import { withTheme } from '../cn';
  * @class
  * @extends Input
  */
-@cn('card-input', Input)
-class CardInput extends React.Component {
-    cn = createCn('hoba');
+class CardInput extends React.PureComponent {
+    cn = createCn('card-input');
     static propTypes = {
         ...Input.propTypes,
         /** Подсказка в текстовом поле */
@@ -36,7 +35,7 @@ class CardInput extends React.Component {
      */
     root;
 
-    render(Input) {
+    render() {
         return (
             <Input
                 { ...this.props }

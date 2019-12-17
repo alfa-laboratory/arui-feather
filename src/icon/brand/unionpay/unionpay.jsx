@@ -18,4 +18,4 @@ class IconUnionpay extends React.Component {
     }
 }
 
-export default withTheme(IconUnionpay);
+export default IconUnionpay;

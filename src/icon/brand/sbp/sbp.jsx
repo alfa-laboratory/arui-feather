@@ -18,4 +18,4 @@ class IconSbp extends React.Component {
     }
 }
 
-export default withTheme(IconSbp);
+export default IconSbp;

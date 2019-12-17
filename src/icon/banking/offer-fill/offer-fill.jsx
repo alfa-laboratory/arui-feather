@@ -18,4 +18,4 @@ class IconOfferFill extends React.Component {
     }
 }
 
-export default withTheme(IconOfferFill);
+export default IconOfferFill;

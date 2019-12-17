@@ -18,4 +18,4 @@ class IconCategoryVipManager extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryVipManager);
+export default IconCategoryVipManager;

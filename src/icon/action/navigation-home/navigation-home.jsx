@@ -18,4 +18,4 @@ class IconNavigationHome extends React.Component {
     }
 }
 
-export default withTheme(IconNavigationHome);
+export default IconNavigationHome;

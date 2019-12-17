@@ -12,7 +12,8 @@ import { withTheme } from '../cn';
  *
  * @extends Button
  */
-@cn('icon-button')
-class IconButton extends Button {}
+class IconButton extends Button {
+    cn = createCn('icon-button');
+}
 
 export default withTheme(IconButton);

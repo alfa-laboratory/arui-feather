@@ -12,7 +12,8 @@ import { withTheme } from '../cn';
  *
  * @extends Button
  */
-@cn('tag-button')
-class TagButton extends Button {}
+class TagButton extends Button {
+    cn = createCn('tag-button');
+}
 
 export default withTheme(TagButton);

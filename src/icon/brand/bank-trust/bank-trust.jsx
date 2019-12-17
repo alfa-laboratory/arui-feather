@@ -18,4 +18,4 @@ class IconBankTrust extends React.Component {
     }
 }
 
-export default withTheme(IconBankTrust);
+export default IconBankTrust;

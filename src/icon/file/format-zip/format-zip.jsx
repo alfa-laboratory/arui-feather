@@ -18,4 +18,4 @@ class IconFormatZip extends React.Component {
     }
 }
 
-export default withTheme(IconFormatZip);
+export default IconFormatZip;

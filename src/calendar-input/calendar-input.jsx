@@ -37,9 +37,8 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 /**
  * Компонент для ввода даты.
  */
-@cn('calendar-input', Input, Popup)
-class CalendarInput extends React.Component {
-    cn = createCn('hoba');
+class CalendarInput extends React.PureComponent {
+    cn = createCn('calendar-input');
     static propTypes = {
         /** Содержимое поля ввода */
         value: Type.string,
@@ -251,7 +250,7 @@ class CalendarInput extends React.Component {
         }
     }
 
-    render(Input, Popup) {
+    render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const commonProps = {

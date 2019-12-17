@@ -18,4 +18,4 @@ class IconPhoto extends React.Component {
     }
 }
 
-export default withTheme(IconPhoto);
+export default IconPhoto;

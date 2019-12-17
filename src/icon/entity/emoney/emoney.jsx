@@ -18,4 +18,4 @@ class IconEmoney extends React.Component {
     }
 }
 
-export default withTheme(IconEmoney);
+export default IconEmoney;

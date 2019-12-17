@@ -18,4 +18,4 @@ class IconPaymentToCompany extends React.Component {
     }
 }
 
-export default withTheme(IconPaymentToCompany);
+export default IconPaymentToCompany;

@@ -18,4 +18,4 @@ class IconAutopayment extends React.Component {
     }
 }
 
-export default withTheme(IconAutopayment);
+export default IconAutopayment;

@@ -18,4 +18,4 @@ class IconIncome extends React.Component {
     }
 }
 
-export default withTheme(IconIncome);
+export default IconIncome;

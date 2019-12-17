@@ -18,4 +18,4 @@ class IconCategoryPerson extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryPerson);
+export default IconCategoryPerson;

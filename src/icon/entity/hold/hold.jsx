@@ -18,4 +18,4 @@ class IconHold extends React.Component {
     }
 }
 
-export default withTheme(IconHold);
+export default IconHold;

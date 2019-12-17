@@ -18,4 +18,4 @@ class IconPlay extends React.Component {
     }
 }
 
-export default withTheme(IconPlay);
+export default IconPlay;

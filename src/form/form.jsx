@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент формы.
  */
-@cn('form')
-class Form extends React.Component {
-    cn = createCn('hoba');
+class Form extends React.PureComponent {
+    cn = createCn('form');
     static propTypes = {
         /** Способ кодирования данных формы при их отправке */
         enctype: Type.oneOf(['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain']),

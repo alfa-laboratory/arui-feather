@@ -18,4 +18,4 @@ class IconPillow extends React.Component {
     }
 }
 
-export default withTheme(IconPillow);
+export default IconPillow;

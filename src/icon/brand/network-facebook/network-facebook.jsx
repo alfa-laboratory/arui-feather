@@ -18,4 +18,4 @@ class IconNetworkFacebook extends React.Component {
     }
 }
 
-export default withTheme(IconNetworkFacebook);
+export default IconNetworkFacebook;

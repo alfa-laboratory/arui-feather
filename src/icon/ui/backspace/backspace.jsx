@@ -18,4 +18,4 @@ class IconBackspace extends React.Component {
     }
 }
 
-export default withTheme(IconBackspace);
+export default IconBackspace;

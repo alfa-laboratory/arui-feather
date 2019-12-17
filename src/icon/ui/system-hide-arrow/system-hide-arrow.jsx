@@ -18,4 +18,4 @@ class IconSystemHideArrow extends React.Component {
     }
 }
 
-export default withTheme(IconSystemHideArrow);
+export default IconSystemHideArrow;

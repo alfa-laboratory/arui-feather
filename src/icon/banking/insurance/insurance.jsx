@@ -18,4 +18,4 @@ class IconInsurance extends React.Component {
     }
 }
 
-export default withTheme(IconInsurance);
+export default IconInsurance;

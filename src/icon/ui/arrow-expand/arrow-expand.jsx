@@ -18,4 +18,4 @@ class IconArrowExpand extends React.Component {
     }
 }
 
-export default withTheme(IconArrowExpand);
+export default IconArrowExpand;

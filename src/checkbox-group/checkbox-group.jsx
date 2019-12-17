@@ -12,9 +12,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент группы чекбоксов.
  */
-@cn('checkbox-group')
-class CheckBoxGroup extends React.Component {
-    cn = createCn('hoba');
+class CheckBoxGroup extends React.PureComponent {
+    cn = createCn('checkbox-group');
     static propTypes = {
         /** Тип компонента */
         type: Type.oneOf(['normal', 'button', 'line']),

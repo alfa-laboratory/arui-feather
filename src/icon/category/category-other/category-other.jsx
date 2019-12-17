@@ -18,4 +18,4 @@ class IconCategoryOther extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryOther);
+export default IconCategoryOther;

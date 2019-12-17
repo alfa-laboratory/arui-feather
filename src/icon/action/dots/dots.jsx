@@ -18,4 +18,4 @@ class IconDots extends React.Component {
     }
 }
 
-export default withTheme(IconDots);
+export default IconDots;

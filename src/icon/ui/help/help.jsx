@@ -18,4 +18,4 @@ class IconHelp extends React.Component {
     }
 }
 
-export default withTheme(IconHelp);
+export default IconHelp;

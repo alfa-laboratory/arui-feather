@@ -18,4 +18,4 @@ class IconDown extends React.Component {
     }
 }
 
-export default withTheme(IconDown);
+export default IconDown;

@@ -18,4 +18,4 @@ class IconArrowBack extends React.Component {
     }
 }
 
-export default withTheme(IconArrowBack);
+export default IconArrowBack;

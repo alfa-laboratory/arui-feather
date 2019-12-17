@@ -14,9 +14,8 @@ import { withTheme } from '../cn';
 /**
  * Заголовок в Popup.
  */
-@cn('popup-header')
-class PopupHeader extends React.Component {
-    cn = createCn('hoba');
+class PopupHeader extends React.PureComponent {
+    cn = createCn('popup-header');
     static propTypes = {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),

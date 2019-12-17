@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент списка.
  */
-@cn('list')
-class List extends React.Component {
-    cn = createCn('hoba');
+class List extends React.PureComponent {
+    cn = createCn('list');
     static propTypes = {
         /** Список элементов */
         items: Type.arrayOf(Type.shape({

@@ -18,4 +18,4 @@ class IconFormatXml extends React.Component {
     }
 }
 
-export default withTheme(IconFormatXml);
+export default IconFormatXml;

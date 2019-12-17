@@ -18,4 +18,4 @@ class IconPercent extends React.Component {
     }
 }
 
-export default withTheme(IconPercent);
+export default IconPercent;

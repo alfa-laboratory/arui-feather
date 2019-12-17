@@ -61,9 +61,8 @@ function handleBodyScroll() {
 /**
  * Компонент боковой панели aka холодильник.
  */
-@cn('sidebar')
-class Sidebar extends React.Component {
-    cn = createCn('hoba');
+class Sidebar extends React.PureComponent {
+    cn = createCn('sidebar');
     static propTypes = {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),

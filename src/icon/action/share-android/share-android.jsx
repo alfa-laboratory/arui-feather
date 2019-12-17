@@ -18,4 +18,4 @@ class IconShareAndroid extends React.Component {
     }
 }
 
-export default withTheme(IconShareAndroid);
+export default IconShareAndroid;

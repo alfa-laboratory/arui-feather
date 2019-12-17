@@ -49,9 +49,8 @@ import { isNodeOutsideElement } from '../lib/window';
 /**
  * Компонент popup'а.
  */
-@cn('popup')
-class Popup extends React.Component {
-    cn = createCn('hoba');
+class Popup extends React.PureComponent {
+    cn = createCn('popup');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

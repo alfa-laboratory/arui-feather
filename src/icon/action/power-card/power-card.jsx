@@ -18,4 +18,4 @@ class IconPowerCard extends React.Component {
     }
 }
 
-export default withTheme(IconPowerCard);
+export default IconPowerCard;

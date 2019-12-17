@@ -18,4 +18,4 @@ class IconFormatSketch extends React.Component {
     }
 }
 
-export default withTheme(IconFormatSketch);
+export default IconFormatSketch;

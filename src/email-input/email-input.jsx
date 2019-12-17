@@ -13,9 +13,8 @@ import { withTheme } from '../cn';
  * Компонент поля ввода почты.
  * @extends Input
  */
-@cn('email-input', Input)
-class EmailInput extends React.Component {
-    cn = createCn('hoba');
+class EmailInput extends React.PureComponent {
+    cn = createCn('email-input');
     static propTypes = {
         ...Input.propTypes
     };
@@ -25,7 +24,7 @@ class EmailInput extends React.Component {
      */
     root;
 
-    render(Input) {
+    render() {
         return (
             <Input
                 { ...this.props }

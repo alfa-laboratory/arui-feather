@@ -18,4 +18,4 @@ class IconCategoryBudget extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryBudget);
+export default IconCategoryBudget;

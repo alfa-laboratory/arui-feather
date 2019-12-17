@@ -18,4 +18,4 @@ class IconApcBonus extends React.Component {
     }
 }
 
-export default withTheme(IconApcBonus);
+export default IconApcBonus;

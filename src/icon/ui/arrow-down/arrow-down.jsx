@@ -18,4 +18,4 @@ class IconArrowDown extends React.Component {
     }
 }
 
-export default withTheme(IconArrowDown);
+export default IconArrowDown;

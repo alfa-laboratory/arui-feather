@@ -12,9 +12,8 @@ import { withTheme } from '../cn';
  * Компонент поля формы.
  * Необходим для вертикального ритма в форме.
  */
-@cn('form-field')
-class FormField extends React.Component {
-    cn = createCn('hoba');
+class FormField extends React.PureComponent {
+    cn = createCn('form-field');
     static propTypes = {
         /** Дочерние элементы `FormField` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),

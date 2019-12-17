@@ -18,4 +18,4 @@ class IconLogout extends React.Component {
     }
 }
 
-export default withTheme(IconLogout);
+export default IconLogout;

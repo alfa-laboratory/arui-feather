@@ -19,9 +19,8 @@ import keyboardCode from '../lib/keyboard-code';
 /**
  * Компонент меню.
  */
-@cn('menu')
-class Menu extends React.Component {
-    cn = createCn('hoba');
+class Menu extends React.PureComponent {
+    cn = createCn('menu');
     static propTypes = {
         /** Тип расположения меню: 'horizontal' */
         view: Type.string,

@@ -18,4 +18,4 @@ class IconCashback extends React.Component {
     }
 }
 
-export default withTheme(IconCashback);
+export default IconCashback;

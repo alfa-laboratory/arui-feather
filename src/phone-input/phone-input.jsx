@@ -17,9 +17,8 @@ import { withTheme } from '../cn';
  *
  * @extends Input
  */
-@cn('phone-input', Input)
-class PhoneInput extends React.Component {
-    cn = createCn('hoba');
+class PhoneInput extends React.PureComponent {
+    cn = createCn('phone-input');
     static propTypes = {
         ...Input.propTypes,
         /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
@@ -35,7 +34,7 @@ class PhoneInput extends React.Component {
 
     root;
 
-    render(Input) {
+    render() {
         return (
             <Input
                 { ...this.props }

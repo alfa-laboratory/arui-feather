@@ -18,4 +18,4 @@ class IconDislike extends React.Component {
     }
 }
 
-export default withTheme(IconDislike);
+export default IconDislike;

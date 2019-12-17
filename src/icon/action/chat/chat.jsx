@@ -18,4 +18,4 @@ class IconChat extends React.Component {
     }
 }
 
-export default withTheme(IconChat);
+export default IconChat;

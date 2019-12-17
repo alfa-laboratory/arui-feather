@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
  */
-@cn('icon')
-class Icon extends React.Component {
-    cn = createCn('hoba');
+class Icon extends React.PureComponent {
+    cn = createCn('icon');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

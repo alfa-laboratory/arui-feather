@@ -56,9 +56,8 @@ function splitInteger(str) {
  *
  * @extends Input
  */
-@cn('money-input', Input)
-class MoneyInput extends React.Component {
-    cn = createCn('hoba');
+class MoneyInput extends React.PureComponent {
+    cn = createCn('money-input');
     static propTypes = {
         ...Input.propTypes,
         /** Максимально допустимая длина значения до запятой */

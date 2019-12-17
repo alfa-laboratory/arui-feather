@@ -18,4 +18,4 @@ class IconContactList extends React.Component {
     }
 }
 
-export default withTheme(IconContactList);
+export default IconContactList;

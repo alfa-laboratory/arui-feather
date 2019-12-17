@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент ссылки.
  */
-@cn('link')
-class Link extends React.Component {
-    cn = createCn('hoba');
+class Link extends React.PureComponent {
+    cn = createCn('link');
     static propTypes = {
         /** Иконка ссылки */
         icon: Type.node,

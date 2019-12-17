@@ -18,4 +18,4 @@ class IconChevronRight extends React.Component {
     }
 }
 
-export default withTheme(IconChevronRight);
+export default IconChevronRight;

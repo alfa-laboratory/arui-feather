@@ -18,4 +18,4 @@ class IconCurrencyRubUsd extends React.Component {
     }
 }
 
-export default withTheme(IconCurrencyRubUsd);
+export default IconCurrencyRubUsd;

@@ -18,4 +18,4 @@ class IconNavigationChat extends React.Component {
     }
 }
 
-export default withTheme(IconNavigationChat);
+export default IconNavigationChat;

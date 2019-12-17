@@ -18,4 +18,4 @@ class IconCategoryTransfer extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryTransfer);
+export default IconCategoryTransfer;

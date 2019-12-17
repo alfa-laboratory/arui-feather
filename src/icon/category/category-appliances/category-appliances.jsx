@@ -18,4 +18,4 @@ class IconCategoryAppliances extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryAppliances);
+export default IconCategoryAppliances;

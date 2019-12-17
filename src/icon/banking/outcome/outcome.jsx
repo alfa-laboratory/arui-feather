@@ -18,4 +18,4 @@ class IconOutcome extends React.Component {
     }
 }
 
-export default withTheme(IconOutcome);
+export default IconOutcome;

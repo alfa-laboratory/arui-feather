@@ -18,4 +18,4 @@ class IconBankOtkritie extends React.Component {
     }
 }
 
-export default withTheme(IconBankOtkritie);
+export default IconBankOtkritie;

@@ -23,9 +23,8 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
 /**
  * Компонент радио-кнопки.
  */
-@cn('radio', TagButton)
-class Radio extends React.Component {
-    cn = createCn('hoba');
+class Radio extends React.PureComponent {
+    cn = createCn('radio');
     static propTypes = {
         /** Тип */
         type: Type.oneOf(['normal', 'button']),
@@ -100,7 +99,7 @@ class Radio extends React.Component {
     label;
     control;
 
-    render(TagButton) {
+    render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (

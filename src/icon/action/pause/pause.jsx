@@ -18,4 +18,4 @@ class IconPause extends React.Component {
     }
 }
 
-export default withTheme(IconPause);
+export default IconPause;

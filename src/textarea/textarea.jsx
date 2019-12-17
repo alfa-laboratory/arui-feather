@@ -14,9 +14,8 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 /**
  * Компонент многострочного текстового ввода.
  */
-@cn('textarea')
-class Textarea extends React.Component {
-    cn = createCn('hoba');
+class Textarea extends React.PureComponent {
+    cn = createCn('textarea');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,

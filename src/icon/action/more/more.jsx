@@ -18,4 +18,4 @@ class IconMore extends React.Component {
     }
 }
 
-export default withTheme(IconMore);
+export default IconMore;

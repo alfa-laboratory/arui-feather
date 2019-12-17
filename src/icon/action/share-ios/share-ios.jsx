@@ -18,4 +18,4 @@ class IconShareIos extends React.Component {
     }
 }
 
-export default withTheme(IconShareIos);
+export default IconShareIos;

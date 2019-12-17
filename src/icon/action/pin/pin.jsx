@@ -18,4 +18,4 @@ class IconPin extends React.Component {
     }
 }
 
-export default withTheme(IconPin);
+export default IconPin;

@@ -21,9 +21,8 @@ import { isNodeOutsideElement } from '../lib/window';
 /**
  * Компонент всплывающего окна.
  */
-@cn('notification')
-class Notification extends React.Component {
-    cn = createCn('hoba');
+class Notification extends React.PureComponent {
+    cn = createCn('notification');
     static propTypes = {
         /** Тип компонента */
         status: Type.oneOf(['error', 'fail', 'ok']),

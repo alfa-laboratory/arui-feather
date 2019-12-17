@@ -18,4 +18,4 @@ class IconBankBaltiyskiy extends React.Component {
     }
 }
 
-export default withTheme(IconBankBaltiyskiy);
+export default IconBankBaltiyskiy;

@@ -18,4 +18,4 @@ class IconCategoryLoans extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryLoans);
+export default IconCategoryLoans;

@@ -18,4 +18,4 @@ class IconAttentionBold extends React.Component {
     }
 }
 
-export default withTheme(IconAttentionBold);
+export default IconAttentionBold;

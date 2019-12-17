@@ -18,4 +18,4 @@ class IconCategoryExperiments extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryExperiments);
+export default IconCategoryExperiments;

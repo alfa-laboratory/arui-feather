@@ -18,4 +18,4 @@ class IconSent extends React.Component {
     }
 }
 
-export default withTheme(IconSent);
+export default IconSent;

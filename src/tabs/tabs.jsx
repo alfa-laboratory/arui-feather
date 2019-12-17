@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
-@cn('tabs')
-class Tabs extends React.Component {
-    cn = createCn('hoba');
+class Tabs extends React.PureComponent {
+    cn = createCn('tabs');
     static propTypes = {
         /** Управление возможность скроллить компонент по-горизонтали */
         scrollable: Type.bool,

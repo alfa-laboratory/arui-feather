@@ -18,4 +18,4 @@ class IconPredictions extends React.Component {
     }
 }
 
-export default withTheme(IconPredictions);
+export default IconPredictions;

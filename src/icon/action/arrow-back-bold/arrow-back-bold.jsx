@@ -18,4 +18,4 @@ class IconArrowBackBold extends React.Component {
     }
 }
 
-export default withTheme(IconArrowBackBold);
+export default IconArrowBackBold;

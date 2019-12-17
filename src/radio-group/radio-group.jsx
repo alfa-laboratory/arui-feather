@@ -12,9 +12,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент группы радио-кнопок.
  */
-@cn('radio-group')
-class RadioGroup extends React.Component {
-    cn = createCn('hoba');
+class RadioGroup extends React.PureComponent {
+    cn = createCn('radio-group');
     static propTypes = {
         /** Тип группы кнопок */
         type: Type.oneOf(['normal', 'button', 'line']),
@@ -107,7 +106,7 @@ class RadioGroup extends React.Component {
         return (
             <div
                 className={
-                    `${cn({
+                    `${this.cn({
                         type: this.props.type,
                         invalid: !!this.props.error,
                         size,

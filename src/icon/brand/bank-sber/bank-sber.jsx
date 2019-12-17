@@ -18,4 +18,4 @@ class IconBankSber extends React.Component {
     }
 }
 
-export default withTheme(IconBankSber);
+export default IconBankSber;

@@ -18,4 +18,4 @@ class IconSubscrption extends React.Component {
     }
 }
 
-export default withTheme(IconSubscrption);
+export default IconSubscrption;

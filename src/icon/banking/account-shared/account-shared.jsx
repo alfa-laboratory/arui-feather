@@ -18,4 +18,4 @@ class IconAccountShared extends React.Component {
     }
 }
 
-export default withTheme(IconAccountShared);
+export default IconAccountShared;

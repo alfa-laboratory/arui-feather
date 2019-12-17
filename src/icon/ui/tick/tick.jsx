@@ -18,4 +18,4 @@ class IconTick extends React.Component {
     }
 }
 
-export default withTheme(IconTick);
+export default IconTick;

@@ -18,4 +18,4 @@ class IconBankUnicredit extends React.Component {
     }
 }
 
-export default withTheme(IconBankUnicredit);
+export default IconBankUnicredit;

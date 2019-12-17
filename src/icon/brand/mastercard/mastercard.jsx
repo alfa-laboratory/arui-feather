@@ -18,4 +18,4 @@ class IconMastercard extends React.Component {
     }
 }
 
-export default withTheme(IconMastercard);
+export default IconMastercard;

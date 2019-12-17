@@ -18,4 +18,4 @@ class IconPaymentToSelf extends React.Component {
     }
 }
 
-export default withTheme(IconPaymentToSelf);
+export default IconPaymentToSelf;

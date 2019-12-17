@@ -18,4 +18,4 @@ class IconUserAdd extends React.Component {
     }
 }
 
-export default withTheme(IconUserAdd);
+export default IconUserAdd;

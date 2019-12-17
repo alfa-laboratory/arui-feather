@@ -18,4 +18,4 @@ class IconBankVozrozhdenie extends React.Component {
     }
 }
 
-export default withTheme(IconBankVozrozhdenie);
+export default IconBankVozrozhdenie;

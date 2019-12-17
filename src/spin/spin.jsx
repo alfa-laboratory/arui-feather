@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
  */
-@cn('spin')
-class Spin extends React.Component {
-    cn = createCn('hoba');
+class Spin extends React.PureComponent {
+    cn = createCn('spin');
     static propTypes = {
         /** Управление видимостью компонента */
         visible: Type.bool,

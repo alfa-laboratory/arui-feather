@@ -18,4 +18,4 @@ class IconErase extends React.Component {
     }
 }
 
-export default withTheme(IconErase);
+export default IconErase;

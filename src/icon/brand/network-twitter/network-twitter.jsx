@@ -18,4 +18,4 @@ class IconNetworkTwitter extends React.Component {
     }
 }
 
-export default withTheme(IconNetworkTwitter);
+export default IconNetworkTwitter;

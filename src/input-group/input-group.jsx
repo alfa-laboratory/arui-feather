@@ -12,9 +12,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент группы полей для текстового ввода.
  */
-@cn('input-group')
-class InputGroup extends React.Component {
-    cn = createCn('hoba');
+class InputGroup extends React.PureComponent {
+    cn = createCn('input-group');
     static propTypes = {
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),

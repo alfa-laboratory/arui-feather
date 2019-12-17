@@ -16,9 +16,8 @@ import { POPUP_MAIN_OFFSET } from '../vars';
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
-@cn('dropdown')
-class Dropdown extends React.Component {
-    cn = createCn('hoba');
+class Dropdown extends React.PureComponent {
+    cn = createCn('dropdown');
     static propTypes = {
         /** Тип компонента */
         switcherType: Type.oneOf(['link', 'button']),

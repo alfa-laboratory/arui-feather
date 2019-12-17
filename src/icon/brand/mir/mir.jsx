@@ -18,4 +18,4 @@ class IconMir extends React.Component {
     }
 }
 
-export default withTheme(IconMir);
+export default IconMir;

@@ -19,9 +19,8 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 /**
  * Компонент текстового поля ввода.
  */
-@cn('input', MaskedInput)
-class Input extends React.Component {
-    cn = createCn('hoba');
+class Input extends React.PureComponent {
+    cn = createCn('input');
     static propTypes = {
         /**
          * Тип поля.

@@ -18,4 +18,4 @@ class IconCategoryState extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryState);
+export default IconCategoryState;

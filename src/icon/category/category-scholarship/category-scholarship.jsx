@@ -18,4 +18,4 @@ class IconCategoryScholarship extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryScholarship);
+export default IconCategoryScholarship;

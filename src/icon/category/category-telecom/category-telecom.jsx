@@ -18,4 +18,4 @@ class IconCategoryTelecom extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryTelecom);
+export default IconCategoryTelecom;

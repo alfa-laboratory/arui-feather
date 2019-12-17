@@ -18,4 +18,4 @@ class IconCategoryShopping extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryShopping);
+export default IconCategoryShopping;

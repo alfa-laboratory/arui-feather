@@ -18,4 +18,4 @@ class IconCardBelkart extends React.Component {
     }
 }
 
-export default withTheme(IconCardBelkart);
+export default IconCardBelkart;

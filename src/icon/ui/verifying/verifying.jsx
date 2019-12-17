@@ -18,4 +18,4 @@ class IconVerifying extends React.Component {
     }
 }
 
-export default withTheme(IconVerifying);
+export default IconVerifying;

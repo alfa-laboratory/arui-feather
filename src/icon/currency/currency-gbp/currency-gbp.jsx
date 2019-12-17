@@ -18,4 +18,4 @@ class IconCurrencyGbp extends React.Component {
     }
 }
 
-export default withTheme(IconCurrencyGbp);
+export default IconCurrencyGbp;

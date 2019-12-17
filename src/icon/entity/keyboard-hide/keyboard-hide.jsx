@@ -18,4 +18,4 @@ class IconKeyboardHide extends React.Component {
     }
 }
 
-export default withTheme(IconKeyboardHide);
+export default IconKeyboardHide;

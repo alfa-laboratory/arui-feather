@@ -18,4 +18,4 @@ class IconSubmit extends React.Component {
     }
 }
 
-export default withTheme(IconSubmit);
+export default IconSubmit;

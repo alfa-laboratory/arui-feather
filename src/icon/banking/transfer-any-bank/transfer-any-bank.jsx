@@ -18,4 +18,4 @@ class IconTransferAnyBank extends React.Component {
     }
 }
 
-export default withTheme(IconTransferAnyBank);
+export default IconTransferAnyBank;

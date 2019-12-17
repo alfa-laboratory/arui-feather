@@ -18,4 +18,4 @@ class IconChatMessageError extends React.Component {
     }
 }
 
-export default withTheme(IconChatMessageError);
+export default IconChatMessageError;

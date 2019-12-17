@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонента лейбла.
  */
-@cn('label')
-class Label extends React.Component {
-    cn = createCn('hoba');
+class Label extends React.PureComponent {
+    cn = createCn('label');
     static propTypes = {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl']),

@@ -20,8 +20,8 @@ const MAX_DIAL_CODE_LENGTH = 4;
  * Компонент ввода международного телефона по маске.
  *
  */
-@cn('intl-phone-input', Input, Select)
 class IntlPhoneInput extends React.Component {
+    cn = createCn('intl-phone-input');
     static propTypes = Input.propTypes;
 
     static defaultProps = {
@@ -65,7 +65,7 @@ class IntlPhoneInput extends React.Component {
         }
     }
 
-    render(Input, Select) {
+    render() {
         return (
             <Input
                 className={ this.cn() }

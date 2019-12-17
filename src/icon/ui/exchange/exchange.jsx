@@ -18,4 +18,4 @@ class IconExchange extends React.Component {
     }
 }
 
-export default withTheme(IconExchange);
+export default IconExchange;

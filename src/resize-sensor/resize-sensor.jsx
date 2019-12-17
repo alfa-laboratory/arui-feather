@@ -14,7 +14,6 @@ import Type from 'prop-types';
  * css свойством `position: relative;`.
  */
 class ResizeSensor extends React.Component {
-    cn = createCn('hoba');
     static propTypes = {
         /** Callback на изменение размера родителя */
         onResize: Type.func
@@ -69,4 +68,4 @@ class ResizeSensor extends React.Component {
     }
 }
 
-export default withTheme(ResizeSensor);
+export default ResizeSensor;

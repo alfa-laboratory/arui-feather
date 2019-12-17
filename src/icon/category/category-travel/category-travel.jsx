@@ -18,4 +18,4 @@ class IconCategoryTravel extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryTravel);
+export default IconCategoryTravel;

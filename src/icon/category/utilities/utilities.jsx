@@ -18,4 +18,4 @@ class IconUtilities extends React.Component {
     }
 }
 
-export default withTheme(IconUtilities);
+export default IconUtilities;

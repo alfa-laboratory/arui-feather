@@ -18,4 +18,4 @@ class IconInternet extends React.Component {
     }
 }
 
-export default withTheme(IconInternet);
+export default IconInternet;

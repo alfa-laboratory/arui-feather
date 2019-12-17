@@ -10,8 +10,7 @@ import { ThemeProvider as TrueThemeProvider } from '../cn';
  * Компонент задающий тему для своих дочерних компонентов.
  * Важно! Может содержать в себе строго один дочерний компонент.
  */
-class ThemeProvider extends React.Component {
-    cn = createCn('hoba');
+class ThemeProvider extends React.PureComponent {
     static propTypes = {
         /** Дочерний элемент `ThemeProvider` */
         children: Type.node,
@@ -29,4 +28,4 @@ class ThemeProvider extends React.Component {
     }
 }
 
-export default withTheme(ThemeProvider);
+export default ThemeProvider;

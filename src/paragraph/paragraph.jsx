@@ -11,9 +11,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент параграфа текста.
  */
-@cn('paragraph')
-class Paragraph extends React.Component {
-    cn = createCn('hoba');
+class Paragraph extends React.PureComponent {
+    cn = createCn('paragraph');
     static propTypes = {
         /** Тип параграфа */
         view: Type.oneOf(['lead', 'normal', 'small']),

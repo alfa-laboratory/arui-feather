@@ -18,4 +18,4 @@ class IconNotificationBadge extends React.Component {
     }
 }
 
-export default withTheme(IconNotificationBadge);
+export default IconNotificationBadge;

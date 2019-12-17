@@ -18,4 +18,4 @@ class IconStar extends React.Component {
     }
 }
 
-export default withTheme(IconStar);
+export default IconStar;

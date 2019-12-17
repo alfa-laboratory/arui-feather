@@ -18,4 +18,4 @@ class IconCancel extends React.Component {
     }
 }
 
-export default withTheme(IconCancel);
+export default IconCancel;

@@ -27,9 +27,8 @@ const breakpointsType = {
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
-@cn('grid-col')
 class GridCol extends React.PureComponent {
-    cn = createCn('hoba');
+    cn = createCn('grid-col');
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,

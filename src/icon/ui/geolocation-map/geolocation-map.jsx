@@ -18,4 +18,4 @@ class IconGeolocationMap extends React.Component {
     }
 }
 
-export default withTheme(IconGeolocationMap);
+export default IconGeolocationMap;

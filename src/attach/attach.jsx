@@ -67,7 +67,6 @@ function isEqualArray(array1, array2) {
 /**
  * Компонент прикрепления файлов.
  */
-@cn('attach')
 class Attach extends React.Component {
     cn = createCn('attach');
     static propTypes = {

@@ -18,9 +18,8 @@ const breakpointsType = {
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
-@cn('grid-row')
 class GridRow extends React.PureComponent {
-    cn = createCn('hoba');
+    cn = createCn('grid-row');
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,

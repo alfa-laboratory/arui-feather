@@ -18,4 +18,4 @@ class IconPrinter extends React.Component {
     }
 }
 
-export default withTheme(IconPrinter);
+export default IconPrinter;

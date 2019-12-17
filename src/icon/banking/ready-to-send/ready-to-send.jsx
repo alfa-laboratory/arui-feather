@@ -18,4 +18,4 @@ class IconReadyToSend extends React.Component {
     }
 }
 
-export default withTheme(IconReadyToSend);
+export default IconReadyToSend;

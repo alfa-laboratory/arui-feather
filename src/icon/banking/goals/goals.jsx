@@ -18,4 +18,4 @@ class IconGoals extends React.Component {
     }
 }
 
-export default withTheme(IconGoals);
+export default IconGoals;

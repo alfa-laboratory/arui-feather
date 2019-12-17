@@ -18,4 +18,4 @@ class IconWallet extends React.Component {
     }
 }
 
-export default withTheme(IconWallet);
+export default IconWallet;

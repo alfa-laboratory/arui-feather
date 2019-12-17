@@ -18,4 +18,4 @@ class IconPasswordChange extends React.Component {
     }
 }
 
-export default withTheme(IconPasswordChange);
+export default IconPasswordChange;

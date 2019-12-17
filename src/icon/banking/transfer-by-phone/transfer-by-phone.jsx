@@ -18,4 +18,4 @@ class IconTransferByPhone extends React.Component {
     }
 }
 
-export default withTheme(IconTransferByPhone);
+export default IconTransferByPhone;

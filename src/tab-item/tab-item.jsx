@@ -10,7 +10,6 @@ import { withTheme } from '../cn';
  * Компонент таба. Как правило, используется совместно с `Tabs`.
  * @extends Link
  */
-@cn('tab-item')
 class TabItem extends Link {
     static defaultProps = {
         size: 'l',
@@ -19,6 +18,10 @@ class TabItem extends Link {
         pseudo: false,
         tabIndex: 0
     };
+    constructor(props) {
+        super(props);
+        this.cn = createCn('tab-item');
+    }
 }
 
 export default withTheme(TabItem);

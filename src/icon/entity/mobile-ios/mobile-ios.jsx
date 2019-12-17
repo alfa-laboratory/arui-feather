@@ -18,4 +18,4 @@ class IconMobileIos extends React.Component {
     }
 }
 
-export default withTheme(IconMobileIos);
+export default IconMobileIos;

@@ -18,4 +18,4 @@ class IconBankAlfa extends React.Component {
     }
 }
 
-export default withTheme(IconBankAlfa);
+export default IconBankAlfa;

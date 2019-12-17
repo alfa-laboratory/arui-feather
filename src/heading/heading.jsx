@@ -19,9 +19,8 @@ const HEADING_LEVEL = {
 /**
  * Компонент заголовка.
  */
-@cn('heading')
-class Heading extends React.Component {
-    cn = createCn('hoba');
+class Heading extends React.PureComponent {
+    cn = createCn('heading');
     static propTypes = {
         /** Дочерние элементы `Heading` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),

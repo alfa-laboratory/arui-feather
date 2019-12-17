@@ -18,4 +18,4 @@ class IconBuy extends React.Component {
     }
 }
 
-export default withTheme(IconBuy);
+export default IconBuy;

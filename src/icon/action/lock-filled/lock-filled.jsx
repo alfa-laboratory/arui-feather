@@ -18,4 +18,4 @@ class IconLockFilled extends React.Component {
     }
 }
 
-export default withTheme(IconLockFilled);
+export default IconLockFilled;

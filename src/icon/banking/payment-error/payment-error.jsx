@@ -18,4 +18,4 @@ class IconPaymentError extends React.Component {
     }
 }
 
-export default withTheme(IconPaymentError);
+export default IconPaymentError;

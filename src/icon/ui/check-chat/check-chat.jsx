@@ -18,4 +18,4 @@ class IconCheckChat extends React.Component {
     }
 }
 
-export default withTheme(IconCheckChat);
+export default IconCheckChat;

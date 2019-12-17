@@ -25,9 +25,8 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
 /**
  * Компонент чекбокса.
  */
-@cn('checkbox', TagButton)
-class CheckBox extends React.Component {
-    cn = createCn('hoba');
+class CheckBox extends React.PureComponent {
+    cn = createCn('checkbox');
     static propTypes = {
         /** Текст подписи к чекбоксу */
         text: Type.node,
@@ -101,7 +100,7 @@ class CheckBox extends React.Component {
 
     root;
 
-    render(TagButton) {
+    render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (

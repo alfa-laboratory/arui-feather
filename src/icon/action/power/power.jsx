@@ -18,4 +18,4 @@ class IconPower extends React.Component {
     }
 }
 
-export default withTheme(IconPower);
+export default IconPower;

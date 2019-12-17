@@ -18,4 +18,4 @@ class IconBankUralskiy extends React.Component {
     }
 }
 
-export default withTheme(IconBankUralskiy);
+export default IconBankUralskiy;

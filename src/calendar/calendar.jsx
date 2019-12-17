@@ -34,9 +34,8 @@ const LATER_YEARS_LIMIT = 1;
 /**
  * Компонент календаря.
  */
-@cn('calendar')
-class Calendar extends React.Component {
-    cn = createCn('hoba');
+class Calendar extends React.PureComponent {
+    cn = createCn('calendar');
     static propTypes = {
         /** Выбранная дата, в формате unix timestamp */
         value: Type.number,

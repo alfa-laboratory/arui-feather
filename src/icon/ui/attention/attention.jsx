@@ -18,4 +18,4 @@ class IconAttention extends React.Component {
     }
 }
 
-export default withTheme(IconAttention);
+export default IconAttention;

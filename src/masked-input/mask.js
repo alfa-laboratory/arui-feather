@@ -172,4 +172,4 @@ class Mask {
     }
 }
 
-export default withTheme(Mask);
+export default Mask;

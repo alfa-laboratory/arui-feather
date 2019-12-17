@@ -18,4 +18,4 @@ class IconNews extends React.Component {
     }
 }
 
-export default withTheme(IconNews);
+export default IconNews;

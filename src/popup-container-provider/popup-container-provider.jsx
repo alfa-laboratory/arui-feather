@@ -43,9 +43,8 @@ import { HtmlElement } from '../lib/prop-types';
  *  </Page>
  * ```
  */
-@cn('popup-container')
-class PopupContainerProvider extends React.Component {
-    cn = createCn('hoba');
+class PopupContainerProvider extends React.PureComponent {
+    cn = createCn('popup-container');
     static propTypes = {
         /** Дочерние элементы контейнера */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),

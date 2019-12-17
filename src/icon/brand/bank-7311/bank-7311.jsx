@@ -18,4 +18,4 @@ class IconBank7311 extends React.Component {
     }
 }
 
-export default withTheme(IconBank7311);
+export default IconBank7311;

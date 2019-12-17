@@ -18,4 +18,4 @@ class IconFormatPpt extends React.Component {
     }
 }
 
-export default withTheme(IconFormatPpt);
+export default IconFormatPpt;

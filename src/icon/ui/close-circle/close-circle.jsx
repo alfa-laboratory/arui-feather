@@ -18,4 +18,4 @@ class IconCloseCircle extends React.Component {
     }
 }
 
-export default withTheme(IconCloseCircle);
+export default IconCloseCircle;

@@ -18,4 +18,4 @@ class IconUnlock extends React.Component {
     }
 }
 
-export default withTheme(IconUnlock);
+export default IconUnlock;

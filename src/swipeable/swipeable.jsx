@@ -11,7 +11,6 @@ export const getCoordinates = ({
 );
 
 class Swipeable extends React.Component {
-    cn = createCn('hoba');
     static propTypes = {
         /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
         delta: Type.number,
@@ -116,4 +115,4 @@ class Swipeable extends React.Component {
     };
 }
 
-export default withTheme(Swipeable);
+export default Swipeable;

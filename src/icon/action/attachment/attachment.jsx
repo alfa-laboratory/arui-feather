@@ -18,4 +18,4 @@ class IconAttachment extends React.Component {
     }
 }
 
-export default withTheme(IconAttachment);
+export default IconAttachment;

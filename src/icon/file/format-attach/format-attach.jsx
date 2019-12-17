@@ -18,4 +18,4 @@ class IconFormatAttach extends React.Component {
     }
 }
 
-export default withTheme(IconFormatAttach);
+export default IconFormatAttach;

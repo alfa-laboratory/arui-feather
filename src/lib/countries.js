@@ -1575,4 +1575,4 @@ const AllCountries = {
     getCountries
 };
 
-export default withTheme(AllCountries);
+export default AllCountries;

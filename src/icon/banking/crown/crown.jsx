@@ -18,4 +18,4 @@ class IconCrown extends React.Component {
     }
 }
 
-export default withTheme(IconCrown);
+export default IconCrown;

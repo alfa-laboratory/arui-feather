@@ -18,4 +18,4 @@ class IconCardPinChange extends React.Component {
     }
 }
 
-export default withTheme(IconCardPinChange);
+export default IconCardPinChange;

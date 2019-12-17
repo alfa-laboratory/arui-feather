@@ -18,4 +18,4 @@ class IconCheckBold extends React.Component {
     }
 }
 
-export default withTheme(IconCheckBold);
+export default IconCheckBold;

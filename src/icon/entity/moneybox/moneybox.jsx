@@ -18,4 +18,4 @@ class IconMoneybox extends React.Component {
     }
 }
 
-export default withTheme(IconMoneybox);
+export default IconMoneybox;

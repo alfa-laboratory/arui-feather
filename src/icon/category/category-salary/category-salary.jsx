@@ -18,4 +18,4 @@ class IconCategorySalary extends React.Component {
     }
 }
 
-export default withTheme(IconCategorySalary);
+export default IconCategorySalary;

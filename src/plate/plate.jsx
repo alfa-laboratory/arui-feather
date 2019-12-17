@@ -17,9 +17,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент плашки.
  */
-@cn('plate')
-class Plate extends React.Component {
-    cn = createCn('hoba');
+class Plate extends React.PureComponent {
+    cn = createCn('plate');
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,

@@ -28,8 +28,9 @@ const DEFAULT_TEXT_FALLBACK = 'Выберите:';
 /**
  * Элемент кнопки для выпадающего списка.
  */
-@cn('select-button')
-class SelectButton extends Button {}
+class SelectButton extends Button {
+    cn = createCn('select-button');
+}
 
 /**
  * @typedef {Object} CheckedOption
@@ -42,9 +43,8 @@ class SelectButton extends Button {}
 /**
  * Компонент выпадающего списка.
  */
-@cn('select', SelectButton, Popup)
-class Select extends React.Component {
-    cn = createCn('hoba');
+class Select extends React.PureComponent {
+    cn = createCn('select');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -285,7 +285,7 @@ class Select extends React.Component {
         }
     }
 
-    render(SelectButton, Popup) {
+    render() {
         const value = this.getValue();
 
         return (

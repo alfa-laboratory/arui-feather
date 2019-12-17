@@ -18,4 +18,4 @@ class IconCategoryRent extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryRent);
+export default IconCategoryRent;

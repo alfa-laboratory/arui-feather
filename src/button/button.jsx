@@ -12,9 +12,8 @@ import keyboardCode from '../lib/keyboard-code';
 /**
  * Компонент кнопки (да, она нажимается!).
  */
-@cn('button')
-class Button extends React.Component {
-    cn = createCn('hoba');
+class Button extends React.PureComponent {
+    cn = createCn('button');
     static propTypes = {
         /** Текст кнопки */
         text: Type.node,

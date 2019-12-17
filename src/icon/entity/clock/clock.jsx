@@ -18,4 +18,4 @@ class IconClock extends React.Component {
     }
 }
 
-export default withTheme(IconClock);
+export default IconClock;

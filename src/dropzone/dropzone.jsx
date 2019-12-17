@@ -13,9 +13,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
-@cn('dropzone')
-class Dropzone extends React.Component {
-    cn = createCn('hoba');
+class Dropzone extends React.PureComponent {
+    cn = createCn('dropzone');
     static propTypes = {
         /** Дочерние компоненты */
         children: Type.node,

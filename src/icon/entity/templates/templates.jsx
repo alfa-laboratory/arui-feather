@@ -18,4 +18,4 @@ class IconTemplates extends React.Component {
     }
 }
 
-export default withTheme(IconTemplates);
+export default IconTemplates;

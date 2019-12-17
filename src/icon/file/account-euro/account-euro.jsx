@@ -18,4 +18,4 @@ class IconAccountEuro extends React.Component {
     }
 }
 
-export default withTheme(IconAccountEuro);
+export default IconAccountEuro;

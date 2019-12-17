@@ -18,4 +18,4 @@ class IconStatusUrgent extends React.Component {
     }
 }
 
-export default withTheme(IconStatusUrgent);
+export default IconStatusUrgent;

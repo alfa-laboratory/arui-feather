@@ -18,4 +18,4 @@ class IconCheck extends React.Component {
     }
 }
 
-export default withTheme(IconCheck);
+export default IconCheck;

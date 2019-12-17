@@ -18,4 +18,4 @@ class IconTransferExternal extends React.Component {
     }
 }
 
-export default withTheme(IconTransferExternal);
+export default IconTransferExternal;

@@ -18,4 +18,4 @@ class IconCvv extends React.Component {
     }
 }
 
-export default withTheme(IconCvv);
+export default IconCvv;

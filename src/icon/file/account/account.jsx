@@ -18,4 +18,4 @@ class IconAccount extends React.Component {
     }
 }
 
-export default withTheme(IconAccount);
+export default IconAccount;

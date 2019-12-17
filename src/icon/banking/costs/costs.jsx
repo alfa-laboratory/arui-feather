@@ -18,4 +18,4 @@ class IconCosts extends React.Component {
     }
 }
 
-export default withTheme(IconCosts);
+export default IconCosts;

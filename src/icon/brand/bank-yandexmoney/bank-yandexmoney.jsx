@@ -18,4 +18,4 @@ class IconBankYandexmoney extends React.Component {
     }
 }
 
-export default withTheme(IconBankYandexmoney);
+export default IconBankYandexmoney;

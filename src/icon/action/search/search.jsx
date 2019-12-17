@@ -18,4 +18,4 @@ class IconSearch extends React.Component {
     }
 }
 
-export default withTheme(IconSearch);
+export default IconSearch;

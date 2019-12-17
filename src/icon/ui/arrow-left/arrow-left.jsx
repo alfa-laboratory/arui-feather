@@ -18,4 +18,4 @@ class IconArrowLeft extends React.Component {
     }
 }
 
-export default withTheme(IconArrowLeft);
+export default IconArrowLeft;

@@ -18,4 +18,4 @@ class IconSell extends React.Component {
     }
 }
 
-export default withTheme(IconSell);
+export default IconSell;

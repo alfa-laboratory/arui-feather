@@ -18,4 +18,4 @@ class IconRequestMoney extends React.Component {
     }
 }
 
-export default withTheme(IconRequestMoney);
+export default IconRequestMoney;

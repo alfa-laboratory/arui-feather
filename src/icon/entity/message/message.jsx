@@ -18,4 +18,4 @@ class IconMessage extends React.Component {
     }
 }
 
-export default withTheme(IconMessage);
+export default IconMessage;

@@ -18,4 +18,4 @@ class IconCategoryFines extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryFines);
+export default IconCategoryFines;

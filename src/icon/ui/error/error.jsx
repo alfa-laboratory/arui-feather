@@ -18,4 +18,4 @@ class IconError extends React.Component {
     }
 }
 
-export default withTheme(IconError);
+export default IconError;

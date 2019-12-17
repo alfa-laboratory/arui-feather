@@ -18,4 +18,4 @@ class IconContactlessOn extends React.Component {
     }
 }
 
-export default withTheme(IconContactlessOn);
+export default IconContactlessOn;

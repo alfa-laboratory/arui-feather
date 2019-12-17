@@ -18,4 +18,4 @@ class IconBankHomeCredit extends React.Component {
     }
 }
 
-export default withTheme(IconBankHomeCredit);
+export default IconBankHomeCredit;

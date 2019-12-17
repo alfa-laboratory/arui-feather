@@ -18,4 +18,4 @@ class IconTodo extends React.Component {
     }
 }
 
-export default withTheme(IconTodo);
+export default IconTodo;

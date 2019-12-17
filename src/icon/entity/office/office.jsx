@@ -18,4 +18,4 @@ class IconOffice extends React.Component {
     }
 }
 
-export default withTheme(IconOffice);
+export default IconOffice;

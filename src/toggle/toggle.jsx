@@ -10,9 +10,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент переключателя.
  */
-@cn('toggle')
-class Toggle extends React.Component {
-    cn = createCn('hoba');
+class Toggle extends React.PureComponent {
+    cn = createCn('toggle');
     static propTypes = {
         /** Идентификатор компонента в DOM */
         id: Type.string,

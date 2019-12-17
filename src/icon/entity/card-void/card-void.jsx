@@ -18,4 +18,4 @@ class IconCardVoid extends React.Component {
     }
 }
 
-export default withTheme(IconCardVoid);
+export default IconCardVoid;

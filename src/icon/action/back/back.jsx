@@ -18,4 +18,4 @@ class IconBack extends React.Component {
     }
 }
 
-export default withTheme(IconBack);
+export default IconBack;

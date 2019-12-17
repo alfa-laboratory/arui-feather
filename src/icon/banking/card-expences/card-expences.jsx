@@ -18,4 +18,4 @@ class IconCardExpences extends React.Component {
     }
 }
 
-export default withTheme(IconCardExpences);
+export default IconCardExpences;

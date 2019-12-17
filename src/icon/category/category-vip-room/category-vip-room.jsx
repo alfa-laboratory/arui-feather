@@ -18,4 +18,4 @@ class IconCategoryVipRoom extends React.Component {
     }
 }
 
-export default withTheme(IconCategoryVipRoom);
+export default IconCategoryVipRoom;

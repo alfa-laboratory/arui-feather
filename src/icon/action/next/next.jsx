@@ -18,4 +18,4 @@ class IconNext extends React.Component {
     }
 }
 
-export default withTheme(IconNext);
+export default IconNext;

@@ -16,9 +16,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
-@cn('collapse')
-class Collapse extends React.Component {
-    cn = createCn('hoba');
+class Collapse extends React.PureComponent {
+    cn = createCn('collapse');
     static propTypes = {
         /** Управление `expanded` состоянием компонента */
         isExpanded: Type.bool,

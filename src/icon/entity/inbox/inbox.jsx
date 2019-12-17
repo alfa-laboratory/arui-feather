@@ -18,4 +18,4 @@ class IconInbox extends React.Component {
     }
 }
 
-export default withTheme(IconInbox);
+export default IconInbox;

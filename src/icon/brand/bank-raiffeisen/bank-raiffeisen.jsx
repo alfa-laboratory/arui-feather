@@ -18,4 +18,4 @@ class IconBankRaiffeisen extends React.Component {
     }
 }
 
-export default withTheme(IconBankRaiffeisen);
+export default IconBankRaiffeisen;

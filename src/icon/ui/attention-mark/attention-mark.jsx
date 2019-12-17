@@ -18,4 +18,4 @@ class IconAttentionMark extends React.Component {
     }
 }
 
-export default withTheme(IconAttentionMark);
+export default IconAttentionMark;

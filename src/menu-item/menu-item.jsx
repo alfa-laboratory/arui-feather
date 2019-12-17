@@ -14,9 +14,8 @@ import { withTheme } from '../cn';
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
-@cn('menu-item')
-class MenuItem extends React.Component {
-    cn = createCn('hoba');
+class MenuItem extends React.PureComponent {
+    cn = createCn('menu-item');
     static propTypes = {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),

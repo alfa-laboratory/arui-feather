@@ -18,4 +18,4 @@ class IconBankMdm extends React.Component {
     }
 }
 
-export default withTheme(IconBankMdm);
+export default IconBankMdm;

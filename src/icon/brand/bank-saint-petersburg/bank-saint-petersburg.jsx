@@ -18,4 +18,4 @@ class IconBankSaintPetersburg extends React.Component {
     }
 }
 
-export default withTheme(IconBankSaintPetersburg);
+export default IconBankSaintPetersburg;

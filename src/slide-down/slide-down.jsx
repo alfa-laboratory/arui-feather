@@ -12,9 +12,8 @@ import { withTheme } from '../cn';
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-@cn('slide-down')
-class SlideDown extends React.Component {
-    cn = createCn('hoba');
+class SlideDown extends React.PureComponent {
+    cn = createCn('slide-down');
     static propTypes = {
         /** Управление состоянием expand/collapse компонента */
         isExpanded: Type.bool,

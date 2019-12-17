@@ -14,6 +14,10 @@ require('core-js/fn/object/assign');
 require('core-js/fn/object/is');
 require('core-js/fn/object/values');
 require('core-js/es6/promise');
+require('core-js/es6/set');
+require('core-js/es6/map');
+require('core-js/es6/weak-map');
+require('core-js/es6/symbol');
 
 if (typeof window !== 'undefined') {
     require('raf').polyfill(); // window.requestAnimationFrame for ie <= 10 & android 4.0..4.3

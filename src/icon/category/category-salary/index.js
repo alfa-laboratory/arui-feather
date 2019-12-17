@@ -5,4 +5,6 @@
 import './category-salary.css';
 import '../../../icon';
 
-export { default } from './category-salary';
+import { withTheme } from '../../../cn';
+import Component from './category-salary';
+export default withTheme(Component);

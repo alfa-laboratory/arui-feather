@@ -5,4 +5,6 @@
 import './category-house.css';
 import '../../../icon';
 
-export { default } from './category-house';
+import { withTheme } from '../../../cn';
+import Component from './category-house';
+export default withTheme(Component);

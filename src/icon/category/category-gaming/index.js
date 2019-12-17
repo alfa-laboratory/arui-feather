@@ -5,4 +5,6 @@
 import './category-gaming.css';
 import '../../../icon';
 
-export { default } from './category-gaming';
+import { withTheme } from '../../../cn';
+import Component from './category-gaming';
+export default withTheme(Component);

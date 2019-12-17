@@ -5,4 +5,6 @@
 import './category-shopping.css';
 import '../../../icon';
 
-export { default } from './category-shopping';
+import { withTheme } from '../../../cn';
+import Component from './category-shopping';
+export default withTheme(Component);

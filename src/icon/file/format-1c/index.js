@@ -5,4 +5,6 @@
 import './format-1c.css';
 import '../../../icon';
 
-export { default } from './format-1c';
+import { withTheme } from '../../../cn';
+import Component from './format-1c';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './card-void.css';
 import '../../../icon';
 
-export { default } from './card-void';
+import { withTheme } from '../../../cn';
+import Component from './card-void';
+export default withTheme(Component);

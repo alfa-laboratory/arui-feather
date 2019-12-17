@@ -5,4 +5,6 @@
 import './currency-chf.css';
 import '../../../icon';
 
-export { default } from './currency-chf';
+import { withTheme } from '../../../cn';
+import Component from './currency-chf';
+export default withTheme(Component);

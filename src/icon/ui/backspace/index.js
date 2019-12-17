@@ -5,4 +5,6 @@
 import './backspace.css';
 import '../../../icon';
 
-export { default } from './backspace';
+import { withTheme } from '../../../cn';
+import Component from './backspace';
+export default withTheme(Component);

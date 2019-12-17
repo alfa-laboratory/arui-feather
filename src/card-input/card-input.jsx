@@ -8,7 +8,6 @@ import Type from 'prop-types';
 import Input from '../input/input';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Поле ввода номера карты с маской.
@@ -78,4 +77,4 @@ class CardInput extends React.PureComponent {
     }
 }
 
-export default withTheme(CardInput);
+export default CardInput;

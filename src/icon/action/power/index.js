@@ -5,4 +5,6 @@
 import './power.css';
 import '../../../icon';
 
-export { default } from './power';
+import { withTheme } from '../../../cn';
+import Component from './power';
+export default withTheme(Component);

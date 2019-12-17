@@ -5,4 +5,6 @@
 import './category-dress.css';
 import '../../../icon';
 
-export { default } from './category-dress';
+import { withTheme } from '../../../cn';
+import Component from './category-dress';
+export default withTheme(Component);

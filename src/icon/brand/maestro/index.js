@@ -5,4 +5,6 @@
 import './maestro.css';
 import '../../../icon';
 
-export { default } from './maestro';
+import { withTheme } from '../../../cn';
+import Component from './maestro';
+export default withTheme(Component);

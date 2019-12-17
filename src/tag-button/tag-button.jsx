@@ -5,7 +5,6 @@
 import Button from '../button/button';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент тэг.
@@ -16,4 +15,4 @@ class TagButton extends Button {
     cn = createCn('tag-button');
 }
 
-export default withTheme(TagButton);
+export default TagButton;

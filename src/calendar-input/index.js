@@ -12,4 +12,6 @@ import '../popup-header';
 
 import './calendar-input.css';
 
-export { default } from './calendar-input';
+import { withTheme } from '../cn';
+import Component from './calendar-input';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './password-show.css';
 import '../../../icon';
 
-export { default } from './password-show';
+import { withTheme } from '../../../cn';
+import Component from './password-show';
+export default withTheme(Component);

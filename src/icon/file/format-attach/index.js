@@ -5,4 +5,6 @@
 import './format-attach.css';
 import '../../../icon';
 
-export { default } from './format-attach';
+import { withTheme } from '../../../cn';
+import Component from './format-attach';
+export default withTheme(Component);

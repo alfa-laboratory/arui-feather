@@ -10,4 +10,6 @@ import './sidebar.css';
 import './sidebar_theme_alfa-on-color.css';
 import './sidebar_theme_alfa-on-white.css';
 
-export { default } from './sidebar';
+import { withTheme } from '../cn';
+import Component from './sidebar';
+export default withTheme(Component);

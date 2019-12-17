@@ -5,4 +5,6 @@
 import './autopayment.css';
 import '../../../icon';
 
-export { default } from './autopayment';
+import { withTheme } from '../../../cn';
+import Component from './autopayment';
+export default withTheme(Component);

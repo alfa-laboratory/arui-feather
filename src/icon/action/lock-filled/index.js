@@ -5,4 +5,6 @@
 import './lock-filled.css';
 import '../../../icon';
 
-export { default } from './lock-filled';
+import { withTheme } from '../../../cn';
+import Component from './lock-filled';
+export default withTheme(Component);

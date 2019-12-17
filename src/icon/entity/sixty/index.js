@@ -5,4 +5,6 @@
 import './sixty.css';
 import '../../../icon';
 
-export { default } from './sixty';
+import { withTheme } from '../../../cn';
+import Component from './sixty';
+export default withTheme(Component);

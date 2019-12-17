@@ -5,7 +5,6 @@
 import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент для разделения списка по датам или смысловым группам.
@@ -42,4 +41,4 @@ class ListHeader extends React.PureComponent {
     }
 }
 
-export default withTheme(ListHeader);
+export default ListHeader;

@@ -12,7 +12,6 @@ import IconCheck from '../icon/ui/tick';
 import MenuItem from '../menu-item/menu-item';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
 
@@ -551,4 +550,4 @@ class Menu extends React.PureComponent {
     }
 }
 
-export default withTheme(Menu);
+export default Menu;

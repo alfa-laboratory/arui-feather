@@ -5,4 +5,6 @@
 import './payment-to-self.css';
 import '../../../icon';
 
-export { default } from './payment-to-self';
+import { withTheme } from '../../../cn';
+import Component from './payment-to-self';
+export default withTheme(Component);

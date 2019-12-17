@@ -5,4 +5,6 @@
 import './bank-mdm.css';
 import '../../../icon';
 
-export { default } from './bank-mdm';
+import { withTheme } from '../../../cn';
+import Component from './bank-mdm';
+export default withTheme(Component);

@@ -4,4 +4,6 @@
 
 import './toggle.css';
 
-export { default } from './toggle';
+import { withTheme } from '../cn';
+import Component from './toggle';
+export default withTheme(Component);

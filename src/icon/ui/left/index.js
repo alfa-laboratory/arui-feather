@@ -5,4 +5,6 @@
 import './left.css';
 import '../../../icon';
 
-export { default } from './left';
+import { withTheme } from '../../../cn';
+import Component from './left';
+export default withTheme(Component);

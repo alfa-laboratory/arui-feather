@@ -6,7 +6,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+
 import keyboardCode from '../lib/keyboard-code';
 
 /**
@@ -343,4 +343,4 @@ class Button extends React.PureComponent {
     }
 }
 
-export default withTheme(Button);
+export default Button;

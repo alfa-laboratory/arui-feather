@@ -4,4 +4,6 @@
 
 import './label.css';
 
-export { default } from './label';
+import { withTheme } from '../cn';
+import Component from './label';
+export default withTheme(Component);

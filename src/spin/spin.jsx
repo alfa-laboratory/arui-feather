@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
@@ -47,4 +46,4 @@ class Spin extends React.PureComponent {
     }
 }
 
-export default withTheme(Spin);
+export default Spin;

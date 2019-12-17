@@ -5,4 +5,6 @@
 import './user-add.css';
 import '../../../icon';
 
-export { default } from './user-add';
+import { withTheme } from '../../../cn';
+import Component from './user-add';
+export default withTheme(Component);

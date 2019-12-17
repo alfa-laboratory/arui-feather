@@ -5,4 +5,6 @@
 import './error.css';
 import '../../../icon';
 
-export { default } from './error';
+import { withTheme } from '../../../cn';
+import Component from './error';
+export default withTheme(Component);

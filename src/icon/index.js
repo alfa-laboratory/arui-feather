@@ -4,4 +4,6 @@
 
 import './icon.css';
 
-export { default } from './icon';
+import { withTheme } from '../cn';
+import Component from './icon';
+export default withTheme(Component);

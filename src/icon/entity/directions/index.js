@@ -5,4 +5,6 @@
 import './directions.css';
 import '../../../icon';
 
-export { default } from './directions';
+import { withTheme } from '../../../cn';
+import Component from './directions';
+export default withTheme(Component);

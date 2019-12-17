@@ -5,4 +5,6 @@
 import './geolocation.css';
 import '../../../icon';
 
-export { default } from './geolocation';
+import { withTheme } from '../../../cn';
+import Component from './geolocation';
+export default withTheme(Component);

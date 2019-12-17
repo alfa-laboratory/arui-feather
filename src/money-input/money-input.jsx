@@ -11,7 +11,6 @@ import Input from '../input/input';
 import Mask from '../masked-input/mask';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { getCurrencySymbol } from '../lib/currency-codes';
 
 const DEFAULT_FRACTION_SIZE = 2;
@@ -113,7 +112,7 @@ class MoneyInput extends React.PureComponent {
         }
     }
 
-    render(Input) {
+    render() {
         return (
             <div
                 className={ this.cn({
@@ -253,4 +252,4 @@ class MoneyInput extends React.PureComponent {
     }
 }
 
-export default withTheme(MoneyInput);
+export default MoneyInput;

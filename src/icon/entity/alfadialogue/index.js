@@ -5,4 +5,6 @@
 import './alfadialogue.css';
 import '../../../icon';
 
-export { default } from './alfadialogue';
+import { withTheme } from '../../../cn';
+import Component from './alfadialogue';
+export default withTheme(Component);

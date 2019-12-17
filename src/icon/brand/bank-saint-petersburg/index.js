@@ -5,4 +5,6 @@
 import './bank-saint-petersburg.css';
 import '../../../icon';
 
-export { default } from './bank-saint-petersburg';
+import { withTheme } from '../../../cn';
+import Component from './bank-saint-petersburg';
+export default withTheme(Component);

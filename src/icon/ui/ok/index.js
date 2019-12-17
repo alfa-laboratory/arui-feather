@@ -5,4 +5,6 @@
 import './ok.css';
 import '../../../icon';
 
-export { default } from './ok';
+import { withTheme } from '../../../cn';
+import Component from './ok';
+export default withTheme(Component);

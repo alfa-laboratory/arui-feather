@@ -5,4 +5,6 @@
 import './erase.css';
 import '../../../icon';
 
-export { default } from './erase';
+import { withTheme } from '../../../cn';
+import Component from './erase';
+export default withTheme(Component);

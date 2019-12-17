@@ -5,4 +5,6 @@
 import './category-loans.css';
 import '../../../icon';
 
-export { default } from './category-loans';
+import { withTheme } from '../../../cn';
+import Component from './category-loans';
+export default withTheme(Component);

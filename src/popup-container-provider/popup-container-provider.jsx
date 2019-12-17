@@ -9,7 +9,6 @@ import Type from 'prop-types';
 import IsolatedContainer from '../isolated-container/isolated-container';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 
 /**
@@ -123,4 +122,4 @@ class PopupContainerProvider extends React.PureComponent {
     }
 }
 
-export default withTheme(PopupContainerProvider);
+export default PopupContainerProvider;

@@ -5,4 +5,6 @@
 import './format-png.css';
 import '../../../icon';
 
-export { default } from './format-png';
+import { withTheme } from '../../../cn';
+import Component from './format-png';
+export default withTheme(Component);

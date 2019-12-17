@@ -5,4 +5,6 @@
 import './photo.css';
 import '../../../icon';
 
-export { default } from './photo';
+import { withTheme } from '../../../cn';
+import Component from './photo';
+export default withTheme(Component);

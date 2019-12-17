@@ -9,7 +9,6 @@ import Input from '../input/input';
 import Select from '../select/select';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';
@@ -357,4 +356,4 @@ class IntlPhoneInput extends React.Component {
     }
 }
 
-export default withTheme(IntlPhoneInput);
+export default IntlPhoneInput;

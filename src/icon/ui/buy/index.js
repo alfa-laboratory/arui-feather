@@ -5,4 +5,6 @@
 import './buy.css';
 import '../../../icon';
 
-export { default } from './buy';
+import { withTheme } from '../../../cn';
+import Component from './buy';
+export default withTheme(Component);

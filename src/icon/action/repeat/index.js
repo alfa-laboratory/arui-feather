@@ -5,4 +5,6 @@
 import './repeat.css';
 import '../../../icon';
 
-export { default } from './repeat';
+import { withTheme } from '../../../cn';
+import Component from './repeat';
+export default withTheme(Component);

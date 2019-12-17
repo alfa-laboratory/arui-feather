@@ -5,4 +5,6 @@
 import './card-googlepay.css';
 import '../../../icon';
 
-export { default } from './card-googlepay';
+import { withTheme } from '../../../cn';
+import Component from './card-googlepay';
+export default withTheme(Component);

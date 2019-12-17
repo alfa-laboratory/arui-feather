@@ -5,4 +5,6 @@
 import './android-reorder.css';
 import '../../../icon';
 
-export { default } from './android-reorder';
+import { withTheme } from '../../../cn';
+import Component from './android-reorder';
+export default withTheme(Component);

@@ -4,4 +4,6 @@
 
 import './form-field.css';
 
-export { default } from './form-field';
+import { withTheme } from '../cn';
+import Component from './form-field';
+export default withTheme(Component);

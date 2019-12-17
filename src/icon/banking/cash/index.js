@@ -5,4 +5,6 @@
 import './cash.css';
 import '../../../icon';
 
-export { default } from './cash';
+import { withTheme } from '../../../cn';
+import Component from './cash';
+export default withTheme(Component);

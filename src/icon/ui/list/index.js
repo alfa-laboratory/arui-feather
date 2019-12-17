@@ -5,4 +5,6 @@
 import './list.css';
 import '../../../icon';
 
-export { default } from './list';
+import { withTheme } from '../../../cn';
+import Component from './list';
+export default withTheme(Component);

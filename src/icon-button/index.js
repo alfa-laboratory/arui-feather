@@ -4,4 +4,6 @@
 
 import './icon-button.css';
 
-export { default } from './icon-button';
+import { withTheme } from '../cn';
+import Component from './icon-button';
+export default withTheme(Component);

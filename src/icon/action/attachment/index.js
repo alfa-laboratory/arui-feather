@@ -5,4 +5,6 @@
 import './attachment.css';
 import '../../../icon';
 
-export { default } from './attachment';
+import { withTheme } from '../../../cn';
+import Component from './attachment';
+export default withTheme(Component);

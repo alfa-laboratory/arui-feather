@@ -5,4 +5,6 @@
 import './office.css';
 import '../../../icon';
 
-export { default } from './office';
+import { withTheme } from '../../../cn';
+import Component from './office';
+export default withTheme(Component);

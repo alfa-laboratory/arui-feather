@@ -5,4 +5,6 @@
 import './convert.css';
 import '../../../icon';
 
-export { default } from './convert';
+import { withTheme } from '../../../cn';
+import Component from './convert';
+export default withTheme(Component);

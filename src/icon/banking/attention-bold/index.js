@@ -5,4 +5,6 @@
 import './attention-bold.css';
 import '../../../icon';
 
-export { default } from './attention-bold';
+import { withTheme } from '../../../cn';
+import Component from './attention-bold';
+export default withTheme(Component);

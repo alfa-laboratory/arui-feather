@@ -5,4 +5,6 @@
 import './registry.css';
 import '../../../icon';
 
-export { default } from './registry';
+import { withTheme } from '../../../cn';
+import Component from './registry';
+export default withTheme(Component);

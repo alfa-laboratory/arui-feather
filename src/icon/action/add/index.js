@@ -5,4 +5,6 @@
 import './add.css';
 import '../../../icon';
 
-export { default } from './add';
+import { withTheme } from '../../../cn';
+import Component from './add';
+export default withTheme(Component);

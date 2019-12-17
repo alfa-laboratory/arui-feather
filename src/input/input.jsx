@@ -12,7 +12,6 @@ import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -201,7 +200,7 @@ class Input extends React.PureComponent {
         });
     }
 
-    render(MaskedInput) {
+    render() {
         const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
         const hasLeftAddons = !!this.props.leftAddons;
         const value = this.props.value === undefined ? this.state.value : this.props.value;
@@ -235,7 +234,7 @@ class Input extends React.PureComponent {
                             { this.props.label }
                         </span>
                     }
-                    { this.renderContent(MaskedInput) }
+                    { this.renderContent() }
                     {
                         (this.state.error || this.props.hint) &&
                         <span className={ this.cn('sub') }>
@@ -247,7 +246,7 @@ class Input extends React.PureComponent {
         );
     }
 
-    renderContent(MaskedInput) {
+    renderContent() {
         const isMaskedInput = this.props.mask !== undefined;
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
@@ -586,4 +585,4 @@ class Input extends React.PureComponent {
     }
 }
 
-export default withTheme(Input);
+export default Input;

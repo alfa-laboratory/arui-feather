@@ -5,4 +5,6 @@
 import './history.css';
 import '../../../icon';
 
-export { default } from './history';
+import { withTheme } from '../../../cn';
+import Component from './history';
+export default withTheme(Component);

@@ -8,7 +8,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
@@ -163,4 +162,4 @@ class Dropzone extends React.PureComponent {
     }
 }
 
-export default withTheme(Dropzone);
+export default Dropzone;

@@ -6,4 +6,6 @@ import './list.css';
 
 /* eslint-disable import/export */
 export * from './list';
-export { default } from './list';
+import { withTheme } from '../cn';
+import Component from './list';
+export default withTheme(Component);

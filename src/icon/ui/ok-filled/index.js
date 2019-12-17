@@ -5,4 +5,6 @@
 import './ok-filled.css';
 import '../../../icon';
 
-export { default } from './ok-filled';
+import { withTheme } from '../../../cn';
+import Component from './ok-filled';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './printer.css';
 import '../../../icon';
 
-export { default } from './printer';
+import { withTheme } from '../../../cn';
+import Component from './printer';
+export default withTheme(Component);

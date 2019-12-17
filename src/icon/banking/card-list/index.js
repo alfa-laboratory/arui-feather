@@ -5,4 +5,6 @@
 import './card-list.css';
 import '../../../icon';
 
-export { default } from './card-list';
+import { withTheme } from '../../../cn';
+import Component from './card-list';
+export default withTheme(Component);

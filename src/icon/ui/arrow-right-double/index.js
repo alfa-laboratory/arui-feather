@@ -5,4 +5,6 @@
 import './arrow-right-double.css';
 import '../../../icon';
 
-export { default } from './arrow-right-double';
+import { withTheme } from '../../../cn';
+import Component from './arrow-right-double';
+export default withTheme(Component);

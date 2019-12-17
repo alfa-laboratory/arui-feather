@@ -5,4 +5,6 @@
 import './arrow-left.css';
 import '../../../icon';
 
-export { default } from './arrow-left';
+import { withTheme } from '../../../cn';
+import Component from './arrow-left';
+export default withTheme(Component);

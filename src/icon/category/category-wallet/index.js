@@ -5,4 +5,6 @@
 import './category-wallet.css';
 import '../../../icon';
 
-export { default } from './category-wallet';
+import { withTheme } from '../../../cn';
+import Component from './category-wallet';
+export default withTheme(Component);

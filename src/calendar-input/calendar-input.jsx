@@ -17,7 +17,6 @@ import Popup from '../popup/popup';
 import PopupHeader from '../popup-header/popup-header';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import { isNodeOutsideElement } from '../lib/window';
 import {
@@ -716,4 +715,4 @@ class CalendarInput extends React.PureComponent {
     }
 }
 
-export default withTheme(CalendarInput);
+export default CalendarInput;

@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 const HEADING_LEVEL = {
     xl: 1,
@@ -56,4 +55,4 @@ class Heading extends React.PureComponent {
     }
 }
 
-export default withTheme(Heading);
+export default Heading;

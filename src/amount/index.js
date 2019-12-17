@@ -9,4 +9,6 @@ import './amount.css';
 
 /* eslint-disable import/export */
 export * from './amount';
-export { default } from './amount';
+import { withTheme } from '../cn';
+import Component from './amount';
+export default withTheme(Component);

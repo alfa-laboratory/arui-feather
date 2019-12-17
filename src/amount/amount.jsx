@@ -5,7 +5,7 @@
 import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+
 import Heading from '../heading/heading';
 import Label from '../label/label';
 
@@ -123,4 +123,4 @@ class Amount extends React.PureComponent {
     }
 }
 
-export default withTheme(Amount);
+export default Amount;

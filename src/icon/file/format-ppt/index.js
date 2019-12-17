@@ -5,4 +5,6 @@
 import './format-ppt.css';
 import '../../../icon';
 
-export { default } from './format-ppt';
+import { withTheme } from '../../../cn';
+import Component from './format-ppt';
+export default withTheme(Component);

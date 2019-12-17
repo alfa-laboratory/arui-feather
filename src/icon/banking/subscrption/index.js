@@ -5,4 +5,6 @@
 import './subscrption.css';
 import '../../../icon';
 
-export { default } from './subscrption';
+import { withTheme } from '../../../cn';
+import Component from './subscrption';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './payment-to-company.css';
 import '../../../icon';
 
-export { default } from './payment-to-company';
+import { withTheme } from '../../../cn';
+import Component from './payment-to-company';
+export default withTheme(Component);

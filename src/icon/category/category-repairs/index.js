@@ -5,4 +5,6 @@
 import './category-repairs.css';
 import '../../../icon';
 
-export { default } from './category-repairs';
+import { withTheme } from '../../../cn';
+import Component from './category-repairs';
+export default withTheme(Component);

@@ -21,7 +21,6 @@ import setYear from 'date-fns/set_year';
 import sortedIndexOf from 'lodash.sortedindexof';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
@@ -844,4 +843,4 @@ class Calendar extends React.PureComponent {
     }
 }
 
-export default withTheme(Calendar);
+export default Calendar;

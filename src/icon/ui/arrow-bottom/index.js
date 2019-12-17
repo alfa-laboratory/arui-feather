@@ -5,4 +5,6 @@
 import './arrow-bottom.css';
 import '../../../icon';
 
-export { default } from './arrow-bottom';
+import { withTheme } from '../../../cn';
+import Component from './arrow-bottom';
+export default withTheme(Component);

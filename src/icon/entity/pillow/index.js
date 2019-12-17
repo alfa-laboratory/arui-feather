@@ -5,4 +5,6 @@
 import './pillow.css';
 import '../../../icon';
 
-export { default } from './pillow';
+import { withTheme } from '../../../cn';
+import Component from './pillow';
+export default withTheme(Component);

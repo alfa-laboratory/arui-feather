@@ -5,4 +5,6 @@
 import './arrow-up.css';
 import '../../../icon';
 
-export { default } from './arrow-up';
+import { withTheme } from '../../../cn';
+import Component from './arrow-up';
+export default withTheme(Component);

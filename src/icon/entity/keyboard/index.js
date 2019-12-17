@@ -5,4 +5,6 @@
 import './keyboard.css';
 import '../../../icon';
 
-export { default } from './keyboard';
+import { withTheme } from '../../../cn';
+import Component from './keyboard';
+export default withTheme(Component);

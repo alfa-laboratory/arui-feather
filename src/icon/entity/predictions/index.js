@@ -5,4 +5,6 @@
 import './predictions.css';
 import '../../../icon';
 
-export { default } from './predictions';
+import { withTheme } from '../../../cn';
+import Component from './predictions';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './power-card.css';
 import '../../../icon';
 
-export { default } from './power-card';
+import { withTheme } from '../../../cn';
+import Component from './power-card';
+export default withTheme(Component);

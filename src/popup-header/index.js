@@ -6,4 +6,6 @@ import '../icon/ui/close';
 import '../icon-button/icon-button';
 import './popup-header.css';
 
-export { default } from './popup-header';
+import { withTheme } from '../cn';
+import Component from './popup-header';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './transfer-by-phone-android.css';
 import '../../../icon';
 
-export { default } from './transfer-by-phone-android';
+import { withTheme } from '../../../cn';
+import Component from './transfer-by-phone-android';
+export default withTheme(Component);

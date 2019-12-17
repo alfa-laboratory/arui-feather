@@ -5,4 +5,6 @@
 import './chat.css';
 import '../../../icon';
 
-export { default } from './chat';
+import { withTheme } from '../../../cn';
+import Component from './chat';
+export default withTheme(Component);

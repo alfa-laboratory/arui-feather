@@ -5,4 +5,6 @@
 import './input-group.css';
 import './input-group_theme_alfa-on-white.css';
 
-export { default } from './input-group';
+import { withTheme } from '../cn';
+import Component from './input-group';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './add-filled.css';
 import '../../../icon';
 
-export { default } from './add-filled';
+import { withTheme } from '../../../cn';
+import Component from './add-filled';
+export default withTheme(Component);

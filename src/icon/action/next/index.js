@@ -5,4 +5,6 @@
 import './next.css';
 import '../../../icon';
 
-export { default } from './next';
+import { withTheme } from '../../../cn';
+import Component from './next';
+export default withTheme(Component);

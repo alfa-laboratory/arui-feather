@@ -5,4 +5,6 @@
 import './check-indeterminate.css';
 import '../../../icon';
 
-export { default } from './check-indeterminate';
+import { withTheme } from '../../../cn';
+import Component from './check-indeterminate';
+export default withTheme(Component);

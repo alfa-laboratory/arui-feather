@@ -6,4 +6,6 @@ import './textarea.css';
 import './textarea_theme_alfa-on-color.css';
 import './textarea_theme_alfa-on-white.css';
 
-export { default } from './textarea';
+import { withTheme } from '../cn';
+import Component from './textarea';
+export default withTheme(Component);

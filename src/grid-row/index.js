@@ -4,4 +4,6 @@
 
 import './grid-row.css';
 
-export { default } from './grid-row';
+import { withTheme } from '../cn';
+import Component from './grid-row';
+export default withTheme(Component);

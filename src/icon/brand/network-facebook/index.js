@@ -5,4 +5,6 @@
 import './network-facebook.css';
 import '../../../icon';
 
-export { default } from './network-facebook';
+import { withTheme } from '../../../cn';
+import Component from './network-facebook';
+export default withTheme(Component);

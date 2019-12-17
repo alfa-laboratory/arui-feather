@@ -5,4 +5,6 @@
 import './category-business-activity.css';
 import '../../../icon';
 
-export { default } from './category-business-activity';
+import { withTheme } from '../../../cn';
+import Component from './category-business-activity';
+export default withTheme(Component);

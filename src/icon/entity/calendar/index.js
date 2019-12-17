@@ -5,4 +5,6 @@
 import './calendar.css';
 import '../../../icon';
 
-export { default } from './calendar';
+import { withTheme } from '../../../cn';
+import Component from './calendar';
+export default withTheme(Component);

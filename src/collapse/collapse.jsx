@@ -11,7 +11,6 @@ import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
@@ -140,4 +139,4 @@ class Collapse extends React.PureComponent {
     }
 }
 
-export default withTheme(Collapse);
+export default Collapse;

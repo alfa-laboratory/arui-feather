@@ -5,4 +5,6 @@
 import './category-medicine.css';
 import '../../../icon';
 
-export { default } from './category-medicine';
+import { withTheme } from '../../../cn';
+import Component from './category-medicine';
+export default withTheme(Component);

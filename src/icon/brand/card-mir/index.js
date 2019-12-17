@@ -5,4 +5,6 @@
 import './card-mir.css';
 import '../../../icon';
 
-export { default } from './card-mir';
+import { withTheme } from '../../../cn';
+import Component from './card-mir';
+export default withTheme(Component);

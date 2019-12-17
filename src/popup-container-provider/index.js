@@ -6,4 +6,6 @@ import '../isolated-container';
 
 import './popup-container.css';
 
-export { default } from './popup-container-provider';
+import { withTheme } from '../cn';
+import Component from './popup-container-provider';
+export default withTheme(Component);

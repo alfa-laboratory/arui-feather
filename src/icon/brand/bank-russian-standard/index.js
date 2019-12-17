@@ -5,4 +5,6 @@
 import './bank-russian-standard.css';
 import '../../../icon';
 
-export { default } from './bank-russian-standard';
+import { withTheme } from '../../../cn';
+import Component from './bank-russian-standard';
+export default withTheme(Component);

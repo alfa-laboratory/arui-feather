@@ -5,4 +5,6 @@
 import './pin.css';
 import '../../../icon';
 
-export { default } from './pin';
+import { withTheme } from '../../../cn';
+import Component from './pin';
+export default withTheme(Component);

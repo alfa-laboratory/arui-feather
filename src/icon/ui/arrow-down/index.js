@@ -5,4 +5,6 @@
 import './arrow-down.css';
 import '../../../icon';
 
-export { default } from './arrow-down';
+import { withTheme } from '../../../cn';
+import Component from './arrow-down';
+export default withTheme(Component);

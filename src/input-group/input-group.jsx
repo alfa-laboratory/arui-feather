@@ -7,7 +7,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент группы полей для текстового ввода.
@@ -58,7 +57,7 @@ class InputGroup extends React.PureComponent {
 
         return (
             <span
-                className={ `${cn({ width: this.props.width })} control-group` }
+                className={ `${this.cn({ width: this.props.width })} control-group` }
                 id={ this.props.id }
                 role='group'
                 tabIndex='-1'
@@ -70,4 +69,4 @@ class InputGroup extends React.PureComponent {
     }
 }
 
-export default withTheme(InputGroup);
+export default InputGroup;

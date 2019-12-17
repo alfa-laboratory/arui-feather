@@ -5,4 +5,6 @@
 import './format-sketch.css';
 import '../../../icon';
 
-export { default } from './format-sketch';
+import { withTheme } from '../../../cn';
+import Component from './format-sketch';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './currency-eur-usd.css';
 import '../../../icon';
 
-export { default } from './currency-eur-usd';
+import { withTheme } from '../../../cn';
+import Component from './currency-eur-usd';
+export default withTheme(Component);

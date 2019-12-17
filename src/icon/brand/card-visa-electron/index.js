@@ -5,4 +5,6 @@
 import './card-visa-electron.css';
 import '../../../icon';
 
-export { default } from './card-visa-electron';
+import { withTheme } from '../../../cn';
+import Component from './card-visa-electron';
+export default withTheme(Component);

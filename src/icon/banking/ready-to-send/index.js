@@ -5,4 +5,6 @@
 import './ready-to-send.css';
 import '../../../icon';
 
-export { default } from './ready-to-send';
+import { withTheme } from '../../../cn';
+import Component from './ready-to-send';
+export default withTheme(Component);

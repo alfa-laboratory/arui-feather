@@ -5,4 +5,6 @@
 import './hold.css';
 import '../../../icon';
 
-export { default } from './hold';
+import { withTheme } from '../../../cn';
+import Component from './hold';
+export default withTheme(Component);

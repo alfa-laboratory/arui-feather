@@ -5,4 +5,6 @@
 import './bank-nsipf-2673.css';
 import '../../../icon';
 
-export { default } from './bank-nsipf-2673';
+import { withTheme } from '../../../cn';
+import Component from './bank-nsipf-2673';
+export default withTheme(Component);

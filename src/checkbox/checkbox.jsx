@@ -10,7 +10,6 @@ import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -302,4 +301,4 @@ class CheckBox extends React.PureComponent {
     }
 }
 
-export default withTheme(CheckBox);
+export default CheckBox;

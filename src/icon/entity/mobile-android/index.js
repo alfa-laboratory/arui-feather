@@ -5,4 +5,6 @@
 import './mobile-android.css';
 import '../../../icon';
 
-export { default } from './mobile-android';
+import { withTheme } from '../../../cn';
+import Component from './mobile-android';
+export default withTheme(Component);

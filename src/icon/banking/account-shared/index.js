@@ -5,4 +5,6 @@
 import './account-shared.css';
 import '../../../icon';
 
-export { default } from './account-shared';
+import { withTheme } from '../../../cn';
+import Component from './account-shared';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './verifying.css';
 import '../../../icon';
 
-export { default } from './verifying';
+import { withTheme } from '../../../cn';
+import Component from './verifying';
+export default withTheme(Component);

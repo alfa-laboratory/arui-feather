@@ -5,4 +5,6 @@
 import './bank-qiwi.css';
 import '../../../icon';
 
-export { default } from './bank-qiwi';
+import { withTheme } from '../../../cn';
+import Component from './bank-qiwi';
+export default withTheme(Component);

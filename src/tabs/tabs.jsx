@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
@@ -49,4 +48,4 @@ class Tabs extends React.PureComponent {
     }
 }
 
-export default withTheme(Tabs);
+export default Tabs;

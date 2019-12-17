@@ -5,4 +5,6 @@
 import './category-finance.css';
 import '../../../icon';
 
-export { default } from './category-finance';
+import { withTheme } from '../../../cn';
+import Component from './category-finance';
+export default withTheme(Component);

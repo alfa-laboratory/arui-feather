@@ -5,4 +5,6 @@
 import './arrow-back-bold.css';
 import '../../../icon';
 
-export { default } from './arrow-back-bold';
+import { withTheme } from '../../../cn';
+import Component from './arrow-back-bold';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './category-vacation.css';
 import '../../../icon';
 
-export { default } from './category-vacation';
+import { withTheme } from '../../../cn';
+import Component from './category-vacation';
+export default withTheme(Component);

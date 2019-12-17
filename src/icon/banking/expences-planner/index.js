@@ -5,4 +5,6 @@
 import './expences-planner.css';
 import '../../../icon';
 
-export { default } from './expences-planner';
+import { withTheme } from '../../../cn';
+import Component from './expences-planner';
+export default withTheme(Component);

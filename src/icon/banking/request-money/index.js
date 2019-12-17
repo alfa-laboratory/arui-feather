@@ -5,4 +5,6 @@
 import './request-money.css';
 import '../../../icon';
 
-export { default } from './request-money';
+import { withTheme } from '../../../cn';
+import Component from './request-money';
+export default withTheme(Component);

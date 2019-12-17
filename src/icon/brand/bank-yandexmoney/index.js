@@ -5,4 +5,6 @@
 import './bank-yandexmoney.css';
 import '../../../icon';
 
-export { default } from './bank-yandexmoney';
+import { withTheme } from '../../../cn';
+import Component from './bank-yandexmoney';
+export default withTheme(Component);

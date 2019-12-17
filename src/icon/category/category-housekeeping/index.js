@@ -5,4 +5,6 @@
 import './category-housekeeping.css';
 import '../../../icon';
 
-export { default } from './category-housekeeping';
+import { withTheme } from '../../../cn';
+import Component from './category-housekeeping';
+export default withTheme(Component);

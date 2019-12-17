@@ -5,4 +5,6 @@
 import './card-belkart.css';
 import '../../../icon';
 
-export { default } from './card-belkart';
+import { withTheme } from '../../../cn';
+import Component from './card-belkart';
+export default withTheme(Component);

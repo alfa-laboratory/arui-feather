@@ -5,4 +5,6 @@
 import './category-books-movies.css';
 import '../../../icon';
 
-export { default } from './category-books-movies';
+import { withTheme } from '../../../cn';
+import Component from './category-books-movies';
+export default withTheme(Component);

@@ -10,7 +10,6 @@ import Type from 'prop-types';
 import Input from '../input/input';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент ввода телефона по маске.
@@ -76,4 +75,4 @@ class PhoneInput extends React.PureComponent {
     }
 }
 
-export default withTheme(PhoneInput);
+export default PhoneInput;

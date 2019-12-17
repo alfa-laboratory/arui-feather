@@ -5,4 +5,6 @@
 import './category-pets.css';
 import '../../../icon';
 
-export { default } from './category-pets';
+import { withTheme } from '../../../cn';
+import Component from './category-pets';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './payment-by-photo.css';
 import '../../../icon';
 
-export { default } from './payment-by-photo';
+import { withTheme } from '../../../cn';
+import Component from './payment-by-photo';
+export default withTheme(Component);

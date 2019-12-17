@@ -8,4 +8,6 @@ import '../theme-provider';
 
 import './plate.css';
 
-export { default } from './plate';
+import { withTheme } from '../cn';
+import Component from './plate';
+export default withTheme(Component);

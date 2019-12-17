@@ -4,4 +4,6 @@
 
 import './form.css';
 
-export { default } from './form';
+import { withTheme } from '../cn';
+import Component from './form';
+export default withTheme(Component);

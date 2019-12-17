@@ -5,4 +5,6 @@
 import './bank-unicredit.css';
 import '../../../icon';
 
-export { default } from './bank-unicredit';
+import { withTheme } from '../../../cn';
+import Component from './bank-unicredit';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './format-svg.css';
 import '../../../icon';
 
-export { default } from './format-svg';
+import { withTheme } from '../../../cn';
+import Component from './format-svg';
+export default withTheme(Component);

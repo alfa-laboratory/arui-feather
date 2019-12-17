@@ -5,4 +5,6 @@
 import './category-cashback.css';
 import '../../../icon';
 
-export { default } from './category-cashback';
+import { withTheme } from '../../../cn';
+import Component from './category-cashback';
+export default withTheme(Component);

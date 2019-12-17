@@ -5,4 +5,6 @@
 import './category-gibdd-fines.css';
 import '../../../icon';
 
-export { default } from './category-gibdd-fines';
+import { withTheme } from '../../../cn';
+import Component from './category-gibdd-fines';
+export default withTheme(Component);

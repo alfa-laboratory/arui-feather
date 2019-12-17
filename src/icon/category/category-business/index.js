@@ -5,4 +5,6 @@
 import './category-business.css';
 import '../../../icon';
 
-export { default } from './category-business';
+import { withTheme } from '../../../cn';
+import Component from './category-business';
+export default withTheme(Component);

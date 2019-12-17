@@ -10,4 +10,6 @@ import '../icon-button';
 
 import './notification.css';
 
-export { default } from './notification';
+import { withTheme } from '../cn';
+import Component from './notification';
+export default withTheme(Component);

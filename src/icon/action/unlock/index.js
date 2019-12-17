@@ -5,4 +5,6 @@
 import './unlock.css';
 import '../../../icon';
 
-export { default } from './unlock';
+import { withTheme } from '../../../cn';
+import Component from './unlock';
+export default withTheme(Component);

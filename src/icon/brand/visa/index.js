@@ -5,4 +5,6 @@
 import './visa.css';
 import '../../../icon';
 
-export { default } from './visa';
+import { withTheme } from '../../../cn';
+import Component from './visa';
+export default withTheme(Component);

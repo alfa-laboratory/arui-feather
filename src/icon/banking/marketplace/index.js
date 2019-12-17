@@ -5,4 +5,6 @@
 import './marketplace.css';
 import '../../../icon';
 
-export { default } from './marketplace';
+import { withTheme } from '../../../cn';
+import Component from './marketplace';
+export default withTheme(Component);

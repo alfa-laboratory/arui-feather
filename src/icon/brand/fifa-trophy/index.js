@@ -5,4 +5,6 @@
 import './fifa-trophy.css';
 import '../../../icon';
 
-export { default } from './fifa-trophy';
+import { withTheme } from '../../../cn';
+import Component from './fifa-trophy';
+export default withTheme(Component);

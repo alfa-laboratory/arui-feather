@@ -5,4 +5,6 @@
 import './transfer-any-bank-credit.css';
 import '../../../icon';
 
-export { default } from './transfer-any-bank-credit';
+import { withTheme } from '../../../cn';
+import Component from './transfer-any-bank-credit';
+export default withTheme(Component);

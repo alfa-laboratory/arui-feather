@@ -9,4 +9,6 @@ import './attach.css';
 import './attach_theme_alfa-on-color.css';
 import './attach_theme_alfa-on-white.css';
 
-export { default } from './attach';
+import { withTheme } from '../cn';
+import Component from './attach';
+export default withTheme(Component);

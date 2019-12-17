@@ -5,4 +5,6 @@
 import './mastercard.css';
 import '../../../icon';
 
-export { default } from './mastercard';
+import { withTheme } from '../../../cn';
+import Component from './mastercard';
+export default withTheme(Component);

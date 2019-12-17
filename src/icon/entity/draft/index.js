@@ -5,4 +5,6 @@
 import './draft.css';
 import '../../../icon';
 
-export { default } from './draft';
+import { withTheme } from '../../../cn';
+import Component from './draft';
+export default withTheme(Component);

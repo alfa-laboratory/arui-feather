@@ -5,4 +5,6 @@
 import './system-help.css';
 import '../../../icon';
 
-export { default } from './system-help';
+import { withTheme } from '../../../cn';
+import Component from './system-help';
+export default withTheme(Component);

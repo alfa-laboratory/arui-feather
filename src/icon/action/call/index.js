@@ -5,4 +5,6 @@
 import './call.css';
 import '../../../icon';
 
-export { default } from './call';
+import { withTheme } from '../../../cn';
+import Component from './call';
+export default withTheme(Component);

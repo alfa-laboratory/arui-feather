@@ -5,4 +5,6 @@
 import './card-close.css';
 import '../../../icon';
 
-export { default } from './card-close';
+import { withTheme } from '../../../cn';
+import Component from './card-close';
+export default withTheme(Component);

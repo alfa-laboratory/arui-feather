@@ -5,4 +5,6 @@
 import './category-plane.css';
 import '../../../icon';
 
-export { default } from './category-plane';
+import { withTheme } from '../../../cn';
+import Component from './category-plane';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './account-usd.css';
 import '../../../icon';
 
-export { default } from './account-usd';
+import { withTheme } from '../../../cn';
+import Component from './account-usd';
+export default withTheme(Component);

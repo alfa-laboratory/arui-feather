@@ -5,4 +5,6 @@
 import './category-education.css';
 import '../../../icon';
 
-export { default } from './category-education';
+import { withTheme } from '../../../cn';
+import Component from './category-education';
+export default withTheme(Component);

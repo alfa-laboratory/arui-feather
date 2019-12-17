@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент списка.
@@ -65,4 +64,4 @@ class List extends React.PureComponent {
     }
 }
 
-export default withTheme(List);
+export default List;

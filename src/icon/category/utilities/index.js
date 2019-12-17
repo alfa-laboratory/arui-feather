@@ -5,4 +5,6 @@
 import './utilities.css';
 import '../../../icon';
 
-export { default } from './utilities';
+import { withTheme } from '../../../cn';
+import Component from './utilities';
+export default withTheme(Component);

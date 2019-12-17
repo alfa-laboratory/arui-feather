@@ -5,4 +5,6 @@
 import './selfemloyed-reg.css';
 import '../../../icon';
 
-export { default } from './selfemloyed-reg';
+import { withTheme } from '../../../cn';
+import Component from './selfemloyed-reg';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './download.css';
 import '../../../icon';
 
-export { default } from './download';
+import { withTheme } from '../../../cn';
+import Component from './download';
+export default withTheme(Component);

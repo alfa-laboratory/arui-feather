@@ -5,4 +5,6 @@
 import './payment-error.css';
 import '../../../icon';
 
-export { default } from './payment-error';
+import { withTheme } from '../../../cn';
+import Component from './payment-error';
+export default withTheme(Component);

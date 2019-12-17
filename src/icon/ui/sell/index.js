@@ -5,4 +5,6 @@
 import './sell.css';
 import '../../../icon';
 
-export { default } from './sell';
+import { withTheme } from '../../../cn';
+import Component from './sell';
+export default withTheme(Component);

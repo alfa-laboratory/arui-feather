@@ -5,4 +5,6 @@
 import './gallery-in-camera.css';
 import '../../../icon';
 
-export { default } from './gallery-in-camera';
+import { withTheme } from '../../../cn';
+import Component from './gallery-in-camera';
+export default withTheme(Component);

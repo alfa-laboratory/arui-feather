@@ -4,4 +4,6 @@
 
 import './list-header.css';
 
-export { default } from './list-header';
+import { withTheme } from '../cn';
+import Component from './list-header';
+export default withTheme(Component);

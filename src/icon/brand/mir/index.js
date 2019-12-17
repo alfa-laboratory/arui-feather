@@ -5,4 +5,6 @@
 import './mir.css';
 import '../../../icon';
 
-export { default } from './mir';
+import { withTheme } from '../../../cn';
+import Component from './mir';
+export default withTheme(Component);

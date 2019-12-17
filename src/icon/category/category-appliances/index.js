@@ -5,4 +5,6 @@
 import './category-appliances.css';
 import '../../../icon';
 
-export { default } from './category-appliances';
+import { withTheme } from '../../../cn';
+import Component from './category-appliances';
+export default withTheme(Component);

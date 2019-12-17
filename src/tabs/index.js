@@ -1,3 +1,5 @@
 import './tabs.css';
 
-export { default } from './tabs';
+import { withTheme } from '../cn';
+import Component from './tabs';
+export default withTheme(Component);

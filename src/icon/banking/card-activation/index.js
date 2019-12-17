@@ -5,4 +5,6 @@
 import './card-activation.css';
 import '../../../icon';
 
-export { default } from './card-activation';
+import { withTheme } from '../../../cn';
+import Component from './card-activation';
+export default withTheme(Component);

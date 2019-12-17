@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонента лейбла.
@@ -53,4 +52,4 @@ class Label extends React.PureComponent {
     }
 }
 
-export default withTheme(Label);
+export default Label;

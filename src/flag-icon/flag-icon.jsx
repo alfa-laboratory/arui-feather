@@ -8,7 +8,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент флага в виде иконки.
@@ -55,4 +54,4 @@ class FlagIcon extends React.PureComponent {
     }
 }
 
-export default withTheme(FlagIcon);
+export default FlagIcon;

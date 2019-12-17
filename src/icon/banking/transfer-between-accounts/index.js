@@ -5,4 +5,6 @@
 import './transfer-between-accounts.css';
 import '../../../icon';
 
-export { default } from './transfer-between-accounts';
+import { withTheme } from '../../../cn';
+import Component from './transfer-between-accounts';
+export default withTheme(Component);

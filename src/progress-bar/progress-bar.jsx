@@ -2,7 +2,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент прогресс-бара.
@@ -42,4 +41,4 @@ class ProgressBar extends React.PureComponent {
     }
 }
 
-export default withTheme(ProgressBar);
+export default ProgressBar;

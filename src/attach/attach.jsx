@@ -10,7 +10,6 @@ import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 
@@ -377,4 +376,4 @@ class Attach extends React.Component {
     }
 }
 
-export default withTheme(Attach);
+export default Attach;

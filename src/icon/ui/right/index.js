@@ -5,4 +5,6 @@
 import './right.css';
 import '../../../icon';
 
-export { default } from './right';
+import { withTheme } from '../../../cn';
+import Component from './right';
+export default withTheme(Component);

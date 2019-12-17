@@ -9,7 +9,6 @@ import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Заголовок в Popup.
@@ -68,4 +67,4 @@ class PopupHeader extends React.PureComponent {
     }
 }
 
-export default withTheme(PopupHeader);
+export default PopupHeader;

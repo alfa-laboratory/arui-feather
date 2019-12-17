@@ -5,4 +5,6 @@
 import './unionpay.css';
 import '../../../icon';
 
-export { default } from './unionpay';
+import { withTheme } from '../../../cn';
+import Component from './unionpay';
+export default withTheme(Component);

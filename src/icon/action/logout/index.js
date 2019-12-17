@@ -5,4 +5,6 @@
 import './logout.css';
 import '../../../icon';
 
-export { default } from './logout';
+import { withTheme } from '../../../cn';
+import Component from './logout';
+export default withTheme(Component);

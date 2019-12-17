@@ -5,4 +5,6 @@
 import './pay-back.css';
 import '../../../icon';
 
-export { default } from './pay-back';
+import { withTheme } from '../../../cn';
+import Component from './pay-back';
+export default withTheme(Component);

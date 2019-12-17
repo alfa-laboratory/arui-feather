@@ -5,4 +5,6 @@
 import './email.css';
 import '../../../icon';
 
-export { default } from './email';
+import { withTheme } from '../../../cn';
+import Component from './email';
+export default withTheme(Component);

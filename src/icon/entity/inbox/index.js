@@ -5,4 +5,6 @@
 import './inbox.css';
 import '../../../icon';
 
-export { default } from './inbox';
+import { withTheme } from '../../../cn';
+import Component from './inbox';
+export default withTheme(Component);

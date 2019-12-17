@@ -6,4 +6,6 @@ import '../input';
 
 import './money-input.css';
 
-export { default } from './money-input';
+import { withTheme } from '../cn';
+import Component from './money-input';
+export default withTheme(Component);

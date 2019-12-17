@@ -15,7 +15,6 @@ import keyboardCode from '../lib/keyboard-code';
 import getScrollbarWidth from '../lib/scrollbar-width';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import Mq from '../mq';
 
 const SIDEBAR_WIDTH = 430;
@@ -241,4 +240,4 @@ class Sidebar extends React.PureComponent {
     }
 }
 
-export default withTheme(Sidebar);
+export default Sidebar;

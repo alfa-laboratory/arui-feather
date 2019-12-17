@@ -5,4 +5,6 @@
 import './chat-message-error.css';
 import '../../../icon';
 
-export { default } from './chat-message-error';
+import { withTheme } from '../../../cn';
+import Component from './chat-message-error';
+export default withTheme(Component);

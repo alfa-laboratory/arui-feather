@@ -15,7 +15,6 @@ import IconButton from '../icon-button/icon-button';
 import Swipeable from '../swipeable';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
 
 /**
@@ -285,4 +284,4 @@ class Notification extends React.PureComponent {
     }
 }
 
-export default withTheme(Notification);
+export default Notification;

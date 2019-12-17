@@ -8,4 +8,6 @@ import './popup.css';
 import './popup_theme_alfa-on-white.css';
 import './popup_theme_alfa-on-color.css';
 
-export { default } from './popup';
+import { withTheme } from '../cn';
+import Component from './popup';
+export default withTheme(Component);

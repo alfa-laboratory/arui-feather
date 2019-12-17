@@ -5,4 +5,6 @@
 import './attention-mark.css';
 import '../../../icon';
 
-export { default } from './attention-mark';
+import { withTheme } from '../../../cn';
+import Component from './attention-mark';
+export default withTheme(Component);

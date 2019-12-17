@@ -5,4 +5,6 @@
 import './news.css';
 import '../../../icon';
 
-export { default } from './news';
+import { withTheme } from '../../../cn';
+import Component from './news';
+export default withTheme(Component);

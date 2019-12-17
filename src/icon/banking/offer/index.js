@@ -5,4 +5,6 @@
 import './offer.css';
 import '../../../icon';
 
-export { default } from './offer';
+import { withTheme } from '../../../cn';
+import Component from './offer';
+export default withTheme(Component);

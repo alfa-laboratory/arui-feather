@@ -5,4 +5,6 @@
 import './mobile-ios.css';
 import '../../../icon';
 
-export { default } from './mobile-ios';
+import { withTheme } from '../../../cn';
+import Component from './mobile-ios';
+export default withTheme(Component);

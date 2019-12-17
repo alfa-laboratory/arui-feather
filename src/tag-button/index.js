@@ -6,4 +6,6 @@ import '../button';
 
 import './tag-button.css';
 
-export { default } from './tag-button';
+import { withTheme } from '../cn';
+import Component from './tag-button';
+export default withTheme(Component);

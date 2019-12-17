@@ -5,4 +5,6 @@
 import './password-change.css';
 import '../../../icon';
 
-export { default } from './password-change';
+import { withTheme } from '../../../cn';
+import Component from './password-change';
+export default withTheme(Component);

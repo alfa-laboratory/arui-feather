@@ -5,4 +5,6 @@
 import './arrow-top.css';
 import '../../../icon';
 
-export { default } from './arrow-top';
+import { withTheme } from '../../../cn';
+import Component from './arrow-top';
+export default withTheme(Component);

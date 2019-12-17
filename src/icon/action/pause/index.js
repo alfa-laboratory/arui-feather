@@ -5,4 +5,6 @@
 import './pause.css';
 import '../../../icon';
 
-export { default } from './pause';
+import { withTheme } from '../../../cn';
+import Component from './pause';
+export default withTheme(Component);

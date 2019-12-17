@@ -10,7 +10,6 @@ import Link from '../link/link';
 import Popup from '../popup/popup';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { POPUP_MAIN_OFFSET } from '../vars';
 
 /**
@@ -277,4 +276,4 @@ class Dropdown extends React.PureComponent {
     }
 }
 
-export default withTheme(Dropdown);
+export default Dropdown;

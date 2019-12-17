@@ -4,4 +4,6 @@
 
 import '../input';
 
-export { default } from './phone-input';
+import { withTheme } from '../cn';
+import Component from './phone-input';
+export default withTheme(Component);

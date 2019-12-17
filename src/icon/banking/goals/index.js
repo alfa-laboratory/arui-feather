@@ -5,4 +5,6 @@
 import './goals.css';
 import '../../../icon';
 
-export { default } from './goals';
+import { withTheme } from '../../../cn';
+import Component from './goals';
+export default withTheme(Component);

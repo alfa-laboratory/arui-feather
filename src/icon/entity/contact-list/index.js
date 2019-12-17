@@ -5,4 +5,6 @@
 import './contact-list.css';
 import '../../../icon';
 
-export { default } from './contact-list';
+import { withTheme } from '../../../cn';
+import Component from './contact-list';
+export default withTheme(Component);

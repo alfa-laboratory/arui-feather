@@ -5,4 +5,6 @@
 import './navigation-chat.css';
 import '../../../icon';
 
-export { default } from './navigation-chat';
+import { withTheme } from '../../../cn';
+import Component from './navigation-chat';
+export default withTheme(Component);

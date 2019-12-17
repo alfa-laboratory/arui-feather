@@ -5,4 +5,6 @@
 import './action-photo-or-file.css';
 import '../../../icon';
 
-export { default } from './action-photo-or-file';
+import { withTheme } from '../../../cn';
+import Component from './action-photo-or-file';
+export default withTheme(Component);

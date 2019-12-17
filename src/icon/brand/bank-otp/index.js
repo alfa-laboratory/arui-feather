@@ -5,4 +5,6 @@
 import './bank-otp.css';
 import '../../../icon';
 
-export { default } from './bank-otp';
+import { withTheme } from '../../../cn';
+import Component from './bank-otp';
+export default withTheme(Component);

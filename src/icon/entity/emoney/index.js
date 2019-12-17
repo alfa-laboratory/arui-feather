@@ -5,4 +5,6 @@
 import './emoney.css';
 import '../../../icon';
 
-export { default } from './emoney';
+import { withTheme } from '../../../cn';
+import Component from './emoney';
+export default withTheme(Component);

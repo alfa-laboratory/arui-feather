@@ -4,4 +4,6 @@
 
 import '../input';
 
-export { default } from './email-input';
+import { withTheme } from '../cn';
+import Component from './email-input';
+export default withTheme(Component);

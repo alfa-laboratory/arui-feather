@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент формы.
@@ -95,4 +94,4 @@ class Form extends React.PureComponent {
     }
 }
 
-export default withTheme(Form);
+export default Form;

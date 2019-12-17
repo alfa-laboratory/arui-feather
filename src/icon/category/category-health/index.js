@@ -5,4 +5,6 @@
 import './category-health.css';
 import '../../../icon';
 
-export { default } from './category-health';
+import { withTheme } from '../../../cn';
+import Component from './category-health';
+export default withTheme(Component);

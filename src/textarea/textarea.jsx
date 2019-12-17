@@ -7,7 +7,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -287,4 +286,4 @@ class Textarea extends React.PureComponent {
     }
 }
 
-export default withTheme(Textarea);
+export default Textarea;

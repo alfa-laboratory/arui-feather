@@ -5,4 +5,6 @@
 import './present.css';
 import '../../../icon';
 
-export { default } from './present';
+import { withTheme } from '../../../cn';
+import Component from './present';
+export default withTheme(Component);

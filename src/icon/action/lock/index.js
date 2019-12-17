@@ -5,4 +5,6 @@
 import './lock.css';
 import '../../../icon';
 
-export { default } from './lock';
+import { withTheme } from '../../../cn';
+import Component from './lock';
+export default withTheme(Component);

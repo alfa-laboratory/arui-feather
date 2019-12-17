@@ -5,4 +5,6 @@
 import './format-csv.css';
 import '../../../icon';
 
-export { default } from './format-csv';
+import { withTheme } from '../../../cn';
+import Component from './format-csv';
+export default withTheme(Component);

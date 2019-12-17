@@ -4,4 +4,6 @@
 
 import './slide-down.css';
 
-export { default } from './slide-down';
+import { withTheme } from '../cn';
+import Component from './slide-down';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './category-tv.css';
 import '../../../icon';
 
-export { default } from './category-tv';
+import { withTheme } from '../../../cn';
+import Component from './category-tv';
+export default withTheme(Component);

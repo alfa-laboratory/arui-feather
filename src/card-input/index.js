@@ -4,4 +4,7 @@
 
 import '../input';
 
-export { default } from './card-input';
+import { withTheme } from '../cn';
+import Component from './card-input';
+
+export default withTheme(Component);

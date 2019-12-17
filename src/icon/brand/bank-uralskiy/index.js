@@ -5,4 +5,6 @@
 import './bank-uralskiy.css';
 import '../../../icon';
 
-export { default } from './bank-uralskiy';
+import { withTheme } from '../../../cn';
+import Component from './bank-uralskiy';
+export default withTheme(Component);

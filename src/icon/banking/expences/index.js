@@ -5,4 +5,6 @@
 import './expences.css';
 import '../../../icon';
 
-export { default } from './expences';
+import { withTheme } from '../../../cn';
+import Component from './expences';
+export default withTheme(Component);

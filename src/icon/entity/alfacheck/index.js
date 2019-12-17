@@ -5,4 +5,6 @@
 import './alfacheck.css';
 import '../../../icon';
 
-export { default } from './alfacheck';
+import { withTheme } from '../../../cn';
+import Component from './alfacheck';
+export default withTheme(Component);

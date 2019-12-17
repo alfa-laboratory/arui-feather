@@ -5,4 +5,6 @@
 import './network-vk.css';
 import '../../../icon';
 
-export { default } from './network-vk';
+import { withTheme } from '../../../cn';
+import Component from './network-vk';
+export default withTheme(Component);

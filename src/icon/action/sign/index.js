@@ -5,4 +5,6 @@
 import './sign.css';
 import '../../../icon';
 
-export { default } from './sign';
+import { withTheme } from '../../../cn';
+import Component from './sign';
+export default withTheme(Component);

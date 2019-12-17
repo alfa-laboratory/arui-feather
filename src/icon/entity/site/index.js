@@ -5,4 +5,6 @@
 import './site.css';
 import '../../../icon';
 
-export { default } from './site';
+import { withTheme } from '../../../cn';
+import Component from './site';
+export default withTheme(Component);

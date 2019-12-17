@@ -5,4 +5,6 @@
 import './alfamobile.css';
 import '../../../icon';
 
-export { default } from './alfamobile';
+import { withTheme } from '../../../cn';
+import Component from './alfamobile';
+export default withTheme(Component);

@@ -9,7 +9,6 @@ import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
@@ -107,7 +106,7 @@ class MenuItem extends React.PureComponent {
                         ref={ (control) => {
                             this.control = control;
                         } }
-                        className={ `${cn('control')} ${cn('dropdown')}` }
+                        className={ `${this.cn('control')} ${this.cn('dropdown')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
                         opened={ this.state.hovered }
@@ -145,7 +144,7 @@ class MenuItem extends React.PureComponent {
                         ref={ (control) => {
                             this.control = control;
                         } }
-                        className={ `${cn('control')} ${cn('link')}` }
+                        className={ `${this.cn('control')} ${this.cn('link')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
                         pseudo={ this.props.view === 'pseudo' }
@@ -259,4 +258,4 @@ class MenuItem extends React.PureComponent {
     }
 }
 
-export default withTheme(MenuItem);
+export default MenuItem;

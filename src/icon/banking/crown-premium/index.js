@@ -5,4 +5,6 @@
 import './crown-premium.css';
 import '../../../icon';
 
-export { default } from './crown-premium';
+import { withTheme } from '../../../cn';
+import Component from './crown-premium';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './share-android.css';
 import '../../../icon';
 
-export { default } from './share-android';
+import { withTheme } from '../../../cn';
+import Component from './share-android';
+export default withTheme(Component);

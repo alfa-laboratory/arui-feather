@@ -5,4 +5,6 @@
 import './internet.css';
 import '../../../icon';
 
-export { default } from './internet';
+import { withTheme } from '../../../cn';
+import Component from './internet';
+export default withTheme(Component);

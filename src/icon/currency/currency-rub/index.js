@@ -5,4 +5,6 @@
 import './currency-rub.css';
 import '../../../icon';
 
-export { default } from './currency-rub';
+import { withTheme } from '../../../cn';
+import Component from './currency-rub';
+export default withTheme(Component);

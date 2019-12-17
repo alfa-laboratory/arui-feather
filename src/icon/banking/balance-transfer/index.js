@@ -5,4 +5,6 @@
 import './balance-transfer.css';
 import '../../../icon';
 
-export { default } from './balance-transfer';
+import { withTheme } from '../../../cn';
+import Component from './balance-transfer';
+export default withTheme(Component);

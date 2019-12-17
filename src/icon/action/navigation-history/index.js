@@ -5,4 +5,6 @@
 import './navigation-history.css';
 import '../../../icon';
 
-export { default } from './navigation-history';
+import { withTheme } from '../../../cn';
+import Component from './navigation-history';
+export default withTheme(Component);

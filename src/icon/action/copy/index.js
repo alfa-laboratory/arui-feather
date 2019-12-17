@@ -5,4 +5,6 @@
 import './copy.css';
 import '../../../icon';
 
-export { default } from './copy';
+import { withTheme } from '../../../cn';
+import Component from './copy';
+export default withTheme(Component);

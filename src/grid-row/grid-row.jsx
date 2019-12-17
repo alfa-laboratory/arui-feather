@@ -6,7 +6,6 @@ import React, { Children, cloneElement } from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
@@ -144,4 +143,4 @@ class GridRow extends React.PureComponent {
     }
 }
 
-export default withTheme(GridRow);
+export default GridRow;

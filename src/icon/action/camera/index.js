@@ -5,4 +5,6 @@
 import './camera.css';
 import '../../../icon';
 
-export { default } from './camera';
+import { withTheme } from '../../../cn';
+import Component from './camera';
+export default withTheme(Component);

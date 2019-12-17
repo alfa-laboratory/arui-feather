@@ -5,4 +5,6 @@
 import './category-rent.css';
 import '../../../icon';
 
-export { default } from './category-rent';
+import { withTheme } from '../../../cn';
+import Component from './category-rent';
+export default withTheme(Component);

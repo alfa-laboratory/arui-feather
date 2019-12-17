@@ -6,4 +6,6 @@ import './progress-bar.css';
 import './progress-bar_theme_alfa-on-color.css';
 import './progress-bar_theme_alfa-on-white.css';
 
-export { default } from './progress-bar';
+import { withTheme } from '../cn';
+import Component from './progress-bar';
+export default withTheme(Component);

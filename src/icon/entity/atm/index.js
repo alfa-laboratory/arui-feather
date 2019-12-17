@@ -5,4 +5,6 @@
 import './atm.css';
 import '../../../icon';
 
-export { default } from './atm';
+import { withTheme } from '../../../cn';
+import Component from './atm';
+export default withTheme(Component);

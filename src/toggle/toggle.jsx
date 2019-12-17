@@ -5,7 +5,6 @@
 import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент переключателя.
@@ -145,4 +144,4 @@ class Toggle extends React.PureComponent {
     }
 }
 
-export default withTheme(Toggle);
+export default Toggle;

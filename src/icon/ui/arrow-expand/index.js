@@ -5,4 +5,6 @@
 import './arrow-expand.css';
 import '../../../icon';
 
-export { default } from './arrow-expand';
+import { withTheme } from '../../../cn';
+import Component from './arrow-expand';
+export default withTheme(Component);

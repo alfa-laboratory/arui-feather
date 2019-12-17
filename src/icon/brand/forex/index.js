@@ -5,4 +5,6 @@
 import './forex.css';
 import '../../../icon';
 
-export { default } from './forex';
+import { withTheme } from '../../../cn';
+import Component from './forex';
+export default withTheme(Component);

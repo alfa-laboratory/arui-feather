@@ -5,4 +5,6 @@
 import './person.css';
 import '../../../icon';
 
-export { default } from './person';
+import { withTheme } from '../../../cn';
+import Component from './person';
+export default withTheme(Component);

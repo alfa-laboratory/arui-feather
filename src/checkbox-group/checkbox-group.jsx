@@ -7,7 +7,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент группы чекбоксов.
@@ -107,7 +106,7 @@ class CheckBoxGroup extends React.PureComponent {
         return (
             <span
                 className={
-                    `${cn({
+                    `${this.cn({
                         type: this.props.type,
                         disabled: props.disabled,
                         width: props.width ? props.width : null
@@ -188,4 +187,4 @@ class CheckBoxGroup extends React.PureComponent {
     }
 }
 
-export default withTheme(CheckBoxGroup);
+export default CheckBoxGroup;

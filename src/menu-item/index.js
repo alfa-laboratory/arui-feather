@@ -8,4 +8,6 @@ import '../link';
 
 import './menu-item.css';
 
-export { default } from './menu-item';
+import { withTheme } from '../cn';
+import Component from './menu-item';
+export default withTheme(Component);

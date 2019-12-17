@@ -5,4 +5,6 @@
 import './navigation-payment.css';
 import '../../../icon';
 
-export { default } from './navigation-payment';
+import { withTheme } from '../../../cn';
+import Component from './navigation-payment';
+export default withTheme(Component);

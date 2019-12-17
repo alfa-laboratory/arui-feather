@@ -5,4 +5,6 @@
 import './category-vip-room.css';
 import '../../../icon';
 
-export { default } from './category-vip-room';
+import { withTheme } from '../../../cn';
+import Component from './category-vip-room';
+export default withTheme(Component);

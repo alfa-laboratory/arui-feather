@@ -5,4 +5,6 @@
 import './cvv.css';
 import '../../../icon';
 
-export { default } from './cvv';
+import { withTheme } from '../../../cn';
+import Component from './cvv';
+export default withTheme(Component);

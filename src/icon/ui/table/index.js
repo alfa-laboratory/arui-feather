@@ -5,4 +5,6 @@
 import './table.css';
 import '../../../icon';
 
-export { default } from './table';
+import { withTheme } from '../../../cn';
+import Component from './table';
+export default withTheme(Component);

@@ -9,4 +9,6 @@ import '../resize-sensor';
 
 import './input-autocomplete.css';
 
-export { default } from './input-autocomplete';
+import { withTheme } from '../cn';
+import Component from './input-autocomplete';
+export default withTheme(Component);

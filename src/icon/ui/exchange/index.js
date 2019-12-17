@@ -5,4 +5,6 @@
 import './exchange.css';
 import '../../../icon';
 
-export { default } from './exchange';
+import { withTheme } from '../../../cn';
+import Component from './exchange';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './format-txt.css';
 import '../../../icon';
 
-export { default } from './format-txt';
+import { withTheme } from '../../../cn';
+import Component from './format-txt';
+export default withTheme(Component);

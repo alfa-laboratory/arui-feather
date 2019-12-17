@@ -6,4 +6,6 @@ import '../button';
 import '../link';
 import '../popup';
 
-export { default } from './dropdown';
+import { withTheme } from '../cn';
+import Component from './dropdown';
+export default withTheme(Component);

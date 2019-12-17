@@ -5,4 +5,6 @@
 import './done.css';
 import '../../../icon';
 
-export { default } from './done';
+import { withTheme } from '../../../cn';
+import Component from './done';
+export default withTheme(Component);

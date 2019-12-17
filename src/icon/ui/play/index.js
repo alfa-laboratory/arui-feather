@@ -5,4 +5,6 @@
 import './play.css';
 import '../../../icon';
 
-export { default } from './play';
+import { withTheme } from '../../../cn';
+import Component from './play';
+export default withTheme(Component);

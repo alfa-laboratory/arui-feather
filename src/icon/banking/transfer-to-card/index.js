@@ -5,4 +5,6 @@
 import './transfer-to-card.css';
 import '../../../icon';
 
-export { default } from './transfer-to-card';
+import { withTheme } from '../../../cn';
+import Component from './transfer-to-card';
+export default withTheme(Component);

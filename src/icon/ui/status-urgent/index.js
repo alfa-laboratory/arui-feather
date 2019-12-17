@@ -5,4 +5,6 @@
 import './status-urgent.css';
 import '../../../icon';
 
-export { default } from './status-urgent';
+import { withTheme } from '../../../cn';
+import Component from './status-urgent';
+export default withTheme(Component);

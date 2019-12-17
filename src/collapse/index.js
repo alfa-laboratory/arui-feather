@@ -8,4 +8,6 @@ import '../resize-sensor';
 
 import './collapse.css';
 
-export { default } from './collapse';
+import { withTheme } from '../cn';
+import Component from './collapse';
+export default withTheme(Component);

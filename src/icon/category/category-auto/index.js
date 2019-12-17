@@ -5,4 +5,6 @@
 import './category-auto.css';
 import '../../../icon';
 
-export { default } from './category-auto';
+import { withTheme } from '../../../cn';
+import Component from './category-auto';
+export default withTheme(Component);

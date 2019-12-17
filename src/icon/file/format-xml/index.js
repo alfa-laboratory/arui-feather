@@ -5,4 +5,6 @@
 import './format-xml.css';
 import '../../../icon';
 
-export { default } from './format-xml';
+import { withTheme } from '../../../cn';
+import Component from './format-xml';
+export default withTheme(Component);

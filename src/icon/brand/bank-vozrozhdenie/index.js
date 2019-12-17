@@ -5,4 +5,6 @@
 import './bank-vozrozhdenie.css';
 import '../../../icon';
 
-export { default } from './bank-vozrozhdenie';
+import { withTheme } from '../../../cn';
+import Component from './bank-vozrozhdenie';
+export default withTheme(Component);

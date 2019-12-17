@@ -5,4 +5,6 @@
 import './notifications.css';
 import '../../../icon';
 
-export { default } from './notifications';
+import { withTheme } from '../../../cn';
+import Component from './notifications';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './transfer-in.css';
 import '../../../icon';
 
-export { default } from './transfer-in';
+import { withTheme } from '../../../cn';
+import Component from './transfer-in';
+export default withTheme(Component);

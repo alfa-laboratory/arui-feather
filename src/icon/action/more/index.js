@@ -5,4 +5,6 @@
 import './more.css';
 import '../../../icon';
 
-export { default } from './more';
+import { withTheme } from '../../../cn';
+import Component from './more';
+export default withTheme(Component);

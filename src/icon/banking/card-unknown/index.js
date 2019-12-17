@@ -5,4 +5,6 @@
 import './card-unknown.css';
 import '../../../icon';
 
-export { default } from './card-unknown';
+import { withTheme } from '../../../cn';
+import Component from './card-unknown';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './bank-tinkoff.css';
 import '../../../icon';
 
-export { default } from './bank-tinkoff';
+import { withTheme } from '../../../cn';
+import Component from './bank-tinkoff';
+export default withTheme(Component);

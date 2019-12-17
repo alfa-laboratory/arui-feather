@@ -5,4 +5,6 @@
 import './contactless.css';
 import '../../../icon';
 
-export { default } from './contactless';
+import { withTheme } from '../../../cn';
+import Component from './contactless';
+export default withTheme(Component);

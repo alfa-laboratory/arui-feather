@@ -5,4 +5,6 @@
 import './category-transport.css';
 import '../../../icon';
 
-export { default } from './category-transport';
+import { withTheme } from '../../../cn';
+import Component from './category-transport';
+export default withTheme(Component);

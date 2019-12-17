@@ -5,4 +5,6 @@
 import './category-scholarship.css';
 import '../../../icon';
 
-export { default } from './category-scholarship';
+import { withTheme } from '../../../cn';
+import Component from './category-scholarship';
+export default withTheme(Component);

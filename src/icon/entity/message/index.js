@@ -5,4 +5,6 @@
 import './message.css';
 import '../../../icon';
 
-export { default } from './message';
+import { withTheme } from '../../../cn';
+import Component from './message';
+export default withTheme(Component);

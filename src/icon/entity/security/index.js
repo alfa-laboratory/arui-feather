@@ -5,4 +5,6 @@
 import './security.css';
 import '../../../icon';
 
-export { default } from './security';
+import { withTheme } from '../../../cn';
+import Component from './security';
+export default withTheme(Component);

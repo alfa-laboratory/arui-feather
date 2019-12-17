@@ -17,7 +17,6 @@ import PopupHeader from '../popup-header/popup-header';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
 import scrollTo from '../lib/scroll-to';
@@ -1009,4 +1008,4 @@ class Select extends React.PureComponent {
     }
 }
 
-export default withTheme(Select);
+export default Select;

@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент поля формы.
@@ -46,4 +45,4 @@ class FormField extends React.PureComponent {
     }
 }
 
-export default withTheme(FormField);
+export default FormField;

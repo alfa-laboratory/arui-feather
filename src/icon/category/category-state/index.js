@@ -5,4 +5,6 @@
 import './category-state.css';
 import '../../../icon';
 
-export { default } from './category-state';
+import { withTheme } from '../../../cn';
+import Component from './category-state';
+export default withTheme(Component);

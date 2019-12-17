@@ -12,7 +12,6 @@ import IconButton from '../icon-button/icon-button';
 import ThemeProvider from '../theme-provider/theme-provider';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент плашки.
@@ -121,4 +120,4 @@ class Plate extends React.PureComponent {
     }
 }
 
-export default withTheme(Plate);
+export default Plate;

@@ -5,4 +5,6 @@
 import './navigation-home.css';
 import '../../../icon';
 
-export { default } from './navigation-home';
+import { withTheme } from '../../../cn';
+import Component from './navigation-home';
+export default withTheme(Component);

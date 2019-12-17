@@ -5,4 +5,6 @@
 import './bank-mts.css';
 import '../../../icon';
 
-export { default } from './bank-mts';
+import { withTheme } from '../../../cn';
+import Component from './bank-mts';
+export default withTheme(Component);

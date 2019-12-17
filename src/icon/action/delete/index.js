@@ -5,4 +5,6 @@
 import './delete.css';
 import '../../../icon';
 
-export { default } from './delete';
+import { withTheme } from '../../../cn';
+import Component from './delete';
+export default withTheme(Component);

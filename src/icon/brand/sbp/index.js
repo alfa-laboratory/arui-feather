@@ -5,4 +5,6 @@
 import './sbp.css';
 import '../../../icon';
 
-export { default } from './sbp';
+import { withTheme } from '../../../cn';
+import Component from './sbp';
+export default withTheme(Component);

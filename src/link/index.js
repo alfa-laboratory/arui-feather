@@ -4,4 +4,7 @@
 
 import './link.css';
 
-export { default } from './link';
+import { withTheme } from '../cn';
+import Component from './link';
+
+export default withTheme(Component);

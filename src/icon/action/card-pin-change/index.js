@@ -5,4 +5,6 @@
 import './card-pin-change.css';
 import '../../../icon';
 
-export { default } from './card-pin-change';
+import { withTheme } from '../../../cn';
+import Component from './card-pin-change';
+export default withTheme(Component);

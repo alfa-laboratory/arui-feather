@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
@@ -55,4 +54,4 @@ class Icon extends React.PureComponent {
     }
 }
 
-export default withTheme(Icon);
+export default Icon;

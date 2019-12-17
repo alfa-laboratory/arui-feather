@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент "расхлопа".
@@ -123,4 +122,4 @@ class SlideDown extends React.PureComponent {
     }
 }
 
-export default withTheme(SlideDown);
+export default SlideDown;

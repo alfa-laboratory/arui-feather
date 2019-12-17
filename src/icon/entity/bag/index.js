@@ -5,4 +5,6 @@
 import './bag.css';
 import '../../../icon';
 
-export { default } from './bag';
+import { withTheme } from '../../../cn';
+import Component from './bag';
+export default withTheme(Component);

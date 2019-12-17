@@ -5,4 +5,6 @@
 import './up.css';
 import '../../../icon';
 
-export { default } from './up';
+import { withTheme } from '../../../cn';
+import Component from './up';
+export default withTheme(Component);

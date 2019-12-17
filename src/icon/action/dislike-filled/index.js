@@ -5,4 +5,6 @@
 import './dislike-filled.css';
 import '../../../icon';
 
-export { default } from './dislike-filled';
+import { withTheme } from '../../../cn';
+import Component from './dislike-filled';
+export default withTheme(Component);

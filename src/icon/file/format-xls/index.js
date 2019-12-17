@@ -5,4 +5,6 @@
 import './format-xls.css';
 import '../../../icon';
 
-export { default } from './format-xls';
+import { withTheme } from '../../../cn';
+import Component from './format-xls';
+export default withTheme(Component);

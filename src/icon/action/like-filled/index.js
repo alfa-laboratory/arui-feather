@@ -5,4 +5,6 @@
 import './like-filled.css';
 import '../../../icon';
 
-export { default } from './like-filled';
+import { withTheme } from '../../../cn';
+import Component from './like-filled';
+export default withTheme(Component);

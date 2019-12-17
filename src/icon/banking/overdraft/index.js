@@ -5,4 +5,6 @@
 import './overdraft.css';
 import '../../../icon';
 
-export { default } from './overdraft';
+import { withTheme } from '../../../cn';
+import Component from './overdraft';
+export default withTheme(Component);

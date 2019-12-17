@@ -5,4 +5,6 @@
 import './qr.css';
 import '../../../icon';
 
-export { default } from './qr';
+import { withTheme } from '../../../cn';
+import Component from './qr';
+export default withTheme(Component);

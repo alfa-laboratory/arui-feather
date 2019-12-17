@@ -5,4 +5,6 @@
 import './check-chat.css';
 import '../../../icon';
 
-export { default } from './check-chat';
+import { withTheme } from '../../../cn';
+import Component from './check-chat';
+export default withTheme(Component);

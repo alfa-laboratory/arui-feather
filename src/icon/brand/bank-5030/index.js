@@ -5,4 +5,6 @@
 import './bank-5030.css';
 import '../../../icon';
 
-export { default } from './bank-5030';
+import { withTheme } from '../../../cn';
+import Component from './bank-5030';
+export default withTheme(Component);

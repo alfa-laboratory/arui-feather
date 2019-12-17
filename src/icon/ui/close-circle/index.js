@@ -5,4 +5,6 @@
 import './close-circle.css';
 import '../../../icon';
 
-export { default } from './close-circle';
+import { withTheme } from '../../../cn';
+import Component from './close-circle';
+export default withTheme(Component);

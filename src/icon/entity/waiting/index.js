@@ -5,4 +5,6 @@
 import './waiting.css';
 import '../../../icon';
 
-export { default } from './waiting';
+import { withTheme } from '../../../cn';
+import Component from './waiting';
+export default withTheme(Component);

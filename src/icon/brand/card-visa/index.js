@@ -5,4 +5,6 @@
 import './card-visa.css';
 import '../../../icon';
 
-export { default } from './card-visa';
+import { withTheme } from '../../../cn';
+import Component from './card-visa';
+export default withTheme(Component);

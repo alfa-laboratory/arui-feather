@@ -5,4 +5,6 @@
 import './category-shield.css';
 import '../../../icon';
 
-export { default } from './category-shield';
+import { withTheme } from '../../../cn';
+import Component from './category-shield';
+export default withTheme(Component);

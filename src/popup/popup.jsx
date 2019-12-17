@@ -12,7 +12,6 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 
@@ -641,4 +640,4 @@ class Popup extends React.PureComponent {
     }
 }
 
-export default withTheme(Popup);
+export default Popup;

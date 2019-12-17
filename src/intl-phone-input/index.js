@@ -8,4 +8,6 @@ import '../select';
 
 import './intl-phone-input.css';
 
-export { default } from './intl-phone-input';
+import { withTheme } from '../cn';
+import Component from './intl-phone-input';
+export default withTheme(Component);

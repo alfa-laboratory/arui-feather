@@ -5,4 +5,6 @@
 import './payment-rounded-plus.css';
 import '../../../icon';
 
-export { default } from './payment-rounded-plus';
+import { withTheme } from '../../../cn';
+import Component from './payment-rounded-plus';
+export default withTheme(Component);

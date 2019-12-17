@@ -5,4 +5,6 @@
 import './sent.css';
 import '../../../icon';
 
-export { default } from './sent';
+import { withTheme } from '../../../cn';
+import Component from './sent';
+export default withTheme(Component);

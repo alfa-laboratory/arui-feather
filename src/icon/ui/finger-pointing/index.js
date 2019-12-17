@@ -5,4 +5,6 @@
 import './finger-pointing.css';
 import '../../../icon';
 
-export { default } from './finger-pointing';
+import { withTheme } from '../../../cn';
+import Component from './finger-pointing';
+export default withTheme(Component);

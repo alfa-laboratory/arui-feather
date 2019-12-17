@@ -5,4 +5,6 @@
 import './offer-fill.css';
 import '../../../icon';
 
-export { default } from './offer-fill';
+import { withTheme } from '../../../cn';
+import Component from './offer-fill';
+export default withTheme(Component);

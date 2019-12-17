@@ -5,4 +5,6 @@
 import './insurance.css';
 import '../../../icon';
 
-export { default } from './insurance';
+import { withTheme } from '../../../cn';
+import Component from './insurance';
+export default withTheme(Component);

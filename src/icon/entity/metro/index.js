@@ -5,4 +5,6 @@
 import './metro.css';
 import '../../../icon';
 
-export { default } from './metro';
+import { withTheme } from '../../../cn';
+import Component from './metro';
+export default withTheme(Component);

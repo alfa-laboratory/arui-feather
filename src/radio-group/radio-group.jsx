@@ -7,7 +7,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент группы радио-кнопок.
@@ -184,4 +183,4 @@ class RadioGroup extends React.PureComponent {
     }
 }
 
-export default withTheme(RadioGroup);
+export default RadioGroup;

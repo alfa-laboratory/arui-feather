@@ -6,7 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент ссылки.
@@ -231,4 +230,4 @@ class Link extends React.PureComponent {
     }
 }
 
-export default withTheme(Link);
+export default Link;

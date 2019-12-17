@@ -5,4 +5,6 @@
 import './star.css';
 import '../../../icon';
 
-export { default } from './star';
+import { withTheme } from '../../../cn';
+import Component from './star';
+export default withTheme(Component);

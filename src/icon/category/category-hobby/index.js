@@ -5,4 +5,6 @@
 import './category-hobby.css';
 import '../../../icon';
 
-export { default } from './category-hobby';
+import { withTheme } from '../../../cn';
+import Component from './category-hobby';
+export default withTheme(Component);

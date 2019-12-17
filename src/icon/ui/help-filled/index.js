@@ -5,4 +5,6 @@
 import './help-filled.css';
 import '../../../icon';
 
-export { default } from './help-filled';
+import { withTheme } from '../../../cn';
+import Component from './help-filled';
+export default withTheme(Component);

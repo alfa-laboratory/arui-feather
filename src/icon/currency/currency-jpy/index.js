@@ -5,4 +5,6 @@
 import './currency-jpy.css';
 import '../../../icon';
 
-export { default } from './currency-jpy';
+import { withTheme } from '../../../cn';
+import Component from './currency-jpy';
+export default withTheme(Component);

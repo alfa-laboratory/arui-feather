@@ -5,4 +5,6 @@
 import './category-guard.css';
 import '../../../icon';
 
-export { default } from './category-guard';
+import { withTheme } from '../../../cn';
+import Component from './category-guard';
+export default withTheme(Component);

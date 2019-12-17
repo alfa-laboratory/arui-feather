@@ -5,4 +5,6 @@
 import './system-hide-arrow.css';
 import '../../../icon';
 
-export { default } from './system-hide-arrow';
+import { withTheme } from '../../../cn';
+import Component from './system-hide-arrow';
+export default withTheme(Component);

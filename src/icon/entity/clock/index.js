@@ -5,4 +5,6 @@
 import './clock.css';
 import '../../../icon';
 
-export { default } from './clock';
+import { withTheme } from '../../../cn';
+import Component from './clock';
+export default withTheme(Component);

@@ -4,7 +4,6 @@
 
 import Link from '../link/link';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 /**
  * Компонент таба. Как правило, используется совместно с `Tabs`.
@@ -24,4 +23,4 @@ class TabItem extends Link {
     }
 }
 
-export default withTheme(TabItem);
+export default TabItem;

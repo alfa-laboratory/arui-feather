@@ -5,4 +5,6 @@
 import './share-ios.css';
 import '../../../icon';
 
-export { default } from './share-ios';
+import { withTheme } from '../../../cn';
+import Component from './share-ios';
+export default withTheme(Component);

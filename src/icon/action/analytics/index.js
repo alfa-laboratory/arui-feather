@@ -5,4 +5,6 @@
 import './analytics.css';
 import '../../../icon';
 
-export { default } from './analytics';
+import { withTheme } from '../../../cn';
+import Component from './analytics';
+export default withTheme(Component);

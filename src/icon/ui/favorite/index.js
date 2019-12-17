@@ -5,4 +5,6 @@
 import './favorite.css';
 import '../../../icon';
 
-export { default } from './favorite';
+import { withTheme } from '../../../cn';
+import Component from './favorite';
+export default withTheme(Component);

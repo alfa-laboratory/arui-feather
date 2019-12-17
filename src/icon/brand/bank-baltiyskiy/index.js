@@ -5,4 +5,6 @@
 import './bank-baltiyskiy.css';
 import '../../../icon';
 
-export { default } from './bank-baltiyskiy';
+import { withTheme } from '../../../cn';
+import Component from './bank-baltiyskiy';
+export default withTheme(Component);

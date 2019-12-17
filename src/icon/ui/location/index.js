@@ -5,4 +5,6 @@
 import './location.css';
 import '../../../icon';
 
-export { default } from './location';
+import { withTheme } from '../../../cn';
+import Component from './location';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './mobile.css';
 import '../../../icon';
 
-export { default } from './mobile';
+import { withTheme } from '../../../cn';
+import Component from './mobile';
+export default withTheme(Component);

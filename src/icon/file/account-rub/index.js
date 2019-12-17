@@ -5,4 +5,6 @@
 import './account-rub.css';
 import '../../../icon';
 
-export { default } from './account-rub';
+import { withTheme } from '../../../cn';
+import Component from './account-rub';
+export default withTheme(Component);

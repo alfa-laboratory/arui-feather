@@ -5,4 +5,6 @@
 import './filter.css';
 import '../../../icon';
 
-export { default } from './filter';
+import { withTheme } from '../../../cn';
+import Component from './filter';
+export default withTheme(Component);

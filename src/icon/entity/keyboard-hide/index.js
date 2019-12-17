@@ -5,4 +5,6 @@
 import './keyboard-hide.css';
 import '../../../icon';
 
-export { default } from './keyboard-hide';
+import { withTheme } from '../../../cn';
+import Component from './keyboard-hide';
+export default withTheme(Component);

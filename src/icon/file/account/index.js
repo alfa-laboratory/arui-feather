@@ -5,4 +5,6 @@
 import './account.css';
 import '../../../icon';
 
-export { default } from './account';
+import { withTheme } from '../../../cn';
+import Component from './account';
+export default withTheme(Component);

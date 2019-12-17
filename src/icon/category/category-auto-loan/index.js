@@ -5,4 +5,6 @@
 import './category-auto-loan.css';
 import '../../../icon';
 
-export { default } from './category-auto-loan';
+import { withTheme } from '../../../cn';
+import Component from './category-auto-loan';
+export default withTheme(Component);

@@ -5,4 +5,6 @@
 import './bank-gazprombank.css';
 import '../../../icon';
 
-export { default } from './bank-gazprombank';
+import { withTheme } from '../../../cn';
+import Component from './bank-gazprombank';
+export default withTheme(Component);

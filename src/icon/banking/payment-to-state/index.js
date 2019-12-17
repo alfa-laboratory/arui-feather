@@ -5,4 +5,6 @@
 import './payment-to-state.css';
 import '../../../icon';
 
-export { default } from './payment-to-state';
+import { withTheme } from '../../../cn';
+import Component from './payment-to-state';
+export default withTheme(Component);

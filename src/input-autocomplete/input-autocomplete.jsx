@@ -13,7 +13,6 @@ import Popup from '../popup/popup';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
@@ -151,7 +150,7 @@ class InputAutocomplete extends React.PureComponent {
         }
     }
 
-    render(Input) {
+    render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const props = {
@@ -543,4 +542,4 @@ class InputAutocomplete extends React.PureComponent {
     }
 }
 
-export default withTheme(InputAutocomplete);
+export default InputAutocomplete;

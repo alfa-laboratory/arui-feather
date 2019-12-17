@@ -5,4 +5,6 @@
 import './format-zip.css';
 import '../../../icon';
 
-export { default } from './format-zip';
+import { withTheme } from '../../../cn';
+import Component from './format-zip';
+export default withTheme(Component);

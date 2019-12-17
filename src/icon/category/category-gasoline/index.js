@@ -5,4 +5,6 @@
 import './category-gasoline.css';
 import '../../../icon';
 
-export { default } from './category-gasoline';
+import { withTheme } from '../../../cn';
+import Component from './category-gasoline';
+export default withTheme(Component);

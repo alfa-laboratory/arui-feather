@@ -5,4 +5,6 @@
 import './category-fines.css';
 import '../../../icon';
 
-export { default } from './category-fines';
+import { withTheme } from '../../../cn';
+import Component from './category-fines';
+export default withTheme(Component);

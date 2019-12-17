@@ -5,4 +5,6 @@
 import './category-consulting.css';
 import '../../../icon';
 
-export { default } from './category-consulting';
+import { withTheme } from '../../../cn';
+import Component from './category-consulting';
+export default withTheme(Component);

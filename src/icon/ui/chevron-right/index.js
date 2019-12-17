@@ -5,4 +5,6 @@
 import './chevron-right.css';
 import '../../../icon';
 
-export { default } from './chevron-right';
+import { withTheme } from '../../../cn';
+import Component from './chevron-right';
+export default withTheme(Component);

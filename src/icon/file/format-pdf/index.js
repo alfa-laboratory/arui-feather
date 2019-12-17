@@ -5,4 +5,6 @@
 import './format-pdf.css';
 import '../../../icon';
 
-export { default } from './format-pdf';
+import { withTheme } from '../../../cn';
+import Component from './format-pdf';
+export default withTheme(Component);

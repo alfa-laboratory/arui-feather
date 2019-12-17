@@ -5,4 +5,6 @@
 import './category-unknown.css';
 import '../../../icon';
 
-export { default } from './category-unknown';
+import { withTheme } from '../../../cn';
+import Component from './category-unknown';
+export default withTheme(Component);

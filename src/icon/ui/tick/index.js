@@ -5,4 +5,6 @@
 import './tick.css';
 import '../../../icon';
 
-export { default } from './tick';
+import { withTheme } from '../../../cn';
+import Component from './tick';
+export default withTheme(Component);

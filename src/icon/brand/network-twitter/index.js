@@ -5,4 +5,6 @@
 import './network-twitter.css';
 import '../../../icon';
 
-export { default } from './network-twitter';
+import { withTheme } from '../../../cn';
+import Component from './network-twitter';
+export default withTheme(Component);

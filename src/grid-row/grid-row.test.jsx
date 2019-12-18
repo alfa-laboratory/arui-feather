@@ -10,13 +10,13 @@ import GridCol from '../grid-col';
 
 describe('grid-row', () => {
     it('should render without problems', () => {
-        let row = shallow(<GridRow />);
+        const row = shallow(<GridRow />);
 
         expect(row).toMatchSnapshot();
     });
 
     it('should set default classes for gutter', () => {
-        let row = mount(
+        const row = mount(
             <GridRow>
                 <GridCol>
                     GridRow-test
@@ -24,8 +24,8 @@ describe('grid-row', () => {
             </GridRow>
         );
 
-        let rowClassName = row.getDOMNode().className;
-        let colClassName = row.find('.grid-col').getDOMNode().className;
+        const rowClassName = row.getDOMNode().className;
+        const colClassName = row.find('.grid-col').getDOMNode().className;
 
         expect(rowClassName).toContain('grid-row_gutter-mobile-s_16');
         expect(rowClassName).toContain('grid-row_gutter-desktop-m_24');
@@ -34,7 +34,7 @@ describe('grid-row', () => {
     });
 
     it('should set custom classes for gutter', () => {
-        let row = mount(
+        const row = mount(
             <GridRow gutter={ { mobile: 0, tablet: 16, desktop: { s: 24 } } }>
                 <GridCol>
                     GridRow-test
@@ -42,8 +42,8 @@ describe('grid-row', () => {
             </GridRow>
         );
 
-        let rowClassName = row.getDOMNode().className;
-        let colClassName = row.find('.grid-col').getDOMNode().className;
+        const rowClassName = row.getDOMNode().className;
+        const colClassName = row.find('.grid-col').getDOMNode().className;
 
         expect(rowClassName).toContain('grid-row_gutter-mobile_0');
         expect(rowClassName).toContain('grid-row_gutter-tablet_16');

@@ -1,9 +1,0 @@
-{
-  "minify": true,
-  "options": [],
-  "feature-detects": [
-    "inputtypes",
-    "pointerevents",
-    "touchevents"
-  ]
-}

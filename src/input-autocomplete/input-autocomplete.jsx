@@ -4,7 +4,6 @@
 
 /* eslint react/prop-types: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -40,7 +39,9 @@ class InputAutocomplete extends React.Component {
             /** Текст, который должен быть записан в текстовое поле при выборе варианта */
             text: Type.string,
             /** Список вариантов, только для type='group' */
-            content: Type.array
+            content: Type.array,
+            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
+            props: Type.object
         })),
         /**
          * Управление возможностью изменения атрибута компонента, установка
@@ -70,7 +71,13 @@ class InputAutocomplete extends React.Component {
          */
         onItemSelect: Type.func,
         /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
-        closeOnSelect: Type.bool
+        closeOnSelect: Type.bool,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string,
+        /** Максимальная высота выпадающего списка опций */
+        popupMaxHeight: Type.number,
+        /** Название класса попапа с опциями */
+        popupClassName: Type.string
     };
 
     static defaultProps = {
@@ -146,11 +153,13 @@ class InputAutocomplete extends React.Component {
     }
 
     render(cn, Input) {
-        let value = this.props.value !== undefined ? this.props.value : this.state.value;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-        let props = {
+        const props = {
             ...this.props,
-            ref: (input) => { this.input = input; },
+            ref: (input) => {
+                this.input = input;
+            },
             className: cn({
                 focused: this.state.inputFocused || this.state.menuFocused,
                 'has-autocomplete': true
@@ -174,41 +183,48 @@ class InputAutocomplete extends React.Component {
     }
 
     renderPopup(cn) {
-        let formattedOptionsList = this.props.options
+        const formattedOptionsList = this.props.options
             ? this.formatOptionsList(this.props.options)
             : [];
 
-        let opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.inputFocused || this.state.menuFocused;
+        const opened = this.props.opened === undefined
+            ? (this.state.inputFocused || this.state.menuFocused)
+            : this.props.opened;
 
         if (this.props.options.length === 0) {
             this.popup = null;
+
             return null;
         }
 
         if (this.props.renderPopupOnFocus && !opened) {
             return null;
         }
+
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
-                className={ cn('popup') }
+                className={ cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ (popup) => {
+                    this.popup = popup;
+                } }
                 for={ this.props.name }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
                 target='anchor'
                 directions={ this.props.directions }
-                height='adaptive'
+                height={ this.props.popupMaxHeight ? 'default' : 'adaptive' }
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
                 key='popup'
+                maxHeight={ this.props.popupMaxHeight }
             >
                 <Menu
-                    ref={ (menu) => { this.menu = menu; } }
+                    ref={ (menu) => {
+                        this.menu = menu;
+                    } }
                     className={ cn('menu') }
                     size={ this.props.size }
                     mode='radio-check'
@@ -226,12 +242,11 @@ class InputAutocomplete extends React.Component {
         ];
     }
 
-    @autobind
-    handleItemCheck(checkedItemsValues) {
-        let checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
-        let checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
+    handleItemCheck = (checkedItemsValues) => {
+        const checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
+        const checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
-        let newValue = checkedItem
+        const newValue = checkedItem
             ? (checkedItem.text || checkedItem.value)
             : this.state.value;
 
@@ -263,19 +278,17 @@ class InputAutocomplete extends React.Component {
                 this.input.setSelectionRange(newValue.length);
             }, 0);
         }
-    }
+    };
 
-    @autobind
-    handleChange(value) {
+    handleChange = (value) => {
         this.setState({ value });
 
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handleInputFocus(event) {
+    handleInputFocus = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
@@ -286,10 +299,9 @@ class InputAutocomplete extends React.Component {
         this.setState({
             highlightedItem: null
         });
-    }
+    };
 
-    @autobind
-    handleInputBlur(event) {
+    handleInputBlur = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
         }
@@ -300,20 +312,18 @@ class InputAutocomplete extends React.Component {
             this.solveFocused(event);
             this.blurTimeout = null;
         }, 0);
-    }
+    };
 
-    @autobind
-    handleMenuFocus(event) {
+    handleMenuFocus = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
         }
 
         this.solveFocused(event);
-    }
+    };
 
-    @autobind
-    handleMenuBlur(event) {
+    handleMenuBlur = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
         }
@@ -324,23 +334,21 @@ class InputAutocomplete extends React.Component {
             this.solveFocused(event);
             this.blurTimeout = null;
         }, 0);
-    }
+    };
 
-    @autobind
-    handleClickOutside() {
+    handleClickOutside = () => {
         if (this.props.onClickOutside) {
             this.props.onClickOutside();
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
 
-                let posX = window.pageXOffset;
-                let posY = window.pageYOffset;
+                const posX = window.pageXOffset;
+                const posY = window.pageYOffset;
 
                 if (this.menu) {
                     this.menu.focus();
@@ -360,17 +368,15 @@ class InputAutocomplete extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleHighlightedItem(highlightedItem) {
+    handleHighlightedItem = (highlightedItem) => {
         this.setState({
             highlightedItem
         });
-    }
+    };
 
-    @autobind
-    handleMenuKeyDown(event, highlightedItem) {
+    handleMenuKeyDown = (event, highlightedItem) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW:
             case keyboardCode.UP_ARROW:
@@ -386,7 +392,7 @@ class InputAutocomplete extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.
@@ -421,18 +427,18 @@ class InputAutocomplete extends React.Component {
      * @param {SyntheticEvent} event Событие focus/blur, которое будет проброшено в обработчик onFocus/onBlur
      */
     solveFocused(event) {
-        let currentFocused = this.state.inputFocused || this.state.menuFocused;
+        const currentFocused = this.state.inputFocused || this.state.menuFocused;
 
-        let focusedElement = document.activeElement;
+        const focusedElement = document.activeElement;
 
-        let newState = {
+        const newState = {
             inputFocused: (focusedElement === this.input.getControl()),
             menuFocused: this.menu
                 ? (this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement))
                 : false
         };
 
-        let newFocused = newState.inputFocused || newState.menuFocused;
+        const newFocused = newState.inputFocused || newState.menuFocused;
 
         if (currentFocused !== newFocused) {
             if (newFocused) {
@@ -451,7 +457,7 @@ class InputAutocomplete extends React.Component {
         return (
             options.map((option) => {
                 if (option.type === 'group' && !!option.content) {
-                    let content = this.formatOptionsList(option.content);
+                    const content = this.formatOptionsList(option.content);
 
                     return ({
                         type: 'group',
@@ -463,7 +469,8 @@ class InputAutocomplete extends React.Component {
                 return ({
                     key: option.key || option.value,
                     value: option.value,
-                    content: option.description || option.value
+                    content: option.description || option.value,
+                    props: option.props
                 });
             })
         );
@@ -474,13 +481,16 @@ class InputAutocomplete extends React.Component {
 
         options.find((option) => {
             if (option.type === 'group' && !!option.content) {
-                let findInGroup = this.getCheckedOption(option.content, value);
+                const findInGroup = this.getCheckedOption(option.content, value);
+
                 if (findInGroup) {
                     result = findInGroup;
+
                     return true;
                 }
             } else if (option.value === value) {
                 result = option;
+
                 return true;
             }
 
@@ -490,11 +500,10 @@ class InputAutocomplete extends React.Component {
         return result;
     }
 
-    @autobind
-    updatePopupStyles() {
-        let input = this.input.getNode();
-        let inputWidth = input.getBoundingClientRect().width;
-        let popupStyles = { minWidth: inputWidth };
+    updatePopupStyles = () => {
+        const input = this.input.getNode();
+        const inputWidth = input.getBoundingClientRect().width;
+        const popupStyles = { minWidth: inputWidth };
 
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = inputWidth;
@@ -503,7 +512,7 @@ class InputAutocomplete extends React.Component {
         this.setState({
             popupStyles
         });
-    }
+    };
 
     updatePopupTarget() {
         if (this.popup) {
@@ -515,9 +524,9 @@ class InputAutocomplete extends React.Component {
      * @param {MenuItem} highlightedItem Выбранный пункт меню
      */
     syncKeyboardNavigationWithScroll(highlightedItem) {
-        let element = highlightedItem.getNode();
-        let container = this.popup.getInnerNode();
-        let correction = element.offsetHeight;
+        const element = highlightedItem.getNode();
+        const container = this.popup.getInnerNode();
+        const correction = element.offsetHeight;
 
         if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
             scrollTo({

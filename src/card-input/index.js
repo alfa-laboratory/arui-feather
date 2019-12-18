@@ -4,4 +4,4 @@
 
 import '../input';
 
-export default from './card-input';
+export { default } from './card-input';

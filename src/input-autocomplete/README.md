@@ -27,9 +27,11 @@ function getFilteredOptions(list, typedValue) {
         return list;
     }
 
-    const typedValueLCase = typedValue.toLowerCase();
+    // преобразуем строку ( 'Москва' -> '.*м.*о.*с.*к.*в.*а.*') для полнотекстового поиска, так как
+    // '.*' означает любое количество любых символов
+    const regex = new RegExp(typedValue.toLowerCase().replace(/(?!$)|(?=$)/gm, '.*'));
 
-    return list.filter(({ value }) => value.toLowerCase().includes(typedValueLCase));
+    return list.filter(({ value }) => regex.test(value.toLowerCase()));
 }
 function handleItemSelect(item) {
     setState({ value: item.text })
@@ -52,6 +54,8 @@ function handleChange(value) {
 
 Элементы с кастомной разметкой
 ```jsx
+import Label from 'arui-feather/label';
+
 function Circle({ background }) {
     const circleStyles = {
         width: '14px',
@@ -131,6 +135,7 @@ function handleChange(value) {
 
 Автокомплит с автозакрытием после выбора
 ```jsx
+import TagButton from 'arui-feather/tag-button';
 
 const socialNetworks = [
     { value: 'Facebook' },

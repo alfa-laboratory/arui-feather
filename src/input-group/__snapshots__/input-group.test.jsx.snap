@@ -13,8 +13,10 @@ exports[`input-group should render with many input children without problems 1`]
     <Input
       formNoValidate={false}
       key="1"
+      resetError={true}
       size="m"
       type="text"
+      view="default"
     />
   </span>
   <span
@@ -24,8 +26,10 @@ exports[`input-group should render with many input children without problems 1`]
     <Input
       formNoValidate={false}
       key="2"
+      resetError={true}
       size="m"
       type="text"
+      view="default"
     />
   </span>
 </span>
@@ -44,8 +48,10 @@ exports[`input-group should render with only one children 1`] = `
     <Input
       formNoValidate={false}
       key="1"
+      resetError={true}
       size="m"
       type="text"
+      view="default"
     />
   </span>
 </span>

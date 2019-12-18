@@ -14,7 +14,8 @@ import IconSearch from '../icon/action/search';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('input', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
+
     beforeEach(() => {
         window.scrollTo = jest.fn();
     });
@@ -24,8 +25,8 @@ describe('input', () => {
     });
 
     it('should unset class on input blur', () => {
-        let input = shallow(<Input />);
-        let controlNode = input.find('input');
+        const input = shallow(<Input />);
+        const controlNode = input.find('input');
 
         controlNode.simulate('focus');
         expect(input.props().className).toContain('input_focused');
@@ -35,13 +36,13 @@ describe('input', () => {
     });
 
     it('should render with disabled class', () => {
-        let input = shallow(<Input disabled={ true } />);
+        const input = shallow(<Input disabled={ true } />);
 
         expect(input.props().className).toContain('input_disabled');
     });
 
     it('should unset class on blur event', () => {
-        let input = mount(<Input />);
+        const input = mount(<Input />);
 
         input.find('input').simulate('focus');
 
@@ -53,8 +54,8 @@ describe('input', () => {
     });
 
     it('should set caret to end of input on public focus method', () => {
-        let value = 'test';
-        let input = mount(<Input value={ value } />);
+        const value = 'test';
+        const input = mount(<Input value={ value } />);
 
         input.instance().focus();
 
@@ -63,7 +64,7 @@ describe('input', () => {
     });
 
     it('should set class on focus event', () => {
-        let input = mount(<Input />);
+        const input = mount(<Input />);
 
         input.find('input').simulate('focus');
 
@@ -71,9 +72,9 @@ describe('input', () => {
     });
 
     it('should scroll window to element on public `scrollTo` method', () => {
-        let input = mount(<Input />);
-        let elemTopPosition = input.getDOMNode().getBoundingClientRect().top;
-        let elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const input = mount(<Input />);
+        const elemTopPosition = input.getDOMNode().getBoundingClientRect().top;
+        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
         input.instance().scrollTo();
 
@@ -83,9 +84,10 @@ describe('input', () => {
     it(
         'should not set selection when `setSelectionRange` method was called on input with type `email`',
         () => {
-            let input = mount(<Input value='test' type='email' />);
+            const input = mount(<Input value='test' type='email' />);
 
-            let setSelectionRange = jest.fn();
+            const setSelectionRange = jest.fn();
+
             input.instance().getControl().setSelectionRange = setSelectionRange;
             input.instance().focus();
 
@@ -97,8 +99,9 @@ describe('input', () => {
     it(
         'should set selection to all value when `setSelectionRange` method was called without parameters',
         () => {
-            let input = mount(<Input value='test' />);
-            let setSelectionRange = jest.fn();
+            const input = mount(<Input value='test' />);
+            const setSelectionRange = jest.fn();
+
             input.instance().getControl().setSelectionRange = setSelectionRange;
 
             input.instance().focus();
@@ -111,8 +114,9 @@ describe('input', () => {
     it(
         'should set selection when setSelection range was called with parameters',
         () => {
-            let input = mount(<Input value='test' />);
-            let setSelectionRange = jest.fn();
+            const input = mount(<Input value='test' />);
+            const setSelectionRange = jest.fn();
+
             input.instance().getControl().setSelectionRange = setSelectionRange;
 
             input.instance().focus();
@@ -126,7 +130,7 @@ describe('input', () => {
     );
 
     it('should render without problems', () => {
-        let input = shallow(<Input />);
+        const input = shallow(<Input />);
 
         expect(input).toBeDefined();
         expect(input).toMatchSnapshot();
@@ -134,73 +138,73 @@ describe('input', () => {
     });
 
     it('should set focused className from props', () => {
-        let input = shallow(<Input focused={ true } />);
+        const input = shallow(<Input focused={ true } />);
 
         expect(input.props().className).toContain('input_focused');
     });
 
     it('should render with `label` from props', () => {
-        let input = shallow(<Input label='Label' />);
-        let topNode = input.find('.input__top');
+        const input = shallow(<Input label='Label' />);
+        const topNode = input.find('.input__top');
 
         expect(topNode).toBeDefined();
         expect(topNode.text()).toBe('Label');
     });
 
     it('should render with `placeholder` from props', () => {
-        let input = shallow(<Input placeholder='Placeholder' />);
-        let controlNode = input.find('input');
+        const input = shallow(<Input placeholder='Placeholder' />);
+        const controlNode = input.find('input');
 
         expect(controlNode.props().placeholder).toBe('Placeholder');
     });
 
     it('should render with `hint` from props', () => {
-        let input = shallow(<Input hint='Hint' />);
-        let subNode = input.find('.input__sub');
+        const input = shallow(<Input hint='Hint' />);
+        const subNode = input.find('.input__sub');
 
         expect(subNode).toBeDefined();
         expect(subNode.text()).toBe('Hint');
     });
 
     it('should render with `error` from props', () => {
-        let input = shallow(<Input error='Error' />);
-        let subNode = input.find('.input__sub');
+        const input = shallow(<Input error='Error' />);
+        const subNode = input.find('.input__sub');
 
         expect(subNode).toBeDefined();
         expect(subNode.text()).toBe('Error');
     });
 
     it('should render with `off` autocomplete attribute', () => {
-        let input = shallow(<Input autocomplete={ false } />);
-        let controlNode = input.find('input');
+        const input = shallow(<Input autocomplete={ false } />);
+        const controlNode = input.find('input');
 
         expect(controlNode.props().autoComplete).toBe('off');
     });
 
     it('should render with `on` autocomplete attribute', () => {
-        let input = shallow(<Input autocomplete={ true } />);
-        let controlNode = input.find('input');
+        const input = shallow(<Input autocomplete={ true } />);
+        const controlNode = input.find('input');
 
         expect(controlNode.props().autoComplete).toBe('on');
     });
 
     it('should render string autocomplete attribute', () => {
-        let input = shallow(<Input autocomplete='email' />);
-        let controlNode = input.find('input');
+        const input = shallow(<Input autocomplete='email' />);
+        const controlNode = input.find('input');
 
         expect(controlNode.props().autoComplete).toBe('email');
     });
 
     it('should set value from props', () => {
-        let input = shallow(<Input value='text' />);
-        let controlNode = input.find('input');
+        const input = shallow(<Input value='text' />);
+        const controlNode = input.find('input');
 
         expect(controlNode.props().value).toBe('text');
     });
 
     it('should change the state value when props is not defined', () => {
-        let input = mount(<Input />);
-        let controlNode = input.find('input');
+        const input = mount(<Input />);
+        const controlNode = input.find('input');
 
         controlNode.simulate('change', { target: { value: 'other value' } });
 
@@ -208,8 +212,8 @@ describe('input', () => {
     });
 
     it('should call `onFocus` callback after input was focused', () => {
-        let onFocus = jest.fn();
-        let input = mount(<Input onFocus={ onFocus } />);
+        const onFocus = jest.fn();
+        const input = mount(<Input onFocus={ onFocus } />);
 
         input.find('input').simulate('focus');
 
@@ -217,9 +221,9 @@ describe('input', () => {
     });
 
     it('should call `onClick` callback after input was clicked', () => {
-        let onClick = jest.fn();
-        let input = shallow(<Input onClick={ onClick } />);
-        let controlNode = input.find('input');
+        const onClick = jest.fn();
+        const input = shallow(<Input onClick={ onClick } />);
+        const controlNode = input.find('input');
 
         controlNode.simulate('click');
 
@@ -227,9 +231,9 @@ describe('input', () => {
     });
 
     it('should call `onKeyDown` callback after key down in input', () => {
-        let onKeyDown = jest.fn();
-        let input = shallow(<Input onKeyDown={ onKeyDown } />);
-        let controlNode = input.find('input');
+        const onKeyDown = jest.fn();
+        const input = shallow(<Input onKeyDown={ onKeyDown } />);
+        const controlNode = input.find('input');
 
         controlNode.simulate('keyDown');
 
@@ -237,8 +241,8 @@ describe('input', () => {
     });
 
     it('should call `onBlur` callback after input was blured', () => {
-        let onBlur = jest.fn();
-        let input = mount(<Input onBlur={ onBlur } />);
+        const onBlur = jest.fn();
+        const input = mount(<Input onBlur={ onBlur } />);
 
         input.find('input').simulate('blur');
 
@@ -246,9 +250,9 @@ describe('input', () => {
     });
 
     it('should call `onChange` callback', () => {
-        let onChange = jest.fn();
-        let input = shallow(<Input onChange={ onChange } />);
-        let controlNode = input.find('input');
+        const onChange = jest.fn();
+        const input = shallow(<Input onChange={ onChange } />);
+        const controlNode = input.find('input');
 
         controlNode.simulate('change', { target: { value: 'other value' } });
 
@@ -256,18 +260,19 @@ describe('input', () => {
     });
 
     it('should render with clear element', () => {
-        let input = shallow(<Input clear={ true } value='text' />);
-        let clearNode = input.find('.input__clear');
+        const input = shallow(<Input clear={ true } value='text' />);
+        const clearNode = input.find('.input__clear');
 
         expect(clearNode.length).toBe(1);
     });
 
     it('should call `onClearClick` callback on clear icon click', () => {
-        let onClearClick = jest.fn();
-        let input = mount(<Input clear={ true } onClearClick={ onClearClick } />);
-        let controlNode = input.find('input');
+        const onClearClick = jest.fn();
+        const input = mount(<Input clear={ true } onClearClick={ onClearClick } />);
+        const controlNode = input.find('input');
+
         controlNode.simulate('change', { target: { value: 'value' } });
-        let clearNode = input.find('.input__clear').at(0);
+        const clearNode = input.find('.input__clear').at(0);
 
         clearNode.simulate('click');
 
@@ -275,10 +280,11 @@ describe('input', () => {
     });
 
     it('should clear value after clear icon click', () => {
-        let input = mount(<Input clear={ true } />);
-        let controlNode = input.find('input');
+        const input = mount(<Input clear={ true } />);
+        const controlNode = input.find('input');
+
         controlNode.simulate('change', { target: { value: 'value' } });
-        let clearNode = input.find('.input__clear').at(0);
+        const clearNode = input.find('.input__clear').at(0);
 
         clearNode.simulate('click');
 
@@ -286,15 +292,15 @@ describe('input', () => {
     });
 
     it('should call `onChange` listener after clear icon click', () => {
-        let onChange = jest.fn();
-        let input = mount(
+        const onChange = jest.fn();
+        const input = mount(
             <Input
                 value='text'
                 clear={ true }
                 onChange={ onChange }
             />
         );
-        let clearNode = input.find('.input__clear').at(0);
+        const clearNode = input.find('.input__clear').at(0);
 
         clearNode.simulate('click');
 
@@ -302,16 +308,16 @@ describe('input', () => {
     });
 
     it('should render with icon', () => {
-        let input = shallow(<Input icon={ <IconSearch icon='search' /> } />);
-        let iconNode = input.find('.input__icon');
+        const input = shallow(<Input icon={ <IconSearch icon='search' /> } />);
+        const iconNode = input.find('.input__icon');
 
         expect(iconNode.length).toBe(1);
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let input = mount(<Input />);
+        const input = mount(<Input />);
 
-        let node = input.instance().getNode();
+        const node = input.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
         expect(node).toBe(input.getDOMNode());
@@ -334,8 +340,8 @@ describe('input', () => {
     it(
         'should return `HTMLInputElement` when `getControl` method called',
         () => {
-            let input = mount(<Input />);
-            let controlNode = input.instance().getControl();
+            const input = mount(<Input />);
+            const controlNode = input.instance().getControl();
 
             expect(controlNode).toBeInstanceOf(HTMLInputElement);
         }
@@ -344,8 +350,8 @@ describe('input', () => {
     it(
         'should return `HTMLInputElement` when `getControl` method called and mask is set',
         () => {
-            let input = mount(<Input mask='111' />);
-            let controlNode = input.instance().getControl();
+            const input = mount(<Input mask='111' />);
+            const controlNode = input.instance().getControl();
 
             expect(controlNode).toBeInstanceOf(HTMLInputElement);
         }
@@ -354,8 +360,8 @@ describe('input', () => {
     it(
         'should return null when `getMaskedInputInstance` method is called and mask is not set',
         () => {
-            let input = shallow(<Input />);
-            let maskedInputInstance = input.instance().getMaskedInputInstance();
+            const input = shallow(<Input />);
+            const maskedInputInstance = input.instance().getMaskedInputInstance();
 
             expect(maskedInputInstance).toBeNull();
         }
@@ -364,17 +370,17 @@ describe('input', () => {
     it(
         'should return MaskedInput instance when getMaskedInputInstance method is called and mask is set',
         () => {
-            let input = mount(<Input mask='111' />);
-            let maskedInputInstance = input.instance().getMaskedInputInstance();
+            const input = mount(<Input mask='111' />);
+            const maskedInputInstance = input.instance().getMaskedInputInstance();
 
             expect(maskedInputInstance).toBeInstanceOf(MaskedInput);
         }
     );
 
     it('should call `onTouchStart` callback after input was touched', () => {
-        let onTouchStart = jest.fn();
-        let input = shallow(<Input onTouchStart={ onTouchStart } />);
-        let controlNode = input.find('input');
+        const onTouchStart = jest.fn();
+        const input = shallow(<Input onTouchStart={ onTouchStart } />);
+        const controlNode = input.find('input');
 
         controlNode.simulate('touchStart');
 
@@ -384,9 +390,9 @@ describe('input', () => {
     it(
         'should call `onTouchEnd` callback after input was released on touch',
         () => {
-            let onTouchEnd = jest.fn();
-            let input = shallow(<Input onTouchEnd={ onTouchEnd } />);
-            let controlNode = input.find('input');
+            const onTouchEnd = jest.fn();
+            const input = shallow(<Input onTouchEnd={ onTouchEnd } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchEnd');
 
@@ -397,9 +403,9 @@ describe('input', () => {
     it(
         'should call `onTouchCancel` callback after input was disrupted on touch',
         () => {
-            let onTouchCancel = jest.fn();
-            let input = shallow(<Input onTouchCancel={ onTouchCancel } />);
-            let controlNode = input.find('input');
+            const onTouchCancel = jest.fn();
+            const input = shallow(<Input onTouchCancel={ onTouchCancel } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchCancel');
 
@@ -410,9 +416,9 @@ describe('input', () => {
     it(
         'should call `onTouchMove` callback after input was touched and moved',
         () => {
-            let onTouchMove = jest.fn();
-            let input = shallow(<Input onTouchMove={ onTouchMove } />);
-            let controlNode = input.find('input');
+            const onTouchMove = jest.fn();
+            const input = shallow(<Input onTouchMove={ onTouchMove } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchMove');
 
@@ -423,9 +429,9 @@ describe('input', () => {
     it(
         'should call `onTouchStart` callback with argument as SyntheticEvent and type \'touchstart\'',
         () => {
-            let onTouchStart = jest.fn();
-            let input = mount(<Input onTouchStart={ onTouchStart } />);
-            let controlNode = input.find('input');
+            const onTouchStart = jest.fn();
+            const input = mount(<Input onTouchStart={ onTouchStart } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchStart');
 
@@ -437,9 +443,9 @@ describe('input', () => {
     it(
         'should call `onTouchEnd` callback with argument as SyntheticEvent and type \'touchend\'',
         () => {
-            let onTouchEnd = jest.fn();
-            let input = mount(<Input onTouchEnd={ onTouchEnd } />);
-            let controlNode = input.find('input');
+            const onTouchEnd = jest.fn();
+            const input = mount(<Input onTouchEnd={ onTouchEnd } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchEnd');
             expect(onTouchEnd).toHaveBeenCalled();
@@ -450,9 +456,9 @@ describe('input', () => {
     it(
         'should call `onTouchMove` callback with argument as SyntheticEvent and type \'touchmove\'',
         () => {
-            let onTouchMove = jest.fn();
-            let input = mount(<Input onTouchMove={ onTouchMove } />);
-            let controlNode = input.find('input');
+            const onTouchMove = jest.fn();
+            const input = mount(<Input onTouchMove={ onTouchMove } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchMove');
             expect(onTouchMove).toHaveBeenCalled();
@@ -463,9 +469,9 @@ describe('input', () => {
     it(
         'should call `onTouchCancel` callback with argument as SyntheticEvent and type \'touchcancel\'',
         () => {
-            let onTouchCancel = jest.fn();
-            let input = mount(<Input onTouchCancel={ onTouchCancel } />);
-            let controlNode = input.find('input');
+            const onTouchCancel = jest.fn();
+            const input = mount(<Input onTouchCancel={ onTouchCancel } />);
+            const controlNode = input.find('input');
 
             controlNode.simulate('touchCancel');
             expect(onTouchCancel).toHaveBeenCalled();
@@ -476,8 +482,8 @@ describe('input', () => {
     it(
         'should call `enableMouseWheel` and `disableMouseWheel` after focus and blur',
         () => {
-            let input = mount(<Input />);
-            let controlNode = input.find('input');
+            const input = mount(<Input />);
+            const controlNode = input.find('input');
 
             jest.spyOn(input.instance(), 'enableMouseWheel');
             jest.spyOn(input.instance(), 'disableMouseWheel');
@@ -487,6 +493,19 @@ describe('input', () => {
 
             controlNode.simulate('blur');
             expect(input.instance().disableMouseWheel).toHaveBeenCalled();
+        }
+    );
+
+    it(
+        'should call `resetError` after focus',
+        () => {
+            const input = mount(<Input />);
+            const controlNode = input.find('input');
+
+            jest.spyOn(input.instance(), 'resetError');
+
+            controlNode.simulate('focus');
+            expect(input.instance().resetError).toHaveBeenCalled();
         }
     );
 });

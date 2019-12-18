@@ -7,10 +7,11 @@ exports[`textarea should render without problems 1`] = `
   disabled={false}
   resize="none"
   size="m"
+  view="default"
   width="default"
 >
   <span
-    className="textarea textarea_autosize textarea_size_m textarea_width_default textarea_resize_none textarea_theme_alfa-on-white"
+    className="textarea textarea_autosize textarea_size_m textarea_view_default textarea_width_default textarea_resize_none textarea_theme_alfa-on-white"
   >
     <span
       className="textarea__inner"

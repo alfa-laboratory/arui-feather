@@ -2,14 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
-import Modernizr from '../modernizr';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
+import { isPointerEventsSupported, isTouchSupported } from './utils';
 
 const IS_BROWSER = typeof window !== 'undefined';
-const SUPPORTS_TOUCH = IS_BROWSER && (Modernizr.pointerevents || Modernizr.touchevents);
+const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSupported());
 
 /**
  * Компонент, имплементирующий поддержку медиа запросов в шаблонах.
@@ -52,7 +51,9 @@ class Mq extends React.Component {
     }
 
     render() {
-        if (!this.props.children || !IS_BROWSER || !this.state.isMatched) return false;
+        if (!this.props.children || !IS_BROWSER || !this.state.isMatched) {
+            return false;
+        }
 
         return this.props.children;
     }
@@ -60,8 +61,7 @@ class Mq extends React.Component {
     /**
      * @param {Object} [mql] MediaQueryList или MediaQueryListEvent
      */
-    @autobind
-    handleMatch(mql) {
+    handleMatch = (mql) => {
         let queryPass = true;
         let touchPass = true;
 

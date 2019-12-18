@@ -5,4 +5,4 @@
 import './card-accounts-list.css';
 import '../../../icon';
 
-export default from './card-accounts-list';
+export { default } from './card-accounts-list';

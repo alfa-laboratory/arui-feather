@@ -79,6 +79,17 @@
             font-size: var(--font-size-xl);
         }
     }
+
+    &.input_view_filled {
+        .select-button {
+            padding: 2px 24px 0 2px;
+
+            &.select-button_pressed {
+                border-bottom-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
 }
 
 .select__popup {

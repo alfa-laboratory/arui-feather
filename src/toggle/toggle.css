@@ -1,0 +1,243 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import '../vars.css';
+
+.toggle {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    @media (--mobile) {
+        max-width: 374px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: flex-start;
+
+        user-select: none;
+
+        &:hover {
+            .toggle__switch {
+                opacity: 1;
+            }
+        }
+    }
+
+    input {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        appearance: none;
+        left: 0;
+        top: 0;
+        margin: 0;
+        border: 0;
+        outline: none;
+        opacity: 0;
+        box-shadow: 0 0 0 2px var(--color-dark-indigo);
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
+    &__label {
+        display: block;
+        flex: 1 1 auto;
+        color: var(--color-dark-indigo);
+        line-height: var(--line-height-condensed);
+        font-weight: var(--font-weight-normal);
+
+        &_align_left {
+            order: -1;
+            margin-left: 0;
+        }
+
+        @media (--mobile) {
+            order: -1;
+            margin-left: 0;
+        }
+    }
+
+    &__hint {
+        display: block;
+        flex: 1 1 auto;
+        padding: 0;
+        color: var(--color-dark-indigo-60);
+        font-weight: var(--font-weight-normal);
+
+        @media (--mobile) {
+            margin-left: 0;
+        }
+    }
+
+    &__switch {
+        display: block;
+        flex: 0 0 auto;
+        position: relative;
+        background-color: var(--color-dark-indigo-30);
+        opacity: 0.85;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:before {
+            display: inline-block;
+            vertical-align: top;
+            float: right;
+            background-color: var(--color-red-brand);
+            opacity: 0;
+            transition: 0.2s;
+            content: '';
+        }
+
+        &:after {
+            position: absolute;
+            z-index: 3;
+            background: var(--color-white);
+            border: 0.5px solid var(--color-dark-indigo-05);
+            box-shadow: 0 2px 4px var(--color-dark-indigo-30);
+            transition: 0.2s;
+            content: '';
+        }
+    }
+
+    &_focused input {
+        opacity: 1;
+    }
+
+    input:checked {
+        + .toggle__switch:before {
+            opacity: 1;
+        }
+    }
+
+    input:active:not(:disabled) {
+        /* opacity: 1; */
+    }
+
+    input:disabled {
+        opacity: 0;
+
+        + .toggle__label {
+            opacity: 0.3;
+        }
+
+        + .toggle__switch {
+            opacity: 0.3;
+            cursor: default;
+        }
+    }
+
+    &_size_s {
+        input {
+            width: 30px;
+            height: 18px;
+            border-radius: 9px;
+        }
+
+        .toggle__label {
+            margin: 0 0 0 var(--gap-xs);
+            padding: 2px 0 0;
+            font-size: var(--font-size-s);
+
+            @media (--mobile) {
+                margin-right: var(--gap-s);
+            }
+        }
+
+        .toggle__hint {
+            margin: var(--gap-2xs) 0 0 calc(30px + var(--gap-xs));
+            font-size: var(--font-size-xs);
+            line-height: var(--line-height-condensed);
+
+            @media (--mobile) {
+                margin-right: calc(30px + var(--gap-s));
+            }
+        }
+
+        .toggle__switch {
+            width: 30px;
+            height: 18px;
+            border-radius: 9px;
+
+            &:before {
+                width: 30px;
+                height: 18px;
+                border-radius: 9px;
+            }
+
+            &:after {
+                left: 2px;
+                top: 2px;
+                width: 14px;
+                height: 14px;
+                border-radius: 7px;
+            }
+        }
+
+        input:checked {
+            + .toggle__switch:after {
+                transform: translateX(12px);
+            }
+        }
+    }
+
+    &_size_m {
+        input {
+            width: 40px;
+            height: 24px;
+            border-radius: 12px;
+        }
+
+        .toggle__label {
+            margin: 0 0 0 var(--gap-s);
+            padding: 3px 0 0;
+            font-size: var(--font-size-m);
+
+            @media (--mobile) {
+                margin-right: var(--gap-s);
+            }
+        }
+
+        .toggle__hint {
+            margin: var(--gap-2xs) 0 0 calc(40px + var(--gap-s));
+            font-size: var(--font-size-s);
+            line-height: var(--line-height-condensed);
+
+            @media (--mobile) {
+                margin-right: calc(40px + var(--gap-s));
+            }
+        }
+
+        .toggle__switch {
+            width: 40px;
+            height: 24px;
+            border-radius: 12px;
+
+            &:before {
+                width: 40px;
+                height: 24px;
+                border-radius: 12px;
+            }
+
+            &:after {
+                left: 2px;
+                top: 2px;
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+            }
+        }
+
+        input:checked {
+            + .toggle__switch:after {
+                transform: translateX(16px);
+            }
+        }
+    }
+}

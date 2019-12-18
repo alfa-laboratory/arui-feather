@@ -8,13 +8,13 @@ import Label from './label';
 
 describe('label', () => {
     it('should render without problems', () => {
-        let label = mount(<Label>Label-test</Label>);
+        const label = mount(<Label>Label-test</Label>);
 
         expect(label).toMatchSnapshot();
     });
 
     it('should render with size=`m` by default', () => {
-        let label = mount(<Label />);
+        const label = mount(<Label />);
 
         expect(label.getDOMNode().className).toContain('label_size_m');
     });

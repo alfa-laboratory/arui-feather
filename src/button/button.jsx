@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -57,6 +56,8 @@ class Button extends React.Component {
         checked: Type.bool,
         /** Дочерние элементы `Button` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -131,7 +132,8 @@ class Button extends React.Component {
      */
     control;
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.disabled) {
             this.setState({
                 hovered: false,
@@ -143,7 +145,7 @@ class Button extends React.Component {
     render(cn) {
         const isButton = this.props.tag !== 'span';
 
-        let buttonProps = {
+        const buttonProps = {
             ref: (control) => {
                 this.control = control;
             },
@@ -161,7 +163,7 @@ class Button extends React.Component {
                 view: this.props.view,
                 size: this.props.size,
                 width: this.props.width,
-                focused: this.props.focused !== undefined ? this.props.focused : this.state.focused,
+                focused: this.props.focused === undefined ? this.state.focused : this.props.focused,
                 hovered: this.state.hovered,
                 pressed: this.state.pressed,
                 togglable: this.props.togglable,
@@ -176,10 +178,11 @@ class Button extends React.Component {
             onMouseUp: this.handleMouseUp,
             onMouseOut: this.handleMouseOut,
             onKeyDown: this.handleKeyDown,
-            onKeyUp: this.handleKeyUp
+            onKeyUp: this.handleKeyUp,
+            'data-test-id': this.props['data-test-id']
         };
 
-        let buttonContent = [
+        const buttonContent = [
             this.props.leftAddons && (
                 <span key='left-addons' className={ cn('addon') }>
                     { this.props.leftAddons }
@@ -213,35 +216,33 @@ class Button extends React.Component {
         );
     }
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
-        if (this.state.pressed) return;
+    handleFocus = (event) => {
+        if (this.state.pressed) {
+            return;
+        }
 
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -249,10 +250,9 @@ class Button extends React.Component {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -260,10 +260,9 @@ class Button extends React.Component {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseDown(event) {
+    handleMouseDown = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -271,10 +270,9 @@ class Button extends React.Component {
         if (this.props.onMouseDown) {
             this.props.onMouseDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseUp(event) {
+    handleMouseUp = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -282,10 +280,9 @@ class Button extends React.Component {
         if (this.props.onMouseUp) {
             this.props.onMouseUp(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseOut(event) {
+    handleMouseOut = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -293,10 +290,9 @@ class Button extends React.Component {
         if (this.props.onMouseOut) {
             this.props.onMouseOut(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -304,10 +300,9 @@ class Button extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -315,7 +310,7 @@ class Button extends React.Component {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
@@ -341,6 +336,7 @@ class Button extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

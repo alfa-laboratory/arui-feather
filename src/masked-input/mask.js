@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+// @ts-nocheck
 import InputMask from 'inputmask-core';
 
 // Стандартный плейсхолдер буквы равный по ширине цифровому символу.
@@ -27,21 +28,35 @@ const ALPHANNUMERIC_RE = /^[\dA-Za-z]$/;
  */
 const DEFAULT_FORMAT_CHARACTERS = {
     '*': {
-        validate(char) { return ALPHANNUMERIC_RE.test(char); }
+        validate(char) {
+            return ALPHANNUMERIC_RE.test(char);
+        }
     },
     1: {
-        validate(char) { return DIGIT_RE.test(char); }
+        validate(char) {
+            return DIGIT_RE.test(char);
+        }
     },
     a: {
-        validate(char) { return LETTER_RE.test(char); }
+        validate(char) {
+            return LETTER_RE.test(char);
+        }
     },
     A: {
-        validate(char) { return LETTER_RE.test(char); },
-        transform(char) { return char.toUpperCase(); }
+        validate(char) {
+            return LETTER_RE.test(char);
+        },
+        transform(char) {
+            return char.toUpperCase();
+        }
     },
     '#': {
-        validate(char) { return ALPHANNUMERIC_RE.test(char); },
-        transform(char) { return char.toUpperCase(); }
+        validate(char) {
+            return ALPHANNUMERIC_RE.test(char);
+        },
+        transform(char) {
+            return char.toUpperCase();
+        }
     }
 };
 
@@ -121,24 +136,17 @@ class Mask {
     format(value) {
         let formattedValue = '';
 
-        let cleanValue = this.useWhitespaces ? value : value.replace(/\s+/g, '');
-        let cleanValueLength = cleanValue.length;
+        const cleanValue = this.useWhitespaces ? value : value.replace(/\s+/g, '');
+        const cleanValueLength = cleanValue.length;
         let cleanValueIndex = 0;
         let cleanValueChar;
 
         let patternIndex = 0;
         let patternChar;
-        let patternLength = this.pattern.length;
+        const patternLength = this.pattern.length;
 
         while (patternIndex < patternLength && cleanValueIndex < cleanValueLength) {
-            if (!this.pattern.isEditableIndex(patternIndex)) {
-                patternChar = this.pattern.pattern[patternIndex];
-                formattedValue += patternChar;
-                patternIndex += 1;
-                if (cleanValue.charAt(cleanValueIndex) === patternChar) {
-                    cleanValueIndex += 1;
-                }
-            } else {
+            if (this.pattern.isEditableIndex(patternIndex)) {
                 // eslint-disable-next-line no-cond-assign
                 while ((cleanValueChar = cleanValue.charAt(cleanValueIndex)) !== '') {
                     if (this.pattern.isValidAtIndex(cleanValueChar, patternIndex)) {
@@ -149,6 +157,13 @@ class Mask {
                     } else {
                         cleanValueIndex += 1;
                     }
+                }
+            } else {
+                patternChar = this.pattern.pattern[patternIndex];
+                formattedValue += patternChar;
+                patternIndex += 1;
+                if (cleanValue.charAt(cleanValueIndex) === patternChar) {
+                    cleanValueIndex += 1;
                 }
             }
         }

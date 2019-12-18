@@ -1,6 +1,8 @@
 ### Установка горизонтального отступа
 
 ```jsx
+import GridCol from 'arui-feather/grid-col';
+
 const style = {
     height: 30,
     background: '#ff5c5c'
@@ -23,6 +25,8 @@ const style = {
 По вертикали
 
 ```jsx
+import GridCol from 'arui-feather/grid-col';
+
 const style = {
     height: 30,
     background: '#ff5c5c'
@@ -82,6 +86,8 @@ const styleLastDiv = {
 По горизонтали
 
 ```jsx
+import GridCol from 'arui-feather/grid-col';
+
 const style = {
     height: 30,
     background: '#ff5c5c',

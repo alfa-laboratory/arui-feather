@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
@@ -21,6 +20,8 @@ class Textarea extends React.Component {
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
+        /** Тип поля (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /** Управление автозаполнением компонента */
@@ -98,10 +99,13 @@ class Textarea extends React.Component {
          * Обработчик события keyDown
          * @param {React.KeyboardEvent} event
          */
-        onKeyDown: Type.func
+        onKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
+        view: 'default',
         width: 'default',
         autocomplete: true,
         disabled: false,
@@ -126,13 +130,13 @@ class Textarea extends React.Component {
     control;
 
     render(cn) {
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-        let textareaProps = {
+        const textareaProps = {
             className: cn('control'),
-            [this.props.autosize ? 'inputRef' : 'ref']: (control) => { this.control = control; },
+            [this.props.autosize ? 'inputRef' : 'ref']: (control) => {
+                this.control = control;
+            },
             autoComplete: this.props.autocomplete === false ? 'off' : 'on',
             disabled: this.props.disabled,
             id: this.props.id,
@@ -156,13 +160,17 @@ class Textarea extends React.Component {
                     focused: this.state.focused,
                     autosize: this.props.autosize,
                     size: this.props.size,
+                    view: this.props.view,
                     width: this.props.width,
                     resize: this.props.resize,
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
                     'has-value': !!value
                 }) }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ cn('inner') }>
                     {
@@ -172,15 +180,15 @@ class Textarea extends React.Component {
                         </span>
                     }
                     {
-                        !this.props.autosize
-                            ? <textarea { ...textareaProps } />
-                            : <TextareaAutosize
+                        this.props.autosize
+                            ? <TextareaAutosize
                                 { ...textareaProps }
                                 maxRows={ this.props.maxRows }
                                 minRows={ this.props.minRows }
                                 style={ { maxHeight: this.props.maxHeight } }
                                 onHeightChange={ this.handleHeightChange }
                             />
+                            : <textarea { ...textareaProps } />
                     }
                     {
                         (this.props.error || this.props.hint) &&
@@ -193,27 +201,25 @@ class Textarea extends React.Component {
         );
     }
 
-    @autobind
-    handleFocus() {
+    handleFocus = () => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus();
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleChange(event) {
-        let { value } = event.target;
+    handleChange = (event) => {
+        const { value } = event.target;
+
         if (this.props.value === undefined) {
             this.setState({ value });
         }
@@ -221,35 +227,31 @@ class Textarea extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handlePaste(event) {
+    handlePaste = (event) => {
         if (this.props.onPaste) {
             this.props.onPaste(event);
         }
-    }
+    };
 
-    @autobind
-    handleHeightChange(height) {
+    handleHeightChange = (height) => {
         if (this.props.onHeightChange) {
             this.props.onHeightChange(height);
         }
-    }
+    };
 
-    @autobind
-    handleKeyPress(event) {
+    handleKeyPress = (event) => {
         if (this.props.onKeyPress) {
             this.props.onKeyPress(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.
@@ -265,6 +267,7 @@ class Textarea extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();
@@ -277,7 +280,7 @@ class Textarea extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.root.getBoundingClientRect();
+        const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION

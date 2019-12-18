@@ -17,10 +17,11 @@ function getScrollContainerChild(n) {
 }
 
 describe('scroll-to', () => {
-    let originalWindowScrollTo = window.scrollTo;
+    const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
-        let domContainerNode = document.createElement('div');
+        const domContainerNode = document.createElement('div');
+
         domContainerNode.setAttribute('id', 'container');
         domContainerNode.setAttribute('style', 'min-height: 9999px; margin: 0; padding: 0;');
         domContainerNode.innerHTML = `
@@ -38,7 +39,8 @@ describe('scroll-to', () => {
     });
 
     afterEach(() => {
-        let domContainerNode = getContainer();
+        const domContainerNode = getContainer();
+
         document.body.removeChild(domContainerNode);
         window.scrollTo = originalWindowScrollTo;
     });
@@ -52,7 +54,7 @@ describe('scroll-to', () => {
     });
 
     it('should scroll to Y in container', async () => {
-        let container = getScrollContainer();
+        const container = getScrollContainer();
 
         await scrollTo({
             targetY: 100,
@@ -63,7 +65,7 @@ describe('scroll-to', () => {
     });
 
     it('should catch error with incorrect easing', () => {
-        let fn = function () {
+        const fn = function () {
             scrollTo({
                 targetY: 100,
                 duration: 200,
@@ -75,7 +77,7 @@ describe('scroll-to', () => {
     });
 
     it('should catch error with incorrect duration', () => {
-        let fn = function () {
+        const fn = function () {
             scrollTo({
                 targetY: 100,
                 duration: -200
@@ -86,9 +88,9 @@ describe('scroll-to', () => {
     });
 
     it('should scroll down to element in container', async () => {
-        let element = getScrollContainerChild(3);
-        let container = getScrollContainer();
-        let correction = element.offsetHeight;
+        const element = getScrollContainerChild(3);
+        const container = getScrollContainer();
+        const correction = element.offsetHeight;
 
         if (element.offsetTop + correction > container.scrollTop + container.offsetHeight) {
             await scrollTo({ container, targetY: element.offsetTop });
@@ -97,9 +99,9 @@ describe('scroll-to', () => {
     });
 
     it('should scroll up to element in container', async () => {
-        let element = getScrollContainerChild(0);
-        let container = getScrollContainer();
-        let correction = element.offsetHeight;
+        const element = getScrollContainerChild(0);
+        const container = getScrollContainer();
+        const correction = element.offsetHeight;
 
         container.scrollTop = 500;
 

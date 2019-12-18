@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -38,7 +37,7 @@ class ResizeSensor extends React.Component {
     }
 
     render() {
-        let iframeStyle = {
+        const iframeStyle = {
             position: 'absolute',
             top: 0,
             left: 0,
@@ -52,7 +51,9 @@ class ResizeSensor extends React.Component {
         /* eslint-disable jsx-a11y/iframe-has-title */
         return (
             <iframe
-                ref={ (iframe) => { this.iframe = iframe; } }
+                ref={ (iframe) => {
+                    this.iframe = iframe;
+                } }
                 style={ iframeStyle }
                 tabIndex='-1'
             />
@@ -60,8 +61,7 @@ class ResizeSensor extends React.Component {
         /* eslint-enable jsx-a11y/iframe-has-title */
     }
 
-    @autobind
-    handleResize() {
+    handleResize = () => {
         if (this.props.onResize) {
             this.props.onResize();
         }

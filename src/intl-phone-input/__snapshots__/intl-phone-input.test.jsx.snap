@@ -24,6 +24,8 @@ exports[`intl-phone-input renders without problems 1`] = `
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -37,6 +39,7 @@ exports[`intl-phone-input renders without problems 1`] = `
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -44,9 +47,11 @@ exports[`intl-phone-input renders without problems 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  resetError={true}
   size="m"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -74,6 +79,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -87,6 +94,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -94,9 +102,11 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  resetError={true}
   size="l"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -124,6 +134,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -137,6 +149,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -144,9 +157,11 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  resetError={true}
   size="m"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -174,6 +189,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -187,6 +204,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -194,9 +212,11 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  resetError={true}
   size="s"
   type="tel"
   value="+7"
+  view="default"
 />
 `;
 
@@ -224,6 +244,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
       mode="radio"
       nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
+      onButtonBlur={[Function]}
+      onButtonFocus={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -237,6 +259,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
           "ru",
         ]
       }
+      view="default"
       width="default"
     />
   }
@@ -244,8 +267,10 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  resetError={true}
   size="xl"
   type="tel"
   value="+7"
+  view="default"
 />
 `;

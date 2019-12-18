@@ -4,12 +4,11 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
 
-import IconCheck from '../icon/ui/check';
+import IconCheck from '../icon/ui/tick';
 import MenuItem from '../menu-item/menu-item';
 
 import cn from '../cn';
@@ -113,7 +112,9 @@ class Menu extends React.Component {
          * Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem
          * @param highlightedItem
          */
-        onHighlightItem: Type.func
+        onHighlightItem: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -134,16 +135,17 @@ class Menu extends React.Component {
     blurTimeoutId = null;
 
     componentDidMount() {
-        if (!!this.props.content && this.props.content.length > 0
-            && (!this.props.checkedItems || this.props.checkedItems.length === 0)
-            && this.props.mode === 'radio') {
-            let firstItem = this.getFirstItem(this.props.content);
+        if (!!this.props.content && this.props.content.length > 0 &&
+            (!this.props.checkedItems || this.props.checkedItems.length === 0) &&
+            this.props.mode === 'radio') {
+            const firstItem = this.getFirstItem(this.props.content);
 
             this.changeCheckedItems([firstItem.value]);
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.mode !== 'check' && this.state.checkedItems[0] &&
             nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
             let highlightedItem;
@@ -160,7 +162,8 @@ class Menu extends React.Component {
         }
     }
 
-    componentWillUpdate() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillUpdate() {
         this.menuItemList = [];
     }
 
@@ -175,7 +178,9 @@ class Menu extends React.Component {
         /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
         return (
             <div
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 style={ this.props.style }
                 className={ cn({
                     size: this.props.size,
@@ -193,6 +198,7 @@ class Menu extends React.Component {
                 onKeyUp={ this.handleKeyUp }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { !!this.props.content && this.renderMenuItemList(cn, this.props.content) }
             </div>
@@ -201,7 +207,7 @@ class Menu extends React.Component {
     }
 
     renderMenuItemList(cn, content) {
-        let result = [];
+        const result = [];
         let groupKey = 0;
 
         content.forEach((item) => {
@@ -229,22 +235,22 @@ class Menu extends React.Component {
     }
 
     renderMenuItem(item) {
-        let itemProps = item.props || {};
-        let isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
-        let isItemDisabled = this.props.disabled || itemProps.disabled;
-        let clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
-        let menuItem = {
+        const itemProps = item.props || {};
+        const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
+        const isItemDisabled = this.props.disabled || itemProps.disabled;
+        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
+        const menuItem = {
             item,
             ref: item.value
         };
-        let menuItemProps = {
+        const menuItemProps = {
             ...itemProps,
             disabled: isItemDisabled,
             value: item.value,
             size: this.props.size || itemProps.size,
-            onClick: !isItemDisabled ? clickHandler : undefined
+            onClick: isItemDisabled ? undefined : clickHandler
         };
-        let highlightedItem = this.props.highlightedItem === undefined
+        const highlightedItem = this.props.highlightedItem === undefined
             ? this.state.highlightedItem
             : this.props.highlightedItem;
         let iconSize;
@@ -259,10 +265,12 @@ class Menu extends React.Component {
         return (
             <MenuItem
                 { ...menuItemProps }
-                ref={ (instance) => { menuItem.instance = instance; } }
+                ref={ (instance) => {
+                    menuItem.instance = instance;
+                } }
                 key={ item.key || item.value }
                 checked={ isItemChecked }
-                type={ this.props.mode !== 'basic' ? 'block' : itemProps.type }
+                type={ this.props.mode === 'basic' ? itemProps.type : 'block' }
                 onMouseEnter={ () => this.handleMenuItemMouseEnter(menuItem) }
                 onMouseLeave={ this.handleMenuItemMouseLeave }
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
@@ -278,45 +286,40 @@ class Menu extends React.Component {
         );
     }
 
-    @autobind
-    handleMenuItemClick(item) {
+    handleMenuItemClick = (item) => {
         this.setNewCheckedItems(item);
 
         if (this.props.onItemClick) {
             this.props.onItemClick(item);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         let highlightedItem = null;
         let highlightedMenuItem = null;
-        let menuIteListLength = this.menuItemList.length;
+        const menuIteListLength = this.menuItemList.length;
 
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
@@ -396,10 +399,9 @@ class Menu extends React.Component {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event, highlightedMenuItem);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
             this.blurTimeoutId = null;
@@ -408,10 +410,9 @@ class Menu extends React.Component {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         event.persist();
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
@@ -423,7 +424,7 @@ class Menu extends React.Component {
             }
             this.blurTimeoutId = null;
         }, 0);
-    }
+    };
 
     handleMenuItemMouseEnter(menuItem) {
         this.setState({
@@ -435,8 +436,7 @@ class Menu extends React.Component {
         }
     }
 
-    @autobind
-    handleMenuItemMouseLeave() {
+    handleMenuItemMouseLeave = () => {
         this.setState({
             highlightedItem: null
         });
@@ -444,7 +444,7 @@ class Menu extends React.Component {
         if (this.props.onHighlightItem) {
             this.props.onHighlightItem(null);
         }
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
@@ -465,7 +465,8 @@ class Menu extends React.Component {
         this.root.focus();
 
         if (this.props.autoFocusFirstItem) {
-            let highlightedItem = this.menuItemList[0];
+            const highlightedItem = this.menuItemList[0];
+
             this.setState({
                 highlightedItem
             });
@@ -481,6 +482,7 @@ class Menu extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();
@@ -488,11 +490,11 @@ class Menu extends React.Component {
     }
 
     setNewCheckedItems(item) {
-        let { value } = item;
-        let checkedItems = this.props.checkedItems !== undefined
-            ? Array.from(this.props.checkedItems)
-            : Array.from(this.state.checkedItems);
-        let indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
+        const { value } = item;
+        let checkedItems = this.props.checkedItems === undefined
+            ? Array.from(this.state.checkedItems)
+            : Array.from(this.props.checkedItems);
+        const indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
 
         switch (this.props.mode) {
             case 'check':
@@ -537,14 +539,14 @@ class Menu extends React.Component {
         }
     }
 
-    @autobind
-    getIndexInCheckedItemsList(value) {
-        let checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
+    getIndexInCheckedItemsList = (value) => {
+        const checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
+
         return checkedItems.indexOf(value);
-    }
+    };
 
     getFirstItem(content) {
-        let firstItem = content[0];
+        const firstItem = content[0];
 
         return firstItem.type === 'group' ? this.getFirstItem(firstItem.content) : firstItem;
     }

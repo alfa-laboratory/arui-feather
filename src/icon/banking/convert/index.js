@@ -5,4 +5,4 @@
 import './convert.css';
 import '../../../icon';
 
-export default from './convert';
+export { default } from './convert';

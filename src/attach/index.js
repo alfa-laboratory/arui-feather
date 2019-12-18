@@ -9,4 +9,4 @@ import './attach.css';
 import './attach_theme_alfa-on-color.css';
 import './attach_theme_alfa-on-white.css';
 
-export default from './attach';
+export { default } from './attach';

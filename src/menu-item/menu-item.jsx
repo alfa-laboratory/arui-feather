@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -74,7 +73,9 @@ class MenuItem extends React.Component {
          * Обработчик события снятия курсора с элемента меню
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -91,17 +92,22 @@ class MenuItem extends React.Component {
     control;
 
     render(cn) {
-        let content = this.props.children || this.props.value;
+        const content = this.props.children || this.props.value;
         let itemElement;
         let menuItemProps = {
-            ref: (root) => { this.root = root; }
+            ref: (root) => {
+                this.root = root;
+            },
+            'data-test-id': this.props['data-test-id']
         };
 
         switch (this.props.type) {
             case 'dropdown':
                 itemElement = (
                     <Dropdown
-                        ref={ (control) => { this.control = control; } }
+                        ref={ (control) => {
+                            this.control = control;
+                        } }
                         className={ `${cn('control')} ${cn('dropdown')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
@@ -137,7 +143,9 @@ class MenuItem extends React.Component {
             default:
                 itemElement = (
                     <Link
-                        ref={ (control) => { this.control = control; } }
+                        ref={ (control) => {
+                            this.control = control;
+                        } }
                         className={ `${cn('control')} ${cn('link')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
@@ -176,53 +184,49 @@ class MenuItem extends React.Component {
         );
     }
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.disabled) {
             event.preventDefault();
+
             return;
         }
 
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
@@ -248,6 +252,7 @@ class MenuItem extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

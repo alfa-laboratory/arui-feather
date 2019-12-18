@@ -6,19 +6,19 @@ branches:
 
 environment:
   matrix:
-    - nodejs_version: "8.9.1"
+    - nodejs_version: "8.10.0"
 
 init:
   - tzutil /s "Russian Standard Time"
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - yarn install
+  - npm install
 
 test_script:
   - node --version
-  - yarn lint
-  - yarn test:coverage
+  - npm run lint
+  - npm run test:coverage
 
 build: off
 

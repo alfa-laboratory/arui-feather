@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -84,7 +83,9 @@ class CheckBox extends React.Component {
          * Обработчик события снятия курсора с чекбокса
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -101,7 +102,7 @@ class CheckBox extends React.Component {
     root;
 
     render(cn, TagButton) {
-        let checked = this.props.checked !== undefined ? this.props.checked : this.state.checked;
+        const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -125,6 +126,7 @@ class CheckBox extends React.Component {
                 ref={ (root) => {
                     this.root = root;
                 } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.type === 'button'
                     ? this.renderButtonCheckbox(cn, checked, TagButton)
@@ -210,16 +212,14 @@ class CheckBox extends React.Component {
         ];
     }
 
-    @autobind
-    // eslint-disable-next-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this
     handleInputControlClick(event) {
         event.stopPropagation();
     }
 
-    @autobind
-    handleChange() {
+    handleChange = () => {
         if (!this.props.disabled) {
-            let nextCheckedValue = !(this.props.checked !== undefined ? this.props.checked : this.state.checked);
+            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 
@@ -227,30 +227,27 @@ class CheckBox extends React.Component {
                 this.props.onChange(nextCheckedValue, this.props.value);
             }
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
     handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -258,10 +255,9 @@ class CheckBox extends React.Component {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -269,7 +265,7 @@ class CheckBox extends React.Component {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на чекбокс.
@@ -285,6 +281,7 @@ class CheckBox extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();
@@ -297,7 +294,7 @@ class CheckBox extends React.Component {
      * @public
      */
     scrollTo() {
-        let elementRect = this.root.getBoundingClientRect();
+        const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
             // eslint-disable-next-line no-mixed-operators

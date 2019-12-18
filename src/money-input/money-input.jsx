@@ -4,7 +4,6 @@
 
 /* eslint react/prop-types: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -46,8 +45,8 @@ function splitInteger(str) {
         return [str];
     }
 
-    let from = str.length - INTEGER_PART_SIZE;
-    let to = str.length;
+    const from = str.length - INTEGER_PART_SIZE;
+    const to = str.length;
 
     return [str.slice(from, to)].concat(splitInteger(str.slice(0, from)));
 }
@@ -71,7 +70,9 @@ class MoneyInput extends React.Component {
         /** Отображение символа валюты */
         showCurrency: Type.bool,
         /** Международный код валюты */
-        currencyCode: Type.string
+        currencyCode: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -101,11 +102,13 @@ class MoneyInput extends React.Component {
      */
     root;
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.updateMaskByValue(this.getValue());
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.value !== nextProps.value) {
             this.updateMaskByValue(nextProps.value || '');
         }
@@ -119,6 +122,7 @@ class MoneyInput extends React.Component {
                     bold: this.props.bold,
                     width: this.props.width
                 }) }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <Input
                     { ...this.props }
@@ -146,14 +150,13 @@ class MoneyInput extends React.Component {
         );
     }
 
-    @autobind
-    handleProcessMaskInputEvent(event) {
-        let currentValue = this.mask.format(this.getValue());
+    handleProcessMaskInputEvent = (event) => {
+        const currentValue = this.mask.format(this.getValue());
         let newValue = event.target.value;
 
         // При удалении отрезаем запятую, если исчезла дробная часть.
         if (newValue.length < currentValue.length) {
-            let fractionPart = getValueParts(newValue)[1]; // Берем значение после запятой
+            const fractionPart = getValueParts(newValue)[1]; // Берем значение после запятой
 
             // `fractionPart !== undefined` - значит запятая введена, но
             // `fractionPart.length === 0` - значит цифр после запятой нет.
@@ -164,16 +167,15 @@ class MoneyInput extends React.Component {
         }
 
         this.updateMaskByValue(newValue);
-    }
+    };
 
-    @autobind
-    handleChange(value) {
+    handleChange = (value) => {
         this.setState({ value });
 
         if (this.props.onChange) {
             this.props.onChange(value, Number(value.replace(/[^\d,]/g, '').replace(/,/g, '.')));
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.
@@ -208,9 +210,10 @@ class MoneyInput extends React.Component {
      * @param {String} value Значение
      */
     updateMaskByValue(value) {
-        let [integerPart, fractionPart] = getValueParts(value);
+        const [integerPart, fractionPart] = getValueParts(value);
 
-        let integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
+        const integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
+
         this.maskPattern = splitInteger(new Array(integerPartLength + 1).join('1'))
             .reverse()
             .join(' ');
@@ -247,7 +250,7 @@ class MoneyInput extends React.Component {
      * @returns {String}
      */
     getValue() {
-        return this.props.value !== undefined ? this.props.value : this.state.value;
+        return this.props.value === undefined ? this.state.value : this.props.value;
     }
 }
 

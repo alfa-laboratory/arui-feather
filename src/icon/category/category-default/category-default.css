@@ -17,3 +17,11 @@
 .icon_size_xl.icon_name_category-default.icon_theme_alfa-on-color {
     background-image: url('./icon_category-default_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_category-default.icon_theme_alfa-on-white {
+    background-image: url('./icon_category-default_xxl_black.svg');
+}
+
+.icon_size_xxl.icon_name_category-default.icon_theme_alfa-on-color {
+    background-image: url('./icon_category-default_xxl_white.svg');
+}

@@ -4,7 +4,6 @@
 
 /* eslint react/prop-types: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -34,8 +33,7 @@ export function getAndroidVersion() {
 // Для IE11 вместо `onChange`, используем событие `onInput`, для правильной работы copy/paste
 // Issue на ошибку в React: https://github.com/facebook/react/issues/7211
 // Детектим IE11: `Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;`
-const IS_IE11 =
-    typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
+const IS_IE11 = typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
 
 // Типы операции, которые пользователь может производить с текстовым полем.
 const operationType = {
@@ -43,6 +41,23 @@ const operationType = {
     DELETE: 1,
     REPLACE: 2
 };
+
+/**
+ * Возвращает количество не редактируемых символов в строке, в соответствии с указанной маской.
+ *
+ * @param {String} str Анализируемая строка
+ * @param {Mask} mask Маска
+ * @returns {Number}
+ */
+const getSeparatorsAmount = (str, mask) => (
+    str.split('').reduce((amount, char, index) => {
+        if (mask.isEditableIndex(index)) {
+            return amount;
+        }
+
+        return amount + 1;
+    }, 0)
+);
 
 /**
  * Компонент поля ввода с поддержкой масок.
@@ -67,7 +82,9 @@ class MaskedInput extends React.Component {
          */
         onProcessInputEvent: Type.func,
         /** Признак что пробелы удалять не надо */
-        useWhitespaces: Type.bool
+        useWhitespaces: Type.bool,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     /**
@@ -84,6 +101,11 @@ class MaskedInput extends React.Component {
      * @type {Mask}
      */
     mask;
+
+    /**
+     * @type {Mask}
+     */
+    beforeChangeMask;
 
     /**
      * @type {FormatCharacters}
@@ -105,13 +127,18 @@ class MaskedInput extends React.Component {
      */
     beforeInputSelection = { start: 0, end: 0 };
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.setMask(this.props.mask, this.props.formatCharacters, this.props.useWhitespaces);
+        this.beforeChangeMask = this.mask;
         this.value = this.mask.format(this.props.value || '');
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         let reformatValue = false;
+
+        this.beforeChangeMask = this.mask;
 
         if (this.props.mask !== nextProps.mask || this.props.formatCharacters !== nextProps.formatCharacters) {
             this.setMask(nextProps.mask, nextProps.formatCharacters);
@@ -131,8 +158,8 @@ class MaskedInput extends React.Component {
     }
 
     render() {
-        let props = { ...this.props };
-        let length = props.maxLength !== undefined ? props.maxLength : this.mask.length;
+        const props = { ...this.props };
+        const length = props.maxLength === undefined ? this.mask.length : props.maxLength;
 
         delete props.mask;
         delete props.formatCharacters;
@@ -154,8 +181,7 @@ class MaskedInput extends React.Component {
         );
     }
 
-    @autobind
-    handleBeforeInput(event) {
+    handleBeforeInput = (event) => {
         this.beforeInputSelection = {
             start: this.input.selectionStart,
             end: this.input.selectionEnd
@@ -164,15 +190,14 @@ class MaskedInput extends React.Component {
         if (this.props.onBeforeInput) {
             this.props.onBeforeInput(event);
         }
-    }
+    };
 
     /**
      * Обрабатывает событие «input».
      *
      * @param {React.ChangeEvent<HTMLInput>} event The Event object
      */
-    @autobind
-    handleInput(event) {
+    handleInput = (event) => {
         const processedEvent = IS_IE9_10 ? event : this.processInputEvent(event);
 
         if (this.props.onInput) {
@@ -184,15 +209,14 @@ class MaskedInput extends React.Component {
                 this.props.onChange(processedEvent);
             }
         }
-    }
+    };
 
     /**
      * Обрабатывает событие «change».
      *
      * @param {React.ChangeEvent<HTMLInput>} event The Event object
      */
-    @autobind
-    handleChange(event) {
+    handleChange = (event) => {
         if (IS_IE11 || !this.props.onChange) {
             return;
         }
@@ -202,7 +226,7 @@ class MaskedInput extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(processedInput);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на поле ввода.
@@ -253,11 +277,12 @@ class MaskedInput extends React.Component {
             this.props.onProcessInputEvent(event);
         }
 
-        let prevSelection = this.input.selectionStart;
-        let newValue = event.target.value;
+        const prevSelection = this.input.selectionStart;
+        const newValue = event.target.value;
 
-        let currentValue = this.value;
-        let formattedValue = this.mask.format(newValue);
+        const currentValue = this.value;
+        const formattedValue = this.mask.format(newValue);
+
         this.value = formattedValue;
         event.target.value = formattedValue;
 
@@ -272,18 +297,43 @@ class MaskedInput extends React.Component {
 
             // На пользовательском инпуте было выделение перед операцией,
             // значит могла быть операция или удаления или замены.
-            let beforeInputSelectionLength = this.beforeInputSelection.end - this.beforeInputSelection.start;
+            const beforeInputSelectionLength = this.beforeInputSelection.end - this.beforeInputSelection.start;
+
             if (beforeInputSelectionLength >= 1) {
                 if (newValue.length !== currentValue.length - beforeInputSelectionLength) {
                     opType = operationType.REPLACE;
                 }
             }
 
+            const beforeChangeSeparatorsAmount = getSeparatorsAmount(
+                currentValue.slice(0, prevSelection),
+                this.beforeChangeMask);
+
+            const afterChangeSeparatorsAmount = getSeparatorsAmount(
+                formattedValue.slice(0, newSelection),
+                this.mask);
+
+            // Двигаем каретку вправо, если слева от каретки добавились не редактируемые символы
+            const shouldShiftCaret = beforeChangeSeparatorsAmount < afterChangeSeparatorsAmount &&
+                (opType === operationType.ADD || opType === operationType.REPLACE) &&
+                this.beforeChangeMask.isEditableIndex(this.beforeInputSelection.start) &&
+                this.mask.isEditableIndex(newSelection);
+
+            // Двигаем каретку влево, если слева от каретки добавились не редактируемые символы
+            const shouldUnshiftCaret = beforeChangeSeparatorsAmount > afterChangeSeparatorsAmount &&
+                opType === operationType.DELETE &&
+                (this.mask.isEditableIndex(newSelection - 1) && newSelection > 0);
+
+            if (shouldUnshiftCaret || shouldShiftCaret) {
+                newSelection += (afterChangeSeparatorsAmount - beforeChangeSeparatorsAmount);
+            }
+
             // Для операции добавления и замены, если мы стояли на нередактируемом символе,
             // то добавляем сдвиг до ближайшего редактируемого.
             if (opType === operationType.ADD || opType === operationType.REPLACE) {
                 let index = this.beforeInputSelection.start;
-                while (!this.mask.isEditableIndex(index) && index < formattedValue.length) {
+
+                while (!this.beforeChangeMask.isEditableIndex(index) && index < formattedValue.length) {
                     index += 1;
                 }
                 newSelection += index - this.beforeInputSelection.start;
@@ -305,8 +355,8 @@ class MaskedInput extends React.Component {
             const clampedSection = this.clampSelection(newSelection);
 
             // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
-            const offsetSection =
-                opType === operationType.ADD && IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
+            const offsetSection = opType === operationType.ADD &&
+                IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
 
             this.setInputSelection(clampedSection + offsetSection);
         } else if (IS_ANDROID) {

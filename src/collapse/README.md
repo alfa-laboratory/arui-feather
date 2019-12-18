@@ -1,4 +1,6 @@
 ```jsx
+import Paragraph from 'arui-feather/paragraph';
+
 function handleExpandedChange(isExpanded) {
     setState({ isExpanded });
 }

@@ -5,4 +5,4 @@
 import './category-atm.css';
 import '../../../icon';
 
-export default from './category-atm';
+export { default } from './category-atm';

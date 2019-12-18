@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -39,7 +38,9 @@ class Collapse extends React.Component {
          * Обработчик смены состояний `expanded/collapsed`
          * @param {boolean} isExpanded
          */
-        onExpandedChange: Type.func
+        onExpandedChange: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -64,9 +65,7 @@ class Collapse extends React.Component {
 
     render(cn) {
         let ToggledIcon;
-        let expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
+        const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         switch (expanded) {
             case true: ToggledIcon = IconArrowUp; break;
@@ -79,12 +78,18 @@ class Collapse extends React.Component {
                     expanded
                 }) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div
-                    ref={ (content) => { this.content = content; } }
+                    ref={ (content) => {
+                        this.content = content;
+                    } }
                     className={ cn('content') }
                 >
-                    <div ref={ (contentCase) => { this.contentCase = contentCase; } }>
+                    <div ref={ (contentCase) => {
+                        this.contentCase = contentCase;
+                    } }
+                    >
                         { this.props.children }
                     </div>
                     <ResizeSensor onResize={ this.updateContentHeight } />
@@ -107,11 +112,8 @@ class Collapse extends React.Component {
         );
     }
 
-    @autobind
-    handleExpandedChange() {
-        let newExpandedValue = this.props.isExpanded !== undefined
-            ? !this.props.isExpanded
-            : !this.state.isExpanded;
+    handleExpandedChange = () => {
+        const newExpandedValue = this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
 
         this.setState({
             isExpanded: newExpandedValue
@@ -120,13 +122,10 @@ class Collapse extends React.Component {
         if (this.props.onExpandedChange) {
             this.props.onExpandedChange(newExpandedValue);
         }
-    }
+    };
 
-    @autobind
-    updateContentHeight() {
-        let expanded = this.props.isExpanded !== undefined
-            ? this.props.isExpanded
-            : this.state.isExpanded;
+    updateContentHeight = () => {
+        const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         let contentHeight;
 

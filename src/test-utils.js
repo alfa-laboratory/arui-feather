@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+// @ts-nocheck
+
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 /* eslint react/no-render-return-value: 0 */
 /* eslint react/no-find-dom-node: 0 */
@@ -42,7 +44,7 @@ export function render(jsx, options = {}) {
         container = sharedContainer;
     }
 
-    let instance = ReactDOM.render(jsx, container);
+    const instance = ReactDOM.render(jsx, container);
 
     return {
         instance,

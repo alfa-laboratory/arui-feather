@@ -9,4 +9,4 @@ import '../resize-sensor';
 
 import './input-autocomplete.css';
 
-export default from './input-autocomplete';
+export { default } from './input-autocomplete';

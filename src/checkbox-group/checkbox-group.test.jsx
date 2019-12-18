@@ -10,13 +10,13 @@ import CheckBox from '../checkbox/checkbox';
 
 describe('checkbox-group', () => {
     it('should render without children', () => {
-        let checkboxGroup = shallow(<CheckBoxGroup />);
+        const checkboxGroup = shallow(<CheckBoxGroup />);
 
         expect(checkboxGroup).toMatchSnapshot();
     });
 
     it('should render with only one children', () => {
-        let checkboxGroup = shallow(
+        const checkboxGroup = shallow(
             <CheckBoxGroup>
                 <CheckBox key='1' />
             </CheckBoxGroup>
@@ -26,7 +26,7 @@ describe('checkbox-group', () => {
     });
 
     it('should render with many checkbox children without problems', () => {
-        let checkboxGroup = shallow(
+        const checkboxGroup = shallow(
             <CheckBoxGroup>
                 <CheckBox key='1' text='label' />
                 <CheckBox key='2' text='label' />
@@ -37,7 +37,7 @@ describe('checkbox-group', () => {
     });
 
     it('should render checked checkbox with value from `value` props', () => {
-        let checkboxGroup = mount(
+        const checkboxGroup = mount(
             <CheckBoxGroup
                 value={ ['value_1'] }
             >
@@ -45,20 +45,20 @@ describe('checkbox-group', () => {
                 <CheckBox value='value_2' text='label 2' />
             </CheckBoxGroup>
         );
-        let checkboxNode = checkboxGroup.find('.checkbox').at(0);
+        const checkboxNode = checkboxGroup.find('.checkbox').at(0);
 
         expect(checkboxNode.prop('className')).toContain('checkbox_checked');
     });
 
     it('should focus first child checkbox-button on public focus method', () => {
-        let checkboxGroup = mount(
+        const checkboxGroup = mount(
             <CheckBoxGroup>
                 <CheckBox />
                 <CheckBox />
                 <CheckBox />
             </CheckBoxGroup>
         );
-        let firstCheckboxInstance = checkboxGroup.instance().checkboxes[0];
+        const firstCheckboxInstance = checkboxGroup.instance().checkboxes[0];
 
         jest.spyOn(firstCheckboxInstance, 'focus');
         checkboxGroup.instance().focus();
@@ -73,7 +73,7 @@ describe('checkbox-group', () => {
 
         document.activeElement.blur = jest.fn();
 
-        let checkboxGroup = mount(
+        const checkboxGroup = mount(
             <CheckBoxGroup>
                 <CheckBox />
                 <CheckBox />
@@ -87,8 +87,8 @@ describe('checkbox-group', () => {
     });
 
     it('should call `onFocus` callback after checkbox-group was focused', () => {
-        let onFocus = jest.fn();
-        let checkBoxGroup = mount(
+        const onFocus = jest.fn();
+        const checkBoxGroup = mount(
             <CheckBoxGroup onFocus={ onFocus }>
                 <CheckBox />
             </CheckBoxGroup>
@@ -100,8 +100,8 @@ describe('checkbox-group', () => {
     });
 
     it('should call `onBlur` callback after checkbox-group was blured', () => {
-        let onBlur = jest.fn();
-        let checkBoxGroup = mount(
+        const onBlur = jest.fn();
+        const checkBoxGroup = mount(
             <CheckBoxGroup onBlur={ onBlur }>
                 <CheckBox />
             </CheckBoxGroup>
@@ -113,20 +113,20 @@ describe('checkbox-group', () => {
     });
 
     it('should call `onChange` callback after checkbox-group was checked', () => {
-        let onChange = jest.fn();
-        let checkBoxGroup = mount(
+        const onChange = jest.fn();
+        const checkBoxGroup = mount(
             <CheckBoxGroup onChange={ onChange }>
                 <CheckBox value='value_1' />
             </CheckBoxGroup>
         );
-        let checkboxControlNode = checkBoxGroup.find('.checkbox__control');
+        const checkboxControlNode = checkBoxGroup.find('.checkbox__control');
 
         checkboxControlNode.simulate('change');
         expect(onChange).toHaveBeenCalledWith(['value_1']);
     });
 
     it('should disable all child radios when disabled=true', () => {
-        let checkBoxGroup = mount(
+        const checkBoxGroup = mount(
             <CheckBoxGroup disabled={ true }>
                 <CheckBox />
                 <CheckBox />
@@ -134,18 +134,19 @@ describe('checkbox-group', () => {
             </CheckBoxGroup>
         );
 
-        let disabledCheckboxNodes = checkBoxGroup.find('.checkbox_disabled');
+        const disabledCheckboxNodes = checkBoxGroup.find('.checkbox_disabled');
+
         expect(disabledCheckboxNodes.length).toBe(3);
     });
 
-    it('shouldn\'t call `onChange` callback when disabled=true', function () {
-        let onChange = jest.fn();
-        let checkboxGroup = mount(
+    it('shouldn\'t call `onChange` callback when disabled=true', () => {
+        const onChange = jest.fn();
+        const checkboxGroup = mount(
             <CheckBoxGroup onChange={ onChange } disabled={ true }>
                 <CheckBox />
             </CheckBoxGroup>
         );
-        let checkbox = checkboxGroup.find('.checkbox');
+        const checkbox = checkboxGroup.find('.checkbox');
 
         checkbox.simulate('change');
 

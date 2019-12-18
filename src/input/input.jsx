@@ -4,7 +4,6 @@
 
 /* eslint-disable max-len */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -30,6 +29,8 @@ class Input extends React.Component {
          * Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
          */
         type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
+        /** Тип инпута (filled только на белом фоне в размере m) */
+        view: Type.oneOf(['default', 'filled']),
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
         /**
@@ -86,6 +87,8 @@ class Input extends React.Component {
         hint: Type.node,
         /** Отображение ошибки */
         error: Type.node,
+        /** Сброс ошибки при установке фокуса */
+        resetError: Type.bool,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -158,17 +161,22 @@ class Input extends React.Component {
          * Обработчик, вызываемый перед началом ввода в маскированное поле
          * @param {React.ChangeEvent} event
          */
-        onProcessMaskInputEvent: Type.func
+        onProcessMaskInputEvent: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
         formNoValidate: false,
         size: 'm',
-        type: 'text'
+        type: 'text',
+        view: 'default',
+        resetError: true
     };
 
     state = {
         focused: false,
+        error: this.props.error || null,
         value: this.props.defaultValue || ''
     };
 
@@ -187,29 +195,39 @@ class Input extends React.Component {
      */
     control;
 
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        this.setState({
+            error: nextProps.error
+        });
+    }
+
     render(cn, MaskedInput) {
-        let hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
-        let focused = this.getFocused();
+        const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
+        const hasLeftAddons = !!this.props.leftAddons;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
+        const focused = this.getFocused();
 
         return (
             <span
                 className={ cn({
                     type: this.props.type,
+                    view: this.props.view,
                     disabled: this.props.disabled,
                     focused,
                     size: this.props.size,
                     width: this.props.width,
                     'has-addons': hasAddons,
+                    'has-left-addons': hasLeftAddons,
                     'has-clear': !!this.props.clear,
                     'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    invalid: !!this.props.error
+                    invalid: !!this.state.error
                 }) }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
             >
                 <span className={ cn('inner') }>
                     {
@@ -220,9 +238,9 @@ class Input extends React.Component {
                     }
                     { this.renderContent(cn, MaskedInput) }
                     {
-                        (this.props.error || this.props.hint) &&
+                        (this.state.error || this.props.hint) &&
                         <span className={ cn('sub') }>
-                            { this.props.error || this.props.hint }
+                            { this.state.error || this.props.hint }
                         </span>
                     }
                 </span>
@@ -231,14 +249,13 @@ class Input extends React.Component {
     }
 
     renderContent(cn, MaskedInput) {
-        let isMaskedInput = this.props.mask !== undefined;
-        let value = this.props.value !== undefined
-            ? this.props.value
-            : this.state.value;
+        const isMaskedInput = this.props.mask !== undefined;
+        const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-        let inputProps = {
+        const inputProps = {
             className: cn('control'),
             type: this.props.type,
+            view: this.props.view,
             formNoValidate: this.props.formNoValidate,
             autoComplete: this.getAutoCompleteValue(),
             disabled: this.props.disabled || this.props.disabledAttr,
@@ -249,7 +266,9 @@ class Input extends React.Component {
             tabIndex: this.props.tabIndex,
             placeholder: this.props.placeholder,
             pattern: this.props.pattern,
-            ref: (control) => { this.control = control; },
+            ref: (control) => {
+                this.control = control;
+            },
             title: this.props.title,
             onChange: this.handleChange,
             onFocus: this.handleFocus,
@@ -268,7 +287,9 @@ class Input extends React.Component {
             <span
                 className={ cn('box') }
                 key='input-wrapper'
-                ref={ (box) => { this.box = box; } }
+                ref={ (box) => {
+                    this.box = box;
+                } }
             >
                 {
                     this.props.leftAddons &&
@@ -277,15 +298,15 @@ class Input extends React.Component {
                     </span>
                 }
                 {
-                    !isMaskedInput
-                        ? <input { ...inputProps } />
-                        : <MaskedInput
+                    isMaskedInput
+                        ? <MaskedInput
                             { ...inputProps }
                             mask={ this.props.mask }
                             formatCharacters={ this.props.maskFormatCharacters }
                             onProcessInputEvent={ this.props.onProcessMaskInputEvent }
                             useWhitespaces={ this.props.useWhitespacesInMask }
                         />
+                        : <input { ...inputProps } />
                 }
                 {
                     this.props.clear && value &&
@@ -316,40 +337,36 @@ class Input extends React.Component {
         );
     }
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
         this.enableMouseWheel();
+        this.resetError();
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
         this.disableMouseWheel();
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleChange(event) {
+    handleChange = (event) => {
         this.changeValue(event.target.value);
-    }
+    };
 
-    @autobind
-    handleClearClick(event) {
+    handleClearClick = (event) => {
         this.changeValue('');
 
         if (this.props.onClearClick) {
@@ -357,56 +374,49 @@ class Input extends React.Component {
         }
 
         this.focus();
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyUp(event) {
+    handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
-    }
+    };
 
-    @autobind
-    handlePaste(event) {
+    handlePaste = (event) => {
         if (this.props.onPaste) {
             this.props.onPaste(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchStart(event) {
+    handleTouchStart = (event) => {
         if (this.props.onTouchStart) {
             this.props.onTouchStart(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchEnd(event) {
+    handleTouchEnd = (event) => {
         if (this.props.onTouchEnd) {
             this.props.onTouchEnd(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchMove(event) {
+    handleTouchMove = (event) => {
         if (this.props.onTouchMove) {
             this.props.onTouchMove(event);
         }
-    }
+    };
 
-    @autobind
-    handleTouchCancel(event) {
+    handleTouchCancel = (event) => {
         if (this.props.onTouchCancel) {
             this.props.onTouchCancel(event);
         }
-    }
+    };
 
     getAutoCompleteValue() {
         if (typeof this.props.autocomplete === 'string') {
@@ -508,6 +518,7 @@ class Input extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();
@@ -559,7 +570,20 @@ class Input extends React.Component {
      * @returns {Boolean}
      */
     getFocused() {
-        return this.props.focused !== undefined ? this.props.focused : this.state.focused;
+        return this.props.focused === undefined ? this.state.focused : this.props.focused;
+    }
+
+    /**
+     * Сбрасывает состояние ошибки.
+     *
+     * @returns {void}
+     */
+    resetError() {
+        if (this.props.resetError) {
+            this.setState({
+                error: null
+            });
+        }
     }
 }
 

@@ -5,4 +5,4 @@
 import './category-telecom.css';
 import '../../../icon';
 
-export default from './category-telecom';
+export { default } from './category-telecom';

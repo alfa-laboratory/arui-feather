@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 
 import FlagIcon from '../flag-icon/flag-icon';
@@ -37,7 +36,7 @@ class IntlPhoneInput extends React.Component {
         inputValue: this.props.value,
         selectFocused: false,
         onceOpened: false
-    }
+    };
 
     countries;
     input;
@@ -51,7 +50,8 @@ class IntlPhoneInput extends React.Component {
         this.setCountry();
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
         if (this.state.inputValue !== nextState.inputValue) {
             if (this.props.onChange) {
                 this.props.onChange(nextState.inputValue);
@@ -70,13 +70,17 @@ class IntlPhoneInput extends React.Component {
         return (
             <Input
                 className={ cn() }
-                ref={ (input) => { this.input = input; } }
+                ref={ (input) => {
+                    this.input = input;
+                } }
                 { ...this.props }
                 focused={ this.state.inputFocused || this.state.selectFocused }
                 leftAddons={
                     <Select
                         className={ cn('select') }
-                        ref={ (select) => { this.select = select; } }
+                        ref={ (select) => {
+                            this.select = select;
+                        } }
                         disabled={ this.props.disabled }
                         mode='radio'
                         options={ this.getOptions(cn) }
@@ -88,6 +92,8 @@ class IntlPhoneInput extends React.Component {
                         onChange={ this.handleSelectChange }
                         onClick={ this.handleSelectClick }
                         onFocus={ this.handleSelectFocus }
+                        onButtonFocus={ this.handleSelectButtonFocus }
+                        onButtonBlur={ this.handleSelectButtonBlur }
                     />
                 }
                 noValidate={ true }
@@ -110,13 +116,9 @@ class IntlPhoneInput extends React.Component {
         );
     }
 
-    @autobind
-    renderSelectButtonContent() {
-        return this.renderFlagIcon(this.state.countryIso2);
-    }
+    renderSelectButtonContent = () => this.renderFlagIcon(this.state.countryIso2);
 
-    @autobind
-    handleSelectFocus(event) {
+    handleSelectFocus = (event) => {
         if (!this.state.onceOpened) {
             this.setState({
                 onceOpened: true
@@ -124,16 +126,24 @@ class IntlPhoneInput extends React.Component {
         }
 
         this.resolveFocusedState({ selectFocused: true }, event);
-    }
+    };
 
-    @autobind
-    handleSelectBlur(event) {
+    handleSelectButtonFocus = () => {
+        this.setState({
+            selectFocused: true
+        });
+    };
+
+    handleSelectBlur = (event) => {
         this.resolveFocusedState({ selectFocused: false }, event);
-    }
+    };
 
-    @autobind
-    handleSelectChange(value) {
-        let inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
+    handleSelectButtonBlur = (event) => {
+        this.resolveFocusedState({ selectFocused: false }, event);
+    };
+
+    handleSelectChange = (value) => {
+        const inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
             countryIso2: value[0],
@@ -145,36 +155,31 @@ class IntlPhoneInput extends React.Component {
                 this.input.setSelectionRange(inputValue.length);
             }, 0);
         });
-    }
+    };
 
-    @autobind
-    handleSelectClick() {
+    handleSelectClick = () => {
         // Set focus to input on select closing by it's button toggle
         if (this.state.selectFocused) {
             this.input.focus();
             this.input.setSelectionRange(-1);
         }
-    }
+    };
 
-    @autobind
-    handleInputFocus(event) {
+    handleInputFocus = (event) => {
         this.resolveFocusedState({ inputFocused: true }, event);
-    }
+    };
 
-    @autobind
-    handleInputBlur(event) {
+    handleInputBlur = (event) => {
         this.resolveFocusedState({ inputFocused: false }, event);
-    }
+    };
 
-    @autobind
-    handleInputChange(value) {
+    handleInputChange = (value) => {
         this.setState({
             inputValue: value.length === 1 && value !== '+' ? `+${value}` : value
         }, this.setCountry);
-    }
+    };
 
-    @autobind
-    getOptions(cn) {
+    getOptions = (cn) => {
         this.countries = countries.getCountries();
 
         return this.state.onceOpened ? this.countries.map(country => ({
@@ -192,7 +197,7 @@ class IntlPhoneInput extends React.Component {
                 </span>
             )
         })) : [];
-    }
+    };
 
     getSelectPopupOffset() {
         switch (this.props.size) {
@@ -207,36 +212,43 @@ class IntlPhoneInput extends React.Component {
 
     getValue() {
         // Use value from state not props, cause of some formatting steps in component
-        // Sync props.value with state.inputValue in componentWillUpdate
+        // Sync props.value with state.inputValue in UNSAFE_componentWillUpdate
         return this.state.inputValue;
     }
 
     loadUtil() {
         return import(/* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min')
-            .then((util) => { this.util = util; })
+            .then((util) => {
+                this.util = util;
+            })
             .catch(error => `An error occurred while loading libphonenumber-js:\n${error}`);
     }
 
     resolveFocusedState(nextFocusedStateItem, event) {
-        let focusedState = {
+        const focusedState = {
             inputFocused: this.state.inputFocused,
             selectFocused: this.state.selectFocused
         };
 
-        let relatedTarget = getRelatedTarget(event);
-        let hasMatchedRelatedTarget = relatedTarget === event.target;
+        const relatedTarget = getRelatedTarget(event);
+        const hasMatchedRelatedTarget = relatedTarget === event.target;
         let hasSelectRelatedTarget = false;
+        let isSwitchBetweenRelatedTargers = false;
 
         // Check classNames matching in select's button (relatedTarget) & menu (focused target)
         if (relatedTarget.classList && event.target.classList) {
             hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
                 Array.from(event.target.classList).some(item => /select/.test(item));
+
+            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some(item => item) &&
+                !Array.from(event.target.classList).some(item => /select/.test(item)) &&
+                Array.from(relatedTarget.classList).some(item => /select/.test(item));
         }
 
         if (event.type === 'focus') {
-            if (hasMatchedRelatedTarget || hasSelectRelatedTarget) {
+            if (hasMatchedRelatedTarget || hasSelectRelatedTarget || isSwitchBetweenRelatedTargers) {
                 // If we have smth already focused, do not do anything
-                let alreadyInFocus = Object.values(focusedState).some(item => item);
+                const alreadyInFocus = Object.values(focusedState).some(item => item);
 
                 if (!alreadyInFocus) {
                     this.setState(nextFocusedStateItem);
@@ -249,11 +261,12 @@ class IntlPhoneInput extends React.Component {
         }
 
         if (event.type === 'blur') {
-            if (relatedTarget === document.body) {
+            if (!hasMatchedRelatedTarget) {
                 // Set all values in focusedState to false cause we are blurring now
                 this.setState(
                     Object.keys(focusedState).reduce((result, item) => {
                         result[item] = false;
+
                         return result;
                     }, {})
                 );
@@ -266,33 +279,32 @@ class IntlPhoneInput extends React.Component {
     }
 
     setCountry() {
-        let inputValue = this.getValue().replace(/ /g, '');
+        const inputValue = this.getValue().replace(/ /g, '');
 
         for (let i = 0; i < this.countries.length; i++) {
-            let country = this.countries[i];
+            const country = this.countries[i];
 
             if (new RegExp(`^\\+${country.dialCode}`).test(inputValue)) {
                 // Handle countries with priority field
-                if (country.priority !== undefined) {
-                    // Check max dial code length to allow country change
-                    // For countries with identical dial codes or North American Numbering Plan (NANP)
-                    if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
-                        // Update only value if countries are equal
-                        if (this.state.countryIso2 === country.iso2) {
-                            this.setValue(country.iso2, inputValue);
-                            break;
-                        // If not equal — set highest by priority
-                        } else if (country.priority === 0) {
-                            this.setValue(country.iso2, inputValue);
-                            break;
-                        }
-                    // Otherwise don't change already selected country, just set value
-                    } else if (this.state.countryIso2 === country.iso2) {
+                if (country.priority === undefined) {
+                    this.setValue(country.iso2, inputValue);
+                    break;
+                }
+
+                // Check max dial code length to allow country change
+                // For countries with identical dial codes or North American Numbering Plan (NANP)
+                if (inputValue.length < MAX_DIAL_CODE_LENGTH) {
+                    // Update only value if countries are equal
+                    if (this.state.countryIso2 === country.iso2) {
+                        this.setValue(country.iso2, inputValue);
+                        break;
+                    // If not equal — set highest by priority
+                    } else if (country.priority === 0) {
                         this.setValue(country.iso2, inputValue);
                         break;
                     }
-                // Handle all other countries
-                } else {
+                // Otherwise don't change already selected country, just set value
+                } else if (this.state.countryIso2 === country.iso2) {
                     this.setValue(country.iso2, inputValue);
                     break;
                 }

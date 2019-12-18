@@ -9,25 +9,25 @@ import Plate from './plate';
 
 describe('plate', () => {
     it('should render without problems', () => {
-        let plate = shallow(<Plate>plate-text</Plate>);
+        const plate = shallow(<Plate>plate-text</Plate>);
 
         expect(plate).toMatchSnapshot();
         expect(plate.html()).toContain('plate-text');
     });
 
     it('should render with cross without problems', () => {
-        let plate = shallow(<Plate hasCloser={ true }>plate-text</Plate>);
-        let crossNode = plate.find('.plate__closer');
+        const plate = shallow(<Plate hasCloser={ true }>plate-text</Plate>);
+        const crossNode = plate.find('.plate__closer');
 
         expect(crossNode).toBeTruthy();
     });
 
     it('should call `onCloserClick` callback after plate closer was clicked', () => {
-        let onCloserClick = jest.fn();
-        let plate = shallow(
+        const onCloserClick = jest.fn();
+        const plate = shallow(
             <Plate hasCloser={ true } onCloserClick={ onCloserClick }>plate-text</Plate>
         );
-        let closer = plate.find('.plate__closer');
+        const closer = plate.find('.plate__closer');
 
         closer.simulate('click');
 
@@ -35,8 +35,8 @@ describe('plate', () => {
     });
 
     it('should call `onClick` callback after plate was clicked', () => {
-        let onClick = jest.fn();
-        let plate = mount(
+        const onClick = jest.fn();
+        const plate = mount(
             <Plate hasCloser={ true } onClick={ onClick }>plate-text</Plate>
         );
 

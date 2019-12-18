@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -58,7 +57,9 @@ class RadioGroup extends React.Component {
          * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
          * @param {string} value
          */
-        onChange: Type.func
+        onChange: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -72,9 +73,9 @@ class RadioGroup extends React.Component {
 
     render(cn) {
         let children = null;
-        let { size, name } = this.props;
+        const { size, name } = this.props;
         let props = { name };
-        let radioGroupParts = {};
+        const radioGroupParts = {};
 
         if (this.props.disabled !== undefined) {
             props.disabled = this.props.disabled;
@@ -90,24 +91,19 @@ class RadioGroup extends React.Component {
 
         if (children) {
             this.radios = [];
-
-            let value = this.props.value !== undefined
-                ? this.props.value
-                : this.state.value;
+            const value = this.props.value === undefined ? this.state.value : this.props.value;
 
             React.Children.forEach(children, (radio, index) => {
                 radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
                     ref: radio => this.radios.push(radio),
-                    error: radio.props.error !== undefined
-                        ? radio.props.error : Boolean(this.props.error),
-                    checked: radio.props.checked !== undefined
-                        ? radio.props.checked : (value === radio.props.value),
-                    onChange: radio.props.onChange !== undefined
-                        ? radio.props.onChange : this.handleRadioChange,
+                    error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
+                    checked: radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked,
+                    onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
                     ...props
                 });
             });
         }
+
         return (
             <div
                 className={
@@ -122,6 +118,7 @@ class RadioGroup extends React.Component {
                 tabIndex='-1'
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ cn('inner') }>
                     {
@@ -142,8 +139,7 @@ class RadioGroup extends React.Component {
         );
     }
 
-    @autobind
-    handleRadioChange(value) {
+    handleRadioChange = (value) => {
         if (this.state.value !== value) {
             this.setState({ value });
         }
@@ -151,21 +147,19 @@ class RadioGroup extends React.Component {
         if (this.props.value !== value && this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на первую радиокнопку в группе.
@@ -183,6 +177,7 @@ class RadioGroup extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

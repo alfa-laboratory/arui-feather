@@ -9,15 +9,15 @@ import Collapse from './collapse';
 
 describe('collapse', () => {
     it('should render without problem', () => {
-        let collapse = shallow(<Collapse>Collapsing text</Collapse>);
+        const collapse = shallow(<Collapse>Collapsing text</Collapse>);
 
         expect(collapse).toMatchSnapshot();
         expect(collapse.prop('className')).toContain('collapse');
     });
 
     it('should call `onExpandedChange` callback after expand/collapse', () => {
-        let onExpandedChange = jest.fn();
-        let collapse = mount(
+        const onExpandedChange = jest.fn();
+        const collapse = mount(
             <Collapse
                 collapsedLabel='Expand'
                 expandedLabel='Collapse'
@@ -26,7 +26,7 @@ describe('collapse', () => {
                 Collapsing text
             </Collapse>
         );
-        let linkNode = collapse.find('.link');
+        const linkNode = collapse.find('.link');
 
         linkNode.simulate('click');
 
@@ -34,39 +34,39 @@ describe('collapse', () => {
     });
 
     it('should update component height', () => {
-        let collapse = mount(
+        const collapse = mount(
             <Collapse>
                 some children
             </Collapse>
         );
+
         collapse.setState({ isExpanded: true });
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
         // эмулируем высоту контент-враппера и самостоятельно вызываем resize-handler
         collapse.instance().contentCase = { offsetHeight: 100 };
         collapse.instance().updateContentHeight();
 
-
         expect(collapse.instance().content.style.height).toBe('100px');
     });
 
     it('should not update component height when it is collapsed', () => {
-        let collapse = mount(
+        const collapse = mount(
             <Collapse>
                 some children
             </Collapse>
         );
+
         collapse.setState({ isExpanded: false });
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
         // эмулируем высоту контент-враппера и самостоятельно вызываем resize-handler
         collapse.instance().contentCase = { offsetHeight: 100 };
         collapse.instance().updateContentHeight();
 
-
         expect(collapse.instance().content.style.height).toBe('0px');
     });
 
     it('should apply custom expanded label', () => {
-        let collapse = mount(
+        const collapse = mount(
             <Collapse
                 collapsedLabel='Раскрыть'
                 isExpanded={ false }
@@ -74,13 +74,13 @@ describe('collapse', () => {
                 Collapsing text
             </Collapse>
         );
-        let linkNode = collapse.find('.link');
+        const linkNode = collapse.find('.link');
 
         expect(linkNode.text()).toBe('Раскрыть');
     });
 
     it('should apply custom collapsed label', () => {
-        let collapse = mount(
+        const collapse = mount(
             <Collapse
                 expandedLabel='Закрыть'
                 isExpanded={ true }
@@ -88,21 +88,21 @@ describe('collapse', () => {
                 Collapsing text
             </Collapse>
         );
-        let linkNode = collapse.find('.link');
+        const linkNode = collapse.find('.link');
 
         expect(linkNode.text()).toBe('Закрыть');
     });
 
     it('should have default expanded label', () => {
-        let collapse = mount(<Collapse isExpanded={ false }>Collapsing text</Collapse>);
-        let linkNode = collapse.find('.link');
+        const collapse = mount(<Collapse isExpanded={ false }>Collapsing text</Collapse>);
+        const linkNode = collapse.find('.link');
 
         expect(linkNode.text()).toBe('Expand');
     });
 
     it('should have default collapsed label', () => {
-        let collapse = mount(<Collapse isExpanded={ true }>Collapsing text</Collapse>);
-        let linkNode = collapse.find('.link');
+        const collapse = mount(<Collapse isExpanded={ true }>Collapsing text</Collapse>);
+        const linkNode = collapse.find('.link');
 
         expect(linkNode.text()).toBe('Collapse');
     });

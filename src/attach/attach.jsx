@@ -2,12 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
 import Button from '../button/button';
 import IconAttachment from '../icon/action/attachment';
+import ProgressBar from '../progress-bar';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -58,10 +58,10 @@ function isEqualArray(array1, array2) {
         return true;
     }
 
-    return array1
-        && array2
-        && array1.length === array2.length
-        && array1.every((item, index) => item === array2[index]);
+    return array1 &&
+        array2 &&
+        array1.length === array2.length &&
+        array1.every((item, index) => item === array2[index]);
 }
 
 /**
@@ -119,8 +119,10 @@ class Attach extends React.Component {
         accept: Type.string,
         /** Управление возможностью изменения значения компонента */
         disabled: Type.bool,
-        /** Управляет возможностью выбора нескольких файлов */
+        /** Управление возможностью выбора нескольких файлов */
         multiple: Type.bool,
+        /** Процент выполнения загрузки файла */
+        progressBarPercent: Type.number,
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
         /** Тема компонента */
@@ -156,7 +158,9 @@ class Attach extends React.Component {
          * Обработчик события снятия курсора с кнопки
          * @param {React.MouseEvent} event
          */
-        onMouseLeave: Type.func
+        onMouseLeave: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -179,8 +183,9 @@ class Attach extends React.Component {
      */
     input;
 
-    componentWillReceiveProps(nextProps) {
-        let nextValue = nextProps.value || [];
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        const nextValue = nextProps.value || [];
 
         if (!isEqualArray(nextValue, this.state.value)) {
             this.input.value = '';
@@ -199,7 +204,10 @@ class Attach extends React.Component {
                 }) }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.renderButton(cn) }
                 { this.renderStatusText(cn) }
@@ -208,7 +216,7 @@ class Attach extends React.Component {
     }
 
     renderButton(cn) {
-        let buttonProps = {
+        const buttonProps = {
             ...this.props.buttonProps,
             className: cn('button'),
             disabled: this.props.disabled,
@@ -227,7 +235,9 @@ class Attach extends React.Component {
                         htmlFor={ this.props.id }
                     >
                         <input
-                            ref={ (input) => { this.input = input; } }
+                            ref={ (input) => {
+                                this.input = input;
+                            } }
                             className={ cn('control') }
                             accept={ this.props.accept }
                             disabled={ this.props.disabled }
@@ -252,12 +262,10 @@ class Attach extends React.Component {
     }
 
     renderStatusText(cn) {
-        let files = this.props.value !== undefined
-            ? this.props.value || []
-            : this.state.value;
+        const files = this.props.value === undefined ? this.state.value : (this.props.value || []);
 
         if (files && files.length > 0) {
-            let content = (files.length === 1)
+            const content = (files.length === 1)
                 ? files[0].name
                 : (
                     <abbr
@@ -277,6 +285,12 @@ class Attach extends React.Component {
                         className={ cn('clear') }
                         onClick={ this.handleClearClick }
                     />
+                    { typeof this.props.progressBarPercent !== 'undefined' && (
+                        <ProgressBar
+                            percent={ this.props.progressBarPercent }
+                            className={ cn('progress-bar') }
+                        />
+                    ) }
                 </span>
             );
         }
@@ -288,59 +302,52 @@ class Attach extends React.Component {
         );
     }
 
-    @autobind
-    handleInputChange(event) {
+    handleInputChange = (event) => {
         this.performChange(Array.from(event.target.files));
-    }
+    };
 
-    @autobind
-    handleClearClick() {
+    handleClearClick = () => {
         this.input.value = '';
         this.performChange([]);
-    }
+    };
 
-    @autobind
-    handleButtonClick(event) {
+    handleButtonClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
     /**
      * Ставит фокус на контрол.
@@ -361,7 +368,7 @@ class Attach extends React.Component {
     }
 
     performChange(value) {
-        let shouldFireChange = !isEqualArray(value, this.state.value);
+        const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {
             if (this.props.onChange && shouldFireChange) {

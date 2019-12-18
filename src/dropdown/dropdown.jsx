@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -98,7 +97,9 @@ class Dropdown extends React.Component {
          * Обработчик события клика попапа за пределами попапа
          * @param {React.MouseEvent} event
          */
-        onPopupClickOutside: Type.func
+        onPopupClickOutside: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -126,7 +127,11 @@ class Dropdown extends React.Component {
 
     render(cn) {
         return (
-            <div className={ cn() } id={ this.props.id }>
+            <div
+                className={ cn() }
+                id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 { this.renderSwitcher(cn) }
                 { this.renderPopup(cn) }
             </div>
@@ -134,10 +139,8 @@ class Dropdown extends React.Component {
     }
 
     renderSwitcher(cn) {
-        let content = this.props.children || this.props.switcherText;
-        let opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.opened;
+        const content = this.props.children || this.props.switcherText;
+        const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         return this.props.switcherType === 'button'
             ? this.renderSwitcherButton(cn, content, opened)
@@ -149,11 +152,13 @@ class Dropdown extends React.Component {
             <Button
                 className={ cn('switcher') }
                 size={ this.props.size }
-                ref={ (switcher) => { this.switcher = switcher; } }
+                ref={ (switcher) => {
+                    this.switcher = switcher;
+                } }
                 disabled={ this.props.disabled }
                 togglable={ this.props.togglable }
                 checked={ this.props.togglable === 'check' && opened }
-                onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
+                onClick={ this.props.disabled ? undefined : this.handleSwitcherClick }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
             >
@@ -167,11 +172,13 @@ class Dropdown extends React.Component {
             <Link
                 className={ cn('switcher') }
                 size={ this.props.size }
-                ref={ (switcher) => { this.switcher = switcher; } }
+                ref={ (switcher) => {
+                    this.switcher = switcher;
+                } }
                 disabled={ this.props.disabled }
                 pseudo={ true }
                 text={ content }
-                onClick={ !this.props.disabled ? this.handleSwitcherClick : undefined }
+                onClick={ this.props.disabled ? undefined : this.handleSwitcherClick }
                 onMouseEnter={ this.handleSwitcherMouseEnter }
                 onMouseLeave={ this.handleSwitcherMouseLeave }
             />
@@ -180,9 +187,7 @@ class Dropdown extends React.Component {
 
     renderPopup(cn) {
         let mainOffset;
-        let opened = this.props.opened !== undefined
-            ? this.props.opened
-            : this.state.opened;
+        const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         if (this.props.popupProps === undefined || (
             this.props.popupProps && this.props.popupProps.type !== 'tooltip')) {
@@ -194,7 +199,7 @@ class Dropdown extends React.Component {
             }
         }
 
-        let popupProps = {
+        const popupProps = {
             className: cn('popup'),
             size: this.props.size,
             mainOffset,
@@ -204,7 +209,9 @@ class Dropdown extends React.Component {
         return (
             <Popup
                 { ...popupProps }
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ (popup) => {
+                    this.popup = popup;
+                } }
                 visible={
                     (!this.props.disabled && opened) ||
                     (this.props.mode === 'hover' && (this.state.switcherHovered || this.state.popupHovered))
@@ -218,11 +225,8 @@ class Dropdown extends React.Component {
         );
     }
 
-    @autobind
-    handleSwitcherClick() {
-        let newOpenedStatusValue = this.props.opened !== undefined
-            ? !this.props.opened
-            : !this.state.opened;
+    handleSwitcherClick = () => {
+        const newOpenedStatusValue = this.props.opened === undefined ? !this.state.opened : !this.props.opened;
 
         this.setState({
             opened: newOpenedStatusValue
@@ -231,46 +235,41 @@ class Dropdown extends React.Component {
         if (this.props.onSwitcherClick) {
             this.props.onSwitcherClick(newOpenedStatusValue);
         }
-    }
+    };
 
-    @autobind
-    handleSwitcherMouseEnter(event) {
+    handleSwitcherMouseEnter = (event) => {
         this.setState({ switcherHovered: true });
 
         if (this.props.onSwitcherMouseEnter) {
             this.props.onSwitcherMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleSwitcherMouseLeave(event) {
+    handleSwitcherMouseLeave = (event) => {
         this.setState({ switcherHovered: false });
 
         if (this.props.onSwitcherMouseLeave) {
             this.props.onSwitcherMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handlePopupMouseEnter(event) {
+    handlePopupMouseEnter = (event) => {
         this.setState({ popupHovered: true });
 
         if (this.props.onPopupMouseEnter) {
             this.props.onPopupMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handlePopupMouseLeave(event) {
+    handlePopupMouseLeave = (event) => {
         this.setState({ popupHovered: false });
 
         if (this.props.onPopupMouseLeave) {
             this.props.onPopupMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handlePopupClickOutside(event) {
+    handlePopupClickOutside = (event) => {
         this.setState({ opened: false });
 
         if (this.props.onPopupClickOutside) {

@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -46,7 +45,9 @@ class Form extends React.Component {
          * Обработчик отправки формы
          * @param {React.FormEvent} event
          */
-        onSubmit: Type.func
+        onSubmit: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -73,6 +74,7 @@ class Form extends React.Component {
                 id={ this.props.id }
                 name={ this.props.name }
                 onSubmit={ this.handleSubmit }
+                data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.children }
                 {
@@ -85,8 +87,7 @@ class Form extends React.Component {
         );
     }
 
-    @autobind
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
 
         if (this.props.onSubmit) {

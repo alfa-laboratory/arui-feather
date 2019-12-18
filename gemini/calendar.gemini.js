@@ -38,15 +38,15 @@ const PROP_SETS = [
     }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         PROP_SETS.forEach((set, index) => {
-            let selector = `${themeSelector}.${NAME}_prop-set_${index + 1}`;
-            let props = { theme, ...set };
+            const selector = `${themeSelector}.${NAME}_prop-set_${index + 1}`;
+            const props = { theme, ...set };
 
-            geminiReact.suite(selector, function (suite) {
+            geminiReact.suite(selector, (suite) => {
                 suite
                     .render(
                         <GeminiBox theme={ theme }>
@@ -54,8 +54,14 @@ geminiReact.suite(NAME, function () {
                         </GeminiBox>
                     )
                     .capture('plain')
-                    .capture('hovered', function (actions) {
+                    .capture('hovered', (actions) => {
                         actions.mouseMove('.calendar__arrow.calendar__arrow_direction_right');
+                    })
+                    .capture('selectMonths', (actions) => {
+                        actions.click('.calendar__name.calendar__name_month');
+                    })
+                    .capture('selectYear', (actions) => {
+                        actions.click('.calendar__name.calendar__name_year');
                     });
             });
         });

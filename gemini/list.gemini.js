@@ -12,7 +12,17 @@ const ITEMS = [
     },
     {
         key: 'two',
-        value: 'Two'
+        value: 'Two',
+        list: [
+            {
+                key: 'subone',
+                value: 'Sub one'
+            },
+            {
+                key: 'subtwo',
+                value: 'Sub two'
+            }
+        ]
     },
     {
         key: 'three',
@@ -25,19 +35,19 @@ const PROP_SETS = [
     { items: ITEMS, type: 'ordered' }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 
-                geminiReact.suite(selector, function (suite) {
-                    let props = { theme, size, ...set };
-                    let template = (
+                geminiReact.suite(selector, (suite) => {
+                    const props = { theme, size, ...set };
+                    const template = (
                         <GeminiBox theme={ theme }>
                             <List { ...props } />
                         </GeminiBox>

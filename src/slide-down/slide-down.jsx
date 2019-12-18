@@ -5,8 +5,6 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import autobind from 'core-decorators/lib/autobind';
-
 import cn from '../cn';
 import performance from '../performance';
 
@@ -31,7 +29,9 @@ class SlideDown extends React.Component {
         /** Обработчик события начала анимации */
         onAnimationStart: Type.func,
         /** Обработчик события окончания анимации */
-        onAnimationEnd: Type.func
+        onAnimationEnd: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     state = {
@@ -42,7 +42,8 @@ class SlideDown extends React.Component {
     slideDown;
     slideDownContent;
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.isExpanded !== nextProps.isExpanded) {
             if (nextProps.isExpanded) {
                 this.setHeightToContentHeight();
@@ -64,11 +65,16 @@ class SlideDown extends React.Component {
                     { height: this.getHeight() }
                 }
                 onTransitionEnd={ this.handleTransitionEnd }
-                ref={ (slideDown) => { this.slideDown = slideDown; } }
+                ref={ (slideDown) => {
+                    this.slideDown = slideDown;
+                } }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     className={ cn('content', { expanded: this.state.isHeightAuto }) }
-                    ref={ (slideDownContent) => { this.slideDownContent = slideDownContent; } }
+                    ref={ (slideDownContent) => {
+                        this.slideDownContent = slideDownContent;
+                    } }
                 >
                     { this.props.children }
                 </div>
@@ -76,15 +82,14 @@ class SlideDown extends React.Component {
         );
     }
 
-    @autobind
-    handleTransitionEnd(event) {
+    handleTransitionEnd = (event) => {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
         }
         if (this.props.onAnimationEnd) {
             this.props.onAnimationEnd();
         }
-    }
+    };
 
     getHeight() {
         return this.state.isHeightAuto

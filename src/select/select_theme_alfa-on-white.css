@@ -58,6 +58,21 @@
 
         .select-button {
             border-bottom-color: var(--color-error-translucent);
+
+            &_hovered {
+                border-bottom-color: var(--color-error-translucent);
+            }
+
+            &:focus,
+            &_focused {
+                border-bottom-color: var(--color-error-translucent);
+                box-shadow: inset 0 -1px 0 var(--color-error-translucent);
+
+                &.select-button_hovered {
+                    border-bottom-color: var(--color-error-translucent);
+                    box-shadow: inset 0 -1px 0 var(--color-error-translucent);
+                }
+            }
         }
 
         &.select_opened {

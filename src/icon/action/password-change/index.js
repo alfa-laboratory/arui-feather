@@ -5,4 +5,4 @@
 import './password-change.css';
 import '../../../icon';
 
-export default from './password-change';
+export { default } from './password-change';

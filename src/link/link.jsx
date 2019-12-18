@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -74,7 +73,9 @@ class Link extends React.Component {
         /**
          * Обработчик клика по disabled ссылке
          */
-        onDisabledClick: Type.func
+        onDisabledClick: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -95,10 +96,10 @@ class Link extends React.Component {
     root;
 
     render(cn) {
-        let linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
+        const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
         const { iconPosition } = this.props;
 
-        let linkProps = {
+        const linkProps = {
             ref: (root) => {
                 this.root = root;
             },
@@ -118,7 +119,8 @@ class Link extends React.Component {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave
+            onMouseLeave: this.handleMouseLeave,
+            'data-test-id': this.props['data-test-id']
         };
 
         if (this.props.target === '_blank') {
@@ -130,14 +132,14 @@ class Link extends React.Component {
             linkProps.target = this.props.target;
         }
 
-        let linkContent = [this.props.children];
-        let iconTemplate = this.props.icon && (
+        const linkContent = [this.props.children];
+        const iconTemplate = this.props.icon && (
             <span key='icon' className={ cn('icon', { left: iconPosition === 'left' }) }>
                 { this.props.icon }
             </span>
         );
 
-        let textTemplate = this.props.text && (
+        const textTemplate = this.props.text && (
             <span key='text' className={ cn('text-container') }>
                 <span className={ cn('text') }>{ this.props.text }</span>
             </span>
@@ -153,8 +155,7 @@ class Link extends React.Component {
         return React.createElement(linkElement, linkProps, linkContent);
     }
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.pseudo) {
             event.preventDefault();
         }
@@ -165,43 +166,39 @@ class Link extends React.Component {
         if (this.props.disabled && this.props.onDisabledClick) {
             this.props.onDisabledClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
@@ -227,6 +224,7 @@ class Link extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

@@ -1,10 +1,10 @@
 [Полный список иконок с поиском](http://design.alfabank.ru/style/icons)
 
 ```jsx
-const Icon = require('../../src/icon/brand/bank-2449').default;
+import AlphaIcon from 'arui-feather/icon/brand/bank-2449';
 
 <div>
-    <Icon size='xl' />
-    <Icon size='xl' colored={ true } />
+    <AlphaIcon size='xl' />
+    <AlphaIcon size='xl' colored={ true } />
 </div>
 ```

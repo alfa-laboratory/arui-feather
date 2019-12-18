@@ -1,5 +1,7 @@
 Всплывающее окно слева
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -10,7 +12,8 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='ok'
-        offset={ 10 }
+        offset={ 12 }
+        stickTo='left'
         title='Платёж отправлен'
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
@@ -22,6 +25,8 @@ initialState = {
 
 Всплывающее окно справа
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -32,7 +37,7 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='fail'
-        offset={ 10 }
+        offset={ 12 }
         stickTo='right'
         title='Платёж отправлен'
         onCloseTimeout={ () => { setState({ visible: false }); } }
@@ -45,6 +50,8 @@ initialState = {
 
 Всплывающее окно с ошибкой
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -55,7 +62,7 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='error'
-        offset={ 100 }
+        offset={ 112 }
         stickTo='right'
         title='Недостаточно средств'
         onCloseTimeout={ () => { setState({ visible: false }); } }
@@ -68,7 +75,8 @@ initialState = {
 
 Сообщение с иконкой
 ```jsx
-const IconCalendar = require('../../src/icon/entity/calendar').default;
+import Button from 'arui-feather/button';
+import IconCalendar from 'arui-feather/icon/entity/calendar';
 
 initialState = {
     visible: false
@@ -80,9 +88,10 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='ok'
-        offset={ 100 }
+        offset={ 112 }
+        stickTo='left'
         title='Платёж запланирован'
-        icon={ <IconCalendar size='m' /> }
+        icon={ <IconCalendar theme='alfa-on-color' size='m' /> }
         onCloseTimeout={ () => { setState({ visible: false }); } }
         onCloserClick={ () => { setState({ visible: false }); } }
     >
@@ -93,6 +102,8 @@ initialState = {
 
 Уведомление закрывается по клику снаружи компонента
 ```jsx
+import Button from 'arui-feather/button';
+
 initialState = {
     visible: false
 };
@@ -103,7 +114,8 @@ initialState = {
     <Notification
         visible={ state.visible }
         status='ok'
-        offset={ 190 }
+        offset={ 214 }
+        stickTo='left'
         title='Черновик сохранен'
         onClickOutside={ () => { setState({ visible: false }); } }
     >

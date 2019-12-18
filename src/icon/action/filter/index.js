@@ -5,4 +5,4 @@
 import './filter.css';
 import '../../../icon';
 
-export default from './filter';
+export { default } from './filter';

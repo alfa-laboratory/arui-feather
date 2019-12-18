@@ -51,7 +51,9 @@ class Amount extends React.Component {
         /** Дополнительный класс */
         className: Type.string,
         /** Идентификатор компонента в DOM */
-        id: Type.string
+        id: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -62,10 +64,10 @@ class Amount extends React.Component {
     };
 
     render(cn) {
-        let { amount, size } = this.props;
-        let { majorPart, minorPart, currencySymbol } = formatAmount(amount);
+        const { amount, size } = this.props;
+        const { majorPart, minorPart, currencySymbol } = formatAmount(amount);
 
-        let amountInner = (
+        const amountInner = (
             <span>
                 <span className={ cn('major') }>{ majorPart }</span>
                 { this.renderSeparatorAndMinorPart(cn, minorPart) }
@@ -74,7 +76,11 @@ class Amount extends React.Component {
         );
 
         return (
-            <div className={ cn({ bold: this.props.bold }) } id={ this.props.id }>
+            <div
+                className={ cn({ bold: this.props.bold }) }
+                id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
+            >
                 { this.props.isHeading ? (
                     <Heading size={ size }>{ amountInner }</Heading>
                 ) : (
@@ -85,7 +91,7 @@ class Amount extends React.Component {
     }
 
     renderSeparatorAndMinorPart(cn, minorPart) {
-        let { showZeroMinorPart } = this.props;
+        const { showZeroMinorPart } = this.props;
 
         let needMinorPart = false;
 
@@ -105,9 +111,11 @@ class Amount extends React.Component {
                 </div>
             );
         }
+
         return null;
     }
 
+    // eslint-disable-next-line class-methods-use-this
     renderCurrencySymbol(cn, currencySymbol) {
         return (
             <span className={ cn('currency') }>

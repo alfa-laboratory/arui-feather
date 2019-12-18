@@ -5,4 +5,4 @@
 import './sent.css';
 import '../../../icon';
 
-export default from './sent';
+export { default } from './sent';

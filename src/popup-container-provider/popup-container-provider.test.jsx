@@ -10,7 +10,7 @@ import PopupContainerProvider from './popup-container-provider';
 
 describe('popup-container-provider', () => {
     it('should render without problems', () => {
-        let popupContainerProvider = shallow(
+        const popupContainerProvider = shallow(
             <PopupContainerProvider>
                 <div>Render-test</div>
             </PopupContainerProvider>
@@ -20,7 +20,7 @@ describe('popup-container-provider', () => {
     });
 
     it('should render child', () => {
-        let popupContainer = shallow(
+        const popupContainer = shallow(
             <PopupContainerProvider>
                 <div>Render-test</div>
             </PopupContainerProvider>
@@ -33,12 +33,12 @@ describe('popup-container-provider', () => {
         isInFixedContainer = true,
         renderContainerElement = HTMLElement to which popup will be appended,
         positioningContainerElement = HTMLElement in which popup will try to fit`, () => {
-        let popupContainer = mount(
+        const popupContainer = mount(
             <PopupContainerProvider>
                 <div>Render-test</div>
             </PopupContainerProvider>
         );
-        let childContext = popupContainer.instance().getChildContext();
+        const childContext = popupContainer.instance().getChildContext();
 
         expect(childContext.isInCustomContainer).toBe(true);
         expect(childContext.positioningContainerElement).toBe(popupContainer.getDOMNode());
@@ -46,24 +46,24 @@ describe('popup-container-provider', () => {
     });
 
     it('should render children popups inside itself’s DOM node', () => {
-        let popupContainer = mount(
+        const popupContainer = mount(
             <PopupContainerProvider>
                 <Popup target='position'>Render-test</Popup>
             </PopupContainerProvider>
         );
-        let popupNode = popupContainer.find('.popup');
+        const popupNode = popupContainer.find('.popup');
 
         expect(popupNode.length).toBe(1);
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let popupContainer = mount(
+        const popupContainer = mount(
             <PopupContainerProvider>
                 <Popup target='position'>Render-test</Popup>
             </PopupContainerProvider>
         );
 
-        let node = popupContainer.instance().getNode();
+        const node = popupContainer.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLDivElement);
         expect(node).toBe(popupContainer.getDOMNode());

@@ -5,4 +5,4 @@
 import './power.css';
 import '../../../icon';
 
-export default from './power';
+export { default } from './power';

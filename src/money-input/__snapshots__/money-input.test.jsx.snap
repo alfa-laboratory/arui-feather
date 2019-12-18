@@ -14,10 +14,12 @@ exports[`money-input should render without problems 1`] = `
     maxLength={14}
     onChange={[Function]}
     onProcessMaskInputEvent={[Function]}
+    resetError={true}
     showCurrency={false}
     size="m"
     type="text"
     value=""
+    view="default"
   />
 </div>
 `;

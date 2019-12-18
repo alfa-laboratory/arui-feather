@@ -45,28 +45,28 @@ const PROP_SETS = [
     }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
-                let props = {
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const props = {
                     theme,
                     leftAddons: index === 4 && renderAddons(size),
                     rightAddons: index === 4 && renderAddons(size),
                     ...set
                 };
-                let template = (
+                const template = (
                     <GeminiBox theme={ theme } width={ set.width }>
                         <CalendarInput { ...props } />
                     </GeminiBox>
                 );
 
-                geminiReact.suite(selector, function (suite) {
+                geminiReact.suite(selector, (suite) => {
                     if (set.disabled) {
                         suite
                             .render(template)
@@ -76,7 +76,7 @@ geminiReact.suite(NAME, function () {
                             .setExtraCaptureElements(['.popup'])
                             .render(template)
                             .capture('plain')
-                            .capture('focused', function (actions, find) {
+                            .capture('focused', (actions, find) => {
                                 actions.focus(find('.input__control'));
                             });
                     }

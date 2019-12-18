@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import autobind from 'core-decorators/lib/autobind';
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
@@ -54,7 +53,9 @@ class CheckBoxGroup extends React.Component {
          * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
          * @param {string[]} value
          */
-        onChange: Type.func
+        onChange: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -68,7 +69,7 @@ class CheckBoxGroup extends React.Component {
     render(cn) {
         let children = null;
         let props = { name: this.props.name };
-        let checkboxGroupParts = {};
+        const checkboxGroupParts = {};
 
         if (this.props.disabled !== undefined) {
             props.disabled = this.props.disabled;
@@ -84,18 +85,17 @@ class CheckBoxGroup extends React.Component {
 
         if (children) {
             this.checkboxes = [];
-
-            let value = this.props.value !== undefined
-                ? this.props.value
-                : this.state.value;
+            const value = this.props.value === undefined ? this.state.value : this.props.value;
 
             React.Children.forEach(children, (checkbox, index) => {
-                let checkboxNode = React.cloneElement(checkbox, {
+                const checkboxNode = React.cloneElement(checkbox, {
                     ref: checkbox => this.checkboxes.push(checkbox),
-                    checked: checkbox.props.checked !== undefined
-                        ? checkbox.props.checked : value.some(groupValue => groupValue === checkbox.props.value),
-                    onChange: checkbox.props.onChange !== undefined
-                        ? checkbox.props.onChange : checked => this.handleCheckboxChange(checkbox.props.value, checked),
+                    checked: checkbox.props.checked === undefined
+                        ? value.some(groupValue => groupValue === checkbox.props.value)
+                        : checkbox.props.checked,
+                    onChange: checkbox.props.onChange === undefined
+                        ? checked => this.handleCheckboxChange(checkbox.props.value, checked)
+                        : checkbox.props.onChange,
                     ...props
                 });
 
@@ -119,6 +119,7 @@ class CheckBoxGroup extends React.Component {
                 tabIndex='-1'
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
+                data-test-id={ this.props['data-test-id'] }
             >
                 {
                     !!this.props.label &&
@@ -133,10 +134,9 @@ class CheckBoxGroup extends React.Component {
         );
     }
 
-    @autobind
-    handleCheckboxChange(value, checked) {
-        let newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
-        let changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
+    handleCheckboxChange = (value, checked) => {
+        const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
+        const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
         if (checked) {
             newValue.push(value);
@@ -151,21 +151,19 @@ class CheckBoxGroup extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(newValue);
         }
-    }
+    };
 
-    @autobind
-    handleFocus(event) {
+    handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-    }
+    };
 
-    @autobind
-    handleBlur(event) {
+    handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 
     /**
      * Устанавливает фокус на первую чекбокс-кнопку в группе.
@@ -183,6 +181,7 @@ class CheckBoxGroup extends React.Component {
      *
      * @public
      */
+    // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
             document.activeElement.blur();

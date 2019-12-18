@@ -5,4 +5,4 @@
 import './star-inactive.css';
 import '../../../icon';
 
-export default from './star-inactive';
+export { default } from './star-inactive';

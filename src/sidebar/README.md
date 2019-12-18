@@ -15,13 +15,6 @@ initialState = {
         <Heading size='m'>
             Выписка по счёту
         </Heading>
-        <div style={ { marginBottom: 20 } }>
-            <Input
-                label='Куда отправить выписку?'
-                size='m'
-                placeholder='Адрес электронной почты'
-            />
-        </div>
         <Paragraph>
             100-дневный беспроцентный период начинается с момента образования задолженности по кредитной карте
             и возобновляется на следующий день после полного ее погашения. Беспроцентный период действует
@@ -42,7 +35,7 @@ initialState = {
             (зависит от категории карты). Банк оставляет за собой исключительное право на предоставление или отказ
             в предоставлении кредита. АО «Альфа-Банк». Ген. лицензия ЦБ РФ №1326 от 16.01.2015
         </Paragraph>
-        <Button size='m' view='extra'>Отправить</Button>
+        <Button view='extra'>Отправить</Button>
     </Sidebar>
 </div>
 ```
@@ -52,82 +45,52 @@ initialState = {
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
 }
+
 initialState = {
     isOpen: false
 };
+
 <div>
     <Button onClick={ toggleSidebar }>Фильтр</Button>
     <Sidebar
         headerContent={
-            <button
-                style={ {
-                    margin: 0,
-                    padding: 0,
-                    border: 0,
-                    background: 'none',
-                    outline: 'none',
-                    font: 'inherit',
-                    cursor: 'pointer'
-                } }
-                onClick={ toggleSidebar }
-            >
+            <Link onClick={ toggleSidebar }>
                 Применить
-            </button>
+            </Link>
         }
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
     >
-        <div style={ { marginBottom: 40 } }>
-            <Heading size='s'>
-                Тип операции
-            </Heading>
-            <RadioGroup type='button'>
-                {
-                    ['Пополнение', 'Списание'].map(text => (
-                        <Radio
-                            text={ text }
-                            key={ text }
-                            value={ text }
-                            type='button'
-                        />
-                    ))
-                }
-            </RadioGroup>
-        </div>
-        <div style={ { marginBottom: 40 } }>
-            <Heading size='s'>
-                Счета
-            </Heading>
-            <CheckBoxGroup type='button'>
-                {
-                    ['Счёт ₽ ··2331', 'Счёт $ ··2331'].map(text => (
-                        <CheckBox
-                            text={ text }
-                            key={ text }
-                            value={ text }
-                            type='button'
-                        />
-                    ))
-                }
-            </CheckBoxGroup>
-        </div>
-        <div style={ { marginBottom: 40 } }>
-            <Heading size='s'>
-                Дата операции
-            </Heading>
-            <RadioGroup type='button'>
-                {
-                    ['День', 'Месяц', 'Год'].map(text => (
-                        <Radio
-                            text={ text }
-                            key={ text }
-                            value={ text }
-                            type='button'
-                        />
-                    ))
-                }
-            </RadioGroup>
-        </div>
+        <Heading size='s'>
+            Тип операции
+        </Heading>
+        <RadioGroup type='button'>
+            {
+                ['Пополнение', 'Списание'].map(text => (
+                    <Radio
+                        text={ text }
+                        key={ text }
+                        value={ text }
+                        type='button'
+                    />
+                ))
+            }
+        </RadioGroup>
+        <Heading size='s'>
+            Дата операции
+        </Heading>
+        <RadioGroup type='button'>
+            {
+                ['День', 'Месяц', 'Год'].map(text => (
+                    <Radio
+                        text={ text }
+                        key={ text }
+                        value={ text }
+                        type='button'
+                    />
+                ))
+            }
+        </RadioGroup>
     </Sidebar>
 </div>
 ```

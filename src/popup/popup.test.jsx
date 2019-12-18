@@ -12,7 +12,8 @@ function renderPopup(popupProps, anchorProps) {
     let anchor;
 
     if (popupProps) {
-        let popupContainer = document.createElement('div');
+        const popupContainer = document.createElement('div');
+
         document.body.appendChild(popupContainer);
 
         popup = mount(
@@ -27,7 +28,8 @@ function renderPopup(popupProps, anchorProps) {
     }
 
     if (anchorProps) {
-        let anchorContainer = document.createElement('div');
+        const anchorContainer = document.createElement('div');
+
         document.body.appendChild(anchorContainer);
 
         anchor = mount(
@@ -39,11 +41,13 @@ function renderPopup(popupProps, anchorProps) {
     }
 
     let popupHeaderNode;
+
     if (popup) {
         popupHeaderNode = popup.find('.popup__header');
     }
 
     let popupContentNode;
+
     if (popup) {
         popupContentNode = popup.find('.popup__content');
     }
@@ -62,7 +66,7 @@ function renderPopup(popupProps, anchorProps) {
 
 describe('popup', () => {
     it('should set anchor target', () => {
-        let { popup, anchor } = renderPopup({}, {});
+        const { popup, anchor } = renderPopup({}, {});
 
         popup.instance().setTarget(anchor.getDOMNode());
 
@@ -70,13 +74,13 @@ describe('popup', () => {
     });
 
     it('should throw Error without setting anchor target', () => {
-        let { popup } = renderPopup({}, null);
+        const { popup } = renderPopup({}, null);
 
         expect(popup.instance().redraw).toThrow('Cannot show popup without target or position');
     });
 
     it('should set position', () => {
-        let { popup } = renderPopup({ target: 'position' }, null);
+        const { popup } = renderPopup({ target: 'position' }, null);
 
         popup.instance().setPosition(100, 200);
 
@@ -84,43 +88,43 @@ describe('popup', () => {
     });
 
     it('should throw Error with target=`position` but without setting position', () => {
-        let { popup } = renderPopup({ target: 'position' }, null);
+        const { popup } = renderPopup({ target: 'position' }, null);
 
         expect(popup.instance().redraw).toThrow('Cannot show popup without target or position');
     });
 
     it('should render text inside', () => {
-        let { popup } = renderPopup({}, {});
+        const { popup } = renderPopup({}, {});
 
         expect(popup.text()).toContain('Popup');
     });
 
     it('should set data-for when `for` prop is set', () => {
-        let { popup } = renderPopup({ for: 'example' }, {});
+        const { popup } = renderPopup({ for: 'example' }, {});
 
-        expect(popup.children().prop('data-for')).toBe('example');
+        expect(popup.children().children().props()['data-for']).toEqual('example');
     });
 
     it('should have tooltip with target=`anchor` and type=`tooltip`', () => {
-        let { popup } = renderPopup({ type: 'tooltip' }, {});
+        const { popup } = renderPopup({ type: 'tooltip' }, {});
 
-        expect(popup.children().props().className).toContain('popup_type_tooltip');
+        expect(popup.children().children().props().className).toContain('popup_type_tooltip');
     });
 
     it('should not have tooltip with target=`position` and type=`tooltip`', () => {
-        let { popup } = renderPopup({
+        const { popup } = renderPopup({
             target: 'position',
             type: 'tooltip'
         }, null);
 
         popup.instance().setPosition(100, 200);
 
-        expect(popup.children().props().className).not.toContain('popup_type_tooltip');
+        expect(popup.children().children().props().className).not.toContain('popup_type_tooltip');
     });
 
     it('should call `onMouseEnter` callback after popup was hovered', () => {
-        let onMouseEnter = jest.fn();
-        let { popup } = renderPopup({ onMouseEnter }, {});
+        const onMouseEnter = jest.fn();
+        const { popup } = renderPopup({ onMouseEnter }, {});
 
         popup.children().simulate('mouseEnter');
 
@@ -128,8 +132,8 @@ describe('popup', () => {
     });
 
     it('should call `onMouseLeave` callback after popup was unhovered', () => {
-        let onMouseLeave = jest.fn();
-        let { popup } = renderPopup({ onMouseLeave }, {});
+        const onMouseLeave = jest.fn();
+        const { popup } = renderPopup({ onMouseLeave }, {});
 
         popup.children().simulate('mouseLeave');
 
@@ -137,10 +141,12 @@ describe('popup', () => {
     });
 
     it('should call `onClickOutside` callback after click outside popup', (done) => {
-        let onClickOutside = jest.fn();
+        const onClickOutside = jest.fn();
+
         renderPopup({ onClickOutside, visible: true }, {});
 
-        let outsideElement = document.createElement('div');
+        const outsideElement = document.createElement('div');
+
         outsideElement.setAttribute('style',
             'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
         );
@@ -154,8 +160,8 @@ describe('popup', () => {
     });
 
     it('should not call `onClickOutside` callback after click inside popup', (done) => {
-        let onClickOutside = jest.fn();
-        let { popupContentNode } = renderPopup({ onClickOutside, visible: true }, {});
+        const onClickOutside = jest.fn();
+        const { popupContentNode } = renderPopup({ onClickOutside, visible: true }, {});
 
         setTimeout(() => {
             popupContentNode.simulate('click');
@@ -165,13 +171,13 @@ describe('popup', () => {
     });
 
     it('should not render a header element by default', () => {
-        let { popupHeaderNode } = renderPopup({ visible: true }, {});
+        const { popupHeaderNode } = renderPopup({ visible: true }, {});
 
         expect(popupHeaderNode.length).toBe(0);
     });
 
     it('should render a header element when header parameter is present', () => {
-        let { popupHeaderNode } = renderPopup({ header: <div />, visible: true }, {});
+        const { popupHeaderNode } = renderPopup({ header: <div />, visible: true }, {});
 
         expect(popupHeaderNode.length).toBe(1);
     });

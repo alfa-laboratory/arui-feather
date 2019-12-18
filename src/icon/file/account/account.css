@@ -10,6 +10,14 @@
     background-image: url('./icon_account_m_white.svg');
 }
 
+.icon_size_s.icon_name_account.icon_theme_alfa-on-white {
+    background-image: url('./icon_account_s_black.svg');
+}
+
+.icon_size_s.icon_name_account.icon_theme_alfa-on-color {
+    background-image: url('./icon_account_s_white.svg');
+}
+
 .icon_size_xl.icon_name_account.icon_theme_alfa-on-white {
     background-image: url('./icon_account_xl_black.svg');
 }

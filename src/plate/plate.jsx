@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -48,7 +47,9 @@ class Plate extends React.Component {
          * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
          * @param {React.KeyboardEvent} event
          */
-        onKeyDown: Type.func
+        onKeyDown: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -76,7 +77,10 @@ class Plate extends React.Component {
                     id={ this.props.id }
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
-                    ref={ (node) => { this.root = node; } }
+                    ref={ (node) => {
+                        this.root = node;
+                    } }
+                    data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ cn('content') }>
                         { this.props.children }
@@ -95,15 +99,13 @@ class Plate extends React.Component {
         );
     }
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleCloserClick(event) {
+    handleCloserClick = (event) => {
         this.setState({
             isHidden: true
         });
@@ -111,10 +113,9 @@ class Plate extends React.Component {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }

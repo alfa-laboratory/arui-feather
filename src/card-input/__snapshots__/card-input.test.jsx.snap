@@ -6,7 +6,9 @@ exports[`card-input should render without problems 1`] = `
   formNoValidate={true}
   mask="1111 1111 1111 1111 11"
   placeholder="0000 0000 0000 0000 00"
+  resetError={true}
   size="m"
   type="tel"
+  view="default"
 />
 `;

@@ -9,7 +9,7 @@ import cn from '../cn';
 import performance from '../performance';
 
 /**
- * Базовый компонент иконки. Содержит в себе только неодходимые для компонентов иконки.
+ * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
  */
 @cn('icon')
 @performance()
@@ -26,7 +26,9 @@ class Icon extends React.Component {
         /** Размер иконки */
         size: Type.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']),
         /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
+        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -34,7 +36,7 @@ class Icon extends React.Component {
     };
 
     render(cn) {
-        let mods = { size: this.props.size };
+        const mods = { size: this.props.size };
 
         if (this.props.name) {
             mods.name = this.props.name;
@@ -48,6 +50,7 @@ class Icon extends React.Component {
             <span
                 className={ cn(mods) }
                 id={ this.props.id }
+                data-test-id={ this.props['data-test-id'] }
             />
         );
     }

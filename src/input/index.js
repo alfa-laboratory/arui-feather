@@ -10,4 +10,4 @@ import './input_theme_alfa-on-color.css';
 import './input_theme_alfa-on-white.css';
 import './input.css';
 
-export default from './input';
+export { default } from './input';

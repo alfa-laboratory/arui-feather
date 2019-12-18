@@ -5,4 +5,4 @@
 import './notifications.css';
 import '../../../icon';
 
-export default from './notifications';
+export { default } from './notifications';

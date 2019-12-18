@@ -4,7 +4,6 @@
 
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
-import autobind from 'core-decorators/lib/autobind';
 import React from 'react';
 import Type from 'prop-types';
 
@@ -81,13 +80,15 @@ class Notification extends React.Component {
          * Обработчик клика по компоненту
          * @param {React.MouseEvent} event
          */
-        onClick: Type.func
+        onClick: Type.func,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
         autoCloseDelay: 5000,
-        stickTo: 'left',
-        offset: 0,
+        stickTo: 'right',
+        offset: 12,
         hasCloser: true
     };
 
@@ -138,11 +139,14 @@ class Notification extends React.Component {
         return (
             <Swipeable onSwipe={ this.handleSwipe }>
                 <div
-                    ref={ (root) => { this.root = root; } }
+                    ref={ (root) => {
+                        this.root = root;
+                    } }
                     className={ cn({
                         visible: this.props.visible,
                         status: this.props.status,
                         hovered: this.state.hovered,
+                        'has-closer': this.props.hasCloser,
                         'stick-to': this.props.stickTo
                     }) }
                     id={ this.props.id }
@@ -151,12 +155,14 @@ class Notification extends React.Component {
                     onMouseLeave={ this.handleMouseLeave }
                     onClick={ this.handleClick }
                     onKeyDown={ this.handleKeyDown }
+                    data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ cn('icon') }>
                         {
                             this.props.icon ||
                             <ToggledIcon
                                 colored={ this.props.status === 'ok' || this.props.status === 'error' }
+                                theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                                 size='m'
                             />
                         }
@@ -166,9 +172,11 @@ class Notification extends React.Component {
                             { this.props.title }
                         </div>
                     }
-                    <div className={ cn('content') }>
-                        { this.props.children }
-                    </div>
+                    { this.props.children &&
+                        <div className={ cn('content') }>
+                            { this.props.children }
+                        </div>
+                    }
                     {
                         this.props.hasCloser &&
                         <IconButton
@@ -177,7 +185,8 @@ class Notification extends React.Component {
                             onClick={ this.handleCloserClick }
                         >
                             <IconClose
-                                size='m'
+                                size='s'
+                                theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
                             />
                         </IconButton>
                     }
@@ -186,39 +195,34 @@ class Notification extends React.Component {
         );
     }
 
-    @autobind
-    handleSwipe(direction) {
+    handleSwipe = (direction) => {
         if (direction === 'left' || direction === 'right' || direction === 'top') {
             this.handleCloserClick();
         }
-    }
+    };
 
-    @autobind
-    handleCloserClick(event) {
+    handleCloserClick = (event) => {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         this.setState({ hovered: true });
         this.stopCloseTimer();
 
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
         this.stopCloseTimer();
         this.startCloseTimer();
@@ -226,22 +230,20 @@ class Notification extends React.Component {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleClick(event) {
+    handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
-    }
+    };
 
-    @autobind
-    handleWindowClick(event) {
+    handleWindowClick = (event) => {
         if (this.props.onClickOutside && this.root &&
             isNodeOutsideElement(event.target, this.root)) {
             this.props.onClickOutside(event);
         }
-    }
+    };
 
     getPosition() {
         return { top: this.props.offset };
@@ -261,7 +263,7 @@ class Notification extends React.Component {
     }
 
     ensureClickEvent(isDestroy) {
-        let isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).

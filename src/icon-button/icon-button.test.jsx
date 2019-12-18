@@ -9,7 +9,8 @@ import IconButton from './icon-button';
 
 describe('icon-button', () => {
     it('renders without problems', () => {
-        let iconButton = mount(<IconButton />);
+        const iconButton = mount(<IconButton />);
+
         expect(iconButton).toMatchSnapshot();
     });
 });

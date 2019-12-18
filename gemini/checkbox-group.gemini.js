@@ -13,21 +13,21 @@ const PROP_SETS = [
     { disabled: true }
 ];
 
-geminiReact.suite(NAME, function () {
+geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
-        let themeSelector = `${NAME}_theme_${theme}`;
+        const themeSelector = `${NAME}_theme_${theme}`;
 
         SIZES.forEach((size) => {
-            let sizeSelector = `${NAME}_size_${size}`;
+            const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS.forEach((set, index) => {
-                let selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
-                let props = { theme, size, ...set };
-                let checkboxProps = {
+                const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
+                const props = { theme, size, ...set };
+                const checkboxProps = {
                     type: set.type === 'button' ? 'button' : 'normal',
                     text: 'Checkbox'
                 };
-                let template = (
+                const template = (
                     <GeminiBox theme={ theme }>
                         <CheckboxGroup { ...props }>
                             <Checkbox { ...checkboxProps } />
@@ -42,7 +42,7 @@ geminiReact.suite(NAME, function () {
                     return;
                 }
 
-                geminiReact.suite(selector, function (suite) {
+                geminiReact.suite(selector, (suite) => {
                     suite
                         .render(template)
                         .capture('plain');

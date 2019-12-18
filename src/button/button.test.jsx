@@ -9,7 +9,7 @@ import Button from './button';
 
 describe('button', () => {
     it('should set/unset class on button pressed/unpressed', () => {
-        let button = mount(<Button>Button-example</Button>);
+        const button = mount(<Button>Button-example</Button>);
 
         button.simulate('mouseDown');
         expect(button.getDOMNode().className).toContain('button_pressed');
@@ -19,7 +19,7 @@ describe('button', () => {
     });
 
     it('should unset pressed class on mouse out', () => {
-        let button = mount(<Button>Button-example</Button>);
+        const button = mount(<Button>Button-example</Button>);
 
         button.simulate('mouseDown');
         expect(button.getDOMNode().className).toContain('button_pressed');
@@ -29,13 +29,13 @@ describe('button', () => {
     });
 
     it('should render without problems', () => {
-        let button = mount(<Button>Button-example</Button>);
+        const button = mount(<Button>Button-example</Button>);
 
         expect(button).toMatchSnapshot();
     });
 
     it('should set/unset class on button focused/unfocused', () => {
-        let button = mount(<Button>Button-example</Button>);
+        const button = mount(<Button>Button-example</Button>);
 
         button.simulate('focus');
         expect(button.getDOMNode().className).toContain('button_focused');
@@ -45,13 +45,13 @@ describe('button', () => {
     });
 
     it('should set "focused" class when focused=true', () => {
-        let button = mount(<Button focused={ true } >Button-example</Button>);
+        const button = mount(<Button focused={ true } >Button-example</Button>);
 
         expect(button.getDOMNode().className).toContain('button_focused');
     });
 
     it('should set/unset class on button hovered/unhovered', () => {
-        let button = mount(<Button>Button-example</Button>);
+        const button = mount(<Button>Button-example</Button>);
 
         button.simulate('mouseEnter');
         expect(button.getDOMNode().className).toContain('button_hovered');
@@ -61,7 +61,7 @@ describe('button', () => {
     });
 
     it('should not set class `hovered` on disabled button', () => {
-        let button = mount(<Button disabled={ true }>Button-example</Button>);
+        const button = mount(<Button disabled={ true }>Button-example</Button>);
 
         button.simulate('mouseEnter');
 
@@ -69,8 +69,8 @@ describe('button', () => {
     });
 
     it('should call `onClick` callback after button was clicked', () => {
-        let onClick = jest.fn();
-        let button = mount(<Button onClick={ onClick } />);
+        const onClick = jest.fn();
+        const button = mount(<Button onClick={ onClick } />);
 
         button.simulate('click');
 
@@ -78,7 +78,7 @@ describe('button', () => {
     });
 
     it('should unset class `hovered` and `focused` on disabled button', () => {
-        let button = mount(<Button />);
+        const button = mount(<Button />);
 
         button.simulate('mouseEnter');
         button.simulate('focus');
@@ -93,8 +93,8 @@ describe('button', () => {
     });
 
     it('should call `onFocus` callback after button was focused', () => {
-        let onFocus = jest.fn();
-        let button = mount(<Button onFocus={ onFocus } />);
+        const onFocus = jest.fn();
+        const button = mount(<Button onFocus={ onFocus } />);
 
         button.simulate('focus');
 
@@ -102,8 +102,8 @@ describe('button', () => {
     });
 
     it('should call `onBlur` callback after button was blured', () => {
-        let onBlur = jest.fn();
-        let button = mount(<Button onBlur={ onBlur } />);
+        const onBlur = jest.fn();
+        const button = mount(<Button onBlur={ onBlur } />);
 
         button.simulate('blur');
 
@@ -111,8 +111,8 @@ describe('button', () => {
     });
 
     it('should call `onMouseEnter` callback after button was hovered', () => {
-        let onMouseEnter = jest.fn();
-        let button = mount(<Button onMouseEnter={ onMouseEnter } />);
+        const onMouseEnter = jest.fn();
+        const button = mount(<Button onMouseEnter={ onMouseEnter } />);
 
         button.simulate('mouseEnter');
 
@@ -120,8 +120,8 @@ describe('button', () => {
     });
 
     it('should call `onMouseLeave` callback after button was leaved by cursor', () => {
-        let onMouseLeave = jest.fn();
-        let button = mount(<Button onMouseLeave={ onMouseLeave } />);
+        const onMouseLeave = jest.fn();
+        const button = mount(<Button onMouseLeave={ onMouseLeave } />);
 
         button.simulate('mouseLeave');
 
@@ -129,8 +129,8 @@ describe('button', () => {
     });
 
     it('should call `onMouseDown` callback after button was pressed', () => {
-        let onMouseDown = jest.fn();
-        let button = mount(<Button onMouseDown={ onMouseDown } />);
+        const onMouseDown = jest.fn();
+        const button = mount(<Button onMouseDown={ onMouseDown } />);
 
         button.simulate('mouseDown');
 
@@ -138,8 +138,8 @@ describe('button', () => {
     });
 
     it('should call `onMouseUp` callback after button was unpressed', () => {
-        let onMouseUp = jest.fn();
-        let button = mount(<Button onMouseUp={ onMouseUp } />);
+        const onMouseUp = jest.fn();
+        const button = mount(<Button onMouseUp={ onMouseUp } />);
 
         button.simulate('mouseUp');
 
@@ -147,9 +147,9 @@ describe('button', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        let button = mount(<Button />);
+        const button = mount(<Button />);
 
-        let node = button.instance().getNode();
+        const node = button.instance().getNode();
 
         expect(node).toBeInstanceOf(HTMLElement);
     });

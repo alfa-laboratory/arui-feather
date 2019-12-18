@@ -13,13 +13,12 @@ const breakpointsType = {
     desktop: Type.oneOfType([Type.string, Type.number, Type.object])
 };
 
-
 /**
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
 @cn('grid-row')
-export default class GridRow extends React.PureComponent {
+class GridRow extends React.PureComponent {
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -46,7 +45,9 @@ export default class GridRow extends React.PureComponent {
          */
         tag: Type.string,
         /** Дочерние элементы `GridRow` */
-        children: Type.node
+        children: Type.node,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     }
 
     static defaultProps = {
@@ -79,6 +80,7 @@ export default class GridRow extends React.PureComponent {
         } = this.props;
 
         let gutters = {};
+
         if (typeof gutter === 'object') {
             Object.keys(gutter).forEach((breakpoint) => {
                 if (gutter[breakpoint] === null) {
@@ -134,8 +136,11 @@ export default class GridRow extends React.PureComponent {
                     gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
                 );
                 const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
+
                 return cloneElement(col, { className: `${gutterClassNames.join(' ')}${classNameFromProps}` });
             })
         );
     }
 }
+
+export default GridRow;

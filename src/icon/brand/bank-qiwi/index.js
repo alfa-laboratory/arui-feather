@@ -5,4 +5,4 @@
 import './bank-qiwi.css';
 import '../../../icon';
 
-export default from './bank-qiwi';
+export { default } from './bank-qiwi';

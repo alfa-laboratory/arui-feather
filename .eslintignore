@@ -5,5 +5,8 @@ coverage/**
 demo/**/*
 gemini-coverage/**
 gemini-report/**
+gemini/node_modules/**
 node_modules/**
-src/modernizr.js
+gemini/gemini-report/**
+gemini/node_modules/**
+gemini/gemini-ci.js

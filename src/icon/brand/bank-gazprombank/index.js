@@ -5,4 +5,4 @@
 import './bank-gazprombank.css';
 import '../../../icon';
 
-export default from './bank-gazprombank';
+export { default } from './bank-gazprombank';

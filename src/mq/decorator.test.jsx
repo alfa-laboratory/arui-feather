@@ -10,7 +10,9 @@ import { getMatchMedia } from '../lib/match-media';
 import mqDecorator from './decorator';
 
 jest.mock('../lib/match-media');
-jest.mock('../modernizr', () => ({ pointerevents: true }));
+jest.mock('./utils', () => ({
+    isPointerEventsSupported: jest.fn(() => true)
+}));
 
 describe('mq-decorator', () => {
     it('should pass mqMatch property to decorated component', () => {
@@ -30,8 +32,7 @@ describe('mq-decorator', () => {
             }
         }
 
-
-        let result = mount(<Example />);
+        const result = mount(<Example />);
 
         expect(result.find('Example').props().mqMatch).toBe(false);
     });
@@ -53,7 +54,7 @@ describe('mq-decorator', () => {
             }
         }
 
-        let result = mount(<Example />);
+        const result = mount(<Example />);
 
         expect(result.find('Example').props().isSmall).toBe(false);
     });

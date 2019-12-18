@@ -1,7 +1,7 @@
 <img align="left" width="140" height="140" title="arui-feather"
      src="https://rawgit.com/alfa-laboratory/arui-feather/master/logo.svg" />
 
-# Alfa-Bank UI lightweight library
+# Alfa-Bank UI Library
 
 [![npm][npm-img]][npm]
 [![license][license-img]][license]
@@ -58,13 +58,17 @@ npm install arui-feather --save
 
 ## Вёрстка
 
-[Использование в адаптивной/мобильной среде](./GUIDE.md).
+[Использование в адаптивной/мобильной среде](./GUIDE.md)
+
+## Цветовая схема
+
+[Использование цветовой схемы](./COLORS.md)
 
 ## Разработка
 
 Необходимые внешние зависимости системы:
 
-[`node`](https://nodejs.org/en/) 5+ и `npm`
+[`node`](https://nodejs.org/en/) 8 и `npm`
 
 Шаги запуска демо:
 
@@ -91,7 +95,7 @@ npm install arui-feather --save
 
 Запуск линтера для js `npm run lint-js`.
 
-[Запуск тестов на мобильных устройствах](./GUIDE.md#mobile-testing).
+[Запуск тестов на мобильных устройствах](./GUIDE.md#mobile-testing)
 
 ## Регрессионное тестирование
 
@@ -115,7 +119,7 @@ npm install arui-feather --save
 
 ## Минификация svg
 
-Для оптимизация svg используется [svgo](https://github.com/svg/svgo)
+Для оптимизация svg используется [svgo](https://github.com/svg/svgo).
 
 ```sh
 npm install svgo -g
@@ -124,7 +128,7 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 
 ## Правила контрибуции
 
-[Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md).
+[Подробнее о том, как контрибьютить в проект](./.github/CONTRIBUTING.md)
 
 ## Оптимизация производительности компонентов
 
@@ -141,21 +145,6 @@ import performance from '../performance';
 class Component extends React.Component {}
 ```
 
-## Использование Modernizr
-
-Поскольку modernizr на данный момент не умеет правильно работать внутри webpack
-используется скрипт для генерации webpack на основе конфигурации для него.
-
-Настройки modernizr находятся в файле `.modernizrrc`. [Список доступных опций](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json).
-
-Автоматическая перегенерация `modernizr.js` не предусмотрена, в случае если вы поменяли его настройки - вам нужно
-будет перегенерировать файл.
-
-Для ручного обновления собранного `Modernizr`:
-
-```sh
-npm run modernizr
-```
 
 ## Публикация
 

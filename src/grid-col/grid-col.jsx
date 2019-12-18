@@ -9,7 +9,16 @@ import cn from '../cn';
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
     tablet: Type.oneOfType([Type.string, Type.number, Type.object]),
-    desktop: Type.oneOfType([Type.string, Type.number, Type.object])
+    desktop: Type.oneOfType([Type.string, Type.number, Type.object]),
+    'mobile-s': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'mobile-m': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'mobile-l': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'tablet-s': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'tablet-m': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'tablet-l': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'desktop-s': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'desktop-m': Type.oneOfType([Type.string, Type.number, Type.object]),
+    'desktop-l': Type.oneOfType([Type.string, Type.number, Type.object])
 };
 
 /**
@@ -18,7 +27,7 @@ const breakpointsType = {
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
 @cn('grid-col')
-export default class GridCol extends React.PureComponent {
+class GridCol extends React.PureComponent {
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -56,7 +65,9 @@ export default class GridCol extends React.PureComponent {
         /** Html тег компонента. */
         tag: Type.string,
         /** Дочерние элементы `GridCol` */
-        children: Type.node
+        children: Type.node,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     }
 
     static defaultProps = {
@@ -94,15 +105,19 @@ export default class GridCol extends React.PureComponent {
      * @param {Object} props Свойства.
      * @returns {Object}
      */
-    createClassNames(props) { // eslint-disable-line class-methods-use-this-regexp/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this
+    createClassNames(props) {
         const classNames = {};
+
         Object.keys(props).forEach((name) => {
             const prop = props[name];
+
             if (!prop) {
                 return;
             }
             if (typeof prop !== 'object') {
                 classNames[name] = prop;
+
                 return;
             }
             Object.keys(prop).forEach((breakpoint) => {
@@ -121,6 +136,9 @@ export default class GridCol extends React.PureComponent {
                 }
             });
         });
+
         return classNames;
     }
 }
+
+export default GridCol;

@@ -5,4 +5,4 @@
 import './help.css';
 import '../../../icon';
 
-export default from './help';
+export { default } from './help';

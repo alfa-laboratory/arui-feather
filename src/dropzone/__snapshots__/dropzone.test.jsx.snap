@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropzone should render without problems 1`] = `
+<Dropzone
+  text="Поместите файлы сюда"
+  theme="alfa-on-white"
+>
+  <div
+    className="dropzone dropzone_theme_alfa-on-white"
+    onDragEnter={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+  >
+    <div
+      className="dropzone__view"
+    >
+      Поместите файлы сюда
+    </div>
+  </div>
+</Dropzone>
+`;

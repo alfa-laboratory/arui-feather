@@ -22,7 +22,9 @@ class CardInput extends React.Component {
     static propTypes = {
         ...Input.propTypes,
         /** Подсказка в текстовом поле */
-        placeholder: Type.string
+        placeholder: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -39,7 +41,9 @@ class CardInput extends React.Component {
             <Input
                 { ...this.props }
                 type='tel'
-                ref={ (root) => { this.root = root; } }
+                ref={ (root) => {
+                    this.root = root;
+                } }
                 mask='1111 1111 1111 1111 11'
                 formNoValidate={ true }
                 className={ cn() }

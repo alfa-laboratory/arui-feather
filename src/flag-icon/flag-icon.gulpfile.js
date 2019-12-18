@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+// @ts-nocheck
+
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 const buffer = require('vinyl-buffer');
@@ -44,12 +46,14 @@ gulp.task('clean:flag-icon', () => del(
 );
 
 SIZES.forEach((size) => {
-    let cssChunksTemplate = hbs.compile(fs.readFileSync(`${COMPONENT_DIR}/flag-icon.chunks.css.hbs`).toString());
-    let cssChunksData = { size, chunks: [] };
+    const cssChunksTemplate = hbs.compile(fs.readFileSync(`${COMPONENT_DIR}/flag-icon.chunks.css.hbs`).toString());
+    const cssChunksData = { size, chunks: [] };
 
     // Process 2-char country code files only (ignore subregions)
     gulp.task(`flag-icon:resize-${size}`, () => gulp.src('../../node_modules/region-flags/png/??.png')
-        .pipe(rename((path) => { path.basename = path.basename.toLowerCase(); }))
+        .pipe(rename((path) => {
+            path.basename = path.basename.toLowerCase();
+        }))
         // You need graphicsmagick installed on your system:
         // https://github.com/scalableminds/gulp-gm#graphicsmagick-or-imagemagick
         .pipe(gm((file => file.resize(
@@ -61,12 +65,14 @@ SIZES.forEach((size) => {
             // https://github.com/twolfson/gulp.spritesmith/issues/57
             // https://github.com/katapad/evenizer
             file.size((error, dimensions) => {
-                let { width, height } = dimensions;
+                const { width, height } = dimensions;
 
-                if (error) throw error;
+                if (error) {
+                    throw error;
+                }
 
-                let east = width % 2 === 1 ? 1 : 0;
-                let south = height % 2 === 1 ? 1 : 0;
+                const east = width % 2 === 1 ? 1 : 0;
+                const south = height % 2 === 1 ? 1 : 0;
 
                 if (east || south) {
                     done(null, optimizeGmFile(file.resize(
@@ -82,7 +88,9 @@ SIZES.forEach((size) => {
         .pipe(gulp.dest(`${CHUNKS_IMG_DIR}/${size}/2x`))
         .pipe(gm((file, done) => {
             file.size((error, dimensions) => {
-                if (error) throw error;
+                if (error) {
+                    throw error;
+                }
 
                 done(null, optimizeGmFile(file.resize(
                     dimensions.width / 2,
@@ -98,10 +106,13 @@ SIZES.forEach((size) => {
         () => gulp.src(`${CHUNKS_IMG_DIR}/${size}/1x/*.png`)
             .pipe(gm((file, done) => {
                 file.size((error, dimensions) => {
-                    if (error) throw error;
+                    if (error) {
+                        throw error;
+                    }
 
-                    let url = file.source.split(/\/1x\//g);
-                    let name = path.basename(file.source, path.extname(file.source));
+                    const url = file.source.split(/\/1x\//g);
+                    const name = path.basename(file.source, path.extname(file.source));
+
                     cssChunksData.chunks.push({
                         width: `${dimensions.width}px`,
                         height: `${dimensions.height}px`,
@@ -126,7 +137,7 @@ SIZES.forEach((size) => {
     );
 
     gulp.task(`flag-icon:sprite-${size}`, [`flag-icon:resize-${size}`], () => {
-        let spriteData = gulp.src(`${CHUNKS_IMG_DIR}/${size}/**/*.png`)
+        const spriteData = gulp.src(`${CHUNKS_IMG_DIR}/${size}/**/*.png`)
             .pipe(spritesmith({
                 cssName: `flag-icon_size_${size}.sprite.css`,
                 imgName: `flag-icon_size_${size}@1x.png`,
@@ -138,18 +149,20 @@ SIZES.forEach((size) => {
                     sprite.selector = `.flag-icon_country_${sprite.name}`;
 
                     // https://github.com/twolfson/gulp.spritesmith/issues/124
-                    if (sprite.source_image.indexOf('2x') !== -1) { sprite.name += '-2x'; }
+                    if (sprite.source_image.indexOf('2x') !== -1) {
+                        sprite.name += '-2x';
+                    }
                 }
             }));
 
-        let imageStream = spriteData.img
+        const imageStream = spriteData.img
             .pipe(buffer())
             .pipe(imagemin([
                 imagemin.optipng({ optimizationLevel: 7 })
             ]))
             .pipe(gulp.dest(SPRITES_IMG_DIR));
 
-        let cssStream = spriteData.css
+        const cssStream = spriteData.css
             .pipe(gulp.dest(COMPONENT_DIR));
 
         return merge(imageStream, cssStream);

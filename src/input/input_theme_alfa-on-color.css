@@ -22,7 +22,8 @@
         &:-webkit-autofill:hover,
         &:-webkit-autofill:focus,
         &:-webkit-autofill:active {
-            -webkit-text-fill-color: var(--color-content-alfa-on-color) !important;
+            -webkit-text-fill-color: var(--color-content-alfa-on-color);
+            caret-color: var(--color-content-alfa-on-color);
         }
     }
 
@@ -46,7 +47,6 @@
     &.input_has-icon {
         .input__icon {
             color: var(--color-content-alfa-on-color);
-            opacity: var(--opacity-minor);
         }
     }
 
@@ -61,11 +61,19 @@
         .input__box {
             border-bottom-color: var(--color-border-control-disabled-alfa-on-color);
             border-bottom-style: var(--border-style-control-disabled);
+            box-shadow: none;
         }
 
         &,
         .input__control {
             color: var(--color-content-disabled-alfa-on-color);
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-text-fill-color: var(--color-content-disabled-alfa-on-color);
+            }
         }
 
         .input__control::placeholder {

@@ -4,12 +4,10 @@
 
 /* eslint-disable max-len */
 
-import autobind from 'core-decorators/lib/autobind';
 import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
-import RenderInContainer from '../render-in-container/render-in-container';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
@@ -17,8 +15,6 @@ import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
-
-const IS_REACT_16 = !!ReactDOM.createPortal;
 
 /**
  * @typedef {Object} Point
@@ -68,10 +64,23 @@ class Popup extends React.Component {
         /** Подстраивание высоты попапа под край окна ('adaptive'), занятие попапом всей возможной высоты ('available'), 'default' */
         height: Type.oneOf(['default', 'available', 'adaptive']),
         /** Только для target='anchor', расположение (в порядке приоритета) относительно точки открытия. Первым указывается главное направление, через дефис - второстепенное направление */
-        directions: Type.arrayOf(Type.oneOf([
-            'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
-            'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
-        ])),
+        directions: Type.arrayOf(
+            Type.oneOf([
+                'anchor',
+                'top-left',
+                'top-center',
+                'top-right',
+                'left-top',
+                'left-center',
+                'left-bottom',
+                'right-top',
+                'right-center',
+                'right-bottom',
+                'bottom-left',
+                'bottom-center',
+                'bottom-right'
+            ])
+        ),
         /** Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen' */
         target: Type.oneOf(['anchor', 'position', 'screen']),
         /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно основного направления */
@@ -112,7 +121,9 @@ class Popup extends React.Component {
         /** Максимальная высота попапа */
         maxHeight: Type.number,
         /** Указатель на родительский элемент */
-        for: Type.string
+        for: Type.string,
+        /** Идентификатор для систем автоматизированного тестирования */
+        'data-test-id': Type.string
     };
 
     static defaultProps = {
@@ -171,10 +182,13 @@ class Popup extends React.Component {
         }
     }, 200);
 
-    componentWillMount() {
-        if (this.context.isInCustomContainer
-            && this.context.renderContainerElement
-            && this.context.positioningContainerElement) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
+        if (
+            this.context.isInCustomContainer &&
+            this.context.renderContainerElement &&
+            this.context.positioningContainerElement
+        ) {
             this.setState({
                 receivedContainer: true
             });
@@ -193,27 +207,35 @@ class Popup extends React.Component {
         window.addEventListener('resize', this.handleWindowResize);
 
         /* eslint-disable react/no-did-mount-set-state */
-        this.setState({
-            canUseDOM: true
-        }, () => {
-            if (this.state.needRedrawAfterMount) {
-                this.redraw();
+        this.setState(
+            {
+                canUseDOM: true
+            },
+            () => {
+                if (this.state.needRedrawAfterMount) {
+                    this.redraw();
+                }
             }
-        });
+        );
         /* eslint-enable */
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
-        if (!this.state.receivedContainer
-            && nextContext.renderContainerElement
-            && nextContext.positioningContainerElement) {
-            this.setState({
-                receivedContainer: true
-            }, () => {
-                if (this.props.visible) {
-                    this.redraw();
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+        if (
+            !this.state.receivedContainer &&
+            nextContext.renderContainerElement &&
+            nextContext.positioningContainerElement
+        ) {
+            this.setState(
+                {
+                    receivedContainer: true
+                },
+                () => {
+                    if (this.props.visible) {
+                        this.redraw();
+                    }
                 }
-            });
+            );
 
             return;
         }
@@ -248,18 +270,21 @@ class Popup extends React.Component {
             return null;
         }
 
-        let template = (
+        const template = (
             <div
-                ref={ (popup) => { this.popup = popup; } }
+                ref={ (popup) => {
+                    this.popup = popup;
+                } }
                 data-for={ this.props.for }
                 className={ cn({
                     direction: this.state.direction,
-                    type: (this.props.target === 'anchor') && (this.props.type === 'tooltip') && this.props.type,
+                    type: this.props.target === 'anchor' && this.props.type === 'tooltip' && this.props.type,
                     target: this.props.target,
                     size: this.props.size,
                     visible: this.props.visible,
                     height: this.props.height,
-                    padded: this.props.padded
+                    padded: this.props.padded,
+                    overflow: !!this.props.maxHeight
                 }) }
                 id={ this.props.id }
                 style={ {
@@ -270,59 +295,53 @@ class Popup extends React.Component {
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ cn('container') }>
-                    {
-                        this.props.header && (
-                            <div className={ cn('header') }>
-                                { this.props.header }
-                            </div>
-                        )
-                    }
+                    { this.props.header && <div className={ cn('header') }>{ this.props.header }</div> }
                     <div
-                        ref={ (inner) => { this.inner = inner; } }
+                        ref={ (inner) => {
+                            this.inner = inner;
+                        } }
                         className={ cn('inner') }
                         onScroll={ this.handleInnerScroll }
                     >
-                        <div className={ cn('content') } ref={ (content) => { this.content = content; } }>
+                        <div
+                            className={ cn('content') }
+                            ref={ (content) => {
+                                this.content = content;
+                            } }
+                        >
                             { this.props.children }
                             <ResizeSensor onResize={ this.handleResize } />
                         </div>
                     </div>
-                    {
-                        this.state.hasScrollbar && (
-                            <div>
-                                <div
-                                    className={ cn('gradient', { top: true }) }
-                                    style={ this.state.topGradientStyles }
-                                />
-                                <div
-                                    className={ cn('gradient', { bottom: true }) }
-                                    style={ this.state.bottomGradientStyles }
-                                />
-                            </div>
-                        )
-                    }
+                    { this.state.hasScrollbar && (
+                        <div>
+                            <div className={ cn('gradient', { top: true }) } style={ this.state.topGradientStyles } />
+                            <div
+                                className={ cn('gradient', { bottom: true }) }
+                                style={ this.state.bottomGradientStyles }
+                            />
+                        </div>
+                    ) }
                 </div>
             </div>
         );
 
-        return IS_REACT_16
-            ? ReactDOM.createPortal(template, this.getRenderContainer())
-            : <RenderInContainer container={ this.getRenderContainer() }>{ template }</RenderInContainer>;
+        return ReactDOM.createPortal(template, this.getRenderContainer());
     }
 
-    @autobind
-    handleInnerScroll(event) {
-        let { scrollTop, offsetHeight, scrollHeight } = event.target;
-        let isTopReached = Math.round(scrollTop) === 0;
-        let isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
+    handleInnerScroll = (event) => {
+        const { scrollTop, offsetHeight, scrollHeight } = event.target;
+        const isTopReached = Math.round(scrollTop) === 0;
+        const isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
 
         if (this.props.height === 'adaptive' || this.props.target === 'screen') {
-            let topGradientStyles = {
+            const topGradientStyles = {
                 width: this.state.topGradientStyles.width
             };
-            let bottomGradientStyles = {
+            const bottomGradientStyles = {
                 width: this.state.bottomGradientStyles.width
             };
 
@@ -339,37 +358,33 @@ class Popup extends React.Component {
                 bottomGradientStyles
             });
         }
-    }
+    };
 
-    @autobind
-    handleMouseEnter(event) {
+    handleMouseEnter = (event) => {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
-    }
+    };
 
-    @autobind
-    handleMouseLeave(event) {
+    handleMouseLeave = (event) => {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
-    }
+    };
 
-    @autobind
-    handleWindowClick(event) {
+    handleWindowClick = (event) => {
         if (this.props.onClickOutside && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
             this.props.onClickOutside(event);
         }
-    }
+    };
 
-    @autobind
-    handleResize() {
+    handleResize = () => {
         if (!this.props.visible) {
             return;
         }
 
         this.redraw();
-    }
+    };
 
     /**
      * Задает элемент, к которому будет привязан popup.
@@ -415,7 +430,7 @@ class Popup extends React.Component {
      */
     getRenderContainer() {
         if (!this.context.isInCustomContainer) {
-            return IS_REACT_16 ? document.body : null;
+            return document.body;
         }
 
         return this.context.renderContainerElement;
@@ -447,9 +462,7 @@ class Popup extends React.Component {
             return true;
         }
 
-        return (
-            this.context.isInCustomContainer && this.state.receivedContainer
-        );
+        return this.context.isInCustomContainer && this.state.receivedContainer;
     }
 
     /**
@@ -459,13 +472,14 @@ class Popup extends React.Component {
      * @returns {Boolean}
      */
     isPropsToPositionCorrect() {
-        return (this.props.target === 'anchor' && this.anchor)
-            || (this.props.target === 'position' && this.position)
-            || (this.props.target === 'screen');
+        return (
+            (this.props.target === 'anchor' && this.anchor) ||
+            (this.props.target === 'position' && this.position) ||
+            this.props.target === 'screen'
+        );
     }
 
-    @autobind
-    redraw() {
+    redraw = () => {
         /*
          * Если функция redraw() была вызвана до componentDidMount,
          * то нужно отложить её вызов до момента,
@@ -495,7 +509,7 @@ class Popup extends React.Component {
             this.domElemPopupContent = this.content;
         }
 
-        let popupHash = this.getPopupHash();
+        const popupHash = this.getPopupHash();
         let bestDrawingParams;
 
         switch (this.props.target) {
@@ -529,10 +543,10 @@ class Popup extends React.Component {
         });
 
         this.setGradientStyles();
-    }
+    };
 
     ensureClickEvent(isDestroy) {
-        let isNeedBindEvent = isDestroy !== undefined ? !isDestroy : this.props.visible;
+        const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
         // popup opening (because it propagates to the `window`).
@@ -568,21 +582,21 @@ class Popup extends React.Component {
      * @returns {Number}
      */
     getMinWidth() {
-        return this.props.minWidth !== undefined ? this.props.minWidth : 0;
+        return this.props.minWidth === undefined ? 0 : this.props.minWidth;
     }
 
     /**
      * @returns {Number}
      */
     getMaxWidth() {
-        return this.props.maxWidth !== undefined ? this.props.maxWidth : 'none';
+        return this.props.maxWidth === undefined ? 'none' : this.props.maxWidth;
     }
 
     /**
      * @returns {Number}
      */
     getMaxHeight() {
-        return this.props.maxHeight !== undefined ? this.props.maxHeight : 'none';
+        return this.props.maxHeight === undefined ? 'none' : this.props.maxHeight;
     }
 
     /**
@@ -614,7 +628,7 @@ class Popup extends React.Component {
     }
 
     setGradientStyles() {
-        let { clientWidth } = this.inner;
+        const { clientWidth } = this.inner;
 
         this.setState({
             topGradientStyles: {

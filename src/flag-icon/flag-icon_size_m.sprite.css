@@ -1,5 +1,3 @@
-/* stylelint-disable rule-empty-line-before, length-zero-no-unit */
-
 .flag-icon_mode_sprite.flag-icon_size_m {
     background-image: url('./images/sprites/flag-icon_size_m@1x.png');
     background-size: 278px 254px;
@@ -16,1286 +14,1543 @@
         height: 10px;
         background-position: -180px -213px;
     }
+
     &.flag-icon_country_ad {
         width: 20px;
         height: 14px;
         background-position: -160px -14px;
     }
+
     &.flag-icon_country_ae {
         width: 20px;
         height: 10px;
         background-position: -238px -70px;
     }
+
     &.flag-icon_country_af {
         width: 20px;
         height: 14px;
-        background-position: -160px 0px;
+        background-position: -160px 0;
     }
+
     &.flag-icon_country_ag {
         width: 20px;
         height: 14px;
         background-position: -140px -130px;
     }
+
     &.flag-icon_country_ai {
         width: 20px;
         height: 10px;
         background-position: -238px -120px;
     }
+
     &.flag-icon_country_al {
         width: 20px;
         height: 15px;
         background-position: -20px -30px;
     }
+
     &.flag-icon_country_am {
         width: 20px;
         height: 10px;
-        background-position: -238px 0px;
+        background-position: -238px 0;
     }
+
     &.flag-icon_country_ao {
         width: 20px;
         height: 14px;
         background-position: -20px -74px;
     }
+
     &.flag-icon_country_aq {
         width: 20px;
         height: 14px;
         background-position: -20px -102px;
     }
+
     &.flag-icon_country_ar {
         width: 20px;
         height: 13px;
-        background-position: 0px -200px;
+        background-position: 0 -200px;
     }
+
     &.flag-icon_country_as {
         width: 20px;
         height: 10px;
         background-position: -80px -224px;
     }
+
     &.flag-icon_country_at {
         width: 20px;
         height: 14px;
-        background-position: 0px -116px;
+        background-position: 0 -116px;
     }
+
     &.flag-icon_country_au {
         width: 20px;
         height: 10px;
         background-position: -238px -30px;
     }
+
     &.flag-icon_country_aw {
         width: 20px;
         height: 14px;
         background-position: -60px -130px;
     }
+
     &.flag-icon_country_ax {
         width: 20px;
         height: 13px;
         background-position: -100px -186px;
     }
+
     &.flag-icon_country_az {
         width: 20px;
         height: 10px;
         background-position: -20px -234px;
     }
+
     &.flag-icon_country_ba {
         width: 20px;
         height: 10px;
         background-position: -258px -20px;
     }
+
     &.flag-icon_country_bb {
         width: 20px;
         height: 14px;
         background-position: -160px -70px;
     }
+
     &.flag-icon_country_bd {
         width: 20px;
         height: 12px;
         background-position: -218px -84px;
     }
+
     &.flag-icon_country_be {
         width: 18px;
         height: 15px;
         background-position: -200px -15px;
     }
+
     &.flag-icon_country_bf {
         width: 20px;
         height: 14px;
         background-position: -180px -126px;
     }
+
     &.flag-icon_country_bg {
         width: 20px;
         height: 12px;
         background-position: -218px -120px;
     }
+
     &.flag-icon_country_bh {
         width: 20px;
         height: 12px;
         background-position: -218px -108px;
     }
+
     &.flag-icon_country_bi {
         width: 20px;
         height: 12px;
         background-position: -218px -96px;
     }
+
     &.flag-icon_country_bj {
         width: 20px;
         height: 14px;
         background-position: -20px -60px;
     }
+
     &.flag-icon_country_bl {
         width: 20px;
         height: 14px;
         background-position: -40px -60px;
     }
+
     &.flag-icon_country_bm {
         width: 20px;
         height: 10px;
         background-position: -200px -213px;
     }
+
     &.flag-icon_country_bn {
         width: 20px;
         height: 10px;
         background-position: -20px -224px;
     }
+
     &.flag-icon_country_bo {
         width: 20px;
         height: 14px;
         background-position: -60px -60px;
     }
+
     &.flag-icon_country_bq {
         width: 20px;
         height: 14px;
-        background-position: -80px 0px;
+        background-position: -80px 0;
     }
+
     &.flag-icon_country_br {
         width: 20px;
         height: 14px;
         background-position: -80px -14px;
     }
+
     &.flag-icon_country_bs {
         width: 20px;
         height: 10px;
         background-position: -238px -50px;
     }
+
     &.flag-icon_country_bt {
         width: 20px;
         height: 14px;
         background-position: -80px -28px;
     }
+
     &.flag-icon_country_bv {
         width: 20px;
         height: 15px;
         background-position: -20px -15px;
     }
+
     &.flag-icon_country_bw {
         width: 20px;
         height: 14px;
         background-position: -80px -56px;
     }
+
     &.flag-icon_country_by {
         width: 20px;
         height: 10px;
         background-position: -60px -244px;
     }
+
     &.flag-icon_country_bz {
         width: 20px;
         height: 14px;
-        background-position: 0px -74px;
+        background-position: 0 -74px;
     }
+
     &.flag-icon_country_ca {
         width: 20px;
         height: 10px;
         background-position: -258px -30px;
     }
+
     &.flag-icon_country_cc {
         width: 20px;
         height: 10px;
         background-position: -258px -100px;
     }
+
     &.flag-icon_country_cd {
         width: 20px;
         height: 15px;
-        background-position: -40px 0px;
+        background-position: -40px 0;
     }
+
     &.flag-icon_country_cf {
         width: 20px;
         height: 14px;
         background-position: -40px -74px;
     }
+
     &.flag-icon_country_cg {
         width: 20px;
         height: 14px;
         background-position: -60px -74px;
     }
+
     &.flag-icon_country_ch {
         width: 15px;
         height: 15px;
         background-position: -218px -183px;
     }
+
     &.flag-icon_country_ci {
         width: 20px;
         height: 14px;
-        background-position: -100px 0px;
+        background-position: -100px 0;
     }
+
     &.flag-icon_country_ck {
         width: 20px;
         height: 10px;
         background-position: -238px -20px;
     }
+
     &.flag-icon_country_cl {
         width: 20px;
         height: 14px;
         background-position: -100px -14px;
     }
+
     &.flag-icon_country_cm {
         width: 20px;
         height: 14px;
         background-position: -100px -28px;
     }
+
     &.flag-icon_country_cn {
         width: 20px;
         height: 14px;
         background-position: -100px -42px;
     }
+
     &.flag-icon_country_co {
         width: 20px;
         height: 14px;
         background-position: -100px -56px;
     }
+
     &.flag-icon_country_cp {
         width: 20px;
         height: 14px;
         background-position: -100px -70px;
     }
+
     &.flag-icon_country_cr {
         width: 20px;
         height: 12px;
         background-position: -218px -60px;
     }
+
     &.flag-icon_country_cu {
         width: 20px;
         height: 10px;
         background-position: -100px -244px;
     }
+
     &.flag-icon_country_cv {
         width: 20px;
         height: 12px;
         background-position: -218px -48px;
     }
+
     &.flag-icon_country_cw {
         width: 20px;
         height: 14px;
         background-position: -40px -88px;
     }
+
     &.flag-icon_country_cx {
         width: 20px;
         height: 10px;
         background-position: -258px -60px;
     }
+
     &.flag-icon_country_cy {
         width: 20px;
         height: 14px;
         background-position: -60px -88px;
     }
+
     &.flag-icon_country_cz {
         width: 20px;
         height: 14px;
         background-position: -80px -88px;
     }
+
     &.flag-icon_country_de {
         width: 20px;
         height: 12px;
         background-position: -218px -156px;
     }
+
     &.flag-icon_country_dg {
         width: 20px;
         height: 10px;
-        background-position: 0px -224px;
+        background-position: 0 -224px;
     }
+
     &.flag-icon_country_dj {
         width: 20px;
         height: 14px;
-        background-position: 0px -102px;
+        background-position: 0 -102px;
     }
+
     &.flag-icon_country_dk {
         width: 20px;
         height: 15px;
         background-position: -40px -15px;
     }
+
     &.flag-icon_country_dm {
         width: 20px;
         height: 10px;
         background-position: -180px -224px;
     }
+
     &.flag-icon_country_do {
         width: 20px;
         height: 14px;
         background-position: -40px -102px;
     }
+
     &.flag-icon_country_dz {
         width: 20px;
         height: 14px;
         background-position: -60px -102px;
     }
+
     &.flag-icon_country_ea {
         width: 20px;
         height: 14px;
         background-position: -80px -102px;
     }
+
     &.flag-icon_country_ec {
         width: 20px;
         height: 14px;
         background-position: -100px -102px;
     }
+
     &.flag-icon_country_ee {
         width: 20px;
         height: 13px;
         background-position: -120px -186px;
     }
+
     &.flag-icon_country_eg {
         width: 20px;
         height: 14px;
         background-position: -120px -14px;
     }
+
     &.flag-icon_country_eh {
         width: 20px;
         height: 10px;
         background-position: -238px -150px;
     }
+
     &.flag-icon_country_er {
         width: 20px;
         height: 10px;
         background-position: -238px -190px;
     }
+
     &.flag-icon_country_es {
         width: 20px;
         height: 14px;
         background-position: -120px -28px;
     }
+
     &.flag-icon_country_et {
         width: 20px;
         height: 10px;
         background-position: -160px -234px;
     }
+
     &.flag-icon_country_eu {
         width: 20px;
         height: 14px;
         background-position: -120px -42px;
     }
+
     &.flag-icon_country_fi {
         width: 20px;
         height: 12px;
         background-position: -218px -12px;
     }
+
     &.flag-icon_country_fj {
         width: 20px;
         height: 10px;
         background-position: -180px -244px;
     }
+
     &.flag-icon_country_fk {
         width: 20px;
         height: 10px;
         background-position: -220px -244px;
     }
+
     &.flag-icon_country_fm {
         width: 20px;
         height: 11px;
         background-position: -218px -198px;
     }
+
     &.flag-icon_country_fo {
         width: 20px;
         height: 15px;
-        background-position: 0px -30px;
+        background-position: 0 -30px;
     }
+
     &.flag-icon_country_fr {
         width: 20px;
         height: 14px;
         background-position: -120px -98px;
     }
+
     &.flag-icon_country_ga {
         width: 20px;
         height: 15px;
-        background-position: 0px 0px;
+        background-position: 0 0;
     }
+
     &.flag-icon_country_gb {
         width: 20px;
         height: 10px;
         background-position: -258px -110px;
     }
+
     &.flag-icon_country_gd {
         width: 20px;
         height: 12px;
         background-position: -180px -200px;
     }
+
     &.flag-icon_country_ge {
         width: 20px;
         height: 14px;
         background-position: -40px -116px;
     }
+
     &.flag-icon_country_gf {
         width: 20px;
         height: 14px;
         background-position: -60px -116px;
     }
+
     &.flag-icon_country_gg {
         width: 20px;
         height: 14px;
         background-position: -80px -116px;
     }
+
     &.flag-icon_country_gh {
         width: 20px;
         height: 14px;
         background-position: -100px -116px;
     }
+
     &.flag-icon_country_gi {
         width: 20px;
         height: 10px;
         background-position: -100px -224px;
     }
+
     &.flag-icon_country_gl {
         width: 20px;
         height: 14px;
         background-position: -120px -116px;
     }
+
     &.flag-icon_country_gm {
         width: 20px;
         height: 14px;
-        background-position: -140px 0px;
+        background-position: -140px 0;
     }
+
     &.flag-icon_country_gn {
         width: 20px;
         height: 14px;
         background-position: -140px -14px;
     }
+
     &.flag-icon_country_gp {
         width: 20px;
         height: 14px;
         background-position: -140px -28px;
     }
+
     &.flag-icon_country_gq {
         width: 20px;
         height: 14px;
         background-position: -140px -42px;
     }
+
     &.flag-icon_country_gr {
         width: 20px;
         height: 14px;
         background-position: -140px -56px;
     }
+
     &.flag-icon_country_gs {
         width: 20px;
         height: 10px;
         background-position: -238px -110px;
     }
+
     &.flag-icon_country_gt {
         width: 20px;
         height: 13px;
         background-position: -60px -186px;
     }
+
     &.flag-icon_country_gu {
         width: 20px;
         height: 11px;
         background-position: -60px -213px;
     }
+
     &.flag-icon_country_gw {
         width: 20px;
         height: 10px;
         background-position: -238px -180px;
     }
+
     &.flag-icon_country_gy {
         width: 20px;
         height: 12px;
         background-position: -120px -200px;
     }
+
     &.flag-icon_country_hk {
         width: 20px;
         height: 14px;
         background-position: -140px -112px;
     }
+
     &.flag-icon_country_hm {
         width: 20px;
         height: 10px;
         background-position: -40px -234px;
     }
+
     &.flag-icon_country_hn {
         width: 20px;
         height: 10px;
         background-position: -60px -234px;
     }
+
     &.flag-icon_country_hr {
         width: 20px;
         height: 10px;
         background-position: -140px -234px;
     }
+
     &.flag-icon_country_ht {
         width: 20px;
         height: 12px;
         background-position: -100px -200px;
     }
+
     &.flag-icon_country_hu {
         width: 20px;
         height: 10px;
         background-position: -200px -234px;
     }
+
     &.flag-icon_country_ic {
         width: 20px;
         height: 14px;
         background-position: -20px -130px;
     }
+
     &.flag-icon_country_id {
         width: 20px;
         height: 14px;
         background-position: -40px -130px;
     }
+
     &.flag-icon_country_ie {
         width: 20px;
         height: 10px;
         background-position: -160px -244px;
     }
+
     &.flag-icon_country_il {
         width: 20px;
         height: 15px;
         background-position: -40px -30px;
     }
+
     &.flag-icon_country_im {
         width: 20px;
         height: 10px;
         background-position: -200px -244px;
     }
+
     &.flag-icon_country_in {
         width: 20px;
         height: 14px;
         background-position: -80px -130px;
     }
+
     &.flag-icon_country_io {
         width: 20px;
         height: 10px;
-        background-position: -258px 0px;
+        background-position: -258px 0;
     }
+
     &.flag-icon_country_iq {
         width: 20px;
         height: 14px;
         background-position: -100px -130px;
     }
+
     &.flag-icon_country_ir {
         width: 20px;
         height: 12px;
         background-position: -80px -200px;
     }
+
     &.flag-icon_country_is {
         width: 20px;
         height: 15px;
-        background-position: 0px -45px;
+        background-position: 0 -45px;
     }
+
     &.flag-icon_country_it {
         width: 20px;
         height: 14px;
-        background-position: 0px -144px;
+        background-position: 0 -144px;
     }
+
     &.flag-icon_country_je {
         width: 20px;
         height: 12px;
         background-position: -60px -200px;
     }
+
     &.flag-icon_country_jm {
         width: 20px;
         height: 10px;
         background-position: -258px -120px;
     }
+
     &.flag-icon_country_jo {
         width: 20px;
         height: 10px;
         background-position: -258px -140px;
     }
+
     &.flag-icon_country_jp {
         width: 20px;
         height: 14px;
         background-position: -40px -144px;
     }
+
     &.flag-icon_country_ke {
         width: 20px;
         height: 14px;
         background-position: -60px -144px;
     }
+
     &.flag-icon_country_kg {
         width: 20px;
         height: 12px;
         background-position: -40px -200px;
     }
+
     &.flag-icon_country_kh {
         width: 20px;
         height: 13px;
         background-position: -180px -186px;
     }
+
     &.flag-icon_country_ki {
         width: 20px;
         height: 10px;
         background-position: -60px -224px;
     }
+
     &.flag-icon_country_km {
         width: 20px;
         height: 12px;
         background-position: -20px -200px;
     }
+
     &.flag-icon_country_kn {
         width: 20px;
         height: 14px;
         background-position: -140px -144px;
     }
+
     &.flag-icon_country_kp {
         width: 20px;
         height: 10px;
         background-position: -140px -224px;
     }
+
     &.flag-icon_country_kr {
         width: 20px;
         height: 14px;
         background-position: -60px -30px;
     }
+
     &.flag-icon_country_kw {
         width: 20px;
         height: 10px;
         background-position: -200px -224px;
     }
+
     &.flag-icon_country_ky {
         width: 20px;
         height: 10px;
         background-position: -120px -213px;
     }
+
     &.flag-icon_country_kz {
         width: 20px;
         height: 10px;
         background-position: -238px -10px;
     }
+
     &.flag-icon_country_la {
         width: 20px;
         height: 14px;
         background-position: -160px -28px;
     }
+
     &.flag-icon_country_lb {
         width: 20px;
         height: 14px;
         background-position: -160px -42px;
     }
+
     &.flag-icon_country_lc {
         width: 20px;
         height: 10px;
         background-position: -238px -40px;
     }
+
     &.flag-icon_country_li {
         width: 20px;
         height: 12px;
         background-position: -140px -200px;
     }
+
     &.flag-icon_country_lk {
         width: 20px;
         height: 10px;
         background-position: -238px -60px;
     }
+
     &.flag-icon_country_lr {
         width: 20px;
         height: 11px;
         background-position: -100px -213px;
     }
+
     &.flag-icon_country_ls {
         width: 20px;
         height: 14px;
         background-position: -160px -84px;
     }
+
     &.flag-icon_country_lt {
         width: 20px;
         height: 12px;
         background-position: -160px -200px;
     }
+
     &.flag-icon_country_lu {
         width: 20px;
         height: 12px;
         background-position: -218px -24px;
     }
+
     &.flag-icon_country_lv {
         width: 20px;
         height: 10px;
         background-position: -238px -160px;
     }
+
     &.flag-icon_country_ly {
         width: 20px;
         height: 10px;
         background-position: -238px -170px;
     }
+
     &.flag-icon_country_ma {
         width: 20px;
         height: 14px;
         background-position: -160px -126px;
     }
+
     &.flag-icon_country_mc {
         width: 19px;
         height: 15px;
         background-position: -60px -15px;
     }
+
     &.flag-icon_country_md {
         width: 20px;
         height: 10px;
         background-position: -238px -200px;
     }
+
     &.flag-icon_country_me {
         width: 20px;
         height: 10px;
         background-position: -238px -210px;
     }
+
     &.flag-icon_country_mf {
         width: 20px;
         height: 14px;
-        background-position: 0px -158px;
+        background-position: 0 -158px;
     }
+
     &.flag-icon_country_mg {
         width: 20px;
         height: 14px;
         background-position: -20px -158px;
     }
+
     &.flag-icon_country_mh {
         width: 20px;
         height: 11px;
         background-position: -80px -213px;
     }
+
     &.flag-icon_country_mk {
         width: 20px;
         height: 10px;
         background-position: -80px -234px;
     }
+
     &.flag-icon_country_ml {
         width: 20px;
         height: 14px;
         background-position: -60px -158px;
     }
+
     &.flag-icon_country_mm {
         width: 20px;
         height: 14px;
         background-position: -80px -158px;
     }
+
     &.flag-icon_country_mn {
         width: 20px;
         height: 10px;
         background-position: -180px -234px;
     }
+
     &.flag-icon_country_mo {
         width: 20px;
         height: 14px;
         background-position: -100px -158px;
     }
+
     &.flag-icon_country_mp {
         width: 20px;
         height: 10px;
         background-position: -40px -244px;
     }
+
     &.flag-icon_country_mq {
         width: 20px;
         height: 14px;
         background-position: -120px -158px;
     }
+
     &.flag-icon_country_mr {
         width: 20px;
         height: 14px;
         background-position: -140px -158px;
     }
+
     &.flag-icon_country_ms {
         width: 20px;
         height: 10px;
         background-position: -120px -244px;
     }
+
     &.flag-icon_country_mt {
         width: 20px;
         height: 14px;
         background-position: -160px -158px;
     }
+
     &.flag-icon_country_mu {
         width: 20px;
         height: 14px;
-        background-position: -180px 0px;
+        background-position: -180px 0;
     }
+
     &.flag-icon_country_mv {
         width: 20px;
         height: 14px;
         background-position: -180px -14px;
     }
+
     &.flag-icon_country_mw {
         width: 20px;
         height: 14px;
         background-position: -180px -28px;
     }
+
     &.flag-icon_country_mx {
         width: 20px;
         height: 12px;
         background-position: -218px -132px;
     }
+
     &.flag-icon_country_my {
         width: 20px;
         height: 10px;
         background-position: -258px -10px;
     }
+
     &.flag-icon_country_mz {
         width: 20px;
         height: 14px;
         background-position: -180px -56px;
     }
+
     &.flag-icon_country_na {
         width: 20px;
         height: 14px;
         background-position: -180px -70px;
     }
+
     &.flag-icon_country_nc {
         width: 20px;
         height: 10px;
         background-position: -258px -50px;
     }
+
     &.flag-icon_country_ne {
         width: 18px;
         height: 15px;
-        background-position: -200px 0px;
+        background-position: -200px 0;
     }
+
     &.flag-icon_country_nf {
         width: 20px;
         height: 10px;
         background-position: -258px -70px;
     }
+
     &.flag-icon_country_ng {
         width: 20px;
         height: 10px;
         background-position: -258px -90px;
     }
+
     &.flag-icon_country_ni {
         width: 20px;
         height: 12px;
         background-position: -218px -72px;
     }
+
     &.flag-icon_country_nl {
         width: 20px;
         height: 14px;
         background-position: -180px -112px;
     }
+
     &.flag-icon_country_no {
         width: 20px;
         height: 15px;
         background-position: -40px -45px;
     }
+
     &.flag-icon_country_np {
         width: 13px;
         height: 15px;
         background-position: -258px -180px;
     }
+
     &.flag-icon_country_nr {
         width: 20px;
         height: 10px;
         background-position: -258px -150px;
     }
+
     &.flag-icon_country_nu {
         width: 20px;
         height: 10px;
         background-position: -258px -160px;
     }
+
     &.flag-icon_country_nz {
         width: 20px;
         height: 10px;
         background-position: -140px -213px;
     }
+
     &.flag-icon_country_om {
         width: 20px;
         height: 10px;
         background-position: -160px -213px;
     }
+
     &.flag-icon_country_pa {
         width: 20px;
         height: 14px;
         background-position: -180px -154px;
     }
+
     &.flag-icon_country_pe {
         width: 20px;
         height: 14px;
-        background-position: 0px -172px;
+        background-position: 0 -172px;
     }
+
     &.flag-icon_country_pf {
         width: 20px;
         height: 14px;
         background-position: -20px -172px;
     }
+
     &.flag-icon_country_pg {
         width: 20px;
         height: 15px;
-        background-position: -20px 0px;
+        background-position: -20px 0;
     }
+
     &.flag-icon_country_ph {
         width: 20px;
         height: 10px;
         background-position: -40px -224px;
     }
+
     &.flag-icon_country_pk {
         width: 20px;
         height: 14px;
         background-position: -60px -172px;
     }
+
     &.flag-icon_country_pl {
         width: 20px;
         height: 13px;
         background-position: -140px -186px;
     }
+
     &.flag-icon_country_pm {
         width: 20px;
         height: 14px;
         background-position: -100px -172px;
     }
+
     &.flag-icon_country_pn {
         width: 20px;
         height: 10px;
         background-position: -120px -224px;
     }
+
     &.flag-icon_country_pr {
         width: 20px;
         height: 14px;
         background-position: -120px -172px;
     }
+
     &.flag-icon_country_ps {
         width: 20px;
         height: 10px;
         background-position: -160px -224px;
     }
+
     &.flag-icon_country_pt {
         width: 20px;
         height: 14px;
         background-position: -140px -172px;
     }
+
     &.flag-icon_country_pw {
         width: 20px;
         height: 13px;
         background-position: -40px -186px;
     }
+
     &.flag-icon_country_py {
         width: 20px;
         height: 11px;
         background-position: -20px -213px;
     }
+
     &.flag-icon_country_qa {
         width: 20px;
         height: 8px;
         background-position: -258px -195px;
     }
+
     &.flag-icon_country_re {
         width: 20px;
         height: 14px;
         background-position: -20px -186px;
     }
+
     &.flag-icon_country_ro {
         width: 20px;
         height: 14px;
         background-position: -180px -172px;
     }
+
     &.flag-icon_country_rs {
         width: 20px;
         height: 14px;
         background-position: -160px -172px;
     }
+
     &.flag-icon_country_ru {
         width: 20px;
         height: 14px;
         background-position: -80px -172px;
     }
+
     &.flag-icon_country_rw {
         width: 20px;
         height: 14px;
         background-position: -180px -98px;
     }
+
     &.flag-icon_country_sa {
         width: 20px;
         height: 14px;
         background-position: -180px -84px;
     }
+
     &.flag-icon_country_sb {
         width: 20px;
         height: 10px;
         background-position: -238px -80px;
     }
+
     &.flag-icon_country_sc {
         width: 20px;
         height: 10px;
         background-position: -238px -90px;
     }
+
     &.flag-icon_country_sd {
         width: 20px;
         height: 10px;
         background-position: -238px -100px;
     }
+
     &.flag-icon_country_se {
         width: 20px;
         height: 13px;
         background-position: -80px -186px;
     }
+
     &.flag-icon_country_sg {
         width: 20px;
         height: 14px;
         background-position: -180px -42px;
     }
+
     &.flag-icon_country_sh {
         width: 20px;
         height: 10px;
         background-position: -238px -130px;
     }
+
     &.flag-icon_country_si {
         width: 20px;
         height: 10px;
         background-position: -238px -140px;
     }
+
     &.flag-icon_country_sj {
         width: 20px;
         height: 15px;
-        background-position: -60px 0px;
+        background-position: -60px 0;
     }
+
     &.flag-icon_country_sk {
         width: 20px;
         height: 14px;
         background-position: -160px -112px;
     }
+
     &.flag-icon_country_sl {
         width: 20px;
         height: 14px;
         background-position: -160px -98px;
     }
+
     &.flag-icon_country_sm {
         width: 20px;
         height: 15px;
         background-position: -20px -45px;
     }
+
     &.flag-icon_country_sn {
         width: 20px;
         height: 14px;
         background-position: -160px -56px;
     }
+
     &.flag-icon_country_so {
         width: 20px;
         height: 14px;
         background-position: -120px -144px;
     }
+
     &.flag-icon_country_sr {
         width: 20px;
         height: 14px;
         background-position: -100px -144px;
     }
+
     &.flag-icon_country_ss {
         width: 20px;
         height: 10px;
         background-position: -238px -220px;
     }
+
     &.flag-icon_country_st {
         width: 20px;
         height: 10px;
-        background-position: 0px -234px;
+        background-position: 0 -234px;
     }
+
     &.flag-icon_country_sv {
         width: 20px;
         height: 12px;
         background-position: -218px -36px;
     }
+
     &.flag-icon_country_sx {
         width: 20px;
         height: 14px;
         background-position: -80px -144px;
     }
+
     &.flag-icon_country_sy {
         width: 20px;
         height: 14px;
         background-position: -20px -144px;
     }
+
     &.flag-icon_country_sz {
         width: 20px;
         height: 14px;
         background-position: -120px -130px;
     }
+
     &.flag-icon_country_ta {
         width: 20px;
         height: 10px;
         background-position: -100px -234px;
     }
+
     &.flag-icon_country_tc {
         width: 20px;
         height: 10px;
         background-position: -120px -234px;
     }
+
     &.flag-icon_country_td {
         width: 20px;
         height: 14px;
-        background-position: 0px -130px;
+        background-position: 0 -130px;
     }
+
     &.flag-icon_country_tf {
         width: 20px;
         height: 14px;
         background-position: -140px -98px;
     }
+
     &.flag-icon_country_tg {
         width: 20px;
         height: 13px;
         background-position: -160px -186px;
     }
+
     &.flag-icon_country_th {
         width: 20px;
         height: 14px;
         background-position: -140px -84px;
     }
+
     &.flag-icon_country_tj {
         width: 20px;
         height: 10px;
         background-position: -220px -234px;
     }
+
     &.flag-icon_country_tk {
         width: 20px;
         height: 10px;
-        background-position: 0px -244px;
+        background-position: 0 -244px;
     }
+
     &.flag-icon_country_tl {
         width: 20px;
         height: 10px;
         background-position: -20px -244px;
     }
+
     &.flag-icon_country_tm {
         width: 20px;
         height: 14px;
         background-position: -140px -70px;
     }
+
     &.flag-icon_country_tn {
         width: 20px;
         height: 14px;
         background-position: -20px -116px;
     }
+
     &.flag-icon_country_to {
         width: 20px;
         height: 10px;
         background-position: -80px -244px;
     }
+
     &.flag-icon_country_tr {
         width: 20px;
         height: 14px;
         background-position: -120px -70px;
     }
+
     &.flag-icon_country_tt {
         width: 20px;
         height: 12px;
-        background-position: -218px 0px;
+        background-position: -218px 0;
     }
+
     &.flag-icon_country_tv {
         width: 20px;
         height: 10px;
         background-position: -140px -244px;
     }
+
     &.flag-icon_country_tw {
         width: 20px;
         height: 14px;
         background-position: -120px -56px;
     }
+
     &.flag-icon_country_tz {
         width: 20px;
         height: 14px;
-        background-position: -120px 0px;
+        background-position: -120px 0;
     }
+
     &.flag-icon_country_ua {
         width: 20px;
         height: 14px;
         background-position: -100px -88px;
     }
+
     &.flag-icon_country_ug {
         width: 20px;
         height: 14px;
         background-position: -20px -88px;
     }
+
     &.flag-icon_country_um {
         width: 20px;
         height: 11px;
-        background-position: 0px -213px;
+        background-position: 0 -213px;
     }
+
     &.flag-icon_country_un {
         width: 20px;
         height: 14px;
-        background-position: 0px -88px;
+        background-position: 0 -88px;
     }
+
     &.flag-icon_country_us {
         width: 20px;
         height: 11px;
         background-position: -40px -213px;
     }
+
     &.flag-icon_country_uy {
         width: 20px;
         height: 14px;
         background-position: -80px -74px;
     }
+
     &.flag-icon_country_uz {
         width: 20px;
         height: 10px;
         background-position: -258px -40px;
     }
+
     &.flag-icon_country_va {
         width: 15px;
         height: 15px;
         background-position: -218px -168px;
     }
+
     &.flag-icon_country_vc {
         width: 20px;
         height: 14px;
-        background-position: 0px -60px;
+        background-position: 0 -60px;
     }
+
     &.flag-icon_country_ve {
         width: 20px;
         height: 14px;
         background-position: -60px -44px;
     }
+
     &.flag-icon_country_vg {
         width: 20px;
         height: 10px;
         background-position: -258px -80px;
     }
+
     &.flag-icon_country_vi {
         width: 20px;
         height: 14px;
         background-position: -40px -172px;
     }
+
     &.flag-icon_country_vn {
         width: 20px;
         height: 14px;
         background-position: -40px -158px;
     }
+
     &.flag-icon_country_vu {
         width: 20px;
         height: 12px;
         background-position: -218px -144px;
     }
+
     &.flag-icon_country_wf {
         width: 20px;
         height: 14px;
         background-position: -160px -140px;
     }
+
     &.flag-icon_country_ws {
         width: 20px;
         height: 10px;
         background-position: -258px -130px;
     }
+
     &.flag-icon_country_xk {
         width: 20px;
         height: 15px;
-        background-position: 0px -15px;
+        background-position: 0 -15px;
     }
+
     &.flag-icon_country_ye {
         width: 20px;
         height: 14px;
         background-position: -120px -84px;
     }
+
     &.flag-icon_country_yt {
         width: 20px;
         height: 14px;
         background-position: -80px -42px;
     }
+
     &.flag-icon_country_za {
         width: 20px;
         height: 14px;
-        background-position: 0px -186px;
+        background-position: 0 -186px;
     }
+
     &.flag-icon_country_zm {
         width: 20px;
         height: 14px;
         background-position: -180px -140px;
     }
+
     &.flag-icon_country_zw {
         width: 20px;
         height: 10px;

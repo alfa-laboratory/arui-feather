@@ -2,6 +2,7 @@
 const layoutStyle = {
     paddingRight: '10px'
 };
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
@@ -22,6 +23,7 @@ const layoutStyle = {
 const layoutStyle = {
     paddingRight: '10px'
 };
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
@@ -41,6 +43,7 @@ const layoutStyle = {
 const layoutStyle = {
     paddingRight: '10px'
 };
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (

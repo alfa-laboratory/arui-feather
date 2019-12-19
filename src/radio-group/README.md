@@ -47,8 +47,7 @@ import Radio from 'arui-feather/radio';
                     label='Сколько?'
                 >
                     {
-                        ['Один', 'Два', 'Три', 'Четыре'].map(text =>
-                            <Radio text={ text } key={ text } value={ text } />
+                        ['Один', 'Два', 'Три', 'Четыре'].map(text => <Radio text={ text } key={ text } value={ text } />
                         )
                     }
                 </RadioGroup>

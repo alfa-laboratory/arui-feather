@@ -65,6 +65,7 @@ const ITEMS_UL = [
         value: 'Льготная конвертация валют.'
     }
 ];
+
 <List
     items={ ITEMS_UL }
 />

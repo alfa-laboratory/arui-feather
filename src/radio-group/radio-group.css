@@ -41,7 +41,7 @@
     .radio_size_l,
     .radio_size_xl {
         &:not(:last-of-type) {
-            margin-bottom: 12px;
+            margin-bottom: var(--gap-s);
         }
     }
 
@@ -77,11 +77,11 @@
 
     &_size_l {
         .radio-group__top {
-            margin-bottom: 12px;
+            margin-bottom: var(--gap-s);
         }
 
         .radio-group__sub {
-            margin-top: 12px;
+            margin-top: var(--gap-s);
         }
 
         .radio-group__top,
@@ -92,11 +92,11 @@
 
     &_size_xl {
         .radio-group__top {
-            margin-bottom: 12px;
+            margin-bottom: var(--gap-s);
         }
 
         .radio-group__sub {
-            margin-top: 12px;
+            margin-top: var(--gap-s);
         }
 
         .radio-group__top,

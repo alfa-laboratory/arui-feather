@@ -9,6 +9,7 @@ const buttons = [
     { size: 'm', name: 'Оплатить' },
     { size: 's', name: 'Оплатить' }
 ];
+
 <div>
     <div className='row'>
         {
@@ -40,6 +41,7 @@ const buttons = [
     { size: 'm', name: 'Применить' },
     { size: 's', name: 'Применить' }
 ];
+
 <div>
     <div className='row'>
         {
@@ -71,6 +73,7 @@ const buttons = [
     { size: 'm', name: 'Показать' },
     { size: 's', name: 'Показать' }
 ];
+
 <div>
     <div className='row'>
         {
@@ -95,6 +98,7 @@ const buttons = [
     { size: 'm', name: 'Скачать' },
     { size: 's', name: 'Скачать' }
 ];
+
 <div>
     <div className='row'>
         {
@@ -120,6 +124,7 @@ const buttons = [
     { size: 'm', name: 'Заказать карту' },
     { size: 's', name: 'Заказать карту' }
 ];
+
 <div>
     {
         buttons.map(({ size, name }) => (
@@ -141,6 +146,7 @@ const buttons = [
     { size: 'm', name: 'Продолжить' },
     { size: 's', name: 'Продолжить' }
 ];
+
 <div>
     <div className='row'>
         {

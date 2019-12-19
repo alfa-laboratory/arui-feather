@@ -55,7 +55,7 @@
         min-height: 50px;
         padding: 0 18px;
         font-size: var(--font-size-l);
-        line-height: 48px;
+        line-height: var(--font-size-4xl);
     }
 
     &_size_xl {

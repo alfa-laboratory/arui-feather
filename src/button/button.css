@@ -115,17 +115,17 @@
     }
 
     &_size_s &__icon {
-        margin-left: -4px;
+        margin-left: var(--gap-2xs-neg);
     }
 
     &_size_m {
         height: 40px;
-        padding: 0 20px;
+        padding: 0 var(--gap-l);
         font-size: var(--font-size-m);
     }
 
     &_size_m &__icon {
-        margin-left: -8px;
+        margin-left: var(--gap-xs-neg);
     }
 
     &_size_l {
@@ -135,7 +135,7 @@
     }
 
     &_size_l &__icon {
-        margin-left: -12px;
+        margin-left: var(--gap-s-neg);
     }
 
     &_size_xl {
@@ -145,7 +145,7 @@
     }
 
     &_size_xl &__icon {
-        margin-left: -16px;
+        margin-left: var(--gap-m-neg);
     }
 
     &_view_rounded {

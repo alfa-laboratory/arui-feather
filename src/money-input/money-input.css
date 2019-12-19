@@ -82,13 +82,13 @@
 
         .input_view_filled.input_size_s {
             .input__top {
-                padding-left: 8px;
+                padding-left: var(--gap-xs);
             }
         }
 
         .input_view_filled.input_size_m {
             .input__top {
-                padding-left: 12px;
+                padding-left: var(--gap-s);
             }
         }
     }

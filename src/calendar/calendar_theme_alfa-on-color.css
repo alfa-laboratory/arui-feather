@@ -17,7 +17,7 @@
             background-color: var(--color-background-alfa-on-color);
 
             &:before {
-                background: linear-gradient(to bottom, rgba(11, 31, 53, 1) 0%, rgba(11, 31, 53, 1) 33%, rgba(11, 31, 53, 0) 100%);
+                background: linear-gradient(to bottom, var(--color-dark-indigo) 0%, var(--color-dark-indigo) 33%, rgba(11, 31, 53, 0) 100%);
             }
         }
 

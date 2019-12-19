@@ -55,7 +55,7 @@
 
 .menu_size_s {
     .menu__group-title {
-        padding: 10px 12px;
+        padding: 10px var(--gap-s);
         font-size: var(--font-size-s);
     }
 
@@ -85,7 +85,7 @@
     &.menu_mode_radio-check {
         .menu-item,
         .menu__group-title {
-            padding-left: 24px;
+            padding-left: var(--gap-xl);
         }
     }
 
@@ -98,12 +98,12 @@
 
 .menu_size_m {
     .menu__group-title {
-        padding: 8px 12px;
+        padding: var(--gap-xs) var(--gap-s);
         font-size: var(--font-size-m);
     }
 
     .menu-item {
-        padding: 9px 12px;
+        padding: 9px var(--gap-s);
         font-size: var(--font-size-m);
     }
 
@@ -134,7 +134,7 @@
 
     .menu__group {
         .menu-item {
-            padding-left: 48px;
+            padding-left: var(--gap-4xl);
         }
     }
 }
@@ -146,7 +146,7 @@
     }
 
     .menu-item {
-        padding: 12px 15px 13px;
+        padding: var(--gap-s) 15px 13px;
         font-size: var(--font-size-l);
     }
 
@@ -184,7 +184,7 @@
 
 .menu_size_xl {
     .menu__group-title {
-        padding: 12px 19px;
+        padding: var(--gap-s) 19px;
         font-size: var(--font-size-xl);
     }
 
@@ -214,7 +214,7 @@
     &.menu_mode_radio-check {
         .menu-item,
         .menu__group-title {
-            padding-left: 40px;
+            padding-left: var(--gap-3xl);
         }
     }
 
@@ -263,13 +263,13 @@
 
     &.menu_size_m {
         .menu__group-title {
-            padding: 9px 12px;
+            padding: 9px var(--gap-s);
         }
     }
 
     &.menu_size_l {
         .menu__group-title {
-            padding: 12px 7px;
+            padding: var(--gap-s) 7px;
         }
     }
 

@@ -25,7 +25,10 @@ function runGemini(paths = []) {
         checkForDeprecations();
 
         const gemini = new Gemini();
-        gemini.on(Events.INTERRUPT, (data) => { exit(data.exitCode); });
+
+        gemini.on(Events.INTERRUPT, (data) => {
+            exit(data.exitCode);
+        });
 
         return gemini;
     })

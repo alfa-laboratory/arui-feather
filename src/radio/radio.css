@@ -150,7 +150,7 @@
         transition: all 0.1s 0s ease-out;
 
         &:before {
-            opacity: 1;
+            opacity: var(--opacity-active);
             transition: all 0.1s 0s ease-out;
         }
     }

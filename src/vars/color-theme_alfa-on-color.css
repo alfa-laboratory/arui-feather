@@ -15,7 +15,7 @@
     /**
      * Цвет контента для темы `alfa-on-color`.
      */
-    --color-content-alfa-on-color: rgba(255, 255, 255, 1);
+    --color-content-alfa-on-color: var(--color-white);
 
     /**
      * Цвет второстепенного контента для `alfa-on-color`.

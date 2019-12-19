@@ -41,14 +41,14 @@
         &:after {
             content: '';
             display: block;
-            margin-bottom: -20px;
+            margin-bottom: var(--gap-l-neg);
         }
 
         .tabs__panel {
             white-space: nowrap;
             overflow-x: auto;
             overflow-y: hidden;
-            padding: 0 0 20px;
+            padding: 0 0 var(--gap-l);
         }
 
         .tabs__content {

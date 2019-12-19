@@ -1,3 +1,5 @@
+<!-- eslint-disable no-alert -->
+
 ```jsx
 const IconClose = require('../../src/icon/ui/close').default;
 
@@ -8,7 +10,12 @@ const IconClose = require('../../src/icon/ui/close').default;
                 key={ size }
                 className='column l'
             >
-                <IconButton size={ size } onClick={ () => { alert('Удаление завершено!') } }>
+                <IconButton
+                    size={ size }
+                    onClick={ () => {
+                        alert('Удаление завершено!')
+                    } }
+                >
                     <IconClose size={ size } />
                 </IconButton>
             </span>

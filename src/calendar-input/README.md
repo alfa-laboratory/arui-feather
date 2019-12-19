@@ -84,9 +84,9 @@ const IconOk = require('../../src/icon/ui/ok').default;
 const addDays = require('date-fns/add_days');
 const formatDate = require('date-fns/format');
 
-let currentDate = new Date();
+const currentDate = new Date();
 
-let calendar = {
+const calendar = {
     showToday: true
 };
 

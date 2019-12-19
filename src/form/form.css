@@ -10,7 +10,7 @@
     }
 
     &__footer {
-        padding-top: 20px;
+        padding-top: var(--gap-l);
     }
 }
 

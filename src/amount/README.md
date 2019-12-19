@@ -6,6 +6,7 @@ const AMOUNT = {
         minority: 100
     }
 };
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
@@ -29,6 +30,7 @@ const AMOUNT = {
         minority: 100
     }
 };
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (

@@ -49,7 +49,7 @@ const startOfDay = require('date-fns/start_of_day');
 initialState = {
     date: Date.now()
 };
-let currentDate = new Date();
+const currentDate = new Date();
 const offDays = [
     getTime(startOfDay(addDays(currentDate, 1))),
     getTime(startOfDay(addDays(currentDate, 4))),
@@ -77,8 +77,8 @@ const startOfDay = require('date-fns/start_of_day');
 initialState = {
     date: Date.now()
 };
-let currentDate = new Date();
-let eventDays = [
+const currentDate = new Date();
+const eventDays = [
     getTime(startOfDay(addDays(currentDate, -25))),
     getTime(startOfDay(addDays(currentDate, -24))),
     getTime(startOfDay(addDays(currentDate, -23))),

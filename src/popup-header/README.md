@@ -33,14 +33,20 @@ class PopupHeaderDemo extends React.Component {
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target = target; } }
+                        ref={ (target) => {
+                            this.target = target;
+                        } }
                         size='m'
-                        onClick={ () => { this.setState({ popup: !this.state.popup }); } }
+                        onClick={ () => {
+                            this.setState({ popup: !this.state.popup });
+                        } }
                     >
                         Узнать время работы
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup = popup; } }
+                        ref={ (popup) => {
+                            this.popup = popup;
+                        } }
                         directions={ ['top-center', 'bottom-center'] }
                         size='m'
                         type='tooltip'
@@ -48,7 +54,9 @@ class PopupHeaderDemo extends React.Component {
                             <PopupHeader
                                 size='m'
                                 title='График работы'
-                                onCloserClick={ () => { this.setState({ popup: false }); } }
+                                onCloserClick={ () => {
+                                    this.setState({ popup: false });
+                                } }
                             />
                         ) }
                         visible={ this.state.popup }

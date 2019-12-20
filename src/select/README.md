@@ -5,6 +5,7 @@ const options = [
     { value: '02', text: 'ООО «Виктори»' },
     { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
 ];
+
 <div>
     {
         ['s'].map(size => (
@@ -37,6 +38,7 @@ const options = [
     { value: '02', text: 'ООО «Виктори»' },
     { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
+
 <div>
     {
         ['m'].map(size => (
@@ -69,6 +71,7 @@ const options = [
     { value: '02', text: 'ООО «Виктори»' },
     { value: '03', text: 'ФГУП НПП ВНИИЭМ' }
 ];
+
 <div>
     {
         ['xl'].map(size => (
@@ -101,6 +104,7 @@ const options = [
     { value: '02', text: 'Петроградская' },
     { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
 ];
+
 <div>
     <div className='row'>
         <div className='column'>
@@ -121,6 +125,7 @@ const options = [
     { value: '02', text: 'Петроградская' },
     { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
 ];
+
 <div>
     <div className='row'>
         <div className='column'>
@@ -141,6 +146,7 @@ const options = [
     { value: '02', text: 'Петроградская' },
     { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
 ];
+
 <div>
     <div className='row'>
         <div className='column'>
@@ -162,6 +168,7 @@ const options = [
     { value: '02', text: 'Петроградская' },
     { value: '03', text: 'Адмиралтейская слобода', props: { disabled: true } }
 ];
+
 <div>
     <div className='row'>
         <div className='column'>
@@ -187,6 +194,7 @@ const options = [
     { value: '5', text: 'ГОУ ДПО БелРИПКППС' },
     { value: '6', text: 'ООО «Абсолютная власть»' }
 ];
+
 <div>
     {
         ['l'].map(size => (
@@ -253,6 +261,7 @@ const options = [
     { value: '34', text: 'ООО «Здравый смысл»' },
     { value: '35', text: 'ООО «Ооо»' }
 ];
+
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
@@ -334,6 +343,7 @@ const options2 = [
         ]
     }
 ];
+
 <div>
     <div className='row' >
         <div className='column'>
@@ -362,6 +372,7 @@ const options = [
     { value: '02', text: 'ООО «Виктори»' },
     { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
 ];
+
 <div>
     <div className='row'>
         <div className='column'>
@@ -382,6 +393,7 @@ const options = [
     { value: '02', text: 'ООО «Виктори»' },
     { value: '03', text: 'ФГУП НПП ВНИИЭМ', props: { disabled: true } }
 ];
+
 <div>
     <div className='row'>
         <div className='column'>

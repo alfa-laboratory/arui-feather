@@ -94,7 +94,7 @@
     &_status_ok,
     &_status_error,
     &_status_fail {
-        padding-left: calc(var(--gap-s) + 24px + var(--gap-m));
+        padding-left: calc(var(--gap-s) + var(--gap-xl) + var(--gap-m));
     }
 
     &_status_ok &__icon,
@@ -137,7 +137,7 @@
         &_status_ok,
         &_status_error,
         &_status_fail {
-            padding-left: calc(var(--gap-m) + 24px + var(--gap-m));
+            padding-left: calc(var(--gap-m) + var(--gap-xl) + var(--gap-m));
         }
     }
 }

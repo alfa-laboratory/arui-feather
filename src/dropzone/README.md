@@ -10,7 +10,7 @@ initialState = {
 }
 
 const onDrop = (files) => {
-    let fileList = state.filesList;
+    const fileList = state.filesList;
 
     for (let i = 0; i < files.length; i += 1) {
         if (!files[i].name) {
@@ -31,8 +31,7 @@ const onDrop = (files) => {
             padding: '10px'
         } }
     >
-        { state.filesList.map(file =>
-            <div key={ file }>{ file }</div>
+        { state.filesList.map(file => <div key={ file }>{ file }</div>
         ) }
     </div>
 </Dropzone>

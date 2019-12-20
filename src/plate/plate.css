@@ -60,7 +60,7 @@
         overflow: hidden;
         transition: max-height 1s;
 
-        &_folden {
+        &_folded {
             max-height: 0;
         }
     }

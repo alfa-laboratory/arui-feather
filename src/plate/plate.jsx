@@ -27,7 +27,7 @@ class Plate extends React.Component {
         /** Управление наличием стрелки скрытия контента */
         foldable: Type.bool,
         /** Начальное состояние контента при foldable={ true } */
-        folden: Type.bool,
+        folded: Type.bool,
         /** Иконка компонента */
         icon: Type.node,
         /** Дочерние элементы `Plate` */
@@ -68,14 +68,14 @@ class Plate extends React.Component {
 
     static defaultProps = {
         foldable: false,
-        folden: true,
+        folded: true,
         type: 'default',
         title: ''
     };
 
     state = {
         isHidden: false,
-        isFolden: this.props.folden
+        isFolded: this.props.folded
     };
 
     /**
@@ -118,7 +118,7 @@ class Plate extends React.Component {
                                 onClick={ this.handleFolderClick }
                             >
                                 {
-                                    this.state.isFolden
+                                    this.state.isFolded
                                         ? <IconArrowDown />
                                         : <IconArrowUp />
                                 }
@@ -128,7 +128,7 @@ class Plate extends React.Component {
                 }
                 <div
                     className={ cn('content', {
-                        folden: this.props.foldable && this.state.isFolden
+                        folded: this.props.foldable && this.state.isFolded
                     }) }
                 >
                     { this.props.children }
@@ -155,7 +155,7 @@ class Plate extends React.Component {
 
     handleFolderClick = (event) => {
         this.setState({
-            isFolden: !this.state.isFolden
+            isFolded: !this.state.isFolded
         });
 
         if (this.props.onFolderClick) {

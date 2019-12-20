@@ -2,7 +2,7 @@
 
 exports[`collapse should render without problem 1`] = `
 <div
-  className="collapse collapse_theme_alfa-on-white"
+  className="collapse"
 >
   <div
     className="collapse__content"
@@ -19,7 +19,7 @@ exports[`collapse should render without problem 1`] = `
     className="collapse__link"
     disabled={false}
     icon={
-      <IconArrowDown
+      <ForwardRef(ThemedComponent(IconArrowDown))
         size="s"
       />
     }

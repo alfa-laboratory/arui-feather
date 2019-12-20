@@ -1,3031 +1,2599 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`icon render IconAccount without problems: IconAccount 1`] = `
-<Icon
-  name="account"
-  size="m"
-/>
+exports[`icon render undefined without problems 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountAdd without problems: IconAccountAdd 1`] = `
-<Icon
-  name="account-add"
-  size="m"
-/>
+exports[`icon render undefined without problems 2`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountDefault without problems: IconAccountDefault 1`] = `
-<Icon
-  name="account-default"
-  size="m"
-/>
+exports[`icon render undefined without problems 3`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountEuro without problems: IconAccountEuro 1`] = `
-<Icon
-  name="account-euro"
-  size="m"
-/>
+exports[`icon render undefined without problems 4`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountInfo without problems: IconAccountInfo 1`] = `
-<Icon
-  name="account-info"
-  size="m"
-/>
+exports[`icon render undefined without problems 5`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountRub without problems: IconAccountRub 1`] = `
-<Icon
-  name="account-rub"
-  size="m"
-/>
+exports[`icon render undefined without problems 6`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountShared without problems: IconAccountShared 1`] = `
-<Icon
-  name="account-shared"
-  size="m"
-/>
+exports[`icon render undefined without problems 7`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountText without problems: IconAccountText 1`] = `
-<Icon
-  name="account-text"
-  size="m"
-/>
+exports[`icon render undefined without problems 8`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAccountUsd without problems: IconAccountUsd 1`] = `
-<Icon
-  name="account-usd"
-  size="m"
-/>
+exports[`icon render undefined without problems 9`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconActionPhotoOrFile without problems: IconActionPhotoOrFile 1`] = `
-<Icon
-  name="action-photo-or-file"
-  size="m"
-/>
+exports[`icon render undefined without problems 10`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAdd without problems: IconAdd 1`] = `
-<Icon
-  name="add"
-  size="m"
-/>
+exports[`icon render undefined without problems 11`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAddFilled without problems: IconAddFilled 1`] = `
-<Icon
-  name="add-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 12`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAlfacheck without problems: IconAlfacheck 1`] = `
-<Icon
-  name="alfacheck"
-  size="m"
-/>
+exports[`icon render undefined without problems 13`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAlfadialogue without problems: IconAlfadialogue 1`] = `
-<Icon
-  name="alfadialogue"
-  size="m"
-/>
+exports[`icon render undefined without problems 14`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAlfamobile without problems: IconAlfamobile 1`] = `
-<Icon
-  name="alfamobile"
-  size="m"
-/>
+exports[`icon render undefined without problems 15`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAnalytics without problems: IconAnalytics 1`] = `
-<Icon
-  name="analytics"
-  size="m"
-/>
+exports[`icon render undefined without problems 16`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAndroidReorder without problems: IconAndroidReorder 1`] = `
-<Icon
-  name="android-reorder"
-  size="m"
-/>
+exports[`icon render undefined without problems 17`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconApcBonus without problems: IconApcBonus 1`] = `
-<Icon
-  name="APC-bonus"
-  size="m"
-/>
+exports[`icon render undefined without problems 18`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowBack without problems: IconArrowBack 1`] = `
-<Icon
-  name="arrow-back"
-  size="m"
-/>
+exports[`icon render undefined without problems 19`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowBackBold without problems: IconArrowBackBold 1`] = `
-<Icon
-  name="arrow-back-bold"
-  size="m"
-/>
+exports[`icon render undefined without problems 20`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowBottom without problems: IconArrowBottom 1`] = `
-<Icon
-  name="arrow-bottom"
-  size="m"
-/>
+exports[`icon render undefined without problems 21`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowCollapse without problems: IconArrowCollapse 1`] = `
-<Icon
-  name="arrow-collapse"
-  size="m"
-/>
+exports[`icon render undefined without problems 22`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowDouble without problems: IconArrowDouble 1`] = `
-<Icon
-  name="arrow-double"
-  size="m"
-/>
+exports[`icon render undefined without problems 23`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowDown without problems: IconArrowDown 1`] = `
-<Icon
-  name="arrow-down"
-  size="m"
-/>
+exports[`icon render undefined without problems 24`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowExpand without problems: IconArrowExpand 1`] = `
-<Icon
-  name="arrow-expand"
-  size="m"
-/>
+exports[`icon render undefined without problems 25`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowLeft without problems: IconArrowLeft 1`] = `
-<Icon
-  name="arrow-left"
-  size="m"
-/>
+exports[`icon render undefined without problems 26`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowLeftDouble without problems: IconArrowLeftDouble 1`] = `
-<Icon
-  name="arrow-left-double"
-  size="m"
-/>
+exports[`icon render undefined without problems 27`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowRight without problems: IconArrowRight 1`] = `
-<Icon
-  name="arrow-right"
-  size="m"
-/>
+exports[`icon render undefined without problems 28`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowRightDouble without problems: IconArrowRightDouble 1`] = `
-<Icon
-  name="arrow-right-double"
-  size="m"
-/>
+exports[`icon render undefined without problems 29`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowTop without problems: IconArrowTop 1`] = `
-<Icon
-  name="arrow-top"
-  size="m"
-/>
+exports[`icon render undefined without problems 30`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconArrowUp without problems: IconArrowUp 1`] = `
-<Icon
-  name="arrow-up"
-  size="m"
-/>
+exports[`icon render undefined without problems 31`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAtm without problems: IconAtm 1`] = `
-<Icon
-  name="atm"
-  size="m"
-/>
+exports[`icon render undefined without problems 32`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAttachment without problems: IconAttachment 1`] = `
-<Icon
-  name="attachment"
-  size="m"
-/>
+exports[`icon render undefined without problems 33`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAttention without problems: IconAttention 1`] = `
-<Icon
-  name="attention"
-  size="m"
-/>
+exports[`icon render undefined without problems 34`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAttentionBold without problems: IconAttentionBold 1`] = `
-<Icon
-  name="attention-bold"
-  size="m"
-/>
+exports[`icon render undefined without problems 35`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAttentionMark without problems: IconAttentionMark 1`] = `
-<Icon
-  name="attention-mark"
-  size="m"
-/>
+exports[`icon render undefined without problems 36`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconAutopayment without problems: IconAutopayment 1`] = `
-<Icon
-  name="autopayment"
-  size="m"
-/>
+exports[`icon render undefined without problems 37`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBack without problems: IconBack 1`] = `
-<Icon
-  name="back"
-  size="m"
-/>
+exports[`icon render undefined without problems 38`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBackspace without problems: IconBackspace 1`] = `
-<Icon
-  name="backspace"
-  size="m"
-/>
+exports[`icon render undefined without problems 39`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBag without problems: IconBag 1`] = `
-<Icon
-  name="bag"
-  size="m"
-/>
+exports[`icon render undefined without problems 40`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBalanceTransfer without problems: IconBalanceTransfer 1`] = `
-<Icon
-  name="balance-transfer"
-  size="m"
-/>
+exports[`icon render undefined without problems 41`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank244 without problems: IconBank244 1`] = `
-<Icon
-  name="bank-244"
-  size="m"
-/>
+exports[`icon render undefined without problems 42`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank256 without problems: IconBank256 1`] = `
-<Icon
-  name="bank-256"
-  size="m"
-/>
+exports[`icon render undefined without problems 43`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank285 without problems: IconBank285 1`] = `
-<Icon
-  name="bank-285"
-  size="m"
-/>
+exports[`icon render undefined without problems 44`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank351 without problems: IconBank351 1`] = `
-<Icon
-  name="bank-351"
-  size="m"
-/>
+exports[`icon render undefined without problems 45`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank404 without problems: IconBank404 1`] = `
-<Icon
-  name="bank-404"
-  size="m"
-/>
+exports[`icon render undefined without problems 46`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank439 without problems: IconBank439 1`] = `
-<Icon
-  name="bank-439"
-  size="m"
-/>
+exports[`icon render undefined without problems 47`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank1309 without problems: IconBank1309 1`] = `
-<Icon
-  name="bank-1309"
-  size="m"
-/>
+exports[`icon render undefined without problems 48`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank1415 without problems: IconBank1415 1`] = `
-<Icon
-  name="bank-1415"
-  size="m"
-/>
+exports[`icon render undefined without problems 49`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank1490 without problems: IconBank1490 1`] = `
-<Icon
-  name="bank-1490"
-  size="m"
-/>
+exports[`icon render undefined without problems 50`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank1516 without problems: IconBank1516 1`] = `
-<Icon
-  name="bank-1516"
-  size="m"
-/>
+exports[`icon render undefined without problems 51`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank2377 without problems: IconBank2377 1`] = `
-<Icon
-  name="bank-2377"
-  size="m"
-/>
+exports[`icon render undefined without problems 52`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank2449 without problems: IconBank2449 1`] = `
-<Icon
-  name="bank-2449"
-  size="m"
-/>
+exports[`icon render undefined without problems 53`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank3001 without problems: IconBank3001 1`] = `
-<Icon
-  name="bank-3001"
-  size="m"
-/>
+exports[`icon render undefined without problems 54`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank3308 without problems: IconBank3308 1`] = `
-<Icon
-  name="bank-3308"
-  size="m"
-/>
+exports[`icon render undefined without problems 55`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank4267 without problems: IconBank4267 1`] = `
-<Icon
-  name="bank-4267"
-  size="m"
-/>
+exports[`icon render undefined without problems 56`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank4924 without problems: IconBank4924 1`] = `
-<Icon
-  name="bank-4924"
-  size="m"
-/>
+exports[`icon render undefined without problems 57`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank5030 without problems: IconBank5030 1`] = `
-<Icon
-  name="bank-5030"
-  size="m"
-/>
+exports[`icon render undefined without problems 58`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank5475 without problems: IconBank5475 1`] = `
-<Icon
-  name="bank-5475"
-  size="m"
-/>
+exports[`icon render undefined without problems 59`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank6415 without problems: IconBank6415 1`] = `
-<Icon
-  name="bank-6415"
-  size="m"
-/>
+exports[`icon render undefined without problems 60`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank7311 without problems: IconBank7311 1`] = `
-<Icon
-  name="bank-7311"
-  size="m"
-/>
+exports[`icon render undefined without problems 61`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank7686 without problems: IconBank7686 1`] = `
-<Icon
-  name="bank-7686"
-  size="m"
-/>
+exports[`icon render undefined without problems 62`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank7687 without problems: IconBank7687 1`] = `
-<Icon
-  name="bank-7687"
-  size="m"
-/>
+exports[`icon render undefined without problems 63`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank8967 without problems: IconBank8967 1`] = `
-<Icon
-  name="bank-8967"
-  size="m"
-/>
+exports[`icon render undefined without problems 64`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank9908 without problems: IconBank9908 1`] = `
-<Icon
-  name="bank-9908"
-  size="m"
-/>
+exports[`icon render undefined without problems 65`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBank10223 without problems: IconBank10223 1`] = `
-<Icon
-  name="bank-10223"
-  size="m"
-/>
+exports[`icon render undefined without problems 66`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankAlfa without problems: IconBankAlfa 1`] = `
-<Icon
-  name="bank-alfa"
-  size="m"
-/>
+exports[`icon render undefined without problems 67`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankBaltiyskiy without problems: IconBankBaltiyskiy 1`] = `
-<Icon
-  name="bank-baltiyskiy"
-  size="m"
-/>
+exports[`icon render undefined without problems 68`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankBinbank without problems: IconBankBinbank 1`] = `
-<Icon
-  name="bank-binbank"
-  size="m"
-/>
+exports[`icon render undefined without problems 69`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankEurope without problems: IconBankEurope 1`] = `
-<Icon
-  name="bank-europe"
-  size="m"
-/>
+exports[`icon render undefined without problems 70`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankGazprombank without problems: IconBankGazprombank 1`] = `
-<Icon
-  name="bank-gazprombank"
-  size="m"
-/>
+exports[`icon render undefined without problems 71`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankHomeCredit without problems: IconBankHomeCredit 1`] = `
-<Icon
-  name="bank-home-credit"
-  size="m"
-/>
+exports[`icon render undefined without problems 72`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankMdm without problems: IconBankMdm 1`] = `
-<Icon
-  name="bank-mdm"
-  size="m"
-/>
+exports[`icon render undefined without problems 73`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankMkb without problems: IconBankMkb 1`] = `
-<Icon
-  name="bank-mkb"
-  size="m"
-/>
+exports[`icon render undefined without problems 74`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankMoscow without problems: IconBankMoscow 1`] = `
-<Icon
-  name="bank-moscow"
-  size="m"
-/>
+exports[`icon render undefined without problems 75`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankMts without problems: IconBankMts 1`] = `
-<Icon
-  name="bank-mts"
-  size="m"
-/>
+exports[`icon render undefined without problems 76`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf1 without problems: IconBankNsipf1 1`] = `
-<Icon
-  name="bank-nsipf-1"
-  size="m"
-/>
+exports[`icon render undefined without problems 77`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf128 without problems: IconBankNsipf128 1`] = `
-<Icon
-  name="bank-nsipf-128"
-  size="m"
-/>
+exports[`icon render undefined without problems 78`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf316 without problems: IconBankNsipf316 1`] = `
-<Icon
-  name="bank-nsipf-316"
-  size="m"
-/>
+exports[`icon render undefined without problems 79`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf323 without problems: IconBankNsipf323 1`] = `
-<Icon
-  name="bank-nsipf-323"
-  size="m"
-/>
+exports[`icon render undefined without problems 80`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf354 without problems: IconBankNsipf354 1`] = `
-<Icon
-  name="bank-nsipf-354"
-  size="m"
-/>
+exports[`icon render undefined without problems 81`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf429 without problems: IconBankNsipf429 1`] = `
-<Icon
-  name="bank-nsipf-429"
-  size="m"
-/>
+exports[`icon render undefined without problems 82`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf436 without problems: IconBankNsipf436 1`] = `
-<Icon
-  name="bank-nsipf-436"
-  size="m"
-/>
+exports[`icon render undefined without problems 83`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf705 without problems: IconBankNsipf705 1`] = `
-<Icon
-  name="bank-nsipf-705"
-  size="m"
-/>
+exports[`icon render undefined without problems 84`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf1000 without problems: IconBankNsipf1000 1`] = `
-<Icon
-  name="bank-nsipf-1000"
-  size="m"
-/>
+exports[`icon render undefined without problems 85`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf1326 without problems: IconBankNsipf1326 1`] = `
-<Icon
-  name="bank-nsipf-1326"
-  size="m"
-/>
+exports[`icon render undefined without problems 86`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf1439 without problems: IconBankNsipf1439 1`] = `
-<Icon
-  name="bank-nsipf-1439"
-  size="m"
-/>
+exports[`icon render undefined without problems 87`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf1481 without problems: IconBankNsipf1481 1`] = `
-<Icon
-  name="bank-nsipf-1481"
-  size="m"
-/>
+exports[`icon render undefined without problems 88`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf1792 without problems: IconBankNsipf1792 1`] = `
-<Icon
-  name="bank-nsipf-1792"
-  size="m"
-/>
+exports[`icon render undefined without problems 89`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2209 without problems: IconBankNsipf2209 1`] = `
-<Icon
-  name="bank-nsipf-2209"
-  size="m"
-/>
+exports[`icon render undefined without problems 90`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2241 without problems: IconBankNsipf2241 1`] = `
-<Icon
-  name="bank-nsipf-2241"
-  size="m"
-/>
+exports[`icon render undefined without problems 91`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2268 without problems: IconBankNsipf2268 1`] = `
-<Icon
-  name="bank-nsipf-2268"
-  size="m"
-/>
+exports[`icon render undefined without problems 92`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2275 without problems: IconBankNsipf2275 1`] = `
-<Icon
-  name="bank-nsipf-2275"
-  size="m"
-/>
+exports[`icon render undefined without problems 93`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2289 without problems: IconBankNsipf2289 1`] = `
-<Icon
-  name="bank-nsipf-2289"
-  size="m"
-/>
+exports[`icon render undefined without problems 94`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2361 without problems: IconBankNsipf2361 1`] = `
-<Icon
-  name="bank-nsipf-2361"
-  size="m"
-/>
+exports[`icon render undefined without problems 95`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2524 without problems: IconBankNsipf2524 1`] = `
-<Icon
-  name="bank-nsipf-2524"
-  size="m"
-/>
+exports[`icon render undefined without problems 96`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2673 without problems: IconBankNsipf2673 1`] = `
-<Icon
-  name="bank-nsipf-2673"
-  size="m"
-/>
+exports[`icon render undefined without problems 97`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2748 without problems: IconBankNsipf2748 1`] = `
-<Icon
-  name="bank-nsipf-2748"
-  size="m"
-/>
+exports[`icon render undefined without problems 98`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf2766 without problems: IconBankNsipf2766 1`] = `
-<Icon
-  name="bank-nsipf-2766"
-  size="m"
-/>
+exports[`icon render undefined without problems 99`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf3251 without problems: IconBankNsipf3251 1`] = `
-<Icon
-  name="bank-nsipf-3251"
-  size="m"
-/>
+exports[`icon render undefined without problems 100`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf3279 without problems: IconBankNsipf3279 1`] = `
-<Icon
-  name="bank-nsipf-3279"
-  size="m"
-/>
+exports[`icon render undefined without problems 101`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf3292 without problems: IconBankNsipf3292 1`] = `
-<Icon
-  name="bank-nsipf-3292"
-  size="m"
-/>
+exports[`icon render undefined without problems 102`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankNsipf3311 without problems: IconBankNsipf3311 1`] = `
-<Icon
-  name="bank-nsipf-3311"
-  size="m"
-/>
+exports[`icon render undefined without problems 103`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankOtkritie without problems: IconBankOtkritie 1`] = `
-<Icon
-  name="bank-otkritie"
-  size="m"
-/>
+exports[`icon render undefined without problems 104`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankOtp without problems: IconBankOtp 1`] = `
-<Icon
-  name="bank-otp"
-  size="m"
-/>
+exports[`icon render undefined without problems 105`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankPsb without problems: IconBankPsb 1`] = `
-<Icon
-  name="bank-psb"
-  size="m"
-/>
+exports[`icon render undefined without problems 106`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankQiwi without problems: IconBankQiwi 1`] = `
-<Icon
-  name="bank-qiwi"
-  size="m"
-/>
+exports[`icon render undefined without problems 107`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankRaiffeisen without problems: IconBankRaiffeisen 1`] = `
-<Icon
-  name="bank-raiffeisen"
-  size="m"
-/>
+exports[`icon render undefined without problems 108`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankRussianStandard without problems: IconBankRussianStandard 1`] = `
-<Icon
-  name="bank-russian-standard"
-  size="m"
-/>
+exports[`icon render undefined without problems 109`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankSaintPetersburg without problems: IconBankSaintPetersburg 1`] = `
-<Icon
-  name="bank-saint-petersburg"
-  size="m"
-/>
+exports[`icon render undefined without problems 110`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankSber without problems: IconBankSber 1`] = `
-<Icon
-  name="bank-sber"
-  size="m"
-/>
+exports[`icon render undefined without problems 111`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankSkb without problems: IconBankSkb 1`] = `
-<Icon
-  name="bank-skb"
-  size="m"
-/>
+exports[`icon render undefined without problems 112`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankSocieteGenerale without problems: IconBankSocieteGenerale 1`] = `
-<Icon
-  name="bank-societe-generale"
-  size="m"
-/>
+exports[`icon render undefined without problems 113`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankTinkoff without problems: IconBankTinkoff 1`] = `
-<Icon
-  name="bank-tinkoff"
-  size="m"
-/>
+exports[`icon render undefined without problems 114`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankTrust without problems: IconBankTrust 1`] = `
-<Icon
-  name="bank-trust"
-  size="m"
-/>
+exports[`icon render undefined without problems 115`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankUnicredit without problems: IconBankUnicredit 1`] = `
-<Icon
-  name="bank-unicredit"
-  size="m"
-/>
+exports[`icon render undefined without problems 116`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankUralsib without problems: IconBankUralsib 1`] = `
-<Icon
-  name="bank-uralsib"
-  size="m"
-/>
+exports[`icon render undefined without problems 117`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankUralskiy without problems: IconBankUralskiy 1`] = `
-<Icon
-  name="bank-uralskiy"
-  size="m"
-/>
+exports[`icon render undefined without problems 118`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankVozrozhdenie without problems: IconBankVozrozhdenie 1`] = `
-<Icon
-  name="bank-vozrozhdenie"
-  size="m"
-/>
+exports[`icon render undefined without problems 119`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankVtb without problems: IconBankVtb 1`] = `
-<Icon
-  name="bank-vtb"
-  size="m"
-/>
+exports[`icon render undefined without problems 120`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBankYandexmoney without problems: IconBankYandexmoney 1`] = `
-<Icon
-  name="bank-yandexmoney"
-  size="m"
-/>
+exports[`icon render undefined without problems 121`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconBuy without problems: IconBuy 1`] = `
-<Icon
-  name="buy"
-  size="m"
-/>
+exports[`icon render undefined without problems 122`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCalendar without problems: IconCalendar 1`] = `
-<Icon
-  name="calendar"
-  size="m"
-/>
+exports[`icon render undefined without problems 123`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCall without problems: IconCall 1`] = `
-<Icon
-  name="call"
-  size="m"
-/>
+exports[`icon render undefined without problems 124`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCamera without problems: IconCamera 1`] = `
-<Icon
-  name="camera"
-  size="m"
-/>
+exports[`icon render undefined without problems 125`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCancel without problems: IconCancel 1`] = `
-<Icon
-  name="cancel"
-  size="m"
-/>
+exports[`icon render undefined without problems 126`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCard without problems: IconCard 1`] = `
-<Icon
-  name="card"
-  size="m"
-/>
+exports[`icon render undefined without problems 127`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardAccountsList without problems: IconCardAccountsList 1`] = `
-<Icon
-  name="card-accounts-list"
-  size="m"
-/>
+exports[`icon render undefined without problems 128`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardActivate without problems: IconCardActivate 1`] = `
-<Icon
-  name="card-activate"
-  size="m"
-/>
+exports[`icon render undefined without problems 129`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardActivation without problems: IconCardActivation 1`] = `
-<Icon
-  name="card-activation"
-  size="m"
-/>
+exports[`icon render undefined without problems 130`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardAdd without problems: IconCardAdd 1`] = `
-<Icon
-  name="card-add"
-  size="m"
-/>
+exports[`icon render undefined without problems 131`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardBelkart without problems: IconCardBelkart 1`] = `
-<Icon
-  name="card-belkart"
-  size="m"
-/>
+exports[`icon render undefined without problems 132`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardClose without problems: IconCardClose 1`] = `
-<Icon
-  name="card-close"
-  size="m"
-/>
+exports[`icon render undefined without problems 133`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardExpences without problems: IconCardExpences 1`] = `
-<Icon
-  name="card-expences"
-  size="m"
-/>
+exports[`icon render undefined without problems 134`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardGooglepay without problems: IconCardGooglepay 1`] = `
-<Icon
-  name="card-googlepay"
-  size="m"
-/>
+exports[`icon render undefined without problems 135`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardList without problems: IconCardList 1`] = `
-<Icon
-  name="card-list"
-  size="m"
-/>
+exports[`icon render undefined without problems 136`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardMaestro without problems: IconCardMaestro 1`] = `
-<Icon
-  name="card-maestro"
-  size="m"
-/>
+exports[`icon render undefined without problems 137`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardMastercard without problems: IconCardMastercard 1`] = `
-<Icon
-  name="card-mastercard"
-  size="m"
-/>
+exports[`icon render undefined without problems 138`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardMastero without problems: IconCardMastero 1`] = `
-<Icon
-  name="card-mastero"
-  size="m"
-/>
+exports[`icon render undefined without problems 139`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardMir without problems: IconCardMir 1`] = `
-<Icon
-  name="card-mir"
-  size="m"
-/>
+exports[`icon render undefined without problems 140`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardPinChange without problems: IconCardPinChange 1`] = `
-<Icon
-  name="card-pin-change"
-  size="m"
-/>
+exports[`icon render undefined without problems 141`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardToCard without problems: IconCardToCard 1`] = `
-<Icon
-  name="card-to-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 142`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardUnknown without problems: IconCardUnknown 1`] = `
-<Icon
-  name="card-unknown"
-  size="m"
-/>
+exports[`icon render undefined without problems 143`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardVisa without problems: IconCardVisa 1`] = `
-<Icon
-  name="card-visa"
-  size="m"
-/>
+exports[`icon render undefined without problems 144`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardVisaElectron without problems: IconCardVisaElectron 1`] = `
-<Icon
-  name="card-visa-electron"
-  size="m"
-/>
+exports[`icon render undefined without problems 145`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCardVoid without problems: IconCardVoid 1`] = `
-<Icon
-  name="card-void"
-  size="m"
-/>
+exports[`icon render undefined without problems 146`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCash without problems: IconCash 1`] = `
-<Icon
-  name="cash"
-  size="m"
-/>
+exports[`icon render undefined without problems 147`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCashback without problems: IconCashback 1`] = `
-<Icon
-  name="cashback"
-  size="m"
-/>
+exports[`icon render undefined without problems 148`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCashbackBonus without problems: IconCashbackBonus 1`] = `
-<Icon
-  name="cashback-bonus"
-  size="m"
-/>
+exports[`icon render undefined without problems 149`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryAppliances without problems: IconCategoryAppliances 1`] = `
-<Icon
-  name="category-appliances"
-  size="m"
-/>
+exports[`icon render undefined without problems 150`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryAtm without problems: IconCategoryAtm 1`] = `
-<Icon
-  name="category-atm"
-  size="m"
-/>
+exports[`icon render undefined without problems 151`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryAuto without problems: IconCategoryAuto 1`] = `
-<Icon
-  name="category-auto"
-  size="m"
-/>
+exports[`icon render undefined without problems 152`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryAutoLoan without problems: IconCategoryAutoLoan 1`] = `
-<Icon
-  name="category-auto-loan"
-  size="m"
-/>
+exports[`icon render undefined without problems 153`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryBooksMovies without problems: IconCategoryBooksMovies 1`] = `
-<Icon
-  name="category-books-movies"
-  size="m"
-/>
+exports[`icon render undefined without problems 154`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryBudget without problems: IconCategoryBudget 1`] = `
-<Icon
-  name="category-budget"
-  size="m"
-/>
+exports[`icon render undefined without problems 155`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryBusiness without problems: IconCategoryBusiness 1`] = `
-<Icon
-  name="category-business"
-  size="m"
-/>
+exports[`icon render undefined without problems 156`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryBusinessActivity without problems: IconCategoryBusinessActivity 1`] = `
-<Icon
-  name="category-business-activity"
-  size="m"
-/>
+exports[`icon render undefined without problems 157`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryCards without problems: IconCategoryCards 1`] = `
-<Icon
-  name="category-cards"
-  size="m"
-/>
+exports[`icon render undefined without problems 158`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryCash without problems: IconCategoryCash 1`] = `
-<Icon
-  name="category-cash"
-  size="m"
-/>
+exports[`icon render undefined without problems 159`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryCashback without problems: IconCategoryCashback 1`] = `
-<Icon
-  name="category-cashback"
-  size="m"
-/>
+exports[`icon render undefined without problems 160`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryCharity without problems: IconCategoryCharity 1`] = `
-<Icon
-  name="category-charity"
-  size="m"
-/>
+exports[`icon render undefined without problems 161`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryConsulting without problems: IconCategoryConsulting 1`] = `
-<Icon
-  name="category-consulting"
-  size="m"
-/>
+exports[`icon render undefined without problems 162`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryDefault without problems: IconCategoryDefault 1`] = `
-<Icon
-  name="category-default"
-  size="m"
-/>
+exports[`icon render undefined without problems 163`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryDress without problems: IconCategoryDress 1`] = `
-<Icon
-  name="category-dress"
-  size="m"
-/>
+exports[`icon render undefined without problems 164`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryEducation without problems: IconCategoryEducation 1`] = `
-<Icon
-  name="category-education"
-  size="m"
-/>
+exports[`icon render undefined without problems 165`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryEntertainment without problems: IconCategoryEntertainment 1`] = `
-<Icon
-  name="category-entertainment"
-  size="m"
-/>
+exports[`icon render undefined without problems 166`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryExperiments without problems: IconCategoryExperiments 1`] = `
-<Icon
-  name="category-experiments"
-  size="m"
-/>
+exports[`icon render undefined without problems 167`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryFamily without problems: IconCategoryFamily 1`] = `
-<Icon
-  name="category-family"
-  size="m"
-/>
+exports[`icon render undefined without problems 168`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryFinance without problems: IconCategoryFinance 1`] = `
-<Icon
-  name="category-finance"
-  size="m"
-/>
+exports[`icon render undefined without problems 169`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryFines without problems: IconCategoryFines 1`] = `
-<Icon
-  name="category-fines"
-  size="m"
-/>
+exports[`icon render undefined without problems 170`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryGaming without problems: IconCategoryGaming 1`] = `
-<Icon
-  name="category-gaming"
-  size="m"
-/>
+exports[`icon render undefined without problems 171`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryGasoline without problems: IconCategoryGasoline 1`] = `
-<Icon
-  name="category-gasoline"
-  size="m"
-/>
+exports[`icon render undefined without problems 172`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryGibddFines without problems: IconCategoryGibddFines 1`] = `
-<Icon
-  name="category-gibdd-fines"
-  size="m"
-/>
+exports[`icon render undefined without problems 173`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryGuard without problems: IconCategoryGuard 1`] = `
-<Icon
-  name="category-guard"
-  size="m"
-/>
+exports[`icon render undefined without problems 174`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryHealth without problems: IconCategoryHealth 1`] = `
-<Icon
-  name="category-health"
-  size="m"
-/>
+exports[`icon render undefined without problems 175`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryHobby without problems: IconCategoryHobby 1`] = `
-<Icon
-  name="category-hobby"
-  size="m"
-/>
+exports[`icon render undefined without problems 176`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryHouse without problems: IconCategoryHouse 1`] = `
-<Icon
-  name="category-house"
-  size="m"
-/>
+exports[`icon render undefined without problems 177`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryHousekeeping without problems: IconCategoryHousekeeping 1`] = `
-<Icon
-  name="category-housekeeping"
-  size="m"
-/>
+exports[`icon render undefined without problems 178`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryInvestments without problems: IconCategoryInvestments 1`] = `
-<Icon
-  name="category-investments"
-  size="m"
-/>
+exports[`icon render undefined without problems 179`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryLoans without problems: IconCategoryLoans 1`] = `
-<Icon
-  name="category-loans"
-  size="m"
-/>
+exports[`icon render undefined without problems 180`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryMedicine without problems: IconCategoryMedicine 1`] = `
-<Icon
-  name="category-medicine"
-  size="m"
-/>
+exports[`icon render undefined without problems 181`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryMortgage without problems: IconCategoryMortgage 1`] = `
-<Icon
-  name="category-mortgage"
-  size="m"
-/>
+exports[`icon render undefined without problems 182`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryOther without problems: IconCategoryOther 1`] = `
-<Icon
-  name="category-other"
-  size="m"
-/>
+exports[`icon render undefined without problems 183`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryPerson without problems: IconCategoryPerson 1`] = `
-<Icon
-  name="category-person"
-  size="m"
-/>
+exports[`icon render undefined without problems 184`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryPets without problems: IconCategoryPets 1`] = `
-<Icon
-  name="category-pets"
-  size="m"
-/>
+exports[`icon render undefined without problems 185`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryPlane without problems: IconCategoryPlane 1`] = `
-<Icon
-  name="category-plane"
-  size="m"
-/>
+exports[`icon render undefined without problems 186`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryRent without problems: IconCategoryRent 1`] = `
-<Icon
-  name="category-rent"
-  size="m"
-/>
+exports[`icon render undefined without problems 187`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryRepairs without problems: IconCategoryRepairs 1`] = `
-<Icon
-  name="category-repairs"
-  size="m"
-/>
+exports[`icon render undefined without problems 188`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryRestaurants without problems: IconCategoryRestaurants 1`] = `
-<Icon
-  name="category-restaurants"
-  size="m"
-/>
+exports[`icon render undefined without problems 189`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategorySalary without problems: IconCategorySalary 1`] = `
-<Icon
-  name="category-salary"
-  size="m"
-/>
+exports[`icon render undefined without problems 190`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryScholarship without problems: IconCategoryScholarship 1`] = `
-<Icon
-  name="category-scholarship"
-  size="m"
-/>
+exports[`icon render undefined without problems 191`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryShield without problems: IconCategoryShield 1`] = `
-<Icon
-  name="category-shield"
-  size="m"
-/>
+exports[`icon render undefined without problems 192`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryShopping without problems: IconCategoryShopping 1`] = `
-<Icon
-  name="category-shopping"
-  size="m"
-/>
+exports[`icon render undefined without problems 193`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryState without problems: IconCategoryState 1`] = `
-<Icon
-  name="category-state"
-  size="m"
-/>
+exports[`icon render undefined without problems 194`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryTelecom without problems: IconCategoryTelecom 1`] = `
-<Icon
-  name="category-telecom"
-  size="m"
-/>
+exports[`icon render undefined without problems 195`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryTransfer without problems: IconCategoryTransfer 1`] = `
-<Icon
-  name="category-transfer"
-  size="m"
-/>
+exports[`icon render undefined without problems 196`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryTransport without problems: IconCategoryTransport 1`] = `
-<Icon
-  name="category-transport"
-  size="m"
-/>
+exports[`icon render undefined without problems 197`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryTravel without problems: IconCategoryTravel 1`] = `
-<Icon
-  name="category-travel"
-  size="m"
-/>
+exports[`icon render undefined without problems 198`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryTroika without problems: IconCategoryTroika 1`] = `
-<Icon
-  name="category-troika"
-  size="m"
-/>
+exports[`icon render undefined without problems 199`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryTv without problems: IconCategoryTv 1`] = `
-<Icon
-  name="category-tv"
-  size="m"
-/>
+exports[`icon render undefined without problems 200`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryUnknown without problems: IconCategoryUnknown 1`] = `
-<Icon
-  name="category-unknown"
-  size="m"
-/>
+exports[`icon render undefined without problems 201`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryUser without problems: IconCategoryUser 1`] = `
-<Icon
-  name="category-user"
-  size="m"
-/>
+exports[`icon render undefined without problems 202`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryVacation without problems: IconCategoryVacation 1`] = `
-<Icon
-  name="category-vacation"
-  size="m"
-/>
+exports[`icon render undefined without problems 203`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryVipManager without problems: IconCategoryVipManager 1`] = `
-<Icon
-  name="category-vip-manager"
-  size="m"
-/>
+exports[`icon render undefined without problems 204`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryVipRoom without problems: IconCategoryVipRoom 1`] = `
-<Icon
-  name="category-vip-room"
-  size="m"
-/>
+exports[`icon render undefined without problems 205`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCategoryWallet without problems: IconCategoryWallet 1`] = `
-<Icon
-  name="category-wallet"
-  size="m"
-/>
+exports[`icon render undefined without problems 206`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconChat without problems: IconChat 1`] = `
-<Icon
-  name="chat"
-  size="m"
-/>
+exports[`icon render undefined without problems 207`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconChatMessageError without problems: IconChatMessageError 1`] = `
-<Icon
-  name="chat-message-error"
-  size="m"
-/>
+exports[`icon render undefined without problems 208`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconChatPhoto without problems: IconChatPhoto 1`] = `
-<Icon
-  name="chat-photo"
-  size="m"
-/>
+exports[`icon render undefined without problems 209`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconChatSend without problems: IconChatSend 1`] = `
-<Icon
-  name="chat-send"
-  size="m"
-/>
+exports[`icon render undefined without problems 210`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCheck without problems: IconCheck 1`] = `
-<Icon
-  name="check"
-  size="m"
-/>
+exports[`icon render undefined without problems 211`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCheckBold without problems: IconCheckBold 1`] = `
-<Icon
-  name="check-bold"
-  size="m"
-/>
+exports[`icon render undefined without problems 212`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCheckChat without problems: IconCheckChat 1`] = `
-<Icon
-  name="check-chat"
-  size="m"
-/>
+exports[`icon render undefined without problems 213`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCheckIndeterminate without problems: IconCheckIndeterminate 1`] = `
-<Icon
-  name="check-indeterminate"
-  size="m"
-/>
+exports[`icon render undefined without problems 214`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCheckboxDisabled without problems: IconCheckboxDisabled 1`] = `
-<Icon
-  name="checkbox-disabled"
-  size="m"
-/>
+exports[`icon render undefined without problems 215`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconChevronRight without problems: IconChevronRight 1`] = `
-<Icon
-  name="chevron-right"
-  size="m"
-/>
+exports[`icon render undefined without problems 216`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconClock without problems: IconClock 1`] = `
-<Icon
-  name="clock"
-  size="m"
-/>
+exports[`icon render undefined without problems 217`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconClockFilled without problems: IconClockFilled 1`] = `
-<Icon
-  name="clock-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 218`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconClose without problems: IconClose 1`] = `
-<Icon
-  name="close"
-  size="m"
-/>
+exports[`icon render undefined without problems 219`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCloseCircle without problems: IconCloseCircle 1`] = `
-<Icon
-  name="close-circle"
-  size="m"
-/>
+exports[`icon render undefined without problems 220`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconContactList without problems: IconContactList 1`] = `
-<Icon
-  name="contact-list"
-  size="m"
-/>
+exports[`icon render undefined without problems 221`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconContactless without problems: IconContactless 1`] = `
-<Icon
-  name="contactless"
-  size="m"
-/>
+exports[`icon render undefined without problems 222`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconContactlessOff without problems: IconContactlessOff 1`] = `
-<Icon
-  name="contactless-off"
-  size="m"
-/>
+exports[`icon render undefined without problems 223`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconContactlessOn without problems: IconContactlessOn 1`] = `
-<Icon
-  name="contactless-on"
-  size="m"
-/>
+exports[`icon render undefined without problems 224`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconConvert without problems: IconConvert 1`] = `
-<Icon
-  name="convert"
-  size="m"
-/>
+exports[`icon render undefined without problems 225`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconConvertRubToUsd without problems: IconConvertRubToUsd 1`] = `
-<Icon
-  name="convert-rub-to-usd"
-  size="m"
-/>
+exports[`icon render undefined without problems 226`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCopy without problems: IconCopy 1`] = `
-<Icon
-  name="copy"
-  size="m"
-/>
+exports[`icon render undefined without problems 227`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCosts without problems: IconCosts 1`] = `
-<Icon
-  name="costs"
-  size="m"
-/>
+exports[`icon render undefined without problems 228`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCostsCard without problems: IconCostsCard 1`] = `
-<Icon
-  name="costs-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 229`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCredit without problems: IconCredit 1`] = `
-<Icon
-  name="credit"
-  size="m"
-/>
+exports[`icon render undefined without problems 230`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCreditCard without problems: IconCreditCard 1`] = `
-<Icon
-  name="credit-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 231`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCrown without problems: IconCrown 1`] = `
-<Icon
-  name="crown"
-  size="m"
-/>
+exports[`icon render undefined without problems 232`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCrownPremium without problems: IconCrownPremium 1`] = `
-<Icon
-  name="crown-premium"
-  size="m"
-/>
+exports[`icon render undefined without problems 233`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyChf without problems: IconCurrencyChf 1`] = `
-<Icon
-  name="currency-chf"
-  size="m"
-/>
+exports[`icon render undefined without problems 234`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyEur without problems: IconCurrencyEur 1`] = `
-<Icon
-  name="currency-eur"
-  size="m"
-/>
+exports[`icon render undefined without problems 235`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyEurUsd without problems: IconCurrencyEurUsd 1`] = `
-<Icon
-  name="currency-eur-usd"
-  size="m"
-/>
+exports[`icon render undefined without problems 236`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyGbp without problems: IconCurrencyGbp 1`] = `
-<Icon
-  name="currency-gbp"
-  size="m"
-/>
+exports[`icon render undefined without problems 237`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyJpy without problems: IconCurrencyJpy 1`] = `
-<Icon
-  name="currency-jpy"
-  size="m"
-/>
+exports[`icon render undefined without problems 238`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyRub without problems: IconCurrencyRub 1`] = `
-<Icon
-  name="currency-rub"
-  size="m"
-/>
+exports[`icon render undefined without problems 239`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyRubUsd without problems: IconCurrencyRubUsd 1`] = `
-<Icon
-  name="currency-rub-usd"
-  size="m"
-/>
+exports[`icon render undefined without problems 240`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCurrencyUsd without problems: IconCurrencyUsd 1`] = `
-<Icon
-  name="currency-usd"
-  size="m"
-/>
+exports[`icon render undefined without problems 241`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconCvv without problems: IconCvv 1`] = `
-<Icon
-  name="cvv"
-  size="m"
-/>
+exports[`icon render undefined without problems 242`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDelete without problems: IconDelete 1`] = `
-<Icon
-  name="delete"
-  size="m"
-/>
+exports[`icon render undefined without problems 243`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDeposit without problems: IconDeposit 1`] = `
-<Icon
-  name="deposit"
-  size="m"
-/>
+exports[`icon render undefined without problems 244`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDirections without problems: IconDirections 1`] = `
-<Icon
-  name="directions"
-  size="m"
-/>
+exports[`icon render undefined without problems 245`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDiscount without problems: IconDiscount 1`] = `
-<Icon
-  name="discount"
-  size="m"
-/>
+exports[`icon render undefined without problems 246`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDislike without problems: IconDislike 1`] = `
-<Icon
-  name="dislike"
-  size="m"
-/>
+exports[`icon render undefined without problems 247`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDislikeFilled without problems: IconDislikeFilled 1`] = `
-<Icon
-  name="dislike-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 248`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDone without problems: IconDone 1`] = `
-<Icon
-  name="done"
-  size="m"
-/>
+exports[`icon render undefined without problems 249`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDots without problems: IconDots 1`] = `
-<Icon
-  name="dots"
-  size="m"
-/>
+exports[`icon render undefined without problems 250`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDown without problems: IconDown 1`] = `
-<Icon
-  name="down"
-  size="m"
-/>
+exports[`icon render undefined without problems 251`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDownload without problems: IconDownload 1`] = `
-<Icon
-  name="download"
-  size="m"
-/>
+exports[`icon render undefined without problems 252`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconDraft without problems: IconDraft 1`] = `
-<Icon
-  name="draft"
-  size="m"
-/>
+exports[`icon render undefined without problems 253`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconEdit without problems: IconEdit 1`] = `
-<Icon
-  name="edit"
-  size="m"
-/>
+exports[`icon render undefined without problems 254`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconEmail without problems: IconEmail 1`] = `
-<Icon
-  name="email"
-  size="m"
-/>
+exports[`icon render undefined without problems 255`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconEmoney without problems: IconEmoney 1`] = `
-<Icon
-  name="emoney"
-  size="m"
-/>
+exports[`icon render undefined without problems 256`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconErase without problems: IconErase 1`] = `
-<Icon
-  name="erase"
-  size="m"
-/>
+exports[`icon render undefined without problems 257`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconError without problems: IconError 1`] = `
-<Icon
-  name="error"
-  size="m"
-/>
+exports[`icon render undefined without problems 258`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconExchange without problems: IconExchange 1`] = `
-<Icon
-  name="exchange"
-  size="m"
-/>
+exports[`icon render undefined without problems 259`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconExpandDown without problems: IconExpandDown 1`] = `
-<Icon
-  name="expand-down"
-  size="m"
-/>
+exports[`icon render undefined without problems 260`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconExpences without problems: IconExpences 1`] = `
-<Icon
-  name="expences"
-  size="m"
-/>
+exports[`icon render undefined without problems 261`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconExpencesPlanner without problems: IconExpencesPlanner 1`] = `
-<Icon
-  name="expences-planner"
-  size="m"
-/>
+exports[`icon render undefined without problems 262`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFail without problems: IconFail 1`] = `
-<Icon
-  name="fail"
-  size="m"
-/>
+exports[`icon render undefined without problems 263`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFault without problems: IconFault 1`] = `
-<Icon
-  name="fault"
-  size="m"
-/>
+exports[`icon render undefined without problems 264`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFavorite without problems: IconFavorite 1`] = `
-<Icon
-  name="favorite"
-  size="m"
-/>
+exports[`icon render undefined without problems 265`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFeature without problems: IconFeature 1`] = `
-<Icon
-  name="feature"
-  size="m"
-/>
+exports[`icon render undefined without problems 266`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFifaTrophy without problems: IconFifaTrophy 1`] = `
-<Icon
-  name="fifa-trophy"
-  size="m"
-/>
+exports[`icon render undefined without problems 267`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFilter without problems: IconFilter 1`] = `
-<Icon
-  name="filter"
-  size="m"
-/>
+exports[`icon render undefined without problems 268`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFingerPointing without problems: IconFingerPointing 1`] = `
-<Icon
-  name="finger-pointing"
-  size="m"
-/>
+exports[`icon render undefined without problems 269`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFingerprint without problems: IconFingerprint 1`] = `
-<Icon
-  name="fingerprint"
-  size="m"
-/>
+exports[`icon render undefined without problems 270`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconForex without problems: IconForex 1`] = `
-<Icon
-  name="forex"
-  size="m"
-/>
+exports[`icon render undefined without problems 271`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormat1c without problems: IconFormat1c 1`] = `
-<Icon
-  name="format-1c"
-  size="m"
-/>
+exports[`icon render undefined without problems 272`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatAttach without problems: IconFormatAttach 1`] = `
-<Icon
-  name="format-attach"
-  size="m"
-/>
+exports[`icon render undefined without problems 273`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatCsv without problems: IconFormatCsv 1`] = `
-<Icon
-  name="format-csv"
-  size="m"
-/>
+exports[`icon render undefined without problems 274`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatDefault without problems: IconFormatDefault 1`] = `
-<Icon
-  name="format-default"
-  size="m"
-/>
+exports[`icon render undefined without problems 275`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatDoc without problems: IconFormatDoc 1`] = `
-<Icon
-  name="format-doc"
-  size="m"
-/>
+exports[`icon render undefined without problems 276`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatPdf without problems: IconFormatPdf 1`] = `
-<Icon
-  name="format-pdf"
-  size="m"
-/>
+exports[`icon render undefined without problems 277`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatPng without problems: IconFormatPng 1`] = `
-<Icon
-  name="format-png"
-  size="m"
-/>
+exports[`icon render undefined without problems 278`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatPpt without problems: IconFormatPpt 1`] = `
-<Icon
-  name="format-ppt"
-  size="m"
-/>
+exports[`icon render undefined without problems 279`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatSketch without problems: IconFormatSketch 1`] = `
-<Icon
-  name="format-sketch"
-  size="m"
-/>
+exports[`icon render undefined without problems 280`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatSvg without problems: IconFormatSvg 1`] = `
-<Icon
-  name="format-svg"
-  size="m"
-/>
+exports[`icon render undefined without problems 281`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatTxt without problems: IconFormatTxt 1`] = `
-<Icon
-  name="format-txt"
-  size="m"
-/>
+exports[`icon render undefined without problems 282`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatXls without problems: IconFormatXls 1`] = `
-<Icon
-  name="format-xls"
-  size="m"
-/>
+exports[`icon render undefined without problems 283`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatXml without problems: IconFormatXml 1`] = `
-<Icon
-  name="format-xml"
-  size="m"
-/>
+exports[`icon render undefined without problems 284`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconFormatZip without problems: IconFormatZip 1`] = `
-<Icon
-  name="format-zip"
-  size="m"
-/>
+exports[`icon render undefined without problems 285`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconGalleryInCamera without problems: IconGalleryInCamera 1`] = `
-<Icon
-  name="gallery-in-camera"
-  size="m"
-/>
+exports[`icon render undefined without problems 286`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconGeolocation without problems: IconGeolocation 1`] = `
-<Icon
-  name="geolocation"
-  size="m"
-/>
+exports[`icon render undefined without problems 287`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconGeolocationMap without problems: IconGeolocationMap 1`] = `
-<Icon
-  name="geolocation-map"
-  size="m"
-/>
+exports[`icon render undefined without problems 288`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconGoals without problems: IconGoals 1`] = `
-<Icon
-  name="goals"
-  size="m"
-/>
+exports[`icon render undefined without problems 289`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconHelp without problems: IconHelp 1`] = `
-<Icon
-  name="help"
-  size="m"
-/>
+exports[`icon render undefined without problems 290`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconHelpFilled without problems: IconHelpFilled 1`] = `
-<Icon
-  name="help-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 291`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconHistory without problems: IconHistory 1`] = `
-<Icon
-  name="history"
-  size="m"
-/>
+exports[`icon render undefined without problems 292`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconHold without problems: IconHold 1`] = `
-<Icon
-  name="hold"
-  size="m"
-/>
+exports[`icon render undefined without problems 293`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconInbox without problems: IconInbox 1`] = `
-<Icon
-  name="inbox"
-  size="m"
-/>
+exports[`icon render undefined without problems 294`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconIncome without problems: IconIncome 1`] = `
-<Icon
-  name="income"
-  size="m"
-/>
+exports[`icon render undefined without problems 295`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconInfo without problems: IconInfo 1`] = `
-<Icon
-  name="info"
-  size="m"
-/>
+exports[`icon render undefined without problems 296`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconInsurance without problems: IconInsurance 1`] = `
-<Icon
-  name="insurance"
-  size="m"
-/>
+exports[`icon render undefined without problems 297`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconInternet without problems: IconInternet 1`] = `
-<Icon
-  name="internet"
-  size="m"
-/>
+exports[`icon render undefined without problems 298`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconInvestments without problems: IconInvestments 1`] = `
-<Icon
-  name="investments"
-  size="m"
-/>
+exports[`icon render undefined without problems 299`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconInvoiceForPayment without problems: IconInvoiceForPayment 1`] = `
-<Icon
-  name="invoice-for-payment"
-  size="m"
-/>
+exports[`icon render undefined without problems 300`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconKeyboard without problems: IconKeyboard 1`] = `
-<Icon
-  name="keyboard"
-  size="m"
-/>
+exports[`icon render undefined without problems 301`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconKeyboardHide without problems: IconKeyboardHide 1`] = `
-<Icon
-  name="keyboard-hide"
-  size="m"
-/>
+exports[`icon render undefined without problems 302`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLeft without problems: IconLeft 1`] = `
-<Icon
-  name="left"
-  size="m"
-/>
+exports[`icon render undefined without problems 303`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLike without problems: IconLike 1`] = `
-<Icon
-  name="like"
-  size="m"
-/>
+exports[`icon render undefined without problems 304`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLikeFilled without problems: IconLikeFilled 1`] = `
-<Icon
-  name="like-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 305`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLimits without problems: IconLimits 1`] = `
-<Icon
-  name="limits"
-  size="m"
-/>
+exports[`icon render undefined without problems 306`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconList without problems: IconList 1`] = `
-<Icon
-  name="list"
-  size="m"
-/>
+exports[`icon render undefined without problems 307`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLocation without problems: IconLocation 1`] = `
-<Icon
-  name="location"
-  size="m"
-/>
+exports[`icon render undefined without problems 308`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLock without problems: IconLock 1`] = `
-<Icon
-  name="lock"
-  size="m"
-/>
+exports[`icon render undefined without problems 309`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLockFilled without problems: IconLockFilled 1`] = `
-<Icon
-  name="lock-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 310`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLogoAlfabank without problems: IconLogoAlfabank 1`] = `
-<Icon
-  name="logo-alfabank"
-  size="m"
-/>
+exports[`icon render undefined without problems 311`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconLogout without problems: IconLogout 1`] = `
-<Icon
-  name="logout"
-  size="m"
-/>
+exports[`icon render undefined without problems 312`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMaestro without problems: IconMaestro 1`] = `
-<Icon
-  name="maestro"
-  size="m"
-/>
+exports[`icon render undefined without problems 313`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconManager without problems: IconManager 1`] = `
-<Icon
-  name="manager"
-  size="m"
-/>
+exports[`icon render undefined without problems 314`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMarketplace without problems: IconMarketplace 1`] = `
-<Icon
-  name="marketplace"
-  size="m"
-/>
+exports[`icon render undefined without problems 315`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMastercard without problems: IconMastercard 1`] = `
-<Icon
-  name="mastercard"
-  size="m"
-/>
+exports[`icon render undefined without problems 316`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMessage without problems: IconMessage 1`] = `
-<Icon
-  name="message"
-  size="m"
-/>
+exports[`icon render undefined without problems 317`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMetro without problems: IconMetro 1`] = `
-<Icon
-  name="metro"
-  size="m"
-/>
+exports[`icon render undefined without problems 318`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMetroMap without problems: IconMetroMap 1`] = `
-<Icon
-  name="metro-map"
-  size="m"
-/>
+exports[`icon render undefined without problems 319`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMir without problems: IconMir 1`] = `
-<Icon
-  name="mir"
-  size="m"
-/>
+exports[`icon render undefined without problems 320`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMobile without problems: IconMobile 1`] = `
-<Icon
-  name="mobile"
-  size="m"
-/>
+exports[`icon render undefined without problems 321`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMobileAndroid without problems: IconMobileAndroid 1`] = `
-<Icon
-  name="mobile-android"
-  size="m"
-/>
+exports[`icon render undefined without problems 322`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMobileIos without problems: IconMobileIos 1`] = `
-<Icon
-  name="mobile-ios"
-  size="m"
-/>
+exports[`icon render undefined without problems 323`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMoneybox without problems: IconMoneybox 1`] = `
-<Icon
-  name="moneybox"
-  size="m"
-/>
+exports[`icon render undefined without problems 324`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMore without problems: IconMore 1`] = `
-<Icon
-  name="more"
-  size="m"
-/>
+exports[`icon render undefined without problems 325`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconMypayments without problems: IconMypayments 1`] = `
-<Icon
-  name="mypayments"
-  size="m"
-/>
+exports[`icon render undefined without problems 326`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNavigationChat without problems: IconNavigationChat 1`] = `
-<Icon
-  name="navigation-chat"
-  size="m"
-/>
+exports[`icon render undefined without problems 327`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNavigationHistory without problems: IconNavigationHistory 1`] = `
-<Icon
-  name="navigation-history"
-  size="m"
-/>
+exports[`icon render undefined without problems 328`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNavigationHome without problems: IconNavigationHome 1`] = `
-<Icon
-  name="navigation-home"
-  size="m"
-/>
+exports[`icon render undefined without problems 329`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNavigationMarketplace without problems: IconNavigationMarketplace 1`] = `
-<Icon
-  name="navigation-marketplace"
-  size="m"
-/>
+exports[`icon render undefined without problems 330`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNavigationPayment without problems: IconNavigationPayment 1`] = `
-<Icon
-  name="navigation-payment"
-  size="m"
-/>
+exports[`icon render undefined without problems 331`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNetworkFacebook without problems: IconNetworkFacebook 1`] = `
-<Icon
-  name="network-facebook"
-  size="m"
-/>
+exports[`icon render undefined without problems 332`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNetworkTwitter without problems: IconNetworkTwitter 1`] = `
-<Icon
-  name="network-twitter"
-  size="m"
-/>
+exports[`icon render undefined without problems 333`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNetworkVk without problems: IconNetworkVk 1`] = `
-<Icon
-  name="network-vk"
-  size="m"
-/>
+exports[`icon render undefined without problems 334`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNews without problems: IconNews 1`] = `
-<Icon
-  name="news"
-  size="m"
-/>
+exports[`icon render undefined without problems 335`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNext without problems: IconNext 1`] = `
-<Icon
-  name="next"
-  size="m"
-/>
+exports[`icon render undefined without problems 336`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNotificationBadge without problems: IconNotificationBadge 1`] = `
-<Icon
-  name="notification-badge"
-  size="m"
-/>
+exports[`icon render undefined without problems 337`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconNotifications without problems: IconNotifications 1`] = `
-<Icon
-  name="notifications"
-  size="m"
-/>
+exports[`icon render undefined without problems 338`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOffer without problems: IconOffer 1`] = `
-<Icon
-  name="offer"
-  size="m"
-/>
+exports[`icon render undefined without problems 339`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOfferFill without problems: IconOfferFill 1`] = `
-<Icon
-  name="offer-fill"
-  size="m"
-/>
+exports[`icon render undefined without problems 340`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOffice without problems: IconOffice 1`] = `
-<Icon
-  name="office"
-  size="m"
-/>
+exports[`icon render undefined without problems 341`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOk without problems: IconOk 1`] = `
-<Icon
-  name="ok"
-  size="m"
-/>
+exports[`icon render undefined without problems 342`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOkFilled without problems: IconOkFilled 1`] = `
-<Icon
-  name="ok-filled"
-  size="m"
-/>
+exports[`icon render undefined without problems 343`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOutcome without problems: IconOutcome 1`] = `
-<Icon
-  name="outcome"
-  size="m"
-/>
+exports[`icon render undefined without problems 344`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOutside without problems: IconOutside 1`] = `
-<Icon
-  name="outside"
-  size="m"
-/>
+exports[`icon render undefined without problems 345`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconOverdraft without problems: IconOverdraft 1`] = `
-<Icon
-  name="overdraft"
-  size="m"
-/>
+exports[`icon render undefined without problems 346`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPasswordChange without problems: IconPasswordChange 1`] = `
-<Icon
-  name="password-change"
-  size="m"
-/>
+exports[`icon render undefined without problems 347`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPasswordHide without problems: IconPasswordHide 1`] = `
-<Icon
-  name="password-hide"
-  size="m"
-/>
+exports[`icon render undefined without problems 348`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPasswordShow without problems: IconPasswordShow 1`] = `
-<Icon
-  name="password-show"
-  size="m"
-/>
+exports[`icon render undefined without problems 349`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPause without problems: IconPause 1`] = `
-<Icon
-  name="pause"
-  size="m"
-/>
+exports[`icon render undefined without problems 350`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPayBack without problems: IconPayBack 1`] = `
-<Icon
-  name="pay-back"
-  size="m"
-/>
+exports[`icon render undefined without problems 351`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentByPhoto without problems: IconPaymentByPhoto 1`] = `
-<Icon
-  name="payment-by-photo"
-  size="m"
-/>
+exports[`icon render undefined without problems 352`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentError without problems: IconPaymentError 1`] = `
-<Icon
-  name="payment-error"
-  size="m"
-/>
+exports[`icon render undefined without problems 353`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentOutbox without problems: IconPaymentOutbox 1`] = `
-<Icon
-  name="payment-outbox"
-  size="m"
-/>
+exports[`icon render undefined without problems 354`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentPlus without problems: IconPaymentPlus 1`] = `
-<Icon
-  name="payment-plus"
-  size="m"
-/>
+exports[`icon render undefined without problems 355`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentRoundedPlus without problems: IconPaymentRoundedPlus 1`] = `
-<Icon
-  name="payment-rounded-plus"
-  size="m"
-/>
+exports[`icon render undefined without problems 356`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentRoundedPlusBig without problems: IconPaymentRoundedPlusBig 1`] = `
-<Icon
-  name="payment-rounded-plus-big"
-  size="m"
-/>
+exports[`icon render undefined without problems 357`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentToCompany without problems: IconPaymentToCompany 1`] = `
-<Icon
-  name="payment-to-company"
-  size="m"
-/>
+exports[`icon render undefined without problems 358`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentToPerson without problems: IconPaymentToPerson 1`] = `
-<Icon
-  name="payment-to-person"
-  size="m"
-/>
+exports[`icon render undefined without problems 359`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentToSelf without problems: IconPaymentToSelf 1`] = `
-<Icon
-  name="payment-to-self"
-  size="m"
-/>
+exports[`icon render undefined without problems 360`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPaymentToState without problems: IconPaymentToState 1`] = `
-<Icon
-  name="payment-to-state"
-  size="m"
-/>
+exports[`icon render undefined without problems 361`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPercent without problems: IconPercent 1`] = `
-<Icon
-  name="percent"
-  size="m"
-/>
+exports[`icon render undefined without problems 362`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPerson without problems: IconPerson 1`] = `
-<Icon
-  name="person"
-  size="m"
-/>
+exports[`icon render undefined without problems 363`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPhoto without problems: IconPhoto 1`] = `
-<Icon
-  name="photo"
-  size="m"
-/>
+exports[`icon render undefined without problems 364`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPhotoCard without problems: IconPhotoCard 1`] = `
-<Icon
-  name="photo-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 365`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPillow without problems: IconPillow 1`] = `
-<Icon
-  name="pillow"
-  size="m"
-/>
+exports[`icon render undefined without problems 366`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPin without problems: IconPin 1`] = `
-<Icon
-  name="pin"
-  size="m"
-/>
+exports[`icon render undefined without problems 367`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPinUnpin without problems: IconPinUnpin 1`] = `
-<Icon
-  name="pin-unpin"
-  size="m"
-/>
+exports[`icon render undefined without problems 368`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPlanExpenses without problems: IconPlanExpenses 1`] = `
-<Icon
-  name="plan-expenses"
-  size="m"
-/>
+exports[`icon render undefined without problems 369`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPlay without problems: IconPlay 1`] = `
-<Icon
-  name="play"
-  size="m"
-/>
+exports[`icon render undefined without problems 370`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPower without problems: IconPower 1`] = `
-<Icon
-  name="power"
-  size="m"
-/>
+exports[`icon render undefined without problems 371`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPowerCard without problems: IconPowerCard 1`] = `
-<Icon
-  name="power-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 372`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPredictions without problems: IconPredictions 1`] = `
-<Icon
-  name="predictions"
-  size="m"
-/>
+exports[`icon render undefined without problems 373`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPresent without problems: IconPresent 1`] = `
-<Icon
-  name="present"
-  size="m"
-/>
+exports[`icon render undefined without problems 374`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconPrinter without problems: IconPrinter 1`] = `
-<Icon
-  name="printer"
-  size="m"
-/>
+exports[`icon render undefined without problems 375`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconQr without problems: IconQr 1`] = `
-<Icon
-  name="qr"
-  size="m"
-/>
+exports[`icon render undefined without problems 376`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconReadyToSend without problems: IconReadyToSend 1`] = `
-<Icon
-  name="ready-to-send"
-  size="m"
-/>
+exports[`icon render undefined without problems 377`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconRegistry without problems: IconRegistry 1`] = `
-<Icon
-  name="registry"
-  size="m"
-/>
+exports[`icon render undefined without problems 378`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconRepeat without problems: IconRepeat 1`] = `
-<Icon
-  name="repeat"
-  size="m"
-/>
+exports[`icon render undefined without problems 379`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconReply without problems: IconReply 1`] = `
-<Icon
-  name="reply"
-  size="m"
-/>
+exports[`icon render undefined without problems 380`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconRequestMoney without problems: IconRequestMoney 1`] = `
-<Icon
-  name="request-money"
-  size="m"
-/>
+exports[`icon render undefined without problems 381`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconRight without problems: IconRight 1`] = `
-<Icon
-  name="right"
-  size="m"
-/>
+exports[`icon render undefined without problems 382`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSbp without problems: IconSbp 1`] = `
-<Icon
-  name="sbp"
-  size="m"
-/>
+exports[`icon render undefined without problems 383`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSearch without problems: IconSearch 1`] = `
-<Icon
-  name="search"
-  size="m"
-/>
+exports[`icon render undefined without problems 384`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSecurity without problems: IconSecurity 1`] = `
-<Icon
-  name="security"
-  size="m"
-/>
+exports[`icon render undefined without problems 385`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSelfemloyedReg without problems: IconSelfemloyedReg 1`] = `
-<Icon
-  name="selfemloyed-reg"
-  size="m"
-/>
+exports[`icon render undefined without problems 386`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSell without problems: IconSell 1`] = `
-<Icon
-  name="sell"
-  size="m"
-/>
+exports[`icon render undefined without problems 387`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSent without problems: IconSent 1`] = `
-<Icon
-  name="sent"
-  size="m"
-/>
+exports[`icon render undefined without problems 388`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSentDone without problems: IconSentDone 1`] = `
-<Icon
-  name="sent-done"
-  size="m"
-/>
+exports[`icon render undefined without problems 389`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSettings without problems: IconSettings 1`] = `
-<Icon
-  name="settings"
-  size="m"
-/>
+exports[`icon render undefined without problems 390`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconShareAndroid without problems: IconShareAndroid 1`] = `
-<Icon
-  name="share-android"
-  size="m"
-/>
+exports[`icon render undefined without problems 391`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconShareIos without problems: IconShareIos 1`] = `
-<Icon
-  name="share-ios"
-  size="m"
-/>
+exports[`icon render undefined without problems 392`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSign without problems: IconSign 1`] = `
-<Icon
-  name="sign"
-  size="m"
-/>
+exports[`icon render undefined without problems 393`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSite without problems: IconSite 1`] = `
-<Icon
-  name="site"
-  size="m"
-/>
+exports[`icon render undefined without problems 394`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSixty without problems: IconSixty 1`] = `
-<Icon
-  name="sixty"
-  size="m"
-/>
+exports[`icon render undefined without problems 395`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSliderArrowDouble without problems: IconSliderArrowDouble 1`] = `
-<Icon
-  name="slider-arrow-double"
-  size="m"
-/>
+exports[`icon render undefined without problems 396`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconStar without problems: IconStar 1`] = `
-<Icon
-  name="star"
-  size="m"
-/>
+exports[`icon render undefined without problems 397`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconStarActive without problems: IconStarActive 1`] = `
-<Icon
-  name="star-active"
-  size="m"
-/>
+exports[`icon render undefined without problems 398`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconStarInactive without problems: IconStarInactive 1`] = `
-<Icon
-  name="star-inactive"
-  size="m"
-/>
+exports[`icon render undefined without problems 399`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconStatusUrgent without problems: IconStatusUrgent 1`] = `
-<Icon
-  name="status-urgent"
-  size="m"
-/>
+exports[`icon render undefined without problems 400`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSubmit without problems: IconSubmit 1`] = `
-<Icon
-  name="submit"
-  size="m"
-/>
+exports[`icon render undefined without problems 401`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSubscrption without problems: IconSubscrption 1`] = `
-<Icon
-  name="subscrption"
-  size="m"
-/>
+exports[`icon render undefined without problems 402`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSystemBack without problems: IconSystemBack 1`] = `
-<Icon
-  name="system-back"
-  size="m"
-/>
+exports[`icon render undefined without problems 403`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSystemHelp without problems: IconSystemHelp 1`] = `
-<Icon
-  name="system-help"
-  size="m"
-/>
+exports[`icon render undefined without problems 404`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconSystemHideArrow without problems: IconSystemHideArrow 1`] = `
-<Icon
-  name="system-hide-arrow"
-  size="m"
-/>
+exports[`icon render undefined without problems 405`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTable without problems: IconTable 1`] = `
-<Icon
-  name="table"
-  size="m"
-/>
+exports[`icon render undefined without problems 406`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTemplates without problems: IconTemplates 1`] = `
-<Icon
-  name="templates"
-  size="m"
-/>
+exports[`icon render undefined without problems 407`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTick without problems: IconTick 1`] = `
-<Icon
-  name="tick"
-  size="m"
-/>
+exports[`icon render undefined without problems 408`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTodo without problems: IconTodo 1`] = `
-<Icon
-  name="todo"
-  size="m"
-/>
+exports[`icon render undefined without problems 409`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferAnyBank without problems: IconTransferAnyBank 1`] = `
-<Icon
-  name="transfer-any-bank"
-  size="m"
-/>
+exports[`icon render undefined without problems 410`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferAnyBankCredit without problems: IconTransferAnyBankCredit 1`] = `
-<Icon
-  name="transfer-any-bank-credit"
-  size="m"
-/>
+exports[`icon render undefined without problems 411`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferBetweenAccounts without problems: IconTransferBetweenAccounts 1`] = `
-<Icon
-  name="transfer-between-accounts"
-  size="m"
-/>
+exports[`icon render undefined without problems 412`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferByPhone without problems: IconTransferByPhone 1`] = `
-<Icon
-  name="transfer-by-phone"
-  size="m"
-/>
+exports[`icon render undefined without problems 413`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferByPhoneAndroid without problems: IconTransferByPhoneAndroid 1`] = `
-<Icon
-  name="transfer-by-phone-android"
-  size="m"
-/>
+exports[`icon render undefined without problems 414`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferByPhoneIos without problems: IconTransferByPhoneIos 1`] = `
-<Icon
-  name="transfer-by-phone-ios"
-  size="m"
-/>
+exports[`icon render undefined without problems 415`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferCard without problems: IconTransferCard 1`] = `
-<Icon
-  name="transfer-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 416`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferExternal without problems: IconTransferExternal 1`] = `
-<Icon
-  name="transfer-external"
-  size="m"
-/>
+exports[`icon render undefined without problems 417`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferIn without problems: IconTransferIn 1`] = `
-<Icon
-  name="transfer-in"
-  size="m"
-/>
+exports[`icon render undefined without problems 418`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferInternal without problems: IconTransferInternal 1`] = `
-<Icon
-  name="transfer-internal"
-  size="m"
-/>
+exports[`icon render undefined without problems 419`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferOut without problems: IconTransferOut 1`] = `
-<Icon
-  name="transfer-out"
-  size="m"
-/>
+exports[`icon render undefined without problems 420`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferOuter without problems: IconTransferOuter 1`] = `
-<Icon
-  name="transfer-outer"
-  size="m"
-/>
+exports[`icon render undefined without problems 421`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferSelf without problems: IconTransferSelf 1`] = `
-<Icon
-  name="transfer-self"
-  size="m"
-/>
+exports[`icon render undefined without problems 422`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconTransferToCard without problems: IconTransferToCard 1`] = `
-<Icon
-  name="transfer-to-card"
-  size="m"
-/>
+exports[`icon render undefined without problems 423`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconUnionpay without problems: IconUnionpay 1`] = `
-<Icon
-  name="unionpay"
-  size="m"
-/>
+exports[`icon render undefined without problems 424`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconUnlock without problems: IconUnlock 1`] = `
-<Icon
-  name="unlock"
-  size="m"
-/>
+exports[`icon render undefined without problems 425`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconUp without problems: IconUp 1`] = `
-<Icon
-  name="up"
-  size="m"
-/>
+exports[`icon render undefined without problems 426`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconUserAdd without problems: IconUserAdd 1`] = `
-<Icon
-  name="user-add"
-  size="m"
-/>
+exports[`icon render undefined without problems 427`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconUtilities without problems: IconUtilities 1`] = `
-<Icon
-  name="utilities"
-  size="m"
-/>
+exports[`icon render undefined without problems 428`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconVerifying without problems: IconVerifying 1`] = `
-<Icon
-  name="verifying"
-  size="m"
-/>
+exports[`icon render undefined without problems 429`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconVisa without problems: IconVisa 1`] = `
-<Icon
-  name="visa"
-  size="m"
-/>
+exports[`icon render undefined without problems 430`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconWaiting without problems: IconWaiting 1`] = `
-<Icon
-  name="waiting"
-  size="m"
-/>
+exports[`icon render undefined without problems 431`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
-exports[`icon render IconWallet without problems: IconWallet 1`] = `
-<Icon
-  name="wallet"
-  size="m"
-/>
+exports[`icon render undefined without problems 432`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`icon renders without problems 1`] = `
 <span
-  className="icon icon_size_m icon_theme_alfa-on-white"
+  className="icon icon_size_m"
 />
 `;

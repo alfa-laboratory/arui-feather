@@ -2,7 +2,7 @@
 
 exports[`email-input should render without problems 1`] = `
 <Input
-  className="email-input email-input_theme_alfa-on-white"
+  className="email-input"
   formNoValidate={true}
   resetError={true}
   size="m"

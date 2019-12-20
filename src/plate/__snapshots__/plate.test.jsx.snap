@@ -5,7 +5,7 @@ exports[`plate should render without problems 1`] = `
   theme="alfa-on-white"
 >
   <div
-    className="plate plate_theme_alfa-on-white"
+    className="plate"
     onClick={[Function]}
     onKeyDown={[Function]}
   >

@@ -37,7 +37,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
   >
     <Input
       autocomplete={false}
-      className="input input_has-autocomplete input_theme_alfa-on-white"
+      className="input input_has-autocomplete"
       closeOnSelect={false}
       defaultValue="default"
       directions={
@@ -78,7 +78,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
       width="default"
     >
       <span
-        className="input input_type_text input_view_default input_size_m input_width_default input_has-value input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+        className="input input input_has-autocomplete input_type_text input_view_default input_size_m input_width_default input_has-value"
       >
         <span
           className="input__inner"
@@ -155,7 +155,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
         containerInfo={
           <body>
             <div
-              class="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white input__popup"
+              class="popup input__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive"
               style="top: 0px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
             >
               <div
@@ -168,11 +168,11 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                     class="popup__content"
                   >
                     <div
-                      class="menu menu_size_m menu_group-view_default menu_mode_radio-check menu_theme_alfa-on-white input__menu"
+                      class="menu input__menu menu_size_m menu_group-view_default menu_mode_radio-check"
                       tabindex="0"
                     >
                       <div
-                        class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        class="menu-item menu-item_type_block"
                       >
                         <span
                           class="menu-item__control"
@@ -181,7 +181,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                         </span>
                       </div>
                       <div
-                        class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        class="menu-item menu-item_type_block"
                       >
                         <span
                           class="menu-item__control"
@@ -199,7 +199,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
               </div>
             </div>
             <div
-              class="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white input__popup"
+              class="popup input__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive"
               style="top: 0px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
             >
               <div
@@ -212,11 +212,11 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                     class="popup__content"
                   >
                     <div
-                      class="menu menu_size_m menu_group-view_default menu_mode_radio-check menu_theme_alfa-on-white input__menu"
+                      class="menu input__menu menu_size_m menu_group-view_default menu_mode_radio-check"
                       tabindex="0"
                     >
                       <div
-                        class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        class="menu-item menu-item_type_block"
                       >
                         <span
                           class="menu-item__control"
@@ -225,7 +225,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                         </span>
                       </div>
                       <div
-                        class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        class="menu-item menu-item_type_block"
                       >
                         <span
                           class="menu-item__control"
@@ -234,7 +234,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                         </span>
                       </div>
                       <div
-                        class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        class="menu-item menu-item_type_block"
                       >
                         <span
                           class="menu-item__control"
@@ -255,7 +255,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
         }
       >
         <div
-          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white input__popup"
+          className="popup input__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           style={
@@ -318,7 +318,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                   size="m"
                 >
                   <div
-                    className="menu menu_size_m menu_group-view_default menu_mode_radio-check menu_theme_alfa-on-white input__menu"
+                    className="menu input__menu menu_size_m menu_group-view_default menu_mode_radio-check"
                     onBlur={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
@@ -340,7 +340,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                       view="plain"
                     >
                       <div
-                        className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        className="menu-item menu-item_type_block"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
@@ -365,7 +365,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                       view="plain"
                     >
                       <div
-                        className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        className="menu-item menu-item_type_block"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
@@ -390,7 +390,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                       view="plain"
                     >
                       <div
-                        className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        className="menu-item menu-item_type_block"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
@@ -457,7 +457,7 @@ exports[`input-autocomplete should render without problem 1`] = `
   >
     <Input
       autocomplete={false}
-      className="input input_has-autocomplete input_theme_alfa-on-white"
+      className="input input_has-autocomplete"
       closeOnSelect={false}
       directions={
         Array [
@@ -485,7 +485,7 @@ exports[`input-autocomplete should render without problem 1`] = `
       width="default"
     >
       <span
-        className="input input_type_text input_view_default input_size_m input_width_default input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+        className="input input input_has-autocomplete input_type_text input_view_default input_size_m input_width_default"
       >
         <span
           className="input__inner"

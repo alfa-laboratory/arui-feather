@@ -14,7 +14,7 @@ exports[`dropdown should render without problems 1`] = `
   switcherType="link"
 >
   <div
-    className="dropdown dropdown_theme_alfa-on-white"
+    className="dropdown"
   >
     <Link
       checked={false}
@@ -31,7 +31,7 @@ exports[`dropdown should render without problems 1`] = `
       url="#"
     >
       <a
-        className="link link_pseudo link_size_m link_theme_alfa-on-white dropdown__switcher"
+        className="link dropdown__switcher link_pseudo link_size_m"
         href="#"
         onBlur={[Function]}
         onClick={[Function]}
@@ -69,7 +69,7 @@ exports[`dropdown should render without problems 1`] = `
         containerInfo={
           <body>
             <div
-              class="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
+              class="popup dropdown__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded"
               style="top: 6px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
             >
               <div
@@ -94,7 +94,7 @@ exports[`dropdown should render without problems 1`] = `
         }
       >
         <div
-          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
+          className="popup dropdown__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded"
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           style={

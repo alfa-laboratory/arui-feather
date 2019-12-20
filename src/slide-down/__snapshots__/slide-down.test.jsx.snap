@@ -2,7 +2,7 @@
 
 exports[`slide-down should render without problems 1`] = `
 <div
-  className="slide-down slide-down_theme_alfa-on-white"
+  className="slide-down"
   onTransitionEnd={[Function]}
   style={
     Object {

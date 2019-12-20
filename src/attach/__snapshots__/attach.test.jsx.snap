@@ -10,7 +10,7 @@ exports[`attach should render without problems 1`] = `
   tabIndex={0}
 >
   <span
-    className="attach attach_size_m attach_theme_alfa-on-white"
+    className="attach attach_size_m"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -20,7 +20,7 @@ exports[`attach should render without problems 1`] = `
       focused={false}
       formNoValidate={false}
       icon={
-        <IconAttachment
+        <ForwardRef(ThemedComponent(IconAttachment))
           size="m"
         />
       }
@@ -48,7 +48,7 @@ exports[`attach should render without problems 1`] = `
       type="button"
     >
       <span
-        className="button button_size_m button_theme_alfa-on-white attach__button"
+        className="button attach__button button_size_m"
         disabled={false}
         formNoValidate={null}
         onBlur={[Function]}
@@ -91,18 +91,30 @@ exports[`attach should render without problems 1`] = `
             className="button__icon"
             key="icon"
           >
-            <IconAttachment
+            <ForwardRef(ThemedComponent(IconAttachment))
               size="m"
             >
-              <Icon
-                name="attachment"
+              <IconAttachment
                 size="m"
+                theme="alfa-on-white"
               >
-                <span
-                  className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
-                />
-              </Icon>
-            </IconAttachment>
+                <ForwardRef(ThemedComponent(Icon))
+                  name="attachment"
+                  size="m"
+                  theme="alfa-on-white"
+                >
+                  <Icon
+                    name="attachment"
+                    size="m"
+                    theme="alfa-on-white"
+                  >
+                    <span
+                      className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
+                    />
+                  </Icon>
+                </ForwardRef(ThemedComponent(Icon))>
+              </IconAttachment>
+            </ForwardRef(ThemedComponent(IconAttachment))>
           </span>
           <span
             className="button__text"

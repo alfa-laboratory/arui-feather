@@ -8,7 +8,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import Input from './input';
-import MaskedInput from '../masked-input';
+import MaskedInput from '../masked-input/masked-input';
 import IconSearch from '../icon/action/search';
 
 import { SCROLL_TO_CORRECTION } from '../vars';

@@ -2,7 +2,7 @@
 
 exports[`calendar-input should render without problems 1`] = `
 <span
-  className="calendar-input calendar-input_theme_alfa-on-white"
+  className="calendar-input"
 >
   <span>
     <Mq
@@ -33,7 +33,7 @@ exports[`calendar-input should render without problems 1`] = `
           tag="button"
           type="button"
         >
-          <IconCalendar />
+          <ForwardRef(ThemedComponent(IconCalendar)) />
         </IconButton>
       }
       mask="11.11.1111"

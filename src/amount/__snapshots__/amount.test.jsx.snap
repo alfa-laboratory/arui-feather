@@ -17,14 +17,14 @@ exports[`amount should render without problems 1`] = `
   size="m"
 >
   <div
-    className="amount amount_theme_alfa-on-white"
+    className="amount"
   >
     <Label
       isNoWrap={false}
       size="m"
     >
       <span
-        className="label label_size_m label_theme_alfa-on-white"
+        className="label label_size_m"
       >
         <span
           className="label__inner"

@@ -2,7 +2,7 @@
 
 exports[`input-group should render with many input children without problems 1`] = `
 <span
-  className="input-group input-group_theme_alfa-on-white control-group"
+  className="input-group control-group"
   role="group"
   tabIndex="-1"
 >
@@ -37,7 +37,7 @@ exports[`input-group should render with many input children without problems 1`]
 
 exports[`input-group should render with only one children 1`] = `
 <span
-  className="input-group input-group_theme_alfa-on-white control-group"
+  className="input-group control-group"
   role="group"
   tabIndex="-1"
 >
@@ -59,7 +59,7 @@ exports[`input-group should render with only one children 1`] = `
 
 exports[`input-group should render without any children 1`] = `
 <span
-  className="input-group input-group_theme_alfa-on-white control-group"
+  className="input-group control-group"
   role="group"
   tabIndex="-1"
 />

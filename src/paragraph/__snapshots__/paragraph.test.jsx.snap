@@ -2,6 +2,6 @@
 
 exports[`paragraph should render without problems 1`] = `
 <p
-  className="paragraph paragraph_theme_alfa-on-white"
+  className="paragraph"
 />
 `;

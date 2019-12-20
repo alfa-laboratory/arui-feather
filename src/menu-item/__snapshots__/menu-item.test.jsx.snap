@@ -2,7 +2,7 @@
 
 exports[`menu-item should render without problem 1`] = `
 <div
-  className="menu-item menu-item_type_link menu-item_theme_alfa-on-white"
+  className="menu-item menu-item_type_link"
 >
   <Link
     checked={false}

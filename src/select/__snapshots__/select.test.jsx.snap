@@ -41,7 +41,7 @@ exports[`select should render without problem 1`] = `
   width="default"
 >
   <div
-    className="select select_mode_check select_size_m select_view_default select_width_default select_theme_alfa-on-white"
+    className="select select_mode_check select_size_m select_view_default select_width_default"
   >
     <span
       className="select__inner"
@@ -62,7 +62,7 @@ exports[`select should render without problem 1`] = `
         type="button"
       >
         <button
-          className="select-button select-button_size_m select-button_theme_alfa-on-white"
+          className="select-button select-button_size_m"
           disabled={false}
           formNoValidate={false}
           onBlur={[Function]}
@@ -100,7 +100,7 @@ exports[`select should render without problem 1`] = `
                 type="button"
               >
                 <span
-                  className="icon-button icon-button_size_m icon-button_theme_alfa-on-white select__tick"
+                  className="icon-button select__tick icon-button_size_m"
                   formNoValidate={null}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -123,18 +123,30 @@ exports[`select should render without problem 1`] = `
                       className="icon-button__text"
                       key="text"
                     >
-                      <IconArrowDown
+                      <ForwardRef(ThemedComponent(IconArrowDown))
                         size="s"
                       >
-                        <Icon
-                          name="arrow-down"
+                        <IconArrowDown
                           size="s"
+                          theme="alfa-on-white"
                         >
-                          <span
-                            className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
-                          />
-                        </Icon>
-                      </IconArrowDown>
+                          <ForwardRef(ThemedComponent(Icon))
+                            name="arrow-down"
+                            size="s"
+                            theme="alfa-on-white"
+                          >
+                            <Icon
+                              name="arrow-down"
+                              size="s"
+                              theme="alfa-on-white"
+                            >
+                              <span
+                                className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
+                              />
+                            </Icon>
+                          </ForwardRef(ThemedComponent(Icon))>
+                        </IconArrowDown>
+                      </ForwardRef(ThemedComponent(IconArrowDown))>
                     </span>
                   </span>
                 </span>
@@ -174,7 +186,7 @@ exports[`select should render without problem 1`] = `
           containerInfo={
             <body>
               <div
-                class="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white select__popup"
+                class="popup select__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive"
                 style="top: 0px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
               >
                 <div
@@ -187,11 +199,11 @@ exports[`select should render without problem 1`] = `
                       class="popup__content"
                     >
                       <div
-                        class="menu menu_size_m menu_group-view_default menu_mode_check menu_theme_alfa-on-white select__menu"
+                        class="menu select__menu menu_size_m menu_group-view_default menu_mode_check"
                         tabindex="0"
                       >
                         <div
-                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                          class="menu-item menu-item_type_block"
                         >
                           <span
                             class="menu-item__control"
@@ -200,7 +212,7 @@ exports[`select should render without problem 1`] = `
                           </span>
                         </div>
                         <div
-                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                          class="menu-item menu-item_type_block"
                         >
                           <span
                             class="menu-item__control"
@@ -209,7 +221,7 @@ exports[`select should render without problem 1`] = `
                           </span>
                         </div>
                         <div
-                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                          class="menu-item menu-item_type_block"
                         >
                           <span
                             class="menu-item__control"
@@ -230,7 +242,7 @@ exports[`select should render without problem 1`] = `
           }
         >
           <div
-            className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white select__popup"
+            className="popup select__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             style={
@@ -296,7 +308,7 @@ exports[`select should render without problem 1`] = `
                     size="m"
                   >
                     <div
-                      className="menu menu_size_m menu_group-view_default menu_mode_check menu_theme_alfa-on-white select__menu"
+                      className="menu select__menu menu_size_m menu_group-view_default menu_mode_check"
                       onBlur={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
@@ -318,7 +330,7 @@ exports[`select should render without problem 1`] = `
                         view="plain"
                       >
                         <div
-                          className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                          className="menu-item menu-item_type_block"
                           onClick={[Function]}
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
@@ -343,7 +355,7 @@ exports[`select should render without problem 1`] = `
                         view="plain"
                       >
                         <div
-                          className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                          className="menu-item menu-item_type_block"
                           onClick={[Function]}
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}
@@ -368,7 +380,7 @@ exports[`select should render without problem 1`] = `
                         view="plain"
                       >
                         <div
-                          className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                          className="menu-item menu-item_type_block"
                           onClick={[Function]}
                           onMouseEnter={[Function]}
                           onMouseLeave={[Function]}

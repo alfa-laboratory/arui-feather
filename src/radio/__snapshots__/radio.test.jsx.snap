@@ -6,7 +6,7 @@ exports[`radio should render without problems 1`] = `
   tabIndex={0}
 >
   <label
-    className="radio radio_size_m radio_theme_alfa-on-white"
+    className="radio radio_size_m"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseDown={[Function]}

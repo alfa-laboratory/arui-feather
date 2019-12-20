@@ -6,7 +6,7 @@ exports[`spin should render without problems 1`] = `
   visible={false}
 >
   <span
-    className="spin spin_size_m spin_theme_alfa-on-white"
+    className="spin spin_size_m"
   />
 </Spin>
 `;

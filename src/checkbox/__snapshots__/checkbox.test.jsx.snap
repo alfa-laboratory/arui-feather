@@ -2,7 +2,7 @@
 
 exports[`checkbox should render without problems 1`] = `
 <label
-  className="checkbox checkbox_size_m checkbox_theme_alfa-on-white"
+  className="checkbox checkbox_size_m"
   onBlur={[Function]}
   onFocus={[Function]}
   onMouseDown={[Function]}
@@ -22,7 +22,7 @@ exports[`checkbox should render without problems 1`] = `
       onClick={[Function]}
       type="checkbox"
     />
-    <IconTick
+    <ForwardRef(ThemedComponent(IconTick))
       className="checkbox__icon"
       size="xs"
       theme="alfa-on-color"

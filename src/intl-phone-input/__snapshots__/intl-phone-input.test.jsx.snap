@@ -2,7 +2,7 @@
 
 exports[`intl-phone-input renders without problems 1`] = `
 <Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+  className="intl-phone-input"
   focused={false}
   formNoValidate={false}
   leftAddons={
@@ -57,7 +57,7 @@ exports[`intl-phone-input renders without problems 1`] = `
 
 exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = `
 <Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+  className="intl-phone-input"
   focused={false}
   formNoValidate={false}
   leftAddons={
@@ -112,7 +112,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
 
 exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = `
 <Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+  className="intl-phone-input"
   focused={false}
   formNoValidate={false}
   leftAddons={
@@ -167,7 +167,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
 
 exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = `
 <Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+  className="intl-phone-input"
   focused={false}
   formNoValidate={false}
   leftAddons={
@@ -222,7 +222,7 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
 
 exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] = `
 <Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+  className="intl-phone-input"
   focused={false}
   formNoValidate={false}
   leftAddons={

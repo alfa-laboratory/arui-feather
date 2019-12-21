@@ -16,7 +16,12 @@ exports[`plate should render icon when it propperty is setted 1`] = `
   <div
     className="plate__title"
   >
-    Успешный
+    <span
+      onClick={[Function]}
+      onKeyUp={[Function]}
+    >
+      Успешный
+    </span>
   </div>
   <div
     className="plate__content"

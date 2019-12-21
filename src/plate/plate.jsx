@@ -43,10 +43,20 @@ class Plate extends React.Component {
         /** Идентификатор компонента в DOM */
         id: Type.string,
         /**
-         * Обработчик клика стрелсе сворачивания\разворачивания плашки
+         * Обработчик клика стрелке сворачивания\разворачивания плашки
          * @param {React.MouseEvent} event
          */
         onFolderClick: Type.func,
+        /**
+         * Обработчик клика на заголовке
+         * @param {React.MouseEvent} event
+         */
+        onTitleClick: Type.func,
+        /**
+         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на заголовке компонента
+         * @param {React.KeyboardEvent} event
+         */
+        onTitleKeyDown: Type.func,
         /**
          * Обработчик клика по плашке
          * @param {React.MouseEvent} event
@@ -109,8 +119,15 @@ class Plate extends React.Component {
                 }
                 {
                     this.props.title &&
-                    <div className={ cn('title') }>
-                        { this.props.title }
+                    <div
+                        className={ cn('title') }
+                    >
+                        <span
+                            onClick={ this.handleTitleClick }
+                            onKeyUp={ this.handleTitleKeyDown }
+                        >
+                            { this.props.title }
+                        </span>
                         {
                             this.props.foldable &&
                             <IconButton
@@ -153,6 +170,24 @@ class Plate extends React.Component {
         }
     };
 
+    handleTitleClick = (event) => {
+        if (this.props.foldable) {
+            this.setState({
+                isFolded: !this.state.isFolded
+            });
+        }
+
+        if (this.props.onTitleClick) {
+            this.props.onTitleClick(event);
+        }
+    }
+
+    handleTitleKeyDown = (event) => {
+        if (this.props.onTitleKeyDown) {
+            this.props.onTitleKeyDown(event);
+        }
+    }
+
     handleFolderClick = (event) => {
         this.setState({
             isFolded: !this.state.isFolded
@@ -161,7 +196,7 @@ class Plate extends React.Component {
         if (this.props.onFolderClick) {
             this.props.onFolderClick(event);
         }
-    };
+    }
 
     handleCloserClick = (event) => {
         this.setState({

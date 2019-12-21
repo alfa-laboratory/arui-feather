@@ -45,6 +45,10 @@
         padding-right: 34px;
     }
 
+    &_foldable &__title span {
+        cursor: pointer;
+    }
+
     &_has-icon {
         padding-left: 56px;
     }

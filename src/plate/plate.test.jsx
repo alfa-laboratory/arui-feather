@@ -58,6 +58,18 @@ describe('plate', () => {
         expect(onFolderClick).toHaveBeenCalled();
     });
 
+    it('should call `onTitleClick` callback after plate folder was clicked', () => {
+        const onTitleClick = jest.fn();
+        const plate = shallow(
+            <Plate title='plate-title' foldable={ true } onTitleClick={ onTitleClick }>plate-text</Plate>
+        );
+        const title = plate.find('span');
+
+        title.simulate('click');
+
+        expect(onTitleClick).toHaveBeenCalled();
+    });
+
     it('should render icon when it propperty is setted', () => {
         const plate = shallow(
             <Plate

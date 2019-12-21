@@ -8,33 +8,27 @@
     display: inline-block;
     position: relative;
     width: 100%;
-    margin-right: 7px;
-    margin-bottom: 7px;
-    padding: var(--gap-s);
+    padding: 14px;
+    border-radius: var(--border-radius-control);
 
     &_type_default {
         border-radius: var(--border-radius-2x);
         box-shadow: 0 1px 2px rgba(11, 31, 53, 0.16), 0 4px 12px rgba(11, 31, 53, 0.08);
     }
 
-    &_type {
-        border-radius: var(--border-radius-control);
-        box-sizing: border-box;
+    &_type_common {
+        background-color: var(--color-dark-indigo-05);
+        border: 1px solid rgb(221, 225, 230);
+    }
 
-        &_common {
-            background-color: var(--color-dark-indigo-05);
-            border: 1px solid rgb(221, 225, 230);
-        }
+    &_type_error {
+        background-color: rgba(240, 68, 57, 0.05);
+        border: 1px solid rgba(240, 68, 57, 0.2);
+    }
 
-        &_error {
-            background-color: rgba(240, 68, 57, 0.05);
-            border: 1px solid rgba(240, 68, 57, 0.2);
-        }
-
-        &_success {
-            background-color: rgba(13, 186, 38, 0.06);
-            border: 1px solid rgba(13, 186, 38, 0.2);
-        }
+    &_type_success {
+        background-color: rgba(13, 186, 38, 0.06);
+        border: 1px solid rgba(13, 186, 38, 0.2);
     }
 
     &_hidden {
@@ -42,7 +36,7 @@
     }
 
     &_has-closer, &_foldable {
-        padding-right: 34px;
+        padding-right: 46px;
     }
 
     &_foldable &__title span {
@@ -82,8 +76,8 @@
     &__closer, &__folder {
         opacity: var(--opacity-minor);
         position: absolute;
-        top: 2px;
-        right: 0;
+        top: 5px;
+        right: 11px;
         cursor: pointer;
         transition: opacity .1s ease-out;
 

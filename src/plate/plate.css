@@ -62,10 +62,11 @@
     &__content {
         max-height: 100vh;
         overflow: hidden;
-        transition: max-height 1s;
+        transition: max-height 1s ease-in-out;
 
         &_folded {
             max-height: 0;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
         }
     }
 

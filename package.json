@@ -85,7 +85,7 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.7.6",
-    "bem-react-classname": "0.0.0-rc.1",
+    "bem-react-classname": "^1.1.0",
     "bezier-easing": "2.0.3",
     "cn-decorator": "2.1.0",
     "core-js": "2.5.5",

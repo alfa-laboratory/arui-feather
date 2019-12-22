@@ -8,7 +8,6 @@ import React from 'react';
 import Type from 'prop-types';
 import performance from '../performance';
 
-import Button from '../button/button';
 import IconButton from '../icon-button/icon-button';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
@@ -21,16 +20,10 @@ import ResizeSensor from '../resize-sensor/resize-sensor';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
 import scrollTo from '../lib/scroll-to';
+import SelectButton from './select-button';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
 const DEFAULT_TEXT_FALLBACK = 'Выберите:';
-
-/**
- * Элемент кнопки для выпадающего списка.
- */
-class SelectButton extends Button {
-    cn = createCn('select-button');
-}
 
 /**
  * @typedef {Object} CheckedOption

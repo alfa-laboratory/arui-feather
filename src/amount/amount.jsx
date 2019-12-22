@@ -8,8 +8,9 @@ import { createCn } from 'bem-react-classname';
 
 import performance from '../performance';
 
-import Heading from '../heading/heading';
-import Label from '../label/label';
+import NotThemedHeading from '../heading/heading';
+import NotThemedLabel from '../label/label';
+import { withTheme } from '../cn';
 
 import {
     formatAmount,
@@ -18,6 +19,9 @@ import {
 } from '../lib/format-amount';
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
+
+const Heading = withTheme(NotThemedHeading);
+const Label = withTheme(NotThemedLabel);
 
 /**
  * Компонент для отображения суммы, согласно следующему гайдлайну:

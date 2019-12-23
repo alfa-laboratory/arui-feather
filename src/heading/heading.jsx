@@ -27,6 +27,8 @@ class Heading extends React.Component {
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
         /** Размер, определяющий какой тег заголовка будет использоваться */
         size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),
+        /** Дефолтные отступы */
+        hasDefaultMargins: Type.bool,
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
         /** Дополнительный класс */
@@ -38,13 +40,15 @@ class Heading extends React.Component {
     };
 
     static defaultProps = {
-        size: 'xl'
+        size: 'xl',
+        hasDefaultMargins: true
     };
 
     render(cn) {
         const headingProps = {
             className: cn({
-                size: this.props.size
+                size: this.props.size,
+                margins: this.props.hasDefaultMargins
             }),
             id: this.props.id,
             'data-test-id': this.props['data-test-id']

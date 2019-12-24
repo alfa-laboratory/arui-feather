@@ -11,6 +11,9 @@ import IconActionPhotoOrFile from './action/action-photo-or-file';
 import IconAdd from './action/add';
 import IconAddFilled from './action/add-filled';
 import IconAnalytics from './action/analytics';
+import IconAndroidDocument from './action/android-document';
+import IconAndroidFlash from './action/android-flash';
+import IconAndroidPhoto from './action/android-photo';
 import IconArrowBack from './action/arrow-back';
 import IconArrowBackBold from './action/arrow-back-bold';
 import IconAttachment from './action/attachment';
@@ -33,6 +36,7 @@ import IconEdit from './action/edit';
 import IconEmail from './action/email';
 import IconErase from './action/erase';
 import IconFilter from './action/filter';
+import IconFlash from './action/flash';
 import IconGalleryInCamera from './action/gallery-in-camera';
 import IconLike from './action/like';
 import IconLikeFilled from './action/like-filled';
@@ -315,12 +319,15 @@ import IconFormatAttach from './file/format-attach';
 import IconFormatCsv from './file/format-csv';
 import IconFormatDefault from './file/format-default';
 import IconFormatDoc from './file/format-doc';
+import IconFormatJpg from './file/format-jpg';
 import IconFormatPdf from './file/format-pdf';
 import IconFormatPng from './file/format-png';
 import IconFormatPpt from './file/format-ppt';
+import IconFormatRar from './file/format-rar';
 import IconFormatSketch from './file/format-sketch';
 import IconFormatSvg from './file/format-svg';
 import IconFormatTxt from './file/format-txt';
+import IconFormatUnknown from './file/format-unknown';
 import IconFormatXls from './file/format-xls';
 import IconFormatXml from './file/format-xml';
 import IconFormatZip from './file/format-zip';
@@ -442,17 +449,19 @@ import IconBankNsipf1000 from './brand/bank-nsipf-1000';
 
 describe('icon', () => {
     it('renders without problems', () => {
-        const icon = shallow(<Icon />);
-
+        let icon = shallow(<Icon />);
         expect(icon).toMatchSnapshot();
     });
 
     (() => {
-        const icons = [
+        let icons = [
             { componentName: IconActionPhotoOrFile, name: 'action-photo-or-file' },
             { componentName: IconAdd, name: 'add' },
             { componentName: IconAddFilled, name: 'add-filled' },
             { componentName: IconAnalytics, name: 'analytics' },
+            { componentName: IconAndroidDocument, name: 'android-document' },
+            { componentName: IconAndroidFlash, name: 'android-flash' },
+            { componentName: IconAndroidPhoto, name: 'android-photo' },
             { componentName: IconArrowBack, name: 'arrow-back' },
             { componentName: IconArrowBackBold, name: 'arrow-back-bold' },
             { componentName: IconAttachment, name: 'attachment' },
@@ -475,6 +484,7 @@ describe('icon', () => {
             { componentName: IconEmail, name: 'email' },
             { componentName: IconErase, name: 'erase' },
             { componentName: IconFilter, name: 'filter' },
+            { componentName: IconFlash, name: 'flash' },
             { componentName: IconGalleryInCamera, name: 'gallery-in-camera' },
             { componentName: IconLike, name: 'like' },
             { componentName: IconLikeFilled, name: 'like-filled' },
@@ -757,12 +767,15 @@ describe('icon', () => {
             { componentName: IconFormatCsv, name: 'format-csv' },
             { componentName: IconFormatDefault, name: 'format-default' },
             { componentName: IconFormatDoc, name: 'format-doc' },
+            { componentName: IconFormatJpg, name: 'format-jpg' },
             { componentName: IconFormatPdf, name: 'format-pdf' },
             { componentName: IconFormatPng, name: 'format-png' },
             { componentName: IconFormatPpt, name: 'format-ppt' },
+            { componentName: IconFormatRar, name: 'format-rar' },
             { componentName: IconFormatSketch, name: 'format-sketch' },
             { componentName: IconFormatSvg, name: 'format-svg' },
             { componentName: IconFormatTxt, name: 'format-txt' },
+            { componentName: IconFormatUnknown, name: 'format-unknown' },
             { componentName: IconFormatXls, name: 'format-xls' },
             { componentName: IconFormatXml, name: 'format-xml' },
             { componentName: IconFormatZip, name: 'format-zip' },
@@ -885,9 +898,8 @@ describe('icon', () => {
 
         return icons.map((icon, index) => (
             it(`render ${icon.componentName.name} without problems`, () => {
-                const CurrentComponent = icons[index].componentName;
-                const renderedIcon = shallow(<CurrentComponent />);
-
+                let CurrentComponent = icons[index].componentName;
+                let renderedIcon = shallow(<CurrentComponent />);
                 expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
             })
         ));

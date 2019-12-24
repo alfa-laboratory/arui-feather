@@ -31,7 +31,8 @@
     "build:demo": "styleguidist build",
     "build:flag-icons": "gulp --gulpfile ./src/flag-icon/flag-icon.gulpfile.js",
     "build:icons": "node ./tools/icon/build-icons.js && svgo ./src/icon/**/* --config=.svgo.yml",
-    "update-primitive-colors": "node ./tools/update-colors.js"
+    "update-primitive-colors": "node ./tools/update-colors.js",
+    "postinstall": "npm run update-primitive-colors"
   },
   "lint-staged": {
     "concurrent": false,

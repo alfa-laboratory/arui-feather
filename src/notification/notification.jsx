@@ -12,10 +12,13 @@ import IconClose from '../icon/ui/close';
 import IconError from '../icon/ui/error';
 import IconFail from '../icon/ui/fail';
 import IconOk from '../icon/ui/ok';
-import IconButton from '../icon-button/icon-button';
+import NotThemedIconButton from '../icon-button/icon-button';
 import Swipeable from '../swipeable';
+import { withTheme } from '../cn';
 
 import { isNodeOutsideElement } from '../lib/window';
+
+const IconButton = withTheme(NotThemedIconButton);
 
 /**
  * Компонент всплывающего окна.

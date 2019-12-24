@@ -5,7 +5,10 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
+import NotThemedInput from '../input/input';
+import { withTheme } from '../cn';
+
+const Input = withTheme(NotThemedInput);
 
 /**
  * Компонент поля ввода почты.

@@ -5,12 +5,17 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
-import FlagIcon from '../flag-icon/flag-icon';
-import Input from '../input/input';
-import Select from '../select/select';
+import { withTheme } from '../cn';
+import NotThemedFlagIcon from '../flag-icon/flag-icon';
+import NotThemedInput from '../input/input';
+import NotThemedSelect from '../select/select';
 
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';
+
+const Input = withTheme(NotThemedInput);
+const Select = withTheme(NotThemedSelect);
+const FlagIcon = withTheme(NotThemedFlagIcon);
 
 const MAX_DIAL_CODE_LENGTH = 4;
 

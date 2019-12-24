@@ -6,7 +6,10 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
+import { withTheme } from '../cn';
+import NotThemedInput from '../input/input';
+
+const Input = withTheme(NotThemedInput);
 
 /**
  * Поле ввода номера карты с маской.

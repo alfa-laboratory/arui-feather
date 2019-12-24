@@ -9,15 +9,19 @@ import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import performcance from '../performance';
-
-import Input from '../input/input';
-import Menu from '../menu/menu';
-import Popup from '../popup/popup';
+import { withTheme } from '../cn';
+import NotThemedInput from '../input/input';
+import NotThemedMenu from '../menu/menu';
+import NotThemedPopup from '../popup/popup';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import keyboardCode from '../lib/keyboard-code';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
+
+const Input = withTheme(NotThemedInput);
+const Menu = withTheme(NotThemedMenu);
+const Popup = withTheme(NotThemedPopup);
 
 /**
  * Компонент поля для ввода с автокомплитом.

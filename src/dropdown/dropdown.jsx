@@ -6,11 +6,14 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Button from '../button/button';
+import NotThemedButton from '../button/button';
 import Link from '../link/link';
 import Popup from '../popup/popup';
+import { withTheme } from '../cn';
 
 import { POPUP_MAIN_OFFSET } from '../vars';
+
+const Button = withTheme(NotThemedButton);
 
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.

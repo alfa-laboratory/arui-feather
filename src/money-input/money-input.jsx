@@ -8,10 +8,13 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
+import { withTheme } from '../cn';
+import NotThemedInput from '../input/input';
 import Mask from '../masked-input/mask';
 
 import { getCurrencySymbol } from '../lib/currency-codes';
+
+const Input = withTheme(NotThemedInput);
 
 const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;

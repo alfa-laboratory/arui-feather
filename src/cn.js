@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 import cn from 'cn-decorator';
 
- import { createTheme } from 'bem-react-classname';
+import { createTheme } from 'bem-react-classname';
 
 export const { ThemeProvider, withTheme } = createTheme('alfa-on-white');
 

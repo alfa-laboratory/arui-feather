@@ -10,14 +10,15 @@ import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import performance from '../performance';
+import { withTheme } from '../cn';
 
-import Calendar from '../calendar/calendar';
+import NotThemedCalendar from '../calendar/calendar';
 import IconCalendar from '../icon/entity/calendar';
-import IconButton from '../icon-button/icon-button';
-import Input from '../input/input';
+import NotThemedIconButton from '../icon-button/icon-button';
+import NotThemedInput from '../input/input';
 import Mq from '../mq/mq';
-import Popup from '../popup/popup';
-import PopupHeader from '../popup-header/popup-header';
+import NotThemedPopup from '../popup/popup';
+import NotThemedPopupHeader from '../popup-header/popup-header';
 
 import keyboardCode from '../lib/keyboard-code';
 import { isNodeOutsideElement } from '../lib/window';
@@ -34,6 +35,11 @@ const CUSTOM_DATE_FORMAT = 'DD.MM.YYYY';
 const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
+const Calendar = withTheme(NotThemedCalendar);
+const IconButton = withTheme(NotThemedIconButton);
+const Input = withTheme(NotThemedInput);
+const Popup = withTheme(NotThemedPopup);
+const PopupHeader = withTheme(NotThemedPopupHeader);
 
 /**
  * Компонент для ввода даты.

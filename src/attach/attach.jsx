@@ -6,9 +6,12 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Button from '../button/button';
+import { withTheme } from '../cn';
+import NotThemedButton from '../button/button';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
+
+const Button = withTheme(NotThemedButton);
 
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 

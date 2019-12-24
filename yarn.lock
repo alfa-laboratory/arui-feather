@@ -1818,10 +1818,10 @@ ajv@^6.0.1, ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alfa-ui-primitives@2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-2.3.3.tgz#34cab96ddc87503493d7f37c4ce0fefe195801f9"
-  integrity sha512-F23gDW1xJ3BWFIZWLaf4vym/V2gyLue/9phFMQTnHp3imkNOD/JZ6Ey0UQYPO2+MiM/6RVARxgu9NRnCij3jjQ==
+alfa-ui-primitives@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-2.4.0.tgz#c133d7238c1b5e4e91eca43ac25c7c900bc49853"
+  integrity sha512-yjIxs3ZVDDscrGzOVVX2AVxAP+gmvnO+C3AeJeW3NfXozOynJbdAcxOdVJGcOvNkLcSeU2KkpOdBITdiWSAK0w==
 
 aliasify@^1.7.2, aliasify@^1.9.0:
   version "1.9.0"

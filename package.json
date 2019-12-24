@@ -108,7 +108,7 @@
   },
   "devDependencies": {
     "acorn": "^6.1.1",
-    "alfa-ui-primitives": "2.3.3",
+    "alfa-ui-primitives": "2.4.0",
     "arui-demo": "2.0.0",
     "arui-presets": "^5.1.0",
     "arui-presets-lint": "^2.0.0",

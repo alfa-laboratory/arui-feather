@@ -221,6 +221,7 @@ class Popup extends React.Component {
         /* eslint-enable */
     }
 
+    // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         if (
             !this.state.receivedContainer &&

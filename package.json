@@ -90,7 +90,6 @@
     "core-js": "2.5.5",
     "date-fns": "1.29.0",
     "deprecated-decorator": "0.1.6",
-    "ima-babel6-polyfill": "0.12.0",
     "inputmask-core": "2.2.0",
     "libphonenumber-js": "1.0.24",
     "lodash.debounce": "4.0.8",

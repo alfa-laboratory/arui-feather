@@ -5,4 +5,4 @@
 import './attention-bold.css';
 import '../../../icon';
 
-export default from './attention-bold';
+export { default } from './attention-bold';

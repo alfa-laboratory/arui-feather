@@ -5,4 +5,4 @@
 import './card-mir.css';
 import '../../../icon';
 
-export default from './card-mir';
+export { default } from './card-mir';

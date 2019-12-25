@@ -38,12 +38,12 @@
 
     &_size_l {
         border-bottom-width: 3px;
-        padding: 12px 0;
+        padding: var(--gap-s) 0;
         font-size: var(--font-size-l);
         line-height: var(--line-height-condensed);
 
         @media (--small-only) {
-            padding: 20px 12px;
+            padding: var(--gap-l) var(--gap-s);
             font-size: var(--font-size-xs);
         }
     }

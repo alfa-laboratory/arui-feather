@@ -65,57 +65,86 @@ exports[`dropdown should render without problems 1`] = `
       target="anchor"
       visible={false}
     >
-      <div
-        className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "bottom": undefined,
-            "height": "auto",
-            "left": 0,
-            "maxHeight": "none",
-            "maxWidth": "none",
-            "minWidth": 0,
-            "right": undefined,
-            "top": 6,
-          }
+      <Portal
+        containerInfo={
+          <body>
+            <div
+              class="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
+              style="top: 6px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
+            >
+              <div
+                class="popup__container"
+              >
+                <div
+                  class="popup__inner"
+                >
+                  <div
+                    class="popup__content"
+                  >
+                    Popup-example
+                    <iframe
+                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: transparent; z-index: -1;"
+                      tabindex="-1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </body>
         }
       >
         <div
-          className="popup__container"
+          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "bottom": undefined,
+              "height": "auto",
+              "left": 0,
+              "maxHeight": "none",
+              "maxWidth": "none",
+              "minWidth": 0,
+              "right": undefined,
+              "top": 6,
+            }
+          }
         >
           <div
-            className="popup__inner"
-            onScroll={[Function]}
+            className="popup__container"
           >
             <div
-              className="popup__content"
+              className="popup__inner"
+              onScroll={[Function]}
             >
-              Popup-example
-              <ResizeSensor
-                onResize={[Function]}
+              <div
+                className="popup__content"
               >
-                <iframe
-                  style={
-                    Object {
-                      "background": "transparent",
-                      "border": "none",
-                      "height": "100%",
-                      "left": 0,
-                      "position": "absolute",
-                      "top": 0,
-                      "width": "100%",
-                      "zIndex": -1,
+                Popup-example
+                <ResizeSensor
+                  onResize={[Function]}
+                >
+                  <iframe
+                    style={
+                      Object {
+                        "background": "transparent",
+                        "border": "none",
+                        "height": "100%",
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": "100%",
+                        "zIndex": -1,
+                      }
                     }
-                  }
-                  tabIndex="-1"
-                />
-              </ResizeSensor>
+                    tabIndex="-1"
+                  />
+                </ResizeSensor>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Portal>
     </Popup>
   </div>
 </Dropdown>

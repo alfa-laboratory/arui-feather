@@ -48,6 +48,7 @@ const columnStyle = {
     display: 'flex',
     width: '50%'
 };
+
 <div style={ { width: '100%' } }>
     {
         ['s', 'm', 'l', 'xl'].map(size => (

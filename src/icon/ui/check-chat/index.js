@@ -5,4 +5,4 @@
 import './check-chat.css';
 import '../../../icon';
 
-export default from './check-chat';
+export { default } from './check-chat';

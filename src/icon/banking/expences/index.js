@@ -5,4 +5,4 @@
 import './expences.css';
 import '../../../icon';
 
-export default from './expences';
+export { default } from './expences';

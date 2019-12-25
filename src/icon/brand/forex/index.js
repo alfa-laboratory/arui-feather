@@ -5,4 +5,4 @@
 import './forex.css';
 import '../../../icon';
 
-export default from './forex';
+export { default } from './forex';

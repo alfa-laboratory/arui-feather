@@ -5,4 +5,4 @@
 import './category-experiments.css';
 import '../../../icon';
 
-export default from './category-experiments';
+export { default } from './category-experiments';

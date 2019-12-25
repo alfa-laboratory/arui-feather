@@ -5,4 +5,4 @@
 import './category-gaming.css';
 import '../../../icon';
 
-export default from './category-gaming';
+export { default } from './category-gaming';

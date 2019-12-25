@@ -5,4 +5,4 @@
 import './site.css';
 import '../../../icon';
 
-export default from './site';
+export { default } from './site';

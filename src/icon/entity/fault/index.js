@@ -5,4 +5,4 @@
 import './fault.css';
 import '../../../icon';
 
-export default from './fault';
+export { default } from './fault';

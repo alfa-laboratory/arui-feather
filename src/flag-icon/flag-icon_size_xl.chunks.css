@@ -2,8 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* stylelint-disable rule-empty-line-before, length-zero-no-unit */
-
 .flag-icon_mode_chunk.flag-icon_size_xl {
     background-size: cover;
 
@@ -12,1286 +10,1543 @@
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ac.png');
     }
+
     &.flag-icon_country_ad {
         width: 24px;
         height: 17px;
         background-image: url('./images/chunks/xl/1x/ad.png');
     }
+
     &.flag-icon_country_ae {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ae.png');
     }
+
     &.flag-icon_country_af {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/af.png');
     }
+
     &.flag-icon_country_ag {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ag.png');
     }
+
     &.flag-icon_country_ai {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ai.png');
     }
+
     &.flag-icon_country_al {
         width: 24px;
         height: 17px;
         background-image: url('./images/chunks/xl/1x/al.png');
     }
+
     &.flag-icon_country_am {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/am.png');
     }
+
     &.flag-icon_country_ao {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ao.png');
     }
+
     &.flag-icon_country_aq {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/aq.png');
     }
+
     &.flag-icon_country_ar {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/ar.png');
     }
+
     &.flag-icon_country_as {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/as.png');
     }
+
     &.flag-icon_country_at {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/at.png');
     }
+
     &.flag-icon_country_au {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/au.png');
     }
+
     &.flag-icon_country_aw {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/aw.png');
     }
+
     &.flag-icon_country_ax {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ax.png');
     }
+
     &.flag-icon_country_az {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/az.png');
     }
+
     &.flag-icon_country_ba {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ba.png');
     }
+
     &.flag-icon_country_bb {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bb.png');
     }
+
     &.flag-icon_country_bd {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/bd.png');
     }
+
     &.flag-icon_country_be {
         width: 23px;
         height: 20px;
         background-image: url('./images/chunks/xl/1x/be.png');
     }
+
     &.flag-icon_country_bf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bf.png');
     }
+
     &.flag-icon_country_bg {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/bg.png');
     }
+
     &.flag-icon_country_bh {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/bh.png');
     }
+
     &.flag-icon_country_bi {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/bi.png');
     }
+
     &.flag-icon_country_bj {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bj.png');
     }
+
     &.flag-icon_country_bl {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bl.png');
     }
+
     &.flag-icon_country_bm {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/bm.png');
     }
+
     &.flag-icon_country_bn {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/bn.png');
     }
+
     &.flag-icon_country_bo {
         width: 24px;
         height: 17px;
         background-image: url('./images/chunks/xl/1x/bo.png');
     }
+
     &.flag-icon_country_bq {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bq.png');
     }
+
     &.flag-icon_country_br {
         width: 24px;
         height: 17px;
         background-image: url('./images/chunks/xl/1x/br.png');
     }
+
     &.flag-icon_country_bs {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/bs.png');
     }
+
     &.flag-icon_country_bt {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bt.png');
     }
+
     &.flag-icon_country_bv {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/bv.png');
     }
+
     &.flag-icon_country_bw {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bw.png');
     }
+
     &.flag-icon_country_by {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/by.png');
     }
+
     &.flag-icon_country_bz {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/bz.png');
     }
+
     &.flag-icon_country_ca {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ca.png');
     }
+
     &.flag-icon_country_cc {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/cc.png');
     }
+
     &.flag-icon_country_cd {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/cd.png');
     }
+
     &.flag-icon_country_cf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cf.png');
     }
+
     &.flag-icon_country_cg {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cg.png');
     }
+
     &.flag-icon_country_ch {
         width: 20px;
         height: 20px;
         background-image: url('./images/chunks/xl/1x/ch.png');
     }
+
     &.flag-icon_country_ci {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ci.png');
     }
+
     &.flag-icon_country_ck {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ck.png');
     }
+
     &.flag-icon_country_cl {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cl.png');
     }
+
     &.flag-icon_country_cm {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cm.png');
     }
+
     &.flag-icon_country_cn {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cn.png');
     }
+
     &.flag-icon_country_co {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/co.png');
     }
+
     &.flag-icon_country_cp {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cp.png');
     }
+
     &.flag-icon_country_cr {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/cr.png');
     }
+
     &.flag-icon_country_cu {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/cu.png');
     }
+
     &.flag-icon_country_cv {
         width: 24px;
         height: 14px;
         background-image: url('./images/chunks/xl/1x/cv.png');
     }
+
     &.flag-icon_country_cw {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cw.png');
     }
+
     &.flag-icon_country_cx {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/cx.png');
     }
+
     &.flag-icon_country_cy {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cy.png');
     }
+
     &.flag-icon_country_cz {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/cz.png');
     }
+
     &.flag-icon_country_de {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/de.png');
     }
+
     &.flag-icon_country_dg {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/dg.png');
     }
+
     &.flag-icon_country_dj {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/dj.png');
     }
+
     &.flag-icon_country_dk {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/dk.png');
     }
+
     &.flag-icon_country_dm {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/dm.png');
     }
+
     &.flag-icon_country_do {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/do.png');
     }
+
     &.flag-icon_country_dz {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/dz.png');
     }
+
     &.flag-icon_country_ea {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ea.png');
     }
+
     &.flag-icon_country_ec {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ec.png');
     }
+
     &.flag-icon_country_ee {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ee.png');
     }
+
     &.flag-icon_country_eg {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/eg.png');
     }
+
     &.flag-icon_country_eh {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/eh.png');
     }
+
     &.flag-icon_country_er {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/er.png');
     }
+
     &.flag-icon_country_es {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/es.png');
     }
+
     &.flag-icon_country_et {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/et.png');
     }
+
     &.flag-icon_country_eu {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/eu.png');
     }
+
     &.flag-icon_country_fi {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/fi.png');
     }
+
     &.flag-icon_country_fj {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/fj.png');
     }
+
     &.flag-icon_country_fk {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/fk.png');
     }
+
     &.flag-icon_country_fm {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/fm.png');
     }
+
     &.flag-icon_country_fo {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/fo.png');
     }
+
     &.flag-icon_country_fr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/fr.png');
     }
+
     &.flag-icon_country_ga {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/ga.png');
     }
+
     &.flag-icon_country_gb {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/gb.png');
     }
+
     &.flag-icon_country_gd {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/gd.png');
     }
+
     &.flag-icon_country_ge {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ge.png');
     }
+
     &.flag-icon_country_gf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gf.png');
     }
+
     &.flag-icon_country_gg {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gg.png');
     }
+
     &.flag-icon_country_gh {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gh.png');
     }
+
     &.flag-icon_country_gi {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/gi.png');
     }
+
     &.flag-icon_country_gl {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gl.png');
     }
+
     &.flag-icon_country_gm {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gm.png');
     }
+
     &.flag-icon_country_gn {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gn.png');
     }
+
     &.flag-icon_country_gp {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gp.png');
     }
+
     &.flag-icon_country_gq {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gq.png');
     }
+
     &.flag-icon_country_gr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/gr.png');
     }
+
     &.flag-icon_country_gs {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/gs.png');
     }
+
     &.flag-icon_country_gt {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/gt.png');
     }
+
     &.flag-icon_country_gu {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/gu.png');
     }
+
     &.flag-icon_country_gw {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/gw.png');
     }
+
     &.flag-icon_country_gy {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/gy.png');
     }
+
     &.flag-icon_country_hk {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/hk.png');
     }
+
     &.flag-icon_country_hm {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/hm.png');
     }
+
     &.flag-icon_country_hn {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/hn.png');
     }
+
     &.flag-icon_country_hr {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/hr.png');
     }
+
     &.flag-icon_country_ht {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/ht.png');
     }
+
     &.flag-icon_country_hu {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/hu.png');
     }
+
     &.flag-icon_country_ic {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ic.png');
     }
+
     &.flag-icon_country_id {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/id.png');
     }
+
     &.flag-icon_country_ie {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ie.png');
     }
+
     &.flag-icon_country_il {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/il.png');
     }
+
     &.flag-icon_country_im {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/im.png');
     }
+
     &.flag-icon_country_in {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/in.png');
     }
+
     &.flag-icon_country_io {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/io.png');
     }
+
     &.flag-icon_country_iq {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/iq.png');
     }
+
     &.flag-icon_country_ir {
         width: 24px;
         height: 14px;
         background-image: url('./images/chunks/xl/1x/ir.png');
     }
+
     &.flag-icon_country_is {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/is.png');
     }
+
     &.flag-icon_country_it {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/it.png');
     }
+
     &.flag-icon_country_je {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/je.png');
     }
+
     &.flag-icon_country_jm {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/jm.png');
     }
+
     &.flag-icon_country_jo {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/jo.png');
     }
+
     &.flag-icon_country_jp {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/jp.png');
     }
+
     &.flag-icon_country_ke {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ke.png');
     }
+
     &.flag-icon_country_kg {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/kg.png');
     }
+
     &.flag-icon_country_kh {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/kh.png');
     }
+
     &.flag-icon_country_ki {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ki.png');
     }
+
     &.flag-icon_country_km {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/km.png');
     }
+
     &.flag-icon_country_kn {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/kn.png');
     }
+
     &.flag-icon_country_kp {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/kp.png');
     }
+
     &.flag-icon_country_kr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/kr.png');
     }
+
     &.flag-icon_country_kw {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/kw.png');
     }
+
     &.flag-icon_country_ky {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ky.png');
     }
+
     &.flag-icon_country_kz {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/kz.png');
     }
+
     &.flag-icon_country_la {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/la.png');
     }
+
     &.flag-icon_country_lb {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/lb.png');
     }
+
     &.flag-icon_country_lc {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/lc.png');
     }
+
     &.flag-icon_country_li {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/li.png');
     }
+
     &.flag-icon_country_lk {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/lk.png');
     }
+
     &.flag-icon_country_lr {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/lr.png');
     }
+
     &.flag-icon_country_ls {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ls.png');
     }
+
     &.flag-icon_country_lt {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/lt.png');
     }
+
     &.flag-icon_country_lu {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/lu.png');
     }
+
     &.flag-icon_country_lv {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/lv.png');
     }
+
     &.flag-icon_country_ly {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ly.png');
     }
+
     &.flag-icon_country_ma {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ma.png');
     }
+
     &.flag-icon_country_mc {
         width: 24px;
         height: 19px;
         background-image: url('./images/chunks/xl/1x/mc.png');
     }
+
     &.flag-icon_country_md {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/md.png');
     }
+
     &.flag-icon_country_me {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/me.png');
     }
+
     &.flag-icon_country_mf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mf.png');
     }
+
     &.flag-icon_country_mg {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mg.png');
     }
+
     &.flag-icon_country_mh {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/mh.png');
     }
+
     &.flag-icon_country_mk {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/mk.png');
     }
+
     &.flag-icon_country_ml {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ml.png');
     }
+
     &.flag-icon_country_mm {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mm.png');
     }
+
     &.flag-icon_country_mn {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/mn.png');
     }
+
     &.flag-icon_country_mo {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mo.png');
     }
+
     &.flag-icon_country_mp {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/mp.png');
     }
+
     &.flag-icon_country_mq {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mq.png');
     }
+
     &.flag-icon_country_mr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mr.png');
     }
+
     &.flag-icon_country_ms {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ms.png');
     }
+
     &.flag-icon_country_mt {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mt.png');
     }
+
     &.flag-icon_country_mu {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mu.png');
     }
+
     &.flag-icon_country_mv {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mv.png');
     }
+
     &.flag-icon_country_mw {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mw.png');
     }
+
     &.flag-icon_country_mx {
         width: 24px;
         height: 14px;
         background-image: url('./images/chunks/xl/1x/mx.png');
     }
+
     &.flag-icon_country_my {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/my.png');
     }
+
     &.flag-icon_country_mz {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/mz.png');
     }
+
     &.flag-icon_country_na {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/na.png');
     }
+
     &.flag-icon_country_nc {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/nc.png');
     }
+
     &.flag-icon_country_ne {
         width: 24px;
         height: 20px;
         background-image: url('./images/chunks/xl/1x/ne.png');
     }
+
     &.flag-icon_country_nf {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/nf.png');
     }
+
     &.flag-icon_country_ng {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ng.png');
     }
+
     &.flag-icon_country_ni {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/ni.png');
     }
+
     &.flag-icon_country_nl {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/nl.png');
     }
+
     &.flag-icon_country_no {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/no.png');
     }
+
     &.flag-icon_country_np {
         width: 17px;
         height: 20px;
         background-image: url('./images/chunks/xl/1x/np.png');
     }
+
     &.flag-icon_country_nr {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/nr.png');
     }
+
     &.flag-icon_country_nu {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/nu.png');
     }
+
     &.flag-icon_country_nz {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/nz.png');
     }
+
     &.flag-icon_country_om {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/om.png');
     }
+
     &.flag-icon_country_pa {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pa.png');
     }
+
     &.flag-icon_country_pe {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pe.png');
     }
+
     &.flag-icon_country_pf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pf.png');
     }
+
     &.flag-icon_country_pg {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/pg.png');
     }
+
     &.flag-icon_country_ph {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ph.png');
     }
+
     &.flag-icon_country_pk {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pk.png');
     }
+
     &.flag-icon_country_pl {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/pl.png');
     }
+
     &.flag-icon_country_pm {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pm.png');
     }
+
     &.flag-icon_country_pn {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/pn.png');
     }
+
     &.flag-icon_country_pr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pr.png');
     }
+
     &.flag-icon_country_ps {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ps.png');
     }
+
     &.flag-icon_country_pt {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/pt.png');
     }
+
     &.flag-icon_country_pw {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/pw.png');
     }
+
     &.flag-icon_country_py {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/py.png');
     }
+
     &.flag-icon_country_qa {
         width: 24px;
         height: 10px;
         background-image: url('./images/chunks/xl/1x/qa.png');
     }
+
     &.flag-icon_country_re {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/re.png');
     }
+
     &.flag-icon_country_ro {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ro.png');
     }
+
     &.flag-icon_country_rs {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/rs.png');
     }
+
     &.flag-icon_country_ru {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ru.png');
     }
+
     &.flag-icon_country_rw {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/rw.png');
     }
+
     &.flag-icon_country_sa {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sa.png');
     }
+
     &.flag-icon_country_sb {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/sb.png');
     }
+
     &.flag-icon_country_sc {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/sc.png');
     }
+
     &.flag-icon_country_sd {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/sd.png');
     }
+
     &.flag-icon_country_se {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/se.png');
     }
+
     &.flag-icon_country_sg {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sg.png');
     }
+
     &.flag-icon_country_sh {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/sh.png');
     }
+
     &.flag-icon_country_si {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/si.png');
     }
+
     &.flag-icon_country_sj {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/sj.png');
     }
+
     &.flag-icon_country_sk {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sk.png');
     }
+
     &.flag-icon_country_sl {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sl.png');
     }
+
     &.flag-icon_country_sm {
         width: 24px;
         height: 18px;
         background-image: url('./images/chunks/xl/1x/sm.png');
     }
+
     &.flag-icon_country_sn {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sn.png');
     }
+
     &.flag-icon_country_so {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/so.png');
     }
+
     &.flag-icon_country_sr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sr.png');
     }
+
     &.flag-icon_country_ss {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ss.png');
     }
+
     &.flag-icon_country_st {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/st.png');
     }
+
     &.flag-icon_country_sv {
         width: 24px;
         height: 14px;
         background-image: url('./images/chunks/xl/1x/sv.png');
     }
+
     &.flag-icon_country_sx {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sx.png');
     }
+
     &.flag-icon_country_sy {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sy.png');
     }
+
     &.flag-icon_country_sz {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/sz.png');
     }
+
     &.flag-icon_country_ta {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ta.png');
     }
+
     &.flag-icon_country_tc {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/tc.png');
     }
+
     &.flag-icon_country_td {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/td.png');
     }
+
     &.flag-icon_country_tf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/tf.png');
     }
+
     &.flag-icon_country_tg {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/tg.png');
     }
+
     &.flag-icon_country_th {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/th.png');
     }
+
     &.flag-icon_country_tj {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/tj.png');
     }
+
     &.flag-icon_country_tk {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/tk.png');
     }
+
     &.flag-icon_country_tl {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/tl.png');
     }
+
     &.flag-icon_country_tm {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/tm.png');
     }
+
     &.flag-icon_country_tn {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/tn.png');
     }
+
     &.flag-icon_country_to {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/to.png');
     }
+
     &.flag-icon_country_tr {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/tr.png');
     }
+
     &.flag-icon_country_tt {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/tt.png');
     }
+
     &.flag-icon_country_tv {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/tv.png');
     }
+
     &.flag-icon_country_tw {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/tw.png');
     }
+
     &.flag-icon_country_tz {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/tz.png');
     }
+
     &.flag-icon_country_ua {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ua.png');
     }
+
     &.flag-icon_country_ug {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ug.png');
     }
+
     &.flag-icon_country_um {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/um.png');
     }
+
     &.flag-icon_country_un {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/un.png');
     }
+
     &.flag-icon_country_us {
         width: 24px;
         height: 13px;
         background-image: url('./images/chunks/xl/1x/us.png');
     }
+
     &.flag-icon_country_uy {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/uy.png');
     }
+
     &.flag-icon_country_uz {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/uz.png');
     }
+
     &.flag-icon_country_va {
         width: 20px;
         height: 20px;
         background-image: url('./images/chunks/xl/1x/va.png');
     }
+
     &.flag-icon_country_vc {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/vc.png');
     }
+
     &.flag-icon_country_ve {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ve.png');
     }
+
     &.flag-icon_country_vg {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/vg.png');
     }
+
     &.flag-icon_country_vi {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/vi.png');
     }
+
     &.flag-icon_country_vn {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/vn.png');
     }
+
     &.flag-icon_country_vu {
         width: 24px;
         height: 15px;
         background-image: url('./images/chunks/xl/1x/vu.png');
     }
+
     &.flag-icon_country_wf {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/wf.png');
     }
+
     &.flag-icon_country_ws {
         width: 24px;
         height: 12px;
         background-image: url('./images/chunks/xl/1x/ws.png');
     }
+
     &.flag-icon_country_xk {
         width: 24px;
         height: 17px;
         background-image: url('./images/chunks/xl/1x/xk.png');
     }
+
     &.flag-icon_country_ye {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/ye.png');
     }
+
     &.flag-icon_country_yt {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/yt.png');
     }
+
     &.flag-icon_country_za {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/za.png');
     }
+
     &.flag-icon_country_zm {
         width: 24px;
         height: 16px;
         background-image: url('./images/chunks/xl/1x/zm.png');
     }
+
     &.flag-icon_country_zw {
         width: 24px;
         height: 12px;
@@ -1305,774 +1560,1031 @@
         &.flag-icon_country_ac {
             background-image: url('./images/chunks/xl/2x/ac.png');
         }
+
         &.flag-icon_country_ad {
             background-image: url('./images/chunks/xl/2x/ad.png');
         }
+
         &.flag-icon_country_ae {
             background-image: url('./images/chunks/xl/2x/ae.png');
         }
+
         &.flag-icon_country_af {
             background-image: url('./images/chunks/xl/2x/af.png');
         }
+
         &.flag-icon_country_ag {
             background-image: url('./images/chunks/xl/2x/ag.png');
         }
+
         &.flag-icon_country_ai {
             background-image: url('./images/chunks/xl/2x/ai.png');
         }
+
         &.flag-icon_country_al {
             background-image: url('./images/chunks/xl/2x/al.png');
         }
+
         &.flag-icon_country_am {
             background-image: url('./images/chunks/xl/2x/am.png');
         }
+
         &.flag-icon_country_ao {
             background-image: url('./images/chunks/xl/2x/ao.png');
         }
+
         &.flag-icon_country_aq {
             background-image: url('./images/chunks/xl/2x/aq.png');
         }
+
         &.flag-icon_country_ar {
             background-image: url('./images/chunks/xl/2x/ar.png');
         }
+
         &.flag-icon_country_as {
             background-image: url('./images/chunks/xl/2x/as.png');
         }
+
         &.flag-icon_country_at {
             background-image: url('./images/chunks/xl/2x/at.png');
         }
+
         &.flag-icon_country_au {
             background-image: url('./images/chunks/xl/2x/au.png');
         }
+
         &.flag-icon_country_aw {
             background-image: url('./images/chunks/xl/2x/aw.png');
         }
+
         &.flag-icon_country_ax {
             background-image: url('./images/chunks/xl/2x/ax.png');
         }
+
         &.flag-icon_country_az {
             background-image: url('./images/chunks/xl/2x/az.png');
         }
+
         &.flag-icon_country_ba {
             background-image: url('./images/chunks/xl/2x/ba.png');
         }
+
         &.flag-icon_country_bb {
             background-image: url('./images/chunks/xl/2x/bb.png');
         }
+
         &.flag-icon_country_bd {
             background-image: url('./images/chunks/xl/2x/bd.png');
         }
+
         &.flag-icon_country_be {
             background-image: url('./images/chunks/xl/2x/be.png');
         }
+
         &.flag-icon_country_bf {
             background-image: url('./images/chunks/xl/2x/bf.png');
         }
+
         &.flag-icon_country_bg {
             background-image: url('./images/chunks/xl/2x/bg.png');
         }
+
         &.flag-icon_country_bh {
             background-image: url('./images/chunks/xl/2x/bh.png');
         }
+
         &.flag-icon_country_bi {
             background-image: url('./images/chunks/xl/2x/bi.png');
         }
+
         &.flag-icon_country_bj {
             background-image: url('./images/chunks/xl/2x/bj.png');
         }
+
         &.flag-icon_country_bl {
             background-image: url('./images/chunks/xl/2x/bl.png');
         }
+
         &.flag-icon_country_bm {
             background-image: url('./images/chunks/xl/2x/bm.png');
         }
+
         &.flag-icon_country_bn {
             background-image: url('./images/chunks/xl/2x/bn.png');
         }
+
         &.flag-icon_country_bo {
             background-image: url('./images/chunks/xl/2x/bo.png');
         }
+
         &.flag-icon_country_bq {
             background-image: url('./images/chunks/xl/2x/bq.png');
         }
+
         &.flag-icon_country_br {
             background-image: url('./images/chunks/xl/2x/br.png');
         }
+
         &.flag-icon_country_bs {
             background-image: url('./images/chunks/xl/2x/bs.png');
         }
+
         &.flag-icon_country_bt {
             background-image: url('./images/chunks/xl/2x/bt.png');
         }
+
         &.flag-icon_country_bv {
             background-image: url('./images/chunks/xl/2x/bv.png');
         }
+
         &.flag-icon_country_bw {
             background-image: url('./images/chunks/xl/2x/bw.png');
         }
+
         &.flag-icon_country_by {
             background-image: url('./images/chunks/xl/2x/by.png');
         }
+
         &.flag-icon_country_bz {
             background-image: url('./images/chunks/xl/2x/bz.png');
         }
+
         &.flag-icon_country_ca {
             background-image: url('./images/chunks/xl/2x/ca.png');
         }
+
         &.flag-icon_country_cc {
             background-image: url('./images/chunks/xl/2x/cc.png');
         }
+
         &.flag-icon_country_cd {
             background-image: url('./images/chunks/xl/2x/cd.png');
         }
+
         &.flag-icon_country_cf {
             background-image: url('./images/chunks/xl/2x/cf.png');
         }
+
         &.flag-icon_country_cg {
             background-image: url('./images/chunks/xl/2x/cg.png');
         }
+
         &.flag-icon_country_ch {
             background-image: url('./images/chunks/xl/2x/ch.png');
         }
+
         &.flag-icon_country_ci {
             background-image: url('./images/chunks/xl/2x/ci.png');
         }
+
         &.flag-icon_country_ck {
             background-image: url('./images/chunks/xl/2x/ck.png');
         }
+
         &.flag-icon_country_cl {
             background-image: url('./images/chunks/xl/2x/cl.png');
         }
+
         &.flag-icon_country_cm {
             background-image: url('./images/chunks/xl/2x/cm.png');
         }
+
         &.flag-icon_country_cn {
             background-image: url('./images/chunks/xl/2x/cn.png');
         }
+
         &.flag-icon_country_co {
             background-image: url('./images/chunks/xl/2x/co.png');
         }
+
         &.flag-icon_country_cp {
             background-image: url('./images/chunks/xl/2x/cp.png');
         }
+
         &.flag-icon_country_cr {
             background-image: url('./images/chunks/xl/2x/cr.png');
         }
+
         &.flag-icon_country_cu {
             background-image: url('./images/chunks/xl/2x/cu.png');
         }
+
         &.flag-icon_country_cv {
             background-image: url('./images/chunks/xl/2x/cv.png');
         }
+
         &.flag-icon_country_cw {
             background-image: url('./images/chunks/xl/2x/cw.png');
         }
+
         &.flag-icon_country_cx {
             background-image: url('./images/chunks/xl/2x/cx.png');
         }
+
         &.flag-icon_country_cy {
             background-image: url('./images/chunks/xl/2x/cy.png');
         }
+
         &.flag-icon_country_cz {
             background-image: url('./images/chunks/xl/2x/cz.png');
         }
+
         &.flag-icon_country_de {
             background-image: url('./images/chunks/xl/2x/de.png');
         }
+
         &.flag-icon_country_dg {
             background-image: url('./images/chunks/xl/2x/dg.png');
         }
+
         &.flag-icon_country_dj {
             background-image: url('./images/chunks/xl/2x/dj.png');
         }
+
         &.flag-icon_country_dk {
             background-image: url('./images/chunks/xl/2x/dk.png');
         }
+
         &.flag-icon_country_dm {
             background-image: url('./images/chunks/xl/2x/dm.png');
         }
+
         &.flag-icon_country_do {
             background-image: url('./images/chunks/xl/2x/do.png');
         }
+
         &.flag-icon_country_dz {
             background-image: url('./images/chunks/xl/2x/dz.png');
         }
+
         &.flag-icon_country_ea {
             background-image: url('./images/chunks/xl/2x/ea.png');
         }
+
         &.flag-icon_country_ec {
             background-image: url('./images/chunks/xl/2x/ec.png');
         }
+
         &.flag-icon_country_ee {
             background-image: url('./images/chunks/xl/2x/ee.png');
         }
+
         &.flag-icon_country_eg {
             background-image: url('./images/chunks/xl/2x/eg.png');
         }
+
         &.flag-icon_country_eh {
             background-image: url('./images/chunks/xl/2x/eh.png');
         }
+
         &.flag-icon_country_er {
             background-image: url('./images/chunks/xl/2x/er.png');
         }
+
         &.flag-icon_country_es {
             background-image: url('./images/chunks/xl/2x/es.png');
         }
+
         &.flag-icon_country_et {
             background-image: url('./images/chunks/xl/2x/et.png');
         }
+
         &.flag-icon_country_eu {
             background-image: url('./images/chunks/xl/2x/eu.png');
         }
+
         &.flag-icon_country_fi {
             background-image: url('./images/chunks/xl/2x/fi.png');
         }
+
         &.flag-icon_country_fj {
             background-image: url('./images/chunks/xl/2x/fj.png');
         }
+
         &.flag-icon_country_fk {
             background-image: url('./images/chunks/xl/2x/fk.png');
         }
+
         &.flag-icon_country_fm {
             background-image: url('./images/chunks/xl/2x/fm.png');
         }
+
         &.flag-icon_country_fo {
             background-image: url('./images/chunks/xl/2x/fo.png');
         }
+
         &.flag-icon_country_fr {
             background-image: url('./images/chunks/xl/2x/fr.png');
         }
+
         &.flag-icon_country_ga {
             background-image: url('./images/chunks/xl/2x/ga.png');
         }
+
         &.flag-icon_country_gb {
             background-image: url('./images/chunks/xl/2x/gb.png');
         }
+
         &.flag-icon_country_gd {
             background-image: url('./images/chunks/xl/2x/gd.png');
         }
+
         &.flag-icon_country_ge {
             background-image: url('./images/chunks/xl/2x/ge.png');
         }
+
         &.flag-icon_country_gf {
             background-image: url('./images/chunks/xl/2x/gf.png');
         }
+
         &.flag-icon_country_gg {
             background-image: url('./images/chunks/xl/2x/gg.png');
         }
+
         &.flag-icon_country_gh {
             background-image: url('./images/chunks/xl/2x/gh.png');
         }
+
         &.flag-icon_country_gi {
             background-image: url('./images/chunks/xl/2x/gi.png');
         }
+
         &.flag-icon_country_gl {
             background-image: url('./images/chunks/xl/2x/gl.png');
         }
+
         &.flag-icon_country_gm {
             background-image: url('./images/chunks/xl/2x/gm.png');
         }
+
         &.flag-icon_country_gn {
             background-image: url('./images/chunks/xl/2x/gn.png');
         }
+
         &.flag-icon_country_gp {
             background-image: url('./images/chunks/xl/2x/gp.png');
         }
+
         &.flag-icon_country_gq {
             background-image: url('./images/chunks/xl/2x/gq.png');
         }
+
         &.flag-icon_country_gr {
             background-image: url('./images/chunks/xl/2x/gr.png');
         }
+
         &.flag-icon_country_gs {
             background-image: url('./images/chunks/xl/2x/gs.png');
         }
+
         &.flag-icon_country_gt {
             background-image: url('./images/chunks/xl/2x/gt.png');
         }
+
         &.flag-icon_country_gu {
             background-image: url('./images/chunks/xl/2x/gu.png');
         }
+
         &.flag-icon_country_gw {
             background-image: url('./images/chunks/xl/2x/gw.png');
         }
+
         &.flag-icon_country_gy {
             background-image: url('./images/chunks/xl/2x/gy.png');
         }
+
         &.flag-icon_country_hk {
             background-image: url('./images/chunks/xl/2x/hk.png');
         }
+
         &.flag-icon_country_hm {
             background-image: url('./images/chunks/xl/2x/hm.png');
         }
+
         &.flag-icon_country_hn {
             background-image: url('./images/chunks/xl/2x/hn.png');
         }
+
         &.flag-icon_country_hr {
             background-image: url('./images/chunks/xl/2x/hr.png');
         }
+
         &.flag-icon_country_ht {
             background-image: url('./images/chunks/xl/2x/ht.png');
         }
+
         &.flag-icon_country_hu {
             background-image: url('./images/chunks/xl/2x/hu.png');
         }
+
         &.flag-icon_country_ic {
             background-image: url('./images/chunks/xl/2x/ic.png');
         }
+
         &.flag-icon_country_id {
             background-image: url('./images/chunks/xl/2x/id.png');
         }
+
         &.flag-icon_country_ie {
             background-image: url('./images/chunks/xl/2x/ie.png');
         }
+
         &.flag-icon_country_il {
             background-image: url('./images/chunks/xl/2x/il.png');
         }
+
         &.flag-icon_country_im {
             background-image: url('./images/chunks/xl/2x/im.png');
         }
+
         &.flag-icon_country_in {
             background-image: url('./images/chunks/xl/2x/in.png');
         }
+
         &.flag-icon_country_io {
             background-image: url('./images/chunks/xl/2x/io.png');
         }
+
         &.flag-icon_country_iq {
             background-image: url('./images/chunks/xl/2x/iq.png');
         }
+
         &.flag-icon_country_ir {
             background-image: url('./images/chunks/xl/2x/ir.png');
         }
+
         &.flag-icon_country_is {
             background-image: url('./images/chunks/xl/2x/is.png');
         }
+
         &.flag-icon_country_it {
             background-image: url('./images/chunks/xl/2x/it.png');
         }
+
         &.flag-icon_country_je {
             background-image: url('./images/chunks/xl/2x/je.png');
         }
+
         &.flag-icon_country_jm {
             background-image: url('./images/chunks/xl/2x/jm.png');
         }
+
         &.flag-icon_country_jo {
             background-image: url('./images/chunks/xl/2x/jo.png');
         }
+
         &.flag-icon_country_jp {
             background-image: url('./images/chunks/xl/2x/jp.png');
         }
+
         &.flag-icon_country_ke {
             background-image: url('./images/chunks/xl/2x/ke.png');
         }
+
         &.flag-icon_country_kg {
             background-image: url('./images/chunks/xl/2x/kg.png');
         }
+
         &.flag-icon_country_kh {
             background-image: url('./images/chunks/xl/2x/kh.png');
         }
+
         &.flag-icon_country_ki {
             background-image: url('./images/chunks/xl/2x/ki.png');
         }
+
         &.flag-icon_country_km {
             background-image: url('./images/chunks/xl/2x/km.png');
         }
+
         &.flag-icon_country_kn {
             background-image: url('./images/chunks/xl/2x/kn.png');
         }
+
         &.flag-icon_country_kp {
             background-image: url('./images/chunks/xl/2x/kp.png');
         }
+
         &.flag-icon_country_kr {
             background-image: url('./images/chunks/xl/2x/kr.png');
         }
+
         &.flag-icon_country_kw {
             background-image: url('./images/chunks/xl/2x/kw.png');
         }
+
         &.flag-icon_country_ky {
             background-image: url('./images/chunks/xl/2x/ky.png');
         }
+
         &.flag-icon_country_kz {
             background-image: url('./images/chunks/xl/2x/kz.png');
         }
+
         &.flag-icon_country_la {
             background-image: url('./images/chunks/xl/2x/la.png');
         }
+
         &.flag-icon_country_lb {
             background-image: url('./images/chunks/xl/2x/lb.png');
         }
+
         &.flag-icon_country_lc {
             background-image: url('./images/chunks/xl/2x/lc.png');
         }
+
         &.flag-icon_country_li {
             background-image: url('./images/chunks/xl/2x/li.png');
         }
+
         &.flag-icon_country_lk {
             background-image: url('./images/chunks/xl/2x/lk.png');
         }
+
         &.flag-icon_country_lr {
             background-image: url('./images/chunks/xl/2x/lr.png');
         }
+
         &.flag-icon_country_ls {
             background-image: url('./images/chunks/xl/2x/ls.png');
         }
+
         &.flag-icon_country_lt {
             background-image: url('./images/chunks/xl/2x/lt.png');
         }
+
         &.flag-icon_country_lu {
             background-image: url('./images/chunks/xl/2x/lu.png');
         }
+
         &.flag-icon_country_lv {
             background-image: url('./images/chunks/xl/2x/lv.png');
         }
+
         &.flag-icon_country_ly {
             background-image: url('./images/chunks/xl/2x/ly.png');
         }
+
         &.flag-icon_country_ma {
             background-image: url('./images/chunks/xl/2x/ma.png');
         }
+
         &.flag-icon_country_mc {
             background-image: url('./images/chunks/xl/2x/mc.png');
         }
+
         &.flag-icon_country_md {
             background-image: url('./images/chunks/xl/2x/md.png');
         }
+
         &.flag-icon_country_me {
             background-image: url('./images/chunks/xl/2x/me.png');
         }
+
         &.flag-icon_country_mf {
             background-image: url('./images/chunks/xl/2x/mf.png');
         }
+
         &.flag-icon_country_mg {
             background-image: url('./images/chunks/xl/2x/mg.png');
         }
+
         &.flag-icon_country_mh {
             background-image: url('./images/chunks/xl/2x/mh.png');
         }
+
         &.flag-icon_country_mk {
             background-image: url('./images/chunks/xl/2x/mk.png');
         }
+
         &.flag-icon_country_ml {
             background-image: url('./images/chunks/xl/2x/ml.png');
         }
+
         &.flag-icon_country_mm {
             background-image: url('./images/chunks/xl/2x/mm.png');
         }
+
         &.flag-icon_country_mn {
             background-image: url('./images/chunks/xl/2x/mn.png');
         }
+
         &.flag-icon_country_mo {
             background-image: url('./images/chunks/xl/2x/mo.png');
         }
+
         &.flag-icon_country_mp {
             background-image: url('./images/chunks/xl/2x/mp.png');
         }
+
         &.flag-icon_country_mq {
             background-image: url('./images/chunks/xl/2x/mq.png');
         }
+
         &.flag-icon_country_mr {
             background-image: url('./images/chunks/xl/2x/mr.png');
         }
+
         &.flag-icon_country_ms {
             background-image: url('./images/chunks/xl/2x/ms.png');
         }
+
         &.flag-icon_country_mt {
             background-image: url('./images/chunks/xl/2x/mt.png');
         }
+
         &.flag-icon_country_mu {
             background-image: url('./images/chunks/xl/2x/mu.png');
         }
+
         &.flag-icon_country_mv {
             background-image: url('./images/chunks/xl/2x/mv.png');
         }
+
         &.flag-icon_country_mw {
             background-image: url('./images/chunks/xl/2x/mw.png');
         }
+
         &.flag-icon_country_mx {
             background-image: url('./images/chunks/xl/2x/mx.png');
         }
+
         &.flag-icon_country_my {
             background-image: url('./images/chunks/xl/2x/my.png');
         }
+
         &.flag-icon_country_mz {
             background-image: url('./images/chunks/xl/2x/mz.png');
         }
+
         &.flag-icon_country_na {
             background-image: url('./images/chunks/xl/2x/na.png');
         }
+
         &.flag-icon_country_nc {
             background-image: url('./images/chunks/xl/2x/nc.png');
         }
+
         &.flag-icon_country_ne {
             background-image: url('./images/chunks/xl/2x/ne.png');
         }
+
         &.flag-icon_country_nf {
             background-image: url('./images/chunks/xl/2x/nf.png');
         }
+
         &.flag-icon_country_ng {
             background-image: url('./images/chunks/xl/2x/ng.png');
         }
+
         &.flag-icon_country_ni {
             background-image: url('./images/chunks/xl/2x/ni.png');
         }
+
         &.flag-icon_country_nl {
             background-image: url('./images/chunks/xl/2x/nl.png');
         }
+
         &.flag-icon_country_no {
             background-image: url('./images/chunks/xl/2x/no.png');
         }
+
         &.flag-icon_country_np {
             background-image: url('./images/chunks/xl/2x/np.png');
         }
+
         &.flag-icon_country_nr {
             background-image: url('./images/chunks/xl/2x/nr.png');
         }
+
         &.flag-icon_country_nu {
             background-image: url('./images/chunks/xl/2x/nu.png');
         }
+
         &.flag-icon_country_nz {
             background-image: url('./images/chunks/xl/2x/nz.png');
         }
+
         &.flag-icon_country_om {
             background-image: url('./images/chunks/xl/2x/om.png');
         }
+
         &.flag-icon_country_pa {
             background-image: url('./images/chunks/xl/2x/pa.png');
         }
+
         &.flag-icon_country_pe {
             background-image: url('./images/chunks/xl/2x/pe.png');
         }
+
         &.flag-icon_country_pf {
             background-image: url('./images/chunks/xl/2x/pf.png');
         }
+
         &.flag-icon_country_pg {
             background-image: url('./images/chunks/xl/2x/pg.png');
         }
+
         &.flag-icon_country_ph {
             background-image: url('./images/chunks/xl/2x/ph.png');
         }
+
         &.flag-icon_country_pk {
             background-image: url('./images/chunks/xl/2x/pk.png');
         }
+
         &.flag-icon_country_pl {
             background-image: url('./images/chunks/xl/2x/pl.png');
         }
+
         &.flag-icon_country_pm {
             background-image: url('./images/chunks/xl/2x/pm.png');
         }
+
         &.flag-icon_country_pn {
             background-image: url('./images/chunks/xl/2x/pn.png');
         }
+
         &.flag-icon_country_pr {
             background-image: url('./images/chunks/xl/2x/pr.png');
         }
+
         &.flag-icon_country_ps {
             background-image: url('./images/chunks/xl/2x/ps.png');
         }
+
         &.flag-icon_country_pt {
             background-image: url('./images/chunks/xl/2x/pt.png');
         }
+
         &.flag-icon_country_pw {
             background-image: url('./images/chunks/xl/2x/pw.png');
         }
+
         &.flag-icon_country_py {
             background-image: url('./images/chunks/xl/2x/py.png');
         }
+
         &.flag-icon_country_qa {
             background-image: url('./images/chunks/xl/2x/qa.png');
         }
+
         &.flag-icon_country_re {
             background-image: url('./images/chunks/xl/2x/re.png');
         }
+
         &.flag-icon_country_ro {
             background-image: url('./images/chunks/xl/2x/ro.png');
         }
+
         &.flag-icon_country_rs {
             background-image: url('./images/chunks/xl/2x/rs.png');
         }
+
         &.flag-icon_country_ru {
             background-image: url('./images/chunks/xl/2x/ru.png');
         }
+
         &.flag-icon_country_rw {
             background-image: url('./images/chunks/xl/2x/rw.png');
         }
+
         &.flag-icon_country_sa {
             background-image: url('./images/chunks/xl/2x/sa.png');
         }
+
         &.flag-icon_country_sb {
             background-image: url('./images/chunks/xl/2x/sb.png');
         }
+
         &.flag-icon_country_sc {
             background-image: url('./images/chunks/xl/2x/sc.png');
         }
+
         &.flag-icon_country_sd {
             background-image: url('./images/chunks/xl/2x/sd.png');
         }
+
         &.flag-icon_country_se {
             background-image: url('./images/chunks/xl/2x/se.png');
         }
+
         &.flag-icon_country_sg {
             background-image: url('./images/chunks/xl/2x/sg.png');
         }
+
         &.flag-icon_country_sh {
             background-image: url('./images/chunks/xl/2x/sh.png');
         }
+
         &.flag-icon_country_si {
             background-image: url('./images/chunks/xl/2x/si.png');
         }
+
         &.flag-icon_country_sj {
             background-image: url('./images/chunks/xl/2x/sj.png');
         }
+
         &.flag-icon_country_sk {
             background-image: url('./images/chunks/xl/2x/sk.png');
         }
+
         &.flag-icon_country_sl {
             background-image: url('./images/chunks/xl/2x/sl.png');
         }
+
         &.flag-icon_country_sm {
             background-image: url('./images/chunks/xl/2x/sm.png');
         }
+
         &.flag-icon_country_sn {
             background-image: url('./images/chunks/xl/2x/sn.png');
         }
+
         &.flag-icon_country_so {
             background-image: url('./images/chunks/xl/2x/so.png');
         }
+
         &.flag-icon_country_sr {
             background-image: url('./images/chunks/xl/2x/sr.png');
         }
+
         &.flag-icon_country_ss {
             background-image: url('./images/chunks/xl/2x/ss.png');
         }
+
         &.flag-icon_country_st {
             background-image: url('./images/chunks/xl/2x/st.png');
         }
+
         &.flag-icon_country_sv {
             background-image: url('./images/chunks/xl/2x/sv.png');
         }
+
         &.flag-icon_country_sx {
             background-image: url('./images/chunks/xl/2x/sx.png');
         }
+
         &.flag-icon_country_sy {
             background-image: url('./images/chunks/xl/2x/sy.png');
         }
+
         &.flag-icon_country_sz {
             background-image: url('./images/chunks/xl/2x/sz.png');
         }
+
         &.flag-icon_country_ta {
             background-image: url('./images/chunks/xl/2x/ta.png');
         }
+
         &.flag-icon_country_tc {
             background-image: url('./images/chunks/xl/2x/tc.png');
         }
+
         &.flag-icon_country_td {
             background-image: url('./images/chunks/xl/2x/td.png');
         }
+
         &.flag-icon_country_tf {
             background-image: url('./images/chunks/xl/2x/tf.png');
         }
+
         &.flag-icon_country_tg {
             background-image: url('./images/chunks/xl/2x/tg.png');
         }
+
         &.flag-icon_country_th {
             background-image: url('./images/chunks/xl/2x/th.png');
         }
+
         &.flag-icon_country_tj {
             background-image: url('./images/chunks/xl/2x/tj.png');
         }
+
         &.flag-icon_country_tk {
             background-image: url('./images/chunks/xl/2x/tk.png');
         }
+
         &.flag-icon_country_tl {
             background-image: url('./images/chunks/xl/2x/tl.png');
         }
+
         &.flag-icon_country_tm {
             background-image: url('./images/chunks/xl/2x/tm.png');
         }
+
         &.flag-icon_country_tn {
             background-image: url('./images/chunks/xl/2x/tn.png');
         }
+
         &.flag-icon_country_to {
             background-image: url('./images/chunks/xl/2x/to.png');
         }
+
         &.flag-icon_country_tr {
             background-image: url('./images/chunks/xl/2x/tr.png');
         }
+
         &.flag-icon_country_tt {
             background-image: url('./images/chunks/xl/2x/tt.png');
         }
+
         &.flag-icon_country_tv {
             background-image: url('./images/chunks/xl/2x/tv.png');
         }
+
         &.flag-icon_country_tw {
             background-image: url('./images/chunks/xl/2x/tw.png');
         }
+
         &.flag-icon_country_tz {
             background-image: url('./images/chunks/xl/2x/tz.png');
         }
+
         &.flag-icon_country_ua {
             background-image: url('./images/chunks/xl/2x/ua.png');
         }
+
         &.flag-icon_country_ug {
             background-image: url('./images/chunks/xl/2x/ug.png');
         }
+
         &.flag-icon_country_um {
             background-image: url('./images/chunks/xl/2x/um.png');
         }
+
         &.flag-icon_country_un {
             background-image: url('./images/chunks/xl/2x/un.png');
         }
+
         &.flag-icon_country_us {
             background-image: url('./images/chunks/xl/2x/us.png');
         }
+
         &.flag-icon_country_uy {
             background-image: url('./images/chunks/xl/2x/uy.png');
         }
+
         &.flag-icon_country_uz {
             background-image: url('./images/chunks/xl/2x/uz.png');
         }
+
         &.flag-icon_country_va {
             background-image: url('./images/chunks/xl/2x/va.png');
         }
+
         &.flag-icon_country_vc {
             background-image: url('./images/chunks/xl/2x/vc.png');
         }
+
         &.flag-icon_country_ve {
             background-image: url('./images/chunks/xl/2x/ve.png');
         }
+
         &.flag-icon_country_vg {
             background-image: url('./images/chunks/xl/2x/vg.png');
         }
+
         &.flag-icon_country_vi {
             background-image: url('./images/chunks/xl/2x/vi.png');
         }
+
         &.flag-icon_country_vn {
             background-image: url('./images/chunks/xl/2x/vn.png');
         }
+
         &.flag-icon_country_vu {
             background-image: url('./images/chunks/xl/2x/vu.png');
         }
+
         &.flag-icon_country_wf {
             background-image: url('./images/chunks/xl/2x/wf.png');
         }
+
         &.flag-icon_country_ws {
             background-image: url('./images/chunks/xl/2x/ws.png');
         }
+
         &.flag-icon_country_xk {
             background-image: url('./images/chunks/xl/2x/xk.png');
         }
+
         &.flag-icon_country_ye {
             background-image: url('./images/chunks/xl/2x/ye.png');
         }
+
         &.flag-icon_country_yt {
             background-image: url('./images/chunks/xl/2x/yt.png');
         }
+
         &.flag-icon_country_za {
             background-image: url('./images/chunks/xl/2x/za.png');
         }
+
         &.flag-icon_country_zm {
             background-image: url('./images/chunks/xl/2x/zm.png');
         }
+
         &.flag-icon_country_zw {
             background-image: url('./images/chunks/xl/2x/zw.png');
         }

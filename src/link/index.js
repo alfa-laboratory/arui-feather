@@ -4,4 +4,4 @@
 
 import './link.css';
 
-export default from './link';
+export { default } from './link';

@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+// @ts-nocheck
+
 /**
  * Добавляет к type-checker для propType валидации метод isRequired.
  *
@@ -121,7 +123,7 @@ export function createMappingPropValidator(validationMapping, controllingPropNam
         const isValidProp = availableOptions.indexOf(props[propName]) !== -1;
 
         if (!isValidProp) {
-            return new Error(`Invalid prop '${propName}' supplied to ${componentName}. 
+            return new Error(`Invalid prop '${propName}' supplied to ${componentName}.
                 Expected one of ${availableOptions} for prop '${controllingPropName}' equal to ${controllingPropValue}`
             );
         }

@@ -6,4 +6,4 @@ import '../button';
 
 import './tag-button.css';
 
-export default from './tag-button';
+export { default } from './tag-button';

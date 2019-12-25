@@ -5,4 +5,4 @@
 import './contactless.css';
 import '../../../icon';
 
-export default from './contactless';
+export { default } from './contactless';

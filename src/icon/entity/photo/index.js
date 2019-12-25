@@ -5,4 +5,4 @@
 import './photo.css';
 import '../../../icon';
 
-export default from './photo';
+export { default } from './photo';

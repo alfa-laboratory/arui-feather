@@ -102,11 +102,13 @@ class MoneyInput extends React.Component {
      */
     root;
 
-    componentWillMount() {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillMount() {
         this.updateMaskByValue(this.getValue());
     }
 
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.value !== nextProps.value) {
             this.updateMaskByValue(nextProps.value || '');
         }

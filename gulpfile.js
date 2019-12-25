@@ -7,5 +7,6 @@ createTasks('arui-feather', {
         '!src/**/*.test.{jsx,js}',
         '!src/*/*-benchmark.jsx'
     ],
-    resourcesGlob: ['src/**/*.{png,gif,jpg,svg,ttf,woff,json,d.ts}']
+    resourcesGlob: ['src/**/*.{png,gif,jpg,svg,ttf,woff,json,d.ts}'],
+    useComponentDts: true
 });

@@ -13,7 +13,7 @@ import performance from '../performance';
  */
 @cn('tabs')
 @performance()
-export default class Tabs extends React.Component {
+class Tabs extends React.Component {
     static propTypes = {
         /** Управление возможность скроллить компонент по-горизонтали */
         scrollable: Type.bool,
@@ -49,3 +49,5 @@ export default class Tabs extends React.Component {
         );
     }
 }
+
+export default Tabs;

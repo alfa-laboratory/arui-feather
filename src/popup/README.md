@@ -48,14 +48,20 @@ class PopupDemo extends React.Component {
             <div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target1 = target; } }
+                        ref={ (target) => {
+                            this.target1 = target;
+                        } }
                         size='s'
-                        onClick={ () => { this.setState({ popup1: !this.state.popup1 }); } }
+                        onClick={ () => {
+                            this.setState({ popup1: !this.state.popup1 });
+                        } }
                     >
                         Перейти на тариф
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup1 = popup; } }
+                        ref={ (popup) => {
+                            this.popup1 = popup;
+                        } }
                         directions={ ['top-center', 'bottom-center'] }
                         size='s'
                         type='tooltip'
@@ -66,41 +72,65 @@ class PopupDemo extends React.Component {
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target2 = target; } }
+                        ref={ (target) => {
+                            this.target2 = target;
+                        } }
                         size='l'
-                        onMouseEnter={ () => { this.setState({ popup2: true }); } }
-                        onMouseLeave={ () => { this.setState({ popup2: false }); } }
+                        onMouseEnter={ () => {
+                            this.setState({ popup2: true });
+                        } }
+                        onMouseLeave={ () => {
+                            this.setState({ popup2: false });
+                        } }
                     >
                         Сколько стоит?
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup2 = popup; } }
+                        ref={ (popup) => {
+                            this.popup2 = popup;
+                        } }
                         directions={ ['right-center', 'right-top', 'right-bottom'] }
                         size='l'
                         mainOffset={ 0 }
                         type='tooltip'
                         visible={ this.state.popup2 }
-                        onMouseLeave={ () => { this.setState({ popup2: false }); } }
-                        onMouseEnter={ () => { this.setState({ popup2: true }); } }
+                        onMouseLeave={ () => {
+                            this.setState({ popup2: false });
+                        } }
+                        onMouseEnter={ () => {
+                            this.setState({ popup2: true });
+                        } }
                     >
                         2 400 ₽ в месяц при оплате за год
                     </Popup>
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target3 = target; } }
+                        ref={ (target) => {
+                            this.target3 = target;
+                        } }
                         size='m'
-                        onMouseEnter={ () => { this.setState({ popup3: true }); } }
-                        onMouseLeave={ () => { this.setState({ popup3: false }); } }
+                        onMouseEnter={ () => {
+                            this.setState({ popup3: true });
+                        } }
+                        onMouseLeave={ () => {
+                            this.setState({ popup3: false });
+                        } }
                     >
                         Облачные бухгалтерии
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup3 = popup; } }
+                        ref={ (popup) => {
+                            this.popup3 = popup;
+                        } }
                         height='available'
                         visible={ this.state.popup3 }
-                        onMouseLeave={ () => { this.setState({ popup3: false }); } }
-                        onMouseEnter={ () => { this.setState({ popup3: true }); } }
+                        onMouseLeave={ () => {
+                            this.setState({ popup3: false });
+                        } }
+                        onMouseEnter={ () => {
+                            this.setState({ popup3: true });
+                        } }
                     >
                         <Paragraph view='normal'>
                             В настоящий момент в системе «Альфа-Бизнес Онлайн» реализована интеграция с облачными бухгалтериями <Link url='http://www.moedelo.org' text='«Мое дело»' />, <Link url='http://www.e-kontur.ru' text=' «Бухгалтерия.Контур»' /> и <Link url='http://www.b2b-center.ru/' text='«B2B-Center»' />. При подключении интеграции в Альфа-Бизнес Онлайн у сервисов «Мое дело», «Бухгалтерия.Контур», «B2B-Center» появится возможность автоматически создавать в Альфа-Бизнес Онлайн неподписанные платежные поручения и подгружать из «Альфа-Бизнес Онлайн» информацию о движениях по счетам. Уполномоченное лицо может подключить один аккаунт сервиса «Бухгалтерия.Контур» и (или) один аккаунт сервиса «Мое дело» только к одному Клиенту.
@@ -109,20 +139,32 @@ class PopupDemo extends React.Component {
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target4 = target; } }
+                        ref={ (target) => {
+                            this.target4 = target;
+                        } }
                         size='m'
-                        onMouseEnter={ () => { this.setState({ popup4: true }); } }
-                        onMouseLeave={ () => { this.setState({ popup4: false }); } }
+                        onMouseEnter={ () => {
+                            this.setState({ popup4: true });
+                        } }
+                        onMouseLeave={ () => {
+                            this.setState({ popup4: false });
+                        } }
                     >
                         Облачные бухгалтерии
                     </Button>
                     <Popup
-                        ref={ (ref) => { this.popup4 = ref; } }
+                        ref={ (ref) => {
+                            this.popup4 = ref;
+                        } }
                         height='available'
                         directions={ ['right-center', 'right-top', 'right-bottom'] }
                         visible={ this.state.popup4 }
-                        onMouseLeave={ () => { this.setState({ popup4: false }); } }
-                        onMouseEnter={ () => { this.setState({ popup4: true }); } }
+                        onMouseLeave={ () => {
+                            this.setState({ popup4: false });
+                        } }
+                        onMouseEnter={ () => {
+                            this.setState({ popup4: true });
+                        } }
                     >
                         <Paragraph view='normal'>
                             В настоящий момент в системе «Альфа-Бизнес Онлайн» реализована интеграция с облачными бухгалтериями <Link url='http://www.moedelo.org' text='«Мое дело»' />, <Link url='http://www.e-kontur.ru' text='«Бухгалтерия.Контур»' /> и <Link url='http://www.b2b-center.ru/' text='«B2B-Center»' />. При подключении интеграции в Альфа-Бизнес Онлайн у сервисов «Мое дело», «Бухгалтерия.Контур», «B2B-Center» появится возможность автоматически создавать в Альфа-Бизнес Онлайн неподписанные платежные поручения и подгружать из «Альфа-Бизнес Онлайн» информацию о движениях по счетам. Уполномоченное лицо может подключить один аккаунт сервиса «Бухгалтерия.Контур» и (или) один аккаунт сервиса «Мое дело» только к одному Клиенту.
@@ -131,30 +173,44 @@ class PopupDemo extends React.Component {
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target5 = target; } }
+                        ref={ (target) => {
+                            this.target5 = target;
+                        } }
                         size='m'
-                        onClick={ () => { this.setState({ popup5: !this.state.popup5 }); } }
+                        onClick={ () => {
+                            this.setState({ popup5: !this.state.popup5 });
+                        } }
                     >
                         Сколько стоит?
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup5 = popup; } }
+                        ref={ (popup) => {
+                            this.popup5 = popup;
+                        } }
                         visible={ this.state.popup5 }
-                        onClickOutside={ () => { this.setState({ popup5: false }); } }
+                        onClickOutside={ () => {
+                            this.setState({ popup5: false });
+                        } }
                     >
                         { '2 400 ₽ в месяц при оплате за год' }
                     </Popup>
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target6 = target; } }
+                        ref={ (target) => {
+                            this.target6 = target;
+                        } }
                         size='m'
-                        onClick={ () => { this.setState({ popup6: !this.state.popup6 }); } }
+                        onClick={ () => {
+                            this.setState({ popup6: !this.state.popup6 });
+                        } }
                     >
                         Облачные бухгалтерии
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup6 = popup; } }
+                        ref={ (popup) => {
+                            this.popup6 = popup;
+                        } }
                         target='screen'
                         visible={ this.state.popup6 }
                     >
@@ -163,7 +219,9 @@ class PopupDemo extends React.Component {
                         </Paragraph>
                         <Button
                             size='m'
-                            onClick={ () => { this.setState({ popup6: false }); } }
+                            onClick={ () => {
+                                this.setState({ popup6: false });
+                            } }
                         >
                             Ясно
                         </Button>
@@ -171,14 +229,20 @@ class PopupDemo extends React.Component {
                 </div>
                 <div className='row'>
                     <Button
-                        ref={ (target) => { this.target7 = target; } }
+                        ref={ (target) => {
+                            this.target7 = target;
+                        } }
                         size='m'
-                        onClick={ () => { this.setState({ popup7: !this.state.popup7 }); } }
+                        onClick={ () => {
+                            this.setState({ popup7: !this.state.popup7 });
+                        } }
                     >
                         Сколько стоит
                     </Button>
                     <Popup
-                        ref={ (popup) => { this.popup7 = popup; } }
+                        ref={ (popup) => {
+                            this.popup7 = popup;
+                        } }
                         padded={ true }
                         visible={ this.state.popup7 }
                         header={
@@ -186,7 +250,9 @@ class PopupDemo extends React.Component {
                                 <Label><b>При оплате за год</b></Label>
                             </div>
                         }
-                        onClickOutside={ () => { this.setState({ popup7: false }); } }
+                        onClickOutside={ () => {
+                            this.setState({ popup7: false });
+                        } }
                     >
                         <Label>2 400 ₽ в месяц</Label>
                     </Popup>

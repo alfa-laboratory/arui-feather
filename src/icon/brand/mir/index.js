@@ -5,4 +5,4 @@
 import './mir.css';
 import '../../../icon';
 
-export default from './mir';
+export { default } from './mir';

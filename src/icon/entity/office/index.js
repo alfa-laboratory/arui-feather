@@ -5,4 +5,4 @@
 import './office.css';
 import '../../../icon';
 
-export default from './office';
+export { default } from './office';

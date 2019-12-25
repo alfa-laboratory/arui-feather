@@ -5,4 +5,4 @@
 import './sbp.css';
 import '../../../icon';
 
-export default from './sbp';
+export { default } from './sbp';

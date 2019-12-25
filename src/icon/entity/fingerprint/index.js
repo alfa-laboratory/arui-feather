@@ -5,4 +5,4 @@
 import './fingerprint.css';
 import '../../../icon';
 
-export default from './fingerprint';
+export { default } from './fingerprint';

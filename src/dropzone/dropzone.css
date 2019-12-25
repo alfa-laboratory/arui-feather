@@ -32,7 +32,7 @@
         transition: 0.6s;
 
         &_active {
-            opacity: 1;
+            opacity: var(--opacity-active);
             transition: 0.6s;
         }
     }

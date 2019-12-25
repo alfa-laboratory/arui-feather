@@ -5,4 +5,4 @@
 import './share-android.css';
 import '../../../icon';
 
-export default from './share-android';
+export { default } from './share-android';

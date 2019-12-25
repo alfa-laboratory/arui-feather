@@ -5,4 +5,4 @@
 import './utilities.css';
 import '../../../icon';
 
-export default from './utilities';
+export { default } from './utilities';

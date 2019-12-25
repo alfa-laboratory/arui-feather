@@ -10,7 +10,7 @@ import cn from '../cn';
  * @extends Link
  */
 @cn('tab-item')
-export default class TabItem extends Link {
+class TabItem extends Link {
     static defaultProps = {
         size: 'l',
         disabled: false,
@@ -19,3 +19,5 @@ export default class TabItem extends Link {
         tabIndex: 0
     };
 }
+
+export default TabItem;

@@ -4,4 +4,6 @@
 
 import './list.css';
 
-export default from './list';
+/* eslint-disable import/export */
+export * from './list';
+export { default } from './list';

@@ -25,7 +25,7 @@
 
         &:hover {
             .toggle__switch {
-                opacity: 1;
+                opacity: var(--opacity-active);
             }
         }
     }
@@ -107,17 +107,17 @@
     }
 
     &_focused input {
-        opacity: 1;
+        opacity: var(--opacity-active);
     }
 
     input:checked {
         + .toggle__switch:before {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
     }
 
     input:active:not(:disabled) {
-        /* opacity: 1; */
+        /* opacity: var(--opacity-active); */
     }
 
     input:disabled {

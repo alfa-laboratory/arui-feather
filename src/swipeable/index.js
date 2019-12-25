@@ -1,1 +1,1 @@
-export default from './swipeable';
+export { default } from './swipeable';

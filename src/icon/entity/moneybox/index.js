@@ -5,4 +5,4 @@
 import './moneybox.css';
 import '../../../icon';
 
-export default from './moneybox';
+export { default } from './moneybox';

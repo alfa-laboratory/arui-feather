@@ -5,4 +5,4 @@
 import './message.css';
 import '../../../icon';
 
-export default from './message';
+export { default } from './message';

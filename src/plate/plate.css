@@ -30,7 +30,7 @@
         transition: opacity .1s ease-out;
 
         &:hover {
-            opacity: 1;
+            opacity: var(--opacity-active);
         }
     }
 

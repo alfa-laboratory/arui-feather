@@ -5,4 +5,4 @@
 import './download.css';
 import '../../../icon';
 
-export default from './download';
+export { default } from './download';

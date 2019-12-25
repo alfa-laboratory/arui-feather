@@ -64,7 +64,7 @@
         transition: opacity 400ms ease;
 
         .popup__content {
-            padding: 12px 24px;
+            padding: var(--gap-s) var(--gap-xl);
         }
     }
 
@@ -132,7 +132,7 @@
 
     &_padded:not(.popup_height_available) {
         &.popup_size_s .popup__content {
-            padding: 7px 12px 8px;
+            padding: 7px var(--gap-s) var(--gap-xs);
         }
 
         &.popup_size_m .popup__content {

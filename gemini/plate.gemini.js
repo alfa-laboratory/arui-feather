@@ -8,7 +8,10 @@ const NAME = 'plate';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const PROP_SETS = [
     { hasCloser: true },
-    { isFlat: true }
+    { foldable: true, title: 'Plate Foldable' },
+    { type: 'common', title: 'Plate Common' },
+    { type: 'error', title: 'Plate Error' },
+    { type: 'success', title: 'Plate Success' }
 ];
 
 geminiReact.suite(NAME, () => {

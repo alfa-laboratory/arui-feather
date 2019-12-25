@@ -323,9 +323,9 @@ class Input extends React.Component {
                 }
                 {
                     this.props.icon &&
-                    <span className={ cn('icon') }>
+                    <div className={ cn('icon') }>
                         { this.props.icon }
-                    </span>
+                    </div>
                 }
                 {
                     this.props.rightAddons &&

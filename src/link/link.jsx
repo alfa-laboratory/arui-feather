@@ -35,6 +35,8 @@ class Link extends React.Component {
         checked: Type.bool,
         /** Псевдо-ссылка (border-bottom: dashed) */
         pseudo: Type.bool,
+        /** Тип ссылки */
+        view: Type.oneOf(['default', 'dark']),
         /** Размер компонента */
         size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),
         /** Дочерние элементы `Link` */
@@ -108,6 +110,7 @@ class Link extends React.Component {
                 disabled: this.props.disabled,
                 checked: this.props.checked,
                 pseudo: this.props.pseudo,
+                view: this.props.view,
                 size: this.props.size,
                 focused: this.state.focused,
                 hovered: this.state.hovered,

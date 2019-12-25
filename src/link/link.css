@@ -121,17 +121,23 @@
         border-color: #0f62fe;
     }
 
+    &.link_view_dark {
+        color: var(--color-dark-indigo);
+
+        .link__text {
+            border-color: var(--color-dark-indigo-60);
+        }
+    }
+
     &:hover,
     &:focus {
-        /* color: var(--color-content-accent-alfa-on-white); */
-
         .link__text {
             border-color: transparent;
         }
     }
 
     &.link_disabled {
-        color: var(--color-content-disabled-alfa-on-white);
+        color: var(--color-dark-indigo-30);
     }
 }
 

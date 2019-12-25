@@ -161,6 +161,7 @@
     "react-styleguidist": "9.1.16",
     "region-flags": "1.1.0",
     "style-loader": "^0.23.1",
+    "stylelint-value-no-unknown-custom-properties": "^2.0.0",
     "svgo": "1.0.5",
     "timezone-mock": "^1.0.0",
     "uppercamelcase": "3.0.0",

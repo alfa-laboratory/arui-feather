@@ -30,6 +30,7 @@ exports[`collapse should render without problem 1`] = `
     tabIndex={0}
     text="Expand"
     url="#"
+    view="dark"
   />
 </div>
 `;

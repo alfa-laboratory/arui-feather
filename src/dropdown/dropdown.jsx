@@ -171,6 +171,7 @@ class Dropdown extends React.Component {
         return (
             <Link
                 className={ cn('switcher') }
+                view='dark'
                 size={ this.props.size }
                 ref={ (switcher) => {
                     this.switcher = switcher;

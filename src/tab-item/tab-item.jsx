@@ -13,6 +13,7 @@ import cn from '../cn';
 class TabItem extends Link {
     static defaultProps = {
         size: 'l',
+        view: 'dark',
         disabled: false,
         checked: false,
         pseudo: false,

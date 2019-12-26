@@ -1,5 +1,4 @@
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
-import Link from '../src/link';
 import Paragraph from '../src/paragraph';
 import Plate from '../src/plate';
 import { LOREM_IPSUM } from '../src/vars';
@@ -30,7 +29,6 @@ geminiReact.suite(NAME, () => {
                                 <Paragraph>
                                     { LOREM_IPSUM.slice(0, 3) }
                                 </Paragraph>
-                                <Link>Plate Link</Link>
                             </div>
                         </Plate>
                     </GeminiBox>

@@ -19,6 +19,7 @@ exports[`menu-item should render without problem 1`] = `
     tabIndex={0}
     text={false}
     url="#"
+    view="dark"
   >
     MenuItem
   </Link>

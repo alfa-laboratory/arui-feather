@@ -112,6 +112,27 @@ exports[`icon render IconAnalytics without problems: IconAnalytics 1`] = `
 />
 `;
 
+exports[`icon render IconAndroidDocument without problems: IconAndroidDocument 1`] = `
+<Icon
+  name="android-document"
+  size="m"
+/>
+`;
+
+exports[`icon render IconAndroidFlash without problems: IconAndroidFlash 1`] = `
+<Icon
+  name="android-flash"
+  size="m"
+/>
+`;
+
+exports[`icon render IconAndroidPhoto without problems: IconAndroidPhoto 1`] = `
+<Icon
+  name="android-photo"
+  size="m"
+/>
+`;
+
 exports[`icon render IconAndroidReorder without problems: IconAndroidReorder 1`] = `
 <Icon
   name="android-reorder"
@@ -1890,6 +1911,13 @@ exports[`icon render IconFingerprint without problems: IconFingerprint 1`] = `
 />
 `;
 
+exports[`icon render IconFlash without problems: IconFlash 1`] = `
+<Icon
+  name="flash"
+  size="m"
+/>
+`;
+
 exports[`icon render IconForex without problems: IconForex 1`] = `
 <Icon
   name="forex"
@@ -1932,6 +1960,13 @@ exports[`icon render IconFormatDoc without problems: IconFormatDoc 1`] = `
 />
 `;
 
+exports[`icon render IconFormatJpg without problems: IconFormatJpg 1`] = `
+<Icon
+  name="format-jpg"
+  size="m"
+/>
+`;
+
 exports[`icon render IconFormatPdf without problems: IconFormatPdf 1`] = `
 <Icon
   name="format-pdf"
@@ -1953,6 +1988,13 @@ exports[`icon render IconFormatPpt without problems: IconFormatPpt 1`] = `
 />
 `;
 
+exports[`icon render IconFormatRar without problems: IconFormatRar 1`] = `
+<Icon
+  name="format-rar"
+  size="m"
+/>
+`;
+
 exports[`icon render IconFormatSketch without problems: IconFormatSketch 1`] = `
 <Icon
   name="format-sketch"
@@ -1970,6 +2012,13 @@ exports[`icon render IconFormatSvg without problems: IconFormatSvg 1`] = `
 exports[`icon render IconFormatTxt without problems: IconFormatTxt 1`] = `
 <Icon
   name="format-txt"
+  size="m"
+/>
+`;
+
+exports[`icon render IconFormatUnknown without problems: IconFormatUnknown 1`] = `
+<Icon
+  name="format-unknown"
   size="m"
 />
 `;

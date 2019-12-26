@@ -5,3 +5,7 @@
 .icon_size_l.icon_name_mir.icon_colored.icon_theme_alfa-on-color, .icon_size_l.icon_name_mir.icon_colored.icon_theme_alfa-on-white {
     background-image: url('./icon_mir_l_color.svg');
 }
+
+.icon_size_l.icon_name_mir.icon_theme_alfa-on-color {
+    background-image: url('./icon_mir_l_white.svg');
+}

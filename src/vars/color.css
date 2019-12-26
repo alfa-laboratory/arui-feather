@@ -55,4 +55,18 @@
      * Цвет контента для плашек ошибок.
      */
     --color-error-content: rgba(255, 255, 255, .9);
+
+    /**
+     * Deprecated set
+     * TODO
+     */
+    --color-white-05-deprecated: rgba(255, 255, 255, 0.05);
+    --color-white-20-deprecated: rgba(255, 255, 255, 0.2);
+    --color-white-70-deprecated: rgba(255, 255, 255, 0.7);
+    --color-white-90-deprecated: rgba(255, 255, 255, 0.9);
+    --color-white-95-deprecated: rgba(255, 255, 255, 0.95);
+    --color-dark-indigo-20-deprecated: rgba(11, 31, 53, 0.2);
+    --color-dark-indigo-25-deprecated: rgba(11, 31, 53, 0.25);
+    --color-black-70-deprecated: rgba(0, 0, 0, 0.7);
+    --color-black-90-deprecated: rgba(0, 0, 0, 0.9);
 }

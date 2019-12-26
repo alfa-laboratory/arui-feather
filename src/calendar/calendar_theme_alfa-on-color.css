@@ -57,26 +57,26 @@
 
         &__name {
             &_month, &_year {
-                background: var(--color-white-05);
+                background: var(--color-white-05-deprecated);
 
                 &:hover {
-                    background-color: var(--color-white-20);
+                    background-color: var(--color-white-20-deprecated);
                 }
             }
         }
 
         &__select {
-            background: var(--color-white-05);
-            border: 1px solid var(--color-white-20);
+            background: var(--color-white-05-deprecated);
+            border: 1px solid var(--color-white-20-deprecated);
 
             &:hover {
-                background: var(--color-white-20);
+                background: var(--color-white-20-deprecated);
                 border-color: var(--color-white-30);
             }
 
             &_type_off:hover {
-                background: var(--color-white-05);
-                border-color: var(--color-white-20);
+                background: var(--color-white-05-deprecated);
+                border-color: var(--color-white-20-deprecated);
             }
 
             &_state_current {

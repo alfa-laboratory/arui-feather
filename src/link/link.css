@@ -114,11 +114,10 @@
 }
 
 .link_theme_alfa-on-white {
-    /* TODO waiting for token */
-    color: #0f62fe;
+    color: var(--color-blue-link-web);
 
     .link__text {
-        border-color: #0f62fe;
+        border-color: var(--color-blue-link-web);
     }
 
     &.link_view_dark {

@@ -7,25 +7,83 @@
 .plate {
     display: inline-block;
     position: relative;
-    margin-right: 7px;
-    margin-bottom: 7px;
-    padding: var(--gap-s);
+    width: 100%;
+    padding: var(--gap-m);
     border-radius: var(--border-radius-control);
-    box-shadow: var(--shadow);
+
+    &_type_default {
+        border-radius: var(--border-radius-2x);
+
+        /* TODO rgba-цвета заменить на переменные */
+        box-shadow: 0 1px 2px rgba(11, 31, 53, 0.16), 0 4px 12px rgba(11, 31, 53, 0.08);
+    }
+
+    &_type_common {
+        background-color: var(--color-dark-indigo-05);
+
+        /* TODO rgba-цвет заменить на переменнe. */
+        border: 1px solid rgb(221, 225, 230);
+    }
+
+    &_type_error {
+        /* TODO rgba-цвета заменить на переменные */
+        background-color: rgba(240, 68, 57, 0.05);
+        border: 1px solid rgba(240, 68, 57, 0.2);
+    }
+
+    &_type_success {
+        /* TODO rgba-цвета заменить на переменные */
+        background-color: rgba(13, 186, 38, 0.06);
+        border: 1px solid rgba(13, 186, 38, 0.2);
+    }
 
     &_hidden {
         display: none;
     }
 
-    &_has-closer {
-        padding-right: 34px;
+    &_has-closer, &_foldable {
+        padding-right: 46px;
     }
 
-    &__closer {
+    &_foldable &__title span {
+        cursor: pointer;
+    }
+
+    &_has-icon {
+        padding-left: 56px;
+    }
+
+    &__title {
+        font-size: var(--font-size-l);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-extra-condensed);
+    }
+
+    &__content {
+        max-height: 100vh;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+
+        &_folded {
+            max-height: 0;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+    }
+
+    &_has-icon &__icon {
+        position: absolute;
+        left: 0;
+        width: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__closer, &__folder {
         opacity: var(--opacity-minor);
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 7px;
+        right: var(--gap-s);
         cursor: pointer;
         transition: opacity .1s ease-out;
 
@@ -33,14 +91,4 @@
             opacity: var(--opacity-active);
         }
     }
-
-    &_flat {
-        box-shadow: none;
-    }
-}
-
-.plate_theme_alfa-on-color,
-.plate_theme_alfa-on-white {
-    color: var(--color-content-alfa-on-white);
-    background: var(--color-background-alfa-on-white);
 }

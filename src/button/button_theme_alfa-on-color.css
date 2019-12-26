@@ -34,7 +34,7 @@
     &.button_checked,
     &.button_view_action {
         color: var(--color-content-alfa-on-color);
-        background: var(--color-white-20);
+        background: var(--color-white-20-deprecated);
         border-color: var(--color-border-control-checked-alfa-on-color);
 
         &.button_hovered {
@@ -81,11 +81,11 @@
             border-style: solid;
             border-color: var(--color-content-alfa-on-color);
 
-            box-shadow: 0 0 0 1px var(--color-white-90);
+            box-shadow: 0 0 0 1px var(--color-white-90-deprecated);
 
             &.button_hovered {
-                box-shadow: 0 0 0 1px var(--color-white-70);
-                border-color: var(--color-white-70);
+                box-shadow: 0 0 0 1px var(--color-white-70-deprecated);
+                border-color: var(--color-white-70-deprecated);
             }
         }
     }

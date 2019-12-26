@@ -12,7 +12,7 @@
     .sidebar_theme_alfa-on-white {
         .sidebar__header {
             /* TODO заменить на токены, цвета должны соответствовать Modal */
-            background: var(--color-white-95);
+            background: var(--color-white-95-deprecated);
             border-bottom: 1px solid var(--color-black-10);
         }
 

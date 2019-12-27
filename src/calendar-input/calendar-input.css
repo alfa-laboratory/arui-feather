@@ -51,19 +51,3 @@
         margin: 0 auto;
     }
 }
-
-.calendar-input_theme_alfa-on-color {
-    .calendar-input__custom-control {
-        .input__control:disabled {
-            -webkit-text-fill-color: var(--color-content-alfa-on-color) !important;
-        }
-    }
-}
-
-.calendar-input_theme_alfa-on-white {
-    .calendar-input__custom-control {
-        .input__control:disabled {
-            -webkit-text-fill-color: var(--color-content-alfa-on-white) !important;
-        }
-    }
-}

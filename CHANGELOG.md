@@ -1,3 +1,27 @@
+<a name="16.0.0"></a>
+# [16.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.6.0...v16.0.0) (2019-12-27)
+
+
+### Bug Fixes
+
+* fix ci build ([e1c8204](https://github.com/alfa-laboratory/arui-feather/commit/e1c8204))
+* **calendar-input:** disabled color ios fix ([99bbd3e](https://github.com/alfa-laboratory/arui-feather/commit/99bbd3e))
+* **calendar-input:** disabled state ([#928](https://github.com/alfa-laboratory/arui-feather/issues/928)) ([9356462](https://github.com/alfa-laboratory/arui-feather/commit/9356462))
+* **radio-group:** label wrap ([#880](https://github.com/alfa-laboratory/arui-feather/issues/880)) ([69a1e81](https://github.com/alfa-laboratory/arui-feather/commit/69a1e81))
+* **select:** style for .select_view_filled ([#898](https://github.com/alfa-laboratory/arui-feather/issues/898)) ([b303698](https://github.com/alfa-laboratory/arui-feather/commit/b303698))
+
+
+### Features
+
+* bump react version ([#912](https://github.com/alfa-laboratory/arui-feather/issues/912)) ([01c50fa](https://github.com/alfa-laboratory/arui-feather/commit/01c50fa))
+* new icons and colors from alfa-ui-primitives ([#926](https://github.com/alfa-laboratory/arui-feather/issues/926)) ([4121f56](https://github.com/alfa-laboratory/arui-feather/commit/4121f56))
+* remove RenderInContainer ([#900](https://github.com/alfa-laboratory/arui-feather/issues/900)) ([866648c](https://github.com/alfa-laboratory/arui-feather/commit/866648c))
+* **heading:** prop for default margins ([#923](https://github.com/alfa-laboratory/arui-feather/issues/923)) ([28bafcf](https://github.com/alfa-laboratory/arui-feather/commit/28bafcf))
+* **link:** new link color ([#927](https://github.com/alfa-laboratory/arui-feather/issues/927)) ([3f952b9](https://github.com/alfa-laboratory/arui-feather/commit/3f952b9))
+* **plate:** new types and styles, foldable mode ([#921](https://github.com/alfa-laboratory/arui-feather/issues/921)) ([72eb43b](https://github.com/alfa-laboratory/arui-feather/commit/72eb43b))
+
+
+
 <a name="15.6.0"></a>
 # [15.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.5.2...v15.6.0) (2019-11-26)
 

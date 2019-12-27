@@ -145,7 +145,7 @@
     "gulp-imagemin": "4.1.0",
     "gulp-rename": "1.2.2",
     "gulp.spritesmith": "6.9.0",
-    "handlebars": "4.1.2",
+    "handlebars": "4.3.0",
     "html-reporter": "2.12.3",
     "husky": "3.1.0",
     "jest": "^24.9.0",

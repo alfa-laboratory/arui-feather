@@ -10,7 +10,7 @@
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
     text-decoration: none;
-    transition: color 200ms ease-out;
+    transition: color 100ms ease-out;
     -webkit-tap-highlight-color: var(--color-black-10);
 
     &_flex {
@@ -34,7 +34,7 @@
     &__text {
         border-bottom-style: solid;
         border-bottom-width: 1px;
-        transition: border-color 200ms ease-out;
+        transition: border-color 100ms ease-out;
     }
 
     &__icon {
@@ -114,23 +114,29 @@
 }
 
 .link_theme_alfa-on-white {
-    color: var(--color-content-alfa-on-white);
+    color: var(--color-blue-link-web);
 
     .link__text {
-        border-color: var(--color-content-disabled-alfa-on-white);
+        border-color: var(--color-blue-link-web);
+    }
+
+    &.link_view_dark {
+        color: var(--color-dark-indigo);
+
+        .link__text {
+            border-color: var(--color-dark-indigo-60);
+        }
     }
 
     &:hover,
     &:focus {
-        color: var(--color-content-accent-alfa-on-white);
-
         .link__text {
-            border-color: var(--color-content-minor-alfa-on-white);
+            border-color: transparent;
         }
     }
 
     &.link_disabled {
-        color: var(--color-content-disabled-alfa-on-white);
+        color: var(--color-dark-indigo-30);
     }
 }
 

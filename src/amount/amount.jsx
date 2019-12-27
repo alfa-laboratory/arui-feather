@@ -4,11 +4,9 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
+import { createCn } from 'bem-react-classname';
 import Heading from '../heading/heading';
 import Label from '../label/label';
-
-import cn from '../cn';
 import performance from '../performance';
 
 import {
@@ -23,9 +21,9 @@ const ZERO_MINOR_PART_REGEXP = /^0+$/;
  * Компонент для отображения суммы, согласно следующему гайдлайну:
  * https://design.alfabank.ru/patterns/amount
  */
-@cn('amount')
 @performance(true)
 class Amount extends React.Component {
+    cn = createCn('amount');
     static propTypes = {
         amount: Type.shape({
             /** Абсолютное значение суммы */
@@ -63,21 +61,21 @@ class Amount extends React.Component {
         isHeading: false
     };
 
-    render(cn) {
+    render() {
         const { amount, size } = this.props;
         const { majorPart, minorPart, currencySymbol } = formatAmount(amount);
 
         const amountInner = (
             <span>
-                <span className={ cn('major') }>{ majorPart }</span>
-                { this.renderSeparatorAndMinorPart(cn, minorPart) }
-                { this.renderCurrencySymbol(cn, currencySymbol) }
+                <span className={ this.cn('major') }>{ majorPart }</span>
+                { this.renderSeparatorAndMinorPart(minorPart) }
+                { this.renderCurrencySymbol(currencySymbol) }
             </span>
         );
 
         return (
             <div
-                className={ cn({ bold: this.props.bold }) }
+                className={ this.cn({ bold: this.props.bold }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
@@ -90,7 +88,7 @@ class Amount extends React.Component {
         );
     }
 
-    renderSeparatorAndMinorPart(cn, minorPart) {
+    renderSeparatorAndMinorPart(minorPart) {
         const { showZeroMinorPart } = this.props;
 
         let needMinorPart = false;
@@ -105,9 +103,9 @@ class Amount extends React.Component {
 
         if (needMinorPart) {
             return (
-                <div className={ cn('minor-container') }>
-                    <span className={ cn('separator') }>{ AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR }</span>
-                    <span className={ cn('minor') }>{ minorPart }</span>
+                <div className={ this.cn('minor-container') }>
+                    <span className={ this.cn('separator') }>{ AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR }</span>
+                    <span className={ this.cn('minor') }>{ minorPart }</span>
                 </div>
             );
         }
@@ -116,9 +114,9 @@ class Amount extends React.Component {
     }
 
     // eslint-disable-next-line class-methods-use-this
-    renderCurrencySymbol(cn, currencySymbol) {
+    renderCurrencySymbol(currencySymbol) {
         return (
-            <span className={ cn('currency') }>
+            <span className={ this.cn('currency') }>
                 { THINSP }
                 { currencySymbol }
             </span>

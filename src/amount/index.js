@@ -4,9 +4,13 @@
 
 import '../heading';
 import '../label';
+import { withTheme } from '../cn';
 
 import './amount.css';
 
+import Component from './amount';
+
 /* eslint-disable import/export */
 export * from './amount';
-export { default } from './amount';
+
+export default withTheme(Component);

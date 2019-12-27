@@ -4,6 +4,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { ThemeProvider as NewThemeProvider } from '../cn';
 
 /**
  * Компонент задающий тему для своих дочерних компонентов.
@@ -34,7 +35,11 @@ class ThemeProvider extends React.Component {
     }
 
     render() {
-        return React.Children.only(this.props.children);
+        return (
+            <NewThemeProvider value={ this.props.theme }>
+                { React.Children.only(this.props.children) }
+            </NewThemeProvider>
+        );
     }
 }
 

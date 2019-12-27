@@ -17,7 +17,7 @@ exports[`amount should render without problems 1`] = `
   size="m"
 >
   <div
-    className="amount amount_theme_alfa-on-white"
+    className="amount"
   >
     <Label
       isNoWrap={false}

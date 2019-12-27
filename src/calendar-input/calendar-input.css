@@ -51,3 +51,21 @@
         margin: 0 auto;
     }
 }
+
+/* See #659 PR */
+
+.calendar-input_theme_alfa-on-color {
+    .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-white-30) !important;
+        }
+    }
+}
+
+.calendar-input_theme_alfa-on-white {
+    .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-dark-indigo-30) !important;
+        }
+    }
+}

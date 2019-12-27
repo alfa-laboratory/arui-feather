@@ -47,8 +47,12 @@ module.exports = {
     skipComponentsWithoutExample: true,
     components: './src/*/index.{ts,js}',
 
-    propsParser(filePath) {
-        return reactDoc(filePath);
+    propsParser(componentIndexPath) {
+        const dirPath = path.dirname(componentIndexPath);
+        const componentName = dirPath.split(path.sep).pop();
+        const componentPath = path.resolve(dirPath, `${componentName}.jsx`);
+
+        return reactDoc(componentPath);
     },
     getComponentPathLine(filePath) {
         const componentDirName = path.dirname(filePath);

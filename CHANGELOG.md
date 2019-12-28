@@ -1,3 +1,13 @@
+<a name="16.0.1"></a>
+## [16.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.0...v16.0.1) (2019-12-28)
+
+
+### Bug Fixes
+
+* **link:** darkindigo by default ([c97468f](https://github.com/alfa-laboratory/arui-feather/commit/c97468f))
+
+
+
 <a name="16.0.0"></a>
 # [16.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v15.6.0...v16.0.0) (2019-12-27)
 

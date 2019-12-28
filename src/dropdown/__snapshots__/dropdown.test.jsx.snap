@@ -29,10 +29,9 @@ exports[`dropdown should render without problems 1`] = `
       tabIndex={0}
       text="Switcher-example"
       url="#"
-      view="dark"
     >
       <a
-        className="link link_pseudo link_view_dark link_size_m link_theme_alfa-on-white dropdown__switcher"
+        className="link link_pseudo link_size_m link_theme_alfa-on-white dropdown__switcher"
         href="#"
         onBlur={[Function]}
         onClick={[Function]}

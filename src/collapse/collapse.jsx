@@ -96,7 +96,6 @@ class Collapse extends React.Component {
                 </div>
                 <Link
                     className={ cn('link') }
-                    view='dark'
                     pseudo={ true }
                     icon={
                         <ToggledIcon size='s' />

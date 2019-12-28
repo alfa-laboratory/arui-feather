@@ -36,7 +36,7 @@ class Link extends React.Component {
         /** Псевдо-ссылка (border-bottom: dashed) */
         pseudo: Type.bool,
         /** Тип ссылки */
-        view: Type.oneOf(['default', 'dark']),
+        view: Type.oneOf(['default', 'blue']),
         /** Размер компонента */
         size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),
         /** Дочерние элементы `Link` */

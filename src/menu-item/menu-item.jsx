@@ -147,7 +147,6 @@ class MenuItem extends React.Component {
                             this.control = control;
                         } }
                         className={ `${cn('control')} ${cn('link')}` }
-                        view='dark'
                         size={ this.props.size }
                         theme={ this.props.theme }
                         pseudo={ this.props.view === 'pseudo' }

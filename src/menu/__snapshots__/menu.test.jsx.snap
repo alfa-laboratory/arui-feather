@@ -74,10 +74,9 @@ exports[`menu should render menu items in group with group title 1`] = `
             tabIndex={0}
             text={false}
             url="#1"
-            view="dark"
           >
             <a
-              className="link link_view_dark link_size_m link_theme_alfa-on-white menu-item__control menu-item__link"
+              className="link link_size_m link_theme_alfa-on-white menu-item__control menu-item__link"
               href="#1"
               onBlur={[Function]}
               onClick={[Function]}

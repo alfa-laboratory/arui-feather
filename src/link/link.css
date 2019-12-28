@@ -114,24 +114,35 @@
 }
 
 .link_theme_alfa-on-white {
-    color: var(--color-blue-link-web);
+    color: var(--color-content-alfa-on-white);
 
     .link__text {
-        border-color: var(--color-blue-link-web);
-    }
-
-    &.link_view_dark {
-        color: var(--color-dark-indigo);
-
-        .link__text {
-            border-color: var(--color-dark-indigo-60);
-        }
+        border-color: var(--color-content-disabled-alfa-on-white);
     }
 
     &:hover,
     &:focus {
+        color: var(--color-content-accent-alfa-on-white);
+
         .link__text {
-            border-color: transparent;
+            border-color: var(--color-content-minor-alfa-on-white);
+        }
+    }
+
+    &.link_view_blue {
+        color: var(--color-blue-link-web);
+
+        .link__text {
+            border-color: var(--color-blue-link-web);
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--color-blue-link-web);
+
+            .link__text {
+                border-color: transparent;
+            }
         }
     }
 

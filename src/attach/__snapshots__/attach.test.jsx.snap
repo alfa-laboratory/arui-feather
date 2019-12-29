@@ -10,7 +10,7 @@ exports[`attach should render without problems 1`] = `
   tabIndex={0}
 >
   <span
-    className="attach attach_size_m attach_theme_alfa-on-white"
+    className="attach attach_size_m"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >

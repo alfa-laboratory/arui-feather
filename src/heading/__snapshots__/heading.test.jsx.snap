@@ -2,7 +2,7 @@
 
 exports[`heading should render without problem 1`] = `
 <h4
-  className="heading heading_size_s heading_margins heading_theme_alfa-on-white"
+  className="heading heading_size_s heading_margins_s"
 >
   Heading
 </h4>

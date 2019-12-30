@@ -1,3 +1,13 @@
+<a name="16.0.2"></a>
+## [16.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.1...v16.0.2) (2019-12-30)
+
+
+### Bug Fixes
+
+* **heading:** decrease default margins specificity and use bem-react-classname ([#933](https://github.com/alfa-laboratory/arui-feather/issues/933)) ([4887780](https://github.com/alfa-laboratory/arui-feather/commit/4887780))
+
+
+
 <a name="16.0.1"></a>
 ## [16.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.0...v16.0.1) (2019-12-28)
 

@@ -4,8 +4,8 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import cn from '../cn';
 import performance from '../performance';
 
 const HEADING_LEVEL = {
@@ -19,9 +19,9 @@ const HEADING_LEVEL = {
 /**
  * Компонент заголовка.
  */
-@cn('heading')
 @performance()
 class Heading extends React.Component {
+    cn = createCn('heading');
     static propTypes = {
         /** Дочерние элементы `Heading` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
@@ -44,11 +44,11 @@ class Heading extends React.Component {
         hasDefaultMargins: true
     };
 
-    render(cn) {
+    render() {
         const headingProps = {
-            className: cn({
+            className: this.cn({
                 size: this.props.size,
-                margins: this.props.hasDefaultMargins
+                [`margins_${this.props.size}`]: this.props.hasDefaultMargins
             }),
             id: this.props.id,
             'data-test-id': this.props['data-test-id']

@@ -7,7 +7,6 @@ import { mount } from 'enzyme';
 
 import ThemeProvider from './theme-provider';
 import Button from '../button/button';
-import Heading from '../heading/heading';
 import Paragraph from '../paragraph/paragraph';
 
 describe('theme-provider', () => {
@@ -37,7 +36,6 @@ describe('theme-provider', () => {
         const themeProvider = mount(
             <ThemeProvider theme='alfa-on-color'>
                 <div>
-                    <Heading>Title-test</Heading>
                     <div style={ { background: 'white' } }>
                         <ThemeProvider theme='alfa-on-white'>
                             <Paragraph>Paragraph-test</Paragraph>
@@ -46,10 +44,8 @@ describe('theme-provider', () => {
                 </div>
             </ThemeProvider>
         );
-        const headingNode = themeProvider.find('.heading');
         const paragraphNode = themeProvider.find('.paragraph');
 
-        expect(headingNode.getDOMNode().className).toContain('heading_theme_alfa-on-color');
         expect(paragraphNode.getDOMNode().className).toContain('paragraph_theme_alfa-on-white');
     });
 });

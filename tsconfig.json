@@ -5,7 +5,8 @@
       "allowSyntheticDefaultImports": true,
       "strict": false,
       "baseUrl": "./",
+      "outDir": "dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "__mocks__", "__tests__", "demo"]
+  "exclude": ["node_modules"]
 }

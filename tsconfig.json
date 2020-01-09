@@ -1,0 +1,11 @@
+{
+  "extends": "arui-presets-ts/tsconfig",
+  "compilerOptions": {
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": false,
+      "baseUrl": "./",
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "__mocks__", "__tests__", "demo"]
+}

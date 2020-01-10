@@ -13,7 +13,7 @@ module.exports = {
             'node_modules',
             path.join(process.cwd(), 'node_modules')
         ],
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -21,13 +21,6 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: require.resolve('babel-loader'),
                 exclude: /node_modules/
-            },
-            {
-                test: /\.(ts|tsx)?$/,
-                loader: 'ts-loader',
-                options: {
-                    transpileOnly: true
-                }
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

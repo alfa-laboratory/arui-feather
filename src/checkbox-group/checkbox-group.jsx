@@ -52,6 +52,7 @@ class CheckBoxGroup extends React.Component {
         /**
          * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
          * @param {string[]} value
+         * @param {React.ChangeEvent} event
          */
         onChange: Type.func,
         /** Идентификатор для систем автоматизированного тестирования */
@@ -94,7 +95,7 @@ class CheckBoxGroup extends React.Component {
                         ? value.some(groupValue => groupValue === checkbox.props.value)
                         : checkbox.props.checked,
                     onChange: checkbox.props.onChange === undefined
-                        ? checked => this.handleCheckboxChange(checkbox.props.value, checked)
+                        ? (checked, text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
                         : checkbox.props.onChange,
                     ...props
                 });
@@ -134,7 +135,7 @@ class CheckBoxGroup extends React.Component {
         );
     }
 
-    handleCheckboxChange = (value, checked) => {
+    handleCheckboxChange = (value, checked, event) => {
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
         const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
@@ -149,7 +150,7 @@ class CheckBoxGroup extends React.Component {
         });
 
         if (this.props.onChange) {
-            this.props.onChange(newValue);
+            this.props.onChange(newValue, event);
         }
     };
 

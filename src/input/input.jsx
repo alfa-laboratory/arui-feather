@@ -100,6 +100,7 @@ class Input extends React.Component {
         /**
          * Обработчик изменения значения 'value'
          * @param {string} value
+         * @param {React.ChangeEvent} event
          */
         onChange: Type.func,
         /**
@@ -363,11 +364,11 @@ class Input extends React.Component {
     };
 
     handleChange = (event) => {
-        this.changeValue(event.target.value);
+        this.changeValue(event.target.value, event);
     };
 
     handleClearClick = (event) => {
-        this.changeValue('');
+        this.changeValue('', event);
 
         if (this.props.onClearClick) {
             this.props.onClearClick(event);
@@ -553,14 +554,15 @@ class Input extends React.Component {
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
      * @param {String} value Новое значение
+     * @param {React.ChangeEvent} event
      */
-    changeValue(value) {
+    changeValue(value, event) {
         if (this.props.value === undefined) {
             this.setState({ value });
         }
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     }
 

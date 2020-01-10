@@ -71,11 +71,13 @@ class Menu extends React.Component {
         /**
          * Обработчик клика по варианту меню
          * @param item
+         * @param {React.ChangeEvent} event
          */
         onItemClick: Type.func,
         /**
          * Обработчик выбора варианта меню
          * @param {Array<string|number>} checkedItems
+         * @param {React.ChangeEvent} event
          */
         onItemCheck: Type.func,
         /**
@@ -140,7 +142,7 @@ class Menu extends React.Component {
             this.props.mode === 'radio') {
             const firstItem = this.getFirstItem(this.props.content);
 
-            this.changeCheckedItems([firstItem.value]);
+            this.changeCheckedItems([firstItem.value], null);
         }
     }
 
@@ -238,7 +240,7 @@ class Menu extends React.Component {
         const itemProps = item.props || {};
         const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
         const isItemDisabled = this.props.disabled || itemProps.disabled;
-        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
+        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : event => this.handleMenuItemClick(item, event);
         const menuItem = {
             item,
             ref: item.value
@@ -286,11 +288,11 @@ class Menu extends React.Component {
         );
     }
 
-    handleMenuItemClick = (item) => {
-        this.setNewCheckedItems(item);
+    handleMenuItemClick = (item, event) => {
+        this.setNewCheckedItems(item, event);
 
         if (this.props.onItemClick) {
-            this.props.onItemClick(item);
+            this.props.onItemClick(item, event);
         }
     };
 
@@ -385,7 +387,7 @@ class Menu extends React.Component {
                     : this.props.highlightedItem;
 
                 if (highlightedItem) {
-                    this.setNewCheckedItems(highlightedItem.item);
+                    this.setNewCheckedItems(highlightedItem.item, event);
                 }
 
                 break;
@@ -489,7 +491,7 @@ class Menu extends React.Component {
         }
     }
 
-    setNewCheckedItems(item) {
+    setNewCheckedItems(item, event) {
         const { value } = item;
         let checkedItems = this.props.checkedItems === undefined
             ? Array.from(this.state.checkedItems)
@@ -520,7 +522,7 @@ class Menu extends React.Component {
                 break;
         }
 
-        this.changeCheckedItems(checkedItems);
+        this.changeCheckedItems(checkedItems, event);
         this.focus();
     }
 
@@ -528,14 +530,15 @@ class Menu extends React.Component {
      * Изменяет выбранные значения.
      *
      * @param {Array.<String|Number>} checkedItems Список выбранных значений
+     * @param {React.ChangeEvent} event
      */
-    changeCheckedItems(checkedItems) {
+    changeCheckedItems(checkedItems, event) {
         this.setState({
             checkedItems
         });
 
         if (this.props.onItemCheck) {
-            this.props.onItemCheck(checkedItems);
+            this.props.onItemCheck(checkedItems, event);
         }
     }
 

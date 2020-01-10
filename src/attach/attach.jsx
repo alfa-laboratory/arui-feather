@@ -137,6 +137,7 @@ class Attach extends React.Component {
         /**
          * Обработчик изменения значения 'value'
          * @param {File[]} value
+         * @param {React.ChangeEvent} event
          */
         onChange: Type.func,
         /**
@@ -303,12 +304,12 @@ class Attach extends React.Component {
     }
 
     handleInputChange = (event) => {
-        this.performChange(Array.from(event.target.files));
+        this.performChange(Array.from(event.target.files), event);
     };
 
-    handleClearClick = () => {
+    handleClearClick = (event) => {
         this.input.value = '';
-        this.performChange([]);
+        this.performChange([], event);
     };
 
     handleButtonClick = (event) => {
@@ -367,12 +368,12 @@ class Attach extends React.Component {
         this.input.blur();
     }
 
-    performChange(value) {
+    performChange(value, event) {
         const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {
             if (this.props.onChange && shouldFireChange) {
-                this.props.onChange(value.length ? value : null);
+                this.props.onChange(value.length ? value : null, event);
             }
         });
     }

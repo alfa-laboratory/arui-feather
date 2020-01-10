@@ -60,6 +60,7 @@ class Radio extends React.Component {
          * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
          * @param {string} value
          * @param {boolean} isChecked
+         * @param {React.ChangeEvent} event
          */
         onChange: Type.func,
         /**
@@ -203,14 +204,14 @@ class Radio extends React.Component {
         event.stopPropagation();
     };
 
-    handleChange = () => {
+    handleChange = (event) => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 
             if (this.props.onChange) {
-                this.props.onChange(this.props.value, nextCheckedValue);
+                this.props.onChange(this.props.value, nextCheckedValue, event);
             }
         }
     };

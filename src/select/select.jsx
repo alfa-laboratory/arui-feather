@@ -177,6 +177,7 @@ class Select extends React.Component {
         /**
          * Обработчик изменения значения
          * @param {Array<string|number>} value
+         * @param {React.ChangeEvent} event
          */
         onChange: Type.func,
         /**
@@ -633,7 +634,7 @@ class Select extends React.Component {
         }
     };
 
-    handleOptionCheck = (value) => {
+    handleOptionCheck = (value, event) => {
         const opened = this.getOpened();
 
         this.setState({ value, opened: this.props.mode === 'check' }, () => {
@@ -648,7 +649,7 @@ class Select extends React.Component {
         });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 
@@ -689,7 +690,7 @@ class Select extends React.Component {
         this.setState({ value });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 
@@ -995,7 +996,7 @@ class Select extends React.Component {
     selectFirstOption() {
         const firstOption = this.getFirstOption(this.props.options);
 
-        this.handleOptionCheck([firstOption.value]);
+        this.handleOptionCheck([firstOption.value], null);
     }
 
     getFirstOption(options) {

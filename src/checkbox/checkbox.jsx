@@ -62,6 +62,7 @@ class CheckBox extends React.Component {
          * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
          * @param {boolean} isChecked
          * @param {string} value
+         * @param {React.ChangeEvent} event
          */
         onChange: Type.func,
         /**
@@ -217,14 +218,14 @@ class CheckBox extends React.Component {
         event.stopPropagation();
     }
 
-    handleChange = () => {
+    handleChange = (event) => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 
             if (this.props.onChange) {
-                this.props.onChange(nextCheckedValue, this.props.value);
+                this.props.onChange(nextCheckedValue, this.props.value, event);
             }
         }
     };

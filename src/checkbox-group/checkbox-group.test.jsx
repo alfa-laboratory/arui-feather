@@ -122,7 +122,12 @@ describe('checkbox-group', () => {
         const checkboxControlNode = checkBoxGroup.find('.checkbox__control');
 
         checkboxControlNode.simulate('change');
-        expect(onChange).toHaveBeenCalledWith(['value_1']);
+        expect(onChange).toHaveBeenCalledWith(
+            ['value_1'],
+            expect.objectContaining({
+                nativeEvent: expect.any(Object)
+            })
+        );
     });
 
     it('should disable all child radios when disabled=true', () => {

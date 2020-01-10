@@ -541,7 +541,7 @@ describe('select', () => {
             const actualValue = hiddenInput.prop('value');
 
             expect(actualValue).toEqual(expectedValue);
-            expect(onChange).toBeCalledWith(expectedValue);
+            expect(onChange).toBeCalledWith(expectedValue, null);
         });
 
         it('should not auto select first value', () => {

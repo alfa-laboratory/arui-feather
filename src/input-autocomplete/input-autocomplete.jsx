@@ -242,7 +242,7 @@ class InputAutocomplete extends React.Component {
         ];
     }
 
-    handleItemCheck = (checkedItemsValues) => {
+    handleItemCheck = (checkedItemsValues, event) => {
         const checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
         const checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
@@ -258,7 +258,7 @@ class InputAutocomplete extends React.Component {
             this.setState({ value: newValue });
 
             if (this.props.onChange) {
-                this.props.onChange(newValue);
+                this.props.onChange(newValue, event);
             }
         }
 
@@ -280,11 +280,11 @@ class InputAutocomplete extends React.Component {
         }
     };
 
-    handleChange = (value) => {
+    handleChange = (value, event) => {
         this.setState({ value });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 

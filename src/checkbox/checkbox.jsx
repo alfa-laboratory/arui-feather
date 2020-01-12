@@ -100,7 +100,6 @@ class CheckBox extends React.PureComponent {
     root;
 
     render() {
-        console.log('render');
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (

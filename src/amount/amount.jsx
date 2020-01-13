@@ -6,7 +6,7 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 import Heading from '../heading/heading';
-import Label from '../label/index';
+import Label from '../label';
 import performance from '../performance';
 
 import {

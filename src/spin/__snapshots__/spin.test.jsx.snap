@@ -1,12 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`spin should render themed component without problems 1`] = `
+<ForwardRef(ThemedComponent(Spin))>
+  <Spin
+    size="m"
+    theme="alfa-on-white"
+    visible={false}
+  >
+    <span
+      className="spin spin_size_m spin_theme_alfa-on-white"
+    />
+  </Spin>
+</ForwardRef(ThemedComponent(Spin))>
+`;
+
 exports[`spin should render without problems 1`] = `
 <Spin
   size="m"
   visible={false}
 >
   <span
-    className="spin spin_size_m spin_theme_alfa-on-white"
+    className="spin spin_size_m"
   />
 </Spin>
 `;

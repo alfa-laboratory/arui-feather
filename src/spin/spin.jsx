@@ -12,6 +12,8 @@ import { createCn } from 'bem-react-classname';
  */
 
 class Spin extends React.PureComponent {
+    cn = createCn('spin');
+
     static propTypes = {
         /** Управление видимостью компонента */
         visible: Type.bool,
@@ -31,8 +33,6 @@ class Spin extends React.PureComponent {
         visible: false,
         size: 'm'
     };
-
-    cn = createCn('spin');
 
     render() {
         return (

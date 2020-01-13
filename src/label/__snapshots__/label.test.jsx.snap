@@ -1,12 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`label should render themed component without problems 1`] = `
+<ForwardRef(ThemedComponent(Label))>
+  <Label
+    isNoWrap={false}
+    size="m"
+    theme="alfa-on-white"
+  >
+    <span
+      className="label label_size_m label_theme_alfa-on-white"
+    >
+      <span
+        className="label__inner"
+      >
+        Themed label test
+      </span>
+    </span>
+  </Label>
+</ForwardRef(ThemedComponent(Label))>
+`;
+
 exports[`label should render without problems 1`] = `
 <Label
   isNoWrap={false}
   size="m"
 >
   <span
-    className="label label_size_m label_theme_alfa-on-white"
+    className="label label_size_m"
   >
     <span
       className="label__inner"

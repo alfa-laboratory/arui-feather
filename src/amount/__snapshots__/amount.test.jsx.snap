@@ -24,7 +24,7 @@ exports[`amount should render without problems 1`] = `
       size="m"
     >
       <span
-        className="label label_size_m label_theme_alfa-on-white"
+        className="label label_size_m"
       >
         <span
           className="label__inner"

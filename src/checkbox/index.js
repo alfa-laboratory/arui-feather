@@ -9,4 +9,7 @@ import './checkbox.css';
 import './checkbox_theme_alfa-on-color.css';
 import './checkbox_theme_alfa-on-white.css';
 
-export { default } from './checkbox';
+import { withTheme } from '../cn';
+import Component from './checkbox';
+
+export default withTheme(Component);

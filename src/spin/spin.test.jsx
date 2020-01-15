@@ -6,6 +6,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Spin from './spin';
+import ThemedSpin from './index';
 
 describe('spin', () => {
     it('should render without problems', () => {
@@ -18,5 +19,17 @@ describe('spin', () => {
         const spin = mount(<Spin visible={ true } />);
 
         expect(spin.getDOMNode().className).toContain('spin_visible');
+    });
+
+    it('should render themed component without problems', () => {
+        const spin = mount(<ThemedSpin>Themed label test</ThemedSpin>);
+
+        expect(spin).toMatchSnapshot();
+    });
+
+    it('should contains theme class', () => {
+        const spin = mount(<ThemedSpin />);
+
+        expect(spin.getDOMNode().className).toContain('spin_theme_alfa-on-white');
     });
 });

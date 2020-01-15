@@ -4,16 +4,17 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import cn from '../cn';
-import performance from '../performance';
+import { withTheme } from '../cn';
 
 /**
  * Компонента лейбла.
  */
-@cn('label')
-@performance()
-class Label extends React.Component {
+
+class Label extends React.PureComponent {
+    cn = createCn('label');
+
     static propTypes = {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl']),
@@ -36,17 +37,17 @@ class Label extends React.Component {
         isNoWrap: false
     };
 
-    render(cn) {
+    render() {
         return (
             <span
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     'no-wrap': this.props.isNoWrap
                 }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ cn('inner') }>
+                <span className={ this.cn('inner') }>
                     { this.props.children }
                 </span>
             </span>
@@ -54,4 +55,4 @@ class Label extends React.Component {
     }
 }
 
-export default Label;
+export default withTheme(Label);

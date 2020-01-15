@@ -19,46 +19,51 @@ exports[`amount should render without problems 1`] = `
   <div
     className="amount"
   >
-    <Label
-      isNoWrap={false}
+    <ForwardRef(ThemedComponent(Label))
       size="m"
     >
-      <span
-        className="label label_size_m label_theme_alfa-on-white"
+      <Label
+        isNoWrap={false}
+        size="m"
+        theme="alfa-on-white"
       >
         <span
-          className="label__inner"
+          className="label label_size_m label_theme_alfa-on-white"
         >
-          <span>
-            <span
-              className="amount__major"
-            >
-              1 233 141
-            </span>
-            <div
-              className="amount__minor-container"
-            >
+          <span
+            className="label__inner"
+          >
+            <span>
               <span
-                className="amount__separator"
+                className="amount__major"
               >
-                ,
+                1 233 141
               </span>
+              <div
+                className="amount__minor-container"
+              >
+                <span
+                  className="amount__separator"
+                >
+                  ,
+                </span>
+                <span
+                  className="amount__minor"
+                >
+                  45
+                </span>
+              </div>
               <span
-                className="amount__minor"
+                className="amount__currency"
               >
-                45
+                 
+                ₽
               </span>
-            </div>
-            <span
-              className="amount__currency"
-            >
-               
-              ₽
             </span>
           </span>
         </span>
-      </span>
-    </Label>
+      </Label>
+    </ForwardRef(ThemedComponent(Label))>
   </div>
 </Amount>
 `;

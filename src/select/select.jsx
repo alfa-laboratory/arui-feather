@@ -8,7 +8,7 @@ import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Button from '../button/button';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
 import Menu from '../menu/menu';

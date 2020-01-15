@@ -26,15 +26,11 @@ exports[`calendar-input should render without problems 1`] = `
       focused={false}
       formNoValidate={true}
       icon={
-        <IconButton
-          formNoValidate={false}
+        <ForwardRef(ThemedComponent(IconButton))
           onClick={[Function]}
-          size="m"
-          tag="button"
-          type="button"
         >
           <IconCalendar />
-        </IconButton>
+        </ForwardRef(ThemedComponent(IconButton))>
       }
       mask="11.11.1111"
       onBlur={[Function]}

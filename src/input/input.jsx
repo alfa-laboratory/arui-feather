@@ -8,7 +8,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import IconClose from '../icon/ui/close';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 import MaskedInput from '../masked-input/masked-input';
 
 import cn from '../cn';

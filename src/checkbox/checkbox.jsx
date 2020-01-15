@@ -8,7 +8,7 @@ import { createCn } from 'bem-react-classname';
 
 import IconCheck from '../icon/ui/tick';
 import IconIndeterminate from '../icon/ui/check-indeterminate';
-import TagButton from '../tag-button/tag-button';
+import TagButton from '../tag-button/themed';
 
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';

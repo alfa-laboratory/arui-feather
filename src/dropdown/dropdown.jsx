@@ -5,7 +5,7 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import Button from '../button/button';
+import Button from '../button/themed';
 import Link from '../link/link';
 import Popup from '../popup/popup';
 

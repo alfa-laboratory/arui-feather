@@ -10,7 +10,7 @@ import Type from 'prop-types';
 import IconClose from '../icon/ui/close';
 import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 
 import cn from '../cn';
 import performance from '../performance';

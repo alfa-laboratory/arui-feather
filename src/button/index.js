@@ -6,7 +6,4 @@ import './button.css';
 import './button_theme_alfa-on-color.css';
 import './button_theme_alfa-on-white.css';
 
-import { withTheme } from '../cn';
-import Component from './button';
-
-export default withTheme(Component);
+export { default } from './themed';

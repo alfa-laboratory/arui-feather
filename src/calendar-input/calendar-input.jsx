@@ -10,7 +10,7 @@ import Type from 'prop-types';
 
 import Calendar from '../calendar/calendar';
 import IconCalendar from '../icon/entity/calendar';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 import Input from '../input/input';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';

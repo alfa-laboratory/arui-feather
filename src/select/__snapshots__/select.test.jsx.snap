@@ -100,54 +100,61 @@ exports[`select should render without problem 1`] = `
                 >
                   Выберите:
                 </span>
-                <IconButton
+                <ForwardRef(ThemedComponent(IconButton))
                   className="select__tick"
-                  formNoValidate={false}
                   key="addon-icon"
                   size="m"
                   tag="span"
-                  type="button"
                 >
-                  <span
-                    className="icon-button select__tick icon-button_size_m"
-                    formNoValidate={null}
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseUp={[Function]}
-                    role="button"
+                  <IconButton
+                    className="select__tick"
+                    formNoValidate={false}
+                    size="m"
+                    tag="span"
+                    theme="alfa-on-white"
                     type="button"
                   >
                     <span
-                      className="icon-button__content"
-                      key="content"
+                      className="icon-button select__tick icon-button_size_m icon-button_theme_alfa-on-white"
+                      formNoValidate={null}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      role="button"
+                      type="button"
                     >
                       <span
-                        className="icon-button__text"
-                        key="text"
+                        className="icon-button__content"
+                        key="content"
                       >
-                        <IconArrowDown
-                          size="s"
+                        <span
+                          className="icon-button__text"
+                          key="text"
                         >
-                          <Icon
-                            name="arrow-down"
+                          <IconArrowDown
                             size="s"
                           >
-                            <span
-                              className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
-                            />
-                          </Icon>
-                        </IconArrowDown>
+                            <Icon
+                              name="arrow-down"
+                              size="s"
+                            >
+                              <span
+                                className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
+                              />
+                            </Icon>
+                          </IconArrowDown>
+                        </span>
                       </span>
                     </span>
-                  </span>
-                </IconButton>
+                  </IconButton>
+                </ForwardRef(ThemedComponent(IconButton))>
               </span>
             </span>
           </button>

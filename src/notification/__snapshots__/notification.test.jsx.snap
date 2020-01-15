@@ -31,19 +31,16 @@ exports[`notification should render without problems 1`] = `
     >
       notification-text
     </div>
-    <IconButton
+    <ForwardRef(ThemedComponent(IconButton))
       className="notification__closer"
-      formNoValidate={false}
       onClick={[Function]}
       size="m"
-      tag="button"
-      type="button"
     >
       <IconClose
         size="s"
         theme="alfa-on-color"
       />
-    </IconButton>
+    </ForwardRef(ThemedComponent(IconButton))>
   </div>
 </Swipeable>
 `;

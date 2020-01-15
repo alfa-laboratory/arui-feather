@@ -28,17 +28,14 @@ exports[`sidebar component should render without problems 1`] = `
       <div
         className="sidebar__closer"
       >
-        <IconButton
-          formNoValidate={false}
+        <ForwardRef(ThemedComponent(IconButton))
           onClick={[Function]}
           size="l"
-          tag="button"
-          type="button"
         >
           <IconClose
             size="l"
           />
-        </IconButton>
+        </ForwardRef(ThemedComponent(IconButton))>
       </div>
     </header>
     <div

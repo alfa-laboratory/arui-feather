@@ -5,6 +5,7 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Button from '../button/button';
 import IconButton from '../icon-button/icon-button';
@@ -16,7 +17,7 @@ import Popup from '../popup/popup';
 import PopupHeader from '../popup-header/popup-header';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
-import cn from '../cn';
+import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -28,8 +29,11 @@ const DEFAULT_TEXT_FALLBACK = 'Выберите:';
 /**
  * Элемент кнопки для выпадающего списка.
  */
-@cn('select-button')
-class SelectButton extends Button {}
+class NotThemedSelectButton extends Button {
+    cn = createCn('select-button');
+}
+
+const SelectButton = withTheme(NotThemedSelectButton);
 
 /**
  * @typedef {Object} CheckedOption
@@ -42,9 +46,9 @@ class SelectButton extends Button {}
 /**
  * Компонент выпадающего списка.
  */
-@cn('select', SelectButton, Popup)
 @performance(true)
 class Select extends React.Component {
+    cn = createCn('select');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -285,12 +289,12 @@ class Select extends React.Component {
         }
     }
 
-    render(cn, SelectButton, Popup) {
+    render() {
         const value = this.getValue();
 
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     mode: this.props.mode,
                     size: this.props.size,
                     view: this.props.view,
@@ -309,31 +313,31 @@ class Select extends React.Component {
                 } }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ cn('inner') }>
+                <span className={ this.cn('inner') }>
                     <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value } />
-                    { !!this.props.label && <span className={ cn('top') }>{ this.props.label }</span> }
-                    { this.renderButton(cn, SelectButton) }
+                    { !!this.props.label && <span className={ this.cn('top') }>{ this.props.label }</span> }
+                    { this.renderButton() }
 
                     <Mq query='--small-only' touch={ true } onMatchChange={ this.handleMqMatchChange }>
-                        { this.props.mobileMenuMode === 'native' && this.renderNativeSelect(cn) }
+                        { this.props.mobileMenuMode === 'native' && this.renderNativeSelect() }
                     </Mq>
 
                     { (this.props.error || this.props.hint) && (
                         // The <div /> wrapper is needed to fix Safari bug of "jumping" element with
                         // `display: table-caption`. See: https://github.com/alfa-laboratory/arui-feather/pull/656
-                        <div className={ cn('sub-wrapper') }>
-                            <span className={ cn('sub') }>{ this.props.error || this.props.hint }</span>
+                        <div className={ this.cn('sub-wrapper') }>
+                            <span className={ this.cn('sub') }>{ this.props.error || this.props.hint }</span>
                         </div>
                     ) }
 
                     { (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
-                        this.renderPopup(cn, Popup) }
+                        this.renderPopup() }
                 </span>
             </div>
         );
     }
 
-    renderButton(cn, SelectButton) {
+    renderButton() {
         let tickSize;
         let ToggledIcon;
         const opened = this.getOpened();
@@ -372,9 +376,9 @@ class Select extends React.Component {
                 onFocus={ this.handleButtonFocus }
                 onBlur={ this.handleButtonBlur }
             >
-                { this.renderButtonContent(cn) }
+                { this.renderButtonContent() }
                 { !this.props.hideTick && (
-                    <IconButton className={ cn('tick') } key='addon-icon' size={ this.props.size } tag='span'>
+                    <IconButton className={ this.cn('tick') } key='addon-icon' size={ this.props.size } tag='span'>
                         <ToggledIcon size={ tickSize } />
                     </IconButton>
                 ) }
@@ -386,7 +390,7 @@ class Select extends React.Component {
         );
     }
 
-    renderNativeSelect(cn) {
+    renderNativeSelect() {
         const isCheckMode = this.props.mode === 'check';
         const hasEmptyOptGroup = isCheckMode || this.state.hasGroup;
         const hasEmptyOption = !isCheckMode && !this.state.hasGroup;
@@ -401,7 +405,7 @@ class Select extends React.Component {
                 ref={ (nativeSelect) => {
                     this.nativeSelect = nativeSelect;
                 } }
-                className={ cn('native-control') }
+                className={ this.cn('native-control') }
                 disabled={ this.props.disabled }
                 multiple={ isCheckMode && 'multiple' }
                 value={ value }
@@ -430,7 +434,7 @@ class Select extends React.Component {
         );
     }
 
-    renderPopup(cn, Popup) {
+    renderPopup() {
         const optionsList = this.renderOptionsList(this.props.options);
         const opened = this.getOpened();
         const value = this.getValue();
@@ -446,7 +450,7 @@ class Select extends React.Component {
                 key='popup'
                 ref={ this.setPopupRef }
                 for={ this.props.name }
-                className={ cn('popup') }
+                className={ this.cn('popup') }
                 directions={ this.props.directions }
                 height='adaptive'
                 padded={ false }
@@ -454,7 +458,7 @@ class Select extends React.Component {
                 secondaryOffset={ this.props.popupSecondaryOffset }
                 size={ this.props.size }
                 target={ this.state.isMobile ? 'screen' : 'anchor' }
-                header={ this.state.isMobile && this.renderMobileHeader(cn) }
+                header={ this.state.isMobile && this.renderMobileHeader() }
                 visible={ popupIsVisible }
                 onClickOutside={ this.handleClickOutside }
                 minWidth={ this.state.popupStyles.minWidth }
@@ -463,7 +467,7 @@ class Select extends React.Component {
             >
                 <Menu
                     ref={ this.setMenuRef }
-                    className={ cn('menu') }
+                    className={ this.cn('menu') }
                     size={ this.props.size }
                     disabled={ this.props.disabled }
                     mode={ this.props.mode }
@@ -526,7 +530,7 @@ class Select extends React.Component {
         });
     }
 
-    renderButtonContent(cn) {
+    renderButtonContent() {
         const checkedItems = this.getCheckedItems(this.props.options);
 
         if (this.props.renderButtonContent) {
@@ -544,16 +548,16 @@ class Select extends React.Component {
         // лейбл растягивал блок до нужной ширины, т. к. настоящий лейбл позиционируется абсолютно и не влияет на размер
         // Если нет ни плейсхолдера, ни лейбла, то рендерим "Выберите:" для обратной совместимости
         return (
-            <span className={ cn('placeholder') }>
+            <span className={ this.cn('placeholder') }>
                 { this.props.placeholder || this.props.label || DEFAULT_TEXT_FALLBACK }
             </span>
         );
     }
 
-    renderMobileHeader(cn) {
+    renderMobileHeader() {
         return (
             <PopupHeader
-                className={ cn('mobile-header') }
+                className={ this.cn('mobile-header') }
                 size={ this.props.size }
                 title={ this.props.mobileTitle }
                 onCloserClick={ this.handlePopupCloserClick }

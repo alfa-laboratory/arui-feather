@@ -5,7 +5,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Label from './label';
-import ThemedLabel from './index';
 
 describe('label', () => {
     it('should render without problems', () => {
@@ -18,17 +17,5 @@ describe('label', () => {
         const label = mount(<Label />);
 
         expect(label.getDOMNode().className).toContain('label_size_m');
-    });
-
-    it('should render themed component without problems', () => {
-        const label = mount(<ThemedLabel>Themed label test</ThemedLabel>);
-
-        expect(label).toMatchSnapshot();
-    });
-
-    it('should contains theme class', () => {
-        const label = mount(<ThemedLabel />);
-
-        expect(label.getDOMNode().className).toContain('label_theme_alfa-on-white');
     });
 });

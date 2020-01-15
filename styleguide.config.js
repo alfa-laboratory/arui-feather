@@ -64,7 +64,7 @@ module.exports = {
     getExampleFilename(componentPath) {
         return path.resolve(path.dirname(componentPath), './README.md');
     },
-    ignore: ['**/*-test.jsx'],
+    ignore: ['**/*-test.jsx', '**/*-test.tsx'],
     moduleAliases: {
         'arui-feather': path.resolve(__dirname, './src/')
     },
@@ -85,7 +85,10 @@ module.exports = {
                 },
                 {
                     test: /\.tsx?/i,
-                    loader: 'ts-loader'
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: true
+                    }
                 }
             ]
         }

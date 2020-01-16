@@ -23,10 +23,10 @@ class GeminiBox extends React.PureComponent {
         width: Type.oneOf(['default', 'available'])
     }
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn({ width: this.props.width }) }
+                className={ this.cn({ width: this.props.width }) }
                 style={ this.props.style }
             >
                 <ThemeProvider theme={ this.props.theme }>

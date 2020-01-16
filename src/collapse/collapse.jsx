@@ -11,13 +11,10 @@ import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/link';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
-import performance from '../performance';
-
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
-@performance()
-class Collapse extends React.Component {
+class Collapse extends React.PureComponent {
     cn = createCn('collapse');
     static propTypes = {
         /** Управление `expanded` состоянием компонента */

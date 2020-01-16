@@ -9,16 +9,13 @@ import { createCn } from 'bem-react-classname';
 import Input from '../input/input';
 import ThemedInput from '../input/themed';
 
-import performance from '../performance';
-
 /**
  * Поле ввода номера карты с маской.
  *
  * @class
  * @extends Input
  */
-@performance()
-class CardInput extends React.Component {
+class CardInput extends React.PureComponent {
     cn = createCn('card-input');
     static propTypes = {
         ...Input.propTypes,

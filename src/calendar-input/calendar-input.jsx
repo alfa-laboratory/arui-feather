@@ -9,7 +9,7 @@ import formatDate from 'date-fns/format';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Calendar from '../calendar/calendar';
+import Calendar from '../calendar/themed';
 import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/themed';
 import Input from '../input/themed';

@@ -7,13 +7,10 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import performance from '../performance';
-
 /**
  * Компонент группы полей для текстового ввода.
  */
-@performance()
-class InputGroup extends React.Component {
+class InputGroup extends React.PureComponent {
     cn = createCn('input-group');
     static propTypes = {
         /** Управление возможностью компонента занимать всю ширину родителя */

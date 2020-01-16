@@ -6,13 +6,10 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import performance from '../performance';
-
 /**
  * Компонент формы.
  */
-@performance()
-class Form extends React.Component {
+class Form extends React.PureComponent {
     cn = createCn('form');
     static propTypes = {
         /** Способ кодирования данных формы при их отправке */

@@ -12,15 +12,13 @@ import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/themed';
 import MaskedInput from '../masked-input/masked-input';
 
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
  * Компонент текстового поля ввода.
  */
-@performance()
-class Input extends React.Component {
+class Input extends React.PureComponent {
     cn = createCn('input');
     static propTypes = {
         /**

@@ -4,4 +4,4 @@
 
 import '../input';
 
-export { default } from './email-input';
+export { default } from './themed';

@@ -2,7 +2,7 @@
 
 exports[`calendar-input should render without problems 1`] = `
 <span
-  className="calendar-input calendar-input_theme_alfa-on-white"
+  className="calendar-input"
 >
   <span>
     <Mq
@@ -20,7 +20,7 @@ exports[`calendar-input should render without problems 1`] = `
         value="2018-06-01"
       />
     </Mq>
-    <Input
+    <ForwardRef(ThemedComponent(Input))
       className="calendar-input__custom-control"
       disabledAttr={false}
       focused={false}
@@ -39,11 +39,8 @@ exports[`calendar-input should render without problems 1`] = `
       onKeyDown={[Function]}
       pattern="[0-9.]*"
       placeholder="00.00.0000"
-      resetError={true}
-      size="m"
       type="tel"
       value="01.06.2018"
-      view="default"
     />
   </span>
   <Popup
@@ -66,49 +63,14 @@ exports[`calendar-input should render without problems 1`] = `
     <div
       className="calendar-input__calendar-wrapper"
     >
-      <Calendar
-        eventDays={Array []}
-        isKeyboard={true}
+      <ForwardRef(ThemedComponent(Calendar))
         month={1529020800000}
-        months={
-          Array [
-            "Январь",
-            "Февраль",
-            "Март",
-            "Апрель",
-            "Май",
-            "Июнь",
-            "Июль",
-            "Август",
-            "Сентябрь",
-            "Октябрь",
-            "Ноябрь",
-            "Декабрь",
-          ]
-        }
-        offDays={Array []}
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMonthChange={[Function]}
         onValueChange={[Function]}
-        outputFormat="DD.MM.YYYY"
-        selectedFrom={null}
-        selectedTo={null}
-        showArrows={true}
-        showToday={false}
         value={1527811200000}
-        weekdays={
-          Array [
-            "Пн",
-            "Вт",
-            "Ср",
-            "Чт",
-            "Пт",
-            "Сб",
-            "Вс",
-          ]
-        }
       />
     </div>
   </Popup>

@@ -7,16 +7,16 @@
 import React from 'react';
 import formatDate from 'date-fns/format';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import Calendar from '../calendar/calendar';
+import Calendar from '../calendar/themed';
 import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/themed';
-import Input from '../input/input';
+import Input from '../input/themed';
 import Mq from '../mq/mq';
 import Popup from '../popup/popup';
 import PopupHeader from '../popup-header/popup-header';
 
-import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import { isNodeOutsideElement } from '../lib/window';
 import {
@@ -37,9 +37,9 @@ const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 /**
  * Компонент для ввода даты.
  */
-@cn('calendar-input', Input, Popup)
 @performance(true)
 class CalendarInput extends React.Component {
+    cn = createCn('calendar-input');
     static propTypes = {
         /** Содержимое поля ввода */
         value: Type.string,
@@ -251,7 +251,7 @@ class CalendarInput extends React.Component {
         }
     }
 
-    render(cn, Input, Popup) {
+    render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const commonProps = {
@@ -279,7 +279,7 @@ class CalendarInput extends React.Component {
 
         return (
             <span
-                className={ cn({ width: this.props.width }) }
+                className={ this.cn({ width: this.props.width }) }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span
@@ -298,7 +298,7 @@ class CalendarInput extends React.Component {
                                 } }
                                 { ...commonProps }
                                 { ...nativeProps }
-                                className={ cn('native-control') }
+                                className={ this.cn('native-control') }
                                 type='date'
                                 value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
                                 onBlur={ this.handleNativeInputBlur }
@@ -313,7 +313,7 @@ class CalendarInput extends React.Component {
                         } }
                         { ...commonProps }
                         autocomplete={ this.props.autocomplete }
-                        className={ cn('custom-control') }
+                        className={ this.cn('custom-control') }
                         disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
                         focused={ this.state.isInputFocused || this.state.isCalendarFocused }
                         mask='11.11.1111'
@@ -345,12 +345,12 @@ class CalendarInput extends React.Component {
                         }
                     />
                 </span>
-                { this.renderPopup(cn, value, Popup) }
+                { this.renderPopup(value) }
             </span>
         );
     }
 
-    renderPopup(cn, value, Popup) {
+    renderPopup(value) {
         let opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         if (this.isSimpleInput()) {
@@ -369,7 +369,7 @@ class CalendarInput extends React.Component {
                 header={ this.isMobilePopup() && this.renderMobileHeader() }
                 padded={ false }
             >
-                <div className={ cn('calendar-wrapper', { mobile: this.isMobilePopup() }) }>
+                <div className={ this.cn('calendar-wrapper', { mobile: this.isMobilePopup() }) }>
                     <Calendar
                         ref={ (calendar) => {
                             this.calendar = calendar;

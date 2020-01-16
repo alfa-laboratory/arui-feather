@@ -4,8 +4,7 @@
 
 import React, { Children, cloneElement } from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
 
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
@@ -17,8 +16,8 @@ const breakpointsType = {
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
-@cn('grid-row')
 class GridRow extends React.PureComponent {
+    cn = createCn('grid-row');
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -69,7 +68,7 @@ class GridRow extends React.PureComponent {
      */
     classCol = 'grid-col'
 
-    render(cn) {
+    render() {
         const {
             tag: Tag,
             gutter,
@@ -104,7 +103,7 @@ class GridRow extends React.PureComponent {
         return (
             <Tag
                 { ...props }
-                className={ cn({
+                className={ this.cn({
                     ...gutters,
                     align,
                     justify

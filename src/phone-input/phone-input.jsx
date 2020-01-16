@@ -8,6 +8,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Input from '../input/input';
+import ThemedInput from '../input/themed';
 
 import cn from '../cn';
 import performance from '../performance';
@@ -17,7 +18,7 @@ import performance from '../performance';
  *
  * @extends Input
  */
-@cn('phone-input', Input)
+@cn('phone-input', ThemedInput)
 @performance()
 class PhoneInput extends React.Component {
     static propTypes = {

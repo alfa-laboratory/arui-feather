@@ -40,7 +40,7 @@ exports[`calendar should render without problems 1`] = `
   }
 >
   <div
-    className="calendar calendar_theme_alfa-on-white"
+    className="calendar"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}

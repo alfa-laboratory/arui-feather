@@ -4,16 +4,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент формы.
  */
-@cn('form')
-@performance()
-class Form extends React.Component {
+class Form extends React.PureComponent {
+    cn = createCn('form');
     static propTypes = {
         /** Способ кодирования данных формы при их отправке */
         enctype: Type.oneOf(['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain']),
@@ -59,7 +56,7 @@ class Form extends React.Component {
         autocomplete: true
     };
 
-    render(cn) {
+    render() {
         return (
             <form
                 action={ this.props.action }
@@ -67,7 +64,7 @@ class Form extends React.Component {
                 method={ this.props.method }
                 noValidate={ this.props.noValidate }
                 autoComplete={ this.props.autocomplete === false ? 'off' : 'on' }
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     view: this.props.view
                 }) }
@@ -79,7 +76,7 @@ class Form extends React.Component {
                 { this.props.children }
                 {
                     this.props.footer &&
-                        <div className={ cn('footer') }>
+                        <div className={ this.cn('footer') }>
                             { this.props.footer }
                         </div>
                 }

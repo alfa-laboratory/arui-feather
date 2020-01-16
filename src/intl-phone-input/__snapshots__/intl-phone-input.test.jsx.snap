@@ -1,10 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`intl-phone-input renders without problems 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
     <Select
       className="intl-phone-input__select"
@@ -47,19 +46,16 @@ exports[`intl-phone-input renders without problems 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="m"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
     <Select
       className="intl-phone-input__select"
@@ -102,19 +98,16 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="l"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
     <Select
       className="intl-phone-input__select"
@@ -157,19 +150,16 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="m"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
     <Select
       className="intl-phone-input__select"
@@ -212,19 +202,16 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="s"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
     <Select
       className="intl-phone-input__select"
@@ -267,10 +254,8 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="xl"
   type="tel"
   value="+7"
-  view="default"
 />
 `;

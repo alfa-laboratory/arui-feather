@@ -8,6 +8,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Input from '../input/input';
+import ThemedInput from '../input/themed';
 import Menu from '../menu/menu';
 import Popup from '../popup/popup';
 import ResizeSensor from '../resize-sensor/resize-sensor';
@@ -23,7 +24,7 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
  *
  * @extends Input
  */
-@cn('input', Input)
+@cn('input', ThemedInput)
 @performance(true)
 class InputAutocomplete extends React.Component {
     static propTypes = {

@@ -35,7 +35,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
   <div
     className="input__autocomplete-case input__autocomplete-case_width_default"
   >
-    <Input
+    <ForwardRef(ThemedComponent(Input))
       autocomplete={false}
       className="input input_has-autocomplete input_theme_alfa-on-white"
       closeOnSelect={false}
@@ -50,7 +50,6 @@ exports[`input-autocomplete should render input with provided default value 1`] 
       }
       disabled={false}
       equalPopupWidth={false}
-      formNoValidate={false}
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -69,47 +68,88 @@ exports[`input-autocomplete should render input with provided default value 1`] 
         ]
       }
       renderPopupOnFocus={false}
-      resetError={true}
       size="m"
-      type="text"
       updateValueOnItemSelect={true}
       value="default"
-      view="default"
       width="default"
     >
-      <span
-        className="input input input_has-autocomplete input_theme_alfa-on-white input_type_text input_view_default input_size_m input_width_default input_has-value"
+      <Input
+        autocomplete={false}
+        className="input input_has-autocomplete input_theme_alfa-on-white"
+        closeOnSelect={false}
+        defaultValue="default"
+        directions={
+          Array [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right",
+          ]
+        }
+        disabled={false}
+        equalPopupWidth={false}
+        formNoValidate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        options={
+          Array [
+            Object {
+              "value": "VKontakte",
+            },
+            Object {
+              "value": "Facebook",
+            },
+            Object {
+              "value": "Twitter",
+            },
+          ]
+        }
+        renderPopupOnFocus={false}
+        resetError={true}
+        size="m"
+        theme="alfa-on-white"
+        type="text"
+        updateValueOnItemSelect={true}
+        value="default"
+        view="default"
+        width="default"
       >
         <span
-          className="input__inner"
+          className="input input input_has-autocomplete input_theme_alfa-on-white input_type_text input_view_default input_size_m input_width_default input_has-value input_theme_alfa-on-white"
         >
           <span
-            className="input__box"
-            key="input-wrapper"
+            className="input__inner"
           >
-            <input
-              autoComplete="off"
-              className="input__control"
-              formNoValidate={false}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onPaste={[Function]}
-              onTouchCancel={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              type="text"
-              value="default"
-              view="default"
-            />
+            <span
+              className="input__box"
+              key="input-wrapper"
+            >
+              <input
+                autoComplete="off"
+                className="input__control"
+                formNoValidate={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onPaste={[Function]}
+                onTouchCancel={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                type="text"
+                value="default"
+                view="default"
+              />
+            </span>
           </span>
         </span>
-      </span>
-    </Input>
+      </Input>
+    </ForwardRef(ThemedComponent(Input))>
     <ResizeSensor
       key="popup-sensor"
       onResize={[Function]}
@@ -455,7 +495,7 @@ exports[`input-autocomplete should render without problem 1`] = `
   <div
     className="input__autocomplete-case input__autocomplete-case_width_default"
   >
-    <Input
+    <ForwardRef(ThemedComponent(Input))
       autocomplete={false}
       className="input input_has-autocomplete input_theme_alfa-on-white"
       closeOnSelect={false}
@@ -469,54 +509,81 @@ exports[`input-autocomplete should render without problem 1`] = `
       }
       disabled={false}
       equalPopupWidth={false}
-      formNoValidate={false}
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       options={Array []}
       renderPopupOnFocus={false}
-      resetError={true}
       size="m"
-      type="text"
       updateValueOnItemSelect={true}
       value=""
-      view="default"
       width="default"
     >
-      <span
-        className="input input input_has-autocomplete input_theme_alfa-on-white input_type_text input_view_default input_size_m input_width_default"
+      <Input
+        autocomplete={false}
+        className="input input_has-autocomplete input_theme_alfa-on-white"
+        closeOnSelect={false}
+        directions={
+          Array [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right",
+          ]
+        }
+        disabled={false}
+        equalPopupWidth={false}
+        formNoValidate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        options={Array []}
+        renderPopupOnFocus={false}
+        resetError={true}
+        size="m"
+        theme="alfa-on-white"
+        type="text"
+        updateValueOnItemSelect={true}
+        value=""
+        view="default"
+        width="default"
       >
         <span
-          className="input__inner"
+          className="input input input_has-autocomplete input_theme_alfa-on-white input_type_text input_view_default input_size_m input_width_default input_theme_alfa-on-white"
         >
           <span
-            className="input__box"
-            key="input-wrapper"
+            className="input__inner"
           >
-            <input
-              autoComplete="off"
-              className="input__control"
-              formNoValidate={false}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onPaste={[Function]}
-              onTouchCancel={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              type="text"
-              value=""
-              view="default"
-            />
+            <span
+              className="input__box"
+              key="input-wrapper"
+            >
+              <input
+                autoComplete="off"
+                className="input__control"
+                formNoValidate={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onPaste={[Function]}
+                onTouchCancel={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                type="text"
+                value=""
+                view="default"
+              />
+            </span>
           </span>
         </span>
-      </span>
-    </Input>
+      </Input>
+    </ForwardRef(ThemedComponent(Input))>
   </div>
 </InputAutocomplete>
 `;

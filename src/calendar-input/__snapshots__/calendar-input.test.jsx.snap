@@ -20,7 +20,7 @@ exports[`calendar-input should render without problems 1`] = `
         value="2018-06-01"
       />
     </Mq>
-    <Input
+    <ForwardRef(ThemedComponent(Input))
       className="calendar-input__custom-control"
       disabledAttr={false}
       focused={false}
@@ -39,11 +39,8 @@ exports[`calendar-input should render without problems 1`] = `
       onKeyDown={[Function]}
       pattern="[0-9.]*"
       placeholder="00.00.0000"
-      resetError={true}
-      size="m"
       type="tel"
       value="01.06.2018"
-      view="default"
     />
   </span>
   <Popup

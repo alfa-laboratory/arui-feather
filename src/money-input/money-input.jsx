@@ -8,6 +8,7 @@ import React from 'react';
 import Type from 'prop-types';
 
 import Input from '../input/input';
+import ThemedInput from '../input/themed';
 import Mask from '../masked-input/mask';
 
 import cn from '../cn';
@@ -56,7 +57,7 @@ function splitInteger(str) {
  *
  * @extends Input
  */
-@cn('money-input', Input)
+@cn('money-input', ThemedInput)
 @performance()
 class MoneyInput extends React.Component {
     static propTypes = {

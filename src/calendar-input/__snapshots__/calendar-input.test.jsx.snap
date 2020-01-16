@@ -2,7 +2,7 @@
 
 exports[`calendar-input should render without problems 1`] = `
 <span
-  className="calendar-input calendar-input_theme_alfa-on-white"
+  className="calendar-input"
 >
   <span>
     <Mq

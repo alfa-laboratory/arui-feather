@@ -5,12 +5,12 @@
 // @ts-nocheck
 
 import React from 'react';
+import { createCn } from 'bem-react-classname';
 
 import FlagIcon from '../flag-icon/flag-icon';
-import Input from '../input/input';
+import Input from '../input/themed';
 import Select from '../select/select';
 
-import cn from '../cn';
 import performance from '../performance';
 
 import countries from '../lib/countries';
@@ -22,9 +22,9 @@ const MAX_DIAL_CODE_LENGTH = 4;
  * Компонент ввода международного телефона по маске.
  *
  */
-@cn('intl-phone-input', Input, Select)
 @performance()
 class IntlPhoneInput extends React.Component {
+    cn = createCn('intl-phone-input');
     static propTypes = Input.propTypes;
 
     static defaultProps = {
@@ -68,10 +68,10 @@ class IntlPhoneInput extends React.Component {
         }
     }
 
-    render(cn, Input, Select) {
+    render() {
         return (
             <Input
-                className={ cn() }
+                className={ this.cn() }
                 ref={ (input) => {
                     this.input = input;
                 } }
@@ -79,13 +79,13 @@ class IntlPhoneInput extends React.Component {
                 focused={ this.state.inputFocused || this.state.selectFocused }
                 leftAddons={
                     <Select
-                        className={ cn('select') }
+                        className={ this.cn('select') }
                         ref={ (select) => {
                             this.select = select;
                         } }
                         disabled={ this.props.disabled }
                         mode='radio'
-                        options={ this.getOptions(cn) }
+                        options={ this.getOptions() }
                         popupSecondaryOffset={ this.getSelectPopupOffset() }
                         renderButtonContent={ this.renderSelectButtonContent }
                         size={ this.props.size }
@@ -181,7 +181,7 @@ class IntlPhoneInput extends React.Component {
         }, this.setCountry);
     };
 
-    getOptions = (cn) => {
+    getOptions = () => {
         this.countries = countries.getCountries();
 
         return this.state.onceOpened ? this.countries.map(country => ({
@@ -189,12 +189,12 @@ class IntlPhoneInput extends React.Component {
             text: (
                 <span>
                     { country.name }
-                    <span className={ cn('select-option-code') }>+{ country.dialCode }</span>
+                    <span className={ this.cn('select-option-code') }>+{ country.dialCode }</span>
                 </span>
             ),
             nativeText: `${country.name} +${country.dialCode}`,
             icon: (
-                <span className={ cn('select-option-flag') }>
+                <span className={ this.cn('select-option-flag') }>
                     { this.renderFlagIcon(country.iso2) }
                 </span>
             )

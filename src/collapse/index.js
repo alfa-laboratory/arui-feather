@@ -8,4 +8,4 @@ import '../resize-sensor';
 
 import './collapse.css';
 
-export { default } from './collapse';
+export { default } from './themed';

@@ -4,21 +4,21 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Button from '../button/themed';
 import Link from '../link/link';
 import Popup from '../popup/popup';
 
-import cn from '../cn';
 import performance from '../performance';
 import { POPUP_MAIN_OFFSET } from '../vars';
 
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
-@cn('dropdown')
 @performance()
 class Dropdown extends React.Component {
+    cn = createCn('dropdown');
     static propTypes = {
         /** Тип компонента */
         switcherType: Type.oneOf(['link', 'button']),
@@ -125,32 +125,32 @@ class Dropdown extends React.Component {
         this.popup.setTarget(this.switcher.getNode());
     }
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn() }
+                className={ this.cn() }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
-                { this.renderSwitcher(cn) }
-                { this.renderPopup(cn) }
+                { this.renderSwitcher() }
+                { this.renderPopup() }
             </div>
         );
     }
 
-    renderSwitcher(cn) {
+    renderSwitcher() {
         const content = this.props.children || this.props.switcherText;
         const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
         return this.props.switcherType === 'button'
-            ? this.renderSwitcherButton(cn, content, opened)
-            : this.renderSwitcherLink(cn, content);
+            ? this.renderSwitcherButton(content, opened)
+            : this.renderSwitcherLink(content);
     }
 
-    renderSwitcherButton(cn, content, opened) {
+    renderSwitcherButton(content, opened) {
         return (
             <Button
-                className={ cn('switcher') }
+                className={ this.cn('switcher') }
                 size={ this.props.size }
                 ref={ (switcher) => {
                     this.switcher = switcher;
@@ -167,10 +167,10 @@ class Dropdown extends React.Component {
         );
     }
 
-    renderSwitcherLink(cn, content) {
+    renderSwitcherLink(content) {
         return (
             <Link
-                className={ cn('switcher') }
+                className={ this.cn('switcher') }
                 size={ this.props.size }
                 ref={ (switcher) => {
                     this.switcher = switcher;
@@ -185,7 +185,7 @@ class Dropdown extends React.Component {
         );
     }
 
-    renderPopup(cn) {
+    renderPopup() {
         let mainOffset;
         const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
@@ -200,7 +200,7 @@ class Dropdown extends React.Component {
         }
 
         const popupProps = {
-            className: cn('popup'),
+            className: this.cn('popup'),
             size: this.props.size,
             mainOffset,
             ...this.props.popupProps

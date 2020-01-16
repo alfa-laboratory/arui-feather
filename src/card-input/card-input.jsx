@@ -4,10 +4,11 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import Input from '../input/input';
+import ThemedInput from '../input/themed';
 
-import cn from '../cn';
 import performance from '../performance';
 
 /**
@@ -16,9 +17,9 @@ import performance from '../performance';
  * @class
  * @extends Input
  */
-@cn('card-input', Input)
 @performance()
 class CardInput extends React.Component {
+    cn = createCn('card-input');
     static propTypes = {
         ...Input.propTypes,
         /** Подсказка в текстовом поле */
@@ -36,9 +37,9 @@ class CardInput extends React.Component {
      */
     root;
 
-    render(cn, Input) {
+    render() {
         return (
-            <Input
+            <ThemedInput
                 { ...this.props }
                 type='tel'
                 ref={ (root) => {
@@ -46,7 +47,7 @@ class CardInput extends React.Component {
                 } }
                 mask='1111 1111 1111 1111 11'
                 formNoValidate={ true }
-                className={ cn() }
+                className={ this.cn() }
             />
         );
     }

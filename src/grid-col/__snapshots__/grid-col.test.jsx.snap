@@ -2,6 +2,6 @@
 
 exports[`grid-col should render without problems 1`] = `
 <div
-  className="grid-col grid-col_theme_alfa-on-white"
+  className="grid-col"
 />
 `;

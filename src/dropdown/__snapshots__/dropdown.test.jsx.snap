@@ -14,7 +14,7 @@ exports[`dropdown should render without problems 1`] = `
   switcherType="link"
 >
   <div
-    className="dropdown dropdown_theme_alfa-on-white"
+    className="dropdown"
   >
     <Link
       checked={false}

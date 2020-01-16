@@ -78,7 +78,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
       width="default"
     >
       <span
-        className="input input_type_text input_view_default input_size_m input_width_default input_has-value input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+        className="input input input_has-autocomplete input_theme_alfa-on-white input_type_text input_view_default input_size_m input_width_default input_has-value"
       >
         <span
           className="input__inner"
@@ -485,7 +485,7 @@ exports[`input-autocomplete should render without problem 1`] = `
       width="default"
     >
       <span
-        className="input input_type_text input_view_default input_size_m input_width_default input_theme_alfa-on-white input input_has-autocomplete input_theme_alfa-on-white"
+        className="input input input_has-autocomplete input_theme_alfa-on-white input_type_text input_view_default input_size_m input_width_default"
       >
         <span
           className="input__inner"

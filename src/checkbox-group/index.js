@@ -6,7 +6,4 @@ import './checkbox-group.css';
 import './checkbox-group_theme_alfa-on-color.css';
 import './checkbox-group_theme-alfa-on-white.css';
 
-import { withTheme } from '../cn';
-import Component from './checkbox-group';
-
-export default withTheme(Component);
+export { default } from './themed';

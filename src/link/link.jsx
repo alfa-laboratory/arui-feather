@@ -9,7 +9,7 @@ import { createCn } from 'bem-react-classname';
 /**
  * Компонент ссылки.
  */
-class Link extends React.Component {
+class Link extends React.PureComponent {
     cn = createCn('link');
     static propTypes = {
         /** Иконка ссылки */

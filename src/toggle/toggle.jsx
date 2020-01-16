@@ -9,7 +9,7 @@ import { createCn } from 'bem-react-classname';
 /**
  * Компонент переключателя.
  */
-class Toggle extends React.Component {
+class Toggle extends React.PureComponent {
     cn = createCn('toggle');
     static propTypes = {
         /** Идентификатор компонента в DOM */

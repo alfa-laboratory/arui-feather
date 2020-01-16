@@ -42,7 +42,7 @@ import { HtmlElement } from '../lib/prop-types';
  *  </Page>
  * ```
  */
-class PopupContainerProvider extends React.Component {
+class PopupContainerProvider extends React.PureComponent {
     cn = createCn('popup-container');
     static propTypes = {
         /** Дочерние элементы контейнера */

@@ -12,7 +12,7 @@ import Link from '../link/themed';
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
-class MenuItem extends React.Component {
+class MenuItem extends React.PureComponent {
     cn = createCn('menu-item');
     static propTypes = {
         /** Тип элемента меню */

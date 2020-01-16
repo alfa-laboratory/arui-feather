@@ -9,7 +9,7 @@ import { createCn } from 'bem-react-classname';
 
 import FlagIcon from '../flag-icon/flag-icon';
 import Input from '../input/themed';
-import Select from '../select/select';
+import Select from '../select/themed';
 
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';

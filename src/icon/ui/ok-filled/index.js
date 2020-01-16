@@ -5,4 +5,4 @@
 import './ok-filled.css';
 import '../../../icon';
 
-export { default } from './ok-filled';
+export { default } from './themed';

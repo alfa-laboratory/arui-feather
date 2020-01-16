@@ -14,8 +14,8 @@ import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/themed';
 import Input from '../input/themed';
 import Mq from '../mq/mq';
-import Popup from '../popup/popup';
-import PopupHeader from '../popup-header/popup-header';
+import Popup from '../popup/themed';
+import PopupHeader from '../popup-header/themed';
 
 import keyboardCode from '../lib/keyboard-code';
 import { isNodeOutsideElement } from '../lib/window';

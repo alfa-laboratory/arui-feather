@@ -4,19 +4,16 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import Dropdown from '../dropdown/dropdown';
-import Link from '../link/link';
-
-import cn from '../cn';
-import performance from '../performance';
+import Dropdown from '../dropdown/themed';
+import Link from '../link/themed';
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
-@cn('menu-item')
-@performance()
 class MenuItem extends React.Component {
+    cn = createCn('menu-item');
     static propTypes = {
         /** Тип элемента меню */
         type: Type.oneOf(['link', 'dropdown', 'block']),
@@ -91,7 +88,7 @@ class MenuItem extends React.Component {
     root;
     control;
 
-    render(cn) {
+    render() {
         const content = this.props.children || this.props.value;
         let itemElement;
         let menuItemProps = {
@@ -108,7 +105,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => {
                             this.control = control;
                         } }
-                        className={ `${cn('control')} ${cn('dropdown')}` }
+                        className={ `${this.cn('control')} ${this.cn('dropdown')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
                         opened={ this.state.hovered }
@@ -136,7 +133,7 @@ class MenuItem extends React.Component {
                     onMouseEnter: this.handleMouseEnter,
                     onMouseLeave: this.handleMouseLeave
                 };
-                itemElement = <span className={ cn('control') }>{ content }</span>;
+                itemElement = <span className={ this.cn('control') }>{ content }</span>;
 
                 break;
             case 'link':
@@ -146,7 +143,7 @@ class MenuItem extends React.Component {
                         ref={ (control) => {
                             this.control = control;
                         } }
-                        className={ `${cn('control')} ${cn('link')}` }
+                        className={ `${this.cn('control')} ${this.cn('link')}` }
                         size={ this.props.size }
                         theme={ this.props.theme }
                         pseudo={ this.props.view === 'pseudo' }
@@ -169,7 +166,7 @@ class MenuItem extends React.Component {
 
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     disabled: this.props.disabled,
                     checked: this.props.checked,
                     hidden: this.props.hidden,

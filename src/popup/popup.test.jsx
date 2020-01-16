@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Popup from './index';
+import Popup from './popup';
 
 function renderPopup(popupProps, anchorProps) {
     let popup;

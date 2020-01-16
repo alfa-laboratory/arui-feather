@@ -5,4 +5,4 @@
 import './category-consulting.css';
 import '../../../icon';
 
-export { default } from './category-consulting';
+export { default } from './themed';

@@ -5,4 +5,4 @@
 import './gallery-in-camera.css';
 import '../../../icon';
 
-export { default } from './gallery-in-camera';
+export { default } from './themed';

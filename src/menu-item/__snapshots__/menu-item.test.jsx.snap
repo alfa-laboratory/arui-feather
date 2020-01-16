@@ -2,25 +2,19 @@
 
 exports[`menu-item should render without problem 1`] = `
 <div
-  className="menu-item menu-item_type_link menu-item_theme_alfa-on-white"
+  className="menu-item menu-item_type_link"
 >
-  <Link
-    checked={false}
+  <ForwardRef(ThemedComponent(Link))
     className="menu-item__control menu-item__link"
-    disabled={false}
-    iconPosition="left"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     pseudo={false}
-    size="m"
-    tabIndex={0}
     text={false}
-    url="#"
   >
     MenuItem
-  </Link>
+  </ForwardRef(ThemedComponent(Link))>
 </div>
 `;

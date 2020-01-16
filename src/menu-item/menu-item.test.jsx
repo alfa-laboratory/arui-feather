@@ -6,6 +6,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import MenuItem from './menu-item';
+import Link from '../link/link';
 
 describe('menu-item', () => {
     it('should render without problem', () => {
@@ -49,7 +50,7 @@ describe('menu-item', () => {
         const controlNode = menuItem.find('.menu-item__control').at(0);
         const switcherNode = menuItem.find('.dropdown__switcher').at(0).children();
 
-        expect(switcherNode.type()).toBe('a');
+        expect(switcherNode.type()).toBe(Link);
         expect(controlNode.prop('className')).toContain('dropdown');
         expect(popupNode.text()).toBe('MenuItem Popup');
     });

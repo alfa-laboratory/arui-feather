@@ -5,4 +5,4 @@
 import './mobile-ios.css';
 import '../../../icon';
 
-export { default } from './mobile-ios';
+export { default } from './themed';

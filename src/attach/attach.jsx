@@ -10,8 +10,6 @@ import Button from '../button/themed';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
-import performance from '../performance';
-
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 
 /**
@@ -67,8 +65,7 @@ function isEqualArray(array1, array2) {
 /**
  * Компонент прикрепления файлов.
  */
-@performance()
-class Attach extends React.Component {
+class Attach extends React.PureComponent {
     cn = createCn('attach');
     static propTypes = {
         /** Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null. */

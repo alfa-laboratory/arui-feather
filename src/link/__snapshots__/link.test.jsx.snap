@@ -13,7 +13,7 @@ exports[`link should render with rel="noreferrer noopener" when using target="_b
   url="#"
 >
   <a
-    className="link link_size_m link_theme_alfa-on-white"
+    className="link link_size_m"
     href="#"
     onBlur={[Function]}
     onClick={[Function]}
@@ -29,7 +29,7 @@ exports[`link should render with rel="noreferrer noopener" when using target="_b
 
 exports[`link should render without problems 1`] = `
 <a
-  className="link link_size_m link_theme_alfa-on-white"
+  className="link link_size_m"
   href="#"
   onBlur={[Function]}
   onClick={[Function]}

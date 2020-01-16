@@ -5,4 +5,4 @@
 import './dislike-filled.css';
 import '../../../icon';
 
-export { default } from './dislike-filled';
+export { default } from './themed';

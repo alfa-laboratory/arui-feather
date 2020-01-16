@@ -5,18 +5,16 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
  * Компонент многострочного текстового ввода.
  */
-@cn('textarea')
-@performance()
-class Textarea extends React.Component {
+class Textarea extends React.PureComponent {
+    cn = createCn('textarea');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -129,11 +127,11 @@ class Textarea extends React.Component {
      */
     control;
 
-    render(cn) {
+    render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const textareaProps = {
-            className: cn('control'),
+            className: this.cn('control'),
             [this.props.autosize ? 'inputRef' : 'ref']: (control) => {
                 this.control = control;
             },
@@ -155,7 +153,7 @@ class Textarea extends React.Component {
 
         return (
             <span
-                className={ cn({
+                className={ this.cn({
                     disabled: this.props.disabled,
                     focused: this.state.focused,
                     autosize: this.props.autosize,
@@ -172,10 +170,10 @@ class Textarea extends React.Component {
                 } }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ cn('inner') }>
+                <span className={ this.cn('inner') }>
                     {
                         !!this.props.label &&
-                        <span className={ cn('top') }>
+                        <span className={ this.cn('top') }>
                             { this.props.label }
                         </span>
                     }
@@ -192,7 +190,7 @@ class Textarea extends React.Component {
                     }
                     {
                         (this.props.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
+                        <span className={ this.cn('sub') }>
                             { this.props.error || this.props.hint }
                         </span>
                     }

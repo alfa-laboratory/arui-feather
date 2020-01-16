@@ -5,4 +5,4 @@
 import './format-sketch.css';
 import '../../../icon';
 
-export { default } from './format-sketch';
+export { default } from './themed';

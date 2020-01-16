@@ -5,4 +5,4 @@
 import './transfer-by-phone.css';
 import '../../../icon';
 
-export { default } from './transfer-by-phone';
+export { default } from './themed';

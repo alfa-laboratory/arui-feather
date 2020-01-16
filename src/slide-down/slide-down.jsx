@@ -4,17 +4,14 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-@cn('slide-down')
-@performance()
-class SlideDown extends React.Component {
+class SlideDown extends React.PureComponent {
+    cn = createCn('slide-down');
     static propTypes = {
         /** Управление состоянием expand/collapse компонента */
         isExpanded: Type.bool,
@@ -56,10 +53,10 @@ class SlideDown extends React.Component {
         }
     }
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn() }
+                className={ this.cn() }
                 id={ this.props.id }
                 style={
                     { height: this.getHeight() }
@@ -71,7 +68,7 @@ class SlideDown extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
-                    className={ cn('content', { expanded: this.state.isHeightAuto }) }
+                    className={ this.cn('content', { expanded: this.state.isHeightAuto }) }
                     ref={ (slideDownContent) => {
                         this.slideDownContent = slideDownContent;
                     } }

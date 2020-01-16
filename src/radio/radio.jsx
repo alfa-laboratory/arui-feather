@@ -4,10 +4,9 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import cn from '../cn';
 import TagButton from '../tag-button/themed';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -22,9 +21,8 @@ const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
 /**
  * Компонент радио-кнопки.
  */
-@cn('radio', TagButton)
-@performance()
-class Radio extends React.Component {
+class Radio extends React.PureComponent {
+    cn = createCn('radio');
     static propTypes = {
         /** Тип */
         type: Type.oneOf(['normal', 'button']),
@@ -99,13 +97,13 @@ class Radio extends React.Component {
     label;
     control;
 
-    render(cn, TagButton) {
+    render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     disabled: this.props.disabled,
                     checked,
@@ -129,15 +127,15 @@ class Radio extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.type === 'button'
-                    ? this.renderButtonRadio(cn, checked, TagButton)
-                    : this.renderNormalRadio(cn, checked) }
+                    ? this.renderButtonRadio(checked, TagButton)
+                    : this.renderNormalRadio(checked) }
             </label>
         );
     }
 
-    renderNormalRadio(cn, checked) {
+    renderNormalRadio(checked) {
         return [
-            <span className={ cn('box') } key={ 0 }>
+            <span className={ this.cn('box') } key={ 0 }>
                 <input
                     checked={ checked }
                     disabled={ this.props.disabled }
@@ -147,7 +145,7 @@ class Radio extends React.Component {
                     autoComplete='off'
                     tabIndex='-1'
                     type='radio'
-                    className={ cn('control') }
+                    className={ this.cn('control') }
                     ref={ (control) => {
                         this.control = control;
                     } }
@@ -156,14 +154,14 @@ class Radio extends React.Component {
                 />
             </span>,
             this.props.text && (
-                <span className={ cn('text') } role='presentation' key={ 1 }>
+                <span className={ this.cn('text') } role='presentation' key={ 1 }>
                     { this.props.text }
                 </span>
             )
         ];
     }
 
-    renderButtonRadio(cn, checked, TagButton) {
+    renderButtonRadio(checked, TagButton) {
         return (
             <div>
                 <TagButton
@@ -188,7 +186,7 @@ class Radio extends React.Component {
                     autoComplete='off'
                     tabIndex={ -1 }
                     type='radio'
-                    className={ cn('control') }
+                    className={ this.cn('control') }
                     onChange={ this.handleChange }
                     ref={ (control) => {
                         this.control = control;

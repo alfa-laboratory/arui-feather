@@ -5,4 +5,4 @@
 import './costs.css';
 import '../../../icon';
 
-export { default } from './costs';
+export { default } from './themed';

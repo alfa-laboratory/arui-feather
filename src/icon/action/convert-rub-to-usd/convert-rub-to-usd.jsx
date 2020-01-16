@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconConvertRubToUsd extends React.Component {
+class IconConvertRubToUsd extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

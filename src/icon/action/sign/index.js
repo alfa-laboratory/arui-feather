@@ -5,4 +5,4 @@
 import './sign.css';
 import '../../../icon';
 
-export { default } from './sign';
+export { default } from './themed';

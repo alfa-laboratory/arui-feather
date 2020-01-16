@@ -2,13 +2,13 @@
 
 exports[`popup-header should render without problems 1`] = `
 <div
-  className="popup-header popup-header_theme_alfa-on-white"
+  className="popup-header"
 >
   <ForwardRef(ThemedComponent(IconButton))
     className="popup-header__closer"
     onClick={[Function]}
   >
-    <IconClose />
+    <ForwardRef(ThemedComponent(IconClose)) />
   </ForwardRef(ThemedComponent(IconButton))>
   <div
     className="popup-header__title"

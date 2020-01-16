@@ -5,4 +5,4 @@
 import './camera.css';
 import '../../../icon';
 
-export { default } from './camera';
+export { default } from './themed';

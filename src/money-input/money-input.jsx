@@ -6,13 +6,11 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
-import ThemedInput from '../input/themed';
+import Input from '../input/themed';
 import Mask from '../masked-input/mask';
 
-import cn from '../cn';
-import performance from '../performance';
 import { getCurrencySymbol } from '../lib/currency-codes';
 
 const DEFAULT_FRACTION_SIZE = 2;
@@ -57,9 +55,9 @@ function splitInteger(str) {
  *
  * @extends Input
  */
-@cn('money-input', ThemedInput)
-@performance()
-class MoneyInput extends React.Component {
+
+class MoneyInput extends React.PureComponent {
+    cn = createCn('money-input');
     static propTypes = {
         ...Input.propTypes,
         /** Максимально допустимая длина значения до запятой */
@@ -115,10 +113,10 @@ class MoneyInput extends React.Component {
         }
     }
 
-    render(cn, Input) {
+    render() {
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     currency: this.props.showCurrency,
                     bold: this.props.bold,
                     width: this.props.width
@@ -136,8 +134,8 @@ class MoneyInput extends React.Component {
                     value={ this.getValue() }
                     leftAddons={
                         this.props.showCurrency ? (
-                            <span className={ cn('currency') }>
-                                <span className={ cn('value') }>{ this.getValue() }</span>
+                            <span className={ this.cn('currency') }>
+                                <span className={ this.cn('value') }>{ this.getValue() }</span>
                                 <span>{ getCurrencySymbol(this.props.currencyCode) }</span>
                             </span>
                         ) : (

@@ -4,16 +4,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент ссылки.
  */
-@cn('link')
-@performance()
 class Link extends React.Component {
+    cn = createCn('link');
     static propTypes = {
         /** Иконка ссылки */
         icon: Type.node,
@@ -97,7 +94,7 @@ class Link extends React.Component {
 
     root;
 
-    render(cn) {
+    render() {
         const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
         const { iconPosition } = this.props;
 
@@ -106,7 +103,7 @@ class Link extends React.Component {
                 this.root = root;
             },
             download: this.props.download,
-            className: cn({
+            className: this.cn({
                 disabled: this.props.disabled,
                 checked: this.props.checked,
                 pseudo: this.props.pseudo,
@@ -137,14 +134,14 @@ class Link extends React.Component {
 
         const linkContent = [this.props.children];
         const iconTemplate = this.props.icon && (
-            <span key='icon' className={ cn('icon', { left: iconPosition === 'left' }) }>
+            <span key='icon' className={ this.cn('icon', { left: iconPosition === 'left' }) }>
                 { this.props.icon }
             </span>
         );
 
         const textTemplate = this.props.text && (
-            <span key='text' className={ cn('text-container') }>
-                <span className={ cn('text') }>{ this.props.text }</span>
+            <span key='text' className={ this.cn('text-container') }>
+                <span className={ this.cn('text') }>{ this.props.text }</span>
             </span>
         );
 

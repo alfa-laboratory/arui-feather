@@ -5,4 +5,4 @@
 import './format-csv.css';
 import '../../../icon';
 
-export { default } from './format-csv';
+export { default } from './themed';

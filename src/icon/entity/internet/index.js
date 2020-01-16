@@ -5,4 +5,4 @@
 import './internet.css';
 import '../../../icon';
 
-export { default } from './internet';
+export { default } from './themed';

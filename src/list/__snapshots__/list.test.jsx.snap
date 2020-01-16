@@ -2,7 +2,7 @@
 
 exports[`list should render nested lists 1`] = `
 <ul
-  className="list list_theme_alfa-on-white"
+  className="list"
 >
   <li
     className="list__item"
@@ -55,7 +55,7 @@ exports[`list should render nested lists 1`] = `
 
 exports[`list should render ul type without problem 1`] = `
 <ol
-  className="list list_type_ordered list_theme_alfa-on-white"
+  className="list list_type_ordered"
 >
   <li
     className="list__item"
@@ -80,6 +80,6 @@ exports[`list should render ul type without problem 1`] = `
 
 exports[`list should render without problem 1`] = `
 <ul
-  className="list list_theme_alfa-on-white"
+  className="list"
 />
 `;

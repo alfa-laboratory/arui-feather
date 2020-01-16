@@ -5,4 +5,4 @@
 import './registry.css';
 import '../../../icon';
 
-export { default } from './registry';
+export { default } from './themed';

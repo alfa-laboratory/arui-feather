@@ -5,4 +5,4 @@
 import './arrow-up.css';
 import '../../../icon';
 
-export { default } from './arrow-up';
+export { default } from './themed';

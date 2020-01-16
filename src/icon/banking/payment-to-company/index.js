@@ -5,4 +5,4 @@
 import './payment-to-company.css';
 import '../../../icon';
 
-export { default } from './payment-to-company';
+export { default } from './themed';

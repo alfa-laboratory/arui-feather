@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconCheckboxDisabled extends React.Component {
+class IconCheckboxDisabled extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

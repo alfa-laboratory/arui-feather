@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconAndroidFlash extends React.Component {
+class IconAndroidFlash extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

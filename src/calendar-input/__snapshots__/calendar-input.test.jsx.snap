@@ -29,7 +29,7 @@ exports[`calendar-input should render without problems 1`] = `
         <ForwardRef(ThemedComponent(IconButton))
           onClick={[Function]}
         >
-          <IconCalendar />
+          <ForwardRef(ThemedComponent(IconCalendar)) />
         </ForwardRef(ThemedComponent(IconButton))>
       }
       mask="11.11.1111"
@@ -43,7 +43,7 @@ exports[`calendar-input should render without problems 1`] = `
       value="01.06.2018"
     />
   </span>
-  <Popup
+  <ForwardRef(ThemedComponent(Popup))
     directions={
       Array [
         "bottom-left",
@@ -52,11 +52,8 @@ exports[`calendar-input should render without problems 1`] = `
         "top-right",
       ]
     }
-    fitContaiterOffset={0}
     header={false}
     padded={false}
-    secondaryOffset={0}
-    size="s"
     target="anchor"
     visible={false}
   >
@@ -73,6 +70,6 @@ exports[`calendar-input should render without problems 1`] = `
         value={1527811200000}
       />
     </div>
-  </Popup>
+  </ForwardRef(ThemedComponent(Popup))>
 </span>
 `;

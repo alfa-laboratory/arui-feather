@@ -5,4 +5,4 @@
 import './emoney.css';
 import '../../../icon';
 
-export { default } from './emoney';
+export { default } from './themed';

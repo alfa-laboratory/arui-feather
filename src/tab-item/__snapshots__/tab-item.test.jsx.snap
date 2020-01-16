@@ -10,7 +10,7 @@ exports[`tab-item renders without problems 1`] = `
   view="default"
 >
   <a
-    className="tab-item tab-item_view_default tab-item_size_l tab-item_theme_alfa-on-white"
+    className="tab-item tab-item_view_default tab-item_size_l"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

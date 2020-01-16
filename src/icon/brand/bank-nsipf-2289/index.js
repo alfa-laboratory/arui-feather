@@ -5,4 +5,4 @@
 import './bank-nsipf-2289.css';
 import '../../../icon';
 
-export { default } from './bank-nsipf-2289';
+export { default } from './themed';

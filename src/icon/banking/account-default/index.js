@@ -5,4 +5,4 @@
 import './account-default.css';
 import '../../../icon';
 
-export { default } from './account-default';
+export { default } from './themed';

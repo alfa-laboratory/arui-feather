@@ -1,8 +1,6 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import performance from '../performance';
-
 export const getCoordinates = ({
     touches, changedTouches, clientX, clientY
 }) => (
@@ -11,8 +9,7 @@ export const getCoordinates = ({
         : { clientX, clientY }
 );
 
-@performance()
-class Swipeable extends React.Component {
+class Swipeable extends React.PureComponent {
     static propTypes = {
         /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
         delta: Type.number,

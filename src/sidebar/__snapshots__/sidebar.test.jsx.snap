@@ -2,7 +2,7 @@
 
 exports[`sidebar component should render without problems 1`] = `
 <PopupContainerProvider
-  className="sidebar sidebar_visible sidebar_theme_alfa-on-white"
+  className="sidebar sidebar_visible"
   style={
     Object {
       "width": "430px",
@@ -32,7 +32,7 @@ exports[`sidebar component should render without problems 1`] = `
           onClick={[Function]}
           size="l"
         >
-          <IconClose
+          <ForwardRef(ThemedComponent(IconClose))
             size="l"
           />
         </ForwardRef(ThemedComponent(IconButton))>

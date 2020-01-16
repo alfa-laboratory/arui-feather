@@ -5,4 +5,4 @@
 import './category-transfer.css';
 import '../../../icon';
 
-export { default } from './category-transfer';
+export { default } from './themed';

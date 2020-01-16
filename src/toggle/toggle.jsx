@@ -4,13 +4,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент переключателя.
  */
-@cn('toggle')
 class Toggle extends React.Component {
+    cn = createCn('toggle');
     static propTypes = {
         /** Идентификатор компонента в DOM */
         id: Type.string,
@@ -63,13 +63,13 @@ class Toggle extends React.Component {
         focused: false
     };
 
-    render(cn) {
+    render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <label
-                className={ cn({
+                className={ this.cn({
                     checked,
                     focused: this.state.focused,
                     disabled: this.props.disabled,
@@ -82,9 +82,9 @@ class Toggle extends React.Component {
                 htmlFor={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ cn('wrapper') }>
+                <span className={ this.cn('wrapper') }>
                     <input
-                        className={ cn('control') }
+                        className={ this.cn('control') }
                         type='checkbox'
                         autoComplete='off'
                         id={ this.props.id }
@@ -95,15 +95,15 @@ class Toggle extends React.Component {
                         onClick={ Toggle.handleClick }
                         onChange={ this.handleChange }
                     />
-                    <span className={ cn('switch') } />
+                    <span className={ this.cn('switch') } />
                     { this.props.label && (
-                        <span className={ cn('label', { align: this.props.labelAlign }) }>
+                        <span className={ this.cn('label', { align: this.props.labelAlign }) }>
                             { this.props.label }
                         </span>
                     ) }
                 </span>
                 { this.props.hint && (
-                    <span className={ cn('hint') }>{ this.props.hint }</span>
+                    <span className={ this.cn('hint') }>{ this.props.hint }</span>
                 ) }
             </label>
         );

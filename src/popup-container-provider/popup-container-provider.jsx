@@ -5,10 +5,10 @@
 import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IsolatedContainer from '../isolated-container/isolated-container';
 
-import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 
 /**
@@ -42,8 +42,8 @@ import { HtmlElement } from '../lib/prop-types';
  *  </Page>
  * ```
  */
-@cn('popup-container')
 class PopupContainerProvider extends React.Component {
+    cn = createCn('popup-container');
     static propTypes = {
         /** Дочерние элементы контейнера */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
@@ -81,10 +81,10 @@ class PopupContainerProvider extends React.Component {
         this.handleContainerDidRender();
     }
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn() }
+                className={ this.cn() }
                 id={ this.props.id }
                 ref={ (positioningContainer) => {
                     this.positioningContainer = positioningContainer;

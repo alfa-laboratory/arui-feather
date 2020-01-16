@@ -5,4 +5,4 @@
 import './location.css';
 import '../../../icon';
 
-export { default } from './location';
+export { default } from './themed';

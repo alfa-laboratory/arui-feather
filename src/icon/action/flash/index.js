@@ -5,4 +5,4 @@
 import './flash.css';
 import '../../../icon';
 
-export { default } from './flash';
+export { default } from './themed';

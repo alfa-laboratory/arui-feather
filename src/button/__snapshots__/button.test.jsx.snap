@@ -8,7 +8,7 @@ exports[`button should render without problems 1`] = `
   type="button"
 >
   <button
-    className="button button_size_m button_theme_alfa-on-white"
+    className="button button_size_m"
     formNoValidate={false}
     onBlur={[Function]}
     onClick={[Function]}

@@ -1,5 +1,7 @@
 Чекбокс обычного вида
 ```jsx
+import CheckBox from 'arui-feather/checkbox';
+
 <div>
     <div>
         {

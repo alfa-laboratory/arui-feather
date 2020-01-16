@@ -6,7 +6,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import ThemeProvider from './theme-provider';
-import Button from '../button/button';
+import Button from '../button';
 import Paragraph from '../paragraph/paragraph';
 
 describe('theme-provider', () => {

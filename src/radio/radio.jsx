@@ -5,9 +5,8 @@
 import React from 'react';
 import Type from 'prop-types';
 
-import TagButton from '../tag-button/tag-button';
-
 import cn from '../cn';
+import TagButton from '../tag-button/themed';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { createMappingPropValidator } from '../lib/prop-types';

@@ -41,7 +41,7 @@ exports[`select should render without problem 1`] = `
   width="default"
 >
   <div
-    className="select select_mode_check select_size_m select_view_default select_width_default select_theme_alfa-on-white"
+    className="select select_mode_check select_size_m select_view_default select_width_default"
   >
     <span
       className="select__inner"
@@ -50,99 +50,116 @@ exports[`select should render without problem 1`] = `
         type="hidden"
         value={Array []}
       />
-      <SelectButton
+      <ForwardRef(ThemedComponent(NotThemedSelectButton))
         disabled={false}
         focused={false}
-        formNoValidate={false}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
         size="m"
-        tag="button"
-        type="button"
       >
-        <button
-          className="select-button select-button_size_m select-button_theme_alfa-on-white"
+        <NotThemedSelectButton
           disabled={false}
+          focused={false}
           formNoValidate={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOut={[Function]}
-          onMouseUp={[Function]}
-          role="button"
+          size="m"
+          tag="button"
+          theme="alfa-on-white"
           type="button"
         >
-          <span
-            className="select-button__content"
-            key="content"
+          <button
+            className="select-button select-button_size_m select-button_theme_alfa-on-white"
+            disabled={false}
+            formNoValidate={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOut={[Function]}
+            onMouseUp={[Function]}
+            role="button"
+            type="button"
           >
             <span
-              className="select-button__text"
-              key="text"
+              className="select-button__content"
+              key="content"
             >
               <span
-                className="select__placeholder"
-              >
-                Выберите:
-              </span>
-              <IconButton
-                className="select__tick"
-                formNoValidate={false}
-                key="addon-icon"
-                size="m"
-                tag="span"
-                type="button"
+                className="select-button__text"
+                key="text"
               >
                 <span
-                  className="icon-button icon-button_size_m icon-button_theme_alfa-on-white select__tick"
-                  formNoValidate={null}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseUp={[Function]}
-                  role="button"
-                  type="button"
+                  className="select__placeholder"
                 >
-                  <span
-                    className="icon-button__content"
-                    key="content"
+                  Выберите:
+                </span>
+                <ForwardRef(ThemedComponent(IconButton))
+                  className="select__tick"
+                  key="addon-icon"
+                  size="m"
+                  tag="span"
+                >
+                  <IconButton
+                    className="select__tick"
+                    formNoValidate={false}
+                    size="m"
+                    tag="span"
+                    theme="alfa-on-white"
+                    type="button"
                   >
                     <span
-                      className="icon-button__text"
-                      key="text"
+                      className="icon-button select__tick icon-button_size_m icon-button_theme_alfa-on-white"
+                      formNoValidate={null}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseUp={[Function]}
+                      role="button"
+                      type="button"
                     >
-                      <IconArrowDown
-                        size="s"
+                      <span
+                        className="icon-button__content"
+                        key="content"
                       >
-                        <Icon
-                          name="arrow-down"
-                          size="s"
+                        <span
+                          className="icon-button__text"
+                          key="text"
                         >
-                          <span
-                            className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
-                          />
-                        </Icon>
-                      </IconArrowDown>
+                          <IconArrowDown
+                            size="s"
+                          >
+                            <Icon
+                              name="arrow-down"
+                              size="s"
+                            >
+                              <span
+                                className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
+                              />
+                            </Icon>
+                          </IconArrowDown>
+                        </span>
+                      </span>
                     </span>
-                  </span>
-                </span>
-              </IconButton>
+                  </IconButton>
+                </ForwardRef(ThemedComponent(IconButton))>
+              </span>
             </span>
-          </span>
-        </button>
-      </SelectButton>
+          </button>
+        </NotThemedSelectButton>
+      </ForwardRef(ThemedComponent(NotThemedSelectButton))>
       <Mq
         onMatchChange={[Function]}
         query="--small-only"

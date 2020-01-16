@@ -6,7 +6,7 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Button from '../button/button';
+import Button from '../button/themed';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 

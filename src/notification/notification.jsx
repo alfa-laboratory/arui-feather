@@ -11,7 +11,7 @@ import IconClose from '../icon/ui/close';
 import IconError from '../icon/ui/error';
 import IconFail from '../icon/ui/fail';
 import IconOk from '../icon/ui/ok';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 import Swipeable from '../swipeable';
 
 import cn from '../cn';

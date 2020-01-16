@@ -26,16 +26,12 @@ exports[`plate should render icon when it propperty is setted 1`] = `
   <div
     className="plate__content"
   >
-    <IconButton
+    <ForwardRef(ThemedComponent(IconButton))
       className="plate__closer"
-      formNoValidate={false}
       onClick={[Function]}
-      size="m"
-      tag="button"
-      type="button"
     >
       <IconClose />
-    </IconButton>
+    </ForwardRef(ThemedComponent(IconButton))>
   </div>
 </div>
 `;

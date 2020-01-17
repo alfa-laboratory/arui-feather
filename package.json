@@ -115,7 +115,7 @@
     "@types/react-textarea-autosize": "4.3.5",
     "acorn": "^6.1.1",
     "alfa-ui-primitives": "2.4.0",
-    "arui-demo": "2.0.0",
+    "arui-demo": "3.0.0",
     "arui-presets": "^5.1.0",
     "arui-presets-lint": "^2.0.0",
     "arui-presets-ts": "^5.0.0",

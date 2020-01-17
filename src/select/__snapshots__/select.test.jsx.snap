@@ -240,7 +240,7 @@ exports[`select should render without problem 1`] = `
                           tabindex="0"
                         >
                           <div
-                            class="menu-item menu-item_type_block"
+                            class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                           >
                             <span
                               class="menu-item__control"
@@ -249,7 +249,7 @@ exports[`select should render without problem 1`] = `
                             </span>
                           </div>
                           <div
-                            class="menu-item menu-item_type_block"
+                            class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                           >
                             <span
                               class="menu-item__control"
@@ -258,7 +258,7 @@ exports[`select should render without problem 1`] = `
                             </span>
                           </div>
                           <div
-                            class="menu-item menu-item_type_block"
+                            class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                           >
                             <span
                               class="menu-item__control"
@@ -393,7 +393,7 @@ exports[`select should render without problem 1`] = `
                           onMouseLeave={[Function]}
                           tabIndex={0}
                         >
-                          <MenuItem
+                          <ForwardRef(ThemedComponent(MenuItem))
                             checked={false}
                             hovered={null}
                             key="1"
@@ -403,22 +403,34 @@ exports[`select should render without problem 1`] = `
                             size="m"
                             type="block"
                             value={1}
-                            view="plain"
                           >
-                            <div
-                              className="menu-item menu-item_type_block"
+                            <MenuItem
+                              checked={false}
+                              hovered={null}
                               onClick={[Function]}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
+                              size="m"
+                              theme="alfa-on-white"
+                              type="block"
+                              value={1}
+                              view="plain"
                             >
-                              <span
-                                className="menu-item__control"
+                              <div
+                                className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                                onClick={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                               >
-                                Vk
-                              </span>
-                            </div>
-                          </MenuItem>
-                          <MenuItem
+                                <span
+                                  className="menu-item__control"
+                                >
+                                  Vk
+                                </span>
+                              </div>
+                            </MenuItem>
+                          </ForwardRef(ThemedComponent(MenuItem))>
+                          <ForwardRef(ThemedComponent(MenuItem))
                             checked={false}
                             hovered={null}
                             key="2"
@@ -428,22 +440,34 @@ exports[`select should render without problem 1`] = `
                             size="m"
                             type="block"
                             value={2}
-                            view="plain"
                           >
-                            <div
-                              className="menu-item menu-item_type_block"
+                            <MenuItem
+                              checked={false}
+                              hovered={null}
                               onClick={[Function]}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
+                              size="m"
+                              theme="alfa-on-white"
+                              type="block"
+                              value={2}
+                              view="plain"
                             >
-                              <span
-                                className="menu-item__control"
+                              <div
+                                className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                                onClick={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                               >
-                                Fb
-                              </span>
-                            </div>
-                          </MenuItem>
-                          <MenuItem
+                                <span
+                                  className="menu-item__control"
+                                >
+                                  Fb
+                                </span>
+                              </div>
+                            </MenuItem>
+                          </ForwardRef(ThemedComponent(MenuItem))>
+                          <ForwardRef(ThemedComponent(MenuItem))
                             checked={false}
                             hovered={null}
                             key="3"
@@ -453,21 +477,33 @@ exports[`select should render without problem 1`] = `
                             size="m"
                             type="block"
                             value={3}
-                            view="plain"
                           >
-                            <div
-                              className="menu-item menu-item_type_block"
+                            <MenuItem
+                              checked={false}
+                              hovered={null}
                               onClick={[Function]}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
+                              size="m"
+                              theme="alfa-on-white"
+                              type="block"
+                              value={3}
+                              view="plain"
                             >
-                              <span
-                                className="menu-item__control"
+                              <div
+                                className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                                onClick={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                               >
-                                Tw
-                              </span>
-                            </div>
-                          </MenuItem>
+                                <span
+                                  className="menu-item__control"
+                                >
+                                  Tw
+                                </span>
+                              </div>
+                            </MenuItem>
+                          </ForwardRef(ThemedComponent(MenuItem))>
                         </div>
                       </Menu>
                     </ForwardRef(ThemedComponent(Menu))>

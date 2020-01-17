@@ -44,39 +44,34 @@ exports[`menu should render menu items in group with group title 1`] = `
       >
         Group Title
       </div>
-      <MenuItem
+      <ForwardRef(ThemedComponent(MenuItem))
         checked={false}
         hovered={null}
         key="value1"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         size="m"
-        type="link"
         url="#1"
         value="value1"
-        view="plain"
       >
-        <div
-          className="menu-item menu-item_type_link"
+        <MenuItem
+          checked={false}
+          hovered={null}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          size="m"
+          theme="alfa-on-white"
+          type="link"
+          url="#1"
+          value="value1"
+          view="plain"
         >
-          <ForwardRef(ThemedComponent(Link))
-            checked={false}
-            className="menu-item__control menu-item__link"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            pseudo={false}
-            size="m"
-            text={false}
-            url="#1"
+          <div
+            className="menu-item menu-item_type_link menu-item_theme_alfa-on-white"
           >
-            <Link
+            <ForwardRef(ThemedComponent(Link))
               checked={false}
               className="menu-item__control menu-item__link"
-              disabled={false}
-              iconPosition="left"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -84,26 +79,44 @@ exports[`menu should render menu items in group with group title 1`] = `
               onMouseLeave={[Function]}
               pseudo={false}
               size="m"
-              tabIndex={0}
               text={false}
+              theme="alfa-on-white"
               url="#1"
             >
-              <a
-                className="link menu-item__control menu-item__link link_size_m"
-                href="#1"
+              <Link
+                checked={false}
+                className="menu-item__control menu-item__link"
+                disabled={false}
+                iconPosition="left"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
+                pseudo={false}
+                size="m"
                 tabIndex={0}
+                text={false}
+                theme="alfa-on-white"
+                url="#1"
               >
-                MenuItem 1
-              </a>
-            </Link>
-          </ForwardRef(ThemedComponent(Link))>
-        </div>
-      </MenuItem>
+                <a
+                  className="link menu-item__control menu-item__link link_size_m link_theme_alfa-on-white"
+                  href="#1"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                >
+                  MenuItem 1
+                </a>
+              </Link>
+            </ForwardRef(ThemedComponent(Link))>
+          </div>
+        </MenuItem>
+      </ForwardRef(ThemedComponent(MenuItem))>
     </div>
   </div>
 </Menu>

@@ -231,7 +231,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                         tabindex="0"
                       >
                         <div
-                          class="menu-item menu-item_type_block"
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                         >
                           <span
                             class="menu-item__control"
@@ -240,7 +240,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           </span>
                         </div>
                         <div
-                          class="menu-item menu-item_type_block"
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                         >
                           <span
                             class="menu-item__control"
@@ -275,7 +275,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                         tabindex="0"
                       >
                         <div
-                          class="menu-item menu-item_type_block"
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                         >
                           <span
                             class="menu-item__control"
@@ -284,7 +284,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           </span>
                         </div>
                         <div
-                          class="menu-item menu-item_type_block"
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                         >
                           <span
                             class="menu-item__control"
@@ -293,7 +293,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           </span>
                         </div>
                         <div
-                          class="menu-item menu-item_type_block"
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
                         >
                           <span
                             class="menu-item__control"
@@ -422,7 +422,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                         onMouseLeave={[Function]}
                         tabIndex={0}
                       >
-                        <MenuItem
+                        <ForwardRef(ThemedComponent(MenuItem))
                           checked={false}
                           hovered={null}
                           key="VKontakte"
@@ -432,22 +432,34 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           size="m"
                           type="block"
                           value="VKontakte"
-                          view="plain"
                         >
-                          <div
-                            className="menu-item menu-item_type_block"
+                          <MenuItem
+                            checked={false}
+                            hovered={null}
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            size="m"
+                            theme="alfa-on-white"
+                            type="block"
+                            value="VKontakte"
+                            view="plain"
                           >
-                            <span
-                              className="menu-item__control"
+                            <div
+                              className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                             >
-                              VKontakte
-                            </span>
-                          </div>
-                        </MenuItem>
-                        <MenuItem
+                              <span
+                                className="menu-item__control"
+                              >
+                                VKontakte
+                              </span>
+                            </div>
+                          </MenuItem>
+                        </ForwardRef(ThemedComponent(MenuItem))>
+                        <ForwardRef(ThemedComponent(MenuItem))
                           checked={false}
                           hovered={null}
                           key="Facebook"
@@ -457,22 +469,34 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           size="m"
                           type="block"
                           value="Facebook"
-                          view="plain"
                         >
-                          <div
-                            className="menu-item menu-item_type_block"
+                          <MenuItem
+                            checked={false}
+                            hovered={null}
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            size="m"
+                            theme="alfa-on-white"
+                            type="block"
+                            value="Facebook"
+                            view="plain"
                           >
-                            <span
-                              className="menu-item__control"
+                            <div
+                              className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                             >
-                              Facebook
-                            </span>
-                          </div>
-                        </MenuItem>
-                        <MenuItem
+                              <span
+                                className="menu-item__control"
+                              >
+                                Facebook
+                              </span>
+                            </div>
+                          </MenuItem>
+                        </ForwardRef(ThemedComponent(MenuItem))>
+                        <ForwardRef(ThemedComponent(MenuItem))
                           checked={false}
                           hovered={null}
                           key="Twitter"
@@ -482,21 +506,33 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           size="m"
                           type="block"
                           value="Twitter"
-                          view="plain"
                         >
-                          <div
-                            className="menu-item menu-item_type_block"
+                          <MenuItem
+                            checked={false}
+                            hovered={null}
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            size="m"
+                            theme="alfa-on-white"
+                            type="block"
+                            value="Twitter"
+                            view="plain"
                           >
-                            <span
-                              className="menu-item__control"
+                            <div
+                              className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                             >
-                              Twitter
-                            </span>
-                          </div>
-                        </MenuItem>
+                              <span
+                                className="menu-item__control"
+                              >
+                                Twitter
+                              </span>
+                            </div>
+                          </MenuItem>
+                        </ForwardRef(ThemedComponent(MenuItem))>
                       </div>
                     </Menu>
                   </ForwardRef(ThemedComponent(Menu))>

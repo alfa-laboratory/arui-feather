@@ -7,7 +7,7 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
-import FlagIcon from '../flag-icon/flag-icon';
+import FlagIcon from '../flag-icon/themed';
 import Input from '../input/themed';
 import Select from '../select/themed';
 

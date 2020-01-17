@@ -5,4 +5,4 @@
 import './format-pdf.css';
 import '../../../icon';
 
-export { default } from './format-pdf';
+export { default } from './themed';

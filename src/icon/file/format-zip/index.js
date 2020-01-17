@@ -5,4 +5,4 @@
 import './format-zip.css';
 import '../../../icon';
 
-export { default } from './format-zip';
+export { default } from './themed';

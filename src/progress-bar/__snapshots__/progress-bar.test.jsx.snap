@@ -6,7 +6,7 @@ exports[`progress-bar should render without problems 1`] = `
   size="m"
 >
   <div
-    className="progress-bar progress-bar_size_m progress-bar_theme_alfa-on-white"
+    className="progress-bar progress-bar_size_m"
   >
     <div
       className="progress-bar__current-value"

@@ -5,4 +5,4 @@
 import './category-plane.css';
 import '../../../icon';
 
-export { default } from './category-plane';
+export { default } from './themed';

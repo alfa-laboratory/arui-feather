@@ -5,4 +5,4 @@
 import './goals.css';
 import '../../../icon';
 
-export { default } from './goals';
+export { default } from './themed';

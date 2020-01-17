@@ -5,4 +5,4 @@
 import './clock.css';
 import '../../../icon';
 
-export { default } from './clock';
+export { default } from './themed';

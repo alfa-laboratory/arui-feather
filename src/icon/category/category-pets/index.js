@@ -5,4 +5,4 @@
 import './category-pets.css';
 import '../../../icon';
 
-export { default } from './category-pets';
+export { default } from './themed';

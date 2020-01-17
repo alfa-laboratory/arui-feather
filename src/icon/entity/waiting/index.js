@@ -5,4 +5,4 @@
 import './waiting.css';
 import '../../../icon';
 
-export { default } from './waiting';
+export { default } from './themed';

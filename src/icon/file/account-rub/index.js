@@ -5,4 +5,4 @@
 import './account-rub.css';
 import '../../../icon';
 
-export { default } from './account-rub';
+export { default } from './themed';

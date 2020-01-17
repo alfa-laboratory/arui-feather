@@ -5,4 +5,4 @@
 import './payment-to-person.css';
 import '../../../icon';
 
-export { default } from './payment-to-person';
+export { default } from './themed';

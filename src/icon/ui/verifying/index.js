@@ -5,4 +5,4 @@
 import './verifying.css';
 import '../../../icon';
 
-export { default } from './verifying';
+export { default } from './themed';

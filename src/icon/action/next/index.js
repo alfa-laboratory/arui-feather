@@ -5,4 +5,4 @@
 import './next.css';
 import '../../../icon';
 
-export { default } from './next';
+export { default } from './themed';

@@ -5,8 +5,7 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
-import ThemedInput from '../input/themed';
+import Input from '../input/themed';
 
 /**
  * Компонент поля ввода почты.
@@ -25,7 +24,7 @@ class EmailInput extends React.PureComponent {
 
     render() {
         return (
-            <ThemedInput
+            <Input
                 { ...this.props }
                 type='email'
                 ref={ (root) => {

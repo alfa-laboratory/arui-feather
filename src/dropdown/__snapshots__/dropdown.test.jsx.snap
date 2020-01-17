@@ -16,136 +16,160 @@ exports[`dropdown should render without problems 1`] = `
   <div
     className="dropdown"
   >
-    <Link
-      checked={false}
+    <ForwardRef(ThemedComponent(Link))
       className="dropdown__switcher"
       disabled={false}
-      iconPosition="left"
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       pseudo={true}
       size="m"
-      tabIndex={0}
       text="Switcher-example"
-      url="#"
     >
-      <a
-        className="link link_pseudo link_size_m link_theme_alfa-on-white dropdown__switcher"
-        href="#"
-        onBlur={[Function]}
+      <Link
+        checked={false}
+        className="dropdown__switcher"
+        disabled={false}
+        iconPosition="left"
         onClick={[Function]}
-        onFocus={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
+        pseudo={true}
+        size="m"
         tabIndex={0}
+        text="Switcher-example"
+        theme="alfa-on-white"
+        url="#"
       >
-        <span
-          className="link__text-container"
-          key="text"
+        <a
+          className="link dropdown__switcher link_pseudo link_size_m link_theme_alfa-on-white"
+          href="#"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
         >
           <span
-            className="link__text"
+            className="link__text-container"
+            key="text"
           >
-            Switcher-example
+            <span
+              className="link__text"
+            >
+              Switcher-example
+            </span>
           </span>
-        </span>
-      </a>
-    </Link>
-    <Popup
+        </a>
+      </Link>
+    </ForwardRef(ThemedComponent(Link))>
+    <ForwardRef(ThemedComponent(Popup))
       className="dropdown__popup"
-      fitContaiterOffset={0}
       mainOffset={6}
       onClickOutside={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      padded={true}
-      secondaryOffset={0}
       size="m"
       target="anchor"
       visible={false}
     >
-      <Portal
-        containerInfo={
-          <body>
-            <div
-              class="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
-              style="top: 6px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
-            >
+      <Popup
+        className="dropdown__popup"
+        fitContaiterOffset={0}
+        mainOffset={6}
+        onClickOutside={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        padded={true}
+        secondaryOffset={0}
+        size="m"
+        target="anchor"
+        theme="alfa-on-white"
+        visible={false}
+      >
+        <Portal
+          containerInfo={
+            <body>
               <div
-                class="popup__container"
+                class="popup dropdown__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white"
+                style="top: 6px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
               >
                 <div
-                  class="popup__inner"
+                  class="popup__container"
                 >
                   <div
-                    class="popup__content"
+                    class="popup__inner"
                   >
-                    Popup-example
-                    <iframe
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: transparent; z-index: -1;"
-                      tabindex="-1"
-                    />
+                    <div
+                      class="popup__content"
+                    >
+                      Popup-example
+                      <iframe
+                        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: transparent; z-index: -1;"
+                        tabindex="-1"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </body>
-        }
-      >
-        <div
-          className="popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white dropdown__popup"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          style={
-            Object {
-              "bottom": undefined,
-              "height": "auto",
-              "left": 0,
-              "maxHeight": "none",
-              "maxWidth": "none",
-              "minWidth": 0,
-              "right": undefined,
-              "top": 6,
-            }
+            </body>
           }
         >
           <div
-            className="popup__container"
+            className="popup dropdown__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_padded popup_theme_alfa-on-white"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "bottom": undefined,
+                "height": "auto",
+                "left": 0,
+                "maxHeight": "none",
+                "maxWidth": "none",
+                "minWidth": 0,
+                "right": undefined,
+                "top": 6,
+              }
+            }
           >
             <div
-              className="popup__inner"
-              onScroll={[Function]}
+              className="popup__container"
             >
               <div
-                className="popup__content"
+                className="popup__inner"
+                onScroll={[Function]}
               >
-                Popup-example
-                <ResizeSensor
-                  onResize={[Function]}
+                <div
+                  className="popup__content"
                 >
-                  <iframe
-                    style={
-                      Object {
-                        "background": "transparent",
-                        "border": "none",
-                        "height": "100%",
-                        "left": 0,
-                        "position": "absolute",
-                        "top": 0,
-                        "width": "100%",
-                        "zIndex": -1,
+                  Popup-example
+                  <ResizeSensor
+                    onResize={[Function]}
+                  >
+                    <iframe
+                      style={
+                        Object {
+                          "background": "transparent",
+                          "border": "none",
+                          "height": "100%",
+                          "left": 0,
+                          "position": "absolute",
+                          "top": 0,
+                          "width": "100%",
+                          "zIndex": -1,
+                        }
                       }
-                    }
-                    tabIndex="-1"
-                  />
-                </ResizeSensor>
+                      tabIndex="-1"
+                    />
+                  </ResizeSensor>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Portal>
-    </Popup>
+        </Portal>
+      </Popup>
+    </ForwardRef(ThemedComponent(Popup))>
   </div>
 </Dropdown>
 `;

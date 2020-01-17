@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconPrinter extends React.Component {
+class IconPrinter extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

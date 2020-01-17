@@ -5,4 +5,4 @@
 import './card-mastero.css';
 import '../../../icon';
 
-export { default } from './card-mastero';
+export { default } from './themed';

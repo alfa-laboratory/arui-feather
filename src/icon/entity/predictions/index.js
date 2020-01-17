@@ -5,4 +5,4 @@
 import './predictions.css';
 import '../../../icon';
 
-export { default } from './predictions';
+export { default } from './themed';

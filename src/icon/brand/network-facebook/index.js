@@ -5,4 +5,4 @@
 import './network-facebook.css';
 import '../../../icon';
 
-export { default } from './network-facebook';
+export { default } from './themed';

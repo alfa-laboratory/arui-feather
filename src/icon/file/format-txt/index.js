@@ -5,4 +5,4 @@
 import './format-txt.css';
 import '../../../icon';
 
-export { default } from './format-txt';
+export { default } from './themed';

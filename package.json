@@ -87,7 +87,6 @@
     "@babel/runtime-corejs2": "^7.7.6",
     "bem-react-classname": "^1.1.0",
     "bezier-easing": "2.1.0",
-    "cn-decorator": "2.1.0",
     "core-js": "2.5.5",
     "date-fns": "1.29.0",
     "deprecated-decorator": "0.1.6",
@@ -107,6 +106,7 @@
     "react-dom": ">=16.12"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.4",
     "@types/lodash.debounce": "4.0.6",
     "@types/lodash.sortedindexof": "4.1.6",
     "@types/react": "16.9.17",

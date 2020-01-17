@@ -8,13 +8,10 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import performance from '../performance';
-
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
-@performance()
-class Dropzone extends React.Component {
+class Dropzone extends React.PureComponent {
     cn = createCn('dropzone');
     static propTypes = {
         /** Дочерние компоненты */

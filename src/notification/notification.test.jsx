@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Notification from './';
+import Notification from './notification';
 
 describe('notification', () => {
     it('should render without problems', () => {

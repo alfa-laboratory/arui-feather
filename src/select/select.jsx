@@ -11,10 +11,10 @@ import Button from '../button/button';
 import IconButton from '../icon-button/themed';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
-import Menu from '../menu/menu';
+import Menu from '../menu/themed';
 import Mq from '../mq/mq';
-import Popup from '../popup/popup';
-import PopupHeader from '../popup-header/popup-header';
+import Popup from '../popup/themed';
+import PopupHeader from '../popup-header/themed';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { withTheme } from '../cn';

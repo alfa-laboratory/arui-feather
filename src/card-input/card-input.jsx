@@ -6,8 +6,7 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
-import ThemedInput from '../input/themed';
+import Input from '../input/themed';
 
 /**
  * Поле ввода номера карты с маской.
@@ -36,7 +35,7 @@ class CardInput extends React.PureComponent {
 
     render() {
         return (
-            <ThemedInput
+            <Input
                 { ...this.props }
                 type='tel'
                 ref={ (root) => {

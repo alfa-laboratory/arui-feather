@@ -5,4 +5,4 @@
 import './draft.css';
 import '../../../icon';
 
-export { default } from './draft';
+export { default } from './themed';

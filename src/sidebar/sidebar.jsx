@@ -6,6 +6,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
@@ -14,9 +15,7 @@ import PopupContainerProvider from '../popup-container-provider/popup-container-
 import keyboardCode from '../lib/keyboard-code';
 import getScrollbarWidth from '../lib/scrollbar-width';
 
-import cn from '../cn';
 import Mq from '../mq';
-import performance from '../performance';
 
 const SIDEBAR_WIDTH = 430;
 
@@ -61,9 +60,8 @@ function handleBodyScroll() {
 /**
  * Компонент боковой панели aka холодильник.
  */
-@cn('sidebar')
-@performance()
-class Sidebar extends React.Component {
+class Sidebar extends React.PureComponent {
+    cn = createCn('sidebar');
     static propTypes = {
         /** Тема компонента */
         theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
@@ -138,7 +136,7 @@ class Sidebar extends React.Component {
         window.removeEventListener('scroll', handleBodyScroll);
     }
 
-    render(cn) {
+    render() {
         const {
             hasCloser,
             children,
@@ -154,14 +152,14 @@ class Sidebar extends React.Component {
 
         return (
             <PopupContainerProvider
-                className={ cn({ visible }) }
+                className={ this.cn({ visible }) }
                 style={ style }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     role='button'
                     tabIndex='-1'
-                    className={ cn('overlay', { visible: visible && hasOverlay }) }
+                    className={ this.cn('overlay', { visible: visible && hasOverlay }) }
                     onClick={ this.handleClose }
                 />
                 <Mq
@@ -169,15 +167,15 @@ class Sidebar extends React.Component {
                     onMatchChange={ this.handleMqMatchChange }
                 />
                 <div
-                    className={ cn('inner') }
+                    className={ this.cn('inner') }
                     id={ this.props.id }
                 >
                     <header
-                        className={ cn('header') }
+                        className={ this.cn('header') }
                     >
                         {
                             hasCloser &&
-                            <div className={ cn('closer') }>
+                            <div className={ this.cn('closer') }>
                                 <IconButton
                                     size={ this.state.isMobile ? 'm' : 'l' }
                                     onClick={ this.handleClose }
@@ -188,25 +186,25 @@ class Sidebar extends React.Component {
                         }
                         {
                             headerContent
-                                ? this.renderHeaderContent(cn)
+                                ? this.renderHeaderContent()
                                 : null
                         }
                     </header>
                     <div
                         style={ contentStyle }
-                        className={ cn('content') }
+                        className={ this.cn('content') }
                     >
                         { children }
                     </div>
-                    <footer className={ cn('footer') } />
+                    <footer className={ this.cn('footer') } />
                 </div>
             </PopupContainerProvider>
         );
     }
 
-    renderHeaderContent(cn) {
+    renderHeaderContent() {
         return (
-            <div className={ cn('header-content') }>
+            <div className={ this.cn('header-content') }>
                 { this.props.headerContent }
             </div>
         );

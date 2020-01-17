@@ -8,7 +8,7 @@ import { createCn } from 'bem-react-classname';
 
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
-import Link from '../link/link';
+import Link from '../link/themed';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 /**

@@ -5,4 +5,4 @@
 import './discount.css';
 import '../../../icon';
 
-export { default } from './discount';
+export { default } from './themed';

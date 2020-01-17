@@ -2,7 +2,7 @@
 
 exports[`popup-container-provider should render without problems 1`] = `
 <div
-  className="popup-container popup-container_theme_alfa-on-white"
+  className="popup-container"
 >
   <div>
     Render-test

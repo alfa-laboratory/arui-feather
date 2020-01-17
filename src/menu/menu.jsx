@@ -7,11 +7,11 @@
 import React from 'react';
 import styleType from 'react-style-proptype';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconCheck from '../icon/ui/tick';
-import MenuItem from '../menu-item/menu-item';
+import MenuItem from '../menu-item/themed';
 
-import cn from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -19,9 +19,9 @@ import performance from '../performance';
 /**
  * Компонент меню.
  */
-@cn('menu')
 @performance(true)
 class Menu extends React.Component {
+    cn = createCn('menu');
     static propTypes = {
         /** Тип расположения меню: 'horizontal' */
         view: Type.string,
@@ -174,7 +174,7 @@ class Menu extends React.Component {
         }
     }
 
-    render(cn) {
+    render() {
         /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
         return (
             <div
@@ -182,7 +182,7 @@ class Menu extends React.Component {
                     this.root = root;
                 } }
                 style={ this.props.style }
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size,
                     view: this.props.view,
                     'group-view': this.props.groupView,
@@ -200,13 +200,13 @@ class Menu extends React.Component {
                 onBlur={ this.handleBlur }
                 data-test-id={ this.props['data-test-id'] }
             >
-                { !!this.props.content && this.renderMenuItemList(cn, this.props.content) }
+                { !!this.props.content && this.renderMenuItemList(this.props.content) }
             </div>
         );
         /* eslint-enable jsx-a11y/no-noninteractive-tabindex */
     }
 
-    renderMenuItemList(cn, content) {
+    renderMenuItemList(content) {
         const result = [];
         let groupKey = 0;
 
@@ -214,15 +214,15 @@ class Menu extends React.Component {
             if (item.type === 'group') {
                 result.push(
                     <div
-                        className={ cn('group') }
+                        className={ this.cn('group') }
                         key={ `group_${groupKey}` }
                     >
                         { !!item.title &&
-                            <div className={ cn('group-title') }>
+                            <div className={ this.cn('group-title') }>
                                 { item.title }
                             </div>
                         }
-                        { this.renderMenuItemList(cn, item.content) }
+                        { this.renderMenuItemList(item.content) }
                     </div>
                 );
                 groupKey += 1;

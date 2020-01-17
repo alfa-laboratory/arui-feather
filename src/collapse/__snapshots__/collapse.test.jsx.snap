@@ -14,22 +14,17 @@ exports[`collapse should render without problem 1`] = `
       onResize={[Function]}
     />
   </div>
-  <Link
-    checked={false}
+  <ForwardRef(ThemedComponent(Link))
     className="collapse__link"
-    disabled={false}
     icon={
-      <IconArrowDown
+      <ForwardRef(ThemedComponent(IconArrowDown))
         size="s"
       />
     }
     iconPosition="right"
     onClick={[Function]}
     pseudo={true}
-    size="m"
-    tabIndex={0}
     text="Expand"
-    url="#"
   />
 </div>
 `;

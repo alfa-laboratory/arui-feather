@@ -5,4 +5,4 @@
 import './offer.css';
 import '../../../icon';
 
-export { default } from './offer';
+export { default } from './themed';

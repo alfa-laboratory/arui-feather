@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconCategoryTroika extends React.Component {
+class IconCategoryTroika extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

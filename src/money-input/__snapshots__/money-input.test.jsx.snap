@@ -2,7 +2,7 @@
 
 exports[`money-input should render without problems 1`] = `
 <div
-  className="money-input money-input_theme_alfa-on-white"
+  className="money-input"
 >
   <ForwardRef(ThemedComponent(Input))
     bold={false}

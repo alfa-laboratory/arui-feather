@@ -5,4 +5,4 @@
 import './bank-europe.css';
 import '../../../icon';
 
-export { default } from './bank-europe';
+export { default } from './themed';

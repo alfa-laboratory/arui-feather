@@ -5,4 +5,4 @@
 import './like.css';
 import '../../../icon';
 
-export { default } from './like';
+export { default } from './themed';

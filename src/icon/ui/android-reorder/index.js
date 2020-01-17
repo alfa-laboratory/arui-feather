@@ -5,4 +5,4 @@
 import './android-reorder.css';
 import '../../../icon';
 
-export { default } from './android-reorder';
+export { default } from './themed';

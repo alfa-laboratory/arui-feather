@@ -5,4 +5,4 @@
 import './android-flash.css';
 import '../../../icon';
 
-export { default } from './android-flash';
+export { default } from './themed';

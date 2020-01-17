@@ -7,17 +7,15 @@ import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Button from '../button/themed';
-import Link from '../link/link';
-import Popup from '../popup/popup';
+import Link from '../link/themed';
+import Popup from '../popup/themed';
 
-import performance from '../performance';
 import { POPUP_MAIN_OFFSET } from '../vars';
 
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
-@performance()
-class Dropdown extends React.Component {
+class Dropdown extends React.PureComponent {
     cn = createCn('dropdown');
     static propTypes = {
         /** Тип компонента */

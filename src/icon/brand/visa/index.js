@@ -5,4 +5,4 @@
 import './visa.css';
 import '../../../icon';
 
-export { default } from './visa';
+export { default } from './themed';

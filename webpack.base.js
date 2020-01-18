@@ -23,6 +23,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.tsx?/i,
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true
+                }
+            },
+            {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: require.resolve('file-loader'),
                 options: Object.assign({ mimetype: 'application/font-woff' }, QUERY)

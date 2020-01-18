@@ -11,6 +11,7 @@ const upperCamelCase = require('uppercamelcase');
 const WEBPACK_BASE_TEMPLATE = require('./webpack.base');
 const config = require('arui-demo');
 
+/* eslint import/no-unresolved: 0 */
 const { version } = require('./package');
 
 const PORT = parseInt(process.env.PORT || 8080, 10);

@@ -14,21 +14,21 @@ exports[`amount should render without problems 1`] = `
   bold={false}
   isHeading={false}
   showZeroMinorPart={true}
-  size="s"
+  size="m"
 >
   <div
     className="amount"
   >
     <ForwardRef(ThemedComponent(Label))
-      size="s"
+      size="m"
     >
       <Label
         isNoWrap={false}
-        size="s"
+        size="m"
         theme="alfa-on-white"
       >
         <span
-          className="label label_size_s label_theme_alfa-on-white"
+          className="label label_size_m label_theme_alfa-on-white"
         >
           <span
             className="label__inner"

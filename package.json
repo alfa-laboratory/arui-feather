@@ -51,7 +51,7 @@
       "*.css": [
         "npm run lint-css"
       ],
-      "src/**/*.{js,jsx}": [
+      "src/**/*.{js,jsx,ts,tsx}": [
         "eslint",
         "npm run test -- --findRelatedTests"
       ],

@@ -195,6 +195,13 @@ describe('input', () => {
         expect(controlNode.props().autoComplete).toBe('email');
     });
 
+    it('should render with `data-test-id` attribute if it is set', () => {
+        const input = mount(<Input data-test-id='some value' />);
+        const rootNode = input.getDOMNode();
+
+        expect(rootNode.getAttribute('data-test-id')).toBe('some value');
+    });
+
     it('should set value from props', () => {
         const input = shallow(<Input value='text' />);
         const controlNode = input.find('input');

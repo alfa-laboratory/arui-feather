@@ -5,4 +5,4 @@
 import './credit.css';
 import '../../../icon';
 
-export { default } from './credit';
+export { default } from './themed';

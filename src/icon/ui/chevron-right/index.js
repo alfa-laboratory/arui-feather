@@ -5,4 +5,4 @@
 import './chevron-right.css';
 import '../../../icon';
 
-export { default } from './chevron-right';
+export { default } from './themed';

@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconGeolocationMap extends React.Component {
+class IconGeolocationMap extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

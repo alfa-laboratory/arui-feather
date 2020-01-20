@@ -2,7 +2,7 @@
 
 exports[`list-header should render with \`description\` prop passed 1`] = `
 <div
-  className="list-header list-header_theme_alfa-on-white"
+  className="list-header"
 >
   <span
     className="list-header__title"
@@ -20,7 +20,7 @@ exports[`list-header should render with \`description\` prop passed 1`] = `
 
 exports[`list-header should render with \`filled\` view passed 1`] = `
 <div
-  className="list-header list-header_filled list-header_theme_alfa-on-white"
+  className="list-header list-header_filled"
 >
   <span
     className="list-header__title"
@@ -38,7 +38,7 @@ exports[`list-header should render with \`filled\` view passed 1`] = `
 
 exports[`list-header should render without problems 1`] = `
 <div
-  className="list-header list-header_theme_alfa-on-white"
+  className="list-header"
 >
   <span
     className="list-header__title"

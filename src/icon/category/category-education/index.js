@@ -5,4 +5,4 @@
 import './category-education.css';
 import '../../../icon';
 
-export { default } from './category-education';
+export { default } from './themed';

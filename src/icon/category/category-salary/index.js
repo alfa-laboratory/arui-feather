@@ -5,4 +5,4 @@
 import './category-salary.css';
 import '../../../icon';
 
-export { default } from './category-salary';
+export { default } from './themed';

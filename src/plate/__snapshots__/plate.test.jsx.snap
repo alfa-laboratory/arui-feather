@@ -2,14 +2,14 @@
 
 exports[`plate should render icon when it propperty is setted 1`] = `
 <div
-  className="plate plate_has-closer plate_has-icon plate_type_success plate_theme_alfa-on-white"
+  className="plate plate_has-closer plate_has-icon plate_type_success"
   onClick={[Function]}
   onKeyDown={[Function]}
 >
   <span
     className="plate__icon"
   >
-    <IconOk
+    <ForwardRef(ThemedComponent(IconOk))
       colored={true}
     />
   </span>
@@ -26,23 +26,19 @@ exports[`plate should render icon when it propperty is setted 1`] = `
   <div
     className="plate__content"
   >
-    <IconButton
+    <ForwardRef(ThemedComponent(IconButton))
       className="plate__closer"
-      formNoValidate={false}
       onClick={[Function]}
-      size="m"
-      tag="button"
-      type="button"
     >
-      <IconClose />
-    </IconButton>
+      <ForwardRef(ThemedComponent(IconClose)) />
+    </ForwardRef(ThemedComponent(IconButton))>
   </div>
 </div>
 `;
 
 exports[`plate should render without problems 1`] = `
 <div
-  className="plate plate_type_default plate_theme_alfa-on-white"
+  className="plate plate_type_default"
   onClick={[Function]}
   onKeyDown={[Function]}
 >

@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconCurrencyJpy extends React.Component {
+class IconCurrencyJpy extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

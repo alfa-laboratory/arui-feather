@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconFingerprint extends React.Component {
+class IconFingerprint extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

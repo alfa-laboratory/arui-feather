@@ -5,4 +5,4 @@
 import './category-vip-room.css';
 import '../../../icon';
 
-export { default } from './category-vip-room';
+export { default } from './themed';

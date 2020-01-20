@@ -5,4 +5,4 @@
 import './crown.css';
 import '../../../icon';
 
-export { default } from './crown';
+export { default } from './themed';

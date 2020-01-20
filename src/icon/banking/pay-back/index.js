@@ -5,4 +5,4 @@
 import './pay-back.css';
 import '../../../icon';
 
-export { default } from './pay-back';
+export { default } from './themed';

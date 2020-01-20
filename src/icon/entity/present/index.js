@@ -5,4 +5,4 @@
 import './present.css';
 import '../../../icon';
 
-export { default } from './present';
+export { default } from './themed';

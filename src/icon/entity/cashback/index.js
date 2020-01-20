@@ -5,4 +5,4 @@
 import './cashback.css';
 import '../../../icon';
 
-export { default } from './cashback';
+export { default } from './themed';

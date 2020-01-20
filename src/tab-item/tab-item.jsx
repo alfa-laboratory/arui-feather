@@ -2,15 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import { createCn } from 'bem-react-classname';
 import Link from '../link/link';
-import cn from '../cn';
 
 /**
  * Компонент таба. Как правило, используется совместно с `Tabs`.
  * @extends Link
  */
-@cn('tab-item')
 class TabItem extends Link {
+    cn = createCn('tab-item');
     static defaultProps = {
         size: 'l',
         view: 'default',

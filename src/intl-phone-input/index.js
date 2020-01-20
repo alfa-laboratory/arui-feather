@@ -8,4 +8,4 @@ import '../select';
 
 import './intl-phone-input.css';
 
-export { default } from './intl-phone-input';
+export { default } from './themed';

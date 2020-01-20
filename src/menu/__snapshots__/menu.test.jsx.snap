@@ -26,7 +26,7 @@ exports[`menu should render menu items in group with group title 1`] = `
   size="m"
 >
   <div
-    className="menu menu_size_m menu_group-view_default menu_mode_basic menu_theme_alfa-on-white"
+    className="menu menu_size_m menu_group-view_default menu_mode_basic"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -44,52 +44,79 @@ exports[`menu should render menu items in group with group title 1`] = `
       >
         Group Title
       </div>
-      <MenuItem
+      <ForwardRef(ThemedComponent(MenuItem))
         checked={false}
         hovered={null}
         key="value1"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         size="m"
-        type="link"
         url="#1"
         value="value1"
-        view="plain"
       >
-        <div
-          className="menu-item menu-item_type_link menu-item_theme_alfa-on-white"
+        <MenuItem
+          checked={false}
+          hovered={null}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          size="m"
+          theme="alfa-on-white"
+          type="link"
+          url="#1"
+          value="value1"
+          view="plain"
         >
-          <Link
-            checked={false}
-            className="menu-item__control menu-item__link"
-            disabled={false}
-            iconPosition="left"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            pseudo={false}
-            size="m"
-            tabIndex={0}
-            text={false}
-            url="#1"
+          <div
+            className="menu-item menu-item_type_link menu-item_theme_alfa-on-white"
           >
-            <a
-              className="link link_size_m link_theme_alfa-on-white menu-item__control menu-item__link"
-              href="#1"
+            <ForwardRef(ThemedComponent(Link))
+              checked={false}
+              className="menu-item__control menu-item__link"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              pseudo={false}
+              size="m"
+              text={false}
+              theme="alfa-on-white"
+              url="#1"
             >
-              MenuItem 1
-            </a>
-          </Link>
-        </div>
-      </MenuItem>
+              <Link
+                checked={false}
+                className="menu-item__control menu-item__link"
+                disabled={false}
+                iconPosition="left"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                pseudo={false}
+                size="m"
+                tabIndex={0}
+                text={false}
+                theme="alfa-on-white"
+                url="#1"
+              >
+                <a
+                  className="link menu-item__control menu-item__link link_size_m link_theme_alfa-on-white"
+                  href="#1"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                >
+                  MenuItem 1
+                </a>
+              </Link>
+            </ForwardRef(ThemedComponent(Link))>
+          </div>
+        </MenuItem>
+      </ForwardRef(ThemedComponent(MenuItem))>
     </div>
   </div>
 </Menu>
@@ -103,7 +130,7 @@ exports[`menu should render without problem 1`] = `
   size="m"
 >
   <div
-    className="menu menu_size_m menu_group-view_default menu_mode_basic menu_theme_alfa-on-white"
+    className="menu menu_size_m menu_group-view_default menu_mode_basic"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -124,7 +151,7 @@ exports[`menu shouldn't crash when mode=\`radio\`, and \`checkedItems\` and \`co
   size="m"
 >
   <div
-    className="menu menu_size_m menu_group-view_default menu_mode_radio menu_theme_alfa-on-white"
+    className="menu menu_size_m menu_group-view_default menu_mode_radio"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}

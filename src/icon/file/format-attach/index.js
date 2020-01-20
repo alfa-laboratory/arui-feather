@@ -5,4 +5,4 @@
 import './format-attach.css';
 import '../../../icon';
 
-export { default } from './format-attach';
+export { default } from './themed';

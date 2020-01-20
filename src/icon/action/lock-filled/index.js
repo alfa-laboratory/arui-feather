@@ -5,4 +5,4 @@
 import './lock-filled.css';
 import '../../../icon';
 
-export { default } from './lock-filled';
+export { default } from './themed';

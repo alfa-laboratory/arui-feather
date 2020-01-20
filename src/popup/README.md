@@ -192,7 +192,7 @@ class PopupDemo extends React.Component {
                             this.setState({ popup5: false });
                         } }
                     >
-                        { '2 400 ₽ в месяц при оплате за год' }
+                        2 400 ₽ в месяц при оплате за год
                     </Popup>
                 </div>
                 <div className='row'>

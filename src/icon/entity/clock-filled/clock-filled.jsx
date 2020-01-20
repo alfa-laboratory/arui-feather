@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconClockFilled extends React.Component {
+class IconClockFilled extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

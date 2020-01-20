@@ -449,13 +449,12 @@ import IconBankNsipf1000 from './brand/bank-nsipf-1000';
 
 describe('icon', () => {
     it('renders without problems', () => {
-        const icon = shallow(<Icon />);
-
+        let icon = shallow(<Icon />);
         expect(icon).toMatchSnapshot();
     });
 
     (() => {
-        const icons = [
+        let icons = [
             { componentName: IconActionPhotoOrFile, name: 'action-photo-or-file' },
             { componentName: IconAdd, name: 'add' },
             { componentName: IconAddFilled, name: 'add-filled' },
@@ -899,9 +898,8 @@ describe('icon', () => {
 
         return icons.map((icon, index) => (
             it(`render ${icon.componentName.name} without problems`, () => {
-                const CurrentComponent = icons[index].componentName;
-                const renderedIcon = shallow(<CurrentComponent />);
-
+                let CurrentComponent = icons[index].componentName;
+                let renderedIcon = shallow(<CurrentComponent />);
                 expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
             })
         ));

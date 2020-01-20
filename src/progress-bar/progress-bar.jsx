@@ -1,15 +1,12 @@
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент прогресс-бара.
  */
-@cn('progress-bar')
-@performance()
-class ProgressBar extends React.Component {
+class ProgressBar extends React.PureComponent {
+    cn = createCn('progress-bar');
     static propTypes = {
         /** Прогресс в процентах */
         percent: Type.number,
@@ -26,17 +23,17 @@ class ProgressBar extends React.Component {
         size: 'm'
     }
 
-    render(cn) {
+    render() {
         const styles = { width: `${this.props.percent}%` };
 
         return (
             <div
-                className={ cn({ size: this.props.size }) }
+                className={ this.cn({ size: this.props.size }) }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     style={ styles }
-                    className={ cn('current-value') }
+                    className={ this.cn('current-value') }
                 />
             </div>
         );

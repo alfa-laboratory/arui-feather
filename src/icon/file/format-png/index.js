@@ -5,4 +5,4 @@
 import './format-png.css';
 import '../../../icon';
 
-export { default } from './format-png';
+export { default } from './themed';

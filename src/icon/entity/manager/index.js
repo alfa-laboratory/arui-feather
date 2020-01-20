@@ -5,4 +5,4 @@
 import './manager.css';
 import '../../../icon';
 
-export { default } from './manager';
+export { default } from './themed';

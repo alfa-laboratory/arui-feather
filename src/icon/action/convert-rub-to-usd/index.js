@@ -5,4 +5,4 @@
 import './convert-rub-to-usd.css';
 import '../../../icon';
 
-export { default } from './convert-rub-to-usd';
+export { default } from './themed';

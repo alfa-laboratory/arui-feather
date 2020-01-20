@@ -3,8 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
 
 const breakpointsType = {
     mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
@@ -26,8 +25,8 @@ const breakpointsType = {
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
-@cn('grid-col')
 class GridCol extends React.PureComponent {
+    cn = createCn('grid-col');
     static propTypes = {
         /** Уникальный идентификатор блока */
         id: Type.string,
@@ -74,7 +73,7 @@ class GridCol extends React.PureComponent {
         tag: 'div'
     }
 
-    render(cn) {
+    render() {
         const {
             width,
             offset,
@@ -88,7 +87,7 @@ class GridCol extends React.PureComponent {
         return (
             <Tag
                 { ...props }
-                className={ cn({
+                className={ this.cn({
                     align,
                     ...this.createClassNames({ width, offset, order })
                 }) }

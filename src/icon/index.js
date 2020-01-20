@@ -4,4 +4,4 @@
 
 import './icon.css';
 
-export { default } from './icon';
+export { default } from './themed';

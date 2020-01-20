@@ -5,7 +5,7 @@ exports[`tabs should render without problems 1`] = `
   scrollable={true}
 >
   <div
-    className="tabs tabs_scrollable tabs_theme_alfa-on-white"
+    className="tabs tabs_scrollable"
   >
     <div
       className="tabs__panel"

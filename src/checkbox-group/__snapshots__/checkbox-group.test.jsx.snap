@@ -2,7 +2,7 @@
 
 exports[`checkbox-group should render with many checkbox children without problems 1`] = `
 <span
-  className="checkbox-group checkbox-group_type_normal checkbox-group_theme_alfa-on-white control-group"
+  className="checkbox-group checkbox-group_type_normal control-group"
   onBlur={[Function]}
   onFocus={[Function]}
   role="group"
@@ -41,7 +41,7 @@ exports[`checkbox-group should render with many checkbox children without proble
 
 exports[`checkbox-group should render with only one children 1`] = `
 <span
-  className="checkbox-group checkbox-group_type_normal checkbox-group_theme_alfa-on-white control-group"
+  className="checkbox-group checkbox-group_type_normal control-group"
   onBlur={[Function]}
   onFocus={[Function]}
   role="group"
@@ -67,7 +67,7 @@ exports[`checkbox-group should render with only one children 1`] = `
 
 exports[`checkbox-group should render without children 1`] = `
 <span
-  className="checkbox-group checkbox-group_type_normal checkbox-group_theme_alfa-on-white control-group"
+  className="checkbox-group checkbox-group_type_normal control-group"
   onBlur={[Function]}
   onFocus={[Function]}
   role="group"

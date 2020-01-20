@@ -5,4 +5,4 @@
 import './alfacheck.css';
 import '../../../icon';
 
-export { default } from './alfacheck';
+export { default } from './themed';

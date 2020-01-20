@@ -5,4 +5,4 @@
 import './settings.css';
 import '../../../icon';
 
-export { default } from './settings';
+export { default } from './themed';

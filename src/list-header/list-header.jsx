@@ -4,13 +4,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
-import cn from '../cn';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент для разделения списка по датам или смысловым группам.
  */
-@cn('list-header')
-class ListHeader extends React.Component {
+class ListHeader extends React.PureComponent {
+    cn = createCn('list-header');
     static propTypes = {
         /** Заголовок */
         title: Type.node,
@@ -28,14 +28,14 @@ class ListHeader extends React.Component {
         'data-test-id': Type.string
     };
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn({ filled: this.props.view === 'filled' }) }
+                className={ this.cn({ filled: this.props.view === 'filled' }) }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ cn('title') }>{ this.props.title }</span>
-                { this.props.description && <span className={ cn('description') }>, { this.props.description }</span> }
+                <span className={ this.cn('title') }>{ this.props.title }</span>
+                { this.props.description && <span className={ this.cn('description') }>, { this.props.description }</span> }
             </div>
         );
     }

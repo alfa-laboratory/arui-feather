@@ -4,19 +4,16 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
-import IconButton from '../icon-button/icon-button';
-
-import cn from '../cn';
-import performance from '../performance';
+import IconButton from '../icon-button/themed';
 
 /**
  * Заголовок в Popup.
  */
-@cn('popup-header')
-@performance()
-class PopupHeader extends React.Component {
+class PopupHeader extends React.PureComponent {
+    cn = createCn('popup-header');
     static propTypes = {
         /** Размер компонента */
         size: Type.oneOf(['s', 'm', 'l', 'xl']),
@@ -37,17 +34,17 @@ class PopupHeader extends React.Component {
         'data-test-id': Type.string
     };
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     size: this.props.size
                 }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <IconButton
-                    className={ cn('closer') }
+                    className={ this.cn('closer') }
                     size={ this.props.size }
                     onClick={ this.handleCloserClick }
                 >
@@ -55,7 +52,7 @@ class PopupHeader extends React.Component {
                         size={ this.props.size }
                     />
                 </IconButton>
-                <div className={ cn('title') }>
+                <div className={ this.cn('title') }>
                     { this.props.title }
                 </div>
             </div>

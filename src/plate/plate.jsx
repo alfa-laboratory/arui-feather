@@ -6,21 +6,18 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
-import IconButton from '../icon-button/icon-button';
-
-import cn from '../cn';
-import performance from '../performance';
+import IconButton from '../icon-button/themed';
 
 /**
  * Компонент плашки.
  */
-@cn('plate')
-@performance()
-class Plate extends React.Component {
+class Plate extends React.PureComponent {
+    cn = createCn('plate');
     static propTypes = {
         /** Управление наличием закрывающего крестика */
         hasCloser: Type.bool,
@@ -93,10 +90,10 @@ class Plate extends React.Component {
      */
     root;
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn({
+                className={ this.cn({
                     'has-closer': this.props.hasCloser,
                     foldable: this.props.foldable,
                     'has-icon': !!this.props.icon,
@@ -113,14 +110,14 @@ class Plate extends React.Component {
             >
                 {
                     this.props.icon &&
-                    <span className={ cn('icon') }>
+                    <span className={ this.cn('icon') }>
                         { this.props.icon }
                     </span>
                 }
                 {
                     this.props.title &&
                     <div
-                        className={ cn('title') }
+                        className={ this.cn('title') }
                     >
                         <span
                             onClick={ this.handleTitleClick }
@@ -131,7 +128,7 @@ class Plate extends React.Component {
                         {
                             this.props.foldable &&
                             <IconButton
-                                className={ cn('folder') }
+                                className={ this.cn('folder') }
                                 onClick={ this.handleFolderClick }
                             >
                                 {
@@ -144,7 +141,7 @@ class Plate extends React.Component {
                     </div>
                 }
                 <div
-                    className={ cn('content', {
+                    className={ this.cn('content', {
                         folded: this.props.foldable && this.state.isFolded
                     }) }
                 >
@@ -153,7 +150,7 @@ class Plate extends React.Component {
                         this.props.foldable ||
                         (this.props.hasCloser &&
                         <IconButton
-                            className={ cn('closer') }
+                            className={ this.cn('closer') }
                             onClick={ this.handleCloserClick }
                         >
                             <IconClose />

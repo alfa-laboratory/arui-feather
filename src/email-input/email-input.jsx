@@ -3,19 +3,16 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
-
-import cn from '../cn';
-import performance from '../performance';
+import Input from '../input/themed';
 
 /**
  * Компонент поля ввода почты.
  * @extends Input
  */
-@cn('email-input', Input)
-@performance()
-class EmailInput extends React.Component {
+class EmailInput extends React.PureComponent {
+    cn = createCn('email-input');
     static propTypes = {
         ...Input.propTypes
     };
@@ -25,7 +22,7 @@ class EmailInput extends React.Component {
      */
     root;
 
-    render(cn, Input) {
+    render() {
         return (
             <Input
                 { ...this.props }
@@ -34,7 +31,7 @@ class EmailInput extends React.Component {
                     this.root = root;
                 } }
                 formNoValidate={ true }
-                className={ cn() }
+                className={ this.cn() }
             />
         );
     }

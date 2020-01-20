@@ -5,16 +5,13 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент группы полей для текстового ввода.
  */
-@cn('input-group')
-@performance()
-class InputGroup extends React.Component {
+class InputGroup extends React.PureComponent {
+    cn = createCn('input-group');
     static propTypes = {
         /** Управление возможностью компонента занимать всю ширину родителя */
         width: Type.oneOf(['default', 'available']),
@@ -30,7 +27,7 @@ class InputGroup extends React.Component {
         'data-test-id': Type.string
     };
 
-    render(cn) {
+    render() {
         let children = null;
         const inputGroupParts = {};
 
@@ -46,7 +43,7 @@ class InputGroup extends React.Component {
 
                 inputGroupParts[`input-${index}`] = (
                     <span
-                        className={ cn('input-case', {
+                        className={ this.cn('input-case', {
                             invalid: !!input.props.error,
                             disabled: input.props.disabled
                         }) }
@@ -59,7 +56,7 @@ class InputGroup extends React.Component {
 
         return (
             <span
-                className={ `${cn({ width: this.props.width })} control-group` }
+                className={ `${this.cn({ width: this.props.width })} control-group` }
                 id={ this.props.id }
                 role='group'
                 tabIndex='-1'

@@ -6,16 +6,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
-@cn('dropzone')
-@performance()
-class Dropzone extends React.Component {
+class Dropzone extends React.PureComponent {
+    cn = createCn('dropzone');
     static propTypes = {
         /** Дочерние компоненты */
         children: Type.node,
@@ -140,7 +137,7 @@ class Dropzone extends React.Component {
         this.dragCounter = 0;
     }
 
-    render(cn) {
+    render() {
         return (
             <div
                 ref={ (root) => {
@@ -149,13 +146,13 @@ class Dropzone extends React.Component {
                 id={ this.props.id }
                 name={ this.props.name }
                 data-test-id={ this.props['data-test-id'] }
-                className={ cn() }
+                className={ this.cn() }
                 onDragEnter={ this.handleDragEnter }
                 onDragLeave={ this.handleDragLeave }
                 onDragOver={ this.handleDragOver }
                 onDrop={ this.handleDrop }
             >
-                <div className={ cn('view', { active: this.state.dragging }) }>
+                <div className={ this.cn('view', { active: this.state.dragging }) }>
                     { this.props.text }
                 </div>
                 { this.props.children }

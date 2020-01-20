@@ -8,10 +8,10 @@ import debounce from 'lodash.debounce';
 import React from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
+import { createCn } from 'bem-react-classname';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
-import cn from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
@@ -49,9 +49,9 @@ import performance from '../performance';
 /**
  * Компонент popup'а.
  */
-@cn('popup')
 @performance(true)
 class Popup extends React.Component {
+    cn = createCn('popup');
     static propTypes = {
         /** Дополнительный класс */
         className: Type.string,
@@ -266,7 +266,7 @@ class Popup extends React.Component {
         window.removeEventListener('resize', this.handleWindowResize);
     }
 
-    render(cn) {
+    render() {
         if (!this.state.canUseDOM || !this.isContainerReady()) {
             return null;
         }
@@ -277,7 +277,7 @@ class Popup extends React.Component {
                     this.popup = popup;
                 } }
                 data-for={ this.props.for }
-                className={ cn({
+                className={ this.cn({
                     direction: this.state.direction,
                     type: this.props.target === 'anchor' && this.props.type === 'tooltip' && this.props.type,
                     target: this.props.target,
@@ -298,17 +298,17 @@ class Popup extends React.Component {
                 onMouseLeave={ this.handleMouseLeave }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <div className={ cn('container') }>
-                    { this.props.header && <div className={ cn('header') }>{ this.props.header }</div> }
+                <div className={ this.cn('container') }>
+                    { this.props.header && <div className={ this.cn('header') }>{ this.props.header }</div> }
                     <div
                         ref={ (inner) => {
                             this.inner = inner;
                         } }
-                        className={ cn('inner') }
+                        className={ this.cn('inner') }
                         onScroll={ this.handleInnerScroll }
                     >
                         <div
-                            className={ cn('content') }
+                            className={ this.cn('content') }
                             ref={ (content) => {
                                 this.content = content;
                             } }
@@ -319,9 +319,9 @@ class Popup extends React.Component {
                     </div>
                     { this.state.hasScrollbar && (
                         <div>
-                            <div className={ cn('gradient', { top: true }) } style={ this.state.topGradientStyles } />
+                            <div className={ this.cn('gradient', { top: true }) } style={ this.state.topGradientStyles } />
                             <div
-                                className={ cn('gradient', { bottom: true }) }
+                                className={ this.cn('gradient', { bottom: true }) }
                                 style={ this.state.bottomGradientStyles }
                             />
                         </div>

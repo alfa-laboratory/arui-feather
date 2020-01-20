@@ -6,24 +6,22 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconError from '../icon/ui/error';
 import IconFail from '../icon/ui/fail';
 import IconOk from '../icon/ui/ok';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 import Swipeable from '../swipeable';
 
-import cn from '../cn';
 import { isNodeOutsideElement } from '../lib/window';
-import performance from '../performance';
 
 /**
  * Компонент всплывающего окна.
  */
-@cn('notification')
-@performance()
-class Notification extends React.Component {
+class Notification extends React.PureComponent {
+    cn = createCn('notification')
     static propTypes = {
         /** Тип компонента */
         status: Type.oneOf(['error', 'fail', 'ok']),
@@ -126,7 +124,7 @@ class Notification extends React.Component {
         }
     }
 
-    render(cn) {
+    render() {
         let ToggledIcon;
 
         switch (this.props.status) {
@@ -142,7 +140,7 @@ class Notification extends React.Component {
                     ref={ (root) => {
                         this.root = root;
                     } }
-                    className={ cn({
+                    className={ this.cn({
                         visible: this.props.visible,
                         status: this.props.status,
                         hovered: this.state.hovered,
@@ -157,7 +155,7 @@ class Notification extends React.Component {
                     onKeyDown={ this.handleKeyDown }
                     data-test-id={ this.props['data-test-id'] }
                 >
-                    <div className={ cn('icon') }>
+                    <div className={ this.cn('icon') }>
                         {
                             this.props.icon ||
                             <ToggledIcon
@@ -168,19 +166,19 @@ class Notification extends React.Component {
                         }
                     </div>
                     { this.props.title &&
-                        <div className={ cn('title') }>
+                        <div className={ this.cn('title') }>
                             { this.props.title }
                         </div>
                     }
                     { this.props.children &&
-                        <div className={ cn('content') }>
+                        <div className={ this.cn('content') }>
                             { this.props.children }
                         </div>
                     }
                     {
                         this.props.hasCloser &&
                         <IconButton
-                            className={ cn('closer') }
+                            className={ this.cn('closer') }
                             size='m'
                             onClick={ this.handleCloserClick }
                         >

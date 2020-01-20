@@ -63,7 +63,7 @@ const getSeparatorsAmount = (str, mask) => (
  * Компонент поля ввода с поддержкой масок.
  * Расширяет стандартный <input /> React-а.
  */
-class MaskedInput extends React.Component {
+class MaskedInput extends React.PureComponent {
     static propTypes = {
         /** Маска для поля ввода, использует формат https://github.com/insin/inputmask-core */
         mask: Type.string.isRequired,

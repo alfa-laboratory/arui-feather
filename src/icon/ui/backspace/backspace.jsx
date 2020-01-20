@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconBackspace extends React.Component {
+class IconBackspace extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

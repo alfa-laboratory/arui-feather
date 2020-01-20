@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconNotificationBadge extends React.Component {
+class IconNotificationBadge extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

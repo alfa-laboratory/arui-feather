@@ -6,8 +6,6 @@ import React from 'react';
 import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-import performance from '../performance';
-
 const HEADING_LEVEL = {
     xl: 1,
     l: 2,
@@ -19,8 +17,7 @@ const HEADING_LEVEL = {
 /**
  * Компонент заголовка.
  */
-@performance()
-class Heading extends React.Component {
+class Heading extends React.PureComponent {
     cn = createCn('heading');
     static propTypes = {
         /** Дочерние элементы `Heading` */

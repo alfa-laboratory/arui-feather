@@ -1,28 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`intl-phone-input renders without problems 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
-    <Select
+    <ForwardRef(ThemedComponent(Select))
       className="intl-phone-input__select"
-      directions={
-        Array [
-          "bottom-left",
-          "bottom-right",
-          "top-left",
-          "top-right",
-        ]
-      }
-      disabled={false}
-      equalPopupWidth={false}
-      groupView="default"
-      mobileMenuMode="native"
-      mobileTitle="Выберите:"
       mode="radio"
-      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onButtonBlur={[Function]}
       onButtonFocus={[Function]}
@@ -32,52 +17,32 @@ exports[`intl-phone-input renders without problems 1`] = `
       options={Array []}
       popupSecondaryOffset={-24}
       renderButtonContent={[Function]}
-      renderPopupOnFocus={false}
       size="m"
       value={
         Array [
           "ru",
         ]
       }
-      view="default"
-      width="default"
     />
   }
   noValidate={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="m"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
-    <Select
+    <ForwardRef(ThemedComponent(Select))
       className="intl-phone-input__select"
-      directions={
-        Array [
-          "bottom-left",
-          "bottom-right",
-          "top-left",
-          "top-right",
-        ]
-      }
-      disabled={false}
-      equalPopupWidth={false}
-      groupView="default"
-      mobileMenuMode="native"
-      mobileTitle="Выберите:"
       mode="radio"
-      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onButtonBlur={[Function]}
       onButtonFocus={[Function]}
@@ -87,52 +52,32 @@ exports[`intl-phone-input renders without problems in all sizes: size = l 1`] = 
       options={Array []}
       popupSecondaryOffset={-27}
       renderButtonContent={[Function]}
-      renderPopupOnFocus={false}
       size="l"
       value={
         Array [
           "ru",
         ]
       }
-      view="default"
-      width="default"
     />
   }
   noValidate={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="l"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
-    <Select
+    <ForwardRef(ThemedComponent(Select))
       className="intl-phone-input__select"
-      directions={
-        Array [
-          "bottom-left",
-          "bottom-right",
-          "top-left",
-          "top-right",
-        ]
-      }
-      disabled={false}
-      equalPopupWidth={false}
-      groupView="default"
-      mobileMenuMode="native"
-      mobileTitle="Выберите:"
       mode="radio"
-      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onButtonBlur={[Function]}
       onButtonFocus={[Function]}
@@ -142,52 +87,32 @@ exports[`intl-phone-input renders without problems in all sizes: size = m 1`] = 
       options={Array []}
       popupSecondaryOffset={-24}
       renderButtonContent={[Function]}
-      renderPopupOnFocus={false}
       size="m"
       value={
         Array [
           "ru",
         ]
       }
-      view="default"
-      width="default"
     />
   }
   noValidate={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="m"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
-    <Select
+    <ForwardRef(ThemedComponent(Select))
       className="intl-phone-input__select"
-      directions={
-        Array [
-          "bottom-left",
-          "bottom-right",
-          "top-left",
-          "top-right",
-        ]
-      }
-      disabled={false}
-      equalPopupWidth={false}
-      groupView="default"
-      mobileMenuMode="native"
-      mobileTitle="Выберите:"
       mode="radio"
-      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onButtonBlur={[Function]}
       onButtonFocus={[Function]}
@@ -197,52 +122,32 @@ exports[`intl-phone-input renders without problems in all sizes: size = s 1`] = 
       options={Array []}
       popupSecondaryOffset={-18}
       renderButtonContent={[Function]}
-      renderPopupOnFocus={false}
       size="s"
       value={
         Array [
           "ru",
         ]
       }
-      view="default"
-      width="default"
     />
   }
   noValidate={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="s"
   type="tel"
   value="+7"
-  view="default"
 />
 `;
 
 exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] = `
-<Input
-  className="intl-phone-input intl-phone-input_theme_alfa-on-white"
+<ForwardRef(ThemedComponent(Input))
+  className="intl-phone-input"
   focused={false}
-  formNoValidate={false}
   leftAddons={
-    <Select
+    <ForwardRef(ThemedComponent(Select))
       className="intl-phone-input__select"
-      directions={
-        Array [
-          "bottom-left",
-          "bottom-right",
-          "top-left",
-          "top-right",
-        ]
-      }
-      disabled={false}
-      equalPopupWidth={false}
-      groupView="default"
-      mobileMenuMode="native"
-      mobileTitle="Выберите:"
       mode="radio"
-      nativeOptionPlaceholder="Выберите:"
       onBlur={[Function]}
       onButtonBlur={[Function]}
       onButtonFocus={[Function]}
@@ -252,25 +157,20 @@ exports[`intl-phone-input renders without problems in all sizes: size = xl 1`] =
       options={Array []}
       popupSecondaryOffset={-28}
       renderButtonContent={[Function]}
-      renderPopupOnFocus={false}
       size="xl"
       value={
         Array [
           "ru",
         ]
       }
-      view="default"
-      width="default"
     />
   }
   noValidate={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  resetError={true}
   size="xl"
   type="tel"
   value="+7"
-  view="default"
 />
 `;

@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconCategoryVipRoom extends React.Component {
+class IconCategoryVipRoom extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

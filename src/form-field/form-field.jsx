@@ -4,17 +4,14 @@
 
 import React from 'react';
 import Type from 'prop-types';
-
-import cn from '../cn';
-import performance from '../performance';
+import { createCn } from 'bem-react-classname';
 
 /**
  * Компонент поля формы.
  * Необходим для вертикального ритма в форме.
  */
-@cn('form-field')
-@performance()
-class FormField extends React.Component {
+class FormField extends React.PureComponent {
+    cn = createCn('form-field');
     static propTypes = {
         /** Дочерние элементы `FormField` */
         children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
@@ -34,10 +31,10 @@ class FormField extends React.Component {
         size: 'm'
     };
 
-    render(cn) {
+    render() {
         return (
             <div
-                className={ cn({ size: this.props.size }) }
+                className={ this.cn({ size: this.props.size }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >

@@ -2,6 +2,6 @@
 
 exports[`grid-row should render without problems 1`] = `
 <div
-  className="grid-row grid-row_gutter-mobile-s_16 grid-row_gutter-desktop-m_24 grid-row_justify_between grid-row_theme_alfa-on-white"
+  className="grid-row grid-row_gutter-mobile-s_16 grid-row_gutter-desktop-m_24 grid-row_justify_between"
 />
 `;

@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconBankSkb extends React.Component {
+class IconBankSkb extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

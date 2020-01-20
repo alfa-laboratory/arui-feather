@@ -35,6 +35,7 @@ class Icon {
         this.path = iconPath;
         this.categoryPath = `./src/icon/${this.getCategory()}/${this.getName()}/`;
         this.indexFile = `${this.categoryPath}index.js`;
+        this.themedFile = `${this.categoryPath}themed.js`;
         this.cssFile = `${this.categoryPath}${this.getName()}.css`;
         this.jsxFile = `${this.categoryPath}${this.getName()}.jsx`;
         this.name = this.getName();
@@ -154,6 +155,9 @@ const createComponents = arr =>
 
             // Create index.js
             fs.writeFileSync(item.indexFile, getTemplate('index.js', item));
+
+            // Create themed.js
+            fs.writeFileSync(item.themedFile, getTemplate('themed.js', item));
 
             // Create .jsx
             fs.writeFileSync(item.jsxFile, getTemplate('icon.jsx', item));

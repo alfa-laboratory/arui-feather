@@ -4,4 +4,4 @@
 
 import './slide-down.css';
 
-export { default } from './slide-down';
+export { default } from './themed';

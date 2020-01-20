@@ -5,4 +5,4 @@
 import './fail.css';
 import '../../../icon';
 
-export { default } from './fail';
+export { default } from './themed';

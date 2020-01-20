@@ -5,4 +5,4 @@
 import './alfadialogue.css';
 import '../../../icon';
 
-export { default } from './alfadialogue';
+export { default } from './themed';

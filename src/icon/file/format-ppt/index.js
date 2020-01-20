@@ -5,4 +5,4 @@
 import './format-ppt.css';
 import '../../../icon';
 
-export { default } from './format-ppt';
+export { default } from './themed';

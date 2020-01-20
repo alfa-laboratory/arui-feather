@@ -2,7 +2,7 @@
 
 exports[`toggle should render without problems 1`] = `
 <label
-  className="toggle toggle_size_m toggle_theme_alfa-on-white"
+  className="toggle toggle_size_m"
   onBlur={[Function]}
   onFocus={[Function]}
   onMouseDown={[Function]}

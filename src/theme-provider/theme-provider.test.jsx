@@ -6,8 +6,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import ThemeProvider from './theme-provider';
-import Button from '../button/button';
-import Paragraph from '../paragraph/paragraph';
+import Button from '../button';
+import Paragraph from '../paragraph';
 
 describe('theme-provider', () => {
     it('should render without problems', () => {

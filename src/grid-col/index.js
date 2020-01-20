@@ -4,4 +4,4 @@
 
 import './grid-col.css';
 
-export { default } from './grid-col';
+export { default } from './themed';

@@ -5,4 +5,4 @@
 import './transfer-self.css';
 import '../../../icon';
 
-export { default } from './transfer-self';
+export { default } from './themed';

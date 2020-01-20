@@ -5,4 +5,4 @@
 import './share-ios.css';
 import '../../../icon';
 
-export { default } from './share-ios';
+export { default } from './themed';

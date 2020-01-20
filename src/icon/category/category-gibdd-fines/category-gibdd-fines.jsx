@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconCategoryGibddFines extends React.Component {
+class IconCategoryGibddFines extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

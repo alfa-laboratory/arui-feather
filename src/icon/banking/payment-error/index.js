@@ -5,4 +5,4 @@
 import './payment-error.css';
 import '../../../icon';
 
-export { default } from './payment-error';
+export { default } from './themed';

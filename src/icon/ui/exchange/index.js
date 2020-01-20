@@ -5,4 +5,4 @@
 import './exchange.css';
 import '../../../icon';
 
-export { default } from './exchange';
+export { default } from './themed';

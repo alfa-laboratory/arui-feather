@@ -14,13 +14,12 @@ exports[`attach should render without problems 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <Button
+    <ForwardRef(ThemedComponent(Button))
       className="attach__button"
       disabled={false}
       focused={false}
-      formNoValidate={false}
       icon={
-        <IconAttachment
+        <ForwardRef(ThemedComponent(IconAttachment))
           size="m"
         />
       }
@@ -45,30 +44,18 @@ exports[`attach should render without problems 1`] = `
       size="m"
       tabIndex={0}
       tag="span"
-      type="button"
     >
-      <span
-        className="button button_size_m button_theme_alfa-on-white attach__button"
+      <Button
+        className="attach__button"
         disabled={false}
-        formNoValidate={null}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseOut={[Function]}
-        onMouseUp={[Function]}
-        role="button"
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="button__addon"
-          key="left-addons"
-        >
+        focused={false}
+        formNoValidate={false}
+        icon={
+          <ForwardRef(ThemedComponent(IconAttachment))
+            size="m"
+          />
+        }
+        leftAddons={
           <label
             className="attach__label"
           >
@@ -82,37 +69,95 @@ exports[`attach should render without problems 1`] = `
               type="file"
             />
           </label>
-        </span>
+        }
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        size="m"
+        tabIndex={0}
+        tag="span"
+        theme="alfa-on-white"
+        type="button"
+      >
         <span
-          className="button__content"
-          key="content"
+          className="button attach__button button_size_m button_theme_alfa-on-white"
+          disabled={false}
+          formNoValidate={null}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOut={[Function]}
+          onMouseUp={[Function]}
+          role="button"
+          tabIndex={0}
+          type="button"
         >
           <span
-            className="button__icon"
-            key="icon"
+            className="button__addon"
+            key="left-addons"
           >
-            <IconAttachment
-              size="m"
+            <label
+              className="attach__label"
             >
-              <Icon
-                name="attachment"
+              <input
+                className="attach__control"
+                disabled={false}
+                multiple={false}
+                onChange={[Function]}
                 size="m"
-              >
-                <span
-                  className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
-                />
-              </Icon>
-            </IconAttachment>
+                tabIndex="-1"
+                type="file"
+              />
+            </label>
           </span>
           <span
-            className="button__text"
-            key="text"
+            className="button__content"
+            key="content"
           >
-            Выберите файл
+            <span
+              className="button__icon"
+              key="icon"
+            >
+              <ForwardRef(ThemedComponent(IconAttachment))
+                size="m"
+              >
+                <IconAttachment
+                  size="m"
+                  theme="alfa-on-white"
+                >
+                  <ForwardRef(ThemedComponent(Icon))
+                    name="attachment"
+                    size="m"
+                    theme="alfa-on-white"
+                  >
+                    <Icon
+                      name="attachment"
+                      size="m"
+                      theme="alfa-on-white"
+                    >
+                      <span
+                        className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
+                      />
+                    </Icon>
+                  </ForwardRef(ThemedComponent(Icon))>
+                </IconAttachment>
+              </ForwardRef(ThemedComponent(IconAttachment))>
+            </span>
+            <span
+              className="button__text"
+              key="text"
+            >
+              Выберите файл
+            </span>
           </span>
         </span>
-      </span>
-    </Button>
+      </Button>
+    </ForwardRef(ThemedComponent(Button))>
     <span
       className="attach__no-file"
     >

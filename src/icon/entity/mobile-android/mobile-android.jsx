@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from '../../../icon';
 
-class IconMobileAndroid extends React.Component {
+class IconMobileAndroid extends React.PureComponent {
     static propTypes = Icon.propTypes;
 
     render() {

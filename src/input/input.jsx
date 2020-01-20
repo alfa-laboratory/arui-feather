@@ -6,22 +6,20 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
-import IconButton from '../icon-button/icon-button';
+import IconButton from '../icon-button/themed';
 import MaskedInput from '../masked-input/masked-input';
 
-import cn from '../cn';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 /**
  * Компонент текстового поля ввода.
  */
-@cn('input', MaskedInput)
-@performance()
-class Input extends React.Component {
+class Input extends React.PureComponent {
+    cn = createCn('input');
     static propTypes = {
         /**
          * Тип поля.
@@ -203,7 +201,7 @@ class Input extends React.Component {
         });
     }
 
-    render(cn, MaskedInput) {
+    render() {
         const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
         const hasLeftAddons = !!this.props.leftAddons;
         const value = this.props.value === undefined ? this.state.value : this.props.value;
@@ -211,7 +209,7 @@ class Input extends React.Component {
 
         return (
             <span
-                className={ cn({
+                className={ this.cn({
                     type: this.props.type,
                     view: this.props.view,
                     disabled: this.props.disabled,
@@ -229,18 +227,19 @@ class Input extends React.Component {
                 ref={ (root) => {
                     this.root = root;
                 } }
+                data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ cn('inner') }>
+                <span className={ this.cn('inner') }>
                     {
                         !!this.props.label &&
-                        <span className={ cn('top') }>
+                        <span className={ this.cn('top') }>
                             { this.props.label }
                         </span>
                     }
-                    { this.renderContent(cn, MaskedInput) }
+                    { this.renderContent() }
                     {
                         (this.state.error || this.props.hint) &&
-                        <span className={ cn('sub') }>
+                        <span className={ this.cn('sub') }>
                             { this.state.error || this.props.hint }
                         </span>
                     }
@@ -249,12 +248,12 @@ class Input extends React.Component {
         );
     }
 
-    renderContent(cn, MaskedInput) {
+    renderContent() {
         const isMaskedInput = this.props.mask !== undefined;
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const inputProps = {
-            className: cn('control'),
+            className: this.cn('control'),
             type: this.props.type,
             view: this.props.view,
             formNoValidate: this.props.formNoValidate,
@@ -286,7 +285,7 @@ class Input extends React.Component {
 
         return (
             <span
-                className={ cn('box') }
+                className={ this.cn('box') }
                 key='input-wrapper'
                 ref={ (box) => {
                     this.box = box;
@@ -294,7 +293,7 @@ class Input extends React.Component {
             >
                 {
                     this.props.leftAddons &&
-                    <span className={ cn('addons', { left: true }) } key='left-addons'>
+                    <span className={ this.cn('addons', { left: true }) } key='left-addons'>
                         { this.props.leftAddons }
                     </span>
                 }
@@ -312,7 +311,7 @@ class Input extends React.Component {
                 {
                     this.props.clear && value &&
                     <IconButton
-                        className={ cn('clear') }
+                        className={ this.cn('clear') }
                         size={ this.props.size }
                         tabIndex={ -1 }
                         onClick={ this.handleClearClick }
@@ -324,13 +323,13 @@ class Input extends React.Component {
                 }
                 {
                     this.props.icon &&
-                    <div className={ cn('icon') }>
+                    <div className={ this.cn('icon') }>
                         { this.props.icon }
                     </div>
                 }
                 {
                     this.props.rightAddons &&
-                    <span className={ cn('addons', { right: true }) } key='right-addons'>
+                    <span className={ this.cn('addons', { right: true }) } key='right-addons'>
                         { this.props.rightAddons }
                     </span>
                 }

@@ -6,13 +6,13 @@
 
 import React from 'react';
 import Type from 'prop-types';
+import { createCn } from 'bem-react-classname';
 
-import Input from '../input/input';
-import Menu from '../menu/menu';
-import Popup from '../popup/popup';
+import Input from '../input/themed';
+import Menu from '../menu/themed';
+import Popup from '../popup/themed';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
-import cn from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
@@ -23,9 +23,9 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
  *
  * @extends Input
  */
-@cn('input', Input)
 @performance(true)
 class InputAutocomplete extends React.Component {
+    cn = createCn('input');
     static propTypes = {
         ...Input.propTypes,
         /** Список вариантов выбора */
@@ -152,7 +152,7 @@ class InputAutocomplete extends React.Component {
         }
     }
 
-    render(cn, Input) {
+    render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;
 
         const props = {
@@ -160,7 +160,7 @@ class InputAutocomplete extends React.Component {
             ref: (input) => {
                 this.input = input;
             },
-            className: cn({
+            className: this.cn({
                 focused: this.state.inputFocused || this.state.menuFocused,
                 'has-autocomplete': true
             }),
@@ -174,15 +174,15 @@ class InputAutocomplete extends React.Component {
 
         return (
             <div
-                className={ cn('autocomplete-case', { width: this.props.width }) }
+                className={ this.cn('autocomplete-case', { width: this.props.width }) }
             >
                 <Input { ...props } />
-                { this.renderPopup(cn) }
+                { this.renderPopup() }
             </div>
         );
     }
 
-    renderPopup(cn) {
+    renderPopup() {
         const formattedOptionsList = this.props.options
             ? this.formatOptionsList(this.props.options)
             : [];
@@ -204,7 +204,7 @@ class InputAutocomplete extends React.Component {
         return [
             <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
             <Popup
-                className={ cn('popup', { custom: this.props.popupClassName }) }
+                className={ this.cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
                 ref={ (popup) => {
                     this.popup = popup;
@@ -225,7 +225,7 @@ class InputAutocomplete extends React.Component {
                     ref={ (menu) => {
                         this.menu = menu;
                     } }
-                    className={ cn('menu') }
+                    className={ this.cn('menu') }
                     size={ this.props.size }
                     mode='radio-check'
                     content={ formattedOptionsList }

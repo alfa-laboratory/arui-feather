@@ -2634,6 +2634,18 @@ exports[`icon render undefined without problems 439`] = `
 </ContextConsumer>
 `;
 
+exports[`icon render undefined without problems 440`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 441`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`icon renders without problems 1`] = `
 <span
   className="icon icon_size_m"

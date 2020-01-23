@@ -13,7 +13,7 @@ module.exports = {
             'node_modules',
             path.join(process.cwd(), 'node_modules')
         ],
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     module: {
         rules: [

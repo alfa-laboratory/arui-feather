@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // @ts-nocheck
+
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 

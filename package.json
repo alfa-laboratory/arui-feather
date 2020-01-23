@@ -1,13 +1,13 @@
 {
   "name": "arui-feather",
-  "version": "16.0.3",
+  "version": "16.0.4",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest && npm run compile",
     "test:coverage": "npm run test -- --coverage",
     "lint": "npm run lint-css && npm run lint-js",
     "lint-js": "eslint ./*.js ./src/ ./gemini/ --ext .js,.jsx",
@@ -53,7 +53,7 @@
       ],
       "src/**/*.{js,jsx,ts,tsx}": [
         "eslint",
-        "npm run test -- --findRelatedTests"
+        "jest --findRelatedTests"
       ],
       "src/**/*.md": [
         "npm run lint-md"
@@ -117,7 +117,7 @@
     "@typescript-eslint/eslint-plugin": "2.16.0",
     "@typescript-eslint/parser": "2.16.0",
     "acorn": "^6.1.1",
-    "alfa-ui-primitives": "2.4.0",
+    "alfa-ui-primitives": "2.4.3",
     "arui-demo": "3.0.0",
     "arui-presets": "^5.1.0",
     "arui-presets-lint": "^2.0.0",

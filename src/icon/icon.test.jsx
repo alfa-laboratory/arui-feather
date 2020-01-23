@@ -169,6 +169,7 @@ import IconBankUralskiy from './brand/bank-uralskiy';
 import IconBankVozrozhdenie from './brand/bank-vozrozhdenie';
 import IconBankVtb from './brand/bank-vtb';
 import IconBankYandexmoney from './brand/bank-yandexmoney';
+import IconBeeline from './brand/beeline';
 import IconCardBelkart from './brand/card-belkart';
 import IconCardGooglepay from './brand/card-googlepay';
 import IconCardMaestro from './brand/card-maestro';
@@ -370,6 +371,7 @@ import IconGeolocation from './ui/geolocation';
 import IconGeolocationMap from './ui/geolocation-map';
 import IconHelp from './ui/help';
 import IconHelpFilled from './ui/help-filled';
+import IconHome from './ui/home';
 import IconInfo from './ui/info';
 import IconLeft from './ui/left';
 import IconList from './ui/list';
@@ -618,6 +620,7 @@ describe('icon', () => {
             { componentName: IconBankVozrozhdenie, name: 'bank-vozrozhdenie' },
             { componentName: IconBankVtb, name: 'bank-vtb' },
             { componentName: IconBankYandexmoney, name: 'bank-yandexmoney' },
+            { componentName: IconBeeline, name: 'beeline' },
             { componentName: IconCardBelkart, name: 'card-belkart' },
             { componentName: IconCardGooglepay, name: 'card-googlepay' },
             { componentName: IconCardMaestro, name: 'card-maestro' },
@@ -819,6 +822,7 @@ describe('icon', () => {
             { componentName: IconGeolocationMap, name: 'geolocation-map' },
             { componentName: IconHelp, name: 'help' },
             { componentName: IconHelpFilled, name: 'help-filled' },
+            { componentName: IconHome, name: 'home' },
             { componentName: IconInfo, name: 'info' },
             { componentName: IconLeft, name: 'left' },
             { componentName: IconList, name: 'list' },

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { withTheme } from '../cn';
 import Component from './tab-item';
 

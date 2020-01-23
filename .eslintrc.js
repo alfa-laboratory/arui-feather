@@ -1,5 +1,8 @@
 module.exports = {
-    extends: require.resolve('arui-presets-lint/eslint'),
+    extends: [
+        require.resolve('arui-presets-lint/eslint'),
+        require.resolve('arui-presets-ts/eslint')
+    ],
 
     overrides: [
         {
@@ -22,7 +25,7 @@ module.exports = {
     // explanation of the reason
     rules: {
         // List of file extensions with jsx support
-        'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx'] }],
+        'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx', '.tsx'] }],
 
         // The validation of jsdoc was disabled due to an unnecessary
         // restriction of writing comments that scares off write developers to

@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 import Heading from '../heading/themed';
 import Label from '../label/themed';
@@ -17,44 +16,82 @@ import {
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 
+
+type AmountProps = {
+    amount: {
+
+        /**
+         * Абсолютное значение суммы
+         */
+        value: number;
+
+        /**
+         * Валюта
+         */
+        currency: {
+
+            /**
+             * Международный код валюты
+             */
+            code: string;
+
+            /**
+             * Количество минорных единиц валюты
+             */
+            minority: number;
+        };
+    };
+
+    /**
+     * Отображение минорной части, если она нулевая
+     */
+    showZeroMinorPart?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Толщина шрифта
+     */
+    bold?: boolean;
+
+    /**
+     * Использовать компонент `Heading` для вывода числа
+     */
+    isHeading?: boolean;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Компонент для отображения суммы, согласно следующему гайдлайну:
  * https://design.alfabank.ru/patterns/amount
  */
 @performance(true)
-class Amount extends React.Component {
+class Amount extends React.Component<AmountProps> {
     cn = createCn('amount');
-    static propTypes = {
-        amount: Type.shape({
-            /** Абсолютное значение суммы */
-            value: Type.number,
-            /** Валюта */
-            currency: Type.shape({
-                /** Международный код валюты */
-                code: Type.string,
-                /** Количество минорных единиц валюты */
-                minority: Type.number
-            })
-        }).isRequired,
-        /** Отображение минорной части, если она нулевая */
-        showZeroMinorPart: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Толщина шрифта */
-        bold: Type.bool,
-        /** Использовать компонент `Heading` для вывода числа */
-        isHeading: Type.bool,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    public static defaultProps: Partial<AmountProps> = {
         size: 'm',
         showZeroMinorPart: true,
         bold: false,

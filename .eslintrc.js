@@ -6,7 +6,7 @@ module.exports = {
 
     overrides: [
         {
-            files: ['src/**/*.test.{js,jsx}', 'src/**/__mocks__/*.{js,jsx}'],
+            files: ['src/**/*.test.{js,jsx,tsx,ts}', 'src/**/__mocks__/*.{js,jsx}'],
             globals: {
                 jest: true,
                 beforeAll: true,
@@ -26,6 +26,8 @@ module.exports = {
     rules: {
         // List of file extensions with jsx support
         'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx', '.tsx'] }],
+
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx"]}],
 
         // The validation of jsdoc was disabled due to an unnecessary
         // restriction of writing comments that scares off write developers to

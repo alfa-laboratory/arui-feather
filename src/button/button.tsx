@@ -3,115 +3,185 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 import keyboardCode from '../lib/keyboard-code';
+
+export type ButtonProps = {
+
+    /**
+     * Текст кнопки
+     */
+    text?: React.ReactNode;
+
+    /**
+     * Иконка кнопки
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Список произвольных элементов в левом слоте
+     */
+    rightAddons?: React.ReactNode;
+
+    /**
+     * Список произвольных элементов в правом слоте
+     */
+    leftAddons?: React.ReactNode;
+
+    /**
+     * Тип кнопки
+     */
+    view?: 'default' | 'action' | 'extra' | 'rounded';
+
+    /**
+     * Поведение кнопки
+     */
+    type?: 'button' | 'reset' | 'submit';
+
+    /**
+     * HTML элемент, которым будет компонент в DOM
+     */
+    tag?: 'button' | 'span';
+
+    /**
+     * Управление шириной кнопки. При значении 'available' растягивает кнопку на ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Управление возможности взаимодействия с компонентом
+     */
+    disabled?: boolean;
+
+    /**
+     * Отображение кнопки в состоянии фокуса
+     */
+    focused?: boolean;
+
+    /**
+     * Псевдо представление кнопки
+     */
+    pseudo?: boolean;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Отключает валидацию полей формы, у которых есть атрибут pattern
+     */
+    formNoValidate?: boolean;
+
+    /**
+     * Имя компонента в DOM
+     */
+    name?: string;
+
+    /**
+     * Текст всплывающей подсказки
+     */
+    title?: string;
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Тип переключателя
+     */
+    togglable?: 'check' | 'radio';
+
+    /**
+     * Отображение кнопки в отмеченном (зажатом) состоянии
+     */
+    checked?: boolean;
+
+    /**
+     * Дочерние элементы `Button`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Обработчик клика по кнопке
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса кнопки
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса кнопки
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на кнопку
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с кнопки
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия кнопки мыши в момент
+     */
+    onMouseDown?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события отжатия кнопки мыши в момент
+     */
+    onMouseUp?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события отведения курсора с кнопки
+     */
+    onMouseOut?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+
+};
 
 /**
  * Компонент кнопки (да, она нажимается!).
  */
-class Button extends React.PureComponent {
+class Button extends React.PureComponent<ButtonProps> {
     cn = createCn('button');
-    static propTypes = {
-        /** Текст кнопки */
-        text: Type.node,
-        /** Иконка кнопки */
-        icon: Type.node,
-        /** Список произвольных элементов в левом слоте */
-        rightAddons: Type.node,
-        /** Список произвольных элементов в правом слоте */
-        leftAddons: Type.node,
-        /** Тип кнопки */
-        view: Type.oneOf(['default', 'action', 'extra', 'rounded']),
-        /** Поведение кнопки */
-        type: Type.oneOf(['button', 'reset', 'submit']),
-        /** HTML элемент, которым будет компонент в DOM */
-        tag: Type.oneOf(['button', 'span']),
-        /** Управление шириной кнопки. При значении 'available' растягивает кнопку на ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Управление возможности взаимодействия с компонентом */
-        disabled: Type.bool,
-        /** Отображение кнопки в состоянии фокуса */
-        focused: Type.bool,
-        /** Псевдо представление кнопки */
-        pseudo: Type.bool,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Отключает валидацию полей формы, у которых есть атрибут pattern */
-        formNoValidate: Type.bool,
-        /** Имя компонента в DOM */
-        name: Type.string,
-        /** Текст всплывающей подсказки */
-        title: Type.string,
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Тип переключателя */
-        togglable: Type.oneOf(['check', 'radio']),
-        /** Отображение кнопки в отмеченном (зажатом) состоянии */
-        checked: Type.bool,
-        /** Дочерние элементы `Button` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Обработчик клика по кнопке
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик фокуса кнопки
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса кнопки
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события наведения курсора на кнопку
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с кнопки
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /**
-         * Обработчик события нажатия кнопки мыши в момент
-         * @param {React.MouseEvent} event
-         */
-        onMouseDown: Type.func,
-        /**
-         * Обработчик события отжатия кнопки мыши в момент
-         * @param {React.MouseEvent} event
-         */
-        onMouseUp: Type.func,
-        /**
-         * Обработчик события отведения курсора с кнопки
-         * @param {React.MouseEvent} event
-         */
-        onMouseOut: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /**
-         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyUp: Type.func
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<ButtonProps> = {
         type: 'button',
         tag: 'button',
         size: 'm',
@@ -124,10 +194,7 @@ class Button extends React.PureComponent {
         pressed: false
     };
 
-    /**
-     * @type {HTMLButtonElement|HTMLSpanElement}
-     */
-    control;
+    control: HTMLButtonElement | HTMLSpanElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -151,7 +218,7 @@ class Button extends React.PureComponent {
             name: this.props.name,
             type: this.props.type,
             title: this.props.title,
-            tabIndex: this.props.disabled ? '-1' : this.props.tabIndex,
+            tabIndex: this.props.disabled ? -1 : this.props.tabIndex,
             disabled: this.props.disabled,
             formNoValidate: isButton ? this.props.formNoValidate : null,
             className: this.cn({
@@ -313,7 +380,6 @@ class Button extends React.PureComponent {
      * Возвращает корневой `HTMLElement` компонента.
      *
      * @public
-     * @returns {HTMLElement}
      */
     getNode() {
         return this.control;
@@ -336,7 +402,7 @@ class Button extends React.PureComponent {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 }

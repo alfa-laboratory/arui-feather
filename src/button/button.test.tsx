@@ -147,7 +147,7 @@ describe('button', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const button = mount(<Button />);
+        const button = mount<Button>(<Button />);
 
         const node = button.instance().getNode();
 

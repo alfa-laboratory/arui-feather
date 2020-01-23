@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button should render without problems 1`] = `
+<Button
+  formNoValidate={false}
+  size="m"
+  tag="button"
+  type="button"
+>
+  <button
+    className="button button_size_m"
+    formNoValidate={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseUp={[Function]}
+    role="button"
+    type="button"
+  >
+    <span
+      className="button__content"
+      key="content"
+    >
+      <span
+        className="button__text"
+        key="text"
+      >
+        Button-example
+      </span>
+    </span>
+  </button>
+</Button>
+`;

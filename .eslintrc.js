@@ -27,7 +27,7 @@ module.exports = {
         // List of file extensions with jsx support
         'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx', '.tsx'] }],
 
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx"]}],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx", "**/*.test.jsx", "gulpfile.js"]}],
 
         // The validation of jsdoc was disabled due to an unnecessary
         // restriction of writing comments that scares off write developers to

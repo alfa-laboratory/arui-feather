@@ -10,7 +10,7 @@ import { CURRENCY_MAP } from '../lib/currency-codes';
 
 describe('amount', () => {
     it('should render without problems', () => {
-        const amount = mount(
+        const amount = mount<Amount>(
             <Amount
                 amount={ {
                     value: 123314145,
@@ -28,7 +28,7 @@ describe('amount', () => {
     });
 
     it('should render when amount is negative', () => {
-        const amount = mount(
+        const amount = mount<Amount>(
             <Amount
                 amount={ {
                     value: -452599,
@@ -45,7 +45,7 @@ describe('amount', () => {
     });
 
     it('should render when amount value without minor number', () => {
-        const amount = mount(
+        const amount = mount<Amount>(
             <Amount
                 amount={ {
                     value: 1789000,
@@ -62,7 +62,7 @@ describe('amount', () => {
     });
 
     it('should render without zero minor part when prop showZeroMinorPart=false ', () => {
-        const amount = mount(
+        const amount = mount<Amount>(
             <Amount
                 amount={ {
                     value: 1789000,
@@ -80,7 +80,7 @@ describe('amount', () => {
     });
 
     it('should render when minority equals 1', () => {
-        const amount = mount(
+        const amount = mount<Amount>(
             <Amount
                 amount={ {
                     value: 999,
@@ -97,7 +97,7 @@ describe('amount', () => {
     });
 
     it('should render when minority equals 0', () => {
-        const amount = mount(
+        const amount = mount<Amount>(
             <Amount
                 amount={ {
                     value: 999,

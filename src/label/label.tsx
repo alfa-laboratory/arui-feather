@@ -6,7 +6,7 @@ import React from 'react';
 import { createCn } from 'bem-react-classname';
 
 export type LabelProps = {
-        /**
+    /**
      * Размер компонента
      */
     size?: 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl';

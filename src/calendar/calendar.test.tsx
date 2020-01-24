@@ -293,7 +293,7 @@ describe('calendar', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const calendar = mount(<Calendar />);
+        const calendar = mount<Calendar>(<Calendar />);
 
         const node = calendar.instance().getNode();
 

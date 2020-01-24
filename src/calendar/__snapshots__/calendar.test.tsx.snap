@@ -46,7 +46,7 @@ exports[`calendar should render without problems 1`] = `
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     role="grid"
-    tabIndex="0"
+    tabIndex={0}
   >
     <div
       className="calendar__title"
@@ -57,7 +57,7 @@ exports[`calendar should render without problems 1`] = `
         data-step="-1"
         onClick={[Function]}
         role="button"
-        tabIndex="0"
+        tabIndex={0}
       />
       <div
         className="calendar__arrow calendar__arrow_direction_right"
@@ -65,7 +65,7 @@ exports[`calendar should render without problems 1`] = `
         data-step="1"
         onClick={[Function]}
         role="button"
-        tabIndex="0"
+        tabIndex={0}
       />
       <div
         className="calendar__select-buttons"
@@ -74,7 +74,7 @@ exports[`calendar should render without problems 1`] = `
           className="calendar__name calendar__name_month"
           onClick={[Function]}
           role="button"
-          tabIndex="0"
+          tabIndex={0}
         >
           <div
             className="calendar__select-text"
@@ -89,7 +89,7 @@ exports[`calendar should render without problems 1`] = `
           className="calendar__name calendar__name_year"
           onClick={[Function]}
           role="button"
-          tabIndex="0"
+          tabIndex={0}
         >
           <div
             className="calendar__select-text"
@@ -165,7 +165,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={null}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             />
           </td>
           <td
@@ -176,7 +176,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={null}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             />
           </td>
           <td
@@ -187,7 +187,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={null}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             />
           </td>
           <td
@@ -198,7 +198,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={null}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             />
           </td>
           <td
@@ -209,7 +209,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1527811200000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               1
             </div>
@@ -222,7 +222,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1527897600000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               2
             </div>
@@ -235,7 +235,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1527984000000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               3
             </div>
@@ -253,7 +253,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528070400000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               4
             </div>
@@ -266,7 +266,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528156800000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               5
             </div>
@@ -279,7 +279,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528243200000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               6
             </div>
@@ -292,7 +292,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528329600000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               7
             </div>
@@ -305,7 +305,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528416000000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               8
             </div>
@@ -318,7 +318,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528502400000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               9
             </div>
@@ -331,7 +331,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528588800000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               10
             </div>
@@ -349,7 +349,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528675200000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               11
             </div>
@@ -362,7 +362,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528761600000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               12
             </div>
@@ -375,7 +375,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528848000000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               13
             </div>
@@ -388,7 +388,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1528934400000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               14
             </div>
@@ -401,7 +401,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529020800000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               15
             </div>
@@ -414,7 +414,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529107200000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               16
             </div>
@@ -427,7 +427,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529193600000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               17
             </div>
@@ -445,7 +445,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529280000000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               18
             </div>
@@ -458,7 +458,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529366400000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               19
             </div>
@@ -471,7 +471,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529452800000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               20
             </div>
@@ -484,7 +484,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529539200000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               21
             </div>
@@ -497,7 +497,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529625600000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               22
             </div>
@@ -510,7 +510,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529712000000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               23
             </div>
@@ -523,7 +523,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529798400000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               24
             </div>
@@ -541,7 +541,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529884800000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               25
             </div>
@@ -554,7 +554,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1529971200000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               26
             </div>
@@ -567,7 +567,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1530057600000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               27
             </div>
@@ -580,7 +580,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1530144000000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               28
             </div>
@@ -593,7 +593,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1530230400000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               29
             </div>
@@ -606,7 +606,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={1530316800000}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             >
               30
             </div>
@@ -619,7 +619,7 @@ exports[`calendar should render without problems 1`] = `
               data-day={null}
               onClick={[Function]}
               role="gridcell"
-              tabIndex="0"
+              tabIndex={0}
             />
           </td>
         </tr>

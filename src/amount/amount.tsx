@@ -91,7 +91,7 @@ type AmountProps = {
 class Amount extends React.Component<AmountProps> {
     cn = createCn('amount');
 
-    public static defaultProps: Partial<AmountProps> = {
+    static defaultProps: Partial<AmountProps> = {
         size: 'm',
         showZeroMinorPart: true,
         bold: false,

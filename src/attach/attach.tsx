@@ -3,10 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Button from '../button/themed';
+import { ButtonProps } from '../button/button';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
@@ -62,105 +62,127 @@ function isEqualArray(array1, array2) {
         array1.every((item, index) => item === array2[index]);
 }
 
+export type AttachProps = {
+
+    /**
+     * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
+     */
+    value?: any[];
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Иконка
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Текст для случая, когда файл не загружен
+     */
+    noFileText?: string;
+
+    /**
+     * Содержимое кнопки для выбора файла
+     */
+    buttonContent?: React.ReactNode;
+
+    /**
+     * Свойства для кнопки
+     */
+    buttonProps?: ButtonProps;
+
+    /**
+     * Доступные для выбора MIME типы файлов
+     */
+    accept?: string;
+
+    /**
+     * Управление возможностью изменения значения компонента
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление возможностью выбора нескольких файлов
+     */
+    multiple?: boolean;
+
+    /**
+     * Процент выполнения загрузки файла
+     */
+    progressBarPercent?: number;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Обработчик клика по компоненту кнопки
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик изменения значения 'value'
+     */
+    onChange?: (value?: any[]) => void;
+
+    /**
+     * Обработчик фокуса компонента
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на кнопку
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с кнопки
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
+
 /**
  * Компонент прикрепления файлов.
  */
-class Attach extends React.PureComponent {
+class Attach extends React.PureComponent<AttachProps> {
     cn = createCn('attach');
-    static propTypes = {
-        /** Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null. */
-        value: Type.array, // eslint-disable-line react/forbid-prop-types
-        /** Уникальное имя блока */
-        name: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Иконка */
-        icon: Type.node,
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Текст для случая, когда файл не загружен */
-        noFileText: Type.string,
-        /** Содержимое кнопки для выбора файла */
-        buttonContent: Type.node,
-        /** Свойства для кнопки */
-        buttonProps: Type.shape({
-            text: Type.node,
-            rightAddons: Type.node,
-            leftAddons: Type.node,
-            view: Type.oneOf(['default', 'action', 'extra']),
-            type: Type.oneOf(['button', 'reset', 'submit']),
-            tag: Type.oneOf(['button', 'span']),
-            width: Type.oneOf(['default', 'available']),
-            size: Type.oneOf(['s', 'm', 'l', 'xl']),
-            disabled: Type.bool,
-            pseudo: Type.bool,
-            id: Type.string,
-            name: Type.string,
-            title: Type.string,
-            tabIndex: Type.number,
-            togglable: Type.oneOf(['check', 'radio']),
-            checked: Type.bool,
-            theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-            className: Type.string,
-            onClick: Type.func,
-            onFocus: Type.func,
-            onBlur: Type.func,
-            onMouseEnter: Type.func,
-            onMouseLeave: Type.func,
-            onMouseDown: Type.func,
-            onMouseUp: Type.func,
-            onKeyDown: Type.func,
-            onKeyUp: Type.func
-        }),
-        /** Доступные для выбора MIME типы файлов */
-        accept: Type.string,
-        /** Управление возможностью изменения значения компонента */
-        disabled: Type.bool,
-        /** Управление возможностью выбора нескольких файлов */
-        multiple: Type.bool,
-        /** Процент выполнения загрузки файла */
-        progressBarPercent: Type.number,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Обработчик клика по компоненту кнопки
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик изменения значения 'value'
-         * @param {File[]} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события наведения курсора на кнопку
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с кнопки
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<AttachProps> = {
         buttonContent: 'Выберите файл',
         size: 'm',
         disabled: false,
@@ -175,10 +197,9 @@ class Attach extends React.PureComponent {
         value: []
     };
 
-    /**
-     * @type {HTMLInputElement}
-     */
-    input;
+    input: HTMLInputElement;
+
+    root: HTMLSpanElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -241,8 +262,7 @@ class Attach extends React.PureComponent {
                             id={ this.props.id }
                             multiple={ this.props.multiple }
                             name={ this.props.name }
-                            size={ this.props.size }
-                            tabIndex='-1'
+                            tabIndex={ -1 }
                             type='file'
                             onChange={ this.handleInputChange }
                         />

@@ -15,7 +15,7 @@ describe('attach', () => {
     });
 
     it('should set/unset class on attach focused/unfocused', () => {
-        const attach = mount(<Attach />);
+        const attach = mount<Attach>(<Attach />);
         const instance = attach.instance();
         const inputRef = instance.input;
 

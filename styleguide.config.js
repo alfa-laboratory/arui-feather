@@ -69,7 +69,7 @@ module.exports = {
                     defaultValue.value !== undefined &&
                     typeof defaultValue.value !== 'string') {
                     // TODO: постараться убрать после обновления styleguidist
-                    // почему-то react styleguidist в недрах ожидет string;
+                    // почему-то react styleguidist в недрах ожидает string;
                     // А тут, как и должно приходит true/false
                     // хачим чтоб работало
                     defaultValue.value = String(defaultValue.value);

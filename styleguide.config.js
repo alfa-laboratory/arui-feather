@@ -58,8 +58,27 @@ module.exports = {
 
         if (componentIndexPath && componentIndexPath.endsWith('.ts')) {
             const componentPath = path.resolve(dirPath, `${componentName}.tsx`);
+            const docs = typescriptDocReader.parse(componentPath)[0];
 
-            return typescriptDocReader.parse(componentPath);
+            Object.keys(docs.props).forEach((key) => {
+
+                const defaultValue = docs.props[key].defaultValue;
+
+                if (
+                    defaultValue &&
+                    defaultValue.value !== undefined &&
+                    typeof defaultValue.value !== 'string') {
+                    // TODO: постараться убрать после обновления styleguidist
+                    // почему-то react styleguidist в недрах ожидет string;
+                    // А тут, как и должно приходит true/false
+                    // хачим чтоб работало
+                    defaultValue.value = String(defaultValue.value);
+                }
+
+            });
+
+            return docs;
+
         }
 
         return reactDoc(componentPath);

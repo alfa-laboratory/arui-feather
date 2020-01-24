@@ -3,7 +3,8 @@
   "compilerOptions": {
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
       "strict": false
   },
-  "include": ["src/amount/amount.tsx"]
+  "include": ["src/**/*.tsx"]
 }

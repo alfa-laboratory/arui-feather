@@ -5,7 +5,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
-import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
 
@@ -32,86 +31,148 @@ const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
 const LATER_YEARS_LIMIT = 1;
 
+export type CalendarProps = {
+
+    /**
+     * Выбранная дата, в формате unix timestamp
+     */
+    value?: number;
+
+    /**
+     * Левая граница диапазона дат, в формате unix timestamp
+     */
+    selectedFrom?: number;
+
+    /**
+     * Правая граница диапазона дат, в формате unix timestamp
+     */
+    selectedTo?: number;
+
+    /**
+     * Левая граница дат, возможных для выбора, в формате unix timestamp
+     */
+    earlierLimit?: number;
+
+    /**
+     * Правая граница дат, возможных для выбора, в формате unix timestamp
+     */
+    laterLimit?: number;
+
+    /**
+     * Месяц, в формате unix timestamp
+     */
+    month?: number;
+
+    /**
+     * Обработчик смены даты
+     */
+    onValueChange?: (timestamp?: number, dateString?: string, isTriggeredByKeyboard?: boolean) => void;
+
+    /**
+     * Обработчик смены месяца
+     */
+    onMonthChange?: (month?: number) => void;
+
+    /**
+     * Тип форматирования даты при выводе
+     */
+    outputFormat?: string;
+
+    /**
+     * Список названий месяцев
+     */
+    months?: ReadonlyArray<string>;
+
+    /**
+     * Список названий дней недели
+     */
+    weekdays?: ReadonlyArray<string>;
+
+    /**
+     * Список выходных дней в виде unix timestamp, отсортированный по возрастанию
+     */
+    offDays?: ReadonlyArray<number>;
+
+    /**
+     * Список дней с событиями в виде unix timestamp, отсортированный по возрастанию
+     */
+    eventDays?: ReadonlyArray<number>;
+
+    /**
+     * Отображение текущей даты
+     */
+    showToday?: boolean;
+
+    /**
+     * Отображение стрелок навигации по месяцам
+     */
+    showArrows?: boolean;
+
+    /**
+     * Возможность управления календарём с клавиатуры
+     */
+    isKeyboard?: boolean;
+
+    /**
+     * Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
+
+type CalendarState = {
+    isMonthSelection?: boolean;
+    isYearSelection?: boolean;
+    month: Date | number;
+}
 /**
  * Компонент календаря.
  */
 @performance(true)
-class Calendar extends React.Component {
+class Calendar extends React.Component<CalendarProps, CalendarState> {
     cn = createCn('calendar');
-    static propTypes = {
-        /** Выбранная дата, в формате unix timestamp */
-        value: Type.number,
-        /** Левая граница диапазона дат, в формате unix timestamp */
-        selectedFrom: Type.number,
-        /** Правая граница диапазона дат, в формате unix timestamp */
-        selectedTo: Type.number,
-        /** Левая граница дат, возможных для выбора, в формате unix timestamp */
-        earlierLimit: Type.number,
-        /** Правая граница дат, возможных для выбора, в формате unix timestamp */
-        laterLimit: Type.number,
-        /** Месяц, в формате unix timestamp */
-        month: Type.number,
-        /**
-         * Обработчик смены даты
-         * @param {number} timestamp
-         * @param {string} dateString
-         * @param {boolean} isTriggeredByKeyboard
-         */
-        onValueChange: Type.func,
-        /**
-         * Обработчик смены месяца
-         * @param {number} month
-         */
-        onMonthChange: Type.func,
-        /** Тип форматирования даты при выводе */
-        outputFormat: Type.string,
-        /** Список названий месяцев */
-        months: Type.arrayOf(Type.string),
-        /** Список названий дней недели */
-        weekdays: Type.arrayOf(Type.string),
-        /** Список выходных дней в виде unix timestamp, отсортированный по возрастанию */
-        offDays: Type.arrayOf(Type.number),
-        /** Список дней с событиями в виде unix timestamp, отсортированный по возрастанию */
-        eventDays: Type.arrayOf(Type.number),
-        /** Отображение текущей даты */
-        showToday: Type.bool,
-        /** Отображение стрелок навигации по месяцам */
-        showArrows: Type.bool,
-        /** Возможность управления календарём с клавиатуры */
-        isKeyboard: Type.bool,
-        /** Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /**
-         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyUp: Type.func,
-        /**
-         * Обработчик фокуса
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<CalendarProps> = {
         selectedFrom: null,
         selectedTo: null,
         outputFormat: 'DD.MM.YYYY',
@@ -125,24 +186,25 @@ class Calendar extends React.Component {
         isKeyboard: true
     };
 
-    state = {
+    state: CalendarState = {
         month: startOfMonth(new Date())
     };
 
-    /**
-     * @type {HTMLDivElement}
-     */
-    root;
+    root: HTMLDivElement;
 
-    /**
-     * @type {Number}
-     */
-    blurTimeoutId = null;
+    blurTimeoutId: number = null;
 
-    /**
-     * @type {Array}
-     */
     years = [];
+
+    earlierLimit: Date;
+
+    laterLimit: Date;
+
+    value: Date;
+
+    selectedTo: Date;
+
+    selectedFrom: Date;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
@@ -170,7 +232,7 @@ class Calendar extends React.Component {
                 className={ this.cn({ width: this.props.width }) }
                 id={ this.props.id }
                 role='grid'
-                tabIndex='0'
+                tabIndex={ 0 }
                 onBlur={ this.handleBlur }
                 onFocus={ this.handleFocus }
                 onKeyDown={ this.props.isKeyboard && this.handleKeyDown }
@@ -204,7 +266,7 @@ class Calendar extends React.Component {
                         data-step='-1'
                         data-disabled={ !isPrevMonthEnabled }
                         role='button'
-                        tabIndex='0'
+                        tabIndex={ 0 }
                         onClick={ this.handleArrowClick }
                     />
                 }
@@ -220,41 +282,39 @@ class Calendar extends React.Component {
                         data-step='1'
                         data-disabled={ !isNextMonthEnabled }
                         role='button'
-                        tabIndex='0'
+                        tabIndex={ 0 }
                         onClick={ this.handleArrowClick }
                     />
                 }
                 <div className={ this.cn('select-buttons') }>
-                    {
-                        <div
-                            className={
-                                this.cn('name', {
-                                    month: true
-                                })
-                            }
-                            role='button'
-                            tabIndex='0'
-                            onClick={ this.handleMonthClick }
-                        >
-                            <div className={ this.cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
-                            <div className={ this.cn('select-arrows') } />
-                        </div>
-                    }
-                    {
-                        <div
-                            className={
-                                this.cn('name', {
-                                    year: true
-                                })
-                            }
-                            role='button'
-                            tabIndex='0'
-                            onClick={ this.handleYearClick }
-                        >
-                            <div className={ this.cn('select-text') } >{ `${month.getFullYear()}` }</div>
-                            <div className={ this.cn('select-arrows') } />
-                        </div>
-                    }
+
+                    <div
+                        className={
+                            this.cn('name', {
+                                month: true
+                            })
+                        }
+                        role='button'
+                        tabIndex={ 0 }
+                        onClick={ this.handleMonthClick }
+                    >
+                        <div className={ this.cn('select-text') } >{ `${this.props.months[month.getMonth()]}` }</div>
+                        <div className={ this.cn('select-arrows') } />
+                    </div>
+
+                    <div
+                        className={
+                            this.cn('name', {
+                                year: true
+                            })
+                        }
+                        role='button'
+                        tabIndex={ 0 }
+                        onClick={ this.handleYearClick }
+                    >
+                        <div className={ this.cn('select-text') } >{ `${month.getFullYear()}` }</div>
+                        <div className={ this.cn('select-arrows') } />
+                    </div>
                 </div>
             </div>
         );
@@ -307,7 +367,7 @@ class Calendar extends React.Component {
                                     className={ this.cn('select', { month: true, ...mods }) }
                                     key={ `month_${index + 1}` }
                                     role='gridcell'
-                                    tabIndex='0'
+                                    tabIndex={ 0 }
                                     data-month={ dataMonth }
                                     onClick={ this.handleSelectMonthClick }
                                 >
@@ -363,7 +423,7 @@ class Calendar extends React.Component {
                                     className={ this.cn('select', { year: true, ...mods }) }
                                     key={ `year_${index + 1}` }
                                     role='gridcell'
-                                    tabIndex='0'
+                                    tabIndex={ 0 }
                                     data-year={ dataYear }
                                     onClick={ this.handleSelectYearClick }
                                 >
@@ -445,7 +505,12 @@ class Calendar extends React.Component {
             const current = isCurrentDay(day);
             const val = this.value;
             const weekend = index > 4;
-            const mods = {};
+            const mods: {
+                type?: 'weekend-off' | 'weekend' | 'off';
+                event?: boolean;
+                state?: 'today' | 'current';
+                empty?: boolean;
+            } = {};
 
             if (day) {
                 const isSameDate = val && val.getTime() === day.getTime();
@@ -484,7 +549,7 @@ class Calendar extends React.Component {
                     <div
                         className={ this.cn('day', mods) }
                         role='gridcell'
-                        tabIndex='0'
+                        tabIndex={ 0 }
                         data-day={ dataDay }
                         onClick={ this.handleDayClick }
                     >
@@ -521,7 +586,7 @@ class Calendar extends React.Component {
             clearTimeout(this.blurTimeoutId);
         }
 
-        this.blurTimeoutId = setTimeout(() => {
+        this.blurTimeoutId = window.setTimeout(() => {
             if (isNodeOutsideElement(document.activeElement, this.root) && this.props.onBlur) {
                 this.props.onBlur(event);
             }
@@ -600,7 +665,7 @@ class Calendar extends React.Component {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 
@@ -768,7 +833,7 @@ class Calendar extends React.Component {
         return weeks;
     }
 
-    prepareData(nextProps) {
+    prepareData(nextProps?) {
         let isInitializing = false;
 
         if (!nextProps) {

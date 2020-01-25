@@ -46,7 +46,7 @@ describe('slide-down', () => {
     it('should call onAnimationStart when received new isExpanded prop', () => {
         const onAnimationStart = jest.fn();
         const props = { isExpanded: false, onAnimationStart };
-        const slideDownNode = mount(
+        const slideDownNode = mount<SlideDown>(
             <SlideDown { ...props } />
         );
 
@@ -56,7 +56,7 @@ describe('slide-down', () => {
 
     it('should call onAnimationEnd when handleTransitionEnd is called', () => {
         const onAnimationEnd = jest.fn();
-        const slideDownNode = shallow(
+        const slideDownNode = shallow<SlideDown>(
             <SlideDown isExpanded={ false } onAnimationEnd={ onAnimationEnd } />
         );
 

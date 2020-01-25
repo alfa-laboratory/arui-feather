@@ -3,33 +3,57 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
+export type SlideDownProps = {
+
+    /**
+     * Управление состоянием expand/collapse компонента
+     */
+    isExpanded?: boolean;
+
+    /**
+     * Контент компонента
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик события начала анимации
+     */
+    onAnimationStart?: Function;
+
+    /**
+     * Обработчик события окончания анимации
+     */
+    onAnimationEnd?: Function;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-class SlideDown extends React.PureComponent {
+class SlideDown extends React.PureComponent<SlideDownProps> {
     cn = createCn('slide-down');
-    static propTypes = {
-        /** Управление состоянием expand/collapse компонента */
-        isExpanded: Type.bool,
-        /** Контент компонента */
-        children: Type.node,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Обработчик события начала анимации */
-        onAnimationStart: Type.func,
-        /** Обработчик события окончания анимации */
-        onAnimationEnd: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     state = {
         height: this.props.isExpanded ? 'auto' : 0,

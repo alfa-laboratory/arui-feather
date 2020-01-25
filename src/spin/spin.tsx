@@ -3,33 +3,48 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 
 import { createCn } from 'bem-react-classname';
+
+export type SpinProps = {
+    /**
+     * Управление видимостью компонента
+     */
+    visible?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
  */
-
-class Spin extends React.PureComponent {
+class Spin extends React.PureComponent<SpinProps> {
     cn = createCn('spin');
 
-    static propTypes = {
-        /** Управление видимостью компонента */
-        visible: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
-
-    static defaultProps = {
+    static defaultProps: Partial<SpinProps> = {
         visible: false,
         size: 'm'
     };

@@ -16,7 +16,6 @@ import {
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 
-
 type AmountProps = {
     amount: {
 

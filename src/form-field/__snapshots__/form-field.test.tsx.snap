@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form-field should render without problems 1`] = `
+<FormField
+  size="m"
+>
+  <div
+    className="form-field form-field_size_m"
+  >
+    FormField-test
+  </div>
+</FormField>
+`;

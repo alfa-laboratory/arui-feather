@@ -12,7 +12,8 @@ import CalendarInput from './calendar-input';
 import * as calendarUtils from './utils';
 import keyboardCode from '../lib/keyboard-code';
 import { SCROLL_TO_CORRECTION } from '../vars';
-import { setIsMatched as setMqMatched } from '../mq/mq';
+
+const { setIsMatched: setMqMatched } = require('../mq/mq');
 
 jest.mock('../mq/mq');
 
@@ -76,7 +77,7 @@ describe('calendar-input', () => {
     });
 
     it('should focus input on after `focus` call', () => {
-        const calendarInput = mount(<CalendarInput />);
+        const calendarInput = mount<CalendarInput>(<CalendarInput />);
         const focusTarget = calendarInput.instance().customCalendarTarget;
 
         jest.spyOn(focusTarget, 'focus');
@@ -87,7 +88,7 @@ describe('calendar-input', () => {
     });
 
     it('should blur input on after `blur` call', () => {
-        const calendarInput = mount(<CalendarInput />);
+        const calendarInput = mount<CalendarInput>(<CalendarInput />);
         const focusTarget = calendarInput.instance().customCalendarTarget;
 
         jest.spyOn(focusTarget, 'blur');
@@ -98,7 +99,7 @@ describe('calendar-input', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const calendarInput = mount(<CalendarInput />);
+        const calendarInput = mount<CalendarInput>(<CalendarInput />);
         const elemTopPosition = calendarInput.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
@@ -189,14 +190,14 @@ describe('calendar-input', () => {
     });
 
     it('should open calendar after input was focused', (done) => {
-        const wrapper = mount(<CalendarInput />);
+        const wrapper = mount<CalendarInput>(<CalendarInput />);
         const calendarInput = wrapper.find('input');
 
         calendarInput.simulate('focus');
 
         setTimeout(() => {
             wrapper.update();
-            expect(wrapper.find('Popup').props().visible).toBe(true);
+            expect((wrapper.find('Popup') as any).props().visible).toBe(true);
             done();
         }, 0);
     });
@@ -230,7 +231,7 @@ describe('calendar-input', () => {
 
         dayNode.simulate('click');
 
-        expect(wrapper.find('Popup').props().visible).not.toBe(true);
+        expect((wrapper.find('Popup') as any).props().visible).not.toBe(true);
     });
 
     it('should open calendar popup after down key was pressed in input', () => {
@@ -239,7 +240,7 @@ describe('calendar-input', () => {
 
         inputNode.simulate('keyDown', { which: keyboardCode.DOWN_ARROW });
 
-        expect(wrapper.find('Popup').props().visible).toBe(true);
+        expect((wrapper.find('Popup') as any).props().visible).toBe(true);
     });
 
     it('should close calendar popup after escape key was pressed in input', () => {
@@ -249,7 +250,7 @@ describe('calendar-input', () => {
         wrapper.setState({ isOpen: true });
         inputNode.simulate('keyDown', { which: keyboardCode.ESCAPE });
 
-        expect(wrapper.find('Popup').props().visible).toBe(false);
+        expect((wrapper.find('Popup') as any).props().visible).toBe(false);
     });
 
     it('should close calendar popup after tab key was pressed in input', () => {
@@ -260,7 +261,7 @@ describe('calendar-input', () => {
 
         inputNode.simulate('keyDown', { which: keyboardCode.TAB });
 
-        expect(wrapper.find('Popup').props().visible).toBe(false);
+        expect((wrapper.find('Popup') as any).props().visible).toBe(false);
     });
 
     it('should close calendar popup after enter or space key was pressed in calendar', () => {
@@ -271,16 +272,16 @@ describe('calendar-input', () => {
         wrapper.setState({ isOpen: true });
         calendarNode.simulate('keyDown', { which: keyboardCode.ESCAPE });
 
-        expect(wrapper.find('Popup').props().visible).toBe(false);
+        expect((wrapper.find('Popup') as any).props().visible).toBe(false);
 
         wrapper.setState({ isOpen: true });
         calendarNode.simulate('keyDown', { which: keyboardCode.ESCAPE });
 
-        expect(wrapper.find('Popup').props().visible).toBe(false);
+        expect((wrapper.find('Popup') as any).props().visible).toBe(false);
     });
 
     it('should focus on input after escape key was pressed in calendar', () => {
-        const wrapper = mount(<CalendarInput />);
+        const wrapper = mount<CalendarInput>(<CalendarInput />);
         const calendarTarget = wrapper.instance().customCalendarTarget;
         const calendarNode = wrapper.find('.calendar');
 
@@ -292,7 +293,7 @@ describe('calendar-input', () => {
     });
 
     it('should focus on input after calendar icon was clicked', () => {
-        const wrapper = mount(<CalendarInput />);
+        const wrapper = mount<CalendarInput>(<CalendarInput />);
         const calendarTarget = wrapper.instance().customCalendarTarget;
 
         jest.spyOn(calendarTarget, 'focus');

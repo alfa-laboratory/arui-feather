@@ -10,10 +10,8 @@ import React from 'react';
  * о которых React не должен ничего знать.
  */
 class IsolatedContainer extends React.Component {
-    /**
-     * @type {HTMLElement}
-     */
-    element;
+
+    element: HTMLDivElement;
 
     shouldComponentUpdate() {
         return false;
@@ -30,7 +28,6 @@ class IsolatedContainer extends React.Component {
      * Возвращает корневой `HTMLElement` компонента.
      *
      * @public
-     * @returns {HTMLElement}
      */
     getNode() {
         return this.element;

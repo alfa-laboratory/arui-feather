@@ -54,7 +54,7 @@ export function changeDateFormat(value, inFormat, outFormat) {
  * @param {Number} [laterLimit] Правая граница дат
  * @returns {Number}
  */
-export function calculateMonth(value, format, earlierLimit, laterLimit) {
+export function calculateMonth(value, format, earlierLimit?, laterLimit?) {
     let newValue = value;
 
     if (typeof newValue === 'string') {

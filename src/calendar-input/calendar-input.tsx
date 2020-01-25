@@ -6,10 +6,10 @@
 
 import React from 'react';
 import formatDate from 'date-fns/format';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Calendar from '../calendar/themed';
+import { CalendarProps } from '../calendar/calendar';
 import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/themed';
 import Input from '../input/themed';
@@ -34,146 +34,196 @@ const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 
+export type CalendarInputProps = {
+
+    /**
+     * Содержимое поля ввода
+     */
+    value?: string;
+
+    /**
+     * Содержимое поля ввода, указанное по умолчанию
+     */
+    defaultValue?: string;
+
+    /**
+     * Дата для отображения календаря по умолчанию
+     */
+    defaultMonth?: string | number | any;
+
+    /**
+     * Свойства компонента [Calendar](#!/Calendar)
+     */
+    calendar?: CalendarProps;
+
+    /**
+     * Управление возможностью раскрытия календаря
+     */
+    opened?: boolean;
+
+    /**
+     * Тип инпута (filled только на белом фоне в размере m)
+     */
+    view?: 'default' | 'filled';
+
+    /**
+     * Управление возможностью компонента занимать всю ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Направления, в которые может открываться попап компонента
+     */
+    directions?: ReadonlyArray<'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right'>;
+
+    /**
+     * Управление автозаполнением компонента
+     */
+    autocomplete?: boolean;
+
+    /**
+     * Управление возможностью изменения значения компонента
+     */
+    disabled?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Добавление дополнительных элементов к инпуту слева
+     */
+    leftAddons?: React.ReactNode;
+
+    /**
+     * Добавление дополнительных элементов к инпуту справа
+     */
+    rightAddons?: React.ReactNode;
+
+    /**
+     * Управление рендером иконки календаря в инпуте
+     */
+    withIcon?: boolean;
+
+    /**
+     * Лейбл для поля
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Подсказка в поле
+     */
+    placeholder?: string;
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Отображение ошибки
+     */
+    error?: React.ReactNode;
+
+    /**
+     * Управление нативным режимом на мобильных устройствах
+     */
+    mobileMode?: 'native' | 'popup' | 'input';
+
+    /**
+     * Подсказка над меню в мобильном режиме
+     */
+    mobileTitle?: React.ReactNode;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Имя компонента в DOM
+     */
+    name?: string;
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Обработчик установки фокуса на компонент
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик установки фокуса на поле ввода
+     */
+    onInputFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с поля ввода
+     */
+    onInputBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик ввода даты в текстовом поле
+     */
+    onInputChange?: (value?: string) => void;
+
+    /**
+     * Обработчик выбора даты в календаре
+     */
+    onCalendarChange?: (formattedValue?: string) => void;
+
+    /**
+     * Обрабочик изменения даты в календаре
+     */
+    onChange?: (formattedValue?: string, value?: number) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится в календаре
+     */
+    onCalendarKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле
+     */
+    onInputKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 /**
  * Компонент для ввода даты.
  */
 @performance(true)
-class CalendarInput extends React.Component {
+class CalendarInput extends React.Component<CalendarInputProps> {
     cn = createCn('calendar-input');
-    static propTypes = {
-        /** Содержимое поля ввода */
-        value: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию */
-        defaultValue: Type.string,
-        /** Дата для отображения календаря по умолчанию */
-        defaultMonth: Type.oneOfType([Type.string, Type.number, Type.instanceOf(Date)]),
-        /** Свойства компонента [Calendar](#!/Calendar) */
-        calendar: Type.shape({
-            value: Type.number,
-            selectedFrom: Type.number,
-            selectedTo: Type.number,
-            earlierLimit: Type.number,
-            laterLimit: Type.number,
-            month: Type.number,
-            onValueChange: Type.func,
-            onMonthChange: Type.func,
-            outputFormat: Type.string,
-            months: Type.arrayOf(Type.string),
-            weekdays: Type.arrayOf(Type.string),
-            offDays: Type.arrayOf(Type.number),
-            eventDays: Type.arrayOf(Type.number),
-            showToday: Type.bool,
-            showArrows: Type.bool,
-            isKeyboard: Type.bool,
-            error: Type.node,
-            theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-            className: Type.string,
-            onKeyDown: Type.func,
-            onKeyUp: Type.func,
-            onFocus: Type.func,
-            onBlur: Type.func
-        }),
-        /** Управление возможностью раскрытия календаря */
-        opened: Type.bool,
-        /** Тип инпута (filled только на белом фоне в размере m) */
-        view: Type.oneOf(['default', 'filled']),
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Направления, в которые может открываться попап компонента */
-        directions: Type.arrayOf(Type.oneOf([
-            'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
-            'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
-        ])),
-        /** Управление автозаполнением компонента */
-        autocomplete: Type.bool,
-        /** Управление возможностью изменения значения компонента */
-        disabled: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Добавление дополнительных элементов к инпуту слева */
-        leftAddons: Type.node,
-        /** Добавление дополнительных элементов к инпуту справа */
-        rightAddons: Type.node,
-        /** Управление рендером иконки календаря в инпуте */
-        withIcon: Type.bool,
-        /** Лейбл для поля */
-        label: Type.node,
-        /** Подсказка в поле */
-        placeholder: Type.string,
-        /** Подсказка под полем */
-        hint: Type.node,
-        /** Отображение ошибки */
-        error: Type.node,
-        /** Управление нативным режимом на мобильных устройствах */
-        mobileMode: Type.oneOf(['native', 'popup', 'input']),
-        /** Подсказка над меню в мобильном режиме */
-        mobileTitle: Type.node,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Имя компонента в DOM */
-        name: Type.string,
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /**
-         * Обработчик установки фокуса на компонент
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса с компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик установки фокуса на поле ввода
-         * @param {React.FocusEvent} event
-         */
-        onInputFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса с поля ввода
-         * @param {React.FocusEvent} event
-         */
-        onInputBlur: Type.func,
-        /**
-         * Обработчик ввода даты в текстовом поле
-         * @param {string} value
-         */
-        onInputChange: Type.func,
-        /**
-         * Обработчик выбора даты в календаре
-         * @param {string} formattedValue
-         */
-        onCalendarChange: Type.func,
-        /**
-         * Обрабочик изменения даты в календаре
-         * @param {string} formattedValue
-         * @param {number} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится в календаре
-         * @param {React.KeyboardEvent} event
-         */
-        onCalendarKeyDown: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле
-         * @param {React.KeyboardEvent} event
-         */
-        onInputKeyDown: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<CalendarInputProps> = {
         withIcon: true,
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         placeholder: '00.00.0000',

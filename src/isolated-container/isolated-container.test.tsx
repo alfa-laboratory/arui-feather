@@ -15,7 +15,7 @@ describe('isolated-container', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const isolatedContainer = mount(<IsolatedContainer />);
+        const isolatedContainer = mount<IsolatedContainer>(<IsolatedContainer />);
 
         const node = isolatedContainer.instance().getNode();
 

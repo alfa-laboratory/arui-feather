@@ -14,7 +14,7 @@ describe('heading', () => {
         expect(heading).toMatchSnapshot();
     });
 
-    const sizes = ['xs', 's', 'm', 'l', 'xl'];
+    const sizes = ['xs', 's', 'm', 'l', 'xl'] as const;
     const headingLevel = {
         xl: 1,
         l: 2,

@@ -5,62 +5,74 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+export type DropzoneProps = {
+
+    /**
+     * Дочерние компоненты
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Обработчик события 'drop'
+     */
+    onDrop?: (files?: any[]) => void;
+
+    /**
+     * Обработчик события 'dragover'
+     */
+    onDragOver?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события 'dragleave'
+     */
+    onDragLeave?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события 'dragenter'
+     */
+    onDragEnter?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Текст-подсказка поверх drop-зоны
+     */
+    text?: string;
+
+};
 
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
-class Dropzone extends React.PureComponent {
+class Dropzone extends React.PureComponent<DropzoneProps> {
     cn = createCn('dropzone');
-    static propTypes = {
-        /** Дочерние компоненты */
-        children: Type.node,
 
-        /** Дополнительный класс */
-        className: Type.string,
-
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string,
-
-        /** Уникальный идентификатор блока */
-        id: Type.string,
-
-        /** Уникальное имя блока */
-        name: Type.string,
-
-        /**
-         * Обработчик события 'drop'
-         * @param {Array} files
-         */
-        onDrop: Type.func,
-
-        /**
-         * Обработчик события 'dragover'
-         * @param {React.FocusEvent} event
-         */
-        onDragOver: Type.func,
-
-        /**
-         * Обработчик события 'dragleave'
-         * @param {React.FocusEvent} event
-         */
-        onDragLeave: Type.func,
-
-        /**
-         * Обработчик события 'dragenter'
-         * @param {React.FocusEvent} event
-         */
-        onDragEnter: Type.func,
-
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-
-        /** Текст-подсказка поверх drop-зоны */
-        text: Type.string
-    }
-
-    static defaultProps = {
+    static defaultProps: Partial<DropzoneProps> = {
         theme: 'alfa-on-white',
         text: 'Поместите файлы сюда'
     };
@@ -69,15 +81,9 @@ class Dropzone extends React.PureComponent {
         dragging: false
     };
 
-    /**
-     * @type {HTMLSpanElement}
-     */
-    root;
+    root: HTMLSpanElement;
 
-    /**
-     * @type {Number}
-     */
-    dragCounter;
+    dragCounter: number;
 
     handleDragOver = (event) => {
         event.preventDefault();
@@ -144,7 +150,6 @@ class Dropzone extends React.PureComponent {
                     this.root = root;
                 } }
                 id={ this.props.id }
-                name={ this.props.name }
                 data-test-id={ this.props['data-test-id'] }
                 className={ this.cn() }
                 onDragEnter={ this.handleDragEnter }

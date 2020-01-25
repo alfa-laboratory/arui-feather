@@ -13,7 +13,7 @@ exports[`sidebar component should render without problems 1`] = `
     className="sidebar__overlay sidebar__overlay_visible"
     onClick={[Function]}
     role="button"
-    tabIndex="-1"
+    tabIndex={-1}
   />
   <Mq
     onMatchChange={[Function]}

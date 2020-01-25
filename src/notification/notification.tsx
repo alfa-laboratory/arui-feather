@@ -5,7 +5,6 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
@@ -17,73 +16,115 @@ import Swipeable from '../swipeable';
 
 import { isNodeOutsideElement } from '../lib/window';
 
+export type NotificationProps = {
+    /**
+     * Тип компонента
+     */
+    status?: 'error' | 'fail' | 'ok';
+
+    /**
+     * Управление видимостью компонента
+     */
+    visible?: boolean;
+
+    /**
+     * Отступ от верхнего края
+     */
+    offset?: number;
+
+    /**
+     * К какому краю прижат попап
+     */
+    stickTo?: 'left' | 'right';
+
+    /**
+     * Управляет отображением кнопки закрытия уведомления
+     */
+    hasCloser?: boolean;
+
+    /**
+     * Дочерние элементы `Notification`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Заголовок сообщения
+     */
+    title?: React.ReactNode;
+
+    /**
+     * Замена стандартной иконки
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Время до закрытия компонента
+     */
+    autoCloseDelay?: number;
+
+    /**
+     * Обработчик события истечения времени до закрытия компонента
+     */
+    onCloseTimeout?: Function;
+
+    /**
+     * Обработчик клика по крестику компонента
+     */
+    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на попап
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с попапа
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика вне компонента
+     */
+    onClickOutside?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика по компоненту
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Компонент всплывающего окна.
  */
-class Notification extends React.PureComponent {
+class Notification extends React.PureComponent<NotificationProps> {
     cn = createCn('notification')
-    static propTypes = {
-        /** Тип компонента */
-        status: Type.oneOf(['error', 'fail', 'ok']),
-        /** Управление видимостью компонента */
-        visible: Type.bool,
-        /** Отступ от верхнего края */
-        offset: Type.number,
-        /** К какому краю прижат попап */
-        stickTo: Type.oneOf(['left', 'right']),
-        /** Управляет отображением кнопки закрытия уведомления */
-        hasCloser: Type.bool,
-        /** Дочерние элементы `Notification` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Заголовок сообщения */
-        title: Type.node,
-        /** Замена стандартной иконки */
-        icon: Type.node,
-        /** Время до закрытия компонента */
-        autoCloseDelay: Type.number,
-        /** Обработчик события истечения времени до закрытия компонента */
-        onCloseTimeout: Type.func,
-        /**
-         * Обработчик клика по крестику компонента
-         * @param {React.MouseEvent} event
-         */
-        onCloserClick: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /**
-         * Обработчик события наведения курсора на попап
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с попапа
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /**
-         * Обработчик клика вне компонента
-         * @param {React.MouseEvent} event
-         */
-        onClickOutside: Type.func,
-        /**
-         * Обработчик клика по компоненту
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<NotificationProps> = {
         autoCloseDelay: 5000,
         stickTo: 'right',
         offset: 12,
@@ -94,7 +135,7 @@ class Notification extends React.PureComponent {
         hovered: false
     };
 
-    root;
+    root: HTMLDivElement;
 
     closeTimeout = null;
     clickEventBindTimeout = null;
@@ -199,7 +240,7 @@ class Notification extends React.PureComponent {
         }
     };
 
-    handleCloserClick = (event) => {
+    handleCloserClick = (event?) => {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
@@ -260,7 +301,7 @@ class Notification extends React.PureComponent {
         this.closeTimeout = null;
     }
 
-    ensureClickEvent(isDestroy) {
+    ensureClickEvent(isDestroy?) {
         const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes

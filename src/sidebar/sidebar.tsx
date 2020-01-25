@@ -5,7 +5,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
@@ -57,40 +56,72 @@ function handleBodyScroll() {
     }
 }
 
+export type SidebarProps = {
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Дочерние компоненты
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Признак для отрисовки элемента закрытия
+     */
+    hasCloser?: boolean;
+
+    /**
+     * Признак для отрисовки оверлея
+     */
+    hasOverlay?: boolean;
+
+    /**
+     * Признак появления сайдбара
+     */
+    visible: boolean;
+
+    /**
+     * Контент в шапке сайдбара
+     */
+    headerContent?: React.ReactNode;
+
+    /**
+     * Ширина сайдбара
+     */
+    width?: number;
+
+    /**
+     * Обработчик клика на элемент закрытия
+     */
+    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
+
 /**
  * Компонент боковой панели aka холодильник.
  */
-class Sidebar extends React.PureComponent {
+class Sidebar extends React.PureComponent<SidebarProps> {
     cn = createCn('sidebar');
-    static propTypes = {
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Дочерние компоненты */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Признак для отрисовки элемента закрытия */
-        hasCloser: Type.bool,
-        /** Признак для отрисовки оверлея */
-        hasOverlay: Type.bool,
-        /** Признак появления сайдбара */
-        visible: Type.bool.isRequired,
-        /** Контент в шапке сайдбара */
-        headerContent: Type.node,
-        /** Ширина сайдбара */
-        width: Type.number,
-        /**
-         * Обработчик клика на элемент закрытия
-         * @param {React.MouseEvent} event
-         */
-        onCloserClick: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<SidebarProps> = {
         hasOverlay: true,
         hasCloser: true,
         width: SIDEBAR_WIDTH
@@ -158,7 +189,7 @@ class Sidebar extends React.PureComponent {
             >
                 <div
                     role='button'
-                    tabIndex='-1'
+                    tabIndex={ -1 }
                     className={ this.cn('overlay', { visible: visible && hasOverlay }) }
                     onClick={ this.handleClose }
                 />
@@ -228,7 +259,7 @@ class Sidebar extends React.PureComponent {
         switch (event.which) {
             case keyboardCode.ESCAPE:
                 event.preventDefault();
-                this.handleClose();
+                this.handleClose(event);
                 break;
         }
     };
@@ -236,7 +267,7 @@ class Sidebar extends React.PureComponent {
     styleBodyRightMargin() {
         const offset = this.props.visible ? getScrollbarWidth() : 0;
 
-        document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : 0;
+        document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : '0';
     }
 }
 

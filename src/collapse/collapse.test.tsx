@@ -34,7 +34,7 @@ describe('collapse', () => {
     });
 
     it('should update component height', () => {
-        const collapse = mount(
+        const collapse = mount<Collapse>(
             <Collapse>
                 some children
             </Collapse>
@@ -50,7 +50,7 @@ describe('collapse', () => {
     });
 
     it('should not update component height when it is collapsed', () => {
-        const collapse = mount(
+        const collapse = mount<Collapse>(
             <Collapse>
                 some children
             </Collapse>

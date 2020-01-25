@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconArrowDown from '../icon/ui/arrow-down';
@@ -11,36 +10,60 @@ import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/themed';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
+export type CollapseProps = {
+    /**
+     * Управление `expanded` состоянием компонента
+     * */
+    isExpanded?: boolean;
+
+    /**
+     * Текст ссылки в `expanded` состоянии
+     * */
+    collapsedLabel?: string;
+
+    /**
+     * Текст ссылки в `collapsed` состоянии
+     * */
+    expandedLabel?: string;
+
+    /**
+     * Дочерние элементы `Collapse`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик смены состояний `expanded/collapsed`
+     */
+    onExpandedChange?: (isExpanded?: boolean) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
-class Collapse extends React.PureComponent {
+class Collapse extends React.PureComponent<CollapseProps> {
     cn = createCn('collapse');
-    static propTypes = {
-        /** Управление `expanded` состоянием компонента */
-        isExpanded: Type.bool,
-        /** Текст ссылки в `expanded` состоянии */
-        collapsedLabel: Type.string,
-        /** Текст ссылки в `collapsed` состоянии */
-        expandedLabel: Type.string,
-        /** Дочерние элементы `Collapse` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик смены состояний `expanded/collapsed`
-         * @param {boolean} isExpanded
-         */
-        onExpandedChange: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<CollapseProps> = {
         expandedLabel: 'Collapse',
         collapsedLabel: 'Expand'
     };

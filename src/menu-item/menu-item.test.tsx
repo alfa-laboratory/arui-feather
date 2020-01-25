@@ -117,7 +117,7 @@ describe('menu-item', () => {
 
     it('should prevent default link behavior when disabled=true', () => {
         const event = { preventDefault: jest.fn() };
-        const wrapper = mount(
+        const wrapper = mount<MenuItem>(
             <MenuItem disabled={ true }>MenuItem</MenuItem>
         );
 
@@ -173,7 +173,7 @@ describe('menu-item', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const wrapper = mount(
+        const wrapper = mount<MenuItem>(
             <MenuItem>MenuItem</MenuItem>
         );
 

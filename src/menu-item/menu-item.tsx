@@ -3,79 +3,121 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Dropdown from '../dropdown/themed';
 import Link from '../link/themed';
 
+export type MenuItemProps = {
+
+    /**
+     * Тип элемента меню
+     */
+    type?: 'link' | 'dropdown' | 'block';
+
+    /**
+     * Тип ссылки, для компонента с type='link'
+     */
+    view?: 'plain' | 'underlined' | 'pseudo';
+
+    /**
+     * href ссылки, для компонента с type='link'
+     */
+    url?: string;
+
+    /**
+     * target для ссылки
+     */
+    target?: '_self' | '_blank' | '_parent' | '_top';
+
+    /**
+     * Уникальное значение элемента. Для использования в Menu
+     */
+    value?: string | number;
+
+    /**
+     * Попап для компонента с type='dropdown'
+     */
+    popup?: React.ReactNode;
+
+    /**
+     * Управление возможностью выбирать данный компонент
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление состоянием выбран/не выбран компонента
+     */
+    checked?: boolean;
+
+    /**
+     * Управление видимостью компонента
+     */
+    hidden?: boolean;
+
+    /**
+     * Управление визуальным выделением компонента
+     */
+    hovered?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Дочерние элементы `MenuItem`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Только для type='link', обработчик клика по компоненту
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса компонента
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на элемент меню
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с элемента меню
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
-class MenuItem extends React.PureComponent {
+class MenuItem extends React.PureComponent<MenuItemProps> {
     cn = createCn('menu-item');
-    static propTypes = {
-        /** Тип элемента меню */
-        type: Type.oneOf(['link', 'dropdown', 'block']),
-        /** Тип ссылки, для компонента с type='link' */
-        view: Type.oneOf(['plain', 'underlined', 'pseudo']),
-        /** href ссылки, для компонента с type='link' */
-        url: Type.string,
-        /** target для ссылки */
-        target: Type.oneOf(['_self', '_blank', '_parent', '_top']),
-        /** Уникальное значение элемента. Для использования в Menu */
-        value: Type.oneOfType([
-            Type.string,
-            Type.number
-        ]),
-        /** Попап для компонента с type='dropdown' */
-        popup: Type.node,
-        /** Управление возможностью выбирать данный компонент */
-        disabled: Type.bool,
-        /** Управление состоянием выбран/не выбран компонента */
-        checked: Type.bool,
-        /** Управление видимостью компонента */
-        hidden: Type.bool,
-        /** Управление визуальным выделением компонента */
-        hovered: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Дочерние элементы `MenuItem` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Только для type='link', обработчик клика по компоненту
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события наведения курсора на элемент меню
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с элемента меню
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<MenuItemProps> = {
         type: 'link',
         view: 'plain'
     };
@@ -89,9 +131,9 @@ class MenuItem extends React.PureComponent {
     control;
 
     render() {
-        const content = this.props.children || this.props.value;
+        const content: any = this.props.children || this.props.value;
         let itemElement;
-        let menuItemProps = {
+        let menuItemProps: any = {
             ref: (root) => {
                 this.root = root;
             },
@@ -229,7 +271,6 @@ class MenuItem extends React.PureComponent {
      * Возвращает корневой `HTMLElement` компонента.
      *
      * @public
-     * @returns {HTMLElement}
      */
     getNode() {
         return this.root;
@@ -252,7 +293,7 @@ class MenuItem extends React.PureComponent {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 }

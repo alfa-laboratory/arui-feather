@@ -20,7 +20,7 @@ describe('swipeable', () => {
     });
 
     it('should have initial data', () => {
-        const swipeable = shallow(
+        const swipeable = shallow<Swipeable>(
             <Swipeable onSwipe={ () => {} } delta={ 150 }>
                 <button>I&apos;m swipeable</button>
             </Swipeable>
@@ -134,11 +134,11 @@ describe('swipeable', () => {
         const touch = { clientX: 100, clientY: 500 };
 
         it('should return clientX and clientY from first touch of event touches ', () => {
-            expect(getCoordinates({ touches: [touch], changedTouches: [] })).toEqual(touch);
+            expect(getCoordinates({ touches: [touch] as any, changedTouches: [] as any })).toEqual(touch);
         });
 
         it('should return clientX and clientY from first touch of event changedTouches', () => {
-            expect(getCoordinates({ touches: [], changedTouches: [touch] })).toEqual(touch);
+            expect(getCoordinates({ touches: [] as any, changedTouches: [touch] as any })).toEqual(touch);
         });
 
         it('should return clientX and clientY from mouse event', () => {

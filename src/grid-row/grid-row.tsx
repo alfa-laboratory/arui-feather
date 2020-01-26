@@ -3,53 +3,74 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React, { Children, cloneElement } from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
-const breakpointsType = {
-    mobile: Type.oneOfType([Type.string, Type.number, Type.object]),
-    tablet: Type.oneOfType([Type.string, Type.number, Type.object]),
-    desktop: Type.oneOfType([Type.string, Type.number, Type.object])
+type GridRowGutterType = {
+    mobile?: string | number | object;
+    tablet?: string | number | object;
+    desktop?: string | number | object;
+};
+
+export type GridRowProps = {
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Горизонтальный отступ между колонками.
+     * Возможные значения: `8n` px (n - натуральное число) из диапазона `[0, 8, 16, 24]`
+     * или `{ mobile: [0..24], tablet: [0..24], desktop: [0..24] }`
+     * или `{ mobile: { s: [0..24], m: [0..24], l: [0..24] },
+     * tablet: { s: [0..24], m: [0..24] },
+     * desktop: { s: [0..24], m: [0..24], l: [0..24], xl: [0..24] } }`.
+     */
+    gutter?: string | number | GridRowGutterType;
+
+    /**
+     * Управление выравниванием колонок по вертикальной оси
+     */
+    align?: 'top' | 'middle' | 'bottom';
+
+    /**
+     * Управление выравниванием колонок по горизонтальной оси
+     */
+    justify?: 'left' | 'center' | 'right' | 'around' | 'between';
+
+    /**
+     * Html тег компонента.
+     * Из-за <a href="https://github.com/philipwalton/flexbugs#flexbug-9" target="_blank">ограничений и багов</a>,
+     * существующих во флексбоксах, невозможно использовать
+     * некоторые элементы HTML как flex-контейнеры</a>.
+     */
+    tag?: keyof JSX.IntrinsicElements;
+
+    /**
+     * Дочерние элементы `GridRow`
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
 };
 
 /**
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
-class GridRow extends React.PureComponent {
+class GridRow extends React.PureComponent<GridRowProps> {
     cn = createCn('grid-row');
-    static propTypes = {
-        /** Уникальный идентификатор блока */
-        id: Type.string,
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Горизонтальный отступ между колонками.
-         * Возможные значения: `8n` px (n - натуральное число) из диапазона `[0, 8, 16, 24]`
-         * или `{ mobile: [0..24], tablet: [0..24], desktop: [0..24] }`
-         * или `{ mobile: { s: [0..24], m: [0..24], l: [0..24] },
-         * tablet: { s: [0..24], m: [0..24] },
-         * desktop: { s: [0..24], m: [0..24], l: [0..24], xl: [0..24] } }`.
-         */
-        gutter: Type.oneOfType([Type.string, Type.number, Type.shape(breakpointsType)]),
-        /** Управление выравниванием колонок по вертикальной оси */
-        align: Type.oneOf(['top', 'middle', 'bottom']),
-        /** Управление выравниванием колонок по горизонтальной оси */
-        justify: Type.oneOf(['left', 'center', 'right', 'around', 'between']),
-        /**
-         * Html тег компонента.
-         * Из-за <a href="https://github.com/philipwalton/flexbugs#flexbug-9" target="_blank">ограничений и багов</a>,
-         * существующих во флексбоксах, невозможно использовать
-         * некоторые элементы HTML как flex-контейнеры</a>.
-         */
-        tag: Type.string,
-        /** Дочерние элементы `GridRow` */
-        children: Type.node,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    }
 
-    static defaultProps = {
+    static defaultProps: Partial<GridRowProps> = {
         tag: 'div',
         gutter: {
             mobile: {
@@ -64,7 +85,6 @@ class GridRow extends React.PureComponent {
 
     /**
      * Класс колонки
-     * @type {string}
      */
     classCol = 'grid-col'
 

@@ -5,7 +5,6 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
@@ -13,67 +12,102 @@ import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconButton from '../icon-button/themed';
 
+export type PlateProps = {
+
+    /**
+     * Управление наличием закрывающего крестика
+     */
+    hasCloser?: boolean;
+
+    /**
+     * Управление наличием стрелки скрытия контента
+     */
+    foldable?: boolean;
+
+    /**
+     * Начальное состояние контента при foldable={ true }
+     */
+    folded?: boolean;
+
+    /**
+     * Иконка компонента
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Дочерние элементы `Plate`
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Заголовок `Plate`
+     */
+    title?: string;
+
+    /**
+     * Тип `Plate`
+     */
+    type?: 'default' | 'common' | 'error' | 'success';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик клика стрелке сворачивания\разворачивания плашки
+     */
+    onFolderClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика на заголовке
+     */
+    onTitleClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на заголовке компонента
+     */
+    onTitleKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик клика по плашке
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика по крестику
+     */
+    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
+
 /**
  * Компонент плашки.
  */
-class Plate extends React.PureComponent {
+class Plate extends React.PureComponent<PlateProps> {
     cn = createCn('plate');
-    static propTypes = {
-        /** Управление наличием закрывающего крестика */
-        hasCloser: Type.bool,
-        /** Управление наличием стрелки скрытия контента */
-        foldable: Type.bool,
-        /** Начальное состояние контента при foldable={ true } */
-        folded: Type.bool,
-        /** Иконка компонента */
-        icon: Type.node,
-        /** Дочерние элементы `Plate` */
-        children: Type.node,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Заголовок `Plate` */
-        title: Type.string,
-        /** Тип `Plate` */
-        type: Type.oneOf(['default', 'common', 'error', 'success']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик клика стрелке сворачивания\разворачивания плашки
-         * @param {React.MouseEvent} event
-         */
-        onFolderClick: Type.func,
-        /**
-         * Обработчик клика на заголовке
-         * @param {React.MouseEvent} event
-         */
-        onTitleClick: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на заголовке компонента
-         * @param {React.KeyboardEvent} event
-         */
-        onTitleKeyDown: Type.func,
-        /**
-         * Обработчик клика по плашке
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик клика по крестику
-         * @param {React.MouseEvent} event
-         */
-        onCloserClick: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<PlateProps> = {
         foldable: false,
         folded: true,
         type: 'default',
@@ -85,10 +119,7 @@ class Plate extends React.PureComponent {
         isFolded: this.props.folded
     };
 
-    /**
-     * @type {HTMLElement}
-     */
-    root;
+    root: HTMLElement;
 
     render() {
         return (

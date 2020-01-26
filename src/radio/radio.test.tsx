@@ -79,8 +79,8 @@ describe('radio', () => {
     });
 
     it('should call input focus on public focus method', () => {
-        const radio = mount(<Radio text='some label' />);
-        const input = radio.find('input').instance();
+        const radio = mount<Radio>(<Radio text='some label' />);
+        const input = (radio.find('input') as any).instance();
 
         jest.spyOn(input, 'focus');
 
@@ -94,13 +94,13 @@ describe('radio', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount<Radio>(<Radio text='some label' />);
 
-        document.activeElement.blur = jest.fn();
+        (document.activeElement as HTMLElement).blur = jest.fn();
 
         radio.instance().blur();
 
-        expect(document.activeElement.blur).toHaveBeenCalled();
+        expect((document.activeElement as HTMLElement).blur).toHaveBeenCalled();
     });
 
     it('should call `onFocus` callback after radio was focused', () => {
@@ -243,7 +243,7 @@ describe('radio', () => {
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount<Radio>(<Radio text='some label' />);
         const elemTopPosition = radio.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 

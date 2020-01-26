@@ -7,74 +7,74 @@ import { createCn } from 'bem-react-classname';
 
 export type LinkProps = {
     /** Иконка ссылки */
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
     /** Позиционирование иконки в ссылке */
-    iconPosition: 'left' | 'right';
+    iconPosition?: 'left' | 'right';
     /** Текст ссылки */
-    text: React.ReactNode;
+    text?: React.ReactNode;
     /** href ссылки */
-    url: string;
+    url?: string;
     /** Указание на загрузку, вместо открытия и указание имени файла  */
-    download: string | boolean;
+    download?: string | boolean;
     /** target ссылки */
-    target: '_self' | '_blank' | '_parent' | '_top';
+    target?: '_self' | '_blank' | '_parent' | '_top';
     /** Последовательность перехода между контролами при нажатии на Tab */
-    tabIndex: number;
+    tabIndex?: number;
     /** Управление возможностью клика по ссылке */
-    disabled: boolean;
+    disabled?: boolean;
     /** Управление состоянием ссылки выбран/не выбран */
-    checked: boolean;
+    checked?: boolean;
     /** Псевдо-ссылка (border-bottom: dashed) */
-    pseudo: boolean;
+    pseudo?: boolean;
     /** Тип ссылки */
-    view: 'default' | 'blue';
+    view?: 'default' | 'blue';
     /** Размер компонента */
-    size: 'xs' | 's' | 'm' | 'l' | 'xl';
+    size?: 'xs' | 's' | 'm' | 'l' | 'xl';
     /** Дочерние элементы `Link` */
-    children: React.ReactNode;
+    children?: React.ReactNode;
     /** Тема компонента */
-    theme: 'alfa-on-color' | 'alfa-on-white';
+    theme?: 'alfa-on-color' | 'alfa-on-white';
     /** Дополнительный класс */
-    className: string;
+    className?: string;
     /** Идентификатор компонента в DOM */
-    id: string;
+    id?: string;
     /**
      * Обработчик клика но ссылке
      * @param {React.MouseEvent} event
      */
-    onClick: (event: React.SyntheticEvent) => void;
+    onClick?: (event?: React.MouseEvent<any>) => void;
     /**
      * Обработчик фокуса компонента
      * @param {React.FocusEvent} event
      */
-    onFocus: (event: React.SyntheticEvent) => void;
+    onFocus?: (event?: React.FocusEvent<any>) => void;
     /**
      * Обработчик снятия фокуса компонента
      * @param {React.FocusEvent} event
      */
-    onBlur: (event: React.SyntheticEvent) => void;
+    onBlur?: (event?: React.FocusEvent<any>) => void;
     /**
      * Обработчик события наведения курсора на ссылку
      * @param {React.MouseEvent} event
      */
-    onMouseEnter: (event: React.SyntheticEvent) => void;
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
     /**
      * Обработчик события снятия курсора с ссылки
      * @param {React.MouseEvent} event
      */
-    onMouseLeave: (event: React.SyntheticEvent) => void;
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
     /**
      * Обработчик клика по disabled ссылке
      */
-    onDisabledClick: (event: React.SyntheticEvent) => void;
+    onDisabledClick?: Function;
     /** Идентификатор для систем автоматизированного тестирования */
-    'data-test-id': string;
+    'data-test-id'?: string;
 };
 
 export type LinkExtendedProps = {
-    ref: React.RefObject<HTMLSpanElement | HTMLLinkElement>;
-    rel: string;
-    href: string;
+    ref?: React.RefObject<HTMLSpanElement | HTMLLinkElement>;
+    rel?: string;
+    href?: string;
 };
 
 /**
@@ -82,7 +82,7 @@ export type LinkExtendedProps = {
  */
 class Link extends React.PureComponent<LinkProps> {
     cn = createCn('link');
-    ref = React.createRef<HTMLSpanElement | HTMLLinkElement>();
+    ref = React.createRef<HTMLElement>();
 
     static defaultProps: Partial<LinkProps> = {
         iconPosition: 'left',
@@ -103,7 +103,7 @@ class Link extends React.PureComponent<LinkProps> {
         const { iconPosition, checked, disabled } = this.props;
         const linkElement = checked || disabled ? 'span' : 'a';
 
-        const linkProps: Partial<LinkProps> & Partial<LinkExtendedProps> = {
+        const linkProps: LinkProps & LinkExtendedProps = {
             ref: this.ref,
             download: this.props.download,
             className: this.cn({

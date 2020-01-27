@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconCheck from '../icon/ui/tick';
@@ -11,82 +10,124 @@ import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/themed';
 
 import scrollTo from '../lib/scroll-to';
-import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-const TYPE_SIZE_MAPPING = {
-    button: ['s', 'm', 'l', 'xl'],
-    normal: ['m', 'l']
-};
+export type CheckboxProps = ({
+    /**
+     * Тип чекбокса
+     */
+    type?: 'normal';
 
-const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
+    /**
+     * Размер компонента
+     */
+    size?: 'm' | 'l';
+
+} | {
+    /**
+     * Тип чекбокса
+     */
+    type?: 'button';
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Управление шириной кнопки для типа 'button'. При значении
+     'available' растягивает кнопку на ширину родителя
+     */
+    width?: 'default' | 'available';
+}) & {
+    /**
+     * Текст подписи к чекбоксу
+     */
+    text?: React.ReactNode;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Имя компонента в DOM
+     */
+    name?: string;
+
+    /**
+     * Текст всплывающей подсказки
+     */
+    title?: string;
+
+    /**
+     * Значение чекбокса, которое будет отправлено на сервер, если он выбран
+     */
+    value?: string;
+
+    /**
+     * Управление возможностью изменять состояние 'checked' компонента
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление состоянием вкл/выкл компонента
+     */
+    checked?: boolean;
+
+    /**
+     * Управление неопределенным состоянием чекбокса
+     */
+    indeterminate?: boolean;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
+     */
+    onChange?: (isChecked?: boolean, value?: string) => void;
+
+    /**
+     * Обработчик фокуса комнонента
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на чекбокс
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с чекбокса
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 
 /**
  * Компонент чекбокса.
  */
-class CheckBox extends React.PureComponent {
+class CheckBox extends React.PureComponent<CheckboxProps> {
     cn = createCn('checkbox');
-    static propTypes = {
-        /** Текст подписи к чекбоксу */
-        text: Type.node,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Имя компонента в DOM */
-        name: Type.string,
-        /** Текст всплывающей подсказки */
-        title: Type.string,
-        /** Значение чекбокса, которое будет отправлено на сервер, если он выбран */
-        value: Type.string,
-        /** Размер компонента */
-        size: validateSizeProp,
-        /**
-         * Управление шириной кнопки для типа 'button'. При значении
-         * 'available' растягивает кнопку на ширину родителя
-         */
-        width: Type.oneOf(['default', 'available']),
-        /** Тип чекбокса */
-        type: Type.oneOf(['normal', 'button']),
-        /** Управление возможностью изменять состояние 'checked' компонента */
-        disabled: Type.bool,
-        /** Управление состоянием вкл/выкл компонента */
-        checked: Type.bool,
-        /** Управление неопределенным состоянием чекбокса */
-        indeterminate: Type.bool,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
-         * @param {boolean} isChecked
-         * @param {string} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик фокуса комнонента
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события наведения курсора на чекбокс
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с чекбокса
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<CheckboxProps> = {
         type: 'normal',
         size: 'm'
     };
@@ -187,9 +228,8 @@ class CheckBox extends React.PureComponent {
                 title={ this.props.title }
                 disabled={ this.props.disabled }
                 size={ this.props.size || 'm' }
-                width={ this.props.width }
+                width={ this.props.type === 'button' ? this.props.width : undefined }
                 focused={ this.state.focused }
-                hovered={ this.state.hovered }
                 onClick={ this.handleChange }
             >
                 { this.props.text ? this.props.text : '' }
@@ -282,7 +322,7 @@ class CheckBox extends React.PureComponent {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 

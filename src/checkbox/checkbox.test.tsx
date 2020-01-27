@@ -179,7 +179,7 @@ describe('checkbox', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const checkbox = mount(<CheckBox type='button' />);
+        const checkbox = mount<CheckBox>(<CheckBox type='button' />);
         const elemTopPosition = checkbox.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 

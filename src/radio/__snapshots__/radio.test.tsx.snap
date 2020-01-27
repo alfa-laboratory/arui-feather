@@ -25,7 +25,7 @@ exports[`radio should render without problems 1`] = `
         className="radio__control"
         onChange={[Function]}
         onClick={[Function]}
-        tabIndex="-1"
+        tabIndex={-1}
         type="radio"
       />
     </span>

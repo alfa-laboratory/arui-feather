@@ -3,92 +3,138 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import TagButton from '../tag-button/themed';
 import scrollTo from '../lib/scroll-to';
-import { createMappingPropValidator } from '../lib/prop-types';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-const TYPE_SIZE_MAPPING = {
-    button: ['s', 'm', 'l', 'xl'],
-    normal: ['m', 'l']
+export type RadioProps = ({
+    /**
+     * Тип
+     */
+    type?: 'normal';
+    /**
+     * Размер компонента
+     */
+    size?: 'm' | 'l';
+} | {
+    /**
+     * Тип
+     */
+    type?: 'button';
+    /**
+     * Размер компонента
+     */
+    size?: 's'| 'm' | 'l' | 'xl';
+}) & {
+
+    /**
+     * Управление состоянием вкл/выкл компонента
+     */
+    checked?: boolean;
+
+    /**
+     * Управление возможностью изменения состояние 'checked' компонента
+     */
+    disabled?: boolean;
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Значение радио-кнопки, которое будет отправлено на сервер, если она выбрана
+     */
+    value?: string;
+
+    /**
+     * Текст подписи к радио-кнопке
+     */
+    text?: React.ReactNode;
+
+    /**
+     * Управление шириной кнопки для типа 'button'. При значении 'available'
+     * растягивает кнопку на ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Отображение в состоянии ошибки
+     */
+    error?: boolean;
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
+     */
+    onChange?: (value?: string, isChecked?: boolean) => void;
+
+    /**
+     * Обработчик фокуса комнонента
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на радио-кнопку
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с радио-кнопки
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
 };
 
-const validateSizeProp = createMappingPropValidator(TYPE_SIZE_MAPPING, 'type');
+type RadioState = {
+    focused: boolean;
+    hovered: boolean;
+    checked: boolean;
+    pressed?: boolean;
+}
 
 /**
  * Компонент радио-кнопки.
  */
-class Radio extends React.PureComponent {
+class Radio extends React.PureComponent<RadioProps, RadioState> {
     cn = createCn('radio');
-    static propTypes = {
-        /** Тип */
-        type: Type.oneOf(['normal', 'button']),
-        /** Управление состоянием вкл/выкл компонента */
-        checked: Type.bool,
-        /** Управление возможностью изменения состояние 'checked' компонента */
-        disabled: Type.bool,
-        /** Уникальный идентификатор блока */
-        id: Type.string,
-        /** Уникальное имя блока */
-        name: Type.string,
-        /** Значение радио-кнопки, которое будет отправлено на сервер, если она выбрана */
-        value: Type.string,
-        /** Текст подписи к радио-кнопке */
-        text: Type.node,
-        /**
-         * Управление шириной кнопки для типа 'button'. При значении 'available'
-         * растягивает кнопку на ширину родителя
-         */
-        width: Type.oneOf(['default', 'available']),
-        /** Размер компонента */
-        size: validateSizeProp,
-        /** Отображение в состоянии ошибки */
-        error: Type.bool,
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
-         * @param {string} value
-         * @param {boolean} isChecked
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик фокуса комнонента
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса с компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события наведения курсора на радио-кнопку
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с радио-кнопки
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<RadioProps> = {
         size: 'm',
         tabIndex: 0
     };
 
-    state = {
+    state: RadioState = {
         focused: false,
         hovered: false,
         checked: false
@@ -143,7 +189,7 @@ class Radio extends React.PureComponent {
                     id={ this.props.id }
                     value={ this.props.value }
                     autoComplete='off'
-                    tabIndex='-1'
+                    tabIndex={ -1 }
                     type='radio'
                     className={ this.cn('control') }
                     ref={ (control) => {
@@ -279,7 +325,7 @@ class Radio extends React.PureComponent {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 

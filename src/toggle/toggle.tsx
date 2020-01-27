@@ -3,57 +3,92 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+export type ToggleProps = {
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Имя компонента в DOM
+     */
+    name?: string;
+
+    /**
+     * Текст подписи к чекбоксу
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Выравнивание подписи
+     */
+    labelAlign?: 'left' | 'right';
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Значение чекбокса, которое будет отправлено на сервер, если он выбран
+     */
+    value?: string;
+
+    /**
+     * Управление возможностью взаимодействия с компонентом
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление состоянием вкл/выкл компонента
+     */
+    checked?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
+     */
+    onChange?: (isChecked?: boolean, value?: string) => void;
+
+    /**
+     * Обработчик фокуса комнонента
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 
 /**
  * Компонент переключателя.
  */
-class Toggle extends React.PureComponent {
+class Toggle extends React.PureComponent<ToggleProps> {
     cn = createCn('toggle');
-    static propTypes = {
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Имя компонента в DOM */
-        name: Type.string,
-        /** Текст подписи к чекбоксу */
-        label: Type.node,
-        /** Подсказка под полем */
-        labelAlign: Type.oneOf(['left', 'right']),
-        hint: Type.node,
-        /** Значение чекбокса, которое будет отправлено на сервер, если он выбран */
-        value: Type.string,
-        /** Управление возможностью взаимодействия с компонентом */
-        disabled: Type.bool,
-        /** Управление состоянием вкл/выкл компонента */
-        checked: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /**
-         * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
-         * @param {boolean} isChecked
-         * @param {string} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик фокуса комнонента
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<ToggleProps> = {
         size: 'm',
         labelAlign: 'right'
     };

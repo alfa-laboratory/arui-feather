@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`notification should render without problems 1`] = `
-<ForwardRef(ThemedComponent(Swipeable))
+<Swipeable
+  delta={100}
   onSwipe={[Function]}
 >
   <div
@@ -41,5 +42,5 @@ exports[`notification should render without problems 1`] = `
       />
     </ForwardRef(ThemedComponent(IconButton))>
   </div>
-</ForwardRef(ThemedComponent(Swipeable))>
+</Swipeable>
 `;

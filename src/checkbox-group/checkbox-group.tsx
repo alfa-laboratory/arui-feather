@@ -4,56 +4,94 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+export type CheckBoxGroupThemeFieldType = 'alfa-on-color' | 'alfa-on-white';
+
+export type CheckBoxGroupProps = {
+    /**
+     * Тип компонента
+     */
+    type: 'button';
+    /**
+     * Управление шириной группы кнопок для типа 'button'. При значении
+     * 'available' растягивает группу на ширину родителя
+     */
+    width?: 'default' | 'available';
+} & {
+
+    /**
+     * Тип компонента
+     */
+    type?: 'normal' | 'button' | 'line';
+
+    /**
+     * Выбранные чекбокс-кнопки
+     */
+    value?: ReadonlyArray<string | number>;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Управление возможностью изменения состояния 'checked' дочерних компонентов `CheckBox`
+     */
+    disabled?: boolean;
+
+    /**
+     * Дочерние элементы `CheckBoxGroup`, как правило, компоненты `CheckBox`
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: CheckBoxGroupThemeFieldType;
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Лейбл для группы
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Обработчик фокуса радиогруппы
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с радиогруппы
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
+     */
+    onChange?: (value?: any[]) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
 
 /**
  * Компонент группы чекбоксов.
  */
-class CheckBoxGroup extends React.PureComponent {
+class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     cn = createCn('checkbox-group');
-    static propTypes = {
-        /** Тип компонента */
-        type: Type.oneOf(['normal', 'button', 'line']),
-        /** Выбранные чекбокс-кнопки */
-        value: Type.arrayOf(Type.oneOfType([Type.string, Type.number])),
-        /**
-         * Управление шириной группы кнопок для типа 'button'. При значении
-         * 'available' растягивает группу на ширину родителя
-         */
-        width: Type.oneOf(['default', 'available']),
-        /** Уникальное имя блока */
-        name: Type.string,
-        /** Управление возможностью изменения состояния 'checked' дочерних компонентов `CheckBox` */
-        disabled: Type.bool,
-        /** Дочерние элементы `CheckBoxGroup`, как правило, компоненты `CheckBox` */
-        children: Type.node,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Лейбл для группы */
-        label: Type.node,
-        /**
-         * Обработчик фокуса радиогруппы
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса с радиогруппы
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
-         * @param {string[]} value
-         */
-        onChange: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     static defaultProps = {
         type: 'normal'
@@ -63,9 +101,11 @@ class CheckBoxGroup extends React.PureComponent {
         value: []
     };
 
+    checkboxes: any[];
+
     render() {
         let children = null;
-        let props = { name: this.props.name };
+        let props: { name: string; disabled?: boolean; width?: 'default' | 'available' } = { name: this.props.name };
         const checkboxGroupParts = {};
 
         if (this.props.disabled !== undefined) {
@@ -73,7 +113,9 @@ class CheckBoxGroup extends React.PureComponent {
         }
 
         if (this.props.children) {
-            children = this.props.children.length ? this.props.children : [this.props.children];
+            children = (
+                this.props.children as Array<React.ReactNode>).length
+                ? this.props.children: [this.props.children];
         }
 
         if (this.props.type === 'button') {
@@ -113,7 +155,7 @@ class CheckBoxGroup extends React.PureComponent {
                 }
                 id={ this.props.id }
                 role='group'
-                tabIndex='-1'
+                tabIndex={ -1 }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
                 data-test-id={ this.props['data-test-id'] }
@@ -180,7 +222,7 @@ class CheckBoxGroup extends React.PureComponent {
      */
     // eslint-disable-next-line class-methods-use-this
     blur() {
-        if (document.activeElement) {
+        if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }

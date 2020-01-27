@@ -160,7 +160,7 @@ exports[`dropdown should render without problems 1`] = `
                           "zIndex": -1,
                         }
                       }
-                      tabIndex="-1"
+                      tabIndex={-1}
                     />
                   </ResizeSensor>
                 </div>

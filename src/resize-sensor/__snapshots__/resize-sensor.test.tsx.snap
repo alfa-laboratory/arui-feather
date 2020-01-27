@@ -15,7 +15,7 @@ exports[`resize-sensor should render without problem 1`] = `
         "zIndex": -1,
       }
     }
-    tabIndex="-1"
+    tabIndex={-1}
   />
 </ResizeSensor>
 `;

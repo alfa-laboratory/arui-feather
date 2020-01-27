@@ -32,7 +32,7 @@ describe('resize-sensor', () => {
             <ResizeSensor onResize={ onResize } />,
             { attachTo: target }
         );
-        const iframeNode = resizeSensor.find('iframe').getDOMNode();
+        const iframeNode = resizeSensor.find('iframe').getDOMNode<HTMLIFrameElement>();
 
         iframeNode.contentWindow.dispatchEvent(new Event('resize'));
 

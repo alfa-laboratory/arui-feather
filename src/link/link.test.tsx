@@ -114,7 +114,7 @@ describe('link', () => {
     });
 
     it('should render span tag with valid attributes when checked=true', () => {
-        const link = mount(<Link checked={ true }>Link-example</Link>);
+        const link = mount<Link>(<Link checked={ true }>Link-example</Link>);
         const node = link.instance().getNode();
 
         expect(node.className).toContain('link_checked');
@@ -122,7 +122,7 @@ describe('link', () => {
     });
 
     it('should render span tag with valid attributes when disabled=true', () => {
-        const link = mount(<Link disabled={ true }>Link-example</Link>);
+        const link = mount<Link>(<Link disabled={ true }>Link-example</Link>);
         const node = link.instance().getNode();
 
         expect(node.className).toContain('link_disabled');
@@ -130,7 +130,7 @@ describe('link', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const link = mount(<Link />);
+        const link = mount<Link>(<Link />);
 
         const node = link.instance().getNode();
 
@@ -138,7 +138,7 @@ describe('link', () => {
     });
 
     it('should render with rel="noreferrer noopener" when using target="_blank"', () => {
-        const link = mount(<Link target='_blank' rel='noreferrer noopener' />);
+        const link = mount<Link>(<Link target='_blank' />);
 
         expect(link).toMatchSnapshot();
     });

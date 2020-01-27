@@ -6,7 +6,6 @@ exports[`link should render with rel="noreferrer noopener" when using target="_b
   disabled={false}
   iconPosition="left"
   pseudo={false}
-  rel="noreferrer noopener"
   size="m"
   tabIndex={0}
   target="_blank"

@@ -6,7 +6,7 @@ exports[`checkbox-group should render with many checkbox children without proble
   onBlur={[Function]}
   onFocus={[Function]}
   role="group"
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="checkbox-group__box"
@@ -45,7 +45,7 @@ exports[`checkbox-group should render with only one children 1`] = `
   onBlur={[Function]}
   onFocus={[Function]}
   role="group"
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="checkbox-group__box"
@@ -71,7 +71,7 @@ exports[`checkbox-group should render without children 1`] = `
   onBlur={[Function]}
   onFocus={[Function]}
   role="group"
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <div
     className="checkbox-group__box"

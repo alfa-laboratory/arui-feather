@@ -51,7 +51,7 @@ describe('checkbox-group', () => {
     });
 
     it('should focus first child checkbox-button on public focus method', () => {
-        const checkboxGroup = mount(
+        const checkboxGroup = mount<CheckBoxGroup>(
             <CheckBoxGroup>
                 <CheckBox />
                 <CheckBox />
@@ -71,9 +71,9 @@ describe('checkbox-group', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        document.activeElement.blur = jest.fn();
+        (document.activeElement as HTMLElement).blur = jest.fn();
 
-        const checkboxGroup = mount(
+        const checkboxGroup = mount<CheckBoxGroup>(
             <CheckBoxGroup>
                 <CheckBox />
                 <CheckBox />
@@ -83,7 +83,7 @@ describe('checkbox-group', () => {
 
         checkboxGroup.instance().blur();
 
-        expect(document.activeElement.blur).toHaveBeenCalled();
+        expect((document.activeElement as HTMLElement).blur).toHaveBeenCalled();
     });
 
     it('should call `onFocus` callback after checkbox-group was focused', () => {

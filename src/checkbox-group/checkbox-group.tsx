@@ -8,7 +8,7 @@ import { createCn } from 'bem-react-classname';
 
 export type CheckBoxGroupThemeFieldType = 'alfa-on-color' | 'alfa-on-white';
 
-export type CheckBoxGroupProps = {
+export type CheckBoxGroupProps = ({
     /**
      * Тип компонента
      */
@@ -18,12 +18,12 @@ export type CheckBoxGroupProps = {
      * 'available' растягивает группу на ширину родителя
      */
     width?: 'default' | 'available';
-} & {
-
+} | {
     /**
      * Тип компонента
      */
-    type?: 'normal' | 'button' | 'line';
+    type?: 'normal' | 'line';
+}) & {
 
     /**
      * Выбранные чекбокс-кнопки
@@ -93,7 +93,7 @@ export type CheckBoxGroupProps = {
 class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     cn = createCn('checkbox-group');
 
-    static defaultProps = {
+    static defaultProps: Partial<CheckBoxGroupProps> = {
         type: 'normal'
     };
 

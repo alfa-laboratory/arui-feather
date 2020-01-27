@@ -66,8 +66,8 @@ describe('calcTargetDimensions', () => {
             }
         };
 
-        window.pageXOffset = 10;
-        window.pageYOffset = 10;
+        (window as any).pageXOffset = 10;
+        (window as any).pageYOffset = 10;
 
         const result = calcTargetDimensions(fakePopup);
 

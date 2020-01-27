@@ -1,33 +1,37 @@
 import React from 'react';
-import Type from 'prop-types';
 
+// TODO: функция вызывается на TouchEvent и PointerEvent хотя больше от этого путанницы
+// Тут надо отдельно рефачить и типы и имплементацию чтоб ничего не сломать
 export const getCoordinates = ({
     touches, changedTouches, clientX, clientY
-}) => (
+}: Partial<TouchEvent & PointerEvent>) => (
     (touches && changedTouches)
         ? { clientX: (touches[0] || changedTouches[0]).clientX, clientY: (touches[0] || changedTouches[0]).clientY }
         : { clientX, clientY }
 );
 
-class Swipeable extends React.PureComponent {
-    static propTypes = {
-        /** Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу */
-        delta: Type.number,
-        /**
-         * Функция запускаемая по свайпу.
-         * @param {string} direction Направление свайпа. Возможные значение - 'top', 'right', 'bottom', 'left'.
-         */
-        onSwipe: Type.func.isRequired,
-        /** Дочерний компонент представленный в виде единичного элемента */
-        children: Type.shape({
-            props: Type.shape({
-                onMouseDown: Type.func,
-                onTouchStart: Type.func
-            })
-        }).isRequired
-    };
+export type SwipeableProps = {
 
-    static defaultProps = {
+    /**
+     * Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу
+     */
+    delta?: number;
+
+    /**
+     * Функция запускаемая по свайпу.
+     */
+    onSwipe: (direction: 'top' | 'right' | 'bottom' |'left') => void;
+
+    /**
+     * Дочерний компонент представленный в виде единичного элемента
+     * TODO: // тут должны быть такие children что у ниъ есть onMouseDown onTouchStart
+     */
+    children: any;
+};
+
+class Swipeable extends React.PureComponent<SwipeableProps> {
+
+    static defaultProps: Partial<SwipeableProps> = {
         delta: 100
     };
 

@@ -44,7 +44,7 @@ describe('textarea', () => {
     });
 
     it('should focus textarea on public focus method', () => {
-        const wrapper = mount(<Textarea />);
+        const wrapper = mount<Textarea>(<Textarea />);
 
         const textarea = wrapper.instance().control;
 
@@ -60,13 +60,13 @@ describe('textarea', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        const textarea = mount(<Textarea />);
+        const textarea = mount<Textarea>(<Textarea />);
 
-        document.activeElement.blur = jest.fn();
+        (document.activeElement as HTMLElement).blur = jest.fn();
 
         textarea.instance().blur();
 
-        expect(document.activeElement.blur).toHaveBeenCalled();
+        expect((document.activeElement as HTMLElement).blur).toHaveBeenCalled();
     });
 
     it('should set class on textarea focus', () => {
@@ -97,7 +97,7 @@ describe('textarea', () => {
     });
 
     it('should change the state value when props is not defined', () => {
-        const textarea = mount(<Textarea />);
+        const textarea = mount<Textarea>(<Textarea />);
         const control = textarea.find('textarea');
 
         control.simulate('change', { target: { value: 'other value' } });
@@ -157,7 +157,7 @@ describe('textarea', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const textarea = mount(<Textarea />);
+        const textarea = mount<Textarea>(<Textarea />);
         const elemTopPosition = textarea.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 

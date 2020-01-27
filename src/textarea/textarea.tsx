@@ -4,105 +4,172 @@
 
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
+export type TextareaProps = {
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Тип поля (filled только на белом фоне в размере m)
+     */
+    view?: 'default' | 'filled';
+
+    /**
+     * Управление возможностью компонента занимать всю ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Управление автозаполнением компонента
+     */
+    autocomplete?: boolean;
+
+    /**
+     * Управление возможностью изменения значения компонента
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление возможностью подстраивать высоту компонента под высоту текста
+     */
+    autosize?: boolean;
+
+    /**
+     * Максимальное количество отображаемых строк (работает только вместе с autosize)
+     */
+    maxRows?: number;
+
+    /**
+     * Минимальное количество отображаемых строк (работает только вместе c autosize)
+     */
+    minRows?: number;
+
+    /**
+     * Максимальная высота элемента (работает только вместе с autosize)
+     */
+    maxHeight?: number;
+
+    /**
+     * Максимальное число символов
+     */
+    maxLength?: number;
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Содержимое поля ввода, указанное по умолчанию (используйте это поле
+     * если хотите использовать компонент как uncontrolled)
+     */
+    defaultValue?: string;
+
+    /**
+     * Содержимое поля ввода
+     */
+    value?: string;
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Лейбл для поля
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Подсказка в поле
+     */
+    placeholder?: string;
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Отображение ошибки
+     */
+    error?: React.ReactNode;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Управление возможностью изменения размеров компонента
+     */
+    resize?: 'both' | 'horizontal' | 'vertical' | 'none';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Обработчик изменения значения 'value'
+     */
+    onChange?: (value?: string) => void;
+
+    /**
+     * Обработчик фокуса поля
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса c поля
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события вставки текста в поле
+     */
+    onPaste?: (event?: React.ClipboardEvent<any>) => void;
+
+    /**
+     * Обработчик события изменения высоты компонента со значением параметра "autosize" = true
+     */
+    onHeightChange?: (height?: number) => void;
+
+    /**
+     * Обработчик события нажатия клавиши при фокусе на поле
+     */
+    onKeyPress?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события keyDown
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Компонент многострочного текстового ввода.
  */
-class Textarea extends React.PureComponent {
+class Textarea extends React.PureComponent<TextareaProps> {
     cn = createCn('textarea');
-    static propTypes = {
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Тип поля (filled только на белом фоне в размере m) */
-        view: Type.oneOf(['default', 'filled']),
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Управление автозаполнением компонента */
-        autocomplete: Type.bool,
-        /** Управление возможностью изменения значения компонента */
-        disabled: Type.bool,
-        /** Управление возможностью подстраивать высоту компонента под высоту текста  */
-        autosize: Type.bool,
-        /** Максимальное количество отображаемых строк (работает только вместе с autosize) */
-        maxRows: Type.number,
-        /** Минимальное количество отображаемых строк (работает только вместе c autosize) */
-        minRows: Type.number,
-        /** Максимальная высота элемента (работает только вместе с autosize) */
-        maxHeight: Type.number,
-        /** Максимальное число символов */
-        maxLength: Type.number,
-        /** Уникальный идентификатор блока */
-        id: Type.string,
-        /** Уникальное имя блока */
-        name: Type.string,
-        /**
-         * Содержимое поля ввода, указанное по умолчанию (используйте это поле
-         * если хотите использовать компонент как uncontrolled)
-         */
-        defaultValue: Type.string,
-        /** Содержимое поля ввода */
-        value: Type.string,
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Лейбл для поля */
-        label: Type.node,
-        /** Подсказка в поле */
-        placeholder: Type.string,
-        /** Подсказка под полем */
-        hint: Type.node,
-        /** Отображение ошибки */
-        error: Type.node,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Управление возможностью изменения размеров компонента */
-        resize: Type.oneOf(['both', 'horizontal', 'vertical', 'none']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /**
-         * Обработчик изменения значения 'value'
-         * @param {string} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик фокуса поля
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса c поля
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события вставки текста в поле
-         * @param {React.ClipboardEvent} event
-         */
-        onPaste: Type.func,
-        /**
-         * Обработчик события изменения высоты компонента со значением параметра "autosize" = true
-         * @param {number} height
-         */
-        onHeightChange: Type.func,
-        /**
-         * Обработчик события нажатия клавиши при фокусе на поле
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyPress: Type.func,
-        /**
-         * Обработчик события keyDown
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<TextareaProps> = {
         view: 'default',
         width: 'default',
         autocomplete: true,
@@ -268,7 +335,7 @@ class Textarea extends React.PureComponent {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 

@@ -3,30 +3,52 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+export type ListHeaderProps = {
+
+    /**
+     * Заголовок
+     */
+    title?: React.ReactNode;
+
+    /**
+     * Комментарий
+     */
+    description?: React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Вид компонента
+     */
+    view?: 'transparent' | 'filled';
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+}
 
 /**
  * Компонент для разделения списка по датам или смысловым группам.
  */
-class ListHeader extends React.PureComponent {
+class ListHeader extends React.PureComponent<ListHeaderProps> {
     cn = createCn('list-header');
-    static propTypes = {
-        /** Заголовок */
-        title: Type.node,
-        /** Комментарий */
-        description: Type.node,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Вид компонента */
-        view: Type.oneOf(['transparent', 'filled']),
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     render() {
         return (

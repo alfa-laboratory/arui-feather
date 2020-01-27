@@ -3,7 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
+
+export type ResizeSensorProps = {
+    /**
+     * Callback на изменение размера родителя
+     */
+    onResize?: Function;
+
+};
 
 /**
  * Компонент позволяющий слушать изменения размера родительского элемента.
@@ -13,16 +20,8 @@ import Type from 'prop-types';
  * Важно! Элемент, размер которого вы хотите измерять, должен обладать
  * css свойством `position: relative;`.
  */
-class ResizeSensor extends React.Component {
-    static propTypes = {
-        /** Callback на изменение размера родителя */
-        onResize: Type.func
-    };
-
-    /**
-     * @type {HTMLIFrameElement}
-     */
-    iframe;
+class ResizeSensor extends React.Component<ResizeSensorProps> {
+    iframe: HTMLIFrameElement;
 
     componentDidMount() {
         if (this.iframe.contentWindow) {
@@ -38,7 +37,7 @@ class ResizeSensor extends React.Component {
 
     render() {
         const iframeStyle = {
-            position: 'absolute',
+            position: 'absolute' as const,
             top: 0,
             left: 0,
             width: '100%',
@@ -55,7 +54,7 @@ class ResizeSensor extends React.Component {
                     this.iframe = iframe;
                 } }
                 style={ iframeStyle }
-                tabIndex='-1'
+                tabIndex={ -1 }
             />
         );
         /* eslint-enable jsx-a11y/iframe-has-title */

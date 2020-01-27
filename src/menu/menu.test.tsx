@@ -5,9 +5,9 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import Menu from './menu';
+import Menu, { MenuContentType } from './menu';
 
-const MENU_ITEM1 = {
+const MENU_ITEM1: MenuContentType = {
     type: 'item',
     content: 'MenuItem 1',
     value: 'value1',
@@ -16,7 +16,7 @@ const MENU_ITEM1 = {
     }
 };
 
-const MENU_ITEM2 = {
+const MENU_ITEM2: MenuContentType = {
     type: 'item',
     content: 'MenuItem 2',
     value: 'value2',
@@ -25,14 +25,14 @@ const MENU_ITEM2 = {
     }
 };
 
-const MENU_ITEM2_CLONE = {
+const MENU_ITEM2_CLONE: MenuContentType = {
     type: 'item',
     content: 'MenuItem 2',
     value: 'value2',
     key: 'value3'
 };
 
-const MENU_GROUP = {
+const MENU_GROUP: MenuContentType = {
     type: 'group',
     title: 'Group Title',
     content: [
@@ -167,7 +167,7 @@ describe('menu', () => {
     });
 
     it('should focus on menu after `focus` method call', () => {
-        const menu = mount(<Menu />);
+        const menu = mount<Menu>(<Menu />);
 
         menu.instance().focus();
 
@@ -185,13 +185,13 @@ describe('menu', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        const menu = mount(<Menu />);
+        const menu = mount<Menu>(<Menu />);
 
-        document.activeElement.blur = jest.fn();
+        (document.activeElement as HTMLElement).blur = jest.fn();
 
         menu.instance().blur();
 
-        expect(document.activeElement.blur).toHaveBeenCalled();
+        expect((document.activeElement as HTMLElement).blur).toHaveBeenCalled();
     });
 
     it('should call `onFocus` callback after menu was focused', () => {
@@ -214,7 +214,7 @@ describe('menu', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const menu = mount(<Menu />);
+        const menu = mount<Menu>(<Menu />);
 
         const node = menu.instance().getNode();
 

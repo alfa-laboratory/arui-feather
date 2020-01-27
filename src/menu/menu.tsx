@@ -5,119 +5,194 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
-import styleType from 'react-style-proptype';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconCheck from '../icon/ui/tick';
 import MenuItem from '../menu-item/themed';
+import { MenuItemProps } from '../menu-item/menu-item';
 
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 
+export type MenuHighlightedItemShapeType = {
+
+    /**
+     * Уникальный идентификатор
+     */
+    ref?: number | string;
+
+    /**
+     * Элемент списка типа ContentItem
+     */
+    item?: any;
+}
+
+// TODO: тут надо переделать типы, и сделать условными сейчас не очевидно
+export type MenuContentType = {
+
+    /**
+     * Тип элемента
+     */
+    type?: 'item' | 'group';
+
+    /**
+     * Ключ для перечисления
+     */
+    key?: React.Key;
+
+    /**
+     * Название группы
+     */
+    title?: string;
+
+    /**
+     * Только для type='item', свойство для компонента [MenuItem](#!/MenuItem)
+     */
+    value?: string | number;
+
+    /**
+     * Содержание элемента
+     */
+    content?: React.ReactNode | any[];
+
+    /**
+     * Только для type='item': свойства для компонента [MenuItem](#!/MenuItem)
+     */
+    props?: MenuItemProps;
+};
+
+export type MenuProps = {
+
+    /**
+     * Тип расположения меню: 'horizontal'
+     */
+    view?: string;
+
+    /**
+     * Размещение заголовка групп: обычное или в одну строку с первым элементом группы
+     */
+    groupView?: 'default' | 'line';
+
+    /**
+     * Тип списка вариантов меню
+     */
+    mode?: 'basic' | 'check' | 'radio' | 'radio-check';
+
+    /**
+     * Управление возможностью изменения значения
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление состоянием фокуса элемента
+     */
+    focused?: boolean;
+
+    /**
+     * Управление автоматическим фокусом на первом элементе при вызове публичного метода focus
+     */
+    autoFocusFirstItem?: boolean;
+
+    /**
+     * Элемент меню, на котором стоит выделение
+     */
+    highlightedItem?: MenuHighlightedItemShapeType;
+
+    /**
+     * Список объектов ContentItem
+     */
+    content?: Array<MenuContentType>;
+
+    /**
+     * Список значений выбранных элементов
+     */
+    checkedItems?: ReadonlyArray<string | number>;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Объект со стилями
+     */
+    style?: React.CSSProperties;
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик клика по варианту меню
+     */
+    onItemClick?: (item?: any) => void;
+
+    /**
+     * Обработчик выбора варианта меню
+     */
+    onItemCheck?: (checkedItems?: any[]) => void;
+
+    /**
+     * Обработчик события наведения курсора на меню
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с меню
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>, item?) => void;
+
+    /**
+     * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem
+     */
+    onHighlightItem?: (highlightedItem?: any) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
+
 /**
  * Компонент меню.
  */
 @performance(true)
-class Menu extends React.Component {
+class Menu extends React.Component<MenuProps> {
     cn = createCn('menu');
-    static propTypes = {
-        /** Тип расположения меню: 'horizontal' */
-        view: Type.string,
-        /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
-        groupView: Type.oneOf(['default', 'line']),
-        /** Тип списка вариантов меню */
-        mode: Type.oneOf(['basic', 'check', 'radio', 'radio-check']),
-        /** Управление возможностью изменения значения */
-        disabled: Type.bool,
-        /** Управление состоянием фокуса элемента */
-        focused: Type.bool,
-        /** Управление автоматическим фокусом на первом элементе при вызове публичного метода focus */
-        autoFocusFirstItem: Type.bool,
-        /** Элемент меню, на котором стоит выделение */
-        highlightedItem: Type.shape({
-            /** Уникальный идентификатор */
-            ref: Type.oneOfType([Type.number, Type.string]),
-            /** Элемент списка типа ContentItem */
-            item: Type.any
-        }),
-        /** Список объектов ContentItem */
-        content: Type.arrayOf(Type.shape({
-            /** Тип элемента */
-            type: Type.oneOf(['item', 'group']),
-            /** Только для type='item', свойство для компонента [MenuItem](#!/MenuItem) */
-            value: Type.oneOfType([Type.string, Type.number]),
-            /** Содержание элемента */
-            content: Type.oneOfType([Type.node, Type.array]),
-            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
-            props: Type.object
-        })),
-        /** Список значений выбранных элементов */
-        checkedItems: Type.arrayOf(Type.oneOfType([
-            Type.string,
-            Type.number
-        ])),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Объект со стилями */
-        style: styleType,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик клика по варианту меню
-         * @param item
-         */
-        onItemClick: Type.func,
-        /**
-         * Обработчик выбора варианта меню
-         * @param {Array<string|number>} checkedItems
-         */
-        onItemCheck: Type.func,
-        /**
-         * Обработчик события наведения курсора на меню
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с меню
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /**
-         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyUp: Type.func,
-        /**
-         * Обработчик фокуса
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem
-         * @param highlightedItem
-         */
-        onHighlightItem: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<MenuProps> = {
         size: 'm',
         mode: 'basic',
         groupView: 'default',
@@ -239,7 +314,7 @@ class Menu extends React.Component {
         const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
         const isItemDisabled = this.props.disabled || itemProps.disabled;
         const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
-        const menuItem = {
+        const menuItem: { item; ref; instance? } = {
             item,
             ref: item.value
         };
@@ -450,7 +525,6 @@ class Menu extends React.Component {
      * Возвращает корневой `HTMLElement` компонента.
      *
      * @public
-     * @returns {HTMLElement}
      */
     getNode() {
         return this.root;
@@ -485,7 +559,7 @@ class Menu extends React.Component {
     // eslint-disable-next-line class-methods-use-this
     blur() {
         if (document.activeElement) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLElement).blur();
         }
     }
 

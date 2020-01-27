@@ -4,4 +4,6 @@
 
 import { createTheme } from 'bem-react-classname';
 
-export const { withTheme, ThemeProvider } = createTheme('alfa-on-white');
+export type ThemeType = 'alfa-on-color' | 'alfa-on-white';
+
+export const { withTheme, ThemeProvider } = createTheme<ThemeType>('alfa-on-white');

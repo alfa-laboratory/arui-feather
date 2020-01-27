@@ -6,20 +6,28 @@ import React from 'react';
 import Type from 'prop-types';
 import { ThemeProvider as NewThemeProvider } from '../cn';
 
+export type ThemeProviderProps = {
+    /**
+     * Дочерний элемент `ThemeProvider`
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+};
+
 /**
  * Компонент задающий тему для своих дочерних компонентов.
  * Важно! Может содержать в себе строго один дочерний компонент.
  */
-class ThemeProvider extends React.Component {
-    static propTypes = {
-        /** Дочерний элемент `ThemeProvider` */
-        children: Type.node,
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white'])
-    };
-
+class ThemeProvider extends React.Component<ThemeProviderProps> {
     static contextTypes = {
         theme: Type.string
     };

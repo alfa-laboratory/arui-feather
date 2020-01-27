@@ -3,81 +3,133 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+export type LinkProps = {
+
+    /**
+     * Иконка ссылки
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Позиционирование иконки в ссылке
+     */
+    iconPosition?: 'left' | 'right';
+
+    /**
+     * Текст ссылки
+     */
+    text?: React.ReactNode;
+
+    /**
+     * href ссылки
+     */
+    url?: string;
+
+    /**
+     * Указание на загрузку, вместо открытия и указание имени файла
+     */
+    download?: string | boolean;
+
+    /**
+     * target ссылки
+     */
+    target?: '_self' | '_blank' | '_parent' | '_top';
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Управление возможностью клика по ссылке
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление состоянием ссылки выбран/не выбран
+     */
+    checked?: boolean;
+
+    /**
+     * Псевдо-ссылка (border-bottom: dashed)
+     */
+    pseudo?: boolean;
+
+    /**
+     * Тип ссылки
+     */
+    view?: 'default' | 'blue';
+
+    /**
+     * Размер компонента
+     */
+    size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Дочерние элементы `Link`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик клика но ссылке
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса компонента
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса компонента
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на ссылку
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с ссылки
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика по disabled ссылке
+     */
+    onDisabledClick?: Function;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 
 /**
  * Компонент ссылки.
  */
-class Link extends React.PureComponent {
+class Link extends React.PureComponent<LinkProps> {
     cn = createCn('link');
-    static propTypes = {
-        /** Иконка ссылки */
-        icon: Type.node,
-        /** Позиционирование иконки в ссылке */
-        iconPosition: Type.oneOf(['left', 'right']),
-        /** Текст ссылки */
-        text: Type.node,
-        /** href ссылки */
-        url: Type.string,
-        /** Указание на загрузку, вместо открытия и указание имени файла  */
-        download: Type.oneOfType([Type.string, Type.bool]),
-        /** target ссылки */
-        target: Type.oneOf(['_self', '_blank', '_parent', '_top']),
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Управление возможностью клика по ссылке */
-        disabled: Type.bool,
-        /** Управление состоянием ссылки выбран/не выбран */
-        checked: Type.bool,
-        /** Псевдо-ссылка (border-bottom: dashed) */
-        pseudo: Type.bool,
-        /** Тип ссылки */
-        view: Type.oneOf(['default', 'blue']),
-        /** Размер компонента */
-        size: Type.oneOf(['xs', 's', 'm', 'l', 'xl']),
-        /** Дочерние элементы `Link` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик клика но ссылке
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса компонента
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик события наведения курсора на ссылку
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с ссылки
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /**
-         * Обработчик клика по disabled ссылке
-         */
-        onDisabledClick: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<LinkProps> = {
         iconPosition: 'left',
         size: 'm',
         url: '#',
@@ -98,7 +150,7 @@ class Link extends React.PureComponent {
         const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
         const { iconPosition } = this.props;
 
-        const linkProps = {
+        const linkProps: React.AnchorHTMLAttributes<HTMLAnchorElement> & React.ClassAttributes<HTMLAnchorElement> = {
             ref: (root) => {
                 this.root = root;
             },
@@ -119,8 +171,7 @@ class Link extends React.PureComponent {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave,
-            'data-test-id': this.props['data-test-id']
+            onMouseLeave: this.handleMouseLeave
         };
 
         if (this.props.target === '_blank') {
@@ -152,7 +203,10 @@ class Link extends React.PureComponent {
             linkContent.push(textTemplate, iconTemplate);
         }
 
-        return React.createElement(linkElement, linkProps, linkContent);
+        return React.createElement(linkElement, {
+            ...linkProps,
+            'data-test-id': this.props['data-test-id']
+        }, linkContent);
     }
 
     handleClick = (event) => {
@@ -226,7 +280,7 @@ class Link extends React.PureComponent {
      */
     // eslint-disable-next-line class-methods-use-this
     blur() {
-        if (document.activeElement) {
+        if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }

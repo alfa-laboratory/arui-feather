@@ -31,7 +31,7 @@ export type SwipeableProps = {
 
 class Swipeable extends React.PureComponent<SwipeableProps> {
 
-    static defaultProps = {
+    static defaultProps: Partial<SwipeableProps> = {
         delta: 100
     };
 

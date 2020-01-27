@@ -16,6 +16,7 @@ import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
 
+// TODO: решить че с этим делать потому что вроде как отдельная структура не нужна
 /**
  * @typedef {Object} Point
  * @property {Number} left Координата по оси x
@@ -46,87 +47,145 @@ import performance from '../performance';
  * @property {HTMLElement} targetAnchor Объект элемента, к которому привязан попап, в DOM дереве
  */
 
+export type PopupDirectionsFieldType = 'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+export type PopupProps = {
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Дочерние элементы `Popup`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тип попапа
+     */
+    type?: 'default' | 'tooltip';
+
+    /**
+     * Подстраивание высоты попапа под край окна ('adaptive'), занятие попапом всей возможной высоты ('available'), 'default'
+     */
+    height?: 'default' | 'available' | 'adaptive';
+
+    /**
+     * Только для target='anchor', расположение (в порядке приоритета) относительно точки открытия. Первым указывается главное направление, через дефис - второстепенное направление
+     */
+    directions?: ReadonlyArray<PopupDirectionsFieldType>;
+
+    /**
+     * Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen'
+     */
+    target?: 'anchor' | 'position' | 'screen';
+
+    /**
+     * Только для target='anchor'. Смещение в пикселях всплывающего окна относительно основного направления
+     */
+    mainOffset?: number;
+
+    /**
+     * Только для target='anchor'. Смещение в пикселях всплывающего окна относительно второстепенного направления
+     */
+    secondaryOffset?: number;
+
+    /**
+     * Только для target='anchor'. Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера
+     */
+    fitContaiterOffset?: number;
+
+    /**
+     * Управление видимостью компонента
+     */
+    visible?: boolean;
+
+    /**
+     * Управление выставлением модификатора для добавления внутренних отступов в стилях
+     */
+    padded?: boolean;
+
+    /**
+     * Элемент закреплённого заголовка для компонента
+     */
+    header?: React.ReactNode;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Обработчик события наведения курсора на попап
+     */
+    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с попапа
+     */
+    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика вне компонента
+     */
+    onClickOutside?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Минимальная ширина попапа
+     */
+    minWidth?: number;
+
+    /**
+     * Максимальная ширина попапа
+     */
+    maxWidth?: number;
+
+    /**
+     * Максимальная высота попапа
+     */
+    maxHeight?: number;
+
+    /**
+     * Указатель на родительский элемент
+     */
+    for?: string;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
+type PopupState = {
+    direction: any;
+    hasScrollbar: boolean;
+    receivedContainer: boolean;
+    styles: React.CSSProperties;
+    topGradientStyles: React.CSSProperties;
+    bottomGradientStyles: React.CSSProperties;
+    canUseDOM: boolean;
+    needRedrawAfterMount: boolean;
+};
+
 /**
  * Компонент popup'а.
  */
 @performance(true)
-class Popup extends React.Component {
+class Popup extends React.Component<PopupProps, PopupState> {
     cn = createCn('popup');
-    static propTypes = {
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Дочерние элементы `Popup` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тип попапа */
-        type: Type.oneOf(['default', 'tooltip']),
-        /** Подстраивание высоты попапа под край окна ('adaptive'), занятие попапом всей возможной высоты ('available'), 'default' */
-        height: Type.oneOf(['default', 'available', 'adaptive']),
-        /** Только для target='anchor', расположение (в порядке приоритета) относительно точки открытия. Первым указывается главное направление, через дефис - второстепенное направление */
-        directions: Type.arrayOf(
-            Type.oneOf([
-                'anchor',
-                'top-left',
-                'top-center',
-                'top-right',
-                'left-top',
-                'left-center',
-                'left-bottom',
-                'right-top',
-                'right-center',
-                'right-bottom',
-                'bottom-left',
-                'bottom-center',
-                'bottom-right'
-            ])
-        ),
-        /** Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen' */
-        target: Type.oneOf(['anchor', 'position', 'screen']),
-        /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно основного направления */
-        mainOffset: Type.number,
-        /** Только для target='anchor'. Смещение в пикселях всплывающего окна относительно второстепенного направления */
-        secondaryOffset: Type.number,
-        /** Только для target='anchor'. Минимально допустимое смещение в пикселях всплывающего окна от края его контейнера */
-        fitContaiterOffset: Type.number,
-        /** Управление видимостью компонента */
-        visible: Type.bool,
-        /** Управление выставлением модификатора для добавления внутренних отступов в стилях */
-        padded: Type.bool,
-        /** Элемент закреплённого заголовка для компонента */
-        header: Type.node,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /**
-         * Обработчик события наведения курсора на попап
-         * @param {React.MouseEvent} event
-         */
-        onMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с попапа
-         * @param {React.MouseEvent} event
-         */
-        onMouseLeave: Type.func,
-        /**
-         * Обработчик клика вне компонента
-         * @param {React.MouseEvent} event
-         */
-        onClickOutside: Type.func,
-        /** Минимальная ширина попапа */
-        minWidth: Type.number,
-        /** Максимальная ширина попапа */
-        maxWidth: Type.number,
-        /** Максимальная высота попапа */
-        maxHeight: Type.number,
-        /** Указатель на родительский элемент */
-        for: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<PopupProps> = {
         visible: false,
         padded: true,
         secondaryOffset: 0,
@@ -135,7 +194,8 @@ class Popup extends React.Component {
         size: 's'
     };
 
-    static contextTypes = {
+    // TODO: не типизировал, сделаем потом
+    static contextTypes: any = {
         isInCustomContainer: Type.bool,
         renderContainerElement: HtmlElement,
         positioningContainerElement: HtmlElement
@@ -339,10 +399,16 @@ class Popup extends React.Component {
         const isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
 
         if (this.props.height === 'adaptive' || this.props.target === 'screen') {
-            const topGradientStyles = {
+            const topGradientStyles: {
+                width: string;
+                height?: number;
+            } = {
                 width: this.state.topGradientStyles.width
             };
-            const bottomGradientStyles = {
+            const bottomGradientStyles: {
+                width: string;
+                height?: number;
+            } = {
                 width: this.state.bottomGradientStyles.width
             };
 
@@ -455,8 +521,6 @@ class Popup extends React.Component {
      * `Popup` уже находится в DOM. Для `Popup` без кастомного контейнера
      * роль контейнера выполняет `document.body` и этот для них этот метод
      * всегда вернете `true`.
-     *
-     * @returns {Boolean}
      */
     isContainerReady() {
         if (!this.context.isInCustomContainer) {
@@ -469,10 +533,8 @@ class Popup extends React.Component {
     /**
      * Возвращает `true`, если все необходимые для расчета положения `Popup`
      * внешние props заданы.
-     *
-     * @returns {Boolean}
      */
-    isPropsToPositionCorrect() {
+    isPropsToPositionCorrect(): boolean {
         return (
             (this.props.target === 'anchor' && this.anchor) ||
             (this.props.target === 'position' && this.position) ||
@@ -546,7 +608,7 @@ class Popup extends React.Component {
         this.setGradientStyles();
     };
 
-    ensureClickEvent(isDestroy) {
+    ensureClickEvent(isDestroy?) {
         const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
@@ -579,23 +641,14 @@ class Popup extends React.Component {
         };
     }
 
-    /**
-     * @returns {Number}
-     */
     getMinWidth() {
         return this.props.minWidth === undefined ? 0 : this.props.minWidth;
     }
 
-    /**
-     * @returns {Number}
-     */
     getMaxWidth() {
         return this.props.maxWidth === undefined ? 'none' : this.props.maxWidth;
     }
 
-    /**
-     * @returns {Number}
-     */
     getMaxHeight() {
         return this.props.maxHeight === undefined ? 'none' : this.props.maxHeight;
     }
@@ -603,7 +656,6 @@ class Popup extends React.Component {
     /**
      * Get collection of popup properties.
      *
-     * @returns {PopupHash}
      */
     getPopupHash() {
         return {

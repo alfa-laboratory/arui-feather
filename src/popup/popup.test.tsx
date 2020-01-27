@@ -16,10 +16,10 @@ function renderPopup(popupProps, anchorProps) {
 
         document.body.appendChild(popupContainer);
 
-        popup = mount(
+        popup = mount<Popup>(
             <Popup { ...popupProps }>{ popupProps.children || 'Popup' }</Popup>,
             {
-                container: popupContainer
+                attachTo: popupContainer
             }
         );
 
@@ -35,7 +35,7 @@ function renderPopup(popupProps, anchorProps) {
         anchor = mount(
             <div { ...anchorProps }>Target</div>,
             {
-                container: anchorContainer
+                attachTo: anchorContainer
             }
         );
     }

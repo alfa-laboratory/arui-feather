@@ -115,7 +115,7 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         if (this.props.children) {
             children = (
                 this.props.children as Array<React.ReactNode>).length
-                ? this.props.children: [this.props.children];
+                ? this.props.children : [this.props.children];
         }
 
         if (this.props.type === 'button') {

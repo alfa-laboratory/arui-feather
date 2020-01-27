@@ -3,36 +3,67 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import performance from '../performance';
+
+type ListItemsType = {
+
+    /**
+     * Уникальный ключ элемента
+     */
+    key: string;
+
+    /**
+     * Содержание элемента
+     */
+    value: React.ReactNode;
+
+    /**
+     * Вложенный список элементов
+     */
+    list?: ListProps['items'];
+};
+
+export type ListProps = {
+
+    /**
+     * Список элементов
+     */
+    items?: ReadonlyArray<ListItemsType>;
+
+    /**
+     * Тип списка
+     */
+    type?: 'default' | 'ordered';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+}
 
 /**
  * Компонент списка.
  */
 @performance(true)
-class List extends React.Component {
+class List extends React.Component<ListProps> {
     cn = createCn('list');
-    static propTypes = {
-        /** Список элементов */
-        items: Type.arrayOf(Type.shape({
-            /** Уникальный ключ элемента */
-            key: Type.string.isRequired,
-            /** Содержание элемента */
-            value: Type.node.isRequired
-        })),
-        /** Тип списка */
-        type: Type.oneOf(['default', 'ordered']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     render() {
         const { items, type } = this.props;

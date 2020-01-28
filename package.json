@@ -7,7 +7,7 @@
     "url": "git+https://github.com/alfa-laboratory/arui-feather.git"
   },
   "scripts": {
-    "test": "jest && npm run compile",
+    "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "lint": "npm run lint-css && npm run lint-js",
     "lint-js": "eslint ./*.js ./src/ ./gemini/ --ext .js,.jsx",

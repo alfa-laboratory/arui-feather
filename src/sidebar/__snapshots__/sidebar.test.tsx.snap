@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sidebar component should render without problems 1`] = `
+<PopupContainerProvider
+  className="sidebar sidebar_visible"
+  style={
+    Object {
+      "width": "430px",
+    }
+  }
+>
+  <div
+    className="sidebar__overlay sidebar__overlay_visible"
+    onClick={[Function]}
+    role="button"
+    tabIndex={-1}
+  />
+  <Mq
+    onMatchChange={[Function]}
+    query="--small-only"
+  />
+  <div
+    className="sidebar__inner"
+  >
+    <header
+      className="sidebar__header"
+    >
+      <div
+        className="sidebar__closer"
+      >
+        <ForwardRef(ThemedComponent(IconButton))
+          onClick={[Function]}
+          size="l"
+        >
+          <ForwardRef(ThemedComponent(IconClose))
+            size="l"
+          />
+        </ForwardRef(ThemedComponent(IconButton))>
+      </div>
+    </header>
+    <div
+      className="sidebar__content"
+      style={
+        Object {
+          "marginRight": "-0px",
+        }
+      }
+    >
+      defaultText
+    </div>
+    <footer
+      className="sidebar__footer"
+    />
+  </div>
+</PopupContainerProvider>
+`;

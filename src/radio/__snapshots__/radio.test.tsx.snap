@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`radio should render without problems 1`] = `
+<Radio
+  size="m"
+  tabIndex={0}
+>
+  <label
+    className="radio radio_size_m"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="radio__box"
+      key="0"
+    >
+      <input
+        autoComplete="off"
+        checked={false}
+        className="radio__control"
+        onChange={[Function]}
+        onClick={[Function]}
+        tabIndex={-1}
+        type="radio"
+      />
+    </span>
+  </label>
+</Radio>
+`;

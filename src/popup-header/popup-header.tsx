@@ -3,36 +3,53 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/themed';
 
+export type PopupHeaderProps = {
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Содержимое заголовка
+     */
+    title?: React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик клика по кнопке закрытия
+     */
+    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Заголовок в Popup.
  */
-class PopupHeader extends React.PureComponent {
+class PopupHeader extends React.PureComponent<PopupHeaderProps> {
     cn = createCn('popup-header');
-    static propTypes = {
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Содержимое заголовка */
-        title: Type.node,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик клика по кнопке закрытия
-         * @param {React.MouseEvent} event
-         */
-        onCloserClick: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     render() {
         return (

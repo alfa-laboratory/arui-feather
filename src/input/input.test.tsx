@@ -55,7 +55,7 @@ describe('input', () => {
 
     it('should set caret to end of input on public focus method', () => {
         const value = 'test';
-        const input = mount(<Input value={ value } />);
+        const input = mount<Input>(<Input value={ value } />);
 
         input.instance().focus();
 
@@ -72,7 +72,7 @@ describe('input', () => {
     });
 
     it('should scroll window to element on public `scrollTo` method', () => {
-        const input = mount(<Input />);
+        const input = mount<Input>(<Input />);
         const elemTopPosition = input.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
@@ -84,7 +84,7 @@ describe('input', () => {
     it(
         'should not set selection when `setSelectionRange` method was called on input with type `email`',
         () => {
-            const input = mount(<Input value='test' type='email' />);
+            const input = mount<Input>(<Input value='test' type='email' />);
 
             const setSelectionRange = jest.fn();
 
@@ -99,7 +99,7 @@ describe('input', () => {
     it(
         'should set selection to all value when `setSelectionRange` method was called without parameters',
         () => {
-            const input = mount(<Input value='test' />);
+            const input = mount<Input>(<Input value='test' />);
             const setSelectionRange = jest.fn();
 
             input.instance().getControl().setSelectionRange = setSelectionRange;
@@ -114,7 +114,7 @@ describe('input', () => {
     it(
         'should set selection when setSelection range was called with parameters',
         () => {
-            const input = mount(<Input value='test' />);
+            const input = mount<Input>(<Input value='test' />);
             const setSelectionRange = jest.fn();
 
             input.instance().getControl().setSelectionRange = setSelectionRange;
@@ -315,14 +315,14 @@ describe('input', () => {
     });
 
     it('should render with icon', () => {
-        const input = shallow(<Input icon={ <IconSearch icon='search' /> } />);
+        const input = shallow(<Input icon={ <IconSearch /> } />);
         const iconNode = input.find('.input__icon');
 
         expect(iconNode.length).toBe(1);
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const input = mount(<Input />);
+        const input = mount<Input>(<Input />);
 
         const node = input.instance().getNode();
 
@@ -347,7 +347,7 @@ describe('input', () => {
     it(
         'should return `HTMLInputElement` when `getControl` method called',
         () => {
-            const input = mount(<Input />);
+            const input = mount<Input>(<Input />);
             const controlNode = input.instance().getControl();
 
             expect(controlNode).toBeInstanceOf(HTMLInputElement);
@@ -357,7 +357,7 @@ describe('input', () => {
     it(
         'should return `HTMLInputElement` when `getControl` method called and mask is set',
         () => {
-            const input = mount(<Input mask='111' />);
+            const input = mount<Input>(<Input mask='111' />);
             const controlNode = input.instance().getControl();
 
             expect(controlNode).toBeInstanceOf(HTMLInputElement);
@@ -367,7 +367,7 @@ describe('input', () => {
     it(
         'should return null when `getMaskedInputInstance` method is called and mask is not set',
         () => {
-            const input = shallow(<Input />);
+            const input = shallow<Input>(<Input />);
             const maskedInputInstance = input.instance().getMaskedInputInstance();
 
             expect(maskedInputInstance).toBeNull();
@@ -377,7 +377,7 @@ describe('input', () => {
     it(
         'should return MaskedInput instance when getMaskedInputInstance method is called and mask is set',
         () => {
-            const input = mount(<Input mask='111' />);
+            const input = mount<Input>(<Input mask='111' />);
             const maskedInputInstance = input.instance().getMaskedInputInstance();
 
             expect(maskedInputInstance).toBeInstanceOf(MaskedInput);
@@ -489,7 +489,7 @@ describe('input', () => {
     it(
         'should call `enableMouseWheel` and `disableMouseWheel` after focus and blur',
         () => {
-            const input = mount(<Input />);
+            const input = mount<Input>(<Input />);
             const controlNode = input.find('input');
 
             jest.spyOn(input.instance(), 'enableMouseWheel');
@@ -506,7 +506,7 @@ describe('input', () => {
     it(
         'should call `resetError` after focus',
         () => {
-            const input = mount(<Input />);
+            const input = mount<Input>(<Input />);
             const controlNode = input.find('input');
 
             jest.spyOn(input.instance(), 'resetError');

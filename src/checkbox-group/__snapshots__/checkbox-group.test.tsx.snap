@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkbox-group should render with many checkbox children without problems 1`] = `
+<span
+  className="checkbox-group checkbox-group_type_normal control-group"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  tabIndex={-1}
+>
+  <div
+    className="checkbox-group__box"
+  >
+    <div
+      key="checkbox-0/.0"
+    >
+      <CheckBox
+        checked={false}
+        key="1"
+        onChange={[Function]}
+        size="m"
+        text="label"
+        type="normal"
+      />
+    </div>
+    <div
+      key="checkbox-1/.0"
+    >
+      <CheckBox
+        checked={false}
+        key="2"
+        onChange={[Function]}
+        size="m"
+        text="label"
+        type="normal"
+      />
+    </div>
+  </div>
+</span>
+`;
+
+exports[`checkbox-group should render with only one children 1`] = `
+<span
+  className="checkbox-group checkbox-group_type_normal control-group"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  tabIndex={-1}
+>
+  <div
+    className="checkbox-group__box"
+  >
+    <div
+      key="checkbox-0/.0"
+    >
+      <CheckBox
+        checked={false}
+        key="1"
+        onChange={[Function]}
+        size="m"
+        type="normal"
+      />
+    </div>
+  </div>
+</span>
+`;
+
+exports[`checkbox-group should render without children 1`] = `
+<span
+  className="checkbox-group checkbox-group_type_normal control-group"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  tabIndex={-1}
+>
+  <div
+    className="checkbox-group__box"
+  />
+</span>
+`;

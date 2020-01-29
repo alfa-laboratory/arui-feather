@@ -167,7 +167,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
             "zIndex": -1,
           }
         }
-        tabIndex="-1"
+        tabIndex={-1}
       />
     </ResizeSensor>
     <ForwardRef(ThemedComponent(Popup))
@@ -552,7 +552,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
                           "zIndex": -1,
                         }
                       }
-                      tabIndex="-1"
+                      tabIndex={-1}
                     />
                   </ResizeSensor>
                 </div>

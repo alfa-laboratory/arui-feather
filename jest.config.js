@@ -1,5 +1,5 @@
 module.exports = {
-    testRegex: '.*\\.test\\.(jsx|js)$',
+    testRegex: '.*\\.test\\.(jsx|js|ts|tsx)$',
     moduleNameMapper: {
         '\\.css$': '<rootDir>/__mocks__/assets-mock.js',
         '\\.png$': '<rootDir>/__mocks__/assets-mock.js',
@@ -7,10 +7,16 @@ module.exports = {
         '\\.xml': '<rootDir>/__mocks__/assets-mock.js',
         '\\.ico': '<rootDir>/__mocks__/assets-mock.js'
     },
+    transform: {
+        '^.+\\.jsx?$': 'babel-jest',
+        '^.+\\.tsx?$': 'ts-jest'
+    },
     modulePathIgnorePatterns: [
         '<rootDir>/.publish/'
     ],
     moduleFileExtensions: [
+        'ts',
+        'tsx',
         'js',
         'jsx',
         'json'

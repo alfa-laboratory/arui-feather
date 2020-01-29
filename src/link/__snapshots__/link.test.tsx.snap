@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`link should render with rel="noreferrer noopener" when using target="_blank" 1`] = `
+<Link
+  checked={false}
+  disabled={false}
+  iconPosition="left"
+  pseudo={false}
+  size="m"
+  tabIndex={0}
+  target="_blank"
+  url="#"
+>
+  <a
+    className="link link_size_m"
+    href="#"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    rel="noreferrer noopener"
+    tabIndex={0}
+    target="_blank"
+  />
+</Link>
+`;
+
+exports[`link should render without problems 1`] = `
+<a
+  className="link link_size_m"
+  href="#"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  tabIndex={0}
+>
+  Link-example
+</a>
+`;

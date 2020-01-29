@@ -9,8 +9,12 @@ const merge = require('webpack-merge');
 const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
 const WEBPACK_BASE_TEMPLATE = require('./webpack.base');
+const reactDocgenTypescript = require('react-docgen-typescript');
+
+const typescriptDocReader = reactDocgenTypescript.withCustomConfig('./tsconfig.json', {});
 const config = require('arui-demo');
 
+/* eslint import/no-unresolved: 0 */
 const { version } = require('./package');
 
 const PORT = parseInt(process.env.PORT || 8080, 10);
@@ -52,6 +56,31 @@ module.exports = {
         const componentName = dirPath.split(path.sep).pop();
         const componentPath = path.resolve(dirPath, `${componentName}.jsx`);
 
+        if (componentIndexPath && componentIndexPath.endsWith('.ts')) {
+            const componentPath = path.resolve(dirPath, `${componentName}.tsx`);
+            const docs = typescriptDocReader.parse(componentPath)[0];
+
+            Object.keys(docs.props).forEach((key) => {
+
+                const defaultValue = docs.props[key].defaultValue;
+
+                if (
+                    defaultValue &&
+                    defaultValue.value !== undefined &&
+                    typeof defaultValue.value !== 'string') {
+                    // TODO: постараться убрать после обновления styleguidist
+                    // почему-то react styleguidist в недрах ожидает string;
+                    // А тут, как и должно приходит true/false
+                    // хачим чтоб работало
+                    defaultValue.value = String(defaultValue.value);
+                }
+
+            });
+
+            return docs;
+
+        }
+
         return reactDoc(componentPath);
     },
     getComponentPathLine(filePath) {
@@ -82,13 +111,6 @@ module.exports = {
                 {
                     test: /\.(ico|xml)$/i,
                     loader: 'file-loader'
-                },
-                {
-                    test: /\.tsx?/i,
-                    loader: 'ts-loader',
-                    options: {
-                        transpileOnly: true
-                    }
                 }
             ]
         }
@@ -96,7 +118,7 @@ module.exports = {
     sections: [
         {
             title: 'Components',
-            components: ['./src/*/index.js', './src/*/index.ts'],
+            components: ['./src/*/index.ts', './src/*/index.js'],
             sectionDepth: 1
         }
     ]

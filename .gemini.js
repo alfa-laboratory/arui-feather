@@ -47,7 +47,9 @@ let config = {
             './src/'
         ],
         plugins: {
-            babel7: true,
+            babel7: {
+                extensions: [".es6", ".es", ".jsx", ".js", ".mjs", '.ts', '.tsx'],
+            },
             'html-reporter/gemini': {
                 defaultView: 'failed',
                 path: './gemini-report'

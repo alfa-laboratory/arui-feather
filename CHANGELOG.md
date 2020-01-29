@@ -1,3 +1,14 @@
+<a name="16.0.4"></a>
+## [16.0.4](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.3...v16.0.4) (2020-01-23)
+
+
+### Bug Fixes
+
+* up arui-demo ([#948](https://github.com/alfa-laboratory/arui-feather/issues/948)) ([53cb7e0](https://github.com/alfa-laboratory/arui-feather/commit/53cb7e0))
+* **input:** fix missing data-test-id attribute in input ([#939](https://github.com/alfa-laboratory/arui-feather/issues/939)) ([3d56c69](https://github.com/alfa-laboratory/arui-feather/commit/3d56c69))
+
+
+
 <a name="16.0.3"></a>
 ## [16.0.3](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.2...v16.0.3) (2019-12-30)
 

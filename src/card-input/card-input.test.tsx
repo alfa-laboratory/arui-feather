@@ -26,7 +26,7 @@ describe('card-input', () => {
     });
 
     it('should scroll window to element on public `scrollTo` method call', () => {
-        const cardInput = mount(<CardInput />);
+        const cardInput = mount<CardInput>(<CardInput />);
         const elemTopPosition = cardInput.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
@@ -36,8 +36,8 @@ describe('card-input', () => {
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        const cardInput = mount(<CardInput />);
-        const input = cardInput.instance().root;
+        const cardInput = mount<CardInput>(<CardInput />);
+        const input = cardInput.instance();
 
         jest.spyOn(input, 'focus');
         jest.spyOn(input, 'blur');

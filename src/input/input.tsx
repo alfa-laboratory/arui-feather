@@ -5,7 +5,6 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IconClose from '../icon/ui/close';
@@ -15,156 +14,249 @@ import MaskedInput from '../masked-input/masked-input';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
+export type InputProps = {
+
+    /**
+     * Тип поля.
+     Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
+     Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
+     */
+    type?: 'number' | 'card' | 'email' | 'file' | 'hidden' | 'money' | 'password' | 'tel' | 'text';
+
+    /**
+     * Тип инпута (filled только на белом фоне в размере m)
+     */
+    view?: 'default' | 'filled';
+
+    /**
+     * Управление возможностью компонента занимать всю ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Управление автозаполнением компонента. В случае передачи `true` или `false` подставляет `on` или `off`.
+     Строка подставляется как есть.
+     */
+    autocomplete?: boolean | string;
+
+    /**
+     * Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление возможностью изменения атрибута компонента (без установки класса-модификатора для оформления)
+     */
+    disabledAttr?: boolean;
+
+    /**
+     * Управление возможностью изменения класса-модификатора компонента
+     */
+    focused?: boolean;
+
+    /**
+     * Максимальное число символов
+     */
+    maxLength?: number;
+
+    /**
+     * Иконка компонента
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Управление наличием крестика, сбрасывающего значение 'value'
+     */
+    clear?: boolean;
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Содержимое поля ввода
+     */
+    value?: string;
+
+    /**
+     * Содержимое поля ввода, указанное по умолчанию
+     */
+    defaultValue?: string;
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a>
+     */
+    mask?: string;
+
+    /**
+     * Позволяет использовать пробелы в маске
+     */
+    useWhitespacesInMask?: boolean;
+
+    /**
+     * Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core`
+     */
+    maskFormatCharacters?: {
+        [key: string]: {
+            validate: Function;
+            transform?: Function;
+        };
+    };
+
+    /**
+     * Стандартное ствойство HTMLInputElement 'pattern'. Может быть использовано для показа корректной клавиатуры на мобильных устройствах.
+     */
+    pattern?: string;
+
+    /**
+     * Управление встроенной проверкой данных введённых пользователем в поле на корректность
+     */
+    formNoValidate?: boolean;
+
+    /**
+     * Добавление дополнительных элементов к инпуту слева
+     */
+    leftAddons?: React.ReactNode;
+
+    /**
+     * Добавление дополнительных элементов к инпуту справа
+     */
+    rightAddons?: React.ReactNode;
+
+    /**
+     * Лейбл для поля
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Подсказка в поле
+     */
+    placeholder?: string;
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Отображение ошибки
+     */
+    error?: React.ReactNode;
+
+    /**
+     * Сброс ошибки при установке фокуса
+     */
+    resetError?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Тултип, который появляется при наведении
+     */
+    title?: string;
+
+    /**
+     * Обработчик изменения значения 'value'
+     */
+    onChange?: (value?: string) => void;
+
+    /**
+     * Обработчик фокуса поля
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик клика по полю
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с поля
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик клика по крестику сбрасываещему значение 'value'
+     */
+    onClearClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события вставки текста в поле
+     */
+    onPaste?: (event?: React.ClipboardEvent<any>) => void;
+
+    /**
+     * Обработчик события касания по полю
+     */
+    onTouchStart?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик события прекращения касания по полю
+     */
+    onTouchEnd?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик события перемещения при касании по полю
+     */
+    onTouchMove?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик события прерывания касания по полю
+     */
+    onTouchCancel?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик, вызываемый перед началом ввода в маскированное поле
+     */
+    onProcessMaskInputEvent?: (event?: React.ChangeEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
 /**
  * Компонент текстового поля ввода.
  */
-class Input extends React.PureComponent {
+class Input extends React.PureComponent<InputProps> {
     cn = createCn('input');
-    static propTypes = {
-        /**
-         * Тип поля.
-         * Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
-         * Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
-         */
-        type: Type.oneOf(['number', 'card', 'email', 'file', 'hidden', 'money', 'password', 'tel', 'text']),
-        /** Тип инпута (filled только на белом фоне в размере m) */
-        view: Type.oneOf(['default', 'filled']),
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /**
-         * Управление автозаполнением компонента. В случае передачи `true` или `false` подставляет `on` или `off`.
-         * Строка подставляется как есть.
-         */
-        autocomplete: Type.oneOfType([Type.bool, Type.string]),
-        /** Управление возможностью изменения атрибута компонента, установка соответствующего класса-модификатора для оформления */
-        disabled: Type.bool,
-        /** Управление возможностью изменения атрибута компонента (без установки класса-модификатора для оформления) */
-        disabledAttr: Type.bool,
-        /** Управление возможностью изменения класса-модификатора компонента */
-        focused: Type.bool,
-        /** Максимальное число символов */
-        maxLength: Type.number,
-        /** Иконка компонента */
-        icon: Type.node,
-        /** Управление наличием крестика, сбрасывающего значение 'value' */
-        clear: Type.bool,
-        /** Уникальный идентификатор блока */
-        id: Type.string,
-        /** Уникальное имя блока */
-        name: Type.string,
-        /** Содержимое поля ввода */
-        value: Type.string,
-        /** Содержимое поля ввода, указанное по умолчанию */
-        defaultValue: Type.string,
-        /** Последовательность перехода между контролами при нажатии на Tab */
-        tabIndex: Type.number,
-        /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
-        mask: Type.string,
-        /** Позволяет использовать пробелы в маске */
-        useWhitespacesInMask: Type.bool,
-        /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
-        maskFormatCharacters: Type.objectOf(
-            Type.shape({
-                validate: Type.func.isRequired,
-                transform: Type.func
-            })
-        ),
-        /** Стандартное ствойство HTMLInputElement 'pattern'. Может быть использовано для показа корректной клавиатуры на мобильных устройствах. */
-        pattern: Type.string,
-        /** Управление встроенной проверкой данных введённых пользователем в поле на корректность */
-        formNoValidate: Type.bool,
-        /** Добавление дополнительных элементов к инпуту слева */
-        leftAddons: Type.node,
-        /** Добавление дополнительных элементов к инпуту справа */
-        rightAddons: Type.node,
-        /** Лейбл для поля */
-        label: Type.node,
-        /** Подсказка в поле */
-        placeholder: Type.string,
-        /** Подсказка под полем */
-        hint: Type.node,
-        /** Отображение ошибки */
-        error: Type.node,
-        /** Сброс ошибки при установке фокуса */
-        resetError: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Тултип, который появляется при наведении  */
-        title: Type.string,
-        /**
-         * Обработчик изменения значения 'value'
-         * @param {string} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик фокуса поля
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик клика по полю
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик снятия фокуса с поля
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик клика по крестику сбрасываещему значение 'value'
-         * @param {React.MouseEvent} event
-         */
-        onClearClick: Type.func,
-        /**
-         * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /**
-         * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyUp: Type.func,
-        /**
-         * Обработчик события вставки текста в поле
-         * @param {React.ClipboardEvent} event
-         */
-        onPaste: Type.func,
-        /**
-         * Обработчик события касания по полю
-         * @param {React.TouchEvent} event
-         */
-        onTouchStart: Type.func,
-        /**
-         * Обработчик события прекращения касания по полю
-         * @param {React.TouchEvent} event
-         */
-        onTouchEnd: Type.func,
-        /**
-         * Обработчик события перемещения при касании по полю
-         * @param {React.TouchEvent} event
-         */
-        onTouchMove: Type.func,
-        /**
-         * Обработчик события прерывания касания по полю
-         * @param {React.TouchEvent} event
-         */
-        onTouchCancel: Type.func,
-        /**
-         * Обработчик, вызываемый перед началом ввода в маскированное поле
-         * @param {React.ChangeEvent} event
-         */
-        onProcessMaskInputEvent: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<InputProps> = {
         formNoValidate: false,
         size: 'm',
         type: 'text',
@@ -519,7 +611,7 @@ class Input extends React.PureComponent {
      */
     // eslint-disable-next-line class-methods-use-this
     blur() {
-        if (document.activeElement) {
+        if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }

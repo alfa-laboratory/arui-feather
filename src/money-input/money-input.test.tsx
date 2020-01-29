@@ -27,7 +27,7 @@ describe('money-input', () => {
     });
 
     it('should call input focus method on `focus()` call', () => {
-        const moneyInput = mount(<MoneyInput />);
+        const moneyInput = mount<MoneyInput>(<MoneyInput />);
         const input = moneyInput.instance().root;
 
         jest.spyOn(input, 'focus');
@@ -38,7 +38,7 @@ describe('money-input', () => {
     });
 
     it('should call input blur method on `blur()` call', () => {
-        const moneyInput = mount(<MoneyInput />);
+        const moneyInput = mount<MoneyInput>(<MoneyInput />);
         const input = moneyInput.instance().root;
 
         jest.spyOn(input, 'blur');
@@ -83,7 +83,7 @@ describe('money-input', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const moneyInput = mount(<MoneyInput />);
+        const moneyInput = mount<MoneyInput>(<MoneyInput />);
         const elemTopPosition = moneyInput.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 

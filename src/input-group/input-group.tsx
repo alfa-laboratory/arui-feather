@@ -4,35 +4,33 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+type InputGroupProps = {
+    /** Управление возможностью компонента занимать всю ширину родителя */
+    width: 'default' | 'available';
+    /** Тема компонента */
+    theme: 'alfa-on-color' | 'alfa-on-white';
+    /** Дополнительный класс */
+    className: string;
+    /** Идентификатор компонента в DOM */
+    id: string;
+    /** Идентификатор для систем автоматизированного тестирования */
+    'data-test-id': string;
+};
 
 /**
  * Компонент группы полей для текстового ввода.
  */
-class InputGroup extends React.PureComponent {
+class InputGroup extends React.PureComponent<Partial<InputGroupProps>> {
     cn = createCn('input-group');
-    static propTypes = {
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Дочерние элементы `InputGroup`, как правило, компоненты `Input` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     render() {
         let children = null;
         const inputGroupParts = {};
 
         if (this.props.children) {
-            children = this.props.children.length ? this.props.children : [this.props.children];
+            children = Array.isArray(this.props.children) ? this.props.children : [this.props.children];
         }
 
         if (children) {
@@ -59,7 +57,7 @@ class InputGroup extends React.PureComponent {
                 className={ `${this.cn({ width: this.props.width })} control-group` }
                 id={ this.props.id }
                 role='group'
-                tabIndex='-1'
+                tabIndex={ -1 }
                 data-test-id={ this.props['data-test-id'] }
             >
                 { createFragment(inputGroupParts) }

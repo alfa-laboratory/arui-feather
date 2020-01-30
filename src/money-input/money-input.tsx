@@ -77,10 +77,14 @@ type MoneyInputProps = InputProps & {
     'data-test-id': string;
 }
 
+type MoneyInputState = {
+    value: string;
+}
+
 /**
  * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
  */
-class MoneyInput extends React.PureComponent<MoneyInputProps> {
+class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     cn = createCn('money-input');
 
     static defaultProps: Partial<MoneyInputProps> = {

@@ -5,30 +5,17 @@
 // @ts-nocheck
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Input from '../input/themed';
+import { InputProps } from '../input/input';
 
 /**
- * Поле ввода номера карты с маской.
- *
- * @class
+ * Компонент поля ввода почты.
  * @extends Input
  */
-class CardInput extends React.PureComponent {
-    cn = createCn('card-input');
-    static propTypes = {
-        ...Input.propTypes,
-        /** Подсказка в текстовом поле */
-        placeholder: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
-
-    static defaultProps = {
-        placeholder: '0000 0000 0000 0000 00'
-    };
+class EmailInput extends React.PureComponent<InputProps> {
+    cn = createCn('email-input');
 
     /**
      * @type {Input}
@@ -39,11 +26,10 @@ class CardInput extends React.PureComponent {
         return (
             <Input
                 { ...this.props }
-                type='tel'
+                type='email'
                 ref={ (root) => {
                     this.root = root;
                 } }
-                mask='1111 1111 1111 1111 11'
                 formNoValidate={ true }
                 className={ this.cn() }
             />
@@ -78,4 +64,4 @@ class CardInput extends React.PureComponent {
     }
 }
 
-export default CardInput;
+export default EmailInput;

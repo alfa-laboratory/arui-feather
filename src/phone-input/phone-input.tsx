@@ -7,27 +7,30 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Input from '../input/themed';
+import { InputProps } from '../input/input';
+
+export type PhoneInputProps = InputProps & {
+    /**
+     * Определяет маску для ввода значений.
+     * <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a>
+     */
+    mask: string;
+    /**
+     * Подсказка в текстовом поле
+     */
+    placeholder: string;
+}
 
 /**
  * Компонент ввода телефона по маске.
- *
- * @extends Input
  */
-class PhoneInput extends React.PureComponent {
+class PhoneInput extends React.PureComponent<PhoneInputProps> {
     cn = createCn('phone-input');
-    static propTypes = {
-        ...Input.propTypes,
-        /** Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a> */
-        mask: Type.string,
-        /** Подсказка в текстовом поле */
-        placeholder: Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<PhoneInputProps> = {
         mask: '+1 111 111 11 11',
         placeholder: '+7 000 000 00 00'
     };

@@ -3,13 +3,48 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import styleType from 'react-style-proptype';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import IsolatedContainer from '../isolated-container/isolated-container';
 
-import { HtmlElement } from '../lib/prop-types';
+export type PopupContainerProviderProps = {
+    /**
+     * Дочерние элементы контейнера
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Объект со стилями
+     */
+    style?: any/* Не нашёлся встроенный тип для типа {"name":"custom","raw":"styleType","params":[],"returns":null}
+                  * https://github.com/alfa-laboratory/library-utils/issues/new
+                  */;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+}
+
+type PopupContainerProviderState = {
+    didRender: boolean;
+}
 
 /**
  * Становится родительским элементом для всех дочерних блоков `Popup`.
@@ -42,32 +77,15 @@ import { HtmlElement } from '../lib/prop-types';
  *  </Page>
  * ```
  */
-class PopupContainerProvider extends React.PureComponent {
+class PopupContainerProvider extends React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
     cn = createCn('popup-container');
-    static propTypes = {
-        /** Дочерние элементы контейнера */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Объект со стилями */
-        style: styleType,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
-
-    static childContextTypes = {
-        isInCustomContainer: Type.bool,
-        renderContainerElement: HtmlElement,
-        positioningContainerElement: HtmlElement
-    };
 
     state = {
         didRender: false // eslint-disable-line react/no-unused-state
     };
+
+    renderContainer: IsolatedContainer;
+    positioningContainer: HTMLElement;
 
     getChildContext() {
         return {
@@ -115,9 +133,8 @@ class PopupContainerProvider extends React.PureComponent {
      * Возвращает корневой `HTMLElement` компонента.
      *
      * @public
-     * @returns {HTMLElement}
      */
-    getNode() {
+    getNode(): HTMLElement {
         return this.positioningContainer;
     }
 }

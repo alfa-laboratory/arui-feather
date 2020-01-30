@@ -3,104 +3,125 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Button from '../button/themed';
 import Link from '../link/themed';
 import Popup from '../popup/themed';
+import { PopupProps } from '../popup/popup';
 
 import { POPUP_MAIN_OFFSET } from '../vars';
+
+export type DropdownProps = {
+
+    /**
+     * Тип компонента
+     */
+    switcherType?: 'link' | 'button';
+
+    /**
+     * Текст кнопки компонента
+     */
+    switcherText?: React.ReactNode;
+
+    /**
+     * Компонент [Popup](#!/Popup)
+     */
+    popupContent?: React.ReactNode;
+
+    /**
+     * Свойства для компонента [Popup](#!/Popup)
+     */
+    popupProps?: PopupProps;
+
+    /**
+     * Управление возможностью отображать попап при наведении курсора
+     */
+    mode?: 'hover' | 'normal';
+
+    /**
+     * Управление возможностью открытия попапа
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление состоянием открыт/закрыт попапа
+     */
+    opened?: boolean;
+
+    /**
+     * Только для switcherType='button'. Тип переключателя для кнопки, 'check'
+     */
+    togglable?: 'button' | 'check';
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Дочерние элементы `Dropdown`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Обработчик клика по кнопке компонента
+     */
+    onSwitcherClick?: (isOpened?: boolean) => void;
+
+    /**
+     * Обработчик события наведения курсора на кнопку компонента
+     */
+    onSwitcherMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с кнопки компонента
+     */
+    onSwitcherMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события наведения курсора на попап
+     */
+    onPopupMouseEnter?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события снятия курсора с попапа
+     */
+    onPopupMouseLeave?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события клика попапа за пределами попапа
+     */
+    onPopupClickOutside?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
-class Dropdown extends React.PureComponent {
+class Dropdown extends React.PureComponent<DropdownProps> {
     cn = createCn('dropdown');
-    static propTypes = {
-        /** Тип компонента */
-        switcherType: Type.oneOf(['link', 'button']),
-        /** Текст кнопки компонента */
-        switcherText: Type.node,
-        /** Компонент [Popup](#!/Popup) */
-        popupContent: Type.node,
-        /** Свойства для компонента [Popup](#!/Popup) */
-        popupProps: Type.shape({
-            className: Type.string,
-            type: Type.oneOf(['default', 'tooltip']),
-            height: Type.oneOf(['default', 'available', 'adaptive']),
-            directions: Type.arrayOf(Type.oneOf([
-                'anchor', 'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
-                'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
-            ])),
-            target: Type.oneOf(['anchor', 'position', 'screen']),
-            mainOffset: Type.number,
-            secondaryOffset: Type.number,
-            fitContaiterOffset: Type.number,
-            invalid: Type.bool,
-            visible: Type.bool,
-            padded: Type.bool,
-            size: Type.oneOf(['s', 'm', 'l', 'xl']),
-            theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-            onMouseEnter: Type.func,
-            onMouseLeave: Type.func,
-            onClickOutside: Type.func,
-            minWidth: Type.number,
-            maxWidth: Type.number
-        }),
-        /** Управление возможностью отображать попап при наведении курсора */
-        mode: Type.oneOf(['hover', 'normal']),
-        /** Управление возможностью открытия попапа */
-        disabled: Type.bool,
-        /** Управление состоянием открыт/закрыт попапа */
-        opened: Type.bool,
-        /** Только для switcherType='button'. Тип переключателя для кнопки, 'check' */
-        togglable: Type.oneOf(['button', 'check']),
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Дочерние элементы `Dropdown` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /**
-         * Обработчик клика по кнопке компонента
-         * @param {boolean} isOpened
-         */
-        onSwitcherClick: Type.func,
-        /**
-         * Обработчик события наведения курсора на кнопку компонента
-         * @param {React.MouseEvent} event
-         */
-        onSwitcherMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с кнопки компонента
-         * @param {React.MouseEvent} event
-         */
-        onSwitcherMouseLeave: Type.func,
-        /**
-         * Обработчик события наведения курсора на попап
-         * @param {React.MouseEvent} event
-         */
-        onPopupMouseEnter: Type.func,
-        /**
-         * Обработчик события снятия курсора с попапа
-         * @param {React.MouseEvent} event
-         */
-        onPopupMouseLeave: Type.func,
-        /**
-         * Обработчик события клика попапа за пределами попапа
-         * @param {React.MouseEvent} event
-         */
-        onPopupClickOutside: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<DropdownProps> = {
         switcherType: 'link',
         switcherText: 'Switcher',
         disabled: false,
@@ -154,7 +175,7 @@ class Dropdown extends React.PureComponent {
                     this.switcher = switcher;
                 } }
                 disabled={ this.props.disabled }
-                togglable={ this.props.togglable }
+                togglable={ this.props.togglable as any /** TODO: разобраться детально */ }
                 checked={ this.props.togglable === 'check' && opened }
                 onClick={ this.props.disabled ? undefined : this.handleSwitcherClick }
                 onMouseEnter={ this.handleSwitcherMouseEnter }

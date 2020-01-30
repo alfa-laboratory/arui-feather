@@ -4,62 +4,100 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+import Radio from '../radio/radio';
+
+export type RadioGroupProps = {
+
+    /**
+     * Тип группы кнопок
+     */
+    type?: 'normal' | 'button' | 'line';
+
+    /**
+     * Значение выбранной радио-кнопки
+     */
+    value?: string;
+
+    /**
+     * Отображение попапа с ошибкой в момент когда фокус находится на компоненте
+     */
+    error?: React.ReactNode;
+
+    /**
+     * Размеры pub и sub
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Управление шириной группы кнопок для типа 'button'. При значении
+'available' растягивает группу на ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Управление возможностью изменения состояния 'checked' дочерних компонентов `Radio`
+     */
+    disabled?: boolean;
+
+    /**
+     * Дочерние элементы `RadioGroup`, как правило, компоненты `Radio`
+     */
+    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Лейбл для группы
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Обработчик фокуса радиогруппы
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с радиогруппы
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
+     */
+    onChange?: (value?: string) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
 
 /**
  * Компонент группы радио-кнопок.
  */
-class RadioGroup extends React.PureComponent {
+class RadioGroup extends React.PureComponent<RadioGroupProps> {
     cn = createCn('radio-group');
-    static propTypes = {
-        /** Тип группы кнопок */
-        type: Type.oneOf(['normal', 'button', 'line']),
-        /** Значение выбранной радио-кнопки */
-        value: Type.string,
-        /** Отображение попапа с ошибкой в момент когда фокус находится на компоненте */
-        error: Type.node,
-        /** Размеры pub и sub */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /**
-         * Управление шириной группы кнопок для типа 'button'. При значении
-         * 'available' растягивает группу на ширину родителя
-         */
-        width: Type.oneOf(['default', 'available']),
-        /** Уникальное имя блока */
-        name: Type.string,
-        /** Управление возможностью изменения состояния 'checked' дочерних компонентов `Radio` */
-        disabled: Type.bool,
-        /** Дочерние элементы `RadioGroup`, как правило, компоненты `Radio` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Лейбл для группы */
-        label: Type.node,
-        /** Подсказка под полем */
-        hint: Type.node,
-        /**
-         * Обработчик фокуса радиогруппы
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик снятия фокуса с радиогруппы
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
-         * @param {string} value
-         */
-        onChange: Type.func,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<RadioGroupProps> = {
         type: 'normal',
         size: 'm'
     };
@@ -68,10 +106,12 @@ class RadioGroup extends React.PureComponent {
         value: ''
     };
 
+    radios: Radio[];
+
     render() {
         let children = null;
         const { size, name } = this.props;
-        let props = { name };
+        let props: { name: string; disabled?: boolean; width?: 'default' | 'available' } = { name };
         const radioGroupParts = {};
 
         if (this.props.disabled !== undefined) {
@@ -79,7 +119,9 @@ class RadioGroup extends React.PureComponent {
         }
 
         if (this.props.children) {
-            children = this.props.children.length ? this.props.children : [this.props.children];
+            children = (
+                this.props.children as Array<React.ReactNode>
+            ).length ? this.props.children : [this.props.children];
         }
 
         if (this.props.type === 'button') {
@@ -112,7 +154,7 @@ class RadioGroup extends React.PureComponent {
                     })} control-group${this.props.error ? ' control-group_invalid' : ''}`
                 }
                 role='group'
-                tabIndex='-1'
+                tabIndex={ -1 }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
                 data-test-id={ this.props['data-test-id'] }
@@ -176,7 +218,7 @@ class RadioGroup extends React.PureComponent {
      */
     // eslint-disable-next-line class-methods-use-this
     blur() {
-        if (document.activeElement) {
+        if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }

@@ -8,16 +8,14 @@ import React from 'react';
 import { createCn } from 'bem-react-classname';
 
 import Input from '../input/themed';
+import { InputProps } from '../input/input';
 
 /**
  * Компонент поля ввода почты.
  * @extends Input
  */
-class EmailInput extends React.PureComponent {
+class EmailInput extends React.PureComponent<InputProps> {
     cn = createCn('email-input');
-    static propTypes = {
-        ...Input.propTypes
-    };
 
     /**
      * @type {Input}

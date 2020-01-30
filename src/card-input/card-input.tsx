@@ -19,7 +19,7 @@ export type CardInputProps = InputProps & {
 class CardInput extends React.PureComponent<CardInputProps> {
     cn = createCn('card-input');
 
-    static defaultProps = {
+    static defaultProps: Partial<CardInputProps> = {
         placeholder: '0000 0000 0000 0000 00'
     };
 

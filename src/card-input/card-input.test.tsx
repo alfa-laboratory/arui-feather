@@ -37,7 +37,7 @@ describe('card-input', () => {
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
         const cardInput = mount<CardInput>(<CardInput />);
-        const input = cardInput.instance();
+        const input = cardInput.instance().root;
 
         jest.spyOn(input, 'focus');
         jest.spyOn(input, 'blur');

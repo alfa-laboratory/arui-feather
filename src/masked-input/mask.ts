@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
 import InputMask from 'inputmask-core';
 
 // Стандартный плейсхолдер буквы равный по ширине цифровому символу.
@@ -13,20 +12,16 @@ const DIGIT_RE = /^\d$/;
 const LETTER_RE = /^[A-Za-z]$/;
 const ALPHANNUMERIC_RE = /^[\dA-Za-z]$/;
 
-/**
- * @typedef {Object} CharFormatter
- * @property {Function} validate Предикат-фильтр
- * @property {Function} [transform] Действия с символом
- */
+type CharFormatter = {
+    validate: (char: string) => boolean;
+    transform?: (char: string) => string;
+};
 
-/**
- * @typedef {Object.<string, CharFormatter>} FormatCharacters
- */
+export type FormatCharacters = {
+    [key: string]: CharFormatter;
+};
 
-/**
- * @type FormatCharacters
- */
-const DEFAULT_FORMAT_CHARACTERS = {
+const DEFAULT_FORMAT_CHARACTERS: FormatCharacters = {
     '*': {
         validate(char) {
             return ALPHANNUMERIC_RE.test(char);
@@ -70,41 +65,28 @@ const DEFAULT_FORMAT_CHARACTERS = {
 class Mask {
     /**
      * Длина маски.
-     *
-     * @public
-     * @type {Number}
      */
-    length;
+    length: number;
 
     /**
      * Индекс первого редактируемого символа.
-     *
-     * @public
-     * @type {Number}
      */
-    firstEditableIndex;
+    firstEditableIndex: number;
 
     /**
      * Индекс последнего редактируемого символа.
-     *
-     * @public
-     * @type {Number}
      */
-    lastEditableIndex;
+    lastEditableIndex: number;
 
-    /**
-     * @type {InputMask.Pattern}
-     */
-    pattern;
+    // TODO: install InputMask typings
+    pattern: any;
 
     /**
      * Признак что пробелы удалять не надо
-     *
-     * @type {Boolean}
      */
-    useWhitespaces;
+    useWhitespaces: boolean;
 
-    constructor(mask, formatCharacters, useWhitespaces) {
+    constructor(mask: string, formatCharacters?: FormatCharacters, useWhitespaces?: boolean) {
         this.pattern = new InputMask.Pattern(
             mask,
             { ...DEFAULT_FORMAT_CHARACTERS, ...formatCharacters },

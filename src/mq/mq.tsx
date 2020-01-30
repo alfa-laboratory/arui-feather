@@ -3,12 +3,38 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 import { isPointerEventsSupported, isTouchSupported } from './utils';
 
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSupported());
+
+export type MqProps = {
+
+    /**
+     * Медиа запрос
+     */
+    query?: string;
+
+    /**
+     * Запрос на поддержку тач-событий
+     */
+    touch?: boolean;
+
+    /**
+     * Дочерние элементы `Mq`
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Обработчик изменений в совпадении запросов
+     */
+    onMatchChange?: (isMatched?: boolean) => void;
+}
+
+type MqState = {
+    isMatched: boolean;
+}
 
 /**
  * Компонент, имплементирующий поддержку медиа запросов в шаблонах.
@@ -17,26 +43,12 @@ const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSuppo
  * Можно использовать кастомные запросы из `src/mq/mq.json`, например `--small`.
  * Пока браузеры не поддерживают CSS4 Media Queries, поддержка тач-событий определяется через `touch`.
  */
-class Mq extends React.Component {
-    static propTypes = {
-        /** Медиа запрос */
-        query: Type.string,
-        /** Запрос на поддержку тач-событий */
-        touch: Type.bool,
-        /** Дочерние элементы `Mq` */
-        children: Type.node,
-        /**
-         * Обработчик изменений в совпадении запросов
-         * @param {boolean} isMatched
-         */
-        onMatchChange: Type.func
-    };
-
+class Mq extends React.Component<MqProps, MqState> {
     state = {
         isMatched: false
     };
 
-    mql = null;
+    mql: MediaQueryList | null = null;
 
     componentDidMount() {
         this.mql = getMatchMedia(this.props.query);
@@ -58,10 +70,7 @@ class Mq extends React.Component {
         return this.props.children;
     }
 
-    /**
-     * @param {Object} [mql] MediaQueryList или MediaQueryListEvent
-     */
-    handleMatch = (mql) => {
+    handleMatch = (mql: MediaQueryList | MediaQueryListEvent) => {
         let queryPass = true;
         let touchPass = true;
 

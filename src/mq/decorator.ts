@@ -7,10 +7,18 @@
 import React from 'react';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 
-export default function mqDecorator(query, propName = 'mqMatch') {
-    return function (Component) {
-        return class extends React.Component {
-            mql = null;
+interface ClassDecorator {
+    <TFunction extends Function>(target: TFunction): TFunction | void;
+}
+
+type MqDecoratorState = {
+    matched: boolean;
+}
+
+export default function mqDecorator(query: string, propName: string = 'mqMatch'): ClassDecorator {
+    return function (Component: React.ComponentType) {
+        return class extends React.Component<{}, MqDecoratorState> {
+            mql: MediaQueryList | null = null;
 
             state = {
                 matched: false
@@ -19,11 +27,13 @@ export default function mqDecorator(query, propName = 'mqMatch') {
             componentDidMount() {
                 this.mql = getMatchMedia(query);
                 this.handleMatchChange(this.mql);
+                // TODO: depricated => change to addEventListener
                 this.mql.addListener(this.handleMatchChange);
             }
 
             componentWillUnmount() {
                 releaseMatchMedia(query);
+                // TODO: depricated => change to removeEventListener
                 this.mql.removeListener(this.handleMatchChange);
                 this.mql = null;
             }
@@ -35,7 +45,7 @@ export default function mqDecorator(query, propName = 'mqMatch') {
                 });
             }
 
-            handleMatchChange = (mql) => {
+            handleMatchChange = (mql: MediaQueryListEvent) => {
                 this.setState({
                     matched: mql.matches
                 });

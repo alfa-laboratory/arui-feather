@@ -3,30 +3,49 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+
+export type TabsProps = {
+
+    /**
+     * Управление возможность скроллить компонент по-горизонтали
+     */
+    scrollable?: boolean;
+
+    /**
+     * Дочерние компоненты
+     */
+    children?: React.ReactNode;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Идентификатор компонента в DOM
+     */
+    id?: string;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+};
 
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
-class Tabs extends React.PureComponent {
+class Tabs extends React.PureComponent<TabsProps> {
     cn = createCn('tabs');
-    static propTypes = {
-        /** Управление возможность скроллить компонент по-горизонтали */
-        scrollable: Type.bool,
-        /** Дочерние компоненты */
-        children: Type.node,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<TabsProps> = {
         scrollable: true
     }
 

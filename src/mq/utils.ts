@@ -1,7 +1,5 @@
 /**
  * Возвращает `true`, если есть поддержка `Pointer Events`
- *
- * @returns {Boolean}
  */
 export function isPointerEventsSupported() {
     return 'PointerEvent' in window || 'msPointerEnabled' in window.navigator;
@@ -9,8 +7,6 @@ export function isPointerEventsSupported() {
 
 /**
  * Возвращает `true`, если есть поддержка `Touch Events`
- *
- * @returns {Boolean}
  */
 export function isTouchSupported() {
     return (

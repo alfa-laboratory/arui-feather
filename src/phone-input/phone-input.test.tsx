@@ -21,7 +21,7 @@ describe('phone-input', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const phoneInput = mount(<PhoneInput />);
+        const phoneInput = mount<PhoneInput>(<PhoneInput />);
         const elemTopPosition = phoneInput.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
@@ -31,7 +31,7 @@ describe('phone-input', () => {
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        const phoneInput = mount(<PhoneInput />);
+        const phoneInput = mount<PhoneInput>(<PhoneInput />);
 
         const input = phoneInput.instance().root;
 

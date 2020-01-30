@@ -377,11 +377,11 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         highlightedItem: null
     };
 
-    input: HTMLInputElement;
+    input: Input;
 
-    popup: HTMLElement;
+    popup: Popup;
 
-    menu: HTMLElement;
+    menu: Menu;
 
     blurTimeout: ReturnType<typeof setTimeout> = null;
 

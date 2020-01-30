@@ -6,6 +6,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import Input from '../input/input';
 import InputAutocomplete from './input-autocomplete';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -36,34 +37,34 @@ describe('input-autocomplete', () => {
     });
 
     it('should render without problem', () => {
-        const inputAutocomplete = mount(<InputAutocomplete />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete />);
 
         expect(inputAutocomplete).toMatchSnapshot();
     });
 
     it('should render without problem when give item with duplicate value', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS2 } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS2 } />);
         const optionsNode = inputAutocomplete.find('.menu-item');
 
         expect(optionsNode.length).toBe(OPTIONS2.length);
     });
 
     it('should render input with provided default value', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } defaultValue='default' />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } defaultValue='default' />);
 
         expect(inputAutocomplete).toMatchSnapshot();
     });
 
     it('should render input and popup with options', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } />);
 
         expect(inputAutocomplete.find('.popup').length).toBe(1);
         expect(inputAutocomplete.find('.input__control').length).toBe(1);
     });
 
     it('should call input.focus on public focus method', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } />);
-        const inputInstance = inputAutocomplete.find('Input').instance();
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } />);
+        const inputInstance = inputAutocomplete.find<Input>(Input).instance();
 
         jest.spyOn(inputInstance, 'focus');
 
@@ -73,7 +74,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const inputAutocomplete = mount(<InputAutocomplete />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete />);
         const inputNode = inputAutocomplete.find('.input__control');
 
         const elemTopPosition = inputNode.getDOMNode().getBoundingClientRect().top;
@@ -85,7 +86,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should unset class on input blur', () => {
-        const inputAutocomplete = mount(<InputAutocomplete />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete />);
 
         inputAutocomplete.find('input').simulate('focus');
 
@@ -97,7 +98,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should set width to popup equal or more than button width', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } opened={ true } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } opened={ true } />);
         const inputNode = inputAutocomplete.find('.input').at(0);
         const popupNode = inputAutocomplete.find('.popup');
 
@@ -121,7 +122,7 @@ describe('input-autocomplete', () => {
             opened: true
         };
 
-        const inputAutocomplete = mount(<InputAutocomplete { ...props } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete { ...props } />);
         const inputNode = inputAutocomplete.find('.input').at(0);
         const popupNode = inputAutocomplete.find('.popup');
         const popupWidth = popupNode.getDOMNode().getBoundingClientRect().width;
@@ -131,21 +132,21 @@ describe('input-autocomplete', () => {
     });
 
     it('should set directions to popup', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } directions={ ['right-bottom'] } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } directions={ ['right-bottom'] } />);
         const popupNode = inputAutocomplete.find('.popup');
 
         expect(popupNode.props().className).toContain('popup_direction_right-bottom');
     });
 
     it('should render all options when input value is empty', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } />);
         const optionsNode = inputAutocomplete.find('.menu-item');
 
         expect(optionsNode.length).toBe(OPTIONS.length);
     });
 
     it('should change input value after option was clicked', () => {
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } />);
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
@@ -155,7 +156,9 @@ describe('input-autocomplete', () => {
 
     it('should call `onItemSelect` callback after option was clicked', () => {
         const onItemSelect = jest.fn();
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } onItemSelect={ onItemSelect } />);
+        const inputAutocomplete = mount<InputAutocomplete>(
+            <InputAutocomplete options={ OPTIONS } onItemSelect={ onItemSelect } />
+        );
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
@@ -165,7 +168,9 @@ describe('input-autocomplete', () => {
 
     it('should call `onChange` callback after option was clicked and pass value to it', () => {
         const onChange = jest.fn();
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } onChange={ onChange } />);
+        const inputAutocomplete = mount<InputAutocomplete>(
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />
+        );
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
@@ -180,7 +185,10 @@ describe('input-autocomplete', () => {
             { value: 'Facebook', text: 'Фейсбук' },
             { value: 'Twitter', text: 'Твиттер' }
         ];
-        const inputAutocomplete = mount(<InputAutocomplete options={ OPTIONS } onChange={ onChange } />);
+        const inputAutocomplete = mount<InputAutocomplete>(
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />
+        );
+
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
 
         firstOptionNode.simulate('click');
@@ -202,7 +210,7 @@ describe('input-autocomplete', () => {
 
     it('should call `onKeyDown` callback after key down in input', () => {
         const onKeyDown = jest.fn();
-        const inputAutocomplete = mount(<InputAutocomplete onKeyDown={ onKeyDown } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete onKeyDown={ onKeyDown } />);
         const controlNode = inputAutocomplete.find('input');
 
         controlNode.simulate('keyDown');
@@ -212,12 +220,12 @@ describe('input-autocomplete', () => {
 
     it('should call `onFocus` callback after component was focused', () => {
         const onFocus = jest.fn();
-        const inputAutocomplete = mount(<InputAutocomplete onFocus={ onFocus } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete onFocus={ onFocus } />);
         const controlNode = inputAutocomplete.find('input');
 
         // simulated event don't actually change focus
         // so we just patch input.getControl
-        inputAutocomplete.instance().input.getControl = jest.fn().mockReturnValue(document.activeElement);
+        (inputAutocomplete.instance().input as any).getControl = jest.fn().mockReturnValue(document.activeElement);
 
         controlNode.simulate('focus');
 
@@ -226,7 +234,7 @@ describe('input-autocomplete', () => {
 
     it('should call `onBlur` callback after component was blured', (done) => {
         const onBlur = jest.fn();
-        const inputAutocomplete = mount(<InputAutocomplete onBlur={ onBlur } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete onBlur={ onBlur } />);
         const controlNode = inputAutocomplete.find('input');
 
         inputAutocomplete.setState({ inputFocused: true });
@@ -240,7 +248,7 @@ describe('input-autocomplete', () => {
 
     it('should call `onChange` callback', () => {
         const onChange = jest.fn();
-        const inputAutocomplete = mount(<InputAutocomplete onChange={ onChange } />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete onChange={ onChange } />);
         const controlNode = inputAutocomplete.find('input');
 
         controlNode.simulate('change', { target: { value: 'other value' } });
@@ -249,7 +257,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should close popup after item select if closeOnSelect is set', (done) => {
-        const inputAutocomplete = mount(
+        const inputAutocomplete = mount<InputAutocomplete>(
             <InputAutocomplete closeOnSelect={ true } updateValueOnItemSelect={ false } options={ OPTIONS } />
         );
         const inputNode = inputAutocomplete.instance().input;

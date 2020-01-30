@@ -1,0 +1,682 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input-autocomplete should render input with provided default value 1`] = `
+<InputAutocomplete
+  closeOnSelect={false}
+  defaultValue="default"
+  directions={
+    Array [
+      "bottom-left",
+      "bottom-right",
+      "top-left",
+      "top-right",
+    ]
+  }
+  disabled={false}
+  equalPopupWidth={false}
+  options={
+    Array [
+      Object {
+        "value": "VKontakte",
+      },
+      Object {
+        "value": "Facebook",
+      },
+      Object {
+        "value": "Twitter",
+      },
+    ]
+  }
+  renderPopupOnFocus={false}
+  size="m"
+  updateValueOnItemSelect={true}
+  width="default"
+>
+  <div
+    className="input__autocomplete-case input__autocomplete-case_width_default"
+  >
+    <ForwardRef(ThemedComponent(Input))
+      autocomplete={false}
+      className="input input_has-autocomplete"
+      closeOnSelect={false}
+      defaultValue="default"
+      directions={
+        Array [
+          "bottom-left",
+          "bottom-right",
+          "top-left",
+          "top-right",
+        ]
+      }
+      disabled={false}
+      equalPopupWidth={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      options={
+        Array [
+          Object {
+            "value": "VKontakte",
+          },
+          Object {
+            "value": "Facebook",
+          },
+          Object {
+            "value": "Twitter",
+          },
+        ]
+      }
+      renderPopupOnFocus={false}
+      size="m"
+      updateValueOnItemSelect={true}
+      value="default"
+      width="default"
+    >
+      <Input
+        autocomplete={false}
+        className="input input_has-autocomplete"
+        closeOnSelect={false}
+        defaultValue="default"
+        directions={
+          Array [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right",
+          ]
+        }
+        disabled={false}
+        equalPopupWidth={false}
+        formNoValidate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        options={
+          Array [
+            Object {
+              "value": "VKontakte",
+            },
+            Object {
+              "value": "Facebook",
+            },
+            Object {
+              "value": "Twitter",
+            },
+          ]
+        }
+        renderPopupOnFocus={false}
+        resetError={true}
+        size="m"
+        theme="alfa-on-white"
+        type="text"
+        updateValueOnItemSelect={true}
+        value="default"
+        view="default"
+        width="default"
+      >
+        <span
+          className="input input input_has-autocomplete input_type_text input_view_default input_size_m input_width_default input_has-value input_theme_alfa-on-white"
+        >
+          <span
+            className="input__inner"
+          >
+            <span
+              className="input__box"
+              key="input-wrapper"
+            >
+              <input
+                autoComplete="off"
+                className="input__control"
+                formNoValidate={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onPaste={[Function]}
+                onTouchCancel={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                type="text"
+                value="default"
+                view="default"
+              />
+            </span>
+          </span>
+        </span>
+      </Input>
+    </ForwardRef(ThemedComponent(Input))>
+    <ResizeSensor
+      key="popup-sensor"
+      onResize={[Function]}
+    >
+      <iframe
+        style={
+          Object {
+            "background": "transparent",
+            "border": "none",
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": -1,
+          }
+        }
+        tabIndex={-1}
+      />
+    </ResizeSensor>
+    <ForwardRef(ThemedComponent(Popup))
+      className="input__popup"
+      directions={
+        Array [
+          "bottom-left",
+          "bottom-right",
+          "top-left",
+          "top-right",
+        ]
+      }
+      height="adaptive"
+      key="popup"
+      minWidth={0}
+      onClickOutside={[Function]}
+      padded={false}
+      size="m"
+      target="anchor"
+      visible={false}
+    >
+      <Popup
+        className="input__popup"
+        directions={
+          Array [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right",
+          ]
+        }
+        fitContaiterOffset={0}
+        height="adaptive"
+        minWidth={0}
+        onClickOutside={[Function]}
+        padded={false}
+        secondaryOffset={0}
+        size="m"
+        target="anchor"
+        theme="alfa-on-white"
+        visible={false}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="popup input__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white"
+                style="top: 0px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
+              >
+                <div
+                  class="popup__container"
+                >
+                  <div
+                    class="popup__inner"
+                  >
+                    <div
+                      class="popup__content"
+                    >
+                      <div
+                        class="menu input__menu menu_size_m menu_group-view_default menu_mode_radio-check menu_theme_alfa-on-white"
+                        tabindex="0"
+                      >
+                        <div
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        >
+                          <span
+                            class="menu-item__control"
+                          >
+                            VKontakte
+                          </span>
+                        </div>
+                        <div
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        >
+                          <span
+                            class="menu-item__control"
+                          >
+                            VKontakte
+                          </span>
+                        </div>
+                      </div>
+                      <iframe
+                        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: transparent; z-index: -1;"
+                        tabindex="-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="popup input__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white"
+                style="top: 0px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
+              >
+                <div
+                  class="popup__container"
+                >
+                  <div
+                    class="popup__inner"
+                  >
+                    <div
+                      class="popup__content"
+                    >
+                      <div
+                        class="menu input__menu menu_size_m menu_group-view_default menu_mode_radio-check menu_theme_alfa-on-white"
+                        tabindex="0"
+                      >
+                        <div
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        >
+                          <span
+                            class="menu-item__control"
+                          >
+                            VKontakte
+                          </span>
+                        </div>
+                        <div
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        >
+                          <span
+                            class="menu-item__control"
+                          >
+                            Facebook
+                          </span>
+                        </div>
+                        <div
+                          class="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                        >
+                          <span
+                            class="menu-item__control"
+                          >
+                            Twitter
+                          </span>
+                        </div>
+                      </div>
+                      <iframe
+                        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: transparent; z-index: -1;"
+                        tabindex="-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="popup input__popup popup_direction_bottom-left popup_target_anchor popup_size_m popup_height_adaptive popup_theme_alfa-on-white"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "bottom": undefined,
+                "height": "auto",
+                "left": 0,
+                "maxHeight": "none",
+                "maxWidth": "none",
+                "minWidth": 0,
+                "right": undefined,
+                "top": 0,
+              }
+            }
+          >
+            <div
+              className="popup__container"
+            >
+              <div
+                className="popup__inner"
+                onScroll={[Function]}
+              >
+                <div
+                  className="popup__content"
+                >
+                  <ForwardRef(ThemedComponent(Menu))
+                    autoFocusFirstItem={true}
+                    checkedItems={Array []}
+                    className="input__menu"
+                    content={
+                      Array [
+                        Object {
+                          "content": "VKontakte",
+                          "key": "VKontakte",
+                          "props": undefined,
+                          "value": "VKontakte",
+                        },
+                        Object {
+                          "content": "Facebook",
+                          "key": "Facebook",
+                          "props": undefined,
+                          "value": "Facebook",
+                        },
+                        Object {
+                          "content": "Twitter",
+                          "key": "Twitter",
+                          "props": undefined,
+                          "value": "Twitter",
+                        },
+                      ]
+                    }
+                    highlightedItem={null}
+                    mode="radio-check"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onHighlightItem={[Function]}
+                    onItemCheck={[Function]}
+                    onKeyDown={[Function]}
+                    size="m"
+                  >
+                    <Menu
+                      autoFocusFirstItem={true}
+                      checkedItems={Array []}
+                      className="input__menu"
+                      content={
+                        Array [
+                          Object {
+                            "content": "VKontakte",
+                            "key": "VKontakte",
+                            "props": undefined,
+                            "value": "VKontakte",
+                          },
+                          Object {
+                            "content": "Facebook",
+                            "key": "Facebook",
+                            "props": undefined,
+                            "value": "Facebook",
+                          },
+                          Object {
+                            "content": "Twitter",
+                            "key": "Twitter",
+                            "props": undefined,
+                            "value": "Twitter",
+                          },
+                        ]
+                      }
+                      groupView="default"
+                      highlightedItem={null}
+                      mode="radio-check"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onHighlightItem={[Function]}
+                      onItemCheck={[Function]}
+                      onKeyDown={[Function]}
+                      size="m"
+                      theme="alfa-on-white"
+                    >
+                      <div
+                        className="menu input__menu menu_size_m menu_group-view_default menu_mode_radio-check menu_theme_alfa-on-white"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                      >
+                        <ForwardRef(ThemedComponent(MenuItem))
+                          checked={false}
+                          hovered={null}
+                          key="VKontakte"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          size="m"
+                          type="block"
+                          value="VKontakte"
+                        >
+                          <MenuItem
+                            checked={false}
+                            hovered={null}
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            size="m"
+                            theme="alfa-on-white"
+                            type="block"
+                            value="VKontakte"
+                            view="plain"
+                          >
+                            <div
+                              className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              <span
+                                className="menu-item__control"
+                              >
+                                VKontakte
+                              </span>
+                            </div>
+                          </MenuItem>
+                        </ForwardRef(ThemedComponent(MenuItem))>
+                        <ForwardRef(ThemedComponent(MenuItem))
+                          checked={false}
+                          hovered={null}
+                          key="Facebook"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          size="m"
+                          type="block"
+                          value="Facebook"
+                        >
+                          <MenuItem
+                            checked={false}
+                            hovered={null}
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            size="m"
+                            theme="alfa-on-white"
+                            type="block"
+                            value="Facebook"
+                            view="plain"
+                          >
+                            <div
+                              className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              <span
+                                className="menu-item__control"
+                              >
+                                Facebook
+                              </span>
+                            </div>
+                          </MenuItem>
+                        </ForwardRef(ThemedComponent(MenuItem))>
+                        <ForwardRef(ThemedComponent(MenuItem))
+                          checked={false}
+                          hovered={null}
+                          key="Twitter"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          size="m"
+                          type="block"
+                          value="Twitter"
+                        >
+                          <MenuItem
+                            checked={false}
+                            hovered={null}
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            size="m"
+                            theme="alfa-on-white"
+                            type="block"
+                            value="Twitter"
+                            view="plain"
+                          >
+                            <div
+                              className="menu-item menu-item_type_block menu-item_theme_alfa-on-white"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              <span
+                                className="menu-item__control"
+                              >
+                                Twitter
+                              </span>
+                            </div>
+                          </MenuItem>
+                        </ForwardRef(ThemedComponent(MenuItem))>
+                      </div>
+                    </Menu>
+                  </ForwardRef(ThemedComponent(Menu))>
+                  <ResizeSensor
+                    onResize={[Function]}
+                  >
+                    <iframe
+                      style={
+                        Object {
+                          "background": "transparent",
+                          "border": "none",
+                          "height": "100%",
+                          "left": 0,
+                          "position": "absolute",
+                          "top": 0,
+                          "width": "100%",
+                          "zIndex": -1,
+                        }
+                      }
+                      tabIndex={-1}
+                    />
+                  </ResizeSensor>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Portal>
+      </Popup>
+    </ForwardRef(ThemedComponent(Popup))>
+  </div>
+</InputAutocomplete>
+`;
+
+exports[`input-autocomplete should render without problem 1`] = `
+<InputAutocomplete
+  closeOnSelect={false}
+  directions={
+    Array [
+      "bottom-left",
+      "bottom-right",
+      "top-left",
+      "top-right",
+    ]
+  }
+  disabled={false}
+  equalPopupWidth={false}
+  options={Array []}
+  renderPopupOnFocus={false}
+  size="m"
+  updateValueOnItemSelect={true}
+  width="default"
+>
+  <div
+    className="input__autocomplete-case input__autocomplete-case_width_default"
+  >
+    <ForwardRef(ThemedComponent(Input))
+      autocomplete={false}
+      className="input input_has-autocomplete"
+      closeOnSelect={false}
+      directions={
+        Array [
+          "bottom-left",
+          "bottom-right",
+          "top-left",
+          "top-right",
+        ]
+      }
+      disabled={false}
+      equalPopupWidth={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      options={Array []}
+      renderPopupOnFocus={false}
+      size="m"
+      updateValueOnItemSelect={true}
+      value=""
+      width="default"
+    >
+      <Input
+        autocomplete={false}
+        className="input input_has-autocomplete"
+        closeOnSelect={false}
+        directions={
+          Array [
+            "bottom-left",
+            "bottom-right",
+            "top-left",
+            "top-right",
+          ]
+        }
+        disabled={false}
+        equalPopupWidth={false}
+        formNoValidate={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        options={Array []}
+        renderPopupOnFocus={false}
+        resetError={true}
+        size="m"
+        theme="alfa-on-white"
+        type="text"
+        updateValueOnItemSelect={true}
+        value=""
+        view="default"
+        width="default"
+      >
+        <span
+          className="input input input_has-autocomplete input_type_text input_view_default input_size_m input_width_default input_theme_alfa-on-white"
+        >
+          <span
+            className="input__inner"
+          >
+            <span
+              className="input__box"
+              key="input-wrapper"
+            >
+              <input
+                autoComplete="off"
+                className="input__control"
+                formNoValidate={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onPaste={[Function]}
+                onTouchCancel={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                type="text"
+                value=""
+                view="default"
+              />
+            </span>
+          </span>
+        </span>
+      </Input>
+    </ForwardRef(ThemedComponent(Input))>
+  </div>
+</InputAutocomplete>
+`;

@@ -7,7 +7,6 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Input from '../input/themed';
@@ -20,69 +19,345 @@ import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 
+import MenuItem from '../menu-item/menu-item';
+import { InputProps } from '../input/input';
+
+export type InputAutocompleteProps = InputProps & {
+
+    /**
+     * Тип поля.
+     * Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
+     * Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
+     */
+    type?: 'number' | 'card' | 'email' | 'file' | 'hidden' | 'money' | 'password' | 'tel' | 'text';
+
+    /**
+     * Тип инпута (filled только на белом фоне в размере m)
+     */
+    view?: 'default' | 'filled';
+
+    /**
+     * Управление возможностью компонента занимать всю ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Управление автозаполнением компонента. В случае передачи `true` или `false` подставляет `on` или `off`.
+     * Строка подставляется как есть.
+     */
+    autocomplete?: boolean | string;
+
+    /**
+     * Управление возможностью изменения атрибута компонента, установка
+     * соответствующего класса-модификатора для оформления
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление возможностью изменения атрибута компонента (без установки класса-модификатора для оформления)
+     */
+    disabledAttr?: boolean;
+
+    /**
+     * Управление возможностью изменения класса-модификатора компонента
+     */
+    focused?: boolean;
+
+    /**
+     * Максимальное число символов
+     */
+    maxLength?: number;
+
+    /**
+     * Иконка компонента
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Управление наличием крестика, сбрасывающего значение 'value'
+     */
+    clear?: boolean;
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Содержимое поля ввода
+     */
+    value?: string;
+
+    /**
+     * Содержимое поля ввода, указанное по умолчанию
+     */
+    defaultValue?: string;
+
+    /**
+     * Последовательность перехода между контролами при нажатии на Tab
+     */
+    tabIndex?: number;
+
+    /**
+     * Определяет маску для ввода значений. <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a>
+     */
+    mask?: string;
+
+    /**
+     * Позволяет использовать пробелы в маске
+     */
+    useWhitespacesInMask?: boolean;
+
+    /**
+     * Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core`
+     */
+    maskFormatCharacters?: {
+        [key: string]: {
+            validate: Function;
+            transform?: Function;
+        };
+    };
+
+    /**
+     * Стандартное ствойство HTMLInputElement 'pattern'. Может быть использовано для показа корректной клавиатуры на мобильных устройствах.
+     */
+    pattern?: string;
+
+    /**
+     * Управление встроенной проверкой данных введённых пользователем в поле на корректность
+     */
+    formNoValidate?: boolean;
+
+    /**
+     * Добавление дополнительных элементов к инпуту слева
+     */
+    leftAddons?: React.ReactNode;
+
+    /**
+     * Добавление дополнительных элементов к инпуту справа
+     */
+    rightAddons?: React.ReactNode;
+
+    /**
+     * Лейбл для поля
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Подсказка в поле
+     */
+    placeholder?: string;
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Отображение ошибки
+     */
+    error?: React.ReactNode;
+
+    /**
+     * Сброс ошибки при установке фокуса
+     */
+    resetError?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Тултип, который появляется при наведении
+     */
+    title?: string;
+
+    /**
+     * Обработчик изменения значения 'value'
+     */
+    onChange?: (value?: string) => void;
+
+    /**
+     * Обработчик фокуса поля
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик клика по полю
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик снятия фокуса с поля
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик клика по крестику сбрасываещему значение 'value'
+     */
+    onClearClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
+     */
+    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Обработчик события вставки текста в поле
+     */
+    onPaste?: (event?: React.ClipboardEvent<any>) => void;
+
+    /**
+     * Обработчик события касания по полю
+     */
+    onTouchStart?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик события прекращения касания по полю
+     */
+    onTouchEnd?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик события перемещения при касании по полю
+     */
+    onTouchMove?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик события прерывания касания по полю
+     */
+    onTouchCancel?: (event?: React.TouchEvent<any>) => void;
+
+    /**
+     * Обработчик, вызываемый перед началом ввода в маскированное поле
+     */
+    onProcessMaskInputEvent?: (event?: React.ChangeEvent<any>) => void;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+    /**
+     * Список вариантов выбора
+     */
+    options?: ReadonlyArray<{
+
+        /**
+         * Тип списка вариантов
+         */
+        type?: 'item' | 'group';
+
+        /**
+         * Уникальное значение, которое будет отправлено на сервер, если вариант выбран
+         */
+        value?: string;
+
+        /**
+         * Отображение варианта
+         */
+        description?: React.ReactNode;
+
+        /**
+         * Текст, который должен быть записан в текстовое поле при выборе варианта
+         */
+        text?: string;
+
+        /**
+         * Список вариантов, только для type='group'
+         */
+        content?: any[];
+
+        /**
+         * Только для type='item': свойства для компонента [MenuItem](#!/MenuItem)
+         */
+        props?: object;
+    }>;
+
+    /**
+     * Управление видимостью выпадающего списка
+     */
+    opened?: boolean;
+
+    /**
+     * Ширинa выпадающего списка равна ширине инпута
+     */
+    equalPopupWidth?: boolean;
+
+    /**
+     * Определяет нужно или нет обновлять значение текстового поля при выборе варианта
+     */
+    updateValueOnItemSelect?: boolean;
+
+    /**
+     * Направления, в которые может открываться попап компонента
+     */
+    directions?: ReadonlyArray<'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right'>;
+
+    /**
+     * Вставляет попап со списком только если элемент активен
+     */
+    renderPopupOnFocus?: boolean;
+
+    /**
+     * Обработчик выбора пункта в выпадающем меню
+     */
+    onItemSelect?: (checkedItem?: any) => void;
+
+    /**
+     * Закрытие выпадающего списка в случае, если произошел выбор элемента
+     */
+    closeOnSelect?: boolean;
+
+    /**
+     * Максимальная высота выпадающего списка опций
+     */
+    popupMaxHeight?: number;
+
+    /**
+     * Название класса попапа с опциями
+     */
+    popupClassName?: string;
+}
+
+type InputAutocompleteState = {
+    value: string;
+    inputFocused: boolean;
+    menuFocused: boolean;
+    popupStyles: React.CSSProperties;
+    highlightedItem: MenuItem | null;
+}
+
 /**
  * Компонент поля для ввода с автокомплитом.
  *
  * @extends Input
  */
 @performance(true)
-class InputAutocomplete extends React.Component {
+class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAutocompleteState> {
     cn = createCn('input');
-    static propTypes = {
-        ...Input.propTypes,
-        /** Список вариантов выбора */
-        options: Type.arrayOf(Type.shape({
-            /** Тип списка вариантов */
-            type: Type.oneOf(['item', 'group']),
-            /** Уникальное значение, которое будет отправлено на сервер, если вариант выбран */
-            value: Type.string,
-            /** Отображение варианта */
-            description: Type.node,
-            /** Текст, который должен быть записан в текстовое поле при выборе варианта */
-            text: Type.string,
-            /** Список вариантов, только для type='group' */
-            content: Type.array,
-            /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
-            props: Type.object
-        })),
-        /**
-         * Управление возможностью изменения атрибута компонента, установка
-         * соответствующего класса-модификатора для оформления
-         */
-        disabled: Type.bool,
-        /** Управление видимостью выпадающего списка */
-        opened: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Ширинa выпадающего списка равна ширине инпута */
-        equalPopupWidth: Type.bool,
-        /** Определяет нужно или нет обновлять значение текстового поля при выборе варианта */
-        updateValueOnItemSelect: Type.bool,
-        /** Направления, в которые может открываться попап компонента */
-        directions: Type.arrayOf(Type.oneOf([
-            'top-left', 'top-center', 'top-right', 'left-top', 'left-center', 'left-bottom', 'right-top',
-            'right-center', 'right-bottom', 'bottom-left', 'bottom-center', 'bottom-right'
-        ])),
-        /** Вставляет попап со списком только если элемент активен */
-        renderPopupOnFocus: Type.bool,
-        /**
-         * Обработчик выбора пункта в выпадающем меню
-         * @param checkedItem
-         */
-        onItemSelect: Type.func,
-        /** Закрытие выпадающего списка в случае, если произошел выбор элемента */
-        closeOnSelect: Type.bool,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string,
-        /** Максимальная высота выпадающего списка опций */
-        popupMaxHeight: Type.number,
-        /** Название класса попапа с опциями */
-        popupClassName: Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<InputAutocompleteProps> = {
         disabled: false,
         size: 'm',
         width: 'default',
@@ -102,30 +377,15 @@ class InputAutocomplete extends React.Component {
         highlightedItem: null
     };
 
-    /**
-     * @type {Input}
-     */
-    input;
+    input: HTMLInputElement;
 
-    /**
-     * @type {Popup}
-     */
-    popup;
+    popup: HTMLElement;
 
-    /**
-     * @type {Menu}
-     */
-    menu;
+    menu: HTMLElement;
 
-    /**
-     * @type {Number}
-     */
-    blurTimeout = null;
+    blurTimeout: ReturnType<typeof setTimeout> = null;
 
-    /**
-     * @type {Number}
-     */
-    inputFocusTimeout = null;
+    inputFocusTimeout: ReturnType<typeof setTimeout> = null;
 
     componentDidMount() {
         this.updatePopupTarget();
@@ -426,9 +686,9 @@ class InputAutocomplete extends React.Component {
     /**
      * Определяет является ли весь компонент в фокусе на событиях onFocus/onBlur.
      *
-     * @param {SyntheticEvent} event Событие focus/blur, которое будет проброшено в обработчик onFocus/onBlur
+     * @param event Событие focus/blur, которое будет проброшено в обработчик onFocus/onBlur
      */
-    solveFocused(event) {
+    solveFocused(event: React.SyntheticEvent) {
         const currentFocused = this.state.inputFocused || this.state.menuFocused;
 
         const focusedElement = document.activeElement;
@@ -523,9 +783,9 @@ class InputAutocomplete extends React.Component {
     }
 
     /**
-     * @param {MenuItem} highlightedItem Выбранный пункт меню
+     * @param highlightedItem Выбранный пункт меню
      */
-    syncKeyboardNavigationWithScroll(highlightedItem) {
+    syncKeyboardNavigationWithScroll(highlightedItem: MenuItem) {
         const element = highlightedItem.getNode();
         const container = this.popup.getInnerNode();
         const correction = element.offsetHeight;

@@ -20,13 +20,13 @@ describe('email-input', () => {
     });
 
     it('should render without problems', () => {
-        const emailInput = shallow(<EmailInput />);
+        const emailInput = shallow<EmailInput>(<EmailInput />);
 
         expect(emailInput).toMatchSnapshot();
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const emailInput = mount(<EmailInput />);
+        const emailInput = mount<EmailInput>(<EmailInput />);
         const elemTopPosition = emailInput.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
@@ -36,7 +36,7 @@ describe('email-input', () => {
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        const emailInput = mount(<EmailInput />);
+        const emailInput = mount<EmailInput>(<EmailInput />);
 
         const input = emailInput.instance().root;
 

@@ -84,8 +84,8 @@ class PopupContainerProvider extends React.PureComponent<PopupContainerProviderP
         didRender: false // eslint-disable-line react/no-unused-state
     };
 
-    renderContainer: any;
-    positioningContainer: any;
+    renderContainer: IsolatedContainer;
+    positioningContainer: HTMLElement;
 
     getChildContext() {
         return {

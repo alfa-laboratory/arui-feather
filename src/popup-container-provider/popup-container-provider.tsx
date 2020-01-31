@@ -87,7 +87,7 @@ class PopupContainerProvider extends React.PureComponent<PopupContainerProviderP
     renderContainer: IsolatedContainer;
     positioningContainer: HTMLElement;
 
-    private getChildContext() {
+    getChildContext() {
         return {
             isInCustomContainer: true,
             renderContainerElement: (this.renderContainer && this.renderContainer.getNode()),

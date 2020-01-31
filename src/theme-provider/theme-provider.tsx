@@ -36,7 +36,7 @@ class ThemeProvider extends React.Component<ThemeProviderProps> {
         theme: Type.string
     };
 
-    private getChildContext() {
+    getChildContext() {
         return {
             theme: this.props.theme
         };

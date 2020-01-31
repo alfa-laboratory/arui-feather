@@ -246,7 +246,7 @@ class Link extends React.PureComponent<LinkProps> {
         }
     };
 
-    private handleMouseLeave = (event) => {
+    handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {

@@ -659,7 +659,7 @@ class CalendarInput extends React.Component<CalendarInputProps> {
     /**
      * Устанавливает фокус на поле ввода, открывает календарь.
      */
-    public afocus() {
+    public focus() {
         const targetRef = this.nativeCalendarTarget || this.customCalendarTarget;
 
         targetRef.focus();

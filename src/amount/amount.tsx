@@ -124,7 +124,7 @@ class Amount extends React.Component<AmountProps> {
         );
     }
 
-    renderSeparatorAndMinorPart(minorPart) {
+    private renderSeparatorAndMinorPart(minorPart) {
         const { showZeroMinorPart } = this.props;
 
         let needMinorPart = false;
@@ -149,8 +149,7 @@ class Amount extends React.Component<AmountProps> {
         return null;
     }
 
-    // eslint-disable-next-line class-methods-use-this
-    renderCurrencySymbol(currencySymbol) {
+    private renderCurrencySymbol(currencySymbol) {
         return (
             <span className={ this.cn('currency') }>
                 { THINSP }

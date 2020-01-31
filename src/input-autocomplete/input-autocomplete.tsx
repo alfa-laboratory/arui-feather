@@ -504,7 +504,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         ];
     }
 
-    handleItemCheck = (checkedItemsValues) => {
+    private handleItemCheck = (checkedItemsValues) => {
         const checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
         const checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
@@ -542,7 +542,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         }
     };
 
-    handleChange = (value) => {
+    private handleChange = (value) => {
         this.setState({ value });
 
         if (this.props.onChange) {
@@ -550,7 +550,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         }
     };
 
-    handleInputFocus = (event) => {
+    private handleInputFocus = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
@@ -563,7 +563,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         });
     };
 
-    handleInputBlur = (event) => {
+    private handleInputBlur = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
         }
@@ -576,7 +576,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         }, 0);
     };
 
-    handleMenuFocus = (event) => {
+    private handleMenuFocus = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
             this.blurTimeout = null;
@@ -585,7 +585,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         this.solveFocused(event);
     };
 
-    handleMenuBlur = (event) => {
+    private handleMenuBlur = (event) => {
         if (this.blurTimeout) {
             clearTimeout(this.blurTimeout);
         }
@@ -598,13 +598,13 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         }, 0);
     };
 
-    handleClickOutside = () => {
+    private handleClickOutside = () => {
         if (this.props.onClickOutside) {
             this.props.onClickOutside();
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
@@ -632,13 +632,13 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         }
     };
 
-    handleHighlightedItem = (highlightedItem) => {
+    private handleHighlightedItem = (highlightedItem) => {
         this.setState({
             highlightedItem
         });
     };
 
-    handleMenuKeyDown = (event, highlightedItem) => {
+    private handleMenuKeyDown = (event, highlightedItem) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW:
             case keyboardCode.UP_ARROW:
@@ -658,28 +658,22 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.input.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.input.blur();
     }
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         this.input.scrollTo();
     }
 
@@ -688,7 +682,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
      *
      * @param event Событие focus/blur, которое будет проброшено в обработчик onFocus/onBlur
      */
-    solveFocused(event: React.SyntheticEvent) {
+    private solveFocused(event: React.SyntheticEvent) {
         const currentFocused = this.state.inputFocused || this.state.menuFocused;
 
         const focusedElement = document.activeElement;
@@ -715,7 +709,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         this.setState(newState);
     }
 
-    formatOptionsList(options) {
+    private formatOptionsList(options) {
         return (
             options.map((option) => {
                 if (option.type === 'group' && !!option.content) {
@@ -738,7 +732,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         );
     }
 
-    getCheckedOption(options, value) {
+    private getCheckedOption(options, value) {
         let result = null;
 
         options.find((option) => {
@@ -762,7 +756,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         return result;
     }
 
-    updatePopupStyles = () => {
+    private updatePopupStyles = () => {
         const input = this.input.getNode();
         const inputWidth = input.getBoundingClientRect().width;
         const popupStyles = { minWidth: inputWidth };
@@ -776,7 +770,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         });
     };
 
-    updatePopupTarget() {
+    private updatePopupTarget() {
         if (this.popup) {
             this.popup.setTarget(this.input.getBoxNode());
         }
@@ -785,7 +779,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
     /**
      * @param highlightedItem Выбранный пункт меню
      */
-    syncKeyboardNavigationWithScroll(highlightedItem: MenuItem) {
+    private syncKeyboardNavigationWithScroll(highlightedItem: MenuItem) {
         const element = highlightedItem.getNode();
         const container = this.popup.getInnerNode();
         const correction = element.offsetHeight;

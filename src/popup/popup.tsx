@@ -227,7 +227,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
     anchor = null;
     clickEventBindTimeout = null;
     domElemPopup = null;
-    domElemPopupInner = null;
+    domElemPopupInner: HTMLElement = null;
     domElemPopupContent = null;
     isWindowClickBinded = false;
     position = null;
@@ -236,7 +236,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
     inner;
     content;
 
-    handleWindowResize = debounce(() => {
+    private handleWindowResize = debounce(() => {
         if (this.isPropsToPositionCorrect()) {
             this.redraw();
         }
@@ -393,7 +393,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         return ReactDOM.createPortal(template, this.getRenderContainer());
     }
 
-    handleInnerScroll = (event) => {
+    private handleInnerScroll = (event) => {
         const { scrollTop, offsetHeight, scrollHeight } = event.target;
         const isTopReached = Math.round(scrollTop) === 0;
         const isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
@@ -427,25 +427,25 @@ class Popup extends React.Component<PopupProps, PopupState> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
     };
 
-    handleWindowClick = (event) => {
+    private handleWindowClick = (event) => {
         if (this.props.onClickOutside && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
             this.props.onClickOutside(event);
         }
     };
 
-    handleResize = () => {
+    private handleResize = () => {
         if (!this.props.visible) {
             return;
         }
@@ -455,11 +455,9 @@ class Popup extends React.Component<PopupProps, PopupState> {
 
     /**
      * Задает элемент, к которому будет привязан popup.
-     *
-     * @public
-     * @param {HTMLElement} target Элемент, к которому будет привязан popup
+     * @param target Элемент, к которому будет привязан popup
      */
-    setTarget(target) {
+    public setTarget(target: HTMLElement) {
         if (this.anchor === target) {
             return;
         }
@@ -470,23 +468,18 @@ class Popup extends React.Component<PopupProps, PopupState> {
 
     /**
      * Задает положение popup.
-     *
-     * @public
-     * @param {Number} left x-coordinate
-     * @param {Number} top y-coordinate
+     * @param left x-coordinate
+     * @param top y-coordinate
      */
-    setPosition(left, top) {
+    public setPosition(left: number, top: number) {
         this.position = { left, top };
         this.redraw();
     }
 
     /**
      * Возвращает внутренний DOM узел.
-     *
-     * @public
-     * @returns {HTMLElement}
      */
-    getInnerNode() {
+    public getInnerNode() {
         return this.domElemPopupInner;
     }
 
@@ -495,7 +488,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      *
      * @returns {HTMLElement}
      */
-    getRenderContainer() {
+    private getRenderContainer() {
         if (!this.context.isInCustomContainer) {
             return document.body;
         }
@@ -508,7 +501,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      *
      * @returns {HTMLElement}
      */
-    getPositioningContainer() {
+    private getPositioningContainer() {
         if (!this.context.isInCustomContainer) {
             return null;
         }
@@ -522,7 +515,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      * роль контейнера выполняет `document.body` и этот для них этот метод
      * всегда вернете `true`.
      */
-    isContainerReady() {
+    private isContainerReady() {
         if (!this.context.isInCustomContainer) {
             return true;
         }
@@ -542,7 +535,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         );
     }
 
-    redraw = () => {
+    private redraw = () => {
         /*
          * Если функция redraw() была вызвана до componentDidMount,
          * то нужно отложить её вызов до момента,
@@ -608,7 +601,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         this.setGradientStyles();
     };
 
-    ensureClickEvent(isDestroy?) {
+    private ensureClickEvent(isDestroy?) {
         const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
@@ -631,7 +624,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         }, 0);
     }
 
-    getDrawingCss(drawingParams) {
+    private getDrawingCss(drawingParams) {
         return {
             top: drawingParams.top,
             left: drawingParams.left,
@@ -641,15 +634,15 @@ class Popup extends React.Component<PopupProps, PopupState> {
         };
     }
 
-    getMinWidth() {
+    private getMinWidth() {
         return this.props.minWidth === undefined ? 0 : this.props.minWidth;
     }
 
-    getMaxWidth() {
+    private getMaxWidth() {
         return this.props.maxWidth === undefined ? 'none' : this.props.maxWidth;
     }
 
-    getMaxHeight() {
+    private getMaxHeight() {
         return this.props.maxHeight === undefined ? 'none' : this.props.maxHeight;
     }
 
@@ -657,7 +650,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      * Get collection of popup properties.
      *
      */
-    getPopupHash() {
+    private getPopupHash() {
         return {
             directions: this.props.directions,
             bestDirection: this.state.direction,
@@ -680,7 +673,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         };
     }
 
-    setGradientStyles() {
+    private setGradientStyles() {
         const { clientWidth } = this.inner;
 
         this.setState({

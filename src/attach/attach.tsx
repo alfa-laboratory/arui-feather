@@ -319,22 +319,22 @@ class Attach extends React.PureComponent<AttachProps> {
         );
     }
 
-    handleInputChange = (event) => {
+    private handleInputChange = (event) => {
         this.performChange(Array.from(event.target.files));
     };
 
-    handleClearClick = () => {
+    private handleClearClick = () => {
         this.input.value = '';
         this.performChange([]);
     };
 
-    handleButtonClick = (event) => {
+    private handleButtonClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -342,7 +342,7 @@ class Attach extends React.PureComponent<AttachProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -350,7 +350,7 @@ class Attach extends React.PureComponent<AttachProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
@@ -358,7 +358,7 @@ class Attach extends React.PureComponent<AttachProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
@@ -368,23 +368,19 @@ class Attach extends React.PureComponent<AttachProps> {
 
     /**
      * Ставит фокус на контрол.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.input.focus();
     }
 
     /**
      * Убирает фокус с контрола.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.input.blur();
     }
 
-    performChange(value) {
+    private performChange(value) {
         const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {

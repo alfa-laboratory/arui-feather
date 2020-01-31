@@ -234,25 +234,25 @@ class Notification extends React.PureComponent<NotificationProps> {
         );
     }
 
-    handleSwipe = (direction) => {
+    private handleSwipe = (direction) => {
         if (direction === 'left' || direction === 'right' || direction === 'top') {
             this.handleCloserClick();
         }
     };
 
-    handleCloserClick = (event?) => {
+    private handleCloserClick = (event?) => {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
         this.stopCloseTimer();
 
@@ -261,7 +261,7 @@ class Notification extends React.PureComponent<NotificationProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         this.setState({ hovered: false });
         this.stopCloseTimer();
         this.startCloseTimer();
@@ -271,24 +271,25 @@ class Notification extends React.PureComponent<NotificationProps> {
         }
     };
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleWindowClick = (event) => {
+    private handleWindowClick = (event) => {
         if (this.props.onClickOutside && this.root &&
-            isNodeOutsideElement(event.target, this.root)) {
+            isNodeOutsideElement(event.target, this.root)
+        ) {
             this.props.onClickOutside(event);
         }
     };
 
-    getPosition() {
+    private getPosition() {
         return { top: this.props.offset };
     }
 
-    startCloseTimer() {
+    private startCloseTimer() {
         this.closeTimeout = setTimeout(() => {
             if (this.props.onCloseTimeout) {
                 this.props.onCloseTimeout();
@@ -296,12 +297,12 @@ class Notification extends React.PureComponent<NotificationProps> {
         }, this.props.autoCloseDelay);
     }
 
-    stopCloseTimer() {
+    private stopCloseTimer() {
         clearTimeout(this.closeTimeout);
         this.closeTimeout = null;
     }
 
-    ensureClickEvent(isDestroy?) {
+    private ensureClickEvent(isDestroy?) {
         const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes

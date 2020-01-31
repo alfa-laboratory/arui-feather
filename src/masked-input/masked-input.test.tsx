@@ -46,7 +46,7 @@ describe('masked-input', () => {
     it('should format unformatted value with custom formatter', () => {
         const cyrillic = {
             c: {
-                validate(char) {
+                private validate(char) {
                     return /^[ЁёА-Яа-я]$/.test(char);
                 }
             }
@@ -88,7 +88,7 @@ describe('masked-input', () => {
         const mask = 'ccc 1 ccc';
         const cyrillic = {
             c: {
-                validate(char) {
+                private validate(char) {
                     return /^[ЁёА-Яа-я]$/.test(char);
                 }
             }

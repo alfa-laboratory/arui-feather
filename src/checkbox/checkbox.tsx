@@ -251,11 +251,11 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 
     // eslint-disable-next-line class-methods-use-this
-    handleInputControlClick(event) {
+    private handleInputControlClick(event) {
         event.stopPropagation();
     }
 
-    handleChange = () => {
+    private handleChange = () => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -267,7 +267,7 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -275,9 +275,9 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
         }
     };
 
-    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+    private handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -285,7 +285,7 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -295,7 +295,7 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -307,20 +307,16 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
 
     /**
      * Устанавливает фокус на чекбокс.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с чекбокса.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
@@ -328,10 +324,8 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
 
     /**
      * Скроллит страницу до чекбокса.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({

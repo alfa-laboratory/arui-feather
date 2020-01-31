@@ -428,7 +428,7 @@ class Input extends React.PureComponent<InputProps> {
         );
     }
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
         this.enableMouseWheel();
         this.resetError();
@@ -438,13 +438,13 @@ class Input extends React.PureComponent<InputProps> {
         }
     };
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
         this.disableMouseWheel();
 
@@ -453,11 +453,11 @@ class Input extends React.PureComponent<InputProps> {
         }
     };
 
-    handleChange = (event) => {
+    private handleChange = (event) => {
         this.changeValue(event.target.value);
     };
 
-    handleClearClick = (event) => {
+    private handleClearClick = (event) => {
         this.changeValue('');
 
         if (this.props.onClearClick) {
@@ -467,49 +467,49 @@ class Input extends React.PureComponent<InputProps> {
         this.focus();
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
     };
 
-    handleKeyUp = (event) => {
+    private handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
     };
 
-    handlePaste = (event) => {
+    private handlePaste = (event) => {
         if (this.props.onPaste) {
             this.props.onPaste(event);
         }
     };
 
-    handleTouchStart = (event) => {
+    private handleTouchStart = (event) => {
         if (this.props.onTouchStart) {
             this.props.onTouchStart(event);
         }
     };
 
-    handleTouchEnd = (event) => {
+    private handleTouchEnd = (event) => {
         if (this.props.onTouchEnd) {
             this.props.onTouchEnd(event);
         }
     };
 
-    handleTouchMove = (event) => {
+    private handleTouchMove = (event) => {
         if (this.props.onTouchMove) {
             this.props.onTouchMove(event);
         }
     };
 
-    handleTouchCancel = (event) => {
+    private handleTouchCancel = (event) => {
         if (this.props.onTouchCancel) {
             this.props.onTouchCancel(event);
         }
     };
 
-    getAutoCompleteValue() {
+    private getAutoCompleteValue() {
         if (typeof this.props.autocomplete === 'string') {
             return this.props.autocomplete;
         }
@@ -520,10 +520,8 @@ class Input extends React.PureComponent<InputProps> {
     /**
      * Разблокирует возможность скролла в поле ввода
      *
-     * @public
-     * @returns {void}
      */
-    enableMouseWheel() {
+    public enableMouseWheel() {
         const input = this.control instanceof MaskedInput ? this.control.input : this.control;
 
         if (input) {
@@ -533,11 +531,8 @@ class Input extends React.PureComponent<InputProps> {
 
     /**
      * Блокирует возможность скролла в поле ввода
-     *
-     * @public
-     * @returns {void}
      */
-    disableMouseWheel() {
+    public disableMouseWheel() {
         const input = this.control instanceof MaskedInput ? this.control.getControl() : this.control;
 
         if (input) {
@@ -547,31 +542,22 @@ class Input extends React.PureComponent<InputProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
-     * @returns {HTMLElement}
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Возвращает ссылку на инстанс контейнера для контрола.
-     *
-     * @public
-     * @returns {HTMLSpanElement}
      */
-    getBoxNode() {
+    public getBoxNode() {
         return this.box;
     }
 
     /**
      * Возвращает ссылку на HTMLElement инпута.
-     *
-     * @public
-     * @returns {HTMLInputElement}
      */
-    getControl() {
+    public getControl(): HTMLInputElement {
         if (this.props.mask !== undefined) {
             return this.control.getControl();
         }
@@ -582,11 +568,8 @@ class Input extends React.PureComponent<InputProps> {
     /**
      * Возвращает ссылку на инстанс MaskedInput.
      * Если маска не была установлена, возвращает null.
-     *
-     * @public
-     * @returns {MaskedInput|null}
      */
-    getMaskedInputInstance() {
+    public getMaskedInputInstance(): MaskedInput|null {
         if (this.props.mask !== undefined) {
             return this.control;
         }
@@ -596,21 +579,17 @@ class Input extends React.PureComponent<InputProps> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
         this.setSelectionRange(this.getControl().value.length);
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
@@ -618,10 +597,8 @@ class Input extends React.PureComponent<InputProps> {
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         scrollTo({
             targetY: (this.root.getBoundingClientRect().top + window.pageYOffset) - SCROLL_TO_CORRECTION
         });
@@ -629,12 +606,10 @@ class Input extends React.PureComponent<InputProps> {
 
     /**
      * Устанавливает начальное и конечное положение выделения текста в элементе.
-     *
-     * @public
      * @param {Number} start=0 Индекс первого выделенного символа.
      * @param {Number} end=value.length Индекс символа после последнего выделенного символа.
      */
-    setSelectionRange(start = 0, end = this.getControl().value.length) {
+    public setSelectionRange(start = 0, end = this.getControl().value.length) {
         if (this.props.type !== 'email') {
             this.getControl().setSelectionRange(start, end);
         }
@@ -643,9 +618,9 @@ class Input extends React.PureComponent<InputProps> {
     /**
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
-     * @param {String} value Новое значение
+     * @param value Новое значение
      */
-    changeValue(value) {
+    public changeValue(value: string) {
         if (this.props.value === undefined) {
             this.setState({ value });
         }
@@ -657,19 +632,15 @@ class Input extends React.PureComponent<InputProps> {
 
     /**
      * Возвращает состояние фокуса.
-     *
-     * @returns {Boolean}
      */
-    getFocused() {
+    private getFocused() {
         return this.props.focused === undefined ? this.state.focused : this.props.focused;
     }
 
     /**
      * Сбрасывает состояние ошибки.
-     *
-     * @returns {void}
      */
-    resetError() {
+    private resetError() {
         if (this.props.resetError) {
             this.setState({
                 error: null

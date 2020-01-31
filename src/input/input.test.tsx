@@ -333,7 +333,7 @@ describe('input', () => {
     // it('should format masked value with custom formatter', () => {
     //     const cyrillic = {
     //         c: {
-    //             validate(char) { return /^[ЁёА-Яа-я]$/.it(char); }
+    //             private validate(char) { return /^[ЁёА-Яа-я]$/.it(char); }
     //         }
     //     };
     //     let input = mount(

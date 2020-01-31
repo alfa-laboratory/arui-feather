@@ -26,10 +26,8 @@ class IsolatedContainer extends React.Component {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.element;
     }
 }

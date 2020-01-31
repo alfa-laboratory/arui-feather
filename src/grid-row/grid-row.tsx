@@ -142,7 +142,7 @@ class GridRow extends React.PureComponent<GridRowProps> {
      * @param {ReactElement} children Дочерние элементы компонента.
      * @returns {ReactElement}
      */
-    injectGutterClassNamesToChildren(gutters, children) {
+    private injectGutterClassNamesToChildren(gutters, children) {
         return (
             Children.map(children, (col) => {
                 if (!col) {

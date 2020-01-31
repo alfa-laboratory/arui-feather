@@ -280,13 +280,13 @@ class Button extends React.PureComponent<ButtonProps> {
         );
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.state.pressed) {
             return;
         }
@@ -298,7 +298,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -306,7 +306,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -316,7 +316,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -326,7 +326,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseDown = (event) => {
+    private handleMouseDown = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -336,7 +336,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseUp = (event) => {
+    private handleMouseUp = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -346,7 +346,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseOut = (event) => {
+    private handleMouseOut = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -356,7 +356,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -366,7 +366,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleKeyUp = (event) => {
+    private handleKeyUp = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -378,29 +378,23 @@ class Button extends React.PureComponent<ButtonProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.control;
     }
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }

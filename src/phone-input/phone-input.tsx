@@ -53,28 +53,22 @@ class PhoneInput extends React.PureComponent<PhoneInputProps> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.root.blur();
     }
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    private scrollTo() {
         this.root.scrollTo();
     }
 }

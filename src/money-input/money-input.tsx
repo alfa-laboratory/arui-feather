@@ -153,7 +153,7 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
         );
     }
 
-    handleProcessMaskInputEvent = (event) => {
+    private handleProcessMaskInputEvent = (event) => {
         const currentValue = this.mask.format(this.getValue());
         let newValue = event.target.value;
 
@@ -172,7 +172,7 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
         this.updateMaskByValue(newValue);
     };
 
-    handleChange = (value) => {
+    private handleChange = (value) => {
         this.setState({ value });
 
         if (this.props.onChange) {
@@ -182,28 +182,22 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.root.blur();
     }
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    private scrollTo() {
         this.root.scrollTo();
     }
 
@@ -212,7 +206,7 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
      *
      * @param value Значение
      */
-    updateMaskByValue(value: string) {
+    private updateMaskByValue(value: string) {
         const [integerPart, fractionPart] = getValueParts(value);
 
         const integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
@@ -235,7 +229,7 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     /**
      * Расчитывает максимально допустимую длинну поля ввода.
      */
-    getMaxLength() {
+    private getMaxLength() {
         let maxLength = Math.floor((this.props.integerLength - 1) / INTEGER_PART_SIZE) + this.props.integerLength;
 
         if (this.props.fractionLength) {
@@ -248,7 +242,7 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     /**
      * Возвращает актуальное значение для рендера.
      */
-    getValue() {
+    private getValue() {
         return this.props.value === undefined ? this.state.value : this.props.value;
     }
 }

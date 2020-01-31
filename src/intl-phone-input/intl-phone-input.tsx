@@ -124,9 +124,9 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         );
     }
 
-    renderSelectButtonContent = () => this.renderFlagIcon(this.state.countryIso2);
+    private renderSelectButtonContent = () => this.renderFlagIcon(this.state.countryIso2);
 
-    handleSelectFocus = (event) => {
+    private handleSelectFocus = (event) => {
         if (!this.state.onceOpened) {
             this.setState({
                 onceOpened: true
@@ -136,21 +136,21 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         this.resolveFocusedState({ selectFocused: true }, event);
     };
 
-    handleSelectButtonFocus = () => {
+    private handleSelectButtonFocus = () => {
         this.setState({
             selectFocused: true
         });
     };
 
-    handleSelectBlur = (event) => {
+    private handleSelectBlur = (event) => {
         this.resolveFocusedState({ selectFocused: false }, event);
     };
 
-    handleSelectButtonBlur = (event) => {
+    private handleSelectButtonBlur = (event) => {
         this.resolveFocusedState({ selectFocused: false }, event);
     };
 
-    handleSelectChange = (value) => {
+    private handleSelectChange = (value) => {
         const inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
@@ -165,7 +165,7 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         });
     };
 
-    handleSelectClick = () => {
+    private handleSelectClick = () => {
         // Set focus to input on select closing by it's button toggle
         if (this.state.selectFocused) {
             this.input.focus();
@@ -173,21 +173,21 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         }
     };
 
-    handleInputFocus = (event) => {
+    private handleInputFocus = (event) => {
         this.resolveFocusedState({ inputFocused: true }, event);
     };
 
-    handleInputBlur = (event) => {
+    private handleInputBlur = (event) => {
         this.resolveFocusedState({ inputFocused: false }, event);
     };
 
-    handleInputChange = (value) => {
+    private handleInputChange = (value) => {
         this.setState({
             inputValue: value.length === 1 && value !== '+' ? `+${value}` : value
         }, this.setCountry);
     };
 
-    getOptions = () => {
+    private getOptions = () => {
         this.countries = countries.getCountries();
 
         return this.state.onceOpened ? this.countries.map(country => ({
@@ -207,7 +207,7 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         })) : [];
     };
 
-    getSelectPopupOffset() {
+    private getSelectPopupOffset() {
         switch (this.props.size) {
             case 's': return -18;
             case 'm': return -24;
@@ -218,13 +218,13 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         return 0;
     }
 
-    getValue() {
+    private getValue() {
         // Use value from state not props, cause of some formatting steps in component
         // Sync props.value with state.inputValue in UNSAFE_componentWillUpdate
         return this.state.inputValue;
     }
 
-    loadUtil() {
+    private loadUtil() {
         return import(/* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min')
             .then((util) => {
                 this.util = util;
@@ -232,7 +232,7 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
             .catch(error => `An error occurred while loading libphonenumber-js:\n${error}`);
     }
 
-    resolveFocusedState(nextFocusedStateItem, event) {
+    private resolveFocusedState(nextFocusedStateItem, event) {
         const focusedState = {
             inputFocused: this.state.inputFocused,
             selectFocused: this.state.selectFocused
@@ -286,7 +286,7 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         }
     }
 
-    setCountry() {
+    private setCountry() {
         const inputValue = this.getValue().replace(/ /g, '');
 
         for (let i = 0; i < this.countries.length; i++) {
@@ -320,7 +320,7 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         }
     }
 
-    setValue(countryIso2, inputValue) {
+    private setValue(countryIso2, inputValue) {
         this.asYouType = this.util ? new this.util.AsYouType(countryIso2.toUpperCase()) : null;
         this.setState({
             inputValue: this.asYouType ? this.asYouType.input(inputValue) : inputValue,
@@ -330,38 +330,29 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
 
     /**
      * Возвращает ссылку на HTMLElement инпута.
-     *
-     * @public
-     * @returns {HTMLInputElement}
      */
-    getControl() {
+    public getControl(): HTMLInputElement {
         return this.input.getControl();
     }
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.input.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.input.blur();
     }
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         this.input.scrollTo();
     }
 }

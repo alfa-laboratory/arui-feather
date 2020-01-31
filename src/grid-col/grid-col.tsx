@@ -126,7 +126,7 @@ class GridCol extends React.PureComponent<GridColProps> {
      * @returns {Object}
      */
     // eslint-disable-next-line class-methods-use-this
-    createClassNames(props) {
+    private createClassNames(props) {
         const classNames = {};
 
         Object.keys(props).forEach((name) => {

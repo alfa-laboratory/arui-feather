@@ -173,7 +173,7 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         );
     }
 
-    handleCheckboxChange = (value, checked) => {
+    private handleCheckboxChange = (value, checked) => {
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
         const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
@@ -192,13 +192,13 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
@@ -206,10 +206,8 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
 
     /**
      * Устанавливает фокус на первую чекбокс-кнопку в группе.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         if (this.checkboxes && this.checkboxes[0]) {
             this.checkboxes[0].focus();
         }
@@ -217,11 +215,9 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
 
     /**
      * Убирает фокус с группы чекбокс-кнопок.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }

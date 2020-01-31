@@ -70,7 +70,7 @@ class Mq extends React.Component<MqProps, MqState> {
         return this.props.children;
     }
 
-    handleMatch = (mql: MediaQueryList | MediaQueryListEvent) => {
+    private handleMatch = (mql: MediaQueryList | MediaQueryListEvent) => {
         let queryPass = true;
         let touchPass = true;
 

@@ -91,7 +91,7 @@ describe('radio-group', () => {
     });
 
     it('should focus first child radio-button on public focus method', () => {
-        const radioGroup = mount(
+        const radioGroup = mount<RadioGroup>(
             <RadioGroup>
                 <Radio key='1' />
                 <Radio key='2' />
@@ -113,7 +113,7 @@ describe('radio-group', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        const radioGroup = mount(
+        const radioGroup = mount<RadioGroup>(
             <RadioGroup>
                 <Radio key='1' />
                 <Radio key='2' />
@@ -121,11 +121,11 @@ describe('radio-group', () => {
             </RadioGroup>
         );
 
-        document.activeElement.blur = jest.fn();
+        (document.activeElement as HTMLElement).blur = jest.fn();
 
         radioGroup.instance().blur();
 
-        expect(document.activeElement.blur).toHaveBeenCalled();
+        expect((document.activeElement as HTMLElement).blur).toHaveBeenCalled();
     });
 
     it('should call `onFocus` callback after radio-group was focused', () => {
@@ -169,7 +169,7 @@ describe('radio-group', () => {
     });
 
     it('should change other radio checked status when check one', () => {
-        const radioGroupNode = mount(
+        const radioGroupNode = mount<RadioGroup>(
             <RadioGroup value='1'>
                 <Radio key='1' value='1' />
                 <Radio key='2' value='2' />

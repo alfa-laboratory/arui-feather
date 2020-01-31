@@ -33,7 +33,7 @@ describe('popup-container-provider', () => {
         isInFixedContainer = true,
         renderContainerElement = HTMLElement to which popup will be appended,
         positioningContainerElement = HTMLElement in which popup will try to fit`, () => {
-        const popupContainer = mount(
+        const popupContainer = mount<PopupContainerProvider>(
             <PopupContainerProvider>
                 <div>Render-test</div>
             </PopupContainerProvider>
@@ -46,7 +46,7 @@ describe('popup-container-provider', () => {
     });
 
     it('should render children popups inside itself’s DOM node', () => {
-        const popupContainer = mount(
+        const popupContainer = mount<PopupContainerProvider>(
             <PopupContainerProvider>
                 <Popup target='position'>Render-test</Popup>
             </PopupContainerProvider>
@@ -57,7 +57,7 @@ describe('popup-container-provider', () => {
     });
 
     it('should return root `HTMLElement` after `getNode` method call', () => {
-        const popupContainer = mount(
+        const popupContainer = mount<PopupContainerProvider>(
             <PopupContainerProvider>
                 <Popup target='position'>Render-test</Popup>
             </PopupContainerProvider>

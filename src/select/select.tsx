@@ -4,7 +4,6 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Button from '../button/button';
@@ -13,7 +12,7 @@ import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
 import Menu from '../menu/themed';
 import Mq from '../mq/mq';
-import Popup from '../popup/themed';
+import ThemedPopup from '../popup/themed';
 import PopupHeader from '../popup-header/themed';
 import ResizeSensor from '../resize-sensor/resize-sensor';
 
@@ -35,168 +34,294 @@ class NotThemedSelectButton extends Button {
 
 const SelectButton = withTheme(NotThemedSelectButton);
 
-/**
- * @typedef {Object} CheckedOption
- * @property {String} value Уникальное значение, которое будет отправлено на сервер, если вариант выбран
- * @property {String} text Текст варианта
- * @property {String} checkedText Текст, который будет отображаться при выборе
- * @property {Icon} icon Иконка варианта
- */
+type CheckedOption = {
+    /**
+     * Уникальное значение, которое будет отправлено на сервер, если вариант выбран
+     */
+    value: string;
+    /**
+     * Текст варианта
+     */
+    text: string;
+    /**
+     * Текст, который будет отображаться при выборе
+     */
+    checkedText: string;
+    /**
+     * Иконка варианта
+     */
+    icon: React.ReactType;
+}
+
+type SelectDirectionsFieldType = 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+export type SelectOptionsShapeType = {
+
+    /**
+     * Тип списка вариантов
+     */
+    type?: 'item' | 'group';
+
+    /**
+     * Уникальное значение, которое будет отправлено на сервер, если вариант выбран
+     */
+    value?: string | number;
+
+    /**
+     * Текст варианта
+     */
+    text?: React.ReactNode;
+
+    /**
+     * Текст варианта для нативного режима
+     */
+    nativeText?: string;
+
+    /**
+     * Отображение варианта
+     */
+    description?: React.ReactNode;
+
+    /**
+     * Текст, который будет отображаться при выборе
+     */
+    checkedText?: string;
+
+    /**
+     * Иконка варианта
+     */
+    icon?: React.ReactNode;
+
+    /**
+     * Список вариантов, только для type='group'
+     */
+    content?: any[];
+
+    /**
+     * Только для type='item': свойства для компонента [MenuItem](#!/MenuItem)
+     */
+    props?: object;
+};
+
+
+export type SelectProps = {
+
+    /**
+     * Дополнительный класс
+     */
+    className?: string;
+
+    /**
+     * Тип выпадающего списка
+     */
+    mode?: 'check' | 'radio' | 'radio-check';
+
+    /**
+     * Размещение заголовка групп: обычное или в одну строку с первым элементом группы
+     */
+    groupView?: 'default' | 'line';
+
+    /**
+     * Тип поля (filled только на белом фоне в размере m)
+     */
+    view?: 'default' | 'filled';
+
+    /**
+     * Управление возможностью компонента занимать всю ширину родителя
+     */
+    width?: 'default' | 'available';
+
+    /**
+     * Направления, в которые может открываться попап компонента
+     */
+    directions?: Array<SelectDirectionsFieldType>;
+
+    /**
+     * Управление возможностью редактирования значения
+     */
+    disabled?: boolean;
+
+    /**
+     * Управление видимостью выпадающего списка
+     */
+    opened?: boolean;
+
+    /**
+     * Ширинa выпадающего списка равна ширине кнопки
+     */
+    equalPopupWidth?: boolean;
+
+    /**
+     * Список выбранных значений
+     */
+    value?: Array<string | number>;
+
+    /**
+     * Список вариантов выбора
+     */
+    options?: Array<SelectOptionsShapeType>;
+
+    /**
+     * Вставляет попап со списком только если элемент активен
+     */
+    renderPopupOnFocus?: boolean;
+
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl';
+
+    /**
+     * Уникальный идентификатор блока
+     */
+    id?: string;
+
+    /**
+     * Уникальное имя блока
+     */
+    name?: string;
+
+    /**
+     * Лейбл для поля
+     */
+    label?: React.ReactNode;
+
+    /**
+     * Подсказка в поле
+     */
+    placeholder?: string;
+
+    /**
+     * Подсказка в качестве неактивного первого варианта выбора для нативного мобильного контрола
+     */
+    nativeOptionPlaceholder?: string;
+
+    /**
+     * Подсказка под полем
+     */
+    hint?: React.ReactNode;
+
+    /**
+     * Отображение ошибки
+     */
+    error?: React.ReactNode;
+
+    /**
+     * Управление нативным режимом на мобильных устройствах
+     */
+    mobileMenuMode?: 'native' | 'popup';
+
+    /**
+     * Подсказка над меню в мобильном режиме
+     */
+    mobileTitle?: React.ReactNode;
+
+    /**
+     * Смещение в пикселях всплывающего окна относительно основного направления (только на десктопе)
+     */
+    popupMainOffset?: number;
+
+    /**
+     * Смещение в пикселях всплывающего окна относительно второстепенного направления (только на десктопе)
+     */
+    popupSecondaryOffset?: number;
+
+    /**
+     * Скрытие галочки в правой части кнопки
+     */
+    hideTick?: boolean;
+
+    /**
+     * Тема компонента
+     */
+    theme?: 'alfa-on-color' | 'alfa-on-white';
+
+    /**
+     * Обработчик фокуса на компоненте
+     */
+    onFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик потери фокуса компонентом
+     */
+    onBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса на кнопке
+     */
+    onButtonFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик потери у кнопки
+     */
+    onButtonBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик фокуса на меню
+     */
+    onMenuFocus?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик потери фокуса у меню
+     */
+    onMenuBlur?: (event?: React.FocusEvent<any>) => void;
+
+    /**
+     * Обработчик клика по кнопке компонента
+     */
+    onClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик клика вне компонента
+     */
+    onClickOutside?: (event?: React.MouseEvent<any>) => void;
+
+    /**
+     * Обработчик изменения значения
+     */
+    onChange?: (value?: any[]) => void;
+
+    /**
+     * Обработчик нажатия на клавишу
+     */
+    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+
+    /**
+     * Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption
+     */
+    renderButtonContent?: (checkedOptions: CheckedOption[]) => React.ReactNode;
+
+    /**
+     * Максимальная высота попапа
+     */
+    maxHeight?: number;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+};
+
+type SelectState = {
+    hasGroup: boolean;
+    isMobile: boolean;
+    opened: boolean;
+    popupStyles: {
+        minWidth?: number;
+        maxWidth?: number;
+    };
+    value: Array<string | number>;
+    popupIsReady?: boolean;
+}
 
 /**
  * Компонент выпадающего списка.
  */
 @performance(true)
-class Select extends React.Component {
+class Select extends React.Component<SelectProps, SelectState> {
     cn = createCn('select');
-    static propTypes = {
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Тип выпадающего списка */
-        mode: Type.oneOf(['check', 'radio', 'radio-check']),
-        /** Размещение заголовка групп: обычное или в одну строку с первым элементом группы */
-        groupView: Type.oneOf(['default', 'line']),
-        /** Тип поля (filled только на белом фоне в размере m) */
-        view: Type.oneOf(['default', 'filled']),
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Направления, в которые может открываться попап компонента */
-        directions: Type.arrayOf(
-            Type.oneOf([
-                'top-left',
-                'top-center',
-                'top-right',
-                'left-top',
-                'left-center',
-                'left-bottom',
-                'right-top',
-                'right-center',
-                'right-bottom',
-                'bottom-left',
-                'bottom-center',
-                'bottom-right'
-            ])
-        ),
-        /** Управление возможностью редактирования значения */
-        disabled: Type.bool,
-        /** Управление видимостью выпадающего списка */
-        opened: Type.bool,
-        /** Ширинa выпадающего списка равна ширине кнопки */
-        equalPopupWidth: Type.bool,
-        /** Список выбранных значений */
-        value: Type.arrayOf(Type.oneOfType([Type.string, Type.number])),
-        /** Список вариантов выбора */
-        options: Type.arrayOf(
-            Type.shape({
-                /** Тип списка вариантов */
-                type: Type.oneOf(['item', 'group']),
-                /** Уникальное значение, которое будет отправлено на сервер, если вариант выбран */
-                value: Type.oneOfType([Type.string, Type.number]),
-                /** Текст варианта */
-                text: Type.node,
-                /** Текст варианта для нативного режима */
-                nativeText: Type.string,
-                /** Отображение варианта */
-                description: Type.node,
-                /** Текст, который будет отображаться при выборе */
-                checkedText: Type.string,
-                /** Иконка варианта */
-                icon: Type.node,
-                /** Список вариантов, только для type='group' */
-                content: Type.array,
-                /** Только для type='item': свойства для компонента [MenuItem](#!/MenuItem) */
-                props: Type.object
-            })
-        ),
-        /** Вставляет попап со списком только если элемент активен */
-        renderPopupOnFocus: Type.bool,
-        /** Размер компонента */
-        size: Type.oneOf(['s', 'm', 'l', 'xl']),
-        /** Уникальный идентификатор блока */
-        id: Type.string,
-        /** Уникальное имя блока */
-        name: Type.string,
-        /** Лейбл для поля */
-        label: Type.node,
-        /** Подсказка в поле */
-        placeholder: Type.string,
-        /** Подсказка в качестве неактивного первого варианта выбора для нативного мобильного контрола */
-        nativeOptionPlaceholder: Type.string,
-        /** Подсказка под полем */
-        hint: Type.node,
-        /** Отображение ошибки */
-        error: Type.node,
-        /** Управление нативным режимом на мобильных устройствах */
-        mobileMenuMode: Type.oneOf(['native', 'popup']),
-        /** Подсказка над меню в мобильном режиме */
-        mobileTitle: Type.node,
-        /** Смещение в пикселях всплывающего окна относительно основного направления (только на десктопе) */
-        popupMainOffset: Type.number,
-        /** Смещение в пикселях всплывающего окна относительно второстепенного направления (только на десктопе) */
-        popupSecondaryOffset: Type.number,
-        /** Скрытие галочки в правой части кнопки */
-        hideTick: Type.bool,
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /**
-         * Обработчик фокуса на компоненте
-         * @param {React.FocusEvent} event
-         */
-        onFocus: Type.func,
-        /**
-         * Обработчик потери фокуса компонентом
-         * @param {React.FocusEvent} event
-         */
-        onBlur: Type.func,
-        /**
-         * Обработчик фокуса на кнопке
-         * @param {React.FocusEvent} event
-         */
-        onButtonFocus: Type.func,
-        /**
-         * Обработчик потери у кнопки
-         * @param {React.FocusEvent} event
-         */
-        onButtonBlur: Type.func,
-        /**
-         * Обработчик фокуса на меню
-         * @param {React.FocusEvent} event
-         */
-        onMenuFocus: Type.func,
-        /**
-         * Обработчик потери фокуса у меню
-         * @param {React.FocusEvent} event
-         */
-        onMenuBlur: Type.func,
-        /**
-         * Обработчик клика по кнопке компонента
-         * @param {React.MouseEvent} event
-         */
-        onClick: Type.func,
-        /**
-         * Обработчик клика вне компонента
-         * @param {React.MouseEvent} event
-         */
-        onClickOutside: Type.func,
-        /**
-         * Обработчик изменения значения
-         * @param {Array<string|number>} value
-         */
-        onChange: Type.func,
-        /**
-         * Обработчик нажатия на клавишу
-         * @param {React.KeyboardEvent} event
-         */
-        onKeyDown: Type.func,
-        /** Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption */
-        renderButtonContent: Type.func,
-        /** Максимальная высота попапа */
-        maxHeight: Type.number,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<SelectProps> = {
         mode: 'check',
         groupView: 'default',
         disabled: false,
@@ -212,11 +337,11 @@ class Select extends React.Component {
         renderPopupOnFocus: false
     };
 
-    static contextTypes = {
+    static contextTypes: any = {
         positioningContainerElement: HtmlElement
     };
 
-    state = {
+    state: SelectState = {
         hasGroup: false,
         isMobile: false,
         opened: !!this.props.opened,
@@ -224,28 +349,17 @@ class Select extends React.Component {
         value: this.props.value || []
     };
 
-    /**
-     * @type {HTMLDivElement}
-     */
-    root;
+    root: HTMLDivElement;
 
-    /**
-     * @type {Button}
-     */
     button;
 
-    /**
-     * @type {Popup}
-     */
     popup;
 
-    /**
-     * @type {Menu}
-     */
     menu;
 
+    nativeSelect: HTMLSelectElement;
+
     /**
-     * @type {Boolean}
      * При открытом меню, нажатие на Esc устанавливает значение этой переменной в true
      * Далее фокус переводится на кнопку. Далее вызывается обработчик handleMenuBlur.
      * В обработчике закрываем попап, если ожидаем закрытия(this.awaitClosing) или фокус за пределами селекта.
@@ -314,7 +428,7 @@ class Select extends React.Component {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('inner') }>
-                    <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value } />
+                    <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value as any /* TODO: разобраться что тут происходит */ } />
                     { !!this.props.label && <span className={ this.cn('top') }>{ this.props.label }</span> }
                     { this.renderButton() }
 
@@ -394,7 +508,7 @@ class Select extends React.Component {
         const isCheckMode = this.props.mode === 'check';
         const hasEmptyOptGroup = isCheckMode || this.state.hasGroup;
         const hasEmptyOption = !isCheckMode && !this.state.hasGroup;
-        let value = this.getValue();
+        let value: any = this.getValue();
 
         if (!isCheckMode) {
             value = value.length ? value[0] : '';
@@ -407,7 +521,7 @@ class Select extends React.Component {
                 } }
                 className={ this.cn('native-control') }
                 disabled={ this.props.disabled }
-                multiple={ isCheckMode && 'multiple' }
+                multiple={ isCheckMode && 'multiple' as any }
                 value={ value }
                 onChange={ this.handleNativeOptionCheck }
                 onClick={ this.handleNativeClick }
@@ -446,7 +560,7 @@ class Select extends React.Component {
         }
 
         return (
-            <Popup
+            <ThemedPopup
                 key='popup'
                 ref={ this.setPopupRef }
                 for={ this.props.name }
@@ -480,7 +594,7 @@ class Select extends React.Component {
                     onHighlightItem={ this.handleMenuHighlightItem }
                     onKeyDown={ this.handleMenuKeyDown }
                 />
-            </Popup>
+            </ThemedPopup>
         );
     }
 
@@ -675,16 +789,16 @@ class Select extends React.Component {
 
         const hasEmptyOption = this.props.mode !== 'check' && !this.state.hasGroup;
         const domOptions = Array.from(event.currentTarget.options).filter(
-            (option, index) => !(hasEmptyOption && option.disabled && index === 0)
+            (option: any, index) => !(hasEmptyOption && option.disabled && index === 0)
         );
         const flattenedPropOptions = getFlattenedPropOptions(this.props.options);
-        const value = domOptions.reduce((result, item, index) => {
+        const value = domOptions.reduce((result: any[], item: any, index) => {
             if (item.selected) {
                 result.push(flattenedPropOptions[index].value);
             }
 
             return result;
-        }, []);
+        }, []) as any;
 
         if (this.props.mode === 'radio' || this.props.mode === 'radio-check') {
             this.blur();
@@ -845,7 +959,7 @@ class Select extends React.Component {
      */
     // eslint-disable-next-line class-methods-use-this
     blur() {
-        if (document.activeElement) {
+        if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }
@@ -926,7 +1040,7 @@ class Select extends React.Component {
 
     updatePopupStyles = () => {
         const buttonWidth = this.button.getNode().getBoundingClientRect().width;
-        const popupStyles = { minWidth: buttonWidth };
+        const popupStyles: { minWidth; maxWidth?} = { minWidth: buttonWidth };
 
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = buttonWidth;
@@ -969,17 +1083,11 @@ class Select extends React.Component {
         return { ...event, target: { ...event.target, value: this.getValue() } };
     }
 
-    /**
-     * @returns {Array<String|Number>}
-     */
     getValue() {
         return this.props.value || this.state.value;
     }
 
-    /**
-     * @returns {HTMLElement}
-     */
-    getScrollContainer() {
+    getScrollContainer(): HTMLElement {
         return this.context.positioningContainerElement || document.body;
     }
 

@@ -2,24 +2,19 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* eslint react/prop-types: 0 */
-
 import React from 'react';
-import Type from 'prop-types';
 
-import Mask from './mask';
+import Mask, { FormatCharacters } from './mask';
 
 // В эту проверку попадают IE9 и IE10, которые не могут корректно работать с кареткой на событии `input`.
-const IS_IE9_10 = typeof window !== 'undefined' && !!window.ActiveXObject;
+const IS_IE9_10 = typeof window !== 'undefined' && !!(window as any).ActiveXObject;
 
 const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
 
 /**
  * Возвращает версию андроида в формате "4.2.1" или false, если не аднроид.
- *
- * @returns {String|false}
  */
-export function getAndroidVersion() {
+export function getAndroidVersion(): string | false {
     if (!/android/.test(navigator.userAgent.toLowerCase())) {
         return false;
     }
@@ -33,7 +28,7 @@ export function getAndroidVersion() {
 // Для IE11 вместо `onChange`, используем событие `onInput`, для правильной работы copy/paste
 // Issue на ошибку в React: https://github.com/facebook/react/issues/7211
 // Детектим IE11: `Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;`
-const IS_IE11 = typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !window.ActiveXObject;
+const IS_IE11 = typeof window !== 'undefined' && Object.hasOwnProperty.call(window, 'ActiveXObject') && !(window as any).ActiveXObject;
 
 // Типы операции, которые пользователь может производить с текстовым полем.
 const operationType = {
@@ -44,13 +39,9 @@ const operationType = {
 
 /**
  * Возвращает количество не редактируемых символов в строке, в соответствии с указанной маской.
- *
- * @param {String} str Анализируемая строка
- * @param {Mask} mask Маска
- * @returns {Number}
  */
-const getSeparatorsAmount = (str, mask) => (
-    str.split('').reduce((amount, char, index) => {
+const getSeparatorsAmount = (str: string, mask: Mask): number => (
+    str.split('').reduce((amount, _char, index) => {
         if (mask.isEditableIndex(index)) {
             return amount;
         }
@@ -59,72 +50,83 @@ const getSeparatorsAmount = (str, mask) => (
     }, 0)
 );
 
+export type MaskedInputProps = {
+    /**
+     * Маска для поля ввода, использует формат https://github.com/insin/inputmask-core
+     */
+    mask: string;
+
+    /**
+     * Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core`
+     */
+    formatCharacters?: {
+        [key: string]: {
+            validate: Function;
+            transform?: Function;
+        };
+    };
+
+    /**
+     * Максимальное число символов
+     */
+    maxLength?: number;
+
+    /**
+     * Обработчик, вызываемый перед началом ввода в поле
+     */
+    onProcessInputEvent?: (event?: React.ChangeEvent<any>) => void;
+
+    /**
+     * Признак что пробелы удалять не надо
+     */
+    useWhitespaces?: boolean;
+
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     */
+    'data-test-id'?: string;
+
+    /**
+     * Содержимое поля ввода
+     */
+    value?: string;
+
+    /**
+     * Обработчик события, вызываемый при событии 'change'
+     */
+    onChange?: (event?: React.ChangeEvent<any>) => void;
+
+    /**
+     * Обработчик события, вызываемый при событии 'input'
+     */
+    onInput?: (event?: React.ChangeEvent<any>) => void;
+
+    /**
+     * Обработчик события, вызываемый при событии 'beforeInput'
+     */
+    onBeforeInput?: (event?: React.FormEvent<any>) => void;
+};
+
 /**
  * Компонент поля ввода с поддержкой масок.
  * Расширяет стандартный <input /> React-а.
  */
-class MaskedInput extends React.PureComponent {
-    static propTypes = {
-        /** Маска для поля ввода, использует формат https://github.com/insin/inputmask-core */
-        mask: Type.string.isRequired,
-        /** Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core` */
-        formatCharacters: Type.objectOf(
-            Type.shape({
-                validate: Type.func.isRequired,
-                transform: Type.func
-            })
-        ),
-        /** Максимальное число символов */
-        maxLength: Type.number,
-        /**
-         * Обработчик, вызываемый перед началом ввода в поле
-         * @param {React.ChangeEvent} event
-         */
-        onProcessInputEvent: Type.func,
-        /** Признак что пробелы удалять не надо */
-        useWhitespaces: Type.bool,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
+class MaskedInput extends React.PureComponent<MaskedInputProps> {
 
-    /**
-     * @type {HTMLInputElement}
-     */
-    input;
+    input: HTMLInputElement;
 
-    /**
-     * @type {String}
-     */
-    maskPattern;
+    maskPattern: string;
 
-    /**
-     * @type {Mask}
-     */
-    mask;
+    mask: Mask;
 
-    /**
-     * @type {Mask}
-     */
-    beforeChangeMask;
+    beforeChangeMask: Mask;
 
-    /**
-     * @type {FormatCharacters}
-     */
-    formatCharacters;
+    formatCharacters: FormatCharacters;
 
-    /**
-     * @type {String}
-     */
-    value = '';
+    value: string = '';
 
-    /**
-     * @type {Number}
-     */
     caretFixTimeout;
 
-    /**
-     * @type {{ start: Number, end: Number }}
-     */
     beforeInputSelection = { start: 0, end: 0 };
 
     // eslint-disable-next-line camelcase
@@ -264,7 +266,7 @@ class MaskedInput extends React.PureComponent {
      * @param {FormatCharacters} [formatCharacters] Форматтер маски
      * @param {Boolean} useWhitespaces использовать в маске пробелы
      */
-    setMask(newMask, formatCharacters, useWhitespaces) {
+    setMask(newMask, formatCharacters, useWhitespaces?) {
         if (this.maskPattern !== newMask || this.formatCharacters !== formatCharacters) {
             this.mask = new Mask(newMask, formatCharacters, useWhitespaces);
             this.maskPattern = newMask;
@@ -356,7 +358,7 @@ class MaskedInput extends React.PureComponent {
 
             // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
             const offsetSection = opType === operationType.ADD &&
-                IS_ANDROID && parseFloat(getAndroidVersion(), 10) < 4.4 ? 1 : 0;
+                IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
 
             this.setInputSelection(clampedSection + offsetSection);
         } else if (IS_ANDROID) {

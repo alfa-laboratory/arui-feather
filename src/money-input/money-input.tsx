@@ -7,10 +7,10 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import Input from '../input/themed';
+import { InputProps } from '../input/input';
 import Mask from '../masked-input/mask';
 
 import { getCurrencySymbol } from '../lib/currency-codes';
@@ -24,10 +24,9 @@ const INTEGER_PART_SIZE = 3;
  * Если дробная часть не равна `undefined`, значит введена дробная часть
  * или хотя бы запятая.
  *
- * @param {String} value Значение
- * @returns {Array.<String>}
+ * @param value Значение
  */
-function getValueParts(value) {
+function getValueParts(value: string) {
     return value
         .replace(/[.бю]/g, ',') // Заменяем точки, `б` и `ю` на запятые.
         .replace(/[^\d,]/g, '') // Удаляем все, что не является цифрой или запятой.
@@ -38,10 +37,9 @@ function getValueParts(value) {
 /**
  * Сплитит интегер в группы по 3.
  *
- * @param {String} str Строка интегера
- * @returns {String}
+ * @param str Строка интегера
  */
-function splitInteger(str) {
+function splitInteger(str: string): string {
     if (str.length <= INTEGER_PART_SIZE) {
         return [str];
     }
@@ -52,31 +50,44 @@ function splitInteger(str) {
     return [str.slice(from, to)].concat(splitInteger(str.slice(0, from)));
 }
 
+type MoneyInputProps = InputProps & {
+    /**
+     * Максимально допустимая длина значения до запятой
+     */
+    integerLength?: number;
+    /**
+     * Максимально допустимая длина значения после запятой
+     */
+    fractionLength: number;
+    /**
+     * Толщина шрифта
+     */
+    bold: boolean;
+    /**
+     * Отображение символа валюты
+     */
+    showCurrency: boolean;
+    /**
+     * Международный код валюты
+     */
+    currencyCode: string;
+    /**
+     * Идентификатор для систем автоматизированного тестирования
+     * */
+    'data-test-id': string;
+}
+
+type MoneyInputState = {
+    value: string;
+}
+
 /**
  * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
- *
- * @extends Input
  */
-
-class MoneyInput extends React.PureComponent {
+class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     cn = createCn('money-input');
-    static propTypes = {
-        ...Input.propTypes,
-        /** Максимально допустимая длина значения до запятой */
-        integerLength: Type.number,
-        /** Максимально допустимая длина значения после запятой */
-        fractionLength: Type.number,
-        /** Толщина шрифта */
-        bold: Type.bool,
-        /** Отображение символа валюты */
-        showCurrency: Type.bool,
-        /** Международный код валюты */
-        currencyCode: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
-    static defaultProps = {
+    static defaultProps: Partial<MoneyInputProps> = {
         fractionLength: DEFAULT_FRACTION_SIZE,
         integerLength: DEFAULT_INTEGER_SIZE,
         bold: false,
@@ -88,20 +99,11 @@ class MoneyInput extends React.PureComponent {
         value: ''
     };
 
-    /**
-     * @type {String}
-     */
-    maskPattern;
+    maskPattern: string;
 
-    /**
-     * @type {InputMask.Pattern}
-     */
-    mask;
+    mask: Mask;
 
-    /**
-     * @type {Input}
-     */
-    root;
+    root: HTMLInputElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
@@ -208,9 +210,9 @@ class MoneyInput extends React.PureComponent {
     /**
      * Обновляет маску по значению: группирует целую часть в блоки по три символа.
      *
-     * @param {String} value Значение
+     * @param value Значение
      */
-    updateMaskByValue(value) {
+    updateMaskByValue(value: string) {
         const [integerPart, fractionPart] = getValueParts(value);
 
         const integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
@@ -232,8 +234,6 @@ class MoneyInput extends React.PureComponent {
 
     /**
      * Расчитывает максимально допустимую длинну поля ввода.
-     *
-     * @returns {Number}
      */
     getMaxLength() {
         let maxLength = Math.floor((this.props.integerLength - 1) / INTEGER_PART_SIZE) + this.props.integerLength;
@@ -247,8 +247,6 @@ class MoneyInput extends React.PureComponent {
 
     /**
      * Возвращает актуальное значение для рендера.
-     *
-     * @returns {String}
      */
     getValue() {
         return this.props.value === undefined ? this.state.value : this.props.value;

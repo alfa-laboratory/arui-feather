@@ -2,21 +2,25 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
-
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
 import Input from '../input/themed';
+import { InputProps } from '../input/input';
+
+export type CardInputProps = InputProps & {
+    /** Подсказка в текстовом поле */
+    placeholder?: string;
+};
 
 /**
- * Компонент поля ввода почты.
- * @extends Input
+ * Поле ввода номера карты с маской.
  */
-class EmailInput extends React.PureComponent {
-    cn = createCn('email-input');
-    static propTypes = {
-        ...Input.propTypes
+class CardInput extends React.PureComponent<CardInputProps> {
+    cn = createCn('card-input');
+
+    static defaultProps: Partial<CardInputProps> = {
+        placeholder: '0000 0000 0000 0000 00'
     };
 
     /**
@@ -28,10 +32,11 @@ class EmailInput extends React.PureComponent {
         return (
             <Input
                 { ...this.props }
-                type='email'
+                type='tel'
                 ref={ (root) => {
                     this.root = root;
                 } }
+                mask='1111 1111 1111 1111 11'
                 formNoValidate={ true }
                 className={ this.cn() }
             />
@@ -66,4 +71,4 @@ class EmailInput extends React.PureComponent {
     }
 }
 
-export default EmailInput;
+export default CardInput;

@@ -688,8 +688,8 @@ class Select extends React.Component<SelectProps, SelectState> {
             this.props.onClick(event);
         }
     };
-
-    private handleButtonKeyDown = (event) => {
+    // TODO: не сипользуется и вроде не публичный!!!!
+    handleButtonKeyDown = (event) => {
         if (!this.props.disabled) {
             if (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) {
                 this.toggleOpened();

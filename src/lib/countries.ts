@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* eslint comma-dangle: 0 */
 
 // Copy of https://github.com/patw0929/react-intl-tel-input/blob/master/src/components/AllCountries.js
@@ -46,7 +45,10 @@
 //    Order (if >1 country with same dial code),
 //    Area codes (if >1 country with same dial code)
 // ]
-const defaultCountriesData = [
+
+type CountryParam = [string, string, string, string, number?, string[]?];
+
+const defaultCountriesData: CountryParam[] = [
     [
         'Afghanistan',
         'Афганистан',
@@ -1548,7 +1550,7 @@ const defaultCountriesData = [
 
 let countries;
 
-function formatCountriesData(countriesData) {
+function formatCountriesData(countriesData: CountryParam[]) {
     return countriesData.map(country => ({
         name: country[1],
         iso2: country[2],
@@ -1558,11 +1560,11 @@ function formatCountriesData(countriesData) {
     })).sort((a, b) => a.name.localeCompare(b.name));
 }
 
-function initialize(externalCountriesList) {
-    countries = formatCountriesData(externalCountriesList || defaultCountriesData);
+function initialize(externalCountriesList = defaultCountriesData) {
+    countries = formatCountriesData(externalCountriesList);
 }
 
-function getCountries() {
+function getCountries(): CountryParam[] {
     if (!countries) {
         initialize();
     }

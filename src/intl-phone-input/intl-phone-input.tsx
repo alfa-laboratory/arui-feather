@@ -9,6 +9,7 @@ import { createCn } from 'bem-react-classname';
 
 import FlagIcon from '../flag-icon/themed';
 import Input from '../input/themed';
+import { InputProps } from '../input/input';
 import Select from '../select/themed';
 
 import countries from '../lib/countries';
@@ -16,15 +17,23 @@ import getRelatedTarget from '../lib/related-target';
 
 const MAX_DIAL_CODE_LENGTH = 4;
 
+export type IntlPhoneInputProps = InputProps;
+
+type IntlPhoneInputState = {
+    countryIso2: string;
+    inputFocused: boolean;
+    inputValue: string;
+    selectFocused: boolean;
+    onceOpened: boolean;
+}
+
 /**
  * Компонент ввода международного телефона по маске.
- *
  */
-class IntlPhoneInput extends React.PureComponent {
+class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneInputState> {
     cn = createCn('intl-phone-input');
-    static propTypes = Input.propTypes;
 
-    static defaultProps = {
+    static defaultProps: Partial<IntlPhoneInputProps> = {
         size: 'm',
         value: '+7'
     };
@@ -105,7 +114,7 @@ class IntlPhoneInput extends React.PureComponent {
         );
     }
 
-    renderFlagIcon(countryIso2) {
+    renderFlagIcon(countryIso2: string) {
         return (
             <FlagIcon
                 country={ countryIso2 }

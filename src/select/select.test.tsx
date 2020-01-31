@@ -11,7 +11,8 @@ import Select from './select';
 import keyboardCode from '../lib/keyboard-code';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
-import { setIsMatched as setMqMatched } from '../mq/mq';
+
+const { setIsMatched: setMqMatched } = require('../mq/mq');
 
 jest.mock('../mq/mq');
 
@@ -34,7 +35,7 @@ const OPTIONS = [
 let wrapper;
 
 function renderSelect(props) {
-    const select = mount(<Select { ...props } />);
+    const select = mount<Select>(<Select { ...props } />);
 
     wrapper = select;
 

@@ -3,13 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
-import PhoneInput from './phone-input';
-
+import EmailInput from './email-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-describe('phone-input', () => {
+describe('email-input', () => {
     const originalWindowScrollTo = window.scrollTo;
 
     beforeEach(() => {
@@ -20,28 +19,34 @@ describe('phone-input', () => {
         window.scrollTo = originalWindowScrollTo;
     });
 
+    it('should render without problems', () => {
+        const emailInput = shallow<EmailInput>(<EmailInput />);
+
+        expect(emailInput).toMatchSnapshot();
+    });
+
     it('should scroll window to element on public scrollTo method', () => {
-        const phoneInput = mount(<PhoneInput />);
-        const elemTopPosition = phoneInput.getDOMNode().getBoundingClientRect().top;
+        const emailInput = mount<EmailInput>(<EmailInput />);
+        const elemTopPosition = emailInput.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
-        phoneInput.instance().scrollTo();
+        emailInput.instance().scrollTo();
 
         expect(window.scrollTo).toHaveBeenCalledWith(0, elemScrollTo);
     });
 
     it('should call input focus/blur methods on public focus/blur methods', () => {
-        const phoneInput = mount(<PhoneInput />);
+        const emailInput = mount<EmailInput>(<EmailInput />);
 
-        const input = phoneInput.instance().root;
+        const input = emailInput.instance().root;
 
         jest.spyOn(input, 'focus');
         jest.spyOn(input, 'blur');
 
-        phoneInput.instance().focus();
+        emailInput.instance().focus();
         expect(input.focus).toHaveBeenCalled();
 
-        phoneInput.instance().blur();
+        emailInput.instance().blur();
         expect(input.blur).toHaveBeenCalled();
     });
 });

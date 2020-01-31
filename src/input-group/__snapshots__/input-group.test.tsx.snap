@@ -4,7 +4,7 @@ exports[`input-group should render with many input children without problems 1`]
 <span
   className="input-group control-group"
   role="group"
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <span
     className="input-group__input-case"
@@ -39,7 +39,7 @@ exports[`input-group should render with only one children 1`] = `
 <span
   className="input-group control-group"
   role="group"
-  tabIndex="-1"
+  tabIndex={-1}
 >
   <span
     className="input-group__input-case"
@@ -61,6 +61,6 @@ exports[`input-group should render without any children 1`] = `
 <span
   className="input-group control-group"
   role="group"
-  tabIndex="-1"
+  tabIndex={-1}
 />
 `;

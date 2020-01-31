@@ -68,7 +68,7 @@ class PhoneInput extends React.PureComponent<PhoneInputProps> {
     /**
      * Скроллит страницу до поля ввода.
      */
-    private scrollTo() {
+    public scrollTo() {
         this.root.scrollTo();
     }
 }

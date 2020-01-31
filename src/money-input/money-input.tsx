@@ -197,7 +197,7 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     /**
      * Скроллит страницу до поля ввода.
      */
-    private scrollTo() {
+    public scrollTo() {
         this.root.scrollTo();
     }
 

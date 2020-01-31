@@ -328,7 +328,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
     /**
      * Скроллит страницу до радио-кнопки.
      */
-    private scrollTo() {
+    public scrollTo() {
         const elementRect = this.label.getBoundingClientRect();
 
         scrollTo({

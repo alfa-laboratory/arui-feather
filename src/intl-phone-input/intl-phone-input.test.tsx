@@ -10,7 +10,7 @@ import { shallow, mount } from 'enzyme';
 import IntlPhoneInput from './intl-phone-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-const SIZES = ['s', 'm', 'l', 'xl'];
+const SIZES = ['s', 'm', 'l', 'xl'] as const;
 
 describe('intl-phone-input', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -38,7 +38,7 @@ describe('intl-phone-input', () => {
     });
 
     it('should return `HTMLInputElement` when `getControl` method called', () => {
-        const elem = mount(<IntlPhoneInput />);
+        const elem = mount<IntlPhoneInput>(<IntlPhoneInput />);
         const controlNode = elem.instance().getControl();
 
         expect(controlNode).toBeInstanceOf(HTMLInputElement);
@@ -63,7 +63,7 @@ describe('intl-phone-input', () => {
     });
 
     it('should scroll window to element on public `scrollTo` method', () => {
-        const elem = mount(<IntlPhoneInput />);
+        const elem = mount<IntlPhoneInput>(<IntlPhoneInput />);
         const elemTopPosition = elem.instance().input.getNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 
@@ -115,7 +115,7 @@ describe('intl-phone-input', () => {
     });
 
     it('should call loadUtil method on componentDidMount', () => {
-        const instance = mount(<IntlPhoneInput />).instance();
+        const instance = mount<IntlPhoneInput>(<IntlPhoneInput />).instance();
 
         jest.spyOn(instance, 'loadUtil');
         instance.componentDidMount();
@@ -123,16 +123,16 @@ describe('intl-phone-input', () => {
     });
 
     describe('getOptions method', () => {
-        const elem = mount(<IntlPhoneInput />);
+        const elem = mount<IntlPhoneInput>(<IntlPhoneInput />);
 
         it('should return array with zero length if state.onceOpened is falsy', () => {
             elem.setState({ onceOpened: false });
-            expect(elem.instance().getOptions(() => {}).length).toBe(0);
+            expect(elem.instance().getOptions().length).toBe(0);
         });
 
         it('should return array with countries length if state.onceOpened is truly', () => {
             elem.setState({ onceOpened: true });
-            expect(elem.instance().getOptions(() => {}).length).toBe(243);
+            expect(elem.instance().getOptions().length).toBe(243);
         });
     });
 
@@ -151,7 +151,7 @@ describe('intl-phone-input', () => {
     });
 
     it('should focus on input after select was changed', (done) => {
-        const elem = mount(<IntlPhoneInput />);
+        const elem = mount<IntlPhoneInput>(<IntlPhoneInput />);
 
         elem.setState({ onceOpened: true });
         const controlNode = elem.instance().input;
@@ -169,7 +169,7 @@ describe('intl-phone-input', () => {
     });
 
     it('should focus on input after select was closed by button toggle', () => {
-        const elem = mount(<IntlPhoneInput />);
+        const elem = mount<IntlPhoneInput>(<IntlPhoneInput />);
         const selectButtonNode = elem.find('.select-button');
         const controlNode = elem.instance().input;
 

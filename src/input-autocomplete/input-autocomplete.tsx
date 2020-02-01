@@ -373,15 +373,15 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         highlightedItem: null
     };
 
-    input: Input;
+    private input: Input;
 
-    popup: Popup;
+    private popup: Popup;
 
-    menu: Menu;
+    private menu: Menu;
 
-    blurTimeout: ReturnType<typeof setTimeout> = null;
+    private blurTimeout: ReturnType<typeof setTimeout> = null;
 
-    inputFocusTimeout: ReturnType<typeof setTimeout> = null;
+    private inputFocusTimeout: ReturnType<typeof setTimeout> = null;
 
     componentDidMount() {
         this.updatePopupTarget();
@@ -440,7 +440,7 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
         );
     }
 
-    renderPopup() {
+    private renderPopup() {
         const formattedOptionsList = this.props.options
             ? this.formatOptionsList(this.props.options)
             : [];

@@ -127,7 +127,7 @@ class Form extends React.PureComponent<FormProps> {
         );
     }
 
-    handleSubmit = (event) => {
+    private handleSubmit = (event) => {
         event.preventDefault();
 
         if (this.props.onSubmit) {

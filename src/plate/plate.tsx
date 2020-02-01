@@ -192,13 +192,13 @@ class Plate extends React.PureComponent<PlateProps> {
         );
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleTitleClick = (event) => {
+    private handleTitleClick = (event) => {
         if (this.props.foldable) {
             this.setState({
                 isFolded: !this.state.isFolded
@@ -210,13 +210,13 @@ class Plate extends React.PureComponent<PlateProps> {
         }
     }
 
-    handleTitleKeyDown = (event) => {
+    private handleTitleKeyDown = (event) => {
         if (this.props.onTitleKeyDown) {
             this.props.onTitleKeyDown(event);
         }
     }
 
-    handleFolderClick = (event) => {
+    private handleFolderClick = (event) => {
         this.setState({
             isFolded: !this.state.isFolded
         });
@@ -226,7 +226,7 @@ class Plate extends React.PureComponent<PlateProps> {
         }
     }
 
-    handleCloserClick = (event) => {
+    private handleCloserClick = (event) => {
         this.setState({
             isHidden: true
         });
@@ -236,7 +236,7 @@ class Plate extends React.PureComponent<PlateProps> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }

@@ -320,14 +320,14 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         );
     }
 
-    handleMonthClick = () => {
+    private handleMonthClick = () => {
         this.setState({
             isMonthSelection: !this.state.isMonthSelection,
             isYearSelection: false
         });
     };
 
-    handleYearClick = () => {
+    private handleYearClick = () => {
         this.setState({
             isMonthSelection: false,
             isYearSelection: !this.state.isYearSelection
@@ -381,7 +381,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         );
     }
 
-    handleSelectMonthClick = (event) => {
+    private handleSelectMonthClick = (event) => {
         const newMonth = event.target.attributes['data-month'];
 
         if (newMonth) {
@@ -437,7 +437,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         );
     }
 
-    handleSelectYearClick = (event) => {
+    private handleSelectYearClick = (event) => {
         const newYear = event.target.attributes['data-year'];
 
         if (newYear) {
@@ -561,7 +561,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         });
     }
 
-    handleDayClick = (event) => {
+    private handleDayClick = (event) => {
         const day = event.target.attributes['data-day'];
 
         if (day) {
@@ -569,7 +569,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
             this.blurTimeoutId = null;
@@ -580,7 +580,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         event.persist();
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
@@ -594,7 +594,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         }, 0);
     };
 
-    handleArrowClick = (event) => {
+    private handleArrowClick = (event) => {
         if (event.currentTarget.attributes['data-disabled'].nodeValue === 'true') {
             return;
         }
@@ -614,7 +614,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.DOWN_ARROW: {
                 event.preventDefault();
@@ -642,7 +642,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
     };
 
-    handleKeyUp = (event) => {
+    private handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
@@ -650,20 +650,16 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     /**
      * Устанавливает фокус на календарь.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с календаря.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
@@ -671,11 +667,8 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
-     * @returns {HTMLElement}
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
@@ -686,7 +679,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param {Date|Number} value Дата для проверки
      * @returns {Boolean}
      */
-    isValidDate(value) {
+    private isValidDate(value) {
         if (!value) {
             return false;
         }
@@ -709,7 +702,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param {Data|Number} date Дата для проверки
      * @returns {Boolean}
      */
-    isOffDay(date) {
+    private isOffDay(date) {
         if (this.props.offDays && Array.isArray(this.props.offDays)) {
             const timestamp = date.valueOf();
 
@@ -726,7 +719,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param {Data|Number} date Дата для проверки
      * @returns {Boolean}
      */
-    isEventDay(date) {
+    private isEventDay(date) {
         if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
             const timestamp = date.valueOf();
 
@@ -744,7 +737,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    performChange(timestamp, isTriggeredByKeyboard = false) {
+    private performChange(timestamp, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
             return;
         }
@@ -769,7 +762,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    performChangeWithShift(dayShift, isTriggeredByKeyboard) {
+    private performChangeWithShift(dayShift, isTriggeredByKeyboard) {
         if (!this.ensureValueInLimits(dayShift)) {
             return;
         }
@@ -791,14 +784,14 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
     }
 
-    ensureValueInLimits(dayShift) {
+    private ensureValueInLimits(dayShift) {
         const shiftedDay = addDays(this.value, dayShift);
 
         return (!this.earlierLimit || differenceInMilliseconds(shiftedDay, this.earlierLimit) >= 0) &&
             (!this.laterLimit || differenceInMilliseconds(shiftedDay, this.laterLimit) <= 0);
     }
 
-    calculateWeeks() {
+    private calculateWeeks() {
         let weekDay;
         const weeks = [];
         const lastDay = 6;
@@ -833,7 +826,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
         return weeks;
     }
 
-    prepareData(nextProps?) {
+    private prepareData(nextProps?) {
         let isInitializing = false;
 
         if (!nextProps) {

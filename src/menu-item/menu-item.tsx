@@ -223,7 +223,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         );
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.disabled) {
             event.preventDefault();
 
@@ -235,7 +235,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -243,7 +243,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -251,7 +251,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
@@ -259,7 +259,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
@@ -269,29 +269,23 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Устанавливает фокус на элементе меню.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Убирает фокус с элемента меню.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }

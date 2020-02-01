@@ -361,7 +361,7 @@ class Menu extends React.Component<MenuProps> {
         );
     }
 
-    handleMenuItemClick = (item) => {
+    private handleMenuItemClick = (item) => {
         this.setNewCheckedItems(item);
 
         if (this.props.onItemClick) {
@@ -369,7 +369,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
@@ -377,7 +377,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
@@ -385,13 +385,13 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleKeyUp = (event) => {
+    private handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         let highlightedItem = null;
         let highlightedMenuItem = null;
         const menuIteListLength = this.menuItemList.length;
@@ -476,7 +476,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
             this.blurTimeoutId = null;
@@ -487,7 +487,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         event.persist();
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
@@ -501,7 +501,7 @@ class Menu extends React.Component<MenuProps> {
         }, 0);
     };
 
-    handleMenuItemMouseEnter(menuItem) {
+    private handleMenuItemMouseEnter(menuItem) {
         this.setState({
             highlightedItem: menuItem
         });
@@ -511,7 +511,7 @@ class Menu extends React.Component<MenuProps> {
         }
     }
 
-    handleMenuItemMouseLeave = () => {
+    private handleMenuItemMouseLeave = () => {
         this.setState({
             highlightedItem: null
         });
@@ -523,19 +523,15 @@ class Menu extends React.Component<MenuProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Устанавливает фокус на меню.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
 
         if (this.props.autoFocusFirstItem) {
@@ -553,17 +549,15 @@ class Menu extends React.Component<MenuProps> {
 
     /**
      * Убирает фокус с меню.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
     }
 
-    setNewCheckedItems(item) {
+    private setNewCheckedItems(item) {
         const { value } = item;
         let checkedItems = this.props.checkedItems === undefined
             ? Array.from(this.state.checkedItems)
@@ -603,7 +597,7 @@ class Menu extends React.Component<MenuProps> {
      *
      * @param {Array.<String|Number>} checkedItems Список выбранных значений
      */
-    changeCheckedItems(checkedItems) {
+    private changeCheckedItems(checkedItems) {
         this.setState({
             checkedItems
         });
@@ -613,13 +607,13 @@ class Menu extends React.Component<MenuProps> {
         }
     }
 
-    getIndexInCheckedItemsList = (value) => {
+    private getIndexInCheckedItemsList = (value) => {
         const checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
 
         return checkedItems.indexOf(value);
     };
 
-    getFirstItem(content) {
+    private getFirstItem(content) {
         const firstItem = content[0];
 
         return firstItem.type === 'group' ? this.getFirstItem(firstItem.content) : firstItem;

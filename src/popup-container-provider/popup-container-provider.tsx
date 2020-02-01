@@ -123,7 +123,7 @@ class PopupContainerProvider extends React.PureComponent<PopupContainerProviderP
     /**
      * Необходимо для обновления childContext сразу после получения refs.
      */
-    handleContainerDidRender() {
+    private handleContainerDidRender() {
         this.setState({
             didRender: true // eslint-disable-line react/no-unused-state
         });
@@ -131,10 +131,8 @@ class PopupContainerProvider extends React.PureComponent<PopupContainerProviderP
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode(): HTMLElement {
+    public getNode(): HTMLElement {
         return this.positioningContainer;
     }
 }

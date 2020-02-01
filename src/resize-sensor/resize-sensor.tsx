@@ -60,7 +60,7 @@ class ResizeSensor extends React.Component<ResizeSensorProps> {
         /* eslint-enable jsx-a11y/iframe-has-title */
     }
 
-    handleResize = () => {
+    private handleResize = () => {
         if (this.props.onResize) {
             this.props.onResize();
         }

@@ -241,11 +241,11 @@ class Sidebar extends React.PureComponent<SidebarProps> {
         );
     }
 
-    handleMqMatchChange = (isMatched) => {
+    private handleMqMatchChange = (isMatched) => {
         this.setState({ isMobile: isMatched });
     };
 
-    handleClose = (event) => {
+    private handleClose = (event) => {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
@@ -255,7 +255,7 @@ class Sidebar extends React.PureComponent<SidebarProps> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.ESCAPE:
                 event.preventDefault();
@@ -264,7 +264,7 @@ class Sidebar extends React.PureComponent<SidebarProps> {
         }
     };
 
-    styleBodyRightMargin() {
+    private styleBodyRightMargin() {
         const offset = this.props.visible ? getScrollbarWidth() : 0;
 
         document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : '0';

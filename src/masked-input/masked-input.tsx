@@ -59,12 +59,7 @@ export type MaskedInputProps = {
     /**
      * Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core`
      */
-    formatCharacters?: {
-        [key: string]: {
-            validate: Function;
-            transform?: Function;
-        };
-    };
+    formatCharacters?: FormatCharacters;
 
     /**
      * Максимальное число символов
@@ -183,7 +178,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
         );
     }
 
-    handleBeforeInput = (event) => {
+    private handleBeforeInput = (event) => {
         this.beforeInputSelection = {
             start: this.input.selectionStart,
             end: this.input.selectionEnd
@@ -199,7 +194,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
      *
      * @param {React.ChangeEvent<HTMLInput>} event The Event object
      */
-    handleInput = (event) => {
+    private handleInput = (event) => {
         const processedEvent = IS_IE9_10 ? event : this.processInputEvent(event);
 
         if (this.props.onInput) {
@@ -218,7 +213,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
      *
      * @param {React.ChangeEvent<HTMLInput>} event The Event object
      */
-    handleChange = (event) => {
+    private handleChange = (event) => {
         if (IS_IE11 || !this.props.onChange) {
             return;
         }
@@ -232,41 +227,33 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.input.focus();
     }
 
     /**
      * Снимает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.input.blur();
     }
 
     /**
      * Возвращает ссылку на HTMLElement инпута.
-     *
-     * @public
-     * @returns {HTMLInputElement}
      */
-    getControl() {
+    public getControl() {
         return this.input;
     }
 
     /**
      * Синхронно обновляет маску на поле ввода.
      *
-     * @public
-     * @param {String} newMask Новая маска
-     * @param {FormatCharacters} [formatCharacters] Форматтер маски
-     * @param {Boolean} useWhitespaces использовать в маске пробелы
+     * @param newMask Новая маска
+     * @param formatCharacters Форматтер маски
+     * @param useWhitespaces использовать в маске пробелы
      */
-    setMask(newMask, formatCharacters, useWhitespaces?) {
+    public setMask(newMask: string, formatCharacters: FormatCharacters, useWhitespaces?: boolean) {
         if (this.maskPattern !== newMask || this.formatCharacters !== formatCharacters) {
             this.mask = new Mask(newMask, formatCharacters, useWhitespaces);
             this.maskPattern = newMask;
@@ -274,7 +261,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
         }
     }
 
-    processInputEvent(event) {
+    private processInputEvent(event) {
         if (this.props.onProcessInputEvent) {
             this.props.onProcessInputEvent(event);
         }
@@ -377,7 +364,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
      * @param {Number} selection Положение каретки
      * @returns {Number}
      */
-    clampSelection(selection) {
+    private clampSelection(selection) {
         if (selection < this.mask.firstEditableIndex) {
             return this.mask.firstEditableIndex;
         }
@@ -395,7 +382,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
      *
      * @param {Number} selection Новое положение каретки
      */
-    setInputSelection(selection) {
+    private setInputSelection(selection) {
         this.input.selectionStart = selection;
         this.input.selectionEnd = selection;
 
@@ -416,7 +403,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
      *
      * @param {Number} selection Положение каретки
      */
-    setInputSelectionByTimeout(selection) {
+    private setInputSelectionByTimeout(selection) {
         if (this.caretFixTimeout) {
             clearTimeout(this.caretFixTimeout);
             this.caretFixTimeout = null;

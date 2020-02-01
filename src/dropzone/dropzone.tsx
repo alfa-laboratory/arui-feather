@@ -85,7 +85,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
 
     dragCounter: number;
 
-    handleDragOver = (event) => {
+    private handleDragOver = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -94,7 +94,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
         }
     }
 
-    handleDragEnter = (event) => {
+    private handleDragEnter = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -108,7 +108,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
         }
     };
 
-    handleDragLeave = (event) => {
+    private handleDragLeave = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -123,7 +123,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
         }
     };
 
-    handleDrop = (event) => {
+    private handleDrop = (event) => {
         event.preventDefault();
         event.stopPropagation();
 

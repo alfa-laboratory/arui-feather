@@ -132,7 +132,7 @@ class Collapse extends React.PureComponent<CollapseProps> {
         );
     }
 
-    handleExpandedChange = () => {
+    private handleExpandedChange = () => {
         const newExpandedValue = this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
 
         this.setState({
@@ -144,7 +144,7 @@ class Collapse extends React.PureComponent<CollapseProps> {
         }
     };
 
-    updateContentHeight = () => {
+    private updateContentHeight = () => {
         const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         let contentHeight;

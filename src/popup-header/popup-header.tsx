@@ -76,7 +76,7 @@ class PopupHeader extends React.PureComponent<PopupHeaderProps> {
         );
     }
 
-    handleCloserClick = (event) => {
+    private handleCloserClick = (event) => {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }

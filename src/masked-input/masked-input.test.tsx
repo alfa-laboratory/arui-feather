@@ -88,7 +88,7 @@ describe('masked-input', () => {
         const mask = 'ccc 1 ccc';
         const cyrillic = {
             c: {
-                private validate(char) {
+                validate(char) {
                     return /^[ЁёА-Яа-я]$/.test(char);
                 }
             }

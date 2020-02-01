@@ -8,6 +8,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { FormatCharacters } from '../masked-input/mask';
 
 import Input from '../input/themed';
 import Menu from '../menu/themed';
@@ -116,12 +117,7 @@ export type InputAutocompleteProps = InputProps & {
     /**
      * Кастомные форматтеры символов маски, использует формат formatCharacters из `inputmask-core`
      */
-    maskFormatCharacters?: {
-        [key: string]: {
-            validate: Function;
-            transform?: Function;
-        };
-    };
+    maskFormatCharacters?: FormatCharacters;
 
     /**
      * Стандартное ствойство HTMLInputElement 'pattern'. Может быть использовано для показа корректной клавиатуры на мобильных устройствах.

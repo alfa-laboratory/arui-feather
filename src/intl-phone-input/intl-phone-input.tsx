@@ -187,7 +187,8 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         }, this.setCountry);
     };
 
-    private getOptions = () => {
+    // TODO: торчит для теста
+    getOptions = () => {
         this.countries = countries.getCountries();
 
         return this.state.onceOpened ? this.countries.map(country => ({
@@ -224,7 +225,8 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
         return this.state.inputValue;
     }
 
-    private loadUtil() {
+    // TODO: торчит для теста
+    loadUtil() {
         return import(/* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min')
             .then((util) => {
                 this.util = util;

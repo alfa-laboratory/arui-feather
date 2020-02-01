@@ -5,4 +5,4 @@
 import './navigation-chat.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './navigation-chat';

@@ -5,4 +5,4 @@
 import './bank-home-credit.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './bank-home-credit';

@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import TagButton from './tag-button';
+import { TagButton } from './tag-button';
 
 describe('tag-button', () => {
     it('renders without problems', () => {

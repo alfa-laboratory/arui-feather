@@ -5,4 +5,4 @@
 import './network-twitter.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './network-twitter';

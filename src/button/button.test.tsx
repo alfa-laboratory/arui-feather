@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Button from './button';
+import { Button } from './button';
 
 describe('button', () => {
     it('should set/unset class on button pressed/unpressed', () => {

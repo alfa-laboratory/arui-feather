@@ -5,4 +5,4 @@
 import './bank-unicredit.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './bank-unicredit';

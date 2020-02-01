@@ -9,7 +9,8 @@ import React from 'react';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import { withTheme } from '../cn';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
 import { HtmlElement } from '../lib/prop-types';
@@ -182,7 +183,7 @@ type PopupState = {
  * Компонент popup'а.
  */
 @performance(true)
-class Popup extends React.Component<PopupProps, PopupState> {
+export class Popup extends React.Component<PopupProps, PopupState> {
     cn = createCn('popup');
 
     static defaultProps: Partial<PopupProps> = {
@@ -688,4 +689,4 @@ class Popup extends React.Component<PopupProps, PopupState> {
     }
 }
 
-export default Popup;
+export default withTheme(Popup);

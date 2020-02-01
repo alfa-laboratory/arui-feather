@@ -6,10 +6,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconCheck from '../icon/ui/tick';
-import MenuItem from '../menu-item/themed';
-import { MenuItemProps } from '../menu-item/menu-item';
+import MenuItem, { MenuItemProps } from '../menu-item/menu-item';
 
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
@@ -189,7 +189,7 @@ export type MenuProps = {
  * Компонент меню.
  */
 @performance(true)
-class Menu extends React.Component<MenuProps> {
+export class Menu extends React.Component<MenuProps> {
     cn = createCn('menu');
 
     static defaultProps: Partial<MenuProps> = {
@@ -620,4 +620,4 @@ class Menu extends React.Component<MenuProps> {
     }
 }
 
-export default Menu;
+export default withTheme(Menu);

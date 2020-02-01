@@ -5,4 +5,4 @@
 import './category-shield.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './category-shield';

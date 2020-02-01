@@ -6,11 +6,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
 import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
-import IconButton from '../icon-button/themed';
+import IconButton from '../icon-button/icon-button';
 
 export type PlateProps = {
 
@@ -104,7 +105,7 @@ export type PlateProps = {
 /**
  * Компонент плашки.
  */
-class Plate extends React.PureComponent<PlateProps> {
+export class Plate extends React.PureComponent<PlateProps> {
     cn = createCn('plate');
 
     static defaultProps: Partial<PlateProps> = {
@@ -243,4 +244,4 @@ class Plate extends React.PureComponent<PlateProps> {
     }
 }
 
-export default Plate;
+export default withTheme(Plate);

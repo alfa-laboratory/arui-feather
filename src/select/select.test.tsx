@@ -7,7 +7,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Select from './select';
+import { Select } from './select';
 import keyboardCode from '../lib/keyboard-code';
 
 import { SCROLL_TO_CORRECTION } from '../vars';

@@ -5,4 +5,4 @@
 import './account-shared.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './account-shared';

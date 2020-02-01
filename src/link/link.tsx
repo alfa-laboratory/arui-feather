@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type LinkProps = {
 
@@ -126,7 +127,7 @@ export type LinkProps = {
 /**
  * Компонент ссылки.
  */
-class Link extends React.PureComponent<LinkProps> {
+export class Link extends React.PureComponent<LinkProps> {
     cn = createCn('link');
 
     static defaultProps: Partial<LinkProps> = {
@@ -279,4 +280,4 @@ class Link extends React.PureComponent<LinkProps> {
     }
 }
 
-export default Link;
+export default withTheme(Link);

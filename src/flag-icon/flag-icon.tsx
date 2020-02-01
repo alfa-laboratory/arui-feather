@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type FlagIconProps = {
 
@@ -53,7 +54,7 @@ export type FlagIconProps = {
 /**
  * Компонент флага в виде иконки.
  */
-class FlagIcon extends React.PureComponent<FlagIconProps> {
+export class FlagIcon extends React.PureComponent<FlagIconProps> {
     cn = createCn('flag-icon');
 
     static defaultProps: Partial<FlagIconProps> = {
@@ -77,4 +78,4 @@ class FlagIcon extends React.PureComponent<FlagIconProps> {
     }
 }
 
-export default FlagIcon;
+export default withTheme(FlagIcon);

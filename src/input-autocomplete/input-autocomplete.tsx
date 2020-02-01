@@ -8,20 +8,20 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 import { FormatCharacters } from '../masked-input/mask';
 
-import Input from '../input/themed';
-import Menu from '../menu/themed';
-import Popup from '../popup/themed';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import Menu from '../menu/menu';
+import Popup from '../popup/popup';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 
-import MenuItem from '../menu-item/menu-item';
-import { InputProps } from '../input/input';
+import { MenuItem } from '../menu-item/menu-item';
+import Input, { InputProps } from '../input/input';
 
 export type InputAutocompleteProps = InputProps & {
 
@@ -350,7 +350,7 @@ type InputAutocompleteState = {
  * @extends Input
  */
 @performance(true)
-class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAutocompleteState> {
+export class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAutocompleteState> {
     cn = createCn('input');
 
     static defaultProps: Partial<InputAutocompleteProps> = {
@@ -796,4 +796,4 @@ class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAut
     }
 }
 
-export default InputAutocomplete;
+export default withTheme(InputAutocomplete);

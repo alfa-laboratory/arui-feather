@@ -5,4 +5,4 @@
 import './network-vk.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './network-vk';

@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CardInput from './card-input';
+import { CardInput } from './card-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('card-input', () => {

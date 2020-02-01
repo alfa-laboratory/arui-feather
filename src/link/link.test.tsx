@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Link from './link';
+import { Link } from './link';
 
 describe('link', () => {
     it('should render without problems', () => {

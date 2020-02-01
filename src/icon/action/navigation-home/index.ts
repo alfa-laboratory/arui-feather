@@ -5,4 +5,4 @@
 import './navigation-home.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './navigation-home';

@@ -5,4 +5,4 @@
 import './tick.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './tick';

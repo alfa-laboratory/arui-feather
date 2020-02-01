@@ -7,15 +7,15 @@
 import React from 'react';
 import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Calendar from '../calendar/themed';
-import { CalendarProps } from '../calendar/calendar';
+import Calendar, { CalendarProps } from '../calendar/calendar';
 import IconCalendar from '../icon/entity/calendar';
-import IconButton from '../icon-button/themed';
-import Input from '../input/themed';
+import IconButton from '../icon-button/icon-button';
+import Input from '../input/input';
 import Mq from '../mq/mq';
-import Popup from '../popup/themed';
-import PopupHeader from '../popup-header/themed';
+import Popup from '../popup/popup';
+import PopupHeader from '../popup-header/popup-header';
 
 import keyboardCode from '../lib/keyboard-code';
 import { isNodeOutsideElement } from '../lib/window';
@@ -216,11 +216,12 @@ export type CalendarInputProps = {
      */
     'data-test-id'?: string;
 };
+
 /**
  * Компонент для ввода даты.
  */
 @performance(true)
-class CalendarInput extends React.Component<CalendarInputProps> {
+export class CalendarInput extends React.Component<CalendarInputProps> {
     cn = createCn('calendar-input');
 
     static defaultProps: Partial<CalendarInputProps> = {
@@ -761,4 +762,4 @@ class CalendarInput extends React.Component<CalendarInputProps> {
     }
 }
 
-export default CalendarInput;
+export default withTheme(CalendarInput);

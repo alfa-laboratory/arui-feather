@@ -5,7 +5,8 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import Radio from '../radio/radio';
+import { withTheme } from '../cn';
+import { Radio } from '../radio/radio';
 
 export type RadioGroupProps = {
 
@@ -94,7 +95,7 @@ export type RadioGroupProps = {
 /**
  * Компонент группы радио-кнопок.
  */
-class RadioGroup extends React.PureComponent<RadioGroupProps> {
+export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     cn = createCn('radio-group');
 
     static defaultProps: Partial<RadioGroupProps> = {
@@ -220,4 +221,4 @@ class RadioGroup extends React.PureComponent<RadioGroupProps> {
     }
 }
 
-export default RadioGroup;
+export default withTheme(RadioGroup);

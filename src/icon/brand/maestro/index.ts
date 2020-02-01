@@ -5,4 +5,4 @@
 import './maestro.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './maestro';

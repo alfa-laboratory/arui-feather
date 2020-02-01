@@ -5,4 +5,4 @@
 import './chat-message-error.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './chat-message-error';

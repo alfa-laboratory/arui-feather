@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import performance from '../performance';
 
@@ -62,7 +63,7 @@ export type ListProps = {
  * Компонент списка.
  */
 @performance(true)
-class List extends React.Component<ListProps> {
+export class List extends React.Component<ListProps> {
     cn = createCn('list');
 
     render() {
@@ -97,4 +98,4 @@ class List extends React.Component<ListProps> {
     }
 }
 
-export default List;
+export default withTheme(List);

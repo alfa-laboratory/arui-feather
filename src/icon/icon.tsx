@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type IconProps = {
 
@@ -47,7 +48,7 @@ export type IconProps = {
 /**
  * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
  */
-class Icon extends React.PureComponent<IconProps> {
+export class Icon extends React.PureComponent<IconProps> {
     cn = createCn('icon');
 
     static defaultProps: Partial<IconProps> = {
@@ -79,4 +80,4 @@ class Icon extends React.PureComponent<IconProps> {
     }
 }
 
-export default Icon;
+export default withTheme(Icon);

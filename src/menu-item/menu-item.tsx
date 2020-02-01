@@ -4,9 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Dropdown from '../dropdown/themed';
-import Link from '../link/themed';
+import Dropdown from '../dropdown/dropdown';
+import Link from '../link/link';
 
 export type MenuItemProps = {
 
@@ -114,7 +115,7 @@ export type MenuItemProps = {
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
-class MenuItem extends React.PureComponent<MenuItemProps> {
+export class MenuItem extends React.PureComponent<MenuItemProps> {
     cn = createCn('menu-item');
 
     static defaultProps: Partial<MenuItemProps> = {
@@ -292,4 +293,4 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
     }
 }
 
-export default MenuItem;
+export default withTheme(MenuItem);

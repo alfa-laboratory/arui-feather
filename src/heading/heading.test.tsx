@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Heading from './heading';
+import { Heading } from './heading';
 
 describe('heading', () => {
     it('should render without problem', () => {

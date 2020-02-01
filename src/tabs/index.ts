@@ -1,3 +1,3 @@
 import './tabs.css';
 
-export { default } from './themed';
+export { default } from './tabs';

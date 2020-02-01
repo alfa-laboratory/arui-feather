@@ -5,4 +5,4 @@
 import './selfemloyed-reg.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './selfemloyed-reg';

@@ -5,4 +5,4 @@
 import './category-budget.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './category-budget';

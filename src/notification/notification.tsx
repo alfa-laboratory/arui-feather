@@ -6,12 +6,13 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
 import IconError from '../icon/ui/error';
 import IconFail from '../icon/ui/fail';
 import IconOk from '../icon/ui/ok';
-import IconButton from '../icon-button/themed';
+import IconButton from '../icon-button/icon-button';
 import Swipeable from '../swipeable';
 
 import { isNodeOutsideElement } from '../lib/window';
@@ -121,7 +122,7 @@ export type NotificationProps = {
 /**
  * Компонент всплывающего окна.
  */
-class Notification extends React.PureComponent<NotificationProps> {
+export class Notification extends React.PureComponent<NotificationProps> {
     cn = createCn('notification')
 
     static defaultProps: Partial<NotificationProps> = {
@@ -326,4 +327,4 @@ class Notification extends React.PureComponent<NotificationProps> {
     }
 }
 
-export default Notification;
+export default withTheme(Notification);

@@ -6,8 +6,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Input from '../input/input';
-import InputAutocomplete from './input-autocomplete';
+import { Input } from '../input/input';
+import { InputAutocomplete } from './input-autocomplete';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 

@@ -5,4 +5,4 @@
 import './category-rent.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './category-rent';

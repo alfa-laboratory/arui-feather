@@ -5,8 +5,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CheckBoxGroup from './checkbox-group';
-import CheckBox from '../checkbox/checkbox';
+import { CheckBoxGroup } from './checkbox-group';
+import { CheckBox } from '../checkbox/checkbox';
 
 describe('checkbox-group', () => {
     it('should render without children', () => {

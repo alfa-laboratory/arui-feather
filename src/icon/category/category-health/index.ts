@@ -5,4 +5,4 @@
 import './category-health.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './category-health';

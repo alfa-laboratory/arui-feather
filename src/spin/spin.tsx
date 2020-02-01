@@ -5,6 +5,7 @@
 import React from 'react';
 
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type SpinProps = {
     /**
@@ -41,7 +42,7 @@ export type SpinProps = {
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
  */
-class Spin extends React.PureComponent<SpinProps> {
+export class Spin extends React.PureComponent<SpinProps> {
     cn = createCn('spin');
 
     static defaultProps: Partial<SpinProps> = {
@@ -63,4 +64,4 @@ class Spin extends React.PureComponent<SpinProps> {
     }
 }
 
-export default Spin;
+export default withTheme(Spin);

@@ -5,4 +5,4 @@
 import './transfer-by-phone-ios.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './transfer-by-phone-ios';

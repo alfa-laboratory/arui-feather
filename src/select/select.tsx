@@ -5,18 +5,18 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Button from '../button/button';
-import IconButton from '../icon-button/themed';
+import { Button } from '../button/button';
+import IconButton from '../icon-button/icon-button';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
-import Menu from '../menu/themed';
+import Menu from '../menu/menu';
 import Mq from '../mq/mq';
-import ThemedPopup from '../popup/themed';
-import PopupHeader from '../popup-header/themed';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import ThemedPopup from '../popup/popup';
+import PopupHeader from '../popup-header/popup-header';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
-import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -28,7 +28,7 @@ const DEFAULT_TEXT_FALLBACK = 'Выберите:';
 /**
  * Элемент кнопки для выпадающего списка.
  */
-class NotThemedSelectButton extends Button {
+export class NotThemedSelectButton extends Button {
     cn = createCn('select-button');
 }
 
@@ -318,7 +318,7 @@ type SelectState = {
  * Компонент выпадающего списка.
  */
 @performance(true)
-class Select extends React.Component<SelectProps, SelectState> {
+export class Select extends React.Component<SelectProps, SelectState> {
     cn = createCn('select');
 
     static defaultProps: Partial<SelectProps> = {
@@ -1112,4 +1112,4 @@ class Select extends React.Component<SelectProps, SelectState> {
     }
 }
 
-export default Select;
+export default withTheme(Select);

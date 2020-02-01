@@ -4,4 +4,4 @@
 
 import './toggle.css';
 
-export { default } from './themed';
+export { default } from './toggle';

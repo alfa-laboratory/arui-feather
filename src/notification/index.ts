@@ -10,4 +10,4 @@ import '../icon-button';
 
 import './notification.css';
 
-export { default } from './themed';
+export { default } from './notification';

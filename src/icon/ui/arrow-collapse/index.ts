@@ -5,4 +5,4 @@
 import './arrow-collapse.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './arrow-collapse';

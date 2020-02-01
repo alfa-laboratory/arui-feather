@@ -5,4 +5,4 @@
 import './status-urgent.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './status-urgent';

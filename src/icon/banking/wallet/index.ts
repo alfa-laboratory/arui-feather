@@ -5,4 +5,4 @@
 import './wallet.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './wallet';

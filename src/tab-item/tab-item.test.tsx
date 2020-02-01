@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import TabItem from './tab-item';
+import { TabItem } from './tab-item';
 
 describe('tab-item', () => {
     it('renders without problems', () => {

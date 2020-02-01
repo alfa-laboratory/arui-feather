@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 
 export type ButtonProps = {
@@ -178,7 +179,7 @@ export type ButtonProps = {
 /**
  * Компонент кнопки (да, она нажимается!).
  */
-class Button extends React.PureComponent<ButtonProps> {
+export class Button extends React.PureComponent<ButtonProps> {
     cn = createCn('button');
 
     static defaultProps: Partial<ButtonProps> = {
@@ -401,4 +402,4 @@ class Button extends React.PureComponent<ButtonProps> {
     }
 }
 
-export default Button;
+export default withTheme(Button);

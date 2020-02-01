@@ -7,7 +7,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Sidebar from './sidebar';
+import { Sidebar } from './sidebar';
 
 describe('sidebar component', () => {
     it('should render without problems', () => {

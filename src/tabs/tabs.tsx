@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type TabsProps = {
 
@@ -42,7 +43,7 @@ export type TabsProps = {
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
-class Tabs extends React.PureComponent<TabsProps> {
+export class Tabs extends React.PureComponent<TabsProps> {
     cn = createCn('tabs');
 
     static defaultProps: Partial<TabsProps> = {
@@ -66,4 +67,4 @@ class Tabs extends React.PureComponent<TabsProps> {
     }
 }
 
-export default Tabs;
+export default withTheme(Tabs);

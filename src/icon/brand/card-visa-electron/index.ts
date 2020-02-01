@@ -5,4 +5,4 @@
 import './card-visa-electron.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './card-visa-electron';

@@ -4,10 +4,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconCheck from '../icon/ui/tick';
 import IconIndeterminate from '../icon/ui/check-indeterminate';
-import TagButton from '../tag-button/themed';
+import TagButton from '../tag-button/tag-button';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -124,7 +125,7 @@ export type CheckboxProps = ({
 /**
  * Компонент чекбокса.
  */
-class CheckBox extends React.PureComponent<CheckboxProps> {
+export class CheckBox extends React.PureComponent<CheckboxProps> {
     cn = createCn('checkbox');
 
     static defaultProps: Partial<CheckboxProps> = {
@@ -335,4 +336,4 @@ class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 }
 
-export default CheckBox;
+export default withTheme(CheckBox);

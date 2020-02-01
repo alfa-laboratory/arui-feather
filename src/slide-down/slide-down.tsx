@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type SlideDownProps = {
 
@@ -52,7 +53,7 @@ export type SlideDownProps = {
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-class SlideDown extends React.PureComponent<SlideDownProps> {
+export class SlideDown extends React.PureComponent<SlideDownProps> {
     cn = createCn('slide-down');
 
     state = {
@@ -145,4 +146,4 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
     }
 }
 
-export default SlideDown;
+export default withTheme(SlideDown);

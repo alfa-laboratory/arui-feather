@@ -2647,7 +2647,7 @@ exports[`icon render undefined without problems 441`] = `
 `;
 
 exports[`icon renders without problems 1`] = `
-<span
-  className="icon icon_size_m"
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

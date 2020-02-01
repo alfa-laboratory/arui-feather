@@ -4,4 +4,4 @@
 
 import './link.css';
 
-export { default } from './themed';
+export { default } from './link';

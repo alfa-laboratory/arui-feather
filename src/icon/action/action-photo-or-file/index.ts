@@ -5,4 +5,4 @@
 import './action-photo-or-file.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './action-photo-or-file';

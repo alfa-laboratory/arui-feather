@@ -6,10 +6,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import { FormatCharacters } from '../masked-input/mask';
 import IconClose from '../icon/ui/close';
-import IconButton from '../icon-button/themed';
+import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
 import scrollTo from '../lib/scroll-to';
@@ -249,7 +250,7 @@ export type InputProps = {
 /**
  * Компонент текстового поля ввода.
  */
-class Input extends React.PureComponent<InputProps> {
+export class Input extends React.PureComponent<InputProps> {
     cn = createCn('input');
 
     static defaultProps: Partial<InputProps> = {
@@ -645,4 +646,4 @@ class Input extends React.PureComponent<InputProps> {
     }
 }
 
-export default Input;
+export default withTheme(Input);

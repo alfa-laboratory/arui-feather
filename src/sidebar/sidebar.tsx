@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
@@ -118,7 +119,7 @@ export type SidebarProps = {
 /**
  * Компонент боковой панели aka холодильник.
  */
-class Sidebar extends React.PureComponent<SidebarProps> {
+export class Sidebar extends React.PureComponent<SidebarProps> {
     cn = createCn('sidebar');
 
     static defaultProps: Partial<SidebarProps> = {
@@ -271,4 +272,4 @@ class Sidebar extends React.PureComponent<SidebarProps> {
     }
 }
 
-export default Sidebar;
+export default withTheme(Sidebar);

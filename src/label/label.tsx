@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type LabelProps = {
     /**
@@ -46,7 +47,7 @@ export type LabelProps = {
  * Компонента лейбла.
  */
 
-class Label extends React.PureComponent<LabelProps> {
+export class Label extends React.PureComponent<LabelProps> {
     cn = createCn('label');
 
     static defaultProps: Partial<LabelProps> = {
@@ -72,4 +73,4 @@ class Label extends React.PureComponent<LabelProps> {
     }
 }
 
-export default Label;
+export default withTheme(Label);

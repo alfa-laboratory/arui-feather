@@ -5,4 +5,4 @@
 import './transfer-any-bank-credit.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './transfer-any-bank-credit';

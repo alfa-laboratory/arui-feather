@@ -4,4 +4,4 @@
 
 import './heading.css';
 
-export { default } from './themed';
+export { default } from './heading';

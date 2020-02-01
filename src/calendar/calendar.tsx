@@ -26,6 +26,7 @@ import performance from '../performance';
 import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
+import { withTheme } from '../cn';
 
 const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
@@ -169,7 +170,7 @@ type CalendarState = {
  * Компонент календаря.
  */
 @performance(true)
-class Calendar extends React.Component<CalendarProps, CalendarState> {
+export class Calendar extends React.Component<CalendarProps, CalendarState> {
     cn = createCn('calendar');
 
     static defaultProps: Partial<CalendarProps> = {
@@ -904,4 +905,4 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 }
 
-export default Calendar;
+export default withTheme(Calendar);

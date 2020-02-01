@@ -5,4 +5,4 @@
 import './percent.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './percent';

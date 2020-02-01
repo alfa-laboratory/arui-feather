@@ -5,4 +5,4 @@
 import './invoice-for-payment.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './invoice-for-payment';

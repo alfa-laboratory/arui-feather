@@ -5,4 +5,4 @@
 import './payment-by-photo.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './payment-by-photo';

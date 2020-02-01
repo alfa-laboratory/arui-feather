@@ -5,4 +5,4 @@
 import './system-hide-arrow.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './system-hide-arrow';

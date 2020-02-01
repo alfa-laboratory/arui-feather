@@ -5,4 +5,4 @@
 import './analytics.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './analytics';

@@ -5,4 +5,4 @@
 import './payment-rounded-plus-big.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './payment-rounded-plus-big';

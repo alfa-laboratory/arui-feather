@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type ToggleProps = {
     /**
@@ -85,7 +86,7 @@ export type ToggleProps = {
 /**
  * Компонент переключателя.
  */
-class Toggle extends React.PureComponent<ToggleProps> {
+export class Toggle extends React.PureComponent<ToggleProps> {
     cn = createCn('toggle');
 
     static defaultProps: Partial<ToggleProps> = {
@@ -179,4 +180,4 @@ class Toggle extends React.PureComponent<ToggleProps> {
     }
 }
 
-export default Toggle;
+export default withTheme(Toggle);

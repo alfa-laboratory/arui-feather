@@ -5,7 +5,7 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
-import IsolatedContainer from '../isolated-container/isolated-container';
+import { IsolatedContainer } from '../isolated-container/isolated-container';
 
 export type PopupContainerProviderProps = {
     /**
@@ -77,7 +77,8 @@ type PopupContainerProviderState = {
  *  </Page>
  * ```
  */
-class PopupContainerProvider extends React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
+class PopupContainerProvider extends
+    React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
     cn = createCn('popup-container');
 
     state = {

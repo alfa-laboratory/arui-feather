@@ -5,4 +5,4 @@
 import './category-user.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './category-user';

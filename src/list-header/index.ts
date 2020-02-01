@@ -4,4 +4,4 @@
 
 import './list-header.css';
 
-export { default } from './themed';
+export { default } from './list-header';

@@ -4,8 +4,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import TagButton from '../tag-button/themed';
+import TagButton from '../tag-button/tag-button';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -126,7 +127,7 @@ type RadioState = {
 /**
  * Компонент радио-кнопки.
  */
-class Radio extends React.PureComponent<RadioProps, RadioState> {
+export class Radio extends React.PureComponent<RadioProps, RadioState> {
     cn = createCn('radio');
 
     static defaultProps: Partial<RadioProps> = {
@@ -338,4 +339,4 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
     }
 }
 
-export default Radio;
+export default withTheme(Radio);

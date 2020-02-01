@@ -5,4 +5,4 @@
 import './navigation-marketplace.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './navigation-marketplace';

@@ -5,4 +5,4 @@
 import './plan-expenses.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './plan-expenses';

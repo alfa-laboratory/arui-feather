@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Attach from './attach';
+import { Attach } from './attach';
 
 describe('attach', () => {
     it('should render without problems', () => {

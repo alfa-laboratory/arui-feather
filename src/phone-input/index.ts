@@ -4,4 +4,4 @@
 
 import '../input';
 
-export { default } from './themed';
+export { default } from './phone-input';

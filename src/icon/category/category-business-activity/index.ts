@@ -5,4 +5,4 @@
 import './category-business-activity.css';
 import '../../../icon';
 
-export { default } from './themed';
+export { default } from './category-business-activity';

@@ -13,7 +13,7 @@ import subtractMonth from 'date-fns/sub_months';
 import addMonth from 'date-fns/add_months';
 import formatDate from 'date-fns/format';
 
-import Calendar from './calendar';
+import { Calendar } from './calendar';
 
 import keyboardCode from '../lib/keyboard-code';
 

@@ -10,4 +10,4 @@ import './sidebar.css';
 import './sidebar_theme_alfa-on-color.css';
 import './sidebar_theme_alfa-on-white.css';
 
-export { default } from './themed';
+export { default } from './sidebar';

@@ -46,9 +46,9 @@
 //    Area codes (if >1 country with same dial code)
 // ]
 
-type CountryParam = [string, string, string, string, number?, string[]?];
+type CountryData = [string, string, string, string, number?, string[]?];
 
-const defaultCountriesData: CountryParam[] = [
+const defaultCountriesData: CountryData[] = [
     [
         'Afghanistan',
         'Афганистан',
@@ -1550,7 +1550,7 @@ const defaultCountriesData: CountryParam[] = [
 
 let countries;
 
-function formatCountriesData(countriesData: CountryParam[]) {
+function formatCountriesData(countriesData: CountryData[]) {
     return countriesData.map(country => ({
         name: country[1],
         iso2: country[2],
@@ -1564,7 +1564,7 @@ function initialize(externalCountriesList = defaultCountriesData) {
     countries = formatCountriesData(externalCountriesList);
 }
 
-function getCountries(): CountryParam[] {
+function getCountries(): CountryData[] {
     if (!countries) {
         initialize();
     }

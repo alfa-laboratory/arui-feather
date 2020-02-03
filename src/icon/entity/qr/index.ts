@@ -5,4 +5,5 @@
 import './qr.css';
 import '../../../icon';
 
+export * from './qr';
 export { default } from './qr';

@@ -5,4 +5,5 @@
 import './mobile-ios.css';
 import '../../../icon';
 
+export * from './mobile-ios';
 export { default } from './mobile-ios';

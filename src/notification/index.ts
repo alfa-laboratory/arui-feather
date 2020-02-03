@@ -10,4 +10,5 @@ import '../icon-button';
 
 import './notification.css';
 
+export * from './notification';
 export { default } from './notification';

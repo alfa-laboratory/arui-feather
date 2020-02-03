@@ -5,4 +5,5 @@
 import './payment-to-person.css';
 import '../../../icon';
 
+export * from './payment-to-person';
 export { default } from './payment-to-person';

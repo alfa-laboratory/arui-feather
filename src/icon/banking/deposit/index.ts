@@ -5,4 +5,5 @@
 import './deposit.css';
 import '../../../icon';
 
+export * from './deposit';
 export { default } from './deposit';

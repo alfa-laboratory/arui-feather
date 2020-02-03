@@ -4,4 +4,5 @@
 
 import './label.css';
 
+export * from './label';
 export { default } from './label';

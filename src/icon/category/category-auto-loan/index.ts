@@ -5,4 +5,5 @@
 import './category-auto-loan.css';
 import '../../../icon';
 
+export * from './category-auto-loan';
 export { default } from './category-auto-loan';

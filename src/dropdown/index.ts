@@ -6,4 +6,5 @@ import '../button';
 import '../link';
 import '../popup';
 
+export * from './dropdown';
 export { default } from './dropdown';

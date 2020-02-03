@@ -5,4 +5,5 @@
 import './contact-list.css';
 import '../../../icon';
 
+export * from './contact-list';
 export { default } from './contact-list';

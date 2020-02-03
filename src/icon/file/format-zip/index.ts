@@ -5,4 +5,5 @@
 import './format-zip.css';
 import '../../../icon';
 
+export * from './format-zip';
 export { default } from './format-zip';

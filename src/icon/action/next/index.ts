@@ -5,4 +5,5 @@
 import './next.css';
 import '../../../icon';
 
+export * from './next';
 export { default } from './next';

@@ -5,4 +5,5 @@
 import './category-hobby.css';
 import '../../../icon';
 
+export * from './category-hobby';
 export { default } from './category-hobby';

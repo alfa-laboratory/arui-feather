@@ -6,4 +6,5 @@ import './button.css';
 import './button_theme_alfa-on-color.css';
 import './button_theme_alfa-on-white.css';
 
+export * from './button';
 export { default } from './button';

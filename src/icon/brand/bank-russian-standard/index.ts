@@ -5,4 +5,5 @@
 import './bank-russian-standard.css';
 import '../../../icon';
 
+export * from './bank-russian-standard';
 export { default } from './bank-russian-standard';

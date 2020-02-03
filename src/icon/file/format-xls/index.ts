@@ -5,4 +5,5 @@
 import './format-xls.css';
 import '../../../icon';
 
+export * from './format-xls';
 export { default } from './format-xls';

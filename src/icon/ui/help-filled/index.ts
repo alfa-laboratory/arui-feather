@@ -5,4 +5,5 @@
 import './help-filled.css';
 import '../../../icon';
 
+export * from './help-filled';
 export { default } from './help-filled';

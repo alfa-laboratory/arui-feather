@@ -5,4 +5,5 @@
 import './bank-alfa.css';
 import '../../../icon';
 
+export * from './bank-alfa';
 export { default } from './bank-alfa';

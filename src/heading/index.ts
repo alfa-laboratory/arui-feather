@@ -4,4 +4,5 @@
 
 import './heading.css';
 
+export * from './heading';
 export { default } from './heading';

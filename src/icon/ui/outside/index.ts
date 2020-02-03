@@ -5,4 +5,5 @@
 import './outside.css';
 import '../../../icon';
 
+export * from './outside';
 export { default } from './outside';

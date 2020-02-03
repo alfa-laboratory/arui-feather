@@ -5,4 +5,5 @@
 import './transfer-by-phone-ios.css';
 import '../../../icon';
 
+export * from './transfer-by-phone-ios';
 export { default } from './transfer-by-phone-ios';

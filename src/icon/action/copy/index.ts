@@ -5,4 +5,5 @@
 import './copy.css';
 import '../../../icon';
 
+export * from './copy';
 export { default } from './copy';

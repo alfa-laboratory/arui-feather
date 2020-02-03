@@ -5,4 +5,5 @@
 import './arrow-left.css';
 import '../../../icon';
 
+export * from './arrow-left';
 export { default } from './arrow-left';

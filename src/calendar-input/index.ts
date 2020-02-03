@@ -12,4 +12,5 @@ import '../popup-header';
 
 import './calendar-input.css';
 
+export * from './calendar-input';
 export { default } from './calendar-input';

@@ -5,4 +5,5 @@
 import './currency-chf.css';
 import '../../../icon';
 
+export * from './currency-chf';
 export { default } from './currency-chf';

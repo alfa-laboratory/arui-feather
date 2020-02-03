@@ -5,4 +5,5 @@
 import './category-housekeeping.css';
 import '../../../icon';
 
+export * from './category-housekeeping';
 export { default } from './category-housekeeping';

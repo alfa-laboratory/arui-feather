@@ -5,4 +5,5 @@
 import './present.css';
 import '../../../icon';
 
+export * from './present';
 export { default } from './present';

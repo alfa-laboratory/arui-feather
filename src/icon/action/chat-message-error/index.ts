@@ -5,4 +5,5 @@
 import './chat-message-error.css';
 import '../../../icon';
 
+export * from './chat-message-error';
 export { default } from './chat-message-error';

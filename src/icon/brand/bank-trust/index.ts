@@ -5,4 +5,5 @@
 import './bank-trust.css';
 import '../../../icon';
 
+export * from './bank-trust';
 export { default } from './bank-trust';

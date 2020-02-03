@@ -5,4 +5,5 @@
 import './format-pdf.css';
 import '../../../icon';
 
+export * from './format-pdf';
 export { default } from './format-pdf';

@@ -5,4 +5,5 @@
 import './category-medicine.css';
 import '../../../icon';
 
+export * from './category-medicine';
 export { default } from './category-medicine';

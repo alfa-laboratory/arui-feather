@@ -5,4 +5,5 @@
 import './payment-to-company.css';
 import '../../../icon';
 
+export * from './payment-to-company';
 export { default } from './payment-to-company';

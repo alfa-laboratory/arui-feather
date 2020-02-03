@@ -6,4 +6,5 @@ import '../heading';
 import '../label';
 import './amount.css';
 
+export * from './amount';
 export { default } from './amount';

@@ -5,4 +5,5 @@
 import './edit.css';
 import '../../../icon';
 
+export * from './edit';
 export { default } from './edit';

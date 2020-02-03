@@ -9,4 +9,5 @@ import './menu.css';
 import './menu_theme_alfa-on-white.css';
 import './menu_theme_alfa-on-color.css';
 
+export * from './menu';
 export { default } from './menu';

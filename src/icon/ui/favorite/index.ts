@@ -5,4 +5,5 @@
 import './favorite.css';
 import '../../../icon';
 
+export * from './favorite';
 export { default } from './favorite';

@@ -5,4 +5,5 @@
 import './category-mortgage.css';
 import '../../../icon';
 
+export * from './category-mortgage';
 export { default } from './category-mortgage';

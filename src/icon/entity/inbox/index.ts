@@ -5,4 +5,5 @@
 import './inbox.css';
 import '../../../icon';
 
+export * from './inbox';
 export { default } from './inbox';

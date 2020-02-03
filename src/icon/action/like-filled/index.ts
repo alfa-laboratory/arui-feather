@@ -5,4 +5,5 @@
 import './like-filled.css';
 import '../../../icon';
 
+export * from './like-filled';
 export { default } from './like-filled';

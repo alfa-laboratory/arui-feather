@@ -5,4 +5,5 @@
 import './expand-down.css';
 import '../../../icon';
 
+export * from './expand-down';
 export { default } from './expand-down';

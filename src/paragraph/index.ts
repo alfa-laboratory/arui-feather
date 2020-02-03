@@ -4,4 +4,5 @@
 
 import './paragraph.css';
 
+export * from './paragraph';
 export { default } from './paragraph';

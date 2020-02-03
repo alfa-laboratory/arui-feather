@@ -5,4 +5,5 @@
 import './category-gibdd-fines.css';
 import '../../../icon';
 
+export * from './category-gibdd-fines';
 export { default } from './category-gibdd-fines';

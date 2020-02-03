@@ -5,4 +5,5 @@
 import './printer.css';
 import '../../../icon';
 
+export * from './printer';
 export { default } from './printer';

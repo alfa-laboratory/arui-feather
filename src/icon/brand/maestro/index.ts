@@ -5,4 +5,5 @@
 import './maestro.css';
 import '../../../icon';
 
+export * from './maestro';
 export { default } from './maestro';

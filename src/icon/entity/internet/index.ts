@@ -5,4 +5,5 @@
 import './internet.css';
 import '../../../icon';
 
+export * from './internet';
 export { default } from './internet';

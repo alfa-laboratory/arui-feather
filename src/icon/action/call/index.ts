@@ -5,4 +5,5 @@
 import './call.css';
 import '../../../icon';
 
+export * from './call';
 export { default } from './call';

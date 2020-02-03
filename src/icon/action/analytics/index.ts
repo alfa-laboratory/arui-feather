@@ -5,4 +5,5 @@
 import './analytics.css';
 import '../../../icon';
 
+export * from './analytics';
 export { default } from './analytics';

@@ -6,4 +6,5 @@ import '../input';
 
 import './money-input.css';
 
+export * from './money-input';
 export { default } from './money-input';

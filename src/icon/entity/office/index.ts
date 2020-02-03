@@ -5,4 +5,5 @@
 import './office.css';
 import '../../../icon';
 
+export * from './office';
 export { default } from './office';

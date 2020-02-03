@@ -5,4 +5,5 @@
 import './arrow-double.css';
 import '../../../icon';
 
+export * from './arrow-double';
 export { default } from './arrow-double';

@@ -5,4 +5,5 @@
 import './action-photo-or-file.css';
 import '../../../icon';
 
+export * from './action-photo-or-file';
 export { default } from './action-photo-or-file';

@@ -5,4 +5,5 @@
 import './offer.css';
 import '../../../icon';
 
+export * from './offer';
 export { default } from './offer';

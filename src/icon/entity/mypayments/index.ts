@@ -5,4 +5,5 @@
 import './mypayments.css';
 import '../../../icon';
 
+export * from './mypayments';
 export { default } from './mypayments';

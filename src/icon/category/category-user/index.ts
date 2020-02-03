@@ -5,4 +5,5 @@
 import './category-user.css';
 import '../../../icon';
 
+export * from './category-user';
 export { default } from './category-user';

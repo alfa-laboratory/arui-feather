@@ -5,4 +5,5 @@
 import './category-business.css';
 import '../../../icon';
 
+export * from './category-business';
 export { default } from './category-business';

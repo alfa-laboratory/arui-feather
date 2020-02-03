@@ -5,4 +5,5 @@
 import './input-group.css';
 import './input-group_theme_alfa-on-white.css';
 
+export * from './input-group';
 export { default } from './input-group';

@@ -5,4 +5,5 @@
 import './unionpay.css';
 import '../../../icon';
 
+export * from './unionpay';
 export { default } from './unionpay';

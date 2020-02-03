@@ -5,4 +5,5 @@
 import './format-png.css';
 import '../../../icon';
 
+export * from './format-png';
 export { default } from './format-png';

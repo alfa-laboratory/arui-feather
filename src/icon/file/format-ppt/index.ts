@@ -5,4 +5,5 @@
 import './format-ppt.css';
 import '../../../icon';
 
+export * from './format-ppt';
 export { default } from './format-ppt';

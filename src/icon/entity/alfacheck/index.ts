@@ -5,4 +5,5 @@
 import './alfacheck.css';
 import '../../../icon';
 
+export * from './alfacheck';
 export { default } from './alfacheck';

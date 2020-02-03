@@ -5,4 +5,5 @@
 import './category-tv.css';
 import '../../../icon';
 
+export * from './category-tv';
 export { default } from './category-tv';

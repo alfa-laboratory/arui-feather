@@ -5,4 +5,5 @@
 import './bank-yandexmoney.css';
 import '../../../icon';
 
+export * from './bank-yandexmoney';
 export { default } from './bank-yandexmoney';

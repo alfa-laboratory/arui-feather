@@ -6,4 +6,5 @@ import '../icon/ui/close';
 import '../icon-button/icon-button';
 import './popup-header.css';
 
+export * from './popup-header';
 export { default } from './popup-header';

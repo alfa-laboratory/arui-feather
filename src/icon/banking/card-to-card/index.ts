@@ -5,4 +5,5 @@
 import './card-to-card.css';
 import '../../../icon';
 
+export * from './card-to-card';
 export { default } from './card-to-card';

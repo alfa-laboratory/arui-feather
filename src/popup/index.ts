@@ -8,4 +8,5 @@ import './popup.css';
 import './popup_theme_alfa-on-white.css';
 import './popup_theme_alfa-on-color.css';
 
+export * from './popup';
 export { default } from './popup';

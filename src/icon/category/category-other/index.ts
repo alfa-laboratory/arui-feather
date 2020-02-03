@@ -5,4 +5,5 @@
 import './category-other.css';
 import '../../../icon';
 
+export * from './category-other';
 export { default } from './category-other';

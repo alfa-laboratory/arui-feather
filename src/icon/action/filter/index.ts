@@ -5,4 +5,5 @@
 import './filter.css';
 import '../../../icon';
 
+export * from './filter';
 export { default } from './filter';

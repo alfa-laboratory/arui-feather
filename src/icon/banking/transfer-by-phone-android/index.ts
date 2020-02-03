@@ -5,4 +5,5 @@
 import './transfer-by-phone-android.css';
 import '../../../icon';
 
+export * from './transfer-by-phone-android';
 export { default } from './transfer-by-phone-android';

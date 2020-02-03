@@ -5,4 +5,5 @@
 import './category-entertainment.css';
 import '../../../icon';
 
+export * from './category-entertainment';
 export { default } from './category-entertainment';

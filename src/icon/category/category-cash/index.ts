@@ -5,4 +5,5 @@
 import './category-cash.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-cash';
+export { default } from './category-cash';

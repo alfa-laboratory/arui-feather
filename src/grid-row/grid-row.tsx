@@ -67,7 +67,7 @@ export type GridRowProps = {
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
-class GridRow extends React.PureComponent<GridRowProps> {
+export class GridRow extends React.PureComponent<GridRowProps> {
     cn = createCn('grid-row');
 
     static defaultProps: Partial<GridRowProps> = {
@@ -142,7 +142,7 @@ class GridRow extends React.PureComponent<GridRowProps> {
      * @param {ReactElement} children Дочерние элементы компонента.
      * @returns {ReactElement}
      */
-    injectGutterClassNamesToChildren(gutters, children) {
+    private injectGutterClassNamesToChildren(gutters, children) {
         return (
             Children.map(children, (col) => {
                 if (!col) {

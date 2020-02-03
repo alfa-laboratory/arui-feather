@@ -5,4 +5,5 @@
 import './transfer-any-bank.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './transfer-any-bank';
+export { default } from './transfer-any-bank';

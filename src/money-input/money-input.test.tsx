@@ -7,7 +7,7 @@ import { shallow, mount } from 'enzyme';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-import MoneyInput from './money-input';
+import { MoneyInput } from './money-input';
 
 describe('money-input', () => {
     const originalWindowScrollTo = window.scrollTo;

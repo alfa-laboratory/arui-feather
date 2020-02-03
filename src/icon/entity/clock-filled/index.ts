@@ -5,4 +5,5 @@
 import './clock-filled.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './clock-filled';
+export { default } from './clock-filled';

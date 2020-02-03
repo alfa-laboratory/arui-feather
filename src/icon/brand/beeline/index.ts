@@ -5,4 +5,5 @@
 import './beeline.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './beeline';
+export { default } from './beeline';

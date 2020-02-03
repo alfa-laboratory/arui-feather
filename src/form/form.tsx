@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type FormProps = {
 
@@ -87,7 +88,7 @@ export type FormProps = {
 /**
  * Компонент формы.
  */
-class Form extends React.PureComponent<FormProps> {
+export class Form extends React.PureComponent<FormProps> {
     cn = createCn('form');
 
     static defaultProps: Partial<FormProps> = {
@@ -127,7 +128,7 @@ class Form extends React.PureComponent<FormProps> {
         );
     }
 
-    handleSubmit = (event) => {
+    private handleSubmit = (event) => {
         event.preventDefault();
 
         if (this.props.onSubmit) {
@@ -136,4 +137,4 @@ class Form extends React.PureComponent<FormProps> {
     }
 }
 
-export default Form;
+export default withTheme(Form);

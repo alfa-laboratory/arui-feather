@@ -5,4 +5,5 @@
 import './back.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './back';
+export { default } from './back';

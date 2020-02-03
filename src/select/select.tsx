@@ -5,18 +5,18 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Button from '../button/button';
-import IconButton from '../icon-button/themed';
+import { Button } from '../button/button';
+import IconButton from '../icon-button/icon-button';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
-import Menu from '../menu/themed';
+import Menu from '../menu/menu';
 import Mq from '../mq/mq';
-import ThemedPopup from '../popup/themed';
-import PopupHeader from '../popup-header/themed';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import ThemedPopup from '../popup/popup';
+import PopupHeader from '../popup-header/popup-header';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
-import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -28,7 +28,7 @@ const DEFAULT_TEXT_FALLBACK = 'Выберите:';
 /**
  * Элемент кнопки для выпадающего списка.
  */
-class NotThemedSelectButton extends Button {
+export class NotThemedSelectButton extends Button {
     cn = createCn('select-button');
 }
 
@@ -318,7 +318,7 @@ type SelectState = {
  * Компонент выпадающего списка.
  */
 @performance(true)
-class Select extends React.Component<SelectProps, SelectState> {
+export class Select extends React.Component<SelectProps, SelectState> {
     cn = createCn('select');
 
     static defaultProps: Partial<SelectProps> = {
@@ -679,7 +679,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         );
     }
 
-    handleButtonClick = (event) => {
+    private handleButtonClick = (event) => {
         if (!this.props.disabled) {
             this.toggleOpened();
         }
@@ -688,7 +688,7 @@ class Select extends React.Component<SelectProps, SelectState> {
             this.props.onClick(event);
         }
     };
-
+    // TODO: не сипользуется и вроде не публичный!!!!
     handleButtonKeyDown = (event) => {
         if (!this.props.disabled) {
             if (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) {
@@ -701,19 +701,19 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleButtonFocus = (event) => {
+    private handleButtonFocus = (event) => {
         if (this.props.onButtonFocus) {
             this.props.onButtonFocus(this.getRevisedEvent(event));
         }
     };
 
-    handleButtonBlur = (event) => {
+    private handleButtonBlur = (event) => {
         if (this.props.onButtonBlur) {
             this.props.onButtonBlur(this.getRevisedEvent(event));
         }
     };
 
-    handleMenuFocus = (event) => {
+    private handleMenuFocus = (event) => {
         event.target.value = this.getValue();
 
         if (this.props.onFocus) {
@@ -725,7 +725,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleMenuBlur = (event) => {
+    private handleMenuBlur = (event) => {
         event.target.value = this.getValue();
 
         if (this.awaitClosing || event.relatedTarget !== this.button.getNode()) {
@@ -744,14 +744,14 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleMenuHighlightItem = (highlightedItem) => {
+    private handleMenuHighlightItem = (highlightedItem) => {
         if (!this.getOpened() && highlightedItem && this.popup) {
             this.popup.getInnerNode().scrollTop = 0;
             this.scrollToHighlightedItem(highlightedItem);
         }
     };
 
-    handleOptionCheck = (value) => {
+    private handleOptionCheck = (value) => {
         const opened = this.getOpened();
 
         this.setState({ value, opened: this.props.mode === 'check' }, () => {
@@ -770,7 +770,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleNativeOptionCheck = (event) => {
+    private handleNativeOptionCheck = (event) => {
         function getFlattenedPropOptions(options) {
             let result = [];
 
@@ -811,7 +811,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleClickOutside = () => {
+    private handleClickOutside = () => {
         this.setState({
             opened: false
         });
@@ -821,7 +821,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleMenuKeyDown = (event, highlightedItem) => {
+    private handleMenuKeyDown = (event, highlightedItem) => {
         const opened = this.getOpened();
 
         switch (event.which) {
@@ -850,7 +850,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleNativeFocus = (event) => {
+    private handleNativeFocus = (event) => {
         if (!this.props.disabled) {
             this.toggleOpened();
         }
@@ -860,7 +860,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleNativeBlur = (event) => {
+    private handleNativeBlur = (event) => {
         if (!this.props.disabled) {
             this.toggleOpened();
         }
@@ -870,13 +870,13 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    handleNativeClick = (event) => {
+    private handleNativeClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(this.getRevisedEvent(event));
         }
     };
 
-    handleMqMatchChange = (isMatched) => {
+    private handleMqMatchChange = (isMatched) => {
         this.setState(
             {
                 isMobile: isMatched
@@ -888,13 +888,13 @@ class Select extends React.Component<SelectProps, SelectState> {
         );
     };
 
-    handlePopupCloserClick = () => {
+    private handlePopupCloserClick = () => {
         this.setState({
             opened: false
         });
     };
 
-    setPopupRef = (ref) => {
+    private setPopupRef = (ref) => {
         this.popup = ref;
 
         if (this.popup) {
@@ -916,26 +916,21 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    setMenuRef = (menu) => {
+    private setMenuRef = (menu) => {
         this.menu = menu;
     };
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
-     * @returns {HTMLElement}
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Устанавливает фокус на компонент.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         if (this.nativeSelect) {
             this.nativeSelect.focus();
         } else {
@@ -954,11 +949,9 @@ class Select extends React.Component<SelectProps, SelectState> {
 
     /**
      * Убирает фокус с компонента.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
@@ -966,10 +959,8 @@ class Select extends React.Component<SelectProps, SelectState> {
 
     /**
      * Скроллит страницу до компонента.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
@@ -978,7 +969,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         });
     }
 
-    focusOnMenu() {
+    public focusOnMenu() {
         if (!this.menu) {
             return;
         }
@@ -1000,7 +991,7 @@ class Select extends React.Component<SelectProps, SelectState> {
     /**
      * @param {MenuItem} highlightedItem Выбранный в текущий момент пункт меню
      */
-    scrollToHighlightedItem(highlightedItem) {
+    private scrollToHighlightedItem(highlightedItem) {
         const element = highlightedItem.getNode();
         const container = this.popup.getInnerNode();
         const correction = element.offsetHeight;
@@ -1023,7 +1014,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         }
     }
 
-    toggleOpened() {
+    private toggleOpened() {
         const newOpenedState = !this.getOpened();
 
         this.setState(
@@ -1038,7 +1029,7 @@ class Select extends React.Component<SelectProps, SelectState> {
         );
     }
 
-    updatePopupStyles = () => {
+    private updatePopupStyles = () => {
         const buttonWidth = this.button.getNode().getBoundingClientRect().width;
         const popupStyles: { minWidth; maxWidth?} = { minWidth: buttonWidth };
 
@@ -1049,13 +1040,13 @@ class Select extends React.Component<SelectProps, SelectState> {
         this.setState({ popupStyles });
     };
 
-    setPopupTarget = () => {
+    private setPopupTarget = () => {
         if (this.popup) {
             this.popup.setTarget(this.button.getNode());
         }
     };
 
-    getCheckedItems(options) {
+    private getCheckedItems(options) {
         const value = this.getValue();
         let result = [];
 
@@ -1075,15 +1066,15 @@ class Select extends React.Component<SelectProps, SelectState> {
     /**
      * @returns {Boolean}
      */
-    getOpened() {
+    private getOpened() {
         return this.props.opened === undefined ? this.state.opened : this.props.opened;
     }
 
-    getRevisedEvent(event) {
+    private getRevisedEvent(event) {
         return { ...event, target: { ...event.target, value: this.getValue() } };
     }
 
-    getValue() {
+    private getValue() {
         return this.props.value || this.state.value;
     }
 
@@ -1091,26 +1082,26 @@ class Select extends React.Component<SelectProps, SelectState> {
         return this.context.positioningContainerElement || document.body;
     }
 
-    isAutoSelectRequired() {
+    private isAutoSelectRequired() {
         const { mode, options, renderPopupOnFocus } = this.props;
 
         return renderPopupOnFocus && mode === 'radio' && options.length > 0 && !this.hasCheckedItems();
     }
 
-    hasCheckedItems() {
+    private hasCheckedItems() {
         const { options } = this.props;
         const checkedItems = this.getCheckedItems(options);
 
         return checkedItems.length > 0;
     }
 
-    selectFirstOption() {
+    private selectFirstOption() {
         const firstOption = this.getFirstOption(this.props.options);
 
         this.handleOptionCheck([firstOption.value]);
     }
 
-    getFirstOption(options) {
+    private getFirstOption(options) {
         const firstOption = options[0];
 
         if (firstOption.type === 'group') {
@@ -1121,4 +1112,4 @@ class Select extends React.Component<SelectProps, SelectState> {
     }
 }
 
-export default Select;
+export default withTheme(Select);

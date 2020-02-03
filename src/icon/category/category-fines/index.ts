@@ -5,4 +5,5 @@
 import './category-fines.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-fines';
+export { default } from './category-fines';

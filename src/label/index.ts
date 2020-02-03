@@ -4,4 +4,5 @@
 
 import './label.css';
 
-export { default } from './themed';
+export * from './label';
+export { default } from './label';

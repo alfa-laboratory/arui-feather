@@ -5,4 +5,5 @@
 import './category-transport.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-transport';
+export { default } from './category-transport';

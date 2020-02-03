@@ -5,4 +5,5 @@
 import './download.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './download';
+export { default } from './download';

@@ -5,4 +5,5 @@
 import './search.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './search';
+export { default } from './search';

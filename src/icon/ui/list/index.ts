@@ -5,4 +5,5 @@
 import './list.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './list';
+export { default } from './list';

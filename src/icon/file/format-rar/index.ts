@@ -5,4 +5,5 @@
 import './format-rar.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './format-rar';
+export { default } from './format-rar';

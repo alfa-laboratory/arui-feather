@@ -5,4 +5,5 @@
 import './outcome.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './outcome';
+export { default } from './outcome';

@@ -5,4 +5,5 @@
 import './system-back.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './system-back';
+export { default } from './system-back';

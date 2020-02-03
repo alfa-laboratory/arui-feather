@@ -8,4 +8,5 @@ import '../link';
 
 import './menu-item.css';
 
-export { default } from './themed';
+export * from './menu-item';
+export { default } from './menu-item';

@@ -5,4 +5,5 @@
 import './category-dress.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-dress';
+export { default } from './category-dress';

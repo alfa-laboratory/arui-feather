@@ -5,4 +5,5 @@
 import './check.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './check';
+export { default } from './check';

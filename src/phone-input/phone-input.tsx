@@ -8,9 +8,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Input from '../input/themed';
-import { InputProps } from '../input/input';
+import Input, { InputProps } from '../input/input';
 
 export type PhoneInputProps = InputProps & {
     /**
@@ -27,7 +27,7 @@ export type PhoneInputProps = InputProps & {
 /**
  * Компонент ввода телефона по маске.
  */
-class PhoneInput extends React.PureComponent<PhoneInputProps> {
+export class PhoneInput extends React.PureComponent<PhoneInputProps> {
     cn = createCn('phone-input');
 
     static defaultProps: Partial<PhoneInputProps> = {
@@ -53,30 +53,24 @@ class PhoneInput extends React.PureComponent<PhoneInputProps> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.root.blur();
     }
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         this.root.scrollTo();
     }
 }
 
-export default PhoneInput;
+export default withTheme(PhoneInput);

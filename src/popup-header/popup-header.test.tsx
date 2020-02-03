@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import PopupHeader from './popup-header';
+import { PopupHeader } from './popup-header';
 
 describe('popup-header', () => {
     it('should render without problems', () => {

@@ -51,7 +51,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         });
     }
 
-    handleMouseDown = (event) => {
+    private handleMouseDown = (event) => {
         if (this.props.children.props.onMouseDown) {
             this.props.children.props.onMouseDown(event);
         }
@@ -62,7 +62,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         document.addEventListener('mouseup', this.removeListeners);
     };
 
-    handleTouchStart = (event) => {
+    private handleTouchStart = (event) => {
         if (event.touches && event.touches.length > 1) {
             return;
         }
@@ -78,14 +78,14 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         document.addEventListener('touchcancel', this.removeListeners);
     };
 
-    handleSwipeStart = (event) => {
+    private handleSwipeStart = (event) => {
         const { clientX, clientY } = getCoordinates(event);
 
         this.swipeStartX = clientX;
         this.swipeStartY = clientY;
     };
 
-    handleSwipeEnd = (event) => {
+    private handleSwipeEnd = (event) => {
         const { props: { delta, onSwipe } } = this;
         const { clientX, clientY } = getCoordinates(event);
 
@@ -105,7 +105,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         }
     };
 
-    removeListeners = () => {
+    private removeListeners = () => {
         document.removeEventListener('mouseup', this.handleSwipeEnd);
         document.removeEventListener('mouseup', this.removeListeners);
         document.removeEventListener('touchend', this.handleSwipeEnd);

@@ -5,4 +5,5 @@
 import './close.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './close';
+export { default } from './close';

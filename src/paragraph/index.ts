@@ -4,4 +4,5 @@
 
 import './paragraph.css';
 
-export { default } from './themed';
+export * from './paragraph';
+export { default } from './paragraph';

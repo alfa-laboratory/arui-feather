@@ -6,15 +6,15 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Input from '../input/themed';
-import { InputProps } from '../input/input';
+import Input, { InputProps } from '../input/input';
 
 /**
  * Компонент поля ввода почты.
  * @extends Input
  */
-class EmailInput extends React.PureComponent<InputProps> {
+export class EmailInput extends React.PureComponent<InputProps> {
     cn = createCn('email-input');
 
     /**
@@ -38,30 +38,24 @@ class EmailInput extends React.PureComponent<InputProps> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
-    blur() {
+    public blur() {
         this.root.blur();
     }
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         this.root.scrollTo();
     }
 }
 
-export default EmailInput;
+export default withTheme(EmailInput);

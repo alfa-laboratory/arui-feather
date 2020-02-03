@@ -5,4 +5,5 @@
 import './category-atm.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-atm';
+export { default } from './category-atm';

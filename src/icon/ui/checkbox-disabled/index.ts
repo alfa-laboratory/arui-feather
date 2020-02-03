@@ -5,4 +5,5 @@
 import './checkbox-disabled.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './checkbox-disabled';
+export { default } from './checkbox-disabled';

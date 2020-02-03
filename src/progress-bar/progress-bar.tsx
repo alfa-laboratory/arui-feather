@@ -1,5 +1,6 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type ProgressBarProps = {
 
@@ -33,7 +34,7 @@ export type ProgressBarProps = {
 /**
  * Компонент прогресс-бара.
  */
-class ProgressBar extends React.PureComponent<ProgressBarProps> {
+export class ProgressBar extends React.PureComponent<ProgressBarProps> {
     cn = createCn('progress-bar');
 
     static defaultProps: Partial<ProgressBarProps> = {
@@ -58,4 +59,4 @@ class ProgressBar extends React.PureComponent<ProgressBarProps> {
     }
 }
 
-export default ProgressBar;
+export default withTheme(ProgressBar);

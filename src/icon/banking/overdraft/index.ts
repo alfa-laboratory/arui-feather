@@ -5,4 +5,5 @@
 import './overdraft.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './overdraft';
+export { default } from './overdraft';

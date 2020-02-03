@@ -5,4 +5,5 @@
 import './expences.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './expences';
+export { default } from './expences';

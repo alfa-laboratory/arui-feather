@@ -5,4 +5,5 @@
 import './format-default.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './format-default';
+export { default } from './format-default';

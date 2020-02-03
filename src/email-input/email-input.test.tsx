@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import EmailInput from './email-input';
+import { EmailInput } from './email-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('email-input', () => {

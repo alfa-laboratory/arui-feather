@@ -5,4 +5,5 @@
 import './balance-transfer.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './balance-transfer';
+export { default } from './balance-transfer';

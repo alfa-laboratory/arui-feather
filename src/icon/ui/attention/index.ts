@@ -5,4 +5,5 @@
 import './attention.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './attention';
+export { default } from './attention';

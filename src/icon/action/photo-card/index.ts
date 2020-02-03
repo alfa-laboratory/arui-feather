@@ -5,4 +5,5 @@
 import './photo-card.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './photo-card';
+export { default } from './photo-card';

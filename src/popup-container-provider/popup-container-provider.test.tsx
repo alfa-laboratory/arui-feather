@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Popup from '../popup/popup';
+import { Popup } from '../popup/popup';
 import PopupContainerProvider from './popup-container-provider';
 
 describe('popup-container-provider', () => {

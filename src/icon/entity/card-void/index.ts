@@ -5,4 +5,5 @@
 import './card-void.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './card-void';
+export { default } from './card-void';

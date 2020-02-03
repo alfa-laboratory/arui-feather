@@ -5,4 +5,5 @@
 import './card-unknown.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './card-unknown';
+export { default } from './card-unknown';

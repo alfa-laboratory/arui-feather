@@ -5,4 +5,5 @@
 import './category-loans.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-loans';
+export { default } from './category-loans';

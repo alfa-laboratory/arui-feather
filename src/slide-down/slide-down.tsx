@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type SlideDownProps = {
 
@@ -52,7 +53,7 @@ export type SlideDownProps = {
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-class SlideDown extends React.PureComponent<SlideDownProps> {
+export class SlideDown extends React.PureComponent<SlideDownProps> {
     cn = createCn('slide-down');
 
     state = {
@@ -103,7 +104,7 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
         );
     }
 
-    handleTransitionEnd = (event) => {
+    private handleTransitionEnd = (event) => {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
         }
@@ -112,20 +113,20 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
         }
     };
 
-    getHeight() {
+    private getHeight() {
         return this.state.isHeightAuto
             ? 'auto'
             : this.state.height;
     }
 
-    setHeightToContentHeight() {
+    private setHeightToContentHeight() {
         this.setState({
             isHeightAuto: false,
             height: this.slideDownContent.offsetHeight
         });
     }
 
-    setHeightToNull() {
+    private setHeightToNull() {
         this.setHeightToContentHeight();
 
         // Заставляем React перерисовать элемент
@@ -138,11 +139,11 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
         });
     }
 
-    setAutoHeight() {
+    private setAutoHeight() {
         this.setState({
             isHeightAuto: true
         });
     }
 }
 
-export default SlideDown;
+export default withTheme(SlideDown);

@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import Menu, { MenuContentType } from './menu';
+import { MenuContentType, Menu } from './menu';
 
 const MENU_ITEM1: MenuContentType = {
     type: 'item',

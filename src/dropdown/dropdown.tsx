@@ -4,11 +4,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Button from '../button/themed';
-import Link from '../link/themed';
-import Popup from '../popup/themed';
-import { PopupProps } from '../popup/popup';
+import Button from '../button/button';
+import Link from '../link/link';
+import Popup, { PopupProps } from '../popup/popup';
 
 import { POPUP_MAIN_OFFSET } from '../vars';
 
@@ -118,7 +118,7 @@ export type DropdownProps = {
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
-class Dropdown extends React.PureComponent<DropdownProps> {
+export class Dropdown extends React.PureComponent<DropdownProps> {
     cn = createCn('dropdown');
 
     static defaultProps: Partial<DropdownProps> = {
@@ -244,7 +244,7 @@ class Dropdown extends React.PureComponent<DropdownProps> {
         );
     }
 
-    handleSwitcherClick = () => {
+    private handleSwitcherClick = () => {
         const newOpenedStatusValue = this.props.opened === undefined ? !this.state.opened : !this.props.opened;
 
         this.setState({
@@ -256,7 +256,7 @@ class Dropdown extends React.PureComponent<DropdownProps> {
         }
     };
 
-    handleSwitcherMouseEnter = (event) => {
+    private handleSwitcherMouseEnter = (event) => {
         this.setState({ switcherHovered: true });
 
         if (this.props.onSwitcherMouseEnter) {
@@ -264,7 +264,7 @@ class Dropdown extends React.PureComponent<DropdownProps> {
         }
     };
 
-    handleSwitcherMouseLeave = (event) => {
+    private handleSwitcherMouseLeave = (event) => {
         this.setState({ switcherHovered: false });
 
         if (this.props.onSwitcherMouseLeave) {
@@ -272,7 +272,7 @@ class Dropdown extends React.PureComponent<DropdownProps> {
         }
     };
 
-    handlePopupMouseEnter = (event) => {
+    private handlePopupMouseEnter = (event) => {
         this.setState({ popupHovered: true });
 
         if (this.props.onPopupMouseEnter) {
@@ -280,7 +280,7 @@ class Dropdown extends React.PureComponent<DropdownProps> {
         }
     };
 
-    handlePopupMouseLeave = (event) => {
+    private handlePopupMouseLeave = (event) => {
         this.setState({ popupHovered: false });
 
         if (this.props.onPopupMouseLeave) {
@@ -288,7 +288,7 @@ class Dropdown extends React.PureComponent<DropdownProps> {
         }
     };
 
-    handlePopupClickOutside = (event) => {
+    private handlePopupClickOutside = (event) => {
         this.setState({ opened: false });
 
         if (this.props.onPopupClickOutside) {
@@ -297,4 +297,4 @@ class Dropdown extends React.PureComponent<DropdownProps> {
     }
 }
 
-export default Dropdown;
+export default withTheme(Dropdown);

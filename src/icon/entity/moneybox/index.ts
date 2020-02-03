@@ -5,4 +5,5 @@
 import './moneybox.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './moneybox';
+export { default } from './moneybox';

@@ -7,7 +7,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Input from './input';
+import { Input } from './input';
 import MaskedInput from '../masked-input';
 import IconSearch from '../icon/action/search';
 
@@ -508,10 +508,11 @@ describe('input', () => {
         () => {
             const input = mount<Input>(<Input />);
             const controlNode = input.find('input');
-
+            // @ts-ignore
             jest.spyOn(input.instance(), 'resetError');
 
             controlNode.simulate('focus');
+            // @ts-ignore
             expect(input.instance().resetError).toHaveBeenCalled();
         }
     );

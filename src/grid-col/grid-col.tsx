@@ -87,7 +87,7 @@ export type GridColProps = {
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
-class GridCol extends React.PureComponent<GridColProps> {
+export class GridCol extends React.PureComponent<GridColProps> {
     cn = createCn('grid-col');
 
     static defaultProps: Partial<GridColProps> = {
@@ -126,7 +126,7 @@ class GridCol extends React.PureComponent<GridColProps> {
      * @returns {Object}
      */
     // eslint-disable-next-line class-methods-use-this
-    createClassNames(props) {
+    private createClassNames(props) {
         const classNames = {};
 
         Object.keys(props).forEach((name) => {

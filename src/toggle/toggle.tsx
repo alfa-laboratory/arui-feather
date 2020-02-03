@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type ToggleProps = {
     /**
@@ -85,7 +86,7 @@ export type ToggleProps = {
 /**
  * Компонент переключателя.
  */
-class Toggle extends React.PureComponent<ToggleProps> {
+export class Toggle extends React.PureComponent<ToggleProps> {
     cn = createCn('toggle');
 
     static defaultProps: Partial<ToggleProps> = {
@@ -148,7 +149,7 @@ class Toggle extends React.PureComponent<ToggleProps> {
         event.stopPropagation();
     }
 
-    handleChange = () => {
+    private handleChange = () => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -160,7 +161,7 @@ class Toggle extends React.PureComponent<ToggleProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -168,9 +169,9 @@ class Toggle extends React.PureComponent<ToggleProps> {
         }
     };
 
-    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+    private handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -179,4 +180,4 @@ class Toggle extends React.PureComponent<ToggleProps> {
     }
 }
 
-export default Toggle;
+export default withTheme(Toggle);

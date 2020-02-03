@@ -5,4 +5,5 @@
 import './limits.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './limits';
+export { default } from './limits';

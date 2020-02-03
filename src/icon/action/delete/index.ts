@@ -5,4 +5,5 @@
 import './delete.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './delete';
+export { default } from './delete';

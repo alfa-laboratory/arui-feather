@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import PhoneInput from './phone-input';
+import { PhoneInput } from './phone-input';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 

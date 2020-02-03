@@ -5,4 +5,5 @@
 import './ok.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './ok';
+export { default } from './ok';

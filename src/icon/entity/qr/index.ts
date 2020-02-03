@@ -5,4 +5,5 @@
 import './qr.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './qr';
+export { default } from './qr';

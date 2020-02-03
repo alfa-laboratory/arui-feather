@@ -5,4 +5,5 @@
 import './play.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './play';
+export { default } from './play';

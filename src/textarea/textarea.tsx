@@ -5,6 +5,7 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -166,7 +167,7 @@ export type TextareaProps = {
 /**
  * Компонент многострочного текстового ввода.
  */
-class Textarea extends React.PureComponent<TextareaProps> {
+export class Textarea extends React.PureComponent<TextareaProps> {
     cn = createCn('textarea');
 
     static defaultProps: Partial<TextareaProps> = {
@@ -266,7 +267,7 @@ class Textarea extends React.PureComponent<TextareaProps> {
         );
     }
 
-    handleFocus = () => {
+    private handleFocus = () => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -274,7 +275,7 @@ class Textarea extends React.PureComponent<TextareaProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -282,7 +283,7 @@ class Textarea extends React.PureComponent<TextareaProps> {
         }
     };
 
-    handleChange = (event) => {
+    private handleChange = (event) => {
         const { value } = event.target;
 
         if (this.props.value === undefined) {
@@ -294,25 +295,25 @@ class Textarea extends React.PureComponent<TextareaProps> {
         }
     };
 
-    handlePaste = (event) => {
+    private handlePaste = (event) => {
         if (this.props.onPaste) {
             this.props.onPaste(event);
         }
     };
 
-    handleHeightChange = (height) => {
+    private handleHeightChange = (height) => {
         if (this.props.onHeightChange) {
             this.props.onHeightChange(height);
         }
     };
 
-    handleKeyPress = (event) => {
+    private handleKeyPress = (event) => {
         if (this.props.onKeyPress) {
             this.props.onKeyPress(event);
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
@@ -320,20 +321,16 @@ class Textarea extends React.PureComponent<TextareaProps> {
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Снимает фокус с поля ввода.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
@@ -341,10 +338,8 @@ class Textarea extends React.PureComponent<TextareaProps> {
 
     /**
      * Скроллит страницу до поля ввода.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
@@ -353,4 +348,4 @@ class Textarea extends React.PureComponent<TextareaProps> {
     }
 }
 
-export default Textarea;
+export default withTheme(Textarea);

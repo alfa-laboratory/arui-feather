@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type DropzoneProps = {
 
@@ -69,7 +70,7 @@ export type DropzoneProps = {
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
-class Dropzone extends React.PureComponent<DropzoneProps> {
+export class Dropzone extends React.PureComponent<DropzoneProps> {
     cn = createCn('dropzone');
 
     static defaultProps: Partial<DropzoneProps> = {
@@ -85,7 +86,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
 
     dragCounter: number;
 
-    handleDragOver = (event) => {
+    private handleDragOver = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -94,7 +95,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
         }
     }
 
-    handleDragEnter = (event) => {
+    private handleDragEnter = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -108,7 +109,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
         }
     };
 
-    handleDragLeave = (event) => {
+    private handleDragLeave = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -123,7 +124,7 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
         }
     };
 
-    handleDrop = (event) => {
+    private handleDrop = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -166,4 +167,4 @@ class Dropzone extends React.PureComponent<DropzoneProps> {
     }
 }
 
-export default Dropzone;
+export default withTheme(Dropzone);

@@ -5,4 +5,5 @@
 import './bag.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bag';
+export { default } from './bag';

@@ -4,8 +4,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import TagButton from '../tag-button/themed';
+import TagButton from '../tag-button/tag-button';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -126,7 +127,7 @@ type RadioState = {
 /**
  * Компонент радио-кнопки.
  */
-class Radio extends React.PureComponent<RadioProps, RadioState> {
+export class Radio extends React.PureComponent<RadioProps, RadioState> {
     cn = createCn('radio');
 
     static defaultProps: Partial<RadioProps> = {
@@ -242,11 +243,11 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         );
     }
 
-    handleInputControlClick = (event) => {
+    private handleInputControlClick = (event) => {
         event.stopPropagation();
     };
 
-    handleChange = () => {
+    private handleChange = () => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -258,7 +259,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (!this.props.disabled) {
             this.setState({ focused: true });
         }
@@ -272,9 +273,9 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+    private handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         if (!this.props.disabled) {
             this.setState({ focused: false });
         }
@@ -288,7 +289,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -298,7 +299,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -310,20 +311,16 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     /**
      * Устанавливает фокус на радио-кнопку.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Убирает фокус с радио-кнопки.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
@@ -331,10 +328,8 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     /**
      * Скроллит страницу до радио-кнопки.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         const elementRect = this.label.getBoundingClientRect();
 
         scrollTo({
@@ -344,4 +339,4 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
     }
 }
 
-export default Radio;
+export default withTheme(Radio);

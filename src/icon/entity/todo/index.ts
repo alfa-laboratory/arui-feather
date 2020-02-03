@@ -5,4 +5,5 @@
 import './todo.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './todo';
+export { default } from './todo';

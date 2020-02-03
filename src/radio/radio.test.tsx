@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Radio from './radio';
+import { Radio } from './radio';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('radio', () => {

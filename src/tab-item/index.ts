@@ -1,4 +1,5 @@
 import '../link';
 import './tab-item.css';
 
-export { default } from './themed';
+export * from './tab-item';
+export { default } from './tab-item';

@@ -5,4 +5,5 @@
 import './currency-rub.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './currency-rub';
+export { default } from './currency-rub';

@@ -5,7 +5,8 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import Radio from '../radio/radio';
+import { withTheme } from '../cn';
+import { Radio } from '../radio/radio';
 
 export type RadioGroupProps = {
 
@@ -94,7 +95,7 @@ export type RadioGroupProps = {
 /**
  * Компонент группы радио-кнопок.
  */
-class RadioGroup extends React.PureComponent<RadioGroupProps> {
+export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     cn = createCn('radio-group');
 
     static defaultProps: Partial<RadioGroupProps> = {
@@ -178,7 +179,7 @@ class RadioGroup extends React.PureComponent<RadioGroupProps> {
         );
     }
 
-    handleRadioChange = (value) => {
+    private handleRadioChange = (value) => {
         if (this.state.value !== value) {
             this.setState({ value });
         }
@@ -188,13 +189,13 @@ class RadioGroup extends React.PureComponent<RadioGroupProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
@@ -202,10 +203,8 @@ class RadioGroup extends React.PureComponent<RadioGroupProps> {
 
     /**
      * Устанавливает фокус на первую радиокнопку в группе.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         if (this.radios && this.radios[0]) {
             this.radios[0].focus();
         }
@@ -213,15 +212,13 @@ class RadioGroup extends React.PureComponent<RadioGroupProps> {
 
     /**
      * Убирает фокус с группы радио-кнопок.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }
 }
 
-export default RadioGroup;
+export default withTheme(RadioGroup);

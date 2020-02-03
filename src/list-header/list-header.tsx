@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type ListHeaderProps = {
 
@@ -47,7 +48,7 @@ export type ListHeaderProps = {
 /**
  * Компонент для разделения списка по датам или смысловым группам.
  */
-class ListHeader extends React.PureComponent<ListHeaderProps> {
+export class ListHeader extends React.PureComponent<ListHeaderProps> {
     cn = createCn('list-header');
 
     render() {
@@ -63,4 +64,4 @@ class ListHeader extends React.PureComponent<ListHeaderProps> {
     }
 }
 
-export default ListHeader;
+export default withTheme(ListHeader);

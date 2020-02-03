@@ -4,8 +4,8 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
-import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type InputGroupProps = {
     /**
@@ -42,22 +42,8 @@ export type InputGroupProps = {
 /**
  * Компонент группы полей для текстового ввода.
  */
-class InputGroup extends React.PureComponent<InputGroupProps> {
+export class InputGroup extends React.PureComponent<InputGroupProps> {
     cn = createCn('input-group');
-    static propTypes = {
-        /** Управление возможностью компонента занимать всю ширину родителя */
-        width: Type.oneOf(['default', 'available']),
-        /** Дочерние элементы `InputGroup`, как правило, компоненты `Input` */
-        children: Type.oneOfType([Type.arrayOf(Type.node), Type.node]),
-        /** Тема компонента */
-        theme: Type.oneOf(['alfa-on-color', 'alfa-on-white']),
-        /** Дополнительный класс */
-        className: Type.string,
-        /** Идентификатор компонента в DOM */
-        id: Type.string,
-        /** Идентификатор для систем автоматизированного тестирования */
-        'data-test-id': Type.string
-    };
 
     render() {
         let children = null;
@@ -104,4 +90,4 @@ class InputGroup extends React.PureComponent<InputGroupProps> {
     }
 }
 
-export default InputGroup;
+export default withTheme(InputGroup);

@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CheckBox from './checkbox';
+import { CheckBox } from './checkbox';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 

@@ -5,4 +5,5 @@
 import './navigation-history.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './navigation-history';
+export { default } from './navigation-history';

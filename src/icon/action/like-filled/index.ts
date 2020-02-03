@@ -5,4 +5,5 @@
 import './like-filled.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './like-filled';
+export { default } from './like-filled';

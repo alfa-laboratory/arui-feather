@@ -5,4 +5,5 @@
 import './logo-alfabank.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './logo-alfabank';
+export { default } from './logo-alfabank';

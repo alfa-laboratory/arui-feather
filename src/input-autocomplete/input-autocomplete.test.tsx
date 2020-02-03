@@ -6,8 +6,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Input from '../input/input';
-import InputAutocomplete from './input-autocomplete';
+import { Input } from '../input/input';
+import { InputAutocomplete } from './input-autocomplete';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -225,7 +225,8 @@ describe('input-autocomplete', () => {
 
         // simulated event don't actually change focus
         // so we just patch input.getControl
-        (inputAutocomplete.instance().input as any).getControl = jest.fn().mockReturnValue(document.activeElement);
+        // @ts-ignore
+        (inputAutocomplete.instance().input).getControl = jest.fn().mockReturnValue(document.activeElement);
 
         controlNode.simulate('focus');
 
@@ -260,6 +261,7 @@ describe('input-autocomplete', () => {
         const inputAutocomplete = mount<InputAutocomplete>(
             <InputAutocomplete closeOnSelect={ true } updateValueOnItemSelect={ false } options={ OPTIONS } />
         );
+        // @ts-ignore
         const inputNode = inputAutocomplete.instance().input;
 
         jest.spyOn(inputNode, 'blur');

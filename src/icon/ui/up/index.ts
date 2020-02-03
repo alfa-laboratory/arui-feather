@@ -5,4 +5,5 @@
 import './up.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './up';
+export { default } from './up';

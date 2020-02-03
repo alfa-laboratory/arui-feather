@@ -5,4 +5,5 @@
 import './card-maestro.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './card-maestro';
+export { default } from './card-maestro';

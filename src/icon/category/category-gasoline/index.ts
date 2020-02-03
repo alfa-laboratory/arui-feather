@@ -5,4 +5,5 @@
 import './category-gasoline.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-gasoline';
+export { default } from './category-gasoline';

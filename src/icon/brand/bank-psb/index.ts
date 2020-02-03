@@ -5,4 +5,5 @@
 import './bank-psb.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-psb';
+export { default } from './bank-psb';

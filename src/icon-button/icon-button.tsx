@@ -3,16 +3,17 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Button from '../button/button';
+import { Button } from '../button/button';
 
 /**
  * Компонент кнопки с иконкой.
  *
  * @extends Button
  */
-class IconButton extends Button {
+export class IconButton extends Button {
     cn = createCn('icon-button');
 }
 
-export default IconButton;
+export default withTheme(IconButton);

@@ -8,9 +8,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Input from '../input/themed';
-import { InputProps } from '../input/input';
+import Input, { InputProps } from '../input/input';
 import Mask from '../masked-input/mask';
 
 import { getCurrencySymbol } from '../lib/currency-codes';
@@ -84,7 +84,7 @@ type MoneyInputState = {
 /**
  * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
  */
-class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
+export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     cn = createCn('money-input');
 
     static defaultProps: Partial<MoneyInputProps> = {
@@ -247,4 +247,4 @@ class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
     }
 }
 
-export default MoneyInput;
+export default withTheme(MoneyInput);

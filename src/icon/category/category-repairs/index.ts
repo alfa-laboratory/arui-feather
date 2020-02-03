@@ -5,4 +5,5 @@
 import './category-repairs.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-repairs';
+export { default } from './category-repairs';

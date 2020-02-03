@@ -5,4 +5,5 @@
 import './format-svg.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './format-svg';
+export { default } from './format-svg';

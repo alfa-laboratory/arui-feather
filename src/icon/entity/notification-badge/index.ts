@@ -5,4 +5,5 @@
 import './notification-badge.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './notification-badge';
+export { default } from './notification-badge';

@@ -5,4 +5,5 @@
 import './category-gaming.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-gaming';
+export { default } from './category-gaming';

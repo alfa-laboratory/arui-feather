@@ -3,15 +3,16 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { createCn } from 'bem-react-classname';
-import Button from '../button/button';
+import { withTheme } from '../cn';
+import { Button } from '../button/button';
 
 /**
  * Компонент тэг.
  *
  * @extends Button
  */
-class TagButton extends Button {
+export class TagButton extends Button {
     cn = createCn('tag-button');
 }
 
-export default TagButton;
+export default withTheme(TagButton);

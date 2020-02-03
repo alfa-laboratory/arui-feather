@@ -5,4 +5,5 @@
 import './star-active.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './star-active';
+export { default } from './star-active';

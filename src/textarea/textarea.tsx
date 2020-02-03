@@ -5,6 +5,7 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -166,7 +167,7 @@ export type TextareaProps = {
 /**
  * Компонент многострочного текстового ввода.
  */
-class Textarea extends React.PureComponent<TextareaProps> {
+export class Textarea extends React.PureComponent<TextareaProps> {
     cn = createCn('textarea');
 
     static defaultProps: Partial<TextareaProps> = {
@@ -347,4 +348,4 @@ class Textarea extends React.PureComponent<TextareaProps> {
     }
 }
 
-export default Textarea;
+export default withTheme(Textarea);

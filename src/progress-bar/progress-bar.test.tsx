@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import ProgressBar from './progress-bar';
+import { ProgressBar } from './progress-bar';
 
 describe('progress-bar', () => {
     it('should render without problems', () => {

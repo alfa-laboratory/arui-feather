@@ -5,4 +5,5 @@
 import './category-cards.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-cards';
+export { default } from './category-cards';

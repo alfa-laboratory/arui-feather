@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FormField from './form-field';
+import { FormField } from './form-field';
 
 describe('form-field', () => {
     it('should render without problems', () => {

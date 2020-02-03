@@ -5,8 +5,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import RadioGroup from './radio-group';
-import Radio from '../radio/radio';
+import { RadioGroup } from './radio-group';
+import { Radio } from '../radio/radio';
 
 describe('radio-group', () => {
     it('should render without any children', () => {

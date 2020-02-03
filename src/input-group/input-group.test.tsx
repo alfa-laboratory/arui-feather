@@ -5,8 +5,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import InputGroup from './input-group';
-import Input from '../input/input';
+import { InputGroup } from './input-group';
+import { Input } from '../input/input';
 
 describe('input-group', () => {
     it('should render without any children', () => {

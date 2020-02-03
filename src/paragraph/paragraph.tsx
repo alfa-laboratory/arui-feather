@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type ParagraphProps = {
 
@@ -46,7 +47,7 @@ export type ParagraphProps = {
 /**
  * Компонент параграфа текста.
  */
-class Paragraph extends React.PureComponent<ParagraphProps> {
+export class Paragraph extends React.PureComponent<ParagraphProps> {
     cn = createCn('paragraph');
 
     render() {
@@ -65,4 +66,4 @@ class Paragraph extends React.PureComponent<ParagraphProps> {
     }
 }
 
-export default Paragraph;
+export default withTheme(Paragraph);

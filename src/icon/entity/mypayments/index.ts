@@ -5,4 +5,5 @@
 import './mypayments.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './mypayments';
+export { default } from './mypayments';

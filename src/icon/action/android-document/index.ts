@@ -5,4 +5,5 @@
 import './android-document.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './android-document';
+export { default } from './android-document';

@@ -5,4 +5,5 @@
 import './bank-saint-petersburg.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-saint-petersburg';
+export { default } from './bank-saint-petersburg';

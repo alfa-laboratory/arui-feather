@@ -5,4 +5,5 @@
 import './fault.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './fault';
+export { default } from './fault';

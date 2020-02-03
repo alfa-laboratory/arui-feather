@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ListHeader from './list-header';
+import { ListHeader } from './list-header';
 
 describe('list-header', () => {
     it('should render without problems', () => {

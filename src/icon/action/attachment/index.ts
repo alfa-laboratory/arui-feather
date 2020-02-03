@@ -5,4 +5,5 @@
 import './attachment.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './attachment';
+export { default } from './attachment';

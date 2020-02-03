@@ -5,4 +5,5 @@
 import './sent-done.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './sent-done';
+export { default } from './sent-done';

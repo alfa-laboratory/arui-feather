@@ -5,4 +5,5 @@
 import './bank-uralsib.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-uralsib';
+export { default } from './bank-uralsib';

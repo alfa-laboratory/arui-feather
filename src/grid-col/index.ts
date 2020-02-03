@@ -4,4 +4,5 @@
 
 import './grid-col.css';
 
+export * from './grid-col';
 export { default } from './grid-col';

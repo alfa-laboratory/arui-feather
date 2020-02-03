@@ -5,4 +5,5 @@
 import './check-indeterminate.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './check-indeterminate';
+export { default } from './check-indeterminate';

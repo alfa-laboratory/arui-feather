@@ -49,7 +49,7 @@ module.exports = {
     version,
     serverPort: PORT,
     skipComponentsWithoutExample: true,
-    components: './src/*/index.{ts,js}',
+    components: './src/*/index.ts',
 
     propsParser(componentIndexPath) {
         const dirPath = path.dirname(componentIndexPath);
@@ -118,7 +118,7 @@ module.exports = {
     sections: [
         {
             title: 'Components',
-            components: ['./src/*/index.ts', './src/*/index.js'],
+            components: ['./src/*/index.ts'],
             sectionDepth: 1
         }
     ]

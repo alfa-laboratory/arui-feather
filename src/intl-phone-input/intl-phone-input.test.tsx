@@ -7,7 +7,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import IntlPhoneInput from './intl-phone-input';
+import { IntlPhoneInput } from './intl-phone-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 const SIZES = ['s', 'm', 'l', 'xl'] as const;

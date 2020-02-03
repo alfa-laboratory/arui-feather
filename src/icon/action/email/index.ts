@@ -5,4 +5,5 @@
 import './email.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './email';
+export { default } from './email';

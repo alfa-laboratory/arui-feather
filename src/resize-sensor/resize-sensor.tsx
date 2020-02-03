@@ -20,7 +20,7 @@ export type ResizeSensorProps = {
  * Важно! Элемент, размер которого вы хотите измерять, должен обладать
  * css свойством `position: relative;`.
  */
-class ResizeSensor extends React.Component<ResizeSensorProps> {
+export class ResizeSensor extends React.Component<ResizeSensorProps> {
     iframe: HTMLIFrameElement;
 
     componentDidMount() {

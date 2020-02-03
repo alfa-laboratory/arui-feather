@@ -5,4 +5,5 @@
 import './bank-otkritie.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-otkritie';
+export { default } from './bank-otkritie';

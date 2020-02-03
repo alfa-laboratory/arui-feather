@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type FormFieldProps = {
 
@@ -42,7 +43,7 @@ export type FormFieldProps = {
  * Компонент поля формы.
  * Необходим для вертикального ритма в форме.
  */
-class FormField extends React.PureComponent<FormFieldProps> {
+export class FormField extends React.PureComponent<FormFieldProps> {
     cn = createCn('form-field');
 
     static defaultProps: Partial<FormFieldProps> = {
@@ -62,4 +63,4 @@ class FormField extends React.PureComponent<FormFieldProps> {
     }
 }
 
-export default FormField;
+export default withTheme(FormField);

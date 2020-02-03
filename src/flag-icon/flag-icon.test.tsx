@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FlagIcon from './flag-icon';
+import { FlagIcon } from './flag-icon';
 
 describe('flag-icon', () => {
     it('renders without problems', () => {

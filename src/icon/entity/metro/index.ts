@@ -5,4 +5,5 @@
 import './metro.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './metro';
+export { default } from './metro';

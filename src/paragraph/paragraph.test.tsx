@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Paragraph from './paragraph';
+import { Paragraph } from './paragraph';
 
 describe('paragraph', () => {
     it('should render without problems', () => {

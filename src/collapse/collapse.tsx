@@ -4,11 +4,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
-import Link from '../link/themed';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import Link from '../link/link';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
 export type CollapseProps = {
     /**
@@ -60,7 +61,7 @@ export type CollapseProps = {
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
-class Collapse extends React.PureComponent<CollapseProps> {
+export class Collapse extends React.PureComponent<CollapseProps> {
     cn = createCn('collapse');
 
     static defaultProps: Partial<CollapseProps> = {
@@ -161,4 +162,4 @@ class Collapse extends React.PureComponent<CollapseProps> {
     }
 }
 
-export default Collapse;
+export default withTheme(Collapse);

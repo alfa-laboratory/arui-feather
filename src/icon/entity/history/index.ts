@@ -5,4 +5,5 @@
 import './history.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './history';
+export { default } from './history';

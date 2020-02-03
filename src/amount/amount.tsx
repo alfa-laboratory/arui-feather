@@ -4,8 +4,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import Heading from '../heading/themed';
-import Label from '../label/themed';
+import { withTheme } from '../cn';
+import Heading from '../heading/heading';
+import Label from '../label/label';
 import performance from '../performance';
 
 import {
@@ -16,7 +17,7 @@ import {
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 
-type AmountProps = {
+export type AmountProps = {
     amount: {
 
         /**
@@ -87,7 +88,7 @@ type AmountProps = {
  * https://design.alfabank.ru/patterns/amount
  */
 @performance(true)
-class Amount extends React.Component<AmountProps> {
+export class Amount extends React.Component<AmountProps> {
     cn = createCn('amount');
 
     static defaultProps: Partial<AmountProps> = {
@@ -159,4 +160,4 @@ class Amount extends React.Component<AmountProps> {
     }
 }
 
-export default Amount;
+export default withTheme(Amount);

@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Dropdown from './dropdown';
+import { Dropdown } from './dropdown';
 
 describe('dropdown', () => {
     it('should render without problems', () => {

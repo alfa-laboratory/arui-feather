@@ -5,4 +5,5 @@
 import './format-xml.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './format-xml';
+export { default } from './format-xml';

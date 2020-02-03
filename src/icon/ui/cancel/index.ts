@@ -5,4 +5,5 @@
 import './cancel.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './cancel';
+export { default } from './cancel';

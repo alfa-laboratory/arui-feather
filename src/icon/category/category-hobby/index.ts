@@ -5,4 +5,5 @@
 import './category-hobby.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-hobby';
+export { default } from './category-hobby';

@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import SlideDown from './slide-down';
+import { SlideDown } from './slide-down';
 
 describe('slide-down', () => {
     it('should render without problems', () => {
@@ -60,6 +60,7 @@ describe('slide-down', () => {
             <SlideDown isExpanded={ false } onAnimationEnd={ onAnimationEnd } />
         );
 
+        // @ts-ignore
         slideDownNode.instance().handleTransitionEnd({});
         expect(onAnimationEnd).toHaveBeenCalled();
     });

@@ -5,4 +5,5 @@
 import './slider-arrow-double.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './slider-arrow-double';
+export { default } from './slider-arrow-double';

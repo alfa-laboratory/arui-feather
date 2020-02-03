@@ -5,4 +5,5 @@
 import './notifications.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './notifications';
+export { default } from './notifications';

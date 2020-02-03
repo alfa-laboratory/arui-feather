@@ -5,4 +5,5 @@
 import './request-money.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './request-money';
+export { default } from './request-money';

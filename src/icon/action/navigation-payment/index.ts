@@ -5,4 +5,5 @@
 import './navigation-payment.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './navigation-payment';
+export { default } from './navigation-payment';

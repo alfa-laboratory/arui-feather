@@ -5,4 +5,5 @@
 import './category-appliances.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-appliances';
+export { default } from './category-appliances';

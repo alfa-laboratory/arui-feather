@@ -5,4 +5,5 @@
 import './category-experiments.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-experiments';
+export { default } from './category-experiments';

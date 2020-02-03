@@ -5,6 +5,7 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type InputGroupProps = {
     /**
@@ -41,7 +42,7 @@ export type InputGroupProps = {
 /**
  * Компонент группы полей для текстового ввода.
  */
-class InputGroup extends React.PureComponent<InputGroupProps> {
+export class InputGroup extends React.PureComponent<InputGroupProps> {
     cn = createCn('input-group');
 
     render() {
@@ -89,4 +90,4 @@ class InputGroup extends React.PureComponent<InputGroupProps> {
     }
 }
 
-export default InputGroup;
+export default withTheme(InputGroup);

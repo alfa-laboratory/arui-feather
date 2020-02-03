@@ -4,4 +4,5 @@
 
 import './form.css';
 
-export { default } from './themed';
+export * from './form';
+export { default } from './form';

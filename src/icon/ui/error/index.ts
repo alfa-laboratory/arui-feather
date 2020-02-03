@@ -5,4 +5,5 @@
 import './error.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './error';
+export { default } from './error';

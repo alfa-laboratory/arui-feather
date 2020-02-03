@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import Textarea from './textarea';
+import { Textarea } from './textarea';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 

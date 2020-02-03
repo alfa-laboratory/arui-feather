@@ -5,4 +5,5 @@
 import './category-house.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-house';
+export { default } from './category-house';

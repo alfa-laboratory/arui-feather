@@ -5,4 +5,5 @@
 import './payment-to-state.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './payment-to-state';
+export { default } from './payment-to-state';

@@ -4,9 +4,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Button from '../button/themed';
-import { ButtonProps } from '../button/button';
+import Button, { ButtonProps } from '../button/button';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
@@ -179,7 +179,7 @@ export type AttachProps = {
 /**
  * Компонент прикрепления файлов.
  */
-class Attach extends React.PureComponent<AttachProps> {
+export class Attach extends React.PureComponent<AttachProps> {
     cn = createCn('attach');
 
     static defaultProps: Partial<AttachProps> = {
@@ -391,4 +391,4 @@ class Attach extends React.PureComponent<AttachProps> {
     }
 }
 
-export default Attach;
+export default withTheme(Attach);

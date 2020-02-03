@@ -5,4 +5,5 @@
 import './arrow-down.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './arrow-down';
+export { default } from './arrow-down';

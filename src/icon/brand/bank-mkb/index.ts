@@ -5,4 +5,5 @@
 import './bank-mkb.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-mkb';
+export { default } from './bank-mkb';

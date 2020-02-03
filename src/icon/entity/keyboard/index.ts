@@ -5,4 +5,5 @@
 import './keyboard.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './keyboard';
+export { default } from './keyboard';

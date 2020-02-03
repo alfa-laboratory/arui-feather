@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Dropzone from './dropzone';
+import { Dropzone } from './dropzone';
 
 describe('dropzone', () => {
     const filesList = [

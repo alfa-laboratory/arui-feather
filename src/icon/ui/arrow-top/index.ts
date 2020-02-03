@@ -5,4 +5,5 @@
 import './arrow-top.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './arrow-top';
+export { default } from './arrow-top';

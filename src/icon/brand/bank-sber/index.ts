@@ -5,4 +5,5 @@
 import './bank-sber.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-sber';
+export { default } from './bank-sber';

@@ -4,9 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
-import IconButton from '../icon-button/themed';
+import IconButton from '../icon-button/icon-button';
 
 export type PopupHeaderProps = {
     /**
@@ -48,7 +49,7 @@ export type PopupHeaderProps = {
 /**
  * Заголовок в Popup.
  */
-class PopupHeader extends React.PureComponent<PopupHeaderProps> {
+export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
     cn = createCn('popup-header');
 
     render() {
@@ -83,4 +84,4 @@ class PopupHeader extends React.PureComponent<PopupHeaderProps> {
     }
 }
 
-export default PopupHeader;
+export default withTheme(PopupHeader);

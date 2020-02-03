@@ -5,4 +5,5 @@
 import './arrow-right.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './arrow-right';
+export { default } from './arrow-right';

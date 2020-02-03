@@ -5,4 +5,5 @@
 import './convert.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './convert';
+export { default } from './convert';

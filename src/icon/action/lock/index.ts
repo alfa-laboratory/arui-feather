@@ -5,4 +5,5 @@
 import './lock.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './lock';
+export { default } from './lock';

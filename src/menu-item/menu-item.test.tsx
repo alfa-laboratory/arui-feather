@@ -5,8 +5,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import MenuItem from './menu-item';
-import Link from '../link/link';
+import { MenuItem } from './menu-item';
+import { Link } from '../link/link';
 
 describe('menu-item', () => {
     it('should render without problem', () => {
@@ -121,6 +121,7 @@ describe('menu-item', () => {
             <MenuItem disabled={ true }>MenuItem</MenuItem>
         );
 
+        // @ts-ignore
         wrapper.instance().handleClick(event);
 
         expect(event.preventDefault).toHaveBeenCalled();

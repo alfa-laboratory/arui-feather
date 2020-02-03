@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import IconButton from './icon-button';
+import { IconButton } from './icon-button';
 
 describe('icon-button', () => {
     it('renders without problems', () => {

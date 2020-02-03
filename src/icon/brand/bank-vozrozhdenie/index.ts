@@ -5,4 +5,5 @@
 import './bank-vozrozhdenie.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-vozrozhdenie';
+export { default } from './bank-vozrozhdenie';

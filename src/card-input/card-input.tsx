@@ -4,9 +4,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Input from '../input/themed';
-import { InputProps } from '../input/input';
+import { Input, InputProps } from '../input/input';
 
 export type CardInputProps = InputProps & {
     /** Подсказка в текстовом поле */
@@ -16,7 +16,7 @@ export type CardInputProps = InputProps & {
 /**
  * Поле ввода номера карты с маской.
  */
-class CardInput extends React.PureComponent<CardInputProps> {
+export class CardInput extends React.PureComponent<CardInputProps> {
     cn = createCn('card-input');
 
     static defaultProps: Partial<CardInputProps> = {
@@ -65,4 +65,4 @@ class CardInput extends React.PureComponent<CardInputProps> {
     }
 }
 
-export default CardInput;
+export default withTheme(CardInput);

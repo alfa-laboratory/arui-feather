@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Spin from './spin';
+import { Spin } from './spin';
 import ThemedSpin from './index';
 
 describe('spin', () => {

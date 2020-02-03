@@ -5,6 +5,7 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type CheckBoxGroupThemeFieldType = 'alfa-on-color' | 'alfa-on-white';
 
@@ -90,7 +91,7 @@ export type CheckBoxGroupProps = ({
 /**
  * Компонент группы чекбоксов.
  */
-class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
+export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     cn = createCn('checkbox-group');
 
     static defaultProps: Partial<CheckBoxGroupProps> = {
@@ -224,4 +225,4 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     }
 }
 
-export default CheckBoxGroup;
+export default withTheme(CheckBoxGroup);

@@ -5,4 +5,5 @@
 import './bank-gazprombank.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-gazprombank';
+export { default } from './bank-gazprombank';

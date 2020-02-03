@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import Label from './label';
+import { Label } from './label';
 
 describe('label', () => {
     it('should render without problems', () => {

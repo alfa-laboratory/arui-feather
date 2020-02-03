@@ -5,4 +5,5 @@
 import './bank-uralskiy.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-uralskiy';
+export { default } from './bank-uralskiy';

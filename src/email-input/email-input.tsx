@@ -6,15 +6,15 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Input from '../input/themed';
-import { InputProps } from '../input/input';
+import Input, { InputProps } from '../input/input';
 
 /**
  * Компонент поля ввода почты.
  * @extends Input
  */
-class EmailInput extends React.PureComponent<InputProps> {
+export class EmailInput extends React.PureComponent<InputProps> {
     cn = createCn('email-input');
 
     /**
@@ -58,4 +58,4 @@ class EmailInput extends React.PureComponent<InputProps> {
     }
 }
 
-export default EmailInput;
+export default withTheme(EmailInput);

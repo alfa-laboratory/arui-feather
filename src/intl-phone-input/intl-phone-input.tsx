@@ -6,11 +6,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import FlagIcon from '../flag-icon/themed';
-import Input from '../input/themed';
-import { InputProps } from '../input/input';
-import Select from '../select/themed';
+import FlagIcon from '../flag-icon/flag-icon';
+import Input, { InputProps } from '../input/input';
+import Select from '../select/select';
 
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';
@@ -30,7 +30,7 @@ type IntlPhoneInputState = {
 /**
  * Компонент ввода международного телефона по маске.
  */
-class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneInputState> {
+export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneInputState> {
     cn = createCn('intl-phone-input');
 
     static defaultProps: Partial<IntlPhoneInputProps> = {
@@ -359,4 +359,4 @@ class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneI
     }
 }
 
-export default IntlPhoneInput;
+export default withTheme(IntlPhoneInput);

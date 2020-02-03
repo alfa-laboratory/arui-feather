@@ -6,5 +6,5 @@
       "experimentalDecorators": true,
       "strict": false
   },
-  "include": ["src/**/*.tsx"]
+  "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

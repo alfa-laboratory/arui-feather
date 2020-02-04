@@ -18,13 +18,13 @@ describe('isEventOusideBounds', () => {
     ({
         left, right, top, bottom, pageX, pageY, isOutside
     }) => {
-        const element = {
-            getBoundingClientRect: jest.fn().mockReturnValue({
-                left, right, top, bottom
-            })
-        };
+        const element = document.createElement('div');
 
-        const result = isEventOusideBounds({ pageX, pageY }, element);
+        element.getBoundingClientRect = jest.fn().mockReturnValue({
+            left, right, top, bottom
+        });
+
+        const result = isEventOusideBounds({ pageX, pageY } as any, element);
 
         expect(result).toBe(isOutside);
     });
@@ -44,13 +44,14 @@ describe('isEventOutsideClientBounds', () => {
     ({
         left, right, top, bottom, clientX, clientY, isOutside
     }) => {
-        const element = {
-            getBoundingClientRect: jest.fn().mockReturnValue({
-                left, right, top, bottom
-            })
-        };
+        const event = new MouseEvent('click', { clientX, clientY });
+        const element = document.createElement('div');
 
-        const result = isEventOutsideClientBounds({ clientX, clientY }, element);
+        element.getBoundingClientRect = jest.fn().mockReturnValue({
+            left, right, top, bottom
+        });
+
+        const result = isEventOutsideClientBounds(event, element);
 
         expect(result).toBe(isOutside);
     });
@@ -58,19 +59,20 @@ describe('isEventOutsideClientBounds', () => {
 
 describe('isNodeOutsideElement', () => {
     it('should return `false` if node contains element', () => {
-        const element = {
-            contains: jest.fn().mockReturnValue(true)
-        };
+        const element = document.createElement('div');
+        const node = document.createElement('div');
 
-        const result = isNodeOutsideElement({}, element);
+        element.contains = jest.fn().mockReturnValue(true);
+
+        const result = isNodeOutsideElement(node, element);
 
         expect(result).toBe(false);
     });
 
     it('should return `false` if node equals element', () => {
-        const element = {
-            contains: jest.fn().mockReturnValue(false)
-        };
+        const element = document.createElement('div');
+
+        element.contains = jest.fn().mockReturnValue(false);
 
         const result = isNodeOutsideElement(element, element);
 
@@ -78,11 +80,12 @@ describe('isNodeOutsideElement', () => {
     });
 
     it('should return `true` if node doesn\'t contains element', () => {
-        const element = {
-            contains: jest.fn().mockReturnValue(false)
-        };
+        const element = document.createElement('div');
+        const node = document.createElement('div');
 
-        const result = isNodeOutsideElement({}, element);
+        element.contains = jest.fn().mockReturnValue(false);
+
+        const result = isNodeOutsideElement(node, element);
 
         expect(result).toBe(true);
     });

@@ -3046,6 +3046,11 @@ beeper@^1.0.0:
   resolved "https://registry.yarnpkg.com/beeper/-/beeper-1.1.1.tgz#e6d5ea8c5dad001304a70b22638447f69cb2f809"
   integrity sha1-5tXqjF2tABMEpwsiY4RH9pyy+Ak=
 
+bem-cn-fast@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/bem-cn-fast/-/bem-cn-fast-1.0.2.tgz#ec52816084876ea49ca4701681220dedf0687821"
+  integrity sha1-7FKBYISHbqScpHAWgSIN7fBoeCE=
+
 bem-react-classname@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/bem-react-classname/-/bem-react-classname-1.1.0.tgz#9d61fc2dde16ec53533684f03a74d94202e18447"
@@ -4053,6 +4058,15 @@ clsx@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.0.4.tgz#0c0171f6d5cb2fe83848463c15fcc26b4df8c2ec"
   integrity sha512-1mQ557MIZTrL/140j+JVdRM6e31/OA4vTYxXgqIIZlndyfjHpyawKZia1Im05Vp9BWmImkcNrNtFYQMyFcgJDg==
+
+cn-decorator@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cn-decorator/-/cn-decorator-2.1.0.tgz#5cc0ecb81fa20515387f20c4fe422c74daa8ea73"
+  integrity sha1-XMDsuB+iBRU4fyDE/kIsdNqo6nM=
+  dependencies:
+    bem-cn-fast "^1.0.2"
+    decamelize "^1.2.0"
+    prop-types "^15.6.0"
 
 co@3.1.0:
   version "3.1.0"

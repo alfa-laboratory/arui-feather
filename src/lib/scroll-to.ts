@@ -44,6 +44,10 @@ export default function scrollTo({
         throw new Error('Incorrect duration in options');
     }
 
+    if (!easings[easing]) {
+        throw new Error('Incorrect easing in options');
+    }
+
     const easingFunc = easings[easing];
 
     return new Promise((resolve) => {

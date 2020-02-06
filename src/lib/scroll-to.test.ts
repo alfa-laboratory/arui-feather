@@ -64,6 +64,19 @@ describe('scroll-to', () => {
         expect(container.scrollTop).toBe(100);
     });
 
+    it('should catch error with incorrect easing', () => {
+        const fn = function () {
+            scrollTo({
+                targetY: 100,
+                duration: 200,
+                // @ts-ignore
+                easing: 'incorrectEase'
+            });
+        };
+
+        expect(fn).toThrow('Incorrect easing in options');
+    });
+
     it('should catch error with incorrect duration', () => {
         const fn = function () {
             scrollTo({

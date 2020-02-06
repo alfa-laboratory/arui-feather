@@ -10,22 +10,22 @@ export interface ScrollToOptions {
     * Скроллит по элементу или странице.
     * В настоящее время доступно перемещение только по оси Y.
     */
-        /**
-        * Цель по оси Y
-        */
-        targetY: number;
-        /**
-        * Элемент в котором скроллим
-        */
-        container?: HTMLElement;
-        /**
-        * Продолжительность анимации в миллесекундах
-        */
-        duration?: number;
-        /**
-        * Название функции плавности для анимации
-        */
-        easing?: EasingType;
+    /**
+    * Цель по оси Y
+    */
+    targetY: number;
+    /**
+    * Элемент в котором скроллим
+    */
+    container?: HTMLElement;
+    /**
+    * Продолжительность анимации в миллесекундах
+    */
+    duration?: number;
+    /**
+    * Название функции плавности для анимации
+    */
+    easing?: EasingType;
 }
 
 // TODO: Make a move on the x axis

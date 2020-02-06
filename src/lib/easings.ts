@@ -2,11 +2,35 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
-
 import bezierEasing from 'bezier-easing';
 
-export default {
+export type EasingType =
+    'easeInSine'|
+    'easeOutSine'|
+    'easeInOutSine'|
+    'easeInQuad'|
+    'easeOutQuad'|
+    'easeInOutQuad'|
+    'easeInCubic'|
+    'easeOutCubic'|
+    'easeInOutCubic'|
+    'easeInQuart'|
+    'easeOutQuart'|
+    'easeInOutQuart'|
+    'easeInQuint'|
+    'easeOutQuint'|
+    'easeInOutQuint'|
+    'easeInExpo'|
+    'easeOutExpo'|
+    'easeInOutExpo'|
+    'easeInCirc'|
+    'easeOutCirc'|
+    'easeInOutCirc'|
+    'easeInBack'|
+    'easeOutBack'|
+    'easeInOutBack';
+
+const easings: { [k in EasingType]: bezierEasing.EasingFunction } = {
     easeInSine: bezierEasing(0.47, 0, 0.745, 0.715),
     easeOutSine: bezierEasing(0.39, 0.575, 0.565, 1),
     easeInOutSine: bezierEasing(0.445, 0.05, 0.55, 0.95),
@@ -32,3 +56,5 @@ export default {
     easeOutBack: bezierEasing(0.175, 0.885, 0.32, 1.275),
     easeInOutBack: bezierEasing(0.68, -0.55, 0.265, 1.55)
 };
+
+export default easings;

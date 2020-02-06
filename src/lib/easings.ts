@@ -4,33 +4,7 @@
 
 import bezierEasing from 'bezier-easing';
 
-export type EasingType =
-    'easeInSine'|
-    'easeOutSine'|
-    'easeInOutSine'|
-    'easeInQuad'|
-    'easeOutQuad'|
-    'easeInOutQuad'|
-    'easeInCubic'|
-    'easeOutCubic'|
-    'easeInOutCubic'|
-    'easeInQuart'|
-    'easeOutQuart'|
-    'easeInOutQuart'|
-    'easeInQuint'|
-    'easeOutQuint'|
-    'easeInOutQuint'|
-    'easeInExpo'|
-    'easeOutExpo'|
-    'easeInOutExpo'|
-    'easeInCirc'|
-    'easeOutCirc'|
-    'easeInOutCirc'|
-    'easeInBack'|
-    'easeOutBack'|
-    'easeInOutBack';
-
-const easings: { [k in EasingType]: bezierEasing.EasingFunction } = {
+const easings = {
     easeInSine: bezierEasing(0.47, 0, 0.745, 0.715),
     easeOutSine: bezierEasing(0.39, 0.575, 0.565, 1),
     easeInOutSine: bezierEasing(0.445, 0.05, 0.55, 0.95),
@@ -57,4 +31,5 @@ const easings: { [k in EasingType]: bezierEasing.EasingFunction } = {
     easeInOutBack: bezierEasing(0.68, -0.55, 0.265, 1.55)
 };
 
+export type EasingType = keyof typeof easings;
 export default easings;

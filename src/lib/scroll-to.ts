@@ -5,11 +5,7 @@
 import easings, { EasingType } from './easings';
 import { SCROLL_TO_EASING } from '../vars';
 
-export interface ScrollToOptions {
-    /**
-    * Скроллит по элементу или странице.
-    * В настоящее время доступно перемещение только по оси Y.
-    */
+type ScrollToOptions = {
     /**
     * Цель по оси Y
     */
@@ -27,9 +23,11 @@ export interface ScrollToOptions {
     */
     easing?: EasingType;
 }
-
-// TODO: Make a move on the x axis
-
+/**
+* Скроллит по элементу или странице.
+* В настоящее время доступно перемещение только по оси Y.
+* TODO: Make a move on the x axis
+*/
 export default function scrollTo({
     targetY,
     container,

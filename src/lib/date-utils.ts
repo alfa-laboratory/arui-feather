@@ -2,8 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
-
 /* eslint no-continue: 0 */
 
 import getDaysInMonth from 'date-fns/get_days_in_month';
@@ -13,20 +11,20 @@ const DAYS_IN_WEEK = 7;
 /**
  * Нормализирует дату, возвращает Date вне завистимости от входных данных.
  *
- * @param {Date|Number} date Дата для нормализации.
+ * @param date Дата для нормализации.
  * @returns {Date}
  */
-export function normalizeDate(date) {
+export function normalizeDate(date: Date | number): Date {
     return new Date(date);
 }
 
 /**
  * Возвращает «правильный» индекс дня недели, 0 - пн, 1 - вт и так далее.
  *
- * @param {Date} date Дата, из которой нужно получить день недели.
- * @returns {Number}
+ * @param date Дата, из которой нужно получить день недели.
+ * @returns {number}
  */
-export function getRussianWeekDay(date) {
+export function getRussianWeekDay(date: Date): number {
     const sunday = 0;
     const foreignWeekDayIndex = date.getDay();
 
@@ -35,7 +33,7 @@ export function getRussianWeekDay(date) {
         : foreignWeekDayIndex - 1;
 }
 
-const PARSE_TOKENS = [
+const PARSE_TOKENS: DateParserToken[] = [
     { type: 'date', regex: /^\d{2}/, formatRegex: /^DD/ },
     { type: 'date', regex: /^\d{1,2}/, formatRegex: /^D/ },
     { type: 'month', regex: /^\d{2}/, formatRegex: /^MM/ },
@@ -43,27 +41,40 @@ const PARSE_TOKENS = [
     { type: 'year', regex: /^\d{4}/, formatRegex: /^YYYY/ }
 ];
 
-/**
- * @typedef {Object} Limit
- * @property {Number} min Минимально возможное значение.
- * @property {Number} max Максимально возможное значение.
- */
+type Limit = {
+    /**
+     * Минимально возможное значение
+     */
+    min: number;
+    /**
+     * Максимально возможное значение
+     */
+    max: number;
+}
 
-/**
- * @typedef {Object} DateLimits
- * @property {Limit} date Лимиты для дня.
- * @property {Limit} month Лимиты для месяца.
- * @property {Limit} year Лимиты для года.
- */
+type DateLimits = {
+    /**
+     * Лимиты для дня
+     */
+    date: Limit;
+    /**
+     * Лимиты для месяца
+     */
+    month: Limit;
+    /**
+     * Лимиты для года
+     */
+    year: Limit;
+}
 
 /**
  * Возвращает граничные значения для дня, месяца, года.
  *
- * @param {Number} month Месяц в котором нужно получить максимально возможное число дней.
- * @param {Number} year Год месяца в котором нужно получить максимально возможное число дней.
- * @returns {DateLimits}
+ * @param month Месяц в котором нужно получить максимально возможное число дней.
+ * @param year Год месяца в котором нужно получить максимально возможное число дней.
+ * @returns {DateLimits} Лимиты для переданной даты
  */
-function getLimits(month, year) {
+function getLimits(month: number, year: number): DateLimits {
     return {
         date: { min: 1, max: getDaysInMonth(new Date(year, month - 1)) },
         month: { min: 1, max: 12 },
@@ -71,28 +82,50 @@ function getLimits(month, year) {
     };
 }
 
-/**
- * @typedef {Object} FormatParserToken
- * @property {String} type Тип токена.
- * @property {RegExp} formatRegex Для всех типов кроме 'delimiter'. Регулярное выражение, соответствующее формату
- * @property {RegExp} regex Для всех типов кроме 'delimiter'. Регулярное выражение для проверки соответствия формату
- * @property {String} value Только для типа 'delimiter'. Символ разделитель.
- */
+type DateType = 'date' | 'month' | 'year';
+
+type FormatParserToken = DateParserToken | DelimiterParserToken;
+
+type DelimiterParserToken = {
+    /**
+     * Тип токена
+     */
+    type: 'delimiter';
+    /**
+     * Символ разделитель
+     */
+    value: string;
+}
+
+type DateParserToken = {
+    /**
+     * Тип токена
+     */
+    type: DateType;
+    /**
+     * Регулярное выражение, соответствующее формату
+     */
+    formatRegex: RegExp;
+    /**
+     * Регулярное выражение для проверки соответствия формату
+     */
+    regex: RegExp;
+}
 
 const PARSER_CACHE = {};
 
 /**
  * Разбирает строку с форматом даты.
  *
- * @param {String} format формат даты для разбора.
+ * @param format формат даты для разбора.
  * @returns {Array<FormatParserToken>}
  */
-function parseFormat(format) {
+function parseFormat(format: string): FormatParserToken[] {
     if (PARSER_CACHE[format]) {
         return PARSER_CACHE[format];
     }
 
-    const parser = [];
+    const parser: FormatParserToken[] = [];
     let processingFormat = format;
 
     while (processingFormat.length > 0) {
@@ -123,15 +156,15 @@ function parseFormat(format) {
  * YYYY - год
  * В качестве разделителей между элементами даты могут выступать любые символы, не являющиеся частью формата.
  *
- * @param {String} input Входная строка для разбора.
- * @param {String} [format='DD.MM.YYYY'] Формат, который будет использоваться для разбора.
- * @param {Boolean} [strict=true] Запрещать ли значения, выходящие за пределы логических ограничений месяцев/дней.
+ * @param input Входная строка для разбора.
+ * @param [format='DD.MM.YYYY'] Формат, который будет использоваться для разбора.
+ * @param strict Запрещать ли значения, выходящие за пределы логических ограничений месяцев/дней.
  * В случае если strict=false 22 месяц будет интерпретироваться как год и 10 месяцев.
  * @returns {Date}
  */
-export function parse(input, format = 'DD.MM.YYYY', strict = true) {
+export function parse(input: string, format: string = 'DD.MM.YYYY', strict: boolean = true): Date {
     const parsedFormat = parseFormat(format);
-    const parsedResult = {};
+    const parsedResult: Partial<Record<DateType, number>> = {};
 
     for (let i = 0; i < parsedFormat.length; i++) {
         const token = parsedFormat[i];

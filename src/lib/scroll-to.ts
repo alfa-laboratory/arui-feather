@@ -2,27 +2,38 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import easings from './easings';
+import easings, { EasingType } from './easings';
 import { SCROLL_TO_EASING } from '../vars';
 
+type ScrollToOptions = {
+    /**
+    * Цель по оси Y
+    */
+    targetY: number;
+    /**
+    * Элемент в котором скроллим
+    */
+    container?: HTMLElement;
+    /**
+    * Продолжительность анимации в миллесекундах
+    */
+    duration?: number;
+    /**
+    * Название функции плавности для анимации
+    */
+    easing?: EasingType;
+}
 /**
- * Скроллит по элементу или странице.
- * В настоящее время доступно перемещение только по оси Y.
- *
- * @param {Options} options Список переданных опций
- * @param {Number} options.targetY Цель по оси Y
- * @param {HTMLElement} [options.container] Элемент в котором скроллим
- * @param {Number} [options.duration=0] Продолжительность анимации в миллесекундах
- * @param {String} [options.easing='easeInOutSine'] Название функции плавности для анимации
- * @returns {Promise}
- */
-export default function scrollTo(options) {
-    const {
-        targetY,
-        container,
-        duration = 0,
-        easing = SCROLL_TO_EASING
-    } = options;
+* Скроллит по элементу или странице.
+* В настоящее время доступно перемещение только по оси Y.
+* TODO: Make a move on the x axis
+*/
+export default function scrollTo({
+    targetY,
+    container,
+    duration = 0,
+    easing = SCROLL_TO_EASING
+}: ScrollToOptions): Promise<void> {
 
     const scrollY = container ? container.scrollTop : window.pageYOffset;
     const startTime = window.performance.now();
@@ -38,7 +49,7 @@ export default function scrollTo(options) {
     const easingFunc = easings[easing];
 
     return new Promise((resolve) => {
-        function scrollToTarget(y) {
+        function scrollToTarget(y: number): void {
             if (container) {
                 container.scrollTop = y;
             } else {
@@ -46,7 +57,7 @@ export default function scrollTo(options) {
             }
         }
 
-        function loop(timestamp) {
+        function loop(timestamp: number): void {
             const currentTime = Math.abs(timestamp - startTime);
             const t = currentTime / duration;
             const val = easingFunc(t);

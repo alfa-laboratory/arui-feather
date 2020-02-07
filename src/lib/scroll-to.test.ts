@@ -12,8 +12,8 @@ function getScrollContainer() {
     return document.getElementById('scroll-container');
 }
 
-function getScrollContainerChild(n) {
-    return getScrollContainer().children[n];
+function getScrollContainerChild(n: number) {
+    return getScrollContainer().children[n] as HTMLElement;
 }
 
 describe('scroll-to', () => {
@@ -69,6 +69,7 @@ describe('scroll-to', () => {
             scrollTo({
                 targetY: 100,
                 duration: 200,
+                // @ts-ignore
                 easing: 'incorrectEase'
             });
         };

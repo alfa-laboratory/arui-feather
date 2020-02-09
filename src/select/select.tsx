@@ -28,7 +28,7 @@ const DEFAULT_TEXT_FALLBACK = 'Выберите:';
 /**
  * Элемент кнопки для выпадающего списка.
  */
-export class NotThemedSelectButton extends Button {
+class NotThemedSelectButton extends Button {
     cn = createCn('select-button');
 }
 
@@ -102,7 +102,6 @@ export type SelectOptionsShapeType = {
      */
     props?: object;
 };
-
 
 export type SelectProps = {
 

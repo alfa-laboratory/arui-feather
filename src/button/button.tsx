@@ -176,10 +176,16 @@ export type ButtonProps = {
 
 };
 
+type ButtonState = {
+    focused: boolean;
+    hovered: boolean;
+    pressed: boolean;
+}
+
 /**
  * Компонент кнопки (да, она нажимается!).
  */
-export class Button extends React.PureComponent<ButtonProps> {
+export class Button extends React.PureComponent<ButtonProps, ButtonState> {
     cn = createCn('button');
 
     static defaultProps: Partial<ButtonProps> = {
@@ -189,7 +195,7 @@ export class Button extends React.PureComponent<ButtonProps> {
         formNoValidate: false
     };
 
-    static getDerivedStateFromProps(nextProps: ButtonProps) {
+    static getDerivedStateFromProps(nextProps: ButtonProps): Partial<ButtonState> | null {
         if (nextProps.disabled) {
             return {
                 hovered: false,

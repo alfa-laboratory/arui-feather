@@ -247,10 +247,16 @@ export type InputProps = {
     'data-test-id'?: string;
 };
 
+type InputState = {
+    focused: boolean;
+    error: InputProps['error'] | null;
+    value: string;
+}
+
 /**
  * Компонент текстового поля ввода.
  */
-export class Input extends React.PureComponent<InputProps> {
+export class Input extends React.PureComponent<InputProps, InputState> {
     cn = createCn('input');
 
     static defaultProps: Partial<InputProps> = {
@@ -260,6 +266,16 @@ export class Input extends React.PureComponent<InputProps> {
         view: 'default',
         resetError: true
     };
+
+    static getDerivedStateFromProps(nextProps: Readonly<InputProps>, prevState: InputState): Partial<InputState> | null {
+        if (nextProps.error !== prevState.error) {
+            return {
+                error: nextProps.error
+            };
+        }
+
+        return null;
+    }
 
     state = {
         focused: false,
@@ -281,13 +297,6 @@ export class Input extends React.PureComponent<InputProps> {
      * @type {HTMLInputElement}
      */
     control;
-
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        this.setState({
-            error: nextProps.error
-        });
-    }
 
     render() {
         const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;

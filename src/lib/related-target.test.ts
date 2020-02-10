@@ -6,14 +6,16 @@ import getRelatedTarget from './related-target';
 
 describe('related-target', () => {
     it('should return relatedTarget if event has it', () => {
-        const eventStub = { relatedTarget: 'Some target' };
+        const target = new EventTarget();
+
+        const eventStub = new MouseEvent('click', { relatedTarget: target });
         const result = getRelatedTarget(eventStub);
 
-        expect(result).toBe('Some target');
+        expect(result).toBe(target);
     });
 
     it('should return document.activeElement if not relatedTarget available in event object', () => {
-        const eventStub = {};
+        const eventStub = new MouseEvent('click');
         const result = getRelatedTarget(eventStub);
 
         expect(result).toBe(document.activeElement);

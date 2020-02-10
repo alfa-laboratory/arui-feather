@@ -12,7 +12,6 @@ const DAYS_IN_WEEK = 7;
  * Нормализирует дату, возвращает Date вне завистимости от входных данных.
  *
  * @param date Дата для нормализации.
- * @returns {Date}
  */
 export function normalizeDate(date: Date | number): Date {
     return new Date(date);
@@ -22,7 +21,6 @@ export function normalizeDate(date: Date | number): Date {
  * Возвращает «правильный» индекс дня недели, 0 - пн, 1 - вт и так далее.
  *
  * @param date Дата, из которой нужно получить день недели.
- * @returns {number}
  */
 export function getRussianWeekDay(date: Date): number {
     const sunday = 0;
@@ -72,7 +70,7 @@ type DateLimits = {
  *
  * @param month Месяц в котором нужно получить максимально возможное число дней.
  * @param year Год месяца в котором нужно получить максимально возможное число дней.
- * @returns {DateLimits} Лимиты для переданной даты
+ * @returns Лимиты для переданной даты
  */
 function getLimits(month: number, year: number): DateLimits {
     return {
@@ -118,7 +116,6 @@ const PARSER_CACHE = {};
  * Разбирает строку с форматом даты.
  *
  * @param format формат даты для разбора.
- * @returns {Array<FormatParserToken>}
  */
 function parseFormat(format: string): FormatParserToken[] {
     if (PARSER_CACHE[format]) {
@@ -160,7 +157,6 @@ function parseFormat(format: string): FormatParserToken[] {
  * @param [format='DD.MM.YYYY'] Формат, который будет использоваться для разбора.
  * @param strict Запрещать ли значения, выходящие за пределы логических ограничений месяцев/дней.
  * В случае если strict=false 22 месяц будет интерпретироваться как год и 10 месяцев.
- * @returns {Date}
  */
 export function parse(input: string, format: string = 'DD.MM.YYYY', strict: boolean = true): Date {
     const parsedFormat = parseFormat(format);

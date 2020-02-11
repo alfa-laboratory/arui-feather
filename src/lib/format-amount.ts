@@ -11,15 +11,14 @@ const NEGATIVE_AMOUNT_SYMBOL = '−';
 /**
  * Дробит мажорную часть суммы на части по указанному символу.
  *
- * @param {String} amount Сумма для разбивки на части
- * @param {Number} [partSize=3] Размер частей суммы
- * @param {String} [splitter=THINSP] Символ, разбивающий части суммы
- * @param {String} [splitFrom=5] Длинна суммы, начиная с которой необходимо осуществлять разбивку. По-умолчанию длинна
+ * @param amount Сумма для разбивки на части
+ * @param partSize Размер частей суммы
+ * @param splitter Символ, разбивающий части суммы
+ * @param splitFrom Длинна суммы, начиная с которой необходимо осуществлять разбивку. По-умолчанию длинна
  * равняется пяти по требованию гайдлайнов: https://design.alfabank.ru/patterns/amount. Пример: 2900 — не разбивается,
  * 29 000 — разбивается.
- * @returns {String}
  */
-function splitAmount(amount, partSize = 3, splitter = THINSP, splitFrom = 5) {
+function splitAmount(amount: string, partSize: number = 3, splitter: string = THINSP, splitFrom: number = 5): string {
     const len = amount.length;
 
     // Если длина суммы меньше требуемой, не форматируем сумму
@@ -39,25 +38,49 @@ function splitAmount(amount, partSize = 3, splitter = THINSP, splitFrom = 5) {
         .join('');
 }
 
+export type Amount = {
+    /**
+     * Абсолютное значение суммы
+     */
+    value: number;
+    /**
+     * Параметры валюты
+     */
+    currency: {
+        /**
+         * Код валюты
+         */
+        code: string;
+        /**
+         * Количество минорных единиц валюты
+         */
+        minority: number;
+    };
+};
+
+type FormattedAmount = {
+    /**
+     * Мажорная часть суммы
+     */
+    majorPart: string;
+    /**
+     * Минорная часть суммы
+     */
+    minorPart: string;
+    /**
+     * Валюта целиком
+     */
+    value: string;
+    /**
+     * Символ валюты
+     */
+    currencySymbol: string;
+};
+
 /**
  * Форматирует значение суммы.
- *
- * @typedef {Object} AmountProps Параметры суммы
- * @property {Number} amount.value Абсолютное значение суммы
- * @property {Object} amount.currency Параметры валюты
- * @property {String} amount.currency.code Код валюты
- * @property {Number} amount.currency.minority Количество минорных единиц валюты
- *
- * @typedef {Object} FormattedAmountProps Параметры форматированной суммы
- * @property {String} majorPart Мажорная часть суммы
- * @property {String} minorPart Минорная часть суммы
- * @property {String} value Валюта целиком
- * @property {String} currencySymbol Символ валюты
- *
- * @param {AmountProps} amount Параметры суммы
- * @returns {FormattedAmountProps}
  */
-export function formatAmount(amount) {
+export function formatAmount(amount: Amount): FormattedAmount {
     const {
         value,
         currency: { code }
@@ -96,17 +119,8 @@ export function formatAmount(amount) {
 /**
  * Форматирует значение суммы и возвращает в виде строки.
  * Использует функционал formatAmount
- *
- * @typedef {Object} AmountProps Параметры суммы
- * @property {Number} amount.value Абсолютное значение суммы
- * @property {Object} amount.currency Параметры валюты
- * @property {String} amount.currency.code Код валюты
- * @property {Number} amount.currency.minority Количество минорных единиц валюты
- *
- * @param {AmountProps} amount Параметры суммы
- * @returns {String} Форматированная сумма в виде строки
  */
-export function formatAmountToString(amount) {
+export function formatAmountToString(amount: Amount): string {
     const {
         value,
         currencySymbol

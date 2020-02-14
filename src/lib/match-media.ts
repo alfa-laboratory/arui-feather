@@ -1,4 +1,3 @@
-// @ts-nocheck
 import MqList from '../mq/mq.json';
 
 const pool = {};
@@ -7,10 +6,9 @@ const refCounters = {};
 /**
  * Возвращает MediaQueryList для заданного media-выражения.
  *
- * @param {String} queryProp media выражение или кастомные запросы из `src/mq/mq.json`, например `--small`.
- * @returns {MediaQueryList}
+ * @param queryProp media выражение или кастомные запросы из `src/mq/mq.json`, например `--small`.
  */
-export function getMatchMedia(queryProp) {
+export function getMatchMedia(queryProp: string): MediaQueryList {
     const query = MqList[queryProp] || queryProp;
 
     if (pool[query]) {
@@ -26,9 +24,9 @@ export function getMatchMedia(queryProp) {
 /**
  * Удаляет MediaQueryList.
  *
- * @param {String} queryProp media выражение
+ * @param queryProp media выражение
  */
-export function releaseMatchMedia(queryProp) {
+export function releaseMatchMedia(queryProp: string): void {
     const query = MqList[queryProp] || queryProp;
 
     refCounters[query] -= 1;

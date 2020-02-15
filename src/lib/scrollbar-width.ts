@@ -2,16 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
-
 let scrollbarWidth;
 
 /**
  * Возвращает ширину скроллбара.
- *
- * @returns {Number}
  */
-export default function getScrollbarWidth() {
+export default function getScrollbarWidth(): number {
     if (typeof scrollbarWidth !== 'undefined') {
         return scrollbarWidth;
     }
@@ -27,8 +23,8 @@ export default function getScrollbarWidth() {
         const outer = document.createElement('div');
 
         outer.style.position = 'absolute';
-        outer.style.top = 0;
-        outer.style.left = 0;
+        outer.style.top = '0';
+        outer.style.left = '0';
         outer.style.visibility = 'hidden';
         outer.style.width = '200px';
         outer.style.height = '150px';

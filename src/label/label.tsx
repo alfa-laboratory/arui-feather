@@ -48,7 +48,7 @@ export type LabelProps = {
  */
 
 export class Label extends React.PureComponent<LabelProps> {
-    cn = createCn('label');
+    protected cn = createCn('label');
 
     static defaultProps: Partial<LabelProps> = {
         size: 'm',

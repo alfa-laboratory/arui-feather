@@ -318,7 +318,7 @@ type SelectState = {
  */
 @performance(true)
 export class Select extends React.Component<SelectProps, SelectState> {
-    cn = createCn('select');
+    protected cn = createCn('select');
 
     static defaultProps: Partial<SelectProps> = {
         mode: 'check',
@@ -348,15 +348,16 @@ export class Select extends React.Component<SelectProps, SelectState> {
         value: this.props.value || []
     };
 
-    root: HTMLDivElement;
+    private root: HTMLDivElement;
 
-    button;
+    private button;
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     popup;
 
-    menu;
+    private menu;
 
-    nativeSelect: HTMLSelectElement;
+    private nativeSelect: HTMLSelectElement;
 
     /**
      * При открытом меню, нажатие на Esc устанавливает значение этой переменной в true
@@ -364,7 +365,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
      * В обработчике закрываем попап, если ожидаем закрытия(this.awaitClosing) или фокус за пределами селекта.
      * Это нужно, т.к. в случае в renderPopupOnFocus={true} меню исчезнет быстрее, чем сработает onMenuBlur
      */
-    awaitClosing = false;
+    private awaitClosing = false;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {

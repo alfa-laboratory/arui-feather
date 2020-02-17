@@ -49,7 +49,7 @@ export type IconProps = {
  * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.
  */
 export class Icon extends React.PureComponent<IconProps> {
-    cn = createCn('icon');
+    protected cn = createCn('icon');
 
     static defaultProps: Partial<IconProps> = {
         size: 'm'

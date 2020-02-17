@@ -106,7 +106,7 @@ export type PlateProps = {
  * Компонент плашки.
  */
 export class Plate extends React.PureComponent<PlateProps> {
-    cn = createCn('plate');
+    protected cn = createCn('plate');
 
     static defaultProps: Partial<PlateProps> = {
         foldable: false,
@@ -120,6 +120,7 @@ export class Plate extends React.PureComponent<PlateProps> {
         isFolded: this.props.folded
     };
 
+    // TODO [issues/1018] на private ругается
     root: HTMLElement;
 
     render() {

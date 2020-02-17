@@ -85,7 +85,7 @@ type MoneyInputState = {
  * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
  */
 export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
-    cn = createCn('money-input');
+    protected cn = createCn('money-input');
 
     static defaultProps: Partial<MoneyInputProps> = {
         fractionLength: DEFAULT_FRACTION_SIZE,
@@ -99,11 +99,11 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         value: ''
     };
 
-    maskPattern: string;
+    private maskPattern: string;
 
-    mask: Mask;
+    private mask: Mask;
 
-    root: HTMLInputElement;
+    private root: HTMLInputElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {

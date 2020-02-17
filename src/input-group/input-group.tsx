@@ -43,7 +43,7 @@ export type InputGroupProps = {
  * Компонент группы полей для текстового ввода.
  */
 export class InputGroup extends React.PureComponent<InputGroupProps> {
-    cn = createCn('input-group');
+    protected cn = createCn('input-group');
 
     render() {
         let children = null;

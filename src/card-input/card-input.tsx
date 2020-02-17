@@ -17,7 +17,7 @@ export type CardInputProps = InputProps & {
  * Поле ввода номера карты с маской.
  */
 export class CardInput extends React.PureComponent<CardInputProps> {
-    cn = createCn('card-input');
+    protected cn = createCn('card-input');
 
     static defaultProps: Partial<CardInputProps> = {
         placeholder: '0000 0000 0000 0000 00'
@@ -26,6 +26,7 @@ export class CardInput extends React.PureComponent<CardInputProps> {
     /**
      * @type {Input}
      */
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
 
     render() {

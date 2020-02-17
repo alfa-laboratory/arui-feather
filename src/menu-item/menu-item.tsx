@@ -116,7 +116,7 @@ export type MenuItemProps = {
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
 export class MenuItem extends React.PureComponent<MenuItemProps> {
-    cn = createCn('menu-item');
+    protected cn = createCn('menu-item');
 
     static defaultProps: Partial<MenuItemProps> = {
         type: 'link',
@@ -128,8 +128,8 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
         focused: false
     };
 
-    root;
-    control;
+    private root;
+    private control;
 
     render() {
         const content: any = this.props.children || this.props.value;

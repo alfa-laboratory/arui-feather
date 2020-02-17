@@ -330,7 +330,7 @@ export class Attach extends React.PureComponent<AttachProps> {
         if (maxFilenameLength && filename.length > maxFilenameLength) {
             const lengthOfPart: number = Math.round(maxFilenameLength / 2) - 1;
 
-            return `${filename.substr(0, lengthOfPart)}...${filename.substr(filename.length - lengthOfPart)}`;
+            return `${filename.substr(0, lengthOfPart)}…${filename.substr(filename.length - lengthOfPart)}`;
         }
 
         return filename;

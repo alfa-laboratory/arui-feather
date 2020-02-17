@@ -193,7 +193,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
     /**
      * @type {HTMLTextareaElement}
      */
-    private control;
+    control;
 
     render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;

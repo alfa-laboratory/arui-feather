@@ -35,10 +35,10 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         delta: 100
     };
 
-    private swipeStartX = 0;
-    private swipeStartY = 0;
-    private deltaX = 0;
-    private deltaY = 0;
+    swipeStartX = 0;
+    swipeStartY = 0;
+    deltaX = 0;
+    deltaY = 0;
 
     componentWillUnmount() {
         this.removeListeners();

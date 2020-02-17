@@ -35,7 +35,7 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps> {
         placeholder: '+7 000 000 00 00'
     };
 
-    private root;
+    root;
 
     render() {
         return (

@@ -103,7 +103,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
 
     private mask: Mask;
 
-    private root: HTMLInputElement;
+    root: HTMLInputElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {

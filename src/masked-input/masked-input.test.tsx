@@ -263,7 +263,7 @@ describe('masked-input', () => {
     });
 
     it('should be the correct value when you changed to the mask symbol which may be space', () => {
-        const customCharters = {
+        const customCharaters = {
             d: {
                 validate(char) {
                     return /(^[А-ЯЁ]$)|(^\d$)/.test(char);
@@ -279,7 +279,7 @@ describe('masked-input', () => {
             <MaskedInput
                 mask='d'
                 value='А'
-                formatCharacters={ customCharters }
+                formatCharacters={ customCharaters }
                 useWhitespaces={ true }
             />
         );

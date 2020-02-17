@@ -55,7 +55,7 @@ export type FlagIconProps = {
  * Компонент флага в виде иконки.
  */
 export class FlagIcon extends React.PureComponent<FlagIconProps> {
-    cn = createCn('flag-icon');
+    protected cn = createCn('flag-icon');
 
     static defaultProps: Partial<FlagIconProps> = {
         isFlat: false,

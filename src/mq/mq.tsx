@@ -48,7 +48,7 @@ class Mq extends React.Component<MqProps, MqState> {
         isMatched: false
     };
 
-    mql: MediaQueryList | null = null;
+    private mql: MediaQueryList | null = null;
 
     componentDidMount() {
         this.mql = getMatchMedia(this.props.query);

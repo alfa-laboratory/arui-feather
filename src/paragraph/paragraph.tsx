@@ -48,7 +48,7 @@ export type ParagraphProps = {
  * Компонент параграфа текста.
  */
 export class Paragraph extends React.PureComponent<ParagraphProps> {
-    cn = createCn('paragraph');
+    protected cn = createCn('paragraph');
 
     render() {
         return (

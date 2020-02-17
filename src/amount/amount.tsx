@@ -89,7 +89,7 @@ export type AmountProps = {
  */
 @performance(true)
 export class Amount extends React.Component<AmountProps> {
-    cn = createCn('amount');
+    protected cn = createCn('amount');
 
     static defaultProps: Partial<AmountProps> = {
         size: 'm',

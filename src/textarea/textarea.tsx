@@ -168,7 +168,7 @@ export type TextareaProps = {
  * Компонент многострочного текстового ввода.
  */
 export class Textarea extends React.PureComponent<TextareaProps> {
-    cn = createCn('textarea');
+    protected cn = createCn('textarea');
 
     static defaultProps: Partial<TextareaProps> = {
         view: 'default',
@@ -188,12 +188,12 @@ export class Textarea extends React.PureComponent<TextareaProps> {
     /**
      * @type {HtmlSpanElement}
      */
-    root;
+    private root;
 
     /**
      * @type {HTMLTextareaElement}
      */
-    control;
+    private control;
 
     render() {
         const value = this.props.value === undefined ? this.state.value : this.props.value;

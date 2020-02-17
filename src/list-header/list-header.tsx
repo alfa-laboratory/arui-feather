@@ -49,7 +49,7 @@ export type ListHeaderProps = {
  * Компонент для разделения списка по датам или смысловым группам.
  */
 export class ListHeader extends React.PureComponent<ListHeaderProps> {
-    cn = createCn('list-header');
+    protected cn = createCn('list-header');
 
     render() {
         return (

@@ -222,7 +222,7 @@ export type CalendarInputProps = {
  */
 @performance(true)
 export class CalendarInput extends React.Component<CalendarInputProps> {
-    cn = createCn('calendar-input');
+    protected cn = createCn('calendar-input');
 
     static defaultProps: Partial<CalendarInputProps> = {
         withIcon: true,
@@ -245,35 +245,27 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         )
     };
 
-    /**
-     * @type {Number}
-     */
-    timeoutId;
+    private timeoutId;
 
-    /**
-     * @type {Number}
-     */
-    changeCloseTimeoutId;
+    private changeCloseTimeoutId;
 
     /**
      * @type {Calendar}
      */
-    calendar;
+    private calendar;
 
     /**
      * @type {Popup}
      */
-    calendarPopup;
+    private calendarPopup;
 
     /**
      * @type {Input}
      */
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     customCalendarTarget;
 
-    /**
-     * @type {HTMLInputElement}
-     */
-    nativeCalendarTarget;
+    private nativeCalendarTarget;
 
     componentDidMount() {
         if (this.calendarPopup) {

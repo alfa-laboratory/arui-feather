@@ -351,7 +351,7 @@ type InputAutocompleteState = {
  */
 @performance(true)
 export class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAutocompleteState> {
-    cn = createCn('input');
+    protected cn = createCn('input');
 
     static defaultProps: Partial<InputAutocompleteProps> = {
         disabled: false,

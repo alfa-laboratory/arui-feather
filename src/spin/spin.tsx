@@ -43,7 +43,7 @@ export type SpinProps = {
  * Компонент показывающий крутящееся кольцо загрузки.
  */
 export class Spin extends React.PureComponent<SpinProps> {
-    cn = createCn('spin');
+    protected cn = createCn('spin');
 
     static defaultProps: Partial<SpinProps> = {
         visible: false,

@@ -120,7 +120,7 @@ export type SidebarProps = {
  * Компонент боковой панели aka холодильник.
  */
 export class Sidebar extends React.PureComponent<SidebarProps> {
-    cn = createCn('sidebar');
+    protected cn = createCn('sidebar');
 
     static defaultProps: Partial<SidebarProps> = {
         hasOverlay: true,

@@ -31,7 +31,7 @@ type IntlPhoneInputState = {
  * Компонент ввода международного телефона по маске.
  */
 export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, IntlPhoneInputState> {
-    cn = createCn('intl-phone-input');
+    protected cn = createCn('intl-phone-input');
 
     static defaultProps: Partial<IntlPhoneInputProps> = {
         size: 'm',
@@ -46,12 +46,13 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
         onceOpened: false
     };
 
-    countries;
+    private countries;
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     input;
-    select;
-    timeoutId;
-    util;
-    asYouType;
+    private select;
+    private timeoutId;
+    private util;
+    private asYouType;
 
     componentDidMount() {
         this.loadUtil();

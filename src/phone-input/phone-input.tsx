@@ -17,11 +17,11 @@ export type PhoneInputProps = InputProps & {
      * Определяет маску для ввода значений.
      * <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a>
      */
-    mask: string;
+    mask?: string;
     /**
      * Подсказка в текстовом поле
      */
-    placeholder: string;
+    placeholder?: string;
 }
 
 /**

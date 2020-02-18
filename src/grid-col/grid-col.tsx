@@ -88,7 +88,7 @@ export type GridColProps = {
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
 export class GridCol extends React.PureComponent<GridColProps> {
-    cn = createCn('grid-col');
+    protected cn = createCn('grid-col');
 
     static defaultProps: Partial<GridColProps> = {
         tag: 'div'

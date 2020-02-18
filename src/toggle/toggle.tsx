@@ -87,7 +87,7 @@ export type ToggleProps = {
  * Компонент переключателя.
  */
 export class Toggle extends React.PureComponent<ToggleProps> {
-    cn = createCn('toggle');
+    protected cn = createCn('toggle');
 
     static defaultProps: Partial<ToggleProps> = {
         size: 'm',

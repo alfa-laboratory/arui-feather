@@ -128,7 +128,7 @@ export type LinkProps = {
  * Компонент ссылки.
  */
 export class Link extends React.PureComponent<LinkProps> {
-    cn = createCn('link');
+    protected cn = createCn('link');
 
     static defaultProps: Partial<LinkProps> = {
         iconPosition: 'left',
@@ -145,7 +145,7 @@ export class Link extends React.PureComponent<LinkProps> {
         focused: false
     };
 
-    root: HTMLElement;
+    private root: HTMLElement;
 
     render() {
         const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';

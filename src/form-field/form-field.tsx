@@ -44,7 +44,7 @@ export type FormFieldProps = {
  * Необходим для вертикального ритма в форме.
  */
 export class FormField extends React.PureComponent<FormFieldProps> {
-    cn = createCn('form-field');
+    protected cn = createCn('form-field');
 
     static defaultProps: Partial<FormFieldProps> = {
         size: 'm'

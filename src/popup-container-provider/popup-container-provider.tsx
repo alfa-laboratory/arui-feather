@@ -79,14 +79,14 @@ type PopupContainerProviderState = {
  */
 class PopupContainerProvider extends
     React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
-    cn = createCn('popup-container');
+    protected cn = createCn('popup-container');
 
     state = {
         didRender: false // eslint-disable-line react/no-unused-state
     };
 
-    renderContainer: IsolatedContainer;
-    positioningContainer: HTMLElement;
+    private renderContainer: IsolatedContainer;
+    private positioningContainer: HTMLElement;
 
     getChildContext() {
         return {

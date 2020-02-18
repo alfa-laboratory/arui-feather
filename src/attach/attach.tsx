@@ -185,7 +185,7 @@ export type AttachProps = {
  * Компонент прикрепления файлов.
  */
 export class Attach extends React.PureComponent<AttachProps> {
-    cn = createCn('attach');
+    protected cn = createCn('attach');
 
     static defaultProps: Partial<AttachProps> = {
         buttonContent: 'Выберите файл',
@@ -202,8 +202,8 @@ export class Attach extends React.PureComponent<AttachProps> {
         value: []
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     input: HTMLInputElement;
-
     root: HTMLSpanElement;
 
     // eslint-disable-next-line camelcase

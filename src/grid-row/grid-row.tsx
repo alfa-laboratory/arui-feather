@@ -68,7 +68,7 @@ export type GridRowProps = {
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
 export class GridRow extends React.PureComponent<GridRowProps> {
-    cn = createCn('grid-row');
+    protected cn = createCn('grid-row');
 
     static defaultProps: Partial<GridRowProps> = {
         tag: 'div',
@@ -86,7 +86,7 @@ export class GridRow extends React.PureComponent<GridRowProps> {
     /**
      * Класс колонки
      */
-    classCol = 'grid-col'
+    private classCol = 'grid-col'
 
     render() {
         const {

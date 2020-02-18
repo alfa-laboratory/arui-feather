@@ -184,7 +184,7 @@ type PopupState = {
  */
 @performance(true)
 export class Popup extends React.Component<PopupProps, PopupState> {
-    cn = createCn('popup');
+    protected cn = createCn('popup');
 
     static defaultProps: Partial<PopupProps> = {
         visible: false,
@@ -225,17 +225,17 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         needRedrawAfterMount: false
     };
 
-    anchor = null;
-    clickEventBindTimeout = null;
-    domElemPopup = null;
-    domElemPopupInner: HTMLElement = null;
-    domElemPopupContent = null;
-    isWindowClickBinded = false;
-    position = null;
+    private anchor = null;
+    private clickEventBindTimeout = null;
+    private domElemPopup = null;
+    private domElemPopupInner: HTMLElement = null;
+    private domElemPopupContent = null;
+    private isWindowClickBinded = false;
+    private position = null;
 
-    popup;
-    inner;
-    content;
+    private popup;
+    private inner;
+    private content;
 
     private handleWindowResize = debounce(() => {
         if (this.isPropsToPositionCorrect()) {

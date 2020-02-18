@@ -122,6 +122,6 @@ export const CURRENCY_MAP = {
 /**
  * Возвращает знак валюты по ISO коду.
  */
-export function getCurrencySymbol(currencyCode: keyof typeof CURRENCY_MAP) {
+export function getCurrencySymbol(currencyCode: string) {
     return CURRENCY_MAP[currencyCode] || currencyCode;
 }

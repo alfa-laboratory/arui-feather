@@ -57,7 +57,7 @@ export type HeadingProps = {
  * Компонент заголовка.
  */
 export class Heading extends React.PureComponent<HeadingProps> {
-    cn = createCn('heading');
+    protected cn = createCn('heading');
 
     static defaultProps: Partial<HeadingProps> = {
         size: 'xl',

@@ -119,7 +119,7 @@ export type DropdownProps = {
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
  */
 export class Dropdown extends React.PureComponent<DropdownProps> {
-    cn = createCn('dropdown');
+    protected cn = createCn('dropdown');
 
     static defaultProps: Partial<DropdownProps> = {
         switcherType: 'link',
@@ -137,8 +137,8 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
         popupHovered: false
     };
 
-    popup;
-    switcher;
+    private popup;
+    private switcher;
 
     componentDidMount() {
         this.popup.setTarget(this.switcher.getNode());

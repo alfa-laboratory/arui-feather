@@ -190,7 +190,7 @@ export type MenuProps = {
  */
 @performance(true)
 export class Menu extends React.Component<MenuProps> {
-    cn = createCn('menu');
+    protected cn = createCn('menu');
 
     static defaultProps: Partial<MenuProps> = {
         size: 'm',
@@ -205,9 +205,10 @@ export class Menu extends React.Component<MenuProps> {
         hovered: false
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
-    menuItemList = [];
-    blurTimeoutId = null;
+    private menuItemList = [];
+    private blurTimeoutId = null;
 
     componentDidMount() {
         if (!!this.props.content && this.props.content.length > 0 &&

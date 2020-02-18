@@ -62,7 +62,7 @@ export type CollapseProps = {
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
  */
 export class Collapse extends React.PureComponent<CollapseProps> {
-    cn = createCn('collapse');
+    protected cn = createCn('collapse');
 
     static defaultProps: Partial<CollapseProps> = {
         expandedLabel: 'Collapse',
@@ -73,6 +73,7 @@ export class Collapse extends React.PureComponent<CollapseProps> {
         isExpanded: false
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     content;
     contentCase;
 

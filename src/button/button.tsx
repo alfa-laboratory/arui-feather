@@ -180,7 +180,7 @@ export type ButtonProps = {
  * Компонент кнопки (да, она нажимается!).
  */
 export class Button extends React.PureComponent<ButtonProps> {
-    cn = createCn('button');
+    protected cn = createCn('button');
 
     static defaultProps: Partial<ButtonProps> = {
         type: 'button',
@@ -195,7 +195,7 @@ export class Button extends React.PureComponent<ButtonProps> {
         pressed: false
     };
 
-    control: HTMLButtonElement | HTMLSpanElement;
+    private control: HTMLButtonElement | HTMLSpanElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {

@@ -21,7 +21,7 @@ export type ResizeSensorProps = {
  * css свойством `position: relative;`.
  */
 export class ResizeSensor extends React.Component<ResizeSensorProps> {
-    iframe: HTMLIFrameElement;
+    private iframe: HTMLIFrameElement;
 
     componentDidMount() {
         if (this.iframe.contentWindow) {

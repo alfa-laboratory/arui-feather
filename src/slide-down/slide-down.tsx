@@ -54,15 +54,15 @@ export type SlideDownProps = {
  * Позволяет скрывать и отображать контент.
  */
 export class SlideDown extends React.PureComponent<SlideDownProps> {
-    cn = createCn('slide-down');
+    protected cn = createCn('slide-down');
 
     state = {
         height: this.props.isExpanded ? 'auto' : 0,
         isHeightAuto: this.props.isExpanded
     };
 
-    slideDown;
-    slideDownContent;
+    private slideDown;
+    private slideDownContent;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {

@@ -47,21 +47,25 @@ class Input extends React.Component {
 ```
 // Good
 
-class Input extends React.Component {
-    static propTypes = {
-        /** Размер компонента */
-        size: React.PropTypes.oneOf(['s', 'm', 'l', 'xl'])
-    };
+type InputProps = {
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl'; 
+}
+
+class Input extends React.Component<InputProps> {
 }
 ```
 
 ```
 // Bad
 
-class Input extends React.Component {
-    static propTypes = {
-        size: React.PropTypes.oneOf(['s', 'm', 'l', 'xl'])
-    };
+type InputProps = {
+    size?: 's' | 'm' | 'l' | 'xl'; 
+}
+
+class Input extends React.Component<InputProps> {
 }
 ```
 
@@ -70,12 +74,14 @@ class Input extends React.Component {
 ```
 // Good
 
-class Input extends React.Component {
-    static propTypes = {
-        /** Размер компонента */
-        size: React.PropTypes.oneOf(['s', 'm', 'l', 'xl'])
-    };
+type InputProps = {
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl'; 
+}
 
+class Input extends React.Component<InputProps> {
     static defaultProps = {
         size: 'm'
     };
@@ -88,13 +94,14 @@ class Input extends React.Component {
 
 ```
 // Bad
+type InputProps = {
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl'; 
+}
 
-class Input extends React.Component {
-    static propTypes = {
-        /** Размер компонента */
-        size: React.PropTypes.oneOf(['s', 'm', 'l', 'xl'])
-    };
-
+class Input extends React.Component<InputProps> {
     render() {
         return <div className={ this.props.size || 'm' } />
     }
@@ -106,29 +113,28 @@ class Input extends React.Component {
 ```
 // Good
 
-class Input extends React.Component {
-    static propTypes = {
-        /** Размер компонента */
-        size: React.PropTypes.oneOf(['s', 'm', 'l', 'xl'])
-    };
+type InputProps = {
+    /**
+     * Размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl'; 
 }
 ```
 
 ```
 // Bad
 
-class Input extends React.Component {
-    static propTypes = {
-        /** Определяет размер компонента */
-        size: React.PropTypes.oneOf(['s', 'm', 'l', 'xl'])
-    };
+type InputProps = {
+    /**
+     * Определяет размер компонента
+     */
+    size?: 's' | 'm' | 'l' | 'xl'; 
 }
 ```
 
 ## Документирование функций/методов
 
-По умолчанию все методы `React` компонентов `@private`.
-Используйте тег `@public` для того, чтобы объявить публичный интерфейс.
+Используйте модификаторы доступа явно
 
 ```
 // Good
@@ -136,10 +142,8 @@ class Input extends React.Component {
 class Input extends React.Component {
     /**
      * Ставит фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         ...
     }
 }
@@ -191,10 +195,9 @@ function focus() {
  * Устанавливает опорный элемент.
  * Возвращает предыдущий опорный элемент.
  *
- * @param {HTMLElement} target Новый опорный элемент.
- * @returns {HTMLElement}
+ * @param target Новый опорный элемент.
  */
-function setTarget(target) {
+function setTarget(target: HTMLElement): HTMLElement {
     ...
     return oldTarget;
 }
@@ -219,9 +222,9 @@ function setTarget(target) {
 
 ## Что нужно покрыть тестами в компоненте?
 
-1. Поведение внешних атрибутов, заданных через [React.propTypes](https://facebook.github.io/react/docs/reusable-components.html).
-2. Поведение внешних публичных методов, размеченных как `@public`.
-3. Поведение внешних обработчиков, заданных через [React.propTypes](https://facebook.github.io/react/docs/reusable-components.html)
+1. Поведение внешних атрибутов, заданных через [Props](https://facebook.github.io/react/docs/reusable-components.html).
+2. Поведение внешних публичных методов, размеченных как `public`.
+3. Поведение внешних обработчиков, заданных через [Props](https://facebook.github.io/react/docs/reusable-components.html)
 
 ### Unit тестирование внешних атрибутов
 
@@ -278,7 +281,7 @@ wip
 Pull Request (PR) может попасть в `master` ветку при соблюдении всех условий:
 
 1. Если PR реализует новый публичный функционал, то на него написана документация.
-2. Код в PR соблюдает правила оформления для `js` и `css` кода.
+2. Код в PR соблюдает правила оформления для `ts` и `css` кода.
 3. Если PR добавляет новые фичи, то на них написаны тесты.
 4. Если PR изменяет существующее публичное API, то должна соблюдаться [Deprecation Policy](../README.md#deprecation-policy).
 5. У PR корректный commit message.

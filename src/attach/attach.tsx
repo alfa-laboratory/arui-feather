@@ -125,6 +125,11 @@ export type AttachProps = {
     progressBarPercent?: number;
 
     /**
+     * Число символов, после которого имя файла будет обрезаться
+     */
+    maxFilenameLength?: number;
+
+    /**
      * Размер компонента
      */
     size?: 's' | 'm' | 'l' | 'xl';
@@ -283,7 +288,7 @@ export class Attach extends React.PureComponent<AttachProps> {
 
         if (files && files.length > 0) {
             const content = (files.length === 1)
-                ? files[0].name
+                ? this.truncateFilename(files[0].name)
                 : (
                     <abbr
                         title={ files.map(file => file.name).join() }
@@ -318,6 +323,18 @@ export class Attach extends React.PureComponent<AttachProps> {
             </span>
         );
     }
+
+    private truncateFilename = (filename: string): string => {
+        const { maxFilenameLength } = this.props;
+
+        if (maxFilenameLength && filename.length > maxFilenameLength) {
+            const lengthOfPart: number = Math.round(maxFilenameLength / 2) - 1;
+
+            return `${filename.substr(0, lengthOfPart)}…${filename.substr(filename.length - lengthOfPart)}`;
+        }
+
+        return filename;
+    };
 
     private handleInputChange = (event) => {
         this.performChange(Array.from(event.target.files));

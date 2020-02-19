@@ -219,7 +219,7 @@
         padding-right: 30px;
     }
 
-    &.select_has-placeholder
+    &.select_has-placeholder,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-s)) translateY(-22px);

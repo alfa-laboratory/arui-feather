@@ -50,7 +50,7 @@ export type PopupHeaderProps = {
  * Заголовок в Popup.
  */
 export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
-    cn = createCn('popup-header');
+    protected cn = createCn('popup-header');
 
     render() {
         return (

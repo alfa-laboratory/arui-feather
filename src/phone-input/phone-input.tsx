@@ -17,18 +17,18 @@ export type PhoneInputProps = InputProps & {
      * Определяет маску для ввода значений.
      * <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a>
      */
-    mask: string;
+    mask?: string;
     /**
      * Подсказка в текстовом поле
      */
-    placeholder: string;
+    placeholder?: string;
 }
 
 /**
  * Компонент ввода телефона по маске.
  */
 export class PhoneInput extends React.PureComponent<PhoneInputProps> {
-    cn = createCn('phone-input');
+    protected cn = createCn('phone-input');
 
     static defaultProps: Partial<PhoneInputProps> = {
         mask: '+1 111 111 11 11',

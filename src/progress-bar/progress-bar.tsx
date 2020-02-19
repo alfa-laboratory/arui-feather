@@ -35,7 +35,7 @@ export type ProgressBarProps = {
  * Компонент прогресс-бара.
  */
 export class ProgressBar extends React.PureComponent<ProgressBarProps> {
-    cn = createCn('progress-bar');
+    protected cn = createCn('progress-bar');
 
     static defaultProps: Partial<ProgressBarProps> = {
         percent: 0,

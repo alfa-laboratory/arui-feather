@@ -71,7 +71,7 @@ export type DropzoneProps = {
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
 export class Dropzone extends React.PureComponent<DropzoneProps> {
-    cn = createCn('dropzone');
+    protected cn = createCn('dropzone');
 
     static defaultProps: Partial<DropzoneProps> = {
         theme: 'alfa-on-white',
@@ -82,9 +82,10 @@ export class Dropzone extends React.PureComponent<DropzoneProps> {
         dragging: false
     };
 
+    // TODO [issues/1018] на private ругается
     root: HTMLSpanElement;
 
-    dragCounter: number;
+    private dragCounter: number;
 
     private handleDragOver = (event) => {
         event.preventDefault();

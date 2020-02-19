@@ -123,7 +123,7 @@ export type NotificationProps = {
  * Компонент всплывающего окна.
  */
 export class Notification extends React.PureComponent<NotificationProps> {
-    cn = createCn('notification')
+    protected cn = createCn('notification')
 
     static defaultProps: Partial<NotificationProps> = {
         autoCloseDelay: 5000,
@@ -136,11 +136,11 @@ export class Notification extends React.PureComponent<NotificationProps> {
         hovered: false
     };
 
-    root: HTMLDivElement;
+    private root: HTMLDivElement;
 
-    closeTimeout = null;
-    clickEventBindTimeout = null;
-    isWindowClickBinded = false;
+    private closeTimeout = null;
+    private clickEventBindTimeout = null;
+    private isWindowClickBinded = false;
 
     componentDidMount() {
         this.startCloseTimer();

@@ -128,7 +128,7 @@ type RadioState = {
  * Компонент радио-кнопки.
  */
 export class Radio extends React.PureComponent<RadioProps, RadioState> {
-    cn = createCn('radio');
+    protected cn = createCn('radio');
 
     static defaultProps: Partial<RadioProps> = {
         size: 'm',
@@ -141,8 +141,8 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         checked: false
     };
 
-    label;
-    control;
+    private label;
+    private control;
 
     render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;

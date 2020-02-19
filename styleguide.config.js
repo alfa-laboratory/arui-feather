@@ -6,7 +6,6 @@
 const path = require('path');
 const { lstatSync, readdirSync } = require('fs');
 const merge = require('webpack-merge');
-const reactDoc = require('library-utils/react-doc');
 const upperCamelCase = require('uppercamelcase');
 const WEBPACK_BASE_TEMPLATE = require('./webpack.base');
 const reactDocgenTypescript = require('react-docgen-typescript');
@@ -49,39 +48,32 @@ module.exports = {
     version,
     serverPort: PORT,
     skipComponentsWithoutExample: true,
-    components: './src/*/index.ts',
+    components: './src/*/entrypoint-for-demo.ts',
 
     propsParser(componentIndexPath) {
         const dirPath = path.dirname(componentIndexPath);
         const componentName = dirPath.split(path.sep).pop();
-        const componentPath = path.resolve(dirPath, `${componentName}.jsx`);
+        const componentPath = path.resolve(dirPath, `${componentName}.tsx`);
+        const docs = typescriptDocReader.parse(componentPath)[0];
 
-        if (componentIndexPath && componentIndexPath.endsWith('.ts')) {
-            const componentPath = path.resolve(dirPath, `${componentName}.tsx`);
-            const docs = typescriptDocReader.parse(componentPath)[0];
+        Object.keys(docs.props).forEach((key) => {
 
-            Object.keys(docs.props).forEach((key) => {
+            const defaultValue = docs.props[key].defaultValue;
 
-                const defaultValue = docs.props[key].defaultValue;
+            if (
+                defaultValue &&
+                defaultValue.value !== undefined &&
+                typeof defaultValue.value !== 'string') {
+                // TODO: постараться убрать после обновления styleguidist
+                // почему-то react styleguidist в недрах ожидает string;
+                // А тут, как и должно приходит true/false
+                // хачим чтоб работало
+                defaultValue.value = String(defaultValue.value);
+            }
 
-                if (
-                    defaultValue &&
-                    defaultValue.value !== undefined &&
-                    typeof defaultValue.value !== 'string') {
-                    // TODO: постараться убрать после обновления styleguidist
-                    // почему-то react styleguidist в недрах ожидает string;
-                    // А тут, как и должно приходит true/false
-                    // хачим чтоб работало
-                    defaultValue.value = String(defaultValue.value);
-                }
+        });
 
-            });
-
-            return docs;
-
-        }
-
-        return reactDoc(componentPath);
+        return docs;
     },
     getComponentPathLine(filePath) {
         const componentDirName = path.dirname(filePath);
@@ -118,7 +110,7 @@ module.exports = {
     sections: [
         {
             title: 'Components',
-            components: ['./src/*/index.ts'],
+            components: ['./src/*/entrypoint-for-demo.ts'],
             sectionDepth: 1
         }
     ]

@@ -96,7 +96,7 @@ export type RadioGroupProps = {
  * Компонент группы радио-кнопок.
  */
 export class RadioGroup extends React.PureComponent<RadioGroupProps> {
-    cn = createCn('radio-group');
+    protected cn = createCn('radio-group');
 
     static defaultProps: Partial<RadioGroupProps> = {
         type: 'normal',
@@ -106,7 +106,7 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     state = {
         value: ''
     };
-
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     radios: Radio[];
 
     render() {

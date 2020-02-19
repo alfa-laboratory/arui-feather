@@ -108,21 +108,22 @@ export type MaskedInputProps = {
  */
 class MaskedInput extends React.PureComponent<MaskedInputProps> {
 
+    // TODO [issues/1018] на private ругается
     input: HTMLInputElement;
 
-    maskPattern: string;
+    private maskPattern: string;
 
-    mask: Mask;
+    private mask: Mask;
 
-    beforeChangeMask: Mask;
+    private beforeChangeMask: Mask;
 
-    formatCharacters: FormatCharacters;
+    private formatCharacters: FormatCharacters;
 
-    value: string = '';
+    private value: string = '';
 
-    caretFixTimeout;
+    private caretFixTimeout: ReturnType<typeof setTimeout> = null;;
 
-    beforeInputSelection = { start: 0, end: 0 };
+    private beforeInputSelection = { start: 0, end: 0 };
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {

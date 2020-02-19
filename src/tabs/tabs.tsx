@@ -44,7 +44,7 @@ export type TabsProps = {
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
 export class Tabs extends React.PureComponent<TabsProps> {
-    cn = createCn('tabs');
+    protected cn = createCn('tabs');
 
     static defaultProps: Partial<TabsProps> = {
         scrollable: true

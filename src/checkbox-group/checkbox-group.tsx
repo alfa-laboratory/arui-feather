@@ -92,7 +92,7 @@ export type CheckBoxGroupProps = ({
  * Компонент группы чекбоксов.
  */
 export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
-    cn = createCn('checkbox-group');
+    protected cn = createCn('checkbox-group');
 
     static defaultProps: Partial<CheckBoxGroupProps> = {
         type: 'normal'
@@ -102,6 +102,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         value: []
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     checkboxes: any[];
 
     render() {

@@ -171,7 +171,7 @@ type CalendarState = {
  */
 @performance(true)
 export class Calendar extends React.Component<CalendarProps, CalendarState> {
-    cn = createCn('calendar');
+    protected cn = createCn('calendar');
 
     static defaultProps: Partial<CalendarProps> = {
         selectedFrom: null,
@@ -191,21 +191,21 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         month: startOfMonth(new Date())
     };
 
-    root: HTMLDivElement;
+    private root: HTMLDivElement;
 
-    blurTimeoutId: number = null;
+    private blurTimeoutId: number = null;
 
-    years = [];
+    private years = [];
 
-    earlierLimit: Date;
+    private earlierLimit: Date;
 
-    laterLimit: Date;
+    private laterLimit: Date;
 
-    value: Date;
+    private value: Date;
 
-    selectedTo: Date;
+    private selectedTo: Date;
 
-    selectedFrom: Date;
+    private selectedFrom: Date;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {

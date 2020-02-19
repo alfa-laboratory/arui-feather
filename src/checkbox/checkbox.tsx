@@ -126,7 +126,7 @@ export type CheckboxProps = ({
  * Компонент чекбокса.
  */
 export class CheckBox extends React.PureComponent<CheckboxProps> {
-    cn = createCn('checkbox');
+    protected cn = createCn('checkbox');
 
     static defaultProps: Partial<CheckboxProps> = {
         type: 'normal',
@@ -139,7 +139,7 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
         checked: false
     };
 
-    root;
+    private root;
 
     render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;

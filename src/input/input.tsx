@@ -251,7 +251,7 @@ export type InputProps = {
  * Компонент текстового поля ввода.
  */
 export class Input extends React.PureComponent<InputProps> {
-    cn = createCn('input');
+    protected cn = createCn('input');
 
     static defaultProps: Partial<InputProps> = {
         formNoValidate: false,
@@ -270,17 +270,16 @@ export class Input extends React.PureComponent<InputProps> {
     /**
      * @type {HTMLSpanElement}
      */
-    root;
-
+    private root;
     /**
      * @type {HTMLSpanElement}
      */
-    box;
+    private box;
 
     /**
      * @type {HTMLInputElement}
      */
-    control;
+    private control;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {

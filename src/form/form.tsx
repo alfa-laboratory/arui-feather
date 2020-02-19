@@ -89,7 +89,7 @@ export type FormProps = {
  * Компонент формы.
  */
 export class Form extends React.PureComponent<FormProps> {
-    cn = createCn('form');
+    protected cn = createCn('form');
 
     static defaultProps: Partial<FormProps> = {
         action: '/',

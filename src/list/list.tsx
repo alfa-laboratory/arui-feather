@@ -64,7 +64,7 @@ export type ListProps = {
  */
 @performance(true)
 export class List extends React.Component<ListProps> {
-    cn = createCn('list');
+    protected cn = createCn('list');
 
     render() {
         const { items, type } = this.props;

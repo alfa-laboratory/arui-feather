@@ -2,16 +2,26 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
+/**
+ * Функции объявленные в этом файле используются в сторонних либах для валидации propTypes в рантайме,
+ * т.к. компоненты библиотеки могут использоваться в js, где нет проверок типов Typescript
+ */
 
 /**
- * Добавляет к type-checker для propType валидации метод isRequired.
+ * Добавляет к type-checker для propType валидации метод isRequired
  *
- * @param {Function} validate Оригинальный метод для валидации
- * @returns {Function}
+ * @param validate оригинальный метод для валидации
  */
-function createChainableTypeChecker(validate) {
-    function checkType(isRequired, props, propName, componentName, location) {
+function createChainableTypeChecker(
+    validate: (props: { [key: string]: any }, propName: string, componentName: string, location: string) => void
+) {
+    function checkType(
+        isRequired: boolean,
+        props: { [key: string]: any },
+        propName: string,
+        componentName: string,
+        location: string
+    ) {
         componentName = componentName || '';
         if (props[propName] === null || props[propName] === undefined) {
             if (isRequired) {
@@ -30,19 +40,18 @@ function createChainableTypeChecker(validate) {
 
     chainedCheckType.isRequired = checkType.bind(null, true);
 
-    return chainedCheckType;
+    return chainedCheckType as Function;
 }
 
 /**
- * Проверяет, является ли заданный prop инстансом HTMLElement.
+ * Проверяет, является ли заданный prop инстансом HTMLElement
  *
- * @param {Object} props Пропы компонента
- * @param {String} propName Имя пропса для валидации
- * @param {String} componentName Имя компонента
- * @returns {Error|null}
+ * @param props пропы компонента
+ * @param propName имя пропса для валидации
+ * @param componentName имя компонента
  */
-function propTypeIsHtmlElement(props, propName, componentName) {
-    if (!(props[propName] instanceof (typeof HTMLElement === 'undefined' ? {} : HTMLElement))) {
+function propTypeIsHtmlElement(props: { [key: string]: any }, propName: string, componentName: string): Error | null {
+    if (!(props[propName] instanceof (typeof HTMLElement === 'undefined' ? {} as any : HTMLElement))) {
         return new Error(
             `Invalid prop \`${propName}\` supplied to \`${componentName}\`.
             Expected valid HTMLElement object, ${typeof props[propName]} given.`
@@ -53,13 +62,12 @@ function propTypeIsHtmlElement(props, propName, componentName) {
 }
 
 /**
- * Враппер для prop-type валидаторов, позволяющий помечать prop как устаревший, сохраняя проверку типа.
+ * Враппер для prop-type валидаторов, позволяющий помечать prop как устаревший, сохраняя проверку типа
  *
- * @param {Function} propType Оригинальный propType валидатор.
- * @param {String} message Дополнительное сообщение.
- * @returns {function(...[*]): *}
+ * @param propType оригинальный propType валидатор
+ * @param message дополнительное сообщение
  */
-export function deprecated(propType, message) {
+export function deprecated(propType: Function, message: string): Function {
     let warned = false;
 
     return function (...args) {
@@ -81,14 +89,13 @@ export function deprecated(propType, message) {
 /**
  * Враппер для prop-type валидатора, позволяющий пометить один из типов как устаревший.
  * В случае, если заданный prop будет соответствовать старому валидатору, но не будет
- * соответствовать новому - пользователь будет об этом предупрежден.
+ * соответствовать новому - пользователь будет об этом предупрежден
  *
- * @param {Function} oldType Валидатор для старого типа.
- * @param {Function} newType Валидатор для нового типа.
- * @param {String} message Дополнительное сообщение
- * @returns {Function}
+ * @param oldType валидатор для старого типа.
+ * @param newType валидатор для нового типа.
+ * @param message дополнительное сообщение
  */
-export function deprecatedType(oldType, newType, message) {
+export function deprecatedType(oldType: Function, newType: Function, message: string): Function {
     let warned = false;
 
     return function (...args) {
@@ -106,10 +113,19 @@ export function deprecatedType(oldType, newType, message) {
     };
 }
 
+/**
+ * Готовый prop-type валидатор для проверки, что значение переданное в проп является HtmlElement
+ */
 export const HtmlElement = createChainableTypeChecker(propTypeIsHtmlElement);
 
+/**
+ * Проверяет что значение пропса из заданного множества
+ *
+ * @param validationMapping множество допустимых значений пропса
+ * @param controllingPropName имя контролируемого пропса
+ */
 export function createMappingPropValidator(validationMapping, controllingPropName) {
-    return function validateProp(props, propName, componentName) {
+    return function validateProp(props: { [key: string]: any }, propName: string, componentName: string) {
         const controllingPropValue = props[controllingPropName];
         const controlledPropValue = props[propName];
 

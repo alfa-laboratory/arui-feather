@@ -68,7 +68,7 @@ npm install arui-feather --save
 
 Необходимые внешние зависимости системы:
 
-[`node`](https://nodejs.org/en/) 8 и `npm`
+[`node`](https://nodejs.org/en/) 12 и `npm`
 
 Шаги запуска демо:
 

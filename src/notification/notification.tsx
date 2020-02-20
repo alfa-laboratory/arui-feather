@@ -82,7 +82,7 @@ export type NotificationProps = DeepReadonly<{
     /**
      * Обработчик события истечения времени до закрытия компонента
      */
-    onCloseTimeout?: Function;
+    onCloseTimeout?: () => void;
 
     /**
      * Обработчик клика по крестику компонента
@@ -294,7 +294,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
     private startCloseTimer() {
         this.closeTimeout = setTimeout(() => {
             if (this.props.onCloseTimeout) {
-                (this.props.onCloseTimeout as Function)();
+                this.props.onCloseTimeout();
             }
         }, this.props.autoCloseDelay);
     }

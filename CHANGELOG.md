@@ -1,3 +1,26 @@
+<a name="16.0.5"></a>
+## [16.0.5](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.4...v16.0.5) (2020-02-20)
+
+
+### Bug Fixes
+
+* fix demo theming ([#1043](https://github.com/alfa-laboratory/arui-feather/issues/1043)) ([3955030](https://github.com/alfa-laboratory/arui-feather/commit/3955030))
+* fix select demo ([#1034](https://github.com/alfa-laboratory/arui-feather/issues/1034)) ([d5c0ca1](https://github.com/alfa-laboratory/arui-feather/commit/d5c0ca1))
+* hot fix types ([fce2d99](https://github.com/alfa-laboratory/arui-feather/commit/fce2d99))
+* hotfix typescript demo docs ([#955](https://github.com/alfa-laboratory/arui-feather/issues/955)) ([05aab80](https://github.com/alfa-laboratory/arui-feather/commit/05aab80))
+* rollback optional params in phone input ([#1066](https://github.com/alfa-laboratory/arui-feather/issues/1066)) ([878344f](https://github.com/alfa-laboratory/arui-feather/commit/878344f))
+* up bemreact classname ([#1063](https://github.com/alfa-laboratory/arui-feather/issues/1063)) ([06fc476](https://github.com/alfa-laboratory/arui-feather/commit/06fc476))
+* **input-group:** remove propTypes ([#1015](https://github.com/alfa-laboratory/arui-feather/issues/1015)) ([15295a6](https://github.com/alfa-laboratory/arui-feather/commit/15295a6))
+
+
+### Features
+
+* add media-query hook ([#954](https://github.com/alfa-laboratory/arui-feather/issues/954)) ([bf5e7fa](https://github.com/alfa-laboratory/arui-feather/commit/bf5e7fa))
+* add ts to component ([#1008](https://github.com/alfa-laboratory/arui-feather/issues/1008)) ([dfcfa36](https://github.com/alfa-laboratory/arui-feather/commit/dfcfa36))
+* **attach:** truncate filename ([#1057](https://github.com/alfa-laboratory/arui-feather/issues/1057)) ([938c3c4](https://github.com/alfa-laboratory/arui-feather/commit/938c3c4))
+
+
+
 <a name="16.0.4"></a>
 ## [16.0.4](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.3...v16.0.4) (2020-01-23)
 

@@ -59,23 +59,23 @@ type MoneyInputProps = DeepReadonly<InputProps & {
     /**
      * Максимально допустимая длина значения после запятой
      */
-    fractionLength: number;
+    fractionLength?: number;
     /**
      * Толщина шрифта
      */
-    bold: boolean;
+    bold?: boolean;
     /**
      * Отображение символа валюты
      */
-    showCurrency: boolean;
+    showCurrency?: boolean;
     /**
      * Международный код валюты
      */
-    currencyCode: string;
+    currencyCode?: string;
     /**
      * Идентификатор для систем автоматизированного тестирования
      * */
-    'data-test-id': string;
+    'data-test-id'?: string;
 }>;
 
 type MoneyInputState = {

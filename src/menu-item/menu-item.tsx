@@ -3,13 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
 import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
-export type MenuItemProps = {
+export type MenuItemProps = DeepReadonly<{
 
     /**
      * Тип элемента меню
@@ -110,7 +111,7 @@ export type MenuItemProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.

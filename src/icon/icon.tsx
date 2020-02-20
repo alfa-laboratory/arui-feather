@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type IconProps = {
+export type IconProps = DeepReadonly<{
 
     /**
      * Дополнительный класс
@@ -43,7 +44,7 @@ export type IconProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Базовый компонент иконки. Содержит в себе только необходимые для компонентов иконки.

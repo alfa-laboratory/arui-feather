@@ -5,6 +5,7 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -17,7 +18,7 @@ import Swipeable from '../swipeable';
 
 import { isNodeOutsideElement } from '../lib/window';
 
-export type NotificationProps = {
+export type NotificationProps = DeepReadonly<{
     /**
      * Тип компонента
      */
@@ -117,7 +118,7 @@ export type NotificationProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент всплывающего окна.
@@ -293,7 +294,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
     private startCloseTimer() {
         this.closeTimeout = setTimeout(() => {
             if (this.props.onCloseTimeout) {
-                this.props.onCloseTimeout();
+                (this.props.onCloseTimeout as Function)();
             }
         }, this.props.autoCloseDelay);
     }

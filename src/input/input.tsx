@@ -5,6 +5,7 @@
 /* eslint-disable max-len */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -16,7 +17,7 @@ import MaskedInput from '../masked-input/masked-input';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type InputProps = {
+export type InputProps = DeepReadonly<{
 
     /**
      * Тип поля.
@@ -245,7 +246,7 @@ export type InputProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент текстового поля ввода.

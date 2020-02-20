@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type SlideDownProps = {
+export type SlideDownProps = DeepReadonly<{
 
     /**
      * Управление состоянием expand/collapse компонента
@@ -36,19 +37,19 @@ export type SlideDownProps = {
     /**
      * Обработчик события начала анимации
      */
-    onAnimationStart?: Function;
+    onAnimationStart?: () => void;
 
     /**
      * Обработчик события окончания анимации
      */
-    onAnimationEnd?: Function;
+    onAnimationEnd?: () => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
 
-};
+}>;
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.

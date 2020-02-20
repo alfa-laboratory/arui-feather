@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 
 import Mask, { FormatCharacters } from './mask';
 
@@ -50,7 +51,7 @@ const getSeparatorsAmount = (str: string, mask: Mask): number => (
     }, 0)
 );
 
-export type MaskedInputProps = {
+export type MaskedInputProps = DeepReadonly<{
     /**
      * Маска для поля ввода, использует формат https://github.com/insin/inputmask-core
      */
@@ -100,7 +101,7 @@ export type MaskedInputProps = {
      * Обработчик события, вызываемый при событии 'beforeInput'
      */
     onBeforeInput?: (event?: React.FormEvent<any>) => void;
-};
+}>;
 
 /**
  * Компонент поля ввода с поддержкой масок.

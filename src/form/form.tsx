@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type FormProps = {
+export type FormProps = DeepReadonly<{
 
     /**
      * Способ кодирования данных формы при их отправке
@@ -83,7 +84,7 @@ export type FormProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент формы.

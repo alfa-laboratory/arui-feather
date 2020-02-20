@@ -4,12 +4,13 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
 export type CheckBoxGroupThemeFieldType = 'alfa-on-color' | 'alfa-on-white';
 
-export type CheckBoxGroupProps = ({
+export type CheckBoxGroupProps = DeepReadonly<({
     /**
      * Тип компонента
      */
@@ -86,7 +87,7 @@ export type CheckBoxGroupProps = ({
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент группы чекбоксов.

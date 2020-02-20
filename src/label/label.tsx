@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type LabelProps = {
+export type LabelProps = DeepReadonly<{
     /**
      * Размер компонента
      */
@@ -41,7 +42,7 @@ export type LabelProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}
+}>;
 
 /**
  * Компонента лейбла.

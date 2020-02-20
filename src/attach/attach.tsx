@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -62,7 +63,7 @@ function isEqualArray(array1, array2) {
         array1.every((item, index) => item === array2[index]);
 }
 
-export type AttachProps = {
+export type AttachProps = DeepReadonly<{
 
     /**
      * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
@@ -179,7 +180,7 @@ export type AttachProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент прикрепления файлов.

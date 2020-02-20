@@ -47,7 +47,7 @@ export type NotificationProps = DeepReadonly<{
     /**
      * Дочерние элементы `Notification`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

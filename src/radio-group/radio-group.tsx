@@ -50,7 +50,7 @@ export type RadioGroupProps = DeepReadonly<{
     /**
      * Дочерние элементы `RadioGroup`, как правило, компоненты `Radio`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

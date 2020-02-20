@@ -78,7 +78,7 @@ export type SidebarProps = DeepReadonly<{
     /**
      * Дочерние компоненты
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Признак для отрисовки элемента закрытия

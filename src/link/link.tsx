@@ -72,7 +72,7 @@ export type LinkProps = DeepReadonly<{
     /**
      * Дочерние элементы `Link`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

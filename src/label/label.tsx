@@ -16,7 +16,7 @@ export type LabelProps = DeepReadonly<{
     /**
      * Дочерние элементы `Label`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

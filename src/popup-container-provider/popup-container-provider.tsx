@@ -12,7 +12,7 @@ export type PopupContainerProviderProps = DeepReadonly<{
     /**
      * Дочерние элементы контейнера
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Дополнительный класс

@@ -20,7 +20,7 @@ export type HeadingProps = DeepReadonly<{
     /**
      * Дочерние элементы `Heading`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Размер, определяющий какой тег заголовка будет использоваться

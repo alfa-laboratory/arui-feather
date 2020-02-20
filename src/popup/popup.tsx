@@ -66,7 +66,7 @@ export type PopupProps = DeepReadonly<{
     /**
      * Дочерние элементы `Popup`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тип попапа

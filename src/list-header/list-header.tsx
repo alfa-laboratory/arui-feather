@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type ListHeaderProps = {
+export type ListHeaderProps = DeepReadonly<{
 
     /**
      * Заголовок
@@ -43,7 +44,7 @@ export type ListHeaderProps = {
      */
     'data-test-id'?: string;
 
-}
+}>;
 
 /**
  * Компонент для разделения списка по датам или смысловым группам.

@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
 type BreakpointsType = {
@@ -19,7 +20,7 @@ type BreakpointsType = {
     'desktop-l'?: string | number | object;
 };
 
-export type GridColProps = {
+export type GridColProps = DeepReadonly<{
 
     /**
      * Уникальный идентификатор блока
@@ -80,7 +81,7 @@ export type GridColProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Колонки используются для создания сетки.

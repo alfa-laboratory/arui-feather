@@ -4,10 +4,11 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type InputGroupProps = {
+export type InputGroupProps = DeepReadonly<{
     /**
      * Управление возможностью компонента занимать всю ширину родителя
      */
@@ -37,7 +38,7 @@ export type InputGroupProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент группы полей для текстового ввода.

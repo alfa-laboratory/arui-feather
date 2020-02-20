@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React, { Children, cloneElement } from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
 type GridRowGutterType = {
@@ -11,7 +12,7 @@ type GridRowGutterType = {
     desktop?: string | number | object;
 };
 
-export type GridRowProps = {
+export type GridRowProps = DeepReadonly<{
 
     /**
      * Уникальный идентификатор блока
@@ -61,7 +62,7 @@ export type GridRowProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Строка используется для создания сетки.

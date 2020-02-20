@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type LinkProps = {
+export type LinkProps = DeepReadonly<{
 
     /**
      * Иконка ссылки
@@ -116,13 +117,13 @@ export type LinkProps = {
     /**
      * Обработчик клика по disabled ссылке
      */
-    onDisabledClick?: Function;
+    onDisabledClick?: (event?: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент ссылки.

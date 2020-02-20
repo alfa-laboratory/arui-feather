@@ -5,6 +5,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -57,7 +58,7 @@ function handleBodyScroll() {
     }
 }
 
-export type SidebarProps = {
+export type SidebarProps = DeepReadonly<{
 
     /**
      * Тема компонента
@@ -114,7 +115,7 @@ export type SidebarProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент боковой панели aka холодильник.

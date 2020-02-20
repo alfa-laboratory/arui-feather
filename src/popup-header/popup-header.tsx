@@ -3,13 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 
-export type PopupHeaderProps = {
+export type PopupHeaderProps = DeepReadonly<{
     /**
      * Размер компонента
      */
@@ -44,7 +45,7 @@ export type PopupHeaderProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Заголовок в Popup.

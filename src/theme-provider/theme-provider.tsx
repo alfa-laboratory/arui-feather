@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import Type from 'prop-types';
 import { ThemeProvider as NewThemeProvider } from '../cn';
 
-export type ThemeProviderProps = {
+export type ThemeProviderProps = DeepReadonly<{
     /**
      * Дочерний элемент `ThemeProvider`
      */
@@ -21,7 +22,7 @@ export type ThemeProviderProps = {
      * Тема компонента
      */
     theme?: 'alfa-on-color' | 'alfa-on-white';
-};
+}>;
 
 /**
  * Компонент задающий тему для своих дочерних компонентов.

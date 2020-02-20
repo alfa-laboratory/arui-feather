@@ -4,6 +4,7 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -103,7 +104,7 @@ export type SelectOptionsShapeType = {
     props?: object;
 };
 
-export type SelectProps = {
+export type SelectProps = DeepReadonly<{
 
     /**
      * Дополнительный класс
@@ -299,9 +300,9 @@ export type SelectProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
-type SelectState = {
+type SelectState = DeepReadonly<{
     hasGroup: boolean;
     isMobile: boolean;
     opened: boolean;
@@ -311,7 +312,7 @@ type SelectState = {
     };
     value: Array<string | number>;
     popupIsReady?: boolean;
-}
+}>
 
 /**
  * Компонент выпадающего списка.

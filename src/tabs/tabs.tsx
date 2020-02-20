@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type TabsProps = {
+export type TabsProps = DeepReadonly<{
 
     /**
      * Управление возможность скроллить компонент по-горизонтали
@@ -38,7 +39,7 @@ export type TabsProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.

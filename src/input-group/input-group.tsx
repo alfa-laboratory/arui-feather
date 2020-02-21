@@ -17,7 +17,7 @@ export type InputGroupProps = DeepReadonly<{
     /**
      * Дочерние элементы `InputGroup`, как правило, компоненты `Input`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

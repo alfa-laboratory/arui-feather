@@ -12,7 +12,7 @@ export type FormFieldProps = DeepReadonly<{
     /**
      * Дочерние элементы `FormField`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Дополнительный класс

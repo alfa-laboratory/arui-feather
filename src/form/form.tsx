@@ -52,7 +52,7 @@ export type FormProps = DeepReadonly<{
     /**
      * Дочерние элементы формы
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

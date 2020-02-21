@@ -31,7 +31,7 @@ export type CollapseProps = DeepReadonly<{
     /**
      * Дочерние элементы `Collapse`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

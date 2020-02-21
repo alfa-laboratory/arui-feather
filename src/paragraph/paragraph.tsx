@@ -22,7 +22,7 @@ export type ParagraphProps = DeepReadonly<{
     /**
      * Дочерние элементы `Paragraph`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента

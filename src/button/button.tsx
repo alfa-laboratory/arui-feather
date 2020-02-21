@@ -108,7 +108,7 @@ export type ButtonProps = DeepReadonly<{
     /**
      * Дочерние элементы `Button`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

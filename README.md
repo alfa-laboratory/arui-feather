@@ -136,7 +136,7 @@ find src -name *.svg -print0 | xargs -0 -L 1 svgo
 - Уважаем тех, кто видит проблему и кидает PR.
 - Помогаем друг другу изо всех сил.
 
-Мы ведём задачи в [issues](https://github.com/alfa-laboratory/arui-feather/issues). Для обсуждения есть [чат мейнтейнеров](slack://channel?id=C4C27PN68&team=T02QH68UT).
+Мы ведём задачи в [issues](https://github.com/alfa-laboratory/arui-feather/issues). Для обсуждения есть [чат мейнтейнеров](https://app.slack.com/client/T02QH68UT/C4C27PN68) (#arui-maintainers).
 
 - Не знаете что делать — можно брать любую задачу без Assignee, назначив её на себя.
 - Знаете что делать и есть возможность — кидайте PR.

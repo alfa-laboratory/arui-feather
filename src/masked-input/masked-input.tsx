@@ -140,7 +140,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
         this.beforeChangeMask = this.mask;
 
         if (this.props.mask !== nextProps.mask || this.props.formatCharacters !== nextProps.formatCharacters) {
-            this.setMask(nextProps.mask, nextProps.formatCharacters);
+            this.setMask(nextProps.mask, nextProps.formatCharacters, nextProps.useWhitespaces);
             reformatValue = true;
         }
 

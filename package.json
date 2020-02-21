@@ -73,12 +73,20 @@
   },
   "maintainers": [
     {
+      "name": "Evgeny Sergeev",
       "email": "esergeev2@alfabank.ru",
-      "name": "Evgeny Sergeev"
+      "url": "https://github.com/siebensieben"
     },
     {
+      "name": "Stepan Mikhaylyuk",
+      "email": "esergeev2@alfabank.ru",
+      "url": "https://github.com/stepancar"
+
+    },
+    {
+      "name": "Alexandr Kitov",
       "email": "akitov@alfabank.ru",
-      "name": "Alexander Kitov"
+      "url": "https://github.com/heymdall"
     }
   ],
   "author": "Good guys from Alfa Laboratory",

@@ -74,9 +74,8 @@ export class Collapse extends React.PureComponent<CollapseProps> {
         isExpanded: false
     };
 
-    // TODO [issues/1018] переписать тесты нужно, что бы private был
-    content;
-    contentCase;
+    private content: HTMLDivElement;
+    private contentCase: HTMLDivElement;
 
     componentDidMount() {
         this.updateContentHeight();

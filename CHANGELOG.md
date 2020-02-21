@@ -1,3 +1,21 @@
+<a name="17.0.0"></a>
+# [17.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.5...v17.0.0) (2020-02-21)
+
+
+### Bug Fixes
+
+* money input optional props ([#1076](https://github.com/alfa-laboratory/arui-feather/issues/1076)) ([ca8d146](https://github.com/alfa-laboratory/arui-feather/commit/ca8d146))
+* use React.ReactNode ([#1077](https://github.com/alfa-laboratory/arui-feather/issues/1077)) ([f977b28](https://github.com/alfa-laboratory/arui-feather/commit/f977b28))
+* wrapp props interface with DeepReadonly ([#1075](https://github.com/alfa-laboratory/arui-feather/issues/1075)) ([eeb198a](https://github.com/alfa-laboratory/arui-feather/commit/eeb198a))
+* **masked-input:** fixed setMask call when changing mask ([#1056](https://github.com/alfa-laboratory/arui-feather/issues/1056)) ([c0e9ec9](https://github.com/alfa-laboratory/arui-feather/commit/c0e9ec9))
+
+
+### Features
+
+* **select:** if we have label and placeholder show both ([#1042](https://github.com/alfa-laboratory/arui-feather/issues/1042)) ([5f8e3e6](https://github.com/alfa-laboratory/arui-feather/commit/5f8e3e6))
+
+
+
 <a name="16.0.5"></a>
 ## [16.0.5](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.4...v16.0.5) (2020-02-20)
 

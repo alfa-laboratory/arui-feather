@@ -18,4 +18,6 @@ class IconInvoiceForPayment extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconInvoiceForPayment);
+class ThemedIconInvoiceForPayment extends IconInvoiceForPayment {}
+(ThemedIconInvoiceForPayment as any) = withTheme(IconInvoiceForPayment);
+export default ThemedIconInvoiceForPayment;

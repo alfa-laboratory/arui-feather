@@ -59,4 +59,6 @@ export class EmailInput extends React.PureComponent<InputProps> {
     }
 }
 
-export default withTheme(EmailInput);
+class ThemedEmailInput extends EmailInput {}
+(ThemedEmailInput as any) = withTheme(EmailInput);
+export default ThemedEmailInput;

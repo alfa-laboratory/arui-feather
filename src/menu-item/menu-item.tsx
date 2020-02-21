@@ -294,4 +294,6 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
     }
 }
 
-export default withTheme(MenuItem);
+class ThemedMenuItem extends MenuItem {}
+(ThemedMenuItem as any) = withTheme(MenuItem);
+export default ThemedMenuItem;

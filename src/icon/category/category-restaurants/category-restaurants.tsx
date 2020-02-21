@@ -18,4 +18,6 @@ class IconCategoryRestaurants extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryRestaurants);
+class ThemedIconCategoryRestaurants extends IconCategoryRestaurants {}
+(ThemedIconCategoryRestaurants as any) = withTheme(IconCategoryRestaurants);
+export default ThemedIconCategoryRestaurants;

@@ -18,4 +18,6 @@ class IconAccountAdd extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAccountAdd);
+class ThemedIconAccountAdd extends IconAccountAdd {}
+(ThemedIconAccountAdd as any) = withTheme(IconAccountAdd);
+export default ThemedIconAccountAdd;

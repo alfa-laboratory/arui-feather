@@ -18,4 +18,6 @@ class IconExpences extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconExpences);
+class ThemedIconExpences extends IconExpences {}
+(ThemedIconExpences as any) = withTheme(IconExpences);
+export default ThemedIconExpences;

@@ -18,4 +18,6 @@ class IconExchange extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconExchange);
+class ThemedIconExchange extends IconExchange {}
+(ThemedIconExchange as any) = withTheme(IconExchange);
+export default ThemedIconExchange;

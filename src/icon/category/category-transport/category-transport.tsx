@@ -18,4 +18,6 @@ class IconCategoryTransport extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryTransport);
+class ThemedIconCategoryTransport extends IconCategoryTransport {}
+(ThemedIconCategoryTransport as any) = withTheme(IconCategoryTransport);
+export default ThemedIconCategoryTransport;

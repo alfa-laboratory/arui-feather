@@ -18,4 +18,6 @@ class IconEdit extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconEdit);
+class ThemedIconEdit extends IconEdit {}
+(ThemedIconEdit as any) = withTheme(IconEdit);
+export default ThemedIconEdit;

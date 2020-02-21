@@ -18,4 +18,6 @@ class IconNext extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNext);
+class ThemedIconNext extends IconNext {}
+(ThemedIconNext as any) = withTheme(IconNext);
+export default ThemedIconNext;

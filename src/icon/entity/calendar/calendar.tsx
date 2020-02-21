@@ -18,4 +18,6 @@ class IconCalendar extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCalendar);
+class ThemedIconCalendar extends IconCalendar {}
+(ThemedIconCalendar as any) = withTheme(IconCalendar);
+export default ThemedIconCalendar;

@@ -18,4 +18,6 @@ class IconFail extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFail);
+class ThemedIconFail extends IconFail {}
+(ThemedIconFail as any) = withTheme(IconFail);
+export default ThemedIconFail;

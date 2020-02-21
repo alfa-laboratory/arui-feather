@@ -349,4 +349,6 @@ export class Textarea extends React.PureComponent<TextareaProps> {
     }
 }
 
-export default withTheme(Textarea);
+class ThemedTextarea extends Textarea {}
+(ThemedTextarea as any) = withTheme(Textarea);
+export default ThemedTextarea;

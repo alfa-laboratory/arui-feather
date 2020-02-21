@@ -18,4 +18,6 @@ class IconNotifications extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNotifications);
+class ThemedIconNotifications extends IconNotifications {}
+(ThemedIconNotifications as any) = withTheme(IconNotifications);
+export default ThemedIconNotifications;

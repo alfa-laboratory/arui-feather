@@ -161,4 +161,6 @@ export class Amount extends React.Component<AmountProps> {
     }
 }
 
-export default withTheme(Amount);
+class ThemedAmount extends Amount {}
+(ThemedAmount as any) = withTheme(Amount);
+export default ThemedAmount;

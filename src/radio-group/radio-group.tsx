@@ -222,4 +222,6 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     }
 }
 
-export default withTheme(RadioGroup);
+class ThemedRadioGroup extends RadioGroup {}
+(ThemedRadioGroup as any) = withTheme(RadioGroup);
+export default ThemedRadioGroup;

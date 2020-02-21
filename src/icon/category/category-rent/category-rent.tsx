@@ -18,4 +18,6 @@ class IconCategoryRent extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryRent);
+class ThemedIconCategoryRent extends IconCategoryRent {}
+(ThemedIconCategoryRent as any) = withTheme(IconCategoryRent);
+export default ThemedIconCategoryRent;

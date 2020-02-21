@@ -81,4 +81,6 @@ export class Icon extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(Icon);
+class ThemedIcon extends Icon {}
+(ThemedIcon as any) = withTheme(Icon);
+export default ThemedIcon;

@@ -690,4 +690,6 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     }
 }
 
-export default withTheme(Popup);
+class ThemedPopup extends Popup {}
+(ThemedPopup as any) = withTheme(Popup);
+export default ThemedPopup;

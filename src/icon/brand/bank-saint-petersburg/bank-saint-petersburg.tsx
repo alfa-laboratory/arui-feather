@@ -18,4 +18,6 @@ class IconBankSaintPetersburg extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankSaintPetersburg);
+class ThemedIconBankSaintPetersburg extends IconBankSaintPetersburg {}
+(ThemedIconBankSaintPetersburg as any) = withTheme(IconBankSaintPetersburg);
+export default ThemedIconBankSaintPetersburg;

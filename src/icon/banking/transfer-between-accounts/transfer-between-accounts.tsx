@@ -18,4 +18,6 @@ class IconTransferBetweenAccounts extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTransferBetweenAccounts);
+class ThemedIconTransferBetweenAccounts extends IconTransferBetweenAccounts {}
+(ThemedIconTransferBetweenAccounts as any) = withTheme(IconTransferBetweenAccounts);
+export default ThemedIconTransferBetweenAccounts;

@@ -18,4 +18,6 @@ class IconFormatSvg extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatSvg);
+class ThemedIconFormatSvg extends IconFormatSvg {}
+(ThemedIconFormatSvg as any) = withTheme(IconFormatSvg);
+export default ThemedIconFormatSvg;

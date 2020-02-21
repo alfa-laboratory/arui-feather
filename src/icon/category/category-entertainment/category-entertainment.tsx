@@ -18,4 +18,6 @@ class IconCategoryEntertainment extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryEntertainment);
+class ThemedIconCategoryEntertainment extends IconCategoryEntertainment {}
+(ThemedIconCategoryEntertainment as any) = withTheme(IconCategoryEntertainment);
+export default ThemedIconCategoryEntertainment;

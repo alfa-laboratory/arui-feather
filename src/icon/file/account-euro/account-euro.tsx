@@ -18,4 +18,6 @@ class IconAccountEuro extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAccountEuro);
+class ThemedIconAccountEuro extends IconAccountEuro {}
+(ThemedIconAccountEuro as any) = withTheme(IconAccountEuro);
+export default ThemedIconAccountEuro;

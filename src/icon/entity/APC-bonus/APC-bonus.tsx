@@ -18,4 +18,6 @@ class IconApcBonus extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconApcBonus);
+class ThemedIconApcBonus extends IconApcBonus {}
+(ThemedIconApcBonus as any) = withTheme(IconApcBonus);
+export default ThemedIconApcBonus;

@@ -646,4 +646,6 @@ export class Input extends React.PureComponent<InputProps> {
     }
 }
 
-export default withTheme(Input);
+class ThemedInput extends Input {}
+(ThemedInput as any) = withTheme(Input);
+export default ThemedInput;

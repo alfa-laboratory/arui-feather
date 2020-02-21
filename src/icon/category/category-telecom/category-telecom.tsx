@@ -18,4 +18,6 @@ class IconCategoryTelecom extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryTelecom);
+class ThemedIconCategoryTelecom extends IconCategoryTelecom {}
+(ThemedIconCategoryTelecom as any) = withTheme(IconCategoryTelecom);
+export default ThemedIconCategoryTelecom;

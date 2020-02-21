@@ -18,4 +18,6 @@ class IconVisa extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconVisa);
+class ThemedIconVisa extends IconVisa {}
+(ThemedIconVisa as any) = withTheme(IconVisa);
+export default ThemedIconVisa;

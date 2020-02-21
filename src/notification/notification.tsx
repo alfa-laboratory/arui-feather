@@ -328,4 +328,6 @@ export class Notification extends React.PureComponent<NotificationProps> {
     }
 }
 
-export default withTheme(Notification);
+class ThemedNotification extends Notification {}
+(ThemedNotification as any) = withTheme(Notification);
+export default ThemedNotification;

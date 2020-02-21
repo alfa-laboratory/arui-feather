@@ -18,4 +18,6 @@ class IconAlfacheck extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAlfacheck);
+class ThemedIconAlfacheck extends IconAlfacheck {}
+(ThemedIconAlfacheck as any) = withTheme(IconAlfacheck);
+export default ThemedIconAlfacheck;

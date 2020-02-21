@@ -91,4 +91,6 @@ export class InputGroup extends React.PureComponent<InputGroupProps> {
     }
 }
 
-export default withTheme(InputGroup);
+class ThemedInputGroup extends InputGroup {}
+(ThemedInputGroup as any) = withTheme(InputGroup);
+export default ThemedInputGroup;

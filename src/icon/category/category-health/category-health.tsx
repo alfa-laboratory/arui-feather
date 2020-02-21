@@ -18,4 +18,6 @@ class IconCategoryHealth extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryHealth);
+class ThemedIconCategoryHealth extends IconCategoryHealth {}
+(ThemedIconCategoryHealth as any) = withTheme(IconCategoryHealth);
+export default ThemedIconCategoryHealth;

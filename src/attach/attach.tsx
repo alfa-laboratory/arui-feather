@@ -338,7 +338,7 @@ export class Attach extends React.PureComponent<AttachProps> {
     };
 
     private handleInputChange = (event) => {
-        this.performChange(Array.from(event.target.files, event));
+        this.performChange(Array.from(event.target.files), event);
     };
 
     private handleClearClick = (event) => {

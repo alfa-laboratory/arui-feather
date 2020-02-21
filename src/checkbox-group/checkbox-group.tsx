@@ -136,7 +136,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
                         ? value.some(groupValue => groupValue === checkbox.props.value)
                         : checkbox.props.checked,
                     onChange: checkbox.props.onChange === undefined
-                        ? (checked, text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
+                        ? (checked, _text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
                         : checkbox.props.onChange,
                     ...props
                 });

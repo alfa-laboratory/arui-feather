@@ -5,11 +5,12 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconCheck from '../icon/ui/tick';
-import MenuItem from '../menu-item/themed';
-import { MenuItemProps } from '../menu-item/menu-item';
+import MenuItem, { MenuItemProps } from '../menu-item/menu-item';
 
 import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
@@ -62,7 +63,7 @@ export type MenuContentType = {
     props?: MenuItemProps;
 };
 
-export type MenuProps = {
+export type MenuProps = DeepReadonly<{
 
     /**
      * Тип расположения меню: 'horizontal'
@@ -183,14 +184,14 @@ export type MenuProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент меню.
  */
 @performance(true)
-class Menu extends React.Component<MenuProps> {
-    cn = createCn('menu');
+export class Menu extends React.Component<MenuProps> {
+    protected cn = createCn('menu');
 
     static defaultProps: Partial<MenuProps> = {
         size: 'm',
@@ -205,9 +206,10 @@ class Menu extends React.Component<MenuProps> {
         hovered: false
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
-    menuItemList = [];
-    blurTimeoutId = null;
+    private menuItemList = [];
+    private blurTimeoutId = null;
 
     componentDidMount() {
         if (!!this.props.content && this.props.content.length > 0 &&
@@ -361,7 +363,7 @@ class Menu extends React.Component<MenuProps> {
         );
     }
 
-    handleMenuItemClick = (item, event) => {
+    private handleMenuItemClick = (item, event) => {
         this.setNewCheckedItems(item, event);
 
         if (this.props.onItemClick) {
@@ -369,7 +371,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
@@ -377,7 +379,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
@@ -385,13 +387,13 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleKeyUp = (event) => {
+    private handleKeyUp = (event) => {
         if (this.props.onKeyUp) {
             this.props.onKeyUp(event);
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         let highlightedItem = null;
         let highlightedMenuItem = null;
         const menuIteListLength = this.menuItemList.length;
@@ -476,7 +478,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
             this.blurTimeoutId = null;
@@ -487,7 +489,7 @@ class Menu extends React.Component<MenuProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         event.persist();
         if (this.blurTimeoutId) {
             clearTimeout(this.blurTimeoutId);
@@ -501,7 +503,7 @@ class Menu extends React.Component<MenuProps> {
         }, 0);
     };
 
-    handleMenuItemMouseEnter(menuItem) {
+    private handleMenuItemMouseEnter(menuItem) {
         this.setState({
             highlightedItem: menuItem
         });
@@ -511,7 +513,7 @@ class Menu extends React.Component<MenuProps> {
         }
     }
 
-    handleMenuItemMouseLeave = () => {
+    private handleMenuItemMouseLeave = () => {
         this.setState({
             highlightedItem: null
         });
@@ -523,19 +525,15 @@ class Menu extends React.Component<MenuProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Устанавливает фокус на меню.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
 
         if (this.props.autoFocusFirstItem) {
@@ -553,17 +551,15 @@ class Menu extends React.Component<MenuProps> {
 
     /**
      * Убирает фокус с меню.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
     }
 
-    setNewCheckedItems(item, event) {
+    private setNewCheckedItems(item, event) {
         const { value } = item;
         let checkedItems = this.props.checkedItems === undefined
             ? Array.from(this.state.checkedItems)
@@ -604,7 +600,7 @@ class Menu extends React.Component<MenuProps> {
      * @param {Array.<String|Number>} checkedItems Список выбранных значений
      * @param {React.ChangeEvent} event
      */
-    changeCheckedItems(checkedItems, event) {
+    private changeCheckedItems(checkedItems, event) {
         this.setState({
             checkedItems
         });
@@ -614,17 +610,19 @@ class Menu extends React.Component<MenuProps> {
         }
     }
 
-    getIndexInCheckedItemsList = (value) => {
+    private getIndexInCheckedItemsList = (value) => {
         const checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
 
         return checkedItems.indexOf(value);
     };
 
-    getFirstItem(content) {
+    private getFirstItem(content) {
         const firstItem = content[0];
 
         return firstItem.type === 'group' ? this.getFirstItem(firstItem.content) : firstItem;
     }
 }
 
-export default Menu;
+class ThemedMenu extends Menu {}
+(ThemedMenu as any) = withTheme(Menu);
+export default ThemedMenu;

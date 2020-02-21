@@ -5,4 +5,5 @@
 import './person.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './person';
+export { default } from './person';

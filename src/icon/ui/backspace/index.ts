@@ -5,4 +5,5 @@
 import './backspace.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './backspace';
+export { default } from './backspace';

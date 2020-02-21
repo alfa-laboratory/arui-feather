@@ -5,4 +5,5 @@
 import './help.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './help';
+export { default } from './help';

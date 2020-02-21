@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Attach from './attach';
+import { Attach } from './attach';
 
 describe('attach', () => {
     it('should render without problems', () => {
@@ -152,5 +152,38 @@ describe('attach', () => {
 
         expect(statusNode.text()).toContain('Нет файла');
         expect(controlNode.props().value).toBeFalsy();
+    });
+
+    it('should truncate the filename if the maxFilenameLength prop is passed', () => {
+        const attach = mount(<Attach maxFilenameLength={ 30 } />);
+        const controlNode = attach.find('.attach__control');
+
+        controlNode.simulate('change', {
+            target: {
+                files: [{
+                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt', type: 'application/text'
+                }]
+            }
+        });
+
+        const fileLongNameNode = attach.find('.attach__text');
+
+        expect(fileLongNameNode.text()).toContain('so_long_filena…30_symbols.txt');
+
+        const clearButtonNode = attach.find('.attach__clear');
+
+        clearButtonNode.simulate('click');
+
+        controlNode.simulate('change', {
+            target: {
+                files: [{
+                    name: 'it_has_just_26_symbols.txt', type: 'application/text'
+                }]
+            }
+        });
+
+        const fileShortNameNode = attach.find('.attach__text');
+
+        expect(fileShortNameNode.text()).toContain('it_has_just_26_symbols.txt');
     });
 });

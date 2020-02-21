@@ -5,4 +5,5 @@
 import './bank-baltiyskiy.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-baltiyskiy';
+export { default } from './bank-baltiyskiy';

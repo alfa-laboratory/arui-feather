@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type LinkProps = {
+export type LinkProps = DeepReadonly<{
 
     /**
      * Иконка ссылки
@@ -70,7 +72,7 @@ export type LinkProps = {
     /**
      * Дочерние элементы `Link`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -115,19 +117,19 @@ export type LinkProps = {
     /**
      * Обработчик клика по disabled ссылке
      */
-    onDisabledClick?: Function;
+    onDisabledClick?: (event?: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент ссылки.
  */
-class Link extends React.PureComponent<LinkProps> {
-    cn = createCn('link');
+export class Link extends React.PureComponent<LinkProps> {
+    protected cn = createCn('link');
 
     static defaultProps: Partial<LinkProps> = {
         iconPosition: 'left',
@@ -144,7 +146,7 @@ class Link extends React.PureComponent<LinkProps> {
         focused: false
     };
 
-    root;
+    private root: HTMLElement;
 
     render() {
         const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
@@ -209,7 +211,7 @@ class Link extends React.PureComponent<LinkProps> {
         }, linkContent);
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.pseudo) {
             event.preventDefault();
         }
@@ -222,7 +224,7 @@ class Link extends React.PureComponent<LinkProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -230,7 +232,7 @@ class Link extends React.PureComponent<LinkProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -238,7 +240,7 @@ class Link extends React.PureComponent<LinkProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
@@ -256,34 +258,29 @@ class Link extends React.PureComponent<LinkProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
-     * @returns {HTMLElement}
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Ставит фокус на ссылку.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.root.focus();
     }
 
     /**
      * Убирает фокус с ссылки.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }
 }
 
-export default Link;
+class ThemedLink extends Link {}
+(ThemedLink as any) = withTheme(Link);
+export default ThemedLink;

@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type ToggleProps = {
+export type ToggleProps = DeepReadonly<{
     /**
      * Идентификатор компонента в DOM
      */
@@ -80,13 +82,13 @@ export type ToggleProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент переключателя.
  */
-class Toggle extends React.PureComponent<ToggleProps> {
-    cn = createCn('toggle');
+export class Toggle extends React.PureComponent<ToggleProps> {
+    protected cn = createCn('toggle');
 
     static defaultProps: Partial<ToggleProps> = {
         size: 'm',
@@ -148,7 +150,7 @@ class Toggle extends React.PureComponent<ToggleProps> {
         event.stopPropagation();
     }
 
-    handleChange = () => {
+    private handleChange = () => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -160,7 +162,7 @@ class Toggle extends React.PureComponent<ToggleProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -168,9 +170,9 @@ class Toggle extends React.PureComponent<ToggleProps> {
         }
     };
 
-    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+    private handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -179,4 +181,6 @@ class Toggle extends React.PureComponent<ToggleProps> {
     }
 }
 
-export default Toggle;
+class ThemedToggle extends Toggle {}
+(ThemedToggle as any) = withTheme(Toggle);
+export default ThemedToggle;

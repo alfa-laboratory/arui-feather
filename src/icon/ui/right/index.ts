@@ -5,4 +5,5 @@
 import './right.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './right';
+export { default } from './right';

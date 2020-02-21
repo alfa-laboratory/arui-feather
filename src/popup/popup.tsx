@@ -6,10 +6,12 @@
 
 import debounce from 'lodash.debounce';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
-import ResizeSensor from '../resize-sensor/resize-sensor';
+import { withTheme } from '../cn';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
 import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
 import { HtmlElement } from '../lib/prop-types';
@@ -49,7 +51,7 @@ import performance from '../performance';
 
 export type PopupDirectionsFieldType = 'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
-export type PopupProps = {
+export type PopupProps = DeepReadonly<{
 
     /**
      * Дополнительный класс
@@ -64,7 +66,7 @@ export type PopupProps = {
     /**
      * Дочерние элементы `Popup`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тип попапа
@@ -165,7 +167,7 @@ export type PopupProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 type PopupState = {
     direction: any;
@@ -182,8 +184,8 @@ type PopupState = {
  * Компонент popup'а.
  */
 @performance(true)
-class Popup extends React.Component<PopupProps, PopupState> {
-    cn = createCn('popup');
+export class Popup extends React.Component<PopupProps, PopupState> {
+    protected cn = createCn('popup');
 
     static defaultProps: Partial<PopupProps> = {
         visible: false,
@@ -224,19 +226,19 @@ class Popup extends React.Component<PopupProps, PopupState> {
         needRedrawAfterMount: false
     };
 
-    anchor = null;
-    clickEventBindTimeout = null;
-    domElemPopup = null;
-    domElemPopupInner = null;
-    domElemPopupContent = null;
-    isWindowClickBinded = false;
-    position = null;
+    private anchor = null;
+    private clickEventBindTimeout = null;
+    private domElemPopup = null;
+    private domElemPopupInner: HTMLElement = null;
+    private domElemPopupContent = null;
+    private isWindowClickBinded = false;
+    private position = null;
 
-    popup;
-    inner;
-    content;
+    private popup;
+    private inner;
+    private content;
 
-    handleWindowResize = debounce(() => {
+    private handleWindowResize = debounce(() => {
         if (this.isPropsToPositionCorrect()) {
             this.redraw();
         }
@@ -393,7 +395,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         return ReactDOM.createPortal(template, this.getRenderContainer());
     }
 
-    handleInnerScroll = (event) => {
+    private handleInnerScroll = (event) => {
         const { scrollTop, offsetHeight, scrollHeight } = event.target;
         const isTopReached = Math.round(scrollTop) === 0;
         const isBottomReached = Math.round(scrollTop) + offsetHeight === scrollHeight;
@@ -427,25 +429,25 @@ class Popup extends React.Component<PopupProps, PopupState> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (this.props.onMouseEnter) {
             this.props.onMouseEnter(event);
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (this.props.onMouseLeave) {
             this.props.onMouseLeave(event);
         }
     };
 
-    handleWindowClick = (event) => {
+    private handleWindowClick = (event) => {
         if (this.props.onClickOutside && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
             this.props.onClickOutside(event);
         }
     };
 
-    handleResize = () => {
+    private handleResize = () => {
         if (!this.props.visible) {
             return;
         }
@@ -455,11 +457,9 @@ class Popup extends React.Component<PopupProps, PopupState> {
 
     /**
      * Задает элемент, к которому будет привязан popup.
-     *
-     * @public
-     * @param {HTMLElement} target Элемент, к которому будет привязан popup
+     * @param target Элемент, к которому будет привязан popup
      */
-    setTarget(target) {
+    public setTarget(target: HTMLElement) {
         if (this.anchor === target) {
             return;
         }
@@ -470,23 +470,18 @@ class Popup extends React.Component<PopupProps, PopupState> {
 
     /**
      * Задает положение popup.
-     *
-     * @public
-     * @param {Number} left x-coordinate
-     * @param {Number} top y-coordinate
+     * @param left x-coordinate
+     * @param top y-coordinate
      */
-    setPosition(left, top) {
+    public setPosition(left: number, top: number) {
         this.position = { left, top };
         this.redraw();
     }
 
     /**
      * Возвращает внутренний DOM узел.
-     *
-     * @public
-     * @returns {HTMLElement}
      */
-    getInnerNode() {
+    public getInnerNode() {
         return this.domElemPopupInner;
     }
 
@@ -495,7 +490,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      *
      * @returns {HTMLElement}
      */
-    getRenderContainer() {
+    private getRenderContainer() {
         if (!this.context.isInCustomContainer) {
             return document.body;
         }
@@ -508,7 +503,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      *
      * @returns {HTMLElement}
      */
-    getPositioningContainer() {
+    private getPositioningContainer() {
         if (!this.context.isInCustomContainer) {
             return null;
         }
@@ -522,7 +517,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      * роль контейнера выполняет `document.body` и этот для них этот метод
      * всегда вернете `true`.
      */
-    isContainerReady() {
+    private isContainerReady() {
         if (!this.context.isInCustomContainer) {
             return true;
         }
@@ -542,7 +537,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         );
     }
 
-    redraw = () => {
+    private redraw = () => {
         /*
          * Если функция redraw() была вызвана до componentDidMount,
          * то нужно отложить её вызов до момента,
@@ -608,7 +603,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         this.setGradientStyles();
     };
 
-    ensureClickEvent(isDestroy?) {
+    private ensureClickEvent(isDestroy?) {
         const isNeedBindEvent = isDestroy === undefined ? this.props.visible : !isDestroy;
 
         // We need timeouts to not to catch the event that causes
@@ -631,7 +626,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         }, 0);
     }
 
-    getDrawingCss(drawingParams) {
+    private getDrawingCss(drawingParams) {
         return {
             top: drawingParams.top,
             left: drawingParams.left,
@@ -641,15 +636,15 @@ class Popup extends React.Component<PopupProps, PopupState> {
         };
     }
 
-    getMinWidth() {
+    private getMinWidth() {
         return this.props.minWidth === undefined ? 0 : this.props.minWidth;
     }
 
-    getMaxWidth() {
+    private getMaxWidth() {
         return this.props.maxWidth === undefined ? 'none' : this.props.maxWidth;
     }
 
-    getMaxHeight() {
+    private getMaxHeight() {
         return this.props.maxHeight === undefined ? 'none' : this.props.maxHeight;
     }
 
@@ -657,7 +652,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
      * Get collection of popup properties.
      *
      */
-    getPopupHash() {
+    private getPopupHash() {
         return {
             directions: this.props.directions,
             bestDirection: this.state.direction,
@@ -680,7 +675,7 @@ class Popup extends React.Component<PopupProps, PopupState> {
         };
     }
 
-    setGradientStyles() {
+    private setGradientStyles() {
         const { clientWidth } = this.inner;
 
         this.setState({
@@ -695,4 +690,6 @@ class Popup extends React.Component<PopupProps, PopupState> {
     }
 }
 
-export default Popup;
+class ThemedPopup extends Popup {}
+(ThemedPopup as any) = withTheme(Popup);
+export default ThemedPopup;

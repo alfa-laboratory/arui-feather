@@ -4,7 +4,8 @@
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
       "experimentalDecorators": true,
-      "strict": false
+      "strict": false,
+      "resolveJsonModule": true
   },
-  "include": ["src/**/*.tsx"]
+  "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

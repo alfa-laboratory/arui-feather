@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`radio-group should render with many radio children without problems 1`] = `
+<div
+  className="radio-group radio-group_type_normal radio-group_size_m control-group"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  tabIndex={-1}
+>
+  <div
+    className="radio-group__inner"
+  >
+    <div
+      className="radio-group__box"
+    >
+      <Radio
+        checked={false}
+        error={false}
+        key="radio-0/.$1"
+        onChange={[Function]}
+        size="m"
+        tabIndex={0}
+        text="label"
+      />
+      <Radio
+        checked={false}
+        error={false}
+        key="radio-1/.$2"
+        onChange={[Function]}
+        size="m"
+        tabIndex={0}
+        text="label"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`radio-group should render with only one children 1`] = `
+<div
+  className="radio-group radio-group_type_normal radio-group_size_m control-group"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  tabIndex={-1}
+>
+  <div
+    className="radio-group__inner"
+  >
+    <div
+      className="radio-group__box"
+    >
+      <Radio
+        checked={false}
+        error={false}
+        key="radio-0/.$1"
+        onChange={[Function]}
+        size="m"
+        tabIndex={0}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`radio-group should render without any children 1`] = `
+<div
+  className="radio-group radio-group_type_normal radio-group_size_m control-group"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  tabIndex={-1}
+>
+  <div
+    className="radio-group__inner"
+  >
+    <div
+      className="radio-group__box"
+    />
+  </div>
+</div>
+`;

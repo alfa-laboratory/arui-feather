@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input-group should render with many input children without problems 1`] = `
+<span
+  className="input-group control-group"
+  role="group"
+  tabIndex={-1}
+>
+  <span
+    className="input-group__input-case"
+    key="input-0/.0"
+  >
+    <Input
+      formNoValidate={false}
+      key="1"
+      resetError={true}
+      size="m"
+      type="text"
+      view="default"
+    />
+  </span>
+  <span
+    className="input-group__input-case"
+    key="input-1/.0"
+  >
+    <Input
+      formNoValidate={false}
+      key="2"
+      resetError={true}
+      size="m"
+      type="text"
+      view="default"
+    />
+  </span>
+</span>
+`;
+
+exports[`input-group should render with only one children 1`] = `
+<span
+  className="input-group control-group"
+  role="group"
+  tabIndex={-1}
+>
+  <span
+    className="input-group__input-case"
+    key="input-0/.0"
+  >
+    <Input
+      formNoValidate={false}
+      key="1"
+      resetError={true}
+      size="m"
+      type="text"
+      view="default"
+    />
+  </span>
+</span>
+`;
+
+exports[`input-group should render without any children 1`] = `
+<span
+  className="input-group control-group"
+  role="group"
+  tabIndex={-1}
+/>
+`;

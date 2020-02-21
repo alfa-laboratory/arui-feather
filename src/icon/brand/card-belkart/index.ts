@@ -5,4 +5,5 @@
 import './card-belkart.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './card-belkart';
+export { default } from './card-belkart';

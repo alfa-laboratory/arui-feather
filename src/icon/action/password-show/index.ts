@@ -5,4 +5,5 @@
 import './password-show.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './password-show';
+export { default } from './password-show';

@@ -5,4 +5,5 @@
 import './bank-vtb.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-vtb';
+export { default } from './bank-vtb';

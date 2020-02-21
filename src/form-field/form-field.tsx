@@ -3,14 +3,16 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type FormFieldProps = {
+export type FormFieldProps = DeepReadonly<{
 
     /**
      * Дочерние элементы `FormField`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Дополнительный класс
@@ -36,14 +38,14 @@ export type FormFieldProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент поля формы.
  * Необходим для вертикального ритма в форме.
  */
-class FormField extends React.PureComponent<FormFieldProps> {
-    cn = createCn('form-field');
+export class FormField extends React.PureComponent<FormFieldProps> {
+    protected cn = createCn('form-field');
 
     static defaultProps: Partial<FormFieldProps> = {
         size: 'm'
@@ -62,4 +64,6 @@ class FormField extends React.PureComponent<FormFieldProps> {
     }
 }
 
-export default FormField;
+class ThemedFormField extends FormField {}
+(ThemedFormField as any) = withTheme(FormField);
+export default ThemedFormField;

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { withTheme } from '../../../cn';
 import Icon from '../../../icon';
 import { IconProps } from '../../../icon/icon';
 
@@ -17,4 +18,6 @@ class IconCurrencyChf extends React.PureComponent<IconProps> {
     }
 }
 
-export default IconCurrencyChf;
+class ThemedIconCurrencyChf extends IconCurrencyChf {}
+(ThemedIconCurrencyChf as any) = withTheme(IconCurrencyChf);
+export default ThemedIconCurrencyChf;

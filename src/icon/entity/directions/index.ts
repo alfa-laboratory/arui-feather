@@ -5,4 +5,5 @@
 import './directions.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './directions';
+export { default } from './directions';

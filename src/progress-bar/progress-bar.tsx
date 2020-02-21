@@ -1,7 +1,9 @@
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type ProgressBarProps = {
+export type ProgressBarProps = DeepReadonly<{
 
     /**
      * Прогресс в процентах
@@ -28,13 +30,13 @@ export type ProgressBarProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент прогресс-бара.
  */
-class ProgressBar extends React.PureComponent<ProgressBarProps> {
-    cn = createCn('progress-bar');
+export class ProgressBar extends React.PureComponent<ProgressBarProps> {
+    protected cn = createCn('progress-bar');
 
     static defaultProps: Partial<ProgressBarProps> = {
         percent: 0,
@@ -58,4 +60,6 @@ class ProgressBar extends React.PureComponent<ProgressBarProps> {
     }
 }
 
-export default ProgressBar;
+class ThemedProgressBar extends ProgressBar {}
+(ThemedProgressBar as any) = withTheme(ProgressBar);
+export default ThemedProgressBar;

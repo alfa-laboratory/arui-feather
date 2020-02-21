@@ -5,4 +5,5 @@
 import './autopayment.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './autopayment';
+export { default } from './autopayment';

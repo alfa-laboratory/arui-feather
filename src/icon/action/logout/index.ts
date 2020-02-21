@@ -5,4 +5,5 @@
 import './logout.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './logout';
+export { default } from './logout';

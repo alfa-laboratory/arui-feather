@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type FormProps = {
+export type FormProps = DeepReadonly<{
 
     /**
      * Способ кодирования данных формы при их отправке
@@ -50,7 +52,7 @@ export type FormProps = {
     /**
      * Дочерние элементы формы
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -82,13 +84,13 @@ export type FormProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент формы.
  */
-class Form extends React.PureComponent<FormProps> {
-    cn = createCn('form');
+export class Form extends React.PureComponent<FormProps> {
+    protected cn = createCn('form');
 
     static defaultProps: Partial<FormProps> = {
         action: '/',
@@ -127,7 +129,7 @@ class Form extends React.PureComponent<FormProps> {
         );
     }
 
-    handleSubmit = (event) => {
+    private handleSubmit = (event) => {
         event.preventDefault();
 
         if (this.props.onSubmit) {
@@ -136,4 +138,6 @@ class Form extends React.PureComponent<FormProps> {
     }
 }
 
-export default Form;
+class ThemedForm extends Form {}
+(ThemedForm as any) = withTheme(Form);
+export default ThemedForm;

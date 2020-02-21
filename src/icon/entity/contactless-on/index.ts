@@ -5,4 +5,5 @@
 import './contactless-on.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './contactless-on';
+export { default } from './contactless-on';

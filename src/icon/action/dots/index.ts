@@ -5,4 +5,5 @@
 import './dots.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './dots';
+export { default } from './dots';

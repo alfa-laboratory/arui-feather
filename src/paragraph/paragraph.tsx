@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type ParagraphProps = {
+export type ParagraphProps = DeepReadonly<{
 
     /**
      * Тип параграфа
@@ -20,7 +22,7 @@ export type ParagraphProps = {
     /**
      * Дочерние элементы `Paragraph`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -41,13 +43,13 @@ export type ParagraphProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент параграфа текста.
  */
-class Paragraph extends React.PureComponent<ParagraphProps> {
-    cn = createCn('paragraph');
+export class Paragraph extends React.PureComponent<ParagraphProps> {
+    protected cn = createCn('paragraph');
 
     render() {
         return (
@@ -65,4 +67,6 @@ class Paragraph extends React.PureComponent<ParagraphProps> {
     }
 }
 
-export default Paragraph;
+class ThemedParagraph extends Paragraph {}
+(ThemedParagraph as any) = withTheme(Paragraph);
+export default ThemedParagraph;

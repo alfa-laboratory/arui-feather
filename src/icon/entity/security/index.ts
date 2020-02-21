@@ -5,4 +5,5 @@
 import './security.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './security';
+export { default } from './security';

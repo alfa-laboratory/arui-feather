@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type TabsProps = {
+export type TabsProps = DeepReadonly<{
 
     /**
      * Управление возможность скроллить компонент по-горизонтали
@@ -37,13 +39,13 @@ export type TabsProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент навигации в виде табов. Как правило используется совместно с `TabItem`.
  */
-class Tabs extends React.PureComponent<TabsProps> {
-    cn = createCn('tabs');
+export class Tabs extends React.PureComponent<TabsProps> {
+    protected cn = createCn('tabs');
 
     static defaultProps: Partial<TabsProps> = {
         scrollable: true
@@ -66,4 +68,6 @@ class Tabs extends React.PureComponent<TabsProps> {
     }
 }
 
-export default Tabs;
+class ThemedTabs extends Tabs {}
+(ThemedTabs as any) = withTheme(Tabs);
+export default ThemedTabs;

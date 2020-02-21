@@ -8,4 +8,5 @@ import '../theme-provider';
 
 import './plate.css';
 
-export { default } from './themed';
+export * from './plate';
+export { default } from './plate';

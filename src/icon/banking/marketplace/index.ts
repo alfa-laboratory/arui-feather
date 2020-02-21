@@ -5,4 +5,5 @@
 import './marketplace.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './marketplace';
+export { default } from './marketplace';

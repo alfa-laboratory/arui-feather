@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { withTheme } from '../../../cn';
 import Icon from '../../../icon';
 import { IconProps } from '../../../icon/icon';
 
@@ -17,4 +18,6 @@ class IconUnlock extends React.PureComponent<IconProps> {
     }
 }
 
-export default IconUnlock;
+class ThemedIconUnlock extends IconUnlock {}
+(ThemedIconUnlock as any) = withTheme(IconUnlock);
+export default ThemedIconUnlock;

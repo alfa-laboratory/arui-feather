@@ -5,14 +5,16 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
 import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
-import IconButton from '../icon-button/themed';
+import IconButton from '../icon-button/icon-button';
 
-export type PlateProps = {
+export type PlateProps = DeepReadonly<{
 
     /**
      * Управление наличием закрывающего крестика
@@ -99,13 +101,13 @@ export type PlateProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент плашки.
  */
-class Plate extends React.PureComponent<PlateProps> {
-    cn = createCn('plate');
+export class Plate extends React.PureComponent<PlateProps> {
+    protected cn = createCn('plate');
 
     static defaultProps: Partial<PlateProps> = {
         foldable: false,
@@ -119,6 +121,7 @@ class Plate extends React.PureComponent<PlateProps> {
         isFolded: this.props.folded
     };
 
+    // TODO [issues/1018] на private ругается
     root: HTMLElement;
 
     render() {
@@ -192,13 +195,13 @@ class Plate extends React.PureComponent<PlateProps> {
         );
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleTitleClick = (event) => {
+    private handleTitleClick = (event) => {
         if (this.props.foldable) {
             this.setState({
                 isFolded: !this.state.isFolded
@@ -210,13 +213,13 @@ class Plate extends React.PureComponent<PlateProps> {
         }
     }
 
-    handleTitleKeyDown = (event) => {
+    private handleTitleKeyDown = (event) => {
         if (this.props.onTitleKeyDown) {
             this.props.onTitleKeyDown(event);
         }
     }
 
-    handleFolderClick = (event) => {
+    private handleFolderClick = (event) => {
         this.setState({
             isFolded: !this.state.isFolded
         });
@@ -226,7 +229,7 @@ class Plate extends React.PureComponent<PlateProps> {
         }
     }
 
-    handleCloserClick = (event) => {
+    private handleCloserClick = (event) => {
         this.setState({
             isHidden: true
         });
@@ -236,11 +239,13 @@ class Plate extends React.PureComponent<PlateProps> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
     }
 }
 
-export default Plate;
+class ThemedPlate extends Plate {}
+(ThemedPlate as any) = withTheme(Plate);
+export default ThemedPlate;

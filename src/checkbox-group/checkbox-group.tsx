@@ -4,11 +4,13 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 export type CheckBoxGroupThemeFieldType = 'alfa-on-color' | 'alfa-on-white';
 
-export type CheckBoxGroupProps = ({
+export type CheckBoxGroupProps = DeepReadonly<({
     /**
      * Тип компонента
      */
@@ -85,13 +87,13 @@ export type CheckBoxGroupProps = ({
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент группы чекбоксов.
  */
-class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
-    cn = createCn('checkbox-group');
+export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
+    protected cn = createCn('checkbox-group');
 
     static defaultProps: Partial<CheckBoxGroupProps> = {
         type: 'normal'
@@ -101,6 +103,7 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         value: []
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     checkboxes: any[];
 
     render() {
@@ -133,7 +136,7 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
                         ? value.some(groupValue => groupValue === checkbox.props.value)
                         : checkbox.props.checked,
                     onChange: checkbox.props.onChange === undefined
-                        ? (checked, _text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
+                        ? (checked, text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
                         : checkbox.props.onChange,
                     ...props
                 });
@@ -173,7 +176,7 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         );
     }
 
-    handleCheckboxChange = (value, checked, event) => {
+    private handleCheckboxChange = (value, checked, event) => {
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
         const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
@@ -192,13 +195,13 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
@@ -206,10 +209,8 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
 
     /**
      * Устанавливает фокус на первую чекбокс-кнопку в группе.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         if (this.checkboxes && this.checkboxes[0]) {
             this.checkboxes[0].focus();
         }
@@ -217,15 +218,15 @@ class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
 
     /**
      * Убирает фокус с группы чекбокс-кнопок.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
     }
 }
 
-export default CheckBoxGroup;
+class ThemedCheckBoxGroup extends CheckBoxGroup {}
+(ThemedCheckBoxGroup as any) = withTheme(CheckBoxGroup);
+export default ThemedCheckBoxGroup;

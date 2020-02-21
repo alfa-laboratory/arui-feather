@@ -5,4 +5,5 @@
 import './left.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './left';
+export { default } from './left';

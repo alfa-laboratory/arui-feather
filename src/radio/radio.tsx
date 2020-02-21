@@ -3,13 +3,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import TagButton from '../tag-button/themed';
+import TagButton from '../tag-button/tag-button';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type RadioProps = ({
+export type RadioProps = DeepReadonly<({
     /**
      * Тип
      */
@@ -114,7 +116,7 @@ export type RadioProps = ({
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 type RadioState = {
     focused: boolean;
@@ -126,8 +128,8 @@ type RadioState = {
 /**
  * Компонент радио-кнопки.
  */
-class Radio extends React.PureComponent<RadioProps, RadioState> {
-    cn = createCn('radio');
+export class Radio extends React.PureComponent<RadioProps, RadioState> {
+    protected cn = createCn('radio');
 
     static defaultProps: Partial<RadioProps> = {
         size: 'm',
@@ -140,8 +142,8 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         checked: false
     };
 
-    label;
-    control;
+    private label;
+    private control;
 
     render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
@@ -242,11 +244,11 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         );
     }
 
-    handleInputControlClick = (event) => {
+    private handleInputControlClick = (event) => {
         event.stopPropagation();
     };
 
-    handleChange = (event) => {
+    private handleChange = (event) => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
@@ -258,7 +260,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (!this.props.disabled) {
             this.setState({ focused: true });
         }
@@ -272,9 +274,9 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
+    private handleUnfocus = () => setImmediate(() => this.setState({ focused: false }));
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         if (!this.props.disabled) {
             this.setState({ focused: false });
         }
@@ -288,7 +290,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -298,7 +300,7 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -310,20 +312,16 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     /**
      * Устанавливает фокус на радио-кнопку.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Убирает фокус с радио-кнопки.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
@@ -331,10 +329,8 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     /**
      * Скроллит страницу до радио-кнопки.
-     *
-     * @public
      */
-    scrollTo() {
+    public scrollTo() {
         const elementRect = this.label.getBoundingClientRect();
 
         scrollTo({
@@ -344,4 +340,6 @@ class Radio extends React.PureComponent<RadioProps, RadioState> {
     }
 }
 
-export default Radio;
+class ThemedRadio extends Radio {}
+(ThemedRadio as any) = withTheme(Radio);
+export default ThemedRadio;

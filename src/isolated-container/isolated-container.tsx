@@ -9,9 +9,9 @@ import React from 'react';
  * Используется для визуализации элементов в кастомных контейнерах,
  * о которых React не должен ничего знать.
  */
-class IsolatedContainer extends React.Component {
+export class IsolatedContainer extends React.Component {
 
-    element: HTMLDivElement;
+    private element: HTMLDivElement;
 
     shouldComponentUpdate() {
         return false;
@@ -26,10 +26,8 @@ class IsolatedContainer extends React.Component {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.element;
     }
 }

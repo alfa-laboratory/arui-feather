@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Plate from './plate';
+import { Plate } from './plate';
 import IconOk from '../icon/ui/ok';
 
 describe('plate', () => {

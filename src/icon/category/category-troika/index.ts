@@ -5,4 +5,5 @@
 import './category-troika.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './category-troika';
+export { default } from './category-troika';

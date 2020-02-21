@@ -5,4 +5,5 @@
 import './arrow-back.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './arrow-back';
+export { default } from './arrow-back';

@@ -34,9 +34,14 @@ module.exports = {
     ],
     coveragePathIgnorePatterns: [
         '/node_modules/',
-        '\\.test\\.jsx$',
-        '-test\\.jsx$',
-        'index.js'
+        '\\.test\\.tsx$',
+        '-test\\.tsx$',
+        'index.ts',
+        // REMOVE AFTER UPGRADE STYLEGUIDIST
+        'entrypoint-for-demo.ts',
+        'polyfills.js',
+        '\\.d\\.ts$',
+        '\\.gulpfile\\.js$'
     ],
     snapshotSerializers: [
         'enzyme-to-json/serializer'

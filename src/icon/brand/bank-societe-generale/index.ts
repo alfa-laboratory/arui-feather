@@ -5,4 +5,5 @@
 import './bank-societe-generale.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-societe-generale';
+export { default } from './bank-societe-generale';

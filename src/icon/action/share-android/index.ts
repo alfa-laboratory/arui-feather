@@ -5,4 +5,5 @@
 import './share-android.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './share-android';
+export { default } from './share-android';

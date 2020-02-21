@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
 type BreakpointsType = {
@@ -19,7 +20,7 @@ type BreakpointsType = {
     'desktop-l'?: string | number | object;
 };
 
-export type GridColProps = {
+export type GridColProps = DeepReadonly<{
 
     /**
      * Уникальный идентификатор блока
@@ -80,15 +81,15 @@ export type GridColProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Колонки используются для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  * Колонки должны быть помещены в строки (компонент `GridRow`).
  */
-class GridCol extends React.PureComponent<GridColProps> {
-    cn = createCn('grid-col');
+export class GridCol extends React.PureComponent<GridColProps> {
+    protected cn = createCn('grid-col');
 
     static defaultProps: Partial<GridColProps> = {
         tag: 'div'
@@ -126,7 +127,7 @@ class GridCol extends React.PureComponent<GridColProps> {
      * @returns {Object}
      */
     // eslint-disable-next-line class-methods-use-this
-    createClassNames(props) {
+    private createClassNames(props) {
         const classNames = {};
 
         Object.keys(props).forEach((name) => {

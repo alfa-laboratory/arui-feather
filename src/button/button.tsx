@@ -3,10 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 
-export type ButtonProps = {
+export type ButtonProps = DeepReadonly<{
 
     /**
      * Текст кнопки
@@ -106,7 +108,7 @@ export type ButtonProps = {
     /**
      * Дочерние элементы `Button`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -173,13 +175,13 @@ export type ButtonProps = {
      */
     onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
 
-};
+}>;
 
 /**
  * Компонент кнопки (да, она нажимается!).
  */
-class Button extends React.PureComponent<ButtonProps> {
-    cn = createCn('button');
+export class Button extends React.PureComponent<ButtonProps> {
+    protected cn = createCn('button');
 
     static defaultProps: Partial<ButtonProps> = {
         type: 'button',
@@ -194,7 +196,7 @@ class Button extends React.PureComponent<ButtonProps> {
         pressed: false
     };
 
-    control: HTMLButtonElement | HTMLSpanElement;
+    private control: HTMLButtonElement | HTMLSpanElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -280,13 +282,13 @@ class Button extends React.PureComponent<ButtonProps> {
         );
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.onClick) {
             this.props.onClick(event);
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         if (this.state.pressed) {
             return;
         }
@@ -298,7 +300,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -306,7 +308,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: true });
         }
@@ -316,7 +318,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         if (!this.props.disabled) {
             this.setState({ hovered: false });
         }
@@ -326,7 +328,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseDown = (event) => {
+    private handleMouseDown = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -336,7 +338,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseUp = (event) => {
+    private handleMouseUp = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -346,7 +348,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleMouseOut = (event) => {
+    private handleMouseOut = (event) => {
         if (!this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -356,7 +358,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: true });
         }
@@ -366,7 +368,7 @@ class Button extends React.PureComponent<ButtonProps> {
         }
     };
 
-    handleKeyUp = (event) => {
+    private handleKeyUp = (event) => {
         if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
             this.setState({ pressed: false });
         }
@@ -378,33 +380,29 @@ class Button extends React.PureComponent<ButtonProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.control;
     }
 
     /**
      * Устанавливает фокус на поле ввода.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Убирает фокус с поля ввода.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
     }
 }
 
-export default Button;
+class ThemedButton extends Button {}
+(ThemedButton as any) = withTheme(Button);
+export default ThemedButton;

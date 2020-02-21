@@ -5,4 +5,5 @@
 import './erase.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './erase';
+export { default } from './erase';

@@ -5,7 +5,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Collapse from './collapse';
+import { Collapse } from './collapse';
 
 describe('collapse', () => {
     it('should render without problem', () => {
@@ -44,6 +44,7 @@ describe('collapse', () => {
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
         // эмулируем высоту контент-враппера и самостоятельно вызываем resize-handler
         collapse.instance().contentCase = { offsetHeight: 100 };
+        // @ts-ignore
         collapse.instance().updateContentHeight();
 
         expect(collapse.instance().content.style.height).toBe('100px');
@@ -60,6 +61,7 @@ describe('collapse', () => {
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
         // эмулируем высоту контент-враппера и самостоятельно вызываем resize-handler
         collapse.instance().contentCase = { offsetHeight: 100 };
+        // @ts-ignore
         collapse.instance().updateContentHeight();
 
         expect(collapse.instance().content.style.height).toBe('0px');

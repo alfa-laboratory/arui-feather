@@ -3,14 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { createCn } from 'bem-react-classname';
-import Link, { LinkProps } from '../link/link';
+import { withTheme } from '../cn';
+import { LinkProps, Link } from '../link/link';
 
 /**
  * Компонент таба. Как правило, используется совместно с `Tabs`.
- * @extends Link
  */
-class TabItem extends Link {
-    cn = createCn('tab-item');
+export class TabItem extends Link {
+    protected cn = createCn('tab-item');
     static defaultProps: Partial<LinkProps> = {
         size: 'l',
         view: 'default',
@@ -21,4 +21,6 @@ class TabItem extends Link {
     };
 }
 
-export default TabItem;
+class ThemedTabItem extends TabItem {}
+(ThemedTabItem as any) = withTheme(TabItem);
+export default ThemedTabItem;

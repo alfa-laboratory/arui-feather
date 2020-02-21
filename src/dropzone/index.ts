@@ -4,4 +4,5 @@
 
 import './dropzone.css';
 
-export { default } from './themed';
+export * from './dropzone';
+export { default } from './dropzone';

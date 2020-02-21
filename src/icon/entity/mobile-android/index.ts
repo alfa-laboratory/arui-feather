@@ -5,4 +5,5 @@
 import './mobile-android.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './mobile-android';
+export { default } from './mobile-android';

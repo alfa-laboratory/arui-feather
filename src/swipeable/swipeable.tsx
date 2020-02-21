@@ -1,4 +1,5 @@
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 
 // TODO: функция вызывается на TouchEvent и PointerEvent хотя больше от этого путанницы
 // Тут надо отдельно рефачить и типы и имплементацию чтоб ничего не сломать
@@ -10,7 +11,7 @@ export const getCoordinates = ({
         : { clientX, clientY }
 );
 
-export type SwipeableProps = {
+export type SwipeableProps = DeepReadonly<{
 
     /**
      * Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу
@@ -27,7 +28,7 @@ export type SwipeableProps = {
      * TODO: // тут должны быть такие children что у ниъ есть onMouseDown onTouchStart
      */
     children: any;
-};
+}>;
 
 class Swipeable extends React.PureComponent<SwipeableProps> {
 
@@ -51,7 +52,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         });
     }
 
-    handleMouseDown = (event) => {
+    private handleMouseDown = (event) => {
         if (this.props.children.props.onMouseDown) {
             this.props.children.props.onMouseDown(event);
         }
@@ -62,7 +63,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         document.addEventListener('mouseup', this.removeListeners);
     };
 
-    handleTouchStart = (event) => {
+    private handleTouchStart = (event) => {
         if (event.touches && event.touches.length > 1) {
             return;
         }
@@ -78,14 +79,14 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         document.addEventListener('touchcancel', this.removeListeners);
     };
 
-    handleSwipeStart = (event) => {
+    private handleSwipeStart = (event) => {
         const { clientX, clientY } = getCoordinates(event);
 
         this.swipeStartX = clientX;
         this.swipeStartY = clientY;
     };
 
-    handleSwipeEnd = (event) => {
+    private handleSwipeEnd = (event) => {
         const { props: { delta, onSwipe } } = this;
         const { clientX, clientY } = getCoordinates(event);
 
@@ -105,7 +106,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
         }
     };
 
-    removeListeners = () => {
+    private removeListeners = () => {
         document.removeEventListener('mouseup', this.handleSwipeEnd);
         document.removeEventListener('mouseup', this.removeListeners);
         document.removeEventListener('touchend', this.handleSwipeEnd);

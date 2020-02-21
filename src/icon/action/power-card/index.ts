@@ -5,4 +5,5 @@
 import './power-card.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './power-card';
+export { default } from './power-card';

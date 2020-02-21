@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { withTheme } from '../../../cn';
 import Icon from '../../../icon';
 import { IconProps } from '../../../icon/icon';
 
@@ -17,4 +18,6 @@ class IconCall extends React.PureComponent<IconProps> {
     }
 }
 
-export default IconCall;
+class ThemedIconCall extends IconCall {}
+(ThemedIconCall as any) = withTheme(IconCall);
+export default ThemedIconCall;

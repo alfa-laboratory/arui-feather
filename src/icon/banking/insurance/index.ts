@@ -5,4 +5,5 @@
 import './insurance.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './insurance';
+export { default } from './insurance';

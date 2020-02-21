@@ -5,4 +5,5 @@
 import './pin.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './pin';
+export { default } from './pin';

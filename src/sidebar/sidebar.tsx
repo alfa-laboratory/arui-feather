@@ -5,7 +5,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
 import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
@@ -56,7 +58,7 @@ function handleBodyScroll() {
     }
 }
 
-export type SidebarProps = {
+export type SidebarProps = DeepReadonly<{
 
     /**
      * Тема компонента
@@ -76,7 +78,7 @@ export type SidebarProps = {
     /**
      * Дочерние компоненты
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Признак для отрисовки элемента закрытия
@@ -113,13 +115,13 @@ export type SidebarProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент боковой панели aka холодильник.
  */
-class Sidebar extends React.PureComponent<SidebarProps> {
-    cn = createCn('sidebar');
+export class Sidebar extends React.PureComponent<SidebarProps> {
+    protected cn = createCn('sidebar');
 
     static defaultProps: Partial<SidebarProps> = {
         hasOverlay: true,
@@ -241,11 +243,11 @@ class Sidebar extends React.PureComponent<SidebarProps> {
         );
     }
 
-    handleMqMatchChange = (isMatched) => {
+    private handleMqMatchChange = (isMatched) => {
         this.setState({ isMobile: isMatched });
     };
 
-    handleClose = (event) => {
+    private handleClose = (event) => {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
@@ -255,7 +257,7 @@ class Sidebar extends React.PureComponent<SidebarProps> {
         }
     };
 
-    handleKeyDown = (event) => {
+    private handleKeyDown = (event) => {
         switch (event.which) {
             case keyboardCode.ESCAPE:
                 event.preventDefault();
@@ -264,11 +266,13 @@ class Sidebar extends React.PureComponent<SidebarProps> {
         }
     };
 
-    styleBodyRightMargin() {
+    private styleBodyRightMargin() {
         const offset = this.props.visible ? getScrollbarWidth() : 0;
 
         document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : '0';
     }
 }
 
-export default Sidebar;
+class ThemedSidebar extends Sidebar {}
+(ThemedSidebar as any) = withTheme(Sidebar);
+export default ThemedSidebar;

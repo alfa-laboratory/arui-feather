@@ -5,4 +5,5 @@
 import './copy.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './copy';
+export { default } from './copy';

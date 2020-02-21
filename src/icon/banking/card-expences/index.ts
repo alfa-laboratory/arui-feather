@@ -5,4 +5,5 @@
 import './card-expences.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './card-expences';
+export { default } from './card-expences';

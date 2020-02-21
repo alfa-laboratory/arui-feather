@@ -5,4 +5,5 @@
 import './calendar.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './calendar';
+export { default } from './calendar';

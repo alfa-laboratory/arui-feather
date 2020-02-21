@@ -5,4 +5,5 @@
 import './bank-tinkoff.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './bank-tinkoff';
+export { default } from './bank-tinkoff';

@@ -5,4 +5,5 @@
 import './card-activation.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './card-activation';
+export { default } from './card-activation';

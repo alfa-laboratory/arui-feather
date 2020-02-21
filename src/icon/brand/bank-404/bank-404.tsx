@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { withTheme } from '../../../cn';
 import Icon from '../../../icon';
 import { IconProps } from '../../../icon/icon';
 
@@ -17,4 +18,6 @@ class IconBank404 extends React.PureComponent<IconProps> {
     }
 }
 
-export default IconBank404;
+class ThemedIconBank404 extends IconBank404 {}
+(ThemedIconBank404 as any) = withTheme(IconBank404);
+export default ThemedIconBank404;

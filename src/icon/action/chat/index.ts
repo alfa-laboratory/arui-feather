@@ -5,4 +5,5 @@
 import './chat.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './chat';
+export { default } from './chat';

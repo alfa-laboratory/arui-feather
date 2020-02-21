@@ -3,12 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-import Dropdown from '../dropdown/themed';
-import Link from '../link/themed';
+import Dropdown from '../dropdown/dropdown';
+import Link from '../link/link';
 
-export type MenuItemProps = {
+export type MenuItemProps = DeepReadonly<{
 
     /**
      * Тип элемента меню
@@ -68,7 +70,7 @@ export type MenuItemProps = {
     /**
      * Дочерние элементы `MenuItem`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -109,13 +111,13 @@ export type MenuItemProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
-class MenuItem extends React.PureComponent<MenuItemProps> {
-    cn = createCn('menu-item');
+export class MenuItem extends React.PureComponent<MenuItemProps> {
+    protected cn = createCn('menu-item');
 
     static defaultProps: Partial<MenuItemProps> = {
         type: 'link',
@@ -127,8 +129,8 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         focused: false
     };
 
-    root;
-    control;
+    private root;
+    private control;
 
     render() {
         const content: any = this.props.children || this.props.value;
@@ -223,7 +225,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         );
     }
 
-    handleClick = (event) => {
+    private handleClick = (event) => {
         if (this.props.disabled) {
             event.preventDefault();
 
@@ -235,7 +237,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleFocus = (event) => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
@@ -243,7 +245,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleBlur = (event) => {
+    private handleBlur = (event) => {
         this.setState({ focused: false });
 
         if (this.props.onBlur) {
@@ -251,7 +253,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleMouseEnter = (event) => {
+    private handleMouseEnter = (event) => {
         this.setState({ hovered: true });
 
         if (this.props.onMouseEnter) {
@@ -259,7 +261,7 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
         }
     };
 
-    handleMouseLeave = (event) => {
+    private handleMouseLeave = (event) => {
         this.setState({ hovered: false });
 
         if (this.props.onMouseLeave) {
@@ -269,33 +271,29 @@ class MenuItem extends React.PureComponent<MenuItemProps> {
 
     /**
      * Возвращает корневой `HTMLElement` компонента.
-     *
-     * @public
      */
-    getNode() {
+    public getNode() {
         return this.root;
     }
 
     /**
      * Устанавливает фокус на элементе меню.
-     *
-     * @public
      */
-    focus() {
+    public focus() {
         this.control.focus();
     }
 
     /**
      * Убирает фокус с элемента меню.
-     *
-     * @public
      */
     // eslint-disable-next-line class-methods-use-this
-    blur() {
+    public blur() {
         if (document.activeElement) {
             (document.activeElement as HTMLElement).blur();
         }
     }
 }
 
-export default MenuItem;
+class ThemedMenuItem extends MenuItem {}
+(ThemedMenuItem as any) = withTheme(MenuItem);
+export default ThemedMenuItem;

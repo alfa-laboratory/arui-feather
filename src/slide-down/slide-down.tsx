@@ -3,9 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
+import { withTheme } from '../cn';
 
-export type SlideDownProps = {
+export type SlideDownProps = DeepReadonly<{
 
     /**
      * Управление состоянием expand/collapse компонента
@@ -35,33 +37,33 @@ export type SlideDownProps = {
     /**
      * Обработчик события начала анимации
      */
-    onAnimationStart?: Function;
+    onAnimationStart?: () => void;
 
     /**
      * Обработчик события окончания анимации
      */
-    onAnimationEnd?: Function;
+    onAnimationEnd?: () => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
 
-};
+}>;
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-class SlideDown extends React.PureComponent<SlideDownProps> {
-    cn = createCn('slide-down');
+export class SlideDown extends React.PureComponent<SlideDownProps> {
+    protected cn = createCn('slide-down');
 
     state = {
         height: this.props.isExpanded ? 'auto' : 0,
         isHeightAuto: this.props.isExpanded
     };
 
-    slideDown;
-    slideDownContent;
+    private slideDown;
+    private slideDownContent;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -103,7 +105,7 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
         );
     }
 
-    handleTransitionEnd = (event) => {
+    private handleTransitionEnd = (event) => {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
         }
@@ -112,20 +114,20 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
         }
     };
 
-    getHeight() {
+    private getHeight() {
         return this.state.isHeightAuto
             ? 'auto'
             : this.state.height;
     }
 
-    setHeightToContentHeight() {
+    private setHeightToContentHeight() {
         this.setState({
             isHeightAuto: false,
             height: this.slideDownContent.offsetHeight
         });
     }
 
-    setHeightToNull() {
+    private setHeightToNull() {
         this.setHeightToContentHeight();
 
         // Заставляем React перерисовать элемент
@@ -138,11 +140,13 @@ class SlideDown extends React.PureComponent<SlideDownProps> {
         });
     }
 
-    setAutoHeight() {
+    private setAutoHeight() {
         this.setState({
             isHeightAuto: true
         });
     }
 }
 
-export default SlideDown;
+class ThemedSlideDown extends SlideDown {}
+(ThemedSlideDown as any) = withTheme(SlideDown);
+export default ThemedSlideDown;

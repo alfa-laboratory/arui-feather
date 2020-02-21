@@ -203,7 +203,7 @@
     }
 
     &:not(&_has-label) &__placeholder,
-    &&_has-label&_has-placeholder&_opened &__placeholder {
+    &&_has-label&_has-placeholder &__placeholder {
         opacity: var(--opacity-active);
     }
 }
@@ -219,7 +219,7 @@
         padding-right: 30px;
     }
 
-    &.select_has-placeholder.select_opened,
+    &.select_has-placeholder,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-s)) translateY(-22px);
@@ -240,7 +240,7 @@
         padding-right: 34px;
     }
 
-    &.select_has-placeholder.select_opened,
+    &.select_has-placeholder,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-m)) translateY(-30px);
@@ -261,7 +261,7 @@
         padding-right: 44px;
     }
 
-    &.select_has-placeholder.select_opened,
+    &.select_has-placeholder,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-l)) translateY(-40px);
@@ -282,7 +282,7 @@
         padding-right: 52px;
     }
 
-    &.select_has-placeholder.select_opened,
+    &.select_has-placeholder,
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-xl)) translateY(-50px);
@@ -332,7 +332,7 @@
         }
 
         &.select_has-value,
-        &.select_has-placeholder.select_opened {
+        &.select_has-placeholder {
             .select__top {
                 font-size: var(--font-size-xs);
                 transform: translateY(-8px);
@@ -380,7 +380,7 @@
         }
 
         &.select_has-value,
-        &.select_has-placeholder.select_opened {
+        &.select_has-placeholder {
             .select__top {
                 font-size: var(--font-size-s);
                 transform: translateY(-12px);

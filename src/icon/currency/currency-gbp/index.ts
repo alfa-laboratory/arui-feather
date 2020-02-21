@@ -5,4 +5,5 @@
 import './currency-gbp.css';
 import '../../../icon';
 
-export { default } from './themed';
+export * from './currency-gbp';
+export { default } from './currency-gbp';

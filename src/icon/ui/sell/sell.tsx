@@ -18,4 +18,6 @@ class IconSell extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSell);
+class ThemedIconSell extends IconSell {}
+(ThemedIconSell as any) = withTheme(IconSell);
+export default ThemedIconSell;

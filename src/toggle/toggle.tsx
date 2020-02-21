@@ -181,4 +181,6 @@ export class Toggle extends React.PureComponent<ToggleProps> {
     }
 }
 
-export default withTheme(Toggle);
+class ThemedToggle extends Toggle {}
+(ThemedToggle as any) = withTheme(Toggle);
+export default ThemedToggle;

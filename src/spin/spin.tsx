@@ -65,4 +65,6 @@ export class Spin extends React.PureComponent<SpinProps> {
     }
 }
 
-export default withTheme(Spin);
+class ThemedSpin extends Spin {}
+(ThemedSpin as any) = withTheme(Spin);
+export default ThemedSpin;

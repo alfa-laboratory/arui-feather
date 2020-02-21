@@ -67,4 +67,6 @@ export class Paragraph extends React.PureComponent<ParagraphProps> {
     }
 }
 
-export default withTheme(Paragraph);
+class ThemedParagraph extends Paragraph {}
+(ThemedParagraph as any) = withTheme(Paragraph);
+export default ThemedParagraph;

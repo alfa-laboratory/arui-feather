@@ -403,4 +403,6 @@ export class Button extends React.PureComponent<ButtonProps> {
     }
 }
 
-export default withTheme(Button);
+class ThemedButton extends Button {}
+(ThemedButton as any) = withTheme(Button);
+export default ThemedButton;

@@ -18,4 +18,6 @@ class IconFormatCsv extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatCsv);
+class ThemedIconFormatCsv extends IconFormatCsv {}
+(ThemedIconFormatCsv as any) = withTheme(IconFormatCsv);
+export default ThemedIconFormatCsv;

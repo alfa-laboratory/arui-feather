@@ -18,4 +18,6 @@ class IconWaiting extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconWaiting);
+class ThemedIconWaiting extends IconWaiting {}
+(ThemedIconWaiting as any) = withTheme(IconWaiting);
+export default ThemedIconWaiting;

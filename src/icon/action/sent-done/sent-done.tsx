@@ -18,4 +18,6 @@ class IconSentDone extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSentDone);
+class ThemedIconSentDone extends IconSentDone {}
+(ThemedIconSentDone as any) = withTheme(IconSentDone);
+export default ThemedIconSentDone;

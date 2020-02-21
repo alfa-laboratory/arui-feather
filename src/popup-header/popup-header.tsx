@@ -85,4 +85,6 @@ export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
     }
 }
 
-export default withTheme(PopupHeader);
+class ThemedPopupHeader extends PopupHeader {}
+(ThemedPopupHeader as any) = withTheme(PopupHeader);
+export default ThemedPopupHeader;

@@ -797,4 +797,6 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
     }
 }
 
-export default withTheme(InputAutocomplete);
+class ThemedInputAutocomplete extends InputAutocomplete {}
+(ThemedInputAutocomplete as any) = withTheme(InputAutocomplete);
+export default ThemedInputAutocomplete;

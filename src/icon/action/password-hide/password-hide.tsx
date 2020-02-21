@@ -18,4 +18,6 @@ class IconPasswordHide extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPasswordHide);
+class ThemedIconPasswordHide extends IconPasswordHide {}
+(ThemedIconPasswordHide as any) = withTheme(IconPasswordHide);
+export default ThemedIconPasswordHide;

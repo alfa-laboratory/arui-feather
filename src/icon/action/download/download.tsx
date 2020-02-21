@@ -18,4 +18,6 @@ class IconDownload extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconDownload);
+class ThemedIconDownload extends IconDownload {}
+(ThemedIconDownload as any) = withTheme(IconDownload);
+export default ThemedIconDownload;

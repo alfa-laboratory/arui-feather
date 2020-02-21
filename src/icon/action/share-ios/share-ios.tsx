@@ -18,4 +18,6 @@ class IconShareIos extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconShareIos);
+class ThemedIconShareIos extends IconShareIos {}
+(ThemedIconShareIos as any) = withTheme(IconShareIos);
+export default ThemedIconShareIos;

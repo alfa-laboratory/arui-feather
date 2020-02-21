@@ -18,4 +18,6 @@ class IconPaymentToSelf extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPaymentToSelf);
+class ThemedIconPaymentToSelf extends IconPaymentToSelf {}
+(ThemedIconPaymentToSelf as any) = withTheme(IconPaymentToSelf);
+export default ThemedIconPaymentToSelf;

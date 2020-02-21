@@ -340,4 +340,6 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
     }
 }
 
-export default withTheme(Radio);
+class ThemedRadio extends Radio {}
+(ThemedRadio as any) = withTheme(Radio);
+export default ThemedRadio;

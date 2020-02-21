@@ -18,4 +18,6 @@ class IconSelfemloyedReg extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSelfemloyedReg);
+class ThemedIconSelfemloyedReg extends IconSelfemloyedReg {}
+(ThemedIconSelfemloyedReg as any) = withTheme(IconSelfemloyedReg);
+export default ThemedIconSelfemloyedReg;

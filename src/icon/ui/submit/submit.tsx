@@ -18,4 +18,6 @@ class IconSubmit extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSubmit);
+class ThemedIconSubmit extends IconSubmit {}
+(ThemedIconSubmit as any) = withTheme(IconSubmit);
+export default ThemedIconSubmit;

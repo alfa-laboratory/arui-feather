@@ -18,4 +18,6 @@ class IconNetworkVk extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNetworkVk);
+class ThemedIconNetworkVk extends IconNetworkVk {}
+(ThemedIconNetworkVk as any) = withTheme(IconNetworkVk);
+export default ThemedIconNetworkVk;

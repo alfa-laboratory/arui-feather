@@ -147,4 +147,6 @@ export class SlideDown extends React.PureComponent<SlideDownProps> {
     }
 }
 
-export default withTheme(SlideDown);
+class ThemedSlideDown extends SlideDown {}
+(ThemedSlideDown as any) = withTheme(SlideDown);
+export default ThemedSlideDown;

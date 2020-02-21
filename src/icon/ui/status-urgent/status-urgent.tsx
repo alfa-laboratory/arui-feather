@@ -18,4 +18,6 @@ class IconStatusUrgent extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconStatusUrgent);
+class ThemedIconStatusUrgent extends IconStatusUrgent {}
+(ThemedIconStatusUrgent as any) = withTheme(IconStatusUrgent);
+export default ThemedIconStatusUrgent;

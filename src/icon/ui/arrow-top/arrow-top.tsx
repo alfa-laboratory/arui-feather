@@ -18,4 +18,6 @@ class IconArrowTop extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconArrowTop);
+class ThemedIconArrowTop extends IconArrowTop {}
+(ThemedIconArrowTop as any) = withTheme(IconArrowTop);
+export default ThemedIconArrowTop;

@@ -18,4 +18,6 @@ class IconContactList extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconContactList);
+class ThemedIconContactList extends IconContactList {}
+(ThemedIconContactList as any) = withTheme(IconContactList);
+export default ThemedIconContactList;

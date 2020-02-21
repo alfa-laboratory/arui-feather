@@ -18,4 +18,6 @@ class IconWallet extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconWallet);
+class ThemedIconWallet extends IconWallet {}
+(ThemedIconWallet as any) = withTheme(IconWallet);
+export default ThemedIconWallet;

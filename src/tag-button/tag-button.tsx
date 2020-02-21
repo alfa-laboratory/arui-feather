@@ -15,4 +15,6 @@ export class TagButton extends Button {
     cn = createCn('tag-button');
 }
 
-export default withTheme(TagButton);
+class ThemedTagButton extends TagButton {}
+(ThemedTagButton as any) = withTheme(TagButton);
+export default ThemedTagButton;

@@ -18,4 +18,6 @@ class IconChatSend extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconChatSend);
+class ThemedIconChatSend extends IconChatSend {}
+(ThemedIconChatSend as any) = withTheme(IconChatSend);
+export default ThemedIconChatSend;

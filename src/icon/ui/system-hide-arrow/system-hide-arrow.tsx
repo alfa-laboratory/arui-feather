@@ -18,4 +18,6 @@ class IconSystemHideArrow extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSystemHideArrow);
+class ThemedIconSystemHideArrow extends IconSystemHideArrow {}
+(ThemedIconSystemHideArrow as any) = withTheme(IconSystemHideArrow);
+export default ThemedIconSystemHideArrow;

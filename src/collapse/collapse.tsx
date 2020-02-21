@@ -164,4 +164,6 @@ export class Collapse extends React.PureComponent<CollapseProps> {
     }
 }
 
-export default withTheme(Collapse);
+class ThemedCollapse extends Collapse {}
+(ThemedCollapse as any) = withTheme(Collapse);
+export default ThemedCollapse;

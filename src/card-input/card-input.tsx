@@ -67,4 +67,6 @@ export class CardInput extends React.PureComponent<CardInputProps> {
     }
 }
 
-export default withTheme(CardInput);
+class ThemedCardInput extends CardInput {}
+(ThemedCardInput as any) = withTheme(CardInput);
+export default ThemedCardInput;

@@ -18,4 +18,6 @@ class IconAttention extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAttention);
+class ThemedIconAttention extends IconAttention {}
+(ThemedIconAttention as any) = withTheme(IconAttention);
+export default ThemedIconAttention;

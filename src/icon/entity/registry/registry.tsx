@@ -18,4 +18,6 @@ class IconRegistry extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconRegistry);
+class ThemedIconRegistry extends IconRegistry {}
+(ThemedIconRegistry as any) = withTheme(IconRegistry);
+export default ThemedIconRegistry;

@@ -18,4 +18,6 @@ class IconBankRussianStandard extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankRussianStandard);
+class ThemedIconBankRussianStandard extends IconBankRussianStandard {}
+(ThemedIconBankRussianStandard as any) = withTheme(IconBankRussianStandard);
+export default ThemedIconBankRussianStandard;

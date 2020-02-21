@@ -1113,4 +1113,6 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
 }
 
-export default withTheme(Select);
+class ThemedSelect extends Select {}
+(ThemedSelect as any) = withTheme(Select);
+export default ThemedSelect;

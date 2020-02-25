@@ -616,9 +616,9 @@ export class Input extends React.PureComponent<InputProps> {
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
      * @param value Новое значение
-     * @param {React.ChangeEvent} event
+     * @param event React SyntheticEvent
      */
-    changeValue(value: string, event) {
+    public changeValue(value: string, event: React.ChangeEvent) {
         if (this.props.value === undefined) {
             this.setState({ value });
         }

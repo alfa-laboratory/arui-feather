@@ -28,23 +28,18 @@ type Options = {
 let sharedContainer: HTMLElement;
 
 /**
- * Тестовая обертка.
- *
- * @typedef {TestWrapper} TestWrapper
- * @property {React.Component} instance Ссылка на экземпляр React компонента.
- * @property {HTMLElement} node Корневой HTML узел компонента.
- * @property {HTMLElement} container HTML узел контейнера, в котором отрендерен компонент.
- */
-
-/**
  * Рендерит компонент в настоящий DOM, возвращает тестовую обертку.
  *
- * @param {React.ReactNode} element JSX для рендера.
- * @param {Options} [options] Опции для рендера.
- * @param {HTMLElement} [options.container] Контейнер, в который нарендерить компонент.
- * @returns {TestWrapper}
+ * @param element JSX для рендера.
+ * @param options Опции для рендера.
+ * @param options.container Контейнер, в который нарендерить компонент.
+ *
+ * @returns testWrapper Тестовая обертка.
+ * @returns testWrapper.instance Ссылка на экземпляр React компонента.
+ * @returns testWrapper.node Корневой HTML узел компонента.
+ * @returns testWrapper.container HTML узел контейнера, в котором отрендерен компонент.
  */
-export function render(jsx: React.ReactNode, options: Options = {}): TestWrapper {
+export function render(element: React.ReactNode, options: Options = {}): TestWrapper {
     let { container } = options;
 
     if (!container) {
@@ -80,9 +75,9 @@ export function cleanUp() {
 /**
  * Симулирует событие на HTML узле.
  *
- * @param {HTMLElement} node HTML узел, на котором необходимо сгенерить событие.
- * @param {String} event Тип события.
- * @param {*} [eventData] Данные для прокисрования в событие.
+ * @param node HTML узел, на котором необходимо сгенерить событие.
+ * @param eventType Тип события.
+ * @param eventData Данные для прокисрования в событие.
  */
 export function simulate(node: HTMLElement, eventType: keyof typeof Simulate, eventData: TestUtils.SyntheticEventData) {
     TestUtils.Simulate[eventType](node, eventData);
@@ -91,7 +86,7 @@ export function simulate(node: HTMLElement, eventType: keyof typeof Simulate, ev
 /**
  * Обеспечивает сохранение полей события в случае SyntheticEvent.
  *
- * @param {React.SyntheticEvent} event Событие
+ * @param event Synthetic event.
  */
 export function eventPersist(event: React.SyntheticEvent) {
     if (event.persist) {

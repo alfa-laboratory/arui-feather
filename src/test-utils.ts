@@ -50,7 +50,7 @@ export function render(element: React.ReactNode, options: Options = {}): TestWra
         container = sharedContainer;
     }
 
-    const instance = ReactDOM.render(jsx, container);
+    const instance = ReactDOM.render(element, container);
 
     return {
         instance,

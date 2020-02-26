@@ -18,4 +18,6 @@ class IconFormatXls extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatXls);
+class ThemedIconFormatXls extends IconFormatXls {}
+(ThemedIconFormatXls as any) = withTheme(IconFormatXls);
+export default ThemedIconFormatXls;

@@ -18,4 +18,6 @@ class IconBankGazprombank extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankGazprombank);
+class ThemedIconBankGazprombank extends IconBankGazprombank {}
+(ThemedIconBankGazprombank as any) = withTheme(IconBankGazprombank);
+export default ThemedIconBankGazprombank;

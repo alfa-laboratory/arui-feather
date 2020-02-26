@@ -18,4 +18,6 @@ class IconBank4924 extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBank4924);
+class ThemedIconBank4924 extends IconBank4924 {}
+(ThemedIconBank4924 as any) = withTheme(IconBank4924);
+export default ThemedIconBank4924;

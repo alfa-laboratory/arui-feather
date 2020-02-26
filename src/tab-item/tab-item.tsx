@@ -10,7 +10,7 @@ import { LinkProps, Link } from '../link/link';
  * Компонент таба. Как правило, используется совместно с `Tabs`.
  */
 export class TabItem extends Link {
-    cn = createCn('tab-item');
+    protected cn = createCn('tab-item');
     static defaultProps: Partial<LinkProps> = {
         size: 'l',
         view: 'default',
@@ -21,4 +21,6 @@ export class TabItem extends Link {
     };
 }
 
-export default withTheme(TabItem);
+class ThemedTabItem extends TabItem {}
+(ThemedTabItem as any) = withTheme(TabItem);
+export default ThemedTabItem;

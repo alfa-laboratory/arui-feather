@@ -18,4 +18,6 @@ class IconList extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconList);
+class ThemedIconList extends IconList {}
+(ThemedIconList as any) = withTheme(IconList);
+export default ThemedIconList;

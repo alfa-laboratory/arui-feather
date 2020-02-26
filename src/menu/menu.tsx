@@ -5,6 +5,7 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -62,7 +63,7 @@ export type MenuContentType = {
     props?: MenuItemProps;
 };
 
-export type MenuProps = {
+export type MenuProps = DeepReadonly<{
 
     /**
      * Тип расположения меню: 'horizontal'
@@ -183,14 +184,14 @@ export type MenuProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент меню.
  */
 @performance(true)
 export class Menu extends React.Component<MenuProps> {
-    cn = createCn('menu');
+    protected cn = createCn('menu');
 
     static defaultProps: Partial<MenuProps> = {
         size: 'm',
@@ -205,9 +206,10 @@ export class Menu extends React.Component<MenuProps> {
         hovered: false
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
-    menuItemList = [];
-    blurTimeoutId = null;
+    private menuItemList = [];
+    private blurTimeoutId = null;
 
     componentDidMount() {
         if (!!this.props.content && this.props.content.length > 0 &&
@@ -620,4 +622,6 @@ export class Menu extends React.Component<MenuProps> {
     }
 }
 
-export default withTheme(Menu);
+class ThemedMenu extends Menu {}
+(ThemedMenu as any) = withTheme(Menu);
+export default ThemedMenu;

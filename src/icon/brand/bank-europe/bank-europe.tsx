@@ -18,4 +18,6 @@ class IconBankEurope extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankEurope);
+class ThemedIconBankEurope extends IconBankEurope {}
+(ThemedIconBankEurope as any) = withTheme(IconBankEurope);
+export default ThemedIconBankEurope;

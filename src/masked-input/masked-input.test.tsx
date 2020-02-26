@@ -261,4 +261,32 @@ describe('masked-input', () => {
 
         expect(controlNode).toBeInstanceOf(HTMLInputElement);
     });
+
+    it('should be the correct value when you changed to the mask symbol which may be space', () => {
+        const customCharaters = {
+            d: {
+                validate(char) {
+                    return /(^[А-ЯЁ]$)|(^\d$)/.test(char);
+                }
+            },
+            c: {
+                validate(char) {
+                    return /(^[А-ЯЁ\s]$)/.test(char);
+                }
+            }
+        };
+        const maskedInput = mount<MaskedInput>(
+            <MaskedInput
+                mask='d'
+                value='А'
+                formatCharacters={ customCharaters }
+                useWhitespaces={ true }
+            />
+        );
+
+        maskedInput.setProps({ mask: 'ccc' });
+        maskedInput.setProps({ value: 'А Б' });
+
+        expect(maskedInput.find('input').props().value).toBe('А Б');
+    });
 });

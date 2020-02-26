@@ -18,4 +18,6 @@ class IconDislikeFilled extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconDislikeFilled);
+class ThemedIconDislikeFilled extends IconDislikeFilled {}
+(ThemedIconDislikeFilled as any) = withTheme(IconDislikeFilled);
+export default ThemedIconDislikeFilled;

@@ -18,4 +18,6 @@ class IconOutside extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconOutside);
+class ThemedIconOutside extends IconOutside {}
+(ThemedIconOutside as any) = withTheme(IconOutside);
+export default ThemedIconOutside;

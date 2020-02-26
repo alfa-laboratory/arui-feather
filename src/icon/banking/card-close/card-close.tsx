@@ -18,4 +18,6 @@ class IconCardClose extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCardClose);
+class ThemedIconCardClose extends IconCardClose {}
+(ThemedIconCardClose as any) = withTheme(IconCardClose);
+export default ThemedIconCardClose;

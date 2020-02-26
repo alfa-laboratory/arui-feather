@@ -18,4 +18,6 @@ class IconForex extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconForex);
+class ThemedIconForex extends IconForex {}
+(ThemedIconForex as any) = withTheme(IconForex);
+export default ThemedIconForex;

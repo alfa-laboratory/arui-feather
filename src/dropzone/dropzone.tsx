@@ -5,10 +5,11 @@
 /* eslint-disable max-len */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type DropzoneProps = {
+export type DropzoneProps = DeepReadonly<{
 
     /**
      * Дочерние компоненты
@@ -65,13 +66,13 @@ export type DropzoneProps = {
      */
     text?: string;
 
-};
+}>;
 
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.
  */
 export class Dropzone extends React.PureComponent<DropzoneProps> {
-    cn = createCn('dropzone');
+    protected cn = createCn('dropzone');
 
     static defaultProps: Partial<DropzoneProps> = {
         theme: 'alfa-on-white',
@@ -82,9 +83,10 @@ export class Dropzone extends React.PureComponent<DropzoneProps> {
         dragging: false
     };
 
+    // TODO [issues/1018] на private ругается
     root: HTMLSpanElement;
 
-    dragCounter: number;
+    private dragCounter: number;
 
     private handleDragOver = (event) => {
         event.preventDefault();
@@ -167,4 +169,6 @@ export class Dropzone extends React.PureComponent<DropzoneProps> {
     }
 }
 
-export default withTheme(Dropzone);
+class ThemedDropzone extends Dropzone {}
+(ThemedDropzone as any) = withTheme(Dropzone);
+export default ThemedDropzone;

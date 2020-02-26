@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -10,7 +11,7 @@ import TagButton from '../tag-button/tag-button';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type RadioProps = ({
+export type RadioProps = DeepReadonly<({
     /**
      * Тип
      */
@@ -115,7 +116,7 @@ export type RadioProps = ({
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 type RadioState = {
     focused: boolean;
@@ -128,7 +129,7 @@ type RadioState = {
  * Компонент радио-кнопки.
  */
 export class Radio extends React.PureComponent<RadioProps, RadioState> {
-    cn = createCn('radio');
+    protected cn = createCn('radio');
 
     static defaultProps: Partial<RadioProps> = {
         size: 'm',
@@ -141,8 +142,8 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         checked: false
     };
 
-    label;
-    control;
+    private label;
+    private control;
 
     render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
@@ -339,4 +340,6 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
     }
 }
 
-export default withTheme(Radio);
+class ThemedRadio extends Radio {}
+(ThemedRadio as any) = withTheme(Radio);
+export default ThemedRadio;

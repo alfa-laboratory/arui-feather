@@ -5,6 +5,7 @@
 /* eslint-disable max-len */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -16,7 +17,7 @@ import MaskedInput from '../masked-input/masked-input';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type InputProps = {
+export type InputProps = DeepReadonly<{
 
     /**
      * Тип поля.
@@ -245,7 +246,7 @@ export type InputProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 type InputState = {
     focused: boolean;
@@ -257,7 +258,7 @@ type InputState = {
  * Компонент текстового поля ввода.
  */
 export class Input extends React.PureComponent<InputProps, InputState> {
-    cn = createCn('input');
+    protected cn = createCn('input');
 
     static defaultProps: Partial<InputProps> = {
         formNoValidate: false,
@@ -286,17 +287,16 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     /**
      * @type {HTMLSpanElement}
      */
-    root;
-
+    private root;
     /**
      * @type {HTMLSpanElement}
      */
-    box;
+    private box;
 
     /**
      * @type {HTMLInputElement}
      */
-    control;
+    private control;
 
     render() {
         const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;
@@ -655,4 +655,6 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     }
 }
 
-export default withTheme(Input);
+class ThemedInput extends Input {}
+(ThemedInput as any) = withTheme(Input);
+export default ThemedInput;

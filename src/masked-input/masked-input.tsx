@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 
 import Mask, { FormatCharacters } from './mask';
 
@@ -50,7 +51,7 @@ const getSeparatorsAmount = (str: string, mask: Mask): number => (
     }, 0)
 );
 
-export type MaskedInputProps = {
+export type MaskedInputProps = DeepReadonly<{
     /**
      * Маска для поля ввода, использует формат https://github.com/insin/inputmask-core
      */
@@ -100,7 +101,7 @@ export type MaskedInputProps = {
      * Обработчик события, вызываемый при событии 'beforeInput'
      */
     onBeforeInput?: (event?: React.FormEvent<any>) => void;
-};
+}>;
 
 /**
  * Компонент поля ввода с поддержкой масок.
@@ -108,21 +109,22 @@ export type MaskedInputProps = {
  */
 class MaskedInput extends React.PureComponent<MaskedInputProps> {
 
+    // TODO [issues/1018] на private ругается
     input: HTMLInputElement;
 
-    maskPattern: string;
+    private maskPattern: string;
 
-    mask: Mask;
+    private mask: Mask;
 
-    beforeChangeMask: Mask;
+    private beforeChangeMask: Mask;
 
-    formatCharacters: FormatCharacters;
+    private formatCharacters: FormatCharacters;
 
-    value: string = '';
+    private value: string = '';
 
-    caretFixTimeout;
+    private caretFixTimeout: ReturnType<typeof setTimeout> = null;;
 
-    beforeInputSelection = { start: 0, end: 0 };
+    private beforeInputSelection = { start: 0, end: 0 };
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
@@ -138,7 +140,7 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
         this.beforeChangeMask = this.mask;
 
         if (this.props.mask !== nextProps.mask || this.props.formatCharacters !== nextProps.formatCharacters) {
-            this.setMask(nextProps.mask, nextProps.formatCharacters);
+            this.setMask(nextProps.mask, nextProps.formatCharacters, nextProps.useWhitespaces);
             reformatValue = true;
         }
 

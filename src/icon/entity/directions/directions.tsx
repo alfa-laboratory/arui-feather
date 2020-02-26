@@ -18,4 +18,6 @@ class IconDirections extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconDirections);
+class ThemedIconDirections extends IconDirections {}
+(ThemedIconDirections as any) = withTheme(IconDirections);
+export default ThemedIconDirections;

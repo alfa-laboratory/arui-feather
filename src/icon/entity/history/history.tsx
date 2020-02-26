@@ -18,4 +18,6 @@ class IconHistory extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconHistory);
+class ThemedIconHistory extends IconHistory {}
+(ThemedIconHistory as any) = withTheme(IconHistory);
+export default ThemedIconHistory;

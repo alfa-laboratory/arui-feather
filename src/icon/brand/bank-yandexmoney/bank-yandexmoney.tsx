@@ -18,4 +18,6 @@ class IconBankYandexmoney extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankYandexmoney);
+class ThemedIconBankYandexmoney extends IconBankYandexmoney {}
+(ThemedIconBankYandexmoney as any) = withTheme(IconBankYandexmoney);
+export default ThemedIconBankYandexmoney;

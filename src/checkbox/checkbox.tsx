@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -13,7 +14,7 @@ import TagButton from '../tag-button/tag-button';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type CheckboxProps = ({
+export type CheckboxProps = DeepReadonly<({
     /**
      * Тип чекбокса
      */
@@ -120,13 +121,13 @@ export type CheckboxProps = ({
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент чекбокса.
  */
 export class CheckBox extends React.PureComponent<CheckboxProps> {
-    cn = createCn('checkbox');
+    protected cn = createCn('checkbox');
 
     static defaultProps: Partial<CheckboxProps> = {
         type: 'normal',
@@ -139,7 +140,7 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
         checked: false
     };
 
-    root;
+    private root;
 
     render() {
         const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
@@ -336,4 +337,6 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 }
 
-export default withTheme(CheckBox);
+class ThemedCheckBox extends CheckBox {}
+(ThemedCheckBox as any) = withTheme(CheckBox);
+export default ThemedCheckBox;

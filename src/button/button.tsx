@@ -3,11 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 
-export type ButtonProps = {
+export type ButtonProps = DeepReadonly<{
 
     /**
      * Текст кнопки
@@ -107,7 +108,7 @@ export type ButtonProps = {
     /**
      * Дочерние элементы `Button`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -174,13 +175,13 @@ export type ButtonProps = {
      */
     onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
 
-};
+}>;
 
 /**
  * Компонент кнопки (да, она нажимается!).
  */
 export class Button extends React.PureComponent<ButtonProps> {
-    cn = createCn('button');
+    protected cn = createCn('button');
 
     static defaultProps: Partial<ButtonProps> = {
         type: 'button',
@@ -195,7 +196,7 @@ export class Button extends React.PureComponent<ButtonProps> {
         pressed: false
     };
 
-    control: HTMLButtonElement | HTMLSpanElement;
+    private control: HTMLButtonElement | HTMLSpanElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -402,4 +403,6 @@ export class Button extends React.PureComponent<ButtonProps> {
     }
 }
 
-export default withTheme(Button);
+class ThemedButton extends Button {}
+(ThemedButton as any) = withTheme(Button);
+export default ThemedButton;

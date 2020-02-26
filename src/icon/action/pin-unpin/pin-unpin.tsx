@@ -18,4 +18,6 @@ class IconPinUnpin extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPinUnpin);
+class ThemedIconPinUnpin extends IconPinUnpin {}
+(ThemedIconPinUnpin as any) = withTheme(IconPinUnpin);
+export default ThemedIconPinUnpin;

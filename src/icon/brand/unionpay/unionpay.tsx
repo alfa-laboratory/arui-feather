@@ -18,4 +18,6 @@ class IconUnionpay extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconUnionpay);
+class ThemedIconUnionpay extends IconUnionpay {}
+(ThemedIconUnionpay as any) = withTheme(IconUnionpay);
+export default ThemedIconUnionpay;

@@ -18,4 +18,6 @@ class IconCategoryShield extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryShield);
+class ThemedIconCategoryShield extends IconCategoryShield {}
+(ThemedIconCategoryShield as any) = withTheme(IconCategoryShield);
+export default ThemedIconCategoryShield;

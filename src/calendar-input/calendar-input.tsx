@@ -5,6 +5,7 @@
 /* eslint-disable max-len */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
@@ -34,7 +35,7 @@ const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 
-export type CalendarInputProps = {
+export type CalendarInputProps = DeepReadonly<{
 
     /**
      * Содержимое поля ввода
@@ -215,14 +216,14 @@ export type CalendarInputProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент для ввода даты.
  */
 @performance(true)
 export class CalendarInput extends React.Component<CalendarInputProps> {
-    cn = createCn('calendar-input');
+    protected cn = createCn('calendar-input');
 
     static defaultProps: Partial<CalendarInputProps> = {
         withIcon: true,
@@ -245,35 +246,27 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         )
     };
 
-    /**
-     * @type {Number}
-     */
-    timeoutId;
+    private timeoutId;
 
-    /**
-     * @type {Number}
-     */
-    changeCloseTimeoutId;
+    private changeCloseTimeoutId;
 
     /**
      * @type {Calendar}
      */
-    calendar;
+    private calendar;
 
     /**
      * @type {Popup}
      */
-    calendarPopup;
+    private calendarPopup;
 
     /**
      * @type {Input}
      */
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     customCalendarTarget;
 
-    /**
-     * @type {HTMLInputElement}
-     */
-    nativeCalendarTarget;
+    private nativeCalendarTarget;
 
     componentDidMount() {
         if (this.calendarPopup) {
@@ -762,4 +755,6 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
     }
 }
 
-export default withTheme(CalendarInput);
+class ThemedCalendarInput extends CalendarInput {}
+(ThemedCalendarInput as any) = withTheme(CalendarInput);
+export default ThemedCalendarInput;

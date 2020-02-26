@@ -18,4 +18,6 @@ class IconBankMdm extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankMdm);
+class ThemedIconBankMdm extends IconBankMdm {}
+(ThemedIconBankMdm as any) = withTheme(IconBankMdm);
+export default ThemedIconBankMdm;

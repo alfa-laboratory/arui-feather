@@ -18,4 +18,6 @@ class IconCancel extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCancel);
+class ThemedIconCancel extends IconCancel {}
+(ThemedIconCancel as any) = withTheme(IconCancel);
+export default ThemedIconCancel;

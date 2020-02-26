@@ -3,15 +3,16 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
 import { IsolatedContainer } from '../isolated-container/isolated-container';
 
-export type PopupContainerProviderProps = {
+export type PopupContainerProviderProps = DeepReadonly<{
     /**
      * Дочерние элементы контейнера
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Дополнительный класс
@@ -40,7 +41,7 @@ export type PopupContainerProviderProps = {
      */
     'data-test-id'?: string;
 
-}
+}>;
 
 type PopupContainerProviderState = {
     didRender: boolean;
@@ -79,14 +80,14 @@ type PopupContainerProviderState = {
  */
 class PopupContainerProvider extends
     React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
-    cn = createCn('popup-container');
+    protected cn = createCn('popup-container');
 
     state = {
         didRender: false // eslint-disable-line react/no-unused-state
     };
 
-    renderContainer: IsolatedContainer;
-    positioningContainer: HTMLElement;
+    private renderContainer: IsolatedContainer;
+    private positioningContainer: HTMLElement;
 
     getChildContext() {
         return {

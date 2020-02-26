@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React, { Children, cloneElement } from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
 type GridRowGutterType = {
@@ -11,7 +12,7 @@ type GridRowGutterType = {
     desktop?: string | number | object;
 };
 
-export type GridRowProps = {
+export type GridRowProps = DeepReadonly<{
 
     /**
      * Уникальный идентификатор блока
@@ -61,14 +62,14 @@ export type GridRowProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Строка используется для создания сетки.
  * Сетка имеет резиновую систему разметки, которая масштабируется до 12 столбцов.
  */
 export class GridRow extends React.PureComponent<GridRowProps> {
-    cn = createCn('grid-row');
+    protected cn = createCn('grid-row');
 
     static defaultProps: Partial<GridRowProps> = {
         tag: 'div',
@@ -86,7 +87,7 @@ export class GridRow extends React.PureComponent<GridRowProps> {
     /**
      * Класс колонки
      */
-    classCol = 'grid-col'
+    private classCol = 'grid-col'
 
     render() {
         const {

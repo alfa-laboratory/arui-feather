@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -62,7 +63,7 @@ function isEqualArray(array1, array2) {
         array1.every((item, index) => item === array2[index]);
 }
 
-export type AttachProps = {
+export type AttachProps = DeepReadonly<{
 
     /**
      * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
@@ -125,6 +126,11 @@ export type AttachProps = {
     progressBarPercent?: number;
 
     /**
+     * Число символов, после которого имя файла будет обрезаться
+     */
+    maxFilenameLength?: number;
+
+    /**
      * Размер компонента
      */
     size?: 's' | 'm' | 'l' | 'xl';
@@ -174,13 +180,13 @@ export type AttachProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент прикрепления файлов.
  */
 export class Attach extends React.PureComponent<AttachProps> {
-    cn = createCn('attach');
+    protected cn = createCn('attach');
 
     static defaultProps: Partial<AttachProps> = {
         buttonContent: 'Выберите файл',
@@ -197,8 +203,8 @@ export class Attach extends React.PureComponent<AttachProps> {
         value: []
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     input: HTMLInputElement;
-
     root: HTMLSpanElement;
 
     // eslint-disable-next-line camelcase
@@ -283,7 +289,7 @@ export class Attach extends React.PureComponent<AttachProps> {
 
         if (files && files.length > 0) {
             const content = (files.length === 1)
-                ? files[0].name
+                ? this.truncateFilename(files[0].name)
                 : (
                     <abbr
                         title={ files.map(file => file.name).join() }
@@ -318,6 +324,18 @@ export class Attach extends React.PureComponent<AttachProps> {
             </span>
         );
     }
+
+    private truncateFilename = (filename: string): string => {
+        const { maxFilenameLength } = this.props;
+
+        if (maxFilenameLength && filename.length > maxFilenameLength) {
+            const lengthOfPart: number = Math.round(maxFilenameLength / 2) - 1;
+
+            return `${filename.substr(0, lengthOfPart)}…${filename.substr(filename.length - lengthOfPart)}`;
+        }
+
+        return filename;
+    };
 
     private handleInputChange = (event) => {
         this.performChange(Array.from(event.target.files));
@@ -391,4 +409,6 @@ export class Attach extends React.PureComponent<AttachProps> {
     }
 }
 
-export default withTheme(Attach);
+class ThemedAttach extends Attach {}
+(ThemedAttach as any) = withTheme(Attach);
+export default ThemedAttach;

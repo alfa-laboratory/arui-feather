@@ -18,4 +18,6 @@ class IconCategoryShopping extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryShopping);
+class ThemedIconCategoryShopping extends IconCategoryShopping {}
+(ThemedIconCategoryShopping as any) = withTheme(IconCategoryShopping);
+export default ThemedIconCategoryShopping;

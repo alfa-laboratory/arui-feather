@@ -18,4 +18,6 @@ class IconHold extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconHold);
+class ThemedIconHold extends IconHold {}
+(ThemedIconHold as any) = withTheme(IconHold);
+export default ThemedIconHold;

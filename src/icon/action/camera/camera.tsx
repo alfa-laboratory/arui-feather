@@ -18,4 +18,6 @@ class IconCamera extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCamera);
+class ThemedIconCamera extends IconCamera {}
+(ThemedIconCamera as any) = withTheme(IconCamera);
+export default ThemedIconCamera;

@@ -18,4 +18,6 @@ class IconContactlessOn extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconContactlessOn);
+class ThemedIconContactlessOn extends IconContactlessOn {}
+(ThemedIconContactlessOn as any) = withTheme(IconContactlessOn);
+export default ThemedIconContactlessOn;

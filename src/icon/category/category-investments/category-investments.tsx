@@ -18,4 +18,6 @@ class IconCategoryInvestments extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryInvestments);
+class ThemedIconCategoryInvestments extends IconCategoryInvestments {}
+(ThemedIconCategoryInvestments as any) = withTheme(IconCategoryInvestments);
+export default ThemedIconCategoryInvestments;

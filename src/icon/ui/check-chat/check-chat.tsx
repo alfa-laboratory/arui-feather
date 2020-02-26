@@ -18,4 +18,6 @@ class IconCheckChat extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCheckChat);
+class ThemedIconCheckChat extends IconCheckChat {}
+(ThemedIconCheckChat as any) = withTheme(IconCheckChat);
+export default ThemedIconCheckChat;

@@ -18,4 +18,6 @@ class IconCategoryGasoline extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryGasoline);
+class ThemedIconCategoryGasoline extends IconCategoryGasoline {}
+(ThemedIconCategoryGasoline as any) = withTheme(IconCategoryGasoline);
+export default ThemedIconCategoryGasoline;

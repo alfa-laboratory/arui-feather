@@ -18,4 +18,6 @@ class IconCardMastercard extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCardMastercard);
+class ThemedIconCardMastercard extends IconCardMastercard {}
+(ThemedIconCardMastercard as any) = withTheme(IconCardMastercard);
+export default ThemedIconCardMastercard;

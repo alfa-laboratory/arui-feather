@@ -18,4 +18,6 @@ class IconError extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconError);
+class ThemedIconError extends IconError {}
+(ThemedIconError as any) = withTheme(IconError);
+export default ThemedIconError;

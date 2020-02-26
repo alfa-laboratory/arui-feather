@@ -18,4 +18,6 @@ class IconPredictions extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPredictions);
+class ThemedIconPredictions extends IconPredictions {}
+(ThemedIconPredictions as any) = withTheme(IconPredictions);
+export default ThemedIconPredictions;

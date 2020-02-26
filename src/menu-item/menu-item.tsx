@@ -3,13 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
 import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
 
-export type MenuItemProps = {
+export type MenuItemProps = DeepReadonly<{
 
     /**
      * Тип элемента меню
@@ -69,7 +70,7 @@ export type MenuItemProps = {
     /**
      * Дочерние элементы `MenuItem`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -110,13 +111,13 @@ export type MenuItemProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент элемента меню. Как правило, используется совместно с `Menu`.
  */
 export class MenuItem extends React.PureComponent<MenuItemProps> {
-    cn = createCn('menu-item');
+    protected cn = createCn('menu-item');
 
     static defaultProps: Partial<MenuItemProps> = {
         type: 'link',
@@ -128,8 +129,8 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
         focused: false
     };
 
-    root;
-    control;
+    private root;
+    private control;
 
     render() {
         const content: any = this.props.children || this.props.value;
@@ -293,4 +294,6 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
     }
 }
 
-export default withTheme(MenuItem);
+class ThemedMenuItem extends MenuItem {}
+(ThemedMenuItem as any) = withTheme(MenuItem);
+export default ThemedMenuItem;

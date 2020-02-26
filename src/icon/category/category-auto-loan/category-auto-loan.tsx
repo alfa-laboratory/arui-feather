@@ -18,4 +18,6 @@ class IconCategoryAutoLoan extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryAutoLoan);
+class ThemedIconCategoryAutoLoan extends IconCategoryAutoLoan {}
+(ThemedIconCategoryAutoLoan as any) = withTheme(IconCategoryAutoLoan);
+export default ThemedIconCategoryAutoLoan;

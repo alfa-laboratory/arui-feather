@@ -18,4 +18,6 @@ class IconFormatPdf extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatPdf);
+class ThemedIconFormatPdf extends IconFormatPdf {}
+(ThemedIconFormatPdf as any) = withTheme(IconFormatPdf);
+export default ThemedIconFormatPdf;

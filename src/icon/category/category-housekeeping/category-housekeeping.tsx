@@ -18,4 +18,6 @@ class IconCategoryHousekeeping extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryHousekeeping);
+class ThemedIconCategoryHousekeeping extends IconCategoryHousekeeping {}
+(ThemedIconCategoryHousekeeping as any) = withTheme(IconCategoryHousekeeping);
+export default ThemedIconCategoryHousekeeping;

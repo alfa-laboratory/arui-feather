@@ -18,4 +18,6 @@ class IconCategoryBooksMovies extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryBooksMovies);
+class ThemedIconCategoryBooksMovies extends IconCategoryBooksMovies {}
+(ThemedIconCategoryBooksMovies as any) = withTheme(IconCategoryBooksMovies);
+export default ThemedIconCategoryBooksMovies;

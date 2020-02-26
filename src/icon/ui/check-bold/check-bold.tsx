@@ -18,4 +18,6 @@ class IconCheckBold extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCheckBold);
+class ThemedIconCheckBold extends IconCheckBold {}
+(ThemedIconCheckBold as any) = withTheme(IconCheckBold);
+export default ThemedIconCheckBold;

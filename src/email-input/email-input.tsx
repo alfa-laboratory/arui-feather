@@ -15,11 +15,12 @@ import Input, { InputProps } from '../input/input';
  * @extends Input
  */
 export class EmailInput extends React.PureComponent<InputProps> {
-    cn = createCn('email-input');
+    protected cn = createCn('email-input');
 
     /**
      * @type {Input}
      */
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
 
     render() {
@@ -58,4 +59,6 @@ export class EmailInput extends React.PureComponent<InputProps> {
     }
 }
 
-export default withTheme(EmailInput);
+class ThemedEmailInput extends EmailInput {}
+(ThemedEmailInput as any) = withTheme(EmailInput);
+export default ThemedEmailInput;

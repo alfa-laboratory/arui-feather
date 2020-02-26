@@ -18,4 +18,6 @@ class IconCategoryFinance extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryFinance);
+class ThemedIconCategoryFinance extends IconCategoryFinance {}
+(ThemedIconCategoryFinance as any) = withTheme(IconCategoryFinance);
+export default ThemedIconCategoryFinance;

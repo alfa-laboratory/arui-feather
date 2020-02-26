@@ -18,4 +18,6 @@ class IconCrownPremium extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCrownPremium);
+class ThemedIconCrownPremium extends IconCrownPremium {}
+(ThemedIconCrownPremium as any) = withTheme(IconCrownPremium);
+export default ThemedIconCrownPremium;

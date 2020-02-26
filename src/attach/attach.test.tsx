@@ -17,18 +17,18 @@ describe('attach', () => {
     it('should set/unset class on attach focused/unfocused', () => {
         const attach = mount<Attach>(<Attach />);
         const instance = attach.instance();
-        const inputRef = instance.input;
+        const inputNode = attach.find('input').getDOMNode<HTMLInputElement>();
 
-        jest.spyOn(inputRef, 'focus');
-        jest.spyOn(inputRef, 'blur');
+        jest.spyOn(inputNode, 'focus');
+        jest.spyOn(inputNode, 'blur');
 
         instance.focus();
 
-        expect(inputRef.focus).toHaveBeenCalledTimes(1);
+        expect(inputNode.focus).toHaveBeenCalledTimes(1);
 
         instance.blur();
 
-        expect(inputRef.blur).toHaveBeenCalledTimes(1);
+        expect(inputNode.blur).toHaveBeenCalledTimes(1);
     });
 
     it('should set/unset class on attach hovered/unhovered', () => {

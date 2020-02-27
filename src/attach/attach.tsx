@@ -151,7 +151,7 @@ export type AttachProps = DeepReadonly<{
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: any[]) => void;
+    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса компонента
@@ -331,12 +331,12 @@ export class Attach extends React.PureComponent<AttachProps> {
     };
 
     private handleInputChange = (event) => {
-        this.performChange(Array.from(event.target.files));
+        this.performChange(Array.from(event.target.files), event);
     };
 
-    private handleClearClick = () => {
+    private handleClearClick = (event) => {
         this.input.value = '';
-        this.performChange([]);
+        this.performChange([], event);
     };
 
     private handleButtonClick = (event) => {
@@ -391,12 +391,12 @@ export class Attach extends React.PureComponent<AttachProps> {
         this.input.blur();
     }
 
-    private performChange(value) {
+    private performChange(value, event) {
         const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {
             if (this.props.onChange && shouldFireChange) {
-                this.props.onChange(value.length ? value : null);
+                this.props.onChange(value.length ? value : null, event);
             }
         });
     }

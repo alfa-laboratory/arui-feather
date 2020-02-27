@@ -13,7 +13,7 @@ const IS_IE9_10 = typeof window !== 'undefined' && !!(window as any).ActiveXObje
 const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
 
 /**
- * Возвращает версию андроида в формате "4.2.1" или false, если не аднроид.
+ * Возвращает версию андроида в формате "4.2.1" или false, если не андроид.
  */
 export function getAndroidVersion(): string | false {
     if (!/android/.test(navigator.userAgent.toLowerCase())) {

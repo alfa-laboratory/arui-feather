@@ -203,7 +203,13 @@ describe('radio', () => {
 
         radioInputNode.simulate('change');
 
-        expect(onChange).toHaveBeenCalledWith('test', true);
+        expect(onChange).toHaveBeenCalledWith(
+            'test',
+            true,
+            expect.objectContaining({
+                nativeEvent: expect.any(Object)
+            })
+        );
     });
 
     it('should set class on radio button change', () => {

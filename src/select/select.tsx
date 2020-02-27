@@ -279,7 +279,7 @@ export type SelectProps = DeepReadonly<{
     /**
      * Обработчик изменения значения
      */
-    onChange?: (value?: any[]) => void;
+    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик нажатия на клавишу
@@ -689,7 +689,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             this.props.onClick(event);
         }
     };
-    // TODO: не сипользуется и вроде не публичный!!!!
+    // TODO: не используется и вроде не публичный!!!!
     handleButtonKeyDown = (event) => {
         if (!this.props.disabled) {
             if (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) {
@@ -752,7 +752,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    private handleOptionCheck = (value) => {
+    private handleOptionCheck = (value, event) => {
         const opened = this.getOpened();
 
         this.setState({ value, opened: this.props.mode === 'check' }, () => {
@@ -767,7 +767,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 
@@ -808,7 +808,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         this.setState({ value });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 
@@ -1099,7 +1099,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     private selectFirstOption() {
         const firstOption = this.getFirstOption(this.props.options);
 
-        this.handleOptionCheck([firstOption.value]);
+        this.handleOptionCheck([firstOption.value], null);
     }
 
     private getFirstOption(options) {

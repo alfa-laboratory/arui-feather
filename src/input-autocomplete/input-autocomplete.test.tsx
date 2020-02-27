@@ -175,7 +175,12 @@ describe('input-autocomplete', () => {
 
         firstOptionNode.simulate('click');
 
-        expect(onChange).toHaveBeenCalledWith('VKontakte');
+        expect(onChange).toHaveBeenCalledWith(
+            'VKontakte',
+            expect.objectContaining({
+                nativeEvent: expect.any(Object)
+            })
+        );
     });
 
     it('should call `onChange` callback after option was clicked and pass `text` when `option.text` is exist', () => {
@@ -193,7 +198,12 @@ describe('input-autocomplete', () => {
 
         firstOptionNode.simulate('click');
 
-        expect(onChange).toHaveBeenCalledWith('ВКонтакте');
+        expect(onChange).toHaveBeenCalledWith(
+            'ВКонтакте',
+            expect.objectContaining({
+                nativeEvent: expect.any(Object)
+            })
+        );
     });
 
     it('should not call `onChange` callback after option was clicked when updateValueOnItemSelect = false', () => {

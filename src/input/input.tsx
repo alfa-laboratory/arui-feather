@@ -249,8 +249,19 @@ export type InputProps = DeepReadonly<{
 }>;
 
 type InputState = {
+    /**
+     * Состояние фокуса в поле
+     */
     focused: boolean;
+
+    /**
+     * Ошибка
+     */
     error: InputProps['error'] | null;
+
+    /**
+     * Содержимое поля ввода
+     */
     value: string;
 }
 
@@ -268,27 +279,8 @@ export class Input extends React.PureComponent<InputProps, InputState> {
         resetError: true
     };
 
-    // static getDerivedStateFromProps(nextProps: Readonly<InputProps>, prevState: InputState): Partial<InputState> | null {
-
-    //     console.log(prevState, nextProps);
-
-    //     if (prevState.focused) {
-    //         return {
-    //             error: null
-    //         };
-    //     }
-
-    //     if (nextProps.error !== prevState.error) {
-    //         return {
-    //             error: nextProps.error
-    //         };
-    //     }
-
-    //     return null;
-    // }
-
-    componentDidUpdate(prevProps) {
-        if (!this.state.focused && prevProps.error !== this.props.error) {
+    componentDidUpdate(prevProps: InputProps) {
+        if (prevProps.error !== this.props.error) {
             // eslint-disable-next-line react/no-did-update-set-state
             this.setState({ error: this.props.error });
         }

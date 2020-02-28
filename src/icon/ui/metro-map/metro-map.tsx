@@ -18,4 +18,6 @@ class IconMetroMap extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMetroMap);
+class ThemedIconMetroMap extends IconMetroMap {}
+(ThemedIconMetroMap as any) = withTheme(IconMetroMap);
+export default ThemedIconMetroMap;

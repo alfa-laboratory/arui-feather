@@ -4,11 +4,12 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 import { Radio } from '../radio/radio';
 
-export type RadioGroupProps = {
+export type RadioGroupProps = DeepReadonly<{
 
     /**
      * Тип группы кнопок
@@ -49,7 +50,7 @@ export type RadioGroupProps = {
     /**
      * Дочерние элементы `RadioGroup`, как правило, компоненты `Radio`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -90,13 +91,13 @@ export type RadioGroupProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент группы радио-кнопок.
  */
 export class RadioGroup extends React.PureComponent<RadioGroupProps> {
-    cn = createCn('radio-group');
+    protected cn = createCn('radio-group');
 
     static defaultProps: Partial<RadioGroupProps> = {
         type: 'normal',
@@ -106,7 +107,7 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     state = {
         value: ''
     };
-
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     radios: Radio[];
 
     render() {
@@ -221,4 +222,6 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     }
 }
 
-export default withTheme(RadioGroup);
+class ThemedRadioGroup extends RadioGroup {}
+(ThemedRadioGroup as any) = withTheme(RadioGroup);
+export default ThemedRadioGroup;

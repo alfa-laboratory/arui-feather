@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "16.0.4",
+  "version": "17.0.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -73,19 +73,26 @@
   },
   "maintainers": [
     {
-      "email": "esergeev2@alfabank.ru",
-      "name": "Evgeny Sergeev"
+      "name": "Evgeny Sergeev",
+      "email": "siebensieben@gmail.com",
+      "url": "https://github.com/siebensieben"
     },
     {
+      "name": "Stepan Mikhaylyuk",
+      "email": "stepancar@hotmail.com",
+      "url": "https://github.com/stepancar"
+    },
+    {
+      "name": "Alexandr Kitov",
       "email": "akitov@alfabank.ru",
-      "name": "Alexander Kitov"
+      "url": "https://github.com/heymdall"
     }
   ],
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.7.6",
-    "bem-react-classname": "^1.1.0",
+    "bem-react-classname": "^1.1.4",
     "bezier-easing": "2.1.0",
     "cn-decorator": "^2.1.0",
     "core-js": "2.5.5",
@@ -100,7 +107,8 @@
     "raf": "3.4.0",
     "react-addons-create-fragment": "15.6.2",
     "react-style-proptype": "3.2.1",
-    "react-textarea-autosize": "7.1.2"
+    "react-textarea-autosize": "7.1.2",
+    "utility-types": "^3.10.0"
   },
   "peerDependencies": {
     "react": ">=16.12",

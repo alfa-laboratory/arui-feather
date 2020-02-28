@@ -17,18 +17,18 @@ describe('attach', () => {
     it('should set/unset class on attach focused/unfocused', () => {
         const attach = mount<Attach>(<Attach />);
         const instance = attach.instance();
-        const inputRef = instance.input;
+        const inputNode = attach.find('input').getDOMNode<HTMLInputElement>();
 
-        jest.spyOn(inputRef, 'focus');
-        jest.spyOn(inputRef, 'blur');
+        jest.spyOn(inputNode, 'focus');
+        jest.spyOn(inputNode, 'blur');
 
         instance.focus();
 
-        expect(inputRef.focus).toHaveBeenCalledTimes(1);
+        expect(inputNode.focus).toHaveBeenCalledTimes(1);
 
         instance.blur();
 
-        expect(inputRef.blur).toHaveBeenCalledTimes(1);
+        expect(inputNode.blur).toHaveBeenCalledTimes(1);
     });
 
     it('should set/unset class on attach hovered/unhovered', () => {
@@ -152,5 +152,38 @@ describe('attach', () => {
 
         expect(statusNode.text()).toContain('Нет файла');
         expect(controlNode.props().value).toBeFalsy();
+    });
+
+    it('should truncate the filename if the maxFilenameLength prop is passed', () => {
+        const attach = mount(<Attach maxFilenameLength={ 30 } />);
+        const controlNode = attach.find('.attach__control');
+
+        controlNode.simulate('change', {
+            target: {
+                files: [{
+                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt', type: 'application/text'
+                }]
+            }
+        });
+
+        const fileLongNameNode = attach.find('.attach__text');
+
+        expect(fileLongNameNode.text()).toContain('so_long_filena…30_symbols.txt');
+
+        const clearButtonNode = attach.find('.attach__clear');
+
+        clearButtonNode.simulate('click');
+
+        controlNode.simulate('change', {
+            target: {
+                files: [{
+                    name: 'it_has_just_26_symbols.txt', type: 'application/text'
+                }]
+            }
+        });
+
+        const fileShortNameNode = attach.find('.attach__text');
+
+        expect(fileShortNameNode.text()).toContain('it_has_just_26_symbols.txt');
     });
 });

@@ -18,4 +18,6 @@ class IconMoneybox extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMoneybox);
+class ThemedIconMoneybox extends IconMoneybox {}
+(ThemedIconMoneybox as any) = withTheme(IconMoneybox);
+export default ThemedIconMoneybox;

@@ -18,4 +18,6 @@ class IconSite extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSite);
+class ThemedIconSite extends IconSite {}
+(ThemedIconSite as any) = withTheme(IconSite);
+export default ThemedIconSite;

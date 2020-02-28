@@ -18,4 +18,6 @@ class IconFingerPointing extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFingerPointing);
+class ThemedIconFingerPointing extends IconFingerPointing {}
+(ThemedIconFingerPointing as any) = withTheme(IconFingerPointing);
+export default ThemedIconFingerPointing;

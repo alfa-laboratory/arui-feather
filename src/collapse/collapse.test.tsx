@@ -43,11 +43,12 @@ describe('collapse', () => {
         collapse.setState({ isExpanded: true });
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
         // эмулируем высоту контент-враппера и самостоятельно вызываем resize-handler
-        collapse.instance().contentCase = { offsetHeight: 100 };
-        // @ts-ignore
-        collapse.instance().updateContentHeight();
+        const instance = collapse.instance() as any;
 
-        expect(collapse.instance().content.style.height).toBe('100px');
+        instance.contentCase = { offsetHeight: 100 };
+        instance.updateContentHeight();
+
+        expect(instance.content.style.height).toBe('100px');
     });
 
     it('should not update component height when it is collapsed', () => {
@@ -60,11 +61,13 @@ describe('collapse', () => {
         collapse.setState({ isExpanded: false });
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
         // эмулируем высоту контент-враппера и самостоятельно вызываем resize-handler
-        collapse.instance().contentCase = { offsetHeight: 100 };
-        // @ts-ignore
-        collapse.instance().updateContentHeight();
+        const instance = collapse.instance() as any;
 
-        expect(collapse.instance().content.style.height).toBe('0px');
+        instance.contentCase = { offsetHeight: 100 };
+
+        instance.updateContentHeight();
+
+        expect(instance.content.style.height).toBe('0px');
     });
 
     it('should apply custom expanded label', () => {

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -14,12 +15,12 @@ const HEADING_LEVEL = {
     xs: 5
 };
 
-export type HeadingProps = {
+export type HeadingProps = DeepReadonly<{
 
     /**
      * Дочерние элементы `Heading`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Размер, определяющий какой тег заголовка будет использоваться
@@ -51,13 +52,13 @@ export type HeadingProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент заголовка.
  */
 export class Heading extends React.PureComponent<HeadingProps> {
-    cn = createCn('heading');
+    protected cn = createCn('heading');
 
     static defaultProps: Partial<HeadingProps> = {
         size: 'xl',
@@ -81,4 +82,6 @@ export class Heading extends React.PureComponent<HeadingProps> {
     }
 }
 
-export default withTheme(Heading);
+class ThemedHeading extends Heading {}
+(ThemedHeading as any) = withTheme(Heading);
+export default ThemedHeading;

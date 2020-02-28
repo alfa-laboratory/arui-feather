@@ -18,4 +18,6 @@ class IconCategoryTroika extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryTroika);
+class ThemedIconCategoryTroika extends IconCategoryTroika {}
+(ThemedIconCategoryTroika as any) = withTheme(IconCategoryTroika);
+export default ThemedIconCategoryTroika;

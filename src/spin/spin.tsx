@@ -3,11 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type SpinProps = {
+export type SpinProps = DeepReadonly<{
     /**
      * Управление видимостью компонента
      */
@@ -37,13 +38,13 @@ export type SpinProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент показывающий крутящееся кольцо загрузки.
  */
 export class Spin extends React.PureComponent<SpinProps> {
-    cn = createCn('spin');
+    protected cn = createCn('spin');
 
     static defaultProps: Partial<SpinProps> = {
         visible: false,
@@ -64,4 +65,6 @@ export class Spin extends React.PureComponent<SpinProps> {
     }
 }
 
-export default withTheme(Spin);
+class ThemedSpin extends Spin {}
+(ThemedSpin as any) = withTheme(Spin);
+export default ThemedSpin;

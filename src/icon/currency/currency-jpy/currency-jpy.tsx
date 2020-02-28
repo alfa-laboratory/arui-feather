@@ -18,4 +18,6 @@ class IconCurrencyJpy extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCurrencyJpy);
+class ThemedIconCurrencyJpy extends IconCurrencyJpy {}
+(ThemedIconCurrencyJpy as any) = withTheme(IconCurrencyJpy);
+export default ThemedIconCurrencyJpy;

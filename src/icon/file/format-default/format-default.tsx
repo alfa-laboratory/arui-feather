@@ -18,4 +18,6 @@ class IconFormatDefault extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatDefault);
+class ThemedIconFormatDefault extends IconFormatDefault {}
+(ThemedIconFormatDefault as any) = withTheme(IconFormatDefault);
+export default ThemedIconFormatDefault;

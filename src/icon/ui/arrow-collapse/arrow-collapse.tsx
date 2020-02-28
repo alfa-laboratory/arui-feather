@@ -18,4 +18,6 @@ class IconArrowCollapse extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconArrowCollapse);
+class ThemedIconArrowCollapse extends IconArrowCollapse {}
+(ThemedIconArrowCollapse as any) = withTheme(IconArrowCollapse);
+export default ThemedIconArrowCollapse;

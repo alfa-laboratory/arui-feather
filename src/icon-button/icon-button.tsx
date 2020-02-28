@@ -16,4 +16,6 @@ export class IconButton extends Button {
     cn = createCn('icon-button');
 }
 
-export default withTheme(IconButton);
+class ThemedIconButton extends IconButton {}
+(ThemedIconButton as any) = withTheme(IconButton);
+export default ThemedIconButton;

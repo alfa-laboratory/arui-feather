@@ -11,7 +11,7 @@ import React from 'react';
  */
 export class IsolatedContainer extends React.Component {
 
-    element: HTMLDivElement;
+    private element: HTMLDivElement;
 
     shouldComponentUpdate() {
         return false;

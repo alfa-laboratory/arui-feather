@@ -4,6 +4,7 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -28,7 +29,7 @@ const DEFAULT_TEXT_FALLBACK = 'Выберите:';
 /**
  * Элемент кнопки для выпадающего списка.
  */
-export class NotThemedSelectButton extends Button {
+class NotThemedSelectButton extends Button {
     cn = createCn('select-button');
 }
 
@@ -103,8 +104,7 @@ export type SelectOptionsShapeType = {
     props?: object;
 };
 
-
-export type SelectProps = {
+export type SelectProps = DeepReadonly<{
 
     /**
      * Дополнительный класс
@@ -279,7 +279,7 @@ export type SelectProps = {
     /**
      * Обработчик изменения значения
      */
-    onChange?: (value?: any[]) => void;
+    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик нажатия на клавишу
@@ -300,9 +300,9 @@ export type SelectProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
-type SelectState = {
+type SelectState = DeepReadonly<{
     hasGroup: boolean;
     isMobile: boolean;
     opened: boolean;
@@ -312,14 +312,14 @@ type SelectState = {
     };
     value: Array<string | number>;
     popupIsReady?: boolean;
-}
+}>
 
 /**
  * Компонент выпадающего списка.
  */
 @performance(true)
 export class Select extends React.Component<SelectProps, SelectState> {
-    cn = createCn('select');
+    protected cn = createCn('select');
 
     static defaultProps: Partial<SelectProps> = {
         mode: 'check',
@@ -349,15 +349,16 @@ export class Select extends React.Component<SelectProps, SelectState> {
         value: this.props.value || []
     };
 
-    root: HTMLDivElement;
+    private root: HTMLDivElement;
 
-    button;
+    private button;
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     popup;
 
-    menu;
+    private menu;
 
-    nativeSelect: HTMLSelectElement;
+    private nativeSelect: HTMLSelectElement;
 
     /**
      * При открытом меню, нажатие на Esc устанавливает значение этой переменной в true
@@ -365,7 +366,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
      * В обработчике закрываем попап, если ожидаем закрытия(this.awaitClosing) или фокус за пределами селекта.
      * Это нужно, т.к. в случае в renderPopupOnFocus={true} меню исчезнет быстрее, чем сработает onMenuBlur
      */
-    awaitClosing = false;
+    private awaitClosing = false;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
@@ -688,7 +689,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             this.props.onClick(event);
         }
     };
-    // TODO: не сипользуется и вроде не публичный!!!!
+    // TODO: не используется и вроде не публичный!!!!
     handleButtonKeyDown = (event) => {
         if (!this.props.disabled) {
             if (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) {
@@ -751,7 +752,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         }
     };
 
-    private handleOptionCheck = (value) => {
+    private handleOptionCheck = (value, event) => {
         const opened = this.getOpened();
 
         this.setState({ value, opened: this.props.mode === 'check' }, () => {
@@ -766,7 +767,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 
@@ -807,7 +808,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         this.setState({ value });
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     };
 
@@ -1098,7 +1099,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     private selectFirstOption() {
         const firstOption = this.getFirstOption(this.props.options);
 
-        this.handleOptionCheck([firstOption.value]);
+        this.handleOptionCheck([firstOption.value], null);
     }
 
     private getFirstOption(options) {
@@ -1112,4 +1113,6 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
 }
 
-export default withTheme(Select);
+class ThemedSelect extends Select {}
+(ThemedSelect as any) = withTheme(Select);
+export default ThemedSelect;

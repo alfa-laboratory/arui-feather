@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -15,12 +16,11 @@ const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 /**
  * Возвращает слово в нужном склонении.
  *
- * @param {Number} number Количество
- * @param {Array.<String>} endingList Варианты слов, например: 'день', 'дня', 'дней'
- * @returns {String}
+ * @param number Количество
+ * @param endingList Варианты слов, например: 'день', 'дня', 'дней'
  */
-function getDeclension(number, endingList) {
-    let endingIndex;
+function getDeclension(number: number, endingList: string[]): string {
+    let endingIndex: number;
 
     number %= 100;
 
@@ -47,11 +47,10 @@ function getDeclension(number, endingList) {
 /**
  * Производит поэлементное сравнение массивов.
  *
- * @param {Array} array1 Первый массив
- * @param {Array} array2 Второй массив
- * @returns {Boolean}
+ * @param array1 Первый массив
+ * @param array2 Второй массив
  */
-function isEqualArray(array1, array2) {
+function isEqualArray(array1: any[], array2: any[]): boolean {
     if (array1 === array2) {
         return true;
     }
@@ -62,7 +61,7 @@ function isEqualArray(array1, array2) {
         array1.every((item, index) => item === array2[index]);
 }
 
-export type AttachProps = {
+export type AttachProps = DeepReadonly<{
 
     /**
      * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
@@ -125,6 +124,11 @@ export type AttachProps = {
     progressBarPercent?: number;
 
     /**
+     * Число символов, после которого имя файла будет обрезаться
+     */
+    maxFilenameLength?: number;
+
+    /**
      * Размер компонента
      */
     size?: 's' | 'm' | 'l' | 'xl';
@@ -147,7 +151,7 @@ export type AttachProps = {
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: any[]) => void;
+    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса компонента
@@ -174,13 +178,13 @@ export type AttachProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент прикрепления файлов.
  */
 export class Attach extends React.PureComponent<AttachProps> {
-    cn = createCn('attach');
+    protected cn = createCn('attach');
 
     static defaultProps: Partial<AttachProps> = {
         buttonContent: 'Выберите файл',
@@ -197,9 +201,7 @@ export class Attach extends React.PureComponent<AttachProps> {
         value: []
     };
 
-    input: HTMLInputElement;
-
-    root: HTMLSpanElement;
+    private input: HTMLInputElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -222,9 +224,6 @@ export class Attach extends React.PureComponent<AttachProps> {
                 }) }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (root) => {
-                    this.root = root;
-                } }
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.renderButton() }
@@ -283,7 +282,7 @@ export class Attach extends React.PureComponent<AttachProps> {
 
         if (files && files.length > 0) {
             const content = (files.length === 1)
-                ? files[0].name
+                ? this.truncateFilename(files[0].name)
                 : (
                     <abbr
                         title={ files.map(file => file.name).join() }
@@ -319,13 +318,25 @@ export class Attach extends React.PureComponent<AttachProps> {
         );
     }
 
-    private handleInputChange = (event) => {
-        this.performChange(Array.from(event.target.files));
+    private truncateFilename = (filename: string): string => {
+        const { maxFilenameLength } = this.props;
+
+        if (maxFilenameLength && filename.length > maxFilenameLength) {
+            const lengthOfPart: number = Math.round(maxFilenameLength / 2) - 1;
+
+            return `${filename.substr(0, lengthOfPart)}…${filename.substr(filename.length - lengthOfPart)}`;
+        }
+
+        return filename;
     };
 
-    private handleClearClick = () => {
+    private handleInputChange = (event) => {
+        this.performChange(Array.from(event.target.files), event);
+    };
+
+    private handleClearClick = (event) => {
         this.input.value = '';
-        this.performChange([]);
+        this.performChange([], event);
     };
 
     private handleButtonClick = (event) => {
@@ -380,15 +391,17 @@ export class Attach extends React.PureComponent<AttachProps> {
         this.input.blur();
     }
 
-    private performChange(value) {
+    private performChange(value, event) {
         const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {
             if (this.props.onChange && shouldFireChange) {
-                this.props.onChange(value.length ? value : null);
+                this.props.onChange(value.length ? value : null, event);
             }
         });
     }
 }
 
-export default withTheme(Attach);
+class ThemedAttach extends Attach {}
+(ThemedAttach as any) = withTheme(Attach);
+export default ThemedAttach;

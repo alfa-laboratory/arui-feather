@@ -18,4 +18,6 @@ class IconChatPhoto extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconChatPhoto);
+class ThemedIconChatPhoto extends IconChatPhoto {}
+(ThemedIconChatPhoto as any) = withTheme(IconChatPhoto);
+export default ThemedIconChatPhoto;

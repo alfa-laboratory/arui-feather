@@ -4,10 +4,11 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type InputGroupProps = {
+export type InputGroupProps = DeepReadonly<{
     /**
      * Управление возможностью компонента занимать всю ширину родителя
      */
@@ -16,7 +17,7 @@ export type InputGroupProps = {
     /**
      * Дочерние элементы `InputGroup`, как правило, компоненты `Input`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -37,13 +38,13 @@ export type InputGroupProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент группы полей для текстового ввода.
  */
 export class InputGroup extends React.PureComponent<InputGroupProps> {
-    cn = createCn('input-group');
+    protected cn = createCn('input-group');
 
     render() {
         let children = null;
@@ -90,4 +91,6 @@ export class InputGroup extends React.PureComponent<InputGroupProps> {
     }
 }
 
-export default withTheme(InputGroup);
+class ThemedInputGroup extends InputGroup {}
+(ThemedInputGroup as any) = withTheme(InputGroup);
+export default ThemedInputGroup;

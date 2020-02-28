@@ -18,4 +18,6 @@ class IconLogout extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconLogout);
+class ThemedIconLogout extends IconLogout {}
+(ThemedIconLogout as any) = withTheme(IconLogout);
+export default ThemedIconLogout;

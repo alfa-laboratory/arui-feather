@@ -7,6 +7,7 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -50,7 +51,7 @@ function splitInteger(str: string): string {
     return [str.slice(from, to)].concat(splitInteger(str.slice(0, from)));
 }
 
-type MoneyInputProps = InputProps & {
+type MoneyInputProps = DeepReadonly<InputProps & {
     /**
      * Максимально допустимая длина значения до запятой
      */
@@ -58,24 +59,24 @@ type MoneyInputProps = InputProps & {
     /**
      * Максимально допустимая длина значения после запятой
      */
-    fractionLength: number;
+    fractionLength?: number;
     /**
      * Толщина шрифта
      */
-    bold: boolean;
+    bold?: boolean;
     /**
      * Отображение символа валюты
      */
-    showCurrency: boolean;
+    showCurrency?: boolean;
     /**
      * Международный код валюты
      */
-    currencyCode: string;
+    currencyCode?: string;
     /**
      * Идентификатор для систем автоматизированного тестирования
      * */
-    'data-test-id': string;
-}
+    'data-test-id'?: string;
+}>;
 
 type MoneyInputState = {
     value: string;
@@ -85,7 +86,7 @@ type MoneyInputState = {
  * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
  */
 export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputState> {
-    cn = createCn('money-input');
+    protected cn = createCn('money-input');
 
     static defaultProps: Partial<MoneyInputProps> = {
         fractionLength: DEFAULT_FRACTION_SIZE,
@@ -99,9 +100,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         value: ''
     };
 
-    maskPattern: string;
+    private maskPattern: string;
 
-    mask: Mask;
+    private mask: Mask;
 
     root: HTMLInputElement;
 
@@ -247,4 +248,6 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     }
 }
 
-export default withTheme(MoneyInput);
+class ThemedMoneyInput extends MoneyInput {}
+(ThemedMoneyInput as any) = withTheme(MoneyInput);
+export default ThemedMoneyInput;

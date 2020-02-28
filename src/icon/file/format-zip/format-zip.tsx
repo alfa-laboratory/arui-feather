@@ -18,4 +18,6 @@ class IconFormatZip extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatZip);
+class ThemedIconFormatZip extends IconFormatZip {}
+(ThemedIconFormatZip as any) = withTheme(IconFormatZip);
+export default ThemedIconFormatZip;

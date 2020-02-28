@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type ToggleProps = {
+export type ToggleProps = DeepReadonly<{
     /**
      * Идентификатор компонента в DOM
      */
@@ -81,13 +82,13 @@ export type ToggleProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент переключателя.
  */
 export class Toggle extends React.PureComponent<ToggleProps> {
-    cn = createCn('toggle');
+    protected cn = createCn('toggle');
 
     static defaultProps: Partial<ToggleProps> = {
         size: 'm',
@@ -180,4 +181,6 @@ export class Toggle extends React.PureComponent<ToggleProps> {
     }
 }
 
-export default withTheme(Toggle);
+class ThemedToggle extends Toggle {}
+(ThemedToggle as any) = withTheme(Toggle);
+export default ThemedToggle;

@@ -18,4 +18,6 @@ class IconCardPinChange extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCardPinChange);
+class ThemedIconCardPinChange extends IconCardPinChange {}
+(ThemedIconCardPinChange as any) = withTheme(IconCardPinChange);
+export default ThemedIconCardPinChange;

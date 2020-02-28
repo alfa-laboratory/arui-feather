@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type LabelProps = {
+export type LabelProps = DeepReadonly<{
     /**
      * Размер компонента
      */
@@ -15,7 +16,7 @@ export type LabelProps = {
     /**
      * Дочерние элементы `Label`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -41,14 +42,14 @@ export type LabelProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}
+}>;
 
 /**
  * Компонента лейбла.
  */
 
 export class Label extends React.PureComponent<LabelProps> {
-    cn = createCn('label');
+    protected cn = createCn('label');
 
     static defaultProps: Partial<LabelProps> = {
         size: 'm',
@@ -73,4 +74,6 @@ export class Label extends React.PureComponent<LabelProps> {
     }
 }
 
-export default withTheme(Label);
+class ThemedLabel extends Label {}
+(ThemedLabel as any) = withTheme(Label);
+export default ThemedLabel;

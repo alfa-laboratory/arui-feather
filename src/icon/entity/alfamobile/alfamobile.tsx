@@ -18,4 +18,6 @@ class IconAlfamobile extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAlfamobile);
+class ThemedIconAlfamobile extends IconAlfamobile {}
+(ThemedIconAlfamobile as any) = withTheme(IconAlfamobile);
+export default ThemedIconAlfamobile;

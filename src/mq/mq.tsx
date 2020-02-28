@@ -3,13 +3,14 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 import { isPointerEventsSupported, isTouchSupported } from './utils';
 
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSupported());
 
-export type MqProps = {
+export type MqProps = DeepReadonly<{
 
     /**
      * Медиа запрос
@@ -30,7 +31,7 @@ export type MqProps = {
      * Обработчик изменений в совпадении запросов
      */
     onMatchChange?: (isMatched?: boolean) => void;
-}
+}>;
 
 type MqState = {
     isMatched: boolean;
@@ -48,7 +49,7 @@ class Mq extends React.Component<MqProps, MqState> {
         isMatched: false
     };
 
-    mql: MediaQueryList | null = null;
+    private mql: MediaQueryList | null = null;
 
     componentDidMount() {
         this.mql = getMatchMedia(this.props.query);

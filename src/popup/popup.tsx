@@ -6,6 +6,7 @@
 
 import debounce from 'lodash.debounce';
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
@@ -50,7 +51,7 @@ import performance from '../performance';
 
 export type PopupDirectionsFieldType = 'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
-export type PopupProps = {
+export type PopupProps = DeepReadonly<{
 
     /**
      * Дополнительный класс
@@ -65,7 +66,7 @@ export type PopupProps = {
     /**
      * Дочерние элементы `Popup`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тип попапа
@@ -166,7 +167,7 @@ export type PopupProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 type PopupState = {
     direction: any;
@@ -184,7 +185,7 @@ type PopupState = {
  */
 @performance(true)
 export class Popup extends React.Component<PopupProps, PopupState> {
-    cn = createCn('popup');
+    protected cn = createCn('popup');
 
     static defaultProps: Partial<PopupProps> = {
         visible: false,
@@ -225,17 +226,17 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         needRedrawAfterMount: false
     };
 
-    anchor = null;
-    clickEventBindTimeout = null;
-    domElemPopup = null;
-    domElemPopupInner: HTMLElement = null;
-    domElemPopupContent = null;
-    isWindowClickBinded = false;
-    position = null;
+    private anchor = null;
+    private clickEventBindTimeout = null;
+    private domElemPopup = null;
+    private domElemPopupInner: HTMLElement = null;
+    private domElemPopupContent = null;
+    private isWindowClickBinded = false;
+    private position = null;
 
-    popup;
-    inner;
-    content;
+    private popup;
+    private inner;
+    private content;
 
     private handleWindowResize = debounce(() => {
         if (this.isPropsToPositionCorrect()) {
@@ -689,4 +690,6 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     }
 }
 
-export default withTheme(Popup);
+class ThemedPopup extends Popup {}
+(ThemedPopup as any) = withTheme(Popup);
+export default ThemedPopup;

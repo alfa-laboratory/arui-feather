@@ -18,4 +18,6 @@ class IconCloseCircle extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCloseCircle);
+class ThemedIconCloseCircle extends IconCloseCircle {}
+(ThemedIconCloseCircle as any) = withTheme(IconCloseCircle);
+export default ThemedIconCloseCircle;

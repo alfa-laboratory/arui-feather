@@ -1,4 +1,5 @@
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 
 // TODO: функция вызывается на TouchEvent и PointerEvent хотя больше от этого путанницы
 // Тут надо отдельно рефачить и типы и имплементацию чтоб ничего не сломать
@@ -10,7 +11,7 @@ export const getCoordinates = ({
         : { clientX, clientY }
 );
 
-export type SwipeableProps = {
+export type SwipeableProps = DeepReadonly<{
 
     /**
      * Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу
@@ -27,7 +28,7 @@ export type SwipeableProps = {
      * TODO: // тут должны быть такие children что у ниъ есть onMouseDown onTouchStart
      */
     children: any;
-};
+}>;
 
 class Swipeable extends React.PureComponent<SwipeableProps> {
 

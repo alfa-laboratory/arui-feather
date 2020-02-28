@@ -18,4 +18,6 @@ class IconCategoryHobby extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryHobby);
+class ThemedIconCategoryHobby extends IconCategoryHobby {}
+(ThemedIconCategoryHobby as any) = withTheme(IconCategoryHobby);
+export default ThemedIconCategoryHobby;

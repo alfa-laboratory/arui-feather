@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 import Heading from '../heading/heading';
@@ -17,7 +18,7 @@ import {
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 
-export type AmountProps = {
+export type AmountProps = DeepReadonly<{
     amount: {
 
         /**
@@ -81,7 +82,7 @@ export type AmountProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент для отображения суммы, согласно следующему гайдлайну:
@@ -89,7 +90,7 @@ export type AmountProps = {
  */
 @performance(true)
 export class Amount extends React.Component<AmountProps> {
-    cn = createCn('amount');
+    protected cn = createCn('amount');
 
     static defaultProps: Partial<AmountProps> = {
         size: 'm',
@@ -160,4 +161,6 @@ export class Amount extends React.Component<AmountProps> {
     }
 }
 
-export default withTheme(Amount);
+class ThemedAmount extends Amount {}
+(ThemedAmount as any) = withTheme(Amount);
+export default ThemedAmount;

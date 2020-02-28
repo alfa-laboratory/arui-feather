@@ -5,6 +5,7 @@
 /* eslint-disable max-len */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -16,7 +17,7 @@ import MaskedInput from '../masked-input/masked-input';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type InputProps = {
+export type InputProps = DeepReadonly<{
 
     /**
      * Тип поля.
@@ -179,7 +180,7 @@ export type InputProps = {
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: string) => void;
+    onChange?: (value?: string, event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса поля
@@ -245,13 +246,13 @@ export type InputProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент текстового поля ввода.
  */
 export class Input extends React.PureComponent<InputProps> {
-    cn = createCn('input');
+    protected cn = createCn('input');
 
     static defaultProps: Partial<InputProps> = {
         formNoValidate: false,
@@ -270,17 +271,16 @@ export class Input extends React.PureComponent<InputProps> {
     /**
      * @type {HTMLSpanElement}
      */
-    root;
-
+    private root;
     /**
      * @type {HTMLSpanElement}
      */
-    box;
+    private box;
 
     /**
      * @type {HTMLInputElement}
      */
-    control;
+    private control;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -451,11 +451,11 @@ export class Input extends React.PureComponent<InputProps> {
     };
 
     private handleChange = (event) => {
-        this.changeValue(event.target.value);
+        this.changeValue(event.target.value, event);
     };
 
     private handleClearClick = (event) => {
-        this.changeValue('');
+        this.changeValue('', event);
 
         if (this.props.onClearClick) {
             this.props.onClearClick(event);
@@ -616,14 +616,15 @@ export class Input extends React.PureComponent<InputProps> {
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
      * @param value Новое значение
+     * @param event React SyntheticEvent
      */
-    public changeValue(value: string) {
+    public changeValue(value: string, event: React.ChangeEvent) {
         if (this.props.value === undefined) {
             this.setState({ value });
         }
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     }
 
@@ -646,4 +647,6 @@ export class Input extends React.PureComponent<InputProps> {
     }
 }
 
-export default withTheme(Input);
+class ThemedInput extends Input {}
+(ThemedInput as any) = withTheme(Input);
+export default ThemedInput;

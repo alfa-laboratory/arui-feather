@@ -18,4 +18,6 @@ class IconLike extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconLike);
+class ThemedIconLike extends IconLike {}
+(ThemedIconLike as any) = withTheme(IconLike);
+export default ThemedIconLike;

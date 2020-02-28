@@ -18,4 +18,6 @@ class IconTemplates extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTemplates);
+class ThemedIconTemplates extends IconTemplates {}
+(ThemedIconTemplates as any) = withTheme(IconTemplates);
+export default ThemedIconTemplates;

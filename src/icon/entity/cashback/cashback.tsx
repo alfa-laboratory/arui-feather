@@ -18,4 +18,6 @@ class IconCashback extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCashback);
+class ThemedIconCashback extends IconCashback {}
+(ThemedIconCashback as any) = withTheme(IconCashback);
+export default ThemedIconCashback;

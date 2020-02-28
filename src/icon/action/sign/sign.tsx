@@ -18,4 +18,6 @@ class IconSign extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSign);
+class ThemedIconSign extends IconSign {}
+(ThemedIconSign as any) = withTheme(IconSign);
+export default ThemedIconSign;

@@ -5,6 +5,7 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -62,7 +63,7 @@ export type MenuContentType = {
     props?: MenuItemProps;
 };
 
-export type MenuProps = {
+export type MenuProps = DeepReadonly<{
 
     /**
      * Тип расположения меню: 'horizontal'
@@ -136,12 +137,12 @@ export type MenuProps = {
     /**
      * Обработчик клика по варианту меню
      */
-    onItemClick?: (item?: any) => void;
+    onItemClick?: (item?: any, event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик выбора варианта меню
      */
-    onItemCheck?: (checkedItems?: any[]) => void;
+    onItemCheck?: (checkedItems?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на меню
@@ -183,14 +184,14 @@ export type MenuProps = {
      */
     'data-test-id'?: string;
 
-};
+}>;
 
 /**
  * Компонент меню.
  */
 @performance(true)
 export class Menu extends React.Component<MenuProps> {
-    cn = createCn('menu');
+    protected cn = createCn('menu');
 
     static defaultProps: Partial<MenuProps> = {
         size: 'm',
@@ -205,9 +206,10 @@ export class Menu extends React.Component<MenuProps> {
         hovered: false
     };
 
+    // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
-    menuItemList = [];
-    blurTimeoutId = null;
+    private menuItemList = [];
+    private blurTimeoutId = null;
 
     componentDidMount() {
         if (!!this.props.content && this.props.content.length > 0 &&
@@ -215,7 +217,7 @@ export class Menu extends React.Component<MenuProps> {
             this.props.mode === 'radio') {
             const firstItem = this.getFirstItem(this.props.content);
 
-            this.changeCheckedItems([firstItem.value]);
+            this.changeCheckedItems([firstItem.value], null);
         }
     }
 
@@ -313,7 +315,7 @@ export class Menu extends React.Component<MenuProps> {
         const itemProps = item.props || {};
         const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
         const isItemDisabled = this.props.disabled || itemProps.disabled;
-        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : () => this.handleMenuItemClick(item);
+        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : event => this.handleMenuItemClick(item, event);
         const menuItem: { item; ref; instance? } = {
             item,
             ref: item.value
@@ -361,11 +363,11 @@ export class Menu extends React.Component<MenuProps> {
         );
     }
 
-    private handleMenuItemClick = (item) => {
-        this.setNewCheckedItems(item);
+    private handleMenuItemClick = (item, event) => {
+        this.setNewCheckedItems(item, event);
 
         if (this.props.onItemClick) {
-            this.props.onItemClick(item);
+            this.props.onItemClick(item, event);
         }
     };
 
@@ -460,7 +462,7 @@ export class Menu extends React.Component<MenuProps> {
                     : this.props.highlightedItem;
 
                 if (highlightedItem) {
-                    this.setNewCheckedItems(highlightedItem.item);
+                    this.setNewCheckedItems(highlightedItem.item, event);
                 }
 
                 break;
@@ -557,7 +559,7 @@ export class Menu extends React.Component<MenuProps> {
         }
     }
 
-    private setNewCheckedItems(item) {
+    private setNewCheckedItems(item, event) {
         const { value } = item;
         let checkedItems = this.props.checkedItems === undefined
             ? Array.from(this.state.checkedItems)
@@ -588,7 +590,7 @@ export class Menu extends React.Component<MenuProps> {
                 break;
         }
 
-        this.changeCheckedItems(checkedItems);
+        this.changeCheckedItems(checkedItems, event);
         this.focus();
     }
 
@@ -596,14 +598,15 @@ export class Menu extends React.Component<MenuProps> {
      * Изменяет выбранные значения.
      *
      * @param {Array.<String|Number>} checkedItems Список выбранных значений
+     * @param {React.ChangeEvent} event
      */
-    private changeCheckedItems(checkedItems) {
+    private changeCheckedItems(checkedItems, event) {
         this.setState({
             checkedItems
         });
 
         if (this.props.onItemCheck) {
-            this.props.onItemCheck(checkedItems);
+            this.props.onItemCheck(checkedItems, event);
         }
     }
 
@@ -620,4 +623,6 @@ export class Menu extends React.Component<MenuProps> {
     }
 }
 
-export default withTheme(Menu);
+class ThemedMenu extends Menu {}
+(ThemedMenu as any) = withTheme(Menu);
+export default ThemedMenu;

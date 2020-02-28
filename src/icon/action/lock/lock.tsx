@@ -18,4 +18,6 @@ class IconLock extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconLock);
+class ThemedIconLock extends IconLock {}
+(ThemedIconLock as any) = withTheme(IconLock);
+export default ThemedIconLock;

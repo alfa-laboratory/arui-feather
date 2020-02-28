@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type LinkProps = {
+export type LinkProps = DeepReadonly<{
 
     /**
      * Иконка ссылки
@@ -71,7 +72,7 @@ export type LinkProps = {
     /**
      * Дочерние элементы `Link`
      */
-    children?: ReadonlyArray<React.ReactNode> | React.ReactNode;
+    children?: React.ReactNode;
 
     /**
      * Тема компонента
@@ -116,19 +117,19 @@ export type LinkProps = {
     /**
      * Обработчик клика по disabled ссылке
      */
-    onDisabledClick?: Function;
+    onDisabledClick?: (event?: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-};
+}>;
 
 /**
  * Компонент ссылки.
  */
 export class Link extends React.PureComponent<LinkProps> {
-    cn = createCn('link');
+    protected cn = createCn('link');
 
     static defaultProps: Partial<LinkProps> = {
         iconPosition: 'left',
@@ -145,7 +146,7 @@ export class Link extends React.PureComponent<LinkProps> {
         focused: false
     };
 
-    root: HTMLElement;
+    private root: HTMLElement;
 
     render() {
         const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
@@ -280,4 +281,6 @@ export class Link extends React.PureComponent<LinkProps> {
     }
 }
 
-export default withTheme(Link);
+class ThemedLink extends Link {}
+(ThemedLink as any) = withTheme(Link);
+export default ThemedLink;

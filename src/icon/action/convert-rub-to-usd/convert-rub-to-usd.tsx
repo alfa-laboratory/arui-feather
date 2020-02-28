@@ -18,4 +18,6 @@ class IconConvertRubToUsd extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconConvertRubToUsd);
+class ThemedIconConvertRubToUsd extends IconConvertRubToUsd {}
+(ThemedIconConvertRubToUsd as any) = withTheme(IconConvertRubToUsd);
+export default ThemedIconConvertRubToUsd;

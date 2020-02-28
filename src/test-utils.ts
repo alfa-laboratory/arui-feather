@@ -16,12 +16,24 @@ import TestUtils, { Simulate } from 'react-dom/test-utils';
 console.warn('arui-feather/test-utils is deprecated. Use `jest` + `enzyme` instead');
 
 type TestWrapper = {
+    /**
+     * Ссылка на экземпляр React компонента.
+     */
     instance: Element;
+    /**
+     * Корневой HTML узел компонента.
+     */
     node: Element | Text;
+    /**
+     * HTML узел контейнера, в котором отрендерен компонент.
+     */
     container: HTMLElement;
 };
 
 type Options = {
+    /**
+     * Контейнер, в который нарендерить компонент.
+     */
     container?: HTMLElement;
 };
 
@@ -32,12 +44,8 @@ let sharedContainer: HTMLElement;
  *
  * @param element JSX для рендера.
  * @param options Опции для рендера.
- * @param options.container Контейнер, в который нарендерить компонент.
  *
- * @returns testWrapper Тестовая обертка.
- * @returns testWrapper.instance Ссылка на экземпляр React компонента.
- * @returns testWrapper.node Корневой HTML узел компонента.
- * @returns testWrapper.container HTML узел контейнера, в котором отрендерен компонент.
+ * @returns Тестовая обертка.
  */
 export function render(element: React.ReactNode, options: Options = {}): TestWrapper {
     let { container } = options;

@@ -3056,6 +3056,11 @@ bem-react-classname@^1.1.0:
   resolved "https://registry.yarnpkg.com/bem-react-classname/-/bem-react-classname-1.1.0.tgz#9d61fc2dde16ec53533684f03a74d94202e18447"
   integrity sha512-p7SuKwtylDIT5tMoJn9PUEY3DES95H6UBhSPCrusRW6di6vacIieq/jhBorAkBwton0WhYXgZ8qF7gVtLbRv2w==
 
+bem-react-classname@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/bem-react-classname/-/bem-react-classname-1.1.4.tgz#3e0a7deb25e0b19870d9328a7dc5e1dbfcb02b57"
+  integrity sha512-qzIGsvW3tFHsXL7AG/8Ynx2ogTz6EdfooJ474km+bkAN7HaZFMUJE/6HXAtZg+rClzt6N2NUL5eG7lq7a6fepQ==
+
 bezier-easing@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
@@ -17454,6 +17459,11 @@ util@~0.10.1:
   integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   dependencies:
     inherits "2.0.3"
+
+utility-types@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.10.0.tgz#ea4148f9a741015f05ed74fd615e1d20e6bed82b"
+  integrity sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 
 utils-merge@1.0.1:
   version "1.0.1"

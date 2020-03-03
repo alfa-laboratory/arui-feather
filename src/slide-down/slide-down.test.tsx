@@ -50,7 +50,8 @@ describe('slide-down', () => {
             <SlideDown { ...props } />
         );
 
-        slideDownNode.instance().UNSAFE_componentWillReceiveProps({ ...props, isExpanded: true });
+        slideDownNode.setProps({ isExpanded: true });
+
         expect(onAnimationStart).toHaveBeenCalled();
     });
 

@@ -2,8 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
-
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 /* eslint react/no-render-return-value: 0 */
 /* eslint react/no-find-dom-node: 0 */
@@ -19,7 +17,7 @@ type TestWrapper = {
     /**
      * Ссылка на экземпляр React компонента.
      */
-    instance: Element;
+    instance: Element | React.Component;
     /**
      * Корневой HTML узел компонента.
      */
@@ -47,7 +45,7 @@ let sharedContainer: HTMLElement;
  *
  * @returns Тестовая обертка.
  */
-export function render(element: React.ReactNode, options: Options = {}): TestWrapper {
+export function render(element: React.ReactElement, options: Options = {}): TestWrapper {
     let { container } = options;
 
     if (!container) {
@@ -59,6 +57,10 @@ export function render(element: React.ReactNode, options: Options = {}): TestWra
     }
 
     const instance = ReactDOM.render(element, container);
+
+    if (!instance) {
+        return null;
+    }
 
     return {
         instance,

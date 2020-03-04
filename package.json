@@ -27,7 +27,7 @@
     "lint-staged": "lint-staged",
     "compile": "gulp --cwd . compile",
     "pub": "npm run compile && cd .publish && npm publish",
-    "demo": "styleguidist server",
+    "start": "styleguidist server",
     "build:demo": "styleguidist build",
     "build:flag-icons": "gulp --gulpfile ./src/flag-icon/flag-icon.gulpfile.js",
     "build:icons": "node ./tools/icon/build-icons.js && svgo ./src/icon/**/* --config=.svgo.yml",

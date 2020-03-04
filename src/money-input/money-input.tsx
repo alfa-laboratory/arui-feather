@@ -155,11 +155,13 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     }
 
     private handleProcessMaskInputEvent = (event) => {
-        const currentValue = this.mask.format(this.getValue());
+        const currentValue = this.getValue();
+        const currentFormattedValue = this.mask.format(this.getValue());
         let newValue = event.target.value;
+        const currentSelection = this.root.control.input.selectionStart;
 
         // При удалении отрезаем запятую, если исчезла дробная часть.
-        if (newValue.length < currentValue.length) {
+        if (newValue.length < currentFormattedValue.length) {
             const fractionPart = getValueParts(newValue)[1]; // Берем значение после запятой
 
             // `fractionPart !== undefined` - значит запятая введена, но
@@ -171,6 +173,15 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         }
 
         this.updateMaskByValue(newValue);
+
+        // При добавлении последней цифры целой части каретка должна
+        // оставаться перед запятой
+        if (newValue.length > currentValue.length && newValue[currentSelection] === ',') {
+            setTimeout((() => {
+                this.root.control.input.selectionStart -= 1;
+                this.root.control.input.selectionEnd -= 1;
+            }));
+        }
     };
 
     private handleChange = (value) => {

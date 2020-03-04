@@ -78,7 +78,7 @@ describe('calendar-input', () => {
 
     it('should focus input on after `focus` call', () => {
         const calendarInput = mount<CalendarInput>(<CalendarInput />);
-        const focusTarget = calendarInput.instance().customCalendarTarget;
+        const focusTarget = calendarInput.instance().getCustomCalendarTarget();
 
         jest.spyOn(focusTarget, 'focus');
 
@@ -89,7 +89,7 @@ describe('calendar-input', () => {
 
     it('should blur input on after `blur` call', () => {
         const calendarInput = mount<CalendarInput>(<CalendarInput />);
-        const focusTarget = calendarInput.instance().customCalendarTarget;
+        const focusTarget = calendarInput.instance().getCustomCalendarTarget();
 
         jest.spyOn(focusTarget, 'blur');
 
@@ -282,7 +282,7 @@ describe('calendar-input', () => {
 
     it('should focus on input after escape key was pressed in calendar', () => {
         const wrapper = mount<CalendarInput>(<CalendarInput />);
-        const calendarTarget = wrapper.instance().customCalendarTarget;
+        const calendarTarget = wrapper.instance().getCustomCalendarTarget();
         const calendarNode = wrapper.find('.calendar');
 
         jest.spyOn(calendarTarget, 'focus');
@@ -294,7 +294,7 @@ describe('calendar-input', () => {
 
     it('should focus on input after calendar icon was clicked', () => {
         const wrapper = mount<CalendarInput>(<CalendarInput />);
-        const calendarTarget = wrapper.instance().customCalendarTarget;
+        const calendarTarget = wrapper.instance().getCustomCalendarTarget();
 
         jest.spyOn(calendarTarget, 'focus');
         const iconNode = wrapper.find('.icon');

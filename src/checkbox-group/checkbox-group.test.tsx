@@ -58,7 +58,7 @@ describe('checkbox-group', () => {
                 <CheckBox />
             </CheckBoxGroup>
         );
-        const firstCheckboxInstance = checkboxGroup.instance().checkboxes[0];
+        const firstCheckboxInstance = checkboxGroup.instance().getCheckboxes()[0];
 
         jest.spyOn(firstCheckboxInstance, 'focus');
         checkboxGroup.instance().focus();

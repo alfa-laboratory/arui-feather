@@ -38,13 +38,18 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
         value: '+7'
     };
 
-    state = {
-        countryIso2: 'ru',
-        inputFocused: false,
-        inputValue: this.props.value,
-        selectFocused: false,
-        onceOpened: false
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            countryIso2: 'ru',
+            inputFocused: false,
+            inputValue: this.props.value,
+            selectFocused: false,
+            onceOpened: false
+        };
+    }
+
 
     private countries;
     // TODO [issues/1018] переписать тесты нужно, что бы private был
@@ -55,8 +60,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     private asYouType;
 
     componentDidMount() {
-        this.loadUtil();
-        this.setCountry();
+        this.loadUtil(this.setCountry);
     }
 
     // eslint-disable-next-line camelcase
@@ -227,12 +231,16 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     }
 
     // TODO: торчит для теста
-    loadUtil() {
+    loadUtil(callback: () => void) {
         return import(/* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min')
             .then((util) => {
                 this.util = util;
+                callback();
             })
-            .catch(error => `An error occurred while loading libphonenumber-js:\n${error}`);
+            .catch(error => {
+                callback();
+                return `An error occurred while loading libphonenumber-js:\n${error}`
+            });
     }
 
     private resolveFocusedState(nextFocusedStateItem, event) {
@@ -289,7 +297,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
         }
     }
 
-    private setCountry() {
+    private setCountry = () => {
         const inputValue = this.getValue().replace(/ /g, '');
 
         for (let i = 0; i < this.countries.length; i++) {
@@ -323,7 +331,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
         }
     }
 
-    private setValue(countryIso2, inputValue) {
+    private setValue = (countryIso2, inputValue) => {
         this.asYouType = this.util ? new this.util.AsYouType(countryIso2.toUpperCase()) : null;
         this.setState({
             inputValue: this.asYouType ? this.asYouType.input(inputValue) : inputValue,

@@ -20,6 +20,11 @@ const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
 const INTEGER_PART_SIZE = 3;
 
+// В эту проверку попадают IE9 и IE10, которые не могут корректно работать с кареткой на событии `input`.
+const IS_IE9_10 = typeof window !== 'undefined' && !!(window as any).ActiveXObject;
+
+const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
+
 /**
  * Возвращает целую и дробную часть значения в виде массива.
  * Если дробная часть не равна `undefined`, значит введена дробная часть
@@ -106,6 +111,8 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
 
     root: HTMLInputElement;
 
+    private caretFixTimeout: ReturnType<typeof setTimeout> = null;;
+
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
         this.updateMaskByValue(this.getValue());
@@ -115,6 +122,12 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.value !== nextProps.value) {
             this.updateMaskByValue(nextProps.value || '');
+        }
+    }
+    componentWillUnmount() {
+        if (this.caretFixTimeout) {
+            clearTimeout(this.caretFixTimeout);
+            this.caretFixTimeout = null;
         }
     }
 
@@ -178,8 +191,12 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         // оставаться перед запятой
         if (newValue.length > currentValue.length && newValue[currentSelection] === ',') {
             setTimeout((() => {
-                this.root.control.input.selectionStart -= 1;
-                this.root.control.input.selectionEnd -= 1;
+
+                // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
+                const offsetSection = IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
+                const newSelectionStart = this.root.control.input.selectionStart - 1;
+
+                this.setInputSelection(newSelectionStart + offsetSection);
             }));
         }
     };
@@ -256,6 +273,44 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
      */
     private getValue() {
         return this.props.value === undefined ? this.state.value : this.props.value;
+    }
+
+    /**
+     * Устанавливает каретку поля ввода в новую позицию.
+     *
+     * @param {Number} selection Новое положение каретки
+     */
+    private setInputSelection(selection) {
+        this.root.control.input.selectionStart = selection;
+        this.root.control.input.selectionEnd = selection;
+        // IE10 не умеет синхронно в событие `change` переставлять каретку.
+        // Android chrome имеет дефект с автоматической установкой каретки
+        // при использовании клавиатуры отличной от type="text".
+        if (IS_IE9_10 || IS_ANDROID) {
+            this.setInputSelectionByTimeout(selection);
+        }
+    }
+
+    /**
+     * Устанавливает каретку поля ввода в заданную позицию асинхронно.
+     *
+     * Во-избежание дефекта с установкой каретки, наблюдаемом в мобильных браузерах, а так же
+     * браузерах IE9-10, установка происходит асинхронно, с минимальной задержкой,
+     * с помощью [setTimeout] обертки.
+     *
+     * @param {Number} selection Положение каретки
+     */
+    private setInputSelectionByTimeout(selection) {
+        if (this.caretFixTimeout) {
+            clearTimeout(this.caretFixTimeout);
+            this.caretFixTimeout = null;
+        }
+
+        this.caretFixTimeout = setTimeout(() => {
+            this.caretFixTimeout = null;
+            this.root.control.input.selectionStart = selection;
+            this.root.control.input.selectionEnd = selection;
+        }, 0);
     }
 }
 

@@ -197,7 +197,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
                 const newSelectionStart = this.root.control.input.selectionStart - 1;
 
                 this.setInputSelection(newSelectionStart + offsetSection);
-            }));
+            }), 0);
         }
     };
 

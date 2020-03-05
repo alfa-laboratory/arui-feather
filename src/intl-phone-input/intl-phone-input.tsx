@@ -55,8 +55,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     private asYouType;
 
     componentDidMount() {
-        this.loadUtil();
-        this.setCountry();
+        this.loadUtil().finally(() => this.setCountry());
     }
 
     // eslint-disable-next-line camelcase

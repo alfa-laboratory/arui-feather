@@ -108,9 +108,11 @@ describe('intl-phone-input', () => {
         expect(elem.find('.flag-icon').props().className).toContain('flag-icon_country_ru');
     });
 
-    it('should set new country flag icon from props', () => {
+    it('should set new country flag icon from props', async () => {
         const elem = mount(<IntlPhoneInput value='+61' />);
 
+        await elem.instance().componentDidMount();
+        elem.update();
         expect(elem.find('.flag-icon').props().className).toContain('flag-icon_country_au');
     });
 

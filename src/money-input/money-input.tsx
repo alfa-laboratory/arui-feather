@@ -111,7 +111,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
 
     root: HTMLInputElement;
 
-    private caretFixTimeout: ReturnType<typeof setTimeout> = null;;
+    private caretFixTimeout: ReturnType<typeof setTimeout> = null;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
@@ -278,9 +278,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     /**
      * Устанавливает каретку поля ввода в новую позицию.
      *
-     * @param {Number} selection Новое положение каретки
+     * @param selection Новое положение каретки
      */
-    private setInputSelection(selection) {
+    private setInputSelection(selection: number) {
         this.root.control.input.selectionStart = selection;
         this.root.control.input.selectionEnd = selection;
         // IE10 не умеет синхронно в событие `change` переставлять каретку.
@@ -298,9 +298,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
      * браузерах IE9-10, установка происходит асинхронно, с минимальной задержкой,
      * с помощью [setTimeout] обертки.
      *
-     * @param {Number} selection Положение каретки
+     * @param selection Положение каретки
      */
-    private setInputSelectionByTimeout(selection) {
+    private setInputSelectionByTimeout(selection: number) {
         if (this.caretFixTimeout) {
             clearTimeout(this.caretFixTimeout);
             this.caretFixTimeout = null;

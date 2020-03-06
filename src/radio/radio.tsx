@@ -90,7 +90,7 @@ export type RadioProps = DeepReadonly<({
     /**
      * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
      */
-    onChange?: (value?: string, isChecked?: boolean) => void;
+    onChange?: (value?: string, isChecked?: boolean, event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса комнонента
@@ -248,14 +248,14 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         event.stopPropagation();
     };
 
-    private handleChange = () => {
+    private handleChange = (event) => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 
             if (this.props.onChange) {
-                this.props.onChange(this.props.value, nextCheckedValue);
+                this.props.onChange(this.props.value, nextCheckedValue, event);
             }
         }
     };

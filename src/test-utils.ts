@@ -2,38 +2,50 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// @ts-nocheck
-
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 /* eslint react/no-render-return-value: 0 */
 /* eslint react/no-find-dom-node: 0 */
 
+import React from 'react';
 import ReactDOM from 'react-dom';
-import TestUtils from 'react-dom/test-utils';
+import TestUtils, { Simulate } from 'react-dom/test-utils';
 
 // eslint-disable-next-line no-console
 console.warn('arui-feather/test-utils is deprecated. Use `jest` + `enzyme` instead');
 
-let sharedContainer = null;
+type TestWrapper = {
+    /**
+     * Ссылка на экземпляр React компонента.
+     */
+    instance: Element | React.Component;
+    /**
+     * Корневой HTML узел компонента.
+     */
+    node: Element | Text;
+    /**
+     * HTML узел контейнера, в котором отрендерен компонент.
+     */
+    container: HTMLElement;
+};
 
-/**
- * Тестовая обертка.
- *
- * @typedef {Object} TestWrapper
- * @property {React.Component} instance Ссылка на экземпляр React компонента.
- * @property {Node} node Корневой HTML узел компонента.
- * @property {Node} container HTML узел контейнера, в котором отрендерен компонент.
- */
+type Options = {
+    /**
+     * Контейнер, в который нарендерить компонент.
+     */
+    container?: HTMLElement;
+};
+
+let sharedContainer: HTMLElement;
 
 /**
  * Рендерит компонент в настоящий DOM, возвращает тестовую обертку.
  *
- * @param {Object} jsx JSX для рендера.
- * @param {Object} [options] Опции для рендера.
- * @param {Node} [options.container] Контейнер, в который нарендерить компонент.
- * @returns {TestWrapper}
+ * @param element JSX для рендера.
+ * @param options Опции для рендера.
+ *
+ * @returns Тестовая обертка.
  */
-export function render(jsx, options = {}) {
+export function render(element: React.ReactElement, options: Options = {}): TestWrapper {
     let { container } = options;
 
     if (!container) {
@@ -44,7 +56,11 @@ export function render(jsx, options = {}) {
         container = sharedContainer;
     }
 
-    const instance = ReactDOM.render(jsx, container);
+    const instance = ReactDOM.render(element, container);
+
+    if (!instance) {
+        return null;
+    }
 
     return {
         instance,
@@ -69,20 +85,20 @@ export function cleanUp() {
 /**
  * Симулирует событие на HTML узле.
  *
- * @param {Node} node HTML узел, на котором необходимо сгенерить событие.
- * @param {String} event Тип события.
- * @param {*} [data] Данные для прокисрования в событие.
+ * @param node HTML узел, на котором необходимо сгенерить событие.
+ * @param eventType Тип события.
+ * @param eventData Данные для прокисрования в событие.
  */
-export function simulate(node, event, data) {
-    TestUtils.Simulate[event](node, data);
+export function simulate(node: HTMLElement, eventType: keyof typeof Simulate, eventData: TestUtils.SyntheticEventData) {
+    TestUtils.Simulate[eventType](node, eventData);
 }
 
 /**
  * Обеспечивает сохранение полей события в случае SyntheticEvent.
  *
- * @param {Object} event Событие
+ * @param event Synthetic event.
  */
-export function eventPersist(event) {
+export function eventPersist(event: React.SyntheticEvent) {
     if (event.persist) {
         event.persist();
     }

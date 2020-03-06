@@ -68,16 +68,16 @@ npm install arui-feather --save
 
 Необходимые внешние зависимости системы:
 
-[`node`](https://nodejs.org/en/) 8 и `npm`
+[`node`](https://nodejs.org/en/) 12 и `npm`
 
 Шаги запуска демо:
 
 1. `npm i`
-2. `npm run demo`
+2. `npm run start`
 
-Запустить demo на произвольном порту:
+Запустить демо на произвольном порту:
 
-`PORT=8888 npm run demo`
+`PORT=8888 npm run start`
 
 Использовать только для обновления нескольких компонентов. Иначе не хватает памяти.
 

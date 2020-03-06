@@ -16,12 +16,11 @@ const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
 /**
  * Возвращает слово в нужном склонении.
  *
- * @param {Number} number Количество
- * @param {Array.<String>} endingList Варианты слов, например: 'день', 'дня', 'дней'
- * @returns {String}
+ * @param number Количество
+ * @param endingList Варианты слов, например: 'день', 'дня', 'дней'
  */
-function getDeclension(number, endingList) {
-    let endingIndex;
+function getDeclension(number: number, endingList: string[]): string {
+    let endingIndex: number;
 
     number %= 100;
 
@@ -48,11 +47,10 @@ function getDeclension(number, endingList) {
 /**
  * Производит поэлементное сравнение массивов.
  *
- * @param {Array} array1 Первый массив
- * @param {Array} array2 Второй массив
- * @returns {Boolean}
+ * @param array1 Первый массив
+ * @param array2 Второй массив
  */
-function isEqualArray(array1, array2) {
+function isEqualArray(array1: any[], array2: any[]): boolean {
     if (array1 === array2) {
         return true;
     }
@@ -153,7 +151,7 @@ export type AttachProps = DeepReadonly<{
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: any[]) => void;
+    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса компонента
@@ -203,9 +201,7 @@ export class Attach extends React.PureComponent<AttachProps> {
         value: []
     };
 
-    // TODO [issues/1018] переписать тесты нужно, что бы private был
-    input: HTMLInputElement;
-    root: HTMLSpanElement;
+    private input: HTMLInputElement;
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -228,9 +224,6 @@ export class Attach extends React.PureComponent<AttachProps> {
                 }) }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
-                ref={ (root) => {
-                    this.root = root;
-                } }
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.renderButton() }
@@ -338,12 +331,12 @@ export class Attach extends React.PureComponent<AttachProps> {
     };
 
     private handleInputChange = (event) => {
-        this.performChange(Array.from(event.target.files));
+        this.performChange(Array.from(event.target.files), event);
     };
 
-    private handleClearClick = () => {
+    private handleClearClick = (event) => {
         this.input.value = '';
-        this.performChange([]);
+        this.performChange([], event);
     };
 
     private handleButtonClick = (event) => {
@@ -398,12 +391,12 @@ export class Attach extends React.PureComponent<AttachProps> {
         this.input.blur();
     }
 
-    private performChange(value) {
+    private performChange(value, event) {
         const shouldFireChange = !isEqualArray(value, this.state.value);
 
         this.setState({ value }, () => {
             if (this.props.onChange && shouldFireChange) {
-                this.props.onChange(value.length ? value : null);
+                this.props.onChange(value.length ? value : null, event);
             }
         });
     }

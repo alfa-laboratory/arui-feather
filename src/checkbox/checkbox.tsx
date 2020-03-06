@@ -95,7 +95,7 @@ export type CheckboxProps = DeepReadonly<({
     /**
      * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
      */
-    onChange?: (isChecked?: boolean, value?: string) => void;
+    onChange?: (isChecked?: boolean, value?: string, event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса комнонента
@@ -257,14 +257,14 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
         event.stopPropagation();
     }
 
-    private handleChange = () => {
+    private handleChange = (event) => {
         if (!this.props.disabled) {
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 
             if (this.props.onChange) {
-                this.props.onChange(nextCheckedValue, this.props.value);
+                this.props.onChange(nextCheckedValue, this.props.value, event);
             }
         }
     };

@@ -80,7 +80,7 @@ export type CheckBoxGroupProps = DeepReadonly<({
     /**
      * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
      */
-    onChange?: (value?: any[]) => void;
+    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -136,7 +136,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
                         ? value.some(groupValue => groupValue === checkbox.props.value)
                         : checkbox.props.checked,
                     onChange: checkbox.props.onChange === undefined
-                        ? checked => this.handleCheckboxChange(checkbox.props.value, checked)
+                        ? (checked, _text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
                         : checkbox.props.onChange,
                     ...props
                 });
@@ -176,7 +176,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         );
     }
 
-    private handleCheckboxChange = (value, checked) => {
+    private handleCheckboxChange = (value, checked, event) => {
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
         const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
 
@@ -191,7 +191,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         });
 
         if (this.props.onChange) {
-            this.props.onChange(newValue);
+            this.props.onChange(newValue, event);
         }
     };
 

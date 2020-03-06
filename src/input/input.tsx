@@ -180,7 +180,7 @@ export type InputProps = DeepReadonly<{
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: string) => void;
+    onChange?: (value?: string, event?: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса поля
@@ -468,11 +468,11 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     };
 
     private handleChange = (event) => {
-        this.changeValue(event.target.value);
+        this.changeValue(event.target.value, event);
     };
 
     private handleClearClick = (event) => {
-        this.changeValue('');
+        this.changeValue('', event);
 
         if (this.props.onClearClick) {
             this.props.onClearClick(event);
@@ -633,14 +633,15 @@ export class Input extends React.PureComponent<InputProps, InputState> {
      * Изменяет текущение значение поля ввода и генерирует событие об этом.
      *
      * @param value Новое значение
+     * @param event React SyntheticEvent
      */
-    public changeValue(value: string) {
+    public changeValue(value: string, event: React.ChangeEvent) {
         if (this.props.value === undefined) {
             this.setState({ value });
         }
 
         if (this.props.onChange) {
-            this.props.onChange(value);
+            this.props.onChange(value, event);
         }
     }
 

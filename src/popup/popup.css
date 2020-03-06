@@ -164,10 +164,6 @@
             transform: translateZ(0);
         }
     }
-
-    &_overflow {
-        overflow-y: scroll;
-    }
 }
 
 .popup_type_tooltip {

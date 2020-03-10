@@ -226,4 +226,19 @@ describe('radio-group', () => {
 
         expect(onChange).not.toHaveBeenCalled();
     });
+
+    it('should render with children like boolean or string or others react children type without problems', () => {
+        const radioGroup = shallow(
+            <RadioGroup>
+                <Radio key='1' text='label' />
+                <Radio key='2' text='label' />
+                { false && <Radio key='3' text='label' /> }
+                { 0 && <Radio key='4' text='label' /> }
+                { '' && <Radio key='5' text='label' /> }
+                { null && <Radio key='6' text='label' /> }
+            </RadioGroup>
+        );
+
+        expect(radioGroup).toMatchSnapshot();
+    });
 });

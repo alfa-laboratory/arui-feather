@@ -111,7 +111,7 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     radios: Radio[];
 
     render() {
-        let children = null;
+        let children: React.ReactNode[] = null;
         const { size, name } = this.props;
         let props: { name: string; disabled?: boolean; width?: 'default' | 'available' } = { name };
         const radioGroupParts = {};
@@ -121,9 +121,9 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
         }
 
         if (this.props.children) {
-            children = (
-                this.props.children as Array<React.ReactNode>
-            ).length ? this.props.children : [this.props.children];
+            const { children: propsChildren } = this.props;
+
+            children = (propsChildren instanceof Array && propsChildren.length) ? propsChildren : [propsChildren];
         }
 
         if (this.props.type === 'button') {
@@ -135,13 +135,17 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
             const value = this.props.value === undefined ? this.state.value : this.props.value;
 
             React.Children.forEach(children, (radio, index) => {
-                radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
-                    ref: radio => this.radios.push(radio),
-                    error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
-                    checked: radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked,
-                    onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
-                    ...props
-                });
+                if (React.isValidElement(radio)) {
+                    radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
+                        ref: radio => this.radios.push(radio),
+                        error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
+                        checked: (
+                            radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked
+                        ),
+                        onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
+                        ...props
+                    });
+                }
             });
         }
 

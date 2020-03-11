@@ -330,19 +330,21 @@ describe('input', () => {
         expect(node).toBe(input.getDOMNode());
     });
 
-    // it('should format masked value with custom formatter', () => {
-    //     const cyrillic = {
-    //         c: {
-    //             validate(char) { return /^[ЁёА-Яа-я]$/.it(char); }
-    //         }
-    //     };
-    //     let input = mount(
-    //         <Input maskFormatCharacters={ cyrillic } mask='c 111 cc' value='12-3hjhkА456ИТг' />
-    //     );
-    //     let controlNode = input.find('input');
-    //
-    //     expect(controlNode.value).toBe('А 456 ИТ');
-    // });
+    it('should format masked value with custom formatter', () => {
+        const cyrillic = {
+            c: {
+                validate(char) {
+                    return /^[ЁёА-Яа-я]$/.test(char);
+                }
+            }
+        };
+        const input = mount(
+            <Input maskFormatCharacters={ cyrillic } mask='c 111 cc' value='12-3hjhkА456ИТг' />
+        );
+        const controlNode = input.find('input');
+
+        expect(controlNode.props().value).toBe('А 456 ИТ');
+    });
 
     it(
         'should return `HTMLInputElement` when `getControl` method called',

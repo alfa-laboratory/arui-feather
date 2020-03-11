@@ -111,7 +111,7 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
     radios: Radio[];
 
     render() {
-        let children: React.ReactNode[] = null;
+        let children: React.ReactNode = null;
         const { size, name } = this.props;
         let props: { name: string; disabled?: boolean; width?: 'default' | 'available' } = { name };
         const radioGroupParts = {};
@@ -123,7 +123,7 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
         if (this.props.children) {
             const { children: propsChildren } = this.props;
 
-            children = (propsChildren instanceof Array && propsChildren.length) ? propsChildren : [propsChildren];
+            children = React.Children.toArray(propsChildren);
         }
 
         if (this.props.type === 'button') {

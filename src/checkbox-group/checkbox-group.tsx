@@ -107,7 +107,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     checkboxes: any[];
 
     render() {
-        let children: React.ReactNode[] = null;
+        let children: React.ReactNode = null;
         let props: { name: string; disabled?: boolean; width?: 'default' | 'available' } = { name: this.props.name };
         const checkboxGroupParts = {};
 
@@ -118,7 +118,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         if (this.props.children) {
             const { children: propsChildren } = this.props;
 
-            children = (propsChildren instanceof Array && propsChildren.length) ? propsChildren : [propsChildren];
+            children = React.Children.toArray(propsChildren);
         }
 
         if (this.props.type === 'button') {

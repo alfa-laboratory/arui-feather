@@ -17,7 +17,7 @@ exports[`radio-group should render with children like boolean or string or other
       <Radio
         checked={false}
         error={false}
-        key="radio-0/.$1"
+        key="radio-0/.$.$1"
         onChange={[Function]}
         size="m"
         tabIndex={0}
@@ -26,7 +26,7 @@ exports[`radio-group should render with children like boolean or string or other
       <Radio
         checked={false}
         error={false}
-        key="radio-1/.$2"
+        key="radio-1/.$.$2"
         onChange={[Function]}
         size="m"
         tabIndex={0}
@@ -54,7 +54,7 @@ exports[`radio-group should render with many radio children without problems 1`]
       <Radio
         checked={false}
         error={false}
-        key="radio-0/.$1"
+        key="radio-0/.$.$1"
         onChange={[Function]}
         size="m"
         tabIndex={0}
@@ -63,7 +63,7 @@ exports[`radio-group should render with many radio children without problems 1`]
       <Radio
         checked={false}
         error={false}
-        key="radio-1/.$2"
+        key="radio-1/.$.$2"
         onChange={[Function]}
         size="m"
         tabIndex={0}
@@ -91,7 +91,7 @@ exports[`radio-group should render with only one children 1`] = `
       <Radio
         checked={false}
         error={false}
-        key="radio-0/.$1"
+        key="radio-0/.$.$1"
         onChange={[Function]}
         size="m"
         tabIndex={0}

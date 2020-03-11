@@ -16,7 +16,7 @@ exports[`checkbox-group should render with children like boolean or string or ot
     >
       <CheckBox
         checked={false}
-        key="1"
+        key=".$1"
         onChange={[Function]}
         size="m"
         text="label"
@@ -28,7 +28,7 @@ exports[`checkbox-group should render with children like boolean or string or ot
     >
       <CheckBox
         checked={false}
-        key="2"
+        key=".$2"
         onChange={[Function]}
         size="m"
         text="label"
@@ -55,7 +55,7 @@ exports[`checkbox-group should render with many checkbox children without proble
     >
       <CheckBox
         checked={false}
-        key="1"
+        key=".$1"
         onChange={[Function]}
         size="m"
         text="label"
@@ -67,7 +67,7 @@ exports[`checkbox-group should render with many checkbox children without proble
     >
       <CheckBox
         checked={false}
-        key="2"
+        key=".$2"
         onChange={[Function]}
         size="m"
         text="label"
@@ -94,7 +94,7 @@ exports[`checkbox-group should render with only one children 1`] = `
     >
       <CheckBox
         checked={false}
-        key="1"
+        key=".$1"
         onChange={[Function]}
         size="m"
         type="normal"

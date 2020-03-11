@@ -214,11 +214,6 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
             this.checkboxes[0].focus();
         }
     }
-
-    public getCheckboxes() {
-        return this.checkboxes;
-    }
-
     /**
      * Убирает фокус с группы чекбокс-кнопок.
      */

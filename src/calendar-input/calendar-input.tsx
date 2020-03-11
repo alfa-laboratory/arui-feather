@@ -752,10 +752,6 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
             this.timeoutId = null;
         }, 0);
     }
-
-    public getCustomCalendarTarget() {
-        return this.customCalendarTarget;
-    }
 }
 
 class ThemedCalendarInput extends CalendarInput {}

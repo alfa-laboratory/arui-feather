@@ -104,11 +104,11 @@ export class Amount extends React.Component<AmountProps> {
         const { majorPart, minorPart, currencySymbol } = formatAmount(amount);
 
         const amountInner = (
-            <span>
+            <>
                 <span className={ this.cn('major') }>{ majorPart }</span>
                 { this.renderSeparatorAndMinorPart(minorPart) }
                 { this.renderCurrencySymbol(currencySymbol) }
-            </span>
+            </>
         );
 
         return (
@@ -141,10 +141,10 @@ export class Amount extends React.Component<AmountProps> {
 
         if (needMinorPart) {
             return (
-                <div className={ this.cn('minor-container') }>
+                <>
                     <span className={ this.cn('separator') }>{ AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR }</span>
                     <span className={ this.cn('minor') }>{ minorPart }</span>
-                </div>
+                </>
             );
         }
 

@@ -107,7 +107,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     checkboxes: any[];
 
     render() {
-        let children = null;
+        let children: React.ReactNode = null;
         let props: { name: string; disabled?: boolean; width?: 'default' | 'available' } = { name: this.props.name };
         const checkboxGroupParts = {};
 
@@ -116,9 +116,9 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         }
 
         if (this.props.children) {
-            children = (
-                this.props.children as Array<React.ReactNode>).length
-                ? this.props.children : [this.props.children];
+            const { children: propsChildren } = this.props;
+
+            children = React.Children.toArray(propsChildren);
         }
 
         if (this.props.type === 'button') {
@@ -130,20 +130,22 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
             const value = this.props.value === undefined ? this.state.value : this.props.value;
 
             React.Children.forEach(children, (checkbox, index) => {
-                const checkboxNode = React.cloneElement(checkbox, {
-                    ref: checkbox => this.checkboxes.push(checkbox),
-                    checked: checkbox.props.checked === undefined
-                        ? value.some(groupValue => groupValue === checkbox.props.value)
-                        : checkbox.props.checked,
-                    onChange: checkbox.props.onChange === undefined
-                        ? (checked, _text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
-                        : checkbox.props.onChange,
-                    ...props
-                });
+                if (React.isValidElement(checkbox)) {
+                    const checkboxNode = React.cloneElement(checkbox, {
+                        ref: checkbox => this.checkboxes.push(checkbox),
+                        checked: checkbox.props.checked === undefined
+                            ? value.some(groupValue => groupValue === checkbox.props.value)
+                            : checkbox.props.checked,
+                        onChange: checkbox.props.onChange === undefined
+                            ? (checked, _text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
+                            : checkbox.props.onChange,
+                        ...props
+                    });
 
-                checkboxGroupParts[`checkbox-${index}`] = (this.props.type !== 'button' && this.props.type !== 'line')
-                    ? <div>{ checkboxNode }</div>
-                    : checkboxNode;
+                    checkboxGroupParts[`checkbox-${index}`] = (this.props.type !== 'button' && this.props.type !== 'line')
+                        ? <div>{ checkboxNode }</div>
+                        : checkboxNode;
+                }
             });
         }
 

@@ -1,3 +1,22 @@
+<a name="17.1.0"></a>
+# [17.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.0.0...v17.1.0) (2020-03-12)
+
+
+### Bug Fixes
+
+* change 'bemo' on 'start' for development mode ([#1094](https://github.com/alfa-laboratory/arui-feather/issues/1094)) ([d2c354a](https://github.com/alfa-laboratory/arui-feather/commit/d2c354a))
+* **radio-group:** adds 'isValidElement' check for children ([#1103](https://github.com/alfa-laboratory/arui-feather/issues/1103)) ([71512c5](https://github.com/alfa-laboratory/arui-feather/commit/71512c5))
+* **test-utils:** adds types for test-utils ([#1085](https://github.com/alfa-laboratory/arui-feather/issues/1085)) ([599c01e](https://github.com/alfa-laboratory/arui-feather/commit/599c01e))
+
+
+### Features
+
+* pass SyntheticEvent as a second argument onChange handlers ([#941](https://github.com/alfa-laboratory/arui-feather/issues/941)) ([fe1323b](https://github.com/alfa-laboratory/arui-feather/commit/fe1323b))
+* **attach:** update visibility modifiers ([#1067](https://github.com/alfa-laboratory/arui-feather/issues/1067)) ([24c05d4](https://github.com/alfa-laboratory/arui-feather/commit/24c05d4))
+* **collapse:** update visibility modifiers ([#1083](https://github.com/alfa-laboratory/arui-feather/issues/1083)) ([6118aab](https://github.com/alfa-laboratory/arui-feather/commit/6118aab))
+
+
+
 <a name="17.0.0"></a>
 # [17.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v16.0.5...v17.0.0) (2020-02-21)
 

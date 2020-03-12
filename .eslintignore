@@ -10,3 +10,4 @@ node_modules/**
 gemini/gemini-report/**
 gemini/node_modules/**
 gemini/gemini-ci.js
+hermione/tests/**

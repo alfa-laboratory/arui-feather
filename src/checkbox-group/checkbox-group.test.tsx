@@ -51,6 +51,7 @@ describe('checkbox-group', () => {
     });
 
     it('should focus first child checkbox-button on public focus method', () => {
+
         const checkboxGroup = mount<CheckBoxGroup>(
             <CheckBoxGroup>
                 <CheckBox />
@@ -58,7 +59,8 @@ describe('checkbox-group', () => {
                 <CheckBox />
             </CheckBoxGroup>
         );
-        const firstCheckboxInstance = checkboxGroup.instance().checkboxes[0];
+
+        const firstCheckboxInstance = (checkboxGroup.instance() as any).checkboxes[0];
 
         jest.spyOn(firstCheckboxInstance, 'focus');
         checkboxGroup.instance().focus();
@@ -156,5 +158,20 @@ describe('checkbox-group', () => {
         checkbox.simulate('change');
 
         expect(onChange).not.toHaveBeenCalled();
+    });
+
+    it('should render with children like boolean or string or others react children type without problems', () => {
+        const checkboxGroup = shallow(
+            <CheckBoxGroup>
+                <CheckBox key='1' text='label' />
+                <CheckBox key='2' text='label' />
+                { false && <CheckBox key='3' text='label' /> }
+                { 0 && <CheckBox key='4' text='label' /> }
+                { '' && <CheckBox key='5' text='label' /> }
+                { null && <CheckBox key='6' text='label' /> }
+            </CheckBoxGroup>
+        );
+
+        expect(checkboxGroup).toMatchSnapshot();
     });
 });

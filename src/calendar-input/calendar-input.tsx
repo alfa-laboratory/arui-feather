@@ -263,8 +263,7 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
     /**
      * @type {Input}
      */
-    // TODO [issues/1018] переписать тесты нужно, что бы private был
-    customCalendarTarget;
+    private customCalendarTarget;
 
     private nativeCalendarTarget;
 

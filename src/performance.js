@@ -111,7 +111,9 @@ function deep(nextProps, nextState, nextContext) {
  * @deprecated since version 17.0.0
  */
 export default function performance(useDeep = false) {
-    console.warn('arui-feather/performance is deprecated.');
+    if (!useDeep) {
+        console.warn('arui-feather/performance is deprecated.');
+    }
 
     return function (target) {
         target.prototype.shouldComponentUpdate = useDeep ? deep : shallow;

@@ -5,5 +5,4 @@
 import './card-visa.css';
 import '../../../icon';
 
-export * from './card-visa';
 export { default } from './card-visa';

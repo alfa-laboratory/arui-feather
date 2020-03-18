@@ -18,6 +18,4 @@ class IconLocation extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconLocation extends IconLocation {}
-(ThemedIconLocation as any) = withTheme(IconLocation);
-export default ThemedIconLocation;
+export default withTheme(IconLocation);

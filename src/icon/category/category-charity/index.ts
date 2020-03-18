@@ -5,5 +5,4 @@
 import './category-charity.css';
 import '../../../icon';
 
-export * from './category-charity';
 export { default } from './category-charity';

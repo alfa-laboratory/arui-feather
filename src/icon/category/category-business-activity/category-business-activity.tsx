@@ -18,6 +18,4 @@ class IconCategoryBusinessActivity extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryBusinessActivity extends IconCategoryBusinessActivity {}
-(ThemedIconCategoryBusinessActivity as any) = withTheme(IconCategoryBusinessActivity);
-export default ThemedIconCategoryBusinessActivity;
+export default withTheme(IconCategoryBusinessActivity);

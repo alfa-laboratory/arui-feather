@@ -18,6 +18,4 @@ class IconCategoryVipManager extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryVipManager extends IconCategoryVipManager {}
-(ThemedIconCategoryVipManager as any) = withTheme(IconCategoryVipManager);
-export default ThemedIconCategoryVipManager;
+export default withTheme(IconCategoryVipManager);

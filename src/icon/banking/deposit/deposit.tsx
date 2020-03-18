@@ -18,6 +18,4 @@ class IconDeposit extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconDeposit extends IconDeposit {}
-(ThemedIconDeposit as any) = withTheme(IconDeposit);
-export default ThemedIconDeposit;
+export default withTheme(IconDeposit);

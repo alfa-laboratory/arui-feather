@@ -18,6 +18,4 @@ class IconBag extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBag extends IconBag {}
-(ThemedIconBag as any) = withTheme(IconBag);
-export default ThemedIconBag;
+export default withTheme(IconBag);

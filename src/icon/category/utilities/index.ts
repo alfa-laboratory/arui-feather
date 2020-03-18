@@ -5,5 +5,4 @@
 import './utilities.css';
 import '../../../icon';
 
-export * from './utilities';
 export { default } from './utilities';

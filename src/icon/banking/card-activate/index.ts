@@ -5,5 +5,4 @@
 import './card-activate.css';
 import '../../../icon';
 
-export * from './card-activate';
 export { default } from './card-activate';

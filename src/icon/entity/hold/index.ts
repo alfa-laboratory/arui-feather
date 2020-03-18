@@ -5,5 +5,4 @@
 import './hold.css';
 import '../../../icon';
 
-export * from './hold';
 export { default } from './hold';

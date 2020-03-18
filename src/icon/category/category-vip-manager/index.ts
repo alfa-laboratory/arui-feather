@@ -5,5 +5,4 @@
 import './category-vip-manager.css';
 import '../../../icon';
 
-export * from './category-vip-manager';
 export { default } from './category-vip-manager';

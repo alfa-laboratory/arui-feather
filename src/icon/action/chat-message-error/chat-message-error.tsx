@@ -18,6 +18,4 @@ class IconChatMessageError extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconChatMessageError extends IconChatMessageError {}
-(ThemedIconChatMessageError as any) = withTheme(IconChatMessageError);
-export default ThemedIconChatMessageError;
+export default withTheme(IconChatMessageError);

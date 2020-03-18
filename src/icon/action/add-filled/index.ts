@@ -5,5 +5,4 @@
 import './add-filled.css';
 import '../../../icon';
 
-export * from './add-filled';
 export { default } from './add-filled';

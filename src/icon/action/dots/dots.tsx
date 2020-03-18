@@ -18,6 +18,4 @@ class IconDots extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconDots extends IconDots {}
-(ThemedIconDots as any) = withTheme(IconDots);
-export default ThemedIconDots;
+export default withTheme(IconDots);

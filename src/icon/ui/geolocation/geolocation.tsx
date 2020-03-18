@@ -18,6 +18,4 @@ class IconGeolocation extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconGeolocation extends IconGeolocation {}
-(ThemedIconGeolocation as any) = withTheme(IconGeolocation);
-export default ThemedIconGeolocation;
+export default withTheme(IconGeolocation);

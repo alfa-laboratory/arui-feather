@@ -18,6 +18,4 @@ class IconSettings extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconSettings extends IconSettings {}
-(ThemedIconSettings as any) = withTheme(IconSettings);
-export default ThemedIconSettings;
+export default withTheme(IconSettings);

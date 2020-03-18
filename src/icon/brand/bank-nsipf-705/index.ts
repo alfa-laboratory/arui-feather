@@ -5,5 +5,4 @@
 import './bank-nsipf-705.css';
 import '../../../icon';
 
-export * from './bank-nsipf-705';
 export { default } from './bank-nsipf-705';

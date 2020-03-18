@@ -5,5 +5,4 @@
 import './repeat.css';
 import '../../../icon';
 
-export * from './repeat';
 export { default } from './repeat';

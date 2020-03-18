@@ -5,5 +5,4 @@
 import './arrow-top.css';
 import '../../../icon';
 
-export * from './arrow-top';
 export { default } from './arrow-top';

@@ -5,5 +5,4 @@
 import './network-twitter.css';
 import '../../../icon';
 
-export * from './network-twitter';
 export { default } from './network-twitter';

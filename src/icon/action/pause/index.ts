@@ -5,5 +5,4 @@
 import './pause.css';
 import '../../../icon';
 
-export * from './pause';
 export { default } from './pause';

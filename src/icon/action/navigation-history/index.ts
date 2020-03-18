@@ -5,5 +5,4 @@
 import './navigation-history.css';
 import '../../../icon';
 
-export * from './navigation-history';
 export { default } from './navigation-history';

@@ -5,5 +5,4 @@
 import './category-vacation.css';
 import '../../../icon';
 
-export * from './category-vacation';
 export { default } from './category-vacation';

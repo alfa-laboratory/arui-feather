@@ -5,5 +5,4 @@
 import './category-rent.css';
 import '../../../icon';
 
-export * from './category-rent';
 export { default } from './category-rent';

@@ -5,5 +5,4 @@
 import './category-cards.css';
 import '../../../icon';
 
-export * from './category-cards';
 export { default } from './category-cards';

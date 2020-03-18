@@ -5,5 +5,4 @@
 import './format-unknown.css';
 import '../../../icon';
 
-export * from './format-unknown';
 export { default } from './format-unknown';

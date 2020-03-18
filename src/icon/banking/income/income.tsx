@@ -18,6 +18,4 @@ class IconIncome extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconIncome extends IconIncome {}
-(ThemedIconIncome as any) = withTheme(IconIncome);
-export default ThemedIconIncome;
+export default withTheme(IconIncome);

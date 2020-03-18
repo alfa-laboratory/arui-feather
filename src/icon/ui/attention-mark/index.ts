@@ -5,5 +5,4 @@
 import './attention-mark.css';
 import '../../../icon';
 
-export * from './attention-mark';
 export { default } from './attention-mark';

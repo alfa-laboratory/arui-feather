@@ -5,5 +5,4 @@
 import './pay-back.css';
 import '../../../icon';
 
-export * from './pay-back';
 export { default } from './pay-back';

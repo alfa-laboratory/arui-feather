@@ -5,5 +5,4 @@
 import './expences-planner.css';
 import '../../../icon';
 
-export * from './expences-planner';
 export { default } from './expences-planner';

@@ -5,5 +5,4 @@
 import './pillow.css';
 import '../../../icon';
 
-export * from './pillow';
 export { default } from './pillow';

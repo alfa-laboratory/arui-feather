@@ -18,6 +18,4 @@ class IconCvv extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCvv extends IconCvv {}
-(ThemedIconCvv as any) = withTheme(IconCvv);
-export default ThemedIconCvv;
+export default withTheme(IconCvv);

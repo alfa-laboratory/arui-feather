@@ -18,6 +18,4 @@ class IconFilter extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconFilter extends IconFilter {}
-(ThemedIconFilter as any) = withTheme(IconFilter);
-export default ThemedIconFilter;
+export default withTheme(IconFilter);

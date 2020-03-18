@@ -5,5 +5,4 @@
 import './account-shared.css';
 import '../../../icon';
 
-export * from './account-shared';
 export { default } from './account-shared';

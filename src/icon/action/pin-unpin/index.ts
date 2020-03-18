@@ -5,5 +5,4 @@
 import './pin-unpin.css';
 import '../../../icon';
 
-export * from './pin-unpin';
 export { default } from './pin-unpin';

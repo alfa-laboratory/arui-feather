@@ -5,5 +5,4 @@
 import './subscrption.css';
 import '../../../icon';
 
-export * from './subscrption';
 export { default } from './subscrption';

@@ -5,5 +5,4 @@
 import './password-hide.css';
 import '../../../icon';
 
-export * from './password-hide';
 export { default } from './password-hide';

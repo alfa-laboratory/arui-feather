@@ -18,6 +18,4 @@ class IconFormatRar extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconFormatRar extends IconFormatRar {}
-(ThemedIconFormatRar as any) = withTheme(IconFormatRar);
-export default ThemedIconFormatRar;
+export default withTheme(IconFormatRar);

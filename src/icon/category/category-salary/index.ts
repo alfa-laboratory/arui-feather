@@ -5,5 +5,4 @@
 import './category-salary.css';
 import '../../../icon';
 
-export * from './category-salary';
 export { default } from './category-salary';

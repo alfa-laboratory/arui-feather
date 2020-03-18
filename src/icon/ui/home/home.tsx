@@ -18,6 +18,4 @@ class IconHome extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconHome extends IconHome {}
-(ThemedIconHome as any) = withTheme(IconHome);
-export default ThemedIconHome;
+export default withTheme(IconHome);

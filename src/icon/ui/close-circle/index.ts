@@ -5,5 +5,4 @@
 import './close-circle.css';
 import '../../../icon';
 
-export * from './close-circle';
 export { default } from './close-circle';

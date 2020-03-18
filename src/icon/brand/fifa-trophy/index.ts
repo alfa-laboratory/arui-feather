@@ -5,5 +5,4 @@
 import './fifa-trophy.css';
 import '../../../icon';
 
-export * from './fifa-trophy';
 export { default } from './fifa-trophy';

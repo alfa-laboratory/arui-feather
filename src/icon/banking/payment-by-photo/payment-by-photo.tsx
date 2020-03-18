@@ -18,6 +18,4 @@ class IconPaymentByPhoto extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPaymentByPhoto extends IconPaymentByPhoto {}
-(ThemedIconPaymentByPhoto as any) = withTheme(IconPaymentByPhoto);
-export default ThemedIconPaymentByPhoto;
+export default withTheme(IconPaymentByPhoto);

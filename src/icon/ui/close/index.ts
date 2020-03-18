@@ -5,5 +5,4 @@
 import './close.css';
 import '../../../icon';
 
-export * from './close';
 export { default } from './close';

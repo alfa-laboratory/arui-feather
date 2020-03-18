@@ -5,5 +5,4 @@
 import './bank-moscow.css';
 import '../../../icon';
 
-export * from './bank-moscow';
 export { default } from './bank-moscow';

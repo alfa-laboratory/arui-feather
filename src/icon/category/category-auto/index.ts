@@ -5,5 +5,4 @@
 import './category-auto.css';
 import '../../../icon';
 
-export * from './category-auto';
 export { default } from './category-auto';

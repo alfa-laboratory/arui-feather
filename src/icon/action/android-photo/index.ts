@@ -5,5 +5,4 @@
 import './android-photo.css';
 import '../../../icon';
 
-export * from './android-photo';
 export { default } from './android-photo';

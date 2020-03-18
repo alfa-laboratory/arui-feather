@@ -18,6 +18,4 @@ class IconEmail extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconEmail extends IconEmail {}
-(ThemedIconEmail as any) = withTheme(IconEmail);
-export default ThemedIconEmail;
+export default withTheme(IconEmail);

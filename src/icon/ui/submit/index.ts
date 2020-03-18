@@ -5,5 +5,4 @@
 import './submit.css';
 import '../../../icon';
 
-export * from './submit';
 export { default } from './submit';

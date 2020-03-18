@@ -18,6 +18,4 @@ class IconCategoryScholarship extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryScholarship extends IconCategoryScholarship {}
-(ThemedIconCategoryScholarship as any) = withTheme(IconCategoryScholarship);
-export default ThemedIconCategoryScholarship;
+export default withTheme(IconCategoryScholarship);

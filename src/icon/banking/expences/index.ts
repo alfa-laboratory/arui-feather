@@ -5,5 +5,4 @@
 import './expences.css';
 import '../../../icon';
 
-export * from './expences';
 export { default } from './expences';

@@ -18,6 +18,4 @@ class IconCategoryExperiments extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryExperiments extends IconCategoryExperiments {}
-(ThemedIconCategoryExperiments as any) = withTheme(IconCategoryExperiments);
-export default ThemedIconCategoryExperiments;
+export default withTheme(IconCategoryExperiments);

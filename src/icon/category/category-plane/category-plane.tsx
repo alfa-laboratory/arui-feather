@@ -18,6 +18,4 @@ class IconCategoryPlane extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryPlane extends IconCategoryPlane {}
-(ThemedIconCategoryPlane as any) = withTheme(IconCategoryPlane);
-export default ThemedIconCategoryPlane;
+export default withTheme(IconCategoryPlane);

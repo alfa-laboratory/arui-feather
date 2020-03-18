@@ -5,5 +5,4 @@
 import './fail.css';
 import '../../../icon';
 
-export * from './fail';
 export { default } from './fail';

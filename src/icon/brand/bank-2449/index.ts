@@ -5,5 +5,4 @@
 import './bank-2449.css';
 import '../../../icon';
 
-export * from './bank-2449';
 export { default } from './bank-2449';

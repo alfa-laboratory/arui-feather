@@ -18,6 +18,4 @@ class IconPhotoCard extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPhotoCard extends IconPhotoCard {}
-(ThemedIconPhotoCard as any) = withTheme(IconPhotoCard);
-export default ThemedIconPhotoCard;
+export default withTheme(IconPhotoCard);

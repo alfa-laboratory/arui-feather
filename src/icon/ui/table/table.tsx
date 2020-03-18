@@ -18,6 +18,4 @@ class IconTable extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconTable extends IconTable {}
-(ThemedIconTable as any) = withTheme(IconTable);
-export default ThemedIconTable;
+export default withTheme(IconTable);

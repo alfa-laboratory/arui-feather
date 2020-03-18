@@ -18,6 +18,4 @@ class IconGoals extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconGoals extends IconGoals {}
-(ThemedIconGoals as any) = withTheme(IconGoals);
-export default ThemedIconGoals;
+export default withTheme(IconGoals);

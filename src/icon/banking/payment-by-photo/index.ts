@@ -5,5 +5,4 @@
 import './payment-by-photo.css';
 import '../../../icon';
 
-export * from './payment-by-photo';
 export { default } from './payment-by-photo';

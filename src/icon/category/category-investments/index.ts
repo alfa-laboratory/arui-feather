@@ -5,5 +5,4 @@
 import './category-investments.css';
 import '../../../icon';
 
-export * from './category-investments';
 export { default } from './category-investments';

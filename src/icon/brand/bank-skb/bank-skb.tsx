@@ -18,6 +18,4 @@ class IconBankSkb extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankSkb extends IconBankSkb {}
-(ThemedIconBankSkb as any) = withTheme(IconBankSkb);
-export default ThemedIconBankSkb;
+export default withTheme(IconBankSkb);

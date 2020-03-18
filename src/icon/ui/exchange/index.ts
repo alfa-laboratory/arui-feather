@@ -5,5 +5,4 @@
 import './exchange.css';
 import '../../../icon';
 
-export * from './exchange';
 export { default } from './exchange';

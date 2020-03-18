@@ -5,5 +5,4 @@
 import './feature.css';
 import '../../../icon';
 
-export * from './feature';
 export { default } from './feature';

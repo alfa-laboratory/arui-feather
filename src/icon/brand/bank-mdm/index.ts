@@ -5,5 +5,4 @@
 import './bank-mdm.css';
 import '../../../icon';
 
-export * from './bank-mdm';
 export { default } from './bank-mdm';

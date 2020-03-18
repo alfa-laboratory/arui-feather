@@ -18,6 +18,4 @@ class IconLimits extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconLimits extends IconLimits {}
-(ThemedIconLimits as any) = withTheme(IconLimits);
-export default ThemedIconLimits;
+export default withTheme(IconLimits);

@@ -5,5 +5,4 @@
 import './lock.css';
 import '../../../icon';
 
-export * from './lock';
 export { default } from './lock';

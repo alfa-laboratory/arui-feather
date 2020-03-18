@@ -5,5 +5,4 @@
 import './settings.css';
 import '../../../icon';
 
-export * from './settings';
 export { default } from './settings';

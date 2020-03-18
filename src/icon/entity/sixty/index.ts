@@ -5,5 +5,4 @@
 import './sixty.css';
 import '../../../icon';
 
-export * from './sixty';
 export { default } from './sixty';

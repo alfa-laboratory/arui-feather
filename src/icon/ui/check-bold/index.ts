@@ -5,5 +5,4 @@
 import './check-bold.css';
 import '../../../icon';
 
-export * from './check-bold';
 export { default } from './check-bold';

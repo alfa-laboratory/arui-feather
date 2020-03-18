@@ -5,5 +5,4 @@
 import './geolocation-map.css';
 import '../../../icon';
 
-export * from './geolocation-map';
 export { default } from './geolocation-map';

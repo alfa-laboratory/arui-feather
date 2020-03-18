@@ -18,6 +18,4 @@ class IconNavigationHome extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconNavigationHome extends IconNavigationHome {}
-(ThemedIconNavigationHome as any) = withTheme(IconNavigationHome);
-export default ThemedIconNavigationHome;
+export default withTheme(IconNavigationHome);

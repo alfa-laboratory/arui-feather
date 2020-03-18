@@ -5,5 +5,4 @@
 import './category-guard.css';
 import '../../../icon';
 
-export * from './category-guard';
 export { default } from './category-guard';

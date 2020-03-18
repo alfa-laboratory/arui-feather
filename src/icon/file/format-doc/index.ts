@@ -5,5 +5,4 @@
 import './format-doc.css';
 import '../../../icon';
 
-export * from './format-doc';
 export { default } from './format-doc';

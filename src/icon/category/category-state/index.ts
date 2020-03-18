@@ -5,5 +5,4 @@
 import './category-state.css';
 import '../../../icon';
 
-export * from './category-state';
 export { default } from './category-state';

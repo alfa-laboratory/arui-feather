@@ -5,5 +5,4 @@
 import './up.css';
 import '../../../icon';
 
-export * from './up';
 export { default } from './up';

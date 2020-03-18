@@ -5,5 +5,4 @@
 import './card-pin-change.css';
 import '../../../icon';
 
-export * from './card-pin-change';
 export { default } from './card-pin-change';

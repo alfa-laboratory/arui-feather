@@ -5,5 +5,4 @@
 import './currency-jpy.css';
 import '../../../icon';
 
-export * from './currency-jpy';
 export { default } from './currency-jpy';

@@ -18,6 +18,4 @@ class IconPayBack extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPayBack extends IconPayBack {}
-(ThemedIconPayBack as any) = withTheme(IconPayBack);
-export default ThemedIconPayBack;
+export default withTheme(IconPayBack);

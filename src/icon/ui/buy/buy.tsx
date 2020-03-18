@@ -18,6 +18,4 @@ class IconBuy extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBuy extends IconBuy {}
-(ThemedIconBuy as any) = withTheme(IconBuy);
-export default ThemedIconBuy;
+export default withTheme(IconBuy);

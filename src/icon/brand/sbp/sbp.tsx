@@ -18,6 +18,4 @@ class IconSbp extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconSbp extends IconSbp {}
-(ThemedIconSbp as any) = withTheme(IconSbp);
-export default ThemedIconSbp;
+export default withTheme(IconSbp);

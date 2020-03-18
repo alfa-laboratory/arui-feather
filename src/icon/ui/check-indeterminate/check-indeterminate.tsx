@@ -18,6 +18,4 @@ class IconCheckIndeterminate extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCheckIndeterminate extends IconCheckIndeterminate {}
-(ThemedIconCheckIndeterminate as any) = withTheme(IconCheckIndeterminate);
-export default ThemedIconCheckIndeterminate;
+export default withTheme(IconCheckIndeterminate);

@@ -5,5 +5,4 @@
 import './predictions.css';
 import '../../../icon';
 
-export * from './predictions';
 export { default } from './predictions';

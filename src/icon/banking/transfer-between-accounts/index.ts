@@ -5,5 +5,4 @@
 import './transfer-between-accounts.css';
 import '../../../icon';
 
-export * from './transfer-between-accounts';
 export { default } from './transfer-between-accounts';

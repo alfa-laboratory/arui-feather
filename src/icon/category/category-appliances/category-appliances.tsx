@@ -18,6 +18,4 @@ class IconCategoryAppliances extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryAppliances extends IconCategoryAppliances {}
-(ThemedIconCategoryAppliances as any) = withTheme(IconCategoryAppliances);
-export default ThemedIconCategoryAppliances;
+export default withTheme(IconCategoryAppliances);

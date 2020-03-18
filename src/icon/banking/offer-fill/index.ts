@@ -5,5 +5,4 @@
 import './offer-fill.css';
 import '../../../icon';
 
-export * from './offer-fill';
 export { default } from './offer-fill';

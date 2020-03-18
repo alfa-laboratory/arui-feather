@@ -5,5 +5,4 @@
 import './email.css';
 import '../../../icon';
 
-export * from './email';
 export { default } from './email';

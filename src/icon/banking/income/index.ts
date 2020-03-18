@@ -5,5 +5,4 @@
 import './income.css';
 import '../../../icon';
 
-export * from './income';
 export { default } from './income';

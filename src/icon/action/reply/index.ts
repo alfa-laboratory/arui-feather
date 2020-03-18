@@ -5,5 +5,4 @@
 import './reply.css';
 import '../../../icon';
 
-export * from './reply';
 export { default } from './reply';

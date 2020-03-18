@@ -18,6 +18,4 @@ class IconBeeline extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBeeline extends IconBeeline {}
-(ThemedIconBeeline as any) = withTheme(IconBeeline);
-export default ThemedIconBeeline;
+export default withTheme(IconBeeline);

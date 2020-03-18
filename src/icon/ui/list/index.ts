@@ -5,5 +5,4 @@
 import './list.css';
 import '../../../icon';
 
-export * from './list';
 export { default } from './list';

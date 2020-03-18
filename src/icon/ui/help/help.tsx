@@ -18,6 +18,4 @@ class IconHelp extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconHelp extends IconHelp {}
-(ThemedIconHelp as any) = withTheme(IconHelp);
-export default ThemedIconHelp;
+export default withTheme(IconHelp);

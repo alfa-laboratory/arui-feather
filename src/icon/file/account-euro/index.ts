@@ -5,5 +5,4 @@
 import './account-euro.css';
 import '../../../icon';
 
-export * from './account-euro';
 export { default } from './account-euro';

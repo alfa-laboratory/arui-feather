@@ -5,5 +5,4 @@
 import './category-family.css';
 import '../../../icon';
 
-export * from './category-family';
 export { default } from './category-family';

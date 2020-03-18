@@ -5,5 +5,4 @@
 import './atm.css';
 import '../../../icon';
 
-export * from './atm';
 export { default } from './atm';

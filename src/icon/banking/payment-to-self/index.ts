@@ -5,5 +5,4 @@
 import './payment-to-self.css';
 import '../../../icon';
 
-export * from './payment-to-self';
 export { default } from './payment-to-self';

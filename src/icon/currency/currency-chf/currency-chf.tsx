@@ -18,6 +18,4 @@ class IconCurrencyChf extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCurrencyChf extends IconCurrencyChf {}
-(ThemedIconCurrencyChf as any) = withTheme(IconCurrencyChf);
-export default ThemedIconCurrencyChf;
+export default withTheme(IconCurrencyChf);

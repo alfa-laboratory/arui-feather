@@ -18,6 +18,4 @@ class IconPaymentToState extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPaymentToState extends IconPaymentToState {}
-(ThemedIconPaymentToState as any) = withTheme(IconPaymentToState);
-export default ThemedIconPaymentToState;
+export default withTheme(IconPaymentToState);

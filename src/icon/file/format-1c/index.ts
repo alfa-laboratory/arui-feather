@@ -5,5 +5,4 @@
 import './format-1c.css';
 import '../../../icon';
 
-export * from './format-1c';
 export { default } from './format-1c';

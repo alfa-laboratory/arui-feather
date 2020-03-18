@@ -5,5 +5,4 @@
 import './beeline.css';
 import '../../../icon';
 
-export * from './beeline';
 export { default } from './beeline';

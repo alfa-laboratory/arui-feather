@@ -18,6 +18,4 @@ class IconAttentionBold extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconAttentionBold extends IconAttentionBold {}
-(ThemedIconAttentionBold as any) = withTheme(IconAttentionBold);
-export default ThemedIconAttentionBold;
+export default withTheme(IconAttentionBold);

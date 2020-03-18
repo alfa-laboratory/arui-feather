@@ -5,5 +5,4 @@
 import './bank-mts.css';
 import '../../../icon';
 
-export * from './bank-mts';
 export { default } from './bank-mts';

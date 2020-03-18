@@ -5,5 +5,4 @@
 import './autopayment.css';
 import '../../../icon';
 
-export * from './autopayment';
 export { default } from './autopayment';

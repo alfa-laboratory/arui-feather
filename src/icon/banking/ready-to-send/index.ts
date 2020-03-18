@@ -5,5 +5,4 @@
 import './ready-to-send.css';
 import '../../../icon';
 
-export * from './ready-to-send';
 export { default } from './ready-to-send';

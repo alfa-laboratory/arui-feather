@@ -5,5 +5,4 @@
 import './currency-usd.css';
 import '../../../icon';
 
-export * from './currency-usd';
 export { default } from './currency-usd';

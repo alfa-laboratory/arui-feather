@@ -5,5 +5,4 @@
 import './discount.css';
 import '../../../icon';
 
-export * from './discount';
 export { default } from './discount';

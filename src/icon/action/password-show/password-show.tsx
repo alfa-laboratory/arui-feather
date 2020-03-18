@@ -18,6 +18,4 @@ class IconPasswordShow extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPasswordShow extends IconPasswordShow {}
-(ThemedIconPasswordShow as any) = withTheme(IconPasswordShow);
-export default ThemedIconPasswordShow;
+export default withTheme(IconPasswordShow);

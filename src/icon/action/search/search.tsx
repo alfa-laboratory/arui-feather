@@ -18,6 +18,4 @@ class IconSearch extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconSearch extends IconSearch {}
-(ThemedIconSearch as any) = withTheme(IconSearch);
-export default ThemedIconSearch;
+export default withTheme(IconSearch);

@@ -18,6 +18,4 @@ class IconBankVozrozhdenie extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankVozrozhdenie extends IconBankVozrozhdenie {}
-(ThemedIconBankVozrozhdenie as any) = withTheme(IconBankVozrozhdenie);
-export default ThemedIconBankVozrozhdenie;
+export default withTheme(IconBankVozrozhdenie);

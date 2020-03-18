@@ -18,6 +18,4 @@ class IconBackspace extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBackspace extends IconBackspace {}
-(ThemedIconBackspace as any) = withTheme(IconBackspace);
-export default ThemedIconBackspace;
+export default withTheme(IconBackspace);

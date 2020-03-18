@@ -5,5 +5,4 @@
 import './dislike.css';
 import '../../../icon';
 
-export * from './dislike';
 export { default } from './dislike';

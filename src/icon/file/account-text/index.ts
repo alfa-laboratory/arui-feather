@@ -5,5 +5,4 @@
 import './account-text.css';
 import '../../../icon';
 
-export * from './account-text';
 export { default } from './account-text';

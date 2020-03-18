@@ -5,5 +5,4 @@
 import './more.css';
 import '../../../icon';
 
-export * from './more';
 export { default } from './more';

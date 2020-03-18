@@ -18,6 +18,4 @@ class IconTransferAnyBank extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconTransferAnyBank extends IconTransferAnyBank {}
-(ThemedIconTransferAnyBank as any) = withTheme(IconTransferAnyBank);
-export default ThemedIconTransferAnyBank;
+export default withTheme(IconTransferAnyBank);

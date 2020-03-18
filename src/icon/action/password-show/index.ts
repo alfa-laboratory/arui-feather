@@ -5,5 +5,4 @@
 import './password-show.css';
 import '../../../icon';
 
-export * from './password-show';
 export { default } from './password-show';

@@ -18,6 +18,4 @@ class IconCategoryAtm extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryAtm extends IconCategoryAtm {}
-(ThemedIconCategoryAtm as any) = withTheme(IconCategoryAtm);
-export default ThemedIconCategoryAtm;
+export default withTheme(IconCategoryAtm);

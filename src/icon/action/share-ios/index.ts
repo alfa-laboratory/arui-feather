@@ -5,5 +5,4 @@
 import './share-ios.css';
 import '../../../icon';
 
-export * from './share-ios';
 export { default } from './share-ios';

@@ -18,6 +18,4 @@ class IconNavigationHistory extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconNavigationHistory extends IconNavigationHistory {}
-(ThemedIconNavigationHistory as any) = withTheme(IconNavigationHistory);
-export default ThemedIconNavigationHistory;
+export default withTheme(IconNavigationHistory);

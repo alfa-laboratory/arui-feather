@@ -18,6 +18,4 @@ class IconCategorySalary extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategorySalary extends IconCategorySalary {}
-(ThemedIconCategorySalary as any) = withTheme(IconCategorySalary);
-export default ThemedIconCategorySalary;
+export default withTheme(IconCategorySalary);

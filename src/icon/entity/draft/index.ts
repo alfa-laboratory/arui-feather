@@ -5,5 +5,4 @@
 import './draft.css';
 import '../../../icon';
 
-export * from './draft';
 export { default } from './draft';

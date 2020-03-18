@@ -5,5 +5,4 @@
 import './category-scholarship.css';
 import '../../../icon';
 
-export * from './category-scholarship';
 export { default } from './category-scholarship';

@@ -5,5 +5,4 @@
 import './sign.css';
 import '../../../icon';
 
-export * from './sign';
 export { default } from './sign';

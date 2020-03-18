@@ -5,5 +5,4 @@
 import './system-help.css';
 import '../../../icon';
 
-export * from './system-help';
 export { default } from './system-help';

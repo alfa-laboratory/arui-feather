@@ -18,6 +18,4 @@ class IconQr extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconQr extends IconQr {}
-(ThemedIconQr as any) = withTheme(IconQr);
-export default ThemedIconQr;
+export default withTheme(IconQr);

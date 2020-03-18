@@ -5,5 +5,4 @@
 import './right.css';
 import '../../../icon';
 
-export * from './right';
 export { default } from './right';

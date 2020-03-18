@@ -5,5 +5,4 @@
 import './sell.css';
 import '../../../icon';
 
-export * from './sell';
 export { default } from './sell';

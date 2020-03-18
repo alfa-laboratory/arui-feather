@@ -5,5 +5,4 @@
 import './category-finance.css';
 import '../../../icon';
 
-export * from './category-finance';
 export { default } from './category-finance';

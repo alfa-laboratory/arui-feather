@@ -18,6 +18,4 @@ class IconAndroidDocument extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconAndroidDocument extends IconAndroidDocument {}
-(ThemedIconAndroidDocument as any) = withTheme(IconAndroidDocument);
-export default ThemedIconAndroidDocument;
+export default withTheme(IconAndroidDocument);

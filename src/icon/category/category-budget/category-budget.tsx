@@ -18,6 +18,4 @@ class IconCategoryBudget extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryBudget extends IconCategoryBudget {}
-(ThemedIconCategoryBudget as any) = withTheme(IconCategoryBudget);
-export default ThemedIconCategoryBudget;
+export default withTheme(IconCategoryBudget);

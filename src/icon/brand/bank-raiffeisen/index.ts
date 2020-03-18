@@ -5,5 +5,4 @@
 import './bank-raiffeisen.css';
 import '../../../icon';
 
-export * from './bank-raiffeisen';
 export { default } from './bank-raiffeisen';

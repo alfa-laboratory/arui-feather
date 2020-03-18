@@ -18,6 +18,4 @@ class IconBankSocieteGenerale extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankSocieteGenerale extends IconBankSocieteGenerale {}
-(ThemedIconBankSocieteGenerale as any) = withTheme(IconBankSocieteGenerale);
-export default ThemedIconBankSocieteGenerale;
+export default withTheme(IconBankSocieteGenerale);

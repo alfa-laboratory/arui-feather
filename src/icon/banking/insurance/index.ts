@@ -5,5 +5,4 @@
 import './insurance.css';
 import '../../../icon';
 
-export * from './insurance';
 export { default } from './insurance';

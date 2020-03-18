@@ -18,6 +18,4 @@ class IconBankAlfa extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankAlfa extends IconBankAlfa {}
-(ThemedIconBankAlfa as any) = withTheme(IconBankAlfa);
-export default ThemedIconBankAlfa;
+export default withTheme(IconBankAlfa);

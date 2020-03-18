@@ -18,6 +18,4 @@ class IconOffice extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconOffice extends IconOffice {}
-(ThemedIconOffice as any) = withTheme(IconOffice);
-export default ThemedIconOffice;
+export default withTheme(IconOffice);

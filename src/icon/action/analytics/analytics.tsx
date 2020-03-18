@@ -18,6 +18,4 @@ class IconAnalytics extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconAnalytics extends IconAnalytics {}
-(ThemedIconAnalytics as any) = withTheme(IconAnalytics);
-export default ThemedIconAnalytics;
+export default withTheme(IconAnalytics);

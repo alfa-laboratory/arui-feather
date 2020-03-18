@@ -5,5 +5,4 @@
 import './format-csv.css';
 import '../../../icon';
 
-export * from './format-csv';
 export { default } from './format-csv';

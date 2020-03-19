@@ -180,10 +180,16 @@ export type AttachProps = DeepReadonly<{
 
 }>;
 
+type AttachState = {
+    focused: boolean;
+    hovered: boolean;
+    value: any[];
+};
+
 /**
  * Компонент прикрепления файлов.
  */
-export class Attach extends React.PureComponent<AttachProps> {
+export class Attach extends React.PureComponent<AttachProps, AttachState> {
     protected cn = createCn('attach');
 
     static defaultProps: Partial<AttachProps> = {
@@ -204,12 +210,25 @@ export class Attach extends React.PureComponent<AttachProps> {
     private input: HTMLInputElement;
 
     // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextValue = nextProps.value || [];
+    // UNSAFE_componentWillReceiveProps(nextProps) {
+    //     const nextValue = nextProps.value || [];
 
-        if (!isEqualArray(nextValue, this.state.value)) {
+    //     if (!isEqualArray(nextValue, this.state.value)) {
+    //         this.input.value = '';
+    //         this.setState({ value: nextValue });
+    //     }
+    // }
+
+    componentDidUpdate(_: AttachProps, prevState: AttachState) {
+        const nextValue = this.props.value || [];
+
+        if (
+            this.state.value !== prevState.value &&
+            !isEqualArray(nextValue as any[], prevState.value)
+        ) {
             this.input.value = '';
-            this.setState({ value: nextValue });
+            // eslint-disable-next-line react/no-did-update-set-state
+            this.setState({ value: nextValue as any[] });
         }
     }
 

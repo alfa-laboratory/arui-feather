@@ -1,3 +1,14 @@
+<a name="17.2.0"></a>
+# [17.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.1.0...v17.2.0) (2020-03-19)
+
+
+### Features
+
+*  private property ([#1095](https://github.com/alfa-laboratory/arui-feather/issues/1095)) ([d603098](https://github.com/alfa-laboratory/arui-feather/commit/d603098))
+* **icons:** latest icons from alfa-ui-primitives ([#1111](https://github.com/alfa-laboratory/arui-feather/issues/1111)) ([3d5323e](https://github.com/alfa-laboratory/arui-feather/commit/3d5323e))
+
+
+
 <a name="17.1.0"></a>
 # [17.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.0.0...v17.1.0) (2020-03-12)
 

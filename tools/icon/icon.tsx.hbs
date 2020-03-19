@@ -18,4 +18,6 @@ class {{componentName}} extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme({{componentName}});
+class Themed{{componentName}} extends {{componentName}} {}
+(Themed{{componentName}} as any) = withTheme({{componentName}});
+export default Themed{{componentName}};

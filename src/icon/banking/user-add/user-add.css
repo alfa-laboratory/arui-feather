@@ -9,3 +9,11 @@
 .icon_size_l.icon_name_user-add.icon_theme_alfa-on-color {
     background-image: url('./icon_user-add_l_white.svg');
 }
+
+.icon_size_m.icon_name_user-add.icon_theme_alfa-on-white {
+    background-image: url('./icon_user-add_m_black.svg');
+}
+
+.icon_size_m.icon_name_user-add.icon_theme_alfa-on-color {
+    background-image: url('./icon_user-add_m_white.svg');
+}

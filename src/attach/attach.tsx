@@ -209,16 +209,6 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
 
     private input: HTMLInputElement;
 
-    // eslint-disable-next-line camelcase
-    // UNSAFE_componentWillReceiveProps(nextProps) {
-    //     const nextValue = nextProps.value || [];
-
-    //     if (!isEqualArray(nextValue, this.state.value)) {
-    //         this.input.value = '';
-    //         this.setState({ value: nextValue });
-    //     }
-    // }
-
     componentDidUpdate(_: AttachProps, prevState: AttachState) {
         const nextValue = this.props.value || [];
 

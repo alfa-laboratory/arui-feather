@@ -198,9 +198,9 @@ export class Button extends React.PureComponent<ButtonProps> {
 
     private control: HTMLButtonElement | HTMLSpanElement;
 
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.disabled) {
+    componentDidUpdate() {
+        if (this.props.disabled) {
+            // eslint-disable-next-line react/no-did-update-set-state
             this.setState({
                 hovered: false,
                 focused: false

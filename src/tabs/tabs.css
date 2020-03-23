@@ -29,7 +29,7 @@
 
 .tabs_theme_alfa-on-white {
     .tabs__content:after {
-        border-bottom-color: var(--color-background-control-disabled-alfa-on-white);
+        border-bottom-color: var(--color-dark-indigo-30);
     }
 }
 

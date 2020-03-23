@@ -54,6 +54,8 @@
     }
 
     &_checked {
+        position: relative;
+        z-index: 2;
         border-bottom-style: solid;
     }
 

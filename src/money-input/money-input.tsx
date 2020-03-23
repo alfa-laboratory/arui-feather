@@ -20,9 +20,6 @@ const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
 const INTEGER_PART_SIZE = 3;
 
-// В эту проверку попадают IE9 и IE10, которые не могут корректно работать с кареткой на событии `input`.
-const IS_IE9_10 = typeof window !== 'undefined' && !!(window as any).ActiveXObject;
-
 const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
 
 /**
@@ -125,10 +122,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         }
     }
     componentWillUnmount() {
-        if (this.caretFixTimeout) {
-            clearTimeout(this.caretFixTimeout);
-            this.caretFixTimeout = null;
-        }
+        clearTimeout(this.caretFixTimeout);
     }
 
     render() {
@@ -283,10 +277,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     private setInputSelection(selection: number) {
         this.root.control.input.selectionStart = selection;
         this.root.control.input.selectionEnd = selection;
-        // IE10 не умеет синхронно в событие `change` переставлять каретку.
         // Android chrome имеет дефект с автоматической установкой каретки
         // при использовании клавиатуры отличной от type="text".
-        if (IS_IE9_10 || IS_ANDROID) {
+        if (IS_ANDROID) {
             this.setInputSelectionByTimeout(selection);
         }
     }
@@ -294,20 +287,16 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     /**
      * Устанавливает каретку поля ввода в заданную позицию асинхронно.
      *
-     * Во-избежание дефекта с установкой каретки, наблюдаемом в мобильных браузерах, а так же
-     * браузерах IE9-10, установка происходит асинхронно, с минимальной задержкой,
+     * Во-избежание дефекта с установкой каретки, наблюдаемом в мобильных браузерах,
+     * установка происходит асинхронно, с минимальной задержкой,
      * с помощью [setTimeout] обертки.
      *
      * @param selection Положение каретки
      */
     private setInputSelectionByTimeout(selection: number) {
-        if (this.caretFixTimeout) {
-            clearTimeout(this.caretFixTimeout);
-            this.caretFixTimeout = null;
-        }
+        clearTimeout(this.caretFixTimeout);
 
         this.caretFixTimeout = setTimeout(() => {
-            this.caretFixTimeout = null;
             this.root.control.input.selectionStart = selection;
             this.root.control.input.selectionEnd = selection;
         }, 0);

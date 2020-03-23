@@ -1,3 +1,13 @@
+<a name="17.3.0"></a>
+# [17.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.2.0...v17.3.0) (2020-03-23)
+
+
+### Features
+
+* **tabs:** updated line color ([#1116](https://github.com/alfa-laboratory/arui-feather/issues/1116)) ([c32bb72](https://github.com/alfa-laboratory/arui-feather/commit/c32bb72))
+
+
+
 <a name="17.2.0"></a>
 # [17.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.1.0...v17.2.0) (2020-03-19)
 

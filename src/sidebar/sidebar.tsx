@@ -20,7 +20,12 @@ import Mq from '../mq';
 
 const SIDEBAR_WIDTH = 430;
 
-let savedScrollPosition;
+let savedScrollPosition: number;
+
+type BodyClassParams = {
+    visible: boolean;
+    hasOverlay: boolean;
+}
 
 /**
  * Восстанавливает исходную позицию скролла
@@ -36,11 +41,12 @@ function setCurrentPosition() {
  * Изменяет класс для body. Нужен для управления скроллом
  * основного экрана при показе сайдбара.
  *
- * @param {Boolean} visible Управление видимостью сайдбара.
- * @param {Boolean} hasOverlay Управление наличием оверлея для сайдбара.
+ * @param visible Управление видимостью сайдбара.
+ * @param hasOverlay Управление наличием оверлея для сайдбара.
  */
-function setBodyClass({ visible, hasOverlay }) {
+function setBodyClass({ visible, hasOverlay }: BodyClassParams) {
     document.body.classList[visible ? 'add' : 'remove']('sidebar-visible');
+
     if (hasOverlay) {
         document.body.classList[visible ? 'add' : 'remove']('sidebar-overlay');
     }
@@ -108,7 +114,7 @@ export type SidebarProps = DeepReadonly<{
     /**
      * Обработчик клика на элемент закрытия
      */
-    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+    onCloserClick?: (event?: React.MouseEvent<any> | KeyboardEvent) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -117,10 +123,14 @@ export type SidebarProps = DeepReadonly<{
 
 }>;
 
+type SidebarState = {
+    isMobile: boolean;
+}
+
 /**
  * Компонент боковой панели aka холодильник.
  */
-export class Sidebar extends React.PureComponent<SidebarProps> {
+export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
     protected cn = createCn('sidebar');
 
     static defaultProps: Partial<SidebarProps> = {
@@ -135,36 +145,39 @@ export class Sidebar extends React.PureComponent<SidebarProps> {
 
     componentDidMount() {
         this.styleBodyRightMargin();
+
         setBodyClass({ visible: this.props.visible, hasOverlay: this.props.hasOverlay });
+
         if (this.props.visible) {
             window.addEventListener('keydown', this.handleKeyDown);
         }
+
         window.addEventListener('scroll', handleBodyScroll);
     }
 
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        setBodyClass({ visible: nextProps.visible, hasOverlay: nextProps.hasOverlay });
+    componentDidUpdate() {
+        this.styleBodyRightMargin();
+
+        setBodyClass({ visible: this.props.visible, hasOverlay: this.props.hasOverlay });
+
         if (this.state.isMobile) {
             setCurrentPosition();
         }
 
-        if (nextProps.visible) {
+        if (this.props.visible) {
             window.addEventListener('keydown', this.handleKeyDown);
         } else {
             window.removeEventListener('keydown', this.handleKeyDown);
         }
     }
 
-    componentDidUpdate() {
-        this.styleBodyRightMargin();
-    }
-
     componentWillUnmount() {
         setBodyClass({ visible: false, hasOverlay: this.props.hasOverlay });
+
         if (this.state.isMobile) {
             setCurrentPosition();
         }
+
         window.removeEventListener('keydown', this.handleKeyDown);
         window.removeEventListener('scroll', handleBodyScroll);
     }
@@ -243,21 +256,22 @@ export class Sidebar extends React.PureComponent<SidebarProps> {
         );
     }
 
-    private handleMqMatchChange = (isMatched) => {
+    private handleMqMatchChange = (isMatched: boolean) => {
         this.setState({ isMobile: isMatched });
     };
 
-    private handleClose = (event) => {
+    private handleClose = (event: React.MouseEvent | KeyboardEvent) => {
         if (this.props.onCloserClick) {
             if (this.state.isMobile) {
                 document.body.scrollTop = savedScrollPosition;
                 document.documentElement.scrollTop = savedScrollPosition;
             }
+
             this.props.onCloserClick(event);
         }
     };
 
-    private handleKeyDown = (event) => {
+    private handleKeyDown = (event: KeyboardEvent) => {
         switch (event.which) {
             case keyboardCode.ESCAPE:
                 event.preventDefault();

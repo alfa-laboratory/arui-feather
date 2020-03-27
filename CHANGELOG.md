@@ -1,3 +1,15 @@
+<a name="17.4.0"></a>
+# [17.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.3.0...v17.4.0) (2020-03-27)
+
+
+### Features
+
+* **button:** remove unsafe method ([#1039](https://github.com/alfa-laboratory/arui-feather/issues/1039)) ([8c89726](https://github.com/alfa-laboratory/arui-feather/commit/8c89726))
+* **sidebar:** remove unsafe method ([#1092](https://github.com/alfa-laboratory/arui-feather/issues/1092)) ([200befc](https://github.com/alfa-laboratory/arui-feather/commit/200befc))
+* **slide-down:** remove unsafe method ([#1093](https://github.com/alfa-laboratory/arui-feather/issues/1093)) ([44138fc](https://github.com/alfa-laboratory/arui-feather/commit/44138fc))
+
+
+
 <a name="17.3.0"></a>
 # [17.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.2.0...v17.3.0) (2020-03-23)
 

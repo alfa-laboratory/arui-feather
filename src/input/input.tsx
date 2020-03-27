@@ -248,10 +248,27 @@ export type InputProps = DeepReadonly<{
     'data-test-id'?: string;
 }>;
 
+type InputState = {
+    /**
+     * Состояние фокуса в поле
+     */
+    focused: boolean;
+
+    /**
+     * Ошибка
+     */
+    error: InputProps['error'] | null;
+
+    /**
+     * Содержимое поля ввода
+     */
+    value: string;
+}
+
 /**
  * Компонент текстового поля ввода.
  */
-export class Input extends React.PureComponent<InputProps> {
+export class Input extends React.PureComponent<InputProps, InputState> {
     protected cn = createCn('input');
 
     static defaultProps: Partial<InputProps> = {
@@ -261,6 +278,13 @@ export class Input extends React.PureComponent<InputProps> {
         view: 'default',
         resetError: true
     };
+
+    componentDidUpdate(prevProps: InputProps) {
+        if (prevProps.error !== this.props.error) {
+            // eslint-disable-next-line react/no-did-update-set-state
+            this.setState({ error: this.props.error });
+        }
+    }
 
     state = {
         focused: false,
@@ -281,13 +305,6 @@ export class Input extends React.PureComponent<InputProps> {
      * @type {HTMLInputElement}
      */
     private control;
-
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        this.setState({
-            error: nextProps.error
-        });
-    }
 
     render() {
         const hasAddons = !!this.props.rightAddons || !!this.props.leftAddons;

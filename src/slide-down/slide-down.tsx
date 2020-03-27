@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import React from 'react';
+import React, { createRef } from 'react';
 import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
@@ -50,11 +50,17 @@ export type SlideDownProps = DeepReadonly<{
     'data-test-id'?: string;
 
 }>;
+
+type SlideDownState = {
+    height: number | string;
+    isHeightAuto: boolean;
+}
+
 /**
  * Компонент "расхлопа".
  * Позволяет скрывать и отображать контент.
  */
-export class SlideDown extends React.PureComponent<SlideDownProps> {
+export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownState> {
     protected cn = createCn('slide-down');
 
     state = {
@@ -62,19 +68,21 @@ export class SlideDown extends React.PureComponent<SlideDownProps> {
         isHeightAuto: this.props.isExpanded
     };
 
-    private slideDown;
-    private slideDownContent;
+    private slideDown = createRef<HTMLDivElement>();
+    private slideDownContent = createRef<HTMLDivElement>()
 
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (this.props.isExpanded !== nextProps.isExpanded) {
-            if (nextProps.isExpanded) {
+    componentDidUpdate(prevProps: SlideDownProps) {
+        const { isExpanded, onAnimationStart } = this.props;
+
+        if (prevProps.isExpanded !== isExpanded) {
+            if (isExpanded) {
                 this.setHeightToContentHeight();
             } else {
                 this.setHeightToNull();
             }
-            if (this.props.onAnimationStart) {
-                this.props.onAnimationStart();
+
+            if (onAnimationStart) {
+                onAnimationStart();
             }
         }
     }
@@ -88,16 +96,12 @@ export class SlideDown extends React.PureComponent<SlideDownProps> {
                     { height: this.getHeight() }
                 }
                 onTransitionEnd={ this.handleTransitionEnd }
-                ref={ (slideDown) => {
-                    this.slideDown = slideDown;
-                } }
+                ref={ this.slideDown }
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
                     className={ this.cn('content', { expanded: this.state.isHeightAuto }) }
-                    ref={ (slideDownContent) => {
-                        this.slideDownContent = slideDownContent;
-                    } }
+                    ref={ this.slideDownContent }
                 >
                     { this.props.children }
                 </div>
@@ -105,7 +109,7 @@ export class SlideDown extends React.PureComponent<SlideDownProps> {
         );
     }
 
-    private handleTransitionEnd = (event) => {
+    private handleTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
         if (event.propertyName === 'height' && this.props.isExpanded) {
             this.setAutoHeight();
         }
@@ -121,10 +125,12 @@ export class SlideDown extends React.PureComponent<SlideDownProps> {
     }
 
     private setHeightToContentHeight() {
-        this.setState({
-            isHeightAuto: false,
-            height: this.slideDownContent.offsetHeight
-        });
+        if (this.slideDownContent.current) {
+            this.setState({
+                isHeightAuto: false,
+                height: this.slideDownContent.current.offsetHeight
+            });
+        }
     }
 
     private setHeightToNull() {
@@ -133,10 +139,11 @@ export class SlideDown extends React.PureComponent<SlideDownProps> {
         // Заставляем React перерисовать элемент
         this.forceUpdate(() => {
             // Заставляем браузер сделать reflow
-            this.slideDown.getBoundingClientRect();
-            this.setState({
-                height: 0
-            });
+            if (this.slideDown.current) {
+                this.slideDown.current.getBoundingClientRect();
+            }
+
+            this.setState({ height: 0 });
         });
     }
 

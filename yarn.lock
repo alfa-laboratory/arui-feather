@@ -2020,9 +2020,9 @@ acorn@^4.0.3:
   integrity sha1-EFSVrlNh1pe9GVyCUZLhrX8lN4c=
 
 acorn@^6.0.1, acorn@^6.1.1:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.0.tgz#b659d2ffbafa24baf5db1cdbb2c94a983ecd2784"
-  integrity sha512-gac8OEcQ2Li1dxIEWGZzsp2BitJxwkwcOm0zHAJLcPJaVvm58FRnk6RkuLRpU1EujipU2ZFODv2P9DLMfnV8mw==
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 acorn@^7.0.0, acorn@^7.1.0:
   version "7.1.0"
@@ -2098,10 +2098,10 @@ ajv@^6.0.1, ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alfa-ui-primitives@2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-2.4.3.tgz#60e54418dd1b52b7b66981b65bc187ef04a3294e"
-  integrity sha512-JEUBA+ldz/TDXAn/JygUGhbYys1okVfpaYP5nsmp5jh0DER921kuVk196WZYywMDwS9J+NSi+cbYqPVufoty1w==
+alfa-ui-primitives@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/alfa-ui-primitives/-/alfa-ui-primitives-2.6.0.tgz#6ecb1e6274e71488b277d3689759d4fe33a4fc1d"
+  integrity sha512-GpGrBFfKaAedGwZgKnfZrGzYwyMzpH6pwjUuk0cSigUxQTQ3m0SWobUf5SBQ8YgE3fNJVk7q9Myx+9dDqVDeZQ==
 
 aliasify@^1.7.2, aliasify@^1.9.0:
   version "1.9.0"
@@ -3055,6 +3055,11 @@ bem-react-classname@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/bem-react-classname/-/bem-react-classname-1.1.0.tgz#9d61fc2dde16ec53533684f03a74d94202e18447"
   integrity sha512-p7SuKwtylDIT5tMoJn9PUEY3DES95H6UBhSPCrusRW6di6vacIieq/jhBorAkBwton0WhYXgZ8qF7gVtLbRv2w==
+
+bem-react-classname@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/bem-react-classname/-/bem-react-classname-1.1.4.tgz#3e0a7deb25e0b19870d9328a7dc5e1dbfcb02b57"
+  integrity sha512-qzIGsvW3tFHsXL7AG/8Ynx2ogTz6EdfooJ474km+bkAN7HaZFMUJE/6HXAtZg+rClzt6N2NUL5eG7lq7a6fepQ==
 
 bezier-easing@2.1.0:
   version "2.1.0"
@@ -17454,6 +17459,11 @@ util@~0.10.1:
   integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   dependencies:
     inherits "2.0.3"
+
+utility-types@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.10.0.tgz#ea4148f9a741015f05ed74fd615e1d20e6bed82b"
+  integrity sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 
 utils-merge@1.0.1:
   version "1.0.1"

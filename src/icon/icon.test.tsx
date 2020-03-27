@@ -44,6 +44,8 @@ import IconLock from './action/lock';
 import IconLockFilled from './action/lock-filled';
 import IconLogout from './action/logout';
 import IconMore from './action/more';
+import IconMoreAndroid from './action/more-android';
+import IconMoreIos from './action/more-ios';
 import IconNavigationChat from './action/navigation-chat';
 import IconNavigationHistory from './action/navigation-history';
 import IconNavigationHome from './action/navigation-home';
@@ -69,6 +71,7 @@ import IconSettings from './action/settings';
 import IconShareAndroid from './action/share-android';
 import IconShareIos from './action/share-ios';
 import IconSign from './action/sign';
+import IconSubtract from './action/subtract';
 import IconUnlock from './action/unlock';
 import IconAccountAdd from './banking/account-add';
 import IconAccountDefault from './banking/account-default';
@@ -247,6 +250,9 @@ import IconCategoryVacation from './category/category-vacation';
 import IconCategoryVipManager from './category/category-vip-manager';
 import IconCategoryVipRoom from './category/category-vip-room';
 import IconCategoryWallet from './category/category-wallet';
+import IconComunal from './category/comunal';
+import IconGibdd from './category/gibdd';
+import IconTarifs from './category/tarifs';
 import IconUtilities from './category/utilities';
 import IconCurrencyChf from './currency/currency-chf';
 import IconCurrencyEur from './currency/currency-eur';
@@ -320,6 +326,7 @@ import IconFormatAttach from './file/format-attach';
 import IconFormatCsv from './file/format-csv';
 import IconFormatDefault from './file/format-default';
 import IconFormatDoc from './file/format-doc';
+import IconFormatDocx from './file/format-docx';
 import IconFormatJpg from './file/format-jpg';
 import IconFormatPdf from './file/format-pdf';
 import IconFormatPng from './file/format-png';
@@ -387,12 +394,14 @@ import IconSliderArrowDouble from './ui/slider-arrow-double';
 import IconStar from './ui/star';
 import IconStarActive from './ui/star-active';
 import IconStarInactive from './ui/star-inactive';
+import IconStarVoc from './ui/star-voc';
 import IconStatusUrgent from './ui/status-urgent';
 import IconSubmit from './ui/submit';
 import IconSystemBack from './ui/system-back';
 import IconSystemHelp from './ui/system-help';
 import IconSystemHideArrow from './ui/system-hide-arrow';
 import IconTable from './ui/table';
+import IconThumbVoc from './ui/thumb-voc';
 import IconTick from './ui/tick';
 import IconUp from './ui/up';
 import IconVerifying from './ui/verifying';
@@ -494,6 +503,8 @@ describe('icon', () => {
             { componentName: IconLockFilled, name: 'lock-filled' },
             { componentName: IconLogout, name: 'logout' },
             { componentName: IconMore, name: 'more' },
+            { componentName: IconMoreAndroid, name: 'more-android' },
+            { componentName: IconMoreIos, name: 'more-ios' },
             { componentName: IconNavigationChat, name: 'navigation-chat' },
             { componentName: IconNavigationHistory, name: 'navigation-history' },
             { componentName: IconNavigationHome, name: 'navigation-home' },
@@ -519,6 +530,7 @@ describe('icon', () => {
             { componentName: IconShareAndroid, name: 'share-android' },
             { componentName: IconShareIos, name: 'share-ios' },
             { componentName: IconSign, name: 'sign' },
+            { componentName: IconSubtract, name: 'subtract' },
             { componentName: IconUnlock, name: 'unlock' },
             { componentName: IconAccountAdd, name: 'account-add' },
             { componentName: IconAccountDefault, name: 'account-default' },
@@ -697,6 +709,9 @@ describe('icon', () => {
             { componentName: IconCategoryVipManager, name: 'category-vip-manager' },
             { componentName: IconCategoryVipRoom, name: 'category-vip-room' },
             { componentName: IconCategoryWallet, name: 'category-wallet' },
+            { componentName: IconComunal, name: 'comunal' },
+            { componentName: IconGibdd, name: 'gibdd' },
+            { componentName: IconTarifs, name: 'tarifs' },
             { componentName: IconUtilities, name: 'utilities' },
             { componentName: IconCurrencyChf, name: 'currency-chf' },
             { componentName: IconCurrencyEur, name: 'currency-eur' },
@@ -770,6 +785,7 @@ describe('icon', () => {
             { componentName: IconFormatCsv, name: 'format-csv' },
             { componentName: IconFormatDefault, name: 'format-default' },
             { componentName: IconFormatDoc, name: 'format-doc' },
+            { componentName: IconFormatDocx, name: 'format-docx' },
             { componentName: IconFormatJpg, name: 'format-jpg' },
             { componentName: IconFormatPdf, name: 'format-pdf' },
             { componentName: IconFormatPng, name: 'format-png' },
@@ -837,12 +853,14 @@ describe('icon', () => {
             { componentName: IconStar, name: 'star' },
             { componentName: IconStarActive, name: 'star-active' },
             { componentName: IconStarInactive, name: 'star-inactive' },
+            { componentName: IconStarVoc, name: 'star-voc' },
             { componentName: IconStatusUrgent, name: 'status-urgent' },
             { componentName: IconSubmit, name: 'submit' },
             { componentName: IconSystemBack, name: 'system-back' },
             { componentName: IconSystemHelp, name: 'system-help' },
             { componentName: IconSystemHideArrow, name: 'system-hide-arrow' },
             { componentName: IconTable, name: 'table' },
+            { componentName: IconThumbVoc, name: 'thumb-voc' },
             { componentName: IconTick, name: 'tick' },
             { componentName: IconUp, name: 'up' },
             { componentName: IconVerifying, name: 'verifying' },

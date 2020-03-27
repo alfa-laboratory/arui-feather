@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "17.0.0",
+  "version": "17.3.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -127,7 +127,7 @@
     "@typescript-eslint/eslint-plugin": "2.16.0",
     "@typescript-eslint/parser": "2.16.0",
     "acorn": "^6.1.1",
-    "alfa-ui-primitives": "2.4.3",
+    "alfa-ui-primitives": "2.6.0",
     "arui-demo": "3.0.0",
     "arui-presets": "^5.1.0",
     "arui-presets-lint": "^2.0.0",

@@ -51,6 +51,7 @@ describe('checkbox-group', () => {
     });
 
     it('should focus first child checkbox-button on public focus method', () => {
+
         const checkboxGroup = mount<CheckBoxGroup>(
             <CheckBoxGroup>
                 <CheckBox />
@@ -58,7 +59,8 @@ describe('checkbox-group', () => {
                 <CheckBox />
             </CheckBoxGroup>
         );
-        const firstCheckboxInstance = checkboxGroup.instance().checkboxes[0];
+
+        const firstCheckboxInstance = (checkboxGroup.instance() as any).checkboxes[0];
 
         jest.spyOn(firstCheckboxInstance, 'focus');
         checkboxGroup.instance().focus();

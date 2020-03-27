@@ -103,8 +103,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         value: []
     };
 
-    // TODO [issues/1018] переписать тесты нужно, что бы private был
-    checkboxes: any[];
+    private checkboxes: any[];
 
     render() {
         let children: React.ReactNode = null;
@@ -217,7 +216,6 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
             this.checkboxes[0].focus();
         }
     }
-
     /**
      * Убирает фокус с группы чекбокс-кнопок.
      */

@@ -61,6 +61,10 @@ function isEqualArray(array1: any[], array2: any[]): boolean {
         array1.every((item, index) => item === array2[index]);
 }
 
+function isEmptyArray(value: any) {
+    return Array.isArray(value) && !value.length;
+}
+
 export type AttachProps = DeepReadonly<{
 
     /**
@@ -201,7 +205,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
         noFileText: 'Нет файла'
     };
 
-    state = {
+    state: AttachState = {
         focused: false,
         hovered: false,
         value: []
@@ -209,16 +213,26 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
 
     private input: HTMLInputElement;
 
+    static getDerivedStateFromProps(nextProps: AttachProps, prevState: AttachState) {
+        const nextValue = nextProps.value || [];
+
+        if (
+            !isEmptyArray(nextValue) &&
+            !isEqualArray(nextValue as any[], prevState.value)
+        ) {
+            return {
+                value: nextValue
+            };
+        }
+
+        return null;
+    }
+
     componentDidUpdate(_: AttachProps, prevState: AttachState) {
         const nextValue = this.props.value || [];
 
-        if (
-            this.state.value !== prevState.value &&
-            !isEqualArray(nextValue as any[], prevState.value)
-        ) {
+        if (!isEqualArray(nextValue as any[], prevState.value)) {
             this.input.value = '';
-            // eslint-disable-next-line react/no-did-update-set-state
-            this.setState({ value: nextValue as any[] });
         }
     }
 

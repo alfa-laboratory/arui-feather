@@ -434,6 +434,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         return (
             <div
                 className={ this.cn('autocomplete-case', { width: this.props.width }) }
+                data-test-id={ this.props['data-test-id'] }
             >
                 <Input { ...props } />
                 { this.renderPopup() }

@@ -1,3 +1,13 @@
+<a name="17.4.1"></a>
+## [17.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v17.4.0...v17.4.1) (2020-03-31)
+
+
+### Bug Fixes
+
+* **data-test-id:** fix small old mistake - added data-test-id ([#1122](https://github.com/alfa-laboratory/arui-feather/issues/1122)) ([2ce1b76](https://github.com/alfa-laboratory/arui-feather/commit/2ce1b76))
+
+
+
 <a name="17.4.0"></a>
 # [17.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.3.0...v17.4.0) (2020-03-27)
 

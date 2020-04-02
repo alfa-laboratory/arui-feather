@@ -1,3 +1,35 @@
+<a name="17.4.1"></a>
+## [17.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v17.4.0...v17.4.1) (2020-03-31)
+
+
+### Bug Fixes
+
+* **data-test-id:** fix small old mistake - added data-test-id ([#1122](https://github.com/alfa-laboratory/arui-feather/issues/1122)) ([2ce1b76](https://github.com/alfa-laboratory/arui-feather/commit/2ce1b76))
+
+
+
+<a name="17.4.0"></a>
+# [17.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.3.0...v17.4.0) (2020-03-27)
+
+
+### Features
+
+* **button:** remove unsafe method ([#1039](https://github.com/alfa-laboratory/arui-feather/issues/1039)) ([8c89726](https://github.com/alfa-laboratory/arui-feather/commit/8c89726))
+* **sidebar:** remove unsafe method ([#1092](https://github.com/alfa-laboratory/arui-feather/issues/1092)) ([200befc](https://github.com/alfa-laboratory/arui-feather/commit/200befc))
+* **slide-down:** remove unsafe method ([#1093](https://github.com/alfa-laboratory/arui-feather/issues/1093)) ([44138fc](https://github.com/alfa-laboratory/arui-feather/commit/44138fc))
+
+
+
+<a name="17.3.0"></a>
+# [17.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.2.0...v17.3.0) (2020-03-23)
+
+
+### Features
+
+* **tabs:** updated line color ([#1116](https://github.com/alfa-laboratory/arui-feather/issues/1116)) ([c32bb72](https://github.com/alfa-laboratory/arui-feather/commit/c32bb72))
+
+
+
 <a name="17.2.0"></a>
 # [17.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.1.0...v17.2.0) (2020-03-19)
 

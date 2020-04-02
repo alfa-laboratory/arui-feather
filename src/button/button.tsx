@@ -177,10 +177,16 @@ export type ButtonProps = DeepReadonly<{
 
 }>;
 
+type ButtonState = {
+    focused: boolean;
+    hovered: boolean;
+    pressed: boolean;
+}
+
 /**
  * Компонент кнопки (да, она нажимается!).
  */
-export class Button extends React.PureComponent<ButtonProps> {
+export class Button extends React.PureComponent<ButtonProps, ButtonState> {
     protected cn = createCn('button');
 
     static defaultProps: Partial<ButtonProps> = {
@@ -190,6 +196,17 @@ export class Button extends React.PureComponent<ButtonProps> {
         formNoValidate: false
     };
 
+    static getDerivedStateFromProps(nextProps: ButtonProps): Partial<ButtonState> | null {
+        if (nextProps.disabled) {
+            return {
+                hovered: false,
+                focused: false
+            };
+        }
+
+        return null;
+    }
+
     state = {
         focused: false,
         hovered: false,
@@ -197,16 +214,6 @@ export class Button extends React.PureComponent<ButtonProps> {
     };
 
     private control: HTMLButtonElement | HTMLSpanElement;
-
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.disabled) {
-            this.setState({
-                hovered: false,
-                focused: false
-            });
-        }
-    }
 
     render() {
         const isButton = this.props.tag !== 'span';

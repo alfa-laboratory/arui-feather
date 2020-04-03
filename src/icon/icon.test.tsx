@@ -214,6 +214,7 @@ import IconCategoryExperiments from './category/category-experiments';
 import IconCategoryFamily from './category/category-family';
 import IconCategoryFinance from './category/category-finance';
 import IconCategoryFines from './category/category-fines';
+import IconCategoryGame from './category/category-game';
 import IconCategoryGaming from './category/category-gaming';
 import IconCategoryGasoline from './category/category-gasoline';
 import IconCategoryGibddFines from './category/category-gibdd-fines';
@@ -321,12 +322,14 @@ import IconAccountInfo from './file/account-info';
 import IconAccountRub from './file/account-rub';
 import IconAccountText from './file/account-text';
 import IconAccountUsd from './file/account-usd';
+import IconCategoryComunal from './file/category-comunal';
+import IconCategoryGibdd from './file/category-gibdd';
+import IconCategoryTarifs from './file/category-tarifs';
 import IconFormat1c from './file/format-1c';
 import IconFormatAttach from './file/format-attach';
 import IconFormatCsv from './file/format-csv';
 import IconFormatDefault from './file/format-default';
 import IconFormatDoc from './file/format-doc';
-import IconFormatDocx from './file/format-docx';
 import IconFormatJpg from './file/format-jpg';
 import IconFormatPdf from './file/format-pdf';
 import IconFormatPng from './file/format-png';
@@ -336,9 +339,11 @@ import IconFormatSketch from './file/format-sketch';
 import IconFormatSvg from './file/format-svg';
 import IconFormatTxt from './file/format-txt';
 import IconFormatUnknown from './file/format-unknown';
+import IconFormatWord from './file/format-word';
 import IconFormatXls from './file/format-xls';
 import IconFormatXml from './file/format-xml';
 import IconFormatZip from './file/format-zip';
+import IconAllServices from './ui/all-services';
 import IconAndroidReorder from './ui/android-reorder';
 import IconArrowBottom from './ui/arrow-bottom';
 import IconArrowCollapse from './ui/arrow-collapse';
@@ -395,6 +400,8 @@ import IconStar from './ui/star';
 import IconStarActive from './ui/star-active';
 import IconStarInactive from './ui/star-inactive';
 import IconStarVoc from './ui/star-voc';
+import IconStarVocActive from './ui/star-voc-active';
+import IconStarVocInactive from './ui/star-voc-inactive';
 import IconStatusUrgent from './ui/status-urgent';
 import IconSubmit from './ui/submit';
 import IconSystemBack from './ui/system-back';
@@ -673,6 +680,7 @@ describe('icon', () => {
             { componentName: IconCategoryFamily, name: 'category-family' },
             { componentName: IconCategoryFinance, name: 'category-finance' },
             { componentName: IconCategoryFines, name: 'category-fines' },
+            { componentName: IconCategoryGame, name: 'category-game' },
             { componentName: IconCategoryGaming, name: 'category-gaming' },
             { componentName: IconCategoryGasoline, name: 'category-gasoline' },
             { componentName: IconCategoryGibddFines, name: 'category-gibdd-fines' },
@@ -780,12 +788,14 @@ describe('icon', () => {
             { componentName: IconAccountRub, name: 'account-rub' },
             { componentName: IconAccountText, name: 'account-text' },
             { componentName: IconAccountUsd, name: 'account-usd' },
+            { componentName: IconCategoryComunal, name: 'category-comunal' },
+            { componentName: IconCategoryGibdd, name: 'category-gibdd' },
+            { componentName: IconCategoryTarifs, name: 'category-tarifs' },
             { componentName: IconFormat1c, name: 'format-1c' },
             { componentName: IconFormatAttach, name: 'format-attach' },
             { componentName: IconFormatCsv, name: 'format-csv' },
             { componentName: IconFormatDefault, name: 'format-default' },
             { componentName: IconFormatDoc, name: 'format-doc' },
-            { componentName: IconFormatDocx, name: 'format-docx' },
             { componentName: IconFormatJpg, name: 'format-jpg' },
             { componentName: IconFormatPdf, name: 'format-pdf' },
             { componentName: IconFormatPng, name: 'format-png' },
@@ -795,9 +805,11 @@ describe('icon', () => {
             { componentName: IconFormatSvg, name: 'format-svg' },
             { componentName: IconFormatTxt, name: 'format-txt' },
             { componentName: IconFormatUnknown, name: 'format-unknown' },
+            { componentName: IconFormatWord, name: 'format-word' },
             { componentName: IconFormatXls, name: 'format-xls' },
             { componentName: IconFormatXml, name: 'format-xml' },
             { componentName: IconFormatZip, name: 'format-zip' },
+            { componentName: IconAllServices, name: 'all-services' },
             { componentName: IconAndroidReorder, name: 'android-reorder' },
             { componentName: IconArrowBottom, name: 'arrow-bottom' },
             { componentName: IconArrowCollapse, name: 'arrow-collapse' },
@@ -854,6 +866,8 @@ describe('icon', () => {
             { componentName: IconStarActive, name: 'star-active' },
             { componentName: IconStarInactive, name: 'star-inactive' },
             { componentName: IconStarVoc, name: 'star-voc' },
+            { componentName: IconStarVocActive, name: 'star-voc-active' },
+            { componentName: IconStarVocInactive, name: 'star-voc-inactive' },
             { componentName: IconStatusUrgent, name: 'status-urgent' },
             { componentName: IconSubmit, name: 'submit' },
             { componentName: IconSystemBack, name: 'system-back' },

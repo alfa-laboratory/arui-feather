@@ -1,3 +1,13 @@
+<a name="17.5.0"></a>
+# [17.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.4.1...v17.5.0) (2020-04-04)
+
+
+### Features
+
+* **icons:** latest icons from alfa-ui-primitives ([#1126](https://github.com/alfa-laboratory/arui-feather/issues/1126)) ([bd2fe7f](https://github.com/alfa-laboratory/arui-feather/commit/bd2fe7f))
+
+
+
 <a name="17.4.1"></a>
 ## [17.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v17.4.0...v17.4.1) (2020-03-31)
 

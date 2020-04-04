@@ -2,8 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import './format-docx.css';
+import './category-tarifs.css';
 import '../../../icon';
 
-export * from './format-docx';
-export { default } from './format-docx';
+export * from './category-tarifs';
+export { default } from './category-tarifs';

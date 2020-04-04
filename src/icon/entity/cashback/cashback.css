@@ -6,12 +6,24 @@
     background-image: url('./icon_cashback_l_black.svg');
 }
 
+.icon_size_l.icon_name_cashback.icon_theme_alfa-on-color {
+    background-image: url('./icon_cashback_l_white.svg');
+}
+
 .icon_size_m.icon_name_cashback.icon_theme_alfa-on-white {
     background-image: url('./icon_cashback_m_black.svg');
 }
 
+.icon_size_m.icon_name_cashback.icon_theme_alfa-on-color {
+    background-image: url('./icon_cashback_m_white.svg');
+}
+
 .icon_size_s.icon_name_cashback.icon_theme_alfa-on-white {
     background-image: url('./icon_cashback_s_black.svg');
+}
+
+.icon_size_s.icon_name_cashback.icon_theme_alfa-on-color {
+    background-image: url('./icon_cashback_s_white.svg');
 }
 
 .icon_size_xs.icon_name_cashback.icon_theme_alfa-on-color {

@@ -96,6 +96,9 @@ const additionalIcons = [];
 CATEGORIES.forEach((folder) => {
     glob.sync(`./node_modules/alfa-ui-primitives/icons/${folder}/**/*.svg`).forEach((iconPath) => {
         let filename = path.basename(iconPath, 'icon');
+
+        if (!filename.match(ICON_REGEXP)) return;
+
         let name = filename.match(ICON_REGEXP)[3];
 
         /**

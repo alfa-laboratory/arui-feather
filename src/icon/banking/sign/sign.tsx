@@ -7,17 +7,17 @@ import { withTheme } from '../../../cn';
 import Icon from '../../../icon';
 import { IconProps } from '../../../icon/icon';
 
-class IconFormatDocx extends React.PureComponent<IconProps> {
+class IconSign extends React.PureComponent<IconProps> {
     render() {
         return (
             <Icon
                 { ...this.props }
-                name='format-docx'
+                name='sign'
             />
         );
     }
 }
 
-class ThemedIconFormatDocx extends IconFormatDocx {}
-(ThemedIconFormatDocx as any) = withTheme(IconFormatDocx);
-export default ThemedIconFormatDocx;
+class ThemedIconSign extends IconSign {}
+(ThemedIconSign as any) = withTheme(IconSign);
+export default ThemedIconSign;

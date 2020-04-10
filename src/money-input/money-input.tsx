@@ -76,6 +76,10 @@ type MoneyInputProps = DeepReadonly<InputProps & {
      * Идентификатор для систем автоматизированного тестирования
      * */
     'data-test-id'?: string;
+    /**
+     * Обработчик события, вызываемый при событии 'change'
+     * */
+    onChange?: (value: string, amount: number) => void;
 }>;
 
 type MoneyInputState = {

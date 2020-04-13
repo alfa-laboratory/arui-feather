@@ -1,3 +1,13 @@
+<a name="17.5.1"></a>
+## [17.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v17.5.0...v17.5.1) (2020-04-13)
+
+
+### Bug Fixes
+
+* temporary fix for chrome font bug ([#1130](https://github.com/alfa-laboratory/arui-feather/issues/1130)) ([d8d3312](https://github.com/alfa-laboratory/arui-feather/commit/d8d3312))
+
+
+
 <a name="17.5.0"></a>
 # [17.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.4.1...v17.5.0) (2020-04-04)
 

@@ -79,7 +79,7 @@ type MoneyInputProps = DeepReadonly<InputProps & {
     /**
      * Обработчик события, вызываемый при событии 'change'
      * */
-    onChange?: (value: string, amount: number) => void;
+    onChange?: (value?: string, amount?: number) => void;
 }>;
 
 type MoneyInputState = {

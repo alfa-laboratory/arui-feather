@@ -9,6 +9,11 @@
     --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
     --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
     --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
+    --filled-s-top-padding: 21px;
+    --filled-m-top-padding: 28px;
+    --filled-height: 110px;
+    --filled-s-min-height: 43px;
+    --filled-m-min-height: 56px;
 }
 
 .textarea {
@@ -269,11 +274,11 @@
     &.textarea_size_s {
         .textarea__top {
             padding: 0 var(--gap-xs);
-            line-height: 43px;
+            line-height: var(--filled-s-min-height);
         }
 
         .textarea__control {
-            min-height: 43px;
+            min-height: var(--filled-s-min-height);
             padding: 14px var(--gap-xs) 6px;
         }
 
@@ -290,22 +295,22 @@
 
         &.textarea_has-label {
             .textarea__control {
-                padding-top: 21px;
+                padding-top: var(--filled-s-top-padding);
             }
         }
 
         &.textarea_has-label.textarea_focused,
         &.textarea_has-label.textarea_has-value {
             .textarea__inner {
-                padding-top: 21px;
+                padding-top: var(--filled-s-top-padding);
             }
 
             &:not(.textarea_autosize) .textarea__control {
-                min-height: calc(110px - 21px);
+                min-height: calc(var(--filled-height) - var(--filled-s-top-padding));
             }
 
             .textarea__control {
-                min-height: calc(43px - 21px);
+                min-height: calc(var(--filled-s-min-height) - var(--filled-s-top-padding));
                 padding-top: 0;
             }
         }
@@ -322,11 +327,11 @@
     &.textarea_size_m {
         .textarea__top {
             padding: 0 var(--gap-s);
-            line-height: 56px;
+            line-height: var(--filled-m-min-height);
         }
 
         .textarea__control {
-            min-height: 56px;
+            min-height: var(--filled-m-min-height);
             padding: 18px var(--gap-s) var(--gap-xs);
         }
 
@@ -343,22 +348,22 @@
 
         &.textarea_has-label {
             .textarea__control {
-                padding-top: 28px;
+                padding-top: var(--filled-m-top-padding);
             }
         }
 
         &.textarea_has-label.textarea_focused,
         &.textarea_has-label.textarea_has-value {
             .textarea__inner {
-                padding-top: 28px;
+                padding-top: var(--filled-m-top-padding);
             }
 
             &:not(.textarea_autosize) .textarea__control {
-                min-height: calc(110px - 28px);
+                min-height: calc(var(--filled-height) - var(--filled-m-top-padding));
             }
 
             .textarea__control {
-                min-height: calc(56px - 28px);
+                min-height: calc(var(--filled-m-min-height) - var(--filled-m-top-padding));
                 padding-top: 0;
             }
         }
@@ -404,7 +409,7 @@
     }
 
     &:not(.textarea_autosize) .textarea__control {
-        min-height: 110px;
+        min-height: var(--filled-height);
     }
 
     &__sub {

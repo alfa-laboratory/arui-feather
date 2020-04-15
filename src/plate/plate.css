@@ -37,6 +37,12 @@
         border: 1px solid rgba(13, 186, 38, 0.2);
     }
 
+    &_type_warning {
+        /* TODO rgba-цвета заменить на переменные */
+        background-color: rgb(255, 249, 240);
+        border: 1px solid rgba(249, 211, 150, 0.2);
+    }
+
     &_hidden {
         display: none;
     }

@@ -57,10 +57,6 @@ const DEFAULT_FORMAT_CHARACTERS: FormatCharacters = {
 
 /**
  * Класс маски. Позволяет форматировать строку по заданной маске.
- *
- * @class
- * @param {String} mask Маска в формате: https://github.com/insin/inputmask-core
- * @param {FormatCharacters} [formatCharacters] Форматтеры маски в формате `inputmask-core`
  */
 class Mask {
     /**
@@ -86,6 +82,10 @@ class Mask {
      */
     useWhitespaces: boolean;
 
+    /**
+     * @param mask Маска в формате: https://github.com/insin/inputmask-core
+     * @param formatCharacters Форматтеры маски в формате `inputmask-core`
+     */
     constructor(mask: string, formatCharacters?: FormatCharacters, useWhitespaces?: boolean) {
         this.pattern = new InputMask.Pattern(
             mask,
@@ -102,20 +102,18 @@ class Mask {
     /**
      * Проверяет является ли символ в заданном индексе редактируемым.
      *
-     * @param {Number} index Индекс символа.
-     * @returns {Boolean}
+     * @param index Индекс символа.
      */
-    isEditableIndex(index) {
+    isEditableIndex(index: number) {
         return this.pattern.isEditableIndex(index);
     }
 
     /**
      * Форматирует значение введенное в поле ввода по маске.
      *
-     * @param {String} value Неформатированное значение из поля ввода.
-     * @returns {String}
+     * @param value Неформатированное значение из поля ввода.
      */
-    format(value) {
+    format(value: string) {
         let formattedValue = '';
 
         const cleanValue = this.useWhitespaces ? value : value.replace(/\s+/g, '');

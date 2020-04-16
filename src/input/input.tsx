@@ -620,8 +620,8 @@ export class Input extends React.PureComponent<InputProps, InputState> {
 
     /**
      * Устанавливает начальное и конечное положение выделения текста в элементе.
-     * @param {Number} start=0 Индекс первого выделенного символа.
-     * @param {Number} end=value.length Индекс символа после последнего выделенного символа.
+     * @param start Индекс первого выделенного символа.
+     * @param end Индекс символа после последнего выделенного символа.
      */
     public setSelectionRange(start = 0, end = this.getControl().value.length) {
         if (this.props.type !== 'email') {

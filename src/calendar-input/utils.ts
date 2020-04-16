@@ -7,11 +7,10 @@ import { parse } from '../lib/date-utils';
 /**
  * Разбирает введенную пользователем дату используя заданный формат.
  *
- * @param {String} value Дата
- * @param {String} format Ожидаемый формат даты
- * @returns {Number}
+ * @param value Дата
+ * @param format Ожидаемый формат даты
  */
-export function parseDate(value, format) {
+export function parseDate(value: string, format: string) {
     const valueTrimmed = value ? value.replace(/~+$/, '') : '';
     let result = null;
 
@@ -30,12 +29,11 @@ export function parseDate(value, format) {
 /**
  * Изменяет формат даты с одного на другой.
  *
- * @param {String} value Оригинальная строка с датой
- * @param {String} inFormat Входной формат даты
- * @param {String} outFormat Формат возвращаемой даты
- * @returns {String}
+ * @param value Оригинальная строка с датой
+ * @param inFormat Входной формат даты
+ * @param outFormat Формат возвращаемой даты
  */
-export function changeDateFormat(value, inFormat, outFormat) {
+export function changeDateFormat(value: string, inFormat: string, outFormat: string) {
     const date = parseDate(value, inFormat);
 
     if (date) {
@@ -48,14 +46,13 @@ export function changeDateFormat(value, inFormat, outFormat) {
 /**
  * Возвращает дату с корректным месяцем.
  *
- * @param {String} value Строка даты
- * @param {String} format Формат строки с датой
- * @param {Number} [earlierLimit] Левая граница дат
- * @param {Number} [laterLimit] Правая граница дат
- * @returns {Number}
+ * @param value Строка даты
+ * @param format Формат строки с датой
+ * @param earlierLimit Левая граница дат
+ * @param laterLimit Правая граница дат
  */
-export function calculateMonth(value, format, earlierLimit?, laterLimit?) {
-    let newValue = value;
+export function calculateMonth(value: string, format: string, earlierLimit?: number, laterLimit?: number) {
+    let newValue: string | number = value;
 
     if (typeof newValue === 'string') {
         newValue = parseDate(newValue, format);
@@ -79,8 +76,6 @@ export function calculateMonth(value, format, earlierLimit?, laterLimit?) {
 
 /**
  * Возвращает `true`, если поддерживается `input[type="date"]`
- *
- * @returns {Boolean}
  */
 export function isInputDateSupported() {
     const input = document.createElement('input');

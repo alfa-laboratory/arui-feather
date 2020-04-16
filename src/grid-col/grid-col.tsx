@@ -122,7 +122,6 @@ export class GridCol extends React.PureComponent<GridColProps> {
     /**
      * Создает объект модификаторов для переданных свойств.
      *
-     * @private
      * @param props Свойства.
      */
     // eslint-disable-next-line class-methods-use-this

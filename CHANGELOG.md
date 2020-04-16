@@ -1,3 +1,13 @@
+<a name="17.6.0"></a>
+# [17.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.5.1...v17.6.0) (2020-04-16)
+
+
+### Features
+
+* **plate:** adds new prop "warning" for type ([#1131](https://github.com/alfa-laboratory/arui-feather/issues/1131)) ([d518b39](https://github.com/alfa-laboratory/arui-feather/commit/d518b39))
+
+
+
 <a name="17.5.1"></a>
 ## [17.5.1](https://github.com/alfa-laboratory/arui-feather/compare/v17.5.0...v17.5.1) (2020-04-13)
 

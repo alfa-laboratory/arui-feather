@@ -39,8 +39,8 @@
 
     &_type_warning {
         /* TODO rgba-цвета заменить на переменные */
-        background-color: rgb(255, 249, 240);
-        border: 1px solid rgba(249, 211, 150, 0.2);
+        background-color: rgba(246, 191, 101, 0.1);
+        border: 1px solid rgba(246, 191, 101, 0.6);
     }
 
     &_hidden {

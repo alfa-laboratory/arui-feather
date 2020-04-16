@@ -54,7 +54,7 @@ export type PlateProps = DeepReadonly<{
     /**
      * Тип `Plate`
      */
-    type?: 'default' | 'common' | 'error' | 'success';
+    type?: 'default' | 'common' | 'error' | 'success' | 'warning';
 
     /**
      * Дополнительный класс

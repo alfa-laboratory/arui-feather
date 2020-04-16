@@ -61,6 +61,10 @@ function isEqualArray(array1: any[], array2: any[]): boolean {
         array1.every((item, index) => item === array2[index]);
 }
 
+function isEmptyArray(value: any) {
+    return Array.isArray(value) && !value.length;
+}
+
 export type AttachProps = DeepReadonly<{
 
     /**
@@ -180,10 +184,16 @@ export type AttachProps = DeepReadonly<{
 
 }>;
 
+type AttachState = {
+    focused: boolean;
+    hovered: boolean;
+    value: any[];
+};
+
 /**
  * Компонент прикрепления файлов.
  */
-export class Attach extends React.PureComponent<AttachProps> {
+export class Attach extends React.PureComponent<AttachProps, AttachState> {
     protected cn = createCn('attach');
 
     static defaultProps: Partial<AttachProps> = {
@@ -195,7 +205,7 @@ export class Attach extends React.PureComponent<AttachProps> {
         noFileText: 'Нет файла'
     };
 
-    state = {
+    state: AttachState = {
         focused: false,
         hovered: false,
         value: []
@@ -203,13 +213,26 @@ export class Attach extends React.PureComponent<AttachProps> {
 
     private input: HTMLInputElement;
 
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
+    static getDerivedStateFromProps(nextProps: AttachProps, prevState: AttachState) {
         const nextValue = nextProps.value || [];
 
-        if (!isEqualArray(nextValue, this.state.value)) {
+        if (
+            !isEmptyArray(nextValue) &&
+            !isEqualArray(nextValue as any[], prevState.value)
+        ) {
+            return {
+                value: nextValue
+            };
+        }
+
+        return null;
+    }
+
+    componentDidUpdate(_: AttachProps, prevState: AttachState) {
+        const nextValue = this.props.value || [];
+
+        if (!isEqualArray(nextValue as any[], prevState.value)) {
             this.input.value = '';
-            this.setState({ value: nextValue });
         }
     }
 

@@ -597,10 +597,10 @@ export class Menu extends React.Component<MenuProps> {
     /**
      * Изменяет выбранные значения.
      *
-     * @param {Array.<String|Number>} checkedItems Список выбранных значений
-     * @param {React.ChangeEvent} event
+     * @param checkedItems Список выбранных значений
+     * @param event
      */
-    private changeCheckedItems(checkedItems, event) {
+    private changeCheckedItems(checkedItems: Array<string | number>, event: React.ChangeEvent) {
         this.setState({
             checkedItems
         });

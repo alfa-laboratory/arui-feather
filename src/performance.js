@@ -106,8 +106,7 @@ function deep(nextProps, nextState, nextContext) {
  * В случае, если props или state компонентов имеют сложную структуру (массивы, объекты) необходимо использовать
  * глубокую проверку.
  *
- * @param {Boolean} [useDeep=false] Использовать глубокую проверку равенства
- * @returns {Function}
+ * @param useDeep Использовать глубокую проверку равенства
  * @deprecated since version 17.0.0
  */
 export default function performance(useDeep = false) {

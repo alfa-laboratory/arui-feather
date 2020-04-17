@@ -4,7 +4,7 @@ import getTime from 'date-fns/get_time';
 /**
  * Возвращает `true`, если переданная дата является текущей датой.
  *
- * @param {Data|Number} date Дата для проверки
+ * @param date Дата для проверки
  */
 export function isCurrentDay(
     date: Date | number
@@ -20,7 +20,7 @@ export function isCurrentDay(
  * Возвращает массив - перечень лет, попадающих в переданный диапазон дат.
  * @param earlierLimit Начало диапазона дат
  * @param laterLimit Окончание диапазона дат
- * @returns {Array} Диапазон лет
+ * @returns Диапазон лет
  */
 export function getYearsRange(
     earlierLimit: Date | number,

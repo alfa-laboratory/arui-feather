@@ -678,10 +678,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      * Возвращает `true`, если переданная дата является валидной и
      * попадает в заданные лимиты календаря.
      *
-     * @param {Date|Number} value Дата для проверки
-     * @returns {Boolean}
+     * @param value Дата для проверки
      */
-    private isValidDate(value) {
+    private isValidDate(value: Date | number) {
         if (!value) {
             return false;
         }
@@ -701,10 +700,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     /**
      * Возвращает `true`, если переданная дата является выходным днем.
      *
-     * @param {Data|Number} date Дата для проверки
-     * @returns {Boolean}
+     * @param date Дата для проверки
      */
-    private isOffDay(date) {
+    private isOffDay(date: Date | number) {
         if (this.props.offDays && Array.isArray(this.props.offDays)) {
             const timestamp = date.valueOf();
 
@@ -718,10 +716,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     /**
      * Возвращает `true`, если переданная дата является днм с событиями.
      *
-     * @param {Data|Number} date Дата для проверки
-     * @returns {Boolean}
+     * @param date Дата для проверки
      */
-    private isEventDay(date) {
+    private isEventDay(date: Date | number) {
         if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
             const timestamp = date.valueOf();
 
@@ -735,11 +732,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     /**
      * Генерирует событие, что значие даты изменилось.
      *
-     * @param {Number} timestamp Дата
-     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
+     * @param timestamp Дата
+     * @param isTriggeredByKeyboard Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    private performChange(timestamp, isTriggeredByKeyboard = false) {
+    private performChange(timestamp: number, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
             return;
         }
@@ -760,11 +757,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     /**
      * Генерирует событие, что значение даты изменилось на переданной число дней.
      *
-     * @param {Number} dayShift Смещение текущей даты в днях.
-     * @param {Boolean} [isTriggeredByKeyboard=false] Флаг, что событие
+     * @param dayShift Смещение текущей даты в днях.
+     * @param isTriggeredByKeyboard Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    private performChangeWithShift(dayShift, isTriggeredByKeyboard) {
+    private performChangeWithShift(dayShift: number, isTriggeredByKeyboard: boolean) {
         if (!this.ensureValueInLimits(dayShift)) {
             return;
         }
@@ -782,7 +779,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 this.props.onMonthChange(shiftedValue.valueOf());
             }
         } else {
-            this.performChange(this.state.month, true);
+            this.performChange(this.state.month as any /** TODO: fix it */, true);
         }
     }
 

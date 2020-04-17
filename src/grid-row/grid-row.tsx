@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, ReactElement } from 'react';
 import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
@@ -130,7 +130,7 @@ export class GridRow extends React.PureComponent<GridRowProps> {
                     justify
                 }) }
             >
-                { this.injectGutterClassNamesToChildren(gutters, children) }
+                { this.injectGutterClassNamesToChildren(gutters, children as ReactElement) }
             </Tag>
         );
     }
@@ -138,12 +138,10 @@ export class GridRow extends React.PureComponent<GridRowProps> {
     /**
      * Добавляет модификаторы горизонтальных отступов в дочерний элемент.
      *
-     * @private
-     * @param {Object} gutters Модификаторы горизонтальных отступов
-     * @param {ReactElement} children Дочерние элементы компонента.
-     * @returns {ReactElement}
+     * @param gutters Модификаторы горизонтальных отступов
+     * @param children Дочерние элементы компонента.
      */
-    private injectGutterClassNamesToChildren(gutters, children) {
+    private injectGutterClassNamesToChildren(gutters: object, children: React.ReactElement) {
         return (
             Children.map(children, (col) => {
                 if (!col) {

@@ -194,9 +194,9 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
     /**
      * Обрабатывает событие «input».
      *
-     * @param {React.ChangeEvent<HTMLInput>} event The Event object
+     * @param event The Event object
      */
-    private handleInput = (event) => {
+    private handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         const processedEvent = IS_IE9_10 ? event : this.processInputEvent(event);
 
         if (this.props.onInput) {
@@ -213,9 +213,9 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
     /**
      * Обрабатывает событие «change».
      *
-     * @param {React.ChangeEvent<HTMLInput>} event The Event object
+     * @param event The Event object
      */
-    private handleChange = (event) => {
+    private handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (IS_IE11 || !this.props.onChange) {
             return;
         }
@@ -363,10 +363,9 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
     /**
      * Возвращает положение каретки с учетом первого и последнего редактируемого символа маски.
      *
-     * @param {Number} selection Положение каретки
-     * @returns {Number}
+     * @param selection Положение каретки
      */
-    private clampSelection(selection) {
+    private clampSelection(selection: number) {
         if (selection < this.mask.firstEditableIndex) {
             return this.mask.firstEditableIndex;
         }
@@ -382,9 +381,9 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
     /**
      * Устанавливает каретку поля ввода в новую позицию.
      *
-     * @param {Number} selection Новое положение каретки
+     * @param selection Новое положение каретки
      */
-    private setInputSelection(selection) {
+    private setInputSelection(selection: number) {
         this.input.selectionStart = selection;
         this.input.selectionEnd = selection;
 
@@ -403,9 +402,9 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
      * браузерах IE9-10, установка происходит асинхронно, с минимальной задержкой,
      * с помощью [setTimeout] обертки.
      *
-     * @param {Number} selection Положение каретки
+     * @param selection Положение каретки
      */
-    private setInputSelectionByTimeout(selection) {
+    private setInputSelectionByTimeout(selection: number) {
         if (this.caretFixTimeout) {
             clearTimeout(this.caretFixTimeout);
             this.caretFixTimeout = null;

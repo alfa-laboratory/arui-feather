@@ -1064,9 +1064,6 @@ export class Select extends React.Component<SelectProps, SelectState> {
         return result;
     }
 
-    /**
-     * @returns {Boolean}
-     */
     private getOpened() {
         return this.props.opened === undefined ? this.state.opened : this.props.opened;
     }

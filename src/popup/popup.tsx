@@ -487,10 +487,8 @@ export class Popup extends React.Component<PopupProps, PopupState> {
 
     /**
      * Возвращает контейнер, в котором отрендерится попап.
-     *
-     * @returns {HTMLElement}
      */
-    private getRenderContainer() {
+    private getRenderContainer(): HTMLElement {
         if (!this.context.isInCustomContainer) {
             return document.body;
         }
@@ -500,10 +498,8 @@ export class Popup extends React.Component<PopupProps, PopupState> {
 
     /**
      * Возвращает контейнер, внутрь которого надо вписать элемент.
-     *
-     * @returns {HTMLElement}
      */
-    private getPositioningContainer() {
+    private getPositioningContainer(): HTMLElement {
         if (!this.context.isInCustomContainer) {
             return null;
         }

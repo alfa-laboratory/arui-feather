@@ -1,3 +1,16 @@
+<a name="17.7.0"></a>
+# [17.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.6.0...v17.7.0) (2020-04-17)
+
+
+### Bug Fixes
+
+* **intl-phone-input:** format value on mount ([#1097](https://github.com/alfa-laboratory/arui-feather/issues/1097)) ([53cc428](https://github.com/alfa-laboratory/arui-feather/commit/53cc428))
+* **money-input:** caret position in integer part ([#1096](https://github.com/alfa-laboratory/arui-feather/issues/1096)) ([fdf0d87](https://github.com/alfa-laboratory/arui-feather/commit/fdf0d87))
+* **money-input:** change props type ([#1128](https://github.com/alfa-laboratory/arui-feather/issues/1128)) ([811a9b0](https://github.com/alfa-laboratory/arui-feather/commit/811a9b0))
+* **textarea:** fixed height label overlapping on view=filled ([#1123](https://github.com/alfa-laboratory/arui-feather/issues/1123)) ([bff7cd0](https://github.com/alfa-laboratory/arui-feather/commit/bff7cd0))
+
+
+
 <a name="17.6.0"></a>
 # [17.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.5.1...v17.6.0) (2020-04-16)
 

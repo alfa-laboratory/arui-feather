@@ -20,6 +20,8 @@ const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
 const INTEGER_PART_SIZE = 3;
 
+const IS_ANDROID = typeof window !== 'undefined' && /(android)/i.test(window.navigator.userAgent);
+
 /**
  * Возвращает целую и дробную часть значения в виде массива.
  * Если дробная часть не равна `undefined`, значит введена дробная часть
@@ -110,6 +112,8 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
 
     root: HTMLInputElement;
 
+    private caretFixTimeout: ReturnType<typeof setTimeout> = null;
+
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
         this.updateMaskByValue(this.getValue());
@@ -120,6 +124,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         if (this.props.value !== nextProps.value) {
             this.updateMaskByValue(nextProps.value || '');
         }
+    }
+    componentWillUnmount() {
+        clearTimeout(this.caretFixTimeout);
     }
 
     render() {
@@ -159,11 +166,13 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     }
 
     private handleProcessMaskInputEvent = (event) => {
-        const currentValue = this.mask.format(this.getValue());
+        const currentValue = this.getValue();
+        const currentFormattedValue = this.mask.format(this.getValue());
         let newValue = event.target.value;
+        const currentSelection = this.root.control.input.selectionStart;
 
         // При удалении отрезаем запятую, если исчезла дробная часть.
-        if (newValue.length < currentValue.length) {
+        if (newValue.length < currentFormattedValue.length) {
             const fractionPart = getValueParts(newValue)[1]; // Берем значение после запятой
 
             // `fractionPart !== undefined` - значит запятая введена, но
@@ -175,6 +184,19 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         }
 
         this.updateMaskByValue(newValue);
+
+        // При добавлении последней цифры целой части каретка должна
+        // оставаться перед запятой
+        if (newValue.length > currentValue.length && newValue[currentSelection] === ',') {
+            setTimeout((() => {
+
+                // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
+                const offsetSection = IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
+                const newSelectionStart = this.root.control.input.selectionStart - 1;
+
+                this.setInputSelection(newSelectionStart + offsetSection);
+            }), 0);
+        }
     };
 
     private handleChange = (value) => {
@@ -249,6 +271,39 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
      */
     private getValue() {
         return this.props.value === undefined ? this.state.value : this.props.value;
+    }
+
+    /**
+     * Устанавливает каретку поля ввода в новую позицию.
+     *
+     * @param selection Новое положение каретки
+     */
+    private setInputSelection(selection: number) {
+        this.root.control.input.selectionStart = selection;
+        this.root.control.input.selectionEnd = selection;
+        // Android chrome имеет дефект с автоматической установкой каретки
+        // при использовании клавиатуры отличной от type="text".
+        if (IS_ANDROID) {
+            this.setInputSelectionByTimeout(selection);
+        }
+    }
+
+    /**
+     * Устанавливает каретку поля ввода в заданную позицию асинхронно.
+     *
+     * Во-избежание дефекта с установкой каретки, наблюдаемом в мобильных браузерах,
+     * установка происходит асинхронно, с минимальной задержкой,
+     * с помощью [setTimeout] обертки.
+     *
+     * @param selection Положение каретки
+     */
+    private setInputSelectionByTimeout(selection: number) {
+        clearTimeout(this.caretFixTimeout);
+
+        this.caretFixTimeout = setTimeout(() => {
+            this.root.control.input.selectionStart = selection;
+            this.root.control.input.selectionEnd = selection;
+        }, 0);
     }
 }
 

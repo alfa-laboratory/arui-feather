@@ -59,7 +59,7 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
                 } }
                 formNoValidate={ true }
                 className={ this.cn() }
-                onChange={ this.onChange }
+                onChange={ this.handleChange }
                 value={ updatedValue === undefined ? value : updatedValue }
             />
         );
@@ -72,7 +72,7 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
      * если 8, то происходит замена на 7
      * иначе вставляем 7, а остальное сдвигаем
      */
-    private onChange = (value?: string, event?: React.ChangeEvent<any>) => {
+    private handleChange = (value?: string, event?: React.ChangeEvent<any>) => {
         const { onChange } = this.props;
         let valueForOnChange = value;
 

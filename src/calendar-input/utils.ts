@@ -10,7 +10,7 @@ import { parse } from '../lib/date-utils';
  * @param value Дата
  * @param format Ожидаемый формат даты
  */
-export function parseDate(value: string, format: string) {
+export function parseDate(value: string, format: string): number | null {
     const valueTrimmed = value ? value.replace(/~+$/, '') : '';
     let result = null;
 

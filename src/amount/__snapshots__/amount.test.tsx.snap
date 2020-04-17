@@ -33,32 +33,26 @@ exports[`amount should render without problems 1`] = `
           <span
             className="label__inner"
           >
-            <span>
-              <span
-                className="amount__major"
-              >
-                1 233 141
-              </span>
-              <div
-                className="amount__minor-container"
-              >
-                <span
-                  className="amount__separator"
-                >
-                  ,
-                </span>
-                <span
-                  className="amount__minor"
-                >
-                  45
-                </span>
-              </div>
-              <span
-                className="amount__currency"
-              >
-                 
-                ₽
-              </span>
+            <span
+              className="amount__major"
+            >
+              1 233 141
+            </span>
+            <span
+              className="amount__separator"
+            >
+              ,
+            </span>
+            <span
+              className="amount__minor"
+            >
+              45
+            </span>
+            <span
+              className="amount__currency"
+            >
+               
+              ₽
             </span>
           </span>
         </span>

@@ -8,10 +8,6 @@
     display: inline-block;
     white-space: nowrap;
 
-    &__minor-container {
-        display: inline-block;
-    }
-
     &__currency {
         display: inline-block;
         text-align: right;

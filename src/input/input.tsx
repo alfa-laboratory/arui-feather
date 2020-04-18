@@ -103,7 +103,8 @@ export type InputProps = DeepReadonly<{
     mask?: string;
 
     /**
-     * Позволяет использовать пробелы в маске
+     * Разрешает ставить пробелы в инпуте, если они указаны в форматтере, заданном свойством `maskFormatCharacters`.
+     * Не оказывает влияния, если не установлено свойство `maskFormatCharacters`
      */
     useWhitespacesInMask?: boolean;
 

@@ -22,7 +22,7 @@ describe('paragraph', () => {
     });
 
     it('should render marker from property `mark` before text', () => {
-        const paragraph = shallow(<Paragraph mark='!Important '>Paragraph text</Paragraph>);
+        const paragraph = shallow(<Paragraph mark="!Important ">Paragraph text</Paragraph>);
         const paragraphMarkerNode = paragraph.childAt(0);
 
         expect(paragraphMarkerNode.hasClass('paragraph__marker')).toBe(true);

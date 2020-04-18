@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './wallet.css';
-import '../../../icon';
+import '../..';
 
 export * from './wallet';
 export { default } from './wallet';

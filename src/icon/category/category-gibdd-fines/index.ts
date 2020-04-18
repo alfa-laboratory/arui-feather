@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-gibdd-fines.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-gibdd-fines';
 export { default } from './category-gibdd-fines';

@@ -32,9 +32,8 @@ export default function scrollTo({
     targetY,
     container,
     duration = 0,
-    easing = SCROLL_TO_EASING
+    easing = SCROLL_TO_EASING,
 }: ScrollToOptions): Promise<void> {
-
     const scrollY = container ? container.scrollTop : window.pageYOffset;
     const startTime = window.performance.now();
 
@@ -51,6 +50,7 @@ export default function scrollTo({
     return new Promise((resolve) => {
         function scrollToTarget(y: number): void {
             if (container) {
+                // eslint-disable-next-line no-param-reassign
                 container.scrollTop = y;
             } else {
                 window.scrollTo(0, y);

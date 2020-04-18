@@ -13,6 +13,7 @@ import * as calendarUtils from './utils';
 import keyboardCode from '../lib/keyboard-code';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { setIsMatched: setMqMatched } = require('../mq/mq');
 
 jest.mock('../mq/mq');
@@ -39,7 +40,7 @@ describe('calendar-input', () => {
 
     it('should render without problems', () => {
         const month = new Date('2018-06-15').valueOf();
-        const calendarInput = shallow(<CalendarInput value='01.06.2018' calendar={ { month } } />);
+        const calendarInput = shallow(<CalendarInput value="01.06.2018" calendar={ { month } } />);
 
         expect(calendarInput).toMatchSnapshot();
     });
@@ -150,7 +151,7 @@ describe('calendar-input', () => {
 
     it('should receive custom formatted date from event.target.value on `onFocus` callback', () => {
         const onFocus = jest.fn();
-        const calendarInput = mount(<CalendarInput onFocus={ onFocus } value='01.08.2016' />);
+        const calendarInput = mount(<CalendarInput onFocus={ onFocus } value="01.08.2016" />);
 
         calendarInput.find('input').simulate('focus');
 
@@ -161,7 +162,7 @@ describe('calendar-input', () => {
 
     it('should receive custom formatted date from event.target.value on `onBlur` callback', () => {
         const onBlur = jest.fn();
-        const wrapper = mount(<CalendarInput onBlur={ onBlur } value='01.08.2016' />);
+        const wrapper = mount(<CalendarInput onBlur={ onBlur } value="01.08.2016" />);
 
         wrapper.find('input').simulate('blur');
 
@@ -357,7 +358,7 @@ describe('calendar-input', () => {
 
         it('should set `max` attribute to `date`', () => {
             const calendar = {
-                laterLimit: 1514505600000
+                laterLimit: 1514505600000,
             };
 
             const wrapper = mount(<CalendarInput calendar={ calendar } />);
@@ -368,7 +369,7 @@ describe('calendar-input', () => {
 
         it('should set `min` attribute to `date`', () => {
             const calendar = {
-                earlierLimit: 1513900800000
+                earlierLimit: 1513900800000,
             };
 
             const wrapper = mount(<CalendarInput calendar={ calendar } />);
@@ -378,21 +379,21 @@ describe('calendar-input', () => {
         });
 
         it('should render date input with mobileMode=native', () => {
-            const calendarInput = mount(<CalendarInput mobileMode='native' />);
+            const calendarInput = mount(<CalendarInput mobileMode="native" />);
             const dateInput = calendarInput.find('input[type="date"]');
 
             expect(dateInput.length).toBe(1);
         });
 
         it('should set Popup target to `screen` with mobileMode=popup', () => {
-            const calendarInput = mount(<CalendarInput mobileMode='popup' />);
+            const calendarInput = mount(<CalendarInput mobileMode="popup" />);
             const popup = calendarInput.find('Popup');
 
             expect(popup.prop('target')).toEqual('screen');
         });
 
         it('should not show Popup with mobileMode=input', () => {
-            const calendarInput = mount(<CalendarInput mobileMode='input' />);
+            const calendarInput = mount(<CalendarInput mobileMode="input" />);
             const popup = calendarInput.find('Popup');
 
             expect(popup.prop('visible')).toBe(false);
@@ -425,7 +426,7 @@ describe('calendar-input', () => {
             const result = new Date(calendarUtils.calculateMonth(
                 '2012-11-10',
                 'YYYY-MM-DD',
-                (new Date(2013, 8, 10).getTime())
+                (new Date(2013, 8, 10).getTime()),
             ));
 
             expect(result.getMonth()).toBe(8);
@@ -437,7 +438,7 @@ describe('calendar-input', () => {
                 '2012-11-10',
                 'YYYY-MM-DD',
                 (new Date(2011, 8, 10).getTime()),
-                (new Date(2011, 9, 10).getTime())
+                (new Date(2011, 9, 10).getTime()),
             ));
 
             expect(result.getMonth()).toBe(9);
@@ -449,7 +450,7 @@ describe('calendar-input', () => {
                 '2012-11-10',
                 'YYYY-MM-DD',
                 (new Date(2011, 8, 10).getTime()),
-                (new Date(2014, 9, 10).getTime())
+                (new Date(2014, 9, 10).getTime()),
             ));
 
             expect(result.getMonth() + 1).toBe(11); // getMonth is zero based

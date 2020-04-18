@@ -15,25 +15,26 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const PROP_SETS = [
     {
         directions: ['top-center', 'bottom-left'],
-        type: 'tooltip'
+        type: 'tooltip',
     },
     {
         directions: ['right-center', 'right-top', 'right-bottom'],
         type: 'tooltip',
-        mainOffset: 13
+        mainOffset: 13,
     },
     {
-        target: 'position'
-    }
+        target: 'position',
+    },
 ];
 
 class TestButtonPopup extends React.Component {
     static propTypes = {
         target: Type.oneOf(['anchor', 'position']),
-        size: Type.oneOf(['s', 'm', 'l', 'xl'])
+        size: Type.oneOf(['s', 'm', 'l', 'xl']),
     };
 
     target;
+
     popup;
 
     componentDidMount() {
@@ -52,7 +53,7 @@ class TestButtonPopup extends React.Component {
                         this.target = target;
                     } }
                     size={ this.props.size }
-                    theme='alfa-on-white'
+                    theme="alfa-on-white"
                 >
                     Button
                 </Button>

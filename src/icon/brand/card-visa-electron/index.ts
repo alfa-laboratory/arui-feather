@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './card-visa-electron.css';
-import '../../../icon';
+import '../..';
 
 export * from './card-visa-electron';
 export { default } from './card-visa-electron';

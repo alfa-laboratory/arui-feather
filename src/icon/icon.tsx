@@ -53,7 +53,7 @@ export class Icon extends React.PureComponent<IconProps> {
     protected cn = createCn('icon');
 
     static defaultProps: Partial<IconProps> = {
-        size: 'm'
+        size: 'm',
     };
 
     render() {

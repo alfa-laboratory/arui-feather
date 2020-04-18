@@ -1,7 +1,7 @@
 module.exports = {
     extends: 'arui-presets-lint/stylelint',
     plugins: [
-        'stylelint-value-no-unknown-custom-properties'
+        'stylelint-value-no-unknown-custom-properties',
     ],
     rules: {
         'csstools/value-no-unknown-custom-properties': [true, {
@@ -14,9 +14,9 @@ module.exports = {
                 'src/vars/font.css',
                 'src/vars/opacity.css',
                 'src/vars/primitive-colors.css',
-                'src/vars/shadow.css'
-            ]
-        }]
+                'src/vars/shadow.css',
+            ],
+        }],
     },
-    ignoreFiles: 'src/vars/primitive-colors.css'
+    ignoreFiles: 'src/vars/primitive-colors.css',
 };

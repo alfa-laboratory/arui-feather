@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-hobby.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-hobby';
 export { default } from './category-hobby';

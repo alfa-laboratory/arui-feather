@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './android-reorder.css';
-import '../../../icon';
+import '../..';
 
 export * from './android-reorder';
 export { default } from './android-reorder';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './office.css';
-import '../../../icon';
+import '../..';
 
 export * from './office';
 export { default } from './office';

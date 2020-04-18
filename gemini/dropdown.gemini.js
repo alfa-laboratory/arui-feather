@@ -9,20 +9,20 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const PROP_SETS = [
     {
         disabled: true,
-        switcherContent: 'Disabled switcher'
+        switcherContent: 'Disabled switcher',
     },
     {
-        popupContent: <Label size='m'>Label inside dropdown popup</Label>,
+        popupContent: <Label size="m">Label inside dropdown popup</Label>,
         popupProps: {
             directions: ['bottom-left'],
             mainOffset: 13,
-            type: 'tooltip'
-        }
+            type: 'tooltip',
+        },
     },
     {
         disabled: true,
         switcherContent: 'Disabled switcher',
-        switcherType: 'button'
+        switcherType: 'button',
     },
     {
         switcherType: 'button',
@@ -30,9 +30,9 @@ const PROP_SETS = [
         popupProps: {
             directions: ['right-center'],
             mainOffset: 13,
-            type: 'tooltip'
-        }
-    }
+            type: 'tooltip',
+        },
+    },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -50,7 +50,7 @@ geminiReact.suite(NAME, () => {
                         theme,
                         size,
                         opened: !set.disabled,
-                        ...set
+                        ...set,
                     };
                     const template = (
                         <GeminiBox theme={ theme }>

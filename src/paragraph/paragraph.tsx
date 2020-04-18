@@ -58,9 +58,8 @@ export class Paragraph extends React.PureComponent<ParagraphProps> {
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
-                { this.props.mark &&
-                    <span className={ this.cn('marker') }>{ this.props.mark }</span>
-                }
+                { this.props.mark
+                    && <span className={ this.cn('marker') }>{ this.props.mark }</span> }
                 { this.props.children }
             </p>
         );

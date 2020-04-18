@@ -10,7 +10,7 @@ const PROP_SETS = [
     { foldable: true, title: 'Plate Foldable' },
     { type: 'common', title: 'Plate Common' },
     { type: 'error', title: 'Plate Error' },
-    { type: 'success', title: 'Plate Success' }
+    { type: 'success', title: 'Plate Success' },
 ];
 
 geminiReact.suite(NAME, () => {

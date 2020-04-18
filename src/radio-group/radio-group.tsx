@@ -101,12 +101,13 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
 
     static defaultProps: Partial<RadioGroupProps> = {
         type: 'normal',
-        size: 'm'
+        size: 'm',
     };
 
     state = {
-        value: ''
+        value: '',
     };
+
     // TODO [issues/1018] переписать тесты нужно, что бы private был
     radios: Radio[];
 
@@ -137,13 +138,13 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
             React.Children.forEach(children, (radio, index) => {
                 if (React.isValidElement(radio)) {
                     radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
-                        ref: radio => this.radios.push(radio),
+                        ref: (radio) => this.radios.push(radio),
                         error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
                         checked: (
                             radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked
                         ),
                         onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
-                        ...props
+                        ...props,
                     });
                 }
             });
@@ -156,10 +157,10 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
                         type: this.props.type,
                         invalid: !!this.props.error,
                         size,
-                        ...props
+                        ...props,
                     })} control-group${this.props.error ? ' control-group_invalid' : ''}`
                 }
-                role='group'
+                role="group"
                 tabIndex={ -1 }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
@@ -167,17 +168,19 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
             >
                 <div className={ this.cn('inner') }>
                     {
-                        !!this.props.label &&
-                        <div className={ this.cn('top') }>{ this.props.label }</div>
+                        !!this.props.label
+                        && <div className={ this.cn('top') }>{ this.props.label }</div>
                     }
                     <div className={ this.cn('box') }>
                         { createFragment(radioGroupParts) }
                     </div>
                     {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ this.cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
+                        (this.props.error || this.props.hint)
+                        && (
+                            <span className={ this.cn('sub') }>
+                                { this.props.error || this.props.hint }
+                            </span>
+                        )
                     }
                 </div>
             </div>

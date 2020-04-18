@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './navigation-marketplace.css';
-import '../../../icon';
+import '../..';
 
 export * from './navigation-marketplace';
 export { default } from './navigation-marketplace';

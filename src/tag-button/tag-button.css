@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 .tag-button {
     display: inline-block;
@@ -22,7 +22,10 @@
     transition-property: background, color, width;
     transition-timing-function: ease;
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -76,27 +79,27 @@
 
 .tag-button_theme_alfa-on-color {
     color: var(--color-content-alfa-on-color);
-    background: color(var(--color-background-alfa-on-white) a(.3));
+    background: color(var(--color-background-alfa-on-white) a(0.3));
 
     &.tag-button_hovered {
-        background: color(var(--color-background-alfa-on-white) a(.4));
+        background: color(var(--color-background-alfa-on-white) a(0.4));
     }
 
     &.tag-button_focused {
-        background: color(var(--color-background-alfa-on-white) a(.55));
+        background: color(var(--color-background-alfa-on-white) a(0.55));
 
         &.tag-button_checked {
-            background: color(var(--color-background-alfa-on-white) a(.55));
+            background: color(var(--color-background-alfa-on-white) a(0.55));
         }
     }
 
     &.tag-button_pressed {
-        background: color(var(--color-background-alfa-on-white) a(.6));
+        background: color(var(--color-background-alfa-on-white) a(0.6));
     }
 
     &.tag-button_checked {
         color: var(--color-content-alfa-on-white);
-        background: color(var(--color-background-alfa-on-white) a(.75));
+        background: color(var(--color-background-alfa-on-white) a(0.75));
     }
 
     &.tag-button_disabled {
@@ -109,14 +112,14 @@
 
 .tag-button_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
-    background: color(var(--color-background-alfa-on-color) a(.05));
+    background: color(var(--color-background-alfa-on-color) a(0.05));
 
     &.tag-button_hovered {
-        background: color(var(--color-background-alfa-on-color) a(.08));
+        background: color(var(--color-background-alfa-on-color) a(0.08));
     }
 
     &.tag-button_focused {
-        background: color(var(--color-background-alfa-on-color) a(.14));
+        background: color(var(--color-background-alfa-on-color) a(0.14));
 
         &.tag-button_checked {
             background: color(var(--color-background-alfa-on-color));
@@ -124,12 +127,12 @@
     }
 
     &.tag-button_pressed {
-        background: color(var(--color-background-alfa-on-color) a(.18));
+        background: color(var(--color-background-alfa-on-color) a(0.18));
     }
 
     &.tag-button_checked {
         color: var(--color-content-alfa-on-color);
-        background: color(var(--color-background-alfa-on-color) a(.9));
+        background: color(var(--color-background-alfa-on-color) a(0.9));
     }
 
     &.tag-button_disabled {

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './navigation-chat.css';
-import '../../../icon';
+import '../..';
 
 export * from './navigation-chat';
 export { default } from './navigation-chat';

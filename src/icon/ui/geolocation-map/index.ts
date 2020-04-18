@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './geolocation-map.css';
-import '../../../icon';
+import '../..';
 
 export * from './geolocation-map';
 export { default } from './geolocation-map';

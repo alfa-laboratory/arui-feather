@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './internet.css';
-import '../../../icon';
+import '../..';
 
 export * from './internet';
 export { default } from './internet';

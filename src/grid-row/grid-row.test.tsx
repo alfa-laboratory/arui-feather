@@ -21,7 +21,7 @@ describe('grid-row', () => {
                 <GridCol>
                     GridRow-test
                 </GridCol>
-            </GridRow>
+            </GridRow>,
         );
 
         const rowClassName = row.getDOMNode().className;
@@ -39,7 +39,7 @@ describe('grid-row', () => {
                 <GridCol>
                     GridRow-test
                 </GridCol>
-            </GridRow>
+            </GridRow>,
         );
 
         const rowClassName = row.getDOMNode().className;

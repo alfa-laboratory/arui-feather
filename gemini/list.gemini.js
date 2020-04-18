@@ -8,7 +8,7 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const ITEMS = [
     {
         key: 'one',
-        value: 'One'
+        value: 'One',
     },
     {
         key: 'two',
@@ -16,23 +16,23 @@ const ITEMS = [
         list: [
             {
                 key: 'subone',
-                value: 'Sub one'
+                value: 'Sub one',
             },
             {
                 key: 'subtwo',
-                value: 'Sub two'
-            }
-        ]
+                value: 'Sub two',
+            },
+        ],
     },
     {
         key: 'three',
-        value: 'Three'
-    }
+        value: 'Three',
+    },
 ];
 
 const PROP_SETS = [
     { items: ITEMS },
-    { items: ITEMS, type: 'ordered' }
+    { items: ITEMS, type: 'ordered' },
 ];
 
 geminiReact.suite(NAME, () => {

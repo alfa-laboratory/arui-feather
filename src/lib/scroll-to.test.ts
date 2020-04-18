@@ -48,7 +48,7 @@ describe('scroll-to', () => {
     it('should scroll to Y in window', async () => {
         await scrollTo({
             targetY: 100,
-            duration: 200
+            duration: 200,
         });
         expect(window.scrollTo).toHaveBeenCalledWith(0, 100);
     });
@@ -58,7 +58,7 @@ describe('scroll-to', () => {
 
         await scrollTo({
             targetY: 100,
-            container
+            container,
         });
 
         expect(container.scrollTop).toBe(100);
@@ -69,9 +69,8 @@ describe('scroll-to', () => {
             scrollTo({
                 targetY: 100,
                 duration: 200,
-                // @ts-ignore
-                easing: 'incorrectEase'
-            });
+                easing: 'incorrectEase',
+            } as any);
         };
 
         expect(fn).toThrow('Incorrect easing in options');
@@ -81,7 +80,7 @@ describe('scroll-to', () => {
         const fn = function () {
             scrollTo({
                 targetY: 100,
-                duration: -200
+                duration: -200,
             });
         };
 

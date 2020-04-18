@@ -33,7 +33,7 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps> {
 
     static defaultProps: Partial<PhoneInputProps> = {
         mask: '+1 111 111 11 11',
-        placeholder: '+7 000 000 00 00'
+        placeholder: '+7 000 000 00 00',
     };
 
     root;
@@ -42,7 +42,7 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps> {
         return (
             <Input
                 { ...this.props }
-                type='tel'
+                type="tel"
                 ref={ (root) => {
                     this.root = root;
                 } }

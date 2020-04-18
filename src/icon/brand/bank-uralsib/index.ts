@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-uralsib.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-uralsib';
 export { default } from './bank-uralsib';

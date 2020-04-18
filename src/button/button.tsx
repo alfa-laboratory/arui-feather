@@ -193,14 +193,14 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
         type: 'button',
         tag: 'button',
         size: 'm',
-        formNoValidate: false
+        formNoValidate: false,
     };
 
     static getDerivedStateFromProps(nextProps: ButtonProps): Partial<ButtonState> | null {
         if (nextProps.disabled) {
             return {
                 hovered: false,
-                focused: false
+                focused: false,
             };
         }
 
@@ -210,7 +210,7 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
     state = {
         focused: false,
         hovered: false,
-        pressed: false
+        pressed: false,
     };
 
     private control: HTMLButtonElement | HTMLSpanElement;
@@ -240,7 +240,7 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
                 hovered: this.state.hovered,
                 pressed: this.state.pressed,
                 togglable: this.props.togglable,
-                checked: this.props.checked
+                checked: this.props.checked,
             }),
             onClick: this.handleClick,
             onFocus: this.handleFocus,
@@ -252,37 +252,38 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
             onMouseOut: this.handleMouseOut,
             onKeyDown: this.handleKeyDown,
             onKeyUp: this.handleKeyUp,
-            'data-test-id': this.props['data-test-id']
+            'data-test-id': this.props['data-test-id'],
         };
 
         const buttonContent = [
             this.props.leftAddons && (
-                <span key='left-addons' className={ this.cn('addon') }>
+                <span key="left-addons" className={ this.cn('addon') }>
                     { this.props.leftAddons }
                 </span>
             ),
             (this.props.children || this.props.text || this.props.icon) && (
-                <span key='content' className={ this.cn('content') }>
+                <span key="content" className={ this.cn('content') }>
                     { this.props.icon && (
-                        <span key='icon' className={ this.cn('icon') }>
+                        <span key="icon" className={ this.cn('icon') }>
                             { this.props.icon }
                         </span>
                     ) }
                     { (this.props.children || this.props.text) && (
-                        <span key='text' className={ this.cn('text') }>
+                        <span key="text" className={ this.cn('text') }>
                             { this.props.children || this.props.text }
                         </span>
                     ) }
                 </span>
             ),
             this.props.rightAddons && (
-                <span key='right-addons' className={ this.cn('addon') }>
+                <span key="right-addons" className={ this.cn('addon') }>
                     { this.props.rightAddons }
                 </span>
-            )
+            ),
         ];
 
         return isButton ? (
+            // eslint-disable-next-line react/button-has-type
             <button { ...buttonProps }>{ buttonContent }</button>
         ) : (
             <span { ...buttonProps }>{ buttonContent }</span>

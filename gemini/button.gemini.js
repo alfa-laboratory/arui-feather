@@ -11,7 +11,7 @@ const PROP_SETS = [
     { view: 'action' },
     { view: 'extra' },
     { pseudo: true },
-    { disabled: true }
+    { disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {

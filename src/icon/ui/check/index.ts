@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './check.css';
-import '../../../icon';
+import '../..';
 
 export * from './check';
 export { default } from './check';

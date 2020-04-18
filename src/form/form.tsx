@@ -98,7 +98,7 @@ export class Form extends React.PureComponent<FormProps> {
         method: 'post',
         size: 'm',
         noValidate: false,
-        autocomplete: true
+        autocomplete: true,
     };
 
     render() {
@@ -111,7 +111,7 @@ export class Form extends React.PureComponent<FormProps> {
                 autoComplete={ this.props.autocomplete === false ? 'off' : 'on' }
                 className={ this.cn({
                     size: this.props.size,
-                    view: this.props.view
+                    view: this.props.view,
                 }) }
                 id={ this.props.id }
                 name={ this.props.name }
@@ -120,10 +120,12 @@ export class Form extends React.PureComponent<FormProps> {
             >
                 { this.props.children }
                 {
-                    this.props.footer &&
-                        <div className={ this.cn('footer') }>
-                            { this.props.footer }
-                        </div>
+                    this.props.footer
+                        && (
+                            <div className={ this.cn('footer') }>
+                                { this.props.footer }
+                            </div>
+                        )
                 }
             </form>
         );

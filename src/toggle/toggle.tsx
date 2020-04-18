@@ -92,12 +92,12 @@ export class Toggle extends React.PureComponent<ToggleProps> {
 
     static defaultProps: Partial<ToggleProps> = {
         size: 'm',
-        labelAlign: 'right'
+        labelAlign: 'right',
     };
 
     state = {
         checked: false,
-        focused: false
+        focused: false,
     };
 
     render() {
@@ -110,7 +110,7 @@ export class Toggle extends React.PureComponent<ToggleProps> {
                     checked,
                     focused: this.state.focused,
                     disabled: this.props.disabled,
-                    size: this.props.size
+                    size: this.props.size,
                 }) }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
@@ -122,8 +122,8 @@ export class Toggle extends React.PureComponent<ToggleProps> {
                 <span className={ this.cn('wrapper') }>
                     <input
                         className={ this.cn('control') }
-                        type='checkbox'
-                        autoComplete='off'
+                        type="checkbox"
+                        autoComplete="off"
                         id={ this.props.id }
                         name={ this.props.name }
                         value={ this.props.value }
@@ -152,6 +152,7 @@ export class Toggle extends React.PureComponent<ToggleProps> {
 
     private handleChange = () => {
         if (!this.props.disabled) {
+            // eslint-disable-next-line react/no-access-state-in-setstate
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });

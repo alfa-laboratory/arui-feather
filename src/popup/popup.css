@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 .popup {
     visibility: hidden;
@@ -20,7 +20,10 @@
 
     z-index: 9999;
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -172,7 +175,7 @@
 
 .popup_type_tooltip {
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 0;
         height: 0;
@@ -184,70 +187,162 @@
     }
 
     /* top */
-    &.popup_direction_top-left:before { bottom: -7px; }
-    &.popup_direction_top-center:before { bottom: -7px; left: 50%; }
-    &.popup_direction_top-right:before { bottom: -7px; }
+    &.popup_direction_top-left:before {
+        bottom: -7px;
+    }
+    &.popup_direction_top-center:before {
+        bottom: -7px;
+        left: 50%;
+    }
+    &.popup_direction_top-right:before {
+        bottom: -7px;
+    }
 
-    &.popup_size_s.popup_direction_top-left:before { left: 15px; }
-    &.popup_size_s.popup_direction_top-right:before { right: 15px; }
+    &.popup_size_s.popup_direction_top-left:before {
+        left: 15px;
+    }
+    &.popup_size_s.popup_direction_top-right:before {
+        right: 15px;
+    }
 
-    &.popup_size_m.popup_direction_top-left:before { left: 20px; }
-    &.popup_size_m.popup_direction_top-right:before { right: 20px; }
+    &.popup_size_m.popup_direction_top-left:before {
+        left: 20px;
+    }
+    &.popup_size_m.popup_direction_top-right:before {
+        right: 20px;
+    }
 
-    &.popup_size_l.popup_direction_top-left:before { left: 25px; }
-    &.popup_size_l.popup_direction_top-right:before { right: 25px; }
+    &.popup_size_l.popup_direction_top-left:before {
+        left: 25px;
+    }
+    &.popup_size_l.popup_direction_top-right:before {
+        right: 25px;
+    }
 
-    &.popup_size_xl.popup_direction_top-left:before { left: 30px; }
-    &.popup_size_xl.popup_direction_top-right:before { right: 30px; }
+    &.popup_size_xl.popup_direction_top-left:before {
+        left: 30px;
+    }
+    &.popup_size_xl.popup_direction_top-right:before {
+        right: 30px;
+    }
 
     /* left */
-    &.popup_direction_left-top:before { right: -7px; }
-    &.popup_direction_left-center:before { top: 50%; right: -7px; }
-    &.popup_direction_left-bottom:before { right: -7px; }
+    &.popup_direction_left-top:before {
+        right: -7px;
+    }
+    &.popup_direction_left-center:before {
+        top: 50%;
+        right: -7px;
+    }
+    &.popup_direction_left-bottom:before {
+        right: -7px;
+    }
 
-    &.popup_size_s.popup_direction_left-top:before { top: 15px; }
-    &.popup_size_s.popup_direction_left-bottom:before { bottom: 15px; }
+    &.popup_size_s.popup_direction_left-top:before {
+        top: 15px;
+    }
+    &.popup_size_s.popup_direction_left-bottom:before {
+        bottom: 15px;
+    }
 
-    &.popup_size_m.popup_direction_left-top:before { top: 20px; }
-    &.popup_size_m.popup_direction_left-bottom:before { bottom: 20px; }
+    &.popup_size_m.popup_direction_left-top:before {
+        top: 20px;
+    }
+    &.popup_size_m.popup_direction_left-bottom:before {
+        bottom: 20px;
+    }
 
-    &.popup_size_l.popup_direction_left-top:before { top: 25px; }
-    &.popup_size_l.popup_direction_left-bottom:before { bottom: 25px; }
+    &.popup_size_l.popup_direction_left-top:before {
+        top: 25px;
+    }
+    &.popup_size_l.popup_direction_left-bottom:before {
+        bottom: 25px;
+    }
 
-    &.popup_size_xl.popup_direction_left-top:before { top: 30px; }
-    &.popup_size_xl.popup_direction_left-bottom:before { bottom: 30px; }
+    &.popup_size_xl.popup_direction_left-top:before {
+        top: 30px;
+    }
+    &.popup_size_xl.popup_direction_left-bottom:before {
+        bottom: 30px;
+    }
 
     /* right */
-    &.popup_direction_right-top:before { left: -7px; }
-    &.popup_direction_right-center:before { top: 50%; left: -7px; }
-    &.popup_direction_right-bottom:before { left: -7px; }
+    &.popup_direction_right-top:before {
+        left: -7px;
+    }
+    &.popup_direction_right-center:before {
+        top: 50%;
+        left: -7px;
+    }
+    &.popup_direction_right-bottom:before {
+        left: -7px;
+    }
 
-    &.popup_size_s.popup_direction_right-top:before { top: 15px; }
-    &.popup_size_s.popup_direction_right-bottom:before { bottom: 15px; }
+    &.popup_size_s.popup_direction_right-top:before {
+        top: 15px;
+    }
+    &.popup_size_s.popup_direction_right-bottom:before {
+        bottom: 15px;
+    }
 
-    &.popup_size_m.popup_direction_right-top:before { top: 20px; }
-    &.popup_size_m.popup_direction_right-bottom:before { bottom: 20px; }
+    &.popup_size_m.popup_direction_right-top:before {
+        top: 20px;
+    }
+    &.popup_size_m.popup_direction_right-bottom:before {
+        bottom: 20px;
+    }
 
-    &.popup_size_l.popup_direction_right-top:before { top: 25px; }
-    &.popup_size_l.popup_direction_right-bottom:before { bottom: 25px; }
+    &.popup_size_l.popup_direction_right-top:before {
+        top: 25px;
+    }
+    &.popup_size_l.popup_direction_right-bottom:before {
+        bottom: 25px;
+    }
 
-    &.popup_size_xl.popup_direction_right-top:before { top: 30px; }
-    &.popup_size_xl.popup_direction_right-bottom:before { bottom: 30px; }
+    &.popup_size_xl.popup_direction_right-top:before {
+        top: 30px;
+    }
+    &.popup_size_xl.popup_direction_right-bottom:before {
+        bottom: 30px;
+    }
 
     /* bottom */
-    &.popup_direction_bottom-left:before { top: -7px; }
-    &.popup_direction_bottom-center:before { top: -7px; left: 50%; }
-    &.popup_direction_bottom-right:before { top: -7px; }
+    &.popup_direction_bottom-left:before {
+        top: -7px;
+    }
+    &.popup_direction_bottom-center:before {
+        top: -7px;
+        left: 50%;
+    }
+    &.popup_direction_bottom-right:before {
+        top: -7px;
+    }
 
-    &.popup_size_s.popup_direction_bottom-left:before { left: 15px; }
-    &.popup_size_s.popup_direction_bottom-right:before { right: 15px; }
+    &.popup_size_s.popup_direction_bottom-left:before {
+        left: 15px;
+    }
+    &.popup_size_s.popup_direction_bottom-right:before {
+        right: 15px;
+    }
 
-    &.popup_size_m.popup_direction_bottom-left:before { left: 20px; }
-    &.popup_size_m.popup_direction_bottom-right:before { right: 20px; }
+    &.popup_size_m.popup_direction_bottom-left:before {
+        left: 20px;
+    }
+    &.popup_size_m.popup_direction_bottom-right:before {
+        right: 20px;
+    }
 
-    &.popup_size_l.popup_direction_bottom-left:before { left: 25px; }
-    &.popup_size_l.popup_direction_bottom-right:before { right: 25px; }
+    &.popup_size_l.popup_direction_bottom-left:before {
+        left: 25px;
+    }
+    &.popup_size_l.popup_direction_bottom-right:before {
+        right: 25px;
+    }
 
-    &.popup_size_xl.popup_direction_bottom-left:before { left: 30px; }
-    &.popup_size_xl.popup_direction_bottom-right:before { right: 30px; }
+    &.popup_size_xl.popup_direction_bottom-left:before {
+        left: 30px;
+    }
+    &.popup_size_xl.popup_direction_bottom-right:before {
+        right: 30px;
+    }
 }

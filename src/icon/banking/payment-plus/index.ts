@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './payment-plus.css';
-import '../../../icon';
+import '../..';
 
 export * from './payment-plus';
 export { default } from './payment-plus';

@@ -10,7 +10,6 @@ import React from 'react';
  * о которых React не должен ничего знать.
  */
 export class IsolatedContainer extends React.Component {
-
     private element: HTMLDivElement;
 
     shouldComponentUpdate() {
@@ -18,10 +17,12 @@ export class IsolatedContainer extends React.Component {
     }
 
     render() {
-        return (<div ref={ (element) => {
-            this.element = element;
-        } }
-        />);
+        return (
+            <div ref={ (element) => {
+                this.element = element;
+            } }
+            />
+        );
     }
 
     /**

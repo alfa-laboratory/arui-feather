@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './balance-transfer.css';
-import '../../../icon';
+import '../..';
 
 export * from './balance-transfer';
 export { default } from './balance-transfer';

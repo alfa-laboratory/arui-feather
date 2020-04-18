@@ -7,7 +7,7 @@ import getTime from 'date-fns/get_time';
  * @param date Дата для проверки
  */
 export function isCurrentDay(
-    date: Date | number
+    date: Date | number,
 ): boolean {
     if (date !== null) {
         return date.valueOf() === getTime(startOfToday());
@@ -24,7 +24,7 @@ export function isCurrentDay(
  */
 export function getYearsRange(
     earlierLimit: Date | number,
-    laterLimit: Date | number
+    laterLimit: Date | number,
 ) {
     const years = [];
     const startYear = new Date(earlierLimit).getFullYear();

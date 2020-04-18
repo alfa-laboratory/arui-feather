@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-to-card.css';
-import '../../../icon';
+import '../..';
 
 export * from './transfer-to-card';
 export { default } from './transfer-to-card';

@@ -16,10 +16,10 @@ describe('amount', () => {
                     value: 123314145,
                     currency: {
                         code: 'RUR',
-                        minority: 100
-                    }
+                        minority: 100,
+                    },
                 } }
-            />
+            />,
         );
 
         expect(amount).toMatchSnapshot();
@@ -34,10 +34,10 @@ describe('amount', () => {
                     value: -452599,
                     currency: {
                         code: 'RUR',
-                        minority: 100
-                    }
+                        minority: 100,
+                    },
                 } }
-            />
+            />,
         );
 
         // eslint-disable-next-line no-irregular-whitespace
@@ -51,10 +51,10 @@ describe('amount', () => {
                     value: 1789000,
                     currency: {
                         code: 'RUR',
-                        minority: 100
-                    }
+                        minority: 100,
+                    },
                 } }
-            />
+            />,
         );
 
         // eslint-disable-next-line no-irregular-whitespace
@@ -68,11 +68,11 @@ describe('amount', () => {
                     value: 1789000,
                     currency: {
                         code: 'RUR',
-                        minority: 100
-                    }
+                        minority: 100,
+                    },
                 } }
                 showZeroMinorPart={ false }
-            />
+            />,
         );
 
         // eslint-disable-next-line no-irregular-whitespace
@@ -86,10 +86,10 @@ describe('amount', () => {
                     value: 999,
                     currency: {
                         code: 'BYR',
-                        minority: 1
-                    }
+                        minority: 1,
+                    },
                 } }
-            />
+            />,
         );
 
         // eslint-disable-next-line no-irregular-whitespace
@@ -103,10 +103,10 @@ describe('amount', () => {
                     value: 999,
                     currency: {
                         code: 'ZWD',
-                        minority: 0
-                    }
+                        minority: 0,
+                    },
                 } }
-            />
+            />,
         );
 
         // eslint-disable-next-line no-irregular-whitespace

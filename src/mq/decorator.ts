@@ -15,13 +15,13 @@ type MqDecoratorState = {
     matched: boolean;
 }
 
-export default function mqDecorator(query: string, propName: string = 'mqMatch'): ClassDecorator {
+export default function mqDecorator(query: string, propName = 'mqMatch'): ClassDecorator {
     return function (Component: React.ComponentType) {
         return class extends React.Component<{}, MqDecoratorState> {
             mql: MediaQueryList | null = null;
 
             state = {
-                matched: false
+                matched: false,
             };
 
             componentDidMount() {
@@ -41,13 +41,13 @@ export default function mqDecorator(query: string, propName: string = 'mqMatch')
             render() {
                 return React.createElement(Component, {
                     ...this.props,
-                    [propName]: this.state.matched
+                    [propName]: this.state.matched,
                 });
             }
 
             handleMatchChange = (mql: MediaQueryListEvent) => {
                 this.setState({
-                    matched: mql.matches
+                    matched: mql.matches,
                 });
             }
         };

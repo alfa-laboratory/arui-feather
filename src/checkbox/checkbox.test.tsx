@@ -27,7 +27,7 @@ describe('checkbox', () => {
     });
 
     it('should checkbox render with type `button`', () => {
-        const checkbox = mount(<CheckBox text='button label' type='button' />);
+        const checkbox = mount(<CheckBox text="button label" type="button" />);
         const buttonNode = checkbox.find('button');
 
         expect(buttonNode.text()).toContain('button label');
@@ -35,7 +35,7 @@ describe('checkbox', () => {
     });
 
     it('should checkbox render with type `normal`', () => {
-        const checkbox = mount(<CheckBox text='some label' type='normal' />);
+        const checkbox = mount(<CheckBox text="some label" type="normal" />);
         const buttonNode = checkbox.find('button');
         const labelNode = checkbox.find('.checkbox__text');
 
@@ -44,7 +44,7 @@ describe('checkbox', () => {
     });
 
     it('should checkbox render without any type', () => {
-        const checkbox = mount(<CheckBox text='some label' />);
+        const checkbox = mount(<CheckBox text="some label" />);
         const buttonNode = checkbox.find('button');
         const labelNode = checkbox.find('.checkbox__text');
 
@@ -53,7 +53,7 @@ describe('checkbox', () => {
     });
 
     it('should set class on checkbox focus', () => {
-        const checkbox = mount(<CheckBox text='some label' />);
+        const checkbox = mount(<CheckBox text="some label" />);
 
         checkbox.simulate('focus');
 
@@ -61,7 +61,7 @@ describe('checkbox', () => {
     });
 
     it('should unset class on checkbox blur', () => {
-        const checkbox = mount(<CheckBox text='some label' />);
+        const checkbox = mount(<CheckBox text="some label" />);
 
         checkbox.simulate('focus');
         checkbox.simulate('blur');
@@ -88,7 +88,7 @@ describe('checkbox', () => {
     });
 
     it('should set class on checkbox mouse enter', () => {
-        const checkbox = mount(<CheckBox text='some label' />);
+        const checkbox = mount(<CheckBox text="some label" />);
 
         checkbox.simulate('mouseEnter');
 
@@ -96,7 +96,7 @@ describe('checkbox', () => {
     });
 
     it('should unset class on checkbox mouse leave', () => {
-        const checkbox = mount(<CheckBox text='some label' />);
+        const checkbox = mount(<CheckBox text="some label" />);
 
         checkbox.simulate('mouseEnter');
         expect(checkbox.find('.checkbox').prop('className')).toContain('checkbox_hovered');
@@ -143,7 +143,7 @@ describe('checkbox', () => {
     });
 
     it('should set class on checkbox button change', () => {
-        const checkbox = mount(<CheckBox type='button' />);
+        const checkbox = mount(<CheckBox type="button" />);
         const buttonNode = checkbox.find('button');
 
         buttonNode.simulate('click');
@@ -154,7 +154,7 @@ describe('checkbox', () => {
 
     it('should call `onChange` callback after checkbox button was clicked', () => {
         const onChange = jest.fn();
-        const checkbox = mount(<CheckBox type='button' onChange={ onChange } />);
+        const checkbox = mount(<CheckBox type="button" onChange={ onChange } />);
         const buttonNode = checkbox.find('button');
 
         buttonNode.simulate('click');
@@ -169,7 +169,7 @@ describe('checkbox', () => {
     });
 
     it('should not checked with disabled props', () => {
-        const checkbox = mount(<CheckBox type='button' disabled={ true } />);
+        const checkbox = mount(<CheckBox type="button" disabled={ true } />);
         const buttonNode = checkbox.find('button');
 
         buttonNode.simulate('click');
@@ -179,7 +179,7 @@ describe('checkbox', () => {
     });
 
     it('should scroll window to element on public scrollTo method', () => {
-        const checkbox = mount<CheckBox>(<CheckBox type='button' />);
+        const checkbox = mount<CheckBox>(<CheckBox type="button" />);
         const elemTopPosition = checkbox.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 

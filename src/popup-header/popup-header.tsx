@@ -57,7 +57,7 @@ export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
         return (
             <div
                 className={ this.cn({
-                    size: this.props.size
+                    size: this.props.size,
                 }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }

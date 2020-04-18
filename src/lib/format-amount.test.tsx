@@ -10,8 +10,8 @@ describe('format-amount-to-string', () => {
             value: 1234567,
             currency: {
                 code: 'RUR',
-                minority: 1
-            }
+                minority: 1,
+            },
         };
         const result = formatAmountToString(amount);
 

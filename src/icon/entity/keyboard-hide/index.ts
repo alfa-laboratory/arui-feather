@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './keyboard-hide.css';
-import '../../../icon';
+import '../..';
 
 export * from './keyboard-hide';
 export { default } from './keyboard-hide';

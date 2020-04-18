@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-unknown.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-unknown';
 export { default } from './category-unknown';

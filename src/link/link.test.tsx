@@ -138,7 +138,7 @@ describe('link', () => {
     });
 
     it('should render with rel="noreferrer noopener" when using target="_blank"', () => {
-        const link = mount<Link>(<Link target='_blank' />);
+        const link = mount<Link>(<Link target="_blank" />);
 
         expect(link).toMatchSnapshot();
     });

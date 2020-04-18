@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-gibdd.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-gibdd';
 export { default } from './category-gibdd';

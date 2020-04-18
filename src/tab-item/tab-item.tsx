@@ -11,13 +11,14 @@ import { LinkProps, Link } from '../link/link';
  */
 export class TabItem extends Link {
     protected cn = createCn('tab-item');
+
     static defaultProps: Partial<LinkProps> = {
         size: 'l',
         view: 'default',
         disabled: false,
         checked: false,
         pseudo: false,
-        tabIndex: 0
+        tabIndex: 0,
     };
 }
 

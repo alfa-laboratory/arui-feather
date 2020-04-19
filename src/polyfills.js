@@ -13,6 +13,7 @@ require('core-js/fn/array/includes');
 require('core-js/fn/object/assign');
 require('core-js/fn/object/is');
 require('core-js/fn/object/values');
+require('core-js/fn/set-immediate');
 require('core-js/es6/promise');
 require('core-js/es6/set');
 require('core-js/es6/map');

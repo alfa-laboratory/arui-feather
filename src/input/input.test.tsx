@@ -506,16 +506,25 @@ describe('input', () => {
     );
 
     it(
-        'should call `resetError` after focus',
+        'should not show error on focus if `resetError` props is true',
         () => {
-            const input = mount<Input>(<Input />);
+            const input = shallow<Input>(<Input resetError={ true } error='Error' />);
             const controlNode = input.find('input');
-            // @ts-ignore
-            jest.spyOn(input.instance(), 'resetError');
 
             controlNode.simulate('focus');
-            // @ts-ignore
-            expect(input.instance().resetError).toHaveBeenCalled();
+
+            expect(input.find('.input').props().className).not.toContain('input_invalid');
+        }
+    );
+
+    it(
+        'should show error on focus if `resetError` props is false',
+        () => {
+            const input = mount<Input>(<Input resetError={ false } error='Error' />);
+            const controlNode = input.find('input');
+
+            controlNode.simulate('focus');
+            expect(input.find('.input').props().className).toContain('input_invalid');
         }
     );
 });

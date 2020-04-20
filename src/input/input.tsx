@@ -255,11 +255,6 @@ type InputState = {
     focused: boolean;
 
     /**
-     * Ошибка
-     */
-    error: InputProps['error'] | null;
-
-    /**
      * Содержимое поля ввода
      */
     value: string;
@@ -279,16 +274,8 @@ export class Input extends React.PureComponent<InputProps, InputState> {
         resetError: true
     };
 
-    componentDidUpdate(prevProps: InputProps) {
-        if (prevProps.error !== this.props.error) {
-            // eslint-disable-next-line react/no-did-update-set-state
-            this.setState({ error: this.props.error });
-        }
-    }
-
     state = {
         focused: false,
-        error: this.props.error || null,
         value: this.props.defaultValue || ''
     };
 
@@ -311,6 +298,8 @@ export class Input extends React.PureComponent<InputProps, InputState> {
         const hasLeftAddons = !!this.props.leftAddons;
         const value = this.props.value === undefined ? this.state.value : this.props.value;
         const focused = this.getFocused();
+        const isInvalidOnFocus = this.props.resetError ? !this.state.focused : true;
+        const shouldShowError = !!this.props.error && isInvalidOnFocus;
 
         return (
             <span
@@ -327,7 +316,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                     'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    invalid: !!this.state.error
+                    invalid: shouldShowError
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -343,9 +332,9 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                     }
                     { this.renderContent() }
                     {
-                        (this.state.error || this.props.hint) &&
+                        (shouldShowError || this.props.hint) &&
                         <span className={ this.cn('sub') }>
-                            { this.state.error || this.props.hint }
+                            { this.props.error || this.props.hint }
                         </span>
                     }
                 </span>
@@ -445,7 +434,6 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     private handleFocus = (event) => {
         this.setState({ focused: true });
         this.enableMouseWheel();
-        this.resetError();
 
         if (this.props.onFocus) {
             this.props.onFocus(event);
@@ -650,17 +638,6 @@ export class Input extends React.PureComponent<InputProps, InputState> {
      */
     private getFocused() {
         return this.props.focused === undefined ? this.state.focused : this.props.focused;
-    }
-
-    /**
-     * Сбрасывает состояние ошибки.
-     */
-    private resetError() {
-        if (this.props.resetError) {
-            this.setState({
-                error: null
-            });
-        }
     }
 }
 

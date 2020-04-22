@@ -18,7 +18,7 @@ type GeminiBoxProps = {
     theme?: 'alfa-on-color' | 'alfa-on-white';
 
     /**
-     * Стиль компоненты
+     * Стиль компонента
      */
     style?: React.CSSProperties;
 

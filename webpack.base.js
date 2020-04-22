@@ -18,11 +18,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
-                loader: require.resolve('babel-loader'),
-                exclude: /node_modules/
-            },
-            {
                 test: /\.tsx?/i,
                 loader: 'ts-loader',
                 options: {

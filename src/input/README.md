@@ -660,3 +660,23 @@ const selectOptions = [
     </div>
 </div>
 ```
+
+Использование свойств `maskFormatCharacters` и `useWhitespacesInMask`
+```jsx
+const customFormatter = {
+    s: {
+        validate(char) {
+            return /[Ёёа-яА-Яa-zA-Z0-9\s]/.test(char);
+        }
+    }
+};
+
+<div>
+    <Input
+        placeholder='Введите ваше имя'
+        mask='sssssssssssssss'
+        maskFormatCharacters={ customFormatter }
+        useWhitespacesInMask={ true }
+    />
+</div>
+```

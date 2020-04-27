@@ -1,3 +1,13 @@
+<a name="17.8.0"></a>
+# [17.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.7.0...v17.8.0) (2020-04-27)
+
+
+### Bug Fixes
+
+* **menu:** top in .menu-item_checked:before ([#1144](https://github.com/alfa-laboratory/arui-feather/issues/1144)) ([e44aea4](https://github.com/alfa-laboratory/arui-feather/commit/e44aea4))
+
+
+
 <a name="17.7.0"></a>
 # [17.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.6.0...v17.7.0) (2020-04-17)
 

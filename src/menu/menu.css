@@ -73,7 +73,7 @@
 
     &.menu_mode_radio, &.menu_mode_radio-check {
         .menu-item_checked:before {
-            top: 12px;
+            top: calc(50% - 2px);
             width: 5px;
             height: 5px;
             margin-left: -14px;
@@ -116,7 +116,7 @@
 
     &.menu_mode_radio, &.menu_mode_radio-check {
         .menu-item_checked:before {
-            top: 17px;
+            top: calc(50% - 3px);
             width: 6px;
             height: 6px;
             margin-left: -14px;
@@ -159,7 +159,7 @@
 
     &.menu_mode_radio, &.menu_mode_radio-check {
         .menu-item_checked:before {
-            top: 21px;
+            top: calc(50% - 4px);
             width: 8px;
             height: 8px;
             margin-left: -21px;
@@ -202,7 +202,7 @@
 
     &.menu_mode_radio, &.menu_mode_radio-check {
         .menu-item_checked:before {
-            top: 21px;
+            top: calc(50% - 5px);
             width: 10px;
             height: 10px;
             margin-left: -22px;

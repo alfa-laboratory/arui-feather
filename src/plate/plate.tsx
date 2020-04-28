@@ -5,7 +5,6 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -14,7 +13,7 @@ import IconArrowUp from '../icon/ui/arrow-up';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconButton from '../icon-button/icon-button';
 
-export type PlateProps = DeepReadonly<{
+export type PlateProps = {
 
     /**
      * Управление наличием закрывающего крестика
@@ -101,7 +100,7 @@ export type PlateProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 /**
  * Компонент плашки.

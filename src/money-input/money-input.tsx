@@ -7,7 +7,6 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -54,7 +53,7 @@ function splitInteger(str: string): string {
     return [str.slice(from, to)].concat(splitInteger(str.slice(0, from)));
 }
 
-type MoneyInputProps = DeepReadonly<InputProps & {
+type MoneyInputProps = InputProps & {
     /**
      * Максимально допустимая длина значения до запятой
      */
@@ -83,7 +82,7 @@ type MoneyInputProps = DeepReadonly<InputProps & {
      * Обработчик события, вызываемый при событии 'change'
      * */
     onChange?: (value?: string, amount?: number) => void;
-}>;
+};
 
 type MoneyInputState = {
     value: string;

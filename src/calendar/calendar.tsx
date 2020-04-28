@@ -6,7 +6,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 
 import { createCn } from 'bem-react-classname';
 
@@ -34,7 +33,7 @@ const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
 const LATER_YEARS_LIMIT = 1;
 
-export type CalendarProps = DeepReadonly<{
+export type CalendarProps = {
 
     /**
      * Выбранная дата, в формате unix timestamp
@@ -161,7 +160,7 @@ export type CalendarProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 type CalendarState = {
     isMonthSelection?: boolean;

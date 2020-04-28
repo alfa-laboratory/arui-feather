@@ -3,12 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 
 import { IsolatedContainer } from '../isolated-container/isolated-container';
 
-export type PopupContainerProviderProps = DeepReadonly<{
+export type PopupContainerProviderProps = {
     /**
      * Дочерние элементы контейнера
      */
@@ -41,7 +40,7 @@ export type PopupContainerProviderProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 type PopupContainerProviderState = {
     didRender: boolean;

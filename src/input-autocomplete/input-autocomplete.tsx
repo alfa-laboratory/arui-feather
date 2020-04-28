@@ -7,7 +7,6 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 import { FormatCharacters } from '../masked-input/mask';
@@ -24,7 +23,7 @@ import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 import { MenuItem } from '../menu-item/menu-item';
 import Input, { InputProps } from '../input/input';
 
-export type InputAutocompleteProps = DeepReadonly<InputProps & {
+export type InputAutocompleteProps = InputProps & {
 
     /**
      * Тип поля.
@@ -335,7 +334,7 @@ export type InputAutocompleteProps = DeepReadonly<InputProps & {
      * Название класса попапа с опциями
      */
     popupClassName?: string;
-}>;
+};
 
 type InputAutocompleteState = {
     value: string;

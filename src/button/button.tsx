@@ -3,12 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 
-export type ButtonProps = DeepReadonly<{
+export type ButtonProps = {
 
     /**
      * Текст кнопки
@@ -175,7 +174,7 @@ export type ButtonProps = DeepReadonly<{
      */
     onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
 
-}>;
+};
 
 type ButtonState = {
     focused: boolean;

@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -27,7 +26,7 @@ type ListItemsType = {
     list?: readonly ListItemsType[];
 };
 
-export type ListProps = DeepReadonly<{
+export type ListProps = {
 
     /**
      * Список элементов
@@ -58,7 +57,7 @@ export type ListProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент списка.

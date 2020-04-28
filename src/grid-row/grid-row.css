@@ -47,8 +47,10 @@
 
     @for $i from 8 to 24 by 8 {
         &_gutter_$(i) {
-            margin-left: calc(-$(i) px / 2);
-            margin-right: calc(-$(i) px / 2);
+            /* stylelint-disable-next-line prettier/prettier */
+            margin-left: calc(-$(i)px / 2);
+            /* stylelint-disable-next-line prettier/prettier */
+            margin-right: calc(-$(i)px / 2);
         }
     }
 
@@ -58,8 +60,10 @@
         @media (--$(breakpoint)) {
             @for $i from 8 to 24 by 8 {
                 &_gutter-$(breakpoint)_$(i) {
-                    margin-left: calc(-$(i) px / 2);
-                    margin-right: calc(-$(i) px / 2);
+                    /* stylelint-disable-next-line prettier/prettier */
+                    margin-left: calc(-$(i)px / 2);
+                    /* stylelint-disable-next-line prettier/prettier */
+                    margin-right: calc(-$(i)px / 2);
                 }
             }
         }

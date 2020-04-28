@@ -10,12 +10,12 @@ import deprecated from 'deprecated-decorator';
 export const isEventOusideBounds = deprecated({
     name: 'isEventOusideBounds',
     alternative: 'isEventOutsideClientBounds',
-    version: '12.0.1'
+    version: '12.0.1',
 } as any, (event: MouseEvent, element: Element): boolean => {
     const rect = element.getBoundingClientRect();
 
-    return ((event.pageX < rect.left || event.pageX > rect.right) ||
-            (event.pageY < rect.top || event.pageY > rect.bottom));
+    return ((event.pageX < rect.left || event.pageX > rect.right)
+            || (event.pageY < rect.top || event.pageY > rect.bottom));
 });
 
 /**
@@ -31,6 +31,6 @@ export function isNodeOutsideElement(node: Element, element: Element): boolean {
 export function isEventOutsideClientBounds(event: MouseEvent, element: Element): boolean {
     const rect = element.getBoundingClientRect();
 
-    return event.clientX < rect.left || event.clientX > rect.right ||
-        event.clientY < rect.top || event.clientY > rect.bottom;
+    return event.clientX < rect.left || event.clientX > rect.right
+        || event.clientY < rect.top || event.clientY > rect.bottom;
 }

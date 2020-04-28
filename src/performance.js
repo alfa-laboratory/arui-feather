@@ -75,9 +75,9 @@ export function isEqual(objA, objB, deep = false) {
  * @returns {Boolean}
  */
 function shallow(nextProps, nextState, nextContext) {
-    return !isEqual(this.props, nextProps) ||
-        !isEqual(this.state, nextState) ||
-        !isEqual(this.context, nextContext);
+    return !isEqual(this.props, nextProps)
+        || !isEqual(this.state, nextState)
+        || !isEqual(this.context, nextContext);
 }
 
 /**
@@ -90,9 +90,9 @@ function shallow(nextProps, nextState, nextContext) {
  * @returns {Boolean}
  */
 function deep(nextProps, nextState, nextContext) {
-    return !isEqual(this.props, nextProps, true) ||
-        !isEqual(this.state, nextState, true) ||
-        !isEqual(this.context, nextContext, true);
+    return !isEqual(this.props, nextProps, true)
+        || !isEqual(this.state, nextState, true)
+        || !isEqual(this.context, nextContext, true);
 }
 
 /**
@@ -115,6 +115,7 @@ export default function performance(useDeep = false) {
     }
 
     return function (target) {
+        // eslint-disable-next-line no-param-reassign
         target.prototype.shouldComponentUpdate = useDeep ? deep : shallow;
     };
 }

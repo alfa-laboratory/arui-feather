@@ -61,7 +61,7 @@ export class FlagIcon extends React.PureComponent<FlagIconProps> {
     static defaultProps: Partial<FlagIconProps> = {
         isFlat: false,
         mode: 'chunk',
-        size: 'm'
+        size: 'm',
     };
 
     render() {
@@ -71,7 +71,7 @@ export class FlagIcon extends React.PureComponent<FlagIconProps> {
                     country: this.props.country,
                     flat: this.props.isFlat,
                     mode: this.props.mode,
-                    size: this.props.size
+                    size: this.props.size,
                 }) }
                 data-test-id={ this.props['data-test-id'] }
             />

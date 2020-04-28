@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './currency-rub-usd.css';
-import '../../../icon';
+import '../..';
 
 export * from './currency-rub-usd';
 export { default } from './currency-rub-usd';

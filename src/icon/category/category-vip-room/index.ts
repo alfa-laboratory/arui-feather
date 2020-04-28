@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-vip-room.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-vip-room';
 export { default } from './category-vip-room';

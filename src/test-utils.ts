@@ -65,7 +65,7 @@ export function render(element: React.ReactElement, options: Options = {}): Test
     return {
         instance,
         node: ReactDOM.findDOMNode(instance),
-        container
+        container,
     };
 }
 

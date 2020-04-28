@@ -18,8 +18,8 @@ describe('checkbox-group', () => {
     it('should render with only one children', () => {
         const checkboxGroup = shallow(
             <CheckBoxGroup>
-                <CheckBox key='1' />
-            </CheckBoxGroup>
+                <CheckBox key="1" />
+            </CheckBoxGroup>,
         );
 
         expect(checkboxGroup).toMatchSnapshot();
@@ -28,9 +28,9 @@ describe('checkbox-group', () => {
     it('should render with many checkbox children without problems', () => {
         const checkboxGroup = shallow(
             <CheckBoxGroup>
-                <CheckBox key='1' text='label' />
-                <CheckBox key='2' text='label' />
-            </CheckBoxGroup>
+                <CheckBox key="1" text="label" />
+                <CheckBox key="2" text="label" />
+            </CheckBoxGroup>,
         );
 
         expect(checkboxGroup).toMatchSnapshot();
@@ -41,9 +41,9 @@ describe('checkbox-group', () => {
             <CheckBoxGroup
                 value={ ['value_1'] }
             >
-                <CheckBox value='value_1' text='label 1' />
-                <CheckBox value='value_2' text='label 2' />
-            </CheckBoxGroup>
+                <CheckBox value="value_1" text="label 1" />
+                <CheckBox value="value_2" text="label 2" />
+            </CheckBoxGroup>,
         );
         const checkboxNode = checkboxGroup.find('.checkbox').at(0);
 
@@ -51,13 +51,12 @@ describe('checkbox-group', () => {
     });
 
     it('should focus first child checkbox-button on public focus method', () => {
-
         const checkboxGroup = mount<CheckBoxGroup>(
             <CheckBoxGroup>
                 <CheckBox />
                 <CheckBox />
                 <CheckBox />
-            </CheckBoxGroup>
+            </CheckBoxGroup>,
         );
 
         const firstCheckboxInstance = (checkboxGroup.instance() as any).checkboxes[0];
@@ -80,7 +79,7 @@ describe('checkbox-group', () => {
                 <CheckBox />
                 <CheckBox />
                 <CheckBox />
-            </CheckBoxGroup>
+            </CheckBoxGroup>,
         );
 
         checkboxGroup.instance().blur();
@@ -93,7 +92,7 @@ describe('checkbox-group', () => {
         const checkBoxGroup = mount(
             <CheckBoxGroup onFocus={ onFocus }>
                 <CheckBox />
-            </CheckBoxGroup>
+            </CheckBoxGroup>,
         );
 
         checkBoxGroup.simulate('focus');
@@ -106,7 +105,7 @@ describe('checkbox-group', () => {
         const checkBoxGroup = mount(
             <CheckBoxGroup onBlur={ onBlur }>
                 <CheckBox />
-            </CheckBoxGroup>
+            </CheckBoxGroup>,
         );
 
         checkBoxGroup.simulate('blur');
@@ -118,8 +117,8 @@ describe('checkbox-group', () => {
         const onChange = jest.fn();
         const checkBoxGroup = mount(
             <CheckBoxGroup onChange={ onChange }>
-                <CheckBox value='value_1' />
-            </CheckBoxGroup>
+                <CheckBox value="value_1" />
+            </CheckBoxGroup>,
         );
         const checkboxControlNode = checkBoxGroup.find('.checkbox__control');
 
@@ -127,8 +126,8 @@ describe('checkbox-group', () => {
         expect(onChange).toHaveBeenCalledWith(
             ['value_1'],
             expect.objectContaining({
-                nativeEvent: expect.any(Object)
-            })
+                nativeEvent: expect.any(Object),
+            }),
         );
     });
 
@@ -138,7 +137,7 @@ describe('checkbox-group', () => {
                 <CheckBox />
                 <CheckBox />
                 <CheckBox />
-            </CheckBoxGroup>
+            </CheckBoxGroup>,
         );
 
         const disabledCheckboxNodes = checkBoxGroup.find('.checkbox_disabled');
@@ -151,7 +150,7 @@ describe('checkbox-group', () => {
         const checkboxGroup = mount(
             <CheckBoxGroup onChange={ onChange } disabled={ true }>
                 <CheckBox />
-            </CheckBoxGroup>
+            </CheckBoxGroup>,
         );
         const checkbox = checkboxGroup.find('.checkbox');
 
@@ -163,13 +162,13 @@ describe('checkbox-group', () => {
     it('should render with children like boolean or string or others react children type without problems', () => {
         const checkboxGroup = shallow(
             <CheckBoxGroup>
-                <CheckBox key='1' text='label' />
-                <CheckBox key='2' text='label' />
-                { false && <CheckBox key='3' text='label' /> }
-                { 0 && <CheckBox key='4' text='label' /> }
-                { '' && <CheckBox key='5' text='label' /> }
-                { null && <CheckBox key='6' text='label' /> }
-            </CheckBoxGroup>
+                <CheckBox key="1" text="label" />
+                <CheckBox key="2" text="label" />
+                { false && <CheckBox key="3" text="label" /> }
+                { 0 && <CheckBox key="4" text="label" /> }
+                { '' && <CheckBox key="5" text="label" /> }
+                { null && <CheckBox key="6" text="label" /> }
+            </CheckBoxGroup>,
         );
 
         expect(checkboxGroup).toMatchSnapshot();

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // @ts-nocheck
 
 export const getMatchMedia = jest.fn()

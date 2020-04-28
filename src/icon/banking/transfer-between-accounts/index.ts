@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-between-accounts.css';
-import '../../../icon';
+import '../..';
 
 export * from './transfer-between-accounts';
 export { default } from './transfer-between-accounts';

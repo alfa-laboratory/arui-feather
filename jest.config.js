@@ -5,32 +5,32 @@ module.exports = {
         '\\.png$': '<rootDir>/__mocks__/assets-mock.js',
         '\\.svg': '<rootDir>/__mocks__/assets-mock.js',
         '\\.xml': '<rootDir>/__mocks__/assets-mock.js',
-        '\\.ico': '<rootDir>/__mocks__/assets-mock.js'
+        '\\.ico': '<rootDir>/__mocks__/assets-mock.js',
     },
     transform: {
         '^.+\\.jsx?$': 'babel-jest',
-        '^.+\\.tsx?$': 'ts-jest'
+        '^.+\\.tsx?$': 'ts-jest',
     },
     modulePathIgnorePatterns: [
-        '<rootDir>/.publish/'
+        '<rootDir>/.publish/',
     ],
     moduleFileExtensions: [
         'ts',
         'tsx',
         'js',
         'jsx',
-        'json'
+        'json',
     ],
     setupFiles: [
-        '<rootDir>/__tests__/setup.js'
+        '<rootDir>/__tests__/setup.js',
     ],
     collectCoverageFrom: [
-        'src/**/*.{js,ts,jsx,tsx}'
+        'src/**/*.{js,ts,jsx,tsx}',
     ],
     coverageReporters: [
         'lcov',
         'text',
-        'clover'
+        'clover',
     ],
     coveragePathIgnorePatterns: [
         '/node_modules/',
@@ -41,13 +41,13 @@ module.exports = {
         'entrypoint-for-demo.ts',
         'polyfills.js',
         '\\.d\\.ts$',
-        '\\.gulpfile\\.js$'
+        '\\.gulpfile\\.js$',
     ],
     snapshotSerializers: [
-        'enzyme-to-json/serializer'
+        'enzyme-to-json/serializer',
     ],
     globals: {
         window: true,
-        jest: true
-    }
+        jest: true,
+    },
 };

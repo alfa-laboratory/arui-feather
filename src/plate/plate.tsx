@@ -113,12 +113,12 @@ export class Plate extends React.PureComponent<PlateProps> {
         foldable: false,
         folded: true,
         type: 'default',
-        title: ''
+        title: '',
     };
 
     state = {
         isHidden: false,
-        isFolded: this.props.folded
+        isFolded: this.props.folded,
     };
 
     // TODO [issues/1018] на private ругается
@@ -132,7 +132,7 @@ export class Plate extends React.PureComponent<PlateProps> {
                     foldable: this.props.foldable,
                     'has-icon': !!this.props.icon,
                     hidden: this.props.hasCloser && this.state.isHidden,
-                    type: this.props.type
+                    type: this.props.type,
                 }) }
                 id={ this.props.id }
                 onClick={ this.handleClick }
@@ -143,52 +143,60 @@ export class Plate extends React.PureComponent<PlateProps> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 {
-                    this.props.icon &&
-                    <span className={ this.cn('icon') }>
-                        { this.props.icon }
-                    </span>
+                    this.props.icon
+                    && (
+                        <span className={ this.cn('icon') }>
+                            { this.props.icon }
+                        </span>
+                    )
                 }
                 {
-                    this.props.title &&
-                    <div
-                        className={ this.cn('title') }
-                    >
-                        <span
-                            onClick={ this.handleTitleClick }
-                            onKeyUp={ this.handleTitleKeyDown }
+                    this.props.title
+                    && (
+                        <div
+                            className={ this.cn('title') }
                         >
-                            { this.props.title }
-                        </span>
-                        {
-                            this.props.foldable &&
-                            <IconButton
-                                className={ this.cn('folder') }
-                                onClick={ this.handleFolderClick }
+                            <span
+                                onClick={ this.handleTitleClick }
+                                onKeyUp={ this.handleTitleKeyDown }
                             >
-                                {
-                                    this.state.isFolded
-                                        ? <IconArrowDown />
-                                        : <IconArrowUp />
-                                }
-                            </IconButton>
-                        }
-                    </div>
+                                { this.props.title }
+                            </span>
+                            {
+                                this.props.foldable
+                            && (
+                                <IconButton
+                                    className={ this.cn('folder') }
+                                    onClick={ this.handleFolderClick }
+                                >
+                                    {
+                                        this.state.isFolded
+                                            ? <IconArrowDown />
+                                            : <IconArrowUp />
+                                    }
+                                </IconButton>
+                            )
+                            }
+                        </div>
+                    )
                 }
                 <div
                     className={ this.cn('content', {
-                        folded: this.props.foldable && this.state.isFolded
+                        folded: this.props.foldable && this.state.isFolded,
                     }) }
                 >
                     { this.props.children }
                     {
-                        this.props.foldable ||
-                        (this.props.hasCloser &&
-                        <IconButton
-                            className={ this.cn('closer') }
-                            onClick={ this.handleCloserClick }
-                        >
-                            <IconClose />
-                        </IconButton>)
+                        this.props.foldable
+                        || (this.props.hasCloser
+                        && (
+                            <IconButton
+                                className={ this.cn('closer') }
+                                onClick={ this.handleCloserClick }
+                            >
+                                <IconClose />
+                            </IconButton>
+                        ))
                     }
                 </div>
             </div>
@@ -204,7 +212,8 @@ export class Plate extends React.PureComponent<PlateProps> {
     private handleTitleClick = (event) => {
         if (this.props.foldable) {
             this.setState({
-                isFolded: !this.state.isFolded
+                // eslint-disable-next-line react/no-access-state-in-setstate
+                isFolded: !this.state.isFolded,
             });
         }
 
@@ -221,7 +230,8 @@ export class Plate extends React.PureComponent<PlateProps> {
 
     private handleFolderClick = (event) => {
         this.setState({
-            isFolded: !this.state.isFolded
+            // eslint-disable-next-line react/no-access-state-in-setstate
+            isFolded: !this.state.isFolded,
         });
 
         if (this.props.onFolderClick) {
@@ -231,7 +241,7 @@ export class Plate extends React.PureComponent<PlateProps> {
 
     private handleCloserClick = (event) => {
         this.setState({
-            isHidden: true
+            isHidden: true,
         });
 
         if (this.props.onCloserClick) {

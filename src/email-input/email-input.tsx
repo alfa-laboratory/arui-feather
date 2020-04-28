@@ -27,7 +27,7 @@ export class EmailInput extends React.PureComponent<InputProps> {
         return (
             <Input
                 { ...this.props }
-                type='email'
+                type="email"
                 ref={ (root) => {
                     this.root = root;
                 } }

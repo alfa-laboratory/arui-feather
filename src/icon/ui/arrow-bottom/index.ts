@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './arrow-bottom.css';
-import '../../../icon';
+import '../..';
 
 export * from './arrow-bottom';
 export { default } from './arrow-bottom';

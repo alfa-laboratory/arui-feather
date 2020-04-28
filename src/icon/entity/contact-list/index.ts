@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './contact-list.css';
-import '../../../icon';
+import '../..';
 
 export * from './contact-list';
 export { default } from './contact-list';

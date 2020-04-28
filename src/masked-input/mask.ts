@@ -25,17 +25,17 @@ const DEFAULT_FORMAT_CHARACTERS: FormatCharacters = {
     '*': {
         validate(char) {
             return ALPHANNUMERIC_RE.test(char);
-        }
+        },
     },
     1: {
         validate(char) {
             return DIGIT_RE.test(char);
-        }
+        },
     },
     a: {
         validate(char) {
             return LETTER_RE.test(char);
-        }
+        },
     },
     A: {
         validate(char) {
@@ -43,7 +43,7 @@ const DEFAULT_FORMAT_CHARACTERS: FormatCharacters = {
         },
         transform(char) {
             return char.toUpperCase();
-        }
+        },
     },
     '#': {
         validate(char) {
@@ -51,8 +51,8 @@ const DEFAULT_FORMAT_CHARACTERS: FormatCharacters = {
         },
         transform(char) {
             return char.toUpperCase();
-        }
-    }
+        },
+    },
 };
 
 /**
@@ -90,7 +90,7 @@ class Mask {
         this.pattern = new InputMask.Pattern(
             mask,
             { ...DEFAULT_FORMAT_CHARACTERS, ...formatCharacters },
-            PLACEHOLDER_CHAR
+            PLACEHOLDER_CHAR,
         );
 
         this.length = this.pattern.length;

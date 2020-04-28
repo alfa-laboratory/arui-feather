@@ -11,7 +11,7 @@ const PROP_SETS = [
     { text: 'Radio', error: true },
     { text: 'Radio', type: 'button', error: true },
     { text: 'Radio', disabled: true },
-    { text: 'Radio', type: 'button', disabled: true }
+    { text: 'Radio', type: 'button', disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {

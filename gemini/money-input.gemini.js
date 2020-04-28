@@ -9,8 +9,8 @@ const PROP_SETS = [
     {
         showCurrency: true,
         currencyCode: 'USD',
-        bold: true
-    }
+        bold: true,
+    },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -27,7 +27,7 @@ geminiReact.suite(NAME, () => {
                     const props = { theme, size, ...set };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <MoneyInput { ...props } value='1 000 000' />
+                            <MoneyInput { ...props } value="1 000 000" />
                         </GeminiBox>
                     );
 

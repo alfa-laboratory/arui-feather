@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './maestro.css';
-import '../../../icon';
+import '../..';
 
 export * from './maestro';
 export { default } from './maestro';

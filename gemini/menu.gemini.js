@@ -12,16 +12,16 @@ const MENU_1 = [
         content: 'MenuItem 1',
         value: 'value1',
         props: {
-            url: '#1'
-        }
+            url: '#1',
+        },
     },
     {
         type: 'item',
         content: 'MenuItem 2',
         value: 'value2',
         props: {
-            url: '#2'
-        }
+            url: '#2',
+        },
     },
     {
         type: 'item',
@@ -29,9 +29,9 @@ const MENU_1 = [
         value: 'value3',
         props: {
             url: '#3',
-            disabled: true
-        }
-    }
+            disabled: true,
+        },
+    },
 ];
 
 const MENU_2 = [
@@ -40,8 +40,8 @@ const MENU_2 = [
         content: 'MenuItem 1',
         value: '1',
         props: {
-            url: '#1'
-        }
+            url: '#1',
+        },
     },
     {
         type: 'group',
@@ -52,18 +52,18 @@ const MENU_2 = [
                 content: 'MenuItem 2',
                 value: '2',
                 props: {
-                    url: '#2'
-                }
+                    url: '#2',
+                },
             },
             {
                 type: 'item',
                 content: 'MenuItem 3',
                 value: '3',
                 props: {
-                    url: '#3'
-                }
-            }
-        ]
+                    url: '#3',
+                },
+            },
+        ],
     },
     {
         type: 'group',
@@ -74,8 +74,8 @@ const MENU_2 = [
                 content: 'MenuItem 4',
                 value: '4',
                 props: {
-                    url: '#4'
-                }
+                    url: '#4',
+                },
             },
             {
                 type: 'item',
@@ -84,11 +84,11 @@ const MENU_2 = [
                 props: {
                     url: '#5',
                     type: 'dropdown',
-                    popup: 'Popup Menu'
-                }
-            }
-        ]
-    }
+                    popup: 'Popup Menu',
+                },
+            },
+        ],
+    },
 ];
 
 /* eslint-disable object-curly-newline */
@@ -98,7 +98,7 @@ const PROP_SETS = [
     { mode: 'radio', content: MENU_2, checkedItems: ['value1'] },
     { mode: 'radio-check', view: 'horizontal', content: MENU_2, checkedItems: ['value2'] },
     { mode: 'check', view: 'horizontal', disabled: true, content: MENU_1, checkedItems: ['value1', 'value3'] },
-    { mode: 'radio', disabled: true, content: MENU_1, checkedItems: ['value1'] }
+    { mode: 'radio', disabled: true, content: MENU_1, checkedItems: ['value1'] },
 ];
 /* eslint-enable object-curly-newline */
 
@@ -118,18 +118,20 @@ geminiReact.suite(NAME, () => {
                         <GeminiBox theme={ theme }>
                             <div>
                                 {
-                                    set.mode &&
-                                    <Label size={ size }>
-                                        {
-                                            (set.mode === 'check' &&
-                                                'Меню с множественным выбором (mode="check")') ||
-                                            (set.mode === 'radio' &&
-                                                'Меню с одиночным обязательным выбором (mode="radio")') ||
-                                            (set.mode === 'radio-check' &&
-                                                'Меню с одиночным необязательным выбором (mode="radio-check")'
+                                    set.mode
+                                    && (
+                                        <Label size={ size }>
+                                            {
+                                                (set.mode === 'check'
+                                                && 'Меню с множественным выбором (mode="check")')
+                                            || (set.mode === 'radio'
+                                                && 'Меню с одиночным обязательным выбором (mode="radio")')
+                                            || (set.mode === 'radio-check'
+                                                && 'Меню с одиночным необязательным выбором (mode="radio-check")'
                                             )
-                                        }
-                                    </Label>
+                                            }
+                                        </Label>
+                                    )
                                 }
                                 <Menu { ...props }>
                                     Menu Item

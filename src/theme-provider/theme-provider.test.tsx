@@ -24,9 +24,9 @@ describe('theme-provider', () => {
 
     it('should render Button with `alfa-on-color` theme', () => {
         const themeProvider = mount(
-            <ThemeProvider theme='alfa-on-color'>
+            <ThemeProvider theme="alfa-on-color">
                 <Button>Render-test</Button>
-            </ThemeProvider>
+            </ThemeProvider>,
         );
 
         expect(themeProvider.find('button_theme_alfa-on-color')).toBeTruthy();
@@ -34,15 +34,15 @@ describe('theme-provider', () => {
 
     it('should render children with redefinition theme', () => {
         const themeProvider = mount(
-            <ThemeProvider theme='alfa-on-color'>
+            <ThemeProvider theme="alfa-on-color">
                 <div>
                     <div style={ { background: 'white' } }>
-                        <ThemeProvider theme='alfa-on-white'>
+                        <ThemeProvider theme="alfa-on-white">
                             <Paragraph>Paragraph-test</Paragraph>
                         </ThemeProvider>
                     </div>
                 </div>
-            </ThemeProvider>
+            </ThemeProvider>,
         );
         const paragraphNode = themeProvider.find('.paragraph');
 

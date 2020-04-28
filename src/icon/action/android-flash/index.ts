@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './android-flash.css';
-import '../../../icon';
+import '../..';
 
 export * from './android-flash';
 export { default } from './android-flash';

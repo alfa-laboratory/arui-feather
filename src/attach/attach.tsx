@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
@@ -28,16 +29,16 @@ function getDeclension(number: number, endingList: string[]): string {
         endingIndex = 2;
     } else {
         switch (number % 10) {
-            case 1:
-                endingIndex = 0;
-                break;
-            case 2:
-            case 3:
-            case 4:
-                endingIndex = 1;
-                break;
-            default:
-                endingIndex = 2;
+        case 1:
+            endingIndex = 0;
+            break;
+        case 2:
+        case 3:
+        case 4:
+            endingIndex = 1;
+            break;
+        default:
+            endingIndex = 2;
         }
     }
 
@@ -55,10 +56,10 @@ function isEqualArray(array1: any[], array2: any[]): boolean {
         return true;
     }
 
-    return array1 &&
-        array2 &&
-        array1.length === array2.length &&
-        array1.every((item, index) => item === array2[index]);
+    return array1
+        && array2
+        && array1.length === array2.length
+        && array1.every((item, index) => item === array2[index]);
 }
 
 function isEmptyArray(value: any) {
@@ -202,13 +203,13 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
         disabled: false,
         multiple: false,
         tabIndex: 0,
-        noFileText: 'Нет файла'
+        noFileText: 'Нет файла',
     };
 
     state: AttachState = {
         focused: false,
         hovered: false,
-        value: []
+        value: [],
     };
 
     private input: HTMLInputElement;
@@ -217,11 +218,11 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
         const nextValue = nextProps.value || [];
 
         if (
-            !isEmptyArray(nextValue) &&
-            !isEqualArray(nextValue as any[], prevState.value)
+            !isEmptyArray(nextValue)
+            && !isEqualArray(nextValue as any[], prevState.value)
         ) {
             return {
-                value: nextValue
+                value: nextValue,
             };
         }
 
@@ -243,7 +244,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
                     size: this.props.size,
                     disabled: this.props.disabled,
                     hovered: this.state.hovered,
-                    focused: this.state.focused
+                    focused: this.state.focused,
                 }) }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
@@ -262,14 +263,14 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
             disabled: this.props.disabled,
             size: this.props.size,
             icon: this.props.icon ? this.props.icon : <IconAttachment size={ this.props.size } />,
-            focused: this.state.focused
+            focused: this.state.focused,
         };
 
         return (
             <Button
                 { ...buttonProps }
-                tag='span'
-                leftAddons={
+                tag="span"
+                leftAddons={ (
                     <label
                         className={ this.cn('label') }
                         htmlFor={ this.props.id }
@@ -285,11 +286,11 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
                             multiple={ this.props.multiple }
                             name={ this.props.name }
                             tabIndex={ -1 }
-                            type='file'
+                            type="file"
                             onChange={ this.handleInputChange }
                         />
                     </label>
-                }
+                ) }
                 tabIndex={ this.props.tabIndex }
                 onClick={ this.handleButtonClick }
                 onFocus={ this.handleFocus }
@@ -308,9 +309,11 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
                 ? this.truncateFilename(files[0].name)
                 : (
                     <abbr
-                        title={ files.map(file => file.name).join() }
+                        title={ files.map((file) => file.name).join() }
                     >
-                        { files.length } { getDeclension(files.length, MULTIPLE_TEXTS) }
+                        { files.length }
+                        { ' ' }
+                        { getDeclension(files.length, MULTIPLE_TEXTS) }
                     </abbr>
                 );
 
@@ -320,7 +323,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
                         { content }
                     </span>
                     <button
-                        type='button'
+                        type="button"
                         className={ this.cn('clear') }
                         onClick={ this.handleClearClick }
                     />

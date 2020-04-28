@@ -2,13 +2,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 :root {
-    --popup-gradient:
-        color(var(--color-background-alfa-on-white) a(0)) 0%,
-        color(var(--color-background-alfa-on-white) a(.4)) 40%,
-        color(var(--color-background-alfa-on-white) a(.9)) 75%,
+    --popup-gradient: color(var(--color-background-alfa-on-white) a(0)) 0%,
+        color(var(--color-background-alfa-on-white) a(0.4)) 40%,
+        color(var(--color-background-alfa-on-white) a(0.9)) 75%,
         color(var(--color-background-alfa-on-white) a(1)) 100%;
 }
 
@@ -23,19 +22,11 @@
     &.popup_height_adaptive .popup__gradient,
     &.popup_target_screen .popup__gradient {
         &_top {
-            background:
-                linear-gradient(
-                    to top,
-                    var(--popup-gradient)
-                );
+            background: linear-gradient(to top, var(--popup-gradient));
         }
 
         &_bottom {
-            background:
-                linear-gradient(
-                    to bottom,
-                    var(--popup-gradient)
-                );
+            background: linear-gradient(to bottom, var(--popup-gradient));
         }
     }
 

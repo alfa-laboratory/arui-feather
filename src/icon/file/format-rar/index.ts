@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-rar.css';
-import '../../../icon';
+import '../..';
 
 export * from './format-rar';
 export { default } from './format-rar';

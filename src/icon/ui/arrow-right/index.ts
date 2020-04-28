@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './arrow-right.css';
-import '../../../icon';
+import '../..';
 
 export * from './arrow-right';
 export { default } from './arrow-right';

@@ -40,7 +40,7 @@ export class ProgressBar extends React.PureComponent<ProgressBarProps> {
 
     static defaultProps: Partial<ProgressBarProps> = {
         percent: 0,
-        size: 'm'
+        size: 'm',
     }
 
     render() {

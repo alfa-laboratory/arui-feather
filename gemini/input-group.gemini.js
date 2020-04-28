@@ -10,8 +10,8 @@ const PROP_SETS = [
     {
         inputs: [
             { key: 'input-1-1' },
-            { key: 'input-1-2' }
-        ]
+            { key: 'input-1-2' },
+        ],
     },
     {
         width: 'available',
@@ -19,17 +19,17 @@ const PROP_SETS = [
             { key: 'input-2-1' },
             { key: 'input-2-2' },
             { key: 'input-2-3' },
-            { key: 'input-2-4' }
-        ]
+            { key: 'input-2-4' },
+        ],
     },
     {
         inputs: [
             { key: 'input-3-1', error: 'Input Error' },
             { key: 'input-3-2', disabled: true },
             { key: 'input-3-3', error: 'Input Error' },
-            { key: 'input-3-4', disabled: true }
-        ]
-    }
+            { key: 'input-3-4', disabled: true },
+        ],
+    },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -48,10 +48,10 @@ geminiReact.suite(NAME, () => {
                         <GeminiBox theme={ theme } width={ set.width }>
                             <InputGroup { ...props }>
                                 {
-                                    set.inputs.map(input => (
+                                    set.inputs.map((input) => (
                                         <Input
                                             key={ input.key }
-                                            placeholder='Input ...'
+                                            placeholder="Input ..."
                                         />
                                     ))
                                 }

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-home-credit.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-home-credit';
 export { default } from './bank-home-credit';

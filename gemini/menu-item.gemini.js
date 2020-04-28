@@ -8,7 +8,7 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const PROP_SETS = [
     {},
     { view: 'pseudo' },
-    { disabled: true }
+    { disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {

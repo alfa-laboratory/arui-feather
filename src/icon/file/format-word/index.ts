@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-word.css';
-import '../../../icon';
+import '../..';
 
 export * from './format-word';
 export { default } from './format-word';

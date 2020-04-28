@@ -13,7 +13,7 @@ import performance from '../performance';
 import {
     formatAmount,
     THINSP,
-    AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR
+    AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR,
 } from '../lib/format-amount';
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
@@ -96,7 +96,7 @@ export class Amount extends React.Component<AmountProps> {
         size: 'm',
         showZeroMinorPart: true,
         bold: false,
-        isHeading: false
+        isHeading: false,
     };
 
     render() {
@@ -104,11 +104,11 @@ export class Amount extends React.Component<AmountProps> {
         const { majorPart, minorPart, currencySymbol } = formatAmount(amount);
 
         const amountInner = (
-            <>
+            <React.Fragment>
                 <span className={ this.cn('major') }>{ majorPart }</span>
                 { this.renderSeparatorAndMinorPart(minorPart) }
                 { this.renderCurrencySymbol(currencySymbol) }
-            </>
+            </React.Fragment>
         );
 
         return (
@@ -141,10 +141,10 @@ export class Amount extends React.Component<AmountProps> {
 
         if (needMinorPart) {
             return (
-                <>
+                <React.Fragment>
                     <span className={ this.cn('separator') }>{ AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR }</span>
                     <span className={ this.cn('minor') }>{ minorPart }</span>
-                </>
+                </React.Fragment>
             );
         }
 

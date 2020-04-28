@@ -277,7 +277,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
         size: 'm',
         type: 'text',
         view: 'default',
-        resetError: true
+        resetError: true,
     };
 
     componentDidUpdate(prevProps: InputProps) {
@@ -290,13 +290,14 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     state = {
         focused: false,
         error: this.props.error || null,
-        value: this.props.defaultValue || ''
+        value: this.props.defaultValue || '',
     };
 
     /**
      * @type {HTMLSpanElement}
      */
     private root;
+
     /**
      * @type {HTMLSpanElement}
      */
@@ -328,7 +329,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                     'has-icon': !!this.props.icon,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    invalid: !!this.state.error
+                    invalid: !!this.state.error,
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -337,17 +338,21 @@ export class Input extends React.PureComponent<InputProps, InputState> {
             >
                 <span className={ this.cn('inner') }>
                     {
-                        !!this.props.label &&
-                        <span className={ this.cn('top') }>
-                            { this.props.label }
-                        </span>
+                        !!this.props.label
+                        && (
+                            <span className={ this.cn('top') }>
+                                { this.props.label }
+                            </span>
+                        )
                     }
                     { this.renderContent() }
                     {
-                        (this.state.error || this.props.hint) &&
-                        <span className={ this.cn('sub') }>
-                            { this.state.error || this.props.hint }
-                        </span>
+                        (this.state.error || this.props.hint)
+                        && (
+                            <span className={ this.cn('sub') }>
+                                { this.state.error || this.props.hint }
+                            </span>
+                        )
                     }
                 </span>
             </span>
@@ -386,58 +391,68 @@ export class Input extends React.PureComponent<InputProps, InputState> {
             onTouchStart: this.handleTouchStart,
             onTouchEnd: this.handleTouchEnd,
             onTouchMove: this.handleTouchMove,
-            onTouchCancel: this.handleTouchCancel
+            onTouchCancel: this.handleTouchCancel,
         };
 
         return (
             <span
                 className={ this.cn('box') }
-                key='input-wrapper'
+                key="input-wrapper"
                 ref={ (box) => {
                     this.box = box;
                 } }
             >
                 {
-                    this.props.leftAddons &&
-                    <span className={ this.cn('addons', { left: true }) } key='left-addons'>
-                        { this.props.leftAddons }
-                    </span>
+                    this.props.leftAddons
+                    && (
+                        <span className={ this.cn('addons', { left: true }) } key="left-addons">
+                            { this.props.leftAddons }
+                        </span>
+                    )
                 }
                 {
                     isMaskedInput
-                        ? <MaskedInput
-                            { ...inputProps }
-                            mask={ this.props.mask }
-                            formatCharacters={ this.props.maskFormatCharacters }
-                            onProcessInputEvent={ this.props.onProcessMaskInputEvent }
-                            useWhitespaces={ this.props.useWhitespacesInMask }
-                        />
+                        ? (
+                            <MaskedInput
+                                { ...inputProps }
+                                mask={ this.props.mask }
+                                formatCharacters={ this.props.maskFormatCharacters }
+                                onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                                useWhitespaces={ this.props.useWhitespacesInMask }
+                            />
+                        )
                         : <input { ...inputProps } />
                 }
                 {
-                    this.props.clear && value &&
-                    <IconButton
-                        className={ this.cn('clear') }
-                        size={ this.props.size }
-                        tabIndex={ -1 }
-                        onClick={ this.handleClearClick }
-                    >
-                        <IconClose
+                    this.props.clear && value
+                    && (
+                        <IconButton
+                            className={ this.cn('clear') }
                             size={ this.props.size }
-                        />
-                    </IconButton>
+                            tabIndex={ -1 }
+                            onClick={ this.handleClearClick }
+                        >
+                            <IconClose
+                                size={ this.props.size }
+                            />
+                        </IconButton>
+                    )
                 }
                 {
-                    this.props.icon &&
-                    <div className={ this.cn('icon') }>
-                        { this.props.icon }
-                    </div>
+                    this.props.icon
+                    && (
+                        <div className={ this.cn('icon') }>
+                            { this.props.icon }
+                        </div>
+                    )
                 }
                 {
-                    this.props.rightAddons &&
-                    <span className={ this.cn('addons', { right: true }) } key='right-addons'>
-                        { this.props.rightAddons }
-                    </span>
+                    this.props.rightAddons
+                    && (
+                        <span className={ this.cn('addons', { right: true }) } key="right-addons">
+                            { this.props.rightAddons }
+                        </span>
+                    )
                 }
             </span>
         );
@@ -615,7 +630,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
      */
     public scrollTo() {
         scrollTo({
-            targetY: (this.root.getBoundingClientRect().top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            targetY: (this.root.getBoundingClientRect().top + window.pageYOffset) - SCROLL_TO_CORRECTION,
         });
     }
 
@@ -659,7 +674,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     private resetError() {
         if (this.props.resetError) {
             this.setState({
-                error: null
+                error: null,
             });
         }
     }

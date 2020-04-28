@@ -46,7 +46,7 @@ type MqState = {
  */
 class Mq extends React.Component<MqProps, MqState> {
     state = {
-        isMatched: false
+        isMatched: false,
     };
 
     private mql: MediaQueryList | null = null;
@@ -85,7 +85,7 @@ class Mq extends React.Component<MqProps, MqState> {
         }
 
         this.setState({
-            isMatched: (queryPass && touchPass)
+            isMatched: (queryPass && touchPass),
         }, () => {
             if (this.props.onMatchChange) {
                 this.props.onMatchChange(this.state.isMatched);

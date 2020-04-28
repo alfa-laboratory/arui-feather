@@ -13,7 +13,7 @@ const DEFAULT_DIRECTIONS = [
     'bottom-left', 'bottom-center', 'bottom-right',
     'top-left', 'top-center', 'top-right',
     'right-top', 'right-center', 'right-bottom',
-    'left-top', 'left-center', 'left-bottom'
+    'left-top', 'left-center', 'left-bottom',
 ];
 
 /**
@@ -72,7 +72,7 @@ export function calcTargetDimensions(popup) {
             left: popup.targetPosition.left,
             top: popup.targetPosition.top,
             width: 0,
-            height: 0
+            height: 0,
         };
     }
 
@@ -87,7 +87,7 @@ export function calcTargetDimensions(popup) {
             left: (anchorRect.left - fitContainerRect.left) + fitContainer.scrollLeft,
             top: (anchorRect.top - fitContainerRect.top) + fitContainer.scrollTop,
             width: anchorRect.width,
-            height: anchorRect.height
+            height: anchorRect.height,
         };
     }
 
@@ -95,7 +95,7 @@ export function calcTargetDimensions(popup) {
         left: anchorRect.left + window.pageXOffset,
         top: anchorRect.top + window.pageYOffset,
         width: anchorRect.width,
-        height: anchorRect.height
+        height: anchorRect.height,
     };
 }
 
@@ -114,7 +114,7 @@ function calcViewportDimensions() {
         top: winTop,
         left: winLeft,
         bottom: winTop + winHeight,
-        right: winLeft + winWidth
+        right: winLeft + winWidth,
     };
 }
 
@@ -134,7 +134,7 @@ function calcContainerDimensions(container) {
         top: containerTop,
         left: containerLeft,
         bottom: containerTop + containerHeight,
-        right: containerLeft + containerWidth
+        right: containerLeft + containerWidth,
     };
 }
 
@@ -167,25 +167,26 @@ function calcFitContainerFactor(
     position,
     fitContainerDimensions,
     popupDimensions,
-    popupOffsetFitContainer) {
+    popupOffsetFitContainer,
+) {
     const intersectionLeft = Math.max(
         position.left,
-        fitContainerDimensions.left + popupOffsetFitContainer
+        fitContainerDimensions.left + popupOffsetFitContainer,
     );
 
     const intersectionRight = Math.min(
         position.left + popupDimensions.width,
-        fitContainerDimensions.right - popupOffsetFitContainer
+        fitContainerDimensions.right - popupOffsetFitContainer,
     );
 
     const intersectionTop = Math.max(
         position.top,
-        fitContainerDimensions.top + popupOffsetFitContainer
+        fitContainerDimensions.top + popupOffsetFitContainer,
     );
 
     const intersectionBottom = Math.min(
         position.top + popupDimensions.height,
-        fitContainerDimensions.bottom - popupOffsetFitContainer
+        fitContainerDimensions.bottom - popupOffsetFitContainer,
     );
 
     if ((intersectionLeft < intersectionRight) && (intersectionTop < intersectionBottom)) {
@@ -215,55 +216,55 @@ function calcPos(direction, targetDimensions, popupDimensions, popup) {
     const secondaryDirection = getSecondaryDirection(direction);
 
     switch (mainDirection) {
-        case 'bottom':
-            result.top = targetDimensions.top + targetDimensions.height + mainOffset;
-            break;
-        case 'top':
-            result.top = targetDimensions.top - popupDimensions.height - mainOffset;
-            break;
-        case 'left':
-            result.left = targetDimensions.left - popupDimensions.width - mainOffset;
-            break;
-        case 'right':
-            result.left = targetDimensions.left + targetDimensions.width + mainOffset;
-            break;
-        default:
-            break;
+    case 'bottom':
+        result.top = targetDimensions.top + targetDimensions.height + mainOffset;
+        break;
+    case 'top':
+        result.top = targetDimensions.top - popupDimensions.height - mainOffset;
+        break;
+    case 'left':
+        result.left = targetDimensions.left - popupDimensions.width - mainOffset;
+        break;
+    case 'right':
+        result.left = targetDimensions.left + targetDimensions.width + mainOffset;
+        break;
+    default:
+        break;
     }
 
     switch (secondaryDirection) {
-        case 'right':
-            result.left = (targetDimensions.left + targetDimensions.width) - popupDimensions.width - secondaryOffset;
+    case 'right':
+        result.left = (targetDimensions.left + targetDimensions.width) - popupDimensions.width - secondaryOffset;
+        break;
+    case 'left':
+        result.left = targetDimensions.left + secondaryOffset;
+        break;
+    case 'bottom':
+        result.top = (targetDimensions.top + targetDimensions.height) - popupDimensions.height - secondaryOffset;
+        break;
+    case 'top':
+        result.top = targetDimensions.top + secondaryOffset;
+        break;
+    case 'center':
+        switch (mainDirection) {
+        case 'top':
+        case 'bottom':
+            result.left = targetDimensions.left + (
+                (targetDimensions.width / 2) - (popupDimensions.width / 2)
+            );
             break;
         case 'left':
-            result.left = targetDimensions.left + secondaryOffset;
-            break;
-        case 'bottom':
-            result.top = (targetDimensions.top + targetDimensions.height) - popupDimensions.height - secondaryOffset;
-            break;
-        case 'top':
-            result.top = targetDimensions.top + secondaryOffset;
-            break;
-        case 'center':
-            switch (mainDirection) {
-                case 'top':
-                case 'bottom':
-                    result.left = targetDimensions.left + (
-                        (targetDimensions.width / 2) - (popupDimensions.width / 2)
-                    );
-                    break;
-                case 'left':
-                case 'right':
-                    result.top = targetDimensions.top + (
-                        (targetDimensions.height / 2) - (popupDimensions.height / 2)
-                    );
-                    break;
-                default:
-                    break;
-            }
+        case 'right':
+            result.top = targetDimensions.top + (
+                (targetDimensions.height / 2) - (popupDimensions.height / 2)
+            );
             break;
         default:
             break;
+        }
+        break;
+    default:
+        break;
     }
 
     return result;
@@ -281,7 +282,7 @@ export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimen
     const popupDimensions = {
         width: popup.width,
         height: popup.height,
-        area: popup.width * popup.height
+        area: popup.width * popup.height,
     };
     const directions = popup.directions
         ? popup.directions
@@ -321,7 +322,7 @@ export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimen
             newPopupDimensions = {
                 width: popup.width,
                 height,
-                area: popup.width * height
+                area: popup.width * height,
             };
         }
 
@@ -330,12 +331,12 @@ export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimen
             position,
             fitContainerDimensions,
             popupDimensions,
-            popup.offset.fitContainer
+            popup.offset.fitContainer,
         );
 
-        if (i === 1 ||
-            fitContainerFactor > bestFitContainerFactor ||
-            (!bestFitContainerFactor && popup.bestDirection)
+        if (i === 1
+            || fitContainerFactor > bestFitContainerFactor
+            || (!bestFitContainerFactor && popup.bestDirection)
         ) {
             bestFitContainerFactor = fitContainerFactor;
             bestDirection = direction;
@@ -362,6 +363,6 @@ export function calcBestDrawingParams(popup, targetDimensions, fitContainerDimen
         left: bestPosition.left,
         top: bestPosition.top,
         height: bestHeight || 'auto',
-        overflow
+        overflow,
     };
 }

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './crown.css';
-import '../../../icon';
+import '../..';
 
 export * from './crown';
 export { default } from './crown';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './verifying.css';
-import '../../../icon';
+import '../..';
 
 export * from './verifying';
 export { default } from './verifying';

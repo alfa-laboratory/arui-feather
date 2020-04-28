@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-outer.css';
-import '../../../icon';
+import '../..';
 
 export * from './transfer-outer';
 export { default } from './transfer-outer';

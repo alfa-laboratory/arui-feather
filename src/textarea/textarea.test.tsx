@@ -106,7 +106,7 @@ describe('textarea', () => {
     });
 
     it('should set value from props', () => {
-        const textarea = mount(<Textarea value='text' />);
+        const textarea = mount(<Textarea value="text" />);
 
         expect(textarea.find('textarea').props().value).toEqual('text');
     });
@@ -133,25 +133,25 @@ describe('textarea', () => {
     });
 
     it('should render with resize `none` class', () => {
-        const textarea = mount(<Textarea resize='none' />);
+        const textarea = mount(<Textarea resize="none" />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_none');
     });
 
     it('should render with resize `both` class', () => {
-        const textarea = mount(<Textarea resize='both' />);
+        const textarea = mount(<Textarea resize="both" />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_both');
     });
 
     it('should render with resize `vertical` class', () => {
-        const textarea = mount(<Textarea resize='vertical' />);
+        const textarea = mount(<Textarea resize="vertical" />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_vertical');
     });
 
     it('should render with resize `horizontal` class', () => {
-        const textarea = mount(<Textarea resize='horizontal' />);
+        const textarea = mount(<Textarea resize="horizontal" />);
 
         expect(textarea.getDOMNode().className).toContain('textarea_resize_horizontal');
     });

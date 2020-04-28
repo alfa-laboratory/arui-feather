@@ -9,7 +9,7 @@ import { PopupHeader } from './popup-header';
 
 describe('popup-header', () => {
     it('should render without problems', () => {
-        const popupHeader = shallow(<PopupHeader title='Title' />);
+        const popupHeader = shallow(<PopupHeader title="Title" />);
 
         expect(popupHeader).toMatchSnapshot();
         expect(popupHeader.text()).toContain('Title');

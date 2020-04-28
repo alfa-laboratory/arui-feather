@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './pause.css';
-import '../../../icon';
+import '../..';
 
 export * from './pause';
 export { default } from './pause';

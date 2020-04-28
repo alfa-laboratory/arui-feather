@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
@@ -23,7 +24,7 @@ const DIMENSIONS = {
     s: [15, 12],
     m: [20, 15],
     l: [22, 17],
-    xl: [24, 20]
+    xl: [24, 20],
 };
 
 const COMPONENT_DIR = './';
@@ -33,7 +34,7 @@ const CHUNKS_IMG_DIR = './images/chunks';
 function getImageHeightBySize(size, ratio = 1) {
     return {
         width: DIMENSIONS[size][0] * ratio,
-        height: DIMENSIONS[size][1] * ratio
+        height: DIMENSIONS[size][1] * ratio,
     };
 }
 
@@ -42,8 +43,8 @@ function optimizeGmFile(file) {
 }
 
 gulp.task('clean:flag-icon', () => del(
-    [`${COMPONENT_DIR}/flag-icon_size_*.css`, SPRITES_IMG_DIR, CHUNKS_IMG_DIR])
-);
+    [`${COMPONENT_DIR}/flag-icon_size_*.css`, SPRITES_IMG_DIR, CHUNKS_IMG_DIR],
+));
 
 SIZES.forEach((size) => {
     const cssChunksTemplate = hbs.compile(fs.readFileSync(`${COMPONENT_DIR}/flag-icon.chunks.css.hbs`).toString());
@@ -52,13 +53,14 @@ SIZES.forEach((size) => {
     // Process 2-char country code files only (ignore subregions)
     gulp.task(`flag-icon:resize-${size}`, () => gulp.src('../../node_modules/region-flags/png/??.png')
         .pipe(rename((path) => {
+            // eslint-disable-next-line no-param-reassign
             path.basename = path.basename.toLowerCase();
         }))
         // You need graphicsmagick installed on your system:
         // https://github.com/scalableminds/gulp-gm#graphicsmagick-or-imagemagick
-        .pipe(gm((file => file.resize(
+        .pipe(gm(((file) => file.resize(
             getImageHeightBySize(size, 2).width,
-            getImageHeightBySize(size, 2).height
+            getImageHeightBySize(size, 2).height,
         ))))
         .pipe(gm((file, done) => {
             // We need to run through new dimensions & resize with even numbers if it has odd ones
@@ -78,7 +80,7 @@ SIZES.forEach((size) => {
                     done(null, optimizeGmFile(file.resize(
                         width + east,
                         height + south,
-                        '!' // Override aspect ratio
+                        '!', // Override aspect ratio
                     )));
                 } else {
                     done(null, optimizeGmFile(file));
@@ -94,13 +96,12 @@ SIZES.forEach((size) => {
 
                 done(null, optimizeGmFile(file.resize(
                     dimensions.width / 2,
-                    dimensions.height / 2
+                    dimensions.height / 2,
                 )));
             });
         }))
         // We need to save files on disk cause of spritesmith's retinaSrcFilter inability to read streams
-        .pipe(gulp.dest(`${CHUNKS_IMG_DIR}/${size}/1x`))
-    );
+        .pipe(gulp.dest(`${CHUNKS_IMG_DIR}/${size}/1x`)));
 
     gulp.task(`flag-icon:chunks-${size}`, [`flag-icon:resize-${size}`],
         () => gulp.src(`${CHUNKS_IMG_DIR}/${size}/1x/*.png`)
@@ -117,24 +118,23 @@ SIZES.forEach((size) => {
                         width: `${dimensions.width}px`,
                         height: `${dimensions.height}px`,
                         name,
-                        url: `${CHUNKS_IMG_DIR}/${size}/1x/${url[1]}`
+                        url: `${CHUNKS_IMG_DIR}/${size}/1x/${url[1]}`,
                     });
 
                     done(null, file);
                 });
             }))
             .on('end', () => {
-                cssChunksData.retinaChunks = cssChunksData.chunks.map(item => ({
+                cssChunksData.retinaChunks = cssChunksData.chunks.map((item) => ({
                     name: item.name,
-                    url: item.url.replace('/1x/', '/2x/')
+                    url: item.url.replace('/1x/', '/2x/'),
                 }));
 
                 fs.writeFileSync(
                     `${COMPONENT_DIR}/flag-icon_size_${size}.chunks.css`,
-                    cssChunksTemplate(cssChunksData)
+                    cssChunksTemplate(cssChunksData),
                 );
-            })
-    );
+            }));
 
     gulp.task(`flag-icon:sprite-${size}`, [`flag-icon:resize-${size}`], () => {
         const spriteData = gulp.src(`${CHUNKS_IMG_DIR}/${size}/**/*.png`)
@@ -146,19 +146,21 @@ SIZES.forEach((size) => {
                 cssTemplate: `${COMPONENT_DIR}/flag-icon.sprite.css.hbs`,
                 cssOpts: { size },
                 cssVarMap: (sprite) => {
+                    // eslint-disable-next-line no-param-reassign
                     sprite.selector = `.flag-icon_country_${sprite.name}`;
 
                     // https://github.com/twolfson/gulp.spritesmith/issues/124
                     if (sprite.source_image.indexOf('2x') !== -1) {
+                        // eslint-disable-next-line no-param-reassign
                         sprite.name += '-2x';
                     }
-                }
+                },
             }));
 
         const imageStream = spriteData.img
             .pipe(buffer())
             .pipe(imagemin([
-                imagemin.optipng({ optimizationLevel: 7 })
+                imagemin.optipng({ optimizationLevel: 7 }),
             ]))
             .pipe(gulp.dest(SPRITES_IMG_DIR));
 
@@ -170,6 +172,5 @@ SIZES.forEach((size) => {
 });
 
 gulp.task('default', ['clean:flag-icon']
-    .concat(SIZES.map(size => `flag-icon:chunks-${size}`))
-    .concat(SIZES.map(size => `flag-icon:sprite-${size}`))
-);
+    .concat(SIZES.map((size) => `flag-icon:chunks-${size}`))
+    .concat(SIZES.map((size) => `flag-icon:sprite-${size}`)));

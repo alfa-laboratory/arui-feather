@@ -354,4 +354,15 @@ describe('calendar', () => {
 
         expect(calendarSelectNode.length).toBe(30);
     });
+
+    it('should render 6 week lines for any month', () => {
+        const calendar = mount(<Calendar
+            month={ new Date('2021-02-02').valueOf() }
+            isHeightFixed={ true }
+        />);
+
+        const days = calendar.find('.calendar__day');
+
+        expect(days.length).toBe(42);
+    });
 });

@@ -25,10 +25,14 @@ export type PhoneInputProps = DeepReadonly<InputProps & {
     placeholder?: string;
 }>;
 
+type PhoneInputState = {
+    updatedValue?: string;
+}
+
 /**
  * Компонент ввода телефона по маске.
  */
-export class PhoneInput extends React.PureComponent<PhoneInputProps> {
+export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputState> {
     protected cn = createCn('phone-input');
 
     static defaultProps: Partial<PhoneInputProps> = {
@@ -36,9 +40,16 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps> {
         placeholder: '+7 000 000 00 00',
     };
 
+    state = {
+        updatedValue: undefined,
+    };
+
     root;
 
     render() {
+        const { value } = this.props;
+        const { updatedValue } = this.state;
+
         return (
             <Input
                 { ...this.props }
@@ -48,8 +59,55 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps> {
                 } }
                 formNoValidate={ true }
                 className={ this.cn() }
+                onChange={ this.handleChange }
+                value={ updatedValue === undefined ? value : updatedValue }
             />
         );
+    }
+
+    /**
+     * Промежуточный обработчик value после изменения значения.
+     * В value проверяется, что первый числовой символ 7,
+     * если 7, то ничего не делаем
+     * если 8, то происходит замена на 7
+     * иначе вставляем 7, а остальное сдвигаем
+     */
+    private handleChange = (value?: string, event?: React.ChangeEvent<any>) => {
+        const { onChange } = this.props;
+        let valueForOnChange = value;
+
+        if (value?.length > 1 && !/^\+7.*$/.test(value)) {
+            const [plus, code]: [string, string] = value;
+
+            if (code === '8') {
+                valueForOnChange = value.replace(/^\+(8)(.*)$/, '+7$2');
+            } else {
+                valueForOnChange = `${plus}7${PhoneInput.shiftValue(value.slice(1).replace(/\s/g, ''))}`;
+            }
+        } else if (value?.length === 1) {
+            valueForOnChange = '';
+        }
+        if (onChange) {
+            onChange(valueForOnChange, event);
+        } else {
+            this.setState({ updatedValue: valueForOnChange });
+        }
+    };
+
+    static shiftValue(originalValue: string, mask = ' 111 111 11 11'): string {
+        let shiftedValue = '';
+        let specCounter = 0;
+
+        mask.split('').forEach((sym, index) => {
+            if (sym !== '1' && originalValue[index - specCounter]) {
+                shiftedValue += sym;
+                specCounter += 1;
+            } else {
+                shiftedValue += originalValue[index - specCounter] || '';
+            }
+        });
+
+        return shiftedValue;
     }
 
     /**

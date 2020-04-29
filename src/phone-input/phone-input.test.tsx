@@ -44,4 +44,11 @@ describe('phone-input', () => {
         phoneInput.instance().blur();
         expect(input.blur).toHaveBeenCalled();
     });
+
+    it('should call shift-value', () => {
+        expect(PhoneInput.shiftValue('9163590999')).toBe(' 916 359 09 99');
+        expect(PhoneInput.shiftValue('9163590')).toBe(' 916 359 0');
+        expect(PhoneInput.shiftValue('9163')).toBe(' 916 3');
+        expect(PhoneInput.shiftValue('91')).toBe(' 91');
+    });
 });

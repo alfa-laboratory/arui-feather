@@ -41,7 +41,7 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
     };
 
     state = {
-        updatedValue: undefined
+        updatedValue: undefined,
     };
 
     root;
@@ -94,8 +94,8 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
         }
     };
 
-    static shiftValue(originalValue: string, mask: string = ' 111 111 11 11'): string {
-        let shiftedValue: string = '';
+    static shiftValue(originalValue: string, mask = ' 111 111 11 11'): string {
+        let shiftedValue = '';
         let specCounter = 0;
 
         mask.split('').forEach((sym, index) => {

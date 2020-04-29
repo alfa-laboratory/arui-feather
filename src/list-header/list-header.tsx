@@ -62,6 +62,7 @@ export class ListHeader extends React.PureComponent<ListHeaderProps> {
                 { this.props.description && (
                     <span className={ this.cn('description') }>
                         ,
+                        { ' ' }
                         { this.props.description }
                     </span>
                 ) }

@@ -356,10 +356,7 @@ describe('calendar', () => {
     });
 
     it('should render 6 week lines for any month', () => {
-        const calendar = mount(<Calendar
-            month={ new Date('2021-02-02').valueOf() }
-            isHeightFixed={ true }
-        />);
+        const calendar = mount(<Calendar month={ new Date('2021-02-02').valueOf() } />);
 
         const days = calendar.find('.calendar__day');
 

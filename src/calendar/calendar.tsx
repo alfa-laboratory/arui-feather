@@ -33,6 +33,8 @@ import { withTheme } from '../cn';
 const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
 const LATER_YEARS_LIMIT = 1;
+const TOTAL_WEEK_NUMBER = 6;
+const SUNDAY_INDEX = 6;
 
 export type CalendarProps = DeepReadonly<{
 
@@ -155,11 +157,6 @@ export type CalendarProps = DeepReadonly<{
      * Обработчик снятия фокуса
      */
     onBlur?: (event?: React.FocusEvent<any>) => void;
-
-    /**
-     * Фиксированная высота календаря (шесть недель)
-     */
-    isHeightFixed?: boolean;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -811,10 +808,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     private calculateWeeks() {
         let weekDay: number;
-        let weekCounter = this.props.isHeightFixed ? 6 : 5;
+        let weekCounter = TOTAL_WEEK_NUMBER;
         let isCurrentMonth = true;
         const weeks = [];
-        const lastDay = 6;
+        const lastDay = SUNDAY_INDEX;
         const currentMonth = new Date(this.state.month).getMonth();
         const dateIterator = new Date(this.state.month);
 

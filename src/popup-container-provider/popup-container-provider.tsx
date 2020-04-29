@@ -83,17 +83,18 @@ class PopupContainerProvider extends
     protected cn = createCn('popup-container');
 
     state = {
-        didRender: false // eslint-disable-line react/no-unused-state
+        didRender: false, // eslint-disable-line react/no-unused-state
     };
 
     private renderContainer: IsolatedContainer;
+
     private positioningContainer: HTMLElement;
 
     getChildContext() {
         return {
             isInCustomContainer: true,
             renderContainerElement: (this.renderContainer && this.renderContainer.getNode()),
-            positioningContainerElement: this.positioningContainer
+            positioningContainerElement: this.positioningContainer,
         };
     }
 
@@ -127,7 +128,7 @@ class PopupContainerProvider extends
      */
     private handleContainerDidRender() {
         this.setState({
-            didRender: true // eslint-disable-line react/no-unused-state
+            didRender: true, // eslint-disable-line react/no-unused-state
         });
     }
 

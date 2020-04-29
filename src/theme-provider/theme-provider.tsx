@@ -30,16 +30,16 @@ export type ThemeProviderProps = DeepReadonly<{
  */
 class ThemeProvider extends React.Component<ThemeProviderProps> {
     static contextTypes = {
-        theme: Type.string
+        theme: Type.string,
     };
 
     static childContextTypes = {
-        theme: Type.string
+        theme: Type.string,
     };
 
     getChildContext() {
         return {
-            theme: this.props.theme
+            theme: this.props.theme,
         };
     }
 

@@ -9,13 +9,13 @@ const AMOUNT = {
     value: 123535,
     currency: {
         code: 'RUR',
-        minority: 100
-    }
+        minority: 100,
+    },
 };
 
 const PROP_SETS = [
     { isHeading: true },
-    { isHeading: false }
+    { isHeading: false },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -32,7 +32,7 @@ geminiReact.suite(NAME, () => {
                         theme,
                         size,
                         amount: AMOUNT,
-                        isHeading: isHeadingProp.isHeading
+                        isHeading: isHeadingProp.isHeading,
                     };
                     const template = (
                         <GeminiBox theme={ theme }>

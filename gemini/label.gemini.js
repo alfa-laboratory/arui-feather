@@ -7,7 +7,7 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl']
 
 const PROP_SETS = [
     {},
-    { isNoWrap: true }
+    { isNoWrap: true },
 ];
 
 geminiReact.suite(NAME, () => {

@@ -12,7 +12,7 @@ describe('notification', () => {
         const notification = shallow(
             <Notification>
                 notification-text
-            </Notification>
+            </Notification>,
         );
 
         expect(notification).toMatchSnapshot();
@@ -28,7 +28,7 @@ describe('notification', () => {
                 onClick={ onClick }
             >
                 notification-text
-            </Notification>
+            </Notification>,
         );
 
         notification.simulate('click');
@@ -45,7 +45,7 @@ describe('notification', () => {
                 onCloserClick={ onCloserClick }
             >
                 notification-text
-            </Notification>
+            </Notification>,
         );
         const crossIconNode = notification.find('.notification__closer').at(0);
 
@@ -63,7 +63,7 @@ describe('notification', () => {
                 onCloseTimeout={ onCloseTimeout }
             >
                 notification-text
-            </Notification>
+            </Notification>,
         );
 
         notification.simulate('mouseEnter');
@@ -84,14 +84,13 @@ describe('notification', () => {
                 onClickOutside={ onClickOutside }
             >
                 notification-text
-            </Notification>
+            </Notification>,
         );
 
         const outsideElement = document.createElement('div');
 
         outsideElement.setAttribute('style',
-            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
-        );
+            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;');
         document.body.appendChild(outsideElement);
 
         setTimeout(() => {
@@ -105,10 +104,10 @@ describe('notification', () => {
         const notification = shallow(
             <Notification
                 hasCloser={ true }
-                icon={ <div className='super-icon' /> }
+                icon={ <div className="super-icon" /> }
             >
                 notification-text
-            </Notification>
+            </Notification>,
         );
         const iconNode = notification.find('.super-icon');
 

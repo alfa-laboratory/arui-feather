@@ -52,8 +52,8 @@ describe('mask', () => {
             c: {
                 validate(char) {
                     return /^[ЁёА-Яа-я]$/.test(char);
-                }
-            }
+                },
+            },
         };
         const mask = new Mask('c 111 cc', cyrillic);
 

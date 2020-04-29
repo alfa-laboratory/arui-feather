@@ -12,7 +12,7 @@ const HEADING_LEVEL = {
     l: 2,
     m: 3,
     s: 4,
-    xs: 5
+    xs: 5,
 };
 
 export type HeadingProps = DeepReadonly<{
@@ -62,23 +62,22 @@ export class Heading extends React.PureComponent<HeadingProps> {
 
     static defaultProps: Partial<HeadingProps> = {
         size: 'xl',
-        hasDefaultMargins: true
+        hasDefaultMargins: true,
     };
 
     render() {
         const headingProps = {
             className: this.cn({
                 size: this.props.size,
-                [`margins_${this.props.size}`]: this.props.hasDefaultMargins
+                [`margins_${this.props.size}`]: this.props.hasDefaultMargins,
             }),
             id: this.props.id,
-            'data-test-id': this.props['data-test-id']
+            'data-test-id': this.props['data-test-id'],
         };
 
         return React.createElement(`h${HEADING_LEVEL[this.props.size]}`,
             headingProps,
-            this.props.children
-        );
+            this.props.children);
     }
 }
 

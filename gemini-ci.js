@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 /* eslint no-confusing-arrow: 0 */
 /* eslint strict: [0, "global"] */
@@ -15,7 +16,7 @@ function exit(code) {
 }
 
 function promiseTry(func) {
-    return new Promise(resolve => resolve(func()));
+    return new Promise((resolve) => resolve(func()));
 }
 
 function runGemini(paths = []) {
@@ -32,8 +33,8 @@ function runGemini(paths = []) {
 
         return gemini;
     })
-        .then(gemini => gemini.test(paths, { reporters: [{ name: 'flat' }] }))
-        .then(stats => stats.failed > 0 ? 2 : 0)
+        .then((gemini) => gemini.test(paths, { reporters: [{ name: 'flat' }] }))
+        .then((stats) => stats.failed > 0 ? 2 : 0)
         .catch(handleErrors)
         .then(exit);
 }

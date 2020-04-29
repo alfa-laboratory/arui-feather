@@ -8,11 +8,11 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const PROP_SETS = [
     {},
     {
-        value: [{ name: 'Document.pdf' }]
+        value: [{ name: 'Document.pdf' }],
     },
     {
-        disabled: true
-    }
+        disabled: true,
+    },
 ];
 
 geminiReact.suite(NAME, () => {

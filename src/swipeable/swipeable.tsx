@@ -4,7 +4,7 @@ import { DeepReadonly } from 'utility-types';
 // TODO: функция вызывается на TouchEvent и PointerEvent хотя больше от этого путанницы
 // Тут надо отдельно рефачить и типы и имплементацию чтоб ничего не сломать
 export const getCoordinates = ({
-    touches, changedTouches, clientX, clientY
+    touches, changedTouches, clientX, clientY,
 }: Partial<TouchEvent & PointerEvent>) => (
     (touches && changedTouches)
         ? { clientX: (touches[0] || changedTouches[0]).clientX, clientY: (touches[0] || changedTouches[0]).clientY }
@@ -31,14 +31,16 @@ export type SwipeableProps = DeepReadonly<{
 }>;
 
 class Swipeable extends React.PureComponent<SwipeableProps> {
-
     static defaultProps: Partial<SwipeableProps> = {
-        delta: 100
+        delta: 100,
     };
 
     swipeStartX = 0;
+
     swipeStartY = 0;
+
     deltaX = 0;
+
     deltaY = 0;
 
     componentWillUnmount() {
@@ -48,7 +50,7 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
     render() {
         return React.cloneElement(this.props.children, {
             onMouseDown: this.handleMouseDown,
-            onTouchStart: this.handleTouchStart
+            onTouchStart: this.handleTouchStart,
         });
     }
 

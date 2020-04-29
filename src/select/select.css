@@ -2,13 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 :root {
     --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
     --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
     --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
-    --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
+    --top-scale-xl: calc(
+        strip(var(--font-size-l)) / strip(var(--font-size-xl))
+    );
 }
 
 .select {
@@ -17,7 +19,10 @@
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -45,7 +50,7 @@
         transform-origin: 0 100%;
         transition-duration: 200ms;
         transition-property: color, transform, font-size;
-        transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+        transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     &__sub-wrapper {
@@ -100,8 +105,14 @@
         border: none;
         border-radius: 0;
         transition-duration: 250ms;
-        transition-property: border-bottom-color, box-shadow, color, width, background-color;
-        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); /* TODO @teryaew: add custom easings to styles */
+        transition-property: border-bottom-color, box-shadow, color, width,
+            background-color;
+        transition-timing-function: cubic-bezier(
+            0.23,
+            1,
+            0.32,
+            1
+        ); /* TODO @teryaew: add custom easings to styles */
 
         &::-moz-focus-inner {
             padding: 0;
@@ -199,7 +210,7 @@
 
     &__placeholder {
         opacity: 0;
-        transition: opacity 200ms cubic-bezier(.25, .1, .25, 1);
+        transition: opacity 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     &:not(&_has-label) &__placeholder,
@@ -223,7 +234,7 @@
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-s)) translateY(-22px);
-            width: calc((2 - var(--top-scale-s)) * 100)%;
+            width: calc((2 - var(--top-scale-s)) * 100) %;
             padding-right: 0;
         }
     }
@@ -244,7 +255,7 @@
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-m)) translateY(-30px);
-            width: calc((2 - var(--top-scale-m)) * 100)%;
+            width: calc((2 - var(--top-scale-m)) * 100) %;
             padding-right: 0;
         }
     }
@@ -265,7 +276,7 @@
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-l)) translateY(-40px);
-            width: calc((2 - var(--top-scale-l)) * 100)%;
+            width: calc((2 - var(--top-scale-l)) * 100) %;
             padding-right: 0;
         }
     }
@@ -286,7 +297,7 @@
     &.select_has-value {
         .select__top {
             transform: scale(var(--top-scale-xl)) translateY(-50px);
-            width: calc((2 - var(--top-scale-xl)) * 100)%;
+            width: calc((2 - var(--top-scale-xl)) * 100) %;
             padding-right: 0;
         }
     }
@@ -447,7 +458,8 @@
             border-bottom-style: var(--border-style-control-disabled);
         }
 
-        .select__top, .select__placeholder {
+        .select__top,
+        .select__placeholder {
             color: var(--color-dark-indigo-30);
         }
     }
@@ -461,7 +473,8 @@
             border-bottom-color: var(--color-error);
             box-shadow: inset 0 -1px 0 var(--color-error);
 
-            &.select-button_hovered, &.select-button_pressed {
+            &.select-button_hovered,
+            &.select-button_pressed {
                 border-bottom-color: var(--color-error);
                 box-shadow: inset 0 -1px 0 var(--color-error);
             }

@@ -40,7 +40,7 @@ describe('sidebar component', () => {
                 onCloserClick={ onClick }
             >
                 defaultText
-            </Sidebar>
+            </Sidebar>,
         );
         const closeIcon = sidebar.find('.sidebar__closer .icon-button');
 
@@ -56,7 +56,7 @@ describe('sidebar component', () => {
                 width={ 500 }
             >
                 defaultText
-            </Sidebar>
+            </Sidebar>,
         );
 
         expect(sidebar.find('div.sidebar').props().style).toEqual({ width: '500px' });
@@ -69,7 +69,7 @@ describe('sidebar component', () => {
                 width={ 500 }
             >
                 defaultText
-            </Sidebar>
+            </Sidebar>,
         );
 
         sidebar.setState({ isMobile: true });

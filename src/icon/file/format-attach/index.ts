@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-attach.css';
-import '../../../icon';
+import '../..';
 
 export * from './format-attach';
 export { default } from './format-attach';

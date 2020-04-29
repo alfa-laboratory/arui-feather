@@ -44,7 +44,7 @@ export class ResizeSensor extends React.Component<ResizeSensorProps> {
             height: '100%',
             background: 'transparent',
             border: 'none',
-            zIndex: -1
+            zIndex: -1,
         };
 
         /* eslint-disable jsx-a11y/iframe-has-title */

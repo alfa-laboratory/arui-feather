@@ -13,20 +13,21 @@
  * @param validate оригинальный метод для валидации
  */
 function createChainableTypeChecker(
-    validate: (props: { [key: string]: any }, propName: string, componentName: string, location: string) => void
+    validate: (props: { [key: string]: any }, propName: string, componentName: string, location: string) => void,
 ) {
     function checkType(
         isRequired: boolean,
         props: { [key: string]: any },
         propName: string,
         componentName: string,
-        location: string
+        location: string,
     ) {
+        // eslint-disable-next-line no-param-reassign
         componentName = componentName || '';
         if (props[propName] === null || props[propName] === undefined) {
             if (isRequired) {
                 return new Error(
-                    `Required prop \`${propName}\` was not specified in \`${componentName}\`.`
+                    `Required prop \`${propName}\` was not specified in \`${componentName}\`.`,
                 );
             }
 
@@ -54,7 +55,7 @@ function propTypeIsHtmlElement(props: { [key: string]: any }, propName: string, 
     if (!(props[propName] instanceof (typeof HTMLElement === 'undefined' ? {} as any : HTMLElement))) {
         return new Error(
             `Invalid prop \`${propName}\` supplied to \`${componentName}\`.
-            Expected valid HTMLElement object, ${typeof props[propName]} given.`
+            Expected valid HTMLElement object, ${typeof props[propName]} given.`,
         );
     }
 
@@ -140,8 +141,7 @@ export function createMappingPropValidator(validationMapping, controllingPropNam
 
         if (!isValidProp) {
             return new Error(`Invalid prop '${propName}' supplied to ${componentName}.
-                Expected one of ${availableOptions} for prop '${controllingPropName}' equal to ${controllingPropValue}`
-            );
+                Expected one of ${availableOptions} for prop '${controllingPropName}' equal to ${controllingPropValue}`);
         }
 
         return null;

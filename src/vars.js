@@ -23,5 +23,5 @@ export const LOREM_IPSUM = [
     'Nullam tortor ex, commodo id tristique non, auctor a mi. Donec at feugiat dui, in efficitur ex. Fusce molestie tortor quis leo mattis lobortis. Maecenas luctus risus lorem, id aliquet eros commodo at. ',
     'Fusce lacus sapien, euismod gravida purus non, dignissim sollicitudin arcu. Ut facilisis massa eros, vel hendrerit eros luctus at. Sed dictum ligula ex, et viverra mauris varius non. ',
     'Sed rhoncus condimentum velit at fringilla. Mauris dignissim posuere vestibulum. Nulla sed velit vel ligula semper varius. Quisque gravida nec massa eu fringilla. ',
-    'Duis risus ligula, iaculis vel rutrum eget, varius vitae massa. Proin non accumsan purus. Fusce non augue in enim ullamcorper aliquet a quis quam. '
+    'Duis risus ligula, iaculis vel rutrum eget, varius vitae massa. Proin non accumsan purus. Fusce non augue in enim ullamcorper aliquet a quis quam. ',
 ];

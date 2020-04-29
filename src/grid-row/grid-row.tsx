@@ -75,13 +75,13 @@ export class GridRow extends React.PureComponent<GridRowProps> {
         tag: 'div',
         gutter: {
             mobile: {
-                s: 16
+                s: 16,
             },
             desktop: {
-                m: 24
-            }
+                m: 24,
+            },
         },
-        justify: 'between'
+        justify: 'between',
     }
 
     /**
@@ -127,7 +127,7 @@ export class GridRow extends React.PureComponent<GridRowProps> {
                 className={ this.cn({
                     ...gutters,
                     align,
-                    justify
+                    justify,
                 }) }
             >
                 { this.injectGutterClassNamesToChildren(gutters, children as ReactElement) }
@@ -151,7 +151,7 @@ export class GridRow extends React.PureComponent<GridRowProps> {
                     return col;
                 }
                 const gutterClassNames = Object.keys(gutters).map(
-                    gutter => `${this.classCol}_${gutter}_${gutters[gutter]}`
+                    (gutter) => `${this.classCol}_${gutter}_${gutters[gutter]}`,
                 );
                 const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
 

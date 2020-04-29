@@ -9,13 +9,13 @@ const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const PROP_SETS = [
     {
         collapsedLabel: 'Подробнее',
-        expandedLabel: 'Скрыть'
+        expandedLabel: 'Скрыть',
     },
     {
         collapsedLabel: 'Подробнее',
         expandedLabel: 'Скрыть',
-        isExpanded: true
-    }
+        isExpanded: true,
+    },
 ];
 
 geminiReact.suite(NAME, () => {

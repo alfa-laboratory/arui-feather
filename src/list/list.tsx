@@ -24,7 +24,7 @@ type ListItemsType = {
     /**
      * Вложенный список элементов
      */
-    list?: ReadonlyArray<ListItemsType>;
+    list?: readonly ListItemsType[];
 };
 
 export type ListProps = DeepReadonly<{
@@ -32,7 +32,7 @@ export type ListProps = DeepReadonly<{
     /**
      * Список элементов
      */
-    items?: ReadonlyArray<ListItemsType>;
+    items?: readonly ListItemsType[];
 
     /**
      * Тип списка
@@ -88,13 +88,13 @@ export class List extends React.Component<ListProps> {
         const listProps = {
             className: this.cn({ type }),
             id: this.props.id,
-            'data-test-id': this.props['data-test-id']
+            'data-test-id': this.props['data-test-id'],
         };
 
         return React.createElement(
             listElement,
             listProps,
-            listContent
+            listContent,
         );
     }
 }

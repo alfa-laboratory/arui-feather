@@ -21,7 +21,7 @@ export class CardInput extends React.PureComponent<CardInputProps> {
     protected cn = createCn('card-input');
 
     static defaultProps: Partial<CardInputProps> = {
-        placeholder: '0000 0000 0000 0000 00'
+        placeholder: '0000 0000 0000 0000 00',
     };
 
     /**
@@ -34,11 +34,11 @@ export class CardInput extends React.PureComponent<CardInputProps> {
         return (
             <Input
                 { ...this.props }
-                type='tel'
+                type="tel"
                 ref={ (root) => {
                     this.root = root;
                 } }
-                mask='1111 1111 1111 1111 11'
+                mask="1111 1111 1111 1111 11"
                 formNoValidate={ true }
                 className={ this.cn() }
             />

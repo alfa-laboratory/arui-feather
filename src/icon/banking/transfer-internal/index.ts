@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-internal.css';
-import '../../../icon';
+import '../..';
 
 export * from './transfer-internal';
 export { default } from './transfer-internal';

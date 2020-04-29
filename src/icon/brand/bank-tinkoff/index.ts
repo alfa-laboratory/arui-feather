@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-tinkoff.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-tinkoff';
 export { default } from './bank-tinkoff';

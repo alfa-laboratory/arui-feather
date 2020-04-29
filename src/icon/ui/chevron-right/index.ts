@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './chevron-right.css';
-import '../../../icon';
+import '../..';
 
 export * from './chevron-right';
 export { default } from './chevron-right';

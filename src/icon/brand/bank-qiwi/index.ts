@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-qiwi.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-qiwi';
 export { default } from './bank-qiwi';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './site.css';
-import '../../../icon';
+import '../..';
 
 export * from './site';
 export { default } from './site';

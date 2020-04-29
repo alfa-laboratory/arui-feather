@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './ok-filled.css';
-import '../../../icon';
+import '../..';
 
 export * from './ok-filled';
 export { default } from './ok-filled';

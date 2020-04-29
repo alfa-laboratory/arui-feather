@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-mdm.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-mdm';
 export { default } from './bank-mdm';

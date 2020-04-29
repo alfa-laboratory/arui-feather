@@ -76,11 +76,11 @@ export class Dropzone extends React.PureComponent<DropzoneProps> {
 
     static defaultProps: Partial<DropzoneProps> = {
         theme: 'alfa-on-white',
-        text: 'Поместите файлы сюда'
+        text: 'Поместите файлы сюда',
     };
 
     state = {
-        dragging: false
+        dragging: false,
     };
 
     // TODO [issues/1018] на private ругается

@@ -127,18 +127,19 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
         switcherText: 'Switcher',
         disabled: false,
         popupProps: {
-            target: 'anchor'
+            target: 'anchor',
         },
-        size: 'm'
+        size: 'm',
     };
 
     state = {
         opened: false,
         switcherHovered: false,
-        popupHovered: false
+        popupHovered: false,
     };
 
     private popup;
+
     private switcher;
 
     componentDidMount() {
@@ -212,10 +213,10 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
         if (this.props.popupProps === undefined || (
             this.props.popupProps && this.props.popupProps.type !== 'tooltip')) {
             switch (this.props.size) {
-                case 's':
-                case 'm': mainOffset = POPUP_MAIN_OFFSET / 2; break;
-                case 'l':
-                case 'xl': mainOffset = POPUP_MAIN_OFFSET; break;
+            case 's':
+            case 'm': mainOffset = POPUP_MAIN_OFFSET / 2; break;
+            case 'l':
+            case 'xl': mainOffset = POPUP_MAIN_OFFSET; break;
             }
         }
 
@@ -223,7 +224,7 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
             className: this.cn('popup'),
             size: this.props.size,
             mainOffset,
-            ...this.props.popupProps
+            ...this.props.popupProps,
         };
 
         return (
@@ -233,8 +234,8 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
                     this.popup = popup;
                 } }
                 visible={
-                    (!this.props.disabled && opened) ||
-                    (this.props.mode === 'hover' && (this.state.switcherHovered || this.state.popupHovered))
+                    (!this.props.disabled && opened)
+                    || (this.props.mode === 'hover' && (this.state.switcherHovered || this.state.popupHovered))
                 }
                 onMouseEnter={ this.handlePopupMouseEnter }
                 onMouseLeave={ this.handlePopupMouseLeave }
@@ -246,10 +247,11 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
     }
 
     private handleSwitcherClick = () => {
+        // eslint-disable-next-line react/no-access-state-in-setstate
         const newOpenedStatusValue = this.props.opened === undefined ? !this.state.opened : !this.props.opened;
 
         this.setState({
-            opened: newOpenedStatusValue
+            opened: newOpenedStatusValue,
         });
 
         if (this.props.onSwitcherClick) {

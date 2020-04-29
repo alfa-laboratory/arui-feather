@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './todo.css';
-import '../../../icon';
+import '../..';
 
 export * from './todo';
 export { default } from './todo';

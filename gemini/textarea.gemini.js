@@ -9,20 +9,20 @@ const TEXT = 'Far far away, behind the word mountains, there live the blind text
 const PROP_SETS = [
     {},
     {
-        placeholder: 'Textarea'
+        placeholder: 'Textarea',
     },
     {
         placeholder: 'Textarea',
-        error: 'Something went wrong'
+        error: 'Something went wrong',
     },
     {
         placeholder: 'Textarea',
-        disabled: true
+        disabled: true,
     },
     {
         label: 'Comment',
-        maxRows: 7
-    }
+        maxRows: 7,
+    },
 ];
 
 geminiReact.suite(NAME, () => {

@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 .menu_theme_alfa-on-color {
     .menu-item {
@@ -12,7 +12,8 @@
     .menu-item_hovered:not(.menu-item_disabled) {
         background-color: var(--color-background-control-hovered-alfa-on-color);
 
-        &.menu-item_type_link, &.menu-item_type_dropdown {
+        &.menu-item_type_link,
+        &.menu-item_type_dropdown {
             background-color: transparent;
         }
     }
@@ -25,13 +26,16 @@
         }
     }
 
-    &.menu_mode_radio, &.menu_mode_radio-check {
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
         .menu-item_checked:before {
             background-color: var(--color-content-alfa-on-color);
         }
     }
 
-    &.menu_mode_check, &.menu_mode_radio, &.menu_mode_radio-check {
+    &.menu_mode_check,
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
         .menu-item_disabled {
             &.menu-item_checked:before {
                 opacity: var(--opacity-disabled);

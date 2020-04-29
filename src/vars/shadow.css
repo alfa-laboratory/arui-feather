@@ -11,12 +11,12 @@
     /**
      * Цвет для использования в облегчённых тенях.
      */
-    --shadow-light-color: color(var(--shadow-color) a(.25));
+    --shadow-light-color: color(var(--shadow-color) a(0.25));
 
     /**
      * Тень для компонентов. Использутеся, например, для plate.
      */
-    --shadow: 0 6px 14px 0 color(var(--shadow-color) a(.15));
+    --shadow: 0 6px 14px 0 color(var(--shadow-color) a(0.15));
 
     /**
      * Облегченная тень, используемая, чтобы добавить 3-е измерение интерфейсу

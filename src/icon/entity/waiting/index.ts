@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './waiting.css';
-import '../../../icon';
+import '../..';
 
 export * from './waiting';
 export { default } from './waiting';

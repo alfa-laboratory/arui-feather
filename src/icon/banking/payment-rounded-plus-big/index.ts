@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './payment-rounded-plus-big.css';
-import '../../../icon';
+import '../..';
 
 export * from './payment-rounded-plus-big';
 export { default } from './payment-rounded-plus-big';

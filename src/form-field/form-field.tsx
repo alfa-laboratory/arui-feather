@@ -48,7 +48,7 @@ export class FormField extends React.PureComponent<FormFieldProps> {
     protected cn = createCn('form-field');
 
     static defaultProps: Partial<FormFieldProps> = {
-        size: 'm'
+        size: 'm',
     };
 
     render() {

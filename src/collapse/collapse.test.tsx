@@ -19,12 +19,12 @@ describe('collapse', () => {
         const onExpandedChange = jest.fn();
         const collapse = mount(
             <Collapse
-                collapsedLabel='Expand'
-                expandedLabel='Collapse'
+                collapsedLabel="Expand"
+                expandedLabel="Collapse"
                 onExpandedChange={ onExpandedChange }
             >
                 Collapsing text
-            </Collapse>
+            </Collapse>,
         );
         const linkNode = collapse.find('.link');
 
@@ -37,7 +37,7 @@ describe('collapse', () => {
         const collapse = mount<Collapse>(
             <Collapse>
                 some children
-            </Collapse>
+            </Collapse>,
         );
 
         collapse.setState({ isExpanded: true });
@@ -55,7 +55,7 @@ describe('collapse', () => {
         const collapse = mount<Collapse>(
             <Collapse>
                 some children
-            </Collapse>
+            </Collapse>,
         );
 
         collapse.setState({ isExpanded: false });
@@ -73,11 +73,11 @@ describe('collapse', () => {
     it('should apply custom expanded label', () => {
         const collapse = mount(
             <Collapse
-                collapsedLabel='Раскрыть'
+                collapsedLabel="Раскрыть"
                 isExpanded={ false }
             >
                 Collapsing text
-            </Collapse>
+            </Collapse>,
         );
         const linkNode = collapse.find('.link');
 
@@ -87,11 +87,11 @@ describe('collapse', () => {
     it('should apply custom collapsed label', () => {
         const collapse = mount(
             <Collapse
-                expandedLabel='Закрыть'
+                expandedLabel="Закрыть"
                 isExpanded={ true }
             >
                 Collapsing text
-            </Collapse>
+            </Collapse>,
         );
         const linkNode = collapse.find('.link');
 

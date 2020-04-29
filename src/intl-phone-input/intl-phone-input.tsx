@@ -35,7 +35,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
 
     static defaultProps: Partial<IntlPhoneInputProps> = {
         size: 'm',
-        value: '+7'
+        value: '+7',
     };
 
     state = {
@@ -43,15 +43,20 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
         inputFocused: false,
         inputValue: this.props.value,
         selectFocused: false,
-        onceOpened: false
+        onceOpened: false,
     };
 
     private countries;
+
     // TODO [issues/1018] переписать тесты нужно, что бы private был
     input;
+
     private select;
+
     private timeoutId;
+
     private util;
+
     private asYouType;
 
     async componentDidMount() {
@@ -84,14 +89,14 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
                 } }
                 { ...this.props }
                 focused={ this.state.inputFocused || this.state.selectFocused }
-                leftAddons={
+                leftAddons={ (
                     <Select
                         className={ this.cn('select') }
                         ref={ (select) => {
                             this.select = select;
                         } }
                         disabled={ this.props.disabled }
-                        mode='radio'
+                        mode="radio"
                         options={ this.getOptions() }
                         popupSecondaryOffset={ this.getSelectPopupOffset() }
                         renderButtonContent={ this.renderSelectButtonContent }
@@ -104,9 +109,9 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
                         onButtonFocus={ this.handleSelectButtonFocus }
                         onButtonBlur={ this.handleSelectButtonBlur }
                     />
-                }
+                ) }
                 noValidate={ true }
-                type='tel'
+                type="tel"
                 value={ this.getValue() }
                 onBlur={ this.handleInputBlur }
                 onChange={ this.handleInputChange }
@@ -130,7 +135,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     private handleSelectFocus = (event) => {
         if (!this.state.onceOpened) {
             this.setState({
-                onceOpened: true
+                onceOpened: true,
             });
         }
 
@@ -139,7 +144,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
 
     private handleSelectButtonFocus = () => {
         this.setState({
-            selectFocused: true
+            selectFocused: true,
         });
     };
 
@@ -152,11 +157,11 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     };
 
     private handleSelectChange = (value) => {
-        const inputValue = `+${this.countries.find(country => country.iso2 === value[0]).dialCode}`;
+        const inputValue = `+${this.countries.find((country) => country.iso2 === value[0]).dialCode}`;
 
         this.setState({
             countryIso2: value[0],
-            inputValue
+            inputValue,
         }, () => {
             // Wait for select blur, then focus on input
             this.timeoutId = setTimeout(() => {
@@ -184,7 +189,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
 
     private handleInputChange = (value) => {
         this.setState({
-            inputValue: value.length === 1 && value !== '+' ? `+${value}` : value
+            inputValue: value.length === 1 && value !== '+' ? `+${value}` : value,
         }, this.setCountry);
     };
 
@@ -192,12 +197,15 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     getOptions = () => {
         this.countries = countries.getCountries();
 
-        return this.state.onceOpened ? this.countries.map(country => ({
+        return this.state.onceOpened ? this.countries.map((country) => ({
             value: country.iso2,
             text: (
                 <span>
                     { country.name }
-                    <span className={ this.cn('select-option-code') }>+{ country.dialCode }</span>
+                    <span className={ this.cn('select-option-code') }>
+                        +
+                        { country.dialCode }
+                    </span>
                 </span>
             ),
             nativeText: `${country.name} +${country.dialCode}`,
@@ -205,16 +213,16 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
                 <span className={ this.cn('select-option-flag') }>
                     { this.renderFlagIcon(country.iso2) }
                 </span>
-            )
+            ),
         })) : [];
     };
 
     private getSelectPopupOffset() {
         switch (this.props.size) {
-            case 's': return -18;
-            case 'm': return -24;
-            case 'l': return -27;
-            case 'xl': return -28;
+        case 's': return -18;
+        case 'm': return -24;
+        case 'l': return -27;
+        case 'xl': return -28;
         }
 
         return 0;
@@ -232,13 +240,13 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
             .then((util) => {
                 this.util = util;
             })
-            .catch(error => `An error occurred while loading libphonenumber-js:\n${error}`);
+            .catch((error) => `An error occurred while loading libphonenumber-js:\n${error}`);
     }
 
     private resolveFocusedState(nextFocusedStateItem, event) {
         const focusedState = {
             inputFocused: this.state.inputFocused,
-            selectFocused: this.state.selectFocused
+            selectFocused: this.state.selectFocused,
         };
 
         const relatedTarget = getRelatedTarget(event);
@@ -248,18 +256,18 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
 
         // Check classNames matching in select's button (relatedTarget) & menu (focused target)
         if (relatedTarget.classList && event.target.classList) {
-            hasSelectRelatedTarget = Array.from(relatedTarget.classList).some(item => /select/.test(item)) ===
-                Array.from(event.target.classList).some(item => /select/.test(item));
+            hasSelectRelatedTarget = Array.from(relatedTarget.classList).some((item) => /select/.test(item))
+                === Array.from(event.target.classList).some((item) => /select/.test(item));
 
-            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some(item => item) &&
-                !Array.from(event.target.classList).some(item => /select/.test(item)) &&
-                Array.from(relatedTarget.classList).some(item => /select/.test(item));
+            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some((item) => item)
+                && !Array.from(event.target.classList).some((item) => /select/.test(item))
+                && Array.from(relatedTarget.classList).some((item) => /select/.test(item));
         }
 
         if (event.type === 'focus') {
             if (hasMatchedRelatedTarget || hasSelectRelatedTarget || isSwitchBetweenRelatedTargers) {
                 // If we have smth already focused, do not do anything
-                const alreadyInFocus = Object.values(focusedState).some(item => item);
+                const alreadyInFocus = Object.values(focusedState).some((item) => item);
 
                 if (!alreadyInFocus) {
                     this.setState(nextFocusedStateItem);
@@ -279,7 +287,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
                         result[item] = false;
 
                         return result;
-                    }, {})
+                    }, {}),
                 );
 
                 if (this.props.onBlur) {
@@ -327,7 +335,7 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
         this.asYouType = this.util ? new this.util.AsYouType(countryIso2.toUpperCase()) : null;
         this.setState({
             inputValue: this.asYouType ? this.asYouType.input(inputValue) : inputValue,
-            countryIso2
+            countryIso2,
         });
     }
 

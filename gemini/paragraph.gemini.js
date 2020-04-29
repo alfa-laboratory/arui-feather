@@ -9,11 +9,11 @@ const PROP_SETS = [
     {},
     {
         view: 'lead',
-        mark: 'Ex'
+        mark: 'Ex',
     },
     {
-        view: 'small'
-    }
+        view: 'small',
+    },
 ];
 
 geminiReact.suite(NAME, () => {

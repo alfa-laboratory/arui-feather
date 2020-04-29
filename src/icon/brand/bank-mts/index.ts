@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-mts.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-mts';
 export { default } from './bank-mts';

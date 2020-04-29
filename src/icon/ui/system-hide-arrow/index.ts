@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './system-hide-arrow.css';
-import '../../../icon';
+import '../..';
 
 export * from './system-hide-arrow';
 export { default } from './system-hide-arrow';

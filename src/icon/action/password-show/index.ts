@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './password-show.css';
-import '../../../icon';
+import '../..';
 
 export * from './password-show';
 export { default } from './password-show';

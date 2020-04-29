@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
@@ -136,11 +137,11 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
     static defaultProps: Partial<SidebarProps> = {
         hasOverlay: true,
         hasCloser: true,
-        width: SIDEBAR_WIDTH
+        width: SIDEBAR_WIDTH,
     };
 
     state = {
-        isMobile: false
+        isMobile: false,
     };
 
     componentDidMount() {
@@ -189,7 +190,7 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
             visible,
             headerContent,
             hasOverlay,
-            width
+            width,
         } = this.props;
 
         const offset = visible ? getScrollbarWidth() : 0;
@@ -203,13 +204,13 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div
-                    role='button'
+                    role="button"
                     tabIndex={ -1 }
                     className={ this.cn('overlay', { visible: visible && hasOverlay }) }
                     onClick={ this.handleClose }
                 />
                 <Mq
-                    query='--small-only'
+                    query="--small-only"
                     onMatchChange={ this.handleMqMatchChange }
                 />
                 <div
@@ -220,15 +221,17 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
                         className={ this.cn('header') }
                     >
                         {
-                            hasCloser &&
-                            <div className={ this.cn('closer') }>
-                                <IconButton
-                                    size={ this.state.isMobile ? 'm' : 'l' }
-                                    onClick={ this.handleClose }
-                                >
-                                    <IconClose size='l' />
-                                </IconButton>
-                            </div>
+                            hasCloser
+                            && (
+                                <div className={ this.cn('closer') }>
+                                    <IconButton
+                                        size={ this.state.isMobile ? 'm' : 'l' }
+                                        onClick={ this.handleClose }
+                                    >
+                                        <IconClose size="l" />
+                                    </IconButton>
+                                </div>
+                            )
                         }
                         {
                             headerContent
@@ -273,10 +276,10 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
 
     private handleKeyDown = (event: KeyboardEvent) => {
         switch (event.which) {
-            case keyboardCode.ESCAPE:
-                event.preventDefault();
-                this.handleClose(event);
-                break;
+        case keyboardCode.ESCAPE:
+            event.preventDefault();
+            this.handleClose(event);
+            break;
         }
     };
 

@@ -7,7 +7,7 @@ const THEMES = ['alfa-on-color', 'alfa-on-white'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
 const PROP_SETS = [
-    {}
+    {},
 ];
 
 geminiReact.suite(NAME, () => {
@@ -24,7 +24,7 @@ geminiReact.suite(NAME, () => {
                     const props = {
                         theme,
                         size,
-                        icon: <Spin size={ size } visible={ true } />
+                        icon: <Spin size={ size } visible={ true } />,
                     };
                     const template = (
                         <GeminiBox theme={ theme }>

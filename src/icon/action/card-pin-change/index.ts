@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './card-pin-change.css';
-import '../../../icon';
+import '../..';
 
 export * from './card-pin-change';
 export { default } from './card-pin-change';

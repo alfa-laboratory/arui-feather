@@ -1,10 +1,23 @@
 module.exports = {
     extends: [
         require.resolve('arui-presets-lint/eslint'),
-        require.resolve('arui-presets-ts/eslint')
     ],
 
     overrides: [
+        {
+            files: ['src/**/*.tsx'],
+            rules: {
+                'max-classes-per-file': 'off',
+                'no-param-reassign': 'off',
+            }
+        },
+        // Иконки автогенерированы
+        {
+            files: ['src/icon/**/*.tsx'],
+            rules: {
+                '@typescript-eslint/no-explicit-any': 'off'
+            }
+        },
         {
             files: ['src/**/*.test.{js,jsx,tsx,ts}', 'src/**/__mocks__/*.{js,jsx}'],
             globals: {
@@ -17,6 +30,17 @@ module.exports = {
             files: ['src/**/*-test.{js,jsx}'],
             globals: {
                 sinon: true
+            }
+        },
+        {
+            files: ['gemini/*.gemini.js'],
+            globals: {
+                geminiReact: true
+            },
+            rules: {
+                // Их нельзя переименовать в jsx
+                'react/react-in-jsx-scope': 'off',
+                'max-classes-per-file': 'off'
             }
         }
     ],

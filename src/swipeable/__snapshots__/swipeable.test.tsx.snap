@@ -4,6 +4,7 @@ exports[`swipeable should render without problems 1`] = `
 <button
   onMouseDown={[Function]}
   onTouchStart={[Function]}
+  type="button"
 >
   I'm swipeable
 </button>

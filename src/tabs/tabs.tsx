@@ -48,7 +48,7 @@ export class Tabs extends React.PureComponent<TabsProps> {
     protected cn = createCn('tabs');
 
     static defaultProps: Partial<TabsProps> = {
-        scrollable: true
+        scrollable: true,
     }
 
     render() {

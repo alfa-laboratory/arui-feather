@@ -45,12 +45,12 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onValueChange={ onValueChange }
-            />
+            />,
         );
         const dateToClick = addDays(INITIAL_DAY, 1);
         const dayNodes = calendar
             .find('.calendar__day')
-            .findWhere(e => e.length > 0 && e.props()['data-day'] === dateToClick.valueOf());
+            .findWhere((e) => e.length > 0 && e.props()['data-day'] === dateToClick.valueOf());
 
         dayNodes.simulate('click');
 
@@ -68,7 +68,7 @@ describe('calendar', () => {
         const calendar = mount(
             <Calendar
                 showToday={ true }
-            />
+            />,
         );
         const todayNode = calendar.find('.calendar__day_state_today');
 
@@ -80,7 +80,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 offDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
-            />
+            />,
         );
         let dayOffNode = calendar.find('.calendar__day_type_off');
 
@@ -96,7 +96,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 eventDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
-            />
+            />,
         );
         const dayOfEventsNode = calendar.find('.calendar__day_event');
 
@@ -109,7 +109,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ subtractDays(INITIAL_DAY, EARLIER_LIMIT).valueOf() }
-            />
+            />,
         );
         const daysOffCount = calendar.find('.calendar__day_type_off').length;
         const weekendDaysOffCount = calendar.find('.calendar__day_type_weekend-off').length;
@@ -123,7 +123,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ addDays(INITIAL_DAY, LATER_LIMIT).valueOf() }
-            />
+            />,
         );
         const daysCount = (new Date(INITIAL_DAY.getFullYear(), INITIAL_DAY.getMonth() + 1, 0)).getDate();
         const daysOffCount = calendar.find('.calendar__day_type_off').length;
@@ -138,7 +138,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ addDays(INITIAL_DAY, EARLIER_LIMIT).valueOf() }
-            />
+            />,
         );
         const currentDay = calendar.find('.calendar__day_state_current');
         const expectedDay = addDays(INITIAL_DAY, EARLIER_LIMIT).valueOf();
@@ -152,7 +152,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 laterLimit={ subtractDays(INITIAL_DAY, LATER_LIMIT).valueOf() }
-            />
+            />,
         );
         const currentDay = calendar.find('.calendar__day_state_current');
         const expectedDay = subtractDays(INITIAL_DAY, LATER_LIMIT).valueOf();
@@ -166,7 +166,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onMonthChange={ onMonthChange }
-            />
+            />,
         );
         const arrowNode = calendar.find('.calendar__arrow_direction_left');
 
@@ -182,7 +182,7 @@ describe('calendar', () => {
             <Calendar
                 value={ LAST_DAY_OF_MONTH.valueOf() }
                 onMonthChange={ onMonthChange }
-            />
+            />,
         );
 
         calendar.simulate('keyDown', { which: keyboardCode.DOWN_ARROW });
@@ -196,7 +196,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onValueChange={ onValueChange }
-            />
+            />,
         );
         const expectedDate = addDays(INITIAL_DAY, 7);
 
@@ -212,7 +212,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 onValueChange={ onValueChange }
-            />
+            />,
         );
         const expectedDate = subtractDays(INITIAL_DAY, 7);
 
@@ -229,7 +229,7 @@ describe('calendar', () => {
                 value={ INITIAL_DAY.valueOf() }
                 offDays={ [addDays(INITIAL_DAY, 1).valueOf()] }
                 onValueChange={ onValueChange }
-            />
+            />,
         );
 
         calendar.simulate('keyDown', { which: keyboardCode.RIGHT_ARROW });
@@ -245,7 +245,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ subtractDays(INITIAL_DAY, 10).valueOf() }
-            />
+            />,
         );
 
         const prevMonthArrow = calendar.find('.calendar__arrow_direction_left');
@@ -258,7 +258,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 laterLimit={ addDays(INITIAL_DAY, 10).valueOf() }
-            />
+            />,
         );
 
         const nextMonthArrow = calendar.find('.calendar__arrow_direction_right');
@@ -271,7 +271,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 earlierLimit={ subtractMonth(INITIAL_DAY, 1).valueOf() }
-            />
+            />,
         );
 
         const prevMonthArrow = calendar.find('.calendar__arrow_direction_left').not('.calendar__arrow_double');
@@ -284,7 +284,7 @@ describe('calendar', () => {
             <Calendar
                 value={ INITIAL_DAY.valueOf() }
                 laterLimit={ addMonth(INITIAL_DAY, 1).valueOf() }
-            />
+            />,
         );
 
         const nextMonthArrow = calendar.find('.calendar__arrow_direction_right').not('.calendar__arrow_double');

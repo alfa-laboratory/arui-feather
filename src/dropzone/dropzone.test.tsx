@@ -11,12 +11,12 @@ describe('dropzone', () => {
     const filesList = [
         { name: 'test1.txt', type: 'application/text' },
         { name: 'test2.txt', type: 'application/text' },
-        { name: 'test3.txt', type: 'application/text' }
+        { name: 'test3.txt', type: 'application/text' },
     ];
     const dataTransfer = {
         files: filesList,
         items: filesList,
-        clearData: () => {}
+        clearData: jest.fn(),
     };
 
     it('should render without problems', () => {

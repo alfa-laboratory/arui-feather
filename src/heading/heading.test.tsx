@@ -9,7 +9,7 @@ import { Heading } from './heading';
 
 describe('heading', () => {
     it('should render without problem', () => {
-        const heading = shallow(<Heading size='s'>Heading</Heading>);
+        const heading = shallow(<Heading size="s">Heading</Heading>);
 
         expect(heading).toMatchSnapshot();
     });
@@ -20,10 +20,10 @@ describe('heading', () => {
         l: 2,
         m: 3,
         s: 4,
-        xs: 5
+        xs: 5,
     };
 
-    sizes.forEach(size => (
+    sizes.forEach((size) => (
         it(`should render Heading size=\`${size}\` with tag H${headingLevel[size]}`, () => {
             const heading = shallow(<Heading size={ size }>Heading</Heading>);
 

@@ -809,7 +809,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     private calculateWeeks() {
         let weekDay: number;
         let weekCounter = TOTAL_WEEK_NUMBER;
-        let isCurrentMonth = true;
         const weeks = [];
         const lastDay = SUNDAY_INDEX;
         const currentMonth = new Date(this.state.month).getMonth();
@@ -823,10 +822,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
         dateIterator.setDate(1);
 
-        while (isCurrentMonth || weekCounter > 0) {
+        while (weekCounter > 0) {
             weekDay = getRussianWeekDay(dateIterator); // Получаем 0 - пн, 1 - вт, и т.д.
 
-            if (isCurrentMonth) {
+            if (dateIterator.getMonth() === currentMonth) {
                 week[weekDay] = new Date(dateIterator.getTime());
             }
 
@@ -837,7 +836,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             }
 
             dateIterator.setDate(dateIterator.getDate() + 1);
-            isCurrentMonth = dateIterator.getMonth() === currentMonth;
         }
 
         if (weekDay !== lastDay) {

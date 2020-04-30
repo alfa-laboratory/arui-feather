@@ -21,7 +21,7 @@ let config = {
     windowSize: '1024x768',
 
     httpTimeout: 60000,
-    retry: 1,
+    retry: 3,
     sessionsPerBrowser: 3,
     suitesPerSession: 150,
 

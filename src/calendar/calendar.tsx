@@ -33,6 +33,8 @@ import { withTheme } from '../cn';
 const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
 const LATER_YEARS_LIMIT = 1;
+const TOTAL_WEEK_NUMBER = 6;
+const SUNDAY_INDEX = 6;
 
 export type CalendarProps = DeepReadonly<{
 
@@ -254,12 +256,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             || differenceInMonths(month, startOfMonth(this.earlierLimit)) > 0;
         const isNextMonthEnabled = !this.laterLimit
             || differenceInMonths(month, this.laterLimit) < 0;
+        const areArrowsVisible = this.props.showArrows
+            && !this.state.isMonthSelection
+            && !this.state.isYearSelection;
 
         return (
             <div className={ this.cn('title') }>
                 {
-                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection
-                    && (
+                    areArrowsVisible && (
                         <div
                             className={
                                 this.cn('arrow', {
@@ -276,8 +280,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                     )
                 }
                 {
-                    this.props.showArrows && !this.state.isMonthSelection && !this.state.isYearSelection
-                    && (
+                    areArrowsVisible && (
                         <div
                             className={
                                 this.cn('arrow', {
@@ -305,7 +308,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         tabIndex={ 0 }
                         onClick={ this.handleMonthClick }
                     >
-                        <div className={ this.cn('select-text') }>{ `${this.props.months[month.getMonth()]}` }</div>
+                        <div className={ this.cn('select-text') }>
+                            { this.props.months[month.getMonth()] }
+                        </div>
                         <div className={ this.cn('select-arrows') } />
                     </div>
 
@@ -362,7 +367,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                             const newMonth = setMonth(this.state.month, index);
                             const off = !this.isValidDate(startOfMonth(newMonth));
                             const selectedDate = new Date(this.state.month);
-                            const isSameMonth = selectedDate && selectedDate.getMonth() === newMonth.getMonth();
+                            const isSameMonth = selectedDate
+                                && selectedDate.getMonth() === newMonth.getMonth();
 
                             const dataMonth = off ? null : newMonth.getTime();
 
@@ -421,7 +427,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                             const newYear = setYear(this.state.month, year);
                             const dataYear = newYear.getTime();
                             const selectedDate = new Date(this.state.month);
-                            const isSameYear = selectedDate && selectedDate.getFullYear() === newYear.getFullYear();
+                            const isSameYear = selectedDate
+                                && selectedDate.getFullYear() === newYear.getFullYear();
 
                             const mods = {
                                 state: isSameYear ? 'current' : null,
@@ -563,7 +570,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         onClick={ this.handleDayClick }
                     >
                         { day ? day.getDate() : '' }
-                        { mods.event && <span data-day={ dataDay } className={ this.cn('event') } /> }
+                        { mods.event && (
+                            <span data-day={ dataDay } className={ this.cn('event') } />
+                        ) }
                     </div>
                 </td>
             );
@@ -743,7 +752,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param isTriggeredByKeyboard Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    private performChange(timestamp: number, isTriggeredByKeyboard = false) {
+    private performChange(timestamp: number | Date, isTriggeredByKeyboard = false) {
         if (!this.props.onValueChange) {
             return;
         }
@@ -755,7 +764,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
 
         this.props.onValueChange(
-            timestamp,
+            timestamp.valueOf(),
             formatDate(date, this.props.outputFormat),
             isTriggeredByKeyboard,
         );
@@ -786,7 +795,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 this.props.onMonthChange(shiftedValue.valueOf());
             }
         } else {
-            this.performChange(this.state.month as any /** TODO: fix it */, true);
+            this.performChange(this.state.month, true);
         }
     }
 
@@ -798,10 +807,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 
     private calculateWeeks() {
-        let weekDay;
+        let weekDay: number;
+        let weekCounter = TOTAL_WEEK_NUMBER;
         const weeks = [];
-        const lastDay = 6;
-        const month = new Date(this.state.month);
+        const lastDay = SUNDAY_INDEX;
+        const currentMonth = new Date(this.state.month).getMonth();
         const dateIterator = new Date(this.state.month);
 
         // Далее я использую map для обхода массива, но при создании через new Array(DAYS_IN_WEEK);
@@ -810,19 +820,22 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         // соответственно пропадают undefined значения, поэтому:
         let week = (new Array(DAYS_IN_WEEK)).fill(null);
 
-        for (
-            dateIterator.setDate(1);
-            dateIterator.getMonth() === month.getMonth();
-            dateIterator.setDate(dateIterator.getDate() + 1)
-        ) {
+        dateIterator.setDate(1);
+
+        while (weekCounter > 0) {
             weekDay = getRussianWeekDay(dateIterator); // Получаем 0 - пн, 1 - вт, и т.д.
 
-            week[weekDay] = new Date(dateIterator.getTime());
+            if (dateIterator.getMonth() === currentMonth) {
+                week[weekDay] = new Date(dateIterator.getTime());
+            }
 
             if (weekDay === lastDay) {
                 weeks.push(week);
+                weekCounter -= 1;
                 week = (new Array(DAYS_IN_WEEK)).fill(null);
             }
+
+            dateIterator.setDate(dateIterator.getDate() + 1);
         }
 
         if (weekDay !== lastDay) {
@@ -905,7 +918,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
 
         if (isInitializing || this.props.selectedFrom !== nextProps.selectedFrom) {
-            this.selectedFrom = nextProps.selectedFrom ? normalizeDate(nextProps.selectedFrom) : null;
+            this.selectedFrom = nextProps.selectedFrom
+                ? normalizeDate(nextProps.selectedFrom) : null;
         }
     }
 }

@@ -191,6 +191,7 @@ exports[`input-autocomplete should render input with provided default value 1`] 
     >
       <Popup
         className="input__popup"
+        containerClassName=""
         directions={
           Array [
             "bottom-left",

@@ -76,6 +76,7 @@ exports[`dropdown should render without problems 1`] = `
     >
       <Popup
         className="dropdown__popup"
+        containerClassName=""
         fitContaiterOffset={0}
         mainOffset={6}
         onClickOutside={[Function]}

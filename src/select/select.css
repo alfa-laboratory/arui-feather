@@ -217,6 +217,10 @@
     &&_has-label&_has-placeholder &__placeholder {
         opacity: var(--opacity-active);
     }
+
+    &__popup-container {
+        border-radius: 0;
+    }
 }
 
 .select_size_s {

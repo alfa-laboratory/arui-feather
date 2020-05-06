@@ -179,6 +179,7 @@ exports[`select should render without problem 1`] = `
       />
       <ForwardRef(ThemedComponent(Popup))
         className="select__popup"
+        containerClassName="select__popup-container"
         directions={
           Array [
             "bottom-left",
@@ -199,6 +200,7 @@ exports[`select should render without problem 1`] = `
       >
         <Popup
           className="select__popup"
+          containerClassName="select__popup-container"
           directions={
             Array [
               "bottom-left",
@@ -227,7 +229,7 @@ exports[`select should render without problem 1`] = `
                   style="top: 0px; left: 0px; height: auto; min-width: 0; max-width: none; max-height: none;"
                 >
                   <div
-                    class="popup__container"
+                    class="popup__container select__popup-container"
                   >
                     <div
                       class="popup__inner"
@@ -296,7 +298,7 @@ exports[`select should render without problem 1`] = `
               }
             >
               <div
-                className="popup__container"
+                className="popup__container select__popup-container"
               >
                 <div
                   className="popup__inner"

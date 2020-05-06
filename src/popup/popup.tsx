@@ -59,6 +59,11 @@ export type PopupProps = DeepReadonly<{
     className?: string;
 
     /**
+     * Дополнительный класс контейнера
+     */
+    containerClassName?: string;
+
+    /**
      * Идентификатор компонента в DOM
      */
     id?: string;
@@ -368,7 +373,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 onMouseLeave={ this.handleMouseLeave }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <div className={ this.cn('container') }>
+                <div className={ `${this.cn('container')} ${this.props.containerClassName ?? ''}`.trim() }>
                     { this.props.header && <div className={ this.cn('header') }>{ this.props.header }</div> }
                     <div
                         ref={ (inner) => {
@@ -577,27 +582,27 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         let bestDrawingParams;
 
         switch (this.props.target) {
-        case 'position':
-            bestDrawingParams = { top: this.position.top, left: this.position.left };
-            break;
+            case 'position':
+                bestDrawingParams = { top: this.position.top, left: this.position.left };
+                break;
 
-        case 'screen':
-            bestDrawingParams = {
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                overflow: this.inner.scrollHeight > this.inner.clientHeight,
-            };
-            break;
+            case 'screen':
+                bestDrawingParams = {
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    overflow: this.inner.scrollHeight > this.inner.clientHeight,
+                };
+                break;
 
-        case 'anchor':
-            bestDrawingParams = calcBestDrawingParams(
-                popupHash,
-                calcTargetDimensions(popupHash),
-                calcFitContainerDimensions(popupHash),
-            );
-            break;
+            case 'anchor':
+                bestDrawingParams = calcBestDrawingParams(
+                    popupHash,
+                    calcTargetDimensions(popupHash),
+                    calcFitContainerDimensions(popupHash),
+                );
+                break;
         }
 
         this.setState({

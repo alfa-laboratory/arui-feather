@@ -567,6 +567,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 ref={ this.setPopupRef }
                 for={ this.props.name }
                 className={ this.cn('popup') }
+                containerClassName={this.cn('popup-container')}
                 directions={ this.props.directions }
                 height="adaptive"
                 padded={ false }

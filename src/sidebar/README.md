@@ -1,4 +1,5 @@
 Сайдбар
+
 ```jsx
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });
@@ -11,6 +12,7 @@ initialState = {
     <Sidebar
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
+        footer={ <Button view='extra'>Отправить</Button> }
     >
         <Heading size='m'>
             Выписка по счёту
@@ -35,12 +37,12 @@ initialState = {
             (зависит от категории карты). Банк оставляет за собой исключительное право на предоставление или отказ
             в предоставлении кредита. АО «Альфа-Банк». Ген. лицензия ЦБ РФ №1326 от 16.01.2015
         </Paragraph>
-        <Button view='extra'>Отправить</Button>
     </Sidebar>
 </div>
 ```
 
 Сайдбар с кнопкой в шапке сайдбара (используется только в мобильной версии)
+
 ```jsx
 function toggleSidebar() {
     setState({ isOpen: !state.isOpen });

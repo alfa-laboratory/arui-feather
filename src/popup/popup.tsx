@@ -193,6 +193,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     protected cn = createCn('popup');
 
     static defaultProps: Partial<PopupProps> = {
+        containerClassName: '',
         visible: false,
         padded: true,
         secondaryOffset: 0,
@@ -373,7 +374,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 onMouseLeave={ this.handleMouseLeave }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <div className={ `${this.cn('container')} ${this.props.containerClassName ?? ''}`.trim() }>
+                <div className={ `${this.cn('container')} ${this.props.containerClassName}`.trim() }>
                     { this.props.header && <div className={ this.cn('header') }>{ this.props.header }</div> }
                     <div
                         ref={ (inner) => {

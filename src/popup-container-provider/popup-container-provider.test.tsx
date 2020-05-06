@@ -13,7 +13,7 @@ describe('popup-container-provider', () => {
         const popupContainerProvider = shallow(
             <PopupContainerProvider>
                 <div>Render-test</div>
-            </PopupContainerProvider>
+            </PopupContainerProvider>,
         );
 
         expect(popupContainerProvider).toMatchSnapshot();
@@ -23,7 +23,7 @@ describe('popup-container-provider', () => {
         const popupContainer = shallow(
             <PopupContainerProvider>
                 <div>Render-test</div>
-            </PopupContainerProvider>
+            </PopupContainerProvider>,
         );
 
         expect(popupContainer.text()).toContain('Render-test');
@@ -36,7 +36,7 @@ describe('popup-container-provider', () => {
         const popupContainer = mount<PopupContainerProvider>(
             <PopupContainerProvider>
                 <div>Render-test</div>
-            </PopupContainerProvider>
+            </PopupContainerProvider>,
         );
         const childContext = popupContainer.instance().getChildContext();
 
@@ -48,8 +48,8 @@ describe('popup-container-provider', () => {
     it('should render children popups inside itself’s DOM node', () => {
         const popupContainer = mount<PopupContainerProvider>(
             <PopupContainerProvider>
-                <Popup target='position'>Render-test</Popup>
-            </PopupContainerProvider>
+                <Popup target="position">Render-test</Popup>
+            </PopupContainerProvider>,
         );
         const popupNode = popupContainer.find('.popup');
 
@@ -59,8 +59,8 @@ describe('popup-container-provider', () => {
     it('should return root `HTMLElement` after `getNode` method call', () => {
         const popupContainer = mount<PopupContainerProvider>(
             <PopupContainerProvider>
-                <Popup target='position'>Render-test</Popup>
-            </PopupContainerProvider>
+                <Popup target="position">Render-test</Popup>
+            </PopupContainerProvider>,
         );
 
         const node = popupContainer.instance().getNode();

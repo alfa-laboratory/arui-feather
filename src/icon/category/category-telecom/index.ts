@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-telecom.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-telecom';
 export { default } from './category-telecom';

@@ -9,27 +9,27 @@ const PROP_SETS = [
         status: 'ok',
         offset: 10,
         stickTo: 'left',
-        title: 'Notification title'
+        title: 'Notification title',
     },
     {
         visible: true,
         status: 'fail',
         offset: 10,
-        stickTo: 'left'
+        stickTo: 'left',
     },
     {
         visible: true,
         status: 'error',
         offset: 10,
-        stickTo: 'left'
+        stickTo: 'left',
     },
     {
         visible: true,
-        icon: <IconOk name='action-ok' colored={ true } size='m' />,
+        icon: <IconOk name="action-ok" colored={ true } size="m" />,
         status: 'ok',
         offset: 10,
-        stickTo: 'left'
-    }
+        stickTo: 'left',
+    },
 ];
 
 geminiReact.suite(NAME, () => {

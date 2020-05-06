@@ -19,8 +19,8 @@ function renderPopup(popupProps, anchorProps) {
         popup = mount<Popup>(
             <Popup { ...popupProps }>{ popupProps.children || 'Popup' }</Popup>,
             {
-                attachTo: popupContainer
-            }
+                attachTo: popupContainer,
+            },
         );
 
         // Render in container workaround.
@@ -35,8 +35,8 @@ function renderPopup(popupProps, anchorProps) {
         anchor = mount(
             <div { ...anchorProps }>Target</div>,
             {
-                attachTo: anchorContainer
-            }
+                attachTo: anchorContainer,
+            },
         );
     }
 
@@ -60,7 +60,7 @@ function renderPopup(popupProps, anchorProps) {
         popup,
         anchor,
         popupHeaderNode,
-        popupContentNode
+        popupContentNode,
     };
 }
 
@@ -114,7 +114,7 @@ describe('popup', () => {
     it('should not have tooltip with target=`position` and type=`tooltip`', () => {
         const { popup } = renderPopup({
             target: 'position',
-            type: 'tooltip'
+            type: 'tooltip',
         }, null);
 
         popup.instance().setPosition(100, 200);
@@ -148,8 +148,7 @@ describe('popup', () => {
         const outsideElement = document.createElement('div');
 
         outsideElement.setAttribute('style',
-            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;'
-        );
+            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;');
         document.body.appendChild(outsideElement);
 
         setTimeout(() => {

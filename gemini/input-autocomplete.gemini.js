@@ -15,12 +15,12 @@ const OPTIONS = [
     { value: 'Instagram' },
     { value: 'Tumblr' },
     { value: 'Flickr' },
-    { value: 'Odnoklassniki' }
+    { value: 'Odnoklassniki' },
 ];
 
 const PROP_SETS = [
     { placeholder: 'Input', opened: true, options: OPTIONS },
-    { placeholder: 'Input', disabled: true }
+    { placeholder: 'Input', disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {

@@ -10,7 +10,7 @@ const PROP_SETS = [
     {},
     { type: 'button' },
     { type: 'line' },
-    { disabled: true }
+    { disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -25,7 +25,7 @@ geminiReact.suite(NAME, () => {
                 const props = { theme, size, ...set };
                 const checkboxProps = {
                     type: set.type === 'button' ? 'button' : 'normal',
-                    text: 'Checkbox'
+                    text: 'Checkbox',
                 };
                 const template = (
                     <GeminiBox theme={ theme }>

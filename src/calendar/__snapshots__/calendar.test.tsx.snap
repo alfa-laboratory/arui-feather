@@ -623,6 +623,88 @@ exports[`calendar should render without problems 1`] = `
             />
           </td>
         </tr>
+        <tr
+          className="calendar__row"
+          key="row_7"
+        >
+          <td
+            key="day_1"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+          <td
+            key="day_2"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+          <td
+            key="day_3"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+          <td
+            key="day_4"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+          <td
+            key="day_5"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+          <td
+            key="day_6"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+          <td
+            key="day_7"
+          >
+            <div
+              className="calendar__day calendar__day_empty"
+              data-day={null}
+              onClick={[Function]}
+              role="gridcell"
+              tabIndex={0}
+            />
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

@@ -1,12 +1,11 @@
 .flag-icon_mode_sprite.flag-icon_size_s {
-    background-image: url('./images/sprites/flag-icon_size_s@1x.png');
+    background-image: url("./images/sprites/flag-icon_size_s@1x.png");
     background-size: 195px 189px;
 
-    @media
-        only screen and (min-device-pixel-ratio: 2),
+    @media only screen and (min-device-pixel-ratio: 2),
         only screen and (min-resolution: 192dpi),
         only screen and (min-resolution: 2dppx) {
-        background-image: url('./images/sprites/flag-icon_size_s@2x.png');
+        background-image: url("./images/sprites/flag-icon_size_s@2x.png");
     }
 
     &.flag-icon_country_ac {

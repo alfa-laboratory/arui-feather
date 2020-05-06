@@ -1,3 +1,31 @@
+<a name="17.9.0"></a>
+# [17.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.8.0...v17.9.0) (2020-04-30)
+
+
+### Bug Fixes
+
+* hotfix revert after lint autofix ([a026c49](https://github.com/alfa-laboratory/arui-feather/commit/a026c49))
+* **masked-input:** remove implicit maxLength setting ([#1142](https://github.com/alfa-laboratory/arui-feather/issues/1142)) ([0cb8823](https://github.com/alfa-laboratory/arui-feather/commit/0cb8823))
+* **set-immediate:** add set-immediate polyfill ([#1139](https://github.com/alfa-laboratory/arui-feather/issues/1139)) ([e3809ee](https://github.com/alfa-laboratory/arui-feather/commit/e3809ee))
+
+
+### Features
+
+* **calendar:** fix calendar height ([#1146](https://github.com/alfa-laboratory/arui-feather/issues/1146)) ([9d5da61](https://github.com/alfa-laboratory/arui-feather/commit/9d5da61))
+* **phone-input:** add extra handler for phone-input to format value ([#1113](https://github.com/alfa-laboratory/arui-feather/issues/1113)) ([802c8d6](https://github.com/alfa-laboratory/arui-feather/commit/802c8d6))
+
+
+
+<a name="17.8.0"></a>
+# [17.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.7.0...v17.8.0) (2020-04-27)
+
+
+### Bug Fixes
+
+* **menu:** top in .menu-item_checked:before ([#1144](https://github.com/alfa-laboratory/arui-feather/issues/1144)) ([e44aea4](https://github.com/alfa-laboratory/arui-feather/commit/e44aea4))
+
+
+
 <a name="17.7.0"></a>
 # [17.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.6.0...v17.7.0) (2020-04-17)
 

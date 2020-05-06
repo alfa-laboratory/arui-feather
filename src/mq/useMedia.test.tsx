@@ -9,7 +9,7 @@ import { getMatchMedia } from '../lib/match-media';
 
 jest.mock('../lib/match-media');
 jest.mock('./utils', () => ({
-    isPointerEventsSupported: jest.fn(() => true)
+    isPointerEventsSupported: jest.fn(() => true),
 }));
 
 const getMatchMediaMocked = getMatchMedia as jest.Mock;
@@ -24,7 +24,7 @@ describe('useMedia', () => {
         getMatchMediaMocked.mockReturnValue({
             addListener: jest.fn,
             removeListener: jest.fn,
-            matches: false
+            matches: false,
         });
 
         const ref = React.createRef<HTMLDivElement>();
@@ -49,7 +49,7 @@ describe('useMedia', () => {
         getMatchMediaMocked.mockReturnValue({
             addListener: jest.fn,
             removeListener: jest.fn,
-            matches: false
+            matches: false,
         });
         const ref = React.createRef<HTMLDivElement>();
         const text = () => ref.current.textContent;
@@ -64,7 +64,7 @@ describe('useMedia', () => {
             return <h1 ref={ ref }>{ `${matches}` }</h1>;
         };
 
-        const test = mount(<Example query='--small-only' />);
+        const test = mount(<Example query="--small-only" />);
 
         expect(text()).toEqual('false');
         expect(React.useEffect).toHaveBeenCalledTimes(1);
@@ -72,7 +72,7 @@ describe('useMedia', () => {
         getMatchMediaMocked.mockReturnValue({
             addListener: jest.fn,
             removeListener: jest.fn,
-            matches: true
+            matches: true,
         });
 
         test.setProps({ query: '--desktop-m' });

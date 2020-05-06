@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './card-mastero.css';
-import '../../../icon';
+import '../..';
 
 export * from './card-mastero';
 export { default } from './card-mastero';

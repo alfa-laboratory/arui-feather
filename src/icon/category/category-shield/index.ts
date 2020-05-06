@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-shield.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-shield';
 export { default } from './category-shield';

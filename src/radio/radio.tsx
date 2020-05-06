@@ -133,16 +133,17 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     static defaultProps: Partial<RadioProps> = {
         size: 'm',
-        tabIndex: 0
+        tabIndex: 0,
     };
 
     state: RadioState = {
         focused: false,
         hovered: false,
-        checked: false
+        checked: false,
     };
 
     private label;
+
     private control;
 
     render() {
@@ -159,7 +160,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
                     hovered: this.state.hovered,
                     pressed: this.state.pressed,
                     invalid: !!this.props.error,
-                    width: this.props.type === 'button' ? this.props.width : null
+                    width: this.props.type === 'button' ? this.props.width : null,
                 }) }
                 htmlFor={ this.props.id }
                 tabIndex={ this.props.tabIndex }
@@ -190,9 +191,9 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
                     name={ this.props.name }
                     id={ this.props.id }
                     value={ this.props.value }
-                    autoComplete='off'
+                    autoComplete="off"
                     tabIndex={ -1 }
-                    type='radio'
+                    type="radio"
                     className={ this.cn('control') }
                     ref={ (control) => {
                         this.control = control;
@@ -202,10 +203,10 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
                 />
             </span>,
             this.props.text && (
-                <span className={ this.cn('text') } role='presentation' key={ 1 }>
+                <span className={ this.cn('text') } role="presentation" key={ 1 }>
                     { this.props.text }
                 </span>
-            )
+            ),
         ];
     }
 
@@ -213,7 +214,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         return (
             <div>
                 <TagButton
-                    togglable='check'
+                    togglable="check"
                     checked={ checked }
                     disabled={ this.props.disabled }
                     size={ this.props.size }
@@ -231,9 +232,9 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
                     name={ this.props.name }
                     id={ this.props.id }
                     value={ this.props.value }
-                    autoComplete='off'
+                    autoComplete="off"
                     tabIndex={ -1 }
-                    type='radio'
+                    type="radio"
                     className={ this.cn('control') }
                     onChange={ this.handleChange }
                     ref={ (control) => {
@@ -250,6 +251,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     private handleChange = (event) => {
         if (!this.props.disabled) {
+            // eslint-disable-next-line react/no-access-state-in-setstate
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
@@ -266,6 +268,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
 
         if (this.props.type !== 'button') {
+            // eslint-disable-next-line no-param-reassign
             event.target.value = this.props.value;
         }
 
@@ -282,6 +285,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         }
 
         if (this.props.type !== 'button') {
+            // eslint-disable-next-line no-param-reassign
             event.target.value = this.props.value;
         }
 
@@ -335,7 +339,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
 
         scrollTo({
             // eslint-disable-next-line no-mixed-operators
-            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION,
         });
     }
 }

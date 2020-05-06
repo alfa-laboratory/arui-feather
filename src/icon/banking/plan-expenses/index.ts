@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './plan-expenses.css';
-import '../../../icon';
+import '../..';
 
 export * from './plan-expenses';
 export { default } from './plan-expenses';

@@ -109,7 +109,7 @@ describe('intl-phone-input', () => {
     });
 
     it('should set new country flag icon from props', async () => {
-        const elem = mount(<IntlPhoneInput value='+61' />);
+        const elem = mount(<IntlPhoneInput value="+61" />);
 
         await elem.instance().componentDidMount();
         elem.update();

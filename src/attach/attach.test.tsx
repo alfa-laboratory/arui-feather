@@ -93,9 +93,9 @@ describe('attach', () => {
         controlNode.simulate('change', {
             target: {
                 files: [{
-                    name: 'test.txt', type: 'application/text'
-                }]
-            }
+                    name: 'test.txt', type: 'application/text',
+                }],
+            },
         });
 
         const fileTitleNode = attach.find('.attach__text');
@@ -111,16 +111,16 @@ describe('attach', () => {
             target: {
                 files: [
                     {
-                        name: 'test1.txt', type: 'application/text'
+                        name: 'test1.txt', type: 'application/text',
                     },
                     {
-                        name: 'test2.txt', type: 'application/text'
+                        name: 'test2.txt', type: 'application/text',
                     },
                     {
-                        name: 'test3.txt', type: 'application/text'
-                    }
-                ]
-            }
+                        name: 'test3.txt', type: 'application/text',
+                    },
+                ],
+            },
         });
 
         const filesTitleNode = attach.find('.attach__text abbr');
@@ -135,9 +135,9 @@ describe('attach', () => {
         controlNode.simulate('change', {
             target: {
                 files: [{
-                    name: 'test.txt', type: 'application/text'
-                }]
-            }
+                    name: 'test.txt', type: 'application/text',
+                }],
+            },
         });
 
         const fileTitleNode = attach.find('.attach__text');
@@ -161,9 +161,9 @@ describe('attach', () => {
         controlNode.simulate('change', {
             target: {
                 files: [{
-                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt', type: 'application/text'
-                }]
-            }
+                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt', type: 'application/text',
+                }],
+            },
         });
 
         const fileLongNameNode = attach.find('.attach__text');
@@ -177,9 +177,9 @@ describe('attach', () => {
         controlNode.simulate('change', {
             target: {
                 files: [{
-                    name: 'it_has_just_26_symbols.txt', type: 'application/text'
-                }]
-            }
+                    name: 'it_has_just_26_symbols.txt', type: 'application/text',
+                }],
+            },
         });
 
         const fileShortNameNode = attach.find('.attach__text');

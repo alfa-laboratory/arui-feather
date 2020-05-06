@@ -133,7 +133,7 @@ export type SelectProps = DeepReadonly<{
     /**
      * Направления, в которые может открываться попап компонента
      */
-    directions?: Array<SelectDirectionsFieldType>;
+    directions?: SelectDirectionsFieldType[];
 
     /**
      * Управление возможностью редактирования значения
@@ -158,7 +158,7 @@ export type SelectProps = DeepReadonly<{
     /**
      * Список вариантов выбора
      */
-    options?: Array<SelectOptionsShapeType>;
+    options?: SelectOptionsShapeType[];
 
     /**
      * Вставляет попап со списком только если элемент активен
@@ -332,19 +332,20 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
         mobileTitle: DEFAULT_TEXT_FALLBACK,
         nativeOptionPlaceholder: DEFAULT_TEXT_FALLBACK,
         mobileMenuMode: 'native',
-        renderPopupOnFocus: false
+        renderPopupOnFocus: false,
     };
 
     static contextTypes: any = {
-        positioningContainerElement: HtmlElement
+        positioningContainerElement: HtmlElement,
     };
 
     state: SelectState = {
-        hasGroup: this.props.options.some(option => !!(option.type === 'group' && !!option.content)),
+        // eslint-disable-next-line max-len
+        hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content)),
         isMobile: false,
         opened: !!this.props.opened,
         popupStyles: {},
-        value: this.props.value || []
+        value: this.props.value || [],
     };
 
     private root: HTMLDivElement;
@@ -384,7 +385,8 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                 this.toggleOpened();
             }
         }
-        const hasGroup = prevProps.options.some(option => option.type === 'group' && !!option.content);
+        // eslint-disable-next-line max-len
+        const hasGroup = prevProps.options.some((option) => option.type === 'group' && !!option.content);
 
         this.updateHasGroup(hasGroup);
     }
@@ -406,7 +408,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                     'has-placeholder': !!this.props.placeholder,
                     invalid: !!this.props.error,
                     opened: this.getOpened(),
-                    'no-tick': this.props.hideTick
+                    'no-tick': this.props.hideTick,
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -414,11 +416,11 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('inner') }>
-                    <input id={ this.props.id } name={ this.props.name } type='hidden' value={ value as any /* TODO: разобраться что тут происходит */ } />
+                    <input id={ this.props.id } name={ this.props.name } type="hidden" value={ value as any /* TODO: разобраться что тут происходит */ } />
                     { !!this.props.label && <span className={ this.cn('top') }>{ this.props.label }</span> }
                     { this.renderButton() }
 
-                    <Mq query='--small-only' touch={ true } onMatchChange={ this.handleMqMatchChange }>
+                    <Mq query="--small-only" touch={ true } onMatchChange={ this.handleMqMatchChange }>
                         { this.props.mobileMenuMode === 'native' && this.renderNativeSelect() }
                     </Mq>
 
@@ -430,8 +432,8 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                         </div>
                     ) }
 
-                    { (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
-                        this.renderPopup() }
+                    { (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup'))
+                        && this.renderPopup() }
                 </span>
             </div>
         );
@@ -443,25 +445,25 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
         const opened = this.getOpened();
 
         switch (opened) {
-            case true:
-                ToggledIcon = IconArrowUp;
-                break;
-            case false:
-                ToggledIcon = IconArrowDown;
-                break;
+        case true:
+            ToggledIcon = IconArrowUp;
+            break;
+        case false:
+            ToggledIcon = IconArrowDown;
+            break;
         }
 
         switch (this.props.size) {
-            case 's':
-            case 'm':
-                tickSize = this.props.view === 'filled' ? 'l' : 's';
-                break;
-            case 'l':
-                tickSize = 'm';
-                break;
-            case 'xl':
-                tickSize = 'l';
-                break;
+        case 's':
+        case 'm':
+            tickSize = this.props.view === 'filled' ? 'l' : 's';
+            break;
+        case 'l':
+            tickSize = 'm';
+            break;
+        case 'xl':
+            tickSize = 'l';
+            break;
         }
 
         return (
@@ -478,13 +480,13 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
             >
                 { this.renderButtonContent() }
                 { !this.props.hideTick && (
-                    <IconButton className={ this.cn('tick') } key='addon-icon' size={ this.props.size } tag='span'>
+                    <IconButton className={ this.cn('tick') } key="addon-icon" size={ this.props.size } tag="span">
                         <ToggledIcon size={ tickSize } />
                     </IconButton>
                 ) }
 
                 { this.getOpened() && (
-                    <ResizeSensor key='addon-sensor' onResize={ this.updatePopupStyles } />
+                    <ResizeSensor key="addon-sensor" onResize={ this.updatePopupStyles } />
                 ) }
             </SelectButton>
         );
@@ -523,9 +525,10 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                         https://discussions.apple.com/message/23745665
                         https://discussions.apple.com/message/24694954
                     */
-                    hasEmptyOptGroup && <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } /> }
+                    hasEmptyOptGroup && <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } />
+                }
                 { hasEmptyOption && (
-                    <option disabled={ true } value=''>
+                    <option disabled={ true } value="">
                         { this.props.nativeOptionPlaceholder }
                     </option>
                 ) }
@@ -547,12 +550,12 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
 
         return (
             <ThemedPopup
-                key='popup'
+                key="popup"
                 ref={ this.setPopupRef }
                 for={ this.props.name }
                 className={ this.cn('popup') }
                 directions={ this.props.directions }
-                height='adaptive'
+                height="adaptive"
                 padded={ false }
                 mainOffset={ this.props.popupMainOffset }
                 secondaryOffset={ this.props.popupSecondaryOffset }
@@ -592,7 +595,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                 return {
                     type: 'group',
                     title: option.title,
-                    content
+                    content,
                 };
             }
 
@@ -601,7 +604,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
             return {
                 props: option.props,
                 value: option.value,
-                content: createFragment({ icon: option.icon, content })
+                content: createFragment({ icon: option.icon, content }),
             };
         });
     }
@@ -637,7 +640,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
             return this.props.renderButtonContent(checkedItems);
         }
 
-        const checkedItemsText = checkedItems.map(item => item.checkedText || item.text).join(', ');
+        const checkedItemsText = checkedItems.map((item) => item.checkedText || item.text).join(', ');
 
         if (checkedItemsText) {
             return checkedItemsText;
@@ -674,6 +677,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
             this.props.onClick(event);
         }
     };
+
     // TODO: не используется и вроде не публичный!!!!
     handleButtonKeyDown = (event) => {
         if (!this.props.disabled) {
@@ -700,6 +704,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
     };
 
     private handleMenuFocus = (event) => {
+        // eslint-disable-next-line no-param-reassign
         event.target.value = this.getValue();
 
         if (this.props.onFocus) {
@@ -712,12 +717,13 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
     };
 
     private handleMenuBlur = (event) => {
+        // eslint-disable-next-line no-param-reassign
         event.target.value = this.getValue();
 
         if (this.awaitClosing || event.relatedTarget !== this.button.getNode()) {
             this.awaitClosing = false;
             this.setState({
-                opened: false
+                opened: false,
             });
         }
 
@@ -775,7 +781,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
 
         const hasEmptyOption = this.props.mode !== 'check' && !this.state.hasGroup;
         const domOptions = Array.from(event.currentTarget.options).filter(
-            (option: any, index) => !(hasEmptyOption && option.disabled && index === 0)
+            (option: any, index) => !(hasEmptyOption && option.disabled && index === 0),
         );
         const flattenedPropOptions = getFlattenedPropOptions(this.props.options);
         const value = domOptions.reduce((result: any[], item: any, index) => {
@@ -799,7 +805,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
 
     private handleClickOutside = () => {
         this.setState({
-            opened: false
+            opened: false,
         });
 
         if (this.props.onClickOutside) {
@@ -811,24 +817,24 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
         const opened = this.getOpened();
 
         switch (event.which) {
-            case keyboardCode.DOWN_ARROW:
-            case keyboardCode.UP_ARROW:
-                event.preventDefault();
-                this.scrollToHighlightedItem(highlightedItem);
-                break;
-            case keyboardCode.ENTER:
-            case keyboardCode.SPACE:
-                event.preventDefault();
-                this.setState({
-                    opened: this.props.mode === 'check' ? true : !opened
-                });
-                this.focusOnMenu();
-                break;
-            case keyboardCode.ESCAPE:
-                event.preventDefault();
-                this.awaitClosing = true;
-                this.button.focus();
-                break;
+        case keyboardCode.DOWN_ARROW:
+        case keyboardCode.UP_ARROW:
+            event.preventDefault();
+            this.scrollToHighlightedItem(highlightedItem);
+            break;
+        case keyboardCode.ENTER:
+        case keyboardCode.SPACE:
+            event.preventDefault();
+            this.setState({
+                opened: this.props.mode === 'check' ? true : !opened,
+            });
+            this.focusOnMenu();
+            break;
+        case keyboardCode.ESCAPE:
+            event.preventDefault();
+            this.awaitClosing = true;
+            this.button.focus();
+            break;
         }
 
         if (this.props.onKeyDown) {
@@ -865,18 +871,18 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
     private handleMqMatchChange = (isMatched) => {
         this.setState(
             {
-                isMobile: isMatched
+                isMobile: isMatched,
             },
             () => {
                 this.setPopupTarget();
                 this.updatePopupStyles();
-            }
+            },
         );
     };
 
     private handlePopupCloserClick = () => {
         this.setState({
-            opened: false
+            opened: false,
         });
     };
 
@@ -891,7 +897,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
             const popupIsReady = !!this.popup;
 
             this.setState({
-                popupIsReady
+                popupIsReady,
             });
 
             if (popupIsReady) {
@@ -924,11 +930,11 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
 
             this.setState(
                 {
-                    opened: true
+                    opened: true,
                 },
                 () => {
                     this.focusOnMenu();
-                }
+                },
             );
         }
     }
@@ -951,7 +957,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
 
         scrollTo({
             // eslint-disable-next-line no-mixed-operators
-            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION,
         });
     }
 
@@ -987,14 +993,14 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
                 scrollTo({
                     container,
                     targetY: element.offsetTop,
-                    duration: SCROLL_TO_NORMAL_DURATION
+                    duration: SCROLL_TO_NORMAL_DURATION,
                 });
             } else if (element.offsetTop < container.scrollTop) {
                 scrollTo({
                     container,
                     // eslint-disable-next-line no-mixed-operators
                     targetY: element.offsetTop - container.offsetHeight + correction,
-                    duration: SCROLL_TO_NORMAL_DURATION
+                    duration: SCROLL_TO_NORMAL_DURATION,
                 });
             }
         }
@@ -1005,13 +1011,13 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
 
         this.setState(
             {
-                opened: newOpenedState
+                opened: newOpenedState,
             },
             () => {
                 if (newOpenedState) {
                     this.focusOnMenu();
                 }
-            }
+            },
         );
     }
 
@@ -1022,8 +1028,8 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = buttonWidth;
         }
-        if (this.state.popupStyles.maxWidth !== popupStyles.maxWidth ||
-            this.state.popupStyles.minWidth !== popupStyles.minWidth) {
+        if (this.state.popupStyles.maxWidth !== popupStyles.maxWidth
+            || this.state.popupStyles.minWidth !== popupStyles.minWidth) {
             this.setState({ popupStyles });
         }
     };
@@ -1070,6 +1076,7 @@ export class Select extends React.PureComponent<SelectProps, SelectState> {
     private isAutoSelectRequired() {
         const { mode, options, renderPopupOnFocus } = this.props;
 
+        // eslint-disable-next-line max-len
         return renderPopupOnFocus && mode === 'radio' && options.length > 0 && !this.hasCheckedItems();
     }
 

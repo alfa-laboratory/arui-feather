@@ -13,6 +13,7 @@ import { withTheme } from '../cn';
 
 import Input, { InputProps } from '../input/input';
 import Mask from '../masked-input/mask';
+import { getAndroidVersion } from '../masked-input';
 
 import { getCurrencySymbol } from '../lib/currency-codes';
 
@@ -99,11 +100,11 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         integerLength: DEFAULT_INTEGER_SIZE,
         bold: false,
         showCurrency: false,
-        currencyCode: 'RUR'
+        currencyCode: 'RUR',
     };
 
     state = {
-        value: ''
+        value: '',
     };
 
     private maskPattern: string;
@@ -125,6 +126,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
             this.updateMaskByValue(nextProps.value || '');
         }
     }
+
     componentWillUnmount() {
         clearTimeout(this.caretFixTimeout);
     }
@@ -135,7 +137,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
                 className={ this.cn({
                     currency: this.props.showCurrency,
                     bold: this.props.bold,
-                    width: this.props.width
+                    width: this.props.width,
                 }) }
                 data-test-id={ this.props['data-test-id'] }
             >
@@ -179,6 +181,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
             // `fractionPart.length === 0` - значит цифр после запятой нет.
             if (fractionPart !== undefined && fractionPart.length === 0) {
                 newValue = newValue.substring(0, newValue.length - 1);
+                // eslint-disable-next-line no-param-reassign
                 event.target.value = newValue;
             }
         }
@@ -189,7 +192,6 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         // оставаться перед запятой
         if (newValue.length > currentValue.length && newValue[currentSelection] === ',') {
             setTimeout((() => {
-
                 // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
                 const offsetSection = IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
                 const newSelectionStart = this.root.control.input.selectionStart - 1;

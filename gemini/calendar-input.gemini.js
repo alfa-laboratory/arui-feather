@@ -12,10 +12,10 @@ function renderAddons(calendarInputSize) {
     let iconSize;
 
     switch (calendarInputSize) {
-        case 's':
-        case 'm': iconSize = 's'; break;
-        case 'l': iconSize = 'm'; break;
-        case 'xl': iconSize = 'l'; break;
+    case 's':
+    case 'm': iconSize = 's'; break;
+    case 'l': iconSize = 'm'; break;
+    case 'xl': iconSize = 'l'; break;
     }
 
     return (
@@ -25,24 +25,24 @@ function renderAddons(calendarInputSize) {
 
 const PROP_SETS = [
     {
-        value: DATE
+        value: DATE,
     },
     {
         value: DATE,
-        width: 'available'
+        width: 'available',
     },
     {
         value: DATE,
-        error: 'Something went wrong'
+        error: 'Something went wrong',
     },
     {
         value: DATE,
-        disabled: true
+        disabled: true,
     },
     {
         value: '',
-        defaultMonth: '01.09.2018'
-    }
+        defaultMonth: '01.09.2018',
+    },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -58,7 +58,7 @@ geminiReact.suite(NAME, () => {
                     theme,
                     leftAddons: index === 4 && renderAddons(size),
                     rightAddons: index === 4 && renderAddons(size),
-                    ...set
+                    ...set,
                 };
                 const template = (
                     <GeminiBox theme={ theme } width={ set.width }>

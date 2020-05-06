@@ -96,11 +96,11 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     protected cn = createCn('checkbox-group');
 
     static defaultProps: Partial<CheckBoxGroupProps> = {
-        type: 'normal'
+        type: 'normal',
     };
 
     state = {
-        value: []
+        value: [],
     };
 
     private checkboxes: any[];
@@ -131,14 +131,14 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
             React.Children.forEach(children, (checkbox, index) => {
                 if (React.isValidElement(checkbox)) {
                     const checkboxNode = React.cloneElement(checkbox, {
-                        ref: checkbox => this.checkboxes.push(checkbox),
+                        ref: (checkbox) => this.checkboxes.push(checkbox),
                         checked: checkbox.props.checked === undefined
-                            ? value.some(groupValue => groupValue === checkbox.props.value)
+                            ? value.some((groupValue) => groupValue === checkbox.props.value)
                             : checkbox.props.checked,
                         onChange: checkbox.props.onChange === undefined
                             ? (checked, _text, event) => this.handleCheckboxChange(checkbox.props.value, checked, event)
                             : checkbox.props.onChange,
-                        ...props
+                        ...props,
                     });
 
                     checkboxGroupParts[`checkbox-${index}`] = (this.props.type !== 'button' && this.props.type !== 'line')
@@ -154,21 +154,23 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
                     `${this.cn({
                         type: this.props.type,
                         disabled: props.disabled,
-                        width: props.width ? props.width : null
+                        width: props.width ? props.width : null,
                     })} control-group`
                 }
                 id={ this.props.id }
-                role='group'
+                role="group"
                 tabIndex={ -1 }
                 onFocus={ this.handleFocus }
                 onBlur={ this.handleBlur }
                 data-test-id={ this.props['data-test-id'] }
             >
                 {
-                    !!this.props.label &&
-                    <div className={ this.cn('label') }>
-                        { this.props.label }
-                    </div>
+                    !!this.props.label
+                    && (
+                        <div className={ this.cn('label') }>
+                            { this.props.label }
+                        </div>
+                    )
                 }
                 <div className={ this.cn('box') }>
                     { createFragment(checkboxGroupParts) }
@@ -178,8 +180,9 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     }
 
     private handleCheckboxChange = (value, checked, event) => {
+        // eslint-disable-next-line react/no-access-state-in-setstate
         const newValue = this.props.value ? this.props.value.slice() : this.state.value.slice();
-        const changedValueIndex = newValue.findIndex(stateValue => stateValue === value);
+        const changedValueIndex = newValue.findIndex((stateValue) => stateValue === value);
 
         if (checked) {
             newValue.push(value);
@@ -188,7 +191,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
         }
 
         this.setState({
-            value: newValue
+            value: newValue,
         });
 
         if (this.props.onChange) {
@@ -216,6 +219,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
             this.checkboxes[0].focus();
         }
     }
+
     /**
      * Убирает фокус с группы чекбокс-кнопок.
      */

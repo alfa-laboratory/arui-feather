@@ -121,15 +121,16 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
 
     static defaultProps: Partial<MenuItemProps> = {
         type: 'link',
-        view: 'plain'
+        view: 'plain',
     };
 
     state = {
         hovered: false,
-        focused: false
+        focused: false,
     };
 
     private root;
+
     private control;
 
     render() {
@@ -139,73 +140,73 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
             ref: (root) => {
                 this.root = root;
             },
-            'data-test-id': this.props['data-test-id']
+            'data-test-id': this.props['data-test-id'],
         };
 
         switch (this.props.type) {
-            case 'dropdown':
-                itemElement = (
-                    <Dropdown
-                        ref={ (control) => {
-                            this.control = control;
-                        } }
-                        className={ `${this.cn('control')} ${this.cn('dropdown')}` }
-                        size={ this.props.size }
-                        theme={ this.props.theme }
-                        opened={ this.state.hovered }
-                        switcherType='link'
-                        switcherText={ content }
-                        popupContent={ this.props.popup }
-                        popupProps={ {
-                            directions: ['bottom-left'],
-                            target: 'anchor'
-                        } }
-                        mode='hover'
-                        onSwitcherClick={ this.handleClick }
-                        onSwitcherMouseEnter={ this.handleMouseEnter }
-                        onSwitcherMouseLeave={ this.handleMouseLeave }
-                    />
-                );
-                break;
-            case 'block':
-                menuItemProps = {
-                    ref: (control) => {
-                        this.root = control;
+        case 'dropdown':
+            itemElement = (
+                <Dropdown
+                    ref={ (control) => {
                         this.control = control;
-                    },
-                    onClick: this.handleClick,
-                    onMouseEnter: this.handleMouseEnter,
-                    onMouseLeave: this.handleMouseLeave
-                };
-                itemElement = <span className={ this.cn('control') }>{ content }</span>;
+                    } }
+                    className={ `${this.cn('control')} ${this.cn('dropdown')}` }
+                    size={ this.props.size }
+                    theme={ this.props.theme }
+                    opened={ this.state.hovered }
+                    switcherType="link"
+                    switcherText={ content }
+                    popupContent={ this.props.popup }
+                    popupProps={ {
+                        directions: ['bottom-left'],
+                        target: 'anchor',
+                    } }
+                    mode="hover"
+                    onSwitcherClick={ this.handleClick }
+                    onSwitcherMouseEnter={ this.handleMouseEnter }
+                    onSwitcherMouseLeave={ this.handleMouseLeave }
+                />
+            );
+            break;
+        case 'block':
+            menuItemProps = {
+                ref: (control) => {
+                    this.root = control;
+                    this.control = control;
+                },
+                onClick: this.handleClick,
+                onMouseEnter: this.handleMouseEnter,
+                onMouseLeave: this.handleMouseLeave,
+            };
+            itemElement = <span className={ this.cn('control') }>{ content }</span>;
 
-                break;
-            case 'link':
-            default:
-                itemElement = (
-                    <Link
-                        ref={ (control) => {
-                            this.control = control;
-                        } }
-                        className={ `${this.cn('control')} ${this.cn('link')}` }
-                        size={ this.props.size }
-                        theme={ this.props.theme }
-                        pseudo={ this.props.view === 'pseudo' }
-                        disabled={ this.props.disabled }
-                        checked={ this.props.checked }
-                        text={ this.props.view !== 'plain' && content }
-                        url={ this.props.url }
-                        target={ this.props.target }
-                        onClick={ this.handleClick }
-                        onFocus={ this.handleFocus }
-                        onBlur={ this.handleBlur }
-                        onMouseEnter={ this.handleMouseEnter }
-                        onMouseLeave={ this.handleMouseLeave }
-                    >
-                        { this.props.view === 'plain' && content }
-                    </Link>
-                );
-                break;
+            break;
+        case 'link':
+        default:
+            itemElement = (
+                <Link
+                    ref={ (control) => {
+                        this.control = control;
+                    } }
+                    className={ `${this.cn('control')} ${this.cn('link')}` }
+                    size={ this.props.size }
+                    theme={ this.props.theme }
+                    pseudo={ this.props.view === 'pseudo' }
+                    disabled={ this.props.disabled }
+                    checked={ this.props.checked }
+                    text={ this.props.view !== 'plain' && content }
+                    url={ this.props.url }
+                    target={ this.props.target }
+                    onClick={ this.handleClick }
+                    onFocus={ this.handleFocus }
+                    onBlur={ this.handleBlur }
+                    onMouseEnter={ this.handleMouseEnter }
+                    onMouseLeave={ this.handleMouseLeave }
+                >
+                    { this.props.view === 'plain' && content }
+                </Link>
+            );
+            break;
         }
 
         return (
@@ -216,7 +217,7 @@ export class MenuItem extends React.PureComponent<MenuItemProps> {
                     hidden: this.props.hidden,
                     type: this.props.type,
                     hovered: this.props.hovered === undefined ? this.state.hovered : this.props.hovered,
-                    focused: this.state.focused
+                    focused: this.state.focused,
                 }) }
                 { ...menuItemProps }
             >

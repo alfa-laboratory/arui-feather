@@ -10,7 +10,7 @@ const PROP_SETS = [
     { text: 'Checkbox', type: 'button' },
     { text: 'Checkbox', error: true },
     { text: 'Checkbox', type: 'button', error: true },
-    { text: 'Checkbox', disabled: true }
+    { text: 'Checkbox', disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {

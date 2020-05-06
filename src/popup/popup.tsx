@@ -81,7 +81,7 @@ export type PopupProps = DeepReadonly<{
     /**
      * Только для target='anchor', расположение (в порядке приоритета) относительно точки открытия. Первым указывается главное направление, через дефис - второстепенное направление
      */
-    directions?: ReadonlyArray<PopupDirectionsFieldType>;
+    directions?: readonly PopupDirectionsFieldType[];
 
     /**
      * Привязка компонента к другому элементу на странице, или его расположение независимо от остальных: 'anchor', 'position', 'screen'
@@ -193,14 +193,14 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         secondaryOffset: 0,
         fitContaiterOffset: 0,
         target: 'anchor',
-        size: 's'
+        size: 's',
     };
 
     // TODO: не типизировал, сделаем потом
     static contextTypes: any = {
         isInCustomContainer: Type.bool,
         renderContainerElement: HtmlElement,
-        positioningContainerElement: HtmlElement
+        positioningContainerElement: HtmlElement,
     };
 
     state = {
@@ -210,32 +210,40 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         styles: {
             top: 0,
             left: 0,
-            height: 'auto'
+            height: 'auto',
         },
         topGradientStyles: {
-            width: '100%'
+            width: '100%',
         },
         bottomGradientStyles: {
-            width: '100%'
+            width: '100%',
         },
         canUseDOM: false,
         /*
          * Переменная для отложенного вызова функции redraw(),
          * которая будет вызвана после вызова componentDidMount().
          */
-        needRedrawAfterMount: false
+        needRedrawAfterMount: false,
     };
 
     private anchor = null;
+
     private clickEventBindTimeout = null;
+
     private domElemPopup = null;
+
     private domElemPopupInner: HTMLElement = null;
+
     private domElemPopupContent = null;
+
     private isWindowClickBinded = false;
+
     private position = null;
 
     private popup;
+
     private inner;
+
     private content;
 
     private handleWindowResize = debounce(() => {
@@ -247,12 +255,12 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
         if (
-            this.context.isInCustomContainer &&
-            this.context.renderContainerElement &&
-            this.context.positioningContainerElement
+            this.context.isInCustomContainer
+            && this.context.renderContainerElement
+            && this.context.positioningContainerElement
         ) {
             this.setState({
-                receivedContainer: true
+                receivedContainer: true,
             });
         }
     }
@@ -271,13 +279,13 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         /* eslint-disable react/no-did-mount-set-state */
         this.setState(
             {
-                canUseDOM: true
+                canUseDOM: true,
             },
             () => {
                 if (this.state.needRedrawAfterMount) {
                     this.redraw();
                 }
-            }
+            },
         );
         /* eslint-enable */
     }
@@ -285,19 +293,19 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         if (
-            !this.state.receivedContainer &&
-            nextContext.renderContainerElement &&
-            nextContext.positioningContainerElement
+            !this.state.receivedContainer
+            && nextContext.renderContainerElement
+            && nextContext.positioningContainerElement
         ) {
             this.setState(
                 {
-                    receivedContainer: true
+                    receivedContainer: true,
                 },
                 () => {
                     if (this.props.visible) {
                         this.redraw();
                     }
-                }
+                },
             );
 
             return;
@@ -347,14 +355,14 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                     visible: this.props.visible,
                     height: this.props.height,
                     padded: this.props.padded,
-                    overflow: !!this.props.maxHeight
+                    overflow: !!this.props.maxHeight,
                 }) }
                 id={ this.props.id }
                 style={ {
                     ...this.state.styles,
                     minWidth: this.getMinWidth(),
                     maxWidth: this.getMaxWidth(),
-                    maxHeight: this.getMaxHeight()
+                    maxHeight: this.getMaxHeight(),
                 } }
                 onMouseEnter={ this.handleMouseEnter }
                 onMouseLeave={ this.handleMouseLeave }
@@ -405,13 +413,15 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 width: string;
                 height?: number;
             } = {
-                width: this.state.topGradientStyles.width
+                // eslint-disable-next-line react/no-access-state-in-setstate
+                width: this.state.topGradientStyles.width,
             };
             const bottomGradientStyles: {
                 width: string;
                 height?: number;
             } = {
-                width: this.state.bottomGradientStyles.width
+                // eslint-disable-next-line react/no-access-state-in-setstate
+                width: this.state.bottomGradientStyles.width,
             };
 
             if (isTopReached) {
@@ -424,7 +434,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
 
             this.setState({
                 topGradientStyles,
-                bottomGradientStyles
+                bottomGradientStyles,
             });
         }
     };
@@ -527,9 +537,9 @@ export class Popup extends React.Component<PopupProps, PopupState> {
      */
     isPropsToPositionCorrect(): boolean {
         return (
-            (this.props.target === 'anchor' && this.anchor) ||
-            (this.props.target === 'position' && this.position) ||
-            this.props.target === 'screen'
+            (this.props.target === 'anchor' && this.anchor)
+            || (this.props.target === 'position' && this.position)
+            || this.props.target === 'screen'
         );
     }
 
@@ -542,7 +552,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
          * Это сделано для того, чтобы redraw() не вызывалась на серверной стороне.
          */
         this.setState({
-            needRedrawAfterMount: true
+            needRedrawAfterMount: true,
         });
 
         if (!this.state.canUseDOM || !this.isContainerReady()) {
@@ -550,7 +560,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         }
 
         this.setState({
-            needRedrawAfterMount: false
+            needRedrawAfterMount: false,
         });
 
         if (!this.isPropsToPositionCorrect()) {
@@ -567,33 +577,33 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         let bestDrawingParams;
 
         switch (this.props.target) {
-            case 'position':
-                bestDrawingParams = { top: this.position.top, left: this.position.left };
-                break;
+        case 'position':
+            bestDrawingParams = { top: this.position.top, left: this.position.left };
+            break;
 
-            case 'screen':
-                bestDrawingParams = {
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    overflow: this.inner.scrollHeight > this.inner.clientHeight
-                };
-                break;
+        case 'screen':
+            bestDrawingParams = {
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                overflow: this.inner.scrollHeight > this.inner.clientHeight,
+            };
+            break;
 
-            case 'anchor':
-                bestDrawingParams = calcBestDrawingParams(
-                    popupHash,
-                    calcTargetDimensions(popupHash),
-                    calcFitContainerDimensions(popupHash)
-                );
-                break;
+        case 'anchor':
+            bestDrawingParams = calcBestDrawingParams(
+                popupHash,
+                calcTargetDimensions(popupHash),
+                calcFitContainerDimensions(popupHash),
+            );
+            break;
         }
 
         this.setState({
             direction: bestDrawingParams.direction,
             hasScrollbar: bestDrawingParams.overflow,
-            styles: this.getDrawingCss(bestDrawingParams)
+            styles: this.getDrawingCss(bestDrawingParams),
         });
 
         this.setGradientStyles();
@@ -628,7 +638,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
             left: drawingParams.left,
             right: drawingParams.right,
             bottom: drawingParams.bottom,
-            height: this.props.height === 'adaptive' ? drawingParams.height : 'auto'
+            height: this.props.height === 'adaptive' ? drawingParams.height : 'auto',
         };
     }
 
@@ -663,11 +673,11 @@ export class Popup extends React.Component<PopupProps, PopupState> {
             offset: {
                 main: this.props.mainOffset,
                 second: this.props.secondaryOffset,
-                fitContainer: this.props.fitContaiterOffset
+                fitContainer: this.props.fitContaiterOffset,
             },
             targetPosition: this.position,
             targetAnchor: this.anchor,
-            fitContainer: this.getPositioningContainer()
+            fitContainer: this.getPositioningContainer(),
         };
     }
 
@@ -677,11 +687,11 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         this.setState({
             topGradientStyles: {
                 width: clientWidth,
-                height: 0
+                height: 0,
             },
             bottomGradientStyles: {
-                width: clientWidth
-            }
+                width: clientWidth,
+            },
         });
     }
 }

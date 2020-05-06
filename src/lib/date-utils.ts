@@ -36,7 +36,7 @@ const PARSE_TOKENS: DateParserToken[] = [
     { type: 'date', regex: /^\d{1,2}/, formatRegex: /^D/ },
     { type: 'month', regex: /^\d{2}/, formatRegex: /^MM/ },
     { type: 'month', regex: /^\d{1,2}/, formatRegex: /^M/ },
-    { type: 'year', regex: /^\d{4}/, formatRegex: /^YYYY/ }
+    { type: 'year', regex: /^\d{4}/, formatRegex: /^YYYY/ },
 ];
 
 type Limit = {
@@ -76,7 +76,7 @@ function getLimits(month: number, year: number): DateLimits {
     return {
         date: { min: 1, max: getDaysInMonth(new Date(year, month - 1)) },
         month: { min: 1, max: 12 },
-        year: { min: 1, max: Number.MAX_SAFE_INTEGER }
+        year: { min: 1, max: Number.MAX_SAFE_INTEGER },
     };
 }
 
@@ -127,7 +127,7 @@ function parseFormat(format: string): FormatParserToken[] {
 
     while (processingFormat.length > 0) {
         /* eslint no-loop-func: 0 */
-        const matchedToken = PARSE_TOKENS.find(t => processingFormat.match(t.formatRegex));
+        const matchedToken = PARSE_TOKENS.find((t) => processingFormat.match(t.formatRegex));
 
         if (matchedToken) {
             parser.push(matchedToken);
@@ -158,7 +158,7 @@ function parseFormat(format: string): FormatParserToken[] {
  * @param strict Запрещать ли значения, выходящие за пределы логических ограничений месяцев/дней.
  * В случае если strict=false 22 месяц будет интерпретироваться как год и 10 месяцев.
  */
-export function parse(input: string, format: string = 'DD.MM.YYYY', strict: boolean = true): Date {
+export function parse(input: string, format = 'DD.MM.YYYY', strict = true): Date {
     const parsedFormat = parseFormat(format);
     const parsedResult: Partial<Record<DateType, number>> = {};
 
@@ -169,6 +169,7 @@ export function parse(input: string, format: string = 'DD.MM.YYYY', strict: bool
             if (input[0] !== token.value) {
                 return new Date('invalid');
             }
+            // eslint-disable-next-line no-param-reassign
             input = input.substring(1);
             continue;
         }
@@ -180,20 +181,21 @@ export function parse(input: string, format: string = 'DD.MM.YYYY', strict: bool
         }
 
         parsedResult[token.type] = parseInt(match[0], 10);
+        // eslint-disable-next-line no-param-reassign
         input = input.replace(token.regex, '');
     }
 
     const {
         date: dateLimits,
         month: monthLimits,
-        year: yearLimits
+        year: yearLimits,
     } = getLimits(parsedResult.month, parsedResult.year);
 
     if (
         strict && (
-            parsedResult.date > dateLimits.max || parsedResult.date < dateLimits.min ||
-            parsedResult.month > monthLimits.max || parsedResult.month < monthLimits.min ||
-            parsedResult.year > yearLimits.max || parsedResult.year < yearLimits.min
+            parsedResult.date > dateLimits.max || parsedResult.date < dateLimits.min
+            || parsedResult.month > monthLimits.max || parsedResult.month < monthLimits.min
+            || parsedResult.year > yearLimits.max || parsedResult.year < yearLimits.min
         )
     ) {
         return new Date('invalid');

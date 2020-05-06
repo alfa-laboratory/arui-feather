@@ -1,11 +1,25 @@
 {
-  "extends": "arui-presets-ts/tsconfig",
   "compilerOptions": {
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "experimentalDecorators": true,
-      "strict": false,
-      "resolveJsonModule": true
+    "lib": [
+        "dom",
+        "es2015",
+        "es2016"
+    ],
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

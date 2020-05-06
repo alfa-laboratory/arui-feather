@@ -138,12 +138,12 @@ export class Link extends React.PureComponent<LinkProps> {
         tabIndex: 0,
         disabled: false,
         checked: false,
-        pseudo: false
+        pseudo: false,
     };
 
     state = {
         hovered: false,
-        focused: false
+        focused: false,
     };
 
     private root: HTMLElement;
@@ -165,7 +165,7 @@ export class Link extends React.PureComponent<LinkProps> {
                 size: this.props.size,
                 focused: this.state.focused,
                 hovered: this.state.hovered,
-                flex: this.props.icon && iconPosition === 'left'
+                flex: this.props.icon && iconPosition === 'left',
             }),
             id: this.props.id,
             tabIndex: this.props.tabIndex,
@@ -173,7 +173,7 @@ export class Link extends React.PureComponent<LinkProps> {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
             onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave
+            onMouseLeave: this.handleMouseLeave,
         };
 
         if (this.props.target === '_blank') {
@@ -187,13 +187,13 @@ export class Link extends React.PureComponent<LinkProps> {
 
         const linkContent = [this.props.children];
         const iconTemplate = this.props.icon && (
-            <span key='icon' className={ this.cn('icon', { left: iconPosition === 'left' }) }>
+            <span key="icon" className={ this.cn('icon', { left: iconPosition === 'left' }) }>
                 { this.props.icon }
             </span>
         );
 
         const textTemplate = this.props.text && (
-            <span key='text' className={ this.cn('text-container') }>
+            <span key="text" className={ this.cn('text-container') }>
                 <span className={ this.cn('text') }>{ this.props.text }</span>
             </span>
         );
@@ -207,7 +207,7 @@ export class Link extends React.PureComponent<LinkProps> {
 
         return React.createElement(linkElement, {
             ...linkProps,
-            'data-test-id': this.props['data-test-id']
+            'data-test-id': this.props['data-test-id'],
         }, linkContent);
     }
 

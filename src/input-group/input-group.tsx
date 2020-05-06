@@ -52,7 +52,7 @@ export class InputGroup extends React.PureComponent<InputGroupProps> {
 
         if (this.props.children) {
             children = (
-                (this.props.children as Array<React.ReactNode>).length
+                (this.props.children as React.ReactNode[]).length
                     ? this.props.children
                     : [this.props.children]
             );
@@ -61,14 +61,14 @@ export class InputGroup extends React.PureComponent<InputGroupProps> {
         if (children) {
             React.Children.forEach(children, (input, index) => {
                 input = React.cloneElement(input, {
-                    width: this.props.width
+                    width: this.props.width,
                 });
 
                 inputGroupParts[`input-${index}`] = (
                     <span
                         className={ this.cn('input-case', {
                             invalid: !!input.props.error,
-                            disabled: input.props.disabled
+                            disabled: input.props.disabled,
                         }) }
                     >
                         { input }
@@ -81,7 +81,7 @@ export class InputGroup extends React.PureComponent<InputGroupProps> {
             <span
                 className={ `${this.cn({ width: this.props.width })} control-group` }
                 id={ this.props.id }
-                role='group'
+                role="group"
                 tabIndex={ -1 }
                 data-test-id={ this.props['data-test-id'] }
             >

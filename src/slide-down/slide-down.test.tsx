@@ -19,7 +19,7 @@ describe('slide-down', () => {
         const slideDownNode = shallow(
             <SlideDown>
                 <div style={ { height: '100px' } } />
-            </SlideDown>
+            </SlideDown>,
         );
 
         expect(slideDownNode.props().style).toEqual({ height: 0 });
@@ -27,7 +27,7 @@ describe('slide-down', () => {
 
     it('should render with height=auto when isExpanded=true', () => {
         const slideDownNode = shallow(
-            <SlideDown isExpanded={ true } />
+            <SlideDown isExpanded={ true } />,
         );
 
         expect(slideDownNode.props().style).toEqual({ height: 'auto' });
@@ -35,7 +35,7 @@ describe('slide-down', () => {
 
     it('should set `slide-down__content_expanded` class to content when isExpanded=true', () => {
         const slideDownNode = shallow(
-            <SlideDown isExpanded={ true } />
+            <SlideDown isExpanded={ true } />,
         );
 
         const slideDownContentNode = slideDownNode.find('.slide-down__content');
@@ -47,7 +47,7 @@ describe('slide-down', () => {
         const onAnimationStart = jest.fn();
         const props = { isExpanded: false, onAnimationStart };
         const slideDownNode = mount<SlideDown>(
-            <SlideDown { ...props } />
+            <SlideDown { ...props } />,
         );
 
         slideDownNode.setProps({ isExpanded: true });
@@ -58,11 +58,10 @@ describe('slide-down', () => {
     it('should call onAnimationEnd when handleTransitionEnd is called', () => {
         const onAnimationEnd = jest.fn();
         const slideDownNode = shallow<SlideDown>(
-            <SlideDown isExpanded={ false } onAnimationEnd={ onAnimationEnd } />
+            <SlideDown isExpanded={ false } onAnimationEnd={ onAnimationEnd } />,
         );
 
-        // @ts-ignore
-        slideDownNode.instance().handleTransitionEnd({});
+        (slideDownNode.instance() as any).handleTransitionEnd({});
         expect(onAnimationEnd).toHaveBeenCalled();
     });
 });

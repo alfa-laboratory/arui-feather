@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './notification-badge.css';
-import '../../../icon';
+import '../..';
 
 export * from './notification-badge';
 export { default } from './notification-badge';

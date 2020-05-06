@@ -18,7 +18,7 @@ describe('grid-col', () => {
         const col = mount(
             <GridCol width={ { mobile: 12, tablet: 6, desktop: { s: 4 } } }>
                 GridCol-test
-            </GridCol>
+            </GridCol>,
         );
 
         const colClassName = col.getDOMNode().className;

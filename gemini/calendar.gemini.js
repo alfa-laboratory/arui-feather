@@ -13,29 +13,29 @@ const THEMES = ['alfa-on-color', 'alfa-on-white'];
 
 const PROP_SETS = [
     {
-        value: DATE.valueOf()
+        value: DATE.valueOf(),
     },
     {
         value: DATE.valueOf(),
         earlierLimit: subtractDays(DATE, 3).valueOf(),
-        laterLimit: subtractDays(DATE, 1).valueOf()
+        laterLimit: subtractDays(DATE, 1).valueOf(),
     },
     {
         value: DATE.valueOf(),
         offDays: [
             getTime(startOfDay(addDays(DATE, 1))),
             getTime(startOfDay(addDays(DATE, 4))),
-            getTime(startOfDay(addDays(DATE, 7)))
-        ]
+            getTime(startOfDay(addDays(DATE, 7))),
+        ],
     },
     {
         value: DATE.valueOf(),
         eventDays: [
             getTime(startOfDay(addDays(DATE, 1))),
             getTime(startOfDay(addDays(DATE, 4))),
-            getTime(startOfDay(addDays(DATE, 7)))
-        ]
-    }
+            getTime(startOfDay(addDays(DATE, 7))),
+        ],
+    },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -51,7 +51,7 @@ geminiReact.suite(NAME, () => {
                     .render(
                         <GeminiBox theme={ theme }>
                             <Calendar { ...props } />
-                        </GeminiBox>
+                        </GeminiBox>,
                     )
                     .capture('plain')
                     .capture('hovered', (actions) => {

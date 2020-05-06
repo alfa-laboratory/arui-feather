@@ -19,19 +19,19 @@ describe('list', () => {
         const ITEMS_UL = [
             {
                 key: 'one',
-                value: 'Apple'
+                value: 'Apple',
             },
             {
                 key: 'two',
-                value: 'Orange'
+                value: 'Orange',
             },
             {
                 key: 'three',
-                value: 'Banana'
-            }
+                value: 'Banana',
+            },
         ];
 
-        const list = shallow(<List items={ ITEMS_UL } type='ordered' />);
+        const list = shallow(<List items={ ITEMS_UL } type="ordered" />);
 
         expect(list).toMatchSnapshot();
         expect(list.hasClass('list_type_ordered')).toBe(true);
@@ -44,17 +44,17 @@ describe('list', () => {
                 list: [
                     {
                         key: 'subone',
-                        value: 'Red apple'
+                        value: 'Red apple',
                     },
                     {
                         key: 'subtwo',
-                        value: 'Greeen apple'
-                    }
-                ]
+                        value: 'Greeen apple',
+                    },
+                ],
             },
             {
                 key: 'two',
-                value: 'Orange'
+                value: 'Orange',
             },
             {
                 key: 'three',
@@ -62,14 +62,14 @@ describe('list', () => {
                 list: [
                     {
                         key: 'subthree',
-                        value: 'Small banana'
+                        value: 'Small banana',
                     },
                     {
                         key: 'subfour',
-                        value: 'Big banana'
-                    }
-                ]
-            }
+                        value: 'Big banana',
+                    },
+                ],
+            },
         ];
 
         const list = shallow(<List items={ ITEMS_UL } />);

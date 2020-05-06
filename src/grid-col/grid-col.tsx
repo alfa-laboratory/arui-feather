@@ -92,7 +92,7 @@ export class GridCol extends React.PureComponent<GridColProps> {
     protected cn = createCn('grid-col');
 
     static defaultProps: Partial<GridColProps> = {
-        tag: 'div'
+        tag: 'div',
     }
 
     render() {
@@ -111,7 +111,7 @@ export class GridCol extends React.PureComponent<GridColProps> {
                 { ...props }
                 className={ this.cn({
                     align,
-                    ...this.createClassNames({ width, offset, order })
+                    ...this.createClassNames({ width, offset, order }),
                 }) }
             >
                 { children }

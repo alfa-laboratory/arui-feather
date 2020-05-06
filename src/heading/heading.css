@@ -1,11 +1,14 @@
-@import '../vars.css';
+@import "../vars.css";
 
 .heading {
     margin: 0;
     font-family: var(--font);
     font-weight: var(--font-weight-bold);
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 

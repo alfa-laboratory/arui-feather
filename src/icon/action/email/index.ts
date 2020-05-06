@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './email.css';
-import '../../../icon';
+import '../..';
 
 export * from './email';
 export { default } from './email';

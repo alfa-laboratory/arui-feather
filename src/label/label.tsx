@@ -53,7 +53,7 @@ export class Label extends React.PureComponent<LabelProps> {
 
     static defaultProps: Partial<LabelProps> = {
         size: 'm',
-        isNoWrap: false
+        isNoWrap: false,
     };
 
     render() {
@@ -61,7 +61,7 @@ export class Label extends React.PureComponent<LabelProps> {
             <span
                 className={ this.cn({
                     size: this.props.size,
-                    'no-wrap': this.props.isNoWrap
+                    'no-wrap': this.props.isNoWrap,
                 }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }

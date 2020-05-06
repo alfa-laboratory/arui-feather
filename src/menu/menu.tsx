@@ -103,7 +103,7 @@ export type MenuProps = DeepReadonly<{
     /**
      * Список объектов ContentItem
      */
-    content?: Array<MenuContentType>;
+    content?: MenuContentType[];
 
     /**
      * Список значений выбранных элементов
@@ -197,24 +197,26 @@ export class Menu extends React.Component<MenuProps> {
         size: 'm',
         mode: 'basic',
         groupView: 'default',
-        autoFocusFirstItem: false
+        autoFocusFirstItem: false,
     };
 
     state = {
         highlightedItem: null,
         checkedItems: [],
-        hovered: false
+        hovered: false,
     };
 
     // TODO [issues/1018] переписать тесты нужно, что бы private был
     root;
+
     private menuItemList = [];
+
     private blurTimeoutId = null;
 
     componentDidMount() {
-        if (!!this.props.content && this.props.content.length > 0 &&
-            (!this.props.checkedItems || this.props.checkedItems.length === 0) &&
-            this.props.mode === 'radio') {
+        if (!!this.props.content && this.props.content.length > 0
+            && (!this.props.checkedItems || this.props.checkedItems.length === 0)
+            && this.props.mode === 'radio') {
             const firstItem = this.getFirstItem(this.props.content);
 
             this.changeCheckedItems([firstItem.value], null);
@@ -223,8 +225,8 @@ export class Menu extends React.Component<MenuProps> {
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
-        if (this.props.mode !== 'check' && this.state.checkedItems[0] &&
-            nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
+        if (this.props.mode !== 'check' && this.state.checkedItems[0]
+            && nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
             let highlightedItem;
 
             this.menuItemList.forEach((item, index, menuItemList) => {
@@ -265,7 +267,7 @@ export class Menu extends React.Component<MenuProps> {
                     'group-view': this.props.groupView,
                     hovered: this.state.hovered,
                     disabled: this.props.disabled,
-                    mode: this.props.mode
+                    mode: this.props.mode,
                 }) }
                 id={ this.props.id }
                 tabIndex={ 0 }
@@ -294,13 +296,14 @@ export class Menu extends React.Component<MenuProps> {
                         className={ this.cn('group') }
                         key={ `group_${groupKey}` }
                     >
-                        { !!item.title &&
-                            <div className={ this.cn('group-title') }>
-                                { item.title }
-                            </div>
-                        }
+                        { !!item.title
+                            && (
+                                <div className={ this.cn('group-title') }>
+                                    { item.title }
+                                </div>
+                            ) }
                         { this.renderMenuItemList(item.content) }
-                    </div>
+                    </div>,
                 );
                 groupKey += 1;
             } else {
@@ -315,17 +318,17 @@ export class Menu extends React.Component<MenuProps> {
         const itemProps = item.props || {};
         const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
         const isItemDisabled = this.props.disabled || itemProps.disabled;
-        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : event => this.handleMenuItemClick(item, event);
+        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : (event) => this.handleMenuItemClick(item, event);
         const menuItem: { item; ref; instance? } = {
             item,
-            ref: item.value
+            ref: item.value,
         };
         const menuItemProps = {
             ...itemProps,
             disabled: isItemDisabled,
             value: item.value,
             size: this.props.size || itemProps.size,
-            onClick: isItemDisabled ? undefined : clickHandler
+            onClick: isItemDisabled ? undefined : clickHandler,
         };
         const highlightedItem = this.props.highlightedItem === undefined
             ? this.state.highlightedItem
@@ -333,8 +336,8 @@ export class Menu extends React.Component<MenuProps> {
         let iconSize;
 
         switch (this.props.size) {
-            case 's': case 'm': iconSize = 's'; break;
-            case 'l': case 'xl': iconSize = 'm'; break;
+        case 's': case 'm': iconSize = 's'; break;
+        case 'l': case 'xl': iconSize = 'm'; break;
         }
 
         this.menuItemList.push(menuItem);
@@ -353,10 +356,12 @@ export class Menu extends React.Component<MenuProps> {
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
             >
                 {
-                    this.props.mode === 'check' && isItemChecked &&
-                    <IconCheck
-                        size={ iconSize }
-                    />
+                    this.props.mode === 'check' && isItemChecked
+                    && (
+                        <IconCheck
+                            size={ iconSize }
+                        />
+                    )
                 }
                 { item.content }
             </MenuItem>
@@ -399,74 +404,74 @@ export class Menu extends React.Component<MenuProps> {
         const menuIteListLength = this.menuItemList.length;
 
         switch (event.which) {
-            case keyboardCode.DOWN_ARROW: {
-                event.preventDefault();
+        case keyboardCode.DOWN_ARROW: {
+            event.preventDefault();
 
-                if (this.state.highlightedItem) {
-                    this.menuItemList.forEach((item, index, menuItemList) => {
-                        if (item.ref === this.state.highlightedItem.ref) {
-                            if (index + 1 === menuIteListLength) {
-                                [highlightedItem] = menuItemList;
-                            } else {
-                                highlightedItem = menuItemList[index + 1];
-                            }
+            if (this.state.highlightedItem) {
+                this.menuItemList.forEach((item, index, menuItemList) => {
+                    if (item.ref === this.state.highlightedItem.ref) {
+                        if (index + 1 === menuIteListLength) {
+                            [highlightedItem] = menuItemList;
+                        } else {
+                            highlightedItem = menuItemList[index + 1];
                         }
-                    });
-                } else {
-                    [highlightedItem] = this.menuItemList;
-                }
-
-                this.setState({
-                    highlightedItem
+                    }
                 });
-
-                if (this.props.onHighlightItem) {
-                    this.props.onHighlightItem(highlightedItem);
-                }
-
-                break;
+            } else {
+                [highlightedItem] = this.menuItemList;
             }
-            case keyboardCode.UP_ARROW: {
-                event.preventDefault();
 
-                if (this.state.highlightedItem) {
-                    this.menuItemList.forEach((item, index, menuItemList) => {
-                        if (item.ref === this.state.highlightedItem.ref) {
-                            if (index - 1 < 0) {
-                                highlightedItem = menuItemList[menuIteListLength - 1];
-                            } else {
-                                highlightedItem = menuItemList[index - 1];
-                            }
+            this.setState({
+                highlightedItem,
+            });
+
+            if (this.props.onHighlightItem) {
+                this.props.onHighlightItem(highlightedItem);
+            }
+
+            break;
+        }
+        case keyboardCode.UP_ARROW: {
+            event.preventDefault();
+
+            if (this.state.highlightedItem) {
+                this.menuItemList.forEach((item, index, menuItemList) => {
+                    if (item.ref === this.state.highlightedItem.ref) {
+                        if (index - 1 < 0) {
+                            highlightedItem = menuItemList[menuIteListLength - 1];
+                        } else {
+                            highlightedItem = menuItemList[index - 1];
                         }
-                    });
-                } else {
-                    highlightedItem = this.menuItemList[menuIteListLength - 1];
-                }
-
-                this.setState({
-                    highlightedItem
+                    }
                 });
-
-                if (this.props.onHighlightItem) {
-                    this.props.onHighlightItem(highlightedItem);
-                }
-
-                break;
+            } else {
+                highlightedItem = this.menuItemList[menuIteListLength - 1];
             }
-            case keyboardCode.ENTER:
-            case keyboardCode.SPACE: {
-                event.preventDefault();
 
-                highlightedItem = this.props.highlightedItem === undefined
-                    ? this.state.highlightedItem
-                    : this.props.highlightedItem;
+            this.setState({
+                highlightedItem,
+            });
 
-                if (highlightedItem) {
-                    this.setNewCheckedItems(highlightedItem.item, event);
-                }
-
-                break;
+            if (this.props.onHighlightItem) {
+                this.props.onHighlightItem(highlightedItem);
             }
+
+            break;
+        }
+        case keyboardCode.ENTER:
+        case keyboardCode.SPACE: {
+            event.preventDefault();
+
+            highlightedItem = this.props.highlightedItem === undefined
+                ? this.state.highlightedItem
+                : this.props.highlightedItem;
+
+            if (highlightedItem) {
+                this.setNewCheckedItems(highlightedItem.item, event);
+            }
+
+            break;
+        }
         }
 
         if (highlightedItem) {
@@ -505,7 +510,7 @@ export class Menu extends React.Component<MenuProps> {
 
     private handleMenuItemMouseEnter(menuItem) {
         this.setState({
-            highlightedItem: menuItem
+            highlightedItem: menuItem,
         });
 
         if (this.props.onHighlightItem) {
@@ -515,7 +520,7 @@ export class Menu extends React.Component<MenuProps> {
 
     private handleMenuItemMouseLeave = () => {
         this.setState({
-            highlightedItem: null
+            highlightedItem: null,
         });
 
         if (this.props.onHighlightItem) {
@@ -540,7 +545,7 @@ export class Menu extends React.Component<MenuProps> {
             const highlightedItem = this.menuItemList[0];
 
             this.setState({
-                highlightedItem
+                highlightedItem,
             });
 
             if (this.props.onHighlightItem) {
@@ -567,27 +572,27 @@ export class Menu extends React.Component<MenuProps> {
         const indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
 
         switch (this.props.mode) {
-            case 'check':
-                if (indexInCheckedItemsList === -1) {
-                    checkedItems.push(value);
-                } else {
-                    checkedItems.splice(indexInCheckedItemsList, 1);
-                }
-                break;
-            case 'radio':
-                if (indexInCheckedItemsList === -1) {
-                    checkedItems = [value];
-                }
-                break;
-            case 'radio-check':
-                if (indexInCheckedItemsList === -1) {
-                    checkedItems = [value];
-                } else {
-                    checkedItems = [];
-                }
-                break;
-            default:
-                break;
+        case 'check':
+            if (indexInCheckedItemsList === -1) {
+                checkedItems.push(value);
+            } else {
+                checkedItems.splice(indexInCheckedItemsList, 1);
+            }
+            break;
+        case 'radio':
+            if (indexInCheckedItemsList === -1) {
+                checkedItems = [value];
+            }
+            break;
+        case 'radio-check':
+            if (indexInCheckedItemsList === -1) {
+                checkedItems = [value];
+            } else {
+                checkedItems = [];
+            }
+            break;
+        default:
+            break;
         }
 
         this.changeCheckedItems(checkedItems, event);
@@ -602,7 +607,7 @@ export class Menu extends React.Component<MenuProps> {
      */
     private changeCheckedItems(checkedItems: Array<string | number>, event: React.ChangeEvent) {
         this.setState({
-            checkedItems
+            checkedItems,
         });
 
         if (this.props.onItemCheck) {

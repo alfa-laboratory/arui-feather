@@ -12,7 +12,7 @@ initialState = {
     <Sidebar
         visible={ state.isOpen }
         onCloserClick={ toggleSidebar }
-        footer={ <Button view='extra'>Отправить</Button> }
+        footerContent={ <Button view='extra'>Отправить</Button> }
     >
         <Heading size='m'>
             Выписка по счёту

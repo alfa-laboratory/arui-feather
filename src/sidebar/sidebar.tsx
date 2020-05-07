@@ -108,14 +108,14 @@ export type SidebarProps = DeepReadonly<{
     headerContent?: React.ReactNode;
 
     /**
+     * Контент в подвале сайдбара, на мобильных устройствах содержимое футера прижимается к нижней части вьюпорта
+     */
+    footerContent?: React.ReactNode;
+
+    /**
      * Ширина сайдбара
      */
     width?: number;
-
-    /**
-     * Контент в подвале сайдбара, на мобильных устройствах содержимое футера прижимается к нижней части вьюпорта
-     */
-    footer?: React.ReactNode;
 
     /**
      * Обработчик клика на элемент закрытия
@@ -194,9 +194,9 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
             children,
             visible,
             headerContent,
+            footerContent,
             hasOverlay,
             width,
-            footer,
         } = this.props;
 
         const offset = visible ? getScrollbarWidth() : 0;
@@ -252,7 +252,7 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
                         { children }
                     </div>
                     <footer className={ this.cn('footer') }>
-                        { footer }
+                        { footerContent }
                     </footer>
                 </div>
             </PopupContainerProvider>

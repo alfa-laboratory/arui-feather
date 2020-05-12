@@ -23,11 +23,13 @@ export type InputProps = DeepReadonly<{
      * Тип поля.
      Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
      Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
+     * @default 'text'
      */
     type?: 'number' | 'card' | 'email' | 'file' | 'hidden' | 'money' | 'password' | 'tel' | 'text';
 
     /**
      * Тип инпута (filled только на белом фоне в размере m)
+     * @default 'default'
      */
     view?: 'default' | 'filled';
 
@@ -120,6 +122,7 @@ export type InputProps = DeepReadonly<{
 
     /**
      * Управление встроенной проверкой данных введённых пользователем в поле на корректность
+     * @default false
      */
     formNoValidate?: boolean;
 
@@ -155,11 +158,13 @@ export type InputProps = DeepReadonly<{
 
     /**
      * Сброс ошибки при установке фокуса
+     * @default true
      */
     resetError?: boolean;
 
     /**
      * Размер компонента
+     * @default 'm'
      */
     size?: 's' | 'm' | 'l' | 'xl';
 

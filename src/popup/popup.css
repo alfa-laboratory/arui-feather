@@ -11,9 +11,8 @@
     font-family: var(--font);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-condensed);
-
-    /* Чтобы IE9 не рисовал лишний скролл */
-    clip: rect(0, 0, 0, 0);
+    border-radius: var(--border-radius-control);
+    overflow: hidden;
 
     /* Чтобы попап не прокликивался и браузер не рисовал лишний скролл */
     transform: translate(-9999px, -9999px);

@@ -8,12 +8,12 @@ const PROP_SETS = [
     {
         title: '26 мая 2017',
         description: 'пятница',
-        view: 'filled'
+        view: 'filled',
     },
     {
         title: 'Сегодня',
-        view: 'transparent'
-    }
+        view: 'transparent',
+    },
 ];
 
 geminiReact.suite(NAME, () => {

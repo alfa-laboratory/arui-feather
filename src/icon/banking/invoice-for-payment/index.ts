@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './invoice-for-payment.css';
-import '../../../icon';
+import '../..';
 
 export * from './invoice-for-payment';
 export { default } from './invoice-for-payment';

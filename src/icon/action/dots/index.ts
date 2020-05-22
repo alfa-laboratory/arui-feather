@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './dots.css';
-import '../../../icon';
+import '../..';
 
 export * from './dots';
 export { default } from './dots';

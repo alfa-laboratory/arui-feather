@@ -363,7 +363,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         directions: ['bottom-left', 'bottom-right', 'top-left', 'top-right'],
         equalPopupWidth: false,
         closeOnSelect: false,
-        renderPopupOnFocus: false
+        renderPopupOnFocus: false,
     };
 
     state = {
@@ -371,7 +371,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         inputFocused: false,
         menuFocused: false,
         popupStyles: {},
-        highlightedItem: null
+        highlightedItem: null,
     };
 
     private input: Input;
@@ -421,14 +421,14 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
             },
             className: this.cn({
                 focused: this.state.inputFocused || this.state.menuFocused,
-                'has-autocomplete': true
+                'has-autocomplete': true,
             }),
             autocomplete: this.props.autocomplete || false,
             value,
             onChange: this.handleChange,
             onFocus: this.handleInputFocus,
             onBlur: this.handleInputBlur,
-            onKeyDown: this.handleKeyDown
+            onKeyDown: this.handleKeyDown,
         };
 
         return (
@@ -462,7 +462,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         }
 
         return [
-            <ResizeSensor onResize={ this.updatePopupStyles } key='popup-sensor' />,
+            <ResizeSensor onResize={ this.updatePopupStyles } key="popup-sensor" />,
             <Popup
                 className={ this.cn('popup', { custom: this.props.popupClassName }) }
                 size={ this.props.size }
@@ -472,13 +472,13 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
                 for={ this.props.name }
                 visible={ opened }
                 onClickOutside={ this.handleClickOutside }
-                target='anchor'
+                target="anchor"
                 directions={ this.props.directions }
                 height={ this.props.popupMaxHeight ? 'default' : 'adaptive' }
                 padded={ false }
                 minWidth={ this.state.popupStyles.minWidth }
                 maxWidth={ this.state.popupStyles.maxWidth }
-                key='popup'
+                key="popup"
                 maxHeight={ this.props.popupMaxHeight }
             >
                 <Menu
@@ -487,7 +487,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
                     } }
                     className={ this.cn('menu') }
                     size={ this.props.size }
-                    mode='radio-check'
+                    mode="radio-check"
                     content={ formattedOptionsList }
                     checkedItems={ [] }
                     onItemCheck={ this.handleItemCheck }
@@ -498,7 +498,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
                     onBlur={ this.handleMenuBlur }
                     onKeyDown={ this.handleMenuKeyDown }
                 />
-            </Popup>
+            </Popup>,
         ];
     }
 
@@ -557,7 +557,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         this.solveFocused(event);
 
         this.setState({
-            highlightedItem: null
+            highlightedItem: null,
         });
     };
 
@@ -604,25 +604,25 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
 
     private handleKeyDown = (event) => {
         switch (event.which) {
-            case keyboardCode.DOWN_ARROW: {
-                event.preventDefault();
+        case keyboardCode.DOWN_ARROW: {
+            event.preventDefault();
 
-                const posX = window.pageXOffset;
-                const posY = window.pageYOffset;
+            const posX = window.pageXOffset;
+            const posY = window.pageYOffset;
 
-                if (this.menu) {
-                    this.menu.focus();
-                }
-
-                window.scrollTo(posX, posY);
-
-                break;
+            if (this.menu) {
+                this.menu.focus();
             }
 
-            case keyboardCode.ESCAPE: {
-                this.input.blur();
-                break;
-            }
+            window.scrollTo(posX, posY);
+
+            break;
+        }
+
+        case keyboardCode.ESCAPE: {
+            this.input.blur();
+            break;
+        }
         }
 
         if (this.props.onKeyDown) {
@@ -632,21 +632,21 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
 
     private handleHighlightedItem = (highlightedItem) => {
         this.setState({
-            highlightedItem
+            highlightedItem,
         });
     };
 
     private handleMenuKeyDown = (event, highlightedItem) => {
         switch (event.which) {
-            case keyboardCode.DOWN_ARROW:
-            case keyboardCode.UP_ARROW:
-                event.preventDefault();
-                this.syncKeyboardNavigationWithScroll(highlightedItem);
-                break;
+        case keyboardCode.DOWN_ARROW:
+        case keyboardCode.UP_ARROW:
+            event.preventDefault();
+            this.syncKeyboardNavigationWithScroll(highlightedItem);
+            break;
 
-            case keyboardCode.ESCAPE:
-                this.input.focus();
-                break;
+        case keyboardCode.ESCAPE:
+            this.input.focus();
+            break;
         }
 
         if (this.props.onKeyDown) {
@@ -689,7 +689,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
             inputFocused: (focusedElement === this.input.getControl()),
             menuFocused: this.menu
                 ? (this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement))
-                : false
+                : false,
         };
 
         const newFocused = newState.inputFocused || newState.menuFocused;
@@ -716,7 +716,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
                     return ({
                         type: 'group',
                         title: option.title,
-                        content
+                        content,
                     });
                 }
 
@@ -724,7 +724,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
                     key: option.key || option.value,
                     value: option.value,
                     content: option.description || option.value,
-                    props: option.props
+                    props: option.props,
                 });
             })
         );
@@ -764,7 +764,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         }
 
         this.setState({
-            popupStyles
+            popupStyles,
         });
     };
 
@@ -786,13 +786,13 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
             scrollTo({
                 container,
                 targetY: element.offsetTop,
-                duration: SCROLL_TO_NORMAL_DURATION
+                duration: SCROLL_TO_NORMAL_DURATION,
             });
         } else if (element.offsetTop < container.scrollTop) {
             scrollTo({
                 container,
                 targetY: (element.offsetTop - container.offsetHeight) + correction,
-                duration: SCROLL_TO_NORMAL_DURATION
+                duration: SCROLL_TO_NORMAL_DURATION,
             });
         }
     }

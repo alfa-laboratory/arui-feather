@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 :root {
     --sidebar-width: 430px;
@@ -27,7 +27,10 @@ body.sidebar-overlay {
     transform: translateX(100%);
     z-index: 1001;
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -56,7 +59,7 @@ body.sidebar-overlay {
         border: none;
         outline: none;
 
-        content: '';
+        content: "";
 
         visibility: hidden;
 
@@ -148,6 +151,7 @@ body.sidebar-overlay {
 
         &__footer {
             position: relative;
+            padding: var(--gap-s) var(--gap-m);
 
             &:after {
                 position: absolute;
@@ -158,7 +162,7 @@ body.sidebar-overlay {
                 width: 100%;
                 height: 24px;
 
-                content: '';
+                content: "";
                 pointer-events: none;
                 transform: translateY(-100%);
             }
@@ -176,8 +180,8 @@ body.sidebar-overlay {
         &__content {
             position: relative;
 
-            min-height: calc(100vh - var(--sidebar-header-height));
-            padding: calc(var(--sidebar-header-height) + var(--gap-xl)) var(--gap-m) var(--gap-xl);
+            padding: calc(var(--sidebar-header-height) + var(--gap-xl))
+                var(--gap-m) 0;
 
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch;

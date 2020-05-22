@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 .list {
     margin: 0 0 var(--gap-m);
@@ -26,7 +26,7 @@
         padding: 0;
 
         &:before {
-            content: '\2014';
+            content: "\2014";
             display: block;
             position: absolute;
             right: 100%;
@@ -41,7 +41,7 @@
 
     &_type_ordered &__item {
         &:before {
-            content: counter(item) '.';
+            content: counter(item) ".";
             counter-increment: item;
         }
     }

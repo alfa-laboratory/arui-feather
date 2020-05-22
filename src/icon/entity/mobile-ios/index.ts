@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './mobile-ios.css';
-import '../../../icon';
+import '../..';
 
 export * from './mobile-ios';
 export { default } from './mobile-ios';

@@ -65,10 +65,11 @@ export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownStat
 
     state = {
         height: this.props.isExpanded ? 'auto' : 0,
-        isHeightAuto: this.props.isExpanded
+        isHeightAuto: this.props.isExpanded,
     };
 
     private slideDown = createRef<HTMLDivElement>();
+
     private slideDownContent = createRef<HTMLDivElement>()
 
     componentDidUpdate(prevProps: SlideDownProps) {
@@ -128,7 +129,7 @@ export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownStat
         if (this.slideDownContent.current) {
             this.setState({
                 isHeightAuto: false,
-                height: this.slideDownContent.current.offsetHeight
+                height: this.slideDownContent.current.offsetHeight,
             });
         }
     }
@@ -149,7 +150,7 @@ export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownStat
 
     private setAutoHeight() {
         this.setState({
-            isHeightAuto: true
+            isHeightAuto: true,
         });
     }
 }

@@ -10,9 +10,9 @@ import Swipeable, { getCoordinates } from './swipeable';
 describe('swipeable', () => {
     it('should render without problems', () => {
         const swipeable = shallow(
-            <Swipeable onSwipe={ () => {} }>
-                <button>I&apos;m swipeable</button>
-            </Swipeable>
+            <Swipeable>
+                <button type="button">I&apos;m swipeable</button>
+            </Swipeable>,
         );
 
         expect(swipeable).toMatchSnapshot();
@@ -21,9 +21,9 @@ describe('swipeable', () => {
 
     it('should have initial data', () => {
         const swipeable = shallow<Swipeable>(
-            <Swipeable onSwipe={ () => {} } delta={ 150 }>
-                <button>I&apos;m swipeable</button>
-            </Swipeable>
+            <Swipeable delta={ 150 }>
+                <button type="button">I&apos;m swipeable</button>
+            </Swipeable>,
         ).instance();
 
         expect(swipeable.props.delta).toBe(150);
@@ -40,11 +40,11 @@ describe('swipeable', () => {
         beforeEach(() => {
             spyHandler = jest.fn();
             swipeable = shallow(
-                <Swipeable onSwipe={ () => {} }>
-                    <button onMouseDown={ spyHandler } onTouchStart={ spyHandler }>
+                <Swipeable>
+                    <button type="button" onMouseDown={ spyHandler } onTouchStart={ spyHandler }>
                         I&apos;m swipeable
                     </button>
-                </Swipeable>
+                </Swipeable>,
             );
         });
 
@@ -109,15 +109,15 @@ describe('swipeable', () => {
             { direction: 'left', clientX: -151, clientY: 0 },
             { direction: 'top', clientX: 0, clientY: -151 },
             { direction: 'right', clientX: 151, clientY: 0 },
-            { direction: 'bottom', clientX: 0, clientY: 151 }
+            { direction: 'bottom', clientX: 0, clientY: 151 },
         ];
 
         beforeEach(() => {
             onSwipe = jest.fn();
             swipeable = mount(
                 <Swipeable delta={ 150 } onSwipe={ onSwipe }>
-                    <button>I&apos;m swipeable</button>
-                </Swipeable>
+                    <button type="button">I&apos;m swipeable</button>
+                </Swipeable>,
             );
         });
 

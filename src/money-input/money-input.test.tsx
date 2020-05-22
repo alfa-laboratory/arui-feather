@@ -49,14 +49,14 @@ describe('money-input', () => {
     });
 
     it('should format input value passed with props', () => {
-        const moneyInput = mount(<MoneyInput value='1234,567' />);
+        const moneyInput = mount(<MoneyInput value="1234,567" />);
         const controlNode = moneyInput.find('input');
 
         expect(controlNode.prop('value')).toBe('1 234,56');
     });
 
     it('should format fraction part of input value when fractionLength is 4', () => {
-        const moneyInput = mount(<MoneyInput value='1234,56789' fractionLength={ 4 } />);
+        const moneyInput = mount(<MoneyInput value="1234,56789" fractionLength={ 4 } />);
         const controlNode = moneyInput.find('input');
 
         expect(controlNode.prop('value')).toBe('1 234,5678');
@@ -93,7 +93,7 @@ describe('money-input', () => {
     });
 
     it('should format new value received in props', () => {
-        const moneyInput = mount(<MoneyInput value='' />);
+        const moneyInput = mount(<MoneyInput value="" />);
 
         moneyInput.setProps({ value: '1234,567' });
 
@@ -101,7 +101,7 @@ describe('money-input', () => {
     });
 
     it('should stay caret before comma', (done) => {
-        const moneyInput = mount<MoneyInput>(<MoneyInput value='12,34' />);
+        const moneyInput = mount<MoneyInput>(<MoneyInput value="12,34" />);
         const inputNode = moneyInput.find('input');
 
         setTimeout(() => {

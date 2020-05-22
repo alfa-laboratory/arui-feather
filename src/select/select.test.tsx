@@ -12,6 +12,7 @@ import keyboardCode from '../lib/keyboard-code';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { setIsMatched: setMqMatched } = require('../mq/mq');
 
 jest.mock('../mq/mq');
@@ -20,17 +21,17 @@ const OPTIONS = [
     {
         value: 1,
         text: 'Vk',
-        checkedText: 'Vkontakte'
+        checkedText: 'Vkontakte',
     },
     {
         value: 2,
-        text: 'Fb'
+        text: 'Fb',
     },
     {
         value: 3,
         text: 'Tw',
-        checkedText: 'Twitter'
-    }
+        checkedText: 'Twitter',
+    },
 ];
 let wrapper;
 
@@ -45,7 +46,7 @@ function renderSelect(props) {
     const hiddenInput = select.find('input');
 
     return {
-        select, nativeSelectNode, popupNode, buttonNode, menuNode, hiddenInput
+        select, nativeSelectNode, popupNode, buttonNode, menuNode, hiddenInput,
     };
 }
 
@@ -134,9 +135,9 @@ describe('select', () => {
         const checkedOptions = [OPTIONS[1], OPTIONS[2]];
         const selectProps = {
             options: OPTIONS,
-            value: [checkedOptions[0].value, checkedOptions[1].value]
+            value: [checkedOptions[0].value, checkedOptions[1].value],
         };
-        const expectedOptions = checkedOptions.map(option => option.checkedText || option.text).join(', ');
+        const expectedOptions = checkedOptions.map((option) => option.checkedText || option.text).join(', ');
         const { buttonNode } = renderSelect(selectProps);
 
         expect(buttonNode.text()).toBe(expectedOptions);
@@ -146,7 +147,7 @@ describe('select', () => {
         const checkedOption = OPTIONS[0];
         const selectProps = {
             options: OPTIONS,
-            value: [checkedOption.value]
+            value: [checkedOption.value],
         };
         const { buttonNode } = renderSelect(selectProps);
 
@@ -223,7 +224,7 @@ describe('select', () => {
         const checkedOption = OPTIONS[0];
         const selectProps = {
             options: OPTIONS,
-            value: [checkedOption.value]
+            value: [checkedOption.value],
         };
         const { select } = renderSelect(selectProps);
 
@@ -235,7 +236,7 @@ describe('select', () => {
         const selectProps = {
             mode: 'radio',
             options: OPTIONS,
-            value: [checkedOption.value]
+            value: [checkedOption.value],
         };
         const { select } = renderSelect(selectProps);
 
@@ -253,7 +254,7 @@ describe('select', () => {
         const selectProps = {
             options: OPTIONS,
             placeholder: 'Long text placeholder',
-            opened: true
+            opened: true,
         };
 
         const { popupNode, buttonNode } = renderSelect(selectProps);
@@ -268,7 +269,7 @@ describe('select', () => {
             options: [
                 {
                     value: 1,
-                    text: <div>Very long option text in block element to make select popup strech</div>
+                    text: <div>Very long option text in block element to make select popup strech</div>,
                 },
                 {
                     value: 2,
@@ -276,11 +277,11 @@ describe('select', () => {
                         <div>
                             Much, much longer option text in another block element to make select popup strech
                         </div>
-                    )
-                }
+                    ),
+                },
             ],
             equalPopupWidth: true,
-            opened: true
+            opened: true,
         };
 
         const { popupNode, buttonNode } = renderSelect(selectProps);
@@ -417,7 +418,7 @@ describe('select', () => {
         const onChange = jest.fn();
         const selectProps = {
             options: OPTIONS,
-            onChange
+            onChange,
         };
         const { popupNode } = renderSelect(selectProps);
         const firstOptionNode = popupNode.find('.menu-item').at(0);
@@ -432,7 +433,7 @@ describe('select', () => {
         const onClickOutside = jest.fn();
         const selectProps = {
             options: OPTIONS,
-            onClickOutside
+            onClickOutside,
         };
         const { select } = renderSelect(selectProps);
 
@@ -466,7 +467,7 @@ describe('select', () => {
         it('should not render popup', () => {
             const { popupNode } = renderSelect({
                 renderPopupOnFocus: true,
-                options: OPTIONS
+                options: OPTIONS,
             });
 
             expect(popupNode.length).toEqual(0);
@@ -475,7 +476,7 @@ describe('select', () => {
         it('should render popup after click', () => {
             const { select, buttonNode } = renderSelect({
                 renderPopupOnFocus: true,
-                options: OPTIONS
+                options: OPTIONS,
             });
 
             buttonNode.simulate('click');
@@ -492,7 +493,7 @@ describe('select', () => {
             const { select, buttonNode } = renderSelect({
                 renderPopupOnFocus: true,
                 options: OPTIONS,
-                onMenuFocus
+                onMenuFocus,
             });
 
             buttonNode.simulate('click');
@@ -510,7 +511,7 @@ describe('select', () => {
             const { select, buttonNode } = renderSelect({
                 renderPopupOnFocus: true,
                 options: OPTIONS,
-                onMenuBlur
+                onMenuBlur,
             });
 
             buttonNode.simulate('click');
@@ -535,7 +536,7 @@ describe('select', () => {
                 renderPopupOnFocus: true,
                 options: OPTIONS,
                 mode: 'radio',
-                onChange
+                onChange,
             });
 
             const expectedValue = [OPTIONS[0].value];
@@ -554,7 +555,7 @@ describe('select', () => {
                 options: OPTIONS,
                 value: expectedValue,
                 mode: 'radio',
-                onChange
+                onChange,
             });
 
             const actualValue = hiddenInput.prop('value');
@@ -570,7 +571,7 @@ describe('select', () => {
             const { hiddenInput } = renderSelect({
                 renderPopupOnFocus: true,
                 options: OPTIONS,
-                onChange
+                onChange,
             });
 
             const actualValue = hiddenInput.prop('value');
@@ -605,7 +606,7 @@ describe('select', () => {
             const selectProps = {
                 options: OPTIONS,
                 mobileMenuMode: 'popup',
-                opened: true
+                opened: true,
             };
             const { nativeSelectNode, popupNode } = renderSelect(selectProps);
 

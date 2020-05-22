@@ -48,7 +48,7 @@ export class Spin extends React.PureComponent<SpinProps> {
 
     static defaultProps: Partial<SpinProps> = {
         visible: false,
-        size: 'm'
+        size: 'm',
     };
 
     render() {
@@ -56,7 +56,7 @@ export class Spin extends React.PureComponent<SpinProps> {
             <span
                 className={ this.cn({
                     size: this.props.size,
-                    visible: this.props.visible
+                    visible: this.props.visible,
                 }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }

@@ -26,14 +26,14 @@ describe('radio', () => {
     });
 
     it('should radio input render without problems', () => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount(<Radio text="some label" />);
         const radioInputNode = radio.find('input');
 
         expect(radioInputNode).toBeTruthy();
     });
 
     it('should radio render with type `button`', () => {
-        const radio = mount(<Radio text='button label' type='button' />);
+        const radio = mount(<Radio text="button label" type="button" />);
         const buttonNode = radio.find('button');
 
         expect(buttonNode).toBeTruthy();
@@ -41,7 +41,7 @@ describe('radio', () => {
     });
 
     it('should radio render with type `normal`', () => {
-        const radio = mount(<Radio text='some label' type='normal' />);
+        const radio = mount(<Radio text="some label" type="normal" />);
         const labelNode = radio.find('.radio__text');
         const buttonNode = radio.find('button');
 
@@ -50,7 +50,7 @@ describe('radio', () => {
     });
 
     it('should radio render without any type', () => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount(<Radio text="some label" />);
         const labelNode = radio.find('.radio__text');
         const buttonNode = radio.find('button');
 
@@ -59,7 +59,7 @@ describe('radio', () => {
     });
 
     it('should set class on radio focus', () => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount(<Radio text="some label" />);
 
         radio.simulate('focus');
 
@@ -67,7 +67,7 @@ describe('radio', () => {
     });
 
     it('should unset class on radio blur', () => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount(<Radio text="some label" />);
 
         radio.simulate('focus');
 
@@ -79,7 +79,7 @@ describe('radio', () => {
     });
 
     it('should call input focus on public focus method', () => {
-        const radio = mount<Radio>(<Radio text='some label' />);
+        const radio = mount<Radio>(<Radio text="some label" />);
         const input = (radio.find('input') as any).instance();
 
         jest.spyOn(input, 'focus');
@@ -94,7 +94,7 @@ describe('radio', () => {
         document.body.innerHTML = '<button id="btn1">btn 1 </button>';
         document.getElementById('btn1').focus();
 
-        const radio = mount<Radio>(<Radio text='some label' />);
+        const radio = mount<Radio>(<Radio text="some label" />);
 
         (document.activeElement as HTMLElement).blur = jest.fn();
 
@@ -123,7 +123,7 @@ describe('radio', () => {
 
     it('should call `onFocus` callback after radio was focused with value', () => {
         const onFocus = jest.fn();
-        const radio = mount(<Radio value='test' onFocus={ onFocus } />);
+        const radio = mount(<Radio value="test" onFocus={ onFocus } />);
 
         radio.simulate('focus');
 
@@ -132,7 +132,7 @@ describe('radio', () => {
 
     it('should call `onBlur` callback after radio was blured with value', () => {
         const onBlur = jest.fn();
-        const radio = mount(<Radio value='test' onBlur={ onBlur } />);
+        const radio = mount(<Radio value="test" onBlur={ onBlur } />);
 
         radio.simulate('blur');
 
@@ -140,7 +140,7 @@ describe('radio', () => {
     });
 
     it('should set class on radio mouse enter', () => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount(<Radio text="some label" />);
 
         radio.simulate('mouseEnter');
 
@@ -148,7 +148,7 @@ describe('radio', () => {
     });
 
     it('should unset class on radio mouse leave', () => {
-        const radio = mount(<Radio text='some label' />);
+        const radio = mount(<Radio text="some label" />);
 
         radio.simulate('mouseEnter');
 
@@ -198,7 +198,7 @@ describe('radio', () => {
 
     it('should call `onChange` callback after radio was changed with value and checked state', () => {
         const onChange = jest.fn();
-        const radio = mount(<Radio checked={ false } value='test' onChange={ onChange } />);
+        const radio = mount(<Radio checked={ false } value="test" onChange={ onChange } />);
         const radioInputNode = radio.find('input');
 
         radioInputNode.simulate('change');
@@ -207,13 +207,13 @@ describe('radio', () => {
             'test',
             true,
             expect.objectContaining({
-                nativeEvent: expect.any(Object)
-            })
+                nativeEvent: expect.any(Object),
+            }),
         );
     });
 
     it('should set class on radio button change', () => {
-        const radio = mount(<Radio type='button' />);
+        const radio = mount(<Radio type="button" />);
         const buttonNode = radio.find('button');
 
         buttonNode.simulate('click');
@@ -224,7 +224,7 @@ describe('radio', () => {
 
     it('should call `onChange` callback after radio button was clicked', () => {
         const onChange = jest.fn();
-        const radio = mount(<Radio type='button' onChange={ onChange } />);
+        const radio = mount(<Radio type="button" onChange={ onChange } />);
         const buttonNode = radio.find('button');
 
         buttonNode.simulate('click');
@@ -239,7 +239,7 @@ describe('radio', () => {
     });
 
     it('should not checked with disabled props', () => {
-        const radio = mount(<Radio type='button' disabled={ true } />);
+        const radio = mount(<Radio type="button" disabled={ true } />);
         const buttonNode = radio.find('button');
 
         buttonNode.simulate('click');
@@ -249,7 +249,7 @@ describe('radio', () => {
     });
 
     it('should scroll window to element on public scrollTo method', (done) => {
-        const radio = mount<Radio>(<Radio text='some label' />);
+        const radio = mount<Radio>(<Radio text="some label" />);
         const elemTopPosition = radio.getDOMNode().getBoundingClientRect().top;
         const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
 

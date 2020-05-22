@@ -16,18 +16,19 @@ describe('isEventOusideBounds', () => {
     `(
     'returns $isOutside for the rect ($left, $top, $right, $bottom) and click to ($pageX, $pageY)',
     ({
-        left, right, top, bottom, pageX, pageY, isOutside
+        left, right, top, bottom, pageX, pageY, isOutside,
     }) => {
         const element = document.createElement('div');
 
         element.getBoundingClientRect = jest.fn().mockReturnValue({
-            left, right, top, bottom
+            left, right, top, bottom,
         });
 
         const result = isEventOusideBounds({ pageX, pageY } as any, element);
 
         expect(result).toBe(isOutside);
-    });
+    },
+);
 });
 
 describe('isEventOutsideClientBounds', () => {
@@ -42,19 +43,20 @@ describe('isEventOutsideClientBounds', () => {
     `(
     'returns $isOutside for the rect ($left, $top, $right, $bottom) and click to ($clientX, $clientY)',
     ({
-        left, right, top, bottom, clientX, clientY, isOutside
+        left, right, top, bottom, clientX, clientY, isOutside,
     }) => {
         const event = new MouseEvent('click', { clientX, clientY });
         const element = document.createElement('div');
 
         element.getBoundingClientRect = jest.fn().mockReturnValue({
-            left, right, top, bottom
+            left, right, top, bottom,
         });
 
         const result = isEventOutsideClientBounds(event, element);
 
         expect(result).toBe(isOutside);
-    });
+    },
+);
 });
 
 describe('isNodeOutsideElement', () => {

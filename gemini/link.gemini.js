@@ -8,7 +8,7 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const PROP_SETS = [
     {},
     { pseudo: true },
-    { disabled: true }
+    { disabled: true },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -25,7 +25,7 @@ geminiReact.suite(NAME, () => {
                     const props = { theme, size, ...set };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <Link { ...props } text='Link' />
+                            <Link { ...props } text="Link" />
                         </GeminiBox>
                     );
 

@@ -28,7 +28,7 @@ const easings = {
     easeInOutCirc: bezierEasing(0.785, 0.135, 0.15, 0.86),
     easeInBack: bezierEasing(0.6, -0.28, 0.735, 0.045),
     easeOutBack: bezierEasing(0.175, 0.885, 0.32, 1.275),
-    easeInOutBack: bezierEasing(0.68, -0.55, 0.265, 1.55)
+    easeInOutBack: bezierEasing(0.68, -0.55, 0.265, 1.55),
 };
 
 export type EasingType = keyof typeof easings;

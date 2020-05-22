@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 :root {
     --size-m-box: 16px;
@@ -18,7 +18,10 @@
     font-weight: var(--font-weight-normal);
     white-space: nowrap;
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -41,8 +44,9 @@
         border-radius: 50%;
         transition: all 0.1s 0s ease-out;
 
-        &:before, &:after {
-            content: '';
+        &:before,
+        &:after {
+            content: "";
             display: block;
             position: absolute;
             background: transparent;

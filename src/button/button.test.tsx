@@ -45,7 +45,7 @@ describe('button', () => {
     });
 
     it('should set "focused" class when focused=true', () => {
-        const button = mount(<Button focused={ true } >Button-example</Button>);
+        const button = mount(<Button focused={ true }>Button-example</Button>);
 
         expect(button.getDOMNode().className).toContain('button_focused');
     });

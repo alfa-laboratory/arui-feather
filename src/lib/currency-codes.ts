@@ -116,7 +116,7 @@ export const CURRENCY_MAP = {
     VEF: '\u0042\u0073',
     VND: '\u20ab',
     YER: '\ufdfc',
-    ZWD: '\u005a\u0024'
+    ZWD: '\u005a\u0024',
 };
 
 /**

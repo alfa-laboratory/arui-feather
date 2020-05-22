@@ -30,7 +30,7 @@ describe('resize-sensor', () => {
         const onResize = jest.fn();
         const resizeSensor = mount(
             <ResizeSensor onResize={ onResize } />,
-            { attachTo: target }
+            { attachTo: target },
         );
         const iframeNode = resizeSensor.find('iframe').getDOMNode<HTMLIFrameElement>();
 

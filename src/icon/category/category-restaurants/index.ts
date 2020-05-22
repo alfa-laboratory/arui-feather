@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-restaurants.css';
-import '../../../icon';
+import '../..';
 
 export * from './category-restaurants';
 export { default } from './category-restaurants';

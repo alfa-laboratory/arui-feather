@@ -67,14 +67,15 @@ export class Collapse extends React.PureComponent<CollapseProps> {
 
     static defaultProps: Partial<CollapseProps> = {
         expandedLabel: 'Collapse',
-        collapsedLabel: 'Expand'
+        collapsedLabel: 'Expand',
     };
 
     state = {
-        isExpanded: false
+        isExpanded: false,
     };
 
     private content: HTMLDivElement;
+
     private contentCase: HTMLDivElement;
 
     componentDidMount() {
@@ -90,14 +91,14 @@ export class Collapse extends React.PureComponent<CollapseProps> {
         const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         switch (expanded) {
-            case true: ToggledIcon = IconArrowUp; break;
-            case false: ToggledIcon = IconArrowDown; break;
+        case true: ToggledIcon = IconArrowUp; break;
+        case false: ToggledIcon = IconArrowDown; break;
         }
 
         return (
             <div
                 className={ this.cn({
-                    expanded
+                    expanded,
                 }) }
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
@@ -120,9 +121,9 @@ export class Collapse extends React.PureComponent<CollapseProps> {
                     className={ this.cn('link') }
                     pseudo={ true }
                     icon={
-                        <ToggledIcon size='s' />
+                        <ToggledIcon size="s" />
                     }
-                    iconPosition='right'
+                    iconPosition="right"
                     onClick={ this.handleExpandedChange }
                     text={
                         expanded
@@ -135,10 +136,11 @@ export class Collapse extends React.PureComponent<CollapseProps> {
     }
 
     private handleExpandedChange = () => {
+        // eslint-disable-next-line react/no-access-state-in-setstate
         const newExpandedValue = this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
 
         this.setState({
-            isExpanded: newExpandedValue
+            isExpanded: newExpandedValue,
         });
 
         if (this.props.onExpandedChange) {

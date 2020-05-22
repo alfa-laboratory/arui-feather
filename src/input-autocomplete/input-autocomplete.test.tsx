@@ -14,15 +14,15 @@ import { SCROLL_TO_CORRECTION } from '../vars';
 const OPTIONS = [
     { value: 'VKontakte' },
     { value: 'Facebook' },
-    { value: 'Twitter' }
+    { value: 'Twitter' },
 ];
 
 const OPTIONS2 = [
     { value: 'VKontakte' },
     {
         value: 'VKontakte',
-        key: 'vk2'
-    }
+        key: 'vk2',
+    },
 ];
 
 describe('input-autocomplete', () => {
@@ -50,7 +50,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should render input with provided default value', () => {
-        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } defaultValue='default' />);
+        const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete options={ OPTIONS } defaultValue="default" />);
 
         expect(inputAutocomplete).toMatchSnapshot();
     });
@@ -115,11 +115,11 @@ describe('input-autocomplete', () => {
                     value: `Very, very long option text
                             used just to make autocomplete popup
                             strech really really wide and another
-                            couple of words just to be sure`
-                }
+                            couple of words just to be sure`,
+                },
             ],
             equalPopupWidth: true,
-            opened: true
+            opened: true,
         };
 
         const inputAutocomplete = mount<InputAutocomplete>(<InputAutocomplete { ...props } />);
@@ -157,7 +157,7 @@ describe('input-autocomplete', () => {
     it('should call `onItemSelect` callback after option was clicked', () => {
         const onItemSelect = jest.fn();
         const inputAutocomplete = mount<InputAutocomplete>(
-            <InputAutocomplete options={ OPTIONS } onItemSelect={ onItemSelect } />
+            <InputAutocomplete options={ OPTIONS } onItemSelect={ onItemSelect } />,
         );
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
 
@@ -169,7 +169,7 @@ describe('input-autocomplete', () => {
     it('should call `onChange` callback after option was clicked and pass value to it', () => {
         const onChange = jest.fn();
         const inputAutocomplete = mount<InputAutocomplete>(
-            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />,
         );
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
 
@@ -178,8 +178,8 @@ describe('input-autocomplete', () => {
         expect(onChange).toHaveBeenCalledWith(
             'VKontakte',
             expect.objectContaining({
-                nativeEvent: expect.any(Object)
-            })
+                nativeEvent: expect.any(Object),
+            }),
         );
     });
 
@@ -188,10 +188,10 @@ describe('input-autocomplete', () => {
         const OPTIONS = [
             { value: 'VKontakte', text: 'ВКонтакте' },
             { value: 'Facebook', text: 'Фейсбук' },
-            { value: 'Twitter', text: 'Твиттер' }
+            { value: 'Twitter', text: 'Твиттер' },
         ];
         const inputAutocomplete = mount<InputAutocomplete>(
-            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />,
         );
 
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
@@ -201,15 +201,15 @@ describe('input-autocomplete', () => {
         expect(onChange).toHaveBeenCalledWith(
             'ВКонтакте',
             expect.objectContaining({
-                nativeEvent: expect.any(Object)
-            })
+                nativeEvent: expect.any(Object),
+            }),
         );
     });
 
     it('should not call `onChange` callback after option was clicked when updateValueOnItemSelect = false', () => {
         const onChange = jest.fn();
         const updateValueOnItemSelect = mount(
-            <InputAutocomplete options={ OPTIONS } onChange={ onChange } updateValueOnItemSelect={ false } />
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } updateValueOnItemSelect={ false } />,
         );
         const firstOptionNode = updateValueOnItemSelect.find('.menu-item').at(0);
 
@@ -235,8 +235,7 @@ describe('input-autocomplete', () => {
 
         // simulated event don't actually change focus
         // so we just patch input.getControl
-        // @ts-ignore
-        (inputAutocomplete.instance().input).getControl = jest.fn().mockReturnValue(document.activeElement);
+        ((inputAutocomplete.instance() as any).input).getControl = jest.fn().mockReturnValue(document.activeElement);
 
         controlNode.simulate('focus');
 
@@ -269,10 +268,9 @@ describe('input-autocomplete', () => {
 
     it('should close popup after item select if closeOnSelect is set', (done) => {
         const inputAutocomplete = mount<InputAutocomplete>(
-            <InputAutocomplete closeOnSelect={ true } updateValueOnItemSelect={ false } options={ OPTIONS } />
+            <InputAutocomplete closeOnSelect={ true } updateValueOnItemSelect={ false } options={ OPTIONS } />,
         );
-        // @ts-ignore
-        const inputNode = inputAutocomplete.instance().input;
+        const inputNode = (inputAutocomplete.instance() as any).input;
 
         jest.spyOn(inputNode, 'blur');
 
@@ -292,12 +290,12 @@ describe('input-autocomplete', () => {
         const OPTIONS = [
             { value: 'VKontakte', props: { disabled: true } },
             { value: 'Facebook' },
-            { value: 'Twitter' }
+            { value: 'Twitter' },
         ];
         const onChange = jest.fn();
 
         const inputAutocomplete = mount(
-            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />
+            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />,
         );
 
         inputAutocomplete.find('.menu-item').at(0).simulate('click');

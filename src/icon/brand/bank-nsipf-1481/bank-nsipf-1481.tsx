@@ -4,15 +4,15 @@
 
 import React from 'react';
 import { withTheme } from '../../../cn';
-import Icon from '../../../icon';
-import { IconProps } from '../../../icon/icon';
+import Icon from '../..';
+import { IconProps } from '../../icon';
 
 class IconBankNsipf1481 extends React.PureComponent<IconProps> {
     render() {
         return (
             <Icon
                 { ...this.props }
-                name='bank-nsipf-1481'
+                name="bank-nsipf-1481"
             />
         );
     }

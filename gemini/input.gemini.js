@@ -7,23 +7,23 @@ function renderAddons(inputSize) {
     let radioSize;
 
     switch (inputSize) {
-        case 's':
-        case 'm': radioSize = 's'; break;
-        case 'l': radioSize = 'm'; break;
-        case 'xl': radioSize = 'l'; break;
+    case 's':
+    case 'm': radioSize = 's'; break;
+    case 'l': radioSize = 'm'; break;
+    case 'xl': radioSize = 'l'; break;
     }
 
-    const buttonControlNodes = [1, 2, 3].map(item => (
+    const buttonControlNodes = [1, 2, 3].map((item) => (
         <Radio
             key={ item }
             size={ radioSize }
-            type='button'
+            type="button"
             text={ item }
         />
     ));
 
     return (
-        <RadioGroup type='button'>
+        <RadioGroup type="button">
             { buttonControlNodes }
         </RadioGroup>
     );
@@ -35,23 +35,23 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
 const PROP_SETS = [
     {
-        placeholder: 'Input'
+        placeholder: 'Input',
     },
     {
         placeholder: 'Input with width available',
-        width: 'available'
+        width: 'available',
     },
     {
         placeholder: 'Input',
-        error: 'Something went wrong'
+        error: 'Something went wrong',
     },
     {
         placeholder: 'Input',
-        clear: true
+        clear: true,
     },
     {
-        disabled: true
-    }
+        disabled: true,
+    },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -74,7 +74,7 @@ geminiReact.suite(NAME, () => {
                         size,
                         rightAddons: (index === 0 || index === 1) && renderAddons(size),
                         leftAddons: (index === 0 || index === 1) && renderAddons(size),
-                        ...set
+                        ...set,
                     };
                     const template = (
                         <GeminiBox theme={ theme } width={ set.width }>

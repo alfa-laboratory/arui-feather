@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './left.css';
-import '../../../icon';
+import '../..';
 
 export * from './left';
 export { default } from './left';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './star-voc-active.css';
-import '../../../icon';
+import '../..';
 
 export * from './star-voc-active';
 export { default } from './star-voc-active';

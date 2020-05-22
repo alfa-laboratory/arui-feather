@@ -8,16 +8,16 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 const OPTIONS = [
     {
         value: 1,
-        text: 'Orange'
+        text: 'Orange',
     },
     {
         value: 2,
-        text: 'Banana'
+        text: 'Banana',
     },
     {
         value: 3,
-        text: 'Apple'
-    }
+        text: 'Apple',
+    },
 ];
 
 const PROP_SETS = [
@@ -34,7 +34,7 @@ const PROP_SETS = [
         options: OPTIONS,
         value: [1],
         label: 'test-label',
-        placeholder: 'test-placeholder'
+        placeholder: 'test-placeholder',
     },
     { options: OPTIONS, label: 'test-label', opened: true },
     { options: OPTIONS, placeholder: 'test-placeholder', opened: true },
@@ -42,20 +42,20 @@ const PROP_SETS = [
         options: OPTIONS,
         label: 'test-label',
         placeholder: 'test-placeholder',
-        opened: true
+        opened: true,
     },
     {
         options: OPTIONS,
         value: [1],
         label: 'test-label',
         placeholder: 'test-placeholder',
-        opened: true
+        opened: true,
     },
     {
         options: OPTIONS,
         width: 'available',
-        error: 'Произошла ошибка, попробуйте сделать запрос ещё раз'
-    }
+        error: 'Произошла ошибка, попробуйте сделать запрос ещё раз',
+    },
 ];
 
 geminiReact.suite(NAME, () => {

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-societe-generale.css';
-import '../../../icon';
+import '../..';
 
 export * from './bank-societe-generale';
 export { default } from './bank-societe-generale';

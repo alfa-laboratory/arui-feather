@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './autopayment.css';
-import '../../../icon';
+import '../..';
 
 export * from './autopayment';
 export { default } from './autopayment';

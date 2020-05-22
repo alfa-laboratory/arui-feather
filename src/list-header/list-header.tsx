@@ -59,7 +59,13 @@ export class ListHeader extends React.PureComponent<ListHeaderProps> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('title') }>{ this.props.title }</span>
-                { this.props.description && <span className={ this.cn('description') }>, { this.props.description }</span> }
+                { this.props.description && (
+                    <span className={ this.cn('description') }>
+                        ,
+                        { ' ' }
+                        { this.props.description }
+                    </span>
+                ) }
             </div>
         );
     }

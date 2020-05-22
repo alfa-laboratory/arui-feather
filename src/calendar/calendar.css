@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import '../vars.css';
+@import "../vars.css";
 
 .calendar {
     position: relative;
@@ -21,7 +21,10 @@
         width: 100%;
     }
 
-    &, *, *:before, *:after {
+    &,
+    *,
+    *:before,
+    *:after {
         box-sizing: border-box;
     }
 
@@ -32,7 +35,8 @@
     &__name {
         transition: 0.2s;
 
-        &_month, &_year {
+        &_month,
+        &_year {
             display: inline-block;
             vertical-align: top;
             padding: 0 var(--gap-xs) 0 var(--gap-s);
@@ -80,11 +84,12 @@
             right: 0;
             top: 0;
             height: 20px;
-            content: '';
+            content: "";
         }
     }
 
-    &__years, &__months {
+    &__years,
+    &__months {
         position: absolute;
         left: 0;
         right: 0;
@@ -234,7 +239,7 @@
         margin-left: -5px;
 
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: 2px;
             left: 2px;
@@ -244,7 +249,8 @@
         }
     }
 
-    &__day_state_today, &__day_state_current {
+    &__day_state_today,
+    &__day_state_current {
         position: relative;
         outline: 0;
         user-select: none;
@@ -268,7 +274,8 @@
         pointer-events: none;
         cursor: default;
 
-        &, &:hover {
+        &,
+        &:hover {
             opacity: 0;
         }
     }

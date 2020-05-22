@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './currency-jpy.css';
-import '../../../icon';
+import '../..';
 
 export * from './currency-jpy';
 export { default } from './currency-jpy';

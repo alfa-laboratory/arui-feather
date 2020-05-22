@@ -12,8 +12,8 @@ const MENU_ITEM1: MenuContentType = {
     content: 'MenuItem 1',
     value: 'value1',
     props: {
-        url: '#1'
-    }
+        url: '#1',
+    },
 };
 
 const MENU_ITEM2: MenuContentType = {
@@ -21,23 +21,23 @@ const MENU_ITEM2: MenuContentType = {
     content: 'MenuItem 2',
     value: 'value2',
     props: {
-        url: '#2'
-    }
+        url: '#2',
+    },
 };
 
 const MENU_ITEM2_CLONE: MenuContentType = {
     type: 'item',
     content: 'MenuItem 2',
     value: 'value2',
-    key: 'value3'
+    key: 'value3',
 };
 
 const MENU_GROUP: MenuContentType = {
     type: 'group',
     title: 'Group Title',
     content: [
-        MENU_ITEM1
-    ]
+        MENU_ITEM1,
+    ],
 };
 
 function getNumberOfItemsWithClass(items, className) {
@@ -66,7 +66,7 @@ describe('menu', () => {
     });
 
     it('should render menu items as type=`block` when property `mode` is identified', () => {
-        const menu = mount(<Menu mode='check' content={ [MENU_ITEM1, MENU_ITEM2] } />);
+        const menu = mount(<Menu mode="check" content={ [MENU_ITEM1, MENU_ITEM2] } />);
         const menuFirstItemNode = menu.find('.menu-item').at(0);
 
         expect(menuFirstItemNode.getDOMNode().className).toContain('menu-item_type_block');
@@ -79,23 +79,23 @@ describe('menu', () => {
     });
 
     it('should auto check first item when mode=`radio` and `checkedItems` property is empty', () => {
-        const menu = mount(<Menu mode='radio' content={ [MENU_ITEM1, MENU_ITEM2] } />);
+        const menu = mount(<Menu mode="radio" content={ [MENU_ITEM1, MENU_ITEM2] } />);
         const menuFirstItemNode = menu.find('.menu-item').at(0);
 
         expect(menuFirstItemNode.getDOMNode().className).toContain('menu-item_checked');
     });
 
     it('shouldn\'t crash when mode=`radio`, and `checkedItems` and `content` properties is empty', () => {
-        const menu = mount(<Menu mode='radio' content={ [] } />);
+        const menu = mount(<Menu mode="radio" content={ [] } />);
 
         expect(menu).toMatchSnapshot();
     });
 
     it('should have just one checked menu-item when mode=`radio`', () => {
-        const menu = mount(<Menu mode='radio' content={ [MENU_ITEM1, MENU_ITEM2] } />);
+        const menu = mount(<Menu mode="radio" content={ [MENU_ITEM1, MENU_ITEM2] } />);
         const menuChildsNode = menu.find('.menu-item');
 
-        menuChildsNode.forEach(child => child.simulate('click'));
+        menuChildsNode.forEach((child) => child.simulate('click'));
 
         const checkedMenuItems = menu.find('.menu-item_checked');
 
@@ -103,10 +103,10 @@ describe('menu', () => {
     });
 
     it('should check every menu-item when mode=`check`', () => {
-        const menu = mount(<Menu mode='check' content={ [MENU_ITEM1, MENU_ITEM2] } />);
+        const menu = mount(<Menu mode="check" content={ [MENU_ITEM1, MENU_ITEM2] } />);
         const menuChildsNode = menu.find('.menu-item');
 
-        menuChildsNode.forEach(child => child.simulate('click'));
+        menuChildsNode.forEach((child) => child.simulate('click'));
 
         const checkedMenuItems = menu.find('.menu-item_checked');
 
@@ -131,7 +131,7 @@ describe('menu', () => {
 
     it('should call `onItemCheck` callback after menu-item was clicked and if `mode` is identified', () => {
         const onItemCheck = jest.fn();
-        const menu = mount(<Menu onItemCheck={ onItemCheck } mode='check' content={ [MENU_ITEM1, MENU_ITEM2] } />);
+        const menu = mount(<Menu onItemCheck={ onItemCheck } mode="check" content={ [MENU_ITEM1, MENU_ITEM2] } />);
 
         menu.find('.menu-item').first().simulate('click');
 

@@ -8,7 +8,7 @@ describe('calcTargetDimensions', () => {
     it('should return popup target position if popup is not in targetAnchor mode', () => {
         const fakePopup = {
             isTargetAnchor: false,
-            targetPosition: { left: 0, top: 0 }
+            targetPosition: { left: 0, top: 0 },
         };
         const result = calcTargetDimensions(fakePopup);
 
@@ -16,7 +16,7 @@ describe('calcTargetDimensions', () => {
             left: 0,
             top: 0,
             width: 0,
-            height: 0
+            height: 0,
         });
     });
 
@@ -28,19 +28,19 @@ describe('calcTargetDimensions', () => {
                     left: 0,
                     top: 0,
                     width: 10,
-                    height: 10
-                })
+                    height: 10,
+                }),
             },
             fitContainer: {
                 getBoundingClientRect: () => ({
                     left: 5,
                     top: 5,
                     width: 100,
-                    height: 100
+                    height: 100,
                 }),
                 scrollLeft: 20,
-                scrollTop: 20
-            }
+                scrollTop: 20,
+            },
         };
 
         const result = calcTargetDimensions(fakePopup);
@@ -49,7 +49,7 @@ describe('calcTargetDimensions', () => {
             left: 15,
             top: 15,
             width: 10,
-            height: 10
+            height: 10,
         });
     });
 
@@ -61,9 +61,9 @@ describe('calcTargetDimensions', () => {
                     left: 10,
                     top: 10,
                     width: 10,
-                    height: 10
-                })
-            }
+                    height: 10,
+                }),
+            },
         };
 
         (window as any).pageXOffset = 10;
@@ -75,7 +75,7 @@ describe('calcTargetDimensions', () => {
             left: 20,
             top: 20,
             width: 10,
-            height: 10
+            height: 10,
         });
     });
 });
@@ -87,8 +87,8 @@ describe('calcFitContainerDimensions', () => {
                 scrollLeft: 20,
                 scrollTop: 20,
                 offsetHeight: 10,
-                offsetWidth: 10
-            }
+                offsetWidth: 10,
+            },
         };
 
         const result = calcFitContainerDimensions(fakePopup);
@@ -97,7 +97,7 @@ describe('calcFitContainerDimensions', () => {
             left: 20,
             top: 20,
             bottom: 30,
-            right: 30
+            right: 30,
         });
     });
 
@@ -108,7 +108,7 @@ describe('calcFitContainerDimensions', () => {
             left: window.pageXOffset,
             top: window.pageYOffset,
             bottom: window.pageYOffset + window.innerHeight,
-            right: window.pageXOffset + window.innerWidth
+            right: window.pageXOffset + window.innerWidth,
         });
     });
 });
@@ -128,22 +128,22 @@ describe.only('calcBestDrawingParams', () => {
         offset: {
             main: 0,
             second: 0,
-            fitContainer: 0
+            fitContainer: 0,
         },
         targetPosition: null,
-        targetAnchor: null
+        targetAnchor: null,
     };
     const baseTargetDimensions = {
         left: 0,
         top: 0,
         width: 100,
-        height: 100
+        height: 100,
     };
     const baseViewportDimensions = {
         top: 0,
         left: 0,
         bottom: 600,
-        right: 800
+        right: 800,
     };
 
     it('should draw on right side width margin by main directions = 20, by second direction = 40', () => {
@@ -154,8 +154,8 @@ describe.only('calcBestDrawingParams', () => {
             offset: {
                 ...basePopupHash.offset,
                 main: 20,
-                second: 40
-            }
+                second: 40,
+            },
         };
 
         const result = calcBestDrawingParams(fakePopup, baseTargetDimensions, baseViewportDimensions);
@@ -165,7 +165,7 @@ describe.only('calcBestDrawingParams', () => {
             left: 120,
             top: 40,
             height: 'auto',
-            overflow: false
+            overflow: false,
         });
     });
 
@@ -177,12 +177,12 @@ describe.only('calcBestDrawingParams', () => {
             offset: {
                 ...basePopupHash.offset,
                 main: 20,
-                second: 40
-            }
+                second: 40,
+            },
         };
         const targetDimensions = {
             ...baseTargetDimensions,
-            left: 700
+            left: 700,
         };
         const result = calcBestDrawingParams(fakePopup, targetDimensions, baseViewportDimensions);
 

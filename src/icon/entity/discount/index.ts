@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './discount.css';
-import '../../../icon';
+import '../..';
 
 export * from './discount';
 export { default } from './discount';

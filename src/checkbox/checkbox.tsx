@@ -131,13 +131,13 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
     static defaultProps: Partial<CheckboxProps> = {
         type: 'normal',
-        size: 'm'
+        size: 'm',
     };
 
     state = {
         focused: false,
         hovered: false,
-        checked: false
+        checked: false,
     };
 
     private root;
@@ -155,7 +155,7 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                     indeterminate: this.props.indeterminate,
                     focused: this.state.focused,
                     hovered: this.state.hovered,
-                    width: this.props.type === 'button' ? this.props.width : null
+                    width: this.props.type === 'button' ? this.props.width : null,
                 }) }
                 htmlFor={ this.props.id }
                 onBlur={ this.handleBlur }
@@ -178,11 +178,11 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
     renderNormalCheckbox(checked) {
         return [
-            <span className={ this.cn('box') } key='box'>
+            <span className={ this.cn('box') } key="box">
                 <input
                     className={ this.cn('control') }
-                    type='checkbox'
-                    autoComplete='off'
+                    type="checkbox"
+                    autoComplete="off"
                     name={ this.props.name }
                     id={ this.props.id }
                     value={ this.props.value }
@@ -195,37 +195,37 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                     <IconCheck
                         className={ this.cn('icon') }
                         size={ this.props.size === 'l' ? 's' : 'xs' }
-                        theme='alfa-on-color'
+                        theme="alfa-on-color"
                     />
                 ) }
                 { !checked && this.props.indeterminate && (
                     <IconIndeterminate
                         className={ this.cn('icon') }
                         size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme='alfa-on-color'
+                        theme="alfa-on-color"
                     />
                 ) }
                 { checked && this.props.indeterminate && (
                     <IconCheck
                         className={ this.cn('icon') }
                         size={ this.props.size === 'l' ? 's' : 'xs' }
-                        theme='alfa-on-color'
+                        theme="alfa-on-color"
                     />
                 ) }
             </span>,
             this.props.text && (
-                <span className={ this.cn('text') } key='text' role='presentation'>
+                <span className={ this.cn('text') } key="text" role="presentation">
                     { this.props.text }
                 </span>
-            )
+            ),
         ];
     }
 
     renderButtonCheckbox(checked) {
         return [
             <TagButton
-                key='button'
-                togglable='check'
+                key="button"
+                togglable="check"
                 checked={ checked }
                 title={ this.props.title }
                 disabled={ this.props.disabled }
@@ -238,17 +238,17 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
             </TagButton>,
             <input
                 className={ this.cn('control') }
-                key='control'
-                type='checkbox'
+                key="control"
+                type="checkbox"
                 tabIndex={ -1 }
-                autoComplete='off'
+                autoComplete="off"
                 name={ this.props.name }
                 id={ this.props.id }
                 value={ this.props.value }
                 checked={ checked }
                 disabled={ this.props.disabled }
                 onChange={ this.handleChange }
-            />
+            />,
         ];
     }
 
@@ -259,6 +259,7 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
     private handleChange = (event) => {
         if (!this.props.disabled) {
+            // eslint-disable-next-line react/no-access-state-in-setstate
             const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
@@ -332,7 +333,7 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
         scrollTo({
             // eslint-disable-next-line no-mixed-operators
-            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION,
         });
     }
 }

@@ -4,15 +4,15 @@
 
 import React from 'react';
 import { withTheme } from '../../../cn';
-import Icon from '../../../icon';
-import { IconProps } from '../../../icon/icon';
+import Icon from '../..';
+import { IconProps } from '../../icon';
 
 class IconTransferByPhoneAndroid extends React.PureComponent<IconProps> {
     render() {
         return (
             <Icon
                 { ...this.props }
-                name='transfer-by-phone-android'
+                name="transfer-by-phone-android"
             />
         );
     }

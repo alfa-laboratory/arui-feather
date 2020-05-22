@@ -12,14 +12,14 @@ const PROP_SETS = [
     { error: true },
     { type: 'button', error: true },
     { disabled: true },
-    { type: 'button', disabled: true }
+    { type: 'button', disabled: true },
 ];
 
 const RADIOS = [
     { text: 'One', value: 'radio-1-1' },
     { text: 'Two', value: 'radio-1-2' },
     { text: 'Three', value: 'radio-1-3' },
-    { text: 'Four', value: 'radio-1-4' }
+    { text: 'Four', value: 'radio-1-4' },
 ];
 
 geminiReact.suite(NAME, () => {
@@ -43,7 +43,7 @@ geminiReact.suite(NAME, () => {
                         <GeminiBox theme={ theme }>
                             <RadioGroup type={ set.type === 'button' ? 'button' : 'normal' }>
                                 {
-                                    RADIOS.map(radio => (
+                                    RADIOS.map((radio) => (
                                         <Radio
                                             text={ radio.text }
                                             key={ radio.value }

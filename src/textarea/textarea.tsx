@@ -178,12 +178,12 @@ export class Textarea extends React.PureComponent<TextareaProps> {
         disabled: false,
         autosize: true,
         resize: 'none',
-        size: 'm'
+        size: 'm',
     };
 
     state = {
         focused: false,
-        value: this.props.defaultValue || ''
+        value: this.props.defaultValue || '',
     };
 
     /**
@@ -217,7 +217,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
             onBlur: this.handleBlur,
             onPaste: this.handlePaste,
             onKeyPress: this.handleKeyPress,
-            onKeyDown: this.handleKeyDown
+            onKeyDown: this.handleKeyDown,
         };
 
         return (
@@ -232,7 +232,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                     resize: this.props.resize,
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
-                    'has-value': !!value
+                    'has-value': !!value,
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -241,27 +241,33 @@ export class Textarea extends React.PureComponent<TextareaProps> {
             >
                 <span className={ this.cn('inner') }>
                     {
-                        !!this.props.label &&
-                        <span className={ this.cn('top') }>
-                            { this.props.label }
-                        </span>
+                        !!this.props.label
+                        && (
+                            <span className={ this.cn('top') }>
+                                { this.props.label }
+                            </span>
+                        )
                     }
                     {
                         this.props.autosize
-                            ? <TextareaAutosize
-                                { ...textareaProps }
-                                maxRows={ this.props.maxRows }
-                                minRows={ this.props.minRows }
-                                style={ { maxHeight: this.props.maxHeight } }
-                                onHeightChange={ this.handleHeightChange }
-                            />
+                            ? (
+                                <TextareaAutosize
+                                    { ...textareaProps }
+                                    maxRows={ this.props.maxRows }
+                                    minRows={ this.props.minRows }
+                                    style={ { maxHeight: this.props.maxHeight } }
+                                    onHeightChange={ this.handleHeightChange }
+                                />
+                            )
                             : <textarea { ...textareaProps } />
                     }
                     {
-                        (this.props.error || this.props.hint) &&
-                        <span className={ this.cn('sub') }>
-                            { this.props.error || this.props.hint }
-                        </span>
+                        (this.props.error || this.props.hint)
+                        && (
+                            <span className={ this.cn('sub') }>
+                                { this.props.error || this.props.hint }
+                            </span>
+                        )
                     }
                 </span>
             </span>
@@ -344,7 +350,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
         const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION
+            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION,
         });
     }
 }

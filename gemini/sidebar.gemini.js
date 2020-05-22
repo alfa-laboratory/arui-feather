@@ -8,7 +8,7 @@ const THEMES = ['alfa-on-color', 'alfa-on-white'];
 const PROP_SETS = [
     {},
     { hasOverlay: true, hasCloser: false },
-    { hasOverlay: true, hasCloser: true }
+    { hasOverlay: true, hasCloser: true },
 ];
 
 geminiReact.suite(NAME, () => {

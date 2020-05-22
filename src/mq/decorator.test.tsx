@@ -10,14 +10,14 @@ import mqDecorator from './decorator';
 
 jest.mock('../lib/match-media');
 jest.mock('./utils', () => ({
-    isPointerEventsSupported: jest.fn(() => true)
+    isPointerEventsSupported: jest.fn(() => true),
 }));
 
 describe('mq-decorator', () => {
     it('should pass mqMatch property to decorated component', () => {
         (getMatchMedia as any).mockReturnValueOnce({
             addListener: jest.fn,
-            matches: false
+            matches: false,
         });
 
         type ExampleProps = {
@@ -39,7 +39,7 @@ describe('mq-decorator', () => {
     it('should pass custom named property to decorated component', () => {
         (getMatchMedia as any).mockReturnValueOnce({
             addListener: jest.fn,
-            matches: false
+            matches: false,
         });
 
         type ExampleProps = {

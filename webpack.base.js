@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
-const path = require('path');
-const webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
 const QUERY = {
     name: '[name].[hash].[ext]',
@@ -18,13 +18,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
-                loader: require.resolve('babel-loader'),
+                test: /\.(t|j)sx?$/,
+                loader: require.resolve('ts-loader'),
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.tsx?/i,
-                loader: 'ts-loader',
                 options: {
                     transpileOnly: true,
                 },

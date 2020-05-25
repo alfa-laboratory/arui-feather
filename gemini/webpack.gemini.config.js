@@ -13,9 +13,12 @@ module.exports = merge.smart(WEBPACK_BASE_TEMPLATE, {
         rules: [
             // We need to transpile at least `gemini-react/lib/client-wrapper.js` for IE10
             {
-                test: /gemini-react\/lib\/client-wrapper\.js$/,
+                test: /gemini-react\/lib\/client-wrapper\.(t|j)s$/,
                 exclude: /node_modules\/(?!gemini-react\/).*/,
-                loader: 'babel-loader',
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true,
+                }
             },
         ],
     },

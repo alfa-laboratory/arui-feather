@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
-import path from 'path';
-import webpack from 'webpack';
+const path = require('path');
+const webpack = require('webpack');
 
 const QUERY = {
     name: '[name].[hash].[ext]',

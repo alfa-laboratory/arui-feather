@@ -1,5 +1,5 @@
 module.exports = {
-    testRegex: '.*\\.test\\.(jsx|js|ts|tsx)$',
+    testRegex: '.*\\.test\\.(js|ts|tsx)$',
     moduleNameMapper: {
         '\\.css$': '<rootDir>/__mocks__/assets-mock.js',
         '\\.png$': '<rootDir>/__mocks__/assets-mock.js',
@@ -8,8 +8,7 @@ module.exports = {
         '\\.ico': '<rootDir>/__mocks__/assets-mock.js',
     },
     transform: {
-        '^.+\\.jsx?$': 'babel-jest',
-        '^.+\\.tsx?$': 'ts-jest',
+        '^.+\\.(t|j)sx?$': 'ts-jest',
     },
     modulePathIgnorePatterns: [
         '<rootDir>/.publish/',
@@ -18,14 +17,13 @@ module.exports = {
         'ts',
         'tsx',
         'js',
-        'jsx',
         'json',
     ],
     setupFiles: [
         '<rootDir>/__tests__/setup.js',
     ],
     collectCoverageFrom: [
-        'src/**/*.{js,ts,jsx,tsx}',
+        'src/**/*.{js,ts,tsx}',
     ],
     coverageReporters: [
         'lcov',

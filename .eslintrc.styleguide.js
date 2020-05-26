@@ -3,7 +3,7 @@ module.exports = {
     rules: {
         'func-names': 0,
         'max-len': 0,
-        'react/jsx-filename-extension': [2, { 'extensions': ['gemini.js', '.jsx', '.md'] }],
+        'react/jsx-filename-extension': [2, { 'extensions': ['gemini.js', '.md'] }],
         'react/jsx-no-undef': 0,
         'chai-friendly/no-unused-expressions': 0,
         'react/jsx-indent': 0,

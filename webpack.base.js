@@ -1,4 +1,5 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 const path = require('path');
 const webpack = require('webpack');
@@ -13,7 +14,7 @@ module.exports = {
             'node_modules',
             path.join(process.cwd(), 'node_modules'),
         ],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.ts', '.tsx'],
     },
     module: {
         rules: [

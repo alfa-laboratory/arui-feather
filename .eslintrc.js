@@ -19,17 +19,11 @@ module.exports = {
             }
         },
         {
-            files: ['src/**/*.test.{js,jsx,tsx,ts}', 'src/**/__mocks__/*.{js,jsx}'],
+            files: ['src/**/*.test.{tsx,ts}', 'src/**/__mocks__/*.{ts,tsx}'],
             globals: {
                 jest: true,
                 beforeAll: true,
                 afterAll: true
-            }
-        },
-        {
-            files: ['src/**/*-test.{js,jsx}'],
-            globals: {
-                sinon: true
             }
         },
         {
@@ -49,9 +43,9 @@ module.exports = {
     // explanation of the reason
     rules: {
         // List of file extensions with jsx support
-        'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.jsx', '.tsx'] }],
+        'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.tsx'] }],
 
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx", "**/*.test.jsx", "gulpfile.js"]}],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx", "gulpfile.js"]}],
 
         // The validation of jsdoc was disabled due to an unnecessary
         // restriction of writing comments that scares off write developers to

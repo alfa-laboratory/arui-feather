@@ -119,4 +119,20 @@ describe('money-input', () => {
             done();
         }, 0);
     });
+
+    it('should use placeholder as currency spacer if value is empty', () => {
+        const moneyInput = mount(<MoneyInput placeholder="placeholder" showCurrency={ true } />);
+        const spacerValue = moneyInput.find('.money-input__value').text();
+
+        expect(spacerValue).toBe('placeholder');
+    });
+
+    it('should format currency spacer the same way as value', () => {
+        const moneyInput = mount(<MoneyInput value="1234,567" showCurrency={ true } />);
+
+        const inputValue = moneyInput.find('input').prop('value');
+        const spacerValue = moneyInput.find('.money-input__value').text();
+
+        expect(spacerValue).toBe(inputValue);
+    });
 });

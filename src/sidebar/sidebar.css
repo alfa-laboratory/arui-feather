@@ -151,6 +151,7 @@ body.sidebar-overlay {
 
         &__footer {
             position: relative;
+            padding: var(--gap-s) var(--gap-m);
 
             &:after {
                 position: absolute;
@@ -179,9 +180,8 @@ body.sidebar-overlay {
         &__content {
             position: relative;
 
-            min-height: calc(100vh - var(--sidebar-header-height));
             padding: calc(var(--sidebar-header-height) + var(--gap-xl))
-                var(--gap-m) var(--gap-xl);
+                var(--gap-m) 0;
 
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch;

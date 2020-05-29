@@ -27,10 +27,6 @@ arui-feather — это библиотека React компонентов для
 
 Вы можете посмотреть примеры использования на нашем [сайте с документацией](https://alfa-laboratory.github.io/arui-feather/styleguide/).
 
-## Ждём тебя в команду
-
-Команда дизайн-системы Альфа-Банка ищет разработчика интерфейсов: https://hr.alfabank.ru/vacancies/ui-dev. Присоединяйся!
-
 ## Установка
 
 arui-feather доступен как [npm-пакет](https://www.npmjs.com/package/arui-feather).
@@ -53,7 +49,7 @@ npm install arui-feather --save
 
 **Mobile**
 
-- Android 4.1+
+- Android 5+
 - iOS _(две последние стабильные версии)_
 
 ## Вёрстка

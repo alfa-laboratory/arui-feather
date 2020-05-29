@@ -1,3 +1,13 @@
+<a name="17.10.0"></a>
+# [17.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.9.0...v17.10.0) (2020-05-19)
+
+
+### Features
+
+* **sidebar:** added footer ([#1148](https://github.com/alfa-laboratory/arui-feather/issues/1148)) ([a4ab23a](https://github.com/alfa-laboratory/arui-feather/commit/a4ab23a))
+
+
+
 <a name="17.9.0"></a>
 # [17.9.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.8.0...v17.9.0) (2020-04-30)
 

@@ -15,13 +15,8 @@
      * односимвольный шрифт Roboto Rouble (~3kb gzipped). Использование именно этого семейства обосновано
      * свободой лицензии, в отличии от Segoe UI.
      */
-
-    /**
-     * Временно убираем BlinkMacSystemFont пока выйдет Chrome с фиксом
-     * https://www.bram.us/2020/04/09/chrome-vs-blinkmacsystemfont-when-bold-is-not-bold/
-     */
-    --font: -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-        "Open Sans", "Helvetica Neue", "Roboto Rouble", sans-serif;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", "Roboto Rouble", sans-serif;
 
     /**
      * Облегченная толщина шрифта. Может быть использована для

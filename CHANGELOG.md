@@ -1,3 +1,15 @@
+<a name="17.11.0"></a>
+# [17.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.10.0...v17.11.0) (2020-06-03)
+
+
+### Bug Fixes
+
+* fixed popup radius ([#1158](https://github.com/alfa-laboratory/arui-feather/issues/1158)) ([380028d](https://github.com/alfa-laboratory/arui-feather/commit/380028d))
+* revert font-family after fix in chrome ([#1165](https://github.com/alfa-laboratory/arui-feather/issues/1165)) ([9bfbc36](https://github.com/alfa-laboratory/arui-feather/commit/9bfbc36))
+* **money-input:** fix currency overlapping ([#1167](https://github.com/alfa-laboratory/arui-feather/issues/1167)) ([a5fb456](https://github.com/alfa-laboratory/arui-feather/commit/a5fb456))
+
+
+
 <a name="17.10.0"></a>
 # [17.10.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.9.0...v17.10.0) (2020-05-19)
 

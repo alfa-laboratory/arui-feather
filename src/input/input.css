@@ -32,7 +32,6 @@
     }
 
     &__box {
-        overflow: hidden;
         display: table-cell;
         position: relative;
         user-select: none;
@@ -46,6 +45,11 @@
             1
         ); /* TODO @teryaew: add custom easings to styles */
         -webkit-touch-callout: none;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: block;
     }
 
     &__top {
@@ -205,14 +209,20 @@
             padding-right: var(--gap-s);
         }
 
-        .input__addons_left + .input__control {
-            padding-right: 0;
-            padding-left: var(--gap-s);
+        .input__input-wrapper:nth-child(2) {
+            .input__control,
+            .input__top {
+                padding-right: 0;
+                padding-left: var(--gap-s);
+            }
         }
 
         /* If has left & right addons */
-        .input__control:nth-child(2):nth-last-child(2) {
-            padding-right: var(--gap-s);
+        .input__input-wrapper:nth-child(2):nth-last-child(2) {
+            .input__control,
+            .input__top {
+                padding-right: var(--gap-s);
+            }
         }
     }
 
@@ -451,7 +461,6 @@
     &.input_size_s {
         .input__top {
             line-height: 43px;
-            padding: 0 var(--gap-xs);
         }
 
         .input__box {
@@ -503,18 +512,11 @@
                 height: 43px;
             }
         }
-
-        &.input_has-left-addons {
-            .input__top {
-                padding-left: 38px;
-            }
-        }
     }
 
     &.input_size_m {
         .input__top {
             line-height: 56px;
-            padding: 0 var(--gap-s);
         }
 
         .input__box {
@@ -564,12 +566,6 @@
         &.input_has-addons {
             .input__box {
                 height: 56px;
-            }
-        }
-
-        &.input_has-left-addons {
-            .input__top {
-                padding-left: var(--gap-4xl);
             }
         }
     }
@@ -648,20 +644,28 @@
     }
 
     &.input_has-addons {
-        .input__addons_left + .input__control {
-            padding-right: var(--gap-s);
-        }
-
-        .input__control {
-            padding-left: var(--gap-s);
-            padding-right: var(--gap-s);
+        .input__input-wrapper {
+            .input__control {
+                padding-left: var(--gap-s);
+                padding-right: var(--gap-s);
+            }
 
             &:first-child {
-                padding-left: 0;
+                .input__control {
+                    padding-left: 0;
+                }
             }
 
             &:last-child {
-                padding-right: 0;
+                .input__control {
+                    padding-right: 0;
+                }
+            }
+
+            &:nth-child(2) {
+                .input__control {
+                    padding-right: var(--gap-s);
+                }
             }
         }
     }

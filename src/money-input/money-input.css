@@ -74,22 +74,13 @@
                 left: 0;
                 top: 0;
                 white-space: nowrap;
+            }
 
-                + .input__control {
+            .input__input-wrapper:nth-child(2) {
+                .input__control,
+                .input__top {
                     padding-left: 0;
                 }
-            }
-        }
-
-        .input_view_filled.input_size_s {
-            .input__top {
-                padding-left: var(--gap-xs);
-            }
-        }
-
-        .input_view_filled.input_size_m {
-            .input__top {
-                padding-left: var(--gap-s);
             }
         }
     }

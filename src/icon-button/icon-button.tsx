@@ -5,7 +5,7 @@
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-import { Button } from '../button/button';
+import { Button, ButtonProps } from '../button/button';
 
 /**
  * Компонент кнопки с иконкой.
@@ -16,6 +16,4 @@ export class IconButton extends Button {
     cn = createCn('icon-button');
 }
 
-class ThemedIconButton extends IconButton {}
-(ThemedIconButton as any) = withTheme(IconButton);
-export default ThemedIconButton;
+export default withTheme<ButtonProps, IconButton>(IconButton);

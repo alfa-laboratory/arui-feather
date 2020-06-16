@@ -18,6 +18,4 @@ class IconOkFilled extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconOkFilled extends IconOkFilled {}
-(ThemedIconOkFilled as any) = withTheme(IconOkFilled);
-export default ThemedIconOkFilled;
+export default withTheme(IconOkFilled);

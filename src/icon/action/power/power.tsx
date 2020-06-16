@@ -18,6 +18,4 @@ class IconPower extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPower extends IconPower {}
-(ThemedIconPower as any) = withTheme(IconPower);
-export default ThemedIconPower;
+export default withTheme(IconPower);

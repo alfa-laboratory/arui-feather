@@ -132,6 +132,4 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
     }
 }
 
-class ThemedPhoneInput extends PhoneInput {}
-(ThemedPhoneInput as any) = withTheme(PhoneInput);
-export default ThemedPhoneInput;
+export default withTheme<PhoneInputProps, PhoneInput>(PhoneInput);

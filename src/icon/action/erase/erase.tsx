@@ -18,6 +18,4 @@ class IconErase extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconErase extends IconErase {}
-(ThemedIconErase as any) = withTheme(IconErase);
-export default ThemedIconErase;
+export default withTheme(IconErase);

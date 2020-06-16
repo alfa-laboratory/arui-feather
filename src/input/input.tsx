@@ -685,6 +685,4 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     }
 }
 
-class ThemedInput extends Input {}
-(ThemedInput as any) = withTheme(Input);
-export default ThemedInput;
+export default withTheme<InputProps, Input>(Input);

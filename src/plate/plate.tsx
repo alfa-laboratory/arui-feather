@@ -256,6 +256,4 @@ export class Plate extends React.PureComponent<PlateProps> {
     }
 }
 
-class ThemedPlate extends Plate {}
-(ThemedPlate as any) = withTheme(Plate);
-export default ThemedPlate;
+export default withTheme<PlateProps, Plate>(Plate);

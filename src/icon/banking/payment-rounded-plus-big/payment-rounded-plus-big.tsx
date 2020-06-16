@@ -18,6 +18,4 @@ class IconPaymentRoundedPlusBig extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPaymentRoundedPlusBig extends IconPaymentRoundedPlusBig {}
-(ThemedIconPaymentRoundedPlusBig as any) = withTheme(IconPaymentRoundedPlusBig);
-export default ThemedIconPaymentRoundedPlusBig;
+export default withTheme(IconPaymentRoundedPlusBig);

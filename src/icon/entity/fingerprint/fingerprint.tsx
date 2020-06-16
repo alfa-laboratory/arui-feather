@@ -18,6 +18,4 @@ class IconFingerprint extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconFingerprint extends IconFingerprint {}
-(ThemedIconFingerprint as any) = withTheme(IconFingerprint);
-export default ThemedIconFingerprint;
+export default withTheme(IconFingerprint);

@@ -68,6 +68,4 @@ export class Tabs extends React.PureComponent<TabsProps> {
     }
 }
 
-class ThemedTabs extends Tabs {}
-(ThemedTabs as any) = withTheme(Tabs);
-export default ThemedTabs;
+export default withTheme<TabsProps, Tabs>(Tabs);

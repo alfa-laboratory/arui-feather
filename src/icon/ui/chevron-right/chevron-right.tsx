@@ -18,6 +18,4 @@ class IconChevronRight extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconChevronRight extends IconChevronRight {}
-(ThemedIconChevronRight as any) = withTheme(IconChevronRight);
-export default ThemedIconChevronRight;
+export default withTheme(IconChevronRight);

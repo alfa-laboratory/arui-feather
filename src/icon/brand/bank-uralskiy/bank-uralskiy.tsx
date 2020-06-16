@@ -18,6 +18,4 @@ class IconBankUralskiy extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankUralskiy extends IconBankUralskiy {}
-(ThemedIconBankUralskiy as any) = withTheme(IconBankUralskiy);
-export default ThemedIconBankUralskiy;
+export default withTheme(IconBankUralskiy);

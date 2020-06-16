@@ -60,6 +60,4 @@ export class ProgressBar extends React.PureComponent<ProgressBarProps> {
     }
 }
 
-class ThemedProgressBar extends ProgressBar {}
-(ThemedProgressBar as any) = withTheme(ProgressBar);
-export default ThemedProgressBar;
+export default withTheme<ProgressBarProps, ProgressBar>(ProgressBar);

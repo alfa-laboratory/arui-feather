@@ -74,6 +74,4 @@ export class Label extends React.PureComponent<LabelProps> {
     }
 }
 
-class ThemedLabel extends Label {}
-(ThemedLabel as any) = withTheme(Label);
-export default ThemedLabel;
+export default withTheme<LabelProps, Label>(Label);

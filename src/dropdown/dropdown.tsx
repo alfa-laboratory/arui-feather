@@ -300,6 +300,4 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
     }
 }
 
-class ThemedDropdown extends Dropdown {}
-(ThemedDropdown as any) = withTheme(Dropdown);
-export default ThemedDropdown;
+export default withTheme<DropdownProps, Dropdown>(Dropdown);

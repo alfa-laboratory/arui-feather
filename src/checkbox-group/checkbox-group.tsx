@@ -231,6 +231,4 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
     }
 }
 
-class ThemedCheckBoxGroup extends CheckBoxGroup {}
-(ThemedCheckBoxGroup as any) = withTheme(CheckBoxGroup);
-export default ThemedCheckBoxGroup;
+export default withTheme<CheckBoxGroupProps, CheckBoxGroup>(CheckBoxGroup);

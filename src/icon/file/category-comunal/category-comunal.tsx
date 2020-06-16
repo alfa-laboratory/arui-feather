@@ -18,6 +18,4 @@ class IconCategoryComunal extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryComunal extends IconCategoryComunal {}
-(ThemedIconCategoryComunal as any) = withTheme(IconCategoryComunal);
-export default ThemedIconCategoryComunal;
+export default withTheme(IconCategoryComunal);

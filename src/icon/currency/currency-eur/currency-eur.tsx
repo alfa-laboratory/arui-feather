@@ -18,6 +18,4 @@ class IconCurrencyEur extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCurrencyEur extends IconCurrencyEur {}
-(ThemedIconCurrencyEur as any) = withTheme(IconCurrencyEur);
-export default ThemedIconCurrencyEur;
+export default withTheme(IconCurrencyEur);

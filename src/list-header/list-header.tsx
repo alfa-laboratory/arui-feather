@@ -71,6 +71,4 @@ export class ListHeader extends React.PureComponent<ListHeaderProps> {
     }
 }
 
-class ThemedListHeader extends ListHeader {}
-(ThemedListHeader as any) = withTheme(ListHeader);
-export default ThemedListHeader;
+export default withTheme<ListHeaderProps, ListHeader>(ListHeader);

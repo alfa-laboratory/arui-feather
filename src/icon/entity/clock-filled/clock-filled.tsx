@@ -18,6 +18,4 @@ class IconClockFilled extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconClockFilled extends IconClockFilled {}
-(ThemedIconClockFilled as any) = withTheme(IconClockFilled);
-export default ThemedIconClockFilled;
+export default withTheme(IconClockFilled);

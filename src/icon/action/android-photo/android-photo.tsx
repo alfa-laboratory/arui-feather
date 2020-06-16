@@ -18,6 +18,4 @@ class IconAndroidPhoto extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconAndroidPhoto extends IconAndroidPhoto {}
-(ThemedIconAndroidPhoto as any) = withTheme(IconAndroidPhoto);
-export default ThemedIconAndroidPhoto;
+export default withTheme(IconAndroidPhoto);

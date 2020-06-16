@@ -18,6 +18,4 @@ class IconActionPhotoOrFile extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconActionPhotoOrFile extends IconActionPhotoOrFile {}
-(ThemedIconActionPhotoOrFile as any) = withTheme(IconActionPhotoOrFile);
-export default ThemedIconActionPhotoOrFile;
+export default withTheme(IconActionPhotoOrFile);

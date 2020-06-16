@@ -18,6 +18,4 @@ class IconCategoryGibddFines extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryGibddFines extends IconCategoryGibddFines {}
-(ThemedIconCategoryGibddFines as any) = withTheme(IconCategoryGibddFines);
-export default ThemedIconCategoryGibddFines;
+export default withTheme(IconCategoryGibddFines);

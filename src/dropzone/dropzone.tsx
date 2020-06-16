@@ -169,6 +169,4 @@ export class Dropzone extends React.PureComponent<DropzoneProps> {
     }
 }
 
-class ThemedDropzone extends Dropzone {}
-(ThemedDropzone as any) = withTheme(Dropzone);
-export default ThemedDropzone;
+export default withTheme<DropzoneProps, Dropzone>(Dropzone);

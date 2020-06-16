@@ -64,6 +64,4 @@ export class FormField extends React.PureComponent<FormFieldProps> {
     }
 }
 
-class ThemedFormField extends FormField {}
-(ThemedFormField as any) = withTheme(FormField);
-export default ThemedFormField;
+export default withTheme<FormFieldProps, FormField>(FormField);

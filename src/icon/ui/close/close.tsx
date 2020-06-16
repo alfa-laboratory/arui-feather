@@ -18,6 +18,4 @@ class IconClose extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconClose extends IconClose {}
-(ThemedIconClose as any) = withTheme(IconClose);
-export default ThemedIconClose;
+export default withTheme(IconClose);

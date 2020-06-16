@@ -25,6 +25,11 @@ export type SpinProps = DeepReadonly<{
     theme?: 'alfa-on-color' | 'alfa-on-white';
 
     /**
+     * Дочерние элементы `Spin`
+     */
+    children?: React.ReactNode;
+
+    /**
      * Дополнительный класс
      */
     className?: string;
@@ -65,6 +70,4 @@ export class Spin extends React.PureComponent<SpinProps> {
     }
 }
 
-class ThemedSpin extends Spin {}
-(ThemedSpin as any) = withTheme(Spin);
-export default ThemedSpin;
+export default withTheme<SpinProps, Spin>(Spin);

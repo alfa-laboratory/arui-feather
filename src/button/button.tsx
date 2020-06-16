@@ -411,6 +411,4 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
     }
 }
 
-class ThemedButton extends Button {}
-(ThemedButton as any) = withTheme(Button);
-export default ThemedButton;
+export default withTheme<ButtonProps, Button>(Button);

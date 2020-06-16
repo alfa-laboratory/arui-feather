@@ -18,6 +18,4 @@ class IconHelpFilled extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconHelpFilled extends IconHelpFilled {}
-(ThemedIconHelpFilled as any) = withTheme(IconHelpFilled);
-export default ThemedIconHelpFilled;
+export default withTheme(IconHelpFilled);

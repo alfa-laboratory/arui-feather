@@ -50,4 +50,4 @@ class GeminiBox extends React.PureComponent<GeminiBoxProps> {
     }
 }
 
-export default withTheme(GeminiBox);
+export default withTheme<GeminiBoxProps, GeminiBox>(GeminiBox);

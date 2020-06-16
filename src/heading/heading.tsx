@@ -81,6 +81,4 @@ export class Heading extends React.PureComponent<HeadingProps> {
     }
 }
 
-class ThemedHeading extends Heading {}
-(ThemedHeading as any) = withTheme(Heading);
-export default ThemedHeading;
+export default withTheme<HeadingProps, Heading>(Heading);

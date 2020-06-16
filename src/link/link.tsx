@@ -281,6 +281,4 @@ export class Link extends React.PureComponent<LinkProps> {
     }
 }
 
-class ThemedLink extends Link {}
-(ThemedLink as any) = withTheme(Link);
-export default ThemedLink;
+export default withTheme<LinkProps, Link>(Link);

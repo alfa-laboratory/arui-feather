@@ -70,3 +70,16 @@ function handleChangeAsync(value) {
     />
 </div>
 ```
+
+Новое отображение с иконкой
+```jsx
+import InputIcon from 'arui-feather/icon/ui/info';
+
+<Textarea placeholder='Введите назначение платежа'
+    label='Filled input'
+    view='filled'
+    rightAddons={
+        <InputIcon />
+    }
+/>
+```

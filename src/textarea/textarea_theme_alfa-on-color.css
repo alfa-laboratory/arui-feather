@@ -7,11 +7,14 @@
 .textarea_theme_alfa-on-color {
     .textarea__control {
         color: var(--color-content-alfa-on-color);
-        border-bottom: 1px solid var(--color-border-control-alfa-on-color);
 
         &::placeholder {
             color: var(--color-content-minor-alfa-on-color);
         }
+    }
+
+    .textarea__inner {
+        border-bottom: 1px solid var(--color-border-control-alfa-on-color);
     }
 
     .textarea__top,
@@ -20,7 +23,7 @@
     }
 
     &.textarea_focused {
-        .textarea__control {
+        .textarea__inner {
             border-bottom-color: var(
                 --color-border-control-focused-alfa-on-color
             );
@@ -28,7 +31,7 @@
     }
 
     &.textarea_focused {
-        .textarea__control {
+        .textarea__inner {
             box-shadow: inset 0 -1px 0 var(--color-border-control-focused-alfa-on-color);
         }
     }
@@ -39,9 +42,11 @@
             color: var(--color-content-disabled-alfa-on-color);
         }
 
-        .textarea__control {
+        .textarea__inner {
             border-bottom-style: var(--border-style-control-disabled);
+        }
 
+        .textarea__control {
             &::placeholder {
                 color: var(--color-content-disabled-alfa-on-color);
             }
@@ -59,12 +64,16 @@
             color: var(--color-error);
         }
 
+        .textarea__inner {
+            border-bottom-color: var(--color-error-translucent);
+        }
+
         .textarea__control {
             border-bottom-color: var(--color-error-translucent);
         }
 
         &.textarea_focused {
-            .textarea__control {
+            .textarea__inner {
                 border-bottom-color: var(--color-error-translucent);
                 box-shadow: inset 0 -1px 0 var(--color-error-translucent);
             }

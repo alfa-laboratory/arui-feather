@@ -8,6 +8,7 @@ import { mount, shallow } from 'enzyme';
 import { Textarea } from './textarea';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
+import { Icon } from '../icon';
 
 describe('textarea', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -188,5 +189,17 @@ describe('textarea', () => {
         textarea.find('textarea').simulate('keyDown', { key: 'Down' });
 
         expect(onKeyDown).toHaveBeenCalled();
+    });
+
+    it('should display right addons', () => {
+        const textarea = mount(<Textarea rightAddons={ <Icon /> } />);
+
+        expect(textarea.find('.icon').exists()).toBe(true);
+    });
+
+    it('should not display right addons', () => {
+        const textarea = mount(<Textarea />);
+
+        expect(textarea.find('.icon').exists()).toBe(false);
     });
 });

@@ -2,12 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import React from 'react';
-import { DeepReadonly } from 'utility-types';
-import TextareaAutosize from 'react-textarea-autosize';
 import { createCn } from 'bem-react-classname';
+import React from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
+import { DeepReadonly } from 'utility-types';
 import { withTheme } from '../cn';
-
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -108,6 +107,11 @@ export type TextareaProps = DeepReadonly<{
      * Отображение ошибки
      */
     error?: React.ReactNode;
+
+    /**
+     * Добавление дополнительных элементов к инпуту справа
+     */
+    rightAddons?: React.ReactNode;
 
     /**
      * Размер компонента
@@ -233,6 +237,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
+                    addons: !!this.props.rightAddons,
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -260,6 +265,16 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                                 />
                             )
                             : <textarea { ...textareaProps } />
+                    }
+                    {
+                        this.props.rightAddons && (
+                            <span
+                                className={ this.cn('addons', { right: true }) }
+                                key="right-addons"
+                            >
+                                { this.props.rightAddons }
+                            </span>
+                        )
                     }
                     {
                         (this.props.error || this.props.hint)

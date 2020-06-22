@@ -16,8 +16,10 @@
 
     @for $i from 0 to 24 by 8 {
         &_gutter_$(i) {
-            padding-left: calc($(i) px / 2);
-            padding-right: calc($(i) px / 2);
+            /* stylelint-disable-next-line prettier/prettier */
+            padding-left: calc($(i)px / 2);
+            /* stylelint-disable-next-line prettier/prettier */
+            padding-right: calc($(i)px / 2);
         }
     }
 
@@ -78,8 +80,10 @@
         @media (--$(breakpoint)) {
             @for $i from 8 to 24 by 8 {
                 &_gutter-$(breakpoint)_$(i) {
-                    padding-left: calc($(i) px / 2);
-                    padding-right: calc($(i) px / 2);
+                    /* stylelint-disable-next-line prettier/prettier */
+                    padding-left: calc($(i)px / 2);
+                    /* stylelint-disable-next-line prettier/prettier */
+                    padding-right: calc($(i)px / 2);
                 }
             }
 

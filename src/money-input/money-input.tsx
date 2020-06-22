@@ -152,7 +152,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
                     leftAddons={
                         this.props.showCurrency ? (
                             <span className={ this.cn('currency') }>
-                                <span className={ this.cn('value') }>{ this.getValue() }</span>
+                                <span className={ this.cn('value') }>{ this.getCurrencySpacer() }</span>
                                 <span>{ getCurrencySymbol(this.props.currencyCode) }</span>
                             </span>
                         ) : (
@@ -305,6 +305,13 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
             this.root.control.input.selectionStart = selection;
             this.root.control.input.selectionEnd = selection;
         }, 0);
+    }
+
+    /**
+     * Возвращает значение (невидимый текст) для корректного отображения значка валюты.
+     */
+    private getCurrencySpacer() {
+        return this.mask.format(this.getValue()) || this.props.placeholder;
     }
 }
 

@@ -156,7 +156,6 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
 
     render() {
         const props = { ...this.props };
-        const length = props.maxLength === undefined ? this.mask.length : props.maxLength;
 
         delete props.mask;
         delete props.formatCharacters;
@@ -169,7 +168,6 @@ class MaskedInput extends React.PureComponent<MaskedInputProps> {
                 ref={ (ref) => {
                     this.input = ref;
                 } }
-                maxLength={ length }
                 value={ this.value }
                 onBeforeInput={ this.handleBeforeInput }
                 onInput={ this.handleInput }

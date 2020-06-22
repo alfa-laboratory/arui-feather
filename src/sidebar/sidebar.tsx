@@ -107,6 +107,11 @@ export type SidebarProps = {
     headerContent?: React.ReactNode;
 
     /**
+     * Контент в подвале сайдбара, на мобильных устройствах содержимое футера прижимается к нижней части вьюпорта
+     */
+    footerContent?: React.ReactNode;
+
+    /**
      * Ширина сайдбара
      */
     width?: number;
@@ -188,13 +193,14 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
             children,
             visible,
             headerContent,
+            footerContent,
             hasOverlay,
             width,
         } = this.props;
 
         const offset = visible ? getScrollbarWidth() : 0;
-        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
-        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
+        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px`, };
+        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px`, };
 
         return (
             <PopupContainerProvider
@@ -244,7 +250,9 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
                     >
                         { children }
                     </div>
-                    <footer className={ this.cn('footer') } />
+                    <footer className={ this.cn('footer') }>
+                        { footerContent }
+                    </footer>
                 </div>
             </PopupContainerProvider>
         );

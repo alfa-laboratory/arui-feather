@@ -15,7 +15,7 @@
     --filled-m-top-padding: 28px;
     --filled-height: 110px;
     --filled-s-min-height: 43px;
-    --filled-m-min-height: 56px;
+    --filled-m-min-height: 45px;
 }
 
 .textarea {
@@ -307,6 +307,7 @@
         }
 
         .textarea__control {
+            margin-top: 14px;
             min-height: var(--filled-s-min-height);
             padding: 14px var(--gap-xs) 6px;
         }
@@ -331,6 +332,7 @@
             }
 
             .textarea__control {
+                margin-top: 28px;
                 min-height: calc(
                     var(--filled-s-min-height) - var(--filled-s-top-padding)
                 );
@@ -354,6 +356,7 @@
         }
 
         .textarea__control {
+            margin-top: 8px;
             min-height: var(--filled-m-min-height);
             padding: 18px var(--gap-s) var(--gap-xs);
         }
@@ -378,6 +381,7 @@
             }
 
             .textarea__control {
+                margin-top: 0;
                 min-height: calc(
                     var(--filled-m-min-height) - var(--filled-m-top-padding)
                 );
@@ -438,7 +442,6 @@
 
     &.textarea_focused {
         border-bottom-color: var(--color-dark-indigo);
-        box-shadow: inset 0 -1px 0 var(--color-dark-indigo);
     }
 
     &.textarea_has-label {

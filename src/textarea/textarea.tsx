@@ -276,15 +276,15 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                             </span>
                         )
                     }
-                    {
-                        (this.props.error || this.props.hint)
-                        && (
-                            <span className={ this.cn('sub') }>
-                                { this.props.error || this.props.hint }
-                            </span>
-                        )
-                    }
                 </span>
+                {
+                    (this.props.error || this.props.hint)
+                    && (
+                        <span className={ this.cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    )
+                }
             </span>
         );
     }

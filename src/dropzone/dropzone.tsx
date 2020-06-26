@@ -5,11 +5,10 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type DropzoneProps = DeepReadonly<{
+export type DropzoneProps = {
 
     /**
      * Дочерние компоненты
@@ -66,7 +65,7 @@ export type DropzoneProps = DeepReadonly<{
      */
     text?: string;
 
-}>;
+};
 
 /**
  * Компонент drag-and-drop контейнер для прикрепления файлов.

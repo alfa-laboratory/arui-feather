@@ -4,7 +4,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -66,7 +65,7 @@ function isEmptyArray(value: any) {
     return Array.isArray(value) && !value.length;
 }
 
-export type AttachProps = DeepReadonly<{
+export type AttachProps = {
 
     /**
      * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
@@ -183,7 +182,7 @@ export type AttachProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 type AttachState = {
     focused: boolean;

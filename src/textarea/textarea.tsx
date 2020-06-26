@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import TextareaAutosize from 'react-textarea-autosize';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
@@ -11,7 +10,7 @@ import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type TextareaProps = DeepReadonly<{
+export type TextareaProps = {
 
     /**
      * Дополнительный класс
@@ -163,7 +162,7 @@ export type TextareaProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент многострочного текстового ввода.

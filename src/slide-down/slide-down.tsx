@@ -3,11 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React, { createRef } from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type SlideDownProps = DeepReadonly<{
+export type SlideDownProps = {
 
     /**
      * Управление состоянием expand/collapse компонента
@@ -49,12 +48,12 @@ export type SlideDownProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 type SlideDownState = {
     height: number | string;
     isHeightAuto: boolean;
-}
+};
 
 /**
  * Компонент "расхлопа".

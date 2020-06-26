@@ -6,7 +6,6 @@
 
 import debounce from 'lodash.debounce';
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import Type from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
@@ -51,7 +50,7 @@ import performance from '../performance';
 
 export type PopupDirectionsFieldType = 'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
-export type PopupProps = DeepReadonly<{
+export type PopupProps = {
 
     /**
      * Дополнительный класс
@@ -167,7 +166,7 @@ export type PopupProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 type PopupState = {
     direction: any;

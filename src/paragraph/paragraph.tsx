@@ -3,11 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type ParagraphProps = DeepReadonly<{
+export type ParagraphProps = {
 
     /**
      * Тип параграфа
@@ -43,7 +42,7 @@ export type ParagraphProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент параграфа текста.

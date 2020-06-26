@@ -4,12 +4,11 @@
 
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 import { Radio } from '../radio/radio';
 
-export type RadioGroupProps = DeepReadonly<{
+export type RadioGroupProps = {
 
     /**
      * Тип группы кнопок
@@ -91,7 +90,7 @@ export type RadioGroupProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент группы радио-кнопок.

@@ -1,9 +1,8 @@
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type ProgressBarProps = DeepReadonly<{
+export type ProgressBarProps = {
 
     /**
      * Прогресс в процентах
@@ -30,7 +29,7 @@ export type ProgressBarProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 /**
  * Компонент прогресс-бара.

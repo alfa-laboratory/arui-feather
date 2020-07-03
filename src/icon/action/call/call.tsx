@@ -18,6 +18,4 @@ class IconCall extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCall extends IconCall {}
-(ThemedIconCall as any) = withTheme(IconCall);
-export default ThemedIconCall;
+export default withTheme(IconCall);

@@ -3,16 +3,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
 import { Input, InputProps } from '../input/input';
 
-export type CardInputProps = DeepReadonly<InputProps & {
+export type CardInputProps = InputProps & {
     /** Подсказка в текстовом поле */
     placeholder?: string;
-}>;
+};
 
 /**
  * Поле ввода номера карты с маской.
@@ -67,6 +66,4 @@ export class CardInput extends React.PureComponent<CardInputProps> {
     }
 }
 
-class ThemedCardInput extends CardInput {}
-(ThemedCardInput as any) = withTheme(CardInput);
-export default ThemedCardInput;
+export default withTheme<CardInputProps, CardInput>(CardInput);

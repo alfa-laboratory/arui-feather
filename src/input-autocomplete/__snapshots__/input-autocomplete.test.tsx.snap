@@ -126,25 +126,29 @@ exports[`input-autocomplete should render input with provided default value 1`] 
               className="input__box"
               key="input-wrapper"
             >
-              <input
-                autoComplete="off"
-                className="input__control"
-                formNoValidate={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onPaste={[Function]}
-                onTouchCancel={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                type="text"
-                value="default"
-                view="default"
-              />
+              <span
+                className="input__input-wrapper"
+              >
+                <input
+                  autoComplete="off"
+                  className="input__control"
+                  formNoValidate={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onPaste={[Function]}
+                  onTouchCancel={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  type="text"
+                  value="default"
+                  view="default"
+                />
+              </span>
             </span>
           </span>
         </span>
@@ -653,25 +657,29 @@ exports[`input-autocomplete should render without problem 1`] = `
               className="input__box"
               key="input-wrapper"
             >
-              <input
-                autoComplete="off"
-                className="input__control"
-                formNoValidate={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onPaste={[Function]}
-                onTouchCancel={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                type="text"
-                value=""
-                view="default"
-              />
+              <span
+                className="input__input-wrapper"
+              >
+                <input
+                  autoComplete="off"
+                  className="input__control"
+                  formNoValidate={false}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onPaste={[Function]}
+                  onTouchCancel={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  type="text"
+                  value=""
+                  view="default"
+                />
+              </span>
             </span>
           </span>
         </span>

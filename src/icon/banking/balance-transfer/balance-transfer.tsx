@@ -18,6 +18,4 @@ class IconBalanceTransfer extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBalanceTransfer extends IconBalanceTransfer {}
-(ThemedIconBalanceTransfer as any) = withTheme(IconBalanceTransfer);
-export default ThemedIconBalanceTransfer;
+export default withTheme(IconBalanceTransfer);

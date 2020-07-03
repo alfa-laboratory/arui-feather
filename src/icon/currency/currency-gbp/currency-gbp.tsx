@@ -18,6 +18,4 @@ class IconCurrencyGbp extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCurrencyGbp extends IconCurrencyGbp {}
-(ThemedIconCurrencyGbp as any) = withTheme(IconCurrencyGbp);
-export default ThemedIconCurrencyGbp;
+export default withTheme(IconCurrencyGbp);

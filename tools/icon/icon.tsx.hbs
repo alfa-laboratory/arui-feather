@@ -4,20 +4,18 @@
 
 import React from 'react';
 import { withTheme } from '../../../cn';
-import Icon from '../../../icon';
-import { IconProps } from '../../../icon/icon';
+import Icon from '../..';
+import { IconProps } from '../../icon';
 
 class {{componentName}} extends React.PureComponent<IconProps> {
     render() {
         return (
             <Icon
                 { ...this.props }
-                name='{{name}}'
+                name="{{name}}"
             />
         );
     }
 }
 
-class Themed{{componentName}} extends {{componentName}} {}
-(Themed{{componentName}} as any) = withTheme({{componentName}});
-export default Themed{{componentName}};
+export default withTheme<{{componentName}}Props, {{componentName}}>({{componentName}});

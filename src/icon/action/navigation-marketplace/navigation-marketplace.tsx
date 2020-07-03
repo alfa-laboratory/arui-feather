@@ -18,6 +18,4 @@ class IconNavigationMarketplace extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconNavigationMarketplace extends IconNavigationMarketplace {}
-(ThemedIconNavigationMarketplace as any) = withTheme(IconNavigationMarketplace);
-export default ThemedIconNavigationMarketplace;
+export default withTheme(IconNavigationMarketplace);

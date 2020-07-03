@@ -18,6 +18,4 @@ class IconTransferSelf extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconTransferSelf extends IconTransferSelf {}
-(ThemedIconTransferSelf as any) = withTheme(IconTransferSelf);
-export default ThemedIconTransferSelf;
+export default withTheme(IconTransferSelf);

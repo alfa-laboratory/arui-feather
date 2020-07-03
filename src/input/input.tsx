@@ -5,7 +5,6 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -17,17 +16,19 @@ import MaskedInput from '../masked-input/masked-input';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type InputProps = DeepReadonly<{
+export type InputProps = {
 
     /**
      * Тип поля.
      Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
      Подробнее: <a href="http://w3c.github.io/html/sec-forms.html#does-not-apply" target="_blank">http://w3c.github.io/html/sec-forms.html#does-not-apply</a>
+     * @default 'text'
      */
     type?: 'number' | 'card' | 'email' | 'file' | 'hidden' | 'money' | 'password' | 'tel' | 'text';
 
     /**
      * Тип инпута (filled только на белом фоне в размере m)
+     * @default 'default'
      */
     view?: 'default' | 'filled';
 
@@ -120,6 +121,7 @@ export type InputProps = DeepReadonly<{
 
     /**
      * Управление встроенной проверкой данных введённых пользователем в поле на корректность
+     * @default false
      */
     formNoValidate?: boolean;
 
@@ -155,11 +157,13 @@ export type InputProps = DeepReadonly<{
 
     /**
      * Сброс ошибки при установке фокуса
+     * @default true
      */
     resetError?: boolean;
 
     /**
      * Размер компонента
+     * @default 'm'
      */
     size?: 's' | 'm' | 'l' | 'xl';
 
@@ -247,7 +251,7 @@ export type InputProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 type InputState = {
     /**
@@ -337,14 +341,6 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('inner') }>
-                    {
-                        !!this.props.label
-                        && (
-                            <span className={ this.cn('top') }>
-                                { this.props.label }
-                            </span>
-                        )
-                    }
                     { this.renderContent() }
                     {
                         (this.state.error || this.props.hint)
@@ -410,19 +406,29 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                         </span>
                     )
                 }
-                {
-                    isMaskedInput
-                        ? (
-                            <MaskedInput
-                                { ...inputProps }
-                                mask={ this.props.mask }
-                                formatCharacters={ this.props.maskFormatCharacters }
-                                onProcessInputEvent={ this.props.onProcessMaskInputEvent }
-                                useWhitespaces={ this.props.useWhitespacesInMask }
-                            />
+                <span className={ this.cn('input-wrapper')}>
+                    {
+                        !!this.props.label
+                        && (
+                            <span className={ this.cn('top') }>
+                                { this.props.label }
+                            </span>
                         )
-                        : <input { ...inputProps } />
-                }
+                    }
+                    {
+                        isMaskedInput
+                            ? (
+                                <MaskedInput
+                                    { ...inputProps }
+                                    mask={ this.props.mask }
+                                    formatCharacters={ this.props.maskFormatCharacters }
+                                    onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                                    useWhitespaces={ this.props.useWhitespacesInMask }
+                                />
+                            )
+                            : <input { ...inputProps } />
+                    }
+                </span>
                 {
                     this.props.clear && value
                     && (
@@ -680,6 +686,4 @@ export class Input extends React.PureComponent<InputProps, InputState> {
     }
 }
 
-class ThemedInput extends Input {}
-(ThemedInput as any) = withTheme(Input);
-export default ThemedInput;
+export default withTheme<InputProps, Input>(Input);

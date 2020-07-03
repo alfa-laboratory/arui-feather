@@ -18,6 +18,4 @@ class IconTransferIn extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconTransferIn extends IconTransferIn {}
-(ThemedIconTransferIn as any) = withTheme(IconTransferIn);
-export default ThemedIconTransferIn;
+export default withTheme(IconTransferIn);

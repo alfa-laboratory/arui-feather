@@ -18,6 +18,4 @@ class IconVerifying extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconVerifying extends IconVerifying {}
-(ThemedIconVerifying as any) = withTheme(IconVerifying);
-export default ThemedIconVerifying;
+export default withTheme(IconVerifying);

@@ -3,11 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type LinkProps = DeepReadonly<{
+export type LinkProps = {
 
     /**
      * Иконка ссылки
@@ -123,7 +122,7 @@ export type LinkProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент ссылки.
@@ -281,6 +280,4 @@ export class Link extends React.PureComponent<LinkProps> {
     }
 }
 
-class ThemedLink extends Link {}
-(ThemedLink as any) = withTheme(Link);
-export default ThemedLink;
+export default withTheme<LinkProps, Link>(Link);

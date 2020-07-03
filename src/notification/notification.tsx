@@ -5,7 +5,6 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -18,7 +17,7 @@ import Swipeable from '../swipeable';
 
 import { isNodeOutsideElement } from '../lib/window';
 
-export type NotificationProps = DeepReadonly<{
+export type NotificationProps = {
     /**
      * Тип компонента
      */
@@ -118,7 +117,7 @@ export type NotificationProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент всплывающего окна.
@@ -336,6 +335,4 @@ export class Notification extends React.PureComponent<NotificationProps> {
     }
 }
 
-class ThemedNotification extends Notification {}
-(ThemedNotification as any) = withTheme(Notification);
-export default ThemedNotification;
+export default withTheme<NotificationProps, Notification>(Notification);

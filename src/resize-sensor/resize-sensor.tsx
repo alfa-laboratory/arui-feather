@@ -3,14 +3,13 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 
-export type ResizeSensorProps = DeepReadonly<{
+export type ResizeSensorProps = {
     /**
      * Callback на изменение размера родителя
      */
     onResize?: () => void;
-}>;
+};
 
 /**
  * Компонент позволяющий слушать изменения размера родительского элемента.

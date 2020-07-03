@@ -18,6 +18,4 @@ class IconBankPsb extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankPsb extends IconBankPsb {}
-(ThemedIconBankPsb as any) = withTheme(IconBankPsb);
-export default ThemedIconBankPsb;
+export default withTheme(IconBankPsb);

@@ -18,6 +18,4 @@ class IconCardVoid extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCardVoid extends IconCardVoid {}
-(ThemedIconCardVoid as any) = withTheme(IconCardVoid);
-export default ThemedIconCardVoid;
+export default withTheme(IconCardVoid);

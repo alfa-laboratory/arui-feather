@@ -6,7 +6,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -65,7 +64,7 @@ function handleBodyScroll() {
     }
 }
 
-export type SidebarProps = DeepReadonly<{
+export type SidebarProps = {
 
     /**
      * Тема компонента
@@ -127,7 +126,7 @@ export type SidebarProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 type SidebarState = {
     isMobile: boolean;
@@ -298,6 +297,4 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
     }
 }
 
-class ThemedSidebar extends Sidebar {}
-(ThemedSidebar as any) = withTheme(Sidebar);
-export default ThemedSidebar;
+export default withTheme<SidebarProps, Sidebar>(Sidebar);

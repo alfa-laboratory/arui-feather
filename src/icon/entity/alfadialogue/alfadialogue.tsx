@@ -18,6 +18,4 @@ class IconAlfadialogue extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconAlfadialogue extends IconAlfadialogue {}
-(ThemedIconAlfadialogue as any) = withTheme(IconAlfadialogue);
-export default ThemedIconAlfadialogue;
+export default withTheme(IconAlfadialogue);

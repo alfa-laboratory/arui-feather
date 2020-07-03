@@ -5,7 +5,6 @@
 /* eslint jsx-a11y/no-static-element-interactions: 0 */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -63,7 +62,7 @@ export type MenuContentType = {
     props?: MenuItemProps;
 };
 
-export type MenuProps = DeepReadonly<{
+export type MenuProps = {
 
     /**
      * Тип расположения меню: 'horizontal'
@@ -184,7 +183,7 @@ export type MenuProps = DeepReadonly<{
      */
     'data-test-id'?: string;
 
-}>;
+};
 
 /**
  * Компонент меню.
@@ -628,6 +627,4 @@ export class Menu extends React.Component<MenuProps> {
     }
 }
 
-class ThemedMenu extends Menu {}
-(ThemedMenu as any) = withTheme(Menu);
-export default ThemedMenu;
+export default withTheme<MenuProps, Menu>(Menu);

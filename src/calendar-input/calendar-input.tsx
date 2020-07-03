@@ -5,7 +5,6 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
@@ -35,7 +34,7 @@ const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 
-export type CalendarInputProps = DeepReadonly<{
+export type CalendarInputProps = {
 
     /**
      * Содержимое поля ввода
@@ -133,6 +132,11 @@ export type CalendarInputProps = DeepReadonly<{
     error?: React.ReactNode;
 
     /**
+     * Сброс ошибки при установке фокуса в компоненте Input
+     */
+    resetError?: boolean;
+
+    /**
      * Управление нативным режимом на мобильных устройствах
      */
     mobileMode?: 'native' | 'popup' | 'input';
@@ -216,7 +220,7 @@ export type CalendarInputProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент для ввода даты.
@@ -369,6 +373,7 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
                         placeholder={ this.props.placeholder }
                         hint={ this.props.hint }
                         error={ this.props.error }
+                        resetError={ this.props.resetError }
                         value={ value }
                         view={ this.props.view }
                         width={ this.props.width }
@@ -760,6 +765,4 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
     }
 }
 
-class ThemedCalendarInput extends CalendarInput {}
-(ThemedCalendarInput as any) = withTheme(CalendarInput);
-export default ThemedCalendarInput;
+export default withTheme<CalendarInputProps, CalendarInput>(CalendarInput);

@@ -18,6 +18,4 @@ class IconCategoryVipRoom extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryVipRoom extends IconCategoryVipRoom {}
-(ThemedIconCategoryVipRoom as any) = withTheme(IconCategoryVipRoom);
-export default ThemedIconCategoryVipRoom;
+export default withTheme(IconCategoryVipRoom);

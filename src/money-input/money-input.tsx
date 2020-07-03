@@ -7,7 +7,6 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -54,7 +53,7 @@ function splitInteger(str: string): string {
     return [str.slice(from, to)].concat(splitInteger(str.slice(0, from)));
 }
 
-type MoneyInputProps = DeepReadonly<InputProps & {
+type MoneyInputProps = InputProps & {
     /**
      * Максимально допустимая длина значения до запятой
      */
@@ -83,7 +82,7 @@ type MoneyInputProps = DeepReadonly<InputProps & {
      * Обработчик события, вызываемый при событии 'change'
      * */
     onChange?: (value?: string, amount?: number) => void;
-}>;
+};
 
 type MoneyInputState = {
     value: string;
@@ -153,7 +152,7 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
                     leftAddons={
                         this.props.showCurrency ? (
                             <span className={ this.cn('currency') }>
-                                <span className={ this.cn('value') }>{ this.getValue() }</span>
+                                <span className={ this.cn('value') }>{ this.getCurrencySpacer() }</span>
                                 <span>{ getCurrencySymbol(this.props.currencyCode) }</span>
                             </span>
                         ) : (
@@ -307,8 +306,13 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
             this.root.control.input.selectionEnd = selection;
         }, 0);
     }
+
+    /**
+     * Возвращает значение (невидимый текст) для корректного отображения значка валюты.
+     */
+    private getCurrencySpacer() {
+        return this.mask.format(this.getValue()) || this.props.placeholder;
+    }
 }
 
-class ThemedMoneyInput extends MoneyInput {}
-(ThemedMoneyInput as any) = withTheme(MoneyInput);
-export default ThemedMoneyInput;
+export default withTheme<MoneyInputProps, MoneyInput>(MoneyInput);

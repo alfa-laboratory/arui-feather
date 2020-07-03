@@ -18,6 +18,4 @@ class IconCopy extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCopy extends IconCopy {}
-(ThemedIconCopy as any) = withTheme(IconCopy);
-export default ThemedIconCopy;
+export default withTheme(IconCopy);

@@ -22,6 +22,4 @@ export class TabItem extends Link {
     };
 }
 
-class ThemedTabItem extends TabItem {}
-(ThemedTabItem as any) = withTheme(TabItem);
-export default ThemedTabItem;
+export default withTheme<LinkProps, TabItem>(TabItem);

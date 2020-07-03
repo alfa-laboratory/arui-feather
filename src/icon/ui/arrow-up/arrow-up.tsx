@@ -18,6 +18,4 @@ class IconArrowUp extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconArrowUp extends IconArrowUp {}
-(ThemedIconArrowUp as any) = withTheme(IconArrowUp);
-export default ThemedIconArrowUp;
+export default withTheme(IconArrowUp);

@@ -18,6 +18,4 @@ class IconCardMir extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCardMir extends IconCardMir {}
-(ThemedIconCardMir as any) = withTheme(IconCardMir);
-export default ThemedIconCardMir;
+export default withTheme(IconCardMir);

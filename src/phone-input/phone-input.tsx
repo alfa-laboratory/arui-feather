@@ -7,13 +7,12 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
 import Input, { InputProps } from '../input/input';
 
-export type PhoneInputProps = DeepReadonly<InputProps & {
+export type PhoneInputProps = InputProps & {
     /**
      * Определяет маску для ввода значений.
      * <a href="https://github.com/insin/inputmask-core#pattern" target="_blank">Шаблон маски</a>
@@ -23,7 +22,7 @@ export type PhoneInputProps = DeepReadonly<InputProps & {
      * Подсказка в текстовом поле
      */
     placeholder?: string;
-}>;
+};
 
 type PhoneInputState = {
     updatedValue?: string;
@@ -132,6 +131,4 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
     }
 }
 
-class ThemedPhoneInput extends PhoneInput {}
-(ThemedPhoneInput as any) = withTheme(PhoneInput);
-export default ThemedPhoneInput;
+export default withTheme<PhoneInputProps, PhoneInput>(PhoneInput);

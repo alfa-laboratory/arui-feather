@@ -18,6 +18,4 @@ class IconStarActive extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconStarActive extends IconStarActive {}
-(ThemedIconStarActive as any) = withTheme(IconStarActive);
-export default ThemedIconStarActive;
+export default withTheme(IconStarActive);

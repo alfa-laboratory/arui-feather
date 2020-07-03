@@ -18,6 +18,4 @@ class IconBankBinbank extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankBinbank extends IconBankBinbank {}
-(ThemedIconBankBinbank as any) = withTheme(IconBankBinbank);
-export default ThemedIconBankBinbank;
+export default withTheme(IconBankBinbank);

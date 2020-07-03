@@ -3,11 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-export type FormFieldProps = DeepReadonly<{
+export type FormFieldProps = {
 
     /**
      * Дочерние элементы `FormField`
@@ -38,7 +37,7 @@ export type FormFieldProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент поля формы.
@@ -64,6 +63,4 @@ export class FormField extends React.PureComponent<FormFieldProps> {
     }
 }
 
-class ThemedFormField extends FormField {}
-(ThemedFormField as any) = withTheme(FormField);
-export default ThemedFormField;
+export default withTheme<FormFieldProps, FormField>(FormField);

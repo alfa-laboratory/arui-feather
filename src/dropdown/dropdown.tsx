@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -13,7 +12,7 @@ import Popup, { PopupProps } from '../popup/popup';
 
 import { POPUP_MAIN_OFFSET } from '../vars';
 
-export type DropdownProps = DeepReadonly<{
+export type DropdownProps = {
 
     /**
      * Тип компонента
@@ -114,7 +113,7 @@ export type DropdownProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент «выпадашка»: ссылка или кнопка. По клику показывается Popup.
@@ -300,6 +299,4 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
     }
 }
 
-class ThemedDropdown extends Dropdown {}
-(ThemedDropdown as any) = withTheme(Dropdown);
-export default ThemedDropdown;
+export default withTheme<DropdownProps, Dropdown>(Dropdown);

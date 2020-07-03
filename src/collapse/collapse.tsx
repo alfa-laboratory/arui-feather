@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { DeepReadonly } from 'utility-types';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
@@ -12,7 +11,7 @@ import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/link';
 import { ResizeSensor } from '../resize-sensor/resize-sensor';
 
-export type CollapseProps = DeepReadonly<{
+export type CollapseProps = {
     /**
      * Управление `expanded` состоянием компонента
      * */
@@ -57,7 +56,7 @@ export type CollapseProps = DeepReadonly<{
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-}>;
+};
 
 /**
  * Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
@@ -165,6 +164,4 @@ export class Collapse extends React.PureComponent<CollapseProps> {
     }
 }
 
-class ThemedCollapse extends Collapse {}
-(ThemedCollapse as any) = withTheme(Collapse);
-export default ThemedCollapse;
+export default withTheme<CollapseProps, Collapse>(Collapse);

@@ -18,6 +18,4 @@ class IconCardUnknown extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCardUnknown extends IconCardUnknown {}
-(ThemedIconCardUnknown as any) = withTheme(IconCardUnknown);
-export default ThemedIconCardUnknown;
+export default withTheme(IconCardUnknown);

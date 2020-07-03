@@ -18,6 +18,4 @@ class IconRepeat extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconRepeat extends IconRepeat {}
-(ThemedIconRepeat as any) = withTheme(IconRepeat);
-export default ThemedIconRepeat;
+export default withTheme(IconRepeat);

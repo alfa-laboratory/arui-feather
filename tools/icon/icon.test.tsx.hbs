@@ -13,21 +13,21 @@ import {{this.componentName}} from './{{this.category}}/{{this.name}}';
 
 describe('icon', () => {
     it('renders without problems', () => {
-        let icon = shallow(<Icon />);
+        const icon = shallow(<Icon />);
         expect(icon).toMatchSnapshot();
     });
 
     (() => {
-        let icons = [
+        const icons = [
         {{#each this}}
-            { componentName: {{this.componentName}}, name: '{{this.name}}' }{{#unless @last }},{{/unless}}
+            { componentName: {{this.componentName}}, name: '{{this.name}}' },
         {{/each}}
         ];
 
         return icons.map((icon, index) => (
             it(`render ${icon.componentName.name} without problems`, () => {
-                let CurrentComponent = icons[index].componentName;
-                let renderedIcon = shallow(<CurrentComponent />);
+                const CurrentComponent = icons[index].componentName;
+                const renderedIcon = shallow(<CurrentComponent />);
                 expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
             })
         ));

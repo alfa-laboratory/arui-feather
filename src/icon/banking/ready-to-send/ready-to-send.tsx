@@ -18,6 +18,4 @@ class IconReadyToSend extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconReadyToSend extends IconReadyToSend {}
-(ThemedIconReadyToSend as any) = withTheme(IconReadyToSend);
-export default ThemedIconReadyToSend;
+export default withTheme(IconReadyToSend);

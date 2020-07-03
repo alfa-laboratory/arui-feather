@@ -18,6 +18,4 @@ class IconNetworkTwitter extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconNetworkTwitter extends IconNetworkTwitter {}
-(ThemedIconNetworkTwitter as any) = withTheme(IconNetworkTwitter);
-export default ThemedIconNetworkTwitter;
+export default withTheme(IconNetworkTwitter);

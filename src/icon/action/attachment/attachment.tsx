@@ -18,6 +18,4 @@ class IconAttachment extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconAttachment extends IconAttachment {}
-(ThemedIconAttachment as any) = withTheme(IconAttachment);
-export default ThemedIconAttachment;
+export default withTheme(IconAttachment);

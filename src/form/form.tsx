@@ -139,6 +139,4 @@ export class Form extends React.PureComponent<FormProps> {
     }
 }
 
-class ThemedForm extends Form {}
-(ThemedForm as any) = withTheme(Form);
-export default ThemedForm;
+export default withTheme<FormProps, Form>(Form);

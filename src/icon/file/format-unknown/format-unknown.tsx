@@ -18,6 +18,4 @@ class IconFormatUnknown extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconFormatUnknown extends IconFormatUnknown {}
-(ThemedIconFormatUnknown as any) = withTheme(IconFormatUnknown);
-export default ThemedIconFormatUnknown;
+export default withTheme(IconFormatUnknown);

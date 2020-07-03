@@ -98,6 +98,4 @@ export class List extends React.Component<ListProps> {
     }
 }
 
-class ThemedList extends List {}
-(ThemedList as any) = withTheme(List);
-export default ThemedList;
+export default withTheme<ListProps, List>(List);

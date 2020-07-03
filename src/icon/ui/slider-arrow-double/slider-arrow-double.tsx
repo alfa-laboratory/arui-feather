@@ -18,6 +18,4 @@ class IconSliderArrowDouble extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconSliderArrowDouble extends IconSliderArrowDouble {}
-(ThemedIconSliderArrowDouble as any) = withTheme(IconSliderArrowDouble);
-export default ThemedIconSliderArrowDouble;
+export default withTheme(IconSliderArrowDouble);

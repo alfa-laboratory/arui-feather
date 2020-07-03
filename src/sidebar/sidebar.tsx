@@ -297,6 +297,4 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
     }
 }
 
-class ThemedSidebar extends Sidebar {}
-(ThemedSidebar as any) = withTheme(Sidebar);
-export default ThemedSidebar;
+export default withTheme<SidebarProps, Sidebar>(Sidebar);

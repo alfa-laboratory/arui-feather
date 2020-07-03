@@ -18,6 +18,4 @@ class IconCategoryOther extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryOther extends IconCategoryOther {}
-(ThemedIconCategoryOther as any) = withTheme(IconCategoryOther);
-export default ThemedIconCategoryOther;
+export default withTheme(IconCategoryOther);

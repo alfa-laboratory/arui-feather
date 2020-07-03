@@ -78,6 +78,4 @@ export class FlagIcon extends React.PureComponent<FlagIconProps> {
     }
 }
 
-class ThemedFlagIcon extends FlagIcon {}
-(ThemedFlagIcon as any) = withTheme(FlagIcon);
-export default ThemedFlagIcon;
+export default withTheme<FlagIconProps, FlagIcon>(FlagIcon);

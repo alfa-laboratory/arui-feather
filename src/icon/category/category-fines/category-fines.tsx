@@ -18,6 +18,4 @@ class IconCategoryFines extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryFines extends IconCategoryFines {}
-(ThemedIconCategoryFines as any) = withTheme(IconCategoryFines);
-export default ThemedIconCategoryFines;
+export default withTheme(IconCategoryFines);

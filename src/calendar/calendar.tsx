@@ -923,6 +923,4 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 }
 
-class ThemedCalendar extends Calendar {}
-(ThemedCalendar as any) = withTheme(Calendar);
-export default ThemedCalendar;
+export default withTheme<CalendarProps, Calendar>(Calendar);

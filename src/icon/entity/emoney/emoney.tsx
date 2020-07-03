@@ -18,6 +18,4 @@ class IconEmoney extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconEmoney extends IconEmoney {}
-(ThemedIconEmoney as any) = withTheme(IconEmoney);
-export default ThemedIconEmoney;
+export default withTheme(IconEmoney);

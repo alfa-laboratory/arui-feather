@@ -18,6 +18,4 @@ class IconTransferByPhoneAndroid extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconTransferByPhoneAndroid extends IconTransferByPhoneAndroid {}
-(ThemedIconTransferByPhoneAndroid as any) = withTheme(IconTransferByPhoneAndroid);
-export default ThemedIconTransferByPhoneAndroid;
+export default withTheme(IconTransferByPhoneAndroid);

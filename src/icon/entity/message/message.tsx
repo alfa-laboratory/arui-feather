@@ -18,6 +18,4 @@ class IconMessage extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconMessage extends IconMessage {}
-(ThemedIconMessage as any) = withTheme(IconMessage);
-export default ThemedIconMessage;
+export default withTheme(IconMessage);

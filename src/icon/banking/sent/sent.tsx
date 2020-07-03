@@ -18,6 +18,4 @@ class IconSent extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconSent extends IconSent {}
-(ThemedIconSent as any) = withTheme(IconSent);
-export default ThemedIconSent;
+export default withTheme(IconSent);

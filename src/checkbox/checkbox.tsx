@@ -337,6 +337,4 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 }
 
-class ThemedCheckBox extends CheckBox {}
-(ThemedCheckBox as any) = withTheme(CheckBox);
-export default ThemedCheckBox;
+export default withTheme<CheckboxProps, CheckBox>(CheckBox);

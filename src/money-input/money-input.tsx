@@ -315,6 +315,4 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     }
 }
 
-class ThemedMoneyInput extends MoneyInput {}
-(ThemedMoneyInput as any) = withTheme(MoneyInput);
-export default ThemedMoneyInput;
+export default withTheme<MoneyInputProps, MoneyInput>(MoneyInput);

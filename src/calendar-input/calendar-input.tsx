@@ -765,6 +765,4 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
     }
 }
 
-class ThemedCalendarInput extends CalendarInput {}
-(ThemedCalendarInput as any) = withTheme(CalendarInput);
-export default ThemedCalendarInput;
+export default withTheme<CalendarInputProps, CalendarInput>(CalendarInput);

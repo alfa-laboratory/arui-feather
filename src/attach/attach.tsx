@@ -427,6 +427,4 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
     }
 }
 
-class ThemedAttach extends Attach {}
-(ThemedAttach as any) = withTheme(Attach);
-export default ThemedAttach;
+export default withTheme<AttachProps, Attach>(Attach);

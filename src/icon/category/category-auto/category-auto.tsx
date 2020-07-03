@@ -18,6 +18,4 @@ class IconCategoryAuto extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCategoryAuto extends IconCategoryAuto {}
-(ThemedIconCategoryAuto as any) = withTheme(IconCategoryAuto);
-export default ThemedIconCategoryAuto;
+export default withTheme(IconCategoryAuto);

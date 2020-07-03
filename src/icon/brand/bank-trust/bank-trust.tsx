@@ -18,6 +18,4 @@ class IconBankTrust extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconBankTrust extends IconBankTrust {}
-(ThemedIconBankTrust as any) = withTheme(IconBankTrust);
-export default ThemedIconBankTrust;
+export default withTheme(IconBankTrust);

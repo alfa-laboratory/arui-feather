@@ -18,6 +18,4 @@ class IconShareAndroid extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconShareAndroid extends IconShareAndroid {}
-(ThemedIconShareAndroid as any) = withTheme(IconShareAndroid);
-export default ThemedIconShareAndroid;
+export default withTheme(IconShareAndroid);

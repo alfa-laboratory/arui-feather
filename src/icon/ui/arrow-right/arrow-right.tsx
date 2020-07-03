@@ -18,6 +18,4 @@ class IconArrowRight extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconArrowRight extends IconArrowRight {}
-(ThemedIconArrowRight as any) = withTheme(IconArrowRight);
-export default ThemedIconArrowRight;
+export default withTheme(IconArrowRight);

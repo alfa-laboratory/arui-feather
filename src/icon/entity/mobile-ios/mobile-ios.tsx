@@ -18,6 +18,4 @@ class IconMobileIos extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconMobileIos extends IconMobileIos {}
-(ThemedIconMobileIos as any) = withTheme(IconMobileIos);
-export default ThemedIconMobileIos;
+export default withTheme(IconMobileIos);

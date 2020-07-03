@@ -627,6 +627,4 @@ export class Menu extends React.Component<MenuProps> {
     }
 }
 
-class ThemedMenu extends Menu {}
-(ThemedMenu as any) = withTheme(Menu);
-export default ThemedMenu;
+export default withTheme<MenuProps, Menu>(Menu);

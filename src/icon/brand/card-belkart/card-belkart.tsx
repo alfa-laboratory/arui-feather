@@ -18,6 +18,4 @@ class IconCardBelkart extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconCardBelkart extends IconCardBelkart {}
-(ThemedIconCardBelkart as any) = withTheme(IconCardBelkart);
-export default ThemedIconCardBelkart;
+export default withTheme(IconCardBelkart);

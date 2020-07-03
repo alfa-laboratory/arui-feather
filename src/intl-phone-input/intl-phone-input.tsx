@@ -368,6 +368,4 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     }
 }
 
-class ThemedIntlPhoneInput extends IntlPhoneInput {}
-(ThemedIntlPhoneInput as any) = withTheme(IntlPhoneInput);
-export default ThemedIntlPhoneInput;
+export default withTheme<IntlPhoneInputProps, IntlPhoneInput>(IntlPhoneInput);

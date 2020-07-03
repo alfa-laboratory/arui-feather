@@ -18,6 +18,4 @@ class IconPaymentError extends React.PureComponent<IconProps> {
     }
 }
 
-class ThemedIconPaymentError extends IconPaymentError {}
-(ThemedIconPaymentError as any) = withTheme(IconPaymentError);
-export default ThemedIconPaymentError;
+export default withTheme(IconPaymentError);

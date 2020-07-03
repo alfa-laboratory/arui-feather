@@ -10,7 +10,7 @@
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "lint": "npm run lint-css && npm run lint-js",
-    "lint-js": "eslint ./src/ ./gemini/ --ext .js,.jsx,.ts,.tsx",
+    "lint-js": "eslint ./src/ ./gemini/ --ext .js,.ts,.tsx",
     "lint-md": "eslint -c .eslintrc.styleguide.js ./src/ --ext .md",
     "lint-css": "stylelint ./src/**/*.css",
     "gemini": "gemini test",
@@ -92,6 +92,7 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.7.6",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "bem-react-classname": "1.2.1",
     "bezier-easing": "2.1.0",
     "cn-decorator": "^2.1.0",

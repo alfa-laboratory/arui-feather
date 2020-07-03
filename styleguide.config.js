@@ -1,5 +1,6 @@
 /* eslint strict: [0, "global"] */
 /* eslint import/no-extraneous-dependencies: 0 */
+/* eslint @typescript-eslint/no-var-requires: 0 */
 
 'use strict';
 
@@ -7,11 +8,12 @@ const path = require('path');
 const { lstatSync, readdirSync } = require('fs');
 const merge = require('webpack-merge');
 const upperCamelCase = require('uppercamelcase');
-const WEBPACK_BASE_TEMPLATE = require('./webpack.base');
 const reactDocgenTypescript = require('react-docgen-typescript');
+const config = require('arui-demo');
+
+const WEBPACK_BASE_TEMPLATE = require('./webpack.base');
 
 const typescriptDocReader = reactDocgenTypescript.withCustomConfig('./tsconfig.json', {});
-const config = require('arui-demo');
 
 /* eslint import/no-unresolved: 0 */
 const { version } = require('./package');
@@ -31,9 +33,7 @@ const getContext = (source) => readdirSync(source)
             const componentSourcesFileName = componentDirName.split(path.sep).pop();
             const componentName = upperCamelCase(componentSourcesFileName);
 
-            prev[componentName] = componentDirName;
-
-            return prev;
+            return { ...prev, [componentName]: componentDirName };
         },
         {
             PreviewFrame: 'arui-demo/preview-frame',
@@ -83,7 +83,7 @@ module.exports = {
     getExampleFilename(componentPath) {
         return path.resolve(path.dirname(componentPath), './README.md');
     },
-    ignore: ['**/*-test.jsx', '**/*-test.tsx'],
+    ignore: ['**/*-test.tsx'],
     moduleAliases: {
         'arui-feather': path.resolve(__dirname, './src/'),
     },

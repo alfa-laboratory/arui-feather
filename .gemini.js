@@ -48,7 +48,7 @@ let config = {
         ],
         plugins: {
             babel7: {
-                extensions: [".es6", ".es", ".jsx", ".js", ".mjs", '.ts', '.tsx'],
+                extensions: [".es6", ".es", ".js", ".mjs", '.ts', '.tsx'],
             },
             'html-reporter/gemini': {
                 defaultView: 'failed',

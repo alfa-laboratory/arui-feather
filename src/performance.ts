@@ -4,37 +4,41 @@
 
 import { isValidElement } from 'react';
 
+interface ClassDecorator {
+    <TFunction extends Function>(target: TFunction): TFunction | void;
+}
+
 const { hasOwnProperty } = Object.prototype;
 
 /**
- * Функции проверки равенства двух объектов.
+ * Функции проверки равенства двух переменных.
  *
- * @param {*} objA Первый объект
- * @param {*} objB Второй объект
+ * @param {*} valueA Первое значение
+ * @param {*} valueB Второе значение
  * @param {Boolean} [deep=false] Запускать ли глубокую проверку равенства
  * @returns {Boolean}
  */
-export function isEqual(objA, objB, deep = false) {
-    if (Object.is(objA, objB)) {
+export function isEqual(valueA: unknown, valueB: unknown, deep = false): boolean {
+    if (Object.is(valueA, valueB)) {
         return true;
     }
 
-    if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
+    if (!isObject(valueA) || !isObject(valueB)) {
         return false;
     }
 
-    if (objA.prototype !== objB.prototype) {
+    if (Object.getPrototypeOf(valueA) !== Object.getPrototypeOf(valueB)) {
         return false;
     }
 
-    const keysA = Object.keys(objA);
-    const keysB = Object.keys(objB);
+    const keysA = Object.keys(valueA);
+    const keysB = Object.keys(valueB);
 
     if (keysA.length !== keysB.length) {
         return false;
     }
 
-    const bHasOwnProperty = hasOwnProperty.bind(objB);
+    const bHasOwnProperty = hasOwnProperty.bind(valueB);
 
     while (keysA.length > 0) {
         const key = keysA.pop();
@@ -43,11 +47,11 @@ export function isEqual(objA, objB, deep = false) {
             return false;
         }
 
-        const a = objA[key];
-        const b = objB[key];
+        const a = valueA[key];
+        const b = valueB[key];
 
         if (!Object.is(a, b)) {
-            if (!deep || typeof a !== 'object' || typeof b !== 'object' || a === null || b === null) {
+            if (!deep || !isObject(a) || !isObject(b)) {
                 return false;
             }
 
@@ -64,6 +68,10 @@ export function isEqual(objA, objB, deep = false) {
     }
 
     return true;
+
+    function isObject(value: unknown): value is {} {
+        return typeof value === 'object' && value !== null;
+    }
 }
 
 /**
@@ -74,7 +82,7 @@ export function isEqual(objA, objB, deep = false) {
  * @param {*} nextContext next component context
  * @returns {Boolean}
  */
-function shallow(nextProps, nextState, nextContext) {
+function shallow<P, S>(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: unknown): boolean {
     return !isEqual(this.props, nextProps)
         || !isEqual(this.state, nextState)
         || !isEqual(this.context, nextContext);
@@ -89,7 +97,7 @@ function shallow(nextProps, nextState, nextContext) {
  * @param {*} nextContext next component context
  * @returns {Boolean}
  */
-function deep(nextProps, nextState, nextContext) {
+function deep<P, S>(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: unknown): boolean {
     return !isEqual(this.props, nextProps, true)
         || !isEqual(this.state, nextState, true)
         || !isEqual(this.context, nextContext, true);
@@ -109,7 +117,7 @@ function deep(nextProps, nextState, nextContext) {
  * @param useDeep Использовать глубокую проверку равенства
  * @deprecated since version 17.0.0
  */
-export default function performance(useDeep = false) {
+export default function performance(useDeep = false): ClassDecorator {
     if (!useDeep) {
         console.warn('arui-feather/performance is deprecated.');
     }

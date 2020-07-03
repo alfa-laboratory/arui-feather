@@ -6,8 +6,11 @@
 
 .intl-phone-input {
     &.input {
-        .input__addons_left + .input__control {
-            padding-left: 0;
+        .input__input-wrapper:nth-child(2) {
+            .input__control,
+            .input__top {
+                padding-left: 0;
+            }
         }
     }
 

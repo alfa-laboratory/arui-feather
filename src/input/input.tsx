@@ -341,14 +341,6 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('inner') }>
-                    {
-                        !!this.props.label
-                        && (
-                            <span className={ this.cn('top') }>
-                                { this.props.label }
-                            </span>
-                        )
-                    }
                     { this.renderContent() }
                     {
                         (this.state.error || this.props.hint)
@@ -414,19 +406,29 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                         </span>
                     )
                 }
-                {
-                    isMaskedInput
-                        ? (
-                            <MaskedInput
-                                { ...inputProps }
-                                mask={ this.props.mask }
-                                formatCharacters={ this.props.maskFormatCharacters }
-                                onProcessInputEvent={ this.props.onProcessMaskInputEvent }
-                                useWhitespaces={ this.props.useWhitespacesInMask }
-                            />
+                <span className={ this.cn('input-wrapper')}>
+                    {
+                        !!this.props.label
+                        && (
+                            <span className={ this.cn('top') }>
+                                { this.props.label }
+                            </span>
                         )
-                        : <input { ...inputProps } />
-                }
+                    }
+                    {
+                        isMaskedInput
+                            ? (
+                                <MaskedInput
+                                    { ...inputProps }
+                                    mask={ this.props.mask }
+                                    formatCharacters={ this.props.maskFormatCharacters }
+                                    onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                                    useWhitespaces={ this.props.useWhitespacesInMask }
+                                />
+                            )
+                            : <input { ...inputProps } />
+                    }
+                </span>
                 {
                     this.props.clear && value
                     && (

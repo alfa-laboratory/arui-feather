@@ -7,7 +7,7 @@ import React from 'react';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
 
-import { Button } from '../button/button';
+import { Button } from '../button';
 import IconButton from '../icon-button/icon-button';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
@@ -15,11 +15,10 @@ import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import ThemedPopup from '../popup/popup';
 import PopupHeader from '../popup-header/popup-header';
-import { ResizeSensor } from '../resize-sensor/resize-sensor';
+import { ResizeSensor } from '../resize-sensor';
 
 import { HtmlElement } from '../lib/prop-types';
 import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
@@ -316,8 +315,7 @@ type SelectState = {
 /**
  * Компонент выпадающего списка.
  */
-@performance(true)
-export class Select extends React.Component<SelectProps, SelectState> {
+export class Select extends React.PureComponent<SelectProps, SelectState> {
     protected cn = createCn('select');
 
     static defaultProps: Partial<SelectProps> = {
@@ -341,7 +339,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     };
 
     state: SelectState = {
-        hasGroup: false,
+        // eslint-disable-next-line max-len
+        hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content)),
         isMobile: false,
         opened: !!this.props.opened,
         popupStyles: {},
@@ -367,13 +366,6 @@ export class Select extends React.Component<SelectProps, SelectState> {
      */
     private awaitClosing = false;
 
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillMount() {
-        this.setState({
-            hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content)),
-        });
-    }
-
     componentDidMount() {
         if (this.isAutoSelectRequired()) {
             this.selectFirstOption();
@@ -383,24 +375,19 @@ export class Select extends React.Component<SelectProps, SelectState> {
         this.updatePopupStyles();
     }
 
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
+    componentDidUpdate(prevProps: SelectProps) {
         this.setPopupTarget();
-        this.updatePopupStyles();
 
-        if (this.state.opened && nextProps.disabled) {
-            this.toggleOpened();
-        }
-
-        this.setState({
-            hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content)),
-        });
-    }
-
-    componentDidUpdate() {
         if (this.state.opened) {
             this.updatePopupStyles();
+            if (this.props.disabled) {
+                this.toggleOpened();
+            }
         }
+        // eslint-disable-next-line max-len
+        const hasGroup = prevProps.options.some((option) => option.type === 'group' && !!option.content);
+
+        this.updateHasGroup(hasGroup);
     }
 
     render() {
@@ -1040,8 +1027,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = buttonWidth;
         }
-
-        this.setState({ popupStyles });
+        if (this.state.popupStyles.maxWidth !== popupStyles.maxWidth
+            || this.state.popupStyles.minWidth !== popupStyles.minWidth) {
+            this.setState({ popupStyles });
+        }
     };
 
     private setPopupTarget = () => {
@@ -1086,6 +1075,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     private isAutoSelectRequired() {
         const { mode, options, renderPopupOnFocus } = this.props;
 
+        // eslint-disable-next-line max-len
         return renderPopupOnFocus && mode === 'radio' && options.length > 0 && !this.hasCheckedItems();
     }
 
@@ -1110,6 +1100,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
         }
 
         return firstOption;
+    }
+
+    private updateHasGroup(hasGroup: boolean) {
+        if (this.state.hasGroup !== hasGroup) {
+            this.setState({ hasGroup });
+        }
     }
 }
 

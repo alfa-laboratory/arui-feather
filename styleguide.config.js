@@ -1,6 +1,6 @@
 /* eslint strict: [0, "global"] */
 /* eslint import/no-extraneous-dependencies: 0 */
-
+/* eslint-disable */
 'use strict';
 
 const path = require('path');

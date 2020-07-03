@@ -1,6 +1,8 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const webpack = require('webpack');
 
 const QUERY = {

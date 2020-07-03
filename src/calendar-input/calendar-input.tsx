@@ -132,6 +132,11 @@ export type CalendarInputProps = {
     error?: React.ReactNode;
 
     /**
+     * Сброс ошибки при установке фокуса в компоненте Input
+     */
+    resetError?: boolean;
+
+    /**
      * Управление нативным режимом на мобильных устройствах
      */
     mobileMode?: 'native' | 'popup' | 'input';
@@ -368,6 +373,7 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
                         placeholder={ this.props.placeholder }
                         hint={ this.props.hint }
                         error={ this.props.error }
+                        resetError={ this.props.resetError }
                         value={ value }
                         view={ this.props.view }
                         width={ this.props.width }

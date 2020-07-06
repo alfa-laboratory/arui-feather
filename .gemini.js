@@ -29,7 +29,7 @@ let config = {
         chromeWin7: {
             desiredCapabilities: {
                 browserName: 'chrome',
-                version: '60',
+                version: '70',
                 platform: 'Windows 7'
             }
         }

@@ -7,25 +7,43 @@
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
-            <span className='row' key={ size }>
+            <div className='row' key={ size }>
                 <div className='column'>
                     <Link
                         text='Вернуться в интернет-банк'
                         size={ size }
                     />
                 </div>
-            </span>
+            </div>
         ))
     }
 </div>
 ```
+```jsx
+<div>
+    {
+        ['s', 'm', 'l', 'xl'].map(size => (
+            <div className='row' key={ size }>
+                <div className='column'>
+                    <Link
+                        text='Новая синяя ссылка'
+                        size={ size }
+                        view='blue'
+                    />
+                </div>
+            </div>
+        ))
+    }
+</div>
+```
+
 ### Псевдоссылка
 Вызывает информационный слой (collapse, dropdown, popup) без перехода на другую страницу.
 ```jsx
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
-            <span className='row' key={ size }>
+            <div className='row' key={ size }>
                 <div className='column'>
                     <Link
                         text='Показать больше'
@@ -33,7 +51,7 @@
                         pseudo={ true }
                     />
                 </div>
-            </span>
+            </div>
         ))
     }
 </div>
@@ -52,14 +70,14 @@ const columnStyle = {
 <div style={ { width: '100%' } }>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
-            <span className='row' key={ size }>
+            <div className='row' key={ size }>
                 <div className='column' style={ columnStyle }>
                     <Link size={ size } ><span role='img' aria-label='smile'>😊</span></Link>
                 </div>
                 <div className='column' style={ columnStyle }>
                     <Link size={ size } >¯\_(ツ)_/¯</Link>
                 </div>
-            </span>
+            </div>
         ))
     }
 </div>

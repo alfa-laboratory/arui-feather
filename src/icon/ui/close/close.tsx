@@ -18,4 +18,4 @@ class IconClose extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconClose);
+export default withTheme<IconProps, IconClose>(IconClose);

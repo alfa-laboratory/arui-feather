@@ -18,4 +18,4 @@ class IconMobileAndroid extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMobileAndroid);
+export default withTheme<IconProps, IconMobileAndroid>(IconMobileAndroid);

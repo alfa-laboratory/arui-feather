@@ -18,4 +18,4 @@ class IconFormatDoc extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatDoc);
+export default withTheme<IconProps, IconFormatDoc>(IconFormatDoc);

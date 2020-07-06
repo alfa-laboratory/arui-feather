@@ -18,4 +18,4 @@ class IconCredit extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCredit);
+export default withTheme<IconProps, IconCredit>(IconCredit);

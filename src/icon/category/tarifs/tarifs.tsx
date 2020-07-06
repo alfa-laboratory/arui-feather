@@ -18,4 +18,4 @@ class IconTarifs extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTarifs);
+export default withTheme<IconProps, IconTarifs>(IconTarifs);

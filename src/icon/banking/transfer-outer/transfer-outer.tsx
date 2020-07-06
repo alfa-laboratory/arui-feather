@@ -18,4 +18,4 @@ class IconTransferOuter extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTransferOuter);
+export default withTheme<IconProps, IconTransferOuter>(IconTransferOuter);

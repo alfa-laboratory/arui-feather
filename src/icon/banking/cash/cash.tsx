@@ -18,4 +18,4 @@ class IconCash extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCash);
+export default withTheme<IconProps, IconCash>(IconCash);

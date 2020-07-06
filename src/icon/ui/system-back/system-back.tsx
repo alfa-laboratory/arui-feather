@@ -18,4 +18,4 @@ class IconSystemBack extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSystemBack);
+export default withTheme<IconProps, IconSystemBack>(IconSystemBack);

@@ -18,4 +18,4 @@ class IconMir extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMir);
+export default withTheme<IconProps, IconMir>(IconMir);

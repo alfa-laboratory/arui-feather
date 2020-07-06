@@ -18,4 +18,4 @@ class IconAllServices extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAllServices);
+export default withTheme<IconProps, IconAllServices>(IconAllServices);

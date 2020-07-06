@@ -18,4 +18,4 @@ class IconCardActivation extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCardActivation);
+export default withTheme<IconProps, IconCardActivation>(IconCardActivation);

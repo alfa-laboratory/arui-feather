@@ -18,4 +18,4 @@ class IconCheckboxDisabled extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCheckboxDisabled);
+export default withTheme<IconProps, IconCheckboxDisabled>(IconCheckboxDisabled);

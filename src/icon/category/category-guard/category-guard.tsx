@@ -18,4 +18,4 @@ class IconCategoryGuard extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryGuard);
+export default withTheme<IconProps, IconCategoryGuard>(IconCategoryGuard);

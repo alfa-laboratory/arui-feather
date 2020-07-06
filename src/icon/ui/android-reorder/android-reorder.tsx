@@ -18,4 +18,4 @@ class IconAndroidReorder extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAndroidReorder);
+export default withTheme<IconProps, IconAndroidReorder>(IconAndroidReorder);

@@ -18,4 +18,4 @@ class IconOfferFill extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconOfferFill);
+export default withTheme<IconProps, IconOfferFill>(IconOfferFill);

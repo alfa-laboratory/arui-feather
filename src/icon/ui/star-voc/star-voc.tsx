@@ -18,4 +18,4 @@ class IconStarVoc extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconStarVoc);
+export default withTheme<IconProps, IconStarVoc>(IconStarVoc);

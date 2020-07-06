@@ -18,4 +18,4 @@ class IconCardGooglepay extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCardGooglepay);
+export default withTheme<IconProps, IconCardGooglepay>(IconCardGooglepay);

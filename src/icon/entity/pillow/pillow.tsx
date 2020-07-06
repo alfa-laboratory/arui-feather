@@ -18,4 +18,4 @@ class IconPillow extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPillow);
+export default withTheme<IconProps, IconPillow>(IconPillow);

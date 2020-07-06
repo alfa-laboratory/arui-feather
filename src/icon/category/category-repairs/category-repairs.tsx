@@ -18,4 +18,4 @@ class IconCategoryRepairs extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryRepairs);
+export default withTheme<IconProps, IconCategoryRepairs>(IconCategoryRepairs);

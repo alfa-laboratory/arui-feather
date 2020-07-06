@@ -18,4 +18,4 @@ class IconLogoAlfabank extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconLogoAlfabank);
+export default withTheme<IconProps, IconLogoAlfabank>(IconLogoAlfabank);

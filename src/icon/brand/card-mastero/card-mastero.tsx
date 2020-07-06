@@ -18,4 +18,4 @@ class IconCardMastero extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCardMastero);
+export default withTheme<IconProps, IconCardMastero>(IconCardMastero);

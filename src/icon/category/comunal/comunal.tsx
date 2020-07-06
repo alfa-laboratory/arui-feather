@@ -18,4 +18,4 @@ class IconComunal extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconComunal);
+export default withTheme<IconProps, IconComunal>(IconComunal);

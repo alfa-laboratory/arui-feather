@@ -18,4 +18,4 @@ class IconMetro extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMetro);
+export default withTheme<IconProps, IconMetro>(IconMetro);

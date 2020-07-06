@@ -18,4 +18,4 @@ class IconSixty extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSixty);
+export default withTheme<IconProps, IconSixty>(IconSixty);

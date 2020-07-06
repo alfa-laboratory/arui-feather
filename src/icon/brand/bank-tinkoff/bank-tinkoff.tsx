@@ -18,4 +18,4 @@ class IconBankTinkoff extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankTinkoff);
+export default withTheme<IconProps, IconBankTinkoff>(IconBankTinkoff);

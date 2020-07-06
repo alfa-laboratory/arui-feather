@@ -18,4 +18,4 @@ class IconCrown extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCrown);
+export default withTheme<IconProps, IconCrown>(IconCrown);

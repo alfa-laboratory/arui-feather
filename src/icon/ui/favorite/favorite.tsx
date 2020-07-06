@@ -18,4 +18,4 @@ class IconFavorite extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFavorite);
+export default withTheme<IconProps, IconFavorite>(IconFavorite);

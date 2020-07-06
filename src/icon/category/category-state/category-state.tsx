@@ -18,4 +18,4 @@ class IconCategoryState extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryState);
+export default withTheme<IconProps, IconCategoryState>(IconCategoryState);

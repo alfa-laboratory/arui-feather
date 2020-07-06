@@ -18,4 +18,4 @@ class IconBankHomeCredit extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankHomeCredit);
+export default withTheme<IconProps, IconBankHomeCredit>(IconBankHomeCredit);

@@ -18,4 +18,4 @@ class IconChevronRight extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconChevronRight);
+export default withTheme<IconProps, IconChevronRight>(IconChevronRight);

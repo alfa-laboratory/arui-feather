@@ -18,4 +18,4 @@ class IconArrowBackBold extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconArrowBackBold);
+export default withTheme<IconProps, IconArrowBackBold>(IconArrowBackBold);

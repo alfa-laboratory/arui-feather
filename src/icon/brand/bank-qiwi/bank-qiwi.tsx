@@ -18,4 +18,4 @@ class IconBankQiwi extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankQiwi);
+export default withTheme<IconProps, IconBankQiwi>(IconBankQiwi);

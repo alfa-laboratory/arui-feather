@@ -18,4 +18,4 @@ class IconAccountText extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAccountText);
+export default withTheme<IconProps, IconAccountText>(IconAccountText);

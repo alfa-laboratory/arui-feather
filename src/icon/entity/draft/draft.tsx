@@ -18,4 +18,4 @@ class IconDraft extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconDraft);
+export default withTheme<IconProps, IconDraft>(IconDraft);

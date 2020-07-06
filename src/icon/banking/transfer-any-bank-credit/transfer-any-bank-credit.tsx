@@ -18,4 +18,4 @@ class IconTransferAnyBankCredit extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTransferAnyBankCredit);
+export default withTheme<IconProps, IconTransferAnyBankCredit>(IconTransferAnyBankCredit);

@@ -18,4 +18,4 @@ class IconCurrencyRub extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCurrencyRub);
+export default withTheme<IconProps, IconCurrencyRub>(IconCurrencyRub);

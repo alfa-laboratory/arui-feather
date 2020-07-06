@@ -18,4 +18,4 @@ class IconPresent extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPresent);
+export default withTheme<IconProps, IconPresent>(IconPresent);

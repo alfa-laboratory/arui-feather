@@ -18,4 +18,4 @@ class IconMoreIos extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMoreIos);
+export default withTheme<IconProps, IconMoreIos>(IconMoreIos);

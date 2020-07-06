@@ -18,4 +18,4 @@ class IconNotificationBadge extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNotificationBadge);
+export default withTheme<IconProps, IconNotificationBadge>(IconNotificationBadge);

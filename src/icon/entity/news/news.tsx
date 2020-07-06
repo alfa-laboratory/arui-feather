@@ -18,4 +18,4 @@ class IconNews extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNews);
+export default withTheme<IconProps, IconNews>(IconNews);

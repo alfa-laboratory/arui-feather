@@ -18,4 +18,4 @@ class IconBankUnicredit extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankUnicredit);
+export default withTheme<IconProps, IconBankUnicredit>(IconBankUnicredit);

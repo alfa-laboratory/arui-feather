@@ -18,4 +18,4 @@ class IconInternet extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconInternet);
+export default withTheme<IconProps, IconInternet>(IconInternet);

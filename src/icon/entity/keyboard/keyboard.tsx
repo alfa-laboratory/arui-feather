@@ -18,4 +18,4 @@ class IconKeyboard extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconKeyboard);
+export default withTheme<IconProps, IconKeyboard>(IconKeyboard);

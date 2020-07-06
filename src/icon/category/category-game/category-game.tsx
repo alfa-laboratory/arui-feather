@@ -18,4 +18,4 @@ class IconCategoryGame extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryGame);
+export default withTheme<IconProps, IconCategoryGame>(IconCategoryGame);

@@ -18,4 +18,4 @@ class IconPerson extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPerson);
+export default withTheme<IconProps, IconPerson>(IconPerson);

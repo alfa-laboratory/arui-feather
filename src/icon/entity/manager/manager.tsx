@@ -18,4 +18,4 @@ class IconManager extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconManager);
+export default withTheme<IconProps, IconManager>(IconManager);

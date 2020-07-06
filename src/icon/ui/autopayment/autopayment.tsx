@@ -18,4 +18,4 @@ class IconAutopayment extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAutopayment);
+export default withTheme<IconProps, IconAutopayment>(IconAutopayment);

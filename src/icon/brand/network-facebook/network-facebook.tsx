@@ -18,4 +18,4 @@ class IconNetworkFacebook extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNetworkFacebook);
+export default withTheme<IconProps, IconNetworkFacebook>(IconNetworkFacebook);

@@ -18,4 +18,4 @@ class IconLeft extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconLeft);
+export default withTheme<IconProps, IconLeft>(IconLeft);

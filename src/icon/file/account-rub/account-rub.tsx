@@ -18,4 +18,4 @@ class IconAccountRub extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAccountRub);
+export default withTheme<IconProps, IconAccountRub>(IconAccountRub);

@@ -18,4 +18,4 @@ class IconPaymentOutbox extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPaymentOutbox);
+export default withTheme<IconProps, IconPaymentOutbox>(IconPaymentOutbox);

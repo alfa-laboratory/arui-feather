@@ -18,4 +18,4 @@ class IconCategoryDefault extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryDefault);
+export default withTheme<IconProps, IconCategoryDefault>(IconCategoryDefault);

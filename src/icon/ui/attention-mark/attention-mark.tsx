@@ -18,4 +18,4 @@ class IconAttentionMark extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAttentionMark);
+export default withTheme<IconProps, IconAttentionMark>(IconAttentionMark);

@@ -18,4 +18,4 @@ class IconSubscrption extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSubscrption);
+export default withTheme<IconProps, IconSubscrption>(IconSubscrption);

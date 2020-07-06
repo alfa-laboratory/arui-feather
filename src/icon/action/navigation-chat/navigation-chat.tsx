@@ -18,4 +18,4 @@ class IconNavigationChat extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconNavigationChat);
+export default withTheme<IconProps, IconNavigationChat>(IconNavigationChat);

@@ -18,4 +18,4 @@ class IconFormatWord extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatWord);
+export default withTheme<IconProps, IconFormatWord>(IconFormatWord);

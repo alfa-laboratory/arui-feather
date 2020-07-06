@@ -18,4 +18,4 @@ class IconInsurance extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconInsurance);
+export default withTheme<IconProps, IconInsurance>(IconInsurance);

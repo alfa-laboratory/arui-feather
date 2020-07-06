@@ -18,4 +18,4 @@ class IconCategoryTravel extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryTravel);
+export default withTheme<IconProps, IconCategoryTravel>(IconCategoryTravel);

@@ -18,4 +18,4 @@ class IconSubtract extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSubtract);
+export default withTheme<IconProps, IconSubtract>(IconSubtract);

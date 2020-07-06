@@ -18,4 +18,4 @@ class IconError extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconError);
+export default withTheme<IconProps, IconError>(IconError);

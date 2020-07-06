@@ -18,4 +18,4 @@ class IconConvert extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconConvert);
+export default withTheme<IconProps, IconConvert>(IconConvert);

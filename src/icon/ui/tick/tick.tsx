@@ -18,4 +18,4 @@ class IconTick extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTick);
+export default withTheme<IconProps, IconTick>(IconTick);

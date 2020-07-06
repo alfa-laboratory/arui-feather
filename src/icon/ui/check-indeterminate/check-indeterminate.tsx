@@ -18,4 +18,4 @@ class IconCheckIndeterminate extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCheckIndeterminate);
+export default withTheme<IconProps, IconCheckIndeterminate>(IconCheckIndeterminate);

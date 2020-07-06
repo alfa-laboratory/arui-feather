@@ -18,4 +18,4 @@ class IconRequestMoney extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconRequestMoney);
+export default withTheme<IconProps, IconRequestMoney>(IconRequestMoney);

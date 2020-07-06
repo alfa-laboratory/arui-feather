@@ -18,4 +18,4 @@ class IconDiscount extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconDiscount);
+export default withTheme<IconProps, IconDiscount>(IconDiscount);

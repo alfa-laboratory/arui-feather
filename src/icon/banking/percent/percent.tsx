@@ -18,4 +18,4 @@ class IconPercent extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPercent);
+export default withTheme<IconProps, IconPercent>(IconPercent);

@@ -18,4 +18,4 @@ class IconCategoryCharity extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryCharity);
+export default withTheme<IconProps, IconCategoryCharity>(IconCategoryCharity);

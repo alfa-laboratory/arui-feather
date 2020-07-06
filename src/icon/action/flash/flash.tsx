@@ -18,4 +18,4 @@ class IconFlash extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFlash);
+export default withTheme<IconProps, IconFlash>(IconFlash);

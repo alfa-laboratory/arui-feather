@@ -18,4 +18,4 @@ class IconInbox extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconInbox);
+export default withTheme<IconProps, IconInbox>(IconInbox);

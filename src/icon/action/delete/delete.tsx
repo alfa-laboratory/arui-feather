@@ -18,4 +18,4 @@ class IconDelete extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconDelete);
+export default withTheme<IconProps, IconDelete>(IconDelete);

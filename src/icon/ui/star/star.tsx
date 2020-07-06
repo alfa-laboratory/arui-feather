@@ -18,4 +18,4 @@ class IconStar extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconStar);
+export default withTheme<IconProps, IconStar>(IconStar);

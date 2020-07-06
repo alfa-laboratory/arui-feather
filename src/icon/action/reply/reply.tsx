@@ -18,4 +18,4 @@ class IconReply extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconReply);
+export default withTheme<IconProps, IconReply>(IconReply);

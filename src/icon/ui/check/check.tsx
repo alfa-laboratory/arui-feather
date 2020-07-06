@@ -18,4 +18,4 @@ class IconCheck extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCheck);
+export default withTheme<IconProps, IconCheck>(IconCheck);

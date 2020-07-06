@@ -18,4 +18,4 @@ class IconPause extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPause);
+export default withTheme<IconProps, IconPause>(IconPause);

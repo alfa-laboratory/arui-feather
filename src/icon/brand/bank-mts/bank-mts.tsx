@@ -18,4 +18,4 @@ class IconBankMts extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankMts);
+export default withTheme<IconProps, IconBankMts>(IconBankMts);

@@ -18,4 +18,4 @@ class IconFifaTrophy extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFifaTrophy);
+export default withTheme<IconProps, IconFifaTrophy>(IconFifaTrophy);

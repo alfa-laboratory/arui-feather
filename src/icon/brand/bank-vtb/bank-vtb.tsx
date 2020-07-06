@@ -18,4 +18,4 @@ class IconBankVtb extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankVtb);
+export default withTheme<IconProps, IconBankVtb>(IconBankVtb);

@@ -18,4 +18,4 @@ class IconExpandDown extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconExpandDown);
+export default withTheme<IconProps, IconExpandDown>(IconExpandDown);

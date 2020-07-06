@@ -18,4 +18,4 @@ class IconFormatPng extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFormatPng);
+export default withTheme<IconProps, IconFormatPng>(IconFormatPng);

@@ -18,4 +18,4 @@ class IconSign extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSign);
+export default withTheme<IconProps, IconSign>(IconSign);

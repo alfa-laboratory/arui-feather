@@ -18,4 +18,4 @@ class IconAccountShared extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAccountShared);
+export default withTheme<IconProps, IconAccountShared>(IconAccountShared);

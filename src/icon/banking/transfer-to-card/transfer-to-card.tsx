@@ -18,4 +18,4 @@ class IconTransferToCard extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTransferToCard);
+export default withTheme<IconProps, IconTransferToCard>(IconTransferToCard);

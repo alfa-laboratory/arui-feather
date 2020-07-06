@@ -18,4 +18,4 @@ class IconCurrencyUsd extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCurrencyUsd);
+export default withTheme<IconProps, IconCurrencyUsd>(IconCurrencyUsd);

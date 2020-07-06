@@ -18,4 +18,4 @@ class IconAddFilled extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAddFilled);
+export default withTheme<IconProps, IconAddFilled>(IconAddFilled);

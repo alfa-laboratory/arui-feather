@@ -18,4 +18,4 @@ class IconMore extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMore);
+export default withTheme<IconProps, IconMore>(IconMore);

@@ -18,4 +18,4 @@ class IconBack extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBack);
+export default withTheme<IconProps, IconBack>(IconBack);

@@ -18,4 +18,4 @@ class IconThumbVoc extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconThumbVoc);
+export default withTheme<IconProps, IconThumbVoc>(IconThumbVoc);

@@ -18,4 +18,4 @@ class IconCategoryGibdd extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconCategoryGibdd);
+export default withTheme<IconProps, IconCategoryGibdd>(IconCategoryGibdd);

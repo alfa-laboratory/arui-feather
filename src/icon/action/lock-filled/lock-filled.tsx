@@ -18,4 +18,4 @@ class IconLockFilled extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconLockFilled);
+export default withTheme<IconProps, IconLockFilled>(IconLockFilled);

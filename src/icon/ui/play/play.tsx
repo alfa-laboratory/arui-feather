@@ -18,4 +18,4 @@ class IconPlay extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPlay);
+export default withTheme<IconProps, IconPlay>(IconPlay);

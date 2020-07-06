@@ -18,4 +18,4 @@ class IconSecurity extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconSecurity);
+export default withTheme<IconProps, IconSecurity>(IconSecurity);

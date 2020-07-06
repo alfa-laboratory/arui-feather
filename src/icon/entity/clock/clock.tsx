@@ -18,4 +18,4 @@ class IconClock extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconClock);
+export default withTheme<IconProps, IconClock>(IconClock);

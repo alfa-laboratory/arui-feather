@@ -18,4 +18,4 @@ class IconTodo extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconTodo);
+export default withTheme<IconProps, IconTodo>(IconTodo);

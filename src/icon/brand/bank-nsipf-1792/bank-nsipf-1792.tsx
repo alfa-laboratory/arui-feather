@@ -18,4 +18,4 @@ class IconBankNsipf1792 extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankNsipf1792);
+export default withTheme<IconProps, IconBankNsipf1792>(IconBankNsipf1792);

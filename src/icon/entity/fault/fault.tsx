@@ -18,4 +18,4 @@ class IconFault extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFault);
+export default withTheme<IconProps, IconFault>(IconFault);

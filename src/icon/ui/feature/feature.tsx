@@ -18,4 +18,4 @@ class IconFeature extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconFeature);
+export default withTheme<IconProps, IconFeature>(IconFeature);

@@ -18,4 +18,4 @@ class IconBankOtkritie extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconBankOtkritie);
+export default withTheme<IconProps, IconBankOtkritie>(IconBankOtkritie);

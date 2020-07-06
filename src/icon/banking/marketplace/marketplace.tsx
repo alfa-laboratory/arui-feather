@@ -18,4 +18,4 @@ class IconMarketplace extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconMarketplace);
+export default withTheme<IconProps, IconMarketplace>(IconMarketplace);

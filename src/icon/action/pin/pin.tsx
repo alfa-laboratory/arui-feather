@@ -18,4 +18,4 @@ class IconPin extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconPin);
+export default withTheme<IconProps, IconPin>(IconPin);

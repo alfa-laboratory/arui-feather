@@ -18,4 +18,4 @@ class IconOutcome extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconOutcome);
+export default withTheme<IconProps, IconOutcome>(IconOutcome);

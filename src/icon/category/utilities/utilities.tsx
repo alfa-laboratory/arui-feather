@@ -18,4 +18,4 @@ class IconUtilities extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconUtilities);
+export default withTheme<IconProps, IconUtilities>(IconUtilities);

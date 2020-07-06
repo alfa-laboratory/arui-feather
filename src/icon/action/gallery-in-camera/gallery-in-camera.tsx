@@ -18,4 +18,4 @@ class IconGalleryInCamera extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconGalleryInCamera);
+export default withTheme<IconProps, IconGalleryInCamera>(IconGalleryInCamera);

@@ -18,4 +18,4 @@ class IconAndroidFlash extends React.PureComponent<IconProps> {
     }
 }
 
-export default withTheme(IconAndroidFlash);
+export default withTheme<IconProps, IconAndroidFlash>(IconAndroidFlash);

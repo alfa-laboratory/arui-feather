@@ -17,3 +17,7 @@
 .icon_size_xl.icon_name_format-unknown.icon_colored.icon_theme_alfa-on-color, .icon_size_xl.icon_name_format-unknown.icon_colored.icon_theme_alfa-on-white {
     background-image: url('./icon_format-unknown_xl_color.svg');
 }
+
+.icon_size_xxl.icon_name_format-unknown.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_format-unknown.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-unknown_xxl_color.svg');
+}

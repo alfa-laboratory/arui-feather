@@ -1,3 +1,27 @@
+<a name="18.0.0"></a>
+# [18.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.11.0...v18.0.0) (2020-07-09)
+
+
+### Bug Fixes
+
+* deleted configs for jsx ([#1162](https://github.com/alfa-laboratory/arui-feather/issues/1162)) ([8823000](https://github.com/alfa-laboratory/arui-feather/commit/8823000))
+* fix templates for build:icons command ([#1180](https://github.com/alfa-laboratory/arui-feather/issues/1180)) ([b35b8d1](https://github.com/alfa-laboratory/arui-feather/commit/b35b8d1))
+* **icon:** fix hbs template + rebuild icons ([#1182](https://github.com/alfa-laboratory/arui-feather/issues/1182)) ([fa204eb](https://github.com/alfa-laboratory/arui-feather/commit/fa204eb))
+* **input:** fix label position when input has addons ([#1173](https://github.com/alfa-laboratory/arui-feather/issues/1173)) ([09af638](https://github.com/alfa-laboratory/arui-feather/commit/09af638))
+* **jest.config:** change extension mocking file for modules ([#1181](https://github.com/alfa-laboratory/arui-feather/issues/1181)) ([2b5f3bc](https://github.com/alfa-laboratory/arui-feather/commit/2b5f3bc))
+* **travis:** adds compile command for unit "scope" ([#1171](https://github.com/alfa-laboratory/arui-feather/issues/1171)) ([aefb44e](https://github.com/alfa-laboratory/arui-feather/commit/aefb44e))
+
+
+### Features
+
+* updated content max width ([#1153](https://github.com/alfa-laboratory/arui-feather/issues/1153)) ([c9b84c6](https://github.com/alfa-laboratory/arui-feather/commit/c9b84c6))
+* **calendar-input:** pass resetError through Calendar to Input ([#1174](https://github.com/alfa-laboratory/arui-feather/issues/1174)) ([57845e5](https://github.com/alfa-laboratory/arui-feather/commit/57845e5))
+* **icon:** latest icons from alfa-ui-primitives 2.18.0 ([928ca33](https://github.com/alfa-laboratory/arui-feather/commit/928ca33))
+* **icons:** add alfa-ui-primitives v2.17.0 and build icons ([#1184](https://github.com/alfa-laboratory/arui-feather/issues/1184)) ([d944c64](https://github.com/alfa-laboratory/arui-feather/commit/d944c64))
+* **textarea:** add icon in textarea ([#1185](https://github.com/alfa-laboratory/arui-feather/issues/1185)) ([fc83fcd](https://github.com/alfa-laboratory/arui-feather/commit/fc83fcd))
+
+
+
 <a name="17.11.0"></a>
 # [17.11.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.10.0...v17.11.0) (2020-06-03)
 

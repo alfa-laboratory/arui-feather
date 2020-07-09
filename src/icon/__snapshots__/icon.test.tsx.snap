@@ -2742,6 +2742,54 @@ exports[`icon render undefined without problems 457`] = `
 </ContextConsumer>
 `;
 
+exports[`icon render undefined without problems 458`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 459`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 460`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 461`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 462`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 463`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 464`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`icon render undefined without problems 465`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`icon renders without problems 1`] = `
 <ContextConsumer>
   <Component />

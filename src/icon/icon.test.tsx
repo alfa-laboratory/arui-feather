@@ -109,6 +109,7 @@ import IconLimits from './banking/limits';
 import IconMarketplace from './banking/marketplace';
 import IconOffer from './banking/offer';
 import IconOfferFill from './banking/offer-fill';
+import IconOnlineKassa from './banking/online-kassa';
 import IconOutcome from './banking/outcome';
 import IconOverdraft from './banking/overdraft';
 import IconPayBack from './banking/pay-back';
@@ -223,6 +224,7 @@ import IconCategoryHealth from './category/category-health';
 import IconCategoryHobby from './category/category-hobby';
 import IconCategoryHouse from './category/category-house';
 import IconCategoryHousekeeping from './category/category-housekeeping';
+import IconCategoryIdea from './category/category-idea';
 import IconCategoryInvestments from './category/category-investments';
 import IconCategoryLoans from './category/category-loans';
 import IconCategoryMedicine from './category/category-medicine';
@@ -231,6 +233,7 @@ import IconCategoryOther from './category/category-other';
 import IconCategoryPerson from './category/category-person';
 import IconCategoryPets from './category/category-pets';
 import IconCategoryPlane from './category/category-plane';
+import IconCategoryQuarantine from './category/category-quarantine';
 import IconCategoryRent from './category/category-rent';
 import IconCategoryRepairs from './category/category-repairs';
 import IconCategoryRestaurants from './category/category-restaurants';
@@ -310,6 +313,7 @@ import IconPredictions from './entity/predictions';
 import IconPresent from './entity/present';
 import IconQr from './entity/qr';
 import IconRegistry from './entity/registry';
+import IconScale from './entity/scale';
 import IconSecurity from './entity/security';
 import IconSite from './entity/site';
 import IconSixty from './entity/sixty';
@@ -326,10 +330,13 @@ import IconCategoryComunal from './file/category-comunal';
 import IconCategoryGibdd from './file/category-gibdd';
 import IconCategoryTarifs from './file/category-tarifs';
 import IconFormat1c from './file/format-1c';
+import IconFormatAdd from './file/format-add';
 import IconFormatAttach from './file/format-attach';
 import IconFormatCsv from './file/format-csv';
 import IconFormatDefault from './file/format-default';
+import IconFormatDisabled from './file/format-disabled';
 import IconFormatDoc from './file/format-doc';
+import IconFormatError from './file/format-error';
 import IconFormatJpg from './file/format-jpg';
 import IconFormatPdf from './file/format-pdf';
 import IconFormatPng from './file/format-png';
@@ -337,6 +344,7 @@ import IconFormatPpt from './file/format-ppt';
 import IconFormatRar from './file/format-rar';
 import IconFormatSketch from './file/format-sketch';
 import IconFormatSvg from './file/format-svg';
+import IconFormatTif from './file/format-tif';
 import IconFormatTxt from './file/format-txt';
 import IconFormatUnknown from './file/format-unknown';
 import IconFormatWord from './file/format-word';
@@ -575,6 +583,7 @@ describe('icon', () => {
             { componentName: IconMarketplace, name: 'marketplace' },
             { componentName: IconOffer, name: 'offer' },
             { componentName: IconOfferFill, name: 'offer-fill' },
+            { componentName: IconOnlineKassa, name: 'online-kassa' },
             { componentName: IconOutcome, name: 'outcome' },
             { componentName: IconOverdraft, name: 'overdraft' },
             { componentName: IconPayBack, name: 'pay-back' },
@@ -689,6 +698,7 @@ describe('icon', () => {
             { componentName: IconCategoryHobby, name: 'category-hobby' },
             { componentName: IconCategoryHouse, name: 'category-house' },
             { componentName: IconCategoryHousekeeping, name: 'category-housekeeping' },
+            { componentName: IconCategoryIdea, name: 'category-idea' },
             { componentName: IconCategoryInvestments, name: 'category-investments' },
             { componentName: IconCategoryLoans, name: 'category-loans' },
             { componentName: IconCategoryMedicine, name: 'category-medicine' },
@@ -697,6 +707,7 @@ describe('icon', () => {
             { componentName: IconCategoryPerson, name: 'category-person' },
             { componentName: IconCategoryPets, name: 'category-pets' },
             { componentName: IconCategoryPlane, name: 'category-plane' },
+            { componentName: IconCategoryQuarantine, name: 'category-quarantine' },
             { componentName: IconCategoryRent, name: 'category-rent' },
             { componentName: IconCategoryRepairs, name: 'category-repairs' },
             { componentName: IconCategoryRestaurants, name: 'category-restaurants' },
@@ -776,6 +787,7 @@ describe('icon', () => {
             { componentName: IconPresent, name: 'present' },
             { componentName: IconQr, name: 'qr' },
             { componentName: IconRegistry, name: 'registry' },
+            { componentName: IconScale, name: 'scale' },
             { componentName: IconSecurity, name: 'security' },
             { componentName: IconSite, name: 'site' },
             { componentName: IconSixty, name: 'sixty' },
@@ -792,10 +804,13 @@ describe('icon', () => {
             { componentName: IconCategoryGibdd, name: 'category-gibdd' },
             { componentName: IconCategoryTarifs, name: 'category-tarifs' },
             { componentName: IconFormat1c, name: 'format-1c' },
+            { componentName: IconFormatAdd, name: 'format-add' },
             { componentName: IconFormatAttach, name: 'format-attach' },
             { componentName: IconFormatCsv, name: 'format-csv' },
             { componentName: IconFormatDefault, name: 'format-default' },
+            { componentName: IconFormatDisabled, name: 'format-disabled' },
             { componentName: IconFormatDoc, name: 'format-doc' },
+            { componentName: IconFormatError, name: 'format-error' },
             { componentName: IconFormatJpg, name: 'format-jpg' },
             { componentName: IconFormatPdf, name: 'format-pdf' },
             { componentName: IconFormatPng, name: 'format-png' },
@@ -803,6 +818,7 @@ describe('icon', () => {
             { componentName: IconFormatRar, name: 'format-rar' },
             { componentName: IconFormatSketch, name: 'format-sketch' },
             { componentName: IconFormatSvg, name: 'format-svg' },
+            { componentName: IconFormatTif, name: 'format-tif' },
             { componentName: IconFormatTxt, name: 'format-txt' },
             { componentName: IconFormatUnknown, name: 'format-unknown' },
             { componentName: IconFormatWord, name: 'format-word' },

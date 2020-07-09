@@ -33,3 +33,7 @@
 .icon_size_xl.icon_name_format-pdf.icon_theme_alfa-on-color {
     background-image: url('./icon_format-pdf_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_format-pdf.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_format-pdf.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-pdf_xxl_color.svg');
+}

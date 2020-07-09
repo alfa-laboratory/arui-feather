@@ -15,7 +15,7 @@
     --filled-m-top-padding: 28px;
     --filled-height: 110px;
     --filled-s-min-height: 43px;
-    --filled-m-min-height: 56px;
+    --filled-m-min-height: 57px;
 }
 
 .textarea {
@@ -91,6 +91,22 @@
 
         &::placeholder {
             transition: opacity 0.2s ease-in-out;
+        }
+    }
+
+    /* TODO s/l/xl sizes */
+    &__icon {
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: var(--gap-xs);
+        width: 24px;
+        height: 24px;
+    }
+
+    &_has-icon {
+        .textarea__control {
+            padding-right: var(--gap-2xl);
         }
     }
 
@@ -276,7 +292,7 @@
     }
 }
 
-.textarea_view_filled {
+.textarea_view_filled.textarea_theme_alfa-on-white {
     &.textarea_size_s {
         .textarea__top {
             padding: 0 var(--gap-xs);
@@ -297,6 +313,15 @@
             padding-top: var(--gap-2xs);
             padding-right: var(--gap-xs);
             font-size: var(--font-size-xs);
+        }
+
+        .textarea__icon {
+            right: var(--gap-xs);
+            top: var(--gap-xs);
+        }
+
+        &.textarea_has-icon .textarea__control {
+            padding-right: var(--gap-2xl);
         }
 
         &.textarea_has-label {
@@ -354,6 +379,15 @@
             padding-top: var(--gap-2xs);
             padding-right: var(--gap-s);
             font-size: var(--font-size-s);
+        }
+
+        .textarea__icon {
+            right: var(--gap-s);
+            top: var(--gap-m);
+        }
+
+        &.textarea_has-icon .textarea__control {
+            padding-right: var(--gap-4xl);
         }
 
         &.textarea_has-label {

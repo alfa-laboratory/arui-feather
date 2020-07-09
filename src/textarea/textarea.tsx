@@ -11,7 +11,6 @@ import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
 export type TextareaProps = {
-
     /**
      * Дополнительный класс
      */
@@ -107,6 +106,11 @@ export type TextareaProps = {
      * Отображение ошибки
      */
     error?: React.ReactNode;
+
+    /**
+     * Иконка справа
+     */
+    icon?: React.ReactNode;
 
     /**
      * Размер компонента
@@ -232,6 +236,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
+                    'has-icon': !!this.props.icon
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -259,6 +264,14 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                                 />
                             )
                             : <textarea { ...textareaProps } />
+                    }
+                    {
+                        this.props.icon
+                        && (
+                            <span className={ this.cn('icon') }>
+                                { this.props.icon }
+                            </span>
+                        )
                     }
                     {
                         (this.props.error || this.props.hint)

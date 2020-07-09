@@ -33,3 +33,7 @@
 .icon_size_xl.icon_name_format-doc.icon_theme_alfa-on-color {
     background-image: url('./icon_format-doc_xl_white.svg');
 }
+
+.icon_size_xxl.icon_name_format-doc.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_format-doc.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_format-doc_xxl_color.svg');
+}

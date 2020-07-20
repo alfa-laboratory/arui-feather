@@ -185,6 +185,7 @@ import IconCardVisaElectron from './brand/card-visa-electron';
 import IconFifaTrophy from './brand/fifa-trophy';
 import IconForex from './brand/forex';
 import IconLogoAlfabank from './brand/logo-alfabank';
+import IconLogoAlfabankSquare from './brand/logo-alfabank-square';
 import IconMaestro from './brand/maestro';
 import IconMastercard from './brand/mastercard';
 import IconMir from './brand/mir';
@@ -659,6 +660,7 @@ describe('icon', () => {
             { componentName: IconFifaTrophy, name: 'fifa-trophy' },
             { componentName: IconForex, name: 'forex' },
             { componentName: IconLogoAlfabank, name: 'logo-alfabank' },
+            { componentName: IconLogoAlfabankSquare, name: 'logo-alfabank-square' },
             { componentName: IconMaestro, name: 'maestro' },
             { componentName: IconMastercard, name: 'mastercard' },
             { componentName: IconMir, name: 'mir' },

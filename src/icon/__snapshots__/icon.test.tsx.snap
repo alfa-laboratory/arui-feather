@@ -2790,6 +2790,12 @@ exports[`icon render undefined without problems 465`] = `
 </ContextConsumer>
 `;
 
+exports[`icon render undefined without problems 466`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`icon renders without problems 1`] = `
 <ContextConsumer>
   <Component />

@@ -3,11 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import { IsolatedContainer } from '../isolated-container/isolated-container';
-import { HtmlElement } from '../lib/prop-types';
+import { popupContextTypes } from '../popup/popup';
 
 export type PopupContainerProviderProps = {
     /**
@@ -91,11 +90,7 @@ class PopupContainerProvider extends
 
     private positioningContainer: HTMLElement;
 
-    static childContextTypes = {
-        isInCustomContainer: PropTypes.bool,
-        renderContainerElement: HtmlElement,
-        positioningContainerElement: HtmlElement,
-    };
+    static childContextTypes = popupContextTypes;
 
     getChildContext() {
         return {

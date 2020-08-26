@@ -69,7 +69,7 @@ export type MaskedInputProps = {
     /**
      * Обработчик, вызываемый перед началом ввода в поле
      */
-    onProcessInputEvent?: (event?: React.ChangeEvent<any>) => void;
+    onProcessInputEvent?: (event: React.ChangeEvent<any>) => void;
 
     /**
      * Признак что пробелы удалять не надо
@@ -89,17 +89,17 @@ export type MaskedInputProps = {
     /**
      * Обработчик события, вызываемый при событии 'change'
      */
-    onChange?: (event?: React.ChangeEvent<any>) => void;
+    onChange?: (event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик события, вызываемый при событии 'input'
      */
-    onInput?: (event?: React.ChangeEvent<any>) => void;
+    onInput?: (event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик события, вызываемый при событии 'beforeInput'
      */
-    onBeforeInput?: (event?: React.FormEvent<any>) => void;
+    onBeforeInput?: (event: React.FormEvent<any>) => void;
 };
 
 /**

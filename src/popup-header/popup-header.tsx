@@ -38,7 +38,7 @@ export type PopupHeaderProps = {
     /**
      * Обработчик клика по кнопке закрытия
      */
-    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+    onCloserClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

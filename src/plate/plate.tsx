@@ -68,32 +68,32 @@ export type PlateProps = {
     /**
      * Обработчик клика стрелке сворачивания\разворачивания плашки
      */
-    onFolderClick?: (event?: React.MouseEvent<any>) => void;
+    onFolderClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик клика на заголовке
      */
-    onTitleClick?: (event?: React.MouseEvent<any>) => void;
+    onTitleClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на заголовке компонента
      */
-    onTitleKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onTitleKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик клика по плашке
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик клика по крестику
      */
-    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+    onCloserClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

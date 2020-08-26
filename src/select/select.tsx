@@ -238,37 +238,37 @@ export type SelectProps = {
     /**
      * Обработчик фокуса на компоненте
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик потери фокуса компонентом
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик фокуса на кнопке
      */
-    onButtonFocus?: (event?: React.FocusEvent<any>) => void;
+    onButtonFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик потери у кнопки
      */
-    onButtonBlur?: (event?: React.FocusEvent<any>) => void;
+    onButtonBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик фокуса на меню
      */
-    onMenuFocus?: (event?: React.FocusEvent<any>) => void;
+    onMenuFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик потери фокуса у меню
      */
-    onMenuBlur?: (event?: React.FocusEvent<any>) => void;
+    onMenuBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик клика по кнопке компонента
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик клика вне компонента
@@ -278,12 +278,12 @@ export type SelectProps = {
     /**
      * Обработчик изменения значения
      */
-    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
+    onChange?: (value: any[], event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик нажатия на клавишу
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Кастомный метод рендера содержимого кнопки, принимает на вход: массив элементов типа CheckedOption

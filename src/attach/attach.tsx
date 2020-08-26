@@ -150,32 +150,32 @@ export type AttachProps = {
     /**
      * Обработчик клика по компоненту кнопки
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
+    onChange?: (value: any[], event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса компонента
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса компонента
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на кнопку
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с кнопки
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

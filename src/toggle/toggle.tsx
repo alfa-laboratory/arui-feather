@@ -65,17 +65,17 @@ export type ToggleProps = {
     /**
      * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
      */
-    onChange?: (isChecked?: boolean, value?: string) => void;
+    onChange?: (isChecked: boolean, value: string) => void;
 
     /**
      * Обработчик фокуса комнонента
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса компонента
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

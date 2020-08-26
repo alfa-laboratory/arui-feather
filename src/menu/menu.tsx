@@ -136,47 +136,47 @@ export type MenuProps = {
     /**
      * Обработчик клика по варианту меню
      */
-    onItemClick?: (item?: any, event?: React.ChangeEvent<any>) => void;
+    onItemClick?: (item: any, event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик выбора варианта меню
      */
-    onItemCheck?: (checkedItems?: any[], event?: React.ChangeEvent<any>) => void;
+    onItemCheck?: (checkedItems: any[], event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на меню
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с меню
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>, item?) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>, item: any) => void;
 
     /**
      * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyUp?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик фокуса
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события выделения элемента меню, принимает на вход переменную типа HighlightedItem
      */
-    onHighlightItem?: (highlightedItem?: any) => void;
+    onHighlightItem?: (highlightedItem: any) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

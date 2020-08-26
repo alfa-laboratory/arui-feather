@@ -187,67 +187,67 @@ export type InputAutocompleteProps = InputProps & {
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: string) => void;
+    onChange?: (value: string) => void;
 
     /**
      * Обработчик фокуса поля
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик клика по полю
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса с поля
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик клика по крестику сбрасываещему значение 'value'
      */
-    onClearClick?: (event?: React.MouseEvent<any>) => void;
+    onClearClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyUp?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события вставки текста в поле
      */
-    onPaste?: (event?: React.ClipboardEvent<any>) => void;
+    onPaste?: (event: React.ClipboardEvent<any>) => void;
 
     /**
      * Обработчик события касания по полю
      */
-    onTouchStart?: (event?: React.TouchEvent<any>) => void;
+    onTouchStart?: (event: React.TouchEvent<any>) => void;
 
     /**
      * Обработчик события прекращения касания по полю
      */
-    onTouchEnd?: (event?: React.TouchEvent<any>) => void;
+    onTouchEnd?: (event: React.TouchEvent<any>) => void;
 
     /**
      * Обработчик события перемещения при касании по полю
      */
-    onTouchMove?: (event?: React.TouchEvent<any>) => void;
+    onTouchMove?: (event: React.TouchEvent<any>) => void;
 
     /**
      * Обработчик события прерывания касания по полю
      */
-    onTouchCancel?: (event?: React.TouchEvent<any>) => void;
+    onTouchCancel?: (event: React.TouchEvent<any>) => void;
 
     /**
      * Обработчик, вызываемый перед началом ввода в маскированное поле
      */
-    onProcessMaskInputEvent?: (event?: React.ChangeEvent<any>) => void;
+    onProcessMaskInputEvent?: (event: React.ChangeEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -318,7 +318,7 @@ export type InputAutocompleteProps = InputProps & {
     /**
      * Обработчик выбора пункта в выпадающем меню
      */
-    onItemSelect?: (checkedItem?: any) => void;
+    onItemSelect?: (checkedItem: any) => void;
 
     /**
      * Закрытие выпадающего списка в случае, если произошел выбор элемента

@@ -89,27 +89,27 @@ export type RadioProps = ({
     /**
      * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
      */
-    onChange?: (value?: string, isChecked?: boolean, event?: React.ChangeEvent<any>) => void;
+    onChange?: (value: string, isChecked: boolean, event: React.ChangeEvent<any>) => void;
 
     /**
      * Обработчик фокуса комнонента
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса с компонента
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на радио-кнопку
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с радио-кнопки
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

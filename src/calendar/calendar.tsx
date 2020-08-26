@@ -140,22 +140,22 @@ export type CalendarProps = {
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyUp?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик фокуса
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

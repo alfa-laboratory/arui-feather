@@ -127,52 +127,52 @@ export type ButtonProps = {
     /**
      * Обработчик клика по кнопке
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик фокуса кнопки
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса кнопки
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на кнопку
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с кнопки
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия кнопки мыши в момент
      */
-    onMouseDown?: (event?: React.MouseEvent<any>) => void;
+    onMouseDown?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события отжатия кнопки мыши в момент
      */
-    onMouseUp?: (event?: React.MouseEvent<any>) => void;
+    onMouseUp?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события отведения курсора с кнопки
      */
-    onMouseOut?: (event?: React.MouseEvent<any>) => void;
+    onMouseOut?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyUp?: (event: React.KeyboardEvent<any>) => void;
 
 };
 

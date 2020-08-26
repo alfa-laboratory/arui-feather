@@ -130,37 +130,37 @@ export type TextareaProps = {
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: string) => void;
+    onChange?: (value: string) => void;
 
     /**
      * Обработчик фокуса поля
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса c поля
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события вставки текста в поле
      */
-    onPaste?: (event?: React.ClipboardEvent<any>) => void;
+    onPaste?: (event: React.ClipboardEvent<any>) => void;
 
     /**
      * Обработчик события изменения высоты компонента со значением параметра "autosize" = true
      */
-    onHeightChange?: (height?: number) => void;
+    onHeightChange?: (height: number) => void;
 
     /**
      * Обработчик события нажатия клавиши при фокусе на поле
      */
-    onKeyPress?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyPress?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события keyDown
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -236,7 +236,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    'has-icon': !!this.props.icon
+                    'has-icon': !!this.props.icon,
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -286,11 +286,11 @@ export class Textarea extends React.PureComponent<TextareaProps> {
         );
     }
 
-    private handleFocus = () => {
+    private handleFocus = (event) => {
         this.setState({ focused: true });
 
         if (this.props.onFocus) {
-            this.props.onFocus();
+            this.props.onFocus(event);
         }
     };
 

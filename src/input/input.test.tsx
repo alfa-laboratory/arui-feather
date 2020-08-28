@@ -4,14 +4,12 @@
 
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-
-import { Input } from './input';
-import MaskedInput from '../masked-input';
+import { mount, shallow } from 'enzyme';
+import React, { MutableRefObject } from 'react';
 import IconSearch from '../icon/action/search';
-
+import MaskedInput from '../masked-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
+import { Input } from './input';
 
 describe('input', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -518,4 +516,24 @@ describe('input', () => {
             expect((input.instance() as any).resetError).toHaveBeenCalled();
         },
     );
+
+    it('should work with ref', () => {
+        const ref: MutableRefObject<HTMLInputElement> = { current: undefined };
+        const input = mount<Input>(<Input inputRef={ ref } />);
+
+        expect(ref.current).not.toBeUndefined();
+        expect(input.instance().getControl()).toEqual(ref.current);
+    });
+
+
+    it('should work with ref function', () => {
+        const ref: MutableRefObject<HTMLInputElement> = { current: undefined };
+        const refFunction = (componentRef: HTMLInputElement) => {
+            ref.current = componentRef;
+        };
+        const input = mount<Input>(<Input inputRef={ refFunction } />);
+
+        expect(ref.current).not.toBeUndefined();
+        expect(input.instance().getControl()).toEqual(ref.current);
+    });
 });

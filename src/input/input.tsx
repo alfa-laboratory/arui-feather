@@ -15,6 +15,7 @@ import MaskedInput from '../masked-input/masked-input';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
+import { setRef } from '../lib/set-ref';
 
 export type InputProps = {
 
@@ -181,6 +182,11 @@ export type InputProps = {
      * Тултип, который появляется при наведении
      */
     title?: string;
+
+    /**
+     * Проброс ref для `input` элемента.
+     */
+    inputRef?: React.Ref<HTMLInputElement>;
 
     /**
      * Обработчик изменения значения 'value'
@@ -374,6 +380,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
             placeholder: this.props.placeholder,
             pattern: this.props.pattern,
             ref: (control) => {
+                setRef(this.props.inputRef, control);
                 this.control = control;
             },
             title: this.props.title,

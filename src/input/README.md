@@ -372,6 +372,23 @@ initialState = {
 </div>
 ```
 
+Для корректной работы форм, например, Formik или react-hook-forms, используется inputRef свойство:
+```txt
+export default function App() {
+    const ref = useRef();
+
+    useEffect(() => {
+        setTimeout(() => {
+            ref.current.value = "Tada!!!";
+        }, 3000);
+    });
+
+    return (
+        <Input name="firstname" inputRef={ref} />
+    );
+}
+```
+
 С произвольной иконкой
 ```jsx
 import IconOk from 'arui-feather/icon/ui/ok';

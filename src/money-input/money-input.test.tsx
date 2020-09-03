@@ -100,7 +100,7 @@ describe('money-input', () => {
         expect(moneyInput.find('input').prop('value')).toBe('1 234,56');
     });
 
-    it('should stay caret before comma', async (done) => {
+    it('should stay caret before comma', (done) => {
         const moneyInput = mount<MoneyInput>(<MoneyInput value="12,34" />);
         const inputNode = moneyInput.find('input');
 
@@ -110,14 +110,10 @@ describe('money-input', () => {
         inputNode.simulate('beforeInput');
         inputNode.simulate('input', { target: { value: '123,34' } });
 
-        await new Promise((resolve) => {
-            requestAnimationFrame(() => {
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(3);
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(3);
-                done();
-            });
-
-            resolve();
+        requestAnimationFrame(() => {
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(3);
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(3);
+            done();
         });
     });
 

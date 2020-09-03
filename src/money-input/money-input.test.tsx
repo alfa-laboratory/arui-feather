@@ -100,24 +100,25 @@ describe('money-input', () => {
         expect(moneyInput.find('input').prop('value')).toBe('1 234,56');
     });
 
-    it('should stay caret before comma', (done) => {
+    it('should stay caret before comma', async (done) => {
         const moneyInput = mount<MoneyInput>(<MoneyInput value="12,34" />);
         const inputNode = moneyInput.find('input');
 
-        setTimeout(() => {
-            jest.useFakeTimers();
+        inputNode.getDOMNode<HTMLInputElement>().selectionStart = 3;
+        inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 3;
 
-            inputNode.getDOMNode<HTMLInputElement>().selectionStart = 3;
-            inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 3;
+        inputNode.simulate('beforeInput');
+        inputNode.simulate('input', { target: { value: '123,34' } });
 
-            inputNode.simulate('beforeInput');
-            inputNode.simulate('input', { target: { value: '123,34' } });
-            jest.runAllTimers();
+        await new Promise((resolve) => {
+            requestAnimationFrame(() => {
+                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(3);
+                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(3);
+                done();
+            });
 
-            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(3);
-            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(3);
-            done();
-        }, 0);
+            resolve();
+        });
     });
 
     it('should use placeholder as currency spacer if value is empty', () => {

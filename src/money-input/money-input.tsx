@@ -190,13 +190,13 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         // При добавлении/изменении через selection последней цифры целой части каретка должна
         // оставаться перед запятой
         if (newValue.length >= currentValue.length && newValue[currentSelection] === ',') {
-            setTimeout((() => {
+            window.requestAnimationFrame(() => {
                 // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
                 const offsetSection = IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
                 const newSelectionStart = this.root.control.input.selectionStart - 1;
 
                 this.setInputSelection(newSelectionStart + offsetSection);
-            }), 0);
+            });
         }
     };
 

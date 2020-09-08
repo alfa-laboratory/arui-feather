@@ -37,10 +37,6 @@
         border: 0;
     }
 
-    & + & {
-        margin-left: var(--gap-s);
-    }
-
     &__addon {
         flex: 0 0 auto;
 

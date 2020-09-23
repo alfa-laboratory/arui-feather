@@ -7,6 +7,8 @@ on:
 
 jobs:
   tests:
+    env:
+      CI: true
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -25,32 +27,28 @@ jobs:
           npm cache clean --force
           rm -rf ~/.npm node_modules
           npm i
-        env:
-          CI: true
 
       - name: Lint's checks
         if: ${{ matrix.test-scope == 'lint' }}
         run: |
           npm run lint
+
+      - name: Publish to styleguide
+        if: ${{ matrix.test-scope == 'lint' }}
+        run: |
           sh ${{ github.workspace }}/tools/publish-styleguide.sh
-        env:
-          CI: true
 
       - name: Run tests
         if: ${{ matrix.test-scope == 'unit' }}
         run: |
           npm run test:coverage
           npm run compile
-        env:
-          CI: true
 
       - name: Coveralls
         if: ${{ matrix.test-scope == 'unit' }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
-        env:
-          CI: true
 
       - name: Run gemini
         if: ${{ matrix.test-scope == 'gemini' }}
@@ -58,7 +56,6 @@ jobs:
           npm run sauce-connect
           npm run gemini-ci
         env:
-          CI: true
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
@@ -66,5 +63,3 @@ jobs:
         if: ${{ matrix.test-scope == 'gemini' && failure() }}
         run: |
           sh ${{ github.workspace }}/tools/publish-gemini-report.sh
-        env:
-          CI: true

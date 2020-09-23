@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+import Type from 'prop-types';
 import { createCn } from 'bem-react-classname';
 
 import { IsolatedContainer } from '../isolated-container/isolated-container';
@@ -79,6 +80,12 @@ type PopupContainerProviderState = {
  */
 class PopupContainerProvider extends
     React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
+    static childContextTypes = {
+        isInCustomContainer: Type.bool,
+        renderContainerElement: Type.shape({}),
+        positioningContainerElement: Type.shape({}),
+    };
+
     protected cn = createCn('popup-container');
 
     state = {

@@ -12,7 +12,6 @@ fi
 
 SAUCE_TMP_DIR="$(mktemp -d -t sc.XXXX)"
 echo "Using temp dir $SAUCE_TMP_DIR"
-# pushd $SAUCE_TMP_DIR
 
 SAUCE_CONNECT_PLATFORM=$(uname | sed -e 's/Darwin/osx/' -e 's/Linux/linux/')
 case "${SAUCE_CONNECT_PLATFORM}" in
@@ -58,5 +57,3 @@ while [ ! -f ${SC_READYFILE} ]; do
 done
 
 unset SAUCE_CONNECT_PLATFORM SAUCE_TMP_DIR SC_DIR SC_DISTRIBUTION SC_READYFILE SC_LOGFILE SC_TUNNEL_ID
-
-# popd

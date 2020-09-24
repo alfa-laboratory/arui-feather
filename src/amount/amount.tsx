@@ -141,7 +141,9 @@ export class Amount extends React.Component<AmountProps> {
         if (needMinorPart) {
             return (
                 <React.Fragment>
-                    <span className={ this.cn('separator') }>{ AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR }</span>
+                    <span className={ this.cn('separator') }>
+                        { AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR }
+                    </span>
                     <span className={ this.cn('minor') }>{ minorPart }</span>
                 </React.Fragment>
             );

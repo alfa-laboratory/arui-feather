@@ -79,12 +79,15 @@
         .radio__box {
             width: var(--size-m-box);
             height: var(--size-m-box);
-            margin-right: var(--gap-xs);
 
             &:after {
                 width: var(--size-m-box);
                 height: var(--size-m-box);
             }
+        }
+
+        .radio__text {
+            margin-left: var(--gap-xs);
         }
 
         &.radio_checked .radio__box {
@@ -101,12 +104,15 @@
         .radio__box {
             width: var(--size-l-box);
             height: var(--size-l-box);
-            margin-right: var(--gap-s);
 
             &:after {
                 width: var(--size-l-box);
                 height: var(--size-l-box);
             }
+        }
+
+        .radio__text {
+            margin-left: var(--gap-s);
         }
 
         &.radio_checked .radio__box {

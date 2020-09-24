@@ -1,3 +1,13 @@
+<a name="18.1.0"></a>
+# [18.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.0.0...v18.1.0) (2020-08-07)
+
+
+### Bug Fixes
+
+* **radio:** replace margin-right from box to text margin-left ([#1188](https://github.com/alfa-laboratory/arui-feather/issues/1188)) ([59230de](https://github.com/alfa-laboratory/arui-feather/commit/59230de))
+
+
+
 <a name="18.0.0"></a>
 # [18.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v17.11.0...v18.0.0) (2020-07-09)
 

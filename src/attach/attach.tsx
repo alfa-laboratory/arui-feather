@@ -50,7 +50,7 @@ function getDeclension(number: number, endingList: string[]): string {
  * @param array1 Первый массив
  * @param array2 Второй массив
  */
-function isEqualArray(array1: any[], array2: any[]): boolean {
+function isEqualArray(array1: unknown[], array2: unknown[]): boolean {
     if (array1 === array2) {
         return true;
     }
@@ -61,7 +61,7 @@ function isEqualArray(array1: any[], array2: any[]): boolean {
         && array1.every((item, index) => item === array2[index]);
 }
 
-function isEmptyArray(value: any) {
+function isEmptyArray(value: unknown) {
     return Array.isArray(value) && !value.length;
 }
 
@@ -70,7 +70,7 @@ export type AttachProps = {
     /**
      * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
      */
-    value?: any[];
+    value?: File[];
 
     /**
      * Уникальное имя блока
@@ -150,32 +150,32 @@ export type AttachProps = {
     /**
      * Обработчик клика по компоненту кнопки
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event?: React.MouseEvent<unknown>) => void;
 
     /**
      * Обработчик изменения значения 'value'
      */
-    onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
+    onChange?: (value?: unknown[], event?: React.ChangeEvent<unknown>) => void;
 
     /**
      * Обработчик фокуса компонента
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event?: React.FocusEvent<unknown>) => void;
 
     /**
      * Обработчик снятия фокуса компонента
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event?: React.FocusEvent<unknown>) => void;
 
     /**
      * Обработчик события наведения курсора на кнопку
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event?: React.MouseEvent<unknown>) => void;
 
     /**
      * Обработчик события снятия курсора с кнопки
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event?: React.MouseEvent<unknown>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -187,7 +187,7 @@ export type AttachProps = {
 type AttachState = {
     focused: boolean;
     hovered: boolean;
-    value: any[];
+    value: File[];
 };
 
 /**
@@ -218,7 +218,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
 
         if (
             !isEmptyArray(nextValue)
-            && !isEqualArray(nextValue as any[], prevState.value)
+            && !isEqualArray(nextValue as unknown[], prevState.value)
         ) {
             return {
                 value: nextValue,
@@ -231,7 +231,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
     componentDidUpdate(_: AttachProps, prevState: AttachState) {
         const nextValue = this.props.value || [];
 
-        if (!isEqualArray(nextValue as any[], prevState.value)) {
+        if (!isEqualArray(nextValue as unknown[], prevState.value)) {
             this.input.value = '';
         }
     }

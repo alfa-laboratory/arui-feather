@@ -161,7 +161,8 @@ describe('attach', () => {
         controlNode.simulate('change', {
             target: {
                 files: [{
-                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt', type: 'application/text',
+                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt',
+                    type: 'application/text',
                 }],
             },
         });

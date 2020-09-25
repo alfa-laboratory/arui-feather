@@ -1,3 +1,24 @@
+<a name="18.2.0"></a>
+# [18.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.1.0...v18.2.0) (2020-09-25)
+
+
+### Bug Fixes
+
+* caret position after change with selection ([46eb0a9](https://github.com/alfa-laboratory/arui-feather/commit/46eb0a9))
+* **sauce-connect:** deleted some commands ([7c5e314](https://github.com/alfa-laboratory/arui-feather/commit/7c5e314))
+* **tests:** adds flag for matrices ([#1210](https://github.com/alfa-laboratory/arui-feather/issues/1210)) ([4f950e8](https://github.com/alfa-laboratory/arui-feather/commit/4f950e8))
+* **tests:** replased CI env and split step for lint's check ([e63c166](https://github.com/alfa-laboratory/arui-feather/commit/e63c166))
+
+
+### Features
+
+* deleted old plans and adds new one for github actions ([68f4db5](https://github.com/alfa-laboratory/arui-feather/commit/68f4db5))
+* remove childContextTypes warning ([8496742](https://github.com/alfa-laboratory/arui-feather/commit/8496742))
+* **ui:** add input ref props ([c2253c8](https://github.com/alfa-laboratory/arui-feather/commit/c2253c8))
+* **ui:** add markdown text ([f78d9ec](https://github.com/alfa-laboratory/arui-feather/commit/f78d9ec))
+
+
+
 <a name="18.1.0"></a>
 # [18.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.0.0...v18.1.0) (2020-08-07)
 

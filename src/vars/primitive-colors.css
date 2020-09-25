@@ -49,14 +49,14 @@
     --color-sand: #f6bf65;
     --color-lavender: #8888ad;
     --color-amethyst: #a489aa;
-    --color-black: #000000;
+    --color-black: #000;
     --color-black-60: rgba(0, 0, 0, 0.6);
     --color-black-30: rgba(0, 0, 0, 0.3);
     --color-black-10: rgba(0, 0, 0, 0.1);
-    --color-black-60-flat: #666666;
+    --color-black-60-flat: #666;
     --color-black-30-flat: #b3b3b3;
     --color-black-10-flat: #e6e6e6;
-    --color-white: #ffffff;
+    --color-white: #fff;
     --color-white-60: rgba(255, 255, 255, 0.6);
     --color-white-30: rgba(255, 255, 255, 0.3);
     --color-white-10: rgba(255, 255, 255, 0.1);

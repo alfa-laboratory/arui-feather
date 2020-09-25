@@ -1,0 +1,66 @@
+name: Run all tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        test-scope: [lint, unit, gemini]
+        node-version: [12.14.1]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get nodejs version for test
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: |
+          npm cache clean --force
+          rm -rf ~/.npm node_modules
+          npm i
+
+      - name: Lint's checks
+        if: ${{ matrix.test-scope == 'lint' }}
+        run: |
+          npm run lint
+
+      - name: Publish to styleguide
+        if: ${{ matrix.test-scope == 'lint' }}
+        run: |
+          sh ${{ github.workspace }}/tools/publish-styleguide.sh
+
+      - name: Run tests
+        if: ${{ matrix.test-scope == 'unit' }}
+        run: |
+          npm run test:coverage
+          npm run compile
+
+      - name: Coveralls
+        if: ${{ matrix.test-scope == 'unit' }}
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+
+      - name: Run gemini
+        if: ${{ matrix.test-scope == 'gemini' }}
+        run: |
+          npm run sauce-connect
+          npm run gemini-ci
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+      - name: Send gemini's error log
+        if: ${{ matrix.test-scope == 'gemini' && failure() }}
+        run: |
+          sh ${{ github.workspace }}/tools/publish-gemini-report.sh

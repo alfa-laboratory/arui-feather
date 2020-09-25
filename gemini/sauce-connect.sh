@@ -12,7 +12,6 @@ fi
 
 SAUCE_TMP_DIR="$(mktemp -d -t sc.XXXX)"
 echo "Using temp dir $SAUCE_TMP_DIR"
-pushd $SAUCE_TMP_DIR
 
 SAUCE_CONNECT_PLATFORM=$(uname | sed -e 's/Darwin/osx/' -e 's/Linux/linux/')
 case "${SAUCE_CONNECT_PLATFORM}" in
@@ -32,7 +31,7 @@ fi
 echo "Downloading Sauce Connect"
 wget http://saucelabs.com/downloads/${SC_DISTRIBUTION}
 SC_ACTUAL_SHASUM="$(openssl sha1 ${SC_DISTRIBUTION} | cut -d' ' -f2)"
-if [[ "$SC_ACTUAL_SHASUM" != "$SC_DISTRIBUTION_SHASUM" ]]; then
+if [ "$SC_ACTUAL_SHASUM" != "$SC_DISTRIBUTION_SHASUM" ]; then
     echo "SHA1 sum of Sauce Connect file didn't match!"
     exit 1
 fi
@@ -58,5 +57,3 @@ while [ ! -f ${SC_READYFILE} ]; do
 done
 
 unset SAUCE_CONNECT_PLATFORM SAUCE_TMP_DIR SC_DIR SC_DISTRIBUTION SC_READYFILE SC_LOGFILE SC_TUNNEL_ID
-
-popd

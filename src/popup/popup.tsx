@@ -6,7 +6,7 @@
 
 import debounce from 'lodash.debounce';
 import React from 'react';
-import Type from 'prop-types';
+import Type, { ValidationMap } from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
 import { withTheme } from '../cn';
@@ -179,6 +179,12 @@ type PopupState = {
     needRedrawAfterMount: boolean;
 };
 
+export const popupContextTypes: ValidationMap<unknown> = {
+    isInCustomContainer: Type.bool,
+    renderContainerElement: HtmlElement,
+    positioningContainerElement: HtmlElement,
+};
+
 /**
  * Компонент popup'а.
  */
@@ -195,12 +201,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         size: 's',
     };
 
-    // TODO: не типизировал, сделаем потом
-    static contextTypes: any = {
-        isInCustomContainer: Type.bool,
-        renderContainerElement: HtmlElement,
-        positioningContainerElement: HtmlElement,
-    };
+    static contextTypes = popupContextTypes;
 
     state = {
         direction: null,

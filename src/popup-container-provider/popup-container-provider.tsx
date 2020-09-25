@@ -6,6 +6,7 @@ import React from 'react';
 import { createCn } from 'bem-react-classname';
 
 import { IsolatedContainer } from '../isolated-container/isolated-container';
+import { popupContextTypes } from '../popup/popup';
 
 export type PopupContainerProviderProps = {
     /**
@@ -88,6 +89,8 @@ class PopupContainerProvider extends
     private renderContainer: IsolatedContainer;
 
     private positioningContainer: HTMLElement;
+
+    static childContextTypes = popupContextTypes;
 
     getChildContext() {
         return {

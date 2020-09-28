@@ -1,3 +1,13 @@
+<a name="18.2.1"></a>
+## [18.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.0...v18.2.1) (2020-09-28)
+
+
+### Bug Fixes
+
+* **input:** input wrapper take all remaining from addons space ([0f32ee6](https://github.com/alfa-laboratory/arui-feather/commit/0f32ee6)), closes [#1211](https://github.com/alfa-laboratory/arui-feather/issues/1211)
+
+
+
 <a name="18.2.0"></a>
 # [18.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.1.0...v18.2.0) (2020-09-25)
 

@@ -952,12 +952,11 @@ describe('icon', () => {
             { componentName: IconBankNsipf1000, name: 'bank-nsipf-1000' },
         ];
 
-        return icons.map((icon, index) => (
+        return icons.map((icon, index) =>
             it(`render ${icon.componentName.name} without problems`, () => {
                 const CurrentComponent = icons[index].componentName;
                 const renderedIcon = shallow(<CurrentComponent />);
                 expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
-            })
-        ));
+            }));
     })();
 });

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './manager.css';
+
 import '../..';
 
-export * from './manager';
 export { default } from './manager';

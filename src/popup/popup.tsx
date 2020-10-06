@@ -4,18 +4,23 @@
 
 /* eslint-disable max-len */
 
-import debounce from 'lodash.debounce';
 import React from 'react';
-import Type, { ValidationMap } from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
-import { ResizeSensor } from '../resize-sensor/resize-sensor';
+import debounce from 'lodash.debounce';
+import Type, { ValidationMap } from 'prop-types';
 
-import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
+import { withTheme } from '../cn';
 import { HtmlElement } from '../lib/prop-types';
 import { isNodeOutsideElement } from '../lib/window';
 import performance from '../performance';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
+
+import {
+    calcBestDrawingParams,
+    calcFitContainerDimensions,
+    calcTargetDimensions,
+} from './calc-drawing-params';
 
 // TODO: решить че с этим делать потому что вроде как отдельная структура не нужна
 /**
@@ -48,10 +53,22 @@ import performance from '../performance';
  * @property {HTMLElement} targetAnchor Объект элемента, к которому привязан попап, в DOM дереве
  */
 
-export type PopupDirectionsFieldType = 'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+export type PopupDirectionsFieldType =
+    | 'anchor'
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'left-top'
+    | 'left-center'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-center'
+    | 'right-bottom'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right';
 
 export type PopupProps = {
-
     /**
      * Дополнительный класс
      */
@@ -255,9 +272,9 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
         if (
-            this.context.isInCustomContainer
-            && this.context.renderContainerElement
-            && this.context.positioningContainerElement
+            this.context.isInCustomContainer &&
+            this.context.renderContainerElement &&
+            this.context.positioningContainerElement
         ) {
             this.setState({
                 receivedContainer: true,
@@ -293,9 +310,9 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         if (
-            !this.state.receivedContainer
-            && nextContext.renderContainerElement
-            && nextContext.positioningContainerElement
+            !this.state.receivedContainer &&
+            nextContext.renderContainerElement &&
+            nextContext.positioningContainerElement
         ) {
             this.setState(
                 {
@@ -349,7 +366,10 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 data-for={ this.props.for }
                 className={ this.cn({
                     direction: this.state.direction,
-                    type: this.props.target === 'anchor' && this.props.type === 'tooltip' && this.props.type,
+                    type:
+                        this.props.target === 'anchor' &&
+                        this.props.type === 'tooltip' &&
+                        this.props.type,
                     target: this.props.target,
                     size: this.props.size,
                     visible: this.props.visible,
@@ -369,7 +389,9 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ this.cn('container') }>
-                    { this.props.header && <div className={ this.cn('header') }>{ this.props.header }</div> }
+                    { this.props.header && (
+                        <div className={ this.cn('header') }>{ this.props.header }</div>
+                    ) }
                     <div
                         ref={ (inner) => {
                             this.inner = inner;
@@ -389,7 +411,10 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                     </div>
                     { this.state.hasScrollbar && (
                         <div>
-                            <div className={ this.cn('gradient', { top: true }) } style={ this.state.topGradientStyles } />
+                            <div
+                                className={ this.cn('gradient', { top: true }) }
+                                style={ this.state.topGradientStyles }
+                            />
                             <div
                                 className={ this.cn('gradient', { bottom: true }) }
                                 style={ this.state.bottomGradientStyles }
@@ -452,7 +477,11 @@ export class Popup extends React.Component<PopupProps, PopupState> {
     };
 
     private handleWindowClick = (event) => {
-        if (this.props.onClickOutside && !!this.domElemPopup && isNodeOutsideElement(event.target, this.domElemPopup)) {
+        if (
+            this.props.onClickOutside &&
+            !!this.domElemPopup &&
+            isNodeOutsideElement(event.target, this.domElemPopup)
+        ) {
             this.props.onClickOutside(event);
         }
     };
@@ -537,9 +566,9 @@ export class Popup extends React.Component<PopupProps, PopupState> {
      */
     isPropsToPositionCorrect(): boolean {
         return (
-            (this.props.target === 'anchor' && this.anchor)
-            || (this.props.target === 'position' && this.position)
-            || this.props.target === 'screen'
+            (this.props.target === 'anchor' && this.anchor) ||
+            (this.props.target === 'position' && this.position) ||
+            this.props.target === 'screen'
         );
     }
 
@@ -577,27 +606,27 @@ export class Popup extends React.Component<PopupProps, PopupState> {
         let bestDrawingParams;
 
         switch (this.props.target) {
-        case 'position':
-            bestDrawingParams = { top: this.position.top, left: this.position.left };
-            break;
+            case 'position':
+                bestDrawingParams = { top: this.position.top, left: this.position.left };
+                break;
 
-        case 'screen':
-            bestDrawingParams = {
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                overflow: this.inner.scrollHeight > this.inner.clientHeight,
-            };
-            break;
+            case 'screen':
+                bestDrawingParams = {
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    overflow: this.inner.scrollHeight > this.inner.clientHeight,
+                };
+                break;
 
-        case 'anchor':
-            bestDrawingParams = calcBestDrawingParams(
-                popupHash,
-                calcTargetDimensions(popupHash),
-                calcFitContainerDimensions(popupHash),
-            );
-            break;
+            case 'anchor':
+                bestDrawingParams = calcBestDrawingParams(
+                    popupHash,
+                    calcTargetDimensions(popupHash),
+                    calcFitContainerDimensions(popupHash),
+                );
+                break;
         }
 
         this.setState({

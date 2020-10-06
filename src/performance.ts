@@ -5,7 +5,7 @@
 import { isValidElement } from 'react';
 
 interface ClassDecorator {
-    <TFunction extends Function>(target: TFunction): TFunction | void;
+    <TFunction extends Function>(target: TFunction): TFunction | void; // eslint-disable-line @typescript-eslint/ban-types
 }
 
 const { hasOwnProperty } = Object.prototype;
@@ -15,10 +15,10 @@ const { hasOwnProperty } = Object.prototype;
  *
  * @param {*} valueA Первое значение
  * @param {*} valueB Второе значение
- * @param {Boolean} [deep=false] Запускать ли глубокую проверку равенства
+ * @param {Boolean} [shouldUseDeepCompare=false] Запускать ли глубокую проверку равенства
  * @returns {Boolean}
  */
-export function isEqual(valueA: unknown, valueB: unknown, deep = false): boolean {
+export function isEqual(valueA: unknown, valueB: unknown, shouldUseDeepCompare = false): boolean {
     if (Object.is(valueA, valueB)) {
         return true;
     }
@@ -51,7 +51,7 @@ export function isEqual(valueA: unknown, valueB: unknown, deep = false): boolean
         const b = valueB[key];
 
         if (!Object.is(a, b)) {
-            if (!deep || !isObject(a) || !isObject(b)) {
+            if (!shouldUseDeepCompare || !isObject(a) || !isObject(b)) {
                 return false;
             }
 
@@ -61,7 +61,7 @@ export function isEqual(valueA: unknown, valueB: unknown, deep = false): boolean
                 return false;
             }
 
-            if (!isEqual(a, b, deep)) {
+            if (!isEqual(a, b, shouldUseDeepCompare)) {
                 return false;
             }
         }
@@ -69,7 +69,7 @@ export function isEqual(valueA: unknown, valueB: unknown, deep = false): boolean
 
     return true;
 
-    function isObject(value: unknown): value is {} {
+    function isObject(value: unknown): value is Record<string, unknown> {
         return typeof value === 'object' && value !== null;
     }
 }
@@ -82,10 +82,16 @@ export function isEqual(valueA: unknown, valueB: unknown, deep = false): boolean
  * @param {*} nextContext next component context
  * @returns {Boolean}
  */
-function shallow<P, S>(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: unknown): boolean {
-    return !isEqual(this.props, nextProps)
-        || !isEqual(this.state, nextState)
-        || !isEqual(this.context, nextContext);
+function shallow<P, S>(
+    nextProps: Readonly<P>,
+    nextState: Readonly<S>,
+    nextContext: unknown,
+): boolean {
+    return (
+        !isEqual(this.props, nextProps) ||
+        !isEqual(this.state, nextState) ||
+        !isEqual(this.context, nextContext)
+    );
 }
 
 /**
@@ -98,9 +104,11 @@ function shallow<P, S>(nextProps: Readonly<P>, nextState: Readonly<S>, nextConte
  * @returns {Boolean}
  */
 function deep<P, S>(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: unknown): boolean {
-    return !isEqual(this.props, nextProps, true)
-        || !isEqual(this.state, nextState, true)
-        || !isEqual(this.context, nextContext, true);
+    return (
+        !isEqual(this.props, nextProps, true) ||
+        !isEqual(this.state, nextState, true) ||
+        !isEqual(this.context, nextContext, true)
+    );
 }
 
 /**
@@ -119,10 +127,11 @@ function deep<P, S>(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext:
  */
 export default function performance(useDeep = false): ClassDecorator {
     if (!useDeep) {
+        // eslint-disable-next-line no-console
         console.warn('arui-feather/performance is deprecated.');
     }
 
-    return function (target) {
+    return (target) => {
         // eslint-disable-next-line no-param-reassign
         target.prototype.shouldComponentUpdate = useDeep ? deep : shallow;
     };

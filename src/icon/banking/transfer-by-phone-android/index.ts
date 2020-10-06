@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-by-phone-android.css';
+
 import '../..';
 
-export * from './transfer-by-phone-android';
 export { default } from './transfer-by-phone-android';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-raiffeisen.css';
+
 import '../..';
 
-export * from './bank-raiffeisen';
 export { default } from './bank-raiffeisen';

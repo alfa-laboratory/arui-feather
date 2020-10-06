@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './tick.css';
+
 import '../..';
 
-export * from './tick';
 export { default } from './tick';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './currency-usd.css';
+
 import '../..';
 
-export * from './currency-usd';
 export { default } from './currency-usd';

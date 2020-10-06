@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './sent-done.css';
+
 import '../..';
 
-export * from './sent-done';
 export { default } from './sent-done';

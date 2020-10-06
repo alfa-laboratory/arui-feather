@@ -3,8 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
-import { LinkProps, Link } from '../link/link';
+import { Link, LinkProps } from '../link/link';
 
 /**
  * Компонент таба. Как правило, используется совместно с `Tabs`.

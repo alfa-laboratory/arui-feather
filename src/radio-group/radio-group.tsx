@@ -2,14 +2,14 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import createFragment from 'react-addons-create-fragment';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 import { Radio } from '../radio/radio';
 
 export type RadioGroupProps = {
-
     /**
      * Тип группы кнопок
      */
@@ -137,12 +137,19 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
             React.Children.forEach(children, (radio, index) => {
                 if (React.isValidElement(radio)) {
                     radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
-                        ref: (radio) => this.radios.push(radio),
-                        error: radio.props.error === undefined ? Boolean(this.props.error) : radio.props.error,
-                        checked: (
-                            radio.props.checked === undefined ? (value === radio.props.value) : radio.props.checked
-                        ),
-                        onChange: radio.props.onChange === undefined ? this.handleRadioChange : radio.props.onChange,
+                        ref: (radioElement) => this.radios.push(radioElement),
+                        error:
+                            radio.props.error === undefined
+                                ? Boolean(this.props.error)
+                                : radio.props.error,
+                        checked:
+                            radio.props.checked === undefined
+                                ? value === radio.props.value
+                                : radio.props.checked,
+                        onChange:
+                            radio.props.onChange === undefined
+                                ? this.handleRadioChange
+                                : radio.props.onChange,
                         ...props,
                     });
                 }
@@ -151,14 +158,12 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
 
         return (
             <div
-                className={
-                    `${this.cn({
-                        type: this.props.type,
-                        invalid: !!this.props.error,
-                        size,
-                        ...props,
-                    })} control-group${this.props.error ? ' control-group_invalid' : ''}`
-                }
+                className={ `${this.cn({
+                    type: this.props.type,
+                    invalid: !!this.props.error,
+                    size,
+                    ...props,
+                })} control-group${this.props.error ? ' control-group_invalid' : ''}` }
                 role="group"
                 tabIndex={ -1 }
                 onFocus={ this.handleFocus }
@@ -166,21 +171,13 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ this.cn('inner') }>
-                    {
-                        !!this.props.label
-                        && <div className={ this.cn('top') }>{ this.props.label }</div>
-                    }
-                    <div className={ this.cn('box') }>
-                        { createFragment(radioGroupParts) }
-                    </div>
-                    {
-                        (this.props.error || this.props.hint)
-                        && (
-                            <span className={ this.cn('sub') }>
-                                { this.props.error || this.props.hint }
-                            </span>
-                        )
-                    }
+                    { !!this.props.label && <div className={ this.cn('top') }>{ this.props.label }</div> }
+                    <div className={ this.cn('box') }>{ createFragment(radioGroupParts) }</div>
+                    { (this.props.error || this.props.hint) && (
+                        <span className={ this.cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    ) }
                 </div>
             </div>
         );

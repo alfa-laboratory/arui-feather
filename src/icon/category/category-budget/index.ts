@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-budget.css';
+
 import '../..';
 
-export * from './category-budget';
 export { default } from './category-budget';

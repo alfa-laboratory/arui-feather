@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
 import Link from '../link/link';
@@ -87,11 +87,16 @@ export class Collapse extends React.PureComponent<CollapseProps> {
 
     render() {
         let ToggledIcon;
-        const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
+        const expanded =
+            this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         switch (expanded) {
-        case true: ToggledIcon = IconArrowUp; break;
-        case false: ToggledIcon = IconArrowDown; break;
+            case true:
+                ToggledIcon = IconArrowUp;
+                break;
+            case false:
+                ToggledIcon = IconArrowDown;
+                break;
         }
 
         return (
@@ -108,9 +113,10 @@ export class Collapse extends React.PureComponent<CollapseProps> {
                     } }
                     className={ this.cn('content') }
                 >
-                    <div ref={ (contentCase) => {
-                        this.contentCase = contentCase;
-                    } }
+                    <div
+                        ref={ (contentCase) => {
+                            this.contentCase = contentCase;
+                        } }
                     >
                         { this.props.children }
                     </div>
@@ -119,25 +125,20 @@ export class Collapse extends React.PureComponent<CollapseProps> {
                 <Link
                     className={ this.cn('link') }
                     pseudo={ true }
-                    icon={
-                        <ToggledIcon size="s" />
-                    }
+                    icon={ <ToggledIcon size="s" /> }
                     iconPosition="right"
                     onClick={ this.handleExpandedChange }
-                    text={
-                        expanded
-                            ? this.props.expandedLabel
-                            : this.props.collapsedLabel
-                    }
+                    text={ expanded ? this.props.expandedLabel : this.props.collapsedLabel }
                 />
             </div>
         );
     }
 
     private handleExpandedChange = () => {
-        // eslint-disable-next-line react/no-access-state-in-setstate
-        const newExpandedValue = this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
-
+        /* eslint-disable react/no-access-state-in-setstate */
+        const newExpandedValue =
+            this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
+        /* eslint-enable react/no-access-state-in-setstate */
         this.setState({
             isExpanded: newExpandedValue,
         });
@@ -148,7 +149,8 @@ export class Collapse extends React.PureComponent<CollapseProps> {
     };
 
     private updateContentHeight = () => {
-        const expanded = this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
+        const expanded =
+            this.props.isExpanded === undefined ? this.state.isExpanded : this.props.isExpanded;
 
         let contentHeight;
 
@@ -161,7 +163,7 @@ export class Collapse extends React.PureComponent<CollapseProps> {
         if (this.content) {
             this.content.style.height = `${contentHeight}px`;
         }
-    }
+    };
 }
 
 export default withTheme<CollapseProps, Collapse>(Collapse);

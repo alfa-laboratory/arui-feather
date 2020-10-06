@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './navigation-payment.css';
+
 import '../..';
 
-export * from './navigation-payment';
 export { default } from './navigation-payment';

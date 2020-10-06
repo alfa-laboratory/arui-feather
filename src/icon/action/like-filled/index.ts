@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './like-filled.css';
+
 import '../..';
 
-export * from './like-filled';
 export { default } from './like-filled';

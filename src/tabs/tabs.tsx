@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type TabsProps = {
-
     /**
      * Управление возможность скроллить компонент по-горизонтали
      */
@@ -37,7 +37,6 @@ export type TabsProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -48,7 +47,7 @@ export class Tabs extends React.PureComponent<TabsProps> {
 
     static defaultProps: Partial<TabsProps> = {
         scrollable: true,
-    }
+    };
 
     render() {
         return (
@@ -58,9 +57,7 @@ export class Tabs extends React.PureComponent<TabsProps> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <div className={ this.cn('panel') }>
-                    <div className={ this.cn('content') }>
-                        { this.props.children }
-                    </div>
+                    <div className={ this.cn('content') }>{ this.props.children }</div>
                 </div>
             </div>
         );

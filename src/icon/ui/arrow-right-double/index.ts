@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './arrow-right-double.css';
+
 import '../..';
 
-export * from './arrow-right-double';
 export { default } from './arrow-right-double';

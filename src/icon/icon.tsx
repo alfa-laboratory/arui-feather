@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type IconProps = {
-
     /**
      * Дополнительный класс
      */
@@ -42,7 +42,6 @@ export type IconProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**

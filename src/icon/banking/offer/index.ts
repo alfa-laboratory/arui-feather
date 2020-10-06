@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './offer.css';
+
 import '../..';
 
-export * from './offer';
 export { default } from './offer';

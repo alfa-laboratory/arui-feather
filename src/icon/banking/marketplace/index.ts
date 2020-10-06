@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './marketplace.css';
+
 import '../..';
 
-export * from './marketplace';
 export { default } from './marketplace';

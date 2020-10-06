@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './account-add.css';
+
 import '../..';
 
-export * from './account-add';
 export { default } from './account-add';

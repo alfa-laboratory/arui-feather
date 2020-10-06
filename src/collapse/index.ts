@@ -2,11 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import './collapse.css';
+
 import '../icon';
 import '../link';
 import '../resize-sensor';
-
-import './collapse.css';
 
 export * from './collapse';
 export { default } from './collapse';

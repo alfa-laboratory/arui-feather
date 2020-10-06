@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './arrow-back.css';
+
 import '../..';
 
-export * from './arrow-back';
 export { default } from './arrow-back';

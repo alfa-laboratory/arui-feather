@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './status-urgent.css';
+
 import '../..';
 
-export * from './status-urgent';
 export { default } from './status-urgent';

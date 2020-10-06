@@ -4,12 +4,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
 import performance from '../performance';
 
 type ListItemsType = {
-
     /**
      * Уникальный ключ элемента
      */
@@ -27,7 +26,6 @@ type ListItemsType = {
 };
 
 export type ListProps = {
-
     /**
      * Список элементов
      */
@@ -71,16 +69,9 @@ export class List extends React.Component<ListProps> {
         const listElement = type === 'ordered' ? 'ol' : 'ul';
 
         const listContent = (items || []).map(({ key, value, list }) => (
-            <li
-                key={ `item-${key}` }
-                className={ this.cn('item') }
-            >
+            <li key={ `item-${key}` } className={ this.cn('item') }>
                 { value }
-                {
-                    list && Array.isArray(list)
-                        ? <List items={ list } type={ type } />
-                        : ''
-                }
+                { list && Array.isArray(list) ? <List items={ list } type={ type } /> : '' }
             </li>
         ));
 
@@ -90,11 +81,7 @@ export class List extends React.Component<ListProps> {
             'data-test-id': this.props['data-test-id'],
         };
 
-        return React.createElement(
-            listElement,
-            listProps,
-            listContent,
-        );
+        return React.createElement(listElement, listProps, listContent);
     }
 }
 

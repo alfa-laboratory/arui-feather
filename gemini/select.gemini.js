@@ -72,21 +72,14 @@ geminiReact.suite(NAME, () => {
                     const props = { theme, size, ...set };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <Select
-                                { ...props }
-                            />
+                            <Select { ...props } />
                         </GeminiBox>
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
-                        suite
-                            .setExtraCaptureElements(['.popup'])
-                            .render(template)
-                            .capture('plain');
+                        suite.setExtraCaptureElements(['.popup']).render(template).capture('plain');
                     }
                 });
             });

@@ -2,15 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import "../vars.css";
+@import '../vars.css';
 
 :root {
     --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
     --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
     --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
-    --top-scale-xl: calc(
-        strip(var(--font-size-l)) / strip(var(--font-size-xl))
-    );
+    --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
 }
 
 .select {
@@ -105,8 +103,7 @@
         border: none;
         border-radius: 0;
         transition-duration: 250ms;
-        transition-property: border-bottom-color, box-shadow, color, width,
-            background-color;
+        transition-property: border-bottom-color, box-shadow, color, width, background-color;
         transition-timing-function: cubic-bezier(
             0.23,
             1,

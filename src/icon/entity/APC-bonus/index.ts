@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './APC-bonus.css';
+
 import '../..';
 
-export * from './APC-bonus';
 export { default } from './APC-bonus';

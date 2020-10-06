@@ -1,4 +1,4 @@
-@import "../vars.css";
+@import '../vars.css';
 
 .calendar_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);

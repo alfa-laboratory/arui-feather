@@ -5,7 +5,9 @@
 /* eslint react/no-multi-comp: 0 */
 import React from 'react';
 import { mount } from 'enzyme';
+
 import { getMatchMedia } from '../lib/match-media';
+
 import mqDecorator from './decorator';
 
 jest.mock('../lib/match-media');
@@ -22,7 +24,7 @@ describe('mq-decorator', () => {
 
         type ExampleProps = {
             mqMatch?: boolean;
-        }
+        };
 
         @mqDecorator('--small-only')
         class Example extends React.Component<ExampleProps> {
@@ -44,7 +46,7 @@ describe('mq-decorator', () => {
 
         type ExampleProps = {
             isSmall?: boolean;
-        }
+        };
 
         @mqDecorator('--small-only', 'isSmall')
         class Example extends React.Component<ExampleProps> {

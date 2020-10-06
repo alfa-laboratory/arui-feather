@@ -1,5 +1,5 @@
-import Attach from '../src/attach';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import Attach from '../src/attach';
 
 const NAME = 'attach';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
@@ -32,9 +32,7 @@ geminiReact.suite(NAME, () => {
                 );
 
                 geminiReact.suite(selector, (suite) => {
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

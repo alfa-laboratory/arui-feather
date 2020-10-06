@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './arrow-down.css';
+
 import '../..';
 
-export * from './arrow-down';
 export { default } from './arrow-down';

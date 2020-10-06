@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type FormProps = {
-
     /**
      * Способ кодирования данных формы при их отправке
      */
@@ -82,7 +82,6 @@ export type FormProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -118,14 +117,7 @@ export class Form extends React.PureComponent<FormProps> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.children }
-                {
-                    this.props.footer
-                        && (
-                            <div className={ this.cn('footer') }>
-                                { this.props.footer }
-                            </div>
-                        )
-                }
+                { this.props.footer && <div className={ this.cn('footer') }>{ this.props.footer }</div> }
             </form>
         );
     }
@@ -136,7 +128,7 @@ export class Form extends React.PureComponent<FormProps> {
         if (this.props.onSubmit) {
             this.props.onSubmit(event);
         }
-    }
+    };
 }
 
 export default withTheme<FormProps, Form>(Form);

@@ -4,11 +4,13 @@
 
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
-import { mount, shallow } from 'enzyme';
 import React, { MutableRefObject } from 'react';
+import { mount, shallow } from 'enzyme';
+
 import IconSearch from '../icon/action/search';
 import MaskedInput from '../masked-input';
 import { SCROLL_TO_CORRECTION } from '../vars';
+
 import { Input } from './input';
 
 describe('input', () => {
@@ -72,60 +74,51 @@ describe('input', () => {
     it('should scroll window to element on public `scrollTo` method', () => {
         const input = mount<Input>(<Input />);
         const elemTopPosition = input.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         input.instance().scrollTo();
 
         expect(window.scrollTo).toHaveBeenCalledWith(0, elemScrollTo);
     });
 
-    it(
-        'should not set selection when `setSelectionRange` method was called on input with type `email`',
-        () => {
-            const input = mount<Input>(<Input value="test" type="email" />);
+    it('should not set selection when `setSelectionRange` method was called on input with type `email`', () => {
+        const input = mount<Input>(<Input value="test" type="email" />);
 
-            const setSelectionRange = jest.fn();
+        const setSelectionRange = jest.fn();
 
-            input.instance().getControl().setSelectionRange = setSelectionRange;
-            input.instance().focus();
+        input.instance().getControl().setSelectionRange = setSelectionRange;
+        input.instance().focus();
 
-            input.instance().setSelectionRange();
-            expect(setSelectionRange).not.toHaveBeenCalled();
-        },
-    );
+        input.instance().setSelectionRange();
+        expect(setSelectionRange).not.toHaveBeenCalled();
+    });
 
-    it(
-        'should set selection to all value when `setSelectionRange` method was called without parameters',
-        () => {
-            const input = mount<Input>(<Input value="test" />);
-            const setSelectionRange = jest.fn();
+    it('should set selection to all value when `setSelectionRange` method was called without parameters', () => {
+        const input = mount<Input>(<Input value="test" />);
+        const setSelectionRange = jest.fn();
 
-            input.instance().getControl().setSelectionRange = setSelectionRange;
+        input.instance().getControl().setSelectionRange = setSelectionRange;
 
-            input.instance().focus();
+        input.instance().focus();
 
-            input.instance().setSelectionRange();
-            expect(setSelectionRange).toHaveBeenCalledWith(0, 'test'.length);
-        },
-    );
+        input.instance().setSelectionRange();
+        expect(setSelectionRange).toHaveBeenCalledWith(0, 'test'.length);
+    });
 
-    it(
-        'should set selection when setSelection range was called with parameters',
-        () => {
-            const input = mount<Input>(<Input value="test" />);
-            const setSelectionRange = jest.fn();
+    it('should set selection when setSelection range was called with parameters', () => {
+        const input = mount<Input>(<Input value="test" />);
+        const setSelectionRange = jest.fn();
 
-            input.instance().getControl().setSelectionRange = setSelectionRange;
+        input.instance().getControl().setSelectionRange = setSelectionRange;
 
-            input.instance().focus();
+        input.instance().focus();
 
-            input.instance().setSelectionRange(0, 2);
-            expect(setSelectionRange).toHaveBeenCalledWith(0, 2);
+        input.instance().setSelectionRange(0, 2);
+        expect(setSelectionRange).toHaveBeenCalledWith(0, 2);
 
-            input.instance().setSelectionRange(2, 4);
-            expect(setSelectionRange).toHaveBeenCalledWith(2, 4);
-        },
-    );
+        input.instance().setSelectionRange(2, 4);
+        expect(setSelectionRange).toHaveBeenCalledWith(2, 4);
+    });
 
     it('should render without problems', () => {
         const input = shallow(<Input />);
@@ -298,13 +291,7 @@ describe('input', () => {
 
     it('should call `onChange` listener after clear icon click', () => {
         const onChange = jest.fn();
-        const input = mount(
-            <Input
-                value="text"
-                clear={ true }
-                onChange={ onChange }
-            />,
-        );
+        const input = mount(<Input value="text" clear={ true } onChange={ onChange } />);
         const clearNode = input.find('.input__clear').at(0);
 
         clearNode.simulate('click');
@@ -344,45 +331,33 @@ describe('input', () => {
         expect(controlNode.props().value).toBe('А 456 ИТ');
     });
 
-    it(
-        'should return `HTMLInputElement` when `getControl` method called',
-        () => {
-            const input = mount<Input>(<Input />);
-            const controlNode = input.instance().getControl();
+    it('should return `HTMLInputElement` when `getControl` method called', () => {
+        const input = mount<Input>(<Input />);
+        const controlNode = input.instance().getControl();
 
-            expect(controlNode).toBeInstanceOf(HTMLInputElement);
-        },
-    );
+        expect(controlNode).toBeInstanceOf(HTMLInputElement);
+    });
 
-    it(
-        'should return `HTMLInputElement` when `getControl` method called and mask is set',
-        () => {
-            const input = mount<Input>(<Input mask="111" />);
-            const controlNode = input.instance().getControl();
+    it('should return `HTMLInputElement` when `getControl` method called and mask is set', () => {
+        const input = mount<Input>(<Input mask="111" />);
+        const controlNode = input.instance().getControl();
 
-            expect(controlNode).toBeInstanceOf(HTMLInputElement);
-        },
-    );
+        expect(controlNode).toBeInstanceOf(HTMLInputElement);
+    });
 
-    it(
-        'should return null when `getMaskedInputInstance` method is called and mask is not set',
-        () => {
-            const input = shallow<Input>(<Input />);
-            const maskedInputInstance = input.instance().getMaskedInputInstance();
+    it('should return null when `getMaskedInputInstance` method is called and mask is not set', () => {
+        const input = shallow<Input>(<Input />);
+        const maskedInputInstance = input.instance().getMaskedInputInstance();
 
-            expect(maskedInputInstance).toBeNull();
-        },
-    );
+        expect(maskedInputInstance).toBeNull();
+    });
 
-    it(
-        'should return MaskedInput instance when getMaskedInputInstance method is called and mask is set',
-        () => {
-            const input = mount<Input>(<Input mask="111" />);
-            const maskedInputInstance = input.instance().getMaskedInputInstance();
+    it('should return MaskedInput instance when getMaskedInputInstance method is called and mask is set', () => {
+        const input = mount<Input>(<Input mask="111" />);
+        const maskedInputInstance = input.instance().getMaskedInputInstance();
 
-            expect(maskedInputInstance).toBeInstanceOf(MaskedInput);
-        },
-    );
+        expect(maskedInputInstance).toBeInstanceOf(MaskedInput);
+    });
 
     it('should call `onTouchStart` callback after input was touched', () => {
         const onTouchStart = jest.fn();
@@ -394,128 +369,103 @@ describe('input', () => {
         expect(onTouchStart).toHaveBeenCalled();
     });
 
-    it(
-        'should call `onTouchEnd` callback after input was released on touch',
-        () => {
-            const onTouchEnd = jest.fn();
-            const input = shallow(<Input onTouchEnd={ onTouchEnd } />);
-            const controlNode = input.find('input');
+    it('should call `onTouchEnd` callback after input was released on touch', () => {
+        const onTouchEnd = jest.fn();
+        const input = shallow(<Input onTouchEnd={ onTouchEnd } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchEnd');
+        controlNode.simulate('touchEnd');
 
-            expect(onTouchEnd).toHaveBeenCalled();
-        },
-    );
+        expect(onTouchEnd).toHaveBeenCalled();
+    });
 
-    it(
-        'should call `onTouchCancel` callback after input was disrupted on touch',
-        () => {
-            const onTouchCancel = jest.fn();
-            const input = shallow(<Input onTouchCancel={ onTouchCancel } />);
-            const controlNode = input.find('input');
+    it('should call `onTouchCancel` callback after input was disrupted on touch', () => {
+        const onTouchCancel = jest.fn();
+        const input = shallow(<Input onTouchCancel={ onTouchCancel } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchCancel');
+        controlNode.simulate('touchCancel');
 
-            expect(onTouchCancel).toHaveBeenCalled();
-        },
-    );
+        expect(onTouchCancel).toHaveBeenCalled();
+    });
 
-    it(
-        'should call `onTouchMove` callback after input was touched and moved',
-        () => {
-            const onTouchMove = jest.fn();
-            const input = shallow(<Input onTouchMove={ onTouchMove } />);
-            const controlNode = input.find('input');
+    it('should call `onTouchMove` callback after input was touched and moved', () => {
+        const onTouchMove = jest.fn();
+        const input = shallow(<Input onTouchMove={ onTouchMove } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchMove');
+        controlNode.simulate('touchMove');
 
-            expect(onTouchMove).toHaveBeenCalled();
-        },
-    );
+        expect(onTouchMove).toHaveBeenCalled();
+    });
 
-    it(
-        'should call `onTouchStart` callback with argument as SyntheticEvent and type \'touchstart\'',
-        () => {
-            const onTouchStart = jest.fn();
-            const input = mount(<Input onTouchStart={ onTouchStart } />);
-            const controlNode = input.find('input');
+    it("should call `onTouchStart` callback with argument as SyntheticEvent and type 'touchstart'", () => {
+        const onTouchStart = jest.fn();
+        const input = mount(<Input onTouchStart={ onTouchStart } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchStart');
+        controlNode.simulate('touchStart');
 
-            expect(onTouchStart).toHaveBeenCalled();
-            expect(onTouchStart).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchstart' }));
-        },
-    );
+        expect(onTouchStart).toHaveBeenCalled();
+        expect(onTouchStart).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchstart' }));
+    });
 
-    it(
-        'should call `onTouchEnd` callback with argument as SyntheticEvent and type \'touchend\'',
-        () => {
-            const onTouchEnd = jest.fn();
-            const input = mount(<Input onTouchEnd={ onTouchEnd } />);
-            const controlNode = input.find('input');
+    it("should call `onTouchEnd` callback with argument as SyntheticEvent and type 'touchend'", () => {
+        const onTouchEnd = jest.fn();
+        const input = mount(<Input onTouchEnd={ onTouchEnd } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchEnd');
-            expect(onTouchEnd).toHaveBeenCalled();
-            expect(onTouchEnd).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchend' }));
-        },
-    );
+        controlNode.simulate('touchEnd');
+        expect(onTouchEnd).toHaveBeenCalled();
+        expect(onTouchEnd).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchend' }));
+    });
 
-    it(
-        'should call `onTouchMove` callback with argument as SyntheticEvent and type \'touchmove\'',
-        () => {
-            const onTouchMove = jest.fn();
-            const input = mount(<Input onTouchMove={ onTouchMove } />);
-            const controlNode = input.find('input');
+    it("should call `onTouchMove` callback with argument as SyntheticEvent and type 'touchmove'", () => {
+        const onTouchMove = jest.fn();
+        const input = mount(<Input onTouchMove={ onTouchMove } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchMove');
-            expect(onTouchMove).toHaveBeenCalled();
-            expect(onTouchMove).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchmove' }));
-        },
-    );
+        controlNode.simulate('touchMove');
+        expect(onTouchMove).toHaveBeenCalled();
+        expect(onTouchMove).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchmove' }));
+    });
 
-    it(
-        'should call `onTouchCancel` callback with argument as SyntheticEvent and type \'touchcancel\'',
-        () => {
-            const onTouchCancel = jest.fn();
-            const input = mount(<Input onTouchCancel={ onTouchCancel } />);
-            const controlNode = input.find('input');
+    it("should call `onTouchCancel` callback with argument as SyntheticEvent and type 'touchcancel'", () => {
+        const onTouchCancel = jest.fn();
+        const input = mount(<Input onTouchCancel={ onTouchCancel } />);
+        const controlNode = input.find('input');
 
-            controlNode.simulate('touchCancel');
-            expect(onTouchCancel).toHaveBeenCalled();
-            expect(onTouchCancel).toHaveBeenCalledWith(expect.objectContaining({ type: 'touchcancel' }));
-        },
-    );
+        controlNode.simulate('touchCancel');
+        expect(onTouchCancel).toHaveBeenCalled();
+        expect(onTouchCancel).toHaveBeenCalledWith(
+            expect.objectContaining({ type: 'touchcancel' }),
+        );
+    });
 
-    it(
-        'should call `enableMouseWheel` and `disableMouseWheel` after focus and blur',
-        () => {
-            const input = mount<Input>(<Input />);
-            const controlNode = input.find('input');
+    it('should call `enableMouseWheel` and `disableMouseWheel` after focus and blur', () => {
+        const input = mount<Input>(<Input />);
+        const controlNode = input.find('input');
 
-            jest.spyOn(input.instance(), 'enableMouseWheel');
-            jest.spyOn(input.instance(), 'disableMouseWheel');
+        jest.spyOn(input.instance(), 'enableMouseWheel');
+        jest.spyOn(input.instance(), 'disableMouseWheel');
 
-            controlNode.simulate('focus');
-            expect(input.instance().enableMouseWheel).toHaveBeenCalled();
+        controlNode.simulate('focus');
+        expect(input.instance().enableMouseWheel).toHaveBeenCalled();
 
-            controlNode.simulate('blur');
-            expect(input.instance().disableMouseWheel).toHaveBeenCalled();
-        },
-    );
+        controlNode.simulate('blur');
+        expect(input.instance().disableMouseWheel).toHaveBeenCalled();
+    });
 
-    it(
-        'should call `resetError` after focus',
-        () => {
-            const input = mount<Input>(<Input />);
-            const controlNode = input.find('input');
+    it('should call `resetError` after focus', () => {
+        const input = mount<Input>(<Input />);
+        const controlNode = input.find('input');
 
-            jest.spyOn(input.instance() as any, 'resetError');
+        jest.spyOn(input.instance() as any, 'resetError');
 
-            controlNode.simulate('focus');
+        controlNode.simulate('focus');
 
-            expect((input.instance() as any).resetError).toHaveBeenCalled();
-        },
-    );
+        expect((input.instance() as any).resetError).toHaveBeenCalled();
+    });
 
     it('should work with ref', () => {
         const ref: MutableRefObject<HTMLInputElement> = { current: undefined };
@@ -524,7 +474,6 @@ describe('input', () => {
         expect(ref.current).not.toBeUndefined();
         expect(input.instance().getControl()).toEqual(ref.current);
     });
-
 
     it('should work with ref function', () => {
         const ref: MutableRefObject<HTMLInputElement> = { current: undefined };

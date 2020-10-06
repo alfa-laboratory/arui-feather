@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './flash.css';
+
 import '../..';
 
-export * from './flash';
 export { default } from './flash';

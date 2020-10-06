@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-tv.css';
+
 import '../..';
 
-export * from './category-tv';
 export { default } from './category-tv';

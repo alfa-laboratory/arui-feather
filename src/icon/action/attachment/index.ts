@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './attachment.css';
+
 import '../..';
 
-export * from './attachment';
 export { default } from './attachment';

@@ -1,5 +1,5 @@
-import Dropdown from '../src/dropdown';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import Dropdown from '../src/dropdown';
 import Label from '../src/label';
 
 const NAME = 'dropdown';
@@ -59,14 +59,9 @@ geminiReact.suite(NAME, () => {
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
-                        suite
-                            .setExtraCaptureElements(['.popup'])
-                            .render(template)
-                            .capture('plain');
+                        suite.setExtraCaptureElements(['.popup']).render(template).capture('plain');
                     }
                 });
             });

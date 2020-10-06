@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './contactless-off.css';
+
 import '../..';
 
-export * from './contactless-off';
 export { default } from './contactless-off';

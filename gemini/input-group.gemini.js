@@ -8,10 +8,7 @@ const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
 const PROP_SETS = [
     {
-        inputs: [
-            { key: 'input-1-1' },
-            { key: 'input-1-2' },
-        ],
+        inputs: [{ key: 'input-1-1' }, { key: 'input-1-2' }],
     },
     {
         width: 'available',
@@ -47,21 +44,14 @@ geminiReact.suite(NAME, () => {
                     const template = (
                         <GeminiBox theme={ theme } width={ set.width }>
                             <InputGroup { ...props }>
-                                {
-                                    set.inputs.map((input) => (
-                                        <Input
-                                            key={ input.key }
-                                            placeholder="Input ..."
-                                        />
-                                    ))
-                                }
+                                { set.inputs.map((input) => (
+                                    <Input key={ input.key } placeholder="Input ..." />
+                                )) }
                             </InputGroup>
                         </GeminiBox>
                     );
 
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

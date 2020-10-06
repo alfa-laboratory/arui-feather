@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './qr.css';
+
 import '../..';
 
-export * from './qr';
 export { default } from './qr';

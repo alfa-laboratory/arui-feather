@@ -33,24 +33,20 @@ geminiReact.suite(NAME, () => {
                     const props = { theme, size, ...set };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <Radio
-                                { ...props }
-                            />
+                            <Radio { ...props } />
                         </GeminiBox>
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             })
-                            .capture('pressed', function (actions) {
+                            .capture('pressed', function pressed(actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
                             .capture('focused', (actions, find) => {

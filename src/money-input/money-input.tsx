@@ -8,13 +8,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
-
 import Input, { InputProps } from '../input/input';
-import Mask from '../masked-input/mask';
-import { getAndroidVersion } from '../masked-input';
-
 import { getCurrencySymbol } from '../lib/currency-codes';
+import { getAndroidVersion } from '../masked-input';
+import Mask from '../masked-input/mask';
 
 const DEFAULT_FRACTION_SIZE = 2;
 const DEFAULT_INTEGER_SIZE = 9;
@@ -86,7 +85,7 @@ type MoneyInputProps = InputProps & {
 
 type MoneyInputState = {
     value: string;
-}
+};
 
 /**
  * Компонент поля для ввода суммы. Может принимать в качестве значения либо число, либо число с сотой долей.
@@ -192,7 +191,8 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
         if (newValue.length >= currentValue.length && newValue[currentSelection] === ',') {
             window.requestAnimationFrame(() => {
                 // Фикс бага смещения каретки в браузере на андроидах Jelly Bean (c 4.1 по 4.3)
-                const offsetSection = IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
+                const offsetSection =
+                    IS_ANDROID && parseFloat(getAndroidVersion() as string) < 4.4 ? 1 : 0;
                 const newSelectionStart = this.root.control.input.selectionStart - 1;
 
                 this.setInputSelection(newSelectionStart + offsetSection);
@@ -237,7 +237,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     private updateMaskByValue(value: string) {
         const [integerPart, fractionPart] = getValueParts(value);
 
-        const integerPartLength = Math.max(Math.min(integerPart.length || 1, this.props.integerLength));
+        const integerPartLength = Math.max(
+            Math.min(integerPart.length || 1, this.props.integerLength),
+        );
 
         this.maskPattern = splitInteger(new Array(integerPartLength + 1).join('1'))
             .reverse()
@@ -258,7 +260,9 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
      * Расчитывает максимально допустимую длинну поля ввода.
      */
     private getMaxLength() {
-        let maxLength = Math.floor((this.props.integerLength - 1) / INTEGER_PART_SIZE) + this.props.integerLength;
+        let maxLength =
+            Math.floor((this.props.integerLength - 1) / INTEGER_PART_SIZE) +
+            this.props.integerLength;
 
         if (this.props.fractionLength) {
             maxLength += 1 + this.props.fractionLength;

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Collapse } from './collapse';
 
@@ -34,11 +34,7 @@ describe('collapse', () => {
     });
 
     it('should update component height', () => {
-        const collapse = mount<Collapse>(
-            <Collapse>
-                some children
-            </Collapse>,
-        );
+        const collapse = mount<Collapse>(<Collapse>some children</Collapse>);
 
         collapse.setState({ isExpanded: true });
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
@@ -52,11 +48,7 @@ describe('collapse', () => {
     });
 
     it('should not update component height when it is collapsed', () => {
-        const collapse = mount<Collapse>(
-            <Collapse>
-                some children
-            </Collapse>,
-        );
+        const collapse = mount<Collapse>(<Collapse>some children</Collapse>);
 
         collapse.setState({ isExpanded: false });
         // jsdom не умеет обсчитывать высоты элементов правильным образом, поэтому
@@ -72,10 +64,7 @@ describe('collapse', () => {
 
     it('should apply custom expanded label', () => {
         const collapse = mount(
-            <Collapse
-                collapsedLabel="Раскрыть"
-                isExpanded={ false }
-            >
+            <Collapse collapsedLabel="Раскрыть" isExpanded={ false }>
                 Collapsing text
             </Collapse>,
         );
@@ -86,10 +75,7 @@ describe('collapse', () => {
 
     it('should apply custom collapsed label', () => {
         const collapse = mount(
-            <Collapse
-                expandedLabel="Закрыть"
-                isExpanded={ true }
-            >
+            <Collapse expandedLabel="Закрыть" isExpanded={ true }>
                 Collapsing text
             </Collapse>,
         );

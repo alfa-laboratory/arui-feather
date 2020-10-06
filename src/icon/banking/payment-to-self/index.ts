@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './payment-to-self.css';
+
 import '../..';
 
-export * from './payment-to-self';
 export { default } from './payment-to-self';

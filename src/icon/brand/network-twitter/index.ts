@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './network-twitter.css';
+
 import '../..';
 
-export * from './network-twitter';
 export { default } from './network-twitter';

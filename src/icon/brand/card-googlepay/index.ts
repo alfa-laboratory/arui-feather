@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './card-googlepay.css';
+
 import '../..';
 
-export * from './card-googlepay';
 export { default } from './card-googlepay';

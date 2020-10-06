@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import MaskedInput, { getAndroidVersion } from './masked-input';
 
@@ -13,8 +13,9 @@ describe('masked-input', () => {
         it('should return version 4.0.4', () => {
             Object.defineProperty(window.navigator, 'userAgent', {
                 configurable: true,
-                get: () => 'Mozilla/5.0 (Linux; U; Android 4.0.4; pt-br; MZ608 Build/7.7.1-141-7-FLEM-UMTS-LA) '
-                    + 'AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30',
+                get: () =>
+                    'Mozilla/5.0 (Linux; U; Android 4.0.4; pt-br; MZ608 Build/7.7.1-141-7-FLEM-UMTS-LA) ' +
+                    'AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30',
             });
 
             expect(getAndroidVersion()).toBe('4.0.4');
@@ -23,8 +24,9 @@ describe('masked-input', () => {
         it('should return false', () => {
             Object.defineProperty(window.navigator, 'userAgent', {
                 configurable: true,
-                get: () => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko)'
-                    + 'Chrome/67.0.3396.99 Safari/537.36',
+                get: () =>
+                    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko)' +
+                    'Chrome/67.0.3396.99 Safari/537.36',
             });
 
             expect(getAndroidVersion()).toBe(false);
@@ -38,7 +40,9 @@ describe('masked-input', () => {
     });
 
     it('should format unformatted value', () => {
-        const maskedInput = mount(<MaskedInput mask="1111 1111 1111 1111" value="1234567890123456" />);
+        const maskedInput = mount(
+            <MaskedInput mask="1111 1111 1111 1111" value="1234567890123456" />,
+        );
 
         expect(maskedInput.find('input').props().value).toBe('1234 5678 9012 3456');
     });
@@ -75,7 +79,9 @@ describe('masked-input', () => {
     });
 
     it('should reformat value by new mask after mask was changed', () => {
-        const maskedInput = mount(<MaskedInput mask="1111 1111 1111 1111" value="1234567890123456" />);
+        const maskedInput = mount(
+            <MaskedInput mask="1111 1111 1111 1111" value="1234567890123456" />,
+        );
 
         maskedInput.setProps({
             mask: '+1 (111) 111-11-11',
@@ -101,7 +107,9 @@ describe('masked-input', () => {
     });
 
     it('should reformat value after value was changed', () => {
-        const maskedInput = mount(<MaskedInput mask="1111 1111 1111 1111" value="1234567890123456" />);
+        const maskedInput = mount(
+            <MaskedInput mask="1111 1111 1111 1111" value="1234567890123456" />,
+        );
 
         maskedInput.setProps({ value: '0987654321098765' });
 
@@ -151,109 +159,110 @@ describe('masked-input', () => {
         }, 0);
     });
 
-    it('should move caret position from uneditable position to next editable position during `onInput`',
-        (done) => {
-            const maskedInput = mount<MaskedInput>(<MaskedInput mask="1111 1111 1111 1111" value="1234 5" />);
-            const inputNode = maskedInput.find('input');
+    it('should move caret position from uneditable position to next editable position during `onInput`', (done) => {
+        const maskedInput = mount<MaskedInput>(
+            <MaskedInput mask="1111 1111 1111 1111" value="1234 5" />,
+        );
+        const inputNode = maskedInput.find('input');
 
-            maskedInput.instance().focus();
+        maskedInput.instance().focus();
 
-            setTimeout(() => {
-                inputNode.getDOMNode<HTMLInputElement>().selectionStart = 4;
-                inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 4;
+        setTimeout(() => {
+            inputNode.getDOMNode<HTMLInputElement>().selectionStart = 4;
+            inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 4;
 
-                inputNode.simulate('beforeInput');
-                inputNode.simulate('input', { target: { value: '1234 5' } });
+            inputNode.simulate('beforeInput');
+            inputNode.simulate('input', { target: { value: '1234 5' } });
 
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(5);
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(5);
-                done();
-            }, 0);
-        });
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(5);
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(5);
+            done();
+        }, 0);
+    });
 
-    it('should move caret position from uneditable position to prev editable position during `onInput` (delete)',
-        (done) => {
-            const maskedInput = mount<MaskedInput>(<MaskedInput mask="1111 1111 1111 1111" value="1234 5" />);
-            const inputNode = maskedInput.find('input');
+    it('should move caret position from uneditable position to prev editable position during `onInput` (delete)', (done) => {
+        const maskedInput = mount<MaskedInput>(
+            <MaskedInput mask="1111 1111 1111 1111" value="1234 5" />,
+        );
+        const inputNode = maskedInput.find('input');
 
-            maskedInput.instance().focus();
+        maskedInput.instance().focus();
 
-            setTimeout(() => {
-                inputNode.getDOMNode<HTMLInputElement>().selectionStart = 5;
-                inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 5;
+        setTimeout(() => {
+            inputNode.getDOMNode<HTMLInputElement>().selectionStart = 5;
+            inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 5;
 
-                inputNode.simulate('beforeInput');
-                inputNode.simulate('input', { target: { value: '1234 ' } });
+            inputNode.simulate('beforeInput');
+            inputNode.simulate('input', { target: { value: '1234 ' } });
 
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(4);
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(4);
-                done();
-            }, 0);
-        });
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(4);
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(4);
+            done();
+        }, 0);
+    });
 
-    it('should move caret position from uneditable position to next editable position during `onInput` (replace)',
-        (done) => {
-            const maskedInput = mount<MaskedInput>(<MaskedInput mask="+1 111 11 11 11" value="+7 903 752" />);
-            const inputNode = maskedInput.find('input');
+    it('should move caret position from uneditable position to next editable position during `onInput` (replace)', (done) => {
+        const maskedInput = mount<MaskedInput>(
+            <MaskedInput mask="+1 111 11 11 11" value="+7 903 752" />,
+        );
+        const inputNode = maskedInput.find('input');
 
-            maskedInput.instance().focus();
+        maskedInput.instance().focus();
 
-            setTimeout(() => {
-                inputNode.getDOMNode<HTMLInputElement>().selectionStart = 2;
-                inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 5;
+        setTimeout(() => {
+            inputNode.getDOMNode<HTMLInputElement>().selectionStart = 2;
+            inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 5;
 
-                inputNode.simulate('beforeInput');
-                inputNode.simulate('input', { target: { value: '+7 84' } });
+            inputNode.simulate('beforeInput');
+            inputNode.simulate('input', { target: { value: '+7 84' } });
 
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(3);
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(3);
-                done();
-            }, 0);
-        });
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(3);
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(3);
+            done();
+        }, 0);
+    });
 
-    it('should move caret position, if the number of non-editable characters has decreased at left of the caret',
-        (done) => {
-            const maskedInput = mount<MaskedInput>(<MaskedInput mask="111 111 111" value="124 567" />);
-            const inputNode = maskedInput.find('input');
+    it('should move caret position, if the number of non-editable characters has decreased at left of the caret', (done) => {
+        const maskedInput = mount<MaskedInput>(<MaskedInput mask="111 111 111" value="124 567" />);
+        const inputNode = maskedInput.find('input');
 
-            maskedInput.instance().focus();
+        maskedInput.instance().focus();
 
-            setTimeout(() => {
-                maskedInput.setProps({ mask: '1 111 111' });
+        setTimeout(() => {
+            maskedInput.setProps({ mask: '1 111 111' });
 
-                inputNode.getDOMNode<HTMLInputElement>().selectionStart = 3;
-                inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 3;
+            inputNode.getDOMNode<HTMLInputElement>().selectionStart = 3;
+            inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 3;
 
-                inputNode.simulate('beforeInput');
-                inputNode.simulate('input', { target: { value: '1 234 567' } });
+            inputNode.simulate('beforeInput');
+            inputNode.simulate('input', { target: { value: '1 234 567' } });
 
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(4);
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(4);
-                done();
-            }, 0);
-        });
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(4);
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(4);
+            done();
+        }, 0);
+    });
 
-    it('should move caret position, if the number of non-editable characters has decreased at left of the caret',
-        (done) => {
-            const maskedInput = mount<MaskedInput>(<MaskedInput mask="1 111 111" value="1 234 567" />);
-            const inputNode = maskedInput.find('input');
+    it('should move caret position, if the number of non-editable characters has decreased at left of the caret', (done) => {
+        const maskedInput = mount<MaskedInput>(<MaskedInput mask="1 111 111" value="1 234 567" />);
+        const inputNode = maskedInput.find('input');
 
-            maskedInput.instance().focus();
+        maskedInput.instance().focus();
 
-            setTimeout(() => {
-                maskedInput.setProps({ mask: '111 111 111' });
+        setTimeout(() => {
+            maskedInput.setProps({ mask: '111 111 111' });
 
-                inputNode.getDOMNode<HTMLInputElement>().selectionStart = 3;
-                inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 3;
+            inputNode.getDOMNode<HTMLInputElement>().selectionStart = 3;
+            inputNode.getDOMNode<HTMLInputElement>().selectionEnd = 3;
 
-                inputNode.simulate('beforeInput');
-                inputNode.simulate('input', { target: { value: '124 567' } });
+            inputNode.simulate('beforeInput');
+            inputNode.simulate('input', { target: { value: '124 567' } });
 
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(2);
-                expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(2);
-                done();
-            }, 0);
-        });
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionStart).toBe(2);
+            expect(inputNode.getDOMNode<HTMLInputElement>().selectionEnd).toBe(2);
+            done();
+        }, 0);
+    });
 
     it('should return `HTMLInputElement` when `getControl` method called', () => {
         const maskedInput = mount<MaskedInput>(<MaskedInput mask="111" />);

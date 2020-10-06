@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './network-vk.css';
+
 import '../..';
 
-export * from './network-vk';
 export { default } from './network-vk';

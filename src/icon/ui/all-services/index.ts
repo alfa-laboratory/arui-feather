@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './all-services.css';
+
 import '../..';
 
-export * from './all-services';
 export { default } from './all-services';

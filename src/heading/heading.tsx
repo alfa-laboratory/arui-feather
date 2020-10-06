@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 const HEADING_LEVEL = {
@@ -15,7 +16,6 @@ const HEADING_LEVEL = {
 };
 
 export type HeadingProps = {
-
     /**
      * Дочерние элементы `Heading`
      */
@@ -50,7 +50,6 @@ export type HeadingProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -74,9 +73,11 @@ export class Heading extends React.PureComponent<HeadingProps> {
             'data-test-id': this.props['data-test-id'],
         };
 
-        return React.createElement(`h${HEADING_LEVEL[this.props.size]}`,
+        return React.createElement(
+            `h${HEADING_LEVEL[this.props.size]}`,
             headingProps,
-            this.props.children);
+            this.props.children,
+        );
     }
 }
 

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './add-filled.css';
+
 import '../..';
 
-export * from './add-filled';
 export { default } from './add-filled';

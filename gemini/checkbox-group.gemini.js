@@ -1,17 +1,12 @@
+import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 import Checkbox from '../src/checkbox';
 import CheckboxGroup from '../src/checkbox-group';
-import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'checkbox-group';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
-const PROP_SETS = [
-    {},
-    { type: 'button' },
-    { type: 'line' },
-    { disabled: true },
-];
+const PROP_SETS = [{}, { type: 'button' }, { type: 'line' }, { disabled: true }];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -43,9 +38,7 @@ geminiReact.suite(NAME, () => {
                 }
 
                 geminiReact.suite(selector, (suite) => {
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

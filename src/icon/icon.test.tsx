@@ -1,6 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+// Импорты генерируются автоматически, поэтому авто сортировка будет мешать
+/* eslint-disable simple-import-sort/sort */
 
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -950,12 +952,11 @@ describe('icon', () => {
             { componentName: IconBankNsipf1000, name: 'bank-nsipf-1000' },
         ];
 
-        return icons.map((icon, index) => (
+        return icons.map((icon, index) =>
             it(`render ${icon.componentName.name} without problems`, () => {
                 const CurrentComponent = icons[index].componentName;
                 const renderedIcon = shallow(<CurrentComponent />);
                 expect(renderedIcon).toMatchSnapshot(icon.componentName.name);
-            })
-        ));
+            }));
     })();
 });

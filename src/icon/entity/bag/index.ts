@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bag.css';
+
 import '../..';
 
-export * from './bag';
 export { default } from './bag';

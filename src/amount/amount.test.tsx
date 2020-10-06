@@ -5,8 +5,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Amount } from './amount';
 import { CURRENCY_MAP } from '../lib/currency-codes';
+
+import { Amount } from './amount';
 
 describe('amount', () => {
     it('should render without problems', () => {

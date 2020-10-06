@@ -46,24 +46,22 @@
     }
 
     @for $i from 8 to 24 by 8 {
+        /* prettier-ignore */
         &_gutter_$(i) {
-            /* stylelint-disable-next-line prettier/prettier */
-            margin-left: calc(-$(i)px / 2);
-            /* stylelint-disable-next-line prettier/prettier */
-            margin-right: calc(-$(i)px / 2);
+            margin-left: calc(-$(i) / 2)px;
+            margin-right: calc(-$(i) / 2)px;
         }
     }
 
-    @each $breakpoint in mobile, mobile-s, mobile-m, mobile-l, tablet, tablet-s,
-        tablet-m, desktop, desktop-s, desktop-m, desktop-l, desktop-xl
+    @each $breakpoint in mobile, mobile-s, mobile-m, mobile-l, tablet, tablet-s, tablet-m, desktop,
+        desktop-s, desktop-m, desktop-l, desktop-xl
     {
         @media (--$(breakpoint)) {
             @for $i from 8 to 24 by 8 {
+                /* prettier-ignore */
                 &_gutter-$(breakpoint)_$(i) {
-                    /* stylelint-disable-next-line prettier/prettier */
-                    margin-left: calc(-$(i)px / 2);
-                    /* stylelint-disable-next-line prettier/prettier */
-                    margin-right: calc(-$(i)px / 2);
+                    margin-left: calc(-$(i) / 2)px;
+                    margin-right: calc(-$(i) / 2)px;
                 }
             }
         }

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import Swipeable, { getCoordinates } from './swipeable';
 
@@ -68,7 +68,7 @@ describe('swipeable', () => {
             expect(spyHandler).toHaveBeenCalledTimes(2);
         });
 
-        it('shouldn\'t call handleSwipeStart when handleTouchStart is called with 2 or more touches', () => {
+        it("shouldn't call handleSwipeStart when handleTouchStart is called with 2 or more touches", () => {
             swipeable.instance().handleSwipeStart = spyHandler;
             swipeable.instance().handleTouchStart({ touches: ['touch1', 'touch2'] });
             expect(spyHandler).not.toHaveBeenCalled();
@@ -121,24 +121,27 @@ describe('swipeable', () => {
             );
         });
 
-        testData.forEach(({ direction, clientX, clientY }) => (
+        testData.forEach(({ direction, clientX, clientY }) =>
             it(`should call onSwipe with '${direction}' when it swiped to ${direction}`, () => {
                 swipeable.instance().handleSwipeStart({ clientX: 0, clientY: 0 });
                 swipeable.instance().handleSwipeEnd({ clientX, clientY });
                 expect(onSwipe).toHaveBeenCalledWith(direction);
-            })
-        ));
+            }));
     });
 
     describe('getCoordinates', () => {
         const touch = { clientX: 100, clientY: 500 };
 
         it('should return clientX and clientY from first touch of event touches ', () => {
-            expect(getCoordinates({ touches: [touch] as any, changedTouches: [] as any })).toEqual(touch);
+            expect(getCoordinates({ touches: [touch] as any, changedTouches: [] as any })).toEqual(
+                touch,
+            );
         });
 
         it('should return clientX and clientY from first touch of event changedTouches', () => {
-            expect(getCoordinates({ touches: [] as any, changedTouches: [touch] as any })).toEqual(touch);
+            expect(getCoordinates({ touches: [] as any, changedTouches: [touch] as any })).toEqual(
+                touch,
+            );
         });
 
         it('should return clientX and clientY from mouse event', () => {

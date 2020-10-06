@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './logout.css';
+
 import '../..';
 
-export * from './logout';
 export { default } from './logout';

@@ -1,7 +1,8 @@
-import getTime from 'date-fns/get_time';
-import startOfDay from 'date-fns/start_of_day';
 import formatDate from 'date-fns/format';
+import getTime from 'date-fns/get_time';
 import isDateValid from 'date-fns/is_valid';
+import startOfDay from 'date-fns/start_of_day';
+
 import { parse } from '../lib/date-utils';
 
 /**
@@ -51,14 +52,20 @@ export function changeDateFormat(value: string, inFormat: string, outFormat: str
  * @param earlierLimit Левая граница дат
  * @param laterLimit Правая граница дат
  */
-export function calculateMonth(value: string, format: string, earlierLimit?: number, laterLimit?: number) {
+export function calculateMonth(
+    value: string,
+    format: string,
+    earlierLimit?: number,
+    laterLimit?: number,
+) {
     let newValue: string | number = value;
 
     if (typeof newValue === 'string') {
         newValue = parseDate(newValue, format);
     }
 
-    if (!newValue || newValue !== newValue) { // eslint-disable-line no-self-compare
+    // eslint-disable-next-line no-self-compare
+    if (!newValue || newValue !== newValue) {
         newValue = Date.now();
     } else {
         newValue = getTime(newValue);

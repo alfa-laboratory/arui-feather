@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './comunal.css';
+
 import '../..';
 
-export * from './comunal';
 export { default } from './comunal';

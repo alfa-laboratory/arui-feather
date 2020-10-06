@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-repairs.css';
+
 import '../..';
 
-export * from './category-repairs';
 export { default } from './category-repairs';

@@ -3,8 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type SpinProps = {

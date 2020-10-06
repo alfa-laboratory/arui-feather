@@ -64,11 +64,7 @@ class TestButtonPopup extends React.Component {
                     visible={ true }
                     { ...this.props }
                 >
-                    { `Popup ${
-                        this.props.target === 'position'
-                            ? 'with position 100px 100px'
-                            : ''
-                    }` }
+                    { `Popup ${this.props.target === 'position' ? 'with position 100px 100px' : ''}` }
                 </Popup>
             </div>
         );
@@ -80,9 +76,7 @@ class TestButtonPopupContainer extends React.Component {
     render() {
         return (
             <PopupContainerProvider style={ { width: 500, background: '#efefef' } }>
-                <Paragraph>
-                    { LOREM_IPSUM.slice(0, 3) }
-                </Paragraph>
+                <Paragraph>{ LOREM_IPSUM.slice(0, 3) }</Paragraph>
             </PopupContainerProvider>
         );
     }
@@ -122,9 +116,7 @@ geminiReact.suite(NAME, () => {
                 </ThemeProvider>
             );
 
-            suite
-                .render(template)
-                .capture('plain');
+            suite.render(template).capture('plain');
         });
     });
 });

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './fingerprint.css';
+
 import '../..';
 
-export * from './fingerprint';
 export { default } from './fingerprint';

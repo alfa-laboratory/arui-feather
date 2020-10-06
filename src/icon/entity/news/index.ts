@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './news.css';
+
 import '../..';
 
-export * from './news';
 export { default } from './news';

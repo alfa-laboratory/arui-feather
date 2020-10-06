@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-family.css';
+
 import '../..';
 
-export * from './category-family';
 export { default } from './category-family';

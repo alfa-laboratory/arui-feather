@@ -8,7 +8,7 @@ import { MqProps } from '../mq';
 
 type MqMockProps = {
     onMatchChange: MqProps['onMatchChange'];
-}
+};
 
 let isMatched = true;
 

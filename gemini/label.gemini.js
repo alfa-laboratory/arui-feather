@@ -5,10 +5,7 @@ const NAME = 'label';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl'] : ['m'];
 
-const PROP_SETS = [
-    {},
-    { isNoWrap: true },
-];
+const PROP_SETS = [{}, { isNoWrap: true }];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -23,15 +20,11 @@ geminiReact.suite(NAME, () => {
                     const props = { theme, size, ...set };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <Label { ...props }>
-                                Label
-                            </Label>
+                            <Label { ...props }>Label</Label>
                         </GeminiBox>
                     );
 
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

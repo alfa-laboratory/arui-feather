@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './sell.css';
+
 import '../..';
 
-export * from './sell';
 export { default } from './sell';

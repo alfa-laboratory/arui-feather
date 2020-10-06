@@ -5,7 +5,7 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Sidebar } from './sidebar';
 
@@ -25,7 +25,11 @@ describe('sidebar component', () => {
     });
 
     it('shouldn`t render cross icon with special param', () => {
-        const sidebar = shallow(<Sidebar visible={ true } hasCloser={ false }>defaultText</Sidebar>);
+        const sidebar = shallow(
+            <Sidebar visible={ true } hasCloser={ false }>
+                defaultText
+            </Sidebar>,
+        );
         const closeIcon = sidebar.find('.sidebar__closer');
 
         expect(closeIcon.length).toBe(0);
@@ -34,11 +38,7 @@ describe('sidebar component', () => {
     it('should call `onCloserClick` callback after cross icon was clicked', () => {
         const onClick = jest.fn();
         const sidebar = mount(
-            <Sidebar
-                visible={ true }
-                hasCloser={ true }
-                onCloserClick={ onClick }
-            >
+            <Sidebar visible={ true } hasCloser={ true } onCloserClick={ onClick }>
                 defaultText
             </Sidebar>,
         );
@@ -51,10 +51,7 @@ describe('sidebar component', () => {
 
     it('should render with `width` from props on desktop', () => {
         const sidebar = mount(
-            <Sidebar
-                visible={ true }
-                width={ 500 }
-            >
+            <Sidebar visible={ true } width={ 500 }>
                 defaultText
             </Sidebar>,
         );
@@ -64,10 +61,7 @@ describe('sidebar component', () => {
 
     it('should render with `width: 100%` on mobile', () => {
         const sidebar = mount(
-            <Sidebar
-                visible={ true }
-                width={ 500 }
-            >
+            <Sidebar visible={ true } width={ 500 }>
                 defaultText
             </Sidebar>,
         );

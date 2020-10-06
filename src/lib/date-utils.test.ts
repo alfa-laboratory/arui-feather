@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { normalizeDate, getRussianWeekDay, parse } from './date-utils';
+import { getRussianWeekDay, normalizeDate, parse } from './date-utils';
 
 describe('date utils', () => {
     describe('normalizeDate', () => {
@@ -37,26 +37,27 @@ describe('date utils', () => {
 
     describe('parse', () => {
         it('should parse default russian format', () => {
-            expect(parse('01.01.2017').getTime()).toEqual((new Date(2017, 0, 1)).getTime());
+            expect(parse('01.01.2017').getTime()).toEqual(new Date(2017, 0, 1).getTime());
         });
 
         it('should allow to use any symbol as delimiter between date tokens', () => {
-            const targetDate = (new Date(2017, 0, 1)).getTime();
+            const targetDate = new Date(2017, 0, 1).getTime();
 
             expect(parse('01_01_2017', 'DD_MM_YYYY').getTime()).toEqual(targetDate);
-            expect(parse('day: 01, month: 01, year: 2017', 'day: DD, month: MM, year: YYYY').getTime())
-                .toEqual(targetDate);
+            expect(
+                parse('day: 01, month: 01, year: 2017', 'day: DD, month: MM, year: YYYY').getTime(),
+            ).toEqual(targetDate);
             expect(parse('2017, 01, 01', 'YYYY, MM, DD').getTime()).toEqual(targetDate);
         });
 
         it('should return start of the month if only YYYY and MM is presented in format', () => {
-            const targetDate = (new Date(2017, 0, 1)).getTime();
+            const targetDate = new Date(2017, 0, 1).getTime();
 
             expect(parse('01 2017', 'MM YYYY').getTime()).toEqual(targetDate);
         });
 
         /* eslint-disable no-restricted-globals */
-        it('should return invalid date if string didn\'t match input format', () => {
+        it("should return invalid date if string didn't match input format", () => {
             expect(isNaN(parse('01').getTime())).toEqual(true);
             expect(isNaN(parse('01 01 2017').getTime())).toEqual(true);
             expect(isNaN(parse('01.01').getTime())).toEqual(true);
@@ -72,7 +73,7 @@ describe('date utils', () => {
         /* eslint-enable no-restricted-globals */
 
         it('should return valid date if date token is out of range and strict = false', () => {
-            const targetDate = (new Date(2017, 0, 1)).getTime();
+            const targetDate = new Date(2017, 0, 1).getTime();
 
             expect(parse('32.12.2016', 'DD.MM.YYYY', false).getTime()).toEqual(targetDate);
             expect(parse('01.13.2016', 'DD.MM.YYYY', false).getTime()).toEqual(targetDate);

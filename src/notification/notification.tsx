@@ -6,16 +6,15 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
+import IconButton from '../icon-button/icon-button';
 import IconClose from '../icon/ui/close';
 import IconError from '../icon/ui/error';
 import IconFail from '../icon/ui/fail';
 import IconOk from '../icon/ui/ok';
-import IconButton from '../icon-button/icon-button';
-import Swipeable from '../swipeable';
-
 import { isNodeOutsideElement } from '../lib/window';
+import Swipeable from '../swipeable';
 
 export type NotificationProps = {
     /**
@@ -123,7 +122,7 @@ export type NotificationProps = {
  * Компонент всплывающего окна.
  */
 export class Notification extends React.PureComponent<NotificationProps> {
-    protected cn = createCn('notification')
+    protected cn = createCn('notification');
 
     static defaultProps: Partial<NotificationProps> = {
         autoCloseDelay: 5000,
@@ -172,10 +171,18 @@ export class Notification extends React.PureComponent<NotificationProps> {
         let ToggledIcon;
 
         switch (this.props.status) {
-        case 'error': ToggledIcon = IconError; break;
-        case 'fail': ToggledIcon = IconFail; break;
-        case 'ok': ToggledIcon = IconOk; break;
-        default: ToggledIcon = IconOk; break;
+            case 'error':
+                ToggledIcon = IconError;
+                break;
+            case 'fail':
+                ToggledIcon = IconFail;
+                break;
+            case 'ok':
+                ToggledIcon = IconOk;
+                break;
+            default:
+                ToggledIcon = IconOk;
+                break;
         }
 
         return (
@@ -200,44 +207,40 @@ export class Notification extends React.PureComponent<NotificationProps> {
                     data-test-id={ this.props['data-test-id'] }
                 >
                     <div className={ this.cn('icon') }>
-                        {
-                            this.props.icon
-                            || (
-                                <ToggledIcon
-                                    colored={ this.props.status === 'ok' || this.props.status === 'error' }
-                                    theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
-                                    size="m"
-                                />
-                            )
-                        }
-                    </div>
-                    { this.props.title
-                        && (
-                            <div className={ this.cn('title') }>
-                                { this.props.title }
-                            </div>
-                        ) }
-                    { this.props.children
-                        && (
-                            <div className={ this.cn('content') }>
-                                { this.props.children }
-                            </div>
-                        ) }
-                    {
-                        this.props.hasCloser
-                        && (
-                            <IconButton
-                                className={ this.cn('closer') }
+                        { this.props.icon || (
+                            <ToggledIcon
+                                colored={
+                                    this.props.status === 'ok' || this.props.status === 'error'
+                                }
+                                theme={
+                                    this.props.theme === 'alfa-on-color'
+                                        ? 'alfa-on-white'
+                                        : 'alfa-on-color'
+                                }
                                 size="m"
-                                onClick={ this.handleCloserClick }
-                            >
-                                <IconClose
-                                    size="s"
-                                    theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
-                                />
-                            </IconButton>
-                        )
-                    }
+                            />
+                        ) }
+                    </div>
+                    { this.props.title && <div className={ this.cn('title') }>{ this.props.title }</div> }
+                    { this.props.children && (
+                        <div className={ this.cn('content') }>{ this.props.children }</div>
+                    ) }
+                    { this.props.hasCloser && (
+                        <IconButton
+                            className={ this.cn('closer') }
+                            size="m"
+                            onClick={ this.handleCloserClick }
+                        >
+                            <IconClose
+                                size="s"
+                                theme={
+                                    this.props.theme === 'alfa-on-color'
+                                        ? 'alfa-on-white'
+                                        : 'alfa-on-color'
+                                }
+                            />
+                        </IconButton>
+                    ) }
                 </div>
             </Swipeable>
         );
@@ -287,8 +290,10 @@ export class Notification extends React.PureComponent<NotificationProps> {
     };
 
     private handleWindowClick = (event) => {
-        if (this.props.onClickOutside && this.root
-            && isNodeOutsideElement(event.target, this.root)
+        if (
+            this.props.onClickOutside &&
+            this.root &&
+            isNodeOutsideElement(event.target, this.root)
         ) {
             this.props.onClickOutside(event);
         }

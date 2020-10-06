@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './system-help.css';
+
 import '../..';
 
-export * from './system-help';
 export { default } from './system-help';

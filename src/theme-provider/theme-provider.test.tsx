@@ -5,19 +5,28 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ThemeProvider from './theme-provider';
 import Button from '../button';
 import Paragraph from '../paragraph';
 
+import ThemeProvider from './theme-provider';
+
 describe('theme-provider', () => {
     it('should render without problems', () => {
-        const themeProvider = mount(<ThemeProvider><div>Render-test</div></ThemeProvider>);
+        const themeProvider = mount(
+            <ThemeProvider>
+                <div>Render-test</div>
+            </ThemeProvider>,
+        );
 
         expect(themeProvider).toMatchSnapshot();
     });
 
     it('should render child', () => {
-        const themeProvider = mount(<ThemeProvider><div>Render-test</div></ThemeProvider>);
+        const themeProvider = mount(
+            <ThemeProvider>
+                <div>Render-test</div>
+            </ThemeProvider>,
+        );
 
         expect(themeProvider.text()).toContain('Render-test');
     });

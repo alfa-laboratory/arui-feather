@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './erase.css';
+
 import '../..';
 
-export * from './erase';
 export { default } from './erase';

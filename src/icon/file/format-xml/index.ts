@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-xml.css';
+
 import '../..';
 
-export * from './format-xml';
 export { default } from './format-xml';

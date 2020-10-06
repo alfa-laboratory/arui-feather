@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './card-accounts-list.css';
+
 import '../..';
 
-export * from './card-accounts-list';
 export { default } from './card-accounts-list';

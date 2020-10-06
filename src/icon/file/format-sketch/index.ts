@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-sketch.css';
+
 import '../..';
 
-export * from './format-sketch';
 export { default } from './format-sketch';

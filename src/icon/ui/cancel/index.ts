@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './cancel.css';
+
 import '../..';
 
-export * from './cancel';
 export { default } from './cancel';

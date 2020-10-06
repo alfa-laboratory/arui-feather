@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './share-ios.css';
+
 import '../..';
 
-export * from './share-ios';
 export { default } from './share-ios';

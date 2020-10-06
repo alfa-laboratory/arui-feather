@@ -1,9 +1,9 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type ProgressBarProps = {
-
     /**
      * Прогресс в процентах
      */
@@ -28,7 +28,6 @@ export type ProgressBarProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -40,7 +39,7 @@ export class ProgressBar extends React.PureComponent<ProgressBarProps> {
     static defaultProps: Partial<ProgressBarProps> = {
         percent: 0,
         size: 'm',
-    }
+    };
 
     render() {
         const styles = { width: `${this.props.percent}%` };
@@ -50,10 +49,7 @@ export class ProgressBar extends React.PureComponent<ProgressBarProps> {
                 className={ this.cn({ size: this.props.size }) }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <div
-                    style={ styles }
-                    className={ this.cn('current-value') }
-                />
+                <div style={ styles } className={ this.cn('current-value') } />
             </div>
         );
     }

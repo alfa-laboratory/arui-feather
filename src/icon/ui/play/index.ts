@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './play.css';
+
 import '../..';
 
-export * from './play';
 export { default } from './play';

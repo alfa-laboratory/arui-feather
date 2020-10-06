@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './card-void.css';
+
 import '../..';
 
-export * from './card-void';
 export { default } from './card-void';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './close.css';
+
 import '../..';
 
-export * from './close';
 export { default } from './close';

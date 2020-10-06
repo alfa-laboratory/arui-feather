@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './submit.css';
+
 import '../..';
 
-export * from './submit';
 export { default } from './submit';

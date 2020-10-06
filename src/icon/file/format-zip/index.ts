@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-zip.css';
+
 import '../..';
 
-export * from './format-zip';
 export { default } from './format-zip';

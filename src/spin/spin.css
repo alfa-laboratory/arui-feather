@@ -36,31 +36,31 @@
 
 .spin_theme_alfa-on-color {
     &.spin_size_s {
-        background-image: url("./images/c_s.png");
+        background-image: url('./images/c_s.png');
     }
     &.spin_size_m {
-        background-image: url("./images/c_m.png");
+        background-image: url('./images/c_m.png');
     }
     &.spin_size_l {
-        background-image: url("./images/c_l.png");
+        background-image: url('./images/c_l.png');
     }
     &.spin_size_xl {
-        background-image: url("./images/c_xl.png");
+        background-image: url('./images/c_xl.png');
     }
 }
 
 .spin_theme_alfa-on-white {
     &.spin_size_s {
-        background-image: url("./images/w_s.png");
+        background-image: url('./images/w_s.png');
     }
     &.spin_size_m {
-        background-image: url("./images/w_m.png");
+        background-image: url('./images/w_m.png');
     }
     &.spin_size_l {
-        background-image: url("./images/w_l.png");
+        background-image: url('./images/w_l.png');
     }
     &.spin_size_xl {
-        background-image: url("./images/w_xl.png");
+        background-image: url('./images/w_xl.png');
     }
 }
 

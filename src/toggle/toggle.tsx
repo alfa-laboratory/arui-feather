@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type ToggleProps = {
@@ -138,9 +139,7 @@ export class Toggle extends React.PureComponent<ToggleProps> {
                         </span>
                     ) }
                 </span>
-                { this.props.hint && (
-                    <span className={ this.cn('hint') }>{ this.props.hint }</span>
-                ) }
+                { this.props.hint && <span className={ this.cn('hint') }>{ this.props.hint }</span> }
             </label>
         );
     }
@@ -151,8 +150,11 @@ export class Toggle extends React.PureComponent<ToggleProps> {
 
     private handleChange = () => {
         if (!this.props.disabled) {
-            // eslint-disable-next-line react/no-access-state-in-setstate
-            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
+            /* eslint-disable react/no-access-state-in-setstate */
+            const nextCheckedValue = !(this.props.checked === undefined
+                ? this.state.checked
+                : this.props.checked);
+            /* eslint-enable react/no-access-state-in-setstate */
 
             this.setState({ checked: nextCheckedValue });
 
@@ -178,7 +180,7 @@ export class Toggle extends React.PureComponent<ToggleProps> {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-    }
+    };
 }
 
 export default withTheme<ToggleProps, Toggle>(Toggle);

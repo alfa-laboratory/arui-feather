@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './subtract.css';
+
 import '../..';
 
-export * from './subtract';
 export { default } from './subtract';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-health.css';
+
 import '../..';
 
-export * from './category-health';
 export { default } from './category-health';

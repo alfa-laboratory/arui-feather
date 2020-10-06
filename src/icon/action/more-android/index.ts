@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './more-android.css';
+
 import '../..';
 
-export * from './more-android';
 export { default } from './more-android';

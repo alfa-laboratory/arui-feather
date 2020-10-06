@@ -1,5 +1,6 @@
-import { getMatchMedia, releaseMatchMedia } from './match-media';
 import defaultMq from '../mq/mq.json';
+
+import { getMatchMedia, releaseMatchMedia } from './match-media';
 
 describe('match-media', () => {
     const originalMatchMedia = window.matchMedia;

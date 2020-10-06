@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './selfemloyed-reg.css';
+
 import '../..';
 
-export * from './selfemloyed-reg';
 export { default } from './selfemloyed-reg';

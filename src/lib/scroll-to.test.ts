@@ -65,7 +65,7 @@ describe('scroll-to', () => {
     });
 
     it('should catch error with incorrect easing', () => {
-        const fn = function () {
+        const fn = () => {
             scrollTo({
                 targetY: 100,
                 duration: 200,
@@ -77,7 +77,7 @@ describe('scroll-to', () => {
     });
 
     it('should catch error with incorrect duration', () => {
-        const fn = function () {
+        const fn = () => {
             scrollTo({
                 targetY: 100,
                 duration: -200,
@@ -106,7 +106,10 @@ describe('scroll-to', () => {
         container.scrollTop = 500;
 
         if (element.offsetTop < container.scrollTop) {
-            await scrollTo({ container, targetY: (element.offsetTop - container.offsetHeight) + correction });
+            await scrollTo({
+                container,
+                targetY: element.offsetTop - container.offsetHeight + correction,
+            });
 
             expect(container.scrollTop).toBe(0);
         }

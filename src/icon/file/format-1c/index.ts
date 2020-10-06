@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-1c.css';
+
 import '../..';
 
-export * from './format-1c';
 export { default } from './format-1c';

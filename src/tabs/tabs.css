@@ -1,4 +1,4 @@
-@import "../vars.css";
+@import '../vars.css';
 
 .tabs {
     &,
@@ -12,7 +12,7 @@
         position: relative;
 
         &:after {
-            content: "";
+            content: '';
             position: absolute;
             width: 100%;
             bottom: 1px;
@@ -26,9 +26,7 @@
 
 .tabs_theme_alfa-on-color {
     .tabs__content:after {
-        border-bottom-color: var(
-            --color-background-control-disabled-alfa-on-color
-        );
+        border-bottom-color: var(--color-background-control-disabled-alfa-on-color);
     }
 }
 
@@ -44,7 +42,7 @@
         width: 100%;
 
         &:after {
-            content: "";
+            content: '';
             display: block;
             margin-bottom: var(--gap-l-neg);
         }

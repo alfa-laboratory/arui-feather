@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-nsipf-3292.css';
+
 import '../..';
 
-export * from './bank-nsipf-3292';
 export { default } from './bank-nsipf-3292';

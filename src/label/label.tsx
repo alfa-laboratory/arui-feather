@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type LabelProps = {
@@ -65,9 +66,7 @@ export class Label extends React.PureComponent<LabelProps> {
                 id={ this.props.id }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span className={ this.cn('inner') }>
-                    { this.props.children }
-                </span>
+                <span className={ this.cn('inner') }>{ this.props.children }</span>
             </span>
         );
     }

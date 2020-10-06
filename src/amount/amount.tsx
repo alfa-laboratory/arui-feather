@@ -4,22 +4,17 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 import Heading from '../heading/heading';
 import Label from '../label/label';
+import { AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR, formatAmount, THINSP } from '../lib/format-amount';
 import performance from '../performance';
-
-import {
-    formatAmount,
-    THINSP,
-    AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR,
-} from '../lib/format-amount';
 
 const ZERO_MINOR_PART_REGEXP = /^0+$/;
 
 export type AmountProps = {
     amount: {
-
         /**
          * Абсолютное значение суммы
          */
@@ -29,7 +24,6 @@ export type AmountProps = {
          * Валюта
          */
         currency: {
-
             /**
              * Международный код валюты
              */

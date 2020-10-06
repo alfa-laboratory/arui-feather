@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-person.css';
+
 import '../..';
 
-export * from './category-person';
 export { default } from './category-person';

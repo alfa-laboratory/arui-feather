@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './slider-arrow-double.css';
+
 import '../..';
 
-export * from './slider-arrow-double';
 export { default } from './slider-arrow-double';

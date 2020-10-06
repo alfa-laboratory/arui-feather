@@ -13,13 +13,16 @@ export interface CnFn {
 }
 
 interface ClassDecorator {
-    <TFunction extends Function>(target: TFunction): TFunction | void;
+    <TFunction extends Function>(target: TFunction): TFunction | void; // eslint-disable-line @typescript-eslint/ban-types
 }
 
 /**
  * @deprecated
  */
-const cnDecorator: (blockName: string) => ClassDecorator = (cn as any).create(['alfa-on-white', 'alfa-on-color']);
+const cnDecorator: (blockName: string) => ClassDecorator = (cn as any).create([
+    'alfa-on-white',
+    'alfa-on-color',
+]);
 
 /**
  * @deprecated

@@ -7,26 +7,23 @@ function renderAddons(inputSize) {
     let radioSize;
 
     switch (inputSize) {
-    case 's':
-    case 'm': radioSize = 's'; break;
-    case 'l': radioSize = 'm'; break;
-    case 'xl': radioSize = 'l'; break;
+        case 's':
+        case 'm':
+            radioSize = 's';
+            break;
+        case 'l':
+            radioSize = 'm';
+            break;
+        case 'xl':
+            radioSize = 'l';
+            break;
     }
 
     const buttonControlNodes = [1, 2, 3].map((item) => (
-        <Radio
-            key={ item }
-            size={ radioSize }
-            type="button"
-            text={ item }
-        />
+        <Radio key={ item } size={ radioSize } type="button" text={ item } />
     ));
 
-    return (
-        <RadioGroup type="button">
-            { buttonControlNodes }
-        </RadioGroup>
-    );
+    return <RadioGroup type="button">{ buttonControlNodes }</RadioGroup>;
 }
 
 const NAME = 'input';
@@ -83,17 +80,15 @@ geminiReact.suite(NAME, () => {
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             })
-                            .capture('pressed', function (actions) {
+                            .capture('pressed', function pressed(actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
                             .capture('focused', (actions, find) => {

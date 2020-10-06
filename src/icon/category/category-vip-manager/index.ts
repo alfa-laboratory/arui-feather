@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-vip-manager.css';
+
 import '../..';
 
-export * from './category-vip-manager';
 export { default } from './category-vip-manager';

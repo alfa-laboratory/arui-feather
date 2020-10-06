@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-any-bank.css';
+
 import '../..';
 
-export * from './transfer-any-bank';
 export { default } from './transfer-any-bank';

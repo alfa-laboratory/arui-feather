@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './settings.css';
+
 import '../..';
 
-export * from './settings';
 export { default } from './settings';

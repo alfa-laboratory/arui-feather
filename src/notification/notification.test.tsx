@@ -3,17 +3,13 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Notification } from './notification';
 
 describe('notification', () => {
     it('should render without problems', () => {
-        const notification = shallow(
-            <Notification>
-                notification-text
-            </Notification>,
-        );
+        const notification = shallow(<Notification>notification-text</Notification>);
 
         expect(notification).toMatchSnapshot();
         expect(notification.find('.notification__content').text()).toBe('notification-text');
@@ -22,11 +18,7 @@ describe('notification', () => {
     it('should call `onClick` callback after notification was clicked', () => {
         const onClick = jest.fn();
         const notification = mount(
-            <Notification
-                hasCloser={ true }
-                visible={ true }
-                onClick={ onClick }
-            >
+            <Notification hasCloser={ true } visible={ true } onClick={ onClick }>
                 notification-text
             </Notification>,
         );
@@ -36,14 +28,10 @@ describe('notification', () => {
         expect(onClick).toHaveBeenCalled();
     });
 
-    it('should call `onCloserClick` callback after notification\'s cross was clicked', () => {
+    it("should call `onCloserClick` callback after notification's cross was clicked", () => {
         const onCloserClick = jest.fn();
         const notification = mount(
-            <Notification
-                hasCloser={ true }
-                visible={ true }
-                onCloserClick={ onCloserClick }
-            >
+            <Notification hasCloser={ true } visible={ true } onCloserClick={ onCloserClick }>
                 notification-text
             </Notification>,
         );
@@ -57,11 +45,7 @@ describe('notification', () => {
     it('should call `onCloseTimeout` callback after close timeout was ended', (done) => {
         const onCloseTimeout = jest.fn();
         const notification = mount(
-            <Notification
-                hasCloser={ true }
-                autoCloseDelay={ 100 }
-                onCloseTimeout={ onCloseTimeout }
-            >
+            <Notification hasCloser={ true } autoCloseDelay={ 100 } onCloseTimeout={ onCloseTimeout }>
                 notification-text
             </Notification>,
         );
@@ -79,18 +63,17 @@ describe('notification', () => {
         const onClickOutside = jest.fn();
 
         mount(
-            <Notification
-                visible={ true }
-                onClickOutside={ onClickOutside }
-            >
+            <Notification visible={ true } onClickOutside={ onClickOutside }>
                 notification-text
             </Notification>,
         );
 
         const outsideElement = document.createElement('div');
 
-        outsideElement.setAttribute('style',
-            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;');
+        outsideElement.setAttribute(
+            'style',
+            'width: 100px; height: 100px; position: absolute; left: 500px; top: 500px;',
+        );
         document.body.appendChild(outsideElement);
 
         setTimeout(() => {
@@ -102,10 +85,7 @@ describe('notification', () => {
 
     it('should render passed custom icon component', () => {
         const notification = shallow(
-            <Notification
-                hasCloser={ true }
-                icon={ <div className="super-icon" /> }
-            >
+            <Notification hasCloser={ true } icon={ <div className="super-icon" /> }>
                 notification-text
             </Notification>,
         );

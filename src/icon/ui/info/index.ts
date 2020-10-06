@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './info.css';
+
 import '../..';
 
-export * from './info';
 export { default } from './info';

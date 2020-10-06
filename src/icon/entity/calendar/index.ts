@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './calendar.css';
+
 import '../..';
 
-export * from './calendar';
 export { default } from './calendar';

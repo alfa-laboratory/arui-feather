@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './android-document.css';
+
 import '../..';
 
-export * from './android-document';
 export { default } from './android-document';

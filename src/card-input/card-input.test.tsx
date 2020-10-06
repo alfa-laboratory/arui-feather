@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 import { CardInput } from './card-input';
-import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('card-input', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -28,7 +29,7 @@ describe('card-input', () => {
     it('should scroll window to element on public `scrollTo` method call', () => {
         const cardInput = mount<CardInput>(<CardInput />);
         const elemTopPosition = cardInput.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         cardInput.instance().scrollTo();
 

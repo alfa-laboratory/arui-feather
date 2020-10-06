@@ -7,16 +7,14 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
-
-import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
-import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
-
+import IconClose from '../icon/ui/close';
 import keyboardCode from '../lib/keyboard-code';
 import getScrollbarWidth from '../lib/scrollbar-width';
-
 import Mq from '../mq';
+import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
 
 const SIDEBAR_WIDTH = 430;
 
@@ -25,7 +23,7 @@ let savedScrollPosition: number;
 type BodyClassParams = {
     visible: boolean;
     hasOverlay: boolean;
-}
+};
 
 /**
  * Восстанавливает исходную позицию скролла
@@ -57,7 +55,8 @@ function setBodyClass({ visible, hasOverlay }: BodyClassParams) {
  * сохраняя scrollTop для последующего использования в сайдбаре.
  */
 function handleBodyScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
     if (scrollTop) {
         savedScrollPosition = scrollTop;
@@ -65,7 +64,6 @@ function handleBodyScroll() {
 }
 
 export type SidebarProps = {
-
     /**
      * Тема компонента
      */
@@ -125,12 +123,11 @@ export type SidebarProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 type SidebarState = {
     isMobile: boolean;
-}
+};
 
 /**
  * Компонент боковой панели aka холодильник.
@@ -199,8 +196,8 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
         } = this.props;
 
         const offset = visible ? getScrollbarWidth() : 0;
-        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px`, };
-        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px`, };
+        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
             <PopupContainerProvider
@@ -214,56 +211,32 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
                     className={ this.cn('overlay', { visible: visible && hasOverlay }) }
                     onClick={ this.handleClose }
                 />
-                <Mq
-                    query="--small-only"
-                    onMatchChange={ this.handleMqMatchChange }
-                />
-                <div
-                    className={ this.cn('inner') }
-                    id={ this.props.id }
-                >
-                    <header
-                        className={ this.cn('header') }
-                    >
-                        {
-                            hasCloser
-                            && (
-                                <div className={ this.cn('closer') }>
-                                    <IconButton
-                                        size={ this.state.isMobile ? 'm' : 'l' }
-                                        onClick={ this.handleClose }
-                                    >
-                                        <IconClose size="l" />
-                                    </IconButton>
-                                </div>
-                            )
-                        }
-                        {
-                            headerContent
-                                ? this.renderHeaderContent()
-                                : null
-                        }
+                <Mq query="--small-only" onMatchChange={ this.handleMqMatchChange } />
+                <div className={ this.cn('inner') } id={ this.props.id }>
+                    <header className={ this.cn('header') }>
+                        { hasCloser && (
+                            <div className={ this.cn('closer') }>
+                                <IconButton
+                                    size={ this.state.isMobile ? 'm' : 'l' }
+                                    onClick={ this.handleClose }
+                                >
+                                    <IconClose size="l" />
+                                </IconButton>
+                            </div>
+                        ) }
+                        { headerContent ? this.renderHeaderContent() : null }
                     </header>
-                    <div
-                        style={ contentStyle }
-                        className={ this.cn('content') }
-                    >
+                    <div style={ contentStyle } className={ this.cn('content') }>
                         { children }
                     </div>
-                    <footer className={ this.cn('footer') }>
-                        { footerContent }
-                    </footer>
+                    <footer className={ this.cn('footer') }>{ footerContent }</footer>
                 </div>
             </PopupContainerProvider>
         );
     }
 
     renderHeaderContent() {
-        return (
-            <div className={ this.cn('header-content') }>
-                { this.props.headerContent }
-            </div>
-        );
+        return <div className={ this.cn('header-content') }>{ this.props.headerContent }</div>;
     }
 
     private handleMqMatchChange = (isMatched: boolean) => {
@@ -283,17 +256,18 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
 
     private handleKeyDown = (event: KeyboardEvent) => {
         switch (event.which) {
-        case keyboardCode.ESCAPE:
-            event.preventDefault();
-            this.handleClose(event);
-            break;
+            case keyboardCode.ESCAPE:
+                event.preventDefault();
+                this.handleClose(event);
+                break;
         }
     };
 
     private styleBodyRightMargin() {
         const offset = this.props.visible ? getScrollbarWidth() : 0;
 
-        document.body.style.marginRight = !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : '0';
+        document.body.style.marginRight =
+            !this.state.isMobile && this.props.hasOverlay ? `${offset}px` : '0';
     }
 }
 

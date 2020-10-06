@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-gazprombank.css';
+
 import '../..';
 
-export * from './bank-gazprombank';
 export { default } from './bank-gazprombank';

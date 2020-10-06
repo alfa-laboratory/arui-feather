@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import "../vars.css";
+@import '../vars.css';
 
 .menu {
     outline: 0;
@@ -32,13 +32,11 @@
     }
 
     .menu-item:first-child {
-        border-radius: var(--border-radius-control) 0 0
-            var(--border-radius-control);
+        border-radius: var(--border-radius-control) 0 0 var(--border-radius-control);
     }
 
     .menu-item:last-child {
-        border-radius: 0 var(--border-radius-control)
-            var(--border-radius-control) 0;
+        border-radius: 0 var(--border-radius-control) var(--border-radius-control) 0;
     }
 }
 
@@ -51,7 +49,7 @@
 .menu_mode_radio,
 .menu_mode_radio-check {
     .menu-item_checked:before {
-        content: "";
+        content: '';
         display: inline-block;
         position: absolute;
         border-radius: 50%;

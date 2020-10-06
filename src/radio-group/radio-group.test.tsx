@@ -5,8 +5,9 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import { RadioGroup } from './radio-group';
 import { Radio } from '../radio/radio';
+
+import { RadioGroup } from './radio-group';
 
 describe('radio-group', () => {
     it('should render without any children', () => {
@@ -16,7 +17,11 @@ describe('radio-group', () => {
     });
 
     it('should render with only one children', () => {
-        const radioGroup = shallow(<RadioGroup><Radio key="1" /></RadioGroup>);
+        const radioGroup = shallow(
+            <RadioGroup>
+                <Radio key="1" />
+            </RadioGroup>,
+        );
 
         expect(radioGroup).toMatchSnapshot();
     });
@@ -34,9 +39,7 @@ describe('radio-group', () => {
 
     it('should render checked radio with value from `value` props', () => {
         const radioGroup = mount(
-            <RadioGroup
-                value="1"
-            >
+            <RadioGroup value="1">
                 <Radio key="1" value="1" text="label 1" />
                 <Radio key="2" value="2" text="label 2" />
             </RadioGroup>,
@@ -183,7 +186,7 @@ describe('radio-group', () => {
         expect(radioGroupNode.state().value).toEqual('2');
     });
 
-    it('shouldn\'t call `onChange` when radio group value and radio value are same', () => {
+    it("shouldn't call `onChange` when radio group value and radio value are same", () => {
         const onChange = jest.fn();
         const radioGroupNode = mount(
             <RadioGroup value="1" onChange={ onChange }>
@@ -213,7 +216,7 @@ describe('radio-group', () => {
         expect(disabledRadioNodes.length).toBe(3);
     });
 
-    it('shouldn\'t call `onChange` callback when disabled=true', () => {
+    it("shouldn't call `onChange` callback when disabled=true", () => {
         const onChange = jest.fn();
         const radioGroup = mount(
             <RadioGroup onChange={ onChange } disabled={ true }>

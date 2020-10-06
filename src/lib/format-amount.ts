@@ -18,7 +18,12 @@ const NEGATIVE_AMOUNT_SYMBOL = '−';
  * равняется пяти по требованию гайдлайнов: https://design.alfabank.ru/patterns/amount. Пример: 2900 — не разбивается,
  * 29 000 — разбивается.
  */
-function splitAmount(amount: string, partSize = 3, splitter: string = THINSP, splitFrom = 5): string {
+function splitAmount(
+    amount: string,
+    partSize = 3,
+    splitter: string = THINSP,
+    splitFrom = 5,
+): string {
     const len = amount.length;
 
     // Если длина суммы меньше требуемой, не форматируем сумму
@@ -102,7 +107,8 @@ export function formatAmount(amount: Amount): FormattedAmount {
         AMOUNT_SPLIT_CODE_FROM,
     );
 
-    const majorPartFormatted = value < 0 ? NEGATIVE_AMOUNT_SYMBOL + majorPartSplitted : majorPartSplitted;
+    const majorPartFormatted =
+        value < 0 ? NEGATIVE_AMOUNT_SYMBOL + majorPartSplitted : majorPartSplitted;
 
     const formattedValueStr = minorPart
         ? majorPartFormatted + AMOUNT_MAJOR_MINOR_PARTS_SEPARATOR + minorPart
@@ -121,10 +127,7 @@ export function formatAmount(amount: Amount): FormattedAmount {
  * Использует функционал formatAmount
  */
 export function formatAmountToString(amount: Amount): string {
-    const {
-        value,
-        currencySymbol,
-    } = formatAmount(amount);
+    const { value, currencySymbol } = formatAmount(amount);
 
     return `${value}${THINSP}${currencySymbol}`;
 }

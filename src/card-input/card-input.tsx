@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
 import { Input, InputProps } from '../input/input';
 
 export type CardInputProps = InputProps & {

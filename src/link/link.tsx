@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type LinkProps = {
-
     /**
      * Иконка ссылки
      */
@@ -151,7 +151,8 @@ export class Link extends React.PureComponent<LinkProps> {
         const linkElement = this.props.checked || this.props.disabled ? 'span' : 'a';
         const { iconPosition } = this.props;
 
-        const linkProps: React.AnchorHTMLAttributes<HTMLAnchorElement> & React.ClassAttributes<HTMLAnchorElement> = {
+        const linkProps: React.AnchorHTMLAttributes<HTMLAnchorElement> &
+        React.ClassAttributes<HTMLAnchorElement> = {
             ref: (root) => {
                 this.root = root;
             },
@@ -204,10 +205,14 @@ export class Link extends React.PureComponent<LinkProps> {
             linkContent.push(textTemplate, iconTemplate);
         }
 
-        return React.createElement(linkElement, {
-            ...linkProps,
-            'data-test-id': this.props['data-test-id'],
-        }, linkContent);
+        return React.createElement(
+            linkElement,
+            {
+                ...linkProps,
+                'data-test-id': this.props['data-test-id'],
+            },
+            linkContent,
+        );
     }
 
     private handleClick = (event) => {

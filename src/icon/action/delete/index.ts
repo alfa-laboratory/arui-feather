@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './delete.css';
+
 import '../..';
 
-export * from './delete';
 export { default } from './delete';

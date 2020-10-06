@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './more-ios.css';
+
 import '../..';
 
-export * from './more-ios';
 export { default } from './more-ios';

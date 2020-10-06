@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './payment-rounded-plus.css';
+
 import '../..';
 
-export * from './payment-rounded-plus';
 export { default } from './payment-rounded-plus';

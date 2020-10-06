@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './bank-trust.css';
+
 import '../..';
 
-export * from './bank-trust';
 export { default } from './bank-trust';

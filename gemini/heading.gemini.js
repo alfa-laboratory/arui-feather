@@ -19,15 +19,12 @@ geminiReact.suite(NAME, () => {
                     <GeminiBox theme={ theme }>
                         <Heading { ...props }>
                             Heading Size
-                            { ' ' }
                             { size.toUpperCase() }
                         </Heading>
                     </GeminiBox>
                 );
 
-                suite
-                    .render(template)
-                    .capture('plain');
+                suite.render(template).capture('plain');
             });
         });
     });

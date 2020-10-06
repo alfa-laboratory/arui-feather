@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './emoney.css';
+
 import '../..';
 
-export * from './emoney';
 export { default } from './emoney';

@@ -4,16 +4,14 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 import Button from '../button/button';
+import { withTheme } from '../cn';
 import Link from '../link/link';
 import Popup, { PopupProps } from '../popup/popup';
-
 import { POPUP_MAIN_OFFSET } from '../vars';
 
 export type DropdownProps = {
-
     /**
      * Тип компонента
      */
@@ -147,11 +145,7 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
 
     render() {
         return (
-            <div
-                className={ this.cn() }
-                id={ this.props.id }
-                data-test-id={ this.props['data-test-id'] }
-            >
+            <div className={ this.cn() } id={ this.props.id } data-test-id={ this.props['data-test-id'] }>
                 { this.renderSwitcher() }
                 { this.renderPopup() }
             </div>
@@ -209,13 +203,19 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
         let mainOffset;
         const opened = this.props.opened === undefined ? this.state.opened : this.props.opened;
 
-        if (this.props.popupProps === undefined || (
-            this.props.popupProps && this.props.popupProps.type !== 'tooltip')) {
+        if (
+            this.props.popupProps === undefined ||
+            (this.props.popupProps && this.props.popupProps.type !== 'tooltip')
+        ) {
             switch (this.props.size) {
-            case 's':
-            case 'm': mainOffset = POPUP_MAIN_OFFSET / 2; break;
-            case 'l':
-            case 'xl': mainOffset = POPUP_MAIN_OFFSET; break;
+                case 's':
+                case 'm':
+                    mainOffset = POPUP_MAIN_OFFSET / 2;
+                    break;
+                case 'l':
+                case 'xl':
+                    mainOffset = POPUP_MAIN_OFFSET;
+                    break;
             }
         }
 
@@ -233,8 +233,9 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
                     this.popup = popup;
                 } }
                 visible={
-                    (!this.props.disabled && opened)
-                    || (this.props.mode === 'hover' && (this.state.switcherHovered || this.state.popupHovered))
+                    (!this.props.disabled && opened) ||
+                    (this.props.mode === 'hover' &&
+                        (this.state.switcherHovered || this.state.popupHovered))
                 }
                 onMouseEnter={ this.handlePopupMouseEnter }
                 onMouseLeave={ this.handlePopupMouseLeave }
@@ -246,8 +247,10 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
     }
 
     private handleSwitcherClick = () => {
-        // eslint-disable-next-line react/no-access-state-in-setstate
-        const newOpenedStatusValue = this.props.opened === undefined ? !this.state.opened : !this.props.opened;
+        /* eslint-disable react/no-access-state-in-setstate */
+        const newOpenedStatusValue =
+            this.props.opened === undefined ? !this.state.opened : !this.props.opened;
+        /* eslint-enable react/no-access-state-in-setstate */
 
         this.setState({
             opened: newOpenedStatusValue,
@@ -296,7 +299,7 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
         if (this.props.onPopupClickOutside) {
             this.props.onPopupClickOutside(event);
         }
-    }
+    };
 }
 
 export default withTheme<DropdownProps, Dropdown>(Dropdown);

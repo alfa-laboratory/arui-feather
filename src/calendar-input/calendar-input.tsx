@@ -5,37 +5,36 @@
 /* eslint-disable max-len */
 
 import React from 'react';
-import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import formatDate from 'date-fns/format';
 
 import Calendar, { CalendarProps } from '../calendar/calendar';
-import IconCalendar from '../icon/entity/calendar';
+import { withTheme } from '../cn';
 import IconButton from '../icon-button/icon-button';
+import IconCalendar from '../icon/entity/calendar';
 import Input from '../input/input';
-import Mq from '../mq/mq';
-import Popup from '../popup/popup';
-import PopupHeader from '../popup-header/popup-header';
-
 import keyboardCode from '../lib/keyboard-code';
 import { isNodeOutsideElement } from '../lib/window';
-import {
-    parseDate, calculateMonth, changeDateFormat, isInputDateSupported,
-} from './utils';
+import Mq from '../mq/mq';
 import performance from '../performance';
+import PopupHeader from '../popup-header/popup-header';
+import Popup from '../popup/popup';
+
+import {
+    calculateMonth, changeDateFormat, isInputDateSupported, parseDate,
+} from './utils';
 
 /**
  * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
  * https://www.w3.org/TR/html-markup/input.date.html#input.date.attrs.value
  * https://tools.ietf.org/html/rfc3339#section-5.6
-*/
+ */
 const CUSTOM_DATE_FORMAT = 'DD.MM.YYYY';
 const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 
 export type CalendarInputProps = {
-
     /**
      * Содержимое поля ввода
      */
@@ -74,7 +73,21 @@ export type CalendarInputProps = {
     /**
      * Направления, в которые может открываться попап компонента
      */
-    directions?: ReadonlyArray<'anchor' | 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right'>;
+    directions?: ReadonlyArray<
+    | 'anchor'
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'left-top'
+    | 'left-center'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-center'
+    | 'right-bottom'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right'
+    >;
 
     /**
      * Управление автозаполнением компонента
@@ -308,53 +321,51 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         };
 
         const nativeProps = {
-            min: this.props.calendar
-                && this.props.calendar.earlierLimit
-                && formatDate(this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
-            max: this.props.calendar
-                && this.props.calendar.laterLimit
-                && formatDate(this.props.calendar.laterLimit, NATIVE_DATE_FORMAT),
+            min:
+                this.props.calendar &&
+                this.props.calendar.earlierLimit &&
+                formatDate(this.props.calendar.earlierLimit, NATIVE_DATE_FORMAT),
+            max:
+                this.props.calendar &&
+                this.props.calendar.laterLimit &&
+                formatDate(this.props.calendar.laterLimit, NATIVE_DATE_FORMAT),
         };
 
-        const wrapperProps = this.isMobilePopup() && !this.props.disabled
-            ? {
-                role: 'button',
-                tabIndex: 0,
-                onClick: this.handleMobileWrapperClick,
-            }
-            : {};
+        const wrapperProps =
+            this.isMobilePopup() && !this.props.disabled
+                ? {
+                    role: 'button',
+                    tabIndex: 0,
+                    onClick: this.handleMobileWrapperClick,
+                }
+                : {};
 
         return (
             <span
                 className={ this.cn({ width: this.props.width }) }
                 data-test-id={ this.props['data-test-id'] }
             >
-                <span
-                    { ...wrapperProps }
-                >
-                    <Mq
-                        query="--small-only"
-                        touch={ true }
-                        onMatchChange={ this.handleMqMatchChange }
-                    >
-                        {
-                            this.canBeNative()
-                            && (
-                                <input
-                                    ref={ (nativeCalendarTarget) => {
-                                        this.nativeCalendarTarget = nativeCalendarTarget;
-                                    } }
-                                    { ...commonProps }
-                                    { ...nativeProps }
-                                    className={ this.cn('native-control') }
-                                    type="date"
-                                    value={ changeDateFormat(value, CUSTOM_DATE_FORMAT, NATIVE_DATE_FORMAT) }
-                                    onBlur={ this.handleNativeInputBlur }
-                                    onChange={ this.handleNativeInputChange }
-                                    onFocus={ this.handleNativeInputFocus }
-                                />
-                            )
-                        }
+                <span { ...wrapperProps }>
+                    <Mq query="--small-only" touch={ true } onMatchChange={ this.handleMqMatchChange }>
+                        { this.canBeNative() && (
+                            <input
+                                ref={ (nativeCalendarTarget) => {
+                                    this.nativeCalendarTarget = nativeCalendarTarget;
+                                } }
+                                { ...commonProps }
+                                { ...nativeProps }
+                                className={ this.cn('native-control') }
+                                type="date"
+                                value={ changeDateFormat(
+                                    value,
+                                    CUSTOM_DATE_FORMAT,
+                                    NATIVE_DATE_FORMAT,
+                                ) }
+                                onBlur={ this.handleNativeInputBlur }
+                                onChange={ this.handleNativeInputChange }
+                                onFocus={ this.handleNativeInputFocus }
+                            />
+                        ) }
                     </Mq>
                     <Input
                         ref={ (customCalendarTarget) => {
@@ -386,12 +397,9 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
                         onFocus={ this.handleCustomInputFocus }
                         onKeyDown={ this.handleInputKeyDown }
                         icon={
-                            this.props.withIcon
-                            && (
+                            this.props.withIcon && (
                                 <IconButton onClick={ this.handleIconButtonClick }>
-                                    <IconCalendar
-                                        size={ this.props.size }
-                                    />
+                                    <IconCalendar size={ this.props.size } />
                                 </IconButton>
                             )
                         }
@@ -488,17 +496,17 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
 
     private handleCalendarKeyDown = (event) => {
         switch (event.which) {
-        case keyboardCode.ESCAPE:
-            event.preventDefault();
-            this.customCalendarTarget.focus();
-            break;
-        case keyboardCode.ENTER:
-        case keyboardCode.SPACE:
-            event.preventDefault();
-            this.setState({
-                opened: false,
-            });
-            break;
+            case keyboardCode.ESCAPE:
+                event.preventDefault();
+                this.customCalendarTarget.focus();
+                break;
+            case keyboardCode.ENTER:
+            case keyboardCode.SPACE:
+                event.preventDefault();
+                this.setState({
+                    opened: false,
+                });
+                break;
         }
 
         if (this.props.onCalendarKeyDown) {
@@ -570,7 +578,9 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         const resultEvent = {
             ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
-            target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) },
+            target: {
+                value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT),
+            },
         };
 
         this.changeFocused({ isInputFocused: true }, resultEvent);
@@ -593,7 +603,9 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         const resultEvent = {
             ...event,
             // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
-            target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) },
+            target: {
+                value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT),
+            },
         };
 
         this.changeFocused({ isInputFocused: false }, resultEvent);
@@ -605,34 +617,34 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
 
     private handleInputKeyDown = (event) => {
         switch (event.which) {
-        case keyboardCode.DOWN_ARROW: {
-            event.preventDefault();
+            case keyboardCode.DOWN_ARROW: {
+                event.preventDefault();
 
-            const value = this.props.value === undefined ? this.state.value : this.props.value;
+                const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-            this.setState({
-                opened: true,
-                month: calculateMonth(
-                    value,
-                    CUSTOM_DATE_FORMAT,
-                    this.props.calendar ? this.props.calendar.earlierLimit : undefined,
-                    this.props.calendar ? this.props.calendar.laterLimit : undefined,
-                ),
-            });
+                this.setState({
+                    opened: true,
+                    month: calculateMonth(
+                        value,
+                        CUSTOM_DATE_FORMAT,
+                        this.props.calendar ? this.props.calendar.earlierLimit : undefined,
+                        this.props.calendar ? this.props.calendar.laterLimit : undefined,
+                    ),
+                });
 
-            this.calendar.focus();
+                this.calendar.focus();
 
-            break;
-        }
-        case keyboardCode.ESCAPE: {
-            event.preventDefault();
+                break;
+            }
+            case keyboardCode.ESCAPE: {
+                event.preventDefault();
 
-            this.setState({
-                opened: false,
-            });
+                this.setState({
+                    opened: false,
+                });
 
-            break;
-        }
+                break;
+            }
         }
 
         if (this.props.onInputKeyDown) {
@@ -708,15 +720,18 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
 
         // При переключении фокуса с поля ввода на календарь событие `blur` у поля ввода иногда происходит перед фокусом календаря
         // Поэтому проверяем элемент который получит фокус после блюра и если он внутри календаря - оставляем сфокусированное состояние.
-        const relatedTarget = event.relatedTarget // не поддерживается в FF и IE10 https://github.com/facebook/react/issues/2011
-            || event.explicitOriginalTarget // не поддерживается в IE
-            || document.activeElement; // В IE вернет не <calendar> а конкретную ноду, на которую пришел фокус
+        const relatedTarget =
+            event.relatedTarget || // не поддерживается в FF и IE10 https://github.com/facebook/react/issues/2011
+            event.explicitOriginalTarget || // не поддерживается в IE
+            document.activeElement; // В IE вернет не <calendar> а конкретную ноду, на которую пришел фокус
 
-        const calendarWillReceiveFocus = !isNodeOutsideElement(relatedTarget, this.calendar.getNode());
+        const calendarWillReceiveFocus = !isNodeOutsideElement(
+            relatedTarget,
+            this.calendar.getNode(),
+        );
 
-        const newFocused = newState.isInputFocused
-            || newState.isCalendarFocused
-            || calendarWillReceiveFocus;
+        const newFocused =
+            newState.isInputFocused || newState.isCalendarFocused || calendarWillReceiveFocus;
 
         this.setState(focusedState);
 
@@ -744,17 +759,17 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         this.timeoutId = setTimeout(() => {
             const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-            // eslint-disable-next-line react/no-access-state-in-setstate
-            const newMonth = this.state.opened === opened
-                // eslint-disable-next-line react/no-access-state-in-setstate
-                ? this.state.month
-                : calculateMonth(
-                    value || this.props.defaultMonth,
-                    CUSTOM_DATE_FORMAT,
-                    this.props.calendar ? this.props.calendar.earlierLimit : undefined,
-                    this.props.calendar ? this.props.calendar.laterLimit : undefined,
-                );
-
+            /* eslint-disable react/no-access-state-in-setstate */
+            const newMonth =
+                this.state.opened === opened
+                    ? this.state.month
+                    : calculateMonth(
+                        value || this.props.defaultMonth,
+                        CUSTOM_DATE_FORMAT,
+                        this.props.calendar ? this.props.calendar.earlierLimit : undefined,
+                        this.props.calendar ? this.props.calendar.laterLimit : undefined,
+                    );
+            /* eslint-enable react/no-access-state-in-setstate */
             this.setState({
                 opened,
                 month: newMonth,

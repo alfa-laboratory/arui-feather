@@ -21,5 +21,6 @@ require('core-js/es6/weak-map');
 require('core-js/es6/symbol');
 
 if (typeof window !== 'undefined') {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     require('raf').polyfill(); // window.requestAnimationFrame for ie <= 10 & android 4.0..4.3
 }

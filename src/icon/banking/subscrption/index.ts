@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './subscrption.css';
+
 import '../..';
 
-export * from './subscrption';
 export { default } from './subscrption';

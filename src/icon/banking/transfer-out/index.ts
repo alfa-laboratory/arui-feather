@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './transfer-out.css';
+
 import '../..';
 
-export * from './transfer-out';
 export { default } from './transfer-out';

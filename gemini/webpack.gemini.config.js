@@ -18,13 +18,9 @@ module.exports = merge.smart(WEBPACK_BASE_TEMPLATE, {
                 loader: 'ts-loader',
                 options: {
                     transpileOnly: true,
-                }
+                },
             },
         ],
     },
-    plugins: [
-        new webpack.EnvironmentPlugin([
-            'ALL_SIZES',
-        ]),
-    ],
+    plugins: [new webpack.EnvironmentPlugin(['ALL_SIZES'])],
 });

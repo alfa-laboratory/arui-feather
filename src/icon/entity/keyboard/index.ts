@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './keyboard.css';
+
 import '../..';
 
-export * from './keyboard';
 export { default } from './keyboard';

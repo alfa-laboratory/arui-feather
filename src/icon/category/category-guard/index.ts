@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-guard.css';
+
 import '../..';
 
-export * from './category-guard';
 export { default } from './category-guard';

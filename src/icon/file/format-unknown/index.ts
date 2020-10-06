@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-unknown.css';
+
 import '../..';
 
-export * from './format-unknown';
 export { default } from './format-unknown';

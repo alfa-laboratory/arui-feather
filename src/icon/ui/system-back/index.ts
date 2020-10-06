@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './system-back.css';
+
 import '../..';
 
-export * from './system-back';
 export { default } from './system-back';

@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './online-kassa.css';
+
 import '../..';
 
-export * from './online-kassa';
 export { default } from './online-kassa';

@@ -6,17 +6,15 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
-
 import IconCheck from '../icon/ui/tick';
-import MenuItem, { MenuItemProps } from '../menu-item/menu-item';
-
-import { isNodeOutsideElement } from '../lib/window';
 import keyboardCode from '../lib/keyboard-code';
+import { isNodeOutsideElement } from '../lib/window';
+import MenuItem, { MenuItemProps } from '../menu-item/menu-item';
 import performance from '../performance';
 
 export type MenuHighlightedItemShapeType = {
-
     /**
      * Уникальный идентификатор
      */
@@ -26,11 +24,10 @@ export type MenuHighlightedItemShapeType = {
      * Элемент списка типа ContentItem
      */
     item?: any;
-}
+};
 
 // TODO: тут надо переделать типы, и сделать условными сейчас не очевидно
 export type MenuContentType = {
-
     /**
      * Тип элемента
      */
@@ -63,7 +60,6 @@ export type MenuContentType = {
 };
 
 export type MenuProps = {
-
     /**
      * Тип расположения меню: 'horizontal'
      */
@@ -182,7 +178,6 @@ export type MenuProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -213,9 +208,12 @@ export class Menu extends React.Component<MenuProps> {
     private blurTimeoutId = null;
 
     componentDidMount() {
-        if (!!this.props.content && this.props.content.length > 0
-            && (!this.props.checkedItems || this.props.checkedItems.length === 0)
-            && this.props.mode === 'radio') {
+        if (
+            !!this.props.content &&
+            this.props.content.length > 0 &&
+            (!this.props.checkedItems || this.props.checkedItems.length === 0) &&
+            this.props.mode === 'radio'
+        ) {
             const firstItem = this.getFirstItem(this.props.content);
 
             this.changeCheckedItems([firstItem.value], null);
@@ -224,8 +222,11 @@ export class Menu extends React.Component<MenuProps> {
 
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillReceiveProps(nextProps) {
-        if (this.props.mode !== 'check' && this.state.checkedItems[0]
-            && nextProps.checkedItems[0] !== this.state.checkedItems[0]) {
+        if (
+            this.props.mode !== 'check' &&
+            this.state.checkedItems[0] &&
+            nextProps.checkedItems[0] !== this.state.checkedItems[0]
+        ) {
             let highlightedItem;
 
             this.menuItemList.forEach((item, index, menuItemList) => {
@@ -291,16 +292,8 @@ export class Menu extends React.Component<MenuProps> {
         content.forEach((item) => {
             if (item.type === 'group') {
                 result.push(
-                    <div
-                        className={ this.cn('group') }
-                        key={ `group_${groupKey}` }
-                    >
-                        { !!item.title
-                            && (
-                                <div className={ this.cn('group-title') }>
-                                    { item.title }
-                                </div>
-                            ) }
+                    <div className={ this.cn('group') } key={ `group_${groupKey}` }>
+                        { !!item.title && <div className={ this.cn('group-title') }>{ item.title }</div> }
                         { this.renderMenuItemList(item.content) }
                     </div>,
                 );
@@ -317,7 +310,10 @@ export class Menu extends React.Component<MenuProps> {
         const itemProps = item.props || {};
         const isItemChecked = this.getIndexInCheckedItemsList(item.value) !== -1;
         const isItemDisabled = this.props.disabled || itemProps.disabled;
-        const clickHandler = this.props.mode === 'basic' ? itemProps.onClick : (event) => this.handleMenuItemClick(item, event);
+        const clickHandler =
+            this.props.mode === 'basic'
+                ? itemProps.onClick
+                : (event) => this.handleMenuItemClick(item, event);
         const menuItem: { item; ref; instance? } = {
             item,
             ref: item.value,
@@ -329,14 +325,21 @@ export class Menu extends React.Component<MenuProps> {
             size: this.props.size || itemProps.size,
             onClick: isItemDisabled ? undefined : clickHandler,
         };
-        const highlightedItem = this.props.highlightedItem === undefined
-            ? this.state.highlightedItem
-            : this.props.highlightedItem;
+        const highlightedItem =
+            this.props.highlightedItem === undefined
+                ? this.state.highlightedItem
+                : this.props.highlightedItem;
         let iconSize;
 
         switch (this.props.size) {
-        case 's': case 'm': iconSize = 's'; break;
-        case 'l': case 'xl': iconSize = 'm'; break;
+            case 's':
+            case 'm':
+                iconSize = 's';
+                break;
+            case 'l':
+            case 'xl':
+                iconSize = 'm';
+                break;
         }
 
         this.menuItemList.push(menuItem);
@@ -354,14 +357,7 @@ export class Menu extends React.Component<MenuProps> {
                 onMouseLeave={ this.handleMenuItemMouseLeave }
                 hovered={ highlightedItem && highlightedItem.ref === menuItem.ref }
             >
-                {
-                    this.props.mode === 'check' && isItemChecked
-                    && (
-                        <IconCheck
-                            size={ iconSize }
-                        />
-                    )
-                }
+                { this.props.mode === 'check' && isItemChecked && <IconCheck size={ iconSize } /> }
                 { item.content }
             </MenuItem>
         );
@@ -403,74 +399,75 @@ export class Menu extends React.Component<MenuProps> {
         const menuIteListLength = this.menuItemList.length;
 
         switch (event.which) {
-        case keyboardCode.DOWN_ARROW: {
-            event.preventDefault();
+            case keyboardCode.DOWN_ARROW: {
+                event.preventDefault();
 
-            if (this.state.highlightedItem) {
-                this.menuItemList.forEach((item, index, menuItemList) => {
-                    if (item.ref === this.state.highlightedItem.ref) {
-                        if (index + 1 === menuIteListLength) {
-                            [highlightedItem] = menuItemList;
-                        } else {
-                            highlightedItem = menuItemList[index + 1];
+                if (this.state.highlightedItem) {
+                    this.menuItemList.forEach((item, index, menuItemList) => {
+                        if (item.ref === this.state.highlightedItem.ref) {
+                            if (index + 1 === menuIteListLength) {
+                                [highlightedItem] = menuItemList;
+                            } else {
+                                highlightedItem = menuItemList[index + 1];
+                            }
                         }
-                    }
+                    });
+                } else {
+                    [highlightedItem] = this.menuItemList;
+                }
+
+                this.setState({
+                    highlightedItem,
                 });
-            } else {
-                [highlightedItem] = this.menuItemList;
+
+                if (this.props.onHighlightItem) {
+                    this.props.onHighlightItem(highlightedItem);
+                }
+
+                break;
             }
+            case keyboardCode.UP_ARROW: {
+                event.preventDefault();
 
-            this.setState({
-                highlightedItem,
-            });
-
-            if (this.props.onHighlightItem) {
-                this.props.onHighlightItem(highlightedItem);
-            }
-
-            break;
-        }
-        case keyboardCode.UP_ARROW: {
-            event.preventDefault();
-
-            if (this.state.highlightedItem) {
-                this.menuItemList.forEach((item, index, menuItemList) => {
-                    if (item.ref === this.state.highlightedItem.ref) {
-                        if (index - 1 < 0) {
-                            highlightedItem = menuItemList[menuIteListLength - 1];
-                        } else {
-                            highlightedItem = menuItemList[index - 1];
+                if (this.state.highlightedItem) {
+                    this.menuItemList.forEach((item, index, menuItemList) => {
+                        if (item.ref === this.state.highlightedItem.ref) {
+                            if (index - 1 < 0) {
+                                highlightedItem = menuItemList[menuIteListLength - 1];
+                            } else {
+                                highlightedItem = menuItemList[index - 1];
+                            }
                         }
-                    }
+                    });
+                } else {
+                    highlightedItem = this.menuItemList[menuIteListLength - 1];
+                }
+
+                this.setState({
+                    highlightedItem,
                 });
-            } else {
-                highlightedItem = this.menuItemList[menuIteListLength - 1];
+
+                if (this.props.onHighlightItem) {
+                    this.props.onHighlightItem(highlightedItem);
+                }
+
+                break;
             }
+            case keyboardCode.ENTER:
+            case keyboardCode.SPACE: {
+                event.preventDefault();
 
-            this.setState({
-                highlightedItem,
-            });
+                highlightedItem =
+                    this.props.highlightedItem === undefined
+                        ? this.state.highlightedItem
+                        : this.props.highlightedItem;
 
-            if (this.props.onHighlightItem) {
-                this.props.onHighlightItem(highlightedItem);
+                if (highlightedItem) {
+                    this.setNewCheckedItems(highlightedItem.item, event);
+                }
+
+                break;
             }
-
-            break;
-        }
-        case keyboardCode.ENTER:
-        case keyboardCode.SPACE: {
-            event.preventDefault();
-
-            highlightedItem = this.props.highlightedItem === undefined
-                ? this.state.highlightedItem
-                : this.props.highlightedItem;
-
-            if (highlightedItem) {
-                this.setNewCheckedItems(highlightedItem.item, event);
-            }
-
-            break;
-        }
         }
 
         if (highlightedItem) {
@@ -565,33 +562,34 @@ export class Menu extends React.Component<MenuProps> {
 
     private setNewCheckedItems(item, event) {
         const { value } = item;
-        let checkedItems = this.props.checkedItems === undefined
-            ? Array.from(this.state.checkedItems)
-            : Array.from(this.props.checkedItems);
+        let checkedItems =
+            this.props.checkedItems === undefined
+                ? Array.from(this.state.checkedItems)
+                : Array.from(this.props.checkedItems);
         const indexInCheckedItemsList = this.getIndexInCheckedItemsList(value);
 
         switch (this.props.mode) {
-        case 'check':
-            if (indexInCheckedItemsList === -1) {
-                checkedItems.push(value);
-            } else {
-                checkedItems.splice(indexInCheckedItemsList, 1);
-            }
-            break;
-        case 'radio':
-            if (indexInCheckedItemsList === -1) {
-                checkedItems = [value];
-            }
-            break;
-        case 'radio-check':
-            if (indexInCheckedItemsList === -1) {
-                checkedItems = [value];
-            } else {
-                checkedItems = [];
-            }
-            break;
-        default:
-            break;
+            case 'check':
+                if (indexInCheckedItemsList === -1) {
+                    checkedItems.push(value);
+                } else {
+                    checkedItems.splice(indexInCheckedItemsList, 1);
+                }
+                break;
+            case 'radio':
+                if (indexInCheckedItemsList === -1) {
+                    checkedItems = [value];
+                }
+                break;
+            case 'radio-check':
+                if (indexInCheckedItemsList === -1) {
+                    checkedItems = [value];
+                } else {
+                    checkedItems = [];
+                }
+                break;
+            default:
+                break;
         }
 
         this.changeCheckedItems(checkedItems, event);
@@ -615,7 +613,9 @@ export class Menu extends React.Component<MenuProps> {
     }
 
     private getIndexInCheckedItemsList = (value) => {
-        const checkedItems = this.props.checkedItems ? this.props.checkedItems : this.state.checkedItems;
+        const checkedItems = this.props.checkedItems
+            ? this.props.checkedItems
+            : this.state.checkedItems;
 
         return checkedItems.indexOf(value);
     };

@@ -5,14 +5,20 @@
 import React, { Children, cloneElement, ReactElement } from 'react';
 import { createCn } from 'bem-react-classname';
 
+type GranularRowGutterType = {
+    s?: string | number;
+    m?: string | number;
+    l?: string | number;
+    xl?: string | number;
+};
+
 type GridRowGutterType = {
-    mobile?: string | number | object;
-    tablet?: string | number | object;
-    desktop?: string | number | object;
+    mobile?: string | number | GranularRowGutterType;
+    tablet?: string | number | GranularRowGutterType;
+    desktop?: string | number | GranularRowGutterType;
 };
 
 export type GridRowProps = {
-
     /**
      * Уникальный идентификатор блока
      */
@@ -60,7 +66,6 @@ export type GridRowProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -81,24 +86,19 @@ export class GridRow extends React.PureComponent<GridRowProps> {
             },
         },
         justify: 'between',
-    }
+    };
 
     /**
      * Класс колонки
      */
-    private classCol = 'grid-col'
+    private classCol = 'grid-col';
 
     render() {
         const {
-            tag: Tag,
-            gutter,
-            align,
-            justify,
-            children,
-            ...props
+            tag: Tag, gutter, align, justify, children, ...props
         } = this.props;
 
-        let gutters = {};
+        let gutters: Record<string, string | number> = {};
 
         if (typeof gutter === 'object') {
             Object.keys(gutter).forEach((breakpoint) => {
@@ -110,7 +110,9 @@ export class GridRow extends React.PureComponent<GridRowProps> {
                         if (gutter[breakpoint][size] === null) {
                             return;
                         }
-                        gutters[`gutter-${breakpoint}-${size}`] = gutter[breakpoint][size].toString();
+                        gutters[`gutter-${breakpoint}-${size}`] = gutter[breakpoint][
+                            size
+                        ].toString();
                     });
                 } else {
                     gutters[`gutter-${breakpoint}`] = gutter[breakpoint].toString();
@@ -140,23 +142,26 @@ export class GridRow extends React.PureComponent<GridRowProps> {
      * @param gutters Модификаторы горизонтальных отступов
      * @param children Дочерние элементы компонента.
      */
-    private injectGutterClassNamesToChildren(gutters: object, children: React.ReactElement) {
-        return (
-            Children.map(children, (col) => {
-                if (!col) {
-                    return null;
-                }
-                if (!col.props) {
-                    return col;
-                }
-                const gutterClassNames = Object.keys(gutters).map(
-                    (gutter) => `${this.classCol}_${gutter}_${gutters[gutter]}`,
-                );
-                const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
+    private injectGutterClassNamesToChildren(
+        gutters: Record<string, string | number>,
+        children: React.ReactElement,
+    ) {
+        return Children.map(children, (col) => {
+            if (!col) {
+                return null;
+            }
+            if (!col.props) {
+                return col;
+            }
+            const gutterClassNames = Object.keys(gutters).map(
+                (gutter) => `${this.classCol}_${gutter}_${gutters[gutter]}`,
+            );
+            const classNameFromProps = col.props.className ? ` ${col.props.className}` : '';
 
-                return cloneElement(col, { className: `${gutterClassNames.join(' ')}${classNameFromProps}` });
-            })
-        );
+            return cloneElement(col, {
+                className: `${gutterClassNames.join(' ')}${classNameFromProps}`,
+            });
+        });
     }
 }
 

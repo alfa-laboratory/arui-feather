@@ -23,11 +23,10 @@ describe('heading', () => {
         xs: 5,
     };
 
-    sizes.forEach((size) => (
+    sizes.forEach((size) =>
         it(`should render Heading size=\`${size}\` with tag H${headingLevel[size]}`, () => {
             const heading = shallow(<Heading size={ size }>Heading</Heading>);
 
             expect(heading.is(`h${headingLevel[size]}`));
-        })
-    ));
+        }));
 });

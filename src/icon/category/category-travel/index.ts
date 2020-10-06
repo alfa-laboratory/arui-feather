@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-travel.css';
+
 import '../..';
 
-export * from './category-travel';
 export { default } from './category-travel';

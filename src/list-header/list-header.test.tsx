@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import { ListHeader } from './list-header';
 
 describe('list-header', () => {
@@ -16,7 +17,9 @@ describe('list-header', () => {
     });
 
     it('should render with `filled` view passed', () => {
-        const listHeader = shallow(<ListHeader title="Title" description="description" view="filled" />);
+        const listHeader = shallow(
+            <ListHeader title="Title" description="description" view="filled" />,
+        );
 
         expect(listHeader).toMatchSnapshot();
     });

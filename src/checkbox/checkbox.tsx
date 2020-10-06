@@ -4,43 +4,44 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
-
-import IconCheck from '../icon/ui/tick';
 import IconIndeterminate from '../icon/ui/check-indeterminate';
-import TagButton from '../tag-button/tag-button';
-
+import IconCheck from '../icon/ui/tick';
 import scrollTo from '../lib/scroll-to';
+import TagButton from '../tag-button/tag-button';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type CheckboxProps = ({
-    /**
-     * Тип чекбокса
-     */
-    type?: 'normal';
+export type CheckboxProps = (
+    | {
+        /**
+           * Тип чекбокса
+           */
+        type?: 'normal';
 
-    /**
-     * Размер компонента
-     */
-    size?: 'm' | 'l';
+        /**
+           * Размер компонента
+           */
+        size?: 'm' | 'l';
+    }
+    | {
+        /**
+           * Тип чекбокса
+           */
+        type?: 'button';
 
-} | {
-    /**
-     * Тип чекбокса
-     */
-    type?: 'button';
+        /**
+           * Размер компонента
+           */
+        size?: 's' | 'm' | 'l' | 'xl';
 
-    /**
-     * Размер компонента
-     */
-    size?: 's' | 'm' | 'l' | 'xl';
-
-    /**
+        /**
      * Управление шириной кнопки для типа 'button'. При значении
      'available' растягивает кнопку на ширину родителя
      */
-    width?: 'default' | 'available';
-}) & {
+        width?: 'default' | 'available';
+    }
+) & {
     /**
      * Текст подписи к чекбоксу
      */
@@ -258,8 +259,11 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
     private handleChange = (event) => {
         if (!this.props.disabled) {
-            // eslint-disable-next-line react/no-access-state-in-setstate
-            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
+            /* eslint-disable react/no-access-state-in-setstate */
+            const nextCheckedValue = !(this.props.checked === undefined
+                ? this.state.checked
+                : this.props.checked);
+            /* eslint-enable react/no-access-state-in-setstate */
 
             this.setState({ checked: nextCheckedValue });
 

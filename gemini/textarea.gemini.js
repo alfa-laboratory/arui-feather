@@ -44,36 +44,37 @@ geminiReact.suite(NAME, () => {
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else if (set.label) {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             })
-                            .capture('pressed', function (actions) {
+                            .capture('pressed', function pressed(actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('focused', function (actions) {
+                            .capture('focused', function focused(actions) {
                                 actions.mouseUp(this.renderedComponent);
                             })
                             .capture('with-text', (actions, find) => {
-                                actions.sendKeys(find('.textarea_has-label .textarea__control'), TEXT.repeat(3));
+                                actions.sendKeys(
+                                    find('.textarea_has-label .textarea__control'),
+                                    TEXT.repeat(3),
+                                );
                             });
                     } else {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             })
-                            .capture('pressed', function (actions) {
+                            .capture('pressed', function pressed(actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('focused', function (actions) {
+                            .capture('focused', function focused(actions) {
                                 actions.mouseUp(this.renderedComponent);
                             });
                     }

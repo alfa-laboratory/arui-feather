@@ -2,15 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import "../vars.css";
+@import '../vars.css';
 
 :root {
     --top-scale-s: calc(strip(var(--font-size-xs)) / strip(var(--font-size-s)));
     --top-scale-m: calc(strip(var(--font-size-s)) / strip(var(--font-size-m)));
     --top-scale-l: calc(strip(var(--font-size-m)) / strip(var(--font-size-l)));
-    --top-scale-xl: calc(
-        strip(var(--font-size-l)) / strip(var(--font-size-xl))
-    );
+    --top-scale-xl: calc(strip(var(--font-size-l)) / strip(var(--font-size-xl)));
     --filled-s-top-padding: 21px;
     --filled-m-top-padding: 28px;
     --filled-height: 110px;
@@ -75,8 +73,7 @@
         border: none;
         border-radius: 0;
         transition-duration: 250ms;
-        transition-property: border-bottom-color, box-shadow, width,
-            background-color;
+        transition-property: border-bottom-color, box-shadow, width, background-color;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         -webkit-appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -337,15 +334,11 @@
             }
 
             &:not(.textarea_autosize) .textarea__control {
-                min-height: calc(
-                    var(--filled-height) - var(--filled-s-top-padding)
-                );
+                min-height: calc(var(--filled-height) - var(--filled-s-top-padding));
             }
 
             .textarea__control {
-                min-height: calc(
-                    var(--filled-s-min-height) - var(--filled-s-top-padding)
-                );
+                min-height: calc(var(--filled-s-min-height) - var(--filled-s-top-padding));
                 padding-top: 0;
             }
         }
@@ -403,15 +396,11 @@
             }
 
             &:not(.textarea_autosize) .textarea__control {
-                min-height: calc(
-                    var(--filled-height) - var(--filled-m-top-padding)
-                );
+                min-height: calc(var(--filled-height) - var(--filled-m-top-padding));
             }
 
             .textarea__control {
-                min-height: calc(
-                    var(--filled-m-min-height) - var(--filled-m-top-padding)
-                );
+                min-height: calc(var(--filled-m-min-height) - var(--filled-m-top-padding));
                 padding-top: 0;
             }
         }
@@ -434,8 +423,7 @@
         border-radius: 4px 4px 0 0;
         background-color: var(--color-dark-indigo-05);
         transition-duration: 250ms;
-        transition-property: border-bottom-color, box-shadow, width,
-            background-color;
+        transition-property: border-bottom-color, box-shadow, width, background-color;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 
         &:hover {

@@ -2,6 +2,9 @@ module.exports = {
     extends: [
         require.resolve('arui-presets-lint/eslint'),
     ],
+    parserOptions: {
+        project: './tsconfig.json',
+    },
 
     overrides: [
         {
@@ -58,6 +61,10 @@ module.exports = {
         'sort-class-members/sort-class-members': 'off',
 
         // Destructuring is a syntactic possibility, not a necessity
-        'prefer-destructuring': 'off'
+        'prefer-destructuring': 'off',
+        // Правило выключено, так как вступает в конфликт с тем, как написана почти вся библиотека.
+        'import/no-named-as-default': 'off',
+        // TODO: включить
+        '@typescript-eslint/no-explicit-any': 'off',
     }
 };

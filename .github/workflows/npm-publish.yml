@@ -1,0 +1,19 @@
+name: Create new library package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Create new version
+        run: yarn --frozen-lockfile && yarn compile && yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERMISSION_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          WORK_SPACE: ${{ github.workspace }}
+          CI: true

@@ -15,5 +15,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PERMISSION_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          WORK_SPACE: ${{ github.workspace }}
           CI: true

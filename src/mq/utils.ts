@@ -10,9 +10,9 @@ export function isPointerEventsSupported() {
  */
 export function isTouchSupported() {
     return (
-        'ontouchstart' in window
-        || window.navigator.maxTouchPoints > 0
-        || window.navigator.msMaxTouchPoints > 0
+        'ontouchstart' in window ||
+        window.navigator.maxTouchPoints > 0 ||
+        window.navigator.msMaxTouchPoints > 0
     );
 }
 

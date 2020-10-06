@@ -5,11 +5,7 @@ const NAME = 'menu-item';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
-const PROP_SETS = [
-    {},
-    { view: 'pseudo' },
-    { disabled: true },
-];
+const PROP_SETS = [{}, { view: 'pseudo' }, { disabled: true }];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -25,16 +21,12 @@ geminiReact.suite(NAME, () => {
                     const props = { theme, size, ...set };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <MenuItem { ...props }>
-                                MenuItem
-                            </MenuItem>
+                            <MenuItem { ...props }>MenuItem</MenuItem>
                         </GeminiBox>
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
                         suite
                             .render(template)

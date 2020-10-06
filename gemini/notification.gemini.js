@@ -38,16 +38,9 @@ geminiReact.suite(NAME, () => {
 
         geminiReact.suite(selector, (suite) => {
             const props = { ...set };
-            const template = (
-                <Notification { ...props }>
-                    Notification message
-                </Notification>
-            );
+            const template = <Notification { ...props }>Notification message</Notification>;
 
-            suite
-                .setExtraCaptureElements(['.notification'])
-                .render(template)
-                .capture('plain');
+            suite.setExtraCaptureElements(['.notification']).render(template).capture('plain');
         });
     });
 });

@@ -15,9 +15,7 @@ geminiReact.suite(NAME, () => {
                 </GeminiBox>
             );
 
-            suite
-                .render(template)
-                .capture('plain');
+            suite.render(template).capture('plain');
         });
     });
 });

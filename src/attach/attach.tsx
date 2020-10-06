@@ -5,9 +5,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 import Button, { ButtonProps } from '../button/button';
+import { withTheme } from '../cn';
 import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
@@ -28,16 +28,16 @@ function getDeclension(number: number, endingList: string[]): string {
         endingIndex = 2;
     } else {
         switch (number % 10) {
-        case 1:
-            endingIndex = 0;
-            break;
-        case 2:
-        case 3:
-        case 4:
-            endingIndex = 1;
-            break;
-        default:
-            endingIndex = 2;
+            case 1:
+                endingIndex = 0;
+                break;
+            case 2:
+            case 3:
+            case 4:
+                endingIndex = 1;
+                break;
+            default:
+                endingIndex = 2;
         }
     }
 
@@ -55,10 +55,12 @@ function isEqualArray(array1: unknown[], array2: unknown[]): boolean {
         return true;
     }
 
-    return array1
-        && array2
-        && array1.length === array2.length
-        && array1.every((item, index) => item === array2[index]);
+    return (
+        array1 &&
+        array2 &&
+        array1.length === array2.length &&
+        array1.every((item, index) => item === array2[index])
+    );
 }
 
 function isEmptyArray(value: unknown) {
@@ -66,7 +68,6 @@ function isEmptyArray(value: unknown) {
 }
 
 export type AttachProps = {
-
     /**
      * Содержимое поля ввода, указанное по умолчанию. Принимает массив объектов типа File или null.
      */
@@ -181,7 +182,6 @@ export type AttachProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 type AttachState = {
@@ -216,10 +216,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
     static getDerivedStateFromProps(nextProps: AttachProps, prevState: AttachState) {
         const nextValue = nextProps.value || [];
 
-        if (
-            !isEmptyArray(nextValue)
-            && !isEqualArray(nextValue as unknown[], prevState.value)
-        ) {
+        if (!isEmptyArray(nextValue) && !isEqualArray(nextValue as unknown[], prevState.value)) {
             return {
                 value: nextValue,
             };
@@ -270,10 +267,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
                 { ...buttonProps }
                 tag="span"
                 leftAddons={ (
-                    <label
-                        className={ this.cn('label') }
-                        htmlFor={ this.props.id }
-                    >
+                    <label className={ this.cn('label') } htmlFor={ this.props.id }>
                         <input
                             ref={ (input) => {
                                 this.input = input;
@@ -301,15 +295,14 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
     }
 
     renderStatusText() {
-        const files = this.props.value === undefined ? this.state.value : (this.props.value || []);
+        const files = this.props.value === undefined ? this.state.value : this.props.value || [];
 
         if (files && files.length > 0) {
-            const content = (files.length === 1)
-                ? this.truncateFilename(files[0].name)
-                : (
-                    <abbr
-                        title={ files.map((file) => file.name).join() }
-                    >
+            const content =
+                files.length === 1 ? (
+                    this.truncateFilename(files[0].name)
+                ) : (
+                    <abbr title={ files.map((file) => file.name).join() }>
                         { files.length }
                         { ' ' }
                         { getDeclension(files.length, MULTIPLE_TEXTS) }
@@ -318,9 +311,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
 
             return (
                 <span className={ this.cn('file') }>
-                    <span className={ this.cn('text') }>
-                        { content }
-                    </span>
+                    <span className={ this.cn('text') }>{ content }</span>
                     <button
                         type="button"
                         className={ this.cn('clear') }
@@ -336,11 +327,7 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
             );
         }
 
-        return (
-            <span className={ this.cn('no-file') }>
-                { this.props.noFileText }
-            </span>
-        );
+        return <span className={ this.cn('no-file') }>{ this.props.noFileText }</span>;
     }
 
     private truncateFilename = (filename: string): string => {
@@ -349,7 +336,9 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
         if (maxFilenameLength && filename.length > maxFilenameLength) {
             const lengthOfPart: number = Math.round(maxFilenameLength / 2) - 1;
 
-            return `${filename.substr(0, lengthOfPart)}…${filename.substr(filename.length - lengthOfPart)}`;
+            return `${filename.substr(0, lengthOfPart)}…${filename.substr(
+                filename.length - lengthOfPart,
+            )}`;
         }
 
         return filename;

@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
+
 import { Label } from './label';
 
 describe('label', () => {

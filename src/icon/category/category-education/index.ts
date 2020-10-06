@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-education.css';
+
 import '../..';
 
 export * from './category-education';

@@ -1,10 +1,10 @@
-import startOfDay from 'date-fns/start_of_day';
 import addDays from 'date-fns/add_days';
-import subtractDays from 'date-fns/sub_days';
 import getTime from 'date-fns/get_time';
+import startOfDay from 'date-fns/start_of_day';
+import subtractDays from 'date-fns/sub_days';
 
-import Calendar from '../src/calendar';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import Calendar from '../src/calendar';
 
 const DATE = startOfDay(new Date('2017-04-12'));
 

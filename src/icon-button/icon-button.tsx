@@ -3,9 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 import { Button, ButtonProps } from '../button/button';
+import { withTheme } from '../cn';
 
 /**
  * Компонент кнопки с иконкой.

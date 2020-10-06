@@ -16,5 +16,5 @@ export default function getRelatedTarget(event: FocusEvent | MouseEvent): Elemen
     // https://github.com/facebook/react/issues/6410
     // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/101237/
     // event.relatedTarget isn't fully supported in FF<48 & IE10
-    return event.relatedTarget as Element || document.activeElement;
+    return (event.relatedTarget as Element) || document.activeElement;
 }

@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+
+import GridCol from '../grid-col';
 
 import GridRow from './grid-row';
-import GridCol from '../grid-col';
 
 describe('grid-row', () => {
     it('should render without problems', () => {
@@ -18,9 +19,7 @@ describe('grid-row', () => {
     it('should set default classes for gutter', () => {
         const row = mount(
             <GridRow>
-                <GridCol>
-                    GridRow-test
-                </GridCol>
+                <GridCol>GridRow-test</GridCol>
             </GridRow>,
         );
 
@@ -36,9 +35,7 @@ describe('grid-row', () => {
     it('should set custom classes for gutter', () => {
         const row = mount(
             <GridRow gutter={ { mobile: 0, tablet: 16, desktop: { s: 24 } } }>
-                <GridCol>
-                    GridRow-test
-                </GridCol>
+                <GridCol>GridRow-test</GridCol>
             </GridRow>,
         );
 

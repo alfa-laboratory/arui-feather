@@ -5,8 +5,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { InputGroup } from './input-group';
 import { Input } from '../input/input';
+
+import { InputGroup } from './input-group';
 
 describe('input-group', () => {
     it('should render without any children', () => {
@@ -16,16 +17,22 @@ describe('input-group', () => {
     });
 
     it('should render with only one children', () => {
-        const inputGroup = shallow(<InputGroup><Input key="1" /></InputGroup>);
+        const inputGroup = shallow(
+            <InputGroup>
+                <Input key="1" />
+            </InputGroup>,
+        );
 
         expect(inputGroup).toMatchSnapshot();
     });
 
     it('should render with many input children without problems', () => {
-        const inputGroup = shallow(<InputGroup>
-            <Input key="1" />
-            <Input key="2" />
-                                   </InputGroup>);
+        const inputGroup = shallow(
+            <InputGroup>
+                <Input key="1" />
+                <Input key="2" />
+            </InputGroup>,
+        );
 
         expect(inputGroup).toMatchSnapshot();
     });

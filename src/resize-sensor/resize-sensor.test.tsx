@@ -28,10 +28,7 @@ describe('resize-sensor', () => {
 
     it('should call `onResize` callback when `ResizeSensor` detects new dimensions', () => {
         const onResize = jest.fn();
-        const resizeSensor = mount(
-            <ResizeSensor onResize={ onResize } />,
-            { attachTo: target },
-        );
+        const resizeSensor = mount(<ResizeSensor onResize={ onResize } />, { attachTo: target });
         const iframeNode = resizeSensor.find('iframe').getDOMNode<HTMLIFrameElement>();
 
         iframeNode.contentWindow.dispatchEvent(new Event('resize'));

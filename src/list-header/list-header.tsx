@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type ListHeaderProps = {
-
     /**
      * Заголовок
      */
@@ -42,7 +42,6 @@ export type ListHeaderProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -61,7 +60,6 @@ export class ListHeader extends React.PureComponent<ListHeaderProps> {
                 { this.props.description && (
                     <span className={ this.cn('description') }>
                         ,
-                        { ' ' }
                         { this.props.description }
                     </span>
                 ) }

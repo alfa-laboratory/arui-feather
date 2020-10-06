@@ -6,19 +6,17 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
-
-import { FormatCharacters } from '../masked-input/mask';
-import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
-import MaskedInput from '../masked-input/masked-input';
-
+import IconClose from '../icon/ui/close';
 import scrollTo from '../lib/scroll-to';
-import { SCROLL_TO_CORRECTION } from '../vars';
 import { setRef } from '../lib/set-ref';
+import { FormatCharacters } from '../masked-input/mask';
+import MaskedInput from '../masked-input/masked-input';
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 export type InputProps = {
-
     /**
      * Тип поля.
      Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
@@ -274,7 +272,7 @@ type InputState = {
      * Содержимое поля ввода
      */
     value: string;
-}
+};
 
 /**
  * Компонент текстового поля ввода.
@@ -348,14 +346,11 @@ export class Input extends React.PureComponent<InputProps, InputState> {
             >
                 <span className={ this.cn('inner') }>
                     { this.renderContent() }
-                    {
-                        (this.state.error || this.props.hint)
-                        && (
-                            <span className={ this.cn('sub') }>
-                                { this.state.error || this.props.hint }
-                            </span>
-                        )
-                    }
+                    { (this.state.error || this.props.hint) && (
+                        <span className={ this.cn('sub') }>
+                            { this.state.error || this.props.hint }
+                        </span>
+                    ) }
                 </span>
             </span>
         );
@@ -405,68 +400,43 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                     this.box = box;
                 } }
             >
-                {
-                    this.props.leftAddons
-                    && (
-                        <span className={ this.cn('addons', { left: true }) } key="left-addons">
-                            { this.props.leftAddons }
-                        </span>
-                    )
-                }
-                <span className={ this.cn('input-wrapper')}>
-                    {
-                        !!this.props.label
-                        && (
-                            <span className={ this.cn('top') }>
-                                { this.props.label }
-                            </span>
-                        )
-                    }
-                    {
-                        isMaskedInput
-                            ? (
-                                <MaskedInput
-                                    { ...inputProps }
-                                    mask={ this.props.mask }
-                                    formatCharacters={ this.props.maskFormatCharacters }
-                                    onProcessInputEvent={ this.props.onProcessMaskInputEvent }
-                                    useWhitespaces={ this.props.useWhitespacesInMask }
-                                />
-                            )
-                            : <input { ...inputProps } />
-                    }
+                { this.props.leftAddons && (
+                    <span className={ this.cn('addons', { left: true }) } key="left-addons">
+                        { this.props.leftAddons }
+                    </span>
+                ) }
+                <span className={ this.cn('input-wrapper') }>
+                    { !!this.props.label && (
+                        <span className={ this.cn('top') }>{ this.props.label }</span>
+                    ) }
+                    { isMaskedInput ? (
+                        <MaskedInput
+                            { ...inputProps }
+                            mask={ this.props.mask }
+                            formatCharacters={ this.props.maskFormatCharacters }
+                            onProcessInputEvent={ this.props.onProcessMaskInputEvent }
+                            useWhitespaces={ this.props.useWhitespacesInMask }
+                        />
+                    ) : (
+                        <input { ...inputProps } />
+                    ) }
                 </span>
-                {
-                    this.props.clear && value
-                    && (
-                        <IconButton
-                            className={ this.cn('clear') }
-                            size={ this.props.size }
-                            tabIndex={ -1 }
-                            onClick={ this.handleClearClick }
-                        >
-                            <IconClose
-                                size={ this.props.size }
-                            />
-                        </IconButton>
-                    )
-                }
-                {
-                    this.props.icon
-                    && (
-                        <div className={ this.cn('icon') }>
-                            { this.props.icon }
-                        </div>
-                    )
-                }
-                {
-                    this.props.rightAddons
-                    && (
-                        <span className={ this.cn('addons', { right: true }) } key="right-addons">
-                            { this.props.rightAddons }
-                        </span>
-                    )
-                }
+                { this.props.clear && value && (
+                    <IconButton
+                        className={ this.cn('clear') }
+                        size={ this.props.size }
+                        tabIndex={ -1 }
+                        onClick={ this.handleClearClick }
+                    >
+                        <IconClose size={ this.props.size } />
+                    </IconButton>
+                ) }
+                { this.props.icon && <div className={ this.cn('icon') }>{ this.props.icon }</div> }
+                { this.props.rightAddons && (
+                    <span className={ this.cn('addons', { right: true }) } key="right-addons">
+                        { this.props.rightAddons }
+                    </span>
+                ) }
             </span>
         );
     }
@@ -576,7 +546,8 @@ export class Input extends React.PureComponent<InputProps, InputState> {
      * Блокирует возможность скролла в поле ввода
      */
     public disableMouseWheel() {
-        const input = this.control instanceof MaskedInput ? this.control.getControl() : this.control;
+        const input =
+            this.control instanceof MaskedInput ? this.control.getControl() : this.control;
 
         if (input) {
             input.onwheel = () => false;
@@ -612,7 +583,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
      * Возвращает ссылку на инстанс MaskedInput.
      * Если маска не была установлена, возвращает null.
      */
-    public getMaskedInputInstance(): MaskedInput|null {
+    public getMaskedInputInstance(): MaskedInput | null {
         if (this.props.mask !== undefined) {
             return this.control;
         }
@@ -643,7 +614,8 @@ export class Input extends React.PureComponent<InputProps, InputState> {
      */
     public scrollTo() {
         scrollTo({
-            targetY: (this.root.getBoundingClientRect().top + window.pageYOffset) - SCROLL_TO_CORRECTION,
+            targetY:
+                this.root.getBoundingClientRect().top + window.pageYOffset - SCROLL_TO_CORRECTION,
         });
     }
 

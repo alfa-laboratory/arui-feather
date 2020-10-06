@@ -26,9 +26,7 @@ export function getRussianWeekDay(date: Date): number {
     const sunday = 0;
     const foreignWeekDayIndex = date.getDay();
 
-    return foreignWeekDayIndex === sunday
-        ? DAYS_IN_WEEK - 1
-        : foreignWeekDayIndex - 1;
+    return foreignWeekDayIndex === sunday ? DAYS_IN_WEEK - 1 : foreignWeekDayIndex - 1;
 }
 
 const PARSE_TOKENS: DateParserToken[] = [
@@ -48,7 +46,7 @@ type Limit = {
      * Максимально возможное значение
      */
     max: number;
-}
+};
 
 type DateLimits = {
     /**
@@ -63,7 +61,7 @@ type DateLimits = {
      * Лимиты для года
      */
     year: Limit;
-}
+};
 
 /**
  * Возвращает граничные значения для дня, месяца, года.
@@ -93,7 +91,7 @@ type DelimiterParserToken = {
      * Символ разделитель
      */
     value: string;
-}
+};
 
 type DateParserToken = {
     /**
@@ -108,7 +106,7 @@ type DateParserToken = {
      * Регулярное выражение для проверки соответствия формату
      */
     regex: RegExp;
-}
+};
 
 const PARSER_CACHE = {};
 
@@ -185,18 +183,19 @@ export function parse(input: string, format = 'DD.MM.YYYY', strict = true): Date
         input = input.replace(token.regex, '');
     }
 
-    const {
-        date: dateLimits,
-        month: monthLimits,
-        year: yearLimits,
-    } = getLimits(parsedResult.month, parsedResult.year);
+    const { date: dateLimits, month: monthLimits, year: yearLimits } = getLimits(
+        parsedResult.month,
+        parsedResult.year,
+    );
 
     if (
-        strict && (
-            parsedResult.date > dateLimits.max || parsedResult.date < dateLimits.min
-            || parsedResult.month > monthLimits.max || parsedResult.month < monthLimits.min
-            || parsedResult.year > yearLimits.max || parsedResult.year < yearLimits.min
-        )
+        strict &&
+        (parsedResult.date > dateLimits.max ||
+            parsedResult.date < dateLimits.min ||
+            parsedResult.month > monthLimits.max ||
+            parsedResult.month < monthLimits.min ||
+            parsedResult.year > yearLimits.max ||
+            parsedResult.year < yearLimits.min)
     ) {
         return new Date('invalid');
     }

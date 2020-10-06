@@ -63,7 +63,7 @@ export class ResizeSensor extends React.Component<ResizeSensorProps> {
         if (this.props.onResize) {
             this.props.onResize();
         }
-    }
+    };
 }
 
 export default ResizeSensor;

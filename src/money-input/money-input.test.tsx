@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -85,7 +85,7 @@ describe('money-input', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const moneyInput = mount<MoneyInput>(<MoneyInput />);
         const elemTopPosition = moneyInput.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         moneyInput.instance().scrollTo();
 

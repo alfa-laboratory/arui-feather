@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './star-active.css';
+
 import '../..';
 
 export * from './star-active';

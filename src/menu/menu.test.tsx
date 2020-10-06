@@ -5,7 +5,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import { MenuContentType, Menu } from './menu';
+import { Menu, MenuContentType } from './menu';
 
 const MENU_ITEM1: MenuContentType = {
     type: 'item',
@@ -35,9 +35,7 @@ const MENU_ITEM2_CLONE: MenuContentType = {
 const MENU_GROUP: MenuContentType = {
     type: 'group',
     title: 'Group Title',
-    content: [
-        MENU_ITEM1,
-    ],
+    content: [MENU_ITEM1],
 };
 
 function getNumberOfItemsWithClass(items, className) {
@@ -85,7 +83,7 @@ describe('menu', () => {
         expect(menuFirstItemNode.getDOMNode().className).toContain('menu-item_checked');
     });
 
-    it('shouldn\'t crash when mode=`radio`, and `checkedItems` and `content` properties is empty', () => {
+    it("shouldn't crash when mode=`radio`, and `checkedItems` and `content` properties is empty", () => {
         const menu = mount(<Menu mode="radio" content={ [] } />);
 
         expect(menu).toMatchSnapshot();
@@ -131,7 +129,9 @@ describe('menu', () => {
 
     it('should call `onItemCheck` callback after menu-item was clicked and if `mode` is identified', () => {
         const onItemCheck = jest.fn();
-        const menu = mount(<Menu onItemCheck={ onItemCheck } mode="check" content={ [MENU_ITEM1, MENU_ITEM2] } />);
+        const menu = mount(
+            <Menu onItemCheck={ onItemCheck } mode="check" content={ [MENU_ITEM1, MENU_ITEM2] } />,
+        );
 
         menu.find('.menu-item').first().simulate('click');
 

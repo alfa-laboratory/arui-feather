@@ -2,7 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { calcBestDrawingParams, calcTargetDimensions, calcFitContainerDimensions } from './calc-drawing-params';
+import {
+    calcBestDrawingParams,
+    calcFitContainerDimensions,
+    calcTargetDimensions,
+} from './calc-drawing-params';
 
 describe('calcTargetDimensions', () => {
     it('should return popup target position if popup is not in targetAnchor mode', () => {
@@ -158,7 +162,11 @@ describe.only('calcBestDrawingParams', () => {
             },
         };
 
-        const result = calcBestDrawingParams(fakePopup, baseTargetDimensions, baseViewportDimensions);
+        const result = calcBestDrawingParams(
+            fakePopup,
+            baseTargetDimensions,
+            baseViewportDimensions,
+        );
 
         expect(result).toEqual({
             direction: 'right-top',

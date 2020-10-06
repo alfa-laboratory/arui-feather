@@ -1,5 +1,5 @@
-import Amount from '../src/amount';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import Amount from '../src/amount';
 
 const NAME = 'amount';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
@@ -13,10 +13,7 @@ const AMOUNT = {
     },
 };
 
-const PROP_SETS = [
-    { isHeading: true },
-    { isHeading: false },
-];
+const PROP_SETS = [{ isHeading: true }, { isHeading: false }];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -40,9 +37,7 @@ geminiReact.suite(NAME, () => {
                         </GeminiBox>
                     );
 
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

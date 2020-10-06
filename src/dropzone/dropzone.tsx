@@ -6,10 +6,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type DropzoneProps = {
-
     /**
      * Дочерние компоненты
      */
@@ -64,7 +64,6 @@ export type DropzoneProps = {
      * Текст-подсказка поверх drop-зоны
      */
     text?: string;
-
 };
 
 /**
@@ -94,7 +93,7 @@ export class Dropzone extends React.PureComponent<DropzoneProps> {
         if (this.props.onDragOver) {
             this.props.onDragOver(event);
         }
-    }
+    };
 
     private handleDragEnter = (event) => {
         event.preventDefault();

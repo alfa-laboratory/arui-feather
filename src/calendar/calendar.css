@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import "../vars.css";
+@import '../vars.css';
 
 .calendar {
     position: relative;
@@ -84,7 +84,7 @@
             right: 0;
             top: 0;
             height: 20px;
-            content: "";
+            content: '';
         }
     }
 
@@ -239,7 +239,7 @@
         margin-left: -5px;
 
         &:after {
-            content: "";
+            content: '';
             position: absolute;
             top: 2px;
             left: 2px;

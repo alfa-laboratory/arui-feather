@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-doc.css';
+
 import '../..';
 
 export * from './format-doc';

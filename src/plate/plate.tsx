@@ -6,15 +6,14 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
-import IconClose from '../icon/ui/close';
-import IconArrowUp from '../icon/ui/arrow-up';
-import IconArrowDown from '../icon/ui/arrow-down';
+import { withTheme } from '../cn';
 import IconButton from '../icon-button/icon-button';
+import IconArrowDown from '../icon/ui/arrow-down';
+import IconArrowUp from '../icon/ui/arrow-up';
+import IconClose from '../icon/ui/close';
 
 export type PlateProps = {
-
     /**
      * Управление наличием закрывающего крестика
      */
@@ -99,7 +98,6 @@ export type PlateProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 /**
@@ -141,62 +139,37 @@ export class Plate extends React.PureComponent<PlateProps> {
                 } }
                 data-test-id={ this.props['data-test-id'] }
             >
-                {
-                    this.props.icon
-                    && (
-                        <span className={ this.cn('icon') }>
-                            { this.props.icon }
+                { this.props.icon && <span className={ this.cn('icon') }>{ this.props.icon }</span> }
+                { this.props.title && (
+                    <div className={ this.cn('title') }>
+                        <span onClick={ this.handleTitleClick } onKeyUp={ this.handleTitleKeyDown }>
+                            { this.props.title }
                         </span>
-                    )
-                }
-                {
-                    this.props.title
-                    && (
-                        <div
-                            className={ this.cn('title') }
-                        >
-                            <span
-                                onClick={ this.handleTitleClick }
-                                onKeyUp={ this.handleTitleKeyDown }
+                        { this.props.foldable && (
+                            <IconButton
+                                className={ this.cn('folder') }
+                                onClick={ this.handleFolderClick }
                             >
-                                { this.props.title }
-                            </span>
-                            {
-                                this.props.foldable
-                            && (
-                                <IconButton
-                                    className={ this.cn('folder') }
-                                    onClick={ this.handleFolderClick }
-                                >
-                                    {
-                                        this.state.isFolded
-                                            ? <IconArrowDown />
-                                            : <IconArrowUp />
-                                    }
-                                </IconButton>
-                            )
-                            }
-                        </div>
-                    )
-                }
+                                { this.state.isFolded ? <IconArrowDown /> : <IconArrowUp /> }
+                            </IconButton>
+                        ) }
+                    </div>
+                ) }
                 <div
                     className={ this.cn('content', {
                         folded: this.props.foldable && this.state.isFolded,
                     }) }
                 >
                     { this.props.children }
-                    {
-                        this.props.foldable
-                        || (this.props.hasCloser
-                        && (
+                    { this.props.foldable ||
+                        (this.props.hasCloser && (
                             <IconButton
                                 className={ this.cn('closer') }
                                 onClick={ this.handleCloserClick }
                             >
                                 <IconClose />
                             </IconButton>
-                        ))
-                    }
+                        )) }
                 </div>
             </div>
         );
@@ -219,13 +192,13 @@ export class Plate extends React.PureComponent<PlateProps> {
         if (this.props.onTitleClick) {
             this.props.onTitleClick(event);
         }
-    }
+    };
 
     private handleTitleKeyDown = (event) => {
         if (this.props.onTitleKeyDown) {
             this.props.onTitleKeyDown(event);
         }
-    }
+    };
 
     private handleFolderClick = (event) => {
         this.setState({
@@ -236,7 +209,7 @@ export class Plate extends React.PureComponent<PlateProps> {
         if (this.props.onFolderClick) {
             this.props.onFolderClick(event);
         }
-    }
+    };
 
     private handleCloserClick = (event) => {
         this.setState({
@@ -252,7 +225,7 @@ export class Plate extends React.PureComponent<PlateProps> {
         if (this.props.onKeyDown) {
             this.props.onKeyDown(event);
         }
-    }
+    };
 }
 
 export default withTheme<PlateProps, Plate>(Plate);

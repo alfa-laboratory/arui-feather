@@ -5,8 +5,8 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
@@ -236,7 +236,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    'has-icon': !!this.props.icon
+                    'has-icon': !!this.props.icon,
                 }) }
                 ref={ (root) => {
                     this.root = root;
@@ -244,43 +244,26 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('inner') }>
-                    {
-                        !!this.props.label
-                        && (
-                            <span className={ this.cn('top') }>
-                                { this.props.label }
-                            </span>
-                        )
-                    }
-                    {
-                        this.props.autosize
-                            ? (
-                                <TextareaAutosize
-                                    { ...textareaProps }
-                                    maxRows={ this.props.maxRows }
-                                    minRows={ this.props.minRows }
-                                    style={ { maxHeight: this.props.maxHeight } }
-                                    onHeightChange={ this.handleHeightChange }
-                                />
-                            )
-                            : <textarea { ...textareaProps } />
-                    }
-                    {
-                        this.props.icon
-                        && (
-                            <span className={ this.cn('icon') }>
-                                { this.props.icon }
-                            </span>
-                        )
-                    }
-                    {
-                        (this.props.error || this.props.hint)
-                        && (
-                            <span className={ this.cn('sub') }>
-                                { this.props.error || this.props.hint }
-                            </span>
-                        )
-                    }
+                    { !!this.props.label && (
+                        <span className={ this.cn('top') }>{ this.props.label }</span>
+                    ) }
+                    { this.props.autosize ? (
+                        <TextareaAutosize
+                            { ...textareaProps }
+                            maxRows={ this.props.maxRows }
+                            minRows={ this.props.minRows }
+                            style={ { maxHeight: this.props.maxHeight } }
+                            onHeightChange={ this.handleHeightChange }
+                        />
+                    ) : (
+                        <textarea { ...textareaProps } />
+                    ) }
+                    { this.props.icon && <span className={ this.cn('icon') }>{ this.props.icon }</span> }
+                    { (this.props.error || this.props.hint) && (
+                        <span className={ this.cn('sub') }>
+                            { this.props.error || this.props.hint }
+                        </span>
+                    ) }
                 </span>
             </span>
         );
@@ -362,7 +345,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
         const elementRect = this.root.getBoundingClientRect();
 
         scrollTo({
-            targetY: (elementRect.top + window.pageYOffset) - SCROLL_TO_CORRECTION,
+            targetY: elementRect.top + window.pageYOffset - SCROLL_TO_CORRECTION,
         });
     }
 }

@@ -92,9 +92,12 @@ describe('attach', () => {
 
         controlNode.simulate('change', {
             target: {
-                files: [{
-                    name: 'test.txt', type: 'application/text',
-                }],
+                files: [
+                    {
+                        name: 'test.txt',
+                        type: 'application/text',
+                    },
+                ],
             },
         });
 
@@ -111,13 +114,16 @@ describe('attach', () => {
             target: {
                 files: [
                     {
-                        name: 'test1.txt', type: 'application/text',
+                        name: 'test1.txt',
+                        type: 'application/text',
                     },
                     {
-                        name: 'test2.txt', type: 'application/text',
+                        name: 'test2.txt',
+                        type: 'application/text',
                     },
                     {
-                        name: 'test3.txt', type: 'application/text',
+                        name: 'test3.txt',
+                        type: 'application/text',
                     },
                 ],
             },
@@ -134,9 +140,12 @@ describe('attach', () => {
 
         controlNode.simulate('change', {
             target: {
-                files: [{
-                    name: 'test.txt', type: 'application/text',
-                }],
+                files: [
+                    {
+                        name: 'test.txt',
+                        type: 'application/text',
+                    },
+                ],
             },
         });
 
@@ -160,10 +169,12 @@ describe('attach', () => {
 
         controlNode.simulate('change', {
             target: {
-                files: [{
-                    name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt',
-                    type: 'application/text',
-                }],
+                files: [
+                    {
+                        name: 'so_long_filename_it_definitely_has_more_than_30_symbols.txt',
+                        type: 'application/text',
+                    },
+                ],
             },
         });
 
@@ -177,9 +188,12 @@ describe('attach', () => {
 
         controlNode.simulate('change', {
             target: {
-                files: [{
-                    name: 'it_has_just_26_symbols.txt', type: 'application/text',
-                }],
+                files: [
+                    {
+                        name: 'it_has_just_26_symbols.txt',
+                        type: 'application/text',
+                    },
+                ],
             },
         });
 

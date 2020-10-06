@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-tif.css';
+
 import '../..';
 
 export * from './format-tif';

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './convert-rub-to-usd.css';
+
 import '../..';
 
 export * from './convert-rub-to-usd';

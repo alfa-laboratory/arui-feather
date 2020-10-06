@@ -5,11 +5,7 @@ const NAME = 'link';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
-const PROP_SETS = [
-    {},
-    { pseudo: true },
-    { disabled: true },
-];
+const PROP_SETS = [{}, { pseudo: true }, { disabled: true }];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -30,9 +26,7 @@ geminiReact.suite(NAME, () => {
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
                         suite
                             .render(template)

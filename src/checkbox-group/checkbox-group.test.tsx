@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+
+import { CheckBox } from '../checkbox/checkbox';
 
 import { CheckBoxGroup } from './checkbox-group';
-import { CheckBox } from '../checkbox/checkbox';
 
 describe('checkbox-group', () => {
     it('should render without children', () => {
@@ -38,9 +39,7 @@ describe('checkbox-group', () => {
 
     it('should render checked checkbox with value from `value` props', () => {
         const checkboxGroup = mount(
-            <CheckBoxGroup
-                value={ ['value_1'] }
-            >
+            <CheckBoxGroup value={ ['value_1'] }>
                 <CheckBox value="value_1" text="label 1" />
                 <CheckBox value="value_2" text="label 2" />
             </CheckBoxGroup>,
@@ -145,7 +144,7 @@ describe('checkbox-group', () => {
         expect(disabledCheckboxNodes.length).toBe(3);
     });
 
-    it('shouldn\'t call `onChange` callback when disabled=true', () => {
+    it("shouldn't call `onChange` callback when disabled=true", () => {
         const onChange = jest.fn();
         const checkboxGroup = mount(
             <CheckBoxGroup onChange={ onChange } disabled={ true }>

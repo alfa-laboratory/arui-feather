@@ -3,9 +3,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Popup } from '../popup/popup';
+
 import PopupContainerProvider from './popup-container-provider';
 
 describe('popup-container-provider', () => {

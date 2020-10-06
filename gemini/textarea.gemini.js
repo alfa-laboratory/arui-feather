@@ -44,9 +44,7 @@ geminiReact.suite(NAME, () => {
                     );
 
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else if (set.label) {
                         suite
                             .render(template)
@@ -61,7 +59,10 @@ geminiReact.suite(NAME, () => {
                                 actions.mouseUp(this.renderedComponent);
                             })
                             .capture('with-text', (actions, find) => {
-                                actions.sendKeys(find('.textarea_has-label .textarea__control'), TEXT.repeat(3));
+                                actions.sendKeys(
+                                    find('.textarea_has-label .textarea__control'),
+                                    TEXT.repeat(3),
+                                );
                             });
                     } else {
                         suite

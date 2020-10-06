@@ -8,8 +8,8 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
 import Input, { InputProps } from '../input/input';
 
 export type PhoneInputProps = InputProps & {
@@ -26,7 +26,7 @@ export type PhoneInputProps = InputProps & {
 
 type PhoneInputState = {
     updatedValue?: string;
-}
+};
 
 /**
  * Компонент ввода телефона по маске.
@@ -81,7 +81,9 @@ export class PhoneInput extends React.PureComponent<PhoneInputProps, PhoneInputS
             if (code === '8') {
                 valueForOnChange = value.replace(/^\+(8)(.*)$/, '+7$2');
             } else {
-                valueForOnChange = `${plus}7${PhoneInput.shiftValue(value.slice(1).replace(/\s/g, ''))}`;
+                valueForOnChange = `${plus}7${PhoneInput.shiftValue(
+                    value.slice(1).replace(/\s/g, ''),
+                )}`;
             }
         } else if (value?.length === 1) {
             valueForOnChange = '';

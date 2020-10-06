@@ -3,11 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-
-import { CheckBox } from './checkbox';
+import { mount, shallow } from 'enzyme';
 
 import { SCROLL_TO_CORRECTION } from '../vars';
+
+import { CheckBox } from './checkbox';
 
 describe('checkbox', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -181,7 +181,7 @@ describe('checkbox', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const checkbox = mount<CheckBox>(<CheckBox type="button" />);
         const elemTopPosition = checkbox.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         checkbox.instance().scrollTo();
 

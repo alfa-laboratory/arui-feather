@@ -106,7 +106,10 @@ describe('scroll-to', () => {
         container.scrollTop = 500;
 
         if (element.offsetTop < container.scrollTop) {
-            await scrollTo({ container, targetY: (element.offsetTop - container.offsetHeight) + correction });
+            await scrollTo({
+                container,
+                targetY: element.offsetTop - container.offsetHeight + correction,
+            });
 
             expect(container.scrollTop).toBe(0);
         }

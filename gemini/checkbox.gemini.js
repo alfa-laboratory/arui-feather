@@ -1,5 +1,5 @@
-import Checkbox from '../src/checkbox';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import Checkbox from '../src/checkbox';
 
 const NAME = 'checkbox';
 const THEMES = ['alfa-on-white', 'alfa-on-color'];
@@ -25,9 +25,7 @@ geminiReact.suite(NAME, () => {
                 const props = { theme, size, ...set };
                 const template = (
                     <GeminiBox theme={ theme }>
-                        <Checkbox
-                            { ...props }
-                        />
+                        <Checkbox { ...props } />
                     </GeminiBox>
                 );
 
@@ -38,9 +36,7 @@ geminiReact.suite(NAME, () => {
 
                 geminiReact.suite(selector, (suite) => {
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
                         suite
                             .render(template)

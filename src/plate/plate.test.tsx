@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+
+import IconOk from '../icon/ui/ok';
 
 import { Plate } from './plate';
-import IconOk from '../icon/ui/ok';
 
 describe('plate', () => {
     it('should render without problems', () => {
@@ -26,7 +27,9 @@ describe('plate', () => {
     it('should call `onCloserClick` callback after plate closer was clicked', () => {
         const onCloserClick = jest.fn();
         const plate = shallow(
-            <Plate hasCloser={ true } onCloserClick={ onCloserClick }>plate-text</Plate>,
+            <Plate hasCloser={ true } onCloserClick={ onCloserClick }>
+                plate-text
+            </Plate>,
         );
         const closer = plate.find('.plate__closer');
 
@@ -38,7 +41,9 @@ describe('plate', () => {
     it('should call `onClick` callback after plate was clicked', () => {
         const onClick = jest.fn();
         const plate = mount(
-            <Plate hasCloser={ true } onClick={ onClick }>plate-text</Plate>,
+            <Plate hasCloser={ true } onClick={ onClick }>
+                plate-text
+            </Plate>,
         );
 
         plate.simulate('click');
@@ -49,7 +54,9 @@ describe('plate', () => {
     it('should call `onFolderClick` callback after plate folder was clicked', () => {
         const onFolderClick = jest.fn();
         const plate = shallow(
-            <Plate title="plate-title" foldable={ true } onFolderClick={ onFolderClick }>plate-text</Plate>,
+            <Plate title="plate-title" foldable={ true } onFolderClick={ onFolderClick }>
+                plate-text
+            </Plate>,
         );
         const folder = plate.find('.plate__folder');
 
@@ -61,7 +68,9 @@ describe('plate', () => {
     it('should call `onTitleClick` callback after plate folder was clicked', () => {
         const onTitleClick = jest.fn();
         const plate = shallow(
-            <Plate title="plate-title" foldable={ true } onTitleClick={ onTitleClick }>plate-text</Plate>,
+            <Plate title="plate-title" foldable={ true } onTitleClick={ onTitleClick }>
+                plate-text
+            </Plate>,
         );
         const title = plate.find('span');
 
@@ -76,11 +85,7 @@ describe('plate', () => {
                 title="Успешный"
                 type="success"
                 hasCloser={ true }
-                icon={ (
-                    <IconOk
-                        colored={ true }
-                    />
-                ) }
+                icon={ <IconOk colored={ true } /> }
             />,
         );
 

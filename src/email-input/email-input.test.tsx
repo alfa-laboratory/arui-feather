@@ -3,10 +3,11 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 import { EmailInput } from './email-input';
-import { SCROLL_TO_CORRECTION } from '../vars';
 
 describe('email-input', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -28,7 +29,7 @@ describe('email-input', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const emailInput = mount<EmailInput>(<EmailInput />);
         const elemTopPosition = emailInput.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         emailInput.instance().scrollTo();
 

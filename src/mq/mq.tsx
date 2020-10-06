@@ -3,14 +3,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
+
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
+
 import { isPointerEventsSupported, isTouchSupported } from './utils';
 
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_TOUCH = IS_BROWSER && (isPointerEventsSupported() || isTouchSupported());
 
 export type MqProps = {
-
     /**
      * Медиа запрос
      */
@@ -34,7 +35,7 @@ export type MqProps = {
 
 type MqState = {
     isMatched: boolean;
-}
+};
 
 /**
  * Компонент, имплементирующий поддержку медиа запросов в шаблонах.
@@ -83,14 +84,17 @@ class Mq extends React.Component<MqProps, MqState> {
             touchPass = !SUPPORTS_TOUCH;
         }
 
-        this.setState({
-            isMatched: (queryPass && touchPass),
-        }, () => {
-            if (this.props.onMatchChange) {
-                this.props.onMatchChange(this.state.isMatched);
-            }
-        });
-    }
+        this.setState(
+            {
+                isMatched: queryPass && touchPass,
+            },
+            () => {
+                if (this.props.onMatchChange) {
+                    this.props.onMatchChange(this.state.isMatched);
+                }
+            },
+        );
+    };
 }
 
 export default Mq;

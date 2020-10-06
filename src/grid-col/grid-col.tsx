@@ -20,7 +20,6 @@ type BreakpointsType = {
 };
 
 export type GridColProps = {
-
     /**
      * Уникальный идентификатор блока
      */
@@ -92,17 +91,11 @@ export class GridCol extends React.PureComponent<GridColProps> {
 
     static defaultProps: Partial<GridColProps> = {
         tag: 'div',
-    }
+    };
 
     render() {
         const {
-            width,
-            offset,
-            order,
-            align,
-            tag: Tag,
-            children,
-            ...props
+            width, offset, order, align, tag: Tag, children, ...props
         } = this.props;
 
         return (
@@ -147,7 +140,9 @@ export class GridCol extends React.PureComponent<GridColProps> {
                         if (prop[breakpoint][size] === null) {
                             return;
                         }
-                        classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][size].toString();
+                        classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][
+                            size
+                        ].toString();
                     });
                 } else {
                     classNames[`${name}-${breakpoint}`] = prop[breakpoint].toString();

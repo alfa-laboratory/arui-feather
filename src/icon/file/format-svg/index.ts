@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './format-svg.css';
+
 import '../..';
 
 export * from './format-svg';

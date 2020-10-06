@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
-import IconClose from '../icon/ui/close';
+import { withTheme } from '../cn';
 import IconButton from '../icon-button/icon-button';
+import IconClose from '../icon/ui/close';
 
 export type PopupHeaderProps = {
     /**
@@ -66,13 +66,9 @@ export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
                     size={ this.props.size }
                     onClick={ this.handleCloserClick }
                 >
-                    <IconClose
-                        size={ this.props.size }
-                    />
+                    <IconClose size={ this.props.size } />
                 </IconButton>
-                <div className={ this.cn('title') }>
-                    { this.props.title }
-                </div>
+                <div className={ this.cn('title') }>{ this.props.title }</div>
             </div>
         );
     }
@@ -81,7 +77,7 @@ export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
         if (this.props.onCloserClick) {
             this.props.onCloserClick(event);
         }
-    }
+    };
 }
 
 export default withTheme<PopupHeaderProps, PopupHeader>(PopupHeader);

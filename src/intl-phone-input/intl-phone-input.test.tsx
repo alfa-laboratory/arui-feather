@@ -5,10 +5,11 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 import { IntlPhoneInput } from './intl-phone-input';
-import { SCROLL_TO_CORRECTION } from '../vars';
 
 const SIZES = ['s', 'm', 'l', 'xl'] as const;
 
@@ -65,7 +66,7 @@ describe('intl-phone-input', () => {
     it('should scroll window to element on public `scrollTo` method', () => {
         const elem = mount<IntlPhoneInput>(<IntlPhoneInput />);
         const elemTopPosition = elem.instance().input.getNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         elem.instance().scrollTo();
 

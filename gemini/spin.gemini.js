@@ -6,9 +6,7 @@ const NAME = 'spin';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
 const SIZES = process.env.ALL_SIZES ? ['s', 'm', 'l', 'xl'] : ['m'];
 
-const PROP_SETS = [
-    {},
-];
+const PROP_SETS = [{}];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -28,15 +26,11 @@ geminiReact.suite(NAME, () => {
                     };
                     const template = (
                         <GeminiBox theme={ theme }>
-                            <Button { ...props }>
-                                Button
-                            </Button>
+                            <Button { ...props }>Button</Button>
                         </GeminiBox>
                     );
 
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

@@ -3,15 +3,19 @@ import React from 'react';
 // TODO: функция вызывается на TouchEvent и PointerEvent хотя больше от этого путанницы
 // Тут надо отдельно рефачить и типы и имплементацию чтоб ничего не сломать
 export const getCoordinates = ({
-    touches, changedTouches, clientX, clientY,
-}: Partial<TouchEvent & PointerEvent>) => (
-    (touches && changedTouches)
-        ? { clientX: (touches[0] || changedTouches[0]).clientX, clientY: (touches[0] || changedTouches[0]).clientY }
-        : { clientX, clientY }
-);
+    touches,
+    changedTouches,
+    clientX,
+    clientY,
+}: Partial<TouchEvent & PointerEvent>) =>
+    (touches && changedTouches
+        ? {
+            clientX: (touches[0] || changedTouches[0]).clientX,
+            clientY: (touches[0] || changedTouches[0]).clientY,
+        }
+        : { clientX, clientY });
 
 export type SwipeableProps = {
-
     /**
      * Число пикселей, на которое нужно сместиться, чтобы запустить функцию по свайпу
      */
@@ -20,7 +24,7 @@ export type SwipeableProps = {
     /**
      * Функция запускаемая по свайпу.
      */
-    onSwipe: (direction: 'top' | 'right' | 'bottom' |'left') => void;
+    onSwipe: (direction: 'top' | 'right' | 'bottom' | 'left') => void;
 
     /**
      * Дочерний компонент представленный в виде единичного элемента
@@ -88,7 +92,9 @@ class Swipeable extends React.PureComponent<SwipeableProps> {
     };
 
     private handleSwipeEnd = (event) => {
-        const { props: { delta, onSwipe } } = this;
+        const {
+            props: { delta, onSwipe },
+        } = this;
         const { clientX, clientY } = getCoordinates(event);
 
         this.deltaX = this.swipeStartX - clientX;

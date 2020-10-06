@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './logo-alfabank-square.css';
+
 import '../..';
 
 export * from './logo-alfabank-square';

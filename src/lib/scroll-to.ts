@@ -2,32 +2,33 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import easings, { EasingType } from './easings';
 import { SCROLL_TO_EASING } from '../vars';
+
+import easings, { EasingType } from './easings';
 
 type ScrollToOptions = {
     /**
-    * Цель по оси Y
-    */
+     * Цель по оси Y
+     */
     targetY: number;
     /**
-    * Элемент в котором скроллим
-    */
+     * Элемент в котором скроллим
+     */
     container?: HTMLElement;
     /**
-    * Продолжительность анимации в миллесекундах
-    */
+     * Продолжительность анимации в миллесекундах
+     */
     duration?: number;
     /**
-    * Название функции плавности для анимации
-    */
+     * Название функции плавности для анимации
+     */
     easing?: EasingType;
-}
+};
 /**
-* Скроллит по элементу или странице.
-* В настоящее время доступно перемещение только по оси Y.
-* TODO: Make a move on the x axis
-*/
+ * Скроллит по элементу или странице.
+ * В настоящее время доступно перемещение только по оси Y.
+ * TODO: Make a move on the x axis
+ */
 export default function scrollTo({
     targetY,
     container,
@@ -61,7 +62,7 @@ export default function scrollTo({
             const currentTime = Math.abs(timestamp - startTime);
             const t = currentTime / duration;
             const val = easingFunc(t);
-            const currentTargetY = scrollY + ((targetY - scrollY) * val);
+            const currentTargetY = scrollY + (targetY - scrollY) * val;
 
             if (t < 1) {
                 window.requestAnimationFrame(loop);

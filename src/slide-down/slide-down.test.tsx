@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { SlideDown } from './slide-down';
 
@@ -26,17 +26,13 @@ describe('slide-down', () => {
     });
 
     it('should render with height=auto when isExpanded=true', () => {
-        const slideDownNode = shallow(
-            <SlideDown isExpanded={ true } />,
-        );
+        const slideDownNode = shallow(<SlideDown isExpanded={ true } />);
 
         expect(slideDownNode.props().style).toEqual({ height: 'auto' });
     });
 
     it('should set `slide-down__content_expanded` class to content when isExpanded=true', () => {
-        const slideDownNode = shallow(
-            <SlideDown isExpanded={ true } />,
-        );
+        const slideDownNode = shallow(<SlideDown isExpanded={ true } />);
 
         const slideDownContentNode = slideDownNode.find('.slide-down__content');
 
@@ -46,9 +42,7 @@ describe('slide-down', () => {
     it('should call onAnimationStart when received new isExpanded prop', () => {
         const onAnimationStart = jest.fn();
         const props = { isExpanded: false, onAnimationStart };
-        const slideDownNode = mount<SlideDown>(
-            <SlideDown { ...props } />,
-        );
+        const slideDownNode = mount<SlideDown>(<SlideDown { ...props } />);
 
         slideDownNode.setProps({ isExpanded: true });
 

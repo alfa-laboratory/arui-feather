@@ -4,11 +4,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 import keyboardCode from '../lib/keyboard-code';
 
 export type ButtonProps = {
-
     /**
      * Текст кнопки
      */
@@ -173,14 +173,13 @@ export type ButtonProps = {
      * Обработчик события отжатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
     onKeyUp?: (event?: React.KeyboardEvent<any>) => void;
-
 };
 
 type ButtonState = {
     focused: boolean;
     hovered: boolean;
     pressed: boolean;
-}
+};
 
 /**
  * Компонент кнопки (да, она нажимается!).
@@ -366,7 +365,10 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
     };
 
     private handleKeyDown = (event) => {
-        if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
+        if (
+            (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) &&
+            !this.props.disabled
+        ) {
             this.setState({ pressed: true });
         }
 
@@ -376,7 +378,10 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
     };
 
     private handleKeyUp = (event) => {
-        if ((event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) && !this.props.disabled) {
+        if (
+            (event.which === keyboardCode.ENTER || event.which === keyboardCode.SPACE) &&
+            !this.props.disabled
+        ) {
             this.setState({ pressed: false });
         }
 

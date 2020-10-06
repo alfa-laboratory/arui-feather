@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Link } from './link';
 
@@ -37,7 +37,11 @@ describe('link', () => {
 
     it('should call `onClick` callback after link was clicked disabled=false', () => {
         const onClick = jest.fn();
-        const link = mount(<Link onClick={ onClick } disabled={ false }>Link-example</Link>);
+        const link = mount(
+            <Link onClick={ onClick } disabled={ false }>
+                Link-example
+            </Link>,
+        );
 
         link.simulate('click');
 
@@ -46,7 +50,11 @@ describe('link', () => {
 
     it('should not call `onClick` callback after link was clicked disabled=true', () => {
         const onClick = jest.fn();
-        const link = mount(<Link onClick={ onClick } disabled={ true }>Link-example</Link>);
+        const link = mount(
+            <Link onClick={ onClick } disabled={ true }>
+                Link-example
+            </Link>,
+        );
 
         link.simulate('click');
 
@@ -55,7 +63,11 @@ describe('link', () => {
 
     it('should call `onDisabledClick` callback after link was clicked disabled=true', () => {
         const onDisabledClick = jest.fn();
-        const link = mount(<Link onDisabledClick={ onDisabledClick } disabled={ true }>Link-example</Link>);
+        const link = mount(
+            <Link onDisabledClick={ onDisabledClick } disabled={ true }>
+                Link-example
+            </Link>,
+        );
 
         link.simulate('click');
 
@@ -64,7 +76,11 @@ describe('link', () => {
 
     it('should not call `onDisabledClick` callback after link was clicked disabled=false', () => {
         const onDisabledClick = jest.fn();
-        const link = mount(<Link onDisabledClick={ onDisabledClick } disabled={ false }>Link-example</Link>);
+        const link = mount(
+            <Link onDisabledClick={ onDisabledClick } disabled={ false }>
+                Link-example
+            </Link>,
+        );
 
         link.simulate('click');
 

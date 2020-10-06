@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './navigation-history.css';
+
 import '../..';
 
 export * from './navigation-history';

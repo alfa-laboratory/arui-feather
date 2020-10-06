@@ -4,8 +4,10 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import useMedia from './useMedia';
+
 import { getMatchMedia } from '../lib/match-media';
+
+import useMedia from './useMedia';
 
 jest.mock('../lib/match-media');
 jest.mock('./utils', () => ({
@@ -56,7 +58,7 @@ describe('useMedia', () => {
 
         type Props = {
             query: string;
-        }
+        };
 
         const Example = ({ query }: Props) => {
             const matches = useMedia(query);

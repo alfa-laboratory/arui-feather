@@ -2,9 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import createFragment from 'react-addons-create-fragment';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type InputGroupProps = {
@@ -50,11 +51,9 @@ export class InputGroup extends React.PureComponent<InputGroupProps> {
         const inputGroupParts = {};
 
         if (this.props.children) {
-            children = (
-                (this.props.children as React.ReactNode[]).length
-                    ? this.props.children
-                    : [this.props.children]
-            );
+            children = (this.props.children as React.ReactNode[]).length
+                ? this.props.children
+                : [this.props.children];
         }
 
         if (children) {

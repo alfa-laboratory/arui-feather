@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type FormFieldProps = {
-
     /**
      * Дочерние элементы `FormField`
      */

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './photo-card.css';
+
 import '../..';
 
 export * from './photo-card';

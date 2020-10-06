@@ -6,7 +6,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { Spin } from './spin';
-import ThemedSpin from './index';
+import ThemedSpin from '.';
 
 describe('spin', () => {
     it('should render without problems', () => {

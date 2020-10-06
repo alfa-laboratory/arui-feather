@@ -6,14 +6,13 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
+import { withTheme } from '../cn';
 import FlagIcon from '../flag-icon/flag-icon';
 import Input, { InputProps } from '../input/input';
-import Select from '../select/select';
-
 import countries from '../lib/countries';
 import getRelatedTarget from '../lib/related-target';
+import Select from '../select/select';
 
 const MAX_DIAL_CODE_LENGTH = 4;
 
@@ -25,7 +24,7 @@ type IntlPhoneInputState = {
     inputValue: string;
     selectFocused: boolean;
     onceOpened: boolean;
-}
+};
 
 /**
  * Компонент ввода международного телефона по маске.
@@ -157,18 +156,23 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     };
 
     private handleSelectChange = (value) => {
-        const inputValue = `+${this.countries.find((country) => country.iso2 === value[0]).dialCode}`;
+        const inputValue = `+${
+            this.countries.find((country) => country.iso2 === value[0]).dialCode
+        }`;
 
-        this.setState({
-            countryIso2: value[0],
-            inputValue,
-        }, () => {
-            // Wait for select blur, then focus on input
-            this.timeoutId = setTimeout(() => {
-                this.input.focus();
-                this.input.setSelectionRange(inputValue.length);
-            }, 0);
-        });
+        this.setState(
+            {
+                countryIso2: value[0],
+                inputValue,
+            },
+            () => {
+                // Wait for select blur, then focus on input
+                this.timeoutId = setTimeout(() => {
+                    this.input.focus();
+                    this.input.setSelectionRange(inputValue.length);
+                }, 0);
+            },
+        );
     };
 
     private handleSelectClick = () => {
@@ -188,41 +192,50 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
     };
 
     private handleInputChange = (value) => {
-        this.setState({
-            inputValue: value.length === 1 && value !== '+' ? `+${value}` : value,
-        }, this.setCountry);
+        this.setState(
+            {
+                inputValue: value.length === 1 && value !== '+' ? `+${value}` : value,
+            },
+            this.setCountry,
+        );
     };
 
     // TODO: торчит для теста
     getOptions = () => {
         this.countries = countries.getCountries();
 
-        return this.state.onceOpened ? this.countries.map((country) => ({
-            value: country.iso2,
-            text: (
-                <span>
-                    { country.name }
-                    <span className={ this.cn('select-option-code') }>
-                        +
-                        { country.dialCode }
+        return this.state.onceOpened
+            ? this.countries.map((country) => ({
+                value: country.iso2,
+                text: (
+                    <span>
+                        { country.name }
+                        <span className={ this.cn('select-option-code') }>
+                            +
+                            { country.dialCode }
+                        </span>
                     </span>
-                </span>
-            ),
-            nativeText: `${country.name} +${country.dialCode}`,
-            icon: (
-                <span className={ this.cn('select-option-flag') }>
-                    { this.renderFlagIcon(country.iso2) }
-                </span>
-            ),
-        })) : [];
+                ),
+                nativeText: `${country.name} +${country.dialCode}`,
+                icon: (
+                    <span className={ this.cn('select-option-flag') }>
+                        { this.renderFlagIcon(country.iso2) }
+                    </span>
+                ),
+            }))
+            : [];
     };
 
     private getSelectPopupOffset() {
         switch (this.props.size) {
-        case 's': return -18;
-        case 'm': return -24;
-        case 'l': return -27;
-        case 'xl': return -28;
+            case 's':
+                return -18;
+            case 'm':
+                return -24;
+            case 'l':
+                return -27;
+            case 'xl':
+                return -28;
         }
 
         return 0;
@@ -236,7 +249,9 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
 
     // TODO: торчит для теста
     loadUtil() {
-        return import(/* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min')
+        return import(
+            /* webpackChunkName: "libphonenumber" */ 'libphonenumber-js/bundle/libphonenumber-js.min'
+        )
             .then((util) => {
                 this.util = util;
             })
@@ -256,16 +271,22 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
 
         // Check classNames matching in select's button (relatedTarget) & menu (focused target)
         if (relatedTarget.classList && event.target.classList) {
-            hasSelectRelatedTarget = Array.from(relatedTarget.classList).some((item) => /select/.test(item))
-                === Array.from(event.target.classList).some((item) => /select/.test(item));
+            hasSelectRelatedTarget =
+                Array.from(relatedTarget.classList).some((item) => /select/.test(item)) ===
+                Array.from(event.target.classList).some((item) => /select/.test(item));
 
-            isSwitchBetweenRelatedTargers = !Object.values(focusedState).some((item) => item)
-                && !Array.from(event.target.classList).some((item) => /select/.test(item))
-                && Array.from(relatedTarget.classList).some((item) => /select/.test(item));
+            isSwitchBetweenRelatedTargers =
+                !Object.values(focusedState).some((item) => item) &&
+                !Array.from(event.target.classList).some((item) => /select/.test(item)) &&
+                Array.from(relatedTarget.classList).some((item) => /select/.test(item));
         }
 
         if (event.type === 'focus') {
-            if (hasMatchedRelatedTarget || hasSelectRelatedTarget || isSwitchBetweenRelatedTargers) {
+            if (
+                hasMatchedRelatedTarget ||
+                hasSelectRelatedTarget ||
+                isSwitchBetweenRelatedTargers
+            ) {
                 // If we have smth already focused, do not do anything
                 const alreadyInFocus = Object.values(focusedState).some((item) => item);
 
@@ -317,12 +338,12 @@ export class IntlPhoneInput extends React.PureComponent<IntlPhoneInputProps, Int
                     if (this.state.countryIso2 === country.iso2) {
                         this.setValue(country.iso2, inputValue);
                         break;
-                    // If not equal — set highest by priority
+                        // If not equal — set highest by priority
                     } else if (country.priority === 0) {
                         this.setValue(country.iso2, inputValue);
                         break;
                     }
-                // Otherwise don't change already selected country, just set value
+                    // Otherwise don't change already selected country, just set value
                 } else if (this.state.countryIso2 === country.iso2) {
                     this.setValue(country.iso2, inputValue);
                     break;

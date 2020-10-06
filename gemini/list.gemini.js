@@ -30,10 +30,7 @@ const ITEMS = [
     },
 ];
 
-const PROP_SETS = [
-    { items: ITEMS },
-    { items: ITEMS, type: 'ordered' },
-];
+const PROP_SETS = [{ items: ITEMS }, { items: ITEMS, type: 'ordered' }];
 
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
@@ -53,9 +50,7 @@ geminiReact.suite(NAME, () => {
                         </GeminiBox>
                     );
 
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

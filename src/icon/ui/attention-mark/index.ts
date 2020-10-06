@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './attention-mark.css';
+
 import '../..';
 
 export * from './attention-mark';

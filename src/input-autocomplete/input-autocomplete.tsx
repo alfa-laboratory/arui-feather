@@ -8,23 +8,20 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
-import { FormatCharacters } from '../masked-input/mask';
 
+import { withTheme } from '../cn';
+import Input, { InputProps } from '../input/input';
+import keyboardCode from '../lib/keyboard-code';
+import scrollTo from '../lib/scroll-to';
+import { FormatCharacters } from '../masked-input/mask';
+import { MenuItem } from '../menu-item/menu-item';
 import Menu from '../menu/menu';
+import performance from '../performance';
 import Popup from '../popup/popup';
 import { ResizeSensor } from '../resize-sensor/resize-sensor';
-
-import keyboardCode from '../lib/keyboard-code';
-import performance from '../performance';
-import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_NORMAL_DURATION } from '../vars';
 
-import { MenuItem } from '../menu-item/menu-item';
-import Input, { InputProps } from '../input/input';
-
 export type InputAutocompleteProps = InputProps & {
-
     /**
      * Тип поля.
      * Внимание, тип 'number' не умеет работать с масками, в том числе с 'selectionStart' и 'selectionEnd'.
@@ -258,7 +255,6 @@ export type InputAutocompleteProps = InputProps & {
      * Список вариантов выбора
      */
     options?: ReadonlyArray<{
-
         /**
          * Тип списка вариантов
          */
@@ -308,7 +304,20 @@ export type InputAutocompleteProps = InputProps & {
     /**
      * Направления, в которые может открываться попап компонента
      */
-    directions?: ReadonlyArray<'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right'>;
+    directions?: ReadonlyArray<
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'left-top'
+    | 'left-center'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-center'
+    | 'right-bottom'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right'
+    >;
 
     /**
      * Вставляет попап со списком только если элемент активен
@@ -342,7 +351,7 @@ type InputAutocompleteState = {
     menuFocused: boolean;
     popupStyles: React.CSSProperties;
     highlightedItem: MenuItem | null;
-}
+};
 
 /**
  * Компонент поля для ввода с автокомплитом.
@@ -350,7 +359,10 @@ type InputAutocompleteState = {
  * @extends Input
  */
 @performance(true)
-export class InputAutocomplete extends React.Component<InputAutocompleteProps, InputAutocompleteState> {
+export class InputAutocomplete extends React.Component<
+InputAutocompleteProps,
+InputAutocompleteState
+> {
     protected cn = createCn('input');
 
     static defaultProps: Partial<InputAutocompleteProps> = {
@@ -446,9 +458,10 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
             ? this.formatOptionsList(this.props.options)
             : [];
 
-        const opened = this.props.opened === undefined
-            ? (this.state.inputFocused || this.state.menuFocused)
-            : this.props.opened;
+        const opened =
+            this.props.opened === undefined
+                ? this.state.inputFocused || this.state.menuFocused
+                : this.props.opened;
 
         if (this.props.options.length === 0) {
             this.popup = null;
@@ -502,12 +515,12 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
     }
 
     private handleItemCheck = (checkedItemsValues, event) => {
-        const checkedItemValue = checkedItemsValues.length ? checkedItemsValues[0] : this.state.checkedItemValue;
+        const checkedItemValue = checkedItemsValues.length
+            ? checkedItemsValues[0]
+            : this.state.checkedItemValue;
         const checkedItem = this.getCheckedOption(this.props.options, checkedItemValue);
 
-        const newValue = checkedItem
-            ? (checkedItem.text || checkedItem.value)
-            : this.state.value;
+        const newValue = checkedItem ? checkedItem.text || checkedItem.value : this.state.value;
 
         if (this.props.onItemSelect) {
             this.props.onItemSelect(checkedItem);
@@ -603,25 +616,25 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
 
     private handleKeyDown = (event) => {
         switch (event.which) {
-        case keyboardCode.DOWN_ARROW: {
-            event.preventDefault();
+            case keyboardCode.DOWN_ARROW: {
+                event.preventDefault();
 
-            const posX = window.pageXOffset;
-            const posY = window.pageYOffset;
+                const posX = window.pageXOffset;
+                const posY = window.pageYOffset;
 
-            if (this.menu) {
-                this.menu.focus();
+                if (this.menu) {
+                    this.menu.focus();
+                }
+
+                window.scrollTo(posX, posY);
+
+                break;
             }
 
-            window.scrollTo(posX, posY);
-
-            break;
-        }
-
-        case keyboardCode.ESCAPE: {
-            this.input.blur();
-            break;
-        }
+            case keyboardCode.ESCAPE: {
+                this.input.blur();
+                break;
+            }
         }
 
         if (this.props.onKeyDown) {
@@ -637,15 +650,15 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
 
     private handleMenuKeyDown = (event, highlightedItem) => {
         switch (event.which) {
-        case keyboardCode.DOWN_ARROW:
-        case keyboardCode.UP_ARROW:
-            event.preventDefault();
-            this.syncKeyboardNavigationWithScroll(highlightedItem);
-            break;
+            case keyboardCode.DOWN_ARROW:
+            case keyboardCode.UP_ARROW:
+                event.preventDefault();
+                this.syncKeyboardNavigationWithScroll(highlightedItem);
+                break;
 
-        case keyboardCode.ESCAPE:
-            this.input.focus();
-            break;
+            case keyboardCode.ESCAPE:
+                this.input.focus();
+                break;
         }
 
         if (this.props.onKeyDown) {
@@ -685,9 +698,10 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         const focusedElement = document.activeElement;
 
         const newState = {
-            inputFocused: (focusedElement === this.input.getControl()),
+            inputFocused: focusedElement === this.input.getControl(),
             menuFocused: this.menu
-                ? (this.menu.getNode() === focusedElement || this.menu.getNode().contains(focusedElement))
+                ? this.menu.getNode() === focusedElement ||
+                  this.menu.getNode().contains(focusedElement)
                 : false,
         };
 
@@ -707,26 +721,24 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
     }
 
     private formatOptionsList(options) {
-        return (
-            options.map((option) => {
-                if (option.type === 'group' && !!option.content) {
-                    const content = this.formatOptionsList(option.content);
+        return options.map((option) => {
+            if (option.type === 'group' && !!option.content) {
+                const content = this.formatOptionsList(option.content);
 
-                    return ({
-                        type: 'group',
-                        title: option.title,
-                        content,
-                    });
-                }
+                return {
+                    type: 'group',
+                    title: option.title,
+                    content,
+                };
+            }
 
-                return ({
-                    key: option.key || option.value,
-                    value: option.value,
-                    content: option.description || option.value,
-                    props: option.props,
-                });
-            })
-        );
+            return {
+                key: option.key || option.value,
+                value: option.value,
+                content: option.description || option.value,
+                props: option.props,
+            };
+        });
     }
 
     private getCheckedOption(options, value) {
@@ -790,7 +802,7 @@ export class InputAutocomplete extends React.Component<InputAutocompleteProps, I
         } else if (element.offsetTop < container.scrollTop) {
             scrollTo({
                 container,
-                targetY: (element.offsetTop - container.offsetHeight) + correction,
+                targetY: element.offsetTop - container.offsetHeight + correction,
                 duration: SCROLL_TO_NORMAL_DURATION,
             });
         }

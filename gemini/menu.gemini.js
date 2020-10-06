@@ -97,7 +97,13 @@ const PROP_SETS = [
     { mode: 'check', content: MENU_2, checkedItems: ['value1', 'value3'] },
     { mode: 'radio', content: MENU_2, checkedItems: ['value1'] },
     { mode: 'radio-check', view: 'horizontal', content: MENU_2, checkedItems: ['value2'] },
-    { mode: 'check', view: 'horizontal', disabled: true, content: MENU_1, checkedItems: ['value1', 'value3'] },
+    {
+        mode: 'check',
+        view: 'horizontal',
+        disabled: true,
+        content: MENU_1,
+        checkedItems: ['value1', 'value3'],
+    },
     { mode: 'radio', disabled: true, content: MENU_1, checkedItems: ['value1'] },
 ];
 /* eslint-enable object-curly-newline */
@@ -117,32 +123,22 @@ geminiReact.suite(NAME, () => {
                     const template = (
                         <GeminiBox theme={ theme }>
                             <div>
-                                {
-                                    set.mode
-                                    && (
-                                        <Label size={ size }>
-                                            {
-                                                (set.mode === 'check'
-                                                && 'Меню с множественным выбором (mode="check")')
-                                            || (set.mode === 'radio'
-                                                && 'Меню с одиночным обязательным выбором (mode="radio")')
-                                            || (set.mode === 'radio-check'
-                                                && 'Меню с одиночным необязательным выбором (mode="radio-check")'
-                                            )
-                                            }
-                                        </Label>
-                                    )
-                                }
-                                <Menu { ...props }>
-                                    Menu Item
-                                </Menu>
+                                { set.mode && (
+                                    <Label size={ size }>
+                                        { (set.mode === 'check' &&
+                                            'Меню с множественным выбором (mode="check")') ||
+                                            (set.mode === 'radio' &&
+                                                'Меню с одиночным обязательным выбором (mode="radio")') ||
+                                            (set.mode === 'radio-check' &&
+                                                'Меню с одиночным необязательным выбором (mode="radio-check")') }
+                                    </Label>
+                                ) }
+                                <Menu { ...props }>Menu Item</Menu>
                             </div>
                         </GeminiBox>
                     );
 
-                    suite
-                        .render(template)
-                        .capture('plain');
+                    suite.render(template).capture('plain');
                 });
             });
         });

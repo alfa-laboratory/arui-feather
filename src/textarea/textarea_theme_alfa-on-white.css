@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import "../vars.css";
+@import '../vars.css';
 
 .textarea_theme_alfa-on-white {
     .textarea__control {
@@ -21,9 +21,7 @@
 
     &.textarea_focused {
         .textarea__control {
-            border-bottom-color: var(
-                --color-border-control-focused-alfa-on-white
-            );
+            border-bottom-color: var(--color-border-control-focused-alfa-on-white);
         }
     }
 
@@ -47,9 +45,7 @@
             }
 
             &:disabled {
-                -webkit-text-fill-color: var(
-                    --color-content-disabled-alfa-on-white
-                ) !important;
+                -webkit-text-fill-color: var(--color-content-disabled-alfa-on-white) !important;
             }
         }
     }

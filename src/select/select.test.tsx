@@ -7,10 +7,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Select } from './select';
 import keyboardCode from '../lib/keyboard-code';
-
 import { SCROLL_TO_CORRECTION } from '../vars';
+
+import { Select } from './select';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { setIsMatched: setMqMatched } = require('../mq/mq');
@@ -46,7 +46,12 @@ function renderSelect(props) {
     const hiddenInput = select.find('input');
 
     return {
-        select, nativeSelectNode, popupNode, buttonNode, menuNode, hiddenInput,
+        select,
+        nativeSelectNode,
+        popupNode,
+        buttonNode,
+        menuNode,
+        hiddenInput,
     };
 }
 
@@ -137,7 +142,9 @@ describe('select', () => {
             options: OPTIONS,
             value: [checkedOptions[0].value, checkedOptions[1].value],
         };
-        const expectedOptions = checkedOptions.map((option) => option.checkedText || option.text).join(', ');
+        const expectedOptions = checkedOptions
+            .map((option) => option.checkedText || option.text)
+            .join(', ');
         const { buttonNode } = renderSelect(selectProps);
 
         expect(buttonNode.text()).toBe(expectedOptions);
@@ -178,7 +185,7 @@ describe('select', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const { select } = renderSelect({ options: OPTIONS });
         const elemTopPosition = select.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         select.instance().scrollTo();
 
@@ -269,13 +276,18 @@ describe('select', () => {
             options: [
                 {
                     value: 1,
-                    text: <div>Very long option text in block element to make select popup strech</div>,
+                    text: (
+                        <div>
+                            Very long option text in block element to make select popup strech
+                        </div>
+                    ),
                 },
                 {
                     value: 2,
                     text: (
                         <div>
-                            Much, much longer option text in another block element to make select popup strech
+                            Much, much longer option text in another block element to make select
+                            popup strech
                         </div>
                     ),
                 },

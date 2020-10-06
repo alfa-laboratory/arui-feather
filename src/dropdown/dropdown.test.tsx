@@ -9,9 +9,7 @@ import { Dropdown } from './dropdown';
 
 describe('dropdown', () => {
     it('should render without problems', () => {
-        const dropdown = mount(
-            <Dropdown popupContent="Popup-example">Switcher-example</Dropdown>,
-        );
+        const dropdown = mount(<Dropdown popupContent="Popup-example">Switcher-example</Dropdown>);
 
         expect(dropdown).toMatchSnapshot();
         expect(dropdown.find('.popup').text()).toBe('Popup-example');
@@ -19,17 +17,13 @@ describe('dropdown', () => {
     });
 
     it('should render link switcher by default', () => {
-        const dropdown = mount(
-            <Dropdown />,
-        );
+        const dropdown = mount(<Dropdown />);
 
         expect(dropdown.find('a.dropdown__switcher').props().className).toContain('link');
     });
 
     it('should render button switcher with property switcherType=`button`', () => {
-        const dropdown = mount(
-            <Dropdown switcherType="button" />,
-        );
+        const dropdown = mount(<Dropdown switcherType="button" />);
 
         expect(dropdown.find('button.dropdown__switcher').props().className).toContain('button');
     });
@@ -84,9 +78,7 @@ describe('dropdown', () => {
 
     it('should call `onPopupMouseEnter` callback after popup was hovered', () => {
         const onPopupMouseEnter = jest.fn();
-        const dropdown = mount(
-            <Dropdown onPopupMouseEnter={ onPopupMouseEnter } opened={ true } />,
-        );
+        const dropdown = mount(<Dropdown onPopupMouseEnter={ onPopupMouseEnter } opened={ true } />);
         const popupNode = dropdown.find('.popup');
 
         popupNode.simulate('mouseEnter');
@@ -96,9 +88,7 @@ describe('dropdown', () => {
 
     it('should call `onPopupMouseLeave` callback after popup was unhovered', () => {
         const onPopupMouseLeave = jest.fn();
-        const dropdown = mount(
-            <Dropdown onPopupMouseLeave={ onPopupMouseLeave } opened={ true } />,
-        );
+        const dropdown = mount(<Dropdown onPopupMouseLeave={ onPopupMouseLeave } opened={ true } />);
         const popupNode = dropdown.find('.popup');
 
         popupNode.simulate('mouseLeave');
@@ -107,18 +97,14 @@ describe('dropdown', () => {
     });
 
     it('should set class checked to switcher button then togglable=`check` and popup open', () => {
-        const dropdown = mount(
-            <Dropdown togglable="check" opened={ true } switcherType="button" />,
-        );
+        const dropdown = mount(<Dropdown togglable="check" opened={ true } switcherType="button" />);
         const switcherNode = dropdown.find('button.dropdown__switcher');
 
         expect(switcherNode.props().className).toContain('button_checked');
     });
 
     it('should toggle popup visibility by click on switcher', () => {
-        const dropdown = mount(
-            <Dropdown />,
-        );
+        const dropdown = mount(<Dropdown />);
         const switcherNode = dropdown.find('a.dropdown__switcher');
 
         switcherNode.simulate('click');

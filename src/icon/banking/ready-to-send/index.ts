@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './ready-to-send.css';
+
 import '../..';
 
 export * from './ready-to-send';

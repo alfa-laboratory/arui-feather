@@ -4,10 +4,10 @@
 
 import React, { createRef } from 'react';
 import { createCn } from 'bem-react-classname';
+
 import { withTheme } from '../cn';
 
 export type SlideDownProps = {
-
     /**
      * Управление состоянием expand/collapse компонента
      */
@@ -47,7 +47,6 @@ export type SlideDownProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 type SlideDownState = {
@@ -69,7 +68,7 @@ export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownStat
 
     private slideDown = createRef<HTMLDivElement>();
 
-    private slideDownContent = createRef<HTMLDivElement>()
+    private slideDownContent = createRef<HTMLDivElement>();
 
     componentDidUpdate(prevProps: SlideDownProps) {
         const { isExpanded, onAnimationStart } = this.props;
@@ -92,9 +91,7 @@ export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownStat
             <div
                 className={ this.cn() }
                 id={ this.props.id }
-                style={
-                    { height: this.getHeight() }
-                }
+                style={ { height: this.getHeight() } }
                 onTransitionEnd={ this.handleTransitionEnd }
                 ref={ this.slideDown }
                 data-test-id={ this.props['data-test-id'] }
@@ -119,9 +116,7 @@ export class SlideDown extends React.PureComponent<SlideDownProps, SlideDownStat
     };
 
     private getHeight() {
-        return this.state.isHeightAuto
-            ? 'auto'
-            : this.state.height;
+        return this.state.isHeightAuto ? 'auto' : this.state.height;
     }
 
     private setHeightToContentHeight() {

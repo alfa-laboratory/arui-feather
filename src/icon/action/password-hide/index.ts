@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './password-hide.css';
+
 import '../..';
 
 export * from './password-hide';

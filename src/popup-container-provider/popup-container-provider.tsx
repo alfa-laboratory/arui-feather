@@ -27,9 +27,10 @@ export type PopupContainerProviderProps = {
     /**
      * Объект со стилями
      */
-    style?: any/* Не нашёлся встроенный тип для типа {"name":"custom","raw":"styleType","params":[],"returns":null}
-                  * https://github.com/alfa-laboratory/library-utils/issues/new
-                  */;
+    style?: any;
+    /* Не нашёлся встроенный тип для типа {"name":"custom","raw":"styleType","params":[],"returns":null}
+     * https://github.com/alfa-laboratory/library-utils/issues/new
+     */
 
     /**
      * Тема компонента
@@ -40,12 +41,11 @@ export type PopupContainerProviderProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 type PopupContainerProviderState = {
     didRender: boolean;
-}
+};
 
 /**
  * Становится родительским элементом для всех дочерних блоков `Popup`.
@@ -78,8 +78,10 @@ type PopupContainerProviderState = {
  *  </Page>
  * ```
  */
-class PopupContainerProvider extends
-    React.PureComponent<PopupContainerProviderProps, PopupContainerProviderState> {
+class PopupContainerProvider extends React.PureComponent<
+PopupContainerProviderProps,
+PopupContainerProviderState
+> {
     protected cn = createCn('popup-container');
 
     state = {
@@ -95,7 +97,7 @@ class PopupContainerProvider extends
     getChildContext() {
         return {
             isInCustomContainer: true,
-            renderContainerElement: (this.renderContainer && this.renderContainer.getNode()),
+            renderContainerElement: this.renderContainer && this.renderContainer.getNode(),
             positioningContainerElement: this.positioningContainer,
         };
     }

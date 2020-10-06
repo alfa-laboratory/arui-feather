@@ -5,9 +5,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { PhoneInput } from './phone-input';
-
 import { SCROLL_TO_CORRECTION } from '../vars';
+
+import { PhoneInput } from './phone-input';
 
 describe('phone-input', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -23,7 +23,7 @@ describe('phone-input', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const phoneInput = mount<PhoneInput>(<PhoneInput />);
         const elemTopPosition = phoneInput.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         phoneInput.instance().scrollTo();
 

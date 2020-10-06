@@ -5,8 +5,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Radio } from './radio';
 import { SCROLL_TO_CORRECTION } from '../vars';
+
+import { Radio } from './radio';
 
 describe('radio', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -251,7 +252,7 @@ describe('radio', () => {
     it('should scroll window to element on public scrollTo method', (done) => {
         const radio = mount<Radio>(<Radio text="some label" />);
         const elemTopPosition = radio.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         radio.instance().scrollTo();
 

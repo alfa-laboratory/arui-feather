@@ -4,32 +4,34 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
-import TagButton from '../tag-button/tag-button';
+import { withTheme } from '../cn';
 import scrollTo from '../lib/scroll-to';
+import TagButton from '../tag-button/tag-button';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type RadioProps = ({
-    /**
-     * Тип
-     */
-    type?: 'normal';
-    /**
-     * Размер компонента
-     */
-    size?: 'm' | 'l';
-} | {
-    /**
-     * Тип
-     */
-    type?: 'button';
-    /**
-     * Размер компонента
-     */
-    size?: 's'| 'm' | 'l' | 'xl';
-}) & {
-
+export type RadioProps = (
+    | {
+        /**
+           * Тип
+           */
+        type?: 'normal';
+        /**
+           * Размер компонента
+           */
+        size?: 'm' | 'l';
+    }
+    | {
+        /**
+           * Тип
+           */
+        type?: 'button';
+        /**
+           * Размер компонента
+           */
+        size?: 's' | 'm' | 'l' | 'xl';
+    }
+) & {
     /**
      * Управление состоянием вкл/выкл компонента
      */
@@ -122,7 +124,7 @@ type RadioState = {
     hovered: boolean;
     checked: boolean;
     pressed?: boolean;
-}
+};
 
 /**
  * Компонент радио-кнопки.
@@ -251,7 +253,9 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
     private handleChange = (event) => {
         if (!this.props.disabled) {
             // eslint-disable-next-line react/no-access-state-in-setstate
-            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
+            const nextCheckedValue = !(this.props.checked === undefined
+                ? this.state.checked
+                : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 

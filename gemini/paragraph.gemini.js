@@ -27,15 +27,11 @@ geminiReact.suite(NAME, () => {
                 const props = { theme, ...set };
                 const template = (
                     <GeminiBox theme={ theme }>
-                        <Paragraph { ...props }>
-                            { LOREM_IPSUM.slice(0, 3) }
-                        </Paragraph>
+                        <Paragraph { ...props }>{ LOREM_IPSUM.slice(0, 3) }</Paragraph>
                     </GeminiBox>
                 );
 
-                suite
-                    .render(template)
-                    .capture('plain');
+                suite.render(template).capture('plain');
             });
         });
     });

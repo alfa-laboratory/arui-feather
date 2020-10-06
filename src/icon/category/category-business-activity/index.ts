@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import './category-business-activity.css';
+
 import '../..';
 
 export * from './category-business-activity';

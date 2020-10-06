@@ -5,13 +5,14 @@
 /* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import timezoneMock from 'timezone-mock';
+
+import keyboardCode from '../lib/keyboard-code';
+import { SCROLL_TO_CORRECTION } from '../vars';
 
 import { CalendarInput } from './calendar-input';
 import * as calendarUtils from './utils';
-import keyboardCode from '../lib/keyboard-code';
-import { SCROLL_TO_CORRECTION } from '../vars';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { setIsMatched: setMqMatched } = require('../mq/mq');
@@ -102,7 +103,7 @@ describe('calendar-input', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const calendarInput = mount<CalendarInput>(<CalendarInput />);
         const elemTopPosition = calendarInput.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         calendarInput.instance().scrollTo();
 
@@ -423,35 +424,41 @@ describe('calendar-input', () => {
         });
 
         it('should return earlierLimit month if it after given date', () => {
-            const result = new Date(calendarUtils.calculateMonth(
-                '2012-11-10',
-                'YYYY-MM-DD',
-                (new Date(2013, 8, 10).getTime()),
-            ));
+            const result = new Date(
+                calendarUtils.calculateMonth(
+                    '2012-11-10',
+                    'YYYY-MM-DD',
+                    new Date(2013, 8, 10).getTime(),
+                ),
+            );
 
             expect(result.getMonth()).toBe(8);
             expect(result.getFullYear()).toBe(2013);
         });
 
         it('should return laterLimit month if it before given date', () => {
-            const result = new Date(calendarUtils.calculateMonth(
-                '2012-11-10',
-                'YYYY-MM-DD',
-                (new Date(2011, 8, 10).getTime()),
-                (new Date(2011, 9, 10).getTime()),
-            ));
+            const result = new Date(
+                calendarUtils.calculateMonth(
+                    '2012-11-10',
+                    'YYYY-MM-DD',
+                    new Date(2011, 8, 10).getTime(),
+                    new Date(2011, 9, 10).getTime(),
+                ),
+            );
 
             expect(result.getMonth()).toBe(9);
             expect(result.getFullYear()).toBe(2011);
         });
 
         it('should return start of month if earlier and later limit given, but value is between them', () => {
-            const result = new Date(calendarUtils.calculateMonth(
-                '2012-11-10',
-                'YYYY-MM-DD',
-                (new Date(2011, 8, 10).getTime()),
-                (new Date(2014, 9, 10).getTime()),
-            ));
+            const result = new Date(
+                calendarUtils.calculateMonth(
+                    '2012-11-10',
+                    'YYYY-MM-DD',
+                    new Date(2011, 8, 10).getTime(),
+                    new Date(2014, 9, 10).getTime(),
+                ),
+            );
 
             expect(result.getMonth() + 1).toBe(11); // getMonth is zero based
             expect(result.getFullYear()).toBe(2012);

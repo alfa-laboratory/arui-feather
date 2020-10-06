@@ -1,5 +1,5 @@
-import Collapse from '../src/collapse';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import Collapse from '../src/collapse';
 import Paragraph from '../src/paragraph';
 import { LOREM_IPSUM } from '../src/vars';
 
@@ -30,16 +30,12 @@ geminiReact.suite(NAME, () => {
                 const template = (
                     <GeminiBox theme={ theme }>
                         <Collapse { ...props }>
-                            <Paragraph>
-                                { LOREM_IPSUM.slice(0, 3) }
-                            </Paragraph>
+                            <Paragraph>{ LOREM_IPSUM.slice(0, 3) }</Paragraph>
                         </Collapse>
                     </GeminiBox>
                 );
 
-                suite
-                    .render(template)
-                    .capture('plain');
+                suite.render(template).capture('plain');
             });
         });
     });

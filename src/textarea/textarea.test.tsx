@@ -5,10 +5,10 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import { Textarea } from './textarea';
-
-import { SCROLL_TO_CORRECTION } from '../vars';
 import { Icon } from '../icon';
+import { SCROLL_TO_CORRECTION } from '../vars';
+
+import { Textarea } from './textarea';
 
 describe('textarea', () => {
     const originalWindowScrollTo = window.scrollTo;
@@ -160,7 +160,7 @@ describe('textarea', () => {
     it('should scroll window to element on public scrollTo method', () => {
         const textarea = mount<Textarea>(<Textarea />);
         const elemTopPosition = textarea.getDOMNode().getBoundingClientRect().top;
-        const elemScrollTo = (elemTopPosition + window.pageYOffset) - SCROLL_TO_CORRECTION;
+        const elemScrollTo = elemTopPosition + window.pageYOffset - SCROLL_TO_CORRECTION;
 
         textarea.instance().scrollTo();
 

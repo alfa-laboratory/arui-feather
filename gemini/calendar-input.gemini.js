@@ -1,6 +1,6 @@
+import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 import CalendarInput from '../src/calendar-input';
 import IconOk from '../src/icon/ui/ok';
-import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const DATE = '12.04.2017';
 
@@ -12,15 +12,19 @@ function renderAddons(calendarInputSize) {
     let iconSize;
 
     switch (calendarInputSize) {
-    case 's':
-    case 'm': iconSize = 's'; break;
-    case 'l': iconSize = 'm'; break;
-    case 'xl': iconSize = 'l'; break;
+        case 's':
+        case 'm':
+            iconSize = 's';
+            break;
+        case 'l':
+            iconSize = 'm';
+            break;
+        case 'xl':
+            iconSize = 'l';
+            break;
     }
 
-    return (
-        <IconOk size={ iconSize } colored={ true } />
-    );
+    return <IconOk size={ iconSize } colored={ true } />;
 }
 
 const PROP_SETS = [
@@ -68,9 +72,7 @@ geminiReact.suite(NAME, () => {
 
                 geminiReact.suite(selector, (suite) => {
                     if (set.disabled) {
-                        suite
-                            .render(template)
-                            .capture('plain');
+                        suite.render(template).capture('plain');
                     } else {
                         suite
                             .setExtraCaptureElements(['.popup'])

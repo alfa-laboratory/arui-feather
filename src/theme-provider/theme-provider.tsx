@@ -4,6 +4,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
+
 import { ThemeProvider as NewThemeProvider } from '../cn';
 
 export type ThemeProviderProps = {

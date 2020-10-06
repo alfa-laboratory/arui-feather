@@ -2,25 +2,24 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import createFragment from 'react-addons-create-fragment';
 import React from 'react';
+import createFragment from 'react-addons-create-fragment';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
 
 import { Button } from '../button/button';
+import { withTheme } from '../cn';
 import IconButton from '../icon-button/icon-button';
 import IconArrowDown from '../icon/ui/arrow-down';
 import IconArrowUp from '../icon/ui/arrow-up';
+import keyboardCode from '../lib/keyboard-code';
+import { HtmlElement } from '../lib/prop-types';
+import scrollTo from '../lib/scroll-to';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
-import ThemedPopup from '../popup/popup';
-import PopupHeader from '../popup-header/popup-header';
-import { ResizeSensor } from '../resize-sensor/resize-sensor';
-
-import { HtmlElement } from '../lib/prop-types';
-import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
-import scrollTo from '../lib/scroll-to';
+import PopupHeader from '../popup-header/popup-header';
+import ThemedPopup from '../popup/popup';
+import { ResizeSensor } from '../resize-sensor/resize-sensor';
 import { SCROLL_TO_CORRECTION, SCROLL_TO_NORMAL_DURATION } from '../vars';
 
 const DEFAULT_TEXT_FALLBACK = 'Выберите:';
@@ -51,12 +50,23 @@ type CheckedOption = {
      * Иконка варианта
      */
     icon: React.ReactType;
-}
+};
 
-type SelectDirectionsFieldType = 'top-left' | 'top-center' | 'top-right' | 'left-top' | 'left-center' | 'left-bottom' | 'right-top' | 'right-center' | 'right-bottom' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+type SelectDirectionsFieldType =
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'left-top'
+    | 'left-center'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-center'
+    | 'right-bottom'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right';
 
 export type SelectOptionsShapeType = {
-
     /**
      * Тип списка вариантов
      */
@@ -104,7 +114,6 @@ export type SelectOptionsShapeType = {
 };
 
 export type SelectProps = {
-
     /**
      * Дополнительный класс
      */
@@ -370,7 +379,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
     // eslint-disable-next-line camelcase
     UNSAFE_componentWillMount() {
         this.setState({
-            hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content)),
+            hasGroup: this.props.options.some(
+                (option) => !!(option.type === 'group' && !!option.content),
+            ),
         });
     }
 
@@ -393,7 +404,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
         }
 
         this.setState({
-            hasGroup: this.props.options.some((option) => !!(option.type === 'group' && !!option.content)),
+            hasGroup: this.props.options.some(
+                (option) => !!(option.type === 'group' && !!option.content),
+            ),
         });
     }
 
@@ -428,8 +441,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 <span className={ this.cn('inner') }>
-                    <input id={ this.props.id } name={ this.props.name } type="hidden" value={ value as any /* TODO: разобраться что тут происходит */ } />
-                    { !!this.props.label && <span className={ this.cn('top') }>{ this.props.label }</span> }
+                    <input
+                        id={ this.props.id }
+                        name={ this.props.name }
+                        type="hidden"
+                        value={ value as any /* TODO: разобраться что тут происходит */ }
+                    />
+                    { !!this.props.label && (
+                        <span className={ this.cn('top') }>{ this.props.label }</span>
+                    ) }
                     { this.renderButton() }
 
                     <Mq query="--small-only" touch={ true } onMatchChange={ this.handleMqMatchChange }>
@@ -440,12 +460,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
                         // The <div /> wrapper is needed to fix Safari bug of "jumping" element with
                         // `display: table-caption`. See: https://github.com/alfa-laboratory/arui-feather/pull/656
                         <div className={ this.cn('sub-wrapper') }>
-                            <span className={ this.cn('sub') }>{ this.props.error || this.props.hint }</span>
+                            <span className={ this.cn('sub') }>
+                                { this.props.error || this.props.hint }
+                            </span>
                         </div>
                     ) }
 
-                    { (!this.state.isMobile || (this.state.isMobile && this.props.mobileMenuMode === 'popup'))
-                        && this.renderPopup() }
+                    { (!this.state.isMobile ||
+                        (this.state.isMobile && this.props.mobileMenuMode === 'popup')) &&
+                        this.renderPopup() }
                 </span>
             </div>
         );
@@ -457,25 +480,25 @@ export class Select extends React.Component<SelectProps, SelectState> {
         const opened = this.getOpened();
 
         switch (opened) {
-        case true:
-            ToggledIcon = IconArrowUp;
-            break;
-        case false:
-            ToggledIcon = IconArrowDown;
-            break;
+            case true:
+                ToggledIcon = IconArrowUp;
+                break;
+            case false:
+                ToggledIcon = IconArrowDown;
+                break;
         }
 
         switch (this.props.size) {
-        case 's':
-        case 'm':
-            tickSize = this.props.view === 'filled' ? 'l' : 's';
-            break;
-        case 'l':
-            tickSize = 'm';
-            break;
-        case 'xl':
-            tickSize = 'l';
-            break;
+            case 's':
+            case 'm':
+                tickSize = this.props.view === 'filled' ? 'l' : 's';
+                break;
+            case 'l':
+                tickSize = 'm';
+                break;
+            case 'xl':
+                tickSize = 'l';
+                break;
         }
 
         return (
@@ -492,7 +515,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
             >
                 { this.renderButtonContent() }
                 { !this.props.hideTick && (
-                    <IconButton className={ this.cn('tick') } key="addon-icon" size={ this.props.size } tag="span">
+                    <IconButton
+                        className={ this.cn('tick') }
+                        key="addon-icon"
+                        size={ this.props.size }
+                        tag="span"
+                    >
                         <ToggledIcon size={ tickSize } />
                     </IconButton>
                 ) }
@@ -521,14 +549,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 } }
                 className={ this.cn('native-control') }
                 disabled={ this.props.disabled }
-                multiple={ isCheckMode && 'multiple' as any }
+                multiple={ isCheckMode && ('multiple' as any) }
                 value={ value }
                 onChange={ this.handleNativeOptionCheck }
                 onClick={ this.handleNativeClick }
                 onFocus={ this.handleNativeFocus }
                 onBlur={ this.handleNativeBlur }
             >
-                { /*
+                {
+                    /*
                         Хак с пустым <optgroup> — для фикса странного поведения select с атрибутом multiple на iOS7+:
                         1. If no option is selected, it selects the first option in the list.
                         2. If one option is selected, it deselects that option.
@@ -537,7 +566,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
                         https://discussions.apple.com/message/23745665
                         https://discussions.apple.com/message/24694954
                     */
-                    hasEmptyOptGroup && <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } />
+                    hasEmptyOptGroup && (
+                        <optgroup disabled={ true } label={ this.props.nativeOptionPlaceholder } />
+                    )
                 }
                 { hasEmptyOption && (
                     <option disabled={ true } value="">
@@ -652,7 +683,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
             return this.props.renderButtonContent(checkedItems);
         }
 
-        const checkedItemsText = checkedItems.map((item) => item.checkedText || item.text).join(', ');
+        const checkedItemsText = checkedItems
+            .map((item) => item.checkedText || item.text)
+            .join(', ');
 
         if (checkedItemsText) {
             return checkedItemsText;
@@ -829,24 +862,24 @@ export class Select extends React.Component<SelectProps, SelectState> {
         const opened = this.getOpened();
 
         switch (event.which) {
-        case keyboardCode.DOWN_ARROW:
-        case keyboardCode.UP_ARROW:
-            event.preventDefault();
-            this.scrollToHighlightedItem(highlightedItem);
-            break;
-        case keyboardCode.ENTER:
-        case keyboardCode.SPACE:
-            event.preventDefault();
-            this.setState({
-                opened: this.props.mode === 'check' ? true : !opened,
-            });
-            this.focusOnMenu();
-            break;
-        case keyboardCode.ESCAPE:
-            event.preventDefault();
-            this.awaitClosing = true;
-            this.button.focus();
-            break;
+            case keyboardCode.DOWN_ARROW:
+            case keyboardCode.UP_ARROW:
+                event.preventDefault();
+                this.scrollToHighlightedItem(highlightedItem);
+                break;
+            case keyboardCode.ENTER:
+            case keyboardCode.SPACE:
+                event.preventDefault();
+                this.setState({
+                    opened: this.props.mode === 'check' ? true : !opened,
+                });
+                this.focusOnMenu();
+                break;
+            case keyboardCode.ESCAPE:
+                event.preventDefault();
+                this.awaitClosing = true;
+                this.button.focus();
+                break;
         }
 
         if (this.props.onKeyDown) {
@@ -1035,7 +1068,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
 
     private updatePopupStyles = () => {
         const buttonWidth = this.button.getNode().getBoundingClientRect().width;
-        const popupStyles: { minWidth; maxWidth?} = { minWidth: buttonWidth };
+        const popupStyles: { minWidth; maxWidth? } = { minWidth: buttonWidth };
 
         if (this.props.equalPopupWidth) {
             popupStyles.maxWidth = buttonWidth;
@@ -1086,7 +1119,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
     private isAutoSelectRequired() {
         const { mode, options, renderPopupOnFocus } = this.props;
 
-        return renderPopupOnFocus && mode === 'radio' && options.length > 0 && !this.hasCheckedItems();
+        return (
+            renderPopupOnFocus && mode === 'radio' && options.length > 0 && !this.hasCheckedItems()
+        );
     }
 
     private hasCheckedItems() {

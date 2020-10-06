@@ -13,7 +13,12 @@
  * @param validate оригинальный метод для валидации
  */
 function createChainableTypeChecker(
-    validate: (props: { [key: string]: any }, propName: string, componentName: string, location: string) => void,
+    validate: (
+        props: { [key: string]: any },
+        propName: string,
+        componentName: string,
+        location: string,
+    ) => void,
 ) {
     function checkType(
         isRequired: boolean,
@@ -51,8 +56,17 @@ function createChainableTypeChecker(
  * @param propName имя пропса для валидации
  * @param componentName имя компонента
  */
-function propTypeIsHtmlElement(props: { [key: string]: any }, propName: string, componentName: string): Error | null {
-    if (!(props[propName] instanceof (typeof HTMLElement === 'undefined' ? {} as any : HTMLElement))) {
+function propTypeIsHtmlElement(
+    props: { [key: string]: any },
+    propName: string,
+    componentName: string,
+): Error | null {
+    if (
+        !(
+            props[propName] instanceof
+            (typeof HTMLElement === 'undefined' ? ({} as any) : HTMLElement)
+        )
+    ) {
         return new Error(
             `Invalid prop \`${propName}\` supplied to \`${componentName}\`.
             Expected valid HTMLElement object, ${typeof props[propName]} given.`,
@@ -79,7 +93,9 @@ export function deprecated(propType: Function, message: string): Function {
             warned = true;
             if (process.env.NODE_ENV !== 'production') {
                 // eslint-disable-next-line no-console
-                console.warn(`Property '${propName}' of '${componentName}' is deprecated. ${message}`);
+                console.warn(
+                    `Property '${propName}' of '${componentName}' is deprecated. ${message}`,
+                );
             }
         }
 
@@ -107,7 +123,9 @@ export function deprecatedType(oldType: Function, newType: Function, message: st
         if (process.env.NODE_ENV !== 'production' && !oldResult && !warned && newResult) {
             warned = true;
             // eslint-disable-next-line no-console
-            console.warn(`Given type of '${propName}' of '${componentName}' is deprecated. ${message}`);
+            console.warn(
+                `Given type of '${propName}' of '${componentName}' is deprecated. ${message}`,
+            );
         }
 
         return newResult;
@@ -126,7 +144,11 @@ export const HtmlElement = createChainableTypeChecker(propTypeIsHtmlElement);
  * @param controllingPropName имя контролируемого пропса
  */
 export function createMappingPropValidator(validationMapping, controllingPropName) {
-    return function validateProp(props: { [key: string]: any }, propName: string, componentName: string) {
+    return function validateProp(
+        props: { [key: string]: any },
+        propName: string,
+        componentName: string,
+    ) {
         const controllingPropValue = props[controllingPropName];
         const controlledPropValue = props[propName];
 

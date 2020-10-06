@@ -49,13 +49,13 @@ geminiReact.suite(NAME, () => {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             })
-                            .capture('pressed', function (actions) {
+                            .capture('pressed', function pressed(actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('focused', function (actions) {
+                            .capture('focused', function focused(actions) {
                                 actions.mouseUp(this.renderedComponent);
                             })
                             .capture('with-text', (actions, find) => {
@@ -68,13 +68,13 @@ geminiReact.suite(NAME, () => {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             })
-                            .capture('pressed', function (actions) {
+                            .capture('pressed', function pressed(actions) {
                                 actions.mouseDown(this.renderedComponent);
                             })
-                            .capture('focused', function (actions) {
+                            .capture('focused', function focused(actions) {
                                 actions.mouseUp(this.renderedComponent);
                             });
                     }

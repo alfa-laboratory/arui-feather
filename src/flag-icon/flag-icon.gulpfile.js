@@ -56,9 +56,9 @@ SIZES.forEach((size) => {
         gulp
             .src('../../node_modules/region-flags/png/??.png')
             .pipe(
-                rename((path) => {
+                rename((filePath) => {
                     // eslint-disable-next-line no-param-reassign
-                    path.basename = path.basename.toLowerCase();
+                    filePath.basename = filePath.basename.toLowerCase();
                 }),
             )
             // You need graphicsmagick installed on your system:

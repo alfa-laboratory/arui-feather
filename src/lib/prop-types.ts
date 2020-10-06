@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import { Validator } from 'prop-types';
 /**
  * Функции объявленные в этом файле используются в сторонних либах для валидации propTypes в рантайме,
  * т.к. компоненты библиотеки могут использоваться в js, где нет проверок типов Typescript
@@ -19,7 +20,7 @@ function createChainableTypeChecker(
         componentName: string,
         location: string,
     ) => void,
-) {
+): Validator<unknown> {
     function checkType(
         isRequired: boolean,
         props: { [key: string]: any },
@@ -46,7 +47,7 @@ function createChainableTypeChecker(
 
     chainedCheckType.isRequired = checkType.bind(null, true);
 
-    return chainedCheckType as Function;
+    return chainedCheckType;
 }
 
 /**
@@ -82,10 +83,10 @@ function propTypeIsHtmlElement(
  * @param propType оригинальный propType валидатор
  * @param message дополнительное сообщение
  */
-export function deprecated(propType: Function, message: string): Function {
+export function deprecated<T>(propType: Validator<T>, message: string): Validator<T> {
     let warned = false;
 
-    return function (...args) {
+    return (...args) => {
         const [props, propName, componentName] = args;
         const prop = props[propName];
 
@@ -112,10 +113,14 @@ export function deprecated(propType: Function, message: string): Function {
  * @param newType валидатор для нового типа.
  * @param message дополнительное сообщение
  */
-export function deprecatedType(oldType: Function, newType: Function, message: string): Function {
+export function deprecatedType<T>(
+    oldType: Validator<T>,
+    newType: Validator<T>,
+    message: string,
+): Validator<T> {
     let warned = false;
 
-    return function (...args) {
+    return (...args) => {
         const [, propName, componentName] = args;
         const oldResult = oldType.call(this, ...args);
         const newResult = newType.call(this, ...args);

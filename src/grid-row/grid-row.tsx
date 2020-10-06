@@ -5,10 +5,17 @@
 import React, { Children, cloneElement, ReactElement } from 'react';
 import { createCn } from 'bem-react-classname';
 
+type GranularRowGutterType = {
+    s?: string | number;
+    m?: string | number;
+    l?: string | number;
+    xl?: string | number;
+};
+
 type GridRowGutterType = {
-    mobile?: string | number | object;
-    tablet?: string | number | object;
-    desktop?: string | number | object;
+    mobile?: string | number | GranularRowGutterType;
+    tablet?: string | number | GranularRowGutterType;
+    desktop?: string | number | GranularRowGutterType;
 };
 
 export type GridRowProps = {
@@ -91,7 +98,7 @@ export class GridRow extends React.PureComponent<GridRowProps> {
             tag: Tag, gutter, align, justify, children, ...props
         } = this.props;
 
-        let gutters = {};
+        let gutters: Record<string, string | number> = {};
 
         if (typeof gutter === 'object') {
             Object.keys(gutter).forEach((breakpoint) => {
@@ -135,7 +142,10 @@ export class GridRow extends React.PureComponent<GridRowProps> {
      * @param gutters Модификаторы горизонтальных отступов
      * @param children Дочерние элементы компонента.
      */
-    private injectGutterClassNamesToChildren(gutters: object, children: React.ReactElement) {
+    private injectGutterClassNamesToChildren(
+        gutters: Record<string, string | number>,
+        children: React.ReactElement,
+    ) {
         return Children.map(children, (col) => {
             if (!col) {
                 return null;

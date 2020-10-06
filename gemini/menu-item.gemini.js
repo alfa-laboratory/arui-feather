@@ -31,7 +31,7 @@ geminiReact.suite(NAME, () => {
                         suite
                             .render(template)
                             .capture('plain')
-                            .capture('hovered', function (actions) {
+                            .capture('hovered', function hovered(actions) {
                                 actions.mouseMove(this.renderedComponent);
                             });
                     }

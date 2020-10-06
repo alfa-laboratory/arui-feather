@@ -65,7 +65,7 @@ describe('scroll-to', () => {
     });
 
     it('should catch error with incorrect easing', () => {
-        const fn = function () {
+        const fn = () => {
             scrollTo({
                 targetY: 100,
                 duration: 200,
@@ -77,7 +77,7 @@ describe('scroll-to', () => {
     });
 
     it('should catch error with incorrect duration', () => {
-        const fn = function () {
+        const fn = () => {
             scrollTo({
                 targetY: 100,
                 duration: -200,

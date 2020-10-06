@@ -4,20 +4,32 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 
-type BreakpointsType = {
-    mobile?: string | number | object;
-    tablet?: string | number | object;
-    desktop?: string | number | object;
-    'mobile-s'?: string | number | object;
-    'mobile-m'?: string | number | object;
-    'mobile-l'?: string | number | object;
-    'tablet-s'?: string | number | object;
-    'tablet-m'?: string | number | object;
-    'tablet-l'?: string | number | object;
-    'desktop-s'?: string | number | object;
-    'desktop-m'?: string | number | object;
-    'desktop-l'?: string | number | object;
+type SmallBreakpointsType<ValueType> = {
+    s?: ValueType;
+    m?: ValueType;
+    l?: ValueType;
+    xl?: ValueType;
 };
+
+type BreakpointsType<ValueType> = {
+    mobile?: ValueType | SmallBreakpointsType<ValueType>;
+    tablet?: ValueType | SmallBreakpointsType<ValueType>;
+    desktop?: ValueType | SmallBreakpointsType<ValueType>;
+    'mobile-s'?: ValueType;
+    'mobile-m'?: ValueType;
+    'mobile-l'?: ValueType;
+    'tablet-s'?: ValueType;
+    'tablet-m'?: ValueType;
+    'tablet-l'?: ValueType;
+    'desktop-s'?: ValueType;
+    'desktop-m'?: ValueType;
+    'desktop-l'?: ValueType;
+};
+
+type GridPositions = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+type WidthBreakpointsValues = GridPositions | 'available' | 'auto';
+type OffsetBreakpointsValues = Exclude<GridPositions, 12>; // Оффсет на полную ширину грида невозможен
+type OrderBreakpointsValues = GridPositions | 'last';
 
 export type GridColProps = {
     /**
@@ -43,7 +55,7 @@ export type GridColProps = {
      * tablet: { s: [1..12], m: [1..12] },
      * desktop: { s: [1..12], m: [1..12], l: [1..12], xl: [1..12] } }`.
      */
-    width?: string | number | BreakpointsType;
+    width?: WidthBreakpointsValues | BreakpointsType<WidthBreakpointsValues>;
 
     /**
      * Управлние смещением колонки.
@@ -53,7 +65,7 @@ export type GridColProps = {
      * tablet: { s: [1..11], m: [1..11] },
      * desktop: { s: [1..11], m: [1..11], l: [1..11], xl: [1..11] } }`.
      */
-    offset?: string | number | BreakpointsType;
+    offset?: OffsetBreakpointsValues | BreakpointsType<OffsetBreakpointsValues>;
 
     /**
      * Управление порядком колонок.
@@ -63,7 +75,7 @@ export type GridColProps = {
      * tablet: { s: [1..last], m: [1..last] },
      * desktop: { s: [1..last], m: [1..last], l: [1..last], xl: [1..last] } }`.
      */
-    order?: string | number | BreakpointsType;
+    order?: OrderBreakpointsValues | BreakpointsType<OrderBreakpointsValues>;
 
     /**
      * Html тег компонента.
@@ -103,55 +115,56 @@ export class GridCol extends React.PureComponent<GridColProps> {
                 { ...props }
                 className={ this.cn({
                     align,
-                    ...this.createClassNames({ width, offset, order }),
+                    ...createClassNames({ width, offset, order }),
                 }) }
             >
                 { children }
             </Tag>
         );
     }
+}
 
-    /**
-     * Создает объект модификаторов для переданных свойств.
-     *
-     * @param props Свойства.
-     */
-    // eslint-disable-next-line class-methods-use-this
-    private createClassNames(props: object) {
-        const classNames = {};
+/**
+ * Создает объект модификаторов для переданных свойств.
+ *
+ * @param props Свойства.
+ */
+function createClassNames(props: {
+    width: WidthBreakpointsValues | BreakpointsType<WidthBreakpointsValues>;
+    offset: OffsetBreakpointsValues | BreakpointsType<OffsetBreakpointsValues>;
+    order: OrderBreakpointsValues | BreakpointsType<OrderBreakpointsValues>;
+}) {
+    const classNames: Record<string, string> = {};
 
-        Object.keys(props).forEach((name) => {
-            const prop = props[name];
+    Object.keys(props).forEach((name) => {
+        const prop = props[name];
 
-            if (!prop) {
+        if (!prop) {
+            return;
+        }
+        if (typeof prop !== 'object') {
+            classNames[name] = prop;
+
+            return;
+        }
+        Object.keys(prop).forEach((breakpoint) => {
+            if (prop[breakpoint] === null) {
                 return;
             }
-            if (typeof prop !== 'object') {
-                classNames[name] = prop;
-
-                return;
+            if (typeof prop[breakpoint] === 'object') {
+                Object.keys(prop[breakpoint]).forEach((size) => {
+                    if (prop[breakpoint][size] === null) {
+                        return;
+                    }
+                    classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][size].toString();
+                });
+            } else {
+                classNames[`${name}-${breakpoint}`] = prop[breakpoint].toString();
             }
-            Object.keys(prop).forEach((breakpoint) => {
-                if (prop[breakpoint] === null) {
-                    return;
-                }
-                if (typeof prop[breakpoint] === 'object') {
-                    Object.keys(prop[breakpoint]).forEach((size) => {
-                        if (prop[breakpoint][size] === null) {
-                            return;
-                        }
-                        classNames[`${name}-${breakpoint}-${size}`] = prop[breakpoint][
-                            size
-                        ].toString();
-                    });
-                } else {
-                    classNames[`${name}-${breakpoint}`] = prop[breakpoint].toString();
-                }
-            });
         });
+    });
 
-        return classNames;
-    }
+    return classNames;
 }
 
 export default GridCol;

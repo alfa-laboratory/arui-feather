@@ -247,9 +247,10 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
     }
 
     private handleSwitcherClick = () => {
-        // eslint-disable-next-line react/no-access-state-in-setstate
+        /* eslint-disable react/no-access-state-in-setstate */
         const newOpenedStatusValue =
             this.props.opened === undefined ? !this.state.opened : !this.props.opened;
+        /* eslint-enable react/no-access-state-in-setstate */
 
         this.setState({
             opened: newOpenedStatusValue,

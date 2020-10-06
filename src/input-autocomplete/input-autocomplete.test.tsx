@@ -189,13 +189,13 @@ describe('input-autocomplete', () => {
 
     it('should call `onChange` callback after option was clicked and pass `text` when `option.text` is exist', () => {
         const onChange = jest.fn();
-        const OPTIONS = [
+        const OPTIONS_WITH_TEXT = [
             { value: 'VKontakte', text: 'ВКонтакте' },
             { value: 'Facebook', text: 'Фейсбук' },
             { value: 'Twitter', text: 'Твиттер' },
         ];
         const inputAutocomplete = mount<InputAutocomplete>(
-            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />,
+            <InputAutocomplete options={ OPTIONS_WITH_TEXT } onChange={ onChange } />,
         );
 
         const firstOptionNode = inputAutocomplete.find('.menu-item').at(0);
@@ -305,7 +305,7 @@ describe('input-autocomplete', () => {
     });
 
     it('should have disabled option, which can not be selected, if disabled property is set true', (done) => {
-        const OPTIONS = [
+        const OPTIONS_WITH_PROPS = [
             { value: 'VKontakte', props: { disabled: true } },
             { value: 'Facebook' },
             { value: 'Twitter' },
@@ -313,7 +313,7 @@ describe('input-autocomplete', () => {
         const onChange = jest.fn();
 
         const inputAutocomplete = mount(
-            <InputAutocomplete options={ OPTIONS } onChange={ onChange } />,
+            <InputAutocomplete options={ OPTIONS_WITH_PROPS } onChange={ onChange } />,
         );
 
         inputAutocomplete.find('.menu-item').at(0).simulate('click');

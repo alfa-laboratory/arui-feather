@@ -259,10 +259,11 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
     private handleChange = (event) => {
         if (!this.props.disabled) {
-            // eslint-disable-next-line react/no-access-state-in-setstate
+            /* eslint-disable react/no-access-state-in-setstate */
             const nextCheckedValue = !(this.props.checked === undefined
                 ? this.state.checked
                 : this.props.checked);
+            /* eslint-enable react/no-access-state-in-setstate */
 
             this.setState({ checked: nextCheckedValue });
 

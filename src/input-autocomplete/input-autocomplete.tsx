@@ -283,7 +283,7 @@ export type InputAutocompleteProps = InputProps & {
         /**
          * Только для type='item': свойства для компонента [MenuItem](#!/MenuItem)
          */
-        props?: object;
+        props?: Record<string, unknown>;
     }>;
 
     /**

@@ -135,10 +135,10 @@ export class Collapse extends React.PureComponent<CollapseProps> {
     }
 
     private handleExpandedChange = () => {
-        // eslint-disable-next-line react/no-access-state-in-setstate
+        /* eslint-disable react/no-access-state-in-setstate */
         const newExpandedValue =
             this.props.isExpanded === undefined ? !this.state.isExpanded : !this.props.isExpanded;
-
+        /* eslint-enable react/no-access-state-in-setstate */
         this.setState({
             isExpanded: newExpandedValue,
         });

@@ -64,8 +64,8 @@ export function calculateMonth(
         newValue = parseDate(newValue, format);
     }
 
+    // eslint-disable-next-line no-self-compare
     if (!newValue || newValue !== newValue) {
-        // eslint-disable-line no-self-compare
         newValue = Date.now();
     } else {
         newValue = getTime(newValue);

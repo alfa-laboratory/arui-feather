@@ -37,8 +37,7 @@
   "lint-staged": {
     "./*.js": [
       "prettier-eslint --write",
-      "git add",
-      "eslint"
+      "git add"
     ],
     "demo/**/*.{js,jsx}": [
       "prettier-eslint --write",
@@ -64,7 +63,7 @@
       "prettier-eslint --write",
       "git add",
       "eslint",
-      "jest --findrelatedtests"
+      "jest --findRelatedTests"
     ],
     "src/**/*.md": [
       "npm run lint-md"

@@ -759,18 +759,17 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         this.timeoutId = setTimeout(() => {
             const value = this.props.value === undefined ? this.state.value : this.props.value;
 
-            // eslint-disable-next-line react/no-access-state-in-setstate
+            /* eslint-disable react/no-access-state-in-setstate */
             const newMonth =
                 this.state.opened === opened
-                    ? // eslint-disable-next-line react/no-access-state-in-setstate
-                    this.state.month
+                    ? this.state.month
                     : calculateMonth(
                         value || this.props.defaultMonth,
                         CUSTOM_DATE_FORMAT,
                         this.props.calendar ? this.props.calendar.earlierLimit : undefined,
                         this.props.calendar ? this.props.calendar.laterLimit : undefined,
                     );
-
+            /* eslint-enable react/no-access-state-in-setstate */
             this.setState({
                 opened,
                 month: newMonth,

@@ -177,7 +177,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
                 data-test-id={ this.props['data-test-id'] }
             >
                 { this.props.type === 'button'
-                    ? this.renderButtonRadio(checked, TagButton)
+                    ? this.renderButtonRadio(checked)
                     : this.renderNormalRadio(checked) }
             </label>
         );
@@ -211,7 +211,7 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
         ];
     }
 
-    renderButtonRadio(checked, TagButton) {
+    renderButtonRadio(checked) {
         return (
             <div>
                 <TagButton
@@ -221,7 +221,6 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
                     size={ this.props.size }
                     width={ this.props.width }
                     focused={ this.state.focused }
-                    hovered={ this.state.hovered }
                     tabIndex={ -1 }
                     onClick={ this.handleChange }
                 >
@@ -252,10 +251,11 @@ export class Radio extends React.PureComponent<RadioProps, RadioState> {
 
     private handleChange = (event) => {
         if (!this.props.disabled) {
-            // eslint-disable-next-line react/no-access-state-in-setstate
+            /* eslint-disable react/no-access-state-in-setstate */
             const nextCheckedValue = !(this.props.checked === undefined
                 ? this.state.checked
                 : this.props.checked);
+            /* eslint-enable react/no-access-state-in-setstate */
 
             this.setState({ checked: nextCheckedValue });
 

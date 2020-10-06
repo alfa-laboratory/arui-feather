@@ -110,7 +110,7 @@ export type SelectOptionsShapeType = {
     /**
      * Только для type='item': свойства для компонента [MenuItem](#!/MenuItem)
      */
-    props?: object;
+    props?: Record<string, unknown>;
 };
 
 export type SelectProps = {

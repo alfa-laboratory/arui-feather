@@ -9,7 +9,7 @@ import React from 'react';
 import { getMatchMedia, releaseMatchMedia } from '../lib/match-media';
 
 interface ClassDecorator {
-    <TFunction extends Function>(target: TFunction): TFunction | void;
+    <TFunction extends Function>(target: TFunction): TFunction | void; // eslint-disable-line @typescript-eslint/ban-types
 }
 
 type MqDecoratorState = {
@@ -17,8 +17,8 @@ type MqDecoratorState = {
 };
 
 export default function mqDecorator(query: string, propName = 'mqMatch'): ClassDecorator {
-    return function (Component: React.ComponentType) {
-        return class extends React.Component<{}, MqDecoratorState> {
+    return (Component: React.ComponentType) =>
+        class extends React.Component<unknown, MqDecoratorState> {
             mql: MediaQueryList | null = null;
 
             state = {
@@ -52,5 +52,4 @@ export default function mqDecorator(query: string, propName = 'mqMatch'): ClassD
                 });
             };
         };
-    };
 }

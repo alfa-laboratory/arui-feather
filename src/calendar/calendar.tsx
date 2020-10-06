@@ -364,14 +364,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         const newMonth = setMonth(this.state.month, index);
                         const off = !this.isValidDate(startOfMonth(newMonth));
                         const selectedDate = new Date(this.state.month);
-                        const isSameMonth =
+                        const isWithinMonth =
                             selectedDate && selectedDate.getMonth() === newMonth.getMonth();
 
                         const dataMonth = off ? null : newMonth.getTime();
 
                         const mods = {
                             type: off ? 'off' : null,
-                            state: isSameMonth ? 'current' : null,
+                            state: isWithinMonth ? 'current' : null,
                         };
 
                         return (

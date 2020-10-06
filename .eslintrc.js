@@ -1,7 +1,5 @@
 module.exports = {
-    extends: [
-        require.resolve('arui-presets-lint/eslint'),
-    ],
+    extends: [require.resolve('arui-presets-lint/eslint')],
     parserOptions: {
         project: './tsconfig.json',
     },
@@ -12,34 +10,34 @@ module.exports = {
             rules: {
                 'max-classes-per-file': 'off',
                 'no-param-reassign': 'off',
-            }
+            },
         },
         // Иконки автогенерированы
         {
             files: ['src/icon/**/*.tsx'],
             rules: {
-                '@typescript-eslint/no-explicit-any': 'off'
-            }
+                '@typescript-eslint/no-explicit-any': 'off',
+            },
         },
         {
             files: ['src/**/*.test.{tsx,ts}', 'src/**/__mocks__/*.{ts,tsx}'],
             globals: {
                 jest: true,
                 beforeAll: true,
-                afterAll: true
-            }
+                afterAll: true,
+            },
         },
         {
             files: ['gemini/*.gemini.js'],
             globals: {
-                geminiReact: true
+                geminiReact: true,
             },
             rules: {
                 // Их нельзя переименовать в jsx
                 'react/react-in-jsx-scope': 'off',
-                'max-classes-per-file': 'off'
-            }
-        }
+                'max-classes-per-file': 'off',
+            },
+        },
     ],
 
     // If you want to change/disable some rule below, write a detailed
@@ -48,7 +46,10 @@ module.exports = {
         // List of file extensions with jsx support
         'react/jsx-filename-extension': [2, { extensions: ['gemini.js', '.tsx'] }],
 
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx", "gulpfile.js"]}],
+        'import/no-extraneous-dependencies': [
+            'error',
+            { devDependencies: ['**/*.test.tsx', 'gulpfile.js'] },
+        ],
 
         // The validation of jsdoc was disabled due to an unnecessary
         // restriction of writing comments that scares off write developers to
@@ -66,5 +67,6 @@ module.exports = {
         'import/no-named-as-default': 'off',
         // TODO: включить
         '@typescript-eslint/no-explicit-any': 'off',
-    }
+        '@typescript-eslint/ban-ts-comment': 'off',
+    },
 };

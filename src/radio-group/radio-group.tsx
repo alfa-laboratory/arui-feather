@@ -137,7 +137,7 @@ export class RadioGroup extends React.PureComponent<RadioGroupProps> {
             React.Children.forEach(children, (radio, index) => {
                 if (React.isValidElement(radio)) {
                     radioGroupParts[`radio-${index}`] = React.cloneElement(radio, {
-                        ref: (radio) => this.radios.push(radio),
+                        ref: (radioElement) => this.radios.push(radioElement),
                         error:
                             radio.props.error === undefined
                                 ? Boolean(this.props.error)

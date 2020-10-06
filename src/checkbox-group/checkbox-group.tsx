@@ -134,7 +134,7 @@ export class CheckBoxGroup extends React.PureComponent<CheckBoxGroupProps> {
             React.Children.forEach(children, (checkbox, index) => {
                 if (React.isValidElement(checkbox)) {
                     const checkboxNode = React.cloneElement(checkbox, {
-                        ref: (checkbox) => this.checkboxes.push(checkbox),
+                        ref: (checkboxElement) => this.checkboxes.push(checkboxElement),
                         checked:
                             checkbox.props.checked === undefined
                                 ? value.some((groupValue) => groupValue === checkbox.props.value)

@@ -645,6 +645,8 @@
 
     &.input_has-addons {
         .input__input-wrapper {
+            width: 100%;
+
             .input__control {
                 padding-left: var(--gap-s);
                 padding-right: var(--gap-s);

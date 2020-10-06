@@ -6,5 +6,4 @@ import './contact-list.css';
 
 import '../..';
 
-export * from './contact-list';
 export { default } from './contact-list';

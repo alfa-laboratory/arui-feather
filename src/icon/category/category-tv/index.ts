@@ -6,5 +6,4 @@ import './category-tv.css';
 
 import '../..';
 
-export * from './category-tv';
 export { default } from './category-tv';

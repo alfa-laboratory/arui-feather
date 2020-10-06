@@ -6,5 +6,4 @@ import './power-card.css';
 
 import '../..';
 
-export * from './power-card';
 export { default } from './power-card';

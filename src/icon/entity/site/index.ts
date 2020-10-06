@@ -6,5 +6,4 @@ import './site.css';
 
 import '../..';
 
-export * from './site';
 export { default } from './site';

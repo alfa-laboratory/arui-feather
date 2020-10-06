@@ -6,5 +6,4 @@ import './category-finance.css';
 
 import '../..';
 
-export * from './category-finance';
 export { default } from './category-finance';

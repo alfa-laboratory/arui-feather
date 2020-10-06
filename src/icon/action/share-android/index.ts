@@ -6,5 +6,4 @@ import './share-android.css';
 
 import '../..';
 
-export * from './share-android';
 export { default } from './share-android';

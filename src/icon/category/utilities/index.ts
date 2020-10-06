@@ -6,5 +6,4 @@ import './utilities.css';
 
 import '../..';
 
-export * from './utilities';
 export { default } from './utilities';

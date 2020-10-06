@@ -6,5 +6,4 @@ import './payment-to-person.css';
 
 import '../..';
 
-export * from './payment-to-person';
 export { default } from './payment-to-person';

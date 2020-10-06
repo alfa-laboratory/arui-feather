@@ -6,5 +6,4 @@ import './category-mortgage.css';
 
 import '../..';
 
-export * from './category-mortgage';
 export { default } from './category-mortgage';

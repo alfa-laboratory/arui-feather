@@ -6,5 +6,4 @@ import './outcome.css';
 
 import '../..';
 
-export * from './outcome';
 export { default } from './outcome';

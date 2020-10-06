@@ -6,5 +6,4 @@ import './balance-transfer.css';
 
 import '../..';
 
-export * from './balance-transfer';
 export { default } from './balance-transfer';

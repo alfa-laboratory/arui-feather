@@ -6,5 +6,4 @@ import './moneybox.css';
 
 import '../..';
 
-export * from './moneybox';
 export { default } from './moneybox';

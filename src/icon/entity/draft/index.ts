@@ -6,5 +6,4 @@ import './draft.css';
 
 import '../..';
 
-export * from './draft';
 export { default } from './draft';

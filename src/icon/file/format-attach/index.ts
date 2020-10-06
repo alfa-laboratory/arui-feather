@@ -6,5 +6,4 @@ import './format-attach.css';
 
 import '../..';
 
-export * from './format-attach';
 export { default } from './format-attach';

@@ -6,5 +6,4 @@ import './pin-unpin.css';
 
 import '../..';
 
-export * from './pin-unpin';
 export { default } from './pin-unpin';

@@ -6,5 +6,4 @@ import './category-appliances.css';
 
 import '../..';
 
-export * from './category-appliances';
 export { default } from './category-appliances';

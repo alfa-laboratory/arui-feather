@@ -6,5 +6,4 @@ import './bank-otp.css';
 
 import '../..';
 
-export * from './bank-otp';
 export { default } from './bank-otp';

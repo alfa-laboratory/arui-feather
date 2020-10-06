@@ -6,5 +6,4 @@ import './category-quarantine.css';
 
 import '../..';
 
-export * from './category-quarantine';
 export { default } from './category-quarantine';

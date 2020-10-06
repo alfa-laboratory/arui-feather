@@ -6,5 +6,4 @@ import './news.css';
 
 import '../..';
 
-export * from './news';
 export { default } from './news';

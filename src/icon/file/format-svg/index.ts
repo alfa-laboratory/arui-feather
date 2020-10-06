@@ -6,5 +6,4 @@ import './format-svg.css';
 
 import '../..';
 
-export * from './format-svg';
 export { default } from './format-svg';

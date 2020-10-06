@@ -6,5 +6,4 @@ import './printer.css';
 
 import '../..';
 
-export * from './printer';
 export { default } from './printer';

@@ -6,5 +6,4 @@ import './format-csv.css';
 
 import '../..';
 
-export * from './format-csv';
 export { default } from './format-csv';

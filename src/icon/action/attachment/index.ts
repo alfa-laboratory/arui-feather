@@ -6,5 +6,4 @@ import './attachment.css';
 
 import '../..';
 
-export * from './attachment';
 export { default } from './attachment';

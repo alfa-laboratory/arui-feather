@@ -6,5 +6,4 @@ import './payment-to-state.css';
 
 import '../..';
 
-export * from './payment-to-state';
 export { default } from './payment-to-state';

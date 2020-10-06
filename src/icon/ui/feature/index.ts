@@ -6,5 +6,4 @@ import './feature.css';
 
 import '../..';
 
-export * from './feature';
 export { default } from './feature';

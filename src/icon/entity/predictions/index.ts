@@ -6,5 +6,4 @@ import './predictions.css';
 
 import '../..';
 
-export * from './predictions';
 export { default } from './predictions';

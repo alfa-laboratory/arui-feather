@@ -6,5 +6,4 @@ import './payment-outbox.css';
 
 import '../..';
 
-export * from './payment-outbox';
 export { default } from './payment-outbox';

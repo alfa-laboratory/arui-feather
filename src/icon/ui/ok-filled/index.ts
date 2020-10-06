@@ -6,5 +6,4 @@ import './ok-filled.css';
 
 import '../..';
 
-export * from './ok-filled';
 export { default } from './ok-filled';

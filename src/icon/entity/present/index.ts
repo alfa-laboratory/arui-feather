@@ -6,5 +6,4 @@ import './present.css';
 
 import '../..';
 
-export * from './present';
 export { default } from './present';

@@ -6,5 +6,4 @@ import './history.css';
 
 import '../..';
 
-export * from './history';
 export { default } from './history';

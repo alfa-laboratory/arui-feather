@@ -6,5 +6,4 @@ import './internet.css';
 
 import '../..';
 
-export * from './internet';
 export { default } from './internet';

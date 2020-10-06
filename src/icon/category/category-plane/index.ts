@@ -6,5 +6,4 @@ import './category-plane.css';
 
 import '../..';
 
-export * from './category-plane';
 export { default } from './category-plane';

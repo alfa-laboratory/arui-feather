@@ -6,5 +6,4 @@ import './lock.css';
 
 import '../..';
 
-export * from './lock';
 export { default } from './lock';

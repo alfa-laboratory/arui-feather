@@ -6,5 +6,4 @@ import './cashback.css';
 
 import '../..';
 
-export * from './cashback';
 export { default } from './cashback';

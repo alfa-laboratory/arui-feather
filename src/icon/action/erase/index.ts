@@ -6,5 +6,4 @@ import './erase.css';
 
 import '../..';
 
-export * from './erase';
 export { default } from './erase';

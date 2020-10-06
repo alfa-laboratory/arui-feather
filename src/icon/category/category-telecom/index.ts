@@ -6,5 +6,4 @@ import './category-telecom.css';
 
 import '../..';
 
-export * from './category-telecom';
 export { default } from './category-telecom';

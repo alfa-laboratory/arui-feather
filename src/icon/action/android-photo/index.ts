@@ -6,5 +6,4 @@ import './android-photo.css';
 
 import '../..';
 
-export * from './android-photo';
 export { default } from './android-photo';

@@ -6,5 +6,4 @@ import './favorite.css';
 
 import '../..';
 
-export * from './favorite';
 export { default } from './favorite';

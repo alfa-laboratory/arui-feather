@@ -6,5 +6,4 @@ import './bank-russian-standard.css';
 
 import '../..';
 
-export * from './bank-russian-standard';
 export { default } from './bank-russian-standard';

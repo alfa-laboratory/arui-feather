@@ -6,5 +6,4 @@ import './card-activate.css';
 
 import '../..';
 
-export * from './card-activate';
 export { default } from './card-activate';

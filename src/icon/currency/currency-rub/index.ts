@@ -6,5 +6,4 @@ import './currency-rub.css';
 
 import '../..';
 
-export * from './currency-rub';
 export { default } from './currency-rub';

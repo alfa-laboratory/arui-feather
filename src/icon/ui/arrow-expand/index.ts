@@ -6,5 +6,4 @@ import './arrow-expand.css';
 
 import '../..';
 
-export * from './arrow-expand';
 export { default } from './arrow-expand';

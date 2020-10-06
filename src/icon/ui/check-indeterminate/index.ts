@@ -6,5 +6,4 @@ import './check-indeterminate.css';
 
 import '../..';
 
-export * from './check-indeterminate';
 export { default } from './check-indeterminate';

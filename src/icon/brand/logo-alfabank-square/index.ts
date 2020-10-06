@@ -6,5 +6,4 @@ import './logo-alfabank-square.css';
 
 import '../..';
 
-export * from './logo-alfabank-square';
 export { default } from './logo-alfabank-square';

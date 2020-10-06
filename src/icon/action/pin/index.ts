@@ -6,5 +6,4 @@ import './pin.css';
 
 import '../..';
 
-export * from './pin';
 export { default } from './pin';

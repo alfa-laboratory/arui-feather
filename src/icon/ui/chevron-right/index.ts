@@ -6,5 +6,4 @@ import './chevron-right.css';
 
 import '../..';
 
-export * from './chevron-right';
 export { default } from './chevron-right';

@@ -6,5 +6,4 @@ import './submit.css';
 
 import '../..';
 
-export * from './submit';
 export { default } from './submit';

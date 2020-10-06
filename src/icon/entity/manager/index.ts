@@ -6,5 +6,4 @@ import './manager.css';
 
 import '../..';
 
-export * from './manager';
 export { default } from './manager';

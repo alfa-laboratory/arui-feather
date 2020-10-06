@@ -6,5 +6,4 @@ import './help-filled.css';
 
 import '../..';
 
-export * from './help-filled';
 export { default } from './help-filled';

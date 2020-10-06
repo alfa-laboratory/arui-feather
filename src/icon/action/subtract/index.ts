@@ -6,5 +6,4 @@ import './subtract.css';
 
 import '../..';
 
-export * from './subtract';
 export { default } from './subtract';

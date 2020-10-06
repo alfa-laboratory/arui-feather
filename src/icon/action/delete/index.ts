@@ -6,5 +6,4 @@ import './delete.css';
 
 import '../..';
 
-export * from './delete';
 export { default } from './delete';

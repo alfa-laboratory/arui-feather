@@ -6,5 +6,4 @@ import './format-rar.css';
 
 import '../..';
 
-export * from './format-rar';
 export { default } from './format-rar';

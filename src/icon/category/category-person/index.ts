@@ -6,5 +6,4 @@ import './category-person.css';
 
 import '../..';
 
-export * from './category-person';
 export { default } from './category-person';

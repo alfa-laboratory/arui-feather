@@ -6,5 +6,4 @@ import './category-tarifs.css';
 
 import '../..';
 
-export * from './category-tarifs';
 export { default } from './category-tarifs';

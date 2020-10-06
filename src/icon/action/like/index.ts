@@ -6,5 +6,4 @@ import './like.css';
 
 import '../..';
 
-export * from './like';
 export { default } from './like';

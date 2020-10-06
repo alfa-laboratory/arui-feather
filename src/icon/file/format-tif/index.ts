@@ -6,5 +6,4 @@ import './format-tif.css';
 
 import '../..';
 
-export * from './format-tif';
 export { default } from './format-tif';

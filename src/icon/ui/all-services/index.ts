@@ -6,5 +6,4 @@ import './all-services.css';
 
 import '../..';
 
-export * from './all-services';
 export { default } from './all-services';

@@ -6,5 +6,4 @@ import './email.css';
 
 import '../..';
 
-export * from './email';
 export { default } from './email';

@@ -6,5 +6,4 @@ import './transfer-by-phone-ios.css';
 
 import '../..';
 
-export * from './transfer-by-phone-ios';
 export { default } from './transfer-by-phone-ios';

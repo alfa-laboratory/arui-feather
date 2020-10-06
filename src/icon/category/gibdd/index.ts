@@ -6,5 +6,4 @@ import './gibdd.css';
 
 import '../..';
 
-export * from './gibdd';
 export { default } from './gibdd';

@@ -6,5 +6,4 @@ import './hold.css';
 
 import '../..';
 
-export * from './hold';
 export { default } from './hold';

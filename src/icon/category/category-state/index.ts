@@ -6,5 +6,4 @@ import './category-state.css';
 
 import '../..';
 
-export * from './category-state';
 export { default } from './category-state';

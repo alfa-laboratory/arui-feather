@@ -6,5 +6,4 @@ import './category-rent.css';
 
 import '../..';
 
-export * from './category-rent';
 export { default } from './category-rent';

@@ -6,5 +6,4 @@ import './bank-uralsib.css';
 
 import '../..';
 
-export * from './bank-uralsib';
 export { default } from './bank-uralsib';

@@ -6,5 +6,4 @@ import './arrow-right.css';
 
 import '../..';
 
-export * from './arrow-right';
 export { default } from './arrow-right';

@@ -6,5 +6,4 @@ import './payment-rounded-plus.css';
 
 import '../..';
 
-export * from './payment-rounded-plus';
 export { default } from './payment-rounded-plus';

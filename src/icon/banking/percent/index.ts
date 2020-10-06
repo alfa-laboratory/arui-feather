@@ -6,5 +6,4 @@ import './percent.css';
 
 import '../..';
 
-export * from './percent';
 export { default } from './percent';

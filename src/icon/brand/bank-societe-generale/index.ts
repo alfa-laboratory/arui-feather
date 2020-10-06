@@ -6,5 +6,4 @@ import './bank-societe-generale.css';
 
 import '../..';
 
-export * from './bank-societe-generale';
 export { default } from './bank-societe-generale';

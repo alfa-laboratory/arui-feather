@@ -6,5 +6,4 @@ import './card-mir.css';
 
 import '../..';
 
-export * from './card-mir';
 export { default } from './card-mir';

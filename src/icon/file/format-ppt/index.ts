@@ -6,5 +6,4 @@ import './format-ppt.css';
 
 import '../..';
 
-export * from './format-ppt';
 export { default } from './format-ppt';

@@ -6,5 +6,4 @@ import './limits.css';
 
 import '../..';
 
-export * from './limits';
 export { default } from './limits';

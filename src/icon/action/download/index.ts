@@ -6,5 +6,4 @@ import './download.css';
 
 import '../..';
 
-export * from './download';
 export { default } from './download';

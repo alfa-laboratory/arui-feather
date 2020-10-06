@@ -6,5 +6,4 @@ import './logout.css';
 
 import '../..';
 
-export * from './logout';
 export { default } from './logout';

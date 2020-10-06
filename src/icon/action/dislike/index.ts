@@ -6,5 +6,4 @@ import './dislike.css';
 
 import '../..';
 
-export * from './dislike';
 export { default } from './dislike';

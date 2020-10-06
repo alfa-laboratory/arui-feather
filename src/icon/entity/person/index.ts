@@ -6,5 +6,4 @@ import './person.css';
 
 import '../..';
 
-export * from './person';
 export { default } from './person';

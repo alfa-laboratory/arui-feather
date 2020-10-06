@@ -6,5 +6,4 @@ import './backspace.css';
 
 import '../..';
 
-export * from './backspace';
 export { default } from './backspace';

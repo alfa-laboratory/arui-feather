@@ -6,5 +6,4 @@ import './keyboard-hide.css';
 
 import '../..';
 
-export * from './keyboard-hide';
 export { default } from './keyboard-hide';

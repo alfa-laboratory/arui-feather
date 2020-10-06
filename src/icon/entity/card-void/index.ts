@@ -6,5 +6,4 @@ import './card-void.css';
 
 import '../..';
 
-export * from './card-void';
 export { default } from './card-void';

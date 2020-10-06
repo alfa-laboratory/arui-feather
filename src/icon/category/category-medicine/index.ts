@@ -6,5 +6,4 @@ import './category-medicine.css';
 
 import '../..';
 
-export * from './category-medicine';
 export { default } from './category-medicine';

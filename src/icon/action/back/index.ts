@@ -6,5 +6,4 @@ import './back.css';
 
 import '../..';
 
-export * from './back';
 export { default } from './back';

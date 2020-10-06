@@ -6,5 +6,4 @@ import './currency-jpy.css';
 
 import '../..';
 
-export * from './currency-jpy';
 export { default } from './currency-jpy';

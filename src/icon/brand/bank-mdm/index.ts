@@ -6,5 +6,4 @@ import './bank-mdm.css';
 
 import '../..';
 
-export * from './bank-mdm';
 export { default } from './bank-mdm';

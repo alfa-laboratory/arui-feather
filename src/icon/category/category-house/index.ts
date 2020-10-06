@@ -6,5 +6,4 @@ import './category-house.css';
 
 import '../..';
 
-export * from './category-house';
 export { default } from './category-house';

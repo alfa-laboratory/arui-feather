@@ -6,5 +6,4 @@ import './payment-by-photo.css';
 
 import '../..';
 
-export * from './payment-by-photo';
 export { default } from './payment-by-photo';

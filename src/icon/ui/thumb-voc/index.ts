@@ -6,5 +6,4 @@ import './thumb-voc.css';
 
 import '../..';
 
-export * from './thumb-voc';
 export { default } from './thumb-voc';

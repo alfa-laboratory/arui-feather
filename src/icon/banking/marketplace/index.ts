@@ -6,5 +6,4 @@ import './marketplace.css';
 
 import '../..';
 
-export * from './marketplace';
 export { default } from './marketplace';

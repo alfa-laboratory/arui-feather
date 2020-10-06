@@ -6,5 +6,4 @@ import './category-entertainment.css';
 
 import '../..';
 
-export * from './category-entertainment';
 export { default } from './category-entertainment';

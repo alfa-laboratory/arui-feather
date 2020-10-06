@@ -6,5 +6,4 @@ import './keyboard.css';
 
 import '../..';
 
-export * from './keyboard';
 export { default } from './keyboard';

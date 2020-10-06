@@ -6,5 +6,4 @@ import './bank-gazprombank.css';
 
 import '../..';
 
-export * from './bank-gazprombank';
 export { default } from './bank-gazprombank';

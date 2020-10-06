@@ -6,5 +6,4 @@ import './calendar.css';
 
 import '../..';
 
-export * from './calendar';
 export { default } from './calendar';

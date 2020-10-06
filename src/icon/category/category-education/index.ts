@@ -6,5 +6,4 @@ import './category-education.css';
 
 import '../..';
 
-export * from './category-education';
 export { default } from './category-education';

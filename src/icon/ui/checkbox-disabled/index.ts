@@ -6,5 +6,4 @@ import './checkbox-disabled.css';
 
 import '../..';
 
-export * from './checkbox-disabled';
 export { default } from './checkbox-disabled';

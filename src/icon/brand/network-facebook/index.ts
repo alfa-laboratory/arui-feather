@@ -6,5 +6,4 @@ import './network-facebook.css';
 
 import '../..';
 
-export * from './network-facebook';
 export { default } from './network-facebook';

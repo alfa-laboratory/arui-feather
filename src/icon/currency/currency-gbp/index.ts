@@ -6,5 +6,4 @@ import './currency-gbp.css';
 
 import '../..';
 
-export * from './currency-gbp';
 export { default } from './currency-gbp';

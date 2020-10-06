@@ -6,5 +6,4 @@ import './metro-map.css';
 
 import '../..';
 
-export * from './metro-map';
 export { default } from './metro-map';

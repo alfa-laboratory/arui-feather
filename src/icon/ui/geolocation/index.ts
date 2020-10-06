@@ -6,5 +6,4 @@ import './geolocation.css';
 
 import '../..';
 
-export * from './geolocation';
 export { default } from './geolocation';

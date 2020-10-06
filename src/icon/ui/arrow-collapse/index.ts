@@ -6,5 +6,4 @@ import './arrow-collapse.css';
 
 import '../..';
 
-export * from './arrow-collapse';
 export { default } from './arrow-collapse';

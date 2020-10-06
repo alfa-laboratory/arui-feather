@@ -6,5 +6,4 @@ import './add-filled.css';
 
 import '../..';
 
-export * from './add-filled';
 export { default } from './add-filled';

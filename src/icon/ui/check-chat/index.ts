@@ -6,5 +6,4 @@ import './check-chat.css';
 
 import '../..';
 
-export * from './check-chat';
 export { default } from './check-chat';

@@ -6,5 +6,4 @@ import './navigation-marketplace.css';
 
 import '../..';
 
-export * from './navigation-marketplace';
 export { default } from './navigation-marketplace';

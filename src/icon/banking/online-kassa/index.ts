@@ -6,5 +6,4 @@ import './online-kassa.css';
 
 import '../..';
 
-export * from './online-kassa';
 export { default } from './online-kassa';

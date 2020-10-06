@@ -6,5 +6,4 @@ import './registry.css';
 
 import '../..';
 
-export * from './registry';
 export { default } from './registry';

@@ -6,5 +6,4 @@ import './mobile-ios.css';
 
 import '../..';
 
-export * from './mobile-ios';
 export { default } from './mobile-ios';

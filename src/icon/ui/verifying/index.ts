@@ -6,5 +6,4 @@ import './verifying.css';
 
 import '../..';
 
-export * from './verifying';
 export { default } from './verifying';

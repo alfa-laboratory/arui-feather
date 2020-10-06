@@ -6,5 +6,4 @@ import './android-flash.css';
 
 import '../..';
 
-export * from './android-flash';
 export { default } from './android-flash';

@@ -6,5 +6,4 @@ import './directions.css';
 
 import '../..';
 
-export * from './directions';
 export { default } from './directions';

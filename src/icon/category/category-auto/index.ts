@@ -6,5 +6,4 @@ import './category-auto.css';
 
 import '../..';
 
-export * from './category-auto';
 export { default } from './category-auto';

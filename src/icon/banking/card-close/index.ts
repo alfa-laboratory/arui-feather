@@ -6,5 +6,4 @@ import './card-close.css';
 
 import '../..';
 
-export * from './card-close';
 export { default } from './card-close';

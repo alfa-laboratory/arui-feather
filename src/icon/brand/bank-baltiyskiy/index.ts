@@ -6,5 +6,4 @@ import './bank-baltiyskiy.css';
 
 import '../..';
 
-export * from './bank-baltiyskiy';
 export { default } from './bank-baltiyskiy';

@@ -6,5 +6,4 @@ import './transfer-between-accounts.css';
 
 import '../..';
 
-export * from './transfer-between-accounts';
 export { default } from './transfer-between-accounts';

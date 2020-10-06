@@ -6,5 +6,4 @@ import './navigation-history.css';
 
 import '../..';
 
-export * from './navigation-history';
 export { default } from './navigation-history';

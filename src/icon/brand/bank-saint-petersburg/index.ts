@@ -6,5 +6,4 @@ import './bank-saint-petersburg.css';
 
 import '../..';
 
-export * from './bank-saint-petersburg';
 export { default } from './bank-saint-petersburg';

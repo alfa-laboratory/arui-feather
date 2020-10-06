@@ -6,5 +6,4 @@ import './beeline.css';
 
 import '../..';
 
-export * from './beeline';
 export { default } from './beeline';

@@ -6,5 +6,4 @@ import './list.css';
 
 import '../..';
 
-export * from './list';
 export { default } from './list';

@@ -6,5 +6,4 @@ import './alfacheck.css';
 
 import '../..';
 
-export * from './alfacheck';
 export { default } from './alfacheck';

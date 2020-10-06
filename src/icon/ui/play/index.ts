@@ -6,5 +6,4 @@ import './play.css';
 
 import '../..';
 
-export * from './play';
 export { default } from './play';

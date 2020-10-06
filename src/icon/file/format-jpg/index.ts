@@ -6,5 +6,4 @@ import './format-jpg.css';
 
 import '../..';
 
-export * from './format-jpg';
 export { default } from './format-jpg';

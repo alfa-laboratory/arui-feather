@@ -6,5 +6,4 @@ import './convert.css';
 
 import '../..';
 
-export * from './convert';
 export { default } from './convert';

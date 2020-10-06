@@ -6,5 +6,4 @@ import './dots.css';
 
 import '../..';
 
-export * from './dots';
 export { default } from './dots';

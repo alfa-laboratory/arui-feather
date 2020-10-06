@@ -6,5 +6,4 @@ import './todo.css';
 
 import '../..';
 
-export * from './todo';
 export { default } from './todo';

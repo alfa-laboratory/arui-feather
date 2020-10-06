@@ -6,5 +6,4 @@ import './APC-bonus.css';
 
 import '../..';
 
-export * from './APC-bonus';
 export { default } from './APC-bonus';

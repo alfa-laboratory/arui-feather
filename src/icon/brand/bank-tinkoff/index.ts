@@ -6,5 +6,4 @@ import './bank-tinkoff.css';
 
 import '../..';
 
-export * from './bank-tinkoff';
 export { default } from './bank-tinkoff';

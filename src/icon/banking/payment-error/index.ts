@@ -6,5 +6,4 @@ import './payment-error.css';
 
 import '../..';
 
-export * from './payment-error';
 export { default } from './payment-error';

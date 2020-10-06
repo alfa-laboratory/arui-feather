@@ -6,5 +6,4 @@ import './left.css';
 
 import '../..';
 
-export * from './left';
 export { default } from './left';

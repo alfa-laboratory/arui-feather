@@ -6,5 +6,4 @@ import './bank-vozrozhdenie.css';
 
 import '../..';
 
-export * from './bank-vozrozhdenie';
 export { default } from './bank-vozrozhdenie';

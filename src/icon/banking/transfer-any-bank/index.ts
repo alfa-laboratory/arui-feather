@@ -6,5 +6,4 @@ import './transfer-any-bank.css';
 
 import '../..';
 
-export * from './transfer-any-bank';
 export { default } from './transfer-any-bank';

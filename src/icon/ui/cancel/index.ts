@@ -6,5 +6,4 @@ import './cancel.css';
 
 import '../..';
 
-export * from './cancel';
 export { default } from './cancel';

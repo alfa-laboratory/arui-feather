@@ -6,5 +6,4 @@ import './bank-285.css';
 
 import '../..';
 
-export * from './bank-285';
 export { default } from './bank-285';

@@ -6,5 +6,4 @@ import './format-error.css';
 
 import '../..';
 
-export * from './format-error';
 export { default } from './format-error';

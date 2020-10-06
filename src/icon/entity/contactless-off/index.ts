@@ -6,5 +6,4 @@ import './contactless-off.css';
 
 import '../..';
 
-export * from './contactless-off';
 export { default } from './contactless-off';

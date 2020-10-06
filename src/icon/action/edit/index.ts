@@ -6,5 +6,4 @@ import './edit.css';
 
 import '../..';
 
-export * from './edit';
 export { default } from './edit';

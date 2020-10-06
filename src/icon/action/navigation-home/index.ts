@@ -6,5 +6,4 @@ import './navigation-home.css';
 
 import '../..';
 
-export * from './navigation-home';
 export { default } from './navigation-home';

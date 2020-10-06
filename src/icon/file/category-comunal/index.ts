@@ -6,5 +6,4 @@ import './category-comunal.css';
 
 import '../..';
 
-export * from './category-comunal';
 export { default } from './category-comunal';

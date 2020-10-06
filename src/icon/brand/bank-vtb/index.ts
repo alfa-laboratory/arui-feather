@@ -6,5 +6,4 @@ import './bank-vtb.css';
 
 import '../..';
 
-export * from './bank-vtb';
 export { default } from './bank-vtb';

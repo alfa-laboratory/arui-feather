@@ -6,5 +6,4 @@ import './mir.css';
 
 import '../..';
 
-export * from './mir';
 export { default } from './mir';

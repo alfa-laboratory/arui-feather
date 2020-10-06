@@ -6,5 +6,4 @@ import './sign.css';
 
 import '../..';
 
-export * from './sign';
 export { default } from './sign';

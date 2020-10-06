@@ -6,5 +6,4 @@ import './system-hide-arrow.css';
 
 import '../..';
 
-export * from './system-hide-arrow';
 export { default } from './system-hide-arrow';

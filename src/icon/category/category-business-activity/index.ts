@@ -6,5 +6,4 @@ import './category-business-activity.css';
 
 import '../..';
 
-export * from './category-business-activity';
 export { default } from './category-business-activity';

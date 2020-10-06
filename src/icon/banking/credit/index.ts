@@ -6,5 +6,4 @@ import './credit.css';
 
 import '../..';
 
-export * from './credit';
 export { default } from './credit';

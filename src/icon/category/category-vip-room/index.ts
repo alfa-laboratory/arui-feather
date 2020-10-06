@@ -6,5 +6,4 @@ import './category-vip-room.css';
 
 import '../..';
 
-export * from './category-vip-room';
 export { default } from './category-vip-room';

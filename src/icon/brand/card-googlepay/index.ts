@@ -6,5 +6,4 @@ import './card-googlepay.css';
 
 import '../..';
 
-export * from './card-googlepay';
 export { default } from './card-googlepay';

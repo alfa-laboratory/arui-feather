@@ -6,5 +6,4 @@ import './notifications.css';
 
 import '../..';
 
-export * from './notifications';
 export { default } from './notifications';

@@ -6,5 +6,4 @@ import './message.css';
 
 import '../..';
 
-export * from './message';
 export { default } from './message';

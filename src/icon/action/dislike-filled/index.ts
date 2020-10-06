@@ -6,5 +6,4 @@ import './dislike-filled.css';
 
 import '../..';
 
-export * from './dislike-filled';
 export { default } from './dislike-filled';

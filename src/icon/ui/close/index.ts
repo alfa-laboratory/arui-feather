@@ -6,5 +6,4 @@ import './close.css';
 
 import '../..';
 
-export * from './close';
 export { default } from './close';

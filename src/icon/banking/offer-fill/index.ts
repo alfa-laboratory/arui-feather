@@ -6,5 +6,4 @@ import './offer-fill.css';
 
 import '../..';
 
-export * from './offer-fill';
 export { default } from './offer-fill';

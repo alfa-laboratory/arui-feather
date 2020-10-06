@@ -6,5 +6,4 @@ import './lock-filled.css';
 
 import '../..';
 
-export * from './lock-filled';
 export { default } from './lock-filled';

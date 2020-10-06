@@ -6,5 +6,4 @@ import './category-other.css';
 
 import '../..';
 
-export * from './category-other';
 export { default } from './category-other';

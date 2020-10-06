@@ -6,5 +6,4 @@ import './flash.css';
 
 import '../..';
 
-export * from './flash';
 export { default } from './flash';

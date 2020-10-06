@@ -6,5 +6,4 @@ import './bank-home-credit.css';
 
 import '../..';
 
-export * from './bank-home-credit';
 export { default } from './bank-home-credit';

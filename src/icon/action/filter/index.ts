@@ -6,5 +6,4 @@ import './filter.css';
 
 import '../..';
 
-export * from './filter';
 export { default } from './filter';

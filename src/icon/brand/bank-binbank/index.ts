@@ -6,5 +6,4 @@ import './bank-binbank.css';
 
 import '../..';
 
-export * from './bank-binbank';
 export { default } from './bank-binbank';

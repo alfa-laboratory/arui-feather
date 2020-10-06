@@ -6,5 +6,4 @@ import './expences-planner.css';
 
 import '../..';
 
-export * from './expences-planner';
 export { default } from './expences-planner';

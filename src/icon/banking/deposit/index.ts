@@ -6,5 +6,4 @@ import './deposit.css';
 
 import '../..';
 
-export * from './deposit';
 export { default } from './deposit';

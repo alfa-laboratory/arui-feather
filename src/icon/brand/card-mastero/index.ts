@@ -6,5 +6,4 @@ import './card-mastero.css';
 
 import '../..';
 
-export * from './card-mastero';
 export { default } from './card-mastero';

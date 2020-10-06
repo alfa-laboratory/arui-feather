@@ -6,5 +6,4 @@ import './copy.css';
 
 import '../..';
 
-export * from './copy';
 export { default } from './copy';

@@ -6,5 +6,4 @@ import './card-belkart.css';
 
 import '../..';
 
-export * from './card-belkart';
 export { default } from './card-belkart';

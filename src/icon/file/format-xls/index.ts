@@ -6,5 +6,4 @@ import './format-xls.css';
 
 import '../..';
 
-export * from './format-xls';
 export { default } from './format-xls';

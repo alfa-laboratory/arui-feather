@@ -6,5 +6,4 @@ import './ok.css';
 
 import '../..';
 
-export * from './ok';
 export { default } from './ok';

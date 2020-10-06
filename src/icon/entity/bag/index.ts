@@ -6,5 +6,4 @@ import './bag.css';
 
 import '../..';
 
-export * from './bag';
 export { default } from './bag';

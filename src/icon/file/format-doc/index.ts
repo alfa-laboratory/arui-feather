@@ -6,5 +6,4 @@ import './format-doc.css';
 
 import '../..';
 
-export * from './format-doc';
 export { default } from './format-doc';

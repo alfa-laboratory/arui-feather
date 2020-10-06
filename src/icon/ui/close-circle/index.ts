@@ -6,5 +6,4 @@ import './close-circle.css';
 
 import '../..';
 
-export * from './close-circle';
 export { default } from './close-circle';

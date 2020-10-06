@@ -6,5 +6,4 @@ import './bank-raiffeisen.css';
 
 import '../..';
 
-export * from './bank-raiffeisen';
 export { default } from './bank-raiffeisen';

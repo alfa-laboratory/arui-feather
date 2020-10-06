@@ -6,5 +6,4 @@ import './like-filled.css';
 
 import '../..';
 
-export * from './like-filled';
 export { default } from './like-filled';

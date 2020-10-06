@@ -6,5 +6,4 @@ import './camera.css';
 
 import '../..';
 
-export * from './camera';
 export { default } from './camera';

@@ -6,5 +6,4 @@ import './category-scholarship.css';
 
 import '../..';
 
-export * from './category-scholarship';
 export { default } from './category-scholarship';

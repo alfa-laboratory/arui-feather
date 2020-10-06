@@ -6,5 +6,4 @@ import './security.css';
 
 import '../..';
 
-export * from './security';
 export { default } from './security';

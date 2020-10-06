@@ -6,5 +6,4 @@ import './arrow-double.css';
 
 import '../..';
 
-export * from './arrow-double';
 export { default } from './arrow-double';

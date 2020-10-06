@@ -6,5 +6,4 @@ import './table.css';
 
 import '../..';
 
-export * from './table';
 export { default } from './table';

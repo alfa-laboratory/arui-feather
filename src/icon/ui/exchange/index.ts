@@ -6,5 +6,4 @@ import './exchange.css';
 
 import '../..';
 
-export * from './exchange';
 export { default } from './exchange';

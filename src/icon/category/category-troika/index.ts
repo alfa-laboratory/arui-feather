@@ -6,5 +6,4 @@ import './category-troika.css';
 
 import '../..';
 
-export * from './category-troika';
 export { default } from './category-troika';

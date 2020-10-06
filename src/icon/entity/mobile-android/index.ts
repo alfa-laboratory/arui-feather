@@ -6,5 +6,4 @@ import './mobile-android.css';
 
 import '../..';
 
-export * from './mobile-android';
 export { default } from './mobile-android';

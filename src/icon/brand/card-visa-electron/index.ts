@@ -6,5 +6,4 @@ import './card-visa-electron.css';
 
 import '../..';
 
-export * from './card-visa-electron';
 export { default } from './card-visa-electron';

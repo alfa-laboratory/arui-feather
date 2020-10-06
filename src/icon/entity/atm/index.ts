@@ -6,5 +6,4 @@ import './atm.css';
 
 import '../..';
 
-export * from './atm';
 export { default } from './atm';

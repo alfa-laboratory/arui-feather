@@ -6,5 +6,4 @@ import './analytics.css';
 
 import '../..';
 
-export * from './analytics';
 export { default } from './analytics';

@@ -6,5 +6,4 @@ import './forex.css';
 
 import '../..';
 
-export * from './forex';
 export { default } from './forex';

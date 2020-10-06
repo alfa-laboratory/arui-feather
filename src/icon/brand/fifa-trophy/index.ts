@@ -6,5 +6,4 @@ import './fifa-trophy.css';
 
 import '../..';
 
-export * from './fifa-trophy';
 export { default } from './fifa-trophy';

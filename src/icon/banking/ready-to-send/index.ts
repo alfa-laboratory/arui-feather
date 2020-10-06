@@ -6,5 +6,4 @@ import './ready-to-send.css';
 
 import '../..';
 
-export * from './ready-to-send';
 export { default } from './ready-to-send';

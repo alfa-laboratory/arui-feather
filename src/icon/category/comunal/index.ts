@@ -6,5 +6,4 @@ import './comunal.css';
 
 import '../..';
 
-export * from './comunal';
 export { default } from './comunal';

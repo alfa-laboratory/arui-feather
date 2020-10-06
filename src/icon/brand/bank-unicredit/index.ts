@@ -6,5 +6,4 @@ import './bank-unicredit.css';
 
 import '../..';
 
-export * from './bank-unicredit';
 export { default } from './bank-unicredit';

@@ -6,5 +6,4 @@ import './category-charity.css';
 
 import '../..';
 
-export * from './category-charity';
 export { default } from './category-charity';

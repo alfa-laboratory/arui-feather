@@ -6,5 +6,4 @@ import './category-repairs.css';
 
 import '../..';
 
-export * from './category-repairs';
 export { default } from './category-repairs';

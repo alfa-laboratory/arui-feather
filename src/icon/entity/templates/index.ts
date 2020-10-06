@@ -6,5 +6,4 @@ import './templates.css';
 
 import '../..';
 
-export * from './templates';
 export { default } from './templates';

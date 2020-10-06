@@ -6,5 +6,4 @@ import './outside.css';
 
 import '../..';
 
-export * from './outside';
 export { default } from './outside';

@@ -6,5 +6,4 @@ import './category-housekeeping.css';
 
 import '../..';
 
-export * from './category-housekeeping';
 export { default } from './category-housekeeping';

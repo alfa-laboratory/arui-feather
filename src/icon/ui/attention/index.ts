@@ -6,5 +6,4 @@ import './attention.css';
 
 import '../..';
 
-export * from './attention';
 export { default } from './attention';

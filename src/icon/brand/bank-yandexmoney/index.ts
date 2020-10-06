@@ -6,5 +6,4 @@ import './bank-yandexmoney.css';
 
 import '../..';
 
-export * from './bank-yandexmoney';
 export { default } from './bank-yandexmoney';

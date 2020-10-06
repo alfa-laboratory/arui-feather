@@ -6,5 +6,4 @@ import './chat-message-error.css';
 
 import '../..';
 
-export * from './chat-message-error';
 export { default } from './chat-message-error';

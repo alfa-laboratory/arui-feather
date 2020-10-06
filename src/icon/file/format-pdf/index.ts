@@ -6,5 +6,4 @@ import './format-pdf.css';
 
 import '../..';
 
-export * from './format-pdf';
 export { default } from './format-pdf';

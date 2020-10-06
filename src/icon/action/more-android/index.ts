@@ -6,5 +6,4 @@ import './more-android.css';
 
 import '../..';
 
-export * from './more-android';
 export { default } from './more-android';

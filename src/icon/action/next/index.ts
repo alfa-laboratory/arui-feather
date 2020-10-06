@@ -6,5 +6,4 @@ import './next.css';
 
 import '../..';
 
-export * from './next';
 export { default } from './next';

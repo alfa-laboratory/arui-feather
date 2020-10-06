@@ -6,5 +6,4 @@ import './income.css';
 
 import '../..';
 
-export * from './income';
 export { default } from './income';

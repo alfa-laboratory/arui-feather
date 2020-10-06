@@ -6,5 +6,4 @@ import './expences.css';
 
 import '../..';
 
-export * from './expences';
 export { default } from './expences';

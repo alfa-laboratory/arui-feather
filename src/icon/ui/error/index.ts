@@ -6,5 +6,4 @@ import './error.css';
 
 import '../..';
 
-export * from './error';
 export { default } from './error';

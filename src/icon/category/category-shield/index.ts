@@ -6,5 +6,4 @@ import './category-shield.css';
 
 import '../..';
 
-export * from './category-shield';
 export { default } from './category-shield';

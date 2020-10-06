@@ -6,5 +6,4 @@ import './location.css';
 
 import '../..';
 
-export * from './location';
 export { default } from './location';

@@ -6,5 +6,4 @@ import './qr.css';
 
 import '../..';
 
-export * from './qr';
 export { default } from './qr';

@@ -6,5 +6,4 @@ import './navigation-payment.css';
 
 import '../..';
 
-export * from './navigation-payment';
 export { default } from './navigation-payment';

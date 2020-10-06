@@ -6,5 +6,4 @@ import './goals.css';
 
 import '../..';
 
-export * from './goals';
 export { default } from './goals';

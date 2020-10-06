@@ -6,5 +6,4 @@ import './status-urgent.css';
 
 import '../..';
 
-export * from './status-urgent';
 export { default } from './status-urgent';

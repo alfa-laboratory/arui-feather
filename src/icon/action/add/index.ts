@@ -6,5 +6,4 @@ import './add.css';
 
 import '../..';
 
-export * from './add';
 export { default } from './add';

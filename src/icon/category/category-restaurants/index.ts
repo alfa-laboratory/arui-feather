@@ -6,5 +6,4 @@ import './category-restaurants.css';
 
 import '../..';
 
-export * from './category-restaurants';
 export { default } from './category-restaurants';

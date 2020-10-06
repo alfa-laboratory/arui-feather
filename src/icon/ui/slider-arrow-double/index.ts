@@ -6,5 +6,4 @@ import './slider-arrow-double.css';
 
 import '../..';
 
-export * from './slider-arrow-double';
 export { default } from './slider-arrow-double';

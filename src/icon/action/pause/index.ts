@@ -6,5 +6,4 @@ import './pause.css';
 
 import '../..';
 
-export * from './pause';
 export { default } from './pause';

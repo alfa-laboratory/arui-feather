@@ -6,5 +6,4 @@ import './star-voc-active.css';
 
 import '../..';
 
-export * from './star-voc-active';
 export { default } from './star-voc-active';

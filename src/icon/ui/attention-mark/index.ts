@@ -6,5 +6,4 @@ import './attention-mark.css';
 
 import '../..';
 
-export * from './attention-mark';
 export { default } from './attention-mark';

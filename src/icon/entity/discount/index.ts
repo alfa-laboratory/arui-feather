@@ -6,5 +6,4 @@ import './discount.css';
 
 import '../..';
 
-export * from './discount';
 export { default } from './discount';

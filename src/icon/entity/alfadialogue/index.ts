@@ -6,5 +6,4 @@ import './alfadialogue.css';
 
 import '../..';
 
-export * from './alfadialogue';
 export { default } from './alfadialogue';

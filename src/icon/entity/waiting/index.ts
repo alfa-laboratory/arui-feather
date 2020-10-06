@@ -6,5 +6,4 @@ import './waiting.css';
 
 import '../..';
 
-export * from './waiting';
 export { default } from './waiting';

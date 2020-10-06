@@ -6,5 +6,4 @@ import './category-books-movies.css';
 
 import '../..';
 
-export * from './category-books-movies';
 export { default } from './category-books-movies';

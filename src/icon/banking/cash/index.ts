@@ -6,5 +6,4 @@ import './cash.css';
 
 import '../..';
 
-export * from './cash';
 export { default } from './cash';

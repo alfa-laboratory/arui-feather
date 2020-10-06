@@ -6,5 +6,4 @@ import './chat-send.css';
 
 import '../..';
 
-export * from './chat-send';
 export { default } from './chat-send';

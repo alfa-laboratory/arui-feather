@@ -6,5 +6,4 @@ import './power.css';
 
 import '../..';
 
-export * from './power';
 export { default } from './power';

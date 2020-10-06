@@ -6,5 +6,4 @@ import './gallery-in-camera.css';
 
 import '../..';
 
-export * from './gallery-in-camera';
 export { default } from './gallery-in-camera';

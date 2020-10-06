@@ -6,5 +6,4 @@ import './search.css';
 
 import '../..';
 
-export * from './search';
 export { default } from './search';

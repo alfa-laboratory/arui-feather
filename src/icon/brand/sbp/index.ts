@@ -6,5 +6,4 @@ import './sbp.css';
 
 import '../..';
 
-export * from './sbp';
 export { default } from './sbp';

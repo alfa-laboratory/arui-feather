@@ -6,5 +6,4 @@ import './more.css';
 
 import '../..';
 
-export * from './more';
 export { default } from './more';

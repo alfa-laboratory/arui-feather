@@ -6,5 +6,4 @@ import './password-hide.css';
 
 import '../..';
 
-export * from './password-hide';
 export { default } from './password-hide';

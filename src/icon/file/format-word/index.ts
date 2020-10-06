@@ -6,5 +6,4 @@ import './format-word.css';
 
 import '../..';
 
-export * from './format-word';
 export { default } from './format-word';

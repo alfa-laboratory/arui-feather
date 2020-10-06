@@ -6,5 +6,4 @@ import './sent-done.css';
 
 import '../..';
 
-export * from './sent-done';
 export { default } from './sent-done';

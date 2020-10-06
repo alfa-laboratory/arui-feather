@@ -6,5 +6,4 @@ import './autopayment.css';
 
 import '../..';
 
-export * from './autopayment';
 export { default } from './autopayment';

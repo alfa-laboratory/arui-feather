@@ -6,5 +6,4 @@ import './category-transport.css';
 
 import '../..';
 
-export * from './category-transport';
 export { default } from './category-transport';

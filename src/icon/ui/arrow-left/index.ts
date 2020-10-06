@@ -6,5 +6,4 @@ import './arrow-left.css';
 
 import '../..';
 
-export * from './arrow-left';
 export { default } from './arrow-left';

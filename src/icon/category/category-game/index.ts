@@ -6,5 +6,4 @@ import './category-game.css';
 
 import '../..';
 
-export * from './category-game';
 export { default } from './category-game';

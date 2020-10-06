@@ -6,5 +6,4 @@ import './format-unknown.css';
 
 import '../..';
 
-export * from './format-unknown';
 export { default } from './format-unknown';

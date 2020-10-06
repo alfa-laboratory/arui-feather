@@ -6,5 +6,4 @@ import './fingerprint.css';
 
 import '../..';
 
-export * from './fingerprint';
 export { default } from './fingerprint';

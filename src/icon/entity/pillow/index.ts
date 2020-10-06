@@ -6,5 +6,4 @@ import './pillow.css';
 
 import '../..';
 
-export * from './pillow';
 export { default } from './pillow';

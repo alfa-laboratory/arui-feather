@@ -6,5 +6,4 @@ import './currency-chf.css';
 
 import '../..';
 
-export * from './currency-chf';
 export { default } from './currency-chf';

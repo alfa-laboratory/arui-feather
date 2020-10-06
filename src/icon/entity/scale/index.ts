@@ -6,5 +6,4 @@ import './scale.css';
 
 import '../..';
 
-export * from './scale';
 export { default } from './scale';

@@ -6,5 +6,4 @@ import './network-vk.css';
 
 import '../..';
 
-export * from './network-vk';
 export { default } from './network-vk';

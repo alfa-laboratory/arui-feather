@@ -6,5 +6,4 @@ import './more-ios.css';
 
 import '../..';
 
-export * from './more-ios';
 export { default } from './more-ios';

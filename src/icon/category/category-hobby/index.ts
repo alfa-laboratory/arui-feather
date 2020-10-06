@@ -6,5 +6,4 @@ import './category-hobby.css';
 
 import '../..';
 
-export * from './category-hobby';
 export { default } from './category-hobby';

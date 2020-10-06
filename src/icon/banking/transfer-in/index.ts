@@ -6,5 +6,4 @@ import './transfer-in.css';
 
 import '../..';
 
-export * from './transfer-in';
 export { default } from './transfer-in';

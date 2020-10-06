@@ -6,5 +6,4 @@ import './crown.css';
 
 import '../..';
 
-export * from './crown';
 export { default } from './crown';

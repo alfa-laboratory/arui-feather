@@ -6,5 +6,4 @@ import './wallet.css';
 
 import '../..';
 
-export * from './wallet';
 export { default } from './wallet';

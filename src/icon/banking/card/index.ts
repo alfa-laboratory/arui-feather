@@ -6,5 +6,4 @@ import './card.css';
 
 import '../..';
 
-export * from './card';
 export { default } from './card';

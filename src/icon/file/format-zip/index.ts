@@ -6,5 +6,4 @@ import './format-zip.css';
 
 import '../..';
 
-export * from './format-zip';
 export { default } from './format-zip';

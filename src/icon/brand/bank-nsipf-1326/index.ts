@@ -6,5 +6,4 @@ import './bank-nsipf-1326.css';
 
 import '../..';
 
-export * from './bank-nsipf-1326';
 export { default } from './bank-nsipf-1326';

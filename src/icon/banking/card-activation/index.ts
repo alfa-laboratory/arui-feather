@@ -6,5 +6,4 @@ import './card-activation.css';
 
 import '../..';
 
-export * from './card-activation';
 export { default } from './card-activation';

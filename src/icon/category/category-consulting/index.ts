@@ -6,5 +6,4 @@ import './category-consulting.css';
 
 import '../..';
 
-export * from './category-consulting';
 export { default } from './category-consulting';

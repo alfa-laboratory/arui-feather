@@ -6,5 +6,4 @@ import './tarifs.css';
 
 import '../..';
 
-export * from './tarifs';
 export { default } from './tarifs';

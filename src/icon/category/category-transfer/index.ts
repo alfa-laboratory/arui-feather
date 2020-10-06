@@ -6,5 +6,4 @@ import './category-transfer.css';
 
 import '../..';
 
-export * from './category-transfer';
 export { default } from './category-transfer';

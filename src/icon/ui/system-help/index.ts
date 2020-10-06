@@ -6,5 +6,4 @@ import './system-help.css';
 
 import '../..';
 
-export * from './system-help';
 export { default } from './system-help';

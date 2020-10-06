@@ -6,5 +6,4 @@ import './overdraft.css';
 
 import '../..';
 
-export * from './overdraft';
 export { default } from './overdraft';

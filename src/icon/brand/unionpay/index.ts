@@ -6,5 +6,4 @@ import './unionpay.css';
 
 import '../..';
 
-export * from './unionpay';
 export { default } from './unionpay';

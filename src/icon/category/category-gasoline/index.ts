@@ -6,5 +6,4 @@ import './category-gasoline.css';
 
 import '../..';
 
-export * from './category-gasoline';
 export { default } from './category-gasoline';

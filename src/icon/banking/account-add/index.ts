@@ -6,5 +6,4 @@ import './account-add.css';
 
 import '../..';
 
-export * from './account-add';
 export { default } from './account-add';

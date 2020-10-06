@@ -6,5 +6,4 @@ import './format-xml.css';
 
 import '../..';
 
-export * from './format-xml';
 export { default } from './format-xml';

@@ -6,5 +6,4 @@ import './metro.css';
 
 import '../..';
 
-export * from './metro';
 export { default } from './metro';

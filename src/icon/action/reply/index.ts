@@ -6,5 +6,4 @@ import './reply.css';
 
 import '../..';
 
-export * from './reply';
 export { default } from './reply';

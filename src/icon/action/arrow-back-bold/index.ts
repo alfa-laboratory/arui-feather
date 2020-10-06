@@ -6,5 +6,4 @@ import './arrow-back-bold.css';
 
 import '../..';
 
-export * from './arrow-back-bold';
 export { default } from './arrow-back-bold';

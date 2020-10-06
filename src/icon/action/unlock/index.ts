@@ -6,5 +6,4 @@ import './unlock.css';
 
 import '../..';
 
-export * from './unlock';
 export { default } from './unlock';

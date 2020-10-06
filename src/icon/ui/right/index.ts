@@ -6,5 +6,4 @@ import './right.css';
 
 import '../..';
 
-export * from './right';
 export { default } from './right';

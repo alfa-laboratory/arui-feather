@@ -6,5 +6,4 @@ import './password-change.css';
 
 import '../..';
 
-export * from './password-change';
 export { default } from './password-change';

@@ -6,5 +6,4 @@ import './invoice-for-payment.css';
 
 import '../..';
 
-export * from './invoice-for-payment';
 export { default } from './invoice-for-payment';

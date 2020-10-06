@@ -6,5 +6,4 @@ import './attention-bold.css';
 
 import '../..';
 
-export * from './attention-bold';
 export { default } from './attention-bold';

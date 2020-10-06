@@ -6,5 +6,4 @@ import './office.css';
 
 import '../..';
 
-export * from './office';
 export { default } from './office';

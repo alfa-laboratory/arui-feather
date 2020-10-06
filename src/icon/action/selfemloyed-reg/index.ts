@@ -6,5 +6,4 @@ import './selfemloyed-reg.css';
 
 import '../..';
 
-export * from './selfemloyed-reg';
 export { default } from './selfemloyed-reg';

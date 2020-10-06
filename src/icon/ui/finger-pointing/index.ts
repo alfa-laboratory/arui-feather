@@ -6,5 +6,4 @@ import './finger-pointing.css';
 
 import '../..';
 
-export * from './finger-pointing';
 export { default } from './finger-pointing';

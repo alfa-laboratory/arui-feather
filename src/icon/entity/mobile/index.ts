@@ -6,5 +6,4 @@ import './mobile.css';
 
 import '../..';
 
-export * from './mobile';
 export { default } from './mobile';

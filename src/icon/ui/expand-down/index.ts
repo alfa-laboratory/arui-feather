@@ -6,5 +6,4 @@ import './expand-down.css';
 
 import '../..';
 
-export * from './expand-down';
 export { default } from './expand-down';

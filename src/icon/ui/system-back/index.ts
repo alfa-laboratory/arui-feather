@@ -6,5 +6,4 @@ import './system-back.css';
 
 import '../..';
 
-export * from './system-back';
 export { default } from './system-back';

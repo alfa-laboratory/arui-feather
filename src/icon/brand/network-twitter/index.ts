@@ -6,5 +6,4 @@ import './network-twitter.css';
 
 import '../..';
 
-export * from './network-twitter';
 export { default } from './network-twitter';

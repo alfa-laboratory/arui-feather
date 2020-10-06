@@ -6,5 +6,4 @@ import './check.css';
 
 import '../..';
 
-export * from './check';
 export { default } from './check';

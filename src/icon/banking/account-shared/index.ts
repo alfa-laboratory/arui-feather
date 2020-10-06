@@ -6,5 +6,4 @@ import './account-shared.css';
 
 import '../..';
 
-export * from './account-shared';
 export { default } from './account-shared';

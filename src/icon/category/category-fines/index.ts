@@ -6,5 +6,4 @@ import './category-fines.css';
 
 import '../..';
 
-export * from './category-fines';
 export { default } from './category-fines';

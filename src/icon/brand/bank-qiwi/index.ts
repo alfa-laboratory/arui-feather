@@ -6,5 +6,4 @@ import './bank-qiwi.css';
 
 import '../..';
 
-export * from './bank-qiwi';
 export { default } from './bank-qiwi';

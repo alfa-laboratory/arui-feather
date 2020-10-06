@@ -6,5 +6,4 @@ import './plan-expenses.css';
 
 import '../..';
 
-export * from './plan-expenses';
 export { default } from './plan-expenses';

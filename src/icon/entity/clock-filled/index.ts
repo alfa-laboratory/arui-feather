@@ -6,5 +6,4 @@ import './clock-filled.css';
 
 import '../..';
 
-export * from './clock-filled';
 export { default } from './clock-filled';

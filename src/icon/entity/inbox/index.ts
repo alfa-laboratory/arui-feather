@@ -6,5 +6,4 @@ import './inbox.css';
 
 import '../..';
 
-export * from './inbox';
 export { default } from './inbox';

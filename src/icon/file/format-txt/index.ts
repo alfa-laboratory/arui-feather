@@ -6,5 +6,4 @@ import './format-txt.css';
 
 import '../..';
 
-export * from './format-txt';
 export { default } from './format-txt';

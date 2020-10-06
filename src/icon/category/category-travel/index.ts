@@ -6,5 +6,4 @@ import './category-travel.css';
 
 import '../..';
 
-export * from './category-travel';
 export { default } from './category-travel';

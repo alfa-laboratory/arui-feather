@@ -6,5 +6,4 @@ import './bank-mts.css';
 
 import '../..';
 
-export * from './bank-mts';
 export { default } from './bank-mts';

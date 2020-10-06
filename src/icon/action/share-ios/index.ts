@@ -6,5 +6,4 @@ import './share-ios.css';
 
 import '../..';
 
-export * from './share-ios';
 export { default } from './share-ios';

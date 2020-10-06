@@ -6,5 +6,4 @@ import './repeat.css';
 
 import '../..';
 
-export * from './repeat';
 export { default } from './repeat';

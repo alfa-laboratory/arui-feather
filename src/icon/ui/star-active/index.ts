@@ -6,5 +6,4 @@ import './star-active.css';
 
 import '../..';
 
-export * from './star-active';
 export { default } from './star-active';

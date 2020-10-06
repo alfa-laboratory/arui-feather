@@ -6,5 +6,4 @@ import './subscrption.css';
 
 import '../..';
 
-export * from './subscrption';
 export { default } from './subscrption';

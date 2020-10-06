@@ -6,5 +6,4 @@ import './fail.css';
 
 import '../..';
 
-export * from './fail';
 export { default } from './fail';

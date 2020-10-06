@@ -6,5 +6,4 @@ import './password-show.css';
 
 import '../..';
 
-export * from './password-show';
 export { default } from './password-show';

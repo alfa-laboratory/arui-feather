@@ -6,5 +6,4 @@ import './call.css';
 
 import '../..';
 
-export * from './call';
 export { default } from './call';

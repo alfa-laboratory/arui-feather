@@ -6,5 +6,4 @@ import './format-sketch.css';
 
 import '../..';
 
-export * from './format-sketch';
 export { default } from './format-sketch';

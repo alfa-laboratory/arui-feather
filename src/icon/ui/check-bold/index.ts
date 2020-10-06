@@ -6,5 +6,4 @@ import './check-bold.css';
 
 import '../..';
 
-export * from './check-bold';
 export { default } from './check-bold';

@@ -6,5 +6,4 @@ import './format-disabled.css';
 
 import '../..';
 
-export * from './format-disabled';
 export { default } from './format-disabled';

@@ -6,5 +6,4 @@ import './alfamobile.css';
 
 import '../..';
 
-export * from './alfamobile';
 export { default } from './alfamobile';

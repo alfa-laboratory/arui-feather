@@ -6,5 +6,4 @@ import './category-pets.css';
 
 import '../..';
 
-export * from './category-pets';
 export { default } from './category-pets';

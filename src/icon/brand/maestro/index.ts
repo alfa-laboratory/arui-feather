@@ -6,5 +6,4 @@ import './maestro.css';
 
 import '../..';
 
-export * from './maestro';
 export { default } from './maestro';

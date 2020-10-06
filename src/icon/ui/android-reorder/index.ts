@@ -6,5 +6,4 @@ import './android-reorder.css';
 
 import '../..';
 
-export * from './android-reorder';
 export { default } from './android-reorder';

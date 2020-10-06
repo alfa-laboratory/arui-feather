@@ -6,5 +6,4 @@ import './android-document.css';
 
 import '../..';
 
-export * from './android-document';
 export { default } from './android-document';

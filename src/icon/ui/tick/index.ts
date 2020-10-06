@@ -6,5 +6,4 @@ import './tick.css';
 
 import '../..';
 
-export * from './tick';
 export { default } from './tick';

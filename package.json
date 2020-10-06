@@ -34,31 +34,40 @@
     "update-primitive-colors": "node ./tools/update-colors.js"
   },
   "lint-staged": {
-    "concurrent": false,
-    "linters": {
-      "./*.js": [
-        "eslint"
-      ],
-      "demo/**/*.{js,jsx}": [
-        "eslint"
-      ],
-      "gemini/**/*.{js,jsx}": [
-        "eslint"
-      ],
-      "demo/components/**/*.{js,jsx}": [
-        "eslint"
-      ],
-      "*.css": [
-        "npm run lint-css"
-      ],
-      "src/**/*.{js,jsx,ts,tsx}": [
-        "eslint",
-        "jest --findRelatedTests"
-      ],
-      "src/**/*.md": [
-        "npm run lint-md"
-      ]
-    }
+    "./*.js": [
+      "prettier-eslint --write",
+      "git add",
+      "eslint"
+    ],
+    "demo/**/*.{js,jsx}": [
+      "prettier-eslint --write",
+      "git add",
+      "eslint"
+    ],
+    "gemini/**/*.{js,jsx}": [
+      "prettier-eslint --write",
+      "git add",
+      "eslint"
+    ],
+    "demo/components/**/*.{js,jsx}": [
+      "prettier-eslint --write",
+      "git add",
+      "eslint"
+    ],
+    "*.css": [
+      "prettier-eslint --write",
+      "git add",
+      "stylelint"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier-eslint --write",
+      "git add",
+      "eslint",
+      "jest --findrelatedtests"
+    ],
+    "src/**/*.md": [
+      "npm run lint-md"
+    ]
   },
   "husky": {
     "hooks": {
@@ -70,6 +79,10 @@
     "extends": [
       "./node_modules/arui-presets-lint/commitlint"
     ]
+  },
+  "prettier": "arui-presets-lint/prettier",
+  "stylelint": {
+    "extends": "arui-presets-lint/stylelint"
   },
   "maintainers": [
     {
@@ -170,10 +183,10 @@
     "gulp.spritesmith": "6.9.0",
     "handlebars": "4.5.3",
     "html-reporter": "2.12.3",
-    "husky": "3.1.0",
+    "husky": "^4.3.0",
     "jest": "^24.9.0",
     "library-utils": "3.0.2",
-    "lint-staged": "8.1.1",
+    "lint-staged": "10.4.0",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
     "postcss-loader": "^3.0.0",

@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Create new version
-        run: yarn --frozen-lockfile && yarn compile && yarn semantic-release
+        run: npm ci && npm run compile && npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.PERMISSION_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

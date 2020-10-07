@@ -1,3 +1,11 @@
+## [18.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.1...v18.2.2) (2020-10-07)
+
+
+### Bug Fixes
+
+* adds lock file ([c7392ef](https://github.com/alfa-laboratory/arui-feather/commit/c7392ef46329d26626af88f8ad286db6ce08598b))
+* changed yarn on npm ([#1215](https://github.com/alfa-laboratory/arui-feather/issues/1215)) ([444be9e](https://github.com/alfa-laboratory/arui-feather/commit/444be9ef2490a55264a4af2cf99012e6df36bb52))
+
 <a name="18.2.1"></a>
 ## [18.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.0...v18.2.1) (2020-09-28)
 
@@ -2775,6 +2783,3 @@
 ### Features
 
 * move to open source ([2c7f060](https://github.com/alfa-laboratory/arui-feather/commit/2c7f060))
-
-
-

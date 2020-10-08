@@ -20,6 +20,8 @@ import formatDate from 'date-fns/format';
 import isSameMonth from 'date-fns/is_same_month';
 import setMonth from 'date-fns/set_month';
 import setYear from 'date-fns/set_year';
+import endOfMonth from 'date-fns/end_of_month';
+import eachDay from 'date-fns/each_day';
 import sortedIndexOf from 'lodash.sortedindexof';
 
 import keyboardCode from '../lib/keyboard-code';
@@ -363,13 +365,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 <div className={ this.cn('months') }>
                     {
                         this.props.months.map((month, index) => {
-                            const newMonth = setMonth(this.state.month, index);
-                            const off = !this.isValidDate(startOfMonth(newMonth));
+                            const monthStart = startOfMonth(setMonth(this.state.month, index));
+                            const monthEnd = endOfMonth(monthStart);
+                            const allMonthDays = eachDay(monthStart, monthEnd);
+                            const off = !allMonthDays.find((day) => this.isValidDate(day));
                             const selectedDate = new Date(this.state.month);
                             const isSameMonth = selectedDate
-                                && selectedDate.getMonth() === newMonth.getMonth();
+                                && selectedDate.getMonth() === monthStart.getMonth();
 
-                            const dataMonth = off ? null : newMonth.getTime();
+                            const dataMonth = off ? null : monthStart.getTime();
 
                             const mods = {
                                 type: off ? 'off' : null,

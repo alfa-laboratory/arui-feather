@@ -94,5 +94,9 @@
 
     &_width_available {
         width: 100%;
+
+        .input__input-wrapper {
+            width: 100%;
+        }
     }
 }

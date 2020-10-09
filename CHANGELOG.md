@@ -1,3 +1,10 @@
+## [18.2.3](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.2...v18.2.3) (2020-10-09)
+
+
+### Bug Fixes
+
+* money input width available ([1f03397](https://github.com/alfa-laboratory/arui-feather/commit/1f03397d79329d7ff0b088127427fdab720748c2))
+
 ## [18.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.1...v18.2.2) (2020-10-07)
 
 

@@ -1,3 +1,10 @@
+## [18.2.4](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.3...v18.2.4) (2020-10-12)
+
+
+### Bug Fixes
+
+* check all days in month pick ([1a87d90](https://github.com/alfa-laboratory/arui-feather/commit/1a87d906d358523bb157981a656c57f5de02dc68))
+
 ## [18.2.3](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.2...v18.2.3) (2020-10-09)
 
 

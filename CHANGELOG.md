@@ -1,3 +1,15 @@
+# [18.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.4...v18.3.0) (2020-10-15)
+
+
+### Bug Fixes
+
+* updated package-lock ([#1224](https://github.com/alfa-laboratory/arui-feather/issues/1224)) ([8332d45](https://github.com/alfa-laboratory/arui-feather/commit/8332d45e5765f4d6fe6947ddf5197de0afb20dfa))
+
+
+### Features
+
+* **icons:** update alfa-ui-primitives and build new icons ([#1223](https://github.com/alfa-laboratory/arui-feather/issues/1223)) ([1d80361](https://github.com/alfa-laboratory/arui-feather/commit/1d80361494bb15db4b4d23ce2af2ba8b6676a35d))
+
 ## [18.2.4](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.3...v18.2.4) (2020-10-12)
 
 

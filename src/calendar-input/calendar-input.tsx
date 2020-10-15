@@ -476,6 +476,10 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         this.setState({
             month,
         });
+
+        if (this.props.calendar && this.props.calendar.onMonthChange) {
+            this.props.calendar.onMonthChange();
+        }
     };
 
     private handleCalendarFocus = (event) => {

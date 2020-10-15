@@ -13,3 +13,7 @@
 .icon_size_l.icon_name_mastercard.icon_colored.icon_theme_alfa-on-color, .icon_size_l.icon_name_mastercard.icon_colored.icon_theme_alfa-on-white {
     background-image: url('./icon_mastercard_l_color.svg');
 }
+
+.icon_size_xxl.icon_name_mastercard.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_mastercard.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_mastercard_xxl_color.svg');
+}

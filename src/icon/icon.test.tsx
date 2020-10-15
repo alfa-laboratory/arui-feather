@@ -64,6 +64,7 @@ import IconPowerCard from './action/power-card';
 import IconPrinter from './action/printer';
 import IconRepeat from './action/repeat';
 import IconReply from './action/reply';
+import IconReturn from './action/return';
 import IconSearch from './action/search';
 import IconSelfemloyedReg from './action/selfemloyed-reg';
 import IconSentDone from './action/sent-done';
@@ -160,6 +161,8 @@ import IconBankOtp from './brand/bank-otp';
 import IconBankPsb from './brand/bank-psb';
 import IconBankQiwi from './brand/bank-qiwi';
 import IconBankRaiffeisen from './brand/bank-raiffeisen';
+import IconBankRosbank from './brand/bank-rosbank';
+import IconBankRshb from './brand/bank-rshb';
 import IconBankRussianStandard from './brand/bank-russian-standard';
 import IconBankSaintPetersburg from './brand/bank-saint-petersburg';
 import IconBankSber from './brand/bank-sber';
@@ -376,6 +379,8 @@ import IconCheckBold from './ui/check-bold';
 import IconCheckChat from './ui/check-chat';
 import IconCheckIndeterminate from './ui/check-indeterminate';
 import IconCheckboxDisabled from './ui/checkbox-disabled';
+import IconChevronForSelectDown from './ui/chevron-for-select-down';
+import IconChevronForSelectUp from './ui/chevron-for-select-up';
 import IconChevronRight from './ui/chevron-right';
 import IconClose from './ui/close';
 import IconCloseCircle from './ui/close-circle';
@@ -539,6 +544,7 @@ describe('icon', () => {
             { componentName: IconPrinter, name: 'printer' },
             { componentName: IconRepeat, name: 'repeat' },
             { componentName: IconReply, name: 'reply' },
+            { componentName: IconReturn, name: 'return' },
             { componentName: IconSearch, name: 'search' },
             { componentName: IconSelfemloyedReg, name: 'selfemloyed-reg' },
             { componentName: IconSentDone, name: 'sent-done' },
@@ -635,6 +641,8 @@ describe('icon', () => {
             { componentName: IconBankPsb, name: 'bank-psb' },
             { componentName: IconBankQiwi, name: 'bank-qiwi' },
             { componentName: IconBankRaiffeisen, name: 'bank-raiffeisen' },
+            { componentName: IconBankRosbank, name: 'bank-rosbank' },
+            { componentName: IconBankRshb, name: 'bank-rshb' },
             { componentName: IconBankRussianStandard, name: 'bank-russian-standard' },
             { componentName: IconBankSaintPetersburg, name: 'bank-saint-petersburg' },
             { componentName: IconBankSber, name: 'bank-sber' },
@@ -851,6 +859,8 @@ describe('icon', () => {
             { componentName: IconCheckChat, name: 'check-chat' },
             { componentName: IconCheckIndeterminate, name: 'check-indeterminate' },
             { componentName: IconCheckboxDisabled, name: 'checkbox-disabled' },
+            { componentName: IconChevronForSelectDown, name: 'chevron-for-select-down' },
+            { componentName: IconChevronForSelectUp, name: 'chevron-for-select-up' },
             { componentName: IconChevronRight, name: 'chevron-right' },
             { componentName: IconClose, name: 'close' },
             { componentName: IconCloseCircle, name: 'close-circle' },

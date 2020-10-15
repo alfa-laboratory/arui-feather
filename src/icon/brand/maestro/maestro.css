@@ -9,3 +9,11 @@
 .icon_size_s.icon_name_maestro.icon_colored.icon_theme_alfa-on-color, .icon_size_s.icon_name_maestro.icon_colored.icon_theme_alfa-on-white {
     background-image: url('./icon_maestro_s_color.svg');
 }
+
+.icon_size_l.icon_name_maestro.icon_colored.icon_theme_alfa-on-color, .icon_size_l.icon_name_maestro.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_maestro_l_color.svg');
+}
+
+.icon_size_xxl.icon_name_maestro.icon_colored.icon_theme_alfa-on-color, .icon_size_xxl.icon_name_maestro.icon_colored.icon_theme_alfa-on-white {
+    background-image: url('./icon_maestro_xxl_color.svg');
+}

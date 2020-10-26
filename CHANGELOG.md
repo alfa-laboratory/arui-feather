@@ -1,3 +1,10 @@
+# [18.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.3.0...v18.4.0) (2020-10-26)
+
+
+### Features
+
+* change 'npm i' on 'npm ci' ([#1227](https://github.com/alfa-laboratory/arui-feather/issues/1227)) ([2485928](https://github.com/alfa-laboratory/arui-feather/commit/248592843b6e845d744cbd73dfb3610ac6902520))
+
 # [18.3.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.2.4...v18.3.0) (2020-10-15)
 
 

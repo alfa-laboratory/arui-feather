@@ -27,7 +27,7 @@ jobs:
         run: |
           npm cache clean --force
           rm -rf ~/.npm node_modules
-          npm i
+          npm ci
 
       - name: Lint's checks
         if: ${{ matrix.test-scope == 'lint' }}

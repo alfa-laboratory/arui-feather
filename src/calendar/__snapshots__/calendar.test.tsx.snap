@@ -3,6 +3,7 @@
 exports[`calendar should render without problems 1`] = `
 <Calendar
   eventDays={Array []}
+  ignoreTimezone={false}
   isKeyboard={true}
   month={1529020800000}
   months={

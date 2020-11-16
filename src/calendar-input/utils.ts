@@ -1,7 +1,8 @@
-import getTime from 'date-fns/get_time';
-import startOfDay from 'date-fns/start_of_day';
+import getTime from 'date-fns/getTime';
+import startOfDay from 'date-fns/startOfDay';
 import formatDate from 'date-fns/format';
-import isDateValid from 'date-fns/is_valid';
+import isDateValid from 'date-fns/isValid';
+
 import { parse } from '../lib/date-utils';
 
 /**

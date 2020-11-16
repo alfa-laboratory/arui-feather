@@ -1,7 +1,7 @@
-import startOfDay from 'date-fns/start_of_day';
-import addDays from 'date-fns/add_days';
-import subtractDays from 'date-fns/sub_days';
-import getTime from 'date-fns/get_time';
+import startOfDay from 'date-fns/startOfDay';
+import addDays from 'date-fns/addDays';
+import subtractDays from 'date-fns/subDays';
+import getTime from 'date-fns/getTime';
 
 import Calendar from '../src/calendar';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';

@@ -6,11 +6,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import timezoneMock from 'timezone-mock';
 
-import addDays from 'date-fns/add_days';
-import startOfDay from 'date-fns/start_of_day';
-import subtractDays from 'date-fns/sub_days';
-import subtractMonth from 'date-fns/sub_months';
-import addMonth from 'date-fns/add_months';
+import addDays from 'date-fns/addDays';
+import startOfDay from 'date-fns/startOfDay';
+import subtractDays from 'date-fns/subDays';
+import subtractMonth from 'date-fns/subMonths';
+import addMonth from 'date-fns/addMonths';
 import formatDate from 'date-fns/format';
 
 import { Calendar } from './calendar';
@@ -20,7 +20,7 @@ import keyboardCode from '../lib/keyboard-code';
 // initialize this later, after we will register timezoneMock
 let INITIAL_DAY;
 let TODAY_DAY;
-const DATE_FORMAT = 'DD.MM.YYYY';
+const DATE_FORMAT = 'dd.MM.yyyy';
 
 describe('calendar', () => {
     beforeAll(() => {

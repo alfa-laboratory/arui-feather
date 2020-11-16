@@ -18,8 +18,10 @@ initialState = {
 ### Выбор даты из ограниченного интервала
 Календарь с заданными левой и правой границей. Позволяет выбрать дату из заданного диапазона. Например, дату встречи с банком для заключения кредитного договора.
 ```jsx
-const addDays = require('date-fns/add_days');
-const subtractDays = require('date-fns/sub_days');
+import {
+    addDays,
+    subDays as subtractDays, 
+} from 'date-fns';
 
 initialState = {
     date: Date.now(),
@@ -42,9 +44,11 @@ initialState = {
 ### Недоступные даты
 Случается, что некоторые даты нельзя выбрать. Например, выходные или праздники.
 ```jsx
-const getTime = require('date-fns/get_time');
-const addDays = require('date-fns/add_days');
-const startOfDay = require('date-fns/start_of_day');
+import {
+    getTime,
+    addDays,
+    startOfDay 
+} from 'date-fns';
 
 initialState = {
     date: Date.now()
@@ -70,9 +74,11 @@ const offDays = [
 ### Отметка о событии
 К календарю могут быть привязаны события или мероприятия: запланированные платежи, даты сдачи отчётности в налоговую и т.д.
 ```jsx
-const getTime = require('date-fns/get_time');
-const addDays = require('date-fns/add_days');
-const startOfDay = require('date-fns/start_of_day');
+import {
+    getTime,
+    addDays,
+    startOfDay 
+} from 'date-fns';
 
 initialState = {
     date: Date.now()

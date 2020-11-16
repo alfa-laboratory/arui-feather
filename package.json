@@ -86,7 +86,7 @@
     "bezier-easing": "2.1.0",
     "cn-decorator": "^2.1.0",
     "core-js": "2.5.5",
-    "date-fns": "1.29.0",
+    "date-fns": "^2.16.1",
     "deprecated-decorator": "0.1.6",
     "inputmask-core": "2.2.0",
     "libphonenumber-js": "1.0.24",

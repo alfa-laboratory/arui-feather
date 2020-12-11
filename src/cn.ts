@@ -26,6 +26,6 @@ const cnDecorator: (blockName: string) => ClassDecorator = (cn as any).create(['
  */
 export default cnDecorator;
 
-export type ThemeType = 'alfa-on-color' | 'alfa-on-white';
+export type ThemeType = 'alfa-on-color' | 'alfa-on-white' | 'alfa-light' | 'alfa-dark';
 
 export const { withTheme, ThemeProvider } = createTheme<ThemeType>('alfa-on-white');

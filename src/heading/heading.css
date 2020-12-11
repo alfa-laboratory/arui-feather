@@ -107,4 +107,12 @@
     &_theme_alfa-on-white {
         color: var(--color-content-alfa-on-white);
     }
+
+    &_theme_alfa-light {
+        color: var(--color-light-text-primary);
+    }
+
+    &_theme_alfa-dark {
+        color: var(--color-dark-text-primary);
+    }
 }

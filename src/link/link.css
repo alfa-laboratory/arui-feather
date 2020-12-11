@@ -150,9 +150,52 @@
         color: var(--color-dark-indigo-30);
     }
 }
+.lint_theme_alfa-light {
+    color: var(--color-light-text-primary);
+
+    .link__text {
+        border-color: var(--color-light-text-disabled);
+    }
+
+    &:hover,
+    &:focus {
+        color: var(--color-light-text-accent);
+
+        .link__text {
+            border-color: var(--color-light-text-accent);
+        }
+    }
+
+    &.link_disabled {
+        color: var(--color-light-text-disabled);
+    }
+}
+
+.link_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+
+    .link__text {
+        border-color: var(--color-dark-text-disabled);
+    }
+
+    &:hover,
+    &:focus {
+        color: var(--color-dark-text-accent);
+
+        .link__text {
+            border-color: var(--color-dark-text-accent);
+        }
+    }
+
+    &.link_disabled {
+        color: var(--color-dark-text-disabled);
+    }
+}
 
 .link_theme_alfa-on-color,
-.link_theme_alfa-on-white {
+.link_theme_alfa-on-white,
+.lint_theme_alfa-light,
+.link_theme_alfa-dark {
     &.link_disabled,
     &.link_checked {
         .link__text {

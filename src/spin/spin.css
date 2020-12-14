@@ -49,6 +49,21 @@
     }
 }
 
+.spin_theme_alfa-dark {
+    &.spin_size_s {
+        background-image: url("./images/c_s.png");
+    }
+    &.spin_size_m {
+        background-image: url("./images/c_m.png");
+    }
+    &.spin_size_l {
+        background-image: url("./images/c_l.png");
+    }
+    &.spin_size_xl {
+        background-image: url("./images/c_xl.png");
+    }
+}
+
 .spin_theme_alfa-on-white {
     &.spin_size_s {
         background-image: url("./images/w_s.png");

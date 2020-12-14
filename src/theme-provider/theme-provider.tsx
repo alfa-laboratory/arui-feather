@@ -4,7 +4,7 @@
 
 import React from 'react';
 import Type from 'prop-types';
-import { ThemeProvider as NewThemeProvider, ThemeType } from '../cn';
+import { ThemeProvider as NewThemeProvider, Theme } from '../cn';
 
 export type ThemeProviderProps = {
     /**
@@ -20,7 +20,7 @@ export type ThemeProviderProps = {
     /**
      * Тема компонента
      */
-    theme?: ThemeType;
+    theme?: Theme;
 };
 
 /**

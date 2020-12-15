@@ -371,6 +371,7 @@ describe('calendar', () => {
         ];
         const calendar = mount(
             <Calendar
+                value={startOfDay(new Date('2020-11-15')).valueOf()}
                 ignoreTimezone={ true }
                 eventDays={ eventDays }
             />
@@ -389,6 +390,7 @@ describe('calendar', () => {
         ];
         const calendar = mount(
             <Calendar
+                value={startOfDay(new Date('2020-11-15')).valueOf()}
                 ignoreTimezone={ true }
                 offDays={ offDays }
             />

@@ -23,6 +23,7 @@ import setYear from 'date-fns/set_year';
 import endOfMonth from 'date-fns/end_of_month';
 import eachDay from 'date-fns/each_day';
 import sortedIndexOf from 'lodash.sortedindexof';
+import sortedIndexBy from 'lodash.sortedindexby';
 
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -732,11 +733,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     private isOffDay(date: Date | number) {
         if (this.props.offDays && Array.isArray(this.props.offDays)) {
             if (this.props.ignoreTimezone) {
-                const dateWithoutTime = formatDate(date, WITHOUT_TIME_FORMAT);
-                
-                return this.props.offDays.findIndex(
-                    (offDay) => formatDate(offDay, WITHOUT_TIME_FORMAT) === dateWithoutTime
-                ) !== -1;
+                return Calendar.checkDaysIgnoringTimezone(this.props.offDays, date);
             }
             const timestamp = date.valueOf();
 
@@ -755,11 +752,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     private isEventDay(date: Date | number) {
         if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
             if (this.props.ignoreTimezone) {
-                const dateWithoutTime = formatDate(date, WITHOUT_TIME_FORMAT);
-
-                return this.props.eventDays.findIndex(
-                    (eventDay) => formatDate(eventDay, WITHOUT_TIME_FORMAT) === dateWithoutTime
-                ) !== -1;
+                return Calendar.checkDaysIgnoringTimezone(this.props.eventDays, date);
             }
             const timestamp = date.valueOf();
 
@@ -946,6 +939,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             this.selectedFrom = nextProps.selectedFrom
                 ? normalizeDate(nextProps.selectedFrom) : null;
         }
+    }
+
+    /**
+     * Проверяет наличие даты в списке дат с игнорированием таймзоны.
+     * 
+     * @param date Дата
+     * @param daysToСheck Список дат для проверки
+     */
+    private static checkDaysIgnoringTimezone(daysToCheck: readonly number[], date: Date | number) {
+        const dateWithoutTime = formatDate(date, WITHOUT_TIME_FORMAT);
+        /* Используем бинарный поиск */
+        const index = sortedIndexBy<string | number>(daysToCheck, dateWithoutTime, (day) => formatDate(day, WITHOUT_TIME_FORMAT));
+        return dateWithoutTime === formatDate(daysToCheck[index], WITHOUT_TIME_FORMAT);
     }
 }
 

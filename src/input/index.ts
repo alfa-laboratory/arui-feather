@@ -8,6 +8,8 @@ import '../masked-input';
 
 import './input_theme_alfa-on-color.css';
 import './input_theme_alfa-on-white.css';
+import './input_theme_alfa-dark.css';
+import './input_theme_alfa-light.css';
 import './input.css';
 
 export { default } from './input';

@@ -10,7 +10,6 @@
 @import "./vars/border.css";
 @import "./vars/shadow.css";
 @import "./vars/primitive-colors.css";
-/* @import "@alfalab/core-components/vars/colors-bluetint.css"; */
 
 :root {
     --content-width: 1092px;

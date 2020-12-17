@@ -150,7 +150,7 @@
         color: var(--color-dark-indigo-30);
     }
 }
-.lint_theme_alfa-light {
+.link_theme_alfa-light {
     color: var(--color-light-text-primary);
 
     .link__text {
@@ -194,7 +194,7 @@
 
 .link_theme_alfa-on-color,
 .link_theme_alfa-on-white,
-.lint_theme_alfa-light,
+.link_theme_alfa-light,
 .link_theme_alfa-dark {
     &.link_disabled,
     &.link_checked {

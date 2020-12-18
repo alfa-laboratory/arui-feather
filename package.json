@@ -82,6 +82,7 @@
   "dependencies": {
     "@babel/runtime-corejs2": "^7.7.6",
     "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/lodash.sortedindexby": "^4.6.6",
     "bem-react-classname": "1.2.1",
     "bezier-easing": "2.1.0",
     "cn-decorator": "^2.1.0",
@@ -91,6 +92,7 @@
     "inputmask-core": "2.2.0",
     "libphonenumber-js": "1.0.24",
     "lodash.debounce": "4.0.8",
+    "lodash.sortedindexby": "^4.6.0",
     "lodash.sortedindexof": "4.1.0",
     "matches-selector-polyfill": "1.0.0",
     "prop-types": "15.7.2",

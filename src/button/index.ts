@@ -5,6 +5,8 @@
 import './button.css';
 import './button_theme_alfa-on-color.css';
 import './button_theme_alfa-on-white.css';
+import './button_theme_alfa-dark.css';
+import './button_theme_alfa-light.css';
 
 export * from './button';
 export { default } from './button';

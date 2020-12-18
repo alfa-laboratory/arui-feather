@@ -102,7 +102,7 @@
   "peerDependencies": {
     "react": ">=16.12",
     "react-dom": ">=16.12",
-    "@alfalab/core-components-vars": "^2.1.0"
+    "@alfalab/core-components-vars": ">=2.1"
   },
   "devDependencies": {
     "@alfalab/core-components-vars": "^2.1.0",

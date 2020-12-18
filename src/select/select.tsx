@@ -5,7 +5,7 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 import { Button } from '../button/button';
 import IconButton from '../icon-button/icon-button';
@@ -233,7 +233,7 @@ export type SelectProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Обработчик фокуса на компоненте

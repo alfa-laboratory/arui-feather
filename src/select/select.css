@@ -233,7 +233,7 @@
     &.select_has-placeholder,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-s)) translateY(-22px);
+            transform: scale(var(--top-scale-s)) translateY(-32px);
             width: calc((2 - var(--top-scale-s)) * 100) %;
             padding-right: 0;
         }
@@ -254,7 +254,7 @@
     &.select_has-placeholder,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-m)) translateY(-30px);
+            transform: scale(var(--top-scale-m)) translateY(-40px);
             width: calc((2 - var(--top-scale-m)) * 100) %;
             padding-right: 0;
         }
@@ -275,7 +275,7 @@
     &.select_has-placeholder,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-l)) translateY(-40px);
+            transform: scale(var(--top-scale-l)) translateY(-50px);
             width: calc((2 - var(--top-scale-l)) * 100) %;
             padding-right: 0;
         }
@@ -296,7 +296,7 @@
     &.select_has-placeholder,
     &.select_has-value {
         .select__top {
-            transform: scale(var(--top-scale-xl)) translateY(-50px);
+            transform: scale(var(--top-scale-xl)) translateY(-60px);
             width: calc((2 - var(--top-scale-xl)) * 100) %;
             padding-right: 0;
         }

@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 import { FormatCharacters } from '../masked-input/mask';
 import IconClose from '../icon/ui/close';
@@ -171,7 +171,7 @@ export type InputProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

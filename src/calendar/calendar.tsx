@@ -23,6 +23,7 @@ import setYear from 'date-fns/set_year';
 import endOfMonth from 'date-fns/end_of_month';
 import eachDay from 'date-fns/each_day';
 import sortedIndexOf from 'lodash.sortedindexof';
+import sortedIndexBy from 'lodash.sortedindexby';
 
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
@@ -36,6 +37,7 @@ const EARLY_YEARS_LIMIT = 100;
 const LATER_YEARS_LIMIT = 1;
 const TOTAL_WEEK_NUMBER = 6;
 const SUNDAY_INDEX = 6;
+const WITHOUT_TIME_FORMAT = 'YYYY-MM-DD';
 
 export type CalendarProps = {
 
@@ -120,6 +122,12 @@ export type CalendarProps = {
     isKeyboard?: boolean;
 
     /**
+     * Игнорировать различие часовых поясов клиента и сервера. Для корректного отображения offDays и eventDays
+     * в том случае, если часовой пояс клиента отличается от часового пояса дат в offDays и eventDays
+     */
+    ignoreTimezone?: boolean;
+
+    /**
      * Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя
      */
     width?: 'default' | 'available';
@@ -190,6 +198,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         showToday: false,
         showArrows: true,
         isKeyboard: true,
+        ignoreTimezone: false,
     };
 
     state: CalendarState = {
@@ -723,6 +732,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      */
     private isOffDay(date: Date | number) {
         if (this.props.offDays && Array.isArray(this.props.offDays)) {
+            if (this.props.ignoreTimezone) {
+                return Calendar.checkDaysIgnoringTimezone(this.props.offDays, date);
+            }
             const timestamp = date.valueOf();
 
             // Поскольку offDays - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
@@ -733,15 +745,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 
     /**
-     * Возвращает `true`, если переданная дата является днм с событиями.
+     * Возвращает `true`, если переданная дата является днем с событиями.
      *
      * @param date Дата для проверки
      */
     private isEventDay(date: Date | number) {
         if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
+            if (this.props.ignoreTimezone) {
+                return Calendar.checkDaysIgnoringTimezone(this.props.eventDays, date);
+            }
             const timestamp = date.valueOf();
 
-            // Поскольку events - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
+            // Поскольку eventDays - отсортирован, используем бинарный поиск, O(log n) против O(n) для обычного поиска
             return sortedIndexOf(this.props.eventDays, timestamp) !== -1;
         }
 
@@ -924,6 +939,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             this.selectedFrom = nextProps.selectedFrom
                 ? normalizeDate(nextProps.selectedFrom) : null;
         }
+    }
+
+    /**
+     * Проверяет наличие даты в списке дат с игнорированием таймзоны.
+     * 
+     * @param date Дата
+     * @param daysToСheck Список дат для проверки
+     */
+    private static checkDaysIgnoringTimezone(daysToCheck: readonly number[], date: Date | number) {
+        const dateWithoutTime = formatDate(date, WITHOUT_TIME_FORMAT);
+        /* Используем бинарный поиск */
+        const index = sortedIndexBy<string | number>(daysToCheck, dateWithoutTime, (day) => formatDate(day, WITHOUT_TIME_FORMAT));
+        return dateWithoutTime === formatDate(daysToCheck[index], WITHOUT_TIME_FORMAT);
     }
 }
 

@@ -362,4 +362,42 @@ describe('calendar', () => {
 
         expect(days.length).toBe(42);
     });
+
+    it('should render eventDays for different timezone with enabled ignoreTimezone', () => {
+        const eventDays = [
+            1604696400000,
+            1604782800000,
+            1605042000000,
+        ];
+        const calendar = mount(
+            <Calendar
+                value={startOfDay(new Date('2020-11-15')).valueOf()}
+                ignoreTimezone={ true }
+                eventDays={ eventDays }
+            />
+        );
+
+        const days = calendar.find('.calendar__event');
+
+        expect(days.length).toBe(3);
+    });
+
+    it('should render offDays for different timezone with enabled ignoreTimezone', () => {
+        const offDays = [
+            1605387600000,
+            1605992400000,
+            1606597200000,
+        ];
+        const calendar = mount(
+            <Calendar
+                value={startOfDay(new Date('2020-11-15')).valueOf()}
+                ignoreTimezone={ true }
+                offDays={ offDays }
+            />
+        );
+
+        const days = calendar.find('.calendar__day_type_weekend-off');
+
+        expect(days.length).toBe(3);
+    });
 });

@@ -1,3 +1,11 @@
+## [18.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v18.4.0...v18.4.1) (2020-12-21)
+
+
+### Bug Fixes
+
+* **calendar:** show offDays and eventDays for different timezones ([#1233](https://github.com/alfa-laboratory/arui-feather/issues/1233)) ([128d9f4](https://github.com/alfa-laboratory/arui-feather/commit/128d9f4210e725e1a14caf40a3de9f3a018fc904))
+* **npm-publish:** add getting same node version as in tests action ([#1246](https://github.com/alfa-laboratory/arui-feather/issues/1246)) ([990bd74](https://github.com/alfa-laboratory/arui-feather/commit/990bd748dd3f925fa3dec5eb250558547e5e301a))
+
 # [18.4.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.3.0...v18.4.0) (2020-10-26)
 
 

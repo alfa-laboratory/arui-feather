@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
+      - name: Get nodejs version for install dependencies
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.14.1
+
       - name: Create new version
         run: npm ci && npm run compile && npm run semantic-release
         env:

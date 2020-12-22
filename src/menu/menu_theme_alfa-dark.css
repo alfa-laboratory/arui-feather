@@ -1,0 +1,50 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.menu_theme_alfa-dark {
+    .menu-item {
+        color: var(--color-dark-text-primary);
+    }
+
+    .menu-item_hovered:not(.menu-item_disabled) {
+        background-color: var(--color-dark-bg-primary);
+
+        &.menu-item_type_link,
+        &.menu-item_type_dropdown {
+            background-color: transparent;
+        }
+    }
+
+    .menu-item_disabled {
+        color: var(--color-dark-text-secondary);
+
+        .icon {
+            opacity: var(--opacity-disabled);
+        }
+    }
+
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
+        .menu-item_checked:before {
+            background-color: var(--color-dark-text-primary);
+        }
+    }
+
+    &.menu_mode_check,
+    &.menu_mode_radio,
+    &.menu_mode_radio-check {
+        .menu-item_disabled {
+            &.menu-item_checked:before {
+                opacity: var(--opacity-disabled);
+            }
+        }
+    }
+
+    .menu__group-title {
+        color: var(--color-dark-text-secondary-transparent);
+    }
+}

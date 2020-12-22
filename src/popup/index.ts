@@ -7,6 +7,8 @@ import '../resize-sensor';
 import './popup.css';
 import './popup_theme_alfa-on-white.css';
 import './popup_theme_alfa-on-color.css';
+import './popup_theme_alfa-dark.css';
+import './popup_theme_alfa-light.css';
 
 export * from './popup';
 export { default } from './popup';

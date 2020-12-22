@@ -3,20 +3,21 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 :root {
-    --popup-gradient: color(var(--color-background-alfa-on-color) a(0)) 0%,
-        color(var(--color-background-alfa-on-color) a(0.4)) 40%,
-        color(var(--color-background-alfa-on-color) a(0.9)) 75%,
-        color(var(--color-background-alfa-on-color) a(1)) 100%;
+    --popup-gradient: color(var(--color-dark-bg-primary) a(0)) 0%,
+        color(var(--color-dark-bg-primary) a(0.4)) 40%,
+        color(var(--color-dark-bg-primary) a(0.9)) 75%,
+        color(var(--color-dark-bg-primary) a(1)) 100%;
 }
 
-.popup_theme_alfa-on-color {
-    color: var(--color-content-alfa-on-color);
-    box-shadow: var(--shadow-light);
+.popup_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+    box-shadow: var(--shadow-dark);
 
     .popup__container {
-        background-color: var(--color-background-alfa-on-color);
+        background-color: var(--color-dark-specialbg-primary-grouped);
     }
 
     &.popup_height_adaptive .popup__gradient,
@@ -31,6 +32,6 @@
     }
 
     &.popup_type_tooltip:before {
-        border-color: var(--color-background-alfa-on-color);
+        border-color: var(--color-dark-graphic-tertiary);
     }
 }

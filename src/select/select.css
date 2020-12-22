@@ -177,6 +177,10 @@
         height: 100%;
     }
 
+    &__toggle-icon {
+        display: flex;
+    }
+
     &_disabled &__tick {
         opacity: var(--opacity-disabled);
     }

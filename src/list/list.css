@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .list {
     margin: 0 0 var(--gap-m);
@@ -53,4 +54,12 @@
 
 .list_theme_alfa-on-white {
     color: var(--color-content-alfa-on-white);
+}
+
+.list_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+}
+
+.list_theme_alfa-light {
+    color: var(--color-light-text-primary);
 }

@@ -6,9 +6,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { TickMIcon, TickSIcon } from '@alfalab/icons-classic';
+import { withTheme, Theme } from '../cn';
 
-import IconCheck from '../icon/ui/tick';
 import MenuItem, { MenuItemProps } from '../menu-item/menu-item';
 
 import { isNodeOutsideElement } from '../lib/window';
@@ -121,7 +121,7 @@ export type MenuProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс
@@ -332,11 +332,11 @@ export class Menu extends React.Component<MenuProps> {
         const highlightedItem = this.props.highlightedItem === undefined
             ? this.state.highlightedItem
             : this.props.highlightedItem;
-        let iconSize;
+        let IconTick;
 
         switch (this.props.size) {
-        case 's': case 'm': iconSize = 's'; break;
-        case 'l': case 'xl': iconSize = 'm'; break;
+        case 's': case 'm': IconTick = TickSIcon; break;
+        case 'l': case 'xl': IconTick = TickMIcon; break;
         }
 
         this.menuItemList.push(menuItem);
@@ -357,9 +357,9 @@ export class Menu extends React.Component<MenuProps> {
                 {
                     this.props.mode === 'check' && isItemChecked
                     && (
-                        <IconCheck
-                            size={ iconSize }
-                        />
+                        <div className="icon">
+                            <IconTick />
+                        </div>
                     )
                 }
                 { item.content }

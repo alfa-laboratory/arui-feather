@@ -1,0 +1,88 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.select_theme_alfa-dark {
+    background-color: var(--color-dark-specialbg-primary-grouped);
+
+    .select__top,
+    .select__sub,
+    .select__placeholder {
+        color: var(--color-dark-text-secondary-transparent);
+    }
+
+    .select-button {
+        color: var(--color-dark-text-primary);
+        border-bottom-color: var(--color-dark-graphic-tertiary);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        padding-left: var(--gap-s);
+
+        &_hovered {
+            border-bottom-color: var(--color-dark-graphic-primary);
+        }
+
+        &:focus,
+        &_focused {
+            border-bottom-color: var(--color-dark-graphic-primary);
+            box-shadow: inset 0 -1px 0 var(--color-dark-graphic-primary);
+
+            &.select-button_hovered {
+                border-bottom-color: var(--color-dark-graphic-primary);
+                box-shadow: inset 0 -1px 0 var(--color-dark-graphic-primary);
+            }
+        }
+
+        &_pressed {
+            border-bottom-color: var(--color-dark-graphic-primary);
+        }
+
+        &_disabled {
+            color: var(--color-dark-text-secondary);
+            border-bottom-color: var(--color-dark-bg-secondary-inverted);
+            border-bottom-style: var(--border-style-control-disabled);
+        }
+    }
+
+    &.select_opened {
+        .select-button {
+            border-bottom-color: var(--color-dark-graphic-primary);
+            box-shadow: inset 0 -1px 0 var(--color-dark-graphic-primary);
+        }
+    }
+
+    &.select_invalid {
+        .select__sub {
+            color: var(--color-dark-text-negative);
+        }
+
+        .select-button {
+            border-bottom-color: var(--color-dark-graphic-negative);
+
+            &_hovered {
+                border-bottom-color: var(--color-dark-graphic-negative);
+            }
+
+            &:focus,
+            &_focused {
+                border-bottom-color: var(--color-dark-graphic-negative);
+                box-shadow: inset 0 -1px 0 var(--color-dark-graphic-negative);
+
+                &.select-button_hovered {
+                    border-bottom-color: var(--color-dark-graphic-negative);
+                    box-shadow: inset 0 -1px 0 var(--color-dark-graphic-negative);
+                }
+            }
+        }
+
+        &.select_opened {
+            .select-button {
+                border-bottom-color: var(--color-dark-graphic-negative);
+                box-shadow: inset 0 -1px 0 var(--color-dark-graphic-negative);
+            }
+        }
+    }
+}

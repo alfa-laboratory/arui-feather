@@ -6,12 +6,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import {
+    CloseSIcon, ErrorMColorIcon, FailMIcon,
+} from '@alfalab/icons-classic';
+import { CheckmarkCircleMColorIcon } from '@alfalab/icons-glyph';
+import { withTheme, Theme } from '../cn';
 
-import IconClose from '../icon/ui/close';
-import IconError from '../icon/ui/error';
-import IconFail from '../icon/ui/fail';
-import IconOk from '../icon/ui/ok';
 import IconButton from '../icon-button/icon-button';
 import Swipeable from '../swipeable';
 
@@ -51,7 +51,7 @@ export type NotificationProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс
@@ -123,7 +123,7 @@ export type NotificationProps = {
  * Компонент всплывающего окна.
  */
 export class Notification extends React.PureComponent<NotificationProps> {
-    protected cn = createCn('notification')
+    protected cn = createCn('notification');
 
     static defaultProps: Partial<NotificationProps> = {
         autoCloseDelay: 5000,
@@ -169,13 +169,14 @@ export class Notification extends React.PureComponent<NotificationProps> {
     }
 
     render() {
+        const { theme, status } = this.props;
         let ToggledIcon;
 
-        switch (this.props.status) {
-        case 'error': ToggledIcon = IconError; break;
-        case 'fail': ToggledIcon = IconFail; break;
-        case 'ok': ToggledIcon = IconOk; break;
-        default: ToggledIcon = IconOk; break;
+        switch (status) {
+        case 'error': ToggledIcon = ErrorMColorIcon; break;
+        case 'fail': ToggledIcon = FailMIcon; break;
+        case 'ok': ToggledIcon = CheckmarkCircleMColorIcon; break;
+        default: ToggledIcon = CheckmarkCircleMColorIcon; break;
         }
 
         return (
@@ -186,7 +187,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
                     } }
                     className={ this.cn({
                         visible: this.props.visible,
-                        status: this.props.status,
+                        status,
                         hovered: this.state.hovered,
                         'has-closer': this.props.hasCloser,
                         'stick-to': this.props.stickTo,
@@ -199,15 +200,11 @@ export class Notification extends React.PureComponent<NotificationProps> {
                     onKeyDown={ this.handleKeyDown }
                     data-test-id={ this.props['data-test-id'] }
                 >
-                    <div className={ this.cn('icon') }>
+                    <div className={ this.cn('icon', { theme: status === 'fail' && theme }) }>
                         {
                             this.props.icon
                             || (
-                                <ToggledIcon
-                                    colored={ this.props.status === 'ok' || this.props.status === 'error' }
-                                    theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
-                                    size="m"
-                                />
+                                <ToggledIcon />
                             )
                         }
                     </div>
@@ -227,14 +224,11 @@ export class Notification extends React.PureComponent<NotificationProps> {
                         this.props.hasCloser
                         && (
                             <IconButton
-                                className={ this.cn('closer') }
+                                className={ this.cn('closer', { theme }) }
                                 size="m"
                                 onClick={ this.handleCloserClick }
                             >
-                                <IconClose
-                                    size="s"
-                                    theme={ this.props.theme === 'alfa-on-color' ? 'alfa-on-white' : 'alfa-on-color' }
-                                />
+                                <CloseSIcon />
                             </IconButton>
                         )
                     }

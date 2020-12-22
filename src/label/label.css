@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .label {
     font-family: var(--font);
@@ -74,5 +75,21 @@
 
     &.label_disabled {
         color: var(--color-content-disabled-alfa-on-white);
+    }
+}
+
+.label_theme_alfa-light {
+    color: var(--color-light-text-primary);
+
+    &.label_disabled {
+        color: var(--color-light-text-disabled);
+    }
+}
+
+.label_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+
+    &.label_disabled {
+        color: var(--color-dark-text-disabled);
     }
 }

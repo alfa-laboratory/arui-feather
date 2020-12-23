@@ -130,7 +130,7 @@
     "@typescript-eslint/parser": "^2.28.0",
     "acorn": "^6.1.1",
     "alfa-ui-primitives": "2.80.0",
-    "arui-demo": "3.0.0",
+    "arui-demo": "3.3.1-feather.0",
     "arui-presets": "^5.1.0",
     "arui-presets-lint": "^4.1.2",
     "babel-plugin-dynamic-import-node": "^2.0.0",

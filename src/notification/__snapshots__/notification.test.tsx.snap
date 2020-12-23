@@ -20,11 +20,7 @@ exports[`notification should render without problems 1`] = `
     <div
       className="notification__icon"
     >
-      <ForwardRef(ThemedComponent(IconOk))
-        colored={false}
-        size="m"
-        theme="alfa-on-color"
-      />
+      <r />
     </div>
     <div
       className="notification__content"
@@ -36,10 +32,7 @@ exports[`notification should render without problems 1`] = `
       onClick={[Function]}
       size="m"
     >
-      <ForwardRef(ThemedComponent(IconClose))
-        size="s"
-        theme="alfa-on-color"
-      />
+      <l />
     </ForwardRef(ThemedComponent(IconButton))>
   </div>
 </Swipeable>

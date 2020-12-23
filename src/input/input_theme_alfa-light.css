@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
-@import "~@alfalab/core-components-vars/colors-bluetint.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .input_theme_alfa-light {
     .input__box {

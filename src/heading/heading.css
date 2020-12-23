@@ -1,4 +1,5 @@
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .heading {
     margin: 0;

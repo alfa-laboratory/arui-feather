@@ -97,3 +97,19 @@
         }
     }
 }
+
+.label_theme_alfa-light {
+    color: var(--color-light-text-primary);
+
+    &.label_disabled {
+        color: var(--color-light-text-disabled);
+    }
+}
+
+.label_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+
+    &.label_disabled {
+        color: var(--color-dark-text-disabled);
+    }
+}

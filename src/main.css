@@ -2,9 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import './font/font_roboto-rouble.css';
-@import './vars.css';
-@import './grid.css';
+@import "./font/font_roboto-rouble.css";
+@import "./vars.css";
+@import "./grid.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 *,
 *:before,
@@ -12,7 +13,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -28,6 +30,10 @@ body {
     font-weight: var(--font-weight-normal);
     letter-spacing: 0;
     background-color: var(--color-background-alfa-on-white);
+
+    & .alfa-dark {
+        background-color: var(--color-dark-bg-primary);
+    }
 }
 
 #react-app {

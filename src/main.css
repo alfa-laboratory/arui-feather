@@ -31,7 +31,8 @@ body {
     letter-spacing: 0;
     background-color: var(--color-background-alfa-on-white);
 
-    & .alfa-dark {
+    &,
+    .alfa-dark {
         background-color: var(--color-dark-bg-primary);
     }
 }

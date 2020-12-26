@@ -181,10 +181,10 @@
 
     &:hover,
     &:focus {
-        color: var(--color-dark-text-accent);
+        color: var(--color-dark-text-link);
 
         .link__text {
-            border-color: var(--color-dark-text-accent);
+            border-color: var(--color-dark-text-link);
         }
     }
 

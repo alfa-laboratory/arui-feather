@@ -80,8 +80,8 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
-    "@alfalab/icons-classic": "^1.36.0",
-    "@alfalab/icons-glyph": "^1.77.0",
+    "@alfalab/icons-classic": "^1.40.0",
+    "@alfalab/icons-glyph": "^1.81.0",
     "@babel/runtime-corejs2": "^7.7.6",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/lodash.sortedindexby": "^4.6.6",

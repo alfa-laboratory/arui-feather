@@ -6,9 +6,10 @@ exports[`icon-button renders without problems 1`] = `
   size="m"
   tag="button"
   type="button"
+  view="default"
 >
   <button
-    className="icon-button icon-button_size_m"
+    className="icon-button icon-button_view_default icon-button_size_m"
     formNoValidate={false}
     onBlur={[Function]}
     onClick={[Function]}

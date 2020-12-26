@@ -31,6 +31,7 @@ export type ButtonProps = {
 
     /**
      * Тип кнопки
+     * @default 'default'
      */
     view?: 'default' | 'action' | 'extra' | 'rounded';
 
@@ -193,6 +194,7 @@ export class Button extends React.PureComponent<ButtonProps, ButtonState> {
         tag: 'button',
         size: 'm',
         formNoValidate: false,
+        view: 'default',
     };
 
     static getDerivedStateFromProps(nextProps: ButtonProps): Partial<ButtonState> | null {

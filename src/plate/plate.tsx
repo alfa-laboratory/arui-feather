@@ -6,11 +6,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { CloseMIcon, ArrowUpMIcon, ArrowDownMIcon } from '@alfalab/icons-classic';
 import { withTheme, Theme } from '../cn';
 
-import IconClose from '../icon/ui/close';
-import IconArrowUp from '../icon/ui/arrow-up';
-import IconArrowDown from '../icon/ui/arrow-down';
 import IconButton from '../icon-button/icon-button';
 
 export type PlateProps = {
@@ -170,8 +168,8 @@ export class Plate extends React.PureComponent<PlateProps> {
                                 >
                                     {
                                         this.state.isFolded
-                                            ? <IconArrowDown />
-                                            : <IconArrowUp />
+                                            ? <ArrowDownMIcon />
+                                            : <ArrowUpMIcon />
                                     }
                                 </IconButton>
                             )
@@ -193,7 +191,7 @@ export class Plate extends React.PureComponent<PlateProps> {
                                 className={ this.cn('closer') }
                                 onClick={ this.handleCloserClick }
                             >
-                                <IconClose />
+                                <CloseMIcon />
                             </IconButton>
                         ))
                     }

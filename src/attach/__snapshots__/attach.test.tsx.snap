@@ -76,9 +76,10 @@ exports[`attach should render without problems 1`] = `
         tag="span"
         theme="alfa-on-white"
         type="button"
+        view="default"
       >
         <span
-          className="button attach__button button_size_m button_theme_alfa-on-white"
+          className="button attach__button button_view_default button_size_m button_theme_alfa-on-white"
           disabled={false}
           formNoValidate={null}
           onBlur={[Function]}

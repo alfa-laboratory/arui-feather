@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .tag-button {
     display: inline-block;
@@ -140,6 +141,74 @@
         background: transparent;
         border-color: var(--color-border-control-disabled-alfa-on-white);
         border-style: var(--border-style-control-disabled);
+        border-width: 1px;
+    }
+}
+
+.tag-button_theme_alfa-light {
+    color: var(--color-light-text-primary);
+    background: color(var(--color-light-bg-secondary));
+
+    &.tag-button_hovered {
+        background: color(var(--color-light-bg-tertiary));
+    }
+
+    &.tag-button_focused {
+        background: color(var(--color-light-bg-tertiary));
+
+        &.tag-button_checked {
+            background: color(var(--color-light-bg-primary-inverted));
+        }
+    }
+
+    &.tag-button_pressed {
+        background: color(var(--color-light-bg-tertiary));
+    }
+
+    &.tag-button_checked {
+        color: var(--color-light-text-primary-inverted);
+        background: color(var(--color-light-bg-secondary-inverted));
+    }
+
+    &.tag-button_disabled {
+        color: var(--color-light-text-disabled);
+        background: transparent;
+        border-color: var(--color-light-border-primary);
+        border-style: dashed;
+        border-width: 1px;
+    }
+}
+
+.tag-button_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+    background: color(var(--color-dark-bg-secondary));
+
+    &.tag-button_hovered {
+        background: color(var(--color-dark-bg-tertiary));
+    }
+
+    &.tag-button_focused {
+        background: color(var(--color-dark-bg-tertiary));
+
+        &.tag-button_checked {
+            background: color(var(--color-dark-bg-primary-inverted));
+        }
+    }
+
+    &.tag-button_pressed {
+        background: color(var(--color-dark-bg-tertiary));
+    }
+
+    &.tag-button_checked {
+        color: var(--color-dark-text-primary-inverted);
+        background: color(var(--color-dark-bg-secondary-inverted));
+    }
+
+    &.tag-button_disabled {
+        color: var(--color-dark-text-disabled);
+        background: transparent;
+        border-color: var(--color-dark-border-primary);
+        border-style: dashed;
         border-width: 1px;
     }
 }

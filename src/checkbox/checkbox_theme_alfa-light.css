@@ -1,0 +1,72 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+ @import "../vars.css";
+ @import "@alfalab/core-components-vars/colors-bluetint.css";
+
+ .checkbox_theme_alfa-light {
+     color: var(--color-light-text-primary);
+ 
+     .checkbox__box {
+         background: var(--color-light-bg-secondary);
+         border: 1px solid var(--color-light-border-tertiary-inverted);
+     }
+ 
+     &.checkbox_checked {
+         .checkbox__box {
+             background: var(--color-light-bg-secondary-inverted);
+             border-color: var(--color-light-border-secondary-inverted);
+         }
+ 
+         &.checkbox_hovered .checkbox__box,
+         &.checkbox_focused .checkbox__box {
+             background: var(--color-light-bg-primary-inverted);
+         }
+     }
+ 
+     &.checkbox_focused {
+         .checkbox__box {
+             background: var(--color-light-bg-tertiary);
+ 
+             &:after {
+                 border-color: var(--color-light-border-tertiary-inverted);
+             }
+         }
+     }
+ 
+     &.checkbox_hovered {
+         .checkbox__box {
+             background: var(--color-light-bg-tertiary);
+         }
+     }
+ 
+     &.checkbox_disabled {
+         color: var(--color-light-text-disabled);
+ 
+         .checkbox__box {
+             background: var(--color-light-bg-tertiary);
+             border-color: transparent;
+         }
+     }
+ 
+     &.checkbox:active {
+         .checkbox__box {
+             background: var(--color-light-bg-tertiary);
+         }
+ 
+         &.checkbox_checked {
+             .checkbox__box,
+             &.checkbox_hovered .checkbox__box,
+             &.checkbox_focused .checkbox__box {
+                 background: var(--color-light-bg-secondary-inverted);
+             }
+         }
+ 
+         &.checkbox_disabled {
+             .checkbox__box {
+                 background: var(--color-light-bg-tertiary);
+             }
+         }
+     }
+ }

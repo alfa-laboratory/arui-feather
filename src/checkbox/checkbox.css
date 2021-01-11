@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 :root {
     --size-m-box: 16px;
@@ -64,6 +65,16 @@
         transform: translate(-50%, calc(-50% - 2px));
         transition: all 0.1s 0s ease-out;
         opacity: 0;
+
+        &_theme_alfa-light,
+        &_theme_alfa-on-white {
+            color: var(--color-static-graphic-light);
+        }
+
+        &_theme_alfa-dark,
+        &_theme_alfa-on-color {
+            color: var(--color-static-graphic-dark);
+        }
     }
 
     &_size_m {

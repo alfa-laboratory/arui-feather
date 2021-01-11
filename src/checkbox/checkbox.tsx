@@ -189,7 +189,14 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 
     renderNormalCheckbox(checked) {
-        const { theme = 'alfa-on-color' } = this.props;
+        const { theme = 'alfa-on-color', size } = this.props;
+        let TickIcon = TickXsIcon;
+        let CheckIndeterminateIcon = CheckIndeterminateSIcon;
+        if (size === 'l') {
+            TickIcon = TickSIcon;
+            CheckIndeterminateIcon = CheckIndeterminateMIcon;
+        }
+
         return [
             <span className={ this.cn('box') } key="box">
                 <input
@@ -204,30 +211,20 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                     onClick={ this.handleInputControlClick }
                     onChange={ this.handleChange }
                 />
-                { !this.props.indeterminate
-                    && (this.props.size === 'l' ? (
-                        <TickSIcon className={ this.cn('icon', { theme }) } />
-                    ) : (
-                        <TickXsIcon className={ this.cn('icon', { theme }) } />
-                    )) }
+                { !this.props.indeterminate && (
+                    <TickIcon className={ this.cn('icon', { theme }) } />
+                ) }
                 { !checked
-                    && this.props.indeterminate
-                    && (this.props.size === 'l' ? (
-                        <CheckIndeterminateMIcon
-                            className={ this.cn('icon', { theme }) }
-                        />
-                    ) : (
-                        <CheckIndeterminateSIcon
-                            className={ this.cn('icon', { theme }) }
-                        />
-                    )) }
+                    && this.props.indeterminate && (
+                    <CheckIndeterminateIcon
+                        className={ this.cn('icon', { theme }) }
+                    />
+                ) }
                 { checked
                     && this.props.indeterminate
-                    && (this.props.size === 'l' ? (
-                        <TickSIcon className={ this.cn('icon', { theme }) } />
-                    ) : (
-                        <TickXsIcon className={ this.cn('icon', { theme }) } />
-                    )) }
+                    && (
+                        <TickIcon className={ this.cn('icon', { theme }) } />
+                    ) }
             </span>,
             this.props.text && (
                 <span

@@ -147,27 +147,27 @@
 
 .tag-button_theme_alfa-light {
     color: var(--color-light-text-primary);
-    background: color(var(--color-light-bg-secondary));
+    background: var(--color-light-bg-secondary);
 
     &.tag-button_hovered {
-        background: color(var(--color-light-bg-tertiary));
+        background: var(--color-light-bg-tertiary);
     }
 
     &.tag-button_focused {
-        background: color(var(--color-light-bg-tertiary));
+        background: var(--color-light-bg-tertiary);
 
         &.tag-button_checked {
-            background: color(var(--color-light-bg-primary-inverted));
+            background: var(--color-light-bg-primary-inverted);
         }
     }
 
     &.tag-button_pressed {
-        background: color(var(--color-light-bg-tertiary));
+        background: var(--color-light-bg-tertiary));
     }
 
     &.tag-button_checked {
         color: var(--color-light-text-primary-inverted);
-        background: color(var(--color-light-bg-secondary-inverted));
+        background: var(--color-light-bg-secondary-inverted);
     }
 
     &.tag-button_disabled {
@@ -181,27 +181,27 @@
 
 .tag-button_theme_alfa-dark {
     color: var(--color-dark-text-primary);
-    background: color(var(--color-dark-bg-secondary));
+    background: var(--color-dark-bg-secondary);
 
     &.tag-button_hovered {
-        background: color(var(--color-dark-bg-tertiary));
+        background: var(--color-dark-bg-tertiary);
     }
 
     &.tag-button_focused {
-        background: color(var(--color-dark-bg-tertiary));
+        background: var(--color-dark-bg-tertiary);
 
         &.tag-button_checked {
-            background: color(var(--color-dark-bg-primary-inverted));
+            background: var(--color-dark-bg-primary-inverted);
         }
     }
 
     &.tag-button_pressed {
-        background: color(var(--color-dark-bg-tertiary));
+        background: var(--color-dark-bg-tertiary);
     }
 
     &.tag-button_checked {
         color: var(--color-dark-text-primary-inverted);
-        background: color(var(--color-dark-bg-secondary-inverted));
+        background: var(--color-dark-bg-secondary-inverted);
     }
 
     &.tag-button_disabled {

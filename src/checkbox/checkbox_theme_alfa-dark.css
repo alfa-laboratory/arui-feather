@@ -26,7 +26,7 @@
  
      &.checkbox_focused {
          .checkbox__box {
-             border-color: var(--color-dark-bg-tertiary);
+             border-color: var(--color-dark-border-tertiary-inverted);
  
              &:after {
                  border-color: var(--color-dark-border-tertiary-inverted);

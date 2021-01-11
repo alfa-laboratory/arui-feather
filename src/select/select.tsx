@@ -505,10 +505,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
             >
                 { this.renderButtonContent() }
                 { !this.props.hideTick && (
-                    <IconButton className={ this.cn('tick') } key="addon-icon" size={ this.props.size } tag="span">
-                        <div className={ this.cn('toggle-icon') }>
-                            <CurrentArrow />
-                        </div>
+                    <IconButton className={ this.cn('tick') } key="addon-icon" tag="span">
+                        <CurrentArrow />
                     </IconButton>
                 ) }
 

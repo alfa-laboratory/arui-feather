@@ -170,42 +170,6 @@
     &_overflow {
         overflow-y: scroll;
     }
-
-    &.popup_type_tooltip {
-        &.popup_direction {
-            &_top-left:before,
-            &_top-center:before,
-            &_top-right:before {
-                border-right-color: transparent;
-                border-bottom-color: transparent;
-                border-left-color: transparent;
-            }
-
-            &_left-top:before,
-            &_left-center:before,
-            &_left-bottom:before {
-                border-top-color: transparent;
-                border-right-color: transparent;
-                border-bottom-color: transparent;
-            }
-
-            &_right-top:before,
-            &_right-center:before,
-            &_right-bottom:before {
-                border-top-color: transparent;
-                border-bottom-color: transparent;
-                border-left-color: transparent;
-            }
-
-            &_bottom-left:before,
-            &_bottom-center:before,
-            &_bottom-right:before {
-                border-top-color: transparent;
-                border-right-color: transparent;
-                border-left-color: transparent;
-            }
-        }
-    }
 }
 
 .popup_type_tooltip {

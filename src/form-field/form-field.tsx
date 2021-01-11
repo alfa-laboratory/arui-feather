@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 export type FormFieldProps = {
 
@@ -31,7 +31,7 @@ export type FormFieldProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

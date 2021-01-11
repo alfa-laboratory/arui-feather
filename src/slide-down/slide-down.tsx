@@ -4,7 +4,7 @@
 
 import React, { createRef } from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 export type SlideDownProps = {
 
@@ -21,7 +21,7 @@ export type SlideDownProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

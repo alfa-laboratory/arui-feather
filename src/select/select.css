@@ -51,6 +51,7 @@
         transition-duration: 200ms;
         transition-property: color, transform, font-size;
         transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        padding-left: var(--gap-l);
     }
 
     &__sub-wrapper {
@@ -175,10 +176,10 @@
         top: 0;
         right: 0;
         height: 100%;
-    }
 
-    &__toggle-icon {
-        display: flex;
+        & .icon-button__text {
+            display: flex;
+        }
     }
 
     &_disabled &__tick {
@@ -225,7 +226,7 @@
 
 .select_size_s {
     &.select_has-label {
-        padding-top: 9px;
+        padding-top: var(--gap-xs);
     }
 
     .select__top {
@@ -246,7 +247,7 @@
 
 .select_size_m {
     &.select_has-label {
-        padding-top: 6px;
+        padding-top: var(--gap-s);
     }
 
     .select__top {
@@ -267,7 +268,7 @@
 
 .select_size_l {
     &.select_has-label {
-        padding-top: 14px;
+        padding-top: var(--gap-m);
     }
 
     .select__top {
@@ -288,7 +289,7 @@
 
 .select_size_xl {
     &.select_has-label {
-        padding-top: 13px;
+        padding-top: var(--gap-l);
     }
 
     .select__top {

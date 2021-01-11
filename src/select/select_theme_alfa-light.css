@@ -19,7 +19,7 @@
         border-bottom-color: var(--color-light-graphic-tertiary);
         border-bottom-style: solid;
         border-bottom-width: 1px;
-        padding-left: var(--gap-s);
+        padding-left: var(--gap-m);
 
         &_hovered {
             border-bottom-color: var(--color-light-graphic-primary);

@@ -104,7 +104,6 @@ exports[`select should render without problem 1`] = `
                 <ForwardRef(ThemedComponent(IconButton))
                   className="select__tick"
                   key="addon-icon"
-                  size="m"
                   tag="span"
                 >
                   <IconButton
@@ -140,23 +139,19 @@ exports[`select should render without problem 1`] = `
                           className="icon-button__text"
                           key="text"
                         >
-                          <div
-                            className="select__toggle-icon"
-                          >
-                            <l>
-                              <svg
-                                fill="currentColor"
-                                focusable="false"
-                                height="18"
-                                viewBox="0 0 18 18"
-                                width="18"
-                              >
-                                <path
-                                  d="M12.182 6.879l.707.707L9 11.474 5.112 7.586l.707-.707L9 10.06z"
-                                />
-                              </svg>
-                            </l>
-                          </div>
+                          <l>
+                            <svg
+                              fill="currentColor"
+                              focusable="false"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                            >
+                              <path
+                                d="M12.182 6.879l.707.707L9 11.474 5.112 7.586l.707-.707L9 10.06z"
+                              />
+                            </svg>
+                          </l>
                         </span>
                       </span>
                     </span>

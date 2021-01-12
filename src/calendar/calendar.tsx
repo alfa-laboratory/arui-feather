@@ -30,7 +30,7 @@ import performance from '../performance';
 import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
@@ -135,7 +135,7 @@ export type CalendarProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

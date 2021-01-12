@@ -1,3 +1,10 @@
+# [18.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.5.0...v18.6.0) (2021-01-12)
+
+
+### Features
+
+* **calendar:** add scrolling to selected year when open year select ([#1254](https://github.com/alfa-laboratory/arui-feather/issues/1254)) ([b5effe0](https://github.com/alfa-laboratory/arui-feather/commit/b5effe049dad248def7b9687eeea4fd889fd1a40))
+
 # [18.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.4.1...v18.5.0) (2021-01-12)
 
 

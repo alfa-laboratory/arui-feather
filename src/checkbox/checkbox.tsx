@@ -189,10 +189,9 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 
     renderNormalCheckbox(checked) {
-        const { theme = 'alfa-on-color', size } = this.props;
         let TickIcon = TickXsIcon;
         let CheckIndeterminateIcon = CheckIndeterminateSIcon;
-        if (size === 'l') {
+        if (this.props.size === 'l') {
             TickIcon = TickSIcon;
             CheckIndeterminateIcon = CheckIndeterminateMIcon;
         }
@@ -212,18 +211,18 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                     onChange={ this.handleChange }
                 />
                 { !this.props.indeterminate && (
-                    <TickIcon className={ this.cn('icon', { theme }) } />
+                    <TickIcon className={ this.cn('icon') } />
                 ) }
                 { !checked
                     && this.props.indeterminate && (
                     <CheckIndeterminateIcon
-                        className={ this.cn('icon', { theme }) }
+                        className={ this.cn('icon') }
                     />
                 ) }
                 { checked
                     && this.props.indeterminate
                     && (
-                        <TickIcon className={ this.cn('icon', { theme }) } />
+                        <TickIcon className={ this.cn('icon') } />
                     ) }
             </span>,
             this.props.text && (
@@ -242,7 +241,6 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
         return [
             <TagButton
                 key="button"
-                theme={ this.props.theme }
                 togglable="check"
                 checked={ checked }
                 title={ this.props.title }

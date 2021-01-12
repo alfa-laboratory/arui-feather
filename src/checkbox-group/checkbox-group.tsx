@@ -5,9 +5,7 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
-
-export type CheckBoxGroupThemeFieldType = 'alfa-on-color' | 'alfa-on-white';
+import { withTheme, Theme } from '../cn';
 
 export type CheckBoxGroupProps = ({
     /**
@@ -49,7 +47,7 @@ export type CheckBoxGroupProps = ({
     /**
      * Тема компонента
      */
-    theme?: CheckBoxGroupThemeFieldType;
+    theme?: Theme;
 
     /**
      * Дополнительный класс

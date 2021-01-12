@@ -8,6 +8,8 @@ import '../tag-button';
 import './checkbox.css';
 import './checkbox_theme_alfa-on-color.css';
 import './checkbox_theme_alfa-on-white.css';
+import './checkbox_theme_alfa-light.css';
+import './checkbox_theme_alfa-dark.css';
 
 export * from './checkbox';
 export { default } from './checkbox';

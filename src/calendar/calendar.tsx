@@ -207,6 +207,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     private root: HTMLDivElement;
 
+    private selectedYearRef = React.createRef<HTMLDivElement>();
+
+    private yearsListRef = React.createRef<HTMLDivElement>();
+
     private blurTimeoutId: number = null;
 
     private years = [];
@@ -355,7 +359,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             isMonthSelection: false,
             // eslint-disable-next-line react/no-access-state-in-setstate
             isYearSelection: !this.state.isYearSelection,
-        });
+        }, this.scrollToSelectedYear);
     };
 
     renderContent() {
@@ -433,7 +437,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     renderYears() {
         return (
             <div className={ this.cn('wrapper') }>
-                <div className={ this.cn('years') }>
+                <div className={ this.cn('years') } ref={ this.yearsListRef }>
                     {
                         this.years.map((year, index) => {
                             const newYear = setYear(this.state.month, year);
@@ -454,6 +458,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                                     tabIndex={ 0 }
                                     data-year={ dataYear }
                                     onClick={ this.handleSelectYearClick }
+                                    ref={ isSameYear ? this.selectedYearRef : undefined }
                                 >
                                     { year }
                                 </div>
@@ -703,6 +708,20 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 
     /**
+     * Пролистывает список с годами до выбранного года.
+     */
+    private scrollToSelectedYear() {
+        const selectedYear = this.selectedYearRef.current;
+        const yearsList = this.yearsListRef.current;
+
+        if (selectedYear && yearsList) {
+            const topIndent = yearsList.clientHeight / 2 - selectedYear.clientHeight / 2;
+
+            yearsList.scrollTop = selectedYear.offsetTop - topIndent;
+        }
+    }
+
+    /**
      * Возвращает `true`, если переданная дата является валидной и
      * попадает в заданные лимиты календаря.
      *
@@ -943,7 +962,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     /**
      * Проверяет наличие даты в списке дат с игнорированием таймзоны.
-     * 
+     *
      * @param date Дата
      * @param daysToСheck Список дат для проверки
      */

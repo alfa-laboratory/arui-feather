@@ -162,7 +162,7 @@
     }
 
     &.tag-button_pressed {
-        background: var(--color-light-bg-tertiary));
+        background: var(--color-light-bg-tertiary);
     }
 
     &.tag-button_checked {

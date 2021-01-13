@@ -1,3 +1,10 @@
+# [18.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.6.0...v18.7.0) (2021-01-13)
+
+
+### Features
+
+* **popup:** remove html scroll in fullscreen popup ([#1257](https://github.com/alfa-laboratory/arui-feather/issues/1257)) ([21f8571](https://github.com/alfa-laboratory/arui-feather/commit/21f857143a5b524410c05add1e71168b550a7ac1))
+
 # [18.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.5.0...v18.6.0) (2021-01-12)
 
 

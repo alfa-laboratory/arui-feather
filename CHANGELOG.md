@@ -1,3 +1,17 @@
+# [18.6.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.5.0...v18.6.0) (2021-01-12)
+
+
+### Features
+
+* **calendar:** add scrolling to selected year when open year select ([#1254](https://github.com/alfa-laboratory/arui-feather/issues/1254)) ([b5effe0](https://github.com/alfa-laboratory/arui-feather/commit/b5effe049dad248def7b9687eeea4fd889fd1a40))
+
+# [18.5.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.4.1...v18.5.0) (2021-01-12)
+
+
+### Features
+
+* **money-input:** add check for leading zeros ([#1255](https://github.com/alfa-laboratory/arui-feather/issues/1255)) ([af70a33](https://github.com/alfa-laboratory/arui-feather/commit/af70a33525b516ed5527aba73f00147fbf6bbf3a))
+
 ## [18.4.1](https://github.com/alfa-laboratory/arui-feather/compare/v18.4.0...v18.4.1) (2020-12-21)
 
 

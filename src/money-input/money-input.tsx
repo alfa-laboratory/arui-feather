@@ -201,6 +201,11 @@ export class MoneyInput extends React.PureComponent<MoneyInputProps, MoneyInputS
     };
 
     private handleChange = (value) => {
+        // если значение начинается с нуля, то следом за ним может быть только десятичный разделитель
+        if (/^0\d+/.test(value)) {
+            return;
+        }
+
         this.setState({ value });
 
         if (this.props.onChange) {

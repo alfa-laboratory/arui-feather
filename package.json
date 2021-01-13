@@ -132,7 +132,7 @@
     "alfa-ui-primitives": "2.80.0",
     "arui-demo": "3.3.1-feather.0",
     "arui-presets": "^5.1.0",
-    "arui-presets-lint": "^4.1.2",
+    "arui-presets-lint": "4.1.2",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "coveralls": "3.0.0",
     "css-loader": "^2.1.1",

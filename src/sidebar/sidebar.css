@@ -68,7 +68,6 @@ body.sidebar-overlay {
 
         &_visible {
             visibility: visible;
-            background-color: var(--shadow-overlay-color);
         }
     }
 

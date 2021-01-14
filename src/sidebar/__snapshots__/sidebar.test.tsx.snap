@@ -32,8 +32,8 @@ exports[`sidebar component should render without problems 1`] = `
           onClick={[Function]}
           size="l"
         >
-          <ForwardRef(ThemedComponent(IconClose))
-            size="l"
+          <l
+            className="sidebar__icon"
           />
         </ForwardRef(ThemedComponent(IconButton))>
       </div>

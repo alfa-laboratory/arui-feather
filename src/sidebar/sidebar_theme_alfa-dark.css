@@ -1,0 +1,36 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+@import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.sidebar_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+    background-color: var(--color-dark-bg-primary);
+
+    .sidebar__overlay {
+        &_visible {
+            background-color: var(--color-dark-bg-overlay);
+        }
+    }
+    .sidebar__icon {
+        color: var(--color-dark-graphic-primary);
+    }
+}
+
+@media (--small-only) {
+    .sidebar_theme_alfa-dark {
+        .sidebar__header {
+            background: var(--color-dark-bg-secondary);
+            border-bottom: 1px solid var(--color-dark-border-secondary);
+        }
+
+        .sidebar__footer:after {
+            background-image: linear-gradient(
+                to top,
+                var(--color-dark-bg-primary),
+                rgba(255, 255, 255, 0)
+            );
+        }
+    }
+}

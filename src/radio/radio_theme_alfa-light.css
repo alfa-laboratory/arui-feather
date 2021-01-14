@@ -1,0 +1,77 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.radio_theme_alfa-light {
+    color: var(--color-light-text-primary);
+
+    .radio__box {
+        background: var(--color-light-bg-secondary);
+        border: 1px solid var(--color-light-border-tertiary-inverted);
+    }
+
+    &.radio_invalid {
+        .radio__box {
+            border-color: var(--color-light-graphic-negative);
+        }
+    }
+
+    &.radio_checked {
+        .radio__box {
+            background: var(--color-light-bg-secondary-inverted);
+            border-color: var(--color-light-border-secondary-inverted);
+        }
+
+        &.radio_hovered .radio__box,
+        &.radio_focused .radio__box {
+            background: var(--color-light-bg-primary-inverted);
+        }
+    }
+
+    &.radio_focused {
+        .radio__box {
+            background: var(--color-light-border-tertiary-inverted);
+
+            &:after {
+                border-color: var(--color-light-border-tertiary-inverted);
+            }
+        }
+    }
+
+    &.radio_hovered {
+        .radio__box {
+            background: var(--color-light-bg-tertiary);
+        }
+    }
+
+    &.radio_disabled {
+        color: var(--color-light-text-disabled);
+
+        .radio__box {
+            background: var(--color-light-bg-tertiary);
+            border-color: transparent;
+        }
+    }
+
+    &.radio:active {
+        .radio__box {
+            background: var(--color-light-bg-tertiary);
+        }
+
+        &.radio_checked {
+            .radio__box,
+            &.radio_hovered .radio__box,
+            &.radio_focused .radio__box {
+                background: var(--color-light-bg-secondary-inverted);
+            }
+        }
+
+        &.radio_disabled {
+            .radio__box {
+                background: var(--color-light-bg-tertiary);
+            }
+        }
+    }
+}

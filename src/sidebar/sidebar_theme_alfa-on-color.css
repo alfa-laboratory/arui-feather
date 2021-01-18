@@ -6,6 +6,15 @@
 .sidebar_theme_alfa-on-color {
     color: var(--color-content-alfa-on-color);
     background-color: var(--color-background-alfa-on-color);
+
+    .sidebar__overlay {
+        &_visible {
+            background-color: var(--shadow-overlay-color);
+        }
+    }
+    .sidebar__icon {
+        color: var(--color-white);
+    }
 }
 
 @media (--small-only) {

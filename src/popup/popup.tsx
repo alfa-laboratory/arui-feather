@@ -274,6 +274,8 @@ export class Popup extends React.Component<PopupProps, PopupState> {
             this.setGradientStyles();
         }
 
+        this.updateDocumentOverflow();
+
         window.addEventListener('resize', this.handleWindowResize);
 
         /* eslint-disable react/no-did-mount-set-state */
@@ -324,12 +326,16 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 this.ensureClickEvent(!this.props.visible);
             }
         }
+
+        this.updateDocumentOverflow();
     }
 
     componentWillUnmount() {
         if (this.props.onClickOutside) {
             this.ensureClickEvent(true);
         }
+
+        this.updateDocumentOverflow(true);
 
         // Cancel debouncing to avoid `this.setState()` invocation in unmounted component state
         this.handleWindowResize.cancel();
@@ -693,6 +699,22 @@ export class Popup extends React.Component<PopupProps, PopupState> {
                 width: clientWidth,
             },
         });
+    }
+
+    /**
+     * Обновляет overflow у html. Нужно чтобы в полноэкранном режиме не скроллился документ
+     * @param willComponentUnmount указывает на то, что функция вызывается при размонтировании компонента
+     */
+    private updateDocumentOverflow(willComponentUnmount?: boolean) {
+        if (this.props.target !== 'screen') {
+            return;
+        }
+
+        if (this.props.visible && !willComponentUnmount) {
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.documentElement.style.overflow = '';
+        }
     }
 }
 

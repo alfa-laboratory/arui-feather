@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "18.4.1-rc.6",
+  "version": "18.6.0",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -80,8 +80,8 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
-    "@alfalab/icons-classic": "^1.40.0",
-    "@alfalab/icons-glyph": "^1.81.0",
+    "@alfalab/icons-classic": "^1.49.0",
+    "@alfalab/icons-glyph": "^1.85.0",
     "@babel/runtime-corejs2": "^7.7.6",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/lodash.sortedindexby": "^4.6.6",
@@ -132,7 +132,7 @@
     "alfa-ui-primitives": "2.80.0",
     "arui-demo": "3.3.1-feather.0",
     "arui-presets": "^5.1.0",
-    "arui-presets-lint": "^4.1.2",
+    "arui-presets-lint": "4.1.2",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "coveralls": "3.0.0",
     "css-loader": "^2.1.1",

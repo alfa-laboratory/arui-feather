@@ -179,7 +179,7 @@
         position: absolute;
         top: 0;
 
-        width: 36px;
+        width: 24px;
         height: 30px;
         line-height: var(--font-size-2xl);
         text-align: center;
@@ -191,8 +191,8 @@
         mix-blend-mode: normal;
         border-radius: var(--border-radius-control);
 
-        background-position: center;
-        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
 
         &_direction_left {
             left: 0;
@@ -207,12 +207,10 @@
         position: relative;
         float: right;
 
-        width: 6px;
         height: 30px;
-        margin-left: var(--gap-xs);
 
-        background-position: center;
-        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
     }
 
     &__select-text {

@@ -2,9 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import './toggle.css';
-import './toggle_theme_alfa-dark.css';
-import './toggle_theme_alfa-light.css';
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
-export * from './toggle';
-export { default } from './toggle';
+.checkbox-group_theme_alfa-light {
+    .label {
+        color: var(--color-light-text-secondary);
+    }
+}

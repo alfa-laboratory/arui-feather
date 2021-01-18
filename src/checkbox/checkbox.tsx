@@ -4,43 +4,49 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import {
+    TickXsIcon,
+    TickSIcon,
+    CheckIndeterminateMIcon,
+    CheckIndeterminateSIcon,
+} from '@alfalab/icons-classic';
+import { withTheme, Theme } from '../cn';
 
-import IconCheck from '../icon/ui/tick';
-import IconIndeterminate from '../icon/ui/check-indeterminate';
 import TagButton from '../tag-button/tag-button';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
 
-export type CheckboxProps = ({
-    /**
-     * Тип чекбокса
-     */
-    type?: 'normal';
+export type CheckboxProps = (
+    | {
+          /**
+           * Тип чекбокса
+           */
+          type?: 'normal';
 
-    /**
-     * Размер компонента
-     */
-    size?: 'm' | 'l';
+          /**
+           * Размер компонента
+           */
+          size?: 'm' | 'l';
+      }
+    | {
+          /**
+           * Тип чекбокса
+           */
+          type?: 'button';
 
-} | {
-    /**
-     * Тип чекбокса
-     */
-    type?: 'button';
+          /**
+           * Размер компонента
+           */
+          size?: 's' | 'm' | 'l' | 'xl';
 
-    /**
-     * Размер компонента
-     */
-    size?: 's' | 'm' | 'l' | 'xl';
-
-    /**
+          /**
      * Управление шириной кнопки для типа 'button'. При значении
      'available' растягивает кнопку на ширину родителя
      */
-    width?: 'default' | 'available';
-}) & {
+          width?: 'default' | 'available';
+      }
+) & {
     /**
      * Текст подписи к чекбоксу
      */
@@ -84,7 +90,7 @@ export type CheckboxProps = ({
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс
@@ -94,7 +100,11 @@ export type CheckboxProps = ({
     /**
      * Обработчик изменения значения 'checked' компонента, принимает на вход isChecked и value компонента
      */
-    onChange?: (isChecked?: boolean, value?: string, event?: React.ChangeEvent<any>) => void;
+    onChange?: (
+        isChecked?: boolean,
+        value?: string,
+        event?: React.ChangeEvent<any>
+    ) => void;
 
     /**
      * Обработчик фокуса комнонента
@@ -142,7 +152,9 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
     private root;
 
     render() {
-        const checked = this.props.checked === undefined ? this.state.checked : this.props.checked;
+        const checked = this.props.checked === undefined
+            ? this.state.checked
+            : this.props.checked;
 
         return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -154,7 +166,8 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                     indeterminate: this.props.indeterminate,
                     focused: this.state.focused,
                     hovered: this.state.hovered,
-                    width: this.props.type === 'button' ? this.props.width : null,
+                    width:
+                        this.props.type === 'button' ? this.props.width : null,
                 }) }
                 htmlFor={ this.props.id }
                 onBlur={ this.handleBlur }
@@ -176,6 +189,13 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
     }
 
     renderNormalCheckbox(checked) {
+        let TickIcon = TickXsIcon;
+        let CheckIndeterminateIcon = CheckIndeterminateSIcon;
+        if (this.props.size === 'l') {
+            TickIcon = TickSIcon;
+            CheckIndeterminateIcon = CheckIndeterminateMIcon;
+        }
+
         return [
             <span className={ this.cn('box') } key="box">
                 <input
@@ -191,29 +211,26 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                     onChange={ this.handleChange }
                 />
                 { !this.props.indeterminate && (
-                    <IconCheck
+                    <TickIcon className={ this.cn('icon') } />
+                ) }
+                { !checked
+                    && this.props.indeterminate && (
+                    <CheckIndeterminateIcon
                         className={ this.cn('icon') }
-                        size={ this.props.size === 'l' ? 's' : 'xs' }
-                        theme="alfa-on-color"
                     />
                 ) }
-                { !checked && this.props.indeterminate && (
-                    <IconIndeterminate
-                        className={ this.cn('icon') }
-                        size={ this.props.size === 'l' ? 'm' : 's' }
-                        theme="alfa-on-color"
-                    />
-                ) }
-                { checked && this.props.indeterminate && (
-                    <IconCheck
-                        className={ this.cn('icon') }
-                        size={ this.props.size === 'l' ? 's' : 'xs' }
-                        theme="alfa-on-color"
-                    />
-                ) }
+                { checked
+                    && this.props.indeterminate
+                    && (
+                        <TickIcon className={ this.cn('icon') } />
+                    ) }
             </span>,
             this.props.text && (
-                <span className={ this.cn('text') } key="text" role="presentation">
+                <span
+                    className={ this.cn('text') }
+                    key="text"
+                    role="presentation"
+                >
                     { this.props.text }
                 </span>
             ),
@@ -229,7 +246,9 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
                 title={ this.props.title }
                 disabled={ this.props.disabled }
                 size={ this.props.size || 'm' }
-                width={ this.props.type === 'button' ? this.props.width : undefined }
+                width={
+                    this.props.type === 'button' ? this.props.width : undefined
+                }
                 focused={ this.state.focused }
                 onClick={ this.handleChange }
             >
@@ -258,8 +277,10 @@ export class CheckBox extends React.PureComponent<CheckboxProps> {
 
     private handleChange = (event) => {
         if (!this.props.disabled) {
-            // eslint-disable-next-line react/no-access-state-in-setstate
-            const nextCheckedValue = !(this.props.checked === undefined ? this.state.checked : this.props.checked);
+            const nextCheckedValue = !(this.props.checked === undefined
+                // eslint-disable-next-line react/no-access-state-in-setstate
+                ? this.state.checked
+                : this.props.checked);
 
             this.setState({ checked: nextCheckedValue });
 

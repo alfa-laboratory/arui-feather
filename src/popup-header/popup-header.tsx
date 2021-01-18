@@ -4,9 +4,11 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import {
+    CloseXsIcon, CloseSIcon, CloseMIcon, CloseLIcon, CloseXlIcon,
+} from '@alfalab/icons-classic';
+import { withTheme, Theme } from '../cn';
 
-import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 
 export type PopupHeaderProps = {
@@ -23,7 +25,7 @@ export type PopupHeaderProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс
@@ -53,25 +55,37 @@ export class PopupHeader extends React.PureComponent<PopupHeaderProps> {
     protected cn = createCn('popup-header');
 
     render() {
+        const {
+            size, id, 'data-test-id': dataTestId, title,
+        } = this.props;
+
+        const closeIcons = {
+            xs: CloseXsIcon,
+            s: CloseSIcon,
+            m: CloseMIcon,
+            l: CloseLIcon,
+            xl: CloseXlIcon,
+        };
+
+        const IconClose = closeIcons[size || 'm'];
+
         return (
             <div
                 className={ this.cn({
-                    size: this.props.size,
+                    size,
                 }) }
-                id={ this.props.id }
-                data-test-id={ this.props['data-test-id'] }
+                id={ id }
+                data-test-id={ dataTestId }
             >
                 <IconButton
                     className={ this.cn('closer') }
-                    size={ this.props.size }
+                    size={ size }
                     onClick={ this.handleCloserClick }
                 >
-                    <IconClose
-                        size={ this.props.size }
-                    />
+                    <IconClose />
                 </IconButton>
                 <div className={ this.cn('title') }>
-                    { this.props.title }
+                    { title }
                 </div>
             </div>
         );

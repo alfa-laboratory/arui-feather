@@ -43,6 +43,15 @@
         background: var(--color-light-bg-secondary-inverted);
         border-color: transparent;
 
+        &.button_hovered {
+            background: var(--color-light-bg-tertiary-inverted);
+            border-color: var(--color-light-border-secondary-inverted);
+        }
+
+        &.button_focused {
+            border-color: var(--color-light-border-secondary-inverted);
+        }
+
         &.button_pressed,
         &:active {
             background: var(--color-light-bg-primary-inverted);

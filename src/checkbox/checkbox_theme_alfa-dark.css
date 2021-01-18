@@ -5,12 +5,12 @@
 @import "../vars.css";
 @import "@alfalab/core-components-vars/colors-bluetint.css";
 
-.checkbox_theme_alfa-on-color {
-    color: var(--color-content-alfa-on-color);
+.checkbox_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
 
     .checkbox__box {
-        background: var(--color-background-control-alfa-on-color);
-        border: 1px solid var(--color-border-control-alfa-on-color);
+        background: var(--color-dark-bg-secondary);
+        border: 1px solid var(--color-dark-border-tertiary-inverted);
     }
 
     .checkbox__icon {
@@ -19,36 +19,36 @@
 
     &.checkbox_checked {
         .checkbox__box {
-            background: var(--color-accent-translucent);
+            background: var(--color-dark-bg-secondary-inverted);
         }
 
         &.checkbox_hovered .checkbox__box,
         &.checkbox_focused .checkbox__box {
-            background: var(--color-accent);
+            background: var(--color-dark-bg-primary-inverted);
         }
     }
 
     &.checkbox_focused {
         .checkbox__box {
-            border-color: var(--color-border-control-focused-alfa-on-color);
+            border-color: var(--color-dark-border-tertiary-inverted);
 
             &:after {
-                border-color: var(--color-border-control-focused-alfa-on-color);
+                border-color: var(--color-dark-border-tertiary-inverted);
             }
         }
     }
 
     &.checkbox_hovered {
         .checkbox__box {
-            border-color: var(--color-border-control-focused-alfa-on-color);
+            border-color: var(--color-dark-border-tertiary-inverted);
         }
     }
 
     &.checkbox_disabled {
-        color: var(--color-content-disabled-alfa-on-color);
+        color: var(--color-dark-text-disabled);
 
         .checkbox__box {
-            background: var(--color-background-control-disabled-alfa-on-color);
+            background: var(--color-dark-bg-tertiary);
             border-color: transparent;
         }
     }

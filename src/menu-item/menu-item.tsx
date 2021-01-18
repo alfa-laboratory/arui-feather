@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 import Dropdown from '../dropdown/dropdown';
 import Link from '../link/link';
@@ -74,7 +74,7 @@ export type MenuItemProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

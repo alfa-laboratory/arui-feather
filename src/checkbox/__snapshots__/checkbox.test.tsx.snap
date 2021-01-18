@@ -22,10 +22,8 @@ exports[`checkbox should render without problems 1`] = `
       onClick={[Function]}
       type="checkbox"
     />
-    <ForwardRef(ThemedComponent(IconTick))
+    <s
       className="checkbox__icon"
-      size="xs"
-      theme="alfa-on-color"
     />
   </span>
 </label>

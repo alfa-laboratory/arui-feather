@@ -1,0 +1,32 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.toggle_theme_alfa-light {
+    input {
+        box-shadow: 0 0 0 2px var(--color-light-border-primary);
+    }
+
+    .toggle__label {
+        color: var(--color-light-text-primary);
+    }
+
+    .toggle__hint {
+        color: var(--color-light-text-secondary);
+    }
+
+    .toggle__switch {
+        background-color: var(--color-light-bg-tertiary);
+
+        &:before {
+            background-color: var(--color-light-bg-secondary-inverted);
+        }
+
+        &:after {
+            background: var(--color-light-bg-primary);
+            border: 0.5px solid var(--color-light-border-primary);
+        }
+    }
+}

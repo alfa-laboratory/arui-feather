@@ -5,6 +5,8 @@
 import './calendar.css';
 import './calendar_theme_alfa-on-white.css';
 import './calendar_theme_alfa-on-color.css';
+import './calendar_theme_alfa-dark.css';
+import './calendar_theme_alfa-light.css';
 
 export * from './calendar';
 export { default } from './calendar';

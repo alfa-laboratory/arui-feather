@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .calendar-input {
     display: inline-block;
@@ -69,6 +70,22 @@
     .calendar-input__custom-control {
         .input__control:disabled {
             -webkit-text-fill-color: var(--color-dark-indigo-30) !important;
+        }
+    }
+}
+
+.calendar-input_theme_alfa-dark {
+    .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-dark-text-primary) !important;
+        }
+    }
+}
+
+.calendar-input_theme_alfa-light {
+    .calendar-input__custom-control {
+        .input__control:disabled {
+            -webkit-text-fill-color: var(--color-light-text-primary) !important;
         }
     }
 }

@@ -1,0 +1,98 @@
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.calendar_theme_alfa-light {
+    color: var(--color-light-text-primary);
+    background-color: var(--color-light-bg-secondary);
+
+    .calendar {
+        &__event {
+            background-color: var(--color-light-bg-secondary);
+
+            &:after {
+                background-color: var(--color-light-bg-secondary-inverted);
+            }
+        }
+
+        &__wrapper {
+            background-color: var(--color-light-bg-secondary);
+
+            &:before {
+                background: linear-gradient(
+                    to bottom,
+                    var(--color-light-bg-secondary) 0%,
+                    var(--color-light-bg-secondary) 33%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+        }
+
+        &__day {
+            &:hover {
+                background: var(--color-light-bg-tertiary);
+            }
+
+            &_state_today {
+                box-shadow: inset 0 0 0 1px
+                    var(--color-light-border-secondary-inverted);
+            }
+
+            &_state_current {
+                color: var(--color-light-text-primary);
+                background: var(--color-light-bg-primary);
+
+                &:hover {
+                    background: var(--color-light-bg-primary);
+                }
+            }
+        }
+
+        &__dayname {
+            color: var(--color-light-text-secondary);
+        }
+
+        &__day_empty,
+        &__select_type_off,
+        &__day_type_off,
+        &__day_type_weekend-off {
+            color: var(--color-light-text-tertiary);
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &__name {
+            &_month,
+            &_year {
+                background-color: var(--color-light-bg-tertiary);
+
+                &:hover {
+                    background-color: var(--color-light-bg-primary);
+                }
+            }
+        }
+
+        &__select {
+            background: var(--color-light-bg-tertiary);
+            border: 1px solid var(--color-light-border-tertiary);
+
+            &:hover {
+                background: var(--color-light-bg-primary);
+                border-color: var(--color-light-border-primary);
+            }
+
+            &_type_off:hover {
+                background: var(--color-light-bg-tertiary);
+                border-color: var(--color-light-border-tertiary);
+            }
+
+            &_state_current {
+                border-color: var(--color-light-border-secondary-inverted);
+
+                &:hover {
+                    border-color: var(--color-light-border-secondary-inverted);
+                }
+            }
+        }
+    }
+}

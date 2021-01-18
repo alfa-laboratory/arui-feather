@@ -7,7 +7,7 @@
 import React from 'react';
 import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 import Calendar, { CalendarProps } from '../calendar/calendar';
 import IconCalendar from '../icon/entity/calendar';
@@ -164,7 +164,7 @@ export type CalendarInputProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Обработчик установки фокуса на компонент

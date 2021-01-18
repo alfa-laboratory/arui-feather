@@ -25,12 +25,14 @@ import eachDay from 'date-fns/each_day';
 import sortedIndexOf from 'lodash.sortedindexof';
 import sortedIndexBy from 'lodash.sortedindexby';
 
+import { ArrowBackMIcon, ArrowForwardMIcon } from '@alfalab/icons-glyph';
+import { ArrowSelectMIcon } from '@alfalab/icons-classic';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 import { isCurrentDay, getYearsRange } from './utils';
 import { normalizeDate, getRussianWeekDay } from '../lib/date-utils';
 import { isNodeOutsideElement } from '../lib/window';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 const DAYS_IN_WEEK = 7;
 const EARLY_YEARS_LIMIT = 100;
@@ -135,7 +137,7 @@ export type CalendarProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс
@@ -290,7 +292,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                             role="button"
                             tabIndex={ 0 }
                             onClick={ this.handleArrowClick }
-                        />
+                        >
+                            <ArrowBackMIcon />
+                        </div>
                     )
                 }
                 {
@@ -307,7 +311,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                             role="button"
                             tabIndex={ 0 }
                             onClick={ this.handleArrowClick }
-                        />
+                        >
+                            <ArrowForwardMIcon />
+                        </div>
                     )
                 }
                 <div className={ this.cn('select-buttons') }>
@@ -325,7 +331,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         <div className={ this.cn('select-text') }>
                             { this.props.months[month.getMonth()] }
                         </div>
-                        <div className={ this.cn('select-arrows') } />
+                        <div className={ this.cn('select-arrows') }>
+                            <ArrowSelectMIcon />
+                        </div>
                     </div>
 
                     <div
@@ -339,7 +347,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         onClick={ this.handleYearClick }
                     >
                         <div className={ this.cn('select-text') }>{ `${month.getFullYear()}` }</div>
-                        <div className={ this.cn('select-arrows') } />
+                        <div className={ this.cn('select-arrows') }>
+                            <ArrowSelectMIcon />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 import Heading from '../heading/heading';
 import Label from '../label/label';
 import performance from '../performance';
@@ -65,7 +65,7 @@ export type AmountProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

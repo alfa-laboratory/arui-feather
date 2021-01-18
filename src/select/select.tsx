@@ -5,12 +5,14 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import {
+    ArrowUpSIcon, ArrowUpMIcon, ArrowUpLIcon,
+    ArrowDownSIcon, ArrowDownMIcon, ArrowDownLIcon,
+} from '@alfalab/icons-classic';
+import { withTheme, Theme } from '../cn';
 
 import { Button } from '../button/button';
 import IconButton from '../icon-button/icon-button';
-import IconArrowDown from '../icon/ui/arrow-down';
-import IconArrowUp from '../icon/ui/arrow-up';
 import Menu from '../menu/menu';
 import Mq from '../mq/mq';
 import ThemedPopup from '../popup/popup';
@@ -233,7 +235,7 @@ export type SelectProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Обработчик фокуса на компоненте
@@ -452,31 +454,42 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
 
     renderButton() {
-        let tickSize;
-        let ToggledIcon;
+        let arrowName = '';
         const opened = this.getOpened();
+        const arrowIcons = {
+            ArrowUpSIcon,
+            ArrowUpMIcon,
+            ArrowUpLIcon,
+            ArrowDownSIcon,
+            ArrowDownMIcon,
+            ArrowDownLIcon,
+        };
 
         switch (opened) {
         case true:
-            ToggledIcon = IconArrowUp;
+            arrowName = 'ArrowUp';
             break;
         case false:
-            ToggledIcon = IconArrowDown;
+            arrowName = 'ArrowDown';
             break;
         }
 
         switch (this.props.size) {
         case 's':
         case 'm':
-            tickSize = this.props.view === 'filled' ? 'l' : 's';
+            arrowName += this.props.view === 'filled' ? 'L' : 'S';
             break;
         case 'l':
-            tickSize = 'm';
+            arrowName += 'M';
             break;
         case 'xl':
-            tickSize = 'l';
+            arrowName += 'L';
             break;
         }
+
+        arrowName += 'Icon';
+
+        const CurrentArrow = arrowIcons[arrowName];
 
         return (
             <SelectButton
@@ -492,8 +505,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
             >
                 { this.renderButtonContent() }
                 { !this.props.hideTick && (
-                    <IconButton className={ this.cn('tick') } key="addon-icon" size={ this.props.size } tag="span">
-                        <ToggledIcon size={ tickSize } />
+                    <IconButton className={ this.cn('tick') } key="addon-icon" tag="span">
+                        <CurrentArrow />
                     </IconButton>
                 ) }
 

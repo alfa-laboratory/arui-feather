@@ -5,6 +5,8 @@
 import './textarea.css';
 import './textarea_theme_alfa-on-color.css';
 import './textarea_theme_alfa-on-white.css';
+import './textarea_theme_alfa-dark.css';
+import './textarea_theme_alfa-light.css';
 
 export * from './textarea';
 export { default } from './textarea';

@@ -1,0 +1,78 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.textarea_theme_alfa-light {
+    .textarea__control {
+        color: var(--color-light-text-primary);
+        border-bottom-color: var(--color-light-graphic-tertiary);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+
+        &::placeholder {
+            color: var(--color-light-text-secondary-transparent);
+        }
+    }
+
+    &.textarea_view_filled .textarea__inner,
+    &.textarea_view_filled .textarea__inner:hover {
+        background-color: var(--color-light-bg-secondary);
+    }
+
+    .textarea__control:hover {
+        border-bottom-color: var(--color-light-graphic-primary);
+    }
+
+    .textarea__top,
+    .textarea__sub {
+        color: var(--color-light-text-secondary-transparent);
+    }
+
+    &.textarea_focused {
+        .textarea__control {
+            border-bottom-color: var(--color-light-graphic-primary);
+            box-shadow: inset 0 -1px 0 var(--color-light-graphic-primary);
+        }
+    }
+
+    &.textarea_disabled {
+        &,
+        .textarea__control {
+            color: var(--color-light-text-secondary);
+        }
+
+        .textarea__control {
+            border-bottom-style: var(--border-style-control-disabled);
+
+            &::placeholder {
+                color: var(--color-light-text-secondary);
+            }
+
+            &:disabled {
+                -webkit-text-fill-color: var(
+                    --color-light-text-secondary
+                ) !important;
+            }
+        }
+    }
+
+    &.textarea_invalid {
+        .textarea__sub {
+            color: var(--color-light-text-negative);
+        }
+
+        .textarea__control {
+            border-bottom-color: var(--color-light-graphic-negative);
+        }
+
+        &.textarea_focused {
+            .textarea__control {
+                border-bottom-color: var(--color-light-graphic-negative);
+                box-shadow: inset 0 -1px 0 var(--color-light-graphic-negative);
+            }
+        }
+    }
+}

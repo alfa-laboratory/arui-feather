@@ -8,6 +8,8 @@ import '../menu-item';
 import './menu.css';
 import './menu_theme_alfa-on-white.css';
 import './menu_theme_alfa-on-color.css';
+import './menu_theme_alfa-dark.css';
+import './menu_theme_alfa-light.css';
 
 export * from './menu';
 export { default } from './menu';

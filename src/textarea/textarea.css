@@ -292,7 +292,9 @@
     }
 }
 
-.textarea_view_filled.textarea_theme_alfa-on-white {
+.textarea_view_filled.textarea_theme_alfa-on-white,
+.textarea_view_filled.textarea_theme_alfa-dark,
+.textarea_view_filled.textarea_theme_alfa-light {
     &.textarea_size_s {
         .textarea__top {
             padding: 0 var(--gap-xs);
@@ -432,11 +434,43 @@
 
     .textarea__inner {
         border-radius: 4px 4px 0 0;
-        background-color: var(--color-dark-indigo-05);
         transition-duration: 250ms;
         transition-property: border-bottom-color, box-shadow, width,
             background-color;
         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .textarea__control {
+        margin: 0;
+    }
+
+    &:not(.textarea_autosize) .textarea__control {
+        min-height: var(--filled-height);
+    }
+
+    &__sub {
+        line-height: var(--line-height-condensed);
+    }
+
+    &.textarea_has-label {
+        padding-top: 0;
+
+        .textarea__control::placeholder {
+            color: transparent;
+        }
+    }
+
+    &.textarea_focused,
+    &.textarea_has-value {
+        .textarea__top {
+            width: auto;
+        }
+    }
+}
+
+.textarea_view_filled.textarea_theme_alfa-on-white {
+    .textarea__inner {
+        background-color: var(--color-dark-indigo-05);
 
         &:hover {
             background-color: var(--color-dark-indigo-10);
@@ -444,7 +478,6 @@
     }
 
     .textarea__control {
-        margin: 0;
         color: var(--color-dark-indigo);
         border-bottom-color: var(--color-dark-indigo-15);
 
@@ -455,14 +488,6 @@
         &::placeholder {
             color: var(--color-dark-indigo-60);
         }
-    }
-
-    &:not(.textarea_autosize) .textarea__control {
-        min-height: var(--filled-height);
-    }
-
-    &__sub {
-        line-height: var(--line-height-condensed);
     }
 
     .textarea__top,
@@ -478,23 +503,10 @@
     }
 
     &.textarea_has-label {
-        padding-top: 0;
-
-        .textarea__control::placeholder {
-            color: transparent;
-        }
-
         &.textarea_focused {
             .textarea__control::placeholder {
                 color: var(--color-dark-indigo-60);
             }
-        }
-    }
-
-    &.textarea_focused,
-    &.textarea_has-value {
-        .textarea__top {
-            width: auto;
         }
     }
 

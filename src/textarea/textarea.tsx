@@ -5,7 +5,7 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 import scrollTo from '../lib/scroll-to';
 import { SCROLL_TO_CORRECTION } from '../vars';
@@ -125,7 +125,7 @@ export type TextareaProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Обработчик изменения значения 'value'

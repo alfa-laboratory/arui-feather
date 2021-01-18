@@ -10,12 +10,15 @@
         border-bottom-color: var(--color-dark-graphic-tertiary);
         border-bottom-style: solid;
         border-bottom-width: 1px;
+    }
+
+    &.input_view_filled .input__box,
+    &.input_view_filled .input__box:hover {
         background-color: var(--color-dark-bg-secondary);
     }
 
     .input__box:hover {
         border-bottom-color: var(--color-dark-graphic-primary);
-        background-color: var(--color-dark-bg-secondary);
     }
 
     .input__control {

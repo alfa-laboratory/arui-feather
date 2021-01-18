@@ -5,7 +5,7 @@
 import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 import { Radio } from '../radio/radio';
 
 export type RadioGroupProps = {
@@ -54,7 +54,7 @@ export type RadioGroupProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

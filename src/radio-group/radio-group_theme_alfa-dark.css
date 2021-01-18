@@ -1,0 +1,20 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import "@alfalab/core-components-vars/colors-bluetint.css";
+
+.radio-group_theme_alfa-dark {
+    .radio-group__top,
+    .radio-group__sub {
+        color: var(--color-dark-text-secondary);
+    }
+
+    &.radio-group_invalid {
+        border-left: 1px solid var(--color-dark-graphic-negative);
+
+        .radio-group__sub {
+            color: var(--color-dark-text-negative);
+        }
+    }
+}

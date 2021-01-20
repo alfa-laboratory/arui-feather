@@ -51,7 +51,6 @@
         transition-duration: 200ms;
         transition-property: color, transform, font-size;
         transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        padding-left: var(--gap-l);
     }
 
     &__sub-wrapper {

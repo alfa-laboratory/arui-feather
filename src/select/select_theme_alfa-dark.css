@@ -14,6 +14,10 @@
         color: var(--color-dark-text-secondary-transparent);
     }
 
+    .select__top {
+        padding-left: var(--gap-l);
+    }
+
     .select-button {
         color: var(--color-dark-text-primary);
         border-bottom-color: var(--color-dark-graphic-tertiary);

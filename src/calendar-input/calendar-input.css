@@ -54,6 +54,10 @@
         width: 320px;
         margin: 0 auto;
     }
+
+    .icon-button {
+        color: inherit;
+    }
 }
 
 /* See #659 PR */

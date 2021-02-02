@@ -80,8 +80,8 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
-    "@alfalab/icons-classic": "^1.49.0",
-    "@alfalab/icons-glyph": "^1.85.0",
+    "@alfalab/icons-classic": "^1.54.0",
+    "@alfalab/icons-glyph": "^1.95.0",
     "@babel/runtime-corejs2": "^7.7.6",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/lodash.sortedindexby": "^4.6.6",
@@ -109,7 +109,7 @@
     "@alfalab/core-components-vars": ">=2.1"
   },
   "devDependencies": {
-    "@alfalab/core-components-vars": "^2.1.0",
+    "@alfalab/core-components-vars": "^2.2.0",
     "@babel/preset-typescript": "^7.8.3",
     "@commitlint/cli": "9.1.2",
     "@semantic-release/changelog": "5.0.1",

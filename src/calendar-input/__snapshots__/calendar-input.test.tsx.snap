@@ -29,7 +29,7 @@ exports[`calendar-input should render without problems 1`] = `
         <ForwardRef(ThemedComponent(IconButton))
           onClick={[Function]}
         >
-          <ForwardRef(ThemedComponent(IconCalendar)) />
+          <r />
         </ForwardRef(ThemedComponent(IconButton))>
       }
       mask="11.11.1111"

@@ -7,10 +7,12 @@
 import React from 'react';
 import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
+import {
+    CalendarMIcon, CalendarLIcon, CalendarSIcon, CalendarXlIcon,
+} from '@alfalab/icons-classic';
 import { withTheme, Theme } from '../cn';
 
 import Calendar, { CalendarProps } from '../calendar/calendar';
-import IconCalendar from '../icon/entity/calendar';
 import IconButton from '../icon-button/icon-button';
 import Input from '../input/input';
 import Mq from '../mq/mq';
@@ -389,9 +391,7 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
                             this.props.withIcon
                             && (
                                 <IconButton onClick={ this.handleIconButtonClick }>
-                                    <IconCalendar
-                                        size={ this.props.size }
-                                    />
+                                    { this.renderIcon() }
                                 </IconButton>
                             )
                         }
@@ -762,6 +762,20 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
 
             this.timeoutId = null;
         }, 0);
+    }
+
+    private renderIcon() {
+        switch (this.props.size) {
+        case 's':
+            return <CalendarSIcon />;
+        case 'l':
+            return <CalendarLIcon />;
+        case 'xl':
+            return <CalendarXlIcon />;
+        case 'm':
+        default:
+            return <CalendarMIcon />;
+        }
     }
 }
 

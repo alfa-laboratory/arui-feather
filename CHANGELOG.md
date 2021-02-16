@@ -1,3 +1,10 @@
+# [18.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.7.0...v18.8.0) (2021-02-16)
+
+
+### Features
+
+* **calendar-input:** changed input-mask ([#1267](https://github.com/alfa-laboratory/arui-feather/issues/1267)) ([855ca13](https://github.com/alfa-laboratory/arui-feather/commit/855ca13687e3d8f92e5cde81aebb0b27efdd4fd0))
+
 # [18.7.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.6.0...v18.7.0) (2021-01-13)
 
 

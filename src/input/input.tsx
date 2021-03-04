@@ -6,10 +6,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import {
+    CloseSIcon, CloseMIcon, CloseLIcon, CloseXlIcon,
+} from '@alfalab/icons-classic';
 import { withTheme, Theme } from '../cn';
 
 import { FormatCharacters } from '../masked-input/mask';
-import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button/icon-button';
 import MaskedInput from '../masked-input/masked-input';
 
@@ -413,7 +415,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                         </span>
                     )
                 }
-                <span className={ this.cn('input-wrapper')}>
+                <span className={ this.cn('input-wrapper') }>
                     {
                         !!this.props.label
                         && (
@@ -445,9 +447,7 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                             tabIndex={ -1 }
                             onClick={ this.handleClearClick }
                         >
-                            <IconClose
-                                size={ this.props.size }
-                            />
+                            { this.renderIcon() }
                         </IconButton>
                     )
                 }
@@ -469,6 +469,20 @@ export class Input extends React.PureComponent<InputProps, InputState> {
                 }
             </span>
         );
+    }
+
+    renderIcon() {
+        switch (this.props.size) {
+        case 's':
+            return <CloseSIcon />;
+        case 'l':
+            return <CloseLIcon />;
+        case 'xl':
+            return <CloseXlIcon />;
+        case 'm':
+        default:
+            return <CloseMIcon />;
+        }
     }
 
     private handleFocus = (event) => {

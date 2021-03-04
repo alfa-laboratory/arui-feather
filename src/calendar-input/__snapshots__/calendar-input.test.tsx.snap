@@ -32,7 +32,17 @@ exports[`calendar-input should render without problems 1`] = `
           <r />
         </ForwardRef(ThemedComponent(IconButton))>
       }
-      mask="11.11.1111"
+      mask="31.11.2111"
+      maskFormatCharacters={
+        Object {
+          "2": Object {
+            "validate": [Function],
+          },
+          "3": Object {
+            "validate": [Function],
+          },
+        }
+      }
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}

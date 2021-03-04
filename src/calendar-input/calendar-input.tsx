@@ -24,6 +24,7 @@ import { isNodeOutsideElement } from '../lib/window';
 import {
     parseDate, calculateMonth, changeDateFormat, isInputDateSupported,
 } from './utils';
+import { FormatCharacters } from '../masked-input/mask';
 import performance from '../performance';
 
 /**
@@ -35,6 +36,18 @@ const CUSTOM_DATE_FORMAT = 'DD.MM.YYYY';
 const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
+const maskFormatCharacters: FormatCharacters = {
+    2: {
+        validate(char) {
+            return /[1-2]/.test(char);
+        },
+    },
+    3: {
+        validate(char) {
+            return /[0-3]/.test(char);
+        },
+    },
+};
 
 export type CalendarInputProps = {
 
@@ -367,7 +380,8 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
                         className={ this.cn('custom-control') }
                         disabledAttr={ this.isNativeInput() || this.isMobilePopup() }
                         focused={ this.state.isInputFocused || this.state.isCalendarFocused }
-                        mask="11.11.1111"
+                        mask="31.11.2111"
+                        maskFormatCharacters={ maskFormatCharacters }
                         size={ this.props.size }
                         type="tel"
                         pattern="[0-9.]*"

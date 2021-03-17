@@ -37,8 +37,8 @@
             }
 
             &_state_current {
-                color: var(--color-light-text-primary);
-                background: var(--color-light-bg-primary);
+                color: var(--color-light-text-primary-inverted);
+                background: var(--color-light-bg-primary-inverted);
 
                 &:hover {
                     background: var(--color-light-bg-primary);

@@ -160,10 +160,10 @@
 
     &:hover,
     &:focus {
-        color: var(--color-light-text-accent);
+        color: var(--color-light-text-link);
 
         .link__text {
-            border-color: var(--color-light-text-accent);
+            border-color: var(--color-light-text-link);
         }
     }
 

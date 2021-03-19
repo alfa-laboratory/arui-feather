@@ -155,15 +155,15 @@
     color: var(--color-light-text-primary);
 
     .link__text {
-        border-color: var(--color-light-text-disabled);
+        border-color: var(--color-light-graphic-secondary);
     }
 
     &:hover,
     &:focus {
-        color: var(--color-light-text-accent);
+        color: var(--color-light-text-link);
 
         .link__text {
-            border-color: var(--color-light-text-accent);
+            border-color: var(--color-light-text-link);
         }
     }
 
@@ -176,7 +176,7 @@
     color: var(--color-dark-text-primary);
 
     .link__text {
-        border-color: var(--color-dark-text-disabled);
+        border-color: var(--color-dark-graphic-secondary);
     }
 
     &:hover,

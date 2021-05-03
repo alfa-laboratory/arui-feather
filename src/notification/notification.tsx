@@ -86,32 +86,32 @@ export type NotificationProps = {
     /**
      * Обработчик клика по крестику компонента
      */
-    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+    onCloserClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на попап
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с попапа
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик клика вне компонента
      */
-    onClickOutside?: (event?: React.MouseEvent<any>) => void;
+    onClickOutside?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик клика по компоненту
      */
-    onClick?: (event?: React.MouseEvent<any>) => void;
+    onClick?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

@@ -82,32 +82,32 @@ export type DropdownProps = {
     /**
      * Обработчик клика по кнопке компонента
      */
-    onSwitcherClick?: (isOpened?: boolean) => void;
+    onSwitcherClick?: (isOpened: boolean) => void;
 
     /**
      * Обработчик события наведения курсора на кнопку компонента
      */
-    onSwitcherMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onSwitcherMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с кнопки компонента
      */
-    onSwitcherMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onSwitcherMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события наведения курсора на попап
      */
-    onPopupMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onPopupMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с попапа
      */
-    onPopupMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onPopupMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события клика попапа за пределами попапа
      */
-    onPopupClickOutside?: (event?: React.MouseEvent<any>) => void;
+    onPopupClickOutside?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

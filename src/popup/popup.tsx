@@ -130,17 +130,17 @@ export type PopupProps = {
     /**
      * Обработчик события наведения курсора на попап
      */
-    onMouseEnter?: (event?: React.MouseEvent<any>) => void;
+    onMouseEnter?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик события снятия курсора с попапа
      */
-    onMouseLeave?: (event?: React.MouseEvent<any>) => void;
+    onMouseLeave?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Обработчик клика вне компонента
      */
-    onClickOutside?: (event?: React.MouseEvent<any>) => void;
+    onClickOutside?: (event: React.MouseEvent<any>) => void;
 
     /**
      * Минимальная ширина попапа

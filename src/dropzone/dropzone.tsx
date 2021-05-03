@@ -38,22 +38,22 @@ export type DropzoneProps = {
     /**
      * Обработчик события 'drop'
      */
-    onDrop?: (files?: any[]) => void;
+    onDrop?: (files: any[]) => void;
 
     /**
      * Обработчик события 'dragover'
      */
-    onDragOver?: (event?: React.FocusEvent<any>) => void;
+    onDragOver?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события 'dragleave'
      */
-    onDragLeave?: (event?: React.FocusEvent<any>) => void;
+    onDragLeave?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик события 'dragenter'
      */
-    onDragEnter?: (event?: React.FocusEvent<any>) => void;
+    onDragEnter?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Тема компонента

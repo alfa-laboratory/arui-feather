@@ -74,17 +74,17 @@ export type RadioGroupProps = {
     /**
      * Обработчик фокуса радиогруппы
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса с радиогруппы
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик изменения значения 'checked' одного из дочерних радио-кнопок
      */
-    onChange?: (value?: string) => void;
+    onChange?: (value: string) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

@@ -119,7 +119,7 @@ export type SidebarProps = {
     /**
      * Обработчик клика на элемент закрытия
      */
-    onCloserClick?: (event?: React.MouseEvent<any> | KeyboardEvent) => void;
+    onCloserClick?: (event: React.MouseEvent<any> | KeyboardEvent) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования
@@ -199,8 +199,8 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
         } = this.props;
 
         const offset = visible ? getScrollbarWidth() : 0;
-        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px`, };
-        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px`, };
+        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
             <PopupContainerProvider

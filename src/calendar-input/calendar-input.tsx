@@ -182,52 +182,52 @@ export type CalendarInputProps = {
     /**
      * Обработчик установки фокуса на компонент
      */
-    onFocus?: (event?: React.FocusEvent<any>) => void;
+    onFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса с компонента
      */
-    onBlur?: (event?: React.FocusEvent<any>) => void;
+    onBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик установки фокуса на поле ввода
      */
-    onInputFocus?: (event?: React.FocusEvent<any>) => void;
+    onInputFocus?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик снятия фокуса с поля ввода
      */
-    onInputBlur?: (event?: React.FocusEvent<any>) => void;
+    onInputBlur?: (event: React.FocusEvent<any>) => void;
 
     /**
      * Обработчик ввода даты в текстовом поле
      */
-    onInputChange?: (value?: string) => void;
+    onInputChange?: (value: string) => void;
 
     /**
      * Обработчик выбора даты в календаре
      */
-    onCalendarChange?: (formattedValue?: string) => void;
+    onCalendarChange?: (formattedValue: string) => void;
 
     /**
      * Обрабочик изменения даты в календаре
      */
-    onChange?: (formattedValue?: string, value?: number) => void;
+    onChange?: (formattedValue: string, value: number) => void;
 
     /**
      * Обработчик события нажатия на клавишу в момент, когда фокус находится на компоненте
      */
-    onKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится в календаре
      */
-    onCalendarKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onCalendarKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Обработчик события нажатия на клавишу клавиатуры в момент, когда фокус находится на текстовом поле
      */
-    onInputKeyDown?: (event?: React.KeyboardEvent<any>) => void;
+    onInputKeyDown?: (event: React.KeyboardEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

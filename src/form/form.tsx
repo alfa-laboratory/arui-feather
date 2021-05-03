@@ -76,7 +76,7 @@ export type FormProps = {
     /**
      * Обработчик отправки формы
      */
-    onSubmit?: (event?: React.FormEvent<any>) => void;
+    onSubmit?: (event: React.FormEvent<any>) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

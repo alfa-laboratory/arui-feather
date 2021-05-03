@@ -29,7 +29,7 @@ export type MqProps = {
     /**
      * Обработчик изменений в совпадении запросов
      */
-    onMatchChange?: (isMatched?: boolean) => void;
+    onMatchChange?: (isMatched: boolean) => void;
 };
 
 type MqState = {

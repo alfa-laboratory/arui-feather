@@ -50,7 +50,7 @@ export type CollapseProps = {
     /**
      * Обработчик смены состояний `expanded/collapsed`
      */
-    onExpandedChange?: (isExpanded?: boolean) => void;
+    onExpandedChange?: (isExpanded: boolean) => void;
 
     /**
      * Идентификатор для систем автоматизированного тестирования

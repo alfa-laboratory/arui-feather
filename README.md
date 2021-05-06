@@ -1,3 +1,8 @@
+**DEPRECATED**<br />
+Не развивается и активно не поддерживается, используйте [core-components](https://github.com/alfa-laboratory/core-components)
+
+<hr />
+
 <img align="left" width="140" height="140" title="arui-feather"
      src="https://rawgit.com/alfa-laboratory/arui-feather/master/logo.svg" />
 

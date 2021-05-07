@@ -14,6 +14,7 @@
 
 .popup_theme_alfa-dark {
     color: var(--color-dark-text-primary);
+    box-shadow: var(--shadow-dark);
 
     .popup__container {
         background-color: var(--color-dark-specialbg-primary-grouped);

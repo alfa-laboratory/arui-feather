@@ -69,9 +69,14 @@
 
     &.input_disabled {
         .input__box {
-            border-bottom-color: var(--color-dark-bg-secondary-inverted);
+            background-color: var(--color-light-bg-tertiary);
+            border-bottom-color: var(--color-light-graphic-tertiary);
             border-bottom-style: var(--border-style-control-disabled);
             box-shadow: none;
+
+            &:hover {
+                background-color: var(--color-light-bg-tertiary);
+            }
         }
 
         &,
@@ -86,7 +91,8 @@
             }
         }
 
-        .input__control::placeholder {
+        .input__control::placeholder,
+        .input__top {
             color: var(--color-light-text-secondary);
         }
 

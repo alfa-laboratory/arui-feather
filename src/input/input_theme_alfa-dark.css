@@ -86,7 +86,8 @@
             }
         }
 
-        .input__control::placeholder {
+        .input__control::placeholder,
+        .input__top {
             color: var(--color-light-text-secondary);
         }
 

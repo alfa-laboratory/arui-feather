@@ -1,5 +1,8 @@
+import {
+    OkLIcon, OkMIcon, OkSIcon, OkXlIcon,
+} from '@alfalab/icons-classic';
+import React from 'react';
 import Button from '../src/button';
-import IconOk from '../src/icon/ui/ok';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
 
 const NAME = 'button';
@@ -14,6 +17,15 @@ const PROP_SETS = [
     { disabled: true },
 ];
 
+const icons = {
+    s: <OkSIcon />,
+    l: <OkLIcon />,
+    xl: <OkXlIcon />,
+    m: <OkMIcon />,
+};
+
+const renderIcon = (size) => icons[size] || <OkMIcon />;
+
 geminiReact.suite(NAME, () => {
     THEMES.forEach((theme) => {
         const themeSelector = `${NAME}_theme_${theme}`;
@@ -22,7 +34,7 @@ geminiReact.suite(NAME, () => {
             const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS
-                .concat([{ icon: <IconOk size={ size } /> }])
+                .concat([{ icon: renderIcon(size) }])
                 .forEach((set, index) => {
                     const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 

@@ -1,5 +1,5 @@
-import IconOk from '../src/icon/ui/ok';
 import Notification from '../src/notification';
+import { OkColorIcon } from '../gemini-utils/ok-icon';
 
 const NAME = 'notification';
 
@@ -25,7 +25,7 @@ const PROP_SETS = [
     },
     {
         visible: true,
-        icon: <IconOk name="action-ok" colored={ true } size="m" />,
+        icon: <OkColorIcon size="m" />,
         status: 'ok',
         offset: 10,
         stickTo: 'left',

@@ -246,7 +246,7 @@
 
 .select_size_m {
     &.select_has-label {
-        padding-top: var(--gap-s);
+        padding-top: var(--gap-xs);
     }
 
     .select__top {
@@ -288,7 +288,7 @@
 
 .select_size_xl {
     &.select_has-label {
-        padding-top: var(--gap-l);
+        padding-top: var(--gap-m);
     }
 
     .select__top {

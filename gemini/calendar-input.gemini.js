@@ -1,6 +1,6 @@
 import CalendarInput from '../src/calendar-input';
-import IconOk from '../src/icon/ui/ok';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import { OkColorIcon } from '../gemini-utils/ok-icon';
 
 const DATE = '12.04.2017';
 
@@ -19,7 +19,7 @@ function renderAddons(calendarInputSize) {
     }
 
     return (
-        <IconOk size={ iconSize } colored={ true } />
+        <OkColorIcon size={ iconSize } />
     );
 }
 

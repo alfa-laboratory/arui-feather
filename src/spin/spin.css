@@ -34,6 +34,7 @@
     }
 }
 
+.button_view_extra.button_theme_alfa-light .spin,
 .spin_theme_alfa-on-color,
 .spin_theme_alfa-dark {
     &.spin_size_s {
@@ -50,6 +51,7 @@
     }
 }
 
+.button_view_extra.button_theme_alfa-dark .spin,
 .spin_theme_alfa-on-white,
 .spin_theme_alfa-light {
     &.spin_size_s {

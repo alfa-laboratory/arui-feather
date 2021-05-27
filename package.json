@@ -1,6 +1,6 @@
 {
   "name": "arui-feather",
-  "version": "18.8.0",
+  "version": "18.8.1-rc.3",
   "description": "Alfa-Bank UI lightweight library",
   "repository": {
     "type": "git",
@@ -80,6 +80,8 @@
   "author": "Good guys from Alfa Laboratory",
   "license": "MPL-2.0",
   "dependencies": {
+    "@alfalab/icons-classic": "^1.56.0",
+    "@alfalab/icons-glyph": "^1.95.0",
     "@babel/runtime-corejs2": "^7.7.6",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/lodash.sortedindexby": "^4.6.6",
@@ -103,9 +105,11 @@
   },
   "peerDependencies": {
     "react": ">=16.12",
-    "react-dom": ">=16.12"
+    "react-dom": ">=16.12",
+    "@alfalab/core-components-vars": ">=2.1"
   },
   "devDependencies": {
+    "@alfalab/core-components-vars": "^2.2.0",
     "@babel/preset-typescript": "^7.8.3",
     "@commitlint/cli": "9.1.2",
     "@semantic-release/changelog": "5.0.1",
@@ -126,9 +130,9 @@
     "@typescript-eslint/parser": "^2.28.0",
     "acorn": "^6.1.1",
     "alfa-ui-primitives": "2.80.0",
-    "arui-demo": "3.0.0",
+    "arui-demo": "3.3.1-feather.0",
     "arui-presets": "^5.1.0",
-    "arui-presets-lint": "^4.1.2",
+    "arui-presets-lint": "4.1.2",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "coveralls": "3.0.0",
     "css-loader": "^2.1.1",

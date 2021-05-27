@@ -525,7 +525,6 @@ describe('input', () => {
         expect(input.instance().getControl()).toEqual(ref.current);
     });
 
-
     it('should work with ref function', () => {
         const ref: MutableRefObject<HTMLInputElement> = { current: undefined };
         const refFunction = (componentRef: HTMLInputElement) => {

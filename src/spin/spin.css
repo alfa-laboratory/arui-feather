@@ -34,7 +34,8 @@
     }
 }
 
-.spin_theme_alfa-on-color {
+.spin_theme_alfa-on-color,
+.spin_theme_alfa-dark {
     &.spin_size_s {
         background-image: url("./images/c_s.png");
     }
@@ -49,7 +50,8 @@
     }
 }
 
-.spin_theme_alfa-on-white {
+.spin_theme_alfa-on-white,
+.spin_theme_alfa-light {
     &.spin_size_s {
         background-image: url("./images/w_s.png");
     }

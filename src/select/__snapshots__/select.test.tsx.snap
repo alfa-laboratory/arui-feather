@@ -69,9 +69,10 @@ exports[`select should render without problem 1`] = `
           tag="button"
           theme="alfa-on-white"
           type="button"
+          view="default"
         >
           <button
-            className="select-button select-button_size_m select-button_theme_alfa-on-white"
+            className="select-button select-button_view_default select-button_size_m select-button_theme_alfa-on-white"
             disabled={false}
             formNoValidate={false}
             onBlur={[Function]}
@@ -103,7 +104,6 @@ exports[`select should render without problem 1`] = `
                 <ForwardRef(ThemedComponent(IconButton))
                   className="select__tick"
                   key="addon-icon"
-                  size="m"
                   tag="span"
                 >
                   <IconButton
@@ -113,9 +113,10 @@ exports[`select should render without problem 1`] = `
                     tag="span"
                     theme="alfa-on-white"
                     type="button"
+                    view="default"
                   >
                     <span
-                      className="icon-button select__tick icon-button_size_m icon-button_theme_alfa-on-white"
+                      className="icon-button select__tick icon-button_view_default icon-button_size_m icon-button_theme_alfa-on-white"
                       formNoValidate={null}
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -138,30 +139,19 @@ exports[`select should render without problem 1`] = `
                           className="icon-button__text"
                           key="text"
                         >
-                          <ForwardRef(ThemedComponent(IconArrowDown))
-                            size="s"
-                          >
-                            <IconArrowDown
-                              size="s"
-                              theme="alfa-on-white"
+                          <l>
+                            <svg
+                              fill="currentColor"
+                              focusable="false"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
                             >
-                              <ForwardRef(ThemedComponent(Icon))
-                                name="arrow-down"
-                                size="s"
-                                theme="alfa-on-white"
-                              >
-                                <Icon
-                                  name="arrow-down"
-                                  size="s"
-                                  theme="alfa-on-white"
-                                >
-                                  <span
-                                    className="icon icon_size_s icon_name_arrow-down icon_theme_alfa-on-white"
-                                  />
-                                </Icon>
-                              </ForwardRef(ThemedComponent(Icon))>
-                            </IconArrowDown>
-                          </ForwardRef(ThemedComponent(IconArrowDown))>
+                              <path
+                                d="M12.182 6.879l.707.707L9 11.474 5.112 7.586l.707-.707L9 10.06z"
+                              />
+                            </svg>
+                          </l>
                         </span>
                       </span>
                     </span>

@@ -1,43 +1,53 @@
 Виды плашек:
 
 ```jsx
-import IconOk from 'arui-feather/icon/ui/ok';
-import IconError from 'arui-feather/icon/ui/error';
-import IconVerifying from 'arui-feather/icon/ui/verifying';
+import { OkSColorIcon, ErrorSColorIcon, CategoryCashMColorIcon } from '@alfalab/icons-classic';
 
 <div>
-    <Plate
-        title='Основной'
-        hasCloser={ true }
-    />
-    <Plate
-        title='Обычный'
-        type='common'
-        hasCloser={ true }
-        icon={
-            <IconVerifying />
-        }
-    />
-    <Plate
-        title='Ошибочный'
-        type='error'
-        hasCloser={ true }
-        icon={
-            <IconError
-                colored={ true }
-            />
-        }
-    />
-    <Plate
-        title='Успешный'
-        type='success'
-        hasCloser={ true }
-        icon={
-            <IconOk
-                colored={ true }
-            />
-        }
-    />
+    <div style={ { margin: '20px' } }>
+        <Plate
+            title='Основной'
+            hasCloser={ true }
+        >
+            <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Paragraph>
+            <Button>default</Button>
+        </Plate>
+    </div>
+    <div style={ { margin: '20px' } }>
+        <Plate
+            title='Обычный'
+            type='common'
+            hasCloser={ true }
+            icon={ <CategoryCashMColorIcon /> }
+        >
+            <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Paragraph>
+            <Button>default</Button>
+            <Button view='extra'>special</Button>
+            <Button pseudo={ true }>pseudo</Button>
+        </Plate>
+    </div>
+    <div style={ { margin: '20px' } }>
+        <Plate
+            title='Ошибочный'
+            type='error'
+            hasCloser={ true }
+            icon={ <ErrorSColorIcon /> }
+            style={ {
+                padding: '20px'
+            } }
+        />
+    </div>
+    <div style={ { margin: '20px' } }>
+        <Plate
+            title='Успешный'
+            type='success'
+            hasCloser={ true }
+            icon={ <OkSColorIcon /> }
+            style={ {
+                padding: '20px'
+            } }
+        />
+    </div>
 </div>
 ```
 

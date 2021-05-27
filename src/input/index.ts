@@ -6,9 +6,11 @@ import '../icon/ui/close';
 import '../icon-button';
 import '../masked-input';
 
+import './input.css';
 import './input_theme_alfa-on-color.css';
 import './input_theme_alfa-on-white.css';
-import './input.css';
+import './input_theme_alfa-dark.css';
+import './input_theme_alfa-light.css';
 
 export { default } from './input';
 export * from './input';

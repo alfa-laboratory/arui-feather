@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .link {
     cursor: pointer;
@@ -150,9 +151,52 @@
         color: var(--color-dark-indigo-30);
     }
 }
+.link_theme_alfa-light {
+    color: var(--color-light-text-primary);
+
+    .link__text {
+        border-color: var(--color-light-graphic-secondary);
+    }
+
+    &:hover,
+    &:focus {
+        color: var(--color-light-text-link);
+
+        .link__text {
+            border-color: var(--color-light-text-link);
+        }
+    }
+
+    &.link_disabled {
+        color: var(--color-light-text-disabled);
+    }
+}
+
+.link_theme_alfa-dark {
+    color: var(--color-dark-text-primary);
+
+    .link__text {
+        border-color: var(--color-dark-graphic-secondary);
+    }
+
+    &:hover,
+    &:focus {
+        color: var(--color-dark-text-link);
+
+        .link__text {
+            border-color: var(--color-dark-text-link);
+        }
+    }
+
+    &.link_disabled {
+        color: var(--color-dark-text-disabled);
+    }
+}
 
 .link_theme_alfa-on-color,
-.link_theme_alfa-on-white {
+.link_theme_alfa-on-white,
+.link_theme_alfa-light,
+.link_theme_alfa-dark {
     &.link_disabled,
     &.link_checked {
         .link__text {

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .popup-header {
     position: relative;
@@ -41,5 +42,15 @@
     &_size_xl {
         padding: 11px var(--gap-4xl);
         font-size: var(--font-size-xl);
+    }
+
+    &_theme_alfa-dark,
+    &_theme_alfa-dark &__closer {
+        color: var(--color-dark-text-primary);
+    }
+
+    &_theme_alfa-light,
+    &_theme_alfa-light &__closer {
+        color: var(--color-light-text-primary);
     }
 }

@@ -148,13 +148,6 @@
     width: 100%;
 }
 
-/* TODO remove? */
-.radio_invalid {
-    .radio__box {
-        border-color: var(--color-error-translucent);
-    }
-}
-
 .radio_checked {
     .radio__box {
         transition: all 0.1s 0s ease-out;

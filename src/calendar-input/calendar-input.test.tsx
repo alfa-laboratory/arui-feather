@@ -298,7 +298,7 @@ describe('calendar-input', () => {
         const calendarTarget = (wrapper.instance() as any).customCalendarTarget;
 
         jest.spyOn(calendarTarget, 'focus');
-        const iconNode = wrapper.find('.icon');
+        const iconNode = wrapper.find('.icon-button');
 
         iconNode.simulate('click');
 

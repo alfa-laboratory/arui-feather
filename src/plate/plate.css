@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .plate {
     display: inline-block;
@@ -98,6 +99,62 @@
 
         &:hover {
             opacity: var(--opacity-active);
+        }
+    }
+}
+
+.plate {
+    &_theme_alfa-on-color {
+        .plate__closer {
+            color: var(--color-dark-text-primary);
+        }
+    }
+
+    &_theme_alfa-dark {
+        &.plate_type {
+            &_default {
+                background-color: var(--color-dark-specialbg-secondary-grouped);
+                box-shadow: none;
+            }
+
+            &_common {
+                color: var(--color-dark-text-primary);
+                background-color: var(--color-dark-bg-secondary);
+
+                & .button_view_default {
+                    background-color: var(--color-dark-bg-primary);
+                }
+            }
+
+            &_error {
+                background-color: rgba(240, 68, 57, 0.05);
+                border: 1px solid rgba(240, 68, 57, 0.2);
+            }
+
+            &_success {
+                background-color: rgba(13, 186, 38, 0.06);
+                border: 1px solid rgba(13, 186, 38, 0.2);
+            }
+
+            &_warning {
+                background-color: rgba(246, 191, 101, 0.1);
+                border: 1px solid rgba(246, 191, 101, 0.6);
+            }
+        }
+
+        .plate__closer {
+            color: var(--color-dark-text-primary);
+        }
+    }
+
+    &_theme_alfa-light {
+        &.plate_type {
+            &_common {
+                color: var(--color-light-text-primary);
+                background-color: var(
+                    --color-light-specialbg-secondary-grouped
+                );
+            }
         }
     }
 }

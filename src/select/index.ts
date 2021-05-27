@@ -15,6 +15,8 @@ import '../resize-sensor';
 import './select.css';
 import './select_theme_alfa-on-color.css';
 import './select_theme_alfa-on-white.css';
+import './select_theme_alfa-dark.css';
+import './select_theme_alfa-light.css';
 
 export * from './select';
 export { default } from './select';

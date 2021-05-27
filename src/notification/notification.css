@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 :root {
     --width: 350px;
@@ -51,6 +52,18 @@
             0 1px 2px rgba(255, 255, 255, 0.24);
     }
 
+    &_theme_alfa-light {
+        color: var(--color-light-text-primary-inverted);
+        background: var(--color-light-bg-primary-inverted);
+        box-shadow: var(--shadow-s);
+    }
+
+    &_theme_alfa-dark {
+        color: var(--color-dark-text-primary-inverted);
+        background: var(--color-dark-bg-primary-inverted);
+        box-shadow: var(--shadow-s);
+    }
+
     &_has-closer {
         padding-right: calc(var(--gap-m) + 18px + var(--gap-m));
     }
@@ -93,6 +106,23 @@
 
         &:hover {
             opacity: var(--opacity-active);
+        }
+    }
+
+    &__icon,
+    &__closer {
+        &_theme_alfa-on-white {
+            color: var(--color-white);
+        }
+        &_theme_alfa-light {
+            color: var(--color-light-graphic-primary-inverted);
+        }
+
+        &_theme_alfa-on-color {
+            color: var(--color-dark-indigo);
+        }
+        &_theme_alfa-dark {
+            color: var(--color-dark-graphic-primary-inverted);
         }
     }
 

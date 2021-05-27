@@ -5,10 +5,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import {
+    AttachmentSIcon, AttachmentMIcon, AttachmentLIcon, AttachmentXlIcon,
+} from '@alfalab/icons-classic';
 import { withTheme } from '../cn';
 
 import Button, { ButtonProps } from '../button/button';
-import IconAttachment from '../icon/action/attachment';
 import ProgressBar from '../progress-bar';
 
 const MULTIPLE_TEXTS = ['файл', 'файла', 'файлов'];
@@ -255,13 +257,27 @@ export class Attach extends React.PureComponent<AttachProps, AttachState> {
         );
     }
 
+    renderIcon() {
+        switch (this.props.size) {
+        case 's':
+            return <AttachmentSIcon />;
+        case 'l':
+            return <AttachmentLIcon />;
+        case 'xl':
+            return <AttachmentXlIcon />;
+        case 'm':
+        default:
+            return <AttachmentMIcon />;
+        }
+    }
+
     renderButton() {
         const buttonProps = {
             ...this.props.buttonProps,
             className: this.cn('button'),
             disabled: this.props.disabled,
             size: this.props.size,
-            icon: this.props.icon ? this.props.icon : <IconAttachment size={ this.props.size } />,
+            icon: this.props.icon ? this.props.icon : this.renderIcon(),
             focused: this.state.focused,
         };
 

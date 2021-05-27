@@ -1,4 +1,5 @@
 @import "../vars.css";
+@import "@alfalab/core-components-vars/colors-bluetint.css";
 
 .heading {
     margin: 0;
@@ -106,5 +107,13 @@
 
     &_theme_alfa-on-white {
         color: var(--color-content-alfa-on-white);
+    }
+
+    &_theme_alfa-light {
+        color: var(--color-light-text-primary);
+    }
+
+    &_theme_alfa-dark {
+        color: var(--color-dark-text-primary);
     }
 }

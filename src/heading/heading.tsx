@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 const HEADING_LEVEL = {
     xl: 1,
@@ -34,7 +34,7 @@ export type HeadingProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дополнительный класс

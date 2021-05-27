@@ -82,7 +82,8 @@
             }
         }
 
-        .input__control::placeholder {
+        .input__control::placeholder,
+        .input__top {
             color: var(--color-content-disabled-alfa-on-color);
         }
 

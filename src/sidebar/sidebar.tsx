@@ -7,9 +7,9 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
+import { CloseLIcon } from '@alfalab/icons-classic';
 import { withTheme } from '../cn';
 
-import IconClose from '../icon/ui/close';
 import IconButton from '../icon-button';
 import PopupContainerProvider from '../popup-container-provider/popup-container-provider';
 
@@ -199,8 +199,8 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
         } = this.props;
 
         const offset = visible ? getScrollbarWidth() : 0;
-        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px`, };
-        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px`, };
+        const style = { width: this.state.isMobile ? '100%' : `${width + offset}px` };
+        const contentStyle = { marginRight: this.state.isMobile ? 0 : `-${offset}px` };
 
         return (
             <PopupContainerProvider
@@ -233,7 +233,7 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
                                         size={ this.state.isMobile ? 'm' : 'l' }
                                         onClick={ this.handleClose }
                                     >
-                                        <IconClose size="l" />
+                                        <CloseLIcon className={ this.cn('icon') } />
                                     </IconButton>
                                 </div>
                             )

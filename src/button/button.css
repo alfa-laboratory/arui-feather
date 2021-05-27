@@ -125,7 +125,7 @@
     }
 
     &_size_m &__icon {
-        margin-left: var(--gap-xs-neg);
+        margin-left: var(--gap-2xs-neg);
     }
 
     &_size_l {
@@ -135,7 +135,7 @@
     }
 
     &_size_l &__icon {
-        margin-left: var(--gap-s-neg);
+        margin-left: var(--gap-xs-neg);
     }
 
     &_size_xl {
@@ -145,7 +145,7 @@
     }
 
     &_size_xl &__icon {
-        margin-left: var(--gap-m-neg);
+        margin-left: var(--gap-s-neg);
     }
 
     &_view_rounded {

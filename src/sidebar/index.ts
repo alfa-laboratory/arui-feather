@@ -9,6 +9,8 @@ import '../popup-container-provider';
 import './sidebar.css';
 import './sidebar_theme_alfa-on-color.css';
 import './sidebar_theme_alfa-on-white.css';
+import './sidebar_theme_alfa-light.css';
+import './sidebar_theme_alfa-dark.css';
 
 export * from './sidebar';
 export { default } from './sidebar';

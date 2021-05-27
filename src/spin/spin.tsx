@@ -5,7 +5,7 @@
 import React from 'react';
 
 import { createCn } from 'bem-react-classname';
-import { withTheme } from '../cn';
+import { withTheme, Theme } from '../cn';
 
 export type SpinProps = {
     /**
@@ -21,7 +21,7 @@ export type SpinProps = {
     /**
      * Тема компонента
      */
-    theme?: 'alfa-on-color' | 'alfa-on-white';
+    theme?: Theme;
 
     /**
      * Дочерние элементы `Spin`

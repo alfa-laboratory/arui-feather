@@ -18,11 +18,7 @@ exports[`attach should render without problems 1`] = `
       className="attach__button"
       disabled={false}
       focused={false}
-      icon={
-        <ForwardRef(ThemedComponent(IconAttachment))
-          size="m"
-        />
-      }
+      icon={<r />}
       leftAddons={
         <label
           className="attach__label"
@@ -49,11 +45,7 @@ exports[`attach should render without problems 1`] = `
         disabled={false}
         focused={false}
         formNoValidate={false}
-        icon={
-          <ForwardRef(ThemedComponent(IconAttachment))
-            size="m"
-          />
-        }
+        icon={<r />}
         leftAddons={
           <label
             className="attach__label"
@@ -76,9 +68,10 @@ exports[`attach should render without problems 1`] = `
         tag="span"
         theme="alfa-on-white"
         type="button"
+        view="default"
       >
         <span
-          className="button attach__button button_size_m button_theme_alfa-on-white"
+          className="button attach__button button_view_default button_size_m button_theme_alfa-on-white"
           disabled={false}
           formNoValidate={null}
           onBlur={[Function]}
@@ -120,30 +113,19 @@ exports[`attach should render without problems 1`] = `
               className="button__icon"
               key="icon"
             >
-              <ForwardRef(ThemedComponent(IconAttachment))
-                size="m"
-              >
-                <IconAttachment
-                  size="m"
-                  theme="alfa-on-white"
+              <r>
+                <svg
+                  fill="currentColor"
+                  focusable="false"
+                  height="18"
+                  viewBox="0 0 17 18"
+                  width="17"
                 >
-                  <ForwardRef(ThemedComponent(Icon))
-                    name="attachment"
-                    size="m"
-                    theme="alfa-on-white"
-                  >
-                    <Icon
-                      name="attachment"
-                      size="m"
-                      theme="alfa-on-white"
-                    >
-                      <span
-                        className="icon icon_size_m icon_name_attachment icon_theme_alfa-on-white"
-                      />
-                    </Icon>
-                  </ForwardRef(ThemedComponent(Icon))>
-                </IconAttachment>
-              </ForwardRef(ThemedComponent(IconAttachment))>
+                  <path
+                    d="M8.508 16.07a5.002 5.002 0 007.026-.044A4.998 4.998 0 0015.578 9L7.8 1.222a3.996 3.996 0 00-6.69 1.793 3.999 3.999 0 001.034 3.864l6.364 6.363a3 3 0 005.037-1.337 2.998 2.998 0 00-.795-2.907L9.92 6.172l-.706.707 2.83 2.827a2.002 2.002 0 01-2.831 2.829l-6.36-6.364a2.996 2.996 0 01-.001-4.241 2.997 2.997 0 014.242 0l7.778 7.777a4 4 0 01-5.657 5.658L2.85 9l-.707.707 6.365 6.364z"
+                  />
+                </svg>
+              </r>
             </span>
             <span
               className="button__text"

@@ -1,6 +1,7 @@
+import React from 'react';
 import Button from '../src/button';
-import IconOk from '../src/icon/ui/ok';
 import GeminiBox from '../gemini-utils/gemini-box/gemini-box';
+import { OkIcon } from '../gemini-utils/ok-icon';
 
 const NAME = 'button';
 const THEMES = ['alfa-on-color', 'alfa-on-white'];
@@ -22,7 +23,7 @@ geminiReact.suite(NAME, () => {
             const sizeSelector = `${NAME}_size_${size}`;
 
             PROP_SETS
-                .concat([{ icon: <IconOk size={ size } /> }])
+                .concat([{ icon: <OkIcon size={ size } /> }])
                 .forEach((set, index) => {
                     const selector = `${themeSelector}.${sizeSelector}.${NAME}_prop-set_${index + 1}`;
 

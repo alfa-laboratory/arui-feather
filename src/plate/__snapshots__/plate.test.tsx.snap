@@ -30,7 +30,7 @@ exports[`plate should render icon when it propperty is setted 1`] = `
       className="plate__closer"
       onClick={[Function]}
     >
-      <ForwardRef(ThemedComponent(IconClose)) />
+      <l />
     </ForwardRef(ThemedComponent(IconButton))>
   </div>
 </div>

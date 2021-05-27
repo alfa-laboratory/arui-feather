@@ -183,7 +183,7 @@
     "react-frame-component": "4.1.1",
     "react-styleguidist": "9.1.5",
     "region-flags": "1.1.0",
-    "semantic-release": "17.1.2",
+    "semantic-release": "17.2.3",
     "style-loader": "^0.23.1",
     "stylelint": "^12.0.1",
     "stylelint-value-no-unknown-custom-properties": "^2.0.0",

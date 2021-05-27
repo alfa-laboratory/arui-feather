@@ -1,3 +1,27 @@
+# [19.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.8.0...v19.0.0) (2021-05-27)
+
+
+### Features
+
+* new theme ([234d580](https://github.com/alfa-laboratory/arui-feather/commit/234d580e770e1866f33dd98367dd1c2f10a5d34c)), closes [#1240](https://github.com/alfa-laboratory/arui-feather/issues/1240) [#1243](https://github.com/alfa-laboratory/arui-feather/issues/1243) [#1244](https://github.com/alfa-laboratory/arui-feather/issues/1244) [#1247](https://github.com/alfa-laboratory/arui-feather/issues/1247) [#1248](https://github.com/alfa-laboratory/arui-feather/issues/1248) [#1250](https://github.com/alfa-laboratory/arui-feather/issues/1250) [#1261](https://github.com/alfa-laboratory/arui-feather/issues/1261) [#1260](https://github.com/alfa-laboratory/arui-feather/issues/1260) [#1263](https://github.com/alfa-laboratory/arui-feather/issues/1263) [#1264](https://github.com/alfa-laboratory/arui-feather/issues/1264) [#1262](https://github.com/alfa-laboratory/arui-feather/issues/1262) [#1265](https://github.com/alfa-laboratory/arui-feather/issues/1265) [#1271](https://github.com/alfa-laboratory/arui-feather/issues/1271) [#1272](https://github.com/alfa-laboratory/arui-feather/issues/1272) [#1276](https://github.com/alfa-laboratory/arui-feather/issues/1276) [#1278](https://github.com/alfa-laboratory/arui-feather/issues/1278) [#1283](https://github.com/alfa-laboratory/arui-feather/issues/1283)
+
+
+### BREAKING CHANGES
+
+* Feat/new theme (#1239)
+
+* feat(theme): add new theme
+
+* feat(theme): add theme to heading, link, plate
+
+* feat(theme): add new theme type
+
+* feat(theme): add some themed icons
+
+* feat(theme): revert icons
+
+* feat(theme): fix
+
 # [18.8.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.7.0...v18.8.0) (2021-02-16)
 
 

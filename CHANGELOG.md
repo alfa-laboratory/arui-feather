@@ -1,3 +1,10 @@
+## [19.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v19.0.0...v19.0.1) (2021-06-01)
+
+
+### Bug Fixes
+
+* **money-input:** fix bug with multiple zeros ([#1286](https://github.com/alfa-laboratory/arui-feather/issues/1286)) ([b26328d](https://github.com/alfa-laboratory/arui-feather/commit/b26328ddb5d9247d1f18fd0a43545e2d861f9a7f))
+
 # [19.0.0](https://github.com/alfa-laboratory/arui-feather/compare/v18.8.0...v19.0.0) (2021-05-27)
 
 

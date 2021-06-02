@@ -1,3 +1,10 @@
+## [19.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v19.0.1...v19.0.2) (2021-06-02)
+
+
+### Bug Fixes
+
+* **select-styles:** add border-radius to select component ([#1287](https://github.com/alfa-laboratory/arui-feather/issues/1287)) ([83b2b3b](https://github.com/alfa-laboratory/arui-feather/commit/83b2b3b741b508e77d050789adbd4d3800d29272))
+
 ## [19.0.1](https://github.com/alfa-laboratory/arui-feather/compare/v19.0.0...v19.0.1) (2021-06-01)
 
 

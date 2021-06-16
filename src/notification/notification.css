@@ -109,7 +109,7 @@
         }
     }
 
-    &__icon,
+    &_status_fail &__icon,
     &__closer {
         &_theme_alfa-on-white {
             color: var(--color-white);
@@ -124,10 +124,6 @@
         &_theme_alfa-dark {
             color: var(--color-dark-graphic-primary-inverted);
         }
-    }
-
-    &__icon_green {
-        color: var(--color-dark-graphic-positive);
     }
 
     &_status_ok,

@@ -126,6 +126,10 @@
         }
     }
 
+    &__icon_green {
+        color: var(--color-dark-graphic-positive);
+    }
+
     &_status_ok,
     &_status_error,
     &_status_fail {

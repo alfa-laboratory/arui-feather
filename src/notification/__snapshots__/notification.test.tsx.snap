@@ -18,7 +18,7 @@ exports[`notification should render without problems 1`] = `
     }
   >
     <div
-      className="notification__icon"
+      className="notification__icon notification__icon_green"
     >
       <r />
     </div>

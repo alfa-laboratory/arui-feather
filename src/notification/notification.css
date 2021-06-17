@@ -109,7 +109,7 @@
         }
     }
 
-    &__icon,
+    &_status_fail &__icon,
     &__closer {
         &_theme_alfa-on-white {
             color: var(--color-white);

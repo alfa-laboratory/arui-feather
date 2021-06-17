@@ -20,7 +20,7 @@ exports[`notification should render without problems 1`] = `
     <div
       className="notification__icon"
     >
-      <r />
+      <l />
     </div>
     <div
       className="notification__content"

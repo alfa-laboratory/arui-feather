@@ -7,9 +7,8 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    CloseSIcon, ErrorMColorIcon, FailMIcon,
+    CloseSIcon, ErrorMColorIcon, FailMIcon, OkMColorIcon,
 } from '@alfalab/icons-classic';
-import { CheckmarkCircleMColorIcon } from '@alfalab/icons-glyph';
 import { withTheme, Theme } from '../cn';
 
 import IconButton from '../icon-button/icon-button';
@@ -175,8 +174,8 @@ export class Notification extends React.PureComponent<NotificationProps> {
         switch (status) {
         case 'error': ToggledIcon = ErrorMColorIcon; break;
         case 'fail': ToggledIcon = FailMIcon; break;
-        case 'ok': ToggledIcon = CheckmarkCircleMColorIcon; break;
-        default: ToggledIcon = CheckmarkCircleMColorIcon; break;
+        case 'ok': ToggledIcon = OkMColorIcon; break;
+        default: ToggledIcon = OkMColorIcon; break;
         }
 
         return (
@@ -200,7 +199,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
                     onKeyDown={ this.handleKeyDown }
                     data-test-id={ this.props['data-test-id'] }
                 >
-                    <div className={ this.cn('icon', { theme: status === 'fail' && theme }) }>
+                    <div className={ this.cn('icon', { theme }) }>
                         {
                             this.props.icon
                             || (

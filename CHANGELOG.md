@@ -1,3 +1,10 @@
+# [19.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v19.0.2...v19.1.0) (2021-06-17)
+
+
+### Features
+
+* **notification:** fixed ok icon ([89e05b8](https://github.com/alfa-laboratory/arui-feather/commit/89e05b89ad163222c252535cb5503bb039e83f50))
+
 ## [19.0.2](https://github.com/alfa-laboratory/arui-feather/compare/v19.0.1...v19.0.2) (2021-06-02)
 
 

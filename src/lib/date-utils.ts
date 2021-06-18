@@ -4,7 +4,7 @@
 
 /* eslint no-continue: 0 */
 
-import getDaysInMonth from 'date-fns/get_days_in_month';
+import getDaysInMonth from 'date-fns/getDaysInMonth';
 
 const DAYS_IN_WEEK = 7;
 
@@ -32,11 +32,11 @@ export function getRussianWeekDay(date: Date): number {
 }
 
 const PARSE_TOKENS: DateParserToken[] = [
-    { type: 'date', regex: /^\d{2}/, formatRegex: /^DD/ },
-    { type: 'date', regex: /^\d{1,2}/, formatRegex: /^D/ },
+    { type: 'date', regex: /^\d{2}/, formatRegex: /^dd/ },
+    { type: 'date', regex: /^\d{1,2}/, formatRegex: /^\bd\b|^d_/ },
     { type: 'month', regex: /^\d{2}/, formatRegex: /^MM/ },
-    { type: 'month', regex: /^\d{1,2}/, formatRegex: /^M/ },
-    { type: 'year', regex: /^\d{4}/, formatRegex: /^YYYY/ },
+    { type: 'month', regex: /^\d{1,2}/, formatRegex: /^\bM\b|^M_/ },
+    { type: 'year', regex: /^\d{4}/, formatRegex: /^yyyy/ },
 ];
 
 type Limit = {
@@ -146,11 +146,11 @@ function parseFormat(format: string): FormatParserToken[] {
 /**
  * Разбирает дату из строки по заданному формату.
  * Допустимые элементы формата:
- * D - дата, в формате 1-31
- * DD - дата, в формате 01-31,
+ * d - дата, в формате 1-31
+ * dd - дата, в формате 01-31,
  * M - месяц, в формате 1-12,
  * MM - месяц, в формате 01-12
- * YYYY - год
+ * yyyy - год
  * В качестве разделителей между элементами даты могут выступать любые символы, не являющиеся частью формата.
  *
  * @param input Входная строка для разбора.
@@ -158,7 +158,7 @@ function parseFormat(format: string): FormatParserToken[] {
  * @param strict Запрещать ли значения, выходящие за пределы логических ограничений месяцев/дней.
  * В случае если strict=false 22 месяц будет интерпретироваться как год и 10 месяцев.
  */
-export function parse(input: string, format = 'DD.MM.YYYY', strict = true): Date {
+export function parse(input: string, format = 'dd.MM.yyyy', strict = true): Date {
     const parsedFormat = parseFormat(format);
     const parsedResult: Partial<Record<DateType, number>> = {};
 
@@ -171,6 +171,7 @@ export function parse(input: string, format = 'DD.MM.YYYY', strict = true): Date
             }
             // eslint-disable-next-line no-param-reassign
             input = input.substring(1);
+
             continue;
         }
 

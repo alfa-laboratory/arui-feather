@@ -402,20 +402,20 @@ describe('calendar-input', () => {
 
     describe('calendar utils', () => {
         it('should change format of a date', () => {
-            const result = calendarUtils.changeDateFormat('2012-11-10', 'YYYY-MM-DD', 'DD.MM.YYYY');
+            const result = calendarUtils.changeDateFormat('2012-11-10', 'yyyy-MM-dd', 'dd.MM.yyyy');
 
             expect(result).toBe('10.11.2012');
         });
 
         it('should return start of month', () => {
-            const result = new Date(calendarUtils.calculateMonth('2012-11-10', 'YYYY-MM-DD'));
+            const result = new Date(calendarUtils.calculateMonth('2012-11-10', 'yyyy-MM-dd'));
 
             expect(result.getMonth() + 1).toBe(11); // getMonth is zero based
             expect(result.getFullYear()).toBe(2012);
         });
 
         it('should return current month if not valid value given', () => {
-            const result = new Date(calendarUtils.calculateMonth('foo', 'YYYY-MM-DD'));
+            const result = new Date(calendarUtils.calculateMonth('foo', 'yyyy-MM-dd'));
             const now = new Date();
 
             expect(result.getMonth()).toBe(now.getMonth());
@@ -425,7 +425,7 @@ describe('calendar-input', () => {
         it('should return earlierLimit month if it after given date', () => {
             const result = new Date(calendarUtils.calculateMonth(
                 '2012-11-10',
-                'YYYY-MM-DD',
+                'yyyy-MM-dd',
                 (new Date(2013, 8, 10).getTime()),
             ));
 
@@ -436,7 +436,7 @@ describe('calendar-input', () => {
         it('should return laterLimit month if it before given date', () => {
             const result = new Date(calendarUtils.calculateMonth(
                 '2012-11-10',
-                'YYYY-MM-DD',
+                'yyyy-MM-dd',
                 (new Date(2011, 8, 10).getTime()),
                 (new Date(2011, 9, 10).getTime()),
             ));
@@ -448,7 +448,7 @@ describe('calendar-input', () => {
         it('should return start of month if earlier and later limit given, but value is between them', () => {
             const result = new Date(calendarUtils.calculateMonth(
                 '2012-11-10',
-                'YYYY-MM-DD',
+                'yyyy-MM-dd',
                 (new Date(2011, 8, 10).getTime()),
                 (new Date(2014, 9, 10).getTime()),
             ));

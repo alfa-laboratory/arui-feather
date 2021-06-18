@@ -23,7 +23,7 @@ exports[`calendar should render without problems 1`] = `
     ]
   }
   offDays={Array []}
-  outputFormat="DD.MM.YYYY"
+  outputFormat="dd.MM.yyyy"
   selectedFrom={null}
   selectedTo={null}
   showArrows={true}

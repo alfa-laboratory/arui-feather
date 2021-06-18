@@ -42,6 +42,12 @@
                 &:hover {
                     background: var(--color-white);
                 }
+
+                &.calendar__day_type_off,
+                &.calendar__day_type_weekend-off {
+                    color: var(--color-dark-indigo-30-flat);
+                    background: var(--color-background-minor-alfa-on-color);
+                }
             }
         }
 

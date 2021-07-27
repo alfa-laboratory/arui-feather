@@ -95,7 +95,7 @@
         border-color: transparent;
 
         .button__text {
-            color: var(--color-content-disabled-alfa-on-color);
+            opacity: 0.4;
         }
     }
 }

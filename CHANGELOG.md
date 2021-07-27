@@ -1,3 +1,10 @@
+## [19.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v19.1.0...v19.1.1) (2021-07-27)
+
+
+### Bug Fixes
+
+* **button:** fixed button text color active/disabled on Safari and iOs ([#1291](https://github.com/alfa-laboratory/arui-feather/issues/1291)) ([010e5f2](https://github.com/alfa-laboratory/arui-feather/commit/010e5f2bbe72332e0f9ddb51f620adb3bf153d7a))
+
 # [19.1.0](https://github.com/alfa-laboratory/arui-feather/compare/v19.0.2...v19.1.0) (2021-06-17)
 
 

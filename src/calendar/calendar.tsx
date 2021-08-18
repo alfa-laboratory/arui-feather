@@ -130,6 +130,11 @@ export type CalendarProps = {
     ignoreTimezone?: boolean;
 
     /**
+     * Отображать список лет в порядке возрастания (по-умолчанию в порядке убывания)
+     */
+    reverseYearsOrder?: boolean;
+
+    /**
      * Управление шириной календаря. При значении 'available' растягивает кнопку на ширину родителя
      */
     width?: 'default' | 'available';
@@ -445,11 +450,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     };
 
     renderYears() {
+        const reverse = this.props.reverseYearsOrder;
+
         return (
             <div className={ this.cn('wrapper') }>
                 <div className={ this.cn('years') } ref={ this.yearsListRef }>
                     {
-                        this.years.map((year, index) => {
+                        (reverse ? this.years.reverse() : this.years).map((year, index) => {
                             const newYear = setYear(this.state.month, year);
                             const dataYear = newYear.getTime();
                             const selectedDate = new Date(this.state.month);

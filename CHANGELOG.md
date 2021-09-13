@@ -1,3 +1,10 @@
+# [19.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v19.1.1...v19.2.0) (2021-09-13)
+
+
+### Features
+
+* **calendar:** add reverseYearsOrder prop to change order of years ([5b414c6](https://github.com/alfa-laboratory/arui-feather/commit/5b414c69937486341ba3cf25798b0954000d11e2))
+
 ## [19.1.1](https://github.com/alfa-laboratory/arui-feather/compare/v19.1.0...v19.1.1) (2021-07-27)
 
 

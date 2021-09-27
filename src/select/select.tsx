@@ -6,9 +6,23 @@ import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    ArrowUpSIcon, ArrowUpMIcon, ArrowUpLIcon,
-    ArrowDownSIcon, ArrowDownMIcon, ArrowDownLIcon,
-} from '@alfalab/icons-classic';
+    ArrowUpSIcon
+} from '@alfalab/icons-classic/ArrowUpSIcon';
+import {
+    ArrowUpMIcon
+} from '@alfalab/icons-classic/ArrowUpMIcon';
+import {
+    ArrowUpLIcon
+} from '@alfalab/icons-classic/ArrowUpLIcon';
+import {
+    ArrowDownSIcon,
+} from '@alfalab/icons-classic/ArrowDownSIcon';
+import {
+    ArrowDownMIcon,
+} from '@alfalab/icons-classic/ArrowDownMIcon';
+import {
+    ArrowDownLIcon
+} from '@alfalab/icons-classic/ArrowDownLIcon';
 import { withTheme, Theme } from '../cn';
 
 import { Button } from '../button/button';

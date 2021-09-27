@@ -7,8 +7,17 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    CloseSIcon, ErrorMColorIcon, FailMIcon, OkMColorIcon,
-} from '@alfalab/icons-classic';
+    CloseSIcon
+} from '@alfalab/icons-classic/CloseSIcon';
+import {
+    ErrorMColorIcon
+} from '@alfalab/icons-classic/ErrorMColorIcon';
+import {
+    FailMIcon
+} from '@alfalab/icons-classic/FailMIcon';
+import {
+    OkMColorIcon,
+} from '@alfalab/icons-classic/OkMColorIcon';
 import { withTheme, Theme } from '../cn';
 
 import IconButton from '../icon-button/icon-button';

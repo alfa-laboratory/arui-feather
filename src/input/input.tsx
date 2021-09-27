@@ -7,8 +7,17 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    CloseSIcon, CloseMIcon, CloseLIcon, CloseXlIcon,
-} from '@alfalab/icons-classic';
+    CloseSIcon
+} from '@alfalab/icons-classic/CloseSIcon';
+import {
+    CloseMIcon
+} from '@alfalab/icons-classic/CloseMIcon';
+import {
+    CloseLIcon
+} from '@alfalab/icons-classic/CloseLIcon';
+import {
+    CloseXlIcon,
+} from '@alfalab/icons-classic/CloseXlIcon';
 import { withTheme, Theme } from '../cn';
 
 import { FormatCharacters } from '../masked-input/mask';

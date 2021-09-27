@@ -6,7 +6,15 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { CloseMIcon, ArrowUpMIcon, ArrowDownMIcon } from '@alfalab/icons-classic';
+import {
+    CloseMIcon
+} from '@alfalab/icons-classic/CloseMIcon';
+import {
+    ArrowUpMIcon
+} from '@alfalab/icons-classic/ArrowUpMIcon';
+import {
+    ArrowDownMIcon
+} from '@alfalab/icons-classic/ArrowDownMIcon';
 import { withTheme, Theme } from '../cn';
 
 import IconButton from '../icon-button/icon-button';

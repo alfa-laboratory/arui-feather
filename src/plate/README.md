@@ -1,7 +1,9 @@
 Виды плашек:
 
 ```jsx
-import { OkSColorIcon, ErrorSColorIcon, CategoryCashMColorIcon } from '@alfalab/icons-classic';
+import { OkSColorIcon } from '@alfalab/icons-classic/OkSColorIcon';
+import { ErrorSColorIcon } from '@alfalab/icons-classic/ErrorSColorIcon';
+import { CategoryCashMColorIcon } from '@alfalab/icons-classic/CategoryCashMColorIcon';
 
 <div>
     <div style={ { margin: '20px' } }>

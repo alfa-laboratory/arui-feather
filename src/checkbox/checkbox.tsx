@@ -5,11 +5,17 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    TickXsIcon,
-    TickSIcon,
-    CheckIndeterminateMIcon,
+    TickXsIcon
+} from '@alfalab/icons-classic/TickXsIcon';
+import {
+    TickSIcon
+} from '@alfalab/icons-classic/TickSIcon';
+import {
+    CheckIndeterminateMIcon
+} from '@alfalab/icons-classic/CheckIndeterminateMIcon';
+import {
     CheckIndeterminateSIcon,
-} from '@alfalab/icons-classic';
+} from '@alfalab/icons-classic/CheckIndeterminateSIcon';
 import { withTheme, Theme } from '../cn';
 
 import TagButton from '../tag-button/tag-button';

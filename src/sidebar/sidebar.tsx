@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { CloseLIcon } from '@alfalab/icons-classic';
+import { CloseLIcon } from '@alfalab/icons-classic/CloseLIcon';
 import { withTheme } from '../cn';
 
 import IconButton from '../icon-button';

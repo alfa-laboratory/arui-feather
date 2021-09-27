@@ -26,7 +26,9 @@ import sortedIndexOf from 'lodash.sortedindexof';
 import sortedIndexBy from 'lodash.sortedindexby';
 
 import { ArrowBackMIcon, ArrowForwardMIcon } from '@alfalab/icons-glyph';
-import { ArrowSelectMIcon } from '@alfalab/icons-classic';
+import {
+    ArrowSelectMIcon
+} from '@alfalab/icons-classic/ArrowSelectMIcon';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 import { isCurrentDay, getYearsRange } from './utils';

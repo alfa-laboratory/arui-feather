@@ -6,8 +6,17 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    AttachmentSIcon, AttachmentMIcon, AttachmentLIcon, AttachmentXlIcon,
-} from '@alfalab/icons-classic';
+    AttachmentSIcon
+} from '@alfalab/icons-classic/AttachmentSIcon';
+import {
+    AttachmentMIcon
+} from '@alfalab/icons-classic/AttachmentMIcon';
+import {
+    AttachmentLIcon
+} from '@alfalab/icons-classic/AttachmentLIcon';
+import {
+    AttachmentXlIcon,
+} from '@alfalab/icons-classic/AttachmentXlIcon';
 import { withTheme } from '../cn';
 
 import Button, { ButtonProps } from '../button/button';

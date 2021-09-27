@@ -1,7 +1,16 @@
 import React, { FC } from 'react';
 import {
-    OkLColorIcon, OkMColorIcon, OkSColorIcon, OkXlColorIcon,
-} from '@alfalab/icons-classic';
+    OkLColorIcon
+} from '@alfalab/icons-classic/OkLColorIcon';
+import {
+    OkMColorIcon
+} from '@alfalab/icons-classic/OkMColorIcon';
+import {
+    OkSColorIcon
+} from '@alfalab/icons-classic/OkSColorIcon';
+import {
+    OkXlColorIcon,
+} from '@alfalab/icons-classic/OkXlColorIcon';
 
 const icons = {
     s: <OkSColorIcon />,

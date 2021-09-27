@@ -6,7 +6,12 @@
 
 import React from 'react';
 import { createCn } from 'bem-react-classname';
-import { TickMIcon, TickSIcon } from '@alfalab/icons-classic';
+import {
+    TickMIcon
+} from '@alfalab/icons-classic/TickMIcon';
+import {
+    TickSIcon
+} from '@alfalab/icons-classic/TickSIcon';
 import { withTheme, Theme } from '../cn';
 
 import MenuItem, { MenuItemProps } from '../menu-item/menu-item';

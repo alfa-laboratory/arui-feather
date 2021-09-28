@@ -1,3 +1,10 @@
+## [19.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v19.2.0...v19.2.1) (2021-09-28)
+
+
+### Bug Fixes
+
+* turkish lira symbol change ([#1249](https://github.com/alfa-laboratory/arui-feather/issues/1249)) ([e04df8c](https://github.com/alfa-laboratory/arui-feather/commit/e04df8c803cdd6e9f325903f3930cb0e0be1b708))
+
 # [19.2.0](https://github.com/alfa-laboratory/arui-feather/compare/v19.1.1...v19.2.0) (2021-09-13)
 
 

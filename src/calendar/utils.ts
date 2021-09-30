@@ -1,5 +1,5 @@
-import startOfToday from 'date-fns/start_of_today';
-import getTime from 'date-fns/get_time';
+import startOfToday from 'date-fns/startOfToday';
+import getTime from 'date-fns/getTime';
 
 /**
  * Возвращает `true`, если переданная дата является текущей датой.

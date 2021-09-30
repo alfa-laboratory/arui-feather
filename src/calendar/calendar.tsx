@@ -9,19 +9,19 @@ import React from 'react';
 
 import { createCn } from 'bem-react-classname';
 
-import differenceInMonths from 'date-fns/difference_in_months';
-import differenceInMilliseconds from 'date-fns/difference_in_milliseconds';
-import startOfDay from 'date-fns/start_of_day';
-import startOfMonth from 'date-fns/start_of_month';
-import addDays from 'date-fns/add_days';
-import addYears from 'date-fns/add_years';
-import subtractYears from 'date-fns/sub_years';
+import differenceInMonths from 'date-fns/differenceInMonths';
+import differenceInMilliseconds from 'date-fns/differenceInMilliseconds';
+import startOfDay from 'date-fns/startOfDay';
+import startOfMonth from 'date-fns/startOfMonth';
+import addDays from 'date-fns/addDays';
+import addYears from 'date-fns/addYears';
+import subtractYears from 'date-fns/subYears';
 import formatDate from 'date-fns/format';
-import isSameMonth from 'date-fns/is_same_month';
-import setMonth from 'date-fns/set_month';
-import setYear from 'date-fns/set_year';
-import endOfMonth from 'date-fns/end_of_month';
-import eachDay from 'date-fns/each_day';
+import isSameMonth from 'date-fns/isSameMonth';
+import setMonth from 'date-fns/setMonth';
+import setYear from 'date-fns/setYear';
+import endOfMonth from 'date-fns/endOfMonth';
+import eachDay from 'date-fns/eachDayOfInterval';
 import sortedIndexOf from 'lodash.sortedindexof';
 import sortedIndexBy from 'lodash.sortedindexby';
 
@@ -198,7 +198,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     static defaultProps: Partial<CalendarProps> = {
         selectedFrom: null,
         selectedTo: null,
-        outputFormat: 'DD.MM.YYYY',
+        outputFormat: 'dd.MM.yyyy',
         weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
         months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
             'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
@@ -397,7 +397,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         this.props.months.map((month, index) => {
                             const monthStart = startOfMonth(setMonth(this.state.month, index));
                             const monthEnd = endOfMonth(monthStart);
-                            const allMonthDays = eachDay(monthStart, monthEnd);
+                            const allMonthDays = eachDay({
+                                start: monthStart,
+                                end: monthEnd,
+                            });
                             const off = !allMonthDays.find((day) => this.isValidDate(day));
                             const selectedDate = new Date(this.state.month);
                             const isSameMonth = selectedDate

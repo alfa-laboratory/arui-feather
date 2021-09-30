@@ -43,16 +43,16 @@ describe('date utils', () => {
         it('should allow to use any symbol as delimiter between date tokens', () => {
             const targetDate = (new Date(2017, 0, 1)).getTime();
 
-            expect(parse('01_01_2017', 'DD_MM_YYYY').getTime()).toEqual(targetDate);
-            expect(parse('day: 01, month: 01, year: 2017', 'day: DD, month: MM, year: YYYY').getTime())
+            expect(parse('01_01_2017', 'dd_MM_yyyy').getTime()).toEqual(targetDate);
+            expect(parse('day: 01, month: 01, year: 2017', 'day: dd, month: MM, year: yyyy').getTime())
                 .toEqual(targetDate);
-            expect(parse('2017, 01, 01', 'YYYY, MM, DD').getTime()).toEqual(targetDate);
+            expect(parse('2017, 01, 01', 'yyyy, MM, dd').getTime()).toEqual(targetDate);
         });
 
-        it('should return start of the month if only YYYY and MM is presented in format', () => {
+        it('should return start of the month if only yyyy and MM is presented in format', () => {
             const targetDate = (new Date(2017, 0, 1)).getTime();
 
-            expect(parse('01 2017', 'MM YYYY').getTime()).toEqual(targetDate);
+            expect(parse('01 2017', 'MM yyyy').getTime()).toEqual(targetDate);
         });
 
         /* eslint-disable no-restricted-globals */
@@ -74,8 +74,8 @@ describe('date utils', () => {
         it('should return valid date if date token is out of range and strict = false', () => {
             const targetDate = (new Date(2017, 0, 1)).getTime();
 
-            expect(parse('32.12.2016', 'DD.MM.YYYY', false).getTime()).toEqual(targetDate);
-            expect(parse('01.13.2016', 'DD.MM.YYYY', false).getTime()).toEqual(targetDate);
+            expect(parse('32.12.2016', 'dd.MM.yyyy', false).getTime()).toEqual(targetDate);
+            expect(parse('01.13.2016', 'dd.MM.yyyy', false).getTime()).toEqual(targetDate);
         });
     });
 });

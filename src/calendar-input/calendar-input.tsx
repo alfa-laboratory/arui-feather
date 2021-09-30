@@ -37,12 +37,12 @@ import { FormatCharacters } from '../masked-input/mask';
 import performance from '../performance';
 
 /**
- * NB: В нативном календаре нельзя менять формат даты. Приемлем только YYYY-MM-DD формат.
+ * NB: В нативном календаре нельзя менять формат даты. Приемлем только yyyy-MM-dd формат.
  * https://www.w3.org/TR/html-markup/input.date.html#input.date.attrs.value
  * https://tools.ietf.org/html/rfc3339#section-5.6
 */
-const CUSTOM_DATE_FORMAT = 'DD.MM.YYYY';
-const NATIVE_DATE_FORMAT = 'YYYY-MM-DD';
+const CUSTOM_DATE_FORMAT = 'dd.MM.yyyy';
+const NATIVE_DATE_FORMAT = 'yyyy-MM-dd';
 const IS_BROWSER = typeof window !== 'undefined';
 const SUPPORTS_INPUT_TYPE_DATE = IS_BROWSER && isInputDateSupported();
 const maskFormatCharacters: FormatCharacters = {
@@ -592,7 +592,7 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
         const resultEvent = {
             ...event,
-            // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
+            // Трансформируем нативную yyyy-MM-dd дату в кастомный формат на вывод в коллбэках
             target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) },
         };
 
@@ -615,7 +615,7 @@ export class CalendarInput extends React.Component<CalendarInputProps> {
         // Копируем пришедший из аргументов SyntheticEvent для дальнейшего редактирования
         const resultEvent = {
             ...event,
-            // Трансформируем нативную YYYY-MM-DD дату в кастомный формат на вывод в коллбэках
+            // Трансформируем нативную yyyy-MM-dd дату в кастомный формат на вывод в коллбэках
             target: { value: changeDateFormat(event.target.value, NATIVE_DATE_FORMAT, CUSTOM_DATE_FORMAT) },
         };
 

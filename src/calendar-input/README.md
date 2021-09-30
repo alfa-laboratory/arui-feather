@@ -26,13 +26,13 @@
 ```
 
 ```jsx
-const formatDate = require('date-fns/format');
+import { format as formatDate } from 'date-fns';
 
 <div>
     {
         ['s', 'm', 'l', 'xl'].map(size => (
             <div className='row' key={ size }>
-                <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'DD.MM.YYYY') } width='available' />
+                <CalendarInput size={ size } placeholder={ formatDate(new Date(), 'dd.MM.yyyy') } width='available' />
             </div>
         ))
     }
@@ -81,8 +81,10 @@ const IconOk = require('../../src/icon/ui/ok').default;
 
 С отображением текущей даты
 ```jsx
-const addDays = require('date-fns/add_days');
-const formatDate = require('date-fns/format');
+import {
+    addDays,
+    format as formatDate
+} from 'date-fns';
 
 const currentDate = new Date();
 
@@ -94,7 +96,7 @@ const calendar = {
     <CalendarInput
         size='m'
         calendar={ calendar }
-        defaultValue={ formatDate(addDays(currentDate, 2), 'DD.MM.YYYY') }
+        defaultValue={ formatDate(addDays(currentDate, 2), 'dd.MM.yyyy') }
         mobileMode='popup'
     />
 </div>

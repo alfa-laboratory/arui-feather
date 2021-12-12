@@ -144,6 +144,7 @@ exports[`select should render without problem 1`] = `
                               fill="currentColor"
                               focusable="false"
                               height="18"
+                              role="img"
                               viewBox="0 0 18 18"
                               width="18"
                             >

@@ -5,13 +5,13 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    CloseXsIcon
+    CloseXsIcon,
 } from '@alfalab/icons-classic/CloseXsIcon';
 import {
-    CloseSIcon
+    CloseSIcon,
 } from '@alfalab/icons-classic/CloseSIcon';
 import {
-    CloseMIcon
+    CloseMIcon,
 } from '@alfalab/icons-classic/CloseMIcon';
 import {
     CloseLIcon,

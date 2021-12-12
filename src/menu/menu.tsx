@@ -7,10 +7,10 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    TickMIcon
+    TickMIcon,
 } from '@alfalab/icons-classic/TickMIcon';
 import {
-    TickSIcon
+    TickSIcon,
 } from '@alfalab/icons-classic/TickSIcon';
 import { withTheme, Theme } from '../cn';
 

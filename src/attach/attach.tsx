@@ -6,13 +6,13 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    AttachmentSIcon
+    AttachmentSIcon,
 } from '@alfalab/icons-classic/AttachmentSIcon';
 import {
-    AttachmentMIcon
+    AttachmentMIcon,
 } from '@alfalab/icons-classic/AttachmentMIcon';
 import {
-    AttachmentLIcon
+    AttachmentLIcon,
 } from '@alfalab/icons-classic/AttachmentLIcon';
 import {
     AttachmentXlIcon,

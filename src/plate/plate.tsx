@@ -7,13 +7,13 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    CloseMIcon
+    CloseMIcon,
 } from '@alfalab/icons-classic/CloseMIcon';
 import {
-    ArrowUpMIcon
+    ArrowUpMIcon,
 } from '@alfalab/icons-classic/ArrowUpMIcon';
 import {
-    ArrowDownMIcon
+    ArrowDownMIcon,
 } from '@alfalab/icons-classic/ArrowDownMIcon';
 import { withTheme, Theme } from '../cn';
 

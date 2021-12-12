@@ -371,10 +371,10 @@ describe('calendar', () => {
         ];
         const calendar = mount(
             <Calendar
-                value={startOfDay(new Date('2020-11-15')).valueOf()}
+                value={ startOfDay(new Date('2020-11-15')).valueOf() }
                 ignoreTimezone={ true }
                 eventDays={ eventDays }
-            />
+            />,
         );
 
         const days = calendar.find('.calendar__event');
@@ -390,10 +390,10 @@ describe('calendar', () => {
         ];
         const calendar = mount(
             <Calendar
-                value={startOfDay(new Date('2020-11-15')).valueOf()}
+                value={ startOfDay(new Date('2020-11-15')).valueOf() }
                 ignoreTimezone={ true }
                 offDays={ offDays }
-            />
+            />,
         );
 
         const days = calendar.find('.calendar__day_type_weekend-off');

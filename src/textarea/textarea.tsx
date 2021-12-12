@@ -236,7 +236,7 @@ export class Textarea extends React.PureComponent<TextareaProps> {
                     invalid: !!this.props.error,
                     'has-label': !!this.props.label,
                     'has-value': !!value,
-                    'has-icon': !!this.props.icon
+                    'has-icon': !!this.props.icon,
                 }) }
                 ref={ (root) => {
                     this.root = root;

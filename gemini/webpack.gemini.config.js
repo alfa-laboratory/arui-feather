@@ -18,7 +18,7 @@ module.exports = merge.smart(WEBPACK_BASE_TEMPLATE, {
                 loader: 'ts-loader',
                 options: {
                     transpileOnly: true,
-                }
+                },
             },
         ],
     },

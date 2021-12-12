@@ -5,13 +5,13 @@
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    TickXsIcon
+    TickXsIcon,
 } from '@alfalab/icons-classic/TickXsIcon';
 import {
-    TickSIcon
+    TickSIcon,
 } from '@alfalab/icons-classic/TickSIcon';
 import {
-    CheckIndeterminateMIcon
+    CheckIndeterminateMIcon,
 } from '@alfalab/icons-classic/CheckIndeterminateMIcon';
 import {
     CheckIndeterminateSIcon,

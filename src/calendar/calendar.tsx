@@ -25,10 +25,9 @@ import eachDay from 'date-fns/each_day';
 import sortedIndexOf from 'lodash.sortedindexof';
 import sortedIndexBy from 'lodash.sortedindexby';
 
-import { ArrowBackMIcon, ArrowForwardMIcon } from '@alfalab/icons-glyph';
-import {
-    ArrowSelectMIcon
-} from '@alfalab/icons-classic/ArrowSelectMIcon';
+import { ArrowBackMIcon } from '@alfalab/icons-glyph/ArrowBackMIcon';
+import { ArrowForwardMIcon } from '@alfalab/icons-glyph/ArrowForwardMIcon';
+import { ArrowSelectMIcon } from '@alfalab/icons-classic/ArrowSelectMIcon';
 import keyboardCode from '../lib/keyboard-code';
 import performance from '../performance';
 import { isCurrentDay, getYearsRange } from './utils';
@@ -44,7 +43,6 @@ const SUNDAY_INDEX = 6;
 const WITHOUT_TIME_FORMAT = 'YYYY-MM-DD';
 
 export type CalendarProps = {
-
     /**
      * Выбранная дата, в формате unix timestamp
      */
@@ -78,7 +76,11 @@ export type CalendarProps = {
     /**
      * Обработчик смены даты
      */
-    onValueChange?: (timestamp?: number, dateString?: string, isTriggeredByKeyboard?: boolean) => void;
+    onValueChange?: (
+        timestamp?: number,
+        dateString?: string,
+        isTriggeredByKeyboard?: boolean
+    ) => void;
 
     /**
      * Обработчик смены месяца
@@ -180,14 +182,13 @@ export type CalendarProps = {
      * Идентификатор для систем автоматизированного тестирования
      */
     'data-test-id'?: string;
-
 };
 
 type CalendarState = {
     isMonthSelection?: boolean;
     isYearSelection?: boolean;
     month: Date | number;
-}
+};
 /**
  * Компонент календаря.
  */
@@ -200,8 +201,20 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         selectedTo: null,
         outputFormat: 'DD.MM.YYYY',
         weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-        months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        months: [
+            'Январь',
+            'Февраль',
+            'Март',
+            'Апрель',
+            'Май',
+            'Июнь',
+            'Июль',
+            'Август',
+            'Сентябрь',
+            'Октябрь',
+            'Ноябрь',
+            'Декабрь',
+        ],
         offDays: [],
         eventDays: [],
         showToday: false,
@@ -277,60 +290,48 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         const month = new Date(this.state.month);
         const isPrevMonthEnabled = !this.earlierLimit
             || differenceInMonths(month, startOfMonth(this.earlierLimit)) > 0;
-        const isNextMonthEnabled = !this.laterLimit
-            || differenceInMonths(month, this.laterLimit) < 0;
+        const isNextMonthEnabled = !this.laterLimit || differenceInMonths(month, this.laterLimit) < 0;
         const areArrowsVisible = this.props.showArrows
             && !this.state.isMonthSelection
             && !this.state.isYearSelection;
 
         return (
             <div className={ this.cn('title') }>
-                {
-                    areArrowsVisible && (
-                        <div
-                            className={
-                                this.cn('arrow', {
-                                    direction: 'left',
-                                    disabled: !isPrevMonthEnabled,
-                                })
-                            }
-                            data-step="-1"
-                            data-disabled={ !isPrevMonthEnabled }
-                            role="button"
-                            tabIndex={ 0 }
-                            onClick={ this.handleArrowClick }
-                        >
-                            <ArrowBackMIcon />
-                        </div>
-                    )
-                }
-                {
-                    areArrowsVisible && (
-                        <div
-                            className={
-                                this.cn('arrow', {
-                                    direction: 'right',
-                                    disabled: !isNextMonthEnabled,
-                                })
-                            }
-                            data-step="1"
-                            data-disabled={ !isNextMonthEnabled }
-                            role="button"
-                            tabIndex={ 0 }
-                            onClick={ this.handleArrowClick }
-                        >
-                            <ArrowForwardMIcon />
-                        </div>
-                    )
-                }
-                <div className={ this.cn('select-buttons') }>
-
+                { areArrowsVisible && (
                     <div
-                        className={
-                            this.cn('name', {
-                                month: true,
-                            })
-                        }
+                        className={ this.cn('arrow', {
+                            direction: 'left',
+                            disabled: !isPrevMonthEnabled,
+                        }) }
+                        data-step="-1"
+                        data-disabled={ !isPrevMonthEnabled }
+                        role="button"
+                        tabIndex={ 0 }
+                        onClick={ this.handleArrowClick }
+                    >
+                        <ArrowBackMIcon />
+                    </div>
+                ) }
+                { areArrowsVisible && (
+                    <div
+                        className={ this.cn('arrow', {
+                            direction: 'right',
+                            disabled: !isNextMonthEnabled,
+                        }) }
+                        data-step="1"
+                        data-disabled={ !isNextMonthEnabled }
+                        role="button"
+                        tabIndex={ 0 }
+                        onClick={ this.handleArrowClick }
+                    >
+                        <ArrowForwardMIcon />
+                    </div>
+                ) }
+                <div className={ this.cn('select-buttons') }>
+                    <div
+                        className={ this.cn('name', {
+                            month: true,
+                        }) }
                         role="button"
                         tabIndex={ 0 }
                         onClick={ this.handleMonthClick }
@@ -344,16 +345,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                     </div>
 
                     <div
-                        className={
-                            this.cn('name', {
-                                year: true,
-                            })
-                        }
+                        className={ this.cn('name', {
+                            year: true,
+                        }) }
                         role="button"
                         tabIndex={ 0 }
                         onClick={ this.handleYearClick }
                     >
-                        <div className={ this.cn('select-text') }>{ `${month.getFullYear()}` }</div>
+                        <div
+                            className={ this.cn('select-text') }
+                        >
+                            { `${month.getFullYear()}` }
+                        </div>
                         <div className={ this.cn('select-arrows') }>
                             <ArrowSelectMIcon />
                         </div>
@@ -372,11 +375,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     };
 
     private handleYearClick = () => {
-        this.setState({
-            isMonthSelection: false,
-            // eslint-disable-next-line react/no-access-state-in-setstate
-            isYearSelection: !this.state.isYearSelection,
-        }, this.scrollToSelectedYear);
+        this.setState(
+            {
+                isMonthSelection: false,
+                // eslint-disable-next-line react/no-access-state-in-setstate
+                isYearSelection: !this.state.isYearSelection,
+            },
+            this.scrollToSelectedYear,
+        );
     };
 
     renderContent() {
@@ -393,37 +399,40 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         return (
             <div className={ this.cn('wrapper') }>
                 <div className={ this.cn('months') }>
-                    {
-                        this.props.months.map((month, index) => {
-                            const monthStart = startOfMonth(setMonth(this.state.month, index));
-                            const monthEnd = endOfMonth(monthStart);
-                            const allMonthDays = eachDay(monthStart, monthEnd);
-                            const off = !allMonthDays.find((day) => this.isValidDate(day));
-                            const selectedDate = new Date(this.state.month);
-                            const isSameMonth = selectedDate
-                                && selectedDate.getMonth() === monthStart.getMonth();
+                    { this.props.months.map((month, index) => {
+                        const monthStart = startOfMonth(
+                            setMonth(this.state.month, index),
+                        );
+                        const monthEnd = endOfMonth(monthStart);
+                        const allMonthDays = eachDay(monthStart, monthEnd);
+                        const off = !allMonthDays.find((day) => this.isValidDate(day));
+                        const selectedDate = new Date(this.state.month);
+                        const isSameMonth = selectedDate
+                            && selectedDate.getMonth() === monthStart.getMonth();
 
-                            const dataMonth = off ? null : monthStart.getTime();
+                        const dataMonth = off ? null : monthStart.getTime();
 
-                            const mods = {
-                                type: off ? 'off' : null,
-                                state: isSameMonth ? 'current' : null,
-                            };
+                        const mods = {
+                            type: off ? 'off' : null,
+                            state: isSameMonth ? 'current' : null,
+                        };
 
-                            return (
-                                <div
-                                    className={ this.cn('select', { month: true, ...mods }) }
-                                    key={ `month_${index + 1}` }
-                                    role="gridcell"
-                                    tabIndex={ 0 }
-                                    data-month={ dataMonth }
-                                    onClick={ this.handleSelectMonthClick }
-                                >
-                                    { month }
-                                </div>
-                            );
-                        })
-                    }
+                        return (
+                            <div
+                                className={ this.cn('select', {
+                                    month: true,
+                                    ...mods,
+                                }) }
+                                key={ `month_${index + 1}` }
+                                role="gridcell"
+                                tabIndex={ 0 }
+                                data-month={ dataMonth }
+                                onClick={ this.handleSelectMonthClick }
+                            >
+                                { month }
+                            </div>
+                        );
+                    }) }
                 </div>
             </div>
         );
@@ -457,13 +466,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         return (
             <div className={ this.cn('wrapper') }>
                 <div className={ this.cn('years') } ref={ this.yearsListRef }>
-                    {
-                        (reverse ? this.years.reverse() : this.years).map((year, index) => {
+                    { (reverse ? this.years.reverse() : this.years).map(
+                        (year, index) => {
                             const newYear = setYear(this.state.month, year);
                             const dataYear = newYear.getTime();
                             const selectedDate = new Date(this.state.month);
                             const isSameYear = selectedDate
-                                && selectedDate.getFullYear() === newYear.getFullYear();
+                                && selectedDate.getFullYear()
+                                    === newYear.getFullYear();
 
                             const mods = {
                                 state: isSameYear ? 'current' : null,
@@ -471,19 +481,26 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
                             return (
                                 <div
-                                    className={ this.cn('select', { year: true, ...mods }) }
+                                    className={ this.cn('select', {
+                                        year: true,
+                                        ...mods,
+                                    }) }
                                     key={ `year_${index + 1}` }
                                     role="gridcell"
                                     tabIndex={ 0 }
                                     data-year={ dataYear }
                                     onClick={ this.handleSelectYearClick }
-                                    ref={ isSameYear ? this.selectedYearRef : undefined }
+                                    ref={
+                                        isSameYear
+                                            ? this.selectedYearRef
+                                            : undefined
+                                    }
                                 >
                                     { year }
                                 </div>
                             );
-                        })
-                    }
+                        },
+                    ) }
                 </div>
             </div>
         );
@@ -512,24 +529,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     };
 
     renderDays() {
-        const rows = [
-            this.renderShortWeekdays(),
-            ...this.renderMonth(),
-        ];
+        const rows = [this.renderShortWeekdays(), ...this.renderMonth()];
 
         return (
             <table className={ this.cn('layout') }>
                 <tbody>
-                    {
-                        rows.map((row, index) => (
-                            <tr
-                                className={ this.cn('row') }
-                                key={ `row_${index + 1}` }
-                            >
-                                { row }
-                            </tr>
-                        ))
-                    }
+                    { rows.map((row, index) => (
+                        <tr className={ this.cn('row') } key={ `row_${index + 1}` }>
+                            { row }
+                        </tr>
+                    )) }
                 </tbody>
             </table>
         );
@@ -538,7 +547,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     renderShortWeekdays() {
         return this.props.weekdays.map((weekdayName, index) => (
             <th
-                className={ this.cn('dayname', { type: index > 4 ? 'weekend' : false }) }
+                className={ this.cn('dayname', {
+                    type: index > 4 ? 'weekend' : false,
+                }) }
                 key={ weekdayName }
             >
                 { weekdayName }
@@ -566,8 +577,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
             if (day) {
                 const isSameDate = val && val.getTime() === day.getTime();
-                const isBetweenPeriod = this.selectedFrom && this.selectedTo
-                    && this.selectedFrom <= day && this.selectedTo >= day;
+                const isBetweenPeriod = this.selectedFrom
+                    && this.selectedTo
+                    && this.selectedFrom <= day
+                    && this.selectedTo >= day;
 
                 if (off || weekend) {
                     if (weekend) {
@@ -590,14 +603,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 mods.empty = true;
             }
 
-            const dataDay = day && !off
-                ? day.getTime()
-                : null;
+            const dataDay = day && !off ? day.getTime() : null;
 
             return (
-                <td
-                    key={ day || `day_${index + 1}` }
-                >
+                <td key={ day || `day_${index + 1}` }>
                     <div
                         className={ this.cn('day', mods) }
                         role="gridcell"
@@ -607,7 +616,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                     >
                         { day ? day.getDate() : '' }
                         { mods.event && (
-                            <span data-day={ dataDay } className={ this.cn('event') } />
+                            <span
+                                data-day={ dataDay }
+                                className={ this.cn('event') }
+                            />
                         ) }
                     </div>
                 </td>
@@ -641,7 +653,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
 
         this.blurTimeoutId = window.setTimeout(() => {
-            if (isNodeOutsideElement(document.activeElement, this.root) && this.props.onBlur) {
+            if (
+                isNodeOutsideElement(document.activeElement, this.root)
+                && this.props.onBlur
+            ) {
                 this.props.onBlur(event);
             }
             this.blurTimeoutId = null;
@@ -649,7 +664,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     };
 
     private handleArrowClick = (event) => {
-        if (event.currentTarget.attributes['data-disabled'].nodeValue === 'true') {
+        if (
+            event.currentTarget.attributes['data-disabled'].nodeValue === 'true'
+        ) {
             return;
         }
 
@@ -771,7 +788,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     private isOffDay(date: Date | number) {
         if (this.props.offDays && Array.isArray(this.props.offDays)) {
             if (this.props.ignoreTimezone) {
-                return Calendar.checkDaysIgnoringTimezone(this.props.offDays, date);
+                return Calendar.checkDaysIgnoringTimezone(
+                    this.props.offDays,
+                    date,
+                );
             }
             const timestamp = date.valueOf();
 
@@ -788,9 +808,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param date Дата для проверки
      */
     private isEventDay(date: Date | number) {
-        if (this.props.eventDays && Array.isArray(this.props.eventDays) && date !== null) {
+        if (
+            this.props.eventDays
+            && Array.isArray(this.props.eventDays)
+            && date !== null
+        ) {
             if (this.props.ignoreTimezone) {
-                return Calendar.checkDaysIgnoringTimezone(this.props.eventDays, date);
+                return Calendar.checkDaysIgnoringTimezone(
+                    this.props.eventDays,
+                    date,
+                );
             }
             const timestamp = date.valueOf();
 
@@ -808,7 +835,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param isTriggeredByKeyboard Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    private performChange(timestamp: number | Date, isTriggeredByKeyboard = false) {
+    private performChange(
+        timestamp: number | Date,
+        isTriggeredByKeyboard = false,
+    ) {
         if (!this.props.onValueChange) {
             return;
         }
@@ -833,7 +863,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param isTriggeredByKeyboard Флаг, что событие
      * произошло из-за нажатия пользователем кнопки на клавиатуре
      */
-    private performChangeWithShift(dayShift: number, isTriggeredByKeyboard: boolean) {
+    private performChangeWithShift(
+        dayShift: number,
+        isTriggeredByKeyboard: boolean,
+    ) {
         if (!this.ensureValueInLimits(dayShift)) {
             return;
         }
@@ -847,7 +880,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
             this.performChange(shiftedValue.valueOf(), isTriggeredByKeyboard);
 
-            if (this.props.onMonthChange && !isSameMonth(shiftedValue, this.value)) {
+            if (
+                this.props.onMonthChange
+                && !isSameMonth(shiftedValue, this.value)
+            ) {
                 this.props.onMonthChange(shiftedValue.valueOf());
             }
         } else {
@@ -858,8 +894,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     private ensureValueInLimits(dayShift) {
         const shiftedDay = addDays(this.value, dayShift);
 
-        return (!this.earlierLimit || differenceInMilliseconds(shiftedDay, this.earlierLimit) >= 0)
-            && (!this.laterLimit || differenceInMilliseconds(shiftedDay, this.laterLimit) <= 0);
+        return (
+            (!this.earlierLimit
+                || differenceInMilliseconds(shiftedDay, this.earlierLimit) >= 0)
+            && (!this.laterLimit
+                || differenceInMilliseconds(shiftedDay, this.laterLimit) <= 0)
+        );
     }
 
     private calculateWeeks() {
@@ -874,7 +914,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         // map не вызывает колбек, для ключей, к которым не были приассигнены значения
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
         // соответственно пропадают undefined значения, поэтому:
-        let week = (new Array(DAYS_IN_WEEK)).fill(null);
+        let week = new Array(DAYS_IN_WEEK).fill(null);
 
         dateIterator.setDate(1);
 
@@ -888,7 +928,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             if (weekDay === lastDay) {
                 weeks.push(week);
                 weekCounter -= 1;
-                week = (new Array(DAYS_IN_WEEK)).fill(null);
+                week = new Array(DAYS_IN_WEEK).fill(null);
             }
 
             dateIterator.setDate(dateIterator.getDate() + 1);
@@ -931,11 +971,17 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             month: startOfMonth(month),
         });
 
-        if (isInitializing || this.props.earlierLimit !== nextProps.earlierLimit) {
+        if (
+            isInitializing
+            || this.props.earlierLimit !== nextProps.earlierLimit
+        ) {
             if (nextProps.earlierLimit) {
                 this.earlierLimit = normalizeDate(nextProps.earlierLimit);
             } else {
-                this.earlierLimit = subtractYears(new Date(), EARLY_YEARS_LIMIT);
+                this.earlierLimit = subtractYears(
+                    new Date(),
+                    EARLY_YEARS_LIMIT,
+                );
             }
 
             this.earlierLimit = startOfDay(this.earlierLimit);
@@ -970,12 +1016,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         this.years = getYearsRange(this.earlierLimit, this.laterLimit);
 
         if (isInitializing || this.props.selectedTo !== nextProps.selectedTo) {
-            this.selectedTo = nextProps.selectedTo ? normalizeDate(nextProps.selectedTo) : null;
+            this.selectedTo = nextProps.selectedTo
+                ? normalizeDate(nextProps.selectedTo)
+                : null;
         }
 
-        if (isInitializing || this.props.selectedFrom !== nextProps.selectedFrom) {
+        if (
+            isInitializing
+            || this.props.selectedFrom !== nextProps.selectedFrom
+        ) {
             this.selectedFrom = nextProps.selectedFrom
-                ? normalizeDate(nextProps.selectedFrom) : null;
+                ? normalizeDate(nextProps.selectedFrom)
+                : null;
         }
     }
 
@@ -985,11 +1037,21 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
      * @param date Дата
      * @param daysToСheck Список дат для проверки
      */
-    private static checkDaysIgnoringTimezone(daysToCheck: readonly number[], date: Date | number) {
+    private static checkDaysIgnoringTimezone(
+        daysToCheck: readonly number[],
+        date: Date | number,
+    ) {
         const dateWithoutTime = formatDate(date, WITHOUT_TIME_FORMAT);
         /* Используем бинарный поиск */
-        const index = sortedIndexBy<string | number>(daysToCheck, dateWithoutTime, (day) => formatDate(day, WITHOUT_TIME_FORMAT));
-        return dateWithoutTime === formatDate(daysToCheck[index], WITHOUT_TIME_FORMAT);
+        const index = sortedIndexBy<string | number>(
+            daysToCheck,
+            dateWithoutTime,
+            (day) => formatDate(day, WITHOUT_TIME_FORMAT),
+        );
+        return (
+            dateWithoutTime
+            === formatDate(daysToCheck[index], WITHOUT_TIME_FORMAT)
+        );
     }
 }
 

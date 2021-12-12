@@ -6,13 +6,13 @@ import createFragment from 'react-addons-create-fragment';
 import React from 'react';
 import { createCn } from 'bem-react-classname';
 import {
-    ArrowUpSIcon
+    ArrowUpSIcon,
 } from '@alfalab/icons-classic/ArrowUpSIcon';
 import {
-    ArrowUpMIcon
+    ArrowUpMIcon,
 } from '@alfalab/icons-classic/ArrowUpMIcon';
 import {
-    ArrowUpLIcon
+    ArrowUpLIcon,
 } from '@alfalab/icons-classic/ArrowUpLIcon';
 import {
     ArrowDownSIcon,
@@ -21,7 +21,7 @@ import {
     ArrowDownMIcon,
 } from '@alfalab/icons-classic/ArrowDownMIcon';
 import {
-    ArrowDownLIcon
+    ArrowDownLIcon,
 } from '@alfalab/icons-classic/ArrowDownLIcon';
 import { withTheme, Theme } from '../cn';
 

@@ -8,13 +8,13 @@ import React from 'react';
 import formatDate from 'date-fns/format';
 import { createCn } from 'bem-react-classname';
 import {
-    CalendarMIcon
+    CalendarMIcon,
 } from '@alfalab/icons-classic/CalendarMIcon';
 import {
-    CalendarLIcon
+    CalendarLIcon,
 } from '@alfalab/icons-classic/CalendarLIcon';
 import {
-    CalendarSIcon
+    CalendarSIcon,
 } from '@alfalab/icons-classic/CalendarSIcon';
 import {
     CalendarXlIcon,

@@ -1,3 +1,11 @@
+## [19.2.2](https://github.com/alfa-laboratory/arui-feather/compare/v19.2.1...v19.2.2) (2021-12-13)
+
+
+### Bug Fixes
+
+* **icons-import:** fix wrong import, that caused import of whole library instead of one icon ([88e2670](https://github.com/alfa-laboratory/arui-feather/commit/88e26704baf01788d72c4935e2842e4a8fdb03e1))
+* **icons-import:** update snapshots ([4051778](https://github.com/alfa-laboratory/arui-feather/commit/4051778dc1667d51252a26481ee78d8dd0399fa4))
+
 ## [19.2.1](https://github.com/alfa-laboratory/arui-feather/compare/v19.2.0...v19.2.1) (2021-09-28)
 
 

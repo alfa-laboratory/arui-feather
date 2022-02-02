@@ -594,7 +594,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 for={ this.props.name }
                 className={ this.cn('popup') }
                 directions={ this.props.directions }
-                height="adaptive"
+                height={ this.props.maxHeight ? 'default' : 'adaptive' }
                 padded={ false }
                 mainOffset={ this.props.popupMainOffset }
                 secondaryOffset={ this.props.popupSecondaryOffset }

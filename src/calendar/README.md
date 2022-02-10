@@ -56,6 +56,9 @@ const offDays = [
     getTime(startOfDay(addDays(currentDate, 7)))
 ];
 
+const startDate = getTime(currentDate.setDate(1));
+const endDate = getTime(addDays(currentDate, 30));
+
 <Calendar
     value={ state.date }
     offDays={ offDays }
@@ -64,6 +67,8 @@ const offDays = [
             date: newDate
         });
     } }
+    selectedFrom={ startDate }
+    selectedTo={ endDate }
 />
 ```
 

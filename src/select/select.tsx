@@ -292,6 +292,11 @@ export type SelectProps = {
     onClickOutside?: (event?: React.MouseEvent<any>) => void;
 
     /**
+     * Обработчик клика по кнопке закрытия попапа со значениями
+     */
+    onCloserClick?: (event?: React.MouseEvent<any>) => void;
+
+    /**
      * Обработчик изменения значения
      */
     onChange?: (value?: any[], event?: React.ChangeEvent<any>) => void;
@@ -919,10 +924,14 @@ export class Select extends React.Component<SelectProps, SelectState> {
         );
     };
 
-    private handlePopupCloserClick = () => {
+    private handlePopupCloserClick = (event: React.MouseEvent<any>) => {
+        const { onCloserClick } = this.props;
         this.setState({
             opened: false,
         });
+        if (typeof onCloserClick === 'function') {
+            onCloserClick(event);
+        }
     };
 
     private setPopupRef = (ref) => {
